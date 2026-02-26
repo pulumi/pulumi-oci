@@ -34,6 +34,7 @@ class RemediationRecipeArgs:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a RemediationRecipe resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
         :param pulumi.Input['RemediationRecipeDetectConfigurationArgs'] detect_configuration: (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
         :param pulumi.Input[_builtins.bool] is_run_triggered_on_kb_change: (Updatable) Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
@@ -222,6 +223,7 @@ class _RemediationRecipeState:
                  verify_configuration: Optional[pulumi.Input['RemediationRecipeVerifyConfigurationArgs']] = None):
         """
         Input properties used for looking up and filtering RemediationRecipe resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input['RemediationRecipeDetectConfigurationArgs'] detect_configuration: (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
@@ -530,6 +532,7 @@ class RemediationRecipe(pulumi.CustomResource):
         $ pulumi import oci:Adm/remediationRecipe:RemediationRecipe test_remediation_recipe "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
@@ -622,6 +625,7 @@ class RemediationRecipe(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Adm/remediationRecipe:RemediationRecipe test_remediation_recipe "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param RemediationRecipeArgs args: The arguments to use to populate this resource's properties.

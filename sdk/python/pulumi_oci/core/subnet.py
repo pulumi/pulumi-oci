@@ -37,6 +37,7 @@ class SubnetArgs:
                  security_list_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Subnet resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the subnet.
         :param pulumi.Input[_builtins.str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN to contain the subnet.
                
@@ -385,6 +386,7 @@ class _SubnetState:
                  virtual_router_mac: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Subnet resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: Controls whether the subnet is regional or specific to an availability domain. Oracle recommends creating regional subnets because they're more flexible and make it easier to implement failover across availability domains. Originally, AD-specific subnets were the only kind available to use.
                
                To create a regional subnet, omit this attribute. Then any resources later created in this subnet (such as a Compute instance) can be created in any availability domain in the region.
@@ -896,6 +898,7 @@ class Subnet(pulumi.CustomResource):
         $ pulumi import oci:Core/subnet:Subnet test_subnet "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: Controls whether the subnet is regional or specific to an availability domain. Oracle recommends creating regional subnets because they're more flexible and make it easier to implement failover across availability domains. Originally, AD-specific subnets were the only kind available to use.
@@ -1035,6 +1038,7 @@ class Subnet(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/subnet:Subnet test_subnet "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SubnetArgs args: The arguments to use to populate this resource's properties.

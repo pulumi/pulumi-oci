@@ -24,6 +24,7 @@ class LogAnalyticsEntityAssociationsRemoveArgs:
                  namespace: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a LogAnalyticsEntityAssociationsRemove resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] association_entities: Destination entities OCIDs with which associations are to be deleted
         :param pulumi.Input[_builtins.str] log_analytics_entity_id: The Log analytics entity OCID.
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. 
@@ -85,6 +86,7 @@ class _LogAnalyticsEntityAssociationsRemoveState:
                  namespace: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LogAnalyticsEntityAssociationsRemove resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] association_entities: Destination entities OCIDs with which associations are to be deleted
         :param pulumi.Input[_builtins.str] log_analytics_entity_id: The Log analytics entity OCID.
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. 
@@ -179,6 +181,7 @@ class LogAnalyticsEntityAssociationsRemove(pulumi.CustomResource):
         $ pulumi import oci:LogAnalytics/logAnalyticsEntityAssociationsRemove:LogAnalyticsEntityAssociationsRemove test_log_analytics_entity_associations_remove "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] association_entities: Destination entities OCIDs with which associations are to be deleted
@@ -222,6 +225,7 @@ class LogAnalyticsEntityAssociationsRemove(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:LogAnalytics/logAnalyticsEntityAssociationsRemove:LogAnalyticsEntityAssociationsRemove test_log_analytics_entity_associations_remove "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param LogAnalyticsEntityAssociationsRemoveArgs args: The arguments to use to populate this resource's properties.

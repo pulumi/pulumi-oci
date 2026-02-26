@@ -36,6 +36,7 @@ class ScheduleArgs:
                  time_starts: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Schedule resource.
+
         :param pulumi.Input[_builtins.str] action: (Updatable) This is the action that will be executed by the schedule.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
         :param pulumi.Input[_builtins.str] recurrence_details: (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
@@ -262,6 +263,7 @@ class _ScheduleState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Schedule resources.
+
         :param pulumi.Input[_builtins.str] action: (Updatable) This is the action that will be executed by the schedule.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -594,6 +596,7 @@ class Schedule(pulumi.CustomResource):
         $ pulumi import oci:ResourceScheduler/schedule:Schedule test_schedule "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: (Updatable) This is the action that will be executed by the schedule.
@@ -635,6 +638,7 @@ class Schedule(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ResourceScheduler/schedule:Schedule test_schedule "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ScheduleArgs args: The arguments to use to populate this resource's properties.

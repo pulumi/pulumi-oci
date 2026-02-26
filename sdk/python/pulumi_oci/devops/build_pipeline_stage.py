@@ -41,6 +41,7 @@ class BuildPipelineStageArgs:
                  wait_criteria: Optional[pulumi.Input['BuildPipelineStageWaitCriteriaArgs']] = None):
         """
         The set of arguments for constructing a BuildPipelineStage resource.
+
         :param pulumi.Input[_builtins.str] build_pipeline_id: The OCID of the build pipeline.
         :param pulumi.Input['BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs'] build_pipeline_stage_predecessor_collection: (Updatable) The collection containing the predecessors of a stage.
         :param pulumi.Input[_builtins.str] build_pipeline_stage_type: (Updatable) Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
@@ -341,6 +342,7 @@ class _BuildPipelineStageState:
                  wait_criteria: Optional[pulumi.Input['BuildPipelineStageWaitCriteriaArgs']] = None):
         """
         Input properties used for looking up and filtering BuildPipelineStage resources.
+
         :param pulumi.Input[_builtins.str] build_pipeline_id: The OCID of the build pipeline.
         :param pulumi.Input['BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs'] build_pipeline_stage_predecessor_collection: (Updatable) The collection containing the predecessors of a stage.
         :param pulumi.Input[_builtins.str] build_pipeline_stage_type: (Updatable) Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
@@ -820,6 +822,7 @@ class BuildPipelineStage(pulumi.CustomResource):
         $ pulumi import oci:DevOps/buildPipelineStage:BuildPipelineStage test_build_pipeline_stage "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] build_pipeline_id: The OCID of the build pipeline.
@@ -922,6 +925,7 @@ class BuildPipelineStage(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DevOps/buildPipelineStage:BuildPipelineStage test_build_pipeline_stage "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param BuildPipelineStageArgs args: The arguments to use to populate this resource's properties.

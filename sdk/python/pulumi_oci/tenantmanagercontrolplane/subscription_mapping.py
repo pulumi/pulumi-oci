@@ -23,6 +23,7 @@ class SubscriptionMappingArgs:
                  subscription_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a SubscriptionMapping resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: OCID of the compartment. Always a tenancy OCID.
         :param pulumi.Input[_builtins.str] subscription_id: OCID of Subscription.
                
@@ -74,6 +75,7 @@ class _SubscriptionMappingState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SubscriptionMapping resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: OCID of the compartment. Always a tenancy OCID.
         :param pulumi.Input[_builtins.bool] is_explicitly_assigned: Denotes if the subscription is explicity assigned to the root compartment or tenancy.
         :param pulumi.Input[_builtins.str] state: Lifecycle state of the subscriptionMapping.
@@ -226,6 +228,7 @@ class SubscriptionMapping(pulumi.CustomResource):
         $ pulumi import oci:Tenantmanagercontrolplane/subscriptionMapping:SubscriptionMapping test_subscription_mapping "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: OCID of the compartment. Always a tenancy OCID.
@@ -267,6 +270,7 @@ class SubscriptionMapping(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Tenantmanagercontrolplane/subscriptionMapping:SubscriptionMapping test_subscription_mapping "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SubscriptionMappingArgs args: The arguments to use to populate this resource's properties.

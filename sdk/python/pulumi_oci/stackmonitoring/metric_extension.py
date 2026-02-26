@@ -32,6 +32,7 @@ class MetricExtensionArgs:
                  publish_trigger: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a MetricExtension resource.
+
         :param pulumi.Input[_builtins.str] collection_recurrences: (Updatable) Schedule of metric extension should use RFC 5545 format i.e. recur-rule-part = "FREQ";INTERVAL where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Metric Extension display name.
@@ -197,6 +198,7 @@ class _MetricExtensionState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MetricExtension resources.
+
         :param pulumi.Input[_builtins.str] collection_method: Type of possible collection methods.
         :param pulumi.Input[_builtins.str] collection_recurrences: (Updatable) Schedule of metric extension should use RFC 5545 format i.e. recur-rule-part = "FREQ";INTERVAL where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -598,6 +600,7 @@ class MetricExtension(pulumi.CustomResource):
         $ pulumi import oci:StackMonitoring/metricExtension:MetricExtension test_metric_extension "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] collection_recurrences: (Updatable) Schedule of metric extension should use RFC 5545 format i.e. recur-rule-part = "FREQ";INTERVAL where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
@@ -693,6 +696,7 @@ class MetricExtension(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:StackMonitoring/metricExtension:MetricExtension test_metric_extension "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MetricExtensionArgs args: The arguments to use to populate this resource's properties.

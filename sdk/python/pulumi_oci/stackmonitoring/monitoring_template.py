@@ -34,6 +34,7 @@ class MonitoringTemplateArgs:
                  repeat_notification_duration: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a MonitoringTemplate resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment containing the monitoringTemplate.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] destinations: (Updatable) A list of destinations for alarm notifications. Each destination is represented by the OCID of a related resource, such as a topic.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name for the monitoring template. It is unique and mutable in nature. Avoid entering confidential information.
@@ -230,6 +231,7 @@ class _MonitoringTemplateState:
                  total_applied_alarm_conditions: Optional[pulumi.Input[_builtins.float]] = None):
         """
         Input properties used for looking up and filtering MonitoringTemplate resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment containing the monitoringTemplate.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-friendly description for the monitoring template. It does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -588,6 +590,7 @@ class MonitoringTemplate(pulumi.CustomResource):
         $ pulumi import oci:StackMonitoring/monitoringTemplate:MonitoringTemplate test_monitoring_template "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment containing the monitoringTemplate.
@@ -655,6 +658,7 @@ class MonitoringTemplate(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:StackMonitoring/monitoringTemplate:MonitoringTemplate test_monitoring_template "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MonitoringTemplateArgs args: The arguments to use to populate this resource's properties.

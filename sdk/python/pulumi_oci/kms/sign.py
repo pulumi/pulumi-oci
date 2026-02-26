@@ -27,6 +27,7 @@ class SignArgs:
                  message_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Sign resource.
+
         :param pulumi.Input[_builtins.str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,', 'GenerateDataEncryptionKey', 'Sign' and 'Verify' operations. see Vault Crypto endpoint.
         :param pulumi.Input[_builtins.str] key_id: The OCID of the key used to sign the message.
         :param pulumi.Input[_builtins.str] message: The base64-encoded binary data object denoting the message or message digest to sign. You can have a message up to 4096 bytes in size. To sign a larger message, provide the message digest.
@@ -136,6 +137,7 @@ class _SignState:
                  signing_algorithm: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Sign resources.
+
         :param pulumi.Input[_builtins.str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,', 'GenerateDataEncryptionKey', 'Sign' and 'Verify' operations. see Vault Crypto endpoint.
         :param pulumi.Input[_builtins.str] key_id: The OCID of the key used to sign the message.
         :param pulumi.Input[_builtins.str] key_version_id: The OCID of the key version used to sign the message.
@@ -300,6 +302,7 @@ class Sign(pulumi.CustomResource):
         $ pulumi import oci:Kms/sign:Sign test_sign "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,', 'GenerateDataEncryptionKey', 'Sign' and 'Verify' operations. see Vault Crypto endpoint.
@@ -353,6 +356,7 @@ class Sign(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Kms/sign:Sign test_sign "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SignArgs args: The arguments to use to populate this resource's properties.

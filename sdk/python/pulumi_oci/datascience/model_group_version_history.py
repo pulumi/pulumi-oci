@@ -28,6 +28,7 @@ class ModelGroupVersionHistoryArgs:
                  latest_model_group_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ModelGroupVersionHistory resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model group version history in.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model group version history.
                
@@ -160,6 +161,7 @@ class _ModelGroupVersionHistoryState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ModelGroupVersionHistory resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model group version history in.
         :param pulumi.Input[_builtins.str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the modelGroupVersionHistory.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -416,6 +418,7 @@ class ModelGroupVersionHistory(pulumi.CustomResource):
         $ pulumi import oci:DataScience/modelGroupVersionHistory:ModelGroupVersionHistory test_model_group_version_history "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model group version history in.
@@ -471,6 +474,7 @@ class ModelGroupVersionHistory(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataScience/modelGroupVersionHistory:ModelGroupVersionHistory test_model_group_version_history "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ModelGroupVersionHistoryArgs args: The arguments to use to populate this resource's properties.

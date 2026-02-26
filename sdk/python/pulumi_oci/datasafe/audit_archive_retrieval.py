@@ -29,6 +29,7 @@ class AuditArchiveRetrievalArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AuditArchiveRetrieval resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the archival retrieval.
         :param pulumi.Input[_builtins.str] end_date: End month of the archive retrieval, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] start_date: Start month of the archive retrieval, in the format defined by RFC3339.
@@ -177,6 +178,7 @@ class _AuditArchiveRetrievalState:
                  time_requested: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AuditArchiveRetrieval resources.
+
         :param pulumi.Input[_builtins.str] audit_event_count: Total count of audit events to be retrieved from the archive for the specified date range.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the archival retrieval.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
@@ -482,6 +484,7 @@ class AuditArchiveRetrieval(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval test_audit_archive_retrieval "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the archival retrieval.
@@ -541,6 +544,7 @@ class AuditArchiveRetrieval(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval test_audit_archive_retrieval "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AuditArchiveRetrievalArgs args: The arguments to use to populate this resource's properties.

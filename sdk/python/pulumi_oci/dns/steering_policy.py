@@ -32,6 +32,7 @@ class SteeringPolicyArgs:
                  ttl: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a SteeringPolicy resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the steering policy.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] template: (Updatable) A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
@@ -228,6 +229,7 @@ class _SteeringPolicyState:
                  ttl: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering SteeringPolicy resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['SteeringPolicyAnswerArgs']]] answers: The set of all answers that can potentially issue from the steering policy.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the steering policy.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -530,6 +532,7 @@ class SteeringPolicy(pulumi.CustomResource):
         $ pulumi import oci:Dns/steeringPolicy:SteeringPolicy test_steering_policy "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['SteeringPolicyAnswerArgs', 'SteeringPolicyAnswerArgsDict']]]] answers: The set of all answers that can potentially issue from the steering policy.
@@ -628,6 +631,7 @@ class SteeringPolicy(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Dns/steeringPolicy:SteeringPolicy test_steering_policy "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SteeringPolicyArgs args: The arguments to use to populate this resource's properties.

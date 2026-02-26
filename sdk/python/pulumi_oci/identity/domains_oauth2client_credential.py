@@ -39,6 +39,7 @@ class DomainsOauth2clientCredentialArgs:
                  user: Optional[pulumi.Input['DomainsOauth2clientCredentialUserArgs']] = None):
         """
         The set of arguments for constructing a DomainsOauth2clientCredential resource.
+
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
                
@@ -512,6 +513,7 @@ class _DomainsOauth2clientCredentialState:
                  user: Optional[pulumi.Input['DomainsOauth2clientCredentialUserArgs']] = None):
         """
         Input properties used for looking up and filtering DomainsOauth2clientCredential resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[_builtins.str] attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         :param pulumi.Input[_builtins.str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -1371,6 +1373,7 @@ class DomainsOauth2clientCredential(pulumi.CustomResource):
         $ pulumi import oci:Identity/domainsOauth2clientCredential:DomainsOauth2clientCredential test_oauth2client_credential "idcsEndpoint/{idcsEndpoint}/oAuth2ClientCredentials/{oAuth2ClientCredentialId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -1549,6 +1552,7 @@ class DomainsOauth2clientCredential(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domainsOauth2clientCredential:DomainsOauth2clientCredential test_oauth2client_credential "idcsEndpoint/{idcsEndpoint}/oAuth2ClientCredentials/{oAuth2ClientCredentialId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainsOauth2clientCredentialArgs args: The arguments to use to populate this resource's properties.

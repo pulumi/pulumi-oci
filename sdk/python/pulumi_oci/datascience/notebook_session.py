@@ -33,6 +33,7 @@ class NotebookSessionArgs:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NotebookSession resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the notebook session.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
                
@@ -211,6 +212,7 @@ class _NotebookSessionState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NotebookSession resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the notebook session.
         :param pulumi.Input[_builtins.str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the notebook session.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -523,6 +525,7 @@ class NotebookSession(pulumi.CustomResource):
         $ pulumi import oci:DataScience/notebookSession:NotebookSession test_notebook_session "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the notebook session.
@@ -619,6 +622,7 @@ class NotebookSession(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataScience/notebookSession:NotebookSession test_notebook_session "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NotebookSessionArgs args: The arguments to use to populate this resource's properties.

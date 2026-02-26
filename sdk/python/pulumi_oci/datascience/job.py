@@ -39,6 +39,7 @@ class JobArgs:
                  job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]] = None):
         """
         The set of arguments for constructing a Job resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
         :param pulumi.Input[_builtins.str] artifact_content_disposition: This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
@@ -316,6 +317,7 @@ class _JobState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Job resources.
+
         :param pulumi.Input[_builtins.str] artifact_content_disposition: This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
         :param pulumi.Input[_builtins.str] artifact_content_length: The content length of the body.
                
@@ -813,6 +815,7 @@ class Job(pulumi.CustomResource):
         $ pulumi import oci:DataScience/job:Job test_job "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] artifact_content_disposition: This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
@@ -971,6 +974,7 @@ class Job(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataScience/job:Job test_job "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param JobArgs args: The arguments to use to populate this resource's properties.

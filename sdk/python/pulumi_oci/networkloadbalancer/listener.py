@@ -31,6 +31,7 @@ class ListenerArgs:
                  udp_idle_timeout: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a Listener resource.
+
         :param pulumi.Input[_builtins.str] default_backend_set_name: (Updatable) The name of the associated backend set.  Example: `example_backend_set`
         :param pulumi.Input[_builtins.str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
         :param pulumi.Input[_builtins.int] port: (Updatable) The communication port for the listener.  Example: `80`
@@ -203,6 +204,7 @@ class _ListenerState:
                  udp_idle_timeout: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering Listener resources.
+
         :param pulumi.Input[_builtins.str] default_backend_set_name: (Updatable) The name of the associated backend set.  Example: `example_backend_set`
         :param pulumi.Input[_builtins.str] ip_version: (Updatable) IP version associated with the listener.
         :param pulumi.Input[_builtins.bool] is_ppv2enabled: (Updatable) Property to enable/disable PPv2 feature for this listener.
@@ -416,6 +418,7 @@ class Listener(pulumi.CustomResource):
         $ pulumi import oci:NetworkLoadBalancer/listener:Listener test_listener "networkLoadBalancers/{networkLoadBalancerId}/listeners/{listenerName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] default_backend_set_name: (Updatable) The name of the associated backend set.  Example: `example_backend_set`
@@ -473,6 +476,7 @@ class Listener(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:NetworkLoadBalancer/listener:Listener test_listener "networkLoadBalancers/{networkLoadBalancerId}/listeners/{listenerName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ListenerArgs args: The arguments to use to populate this resource's properties.

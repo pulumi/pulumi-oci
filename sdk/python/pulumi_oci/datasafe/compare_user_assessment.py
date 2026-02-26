@@ -23,6 +23,7 @@ class CompareUserAssessmentArgs:
                  user_assessment_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a CompareUserAssessment resource.
+
         :param pulumi.Input[_builtins.str] comparison_user_assessment_id: The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
         :param pulumi.Input[_builtins.str] user_assessment_id: The OCID of the user assessment.
                
@@ -69,6 +70,7 @@ class _CompareUserAssessmentState:
                  user_assessment_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CompareUserAssessment resources.
+
         :param pulumi.Input[_builtins.str] comparison_user_assessment_id: The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
         :param pulumi.Input[_builtins.str] user_assessment_id: The OCID of the user assessment.
                
@@ -147,6 +149,7 @@ class CompareUserAssessment(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/compareUserAssessment:CompareUserAssessment test_compare_user_assessment "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] comparison_user_assessment_id: The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
@@ -189,6 +192,7 @@ class CompareUserAssessment(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/compareUserAssessment:CompareUserAssessment test_compare_user_assessment "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CompareUserAssessmentArgs args: The arguments to use to populate this resource's properties.

@@ -25,6 +25,7 @@ class SensitiveTypeGroupGroupedSensitiveTypeArgs:
                  patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs']]]] = None):
         """
         The set of arguments for constructing a SensitiveTypeGroupGroupedSensitiveType resource.
+
         :param pulumi.Input[_builtins.str] sensitive_type_group_id: ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs']]] patch_operations: (Updatable)
@@ -67,6 +68,7 @@ class _SensitiveTypeGroupGroupedSensitiveTypeState:
                  sensitive_type_group_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SensitiveTypeGroupGroupedSensitiveType resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['SensitiveTypeGroupGroupedSensitiveTypeItemArgs']]] items: List of sensitive type id summary objects present in the sensitive type group.
         :param pulumi.Input[Sequence[pulumi.Input['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs']]] patch_operations: (Updatable)
         :param pulumi.Input[_builtins.str] sensitive_type_group_id: ** IMPORTANT **
@@ -158,6 +160,7 @@ class SensitiveTypeGroupGroupedSensitiveType(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/sensitiveTypeGroupGroupedSensitiveType:SensitiveTypeGroupGroupedSensitiveType test_sensitive_type_group_grouped_sensitive_type "sensitiveTypeGroups/{sensitiveTypeGroupId}/groupedSensitiveTypes"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs', 'SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgsDict']]]] patch_operations: (Updatable)
@@ -201,6 +204,7 @@ class SensitiveTypeGroupGroupedSensitiveType(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/sensitiveTypeGroupGroupedSensitiveType:SensitiveTypeGroupGroupedSensitiveType test_sensitive_type_group_grouped_sensitive_type "sensitiveTypeGroups/{sensitiveTypeGroupId}/groupedSensitiveTypes"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SensitiveTypeGroupGroupedSensitiveTypeArgs args: The arguments to use to populate this resource's properties.

@@ -25,6 +25,7 @@ class TagDefaultArgs:
                  is_required: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a TagDefault resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment. The tag default will be applied to all new resources created in this compartment.
         :param pulumi.Input[_builtins.str] tag_definition_id: The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
         :param pulumi.Input[_builtins.str] value: (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 
@@ -114,6 +115,7 @@ class _TagDefaultState:
                  value: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering TagDefault resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment. The tag default will be applied to all new resources created in this compartment.
         :param pulumi.Input[_builtins.bool] is_required: (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
                * If the `isRequired` flag is set to "true", the value is set during resource creation.
@@ -300,6 +302,7 @@ class TagDefault(pulumi.CustomResource):
         $ pulumi import oci:Identity/tagDefault:TagDefault test_tag_default "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment. The tag default will be applied to all new resources created in this compartment.
@@ -356,6 +359,7 @@ class TagDefault(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/tagDefault:TagDefault test_tag_default "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param TagDefaultArgs args: The arguments to use to populate this resource's properties.

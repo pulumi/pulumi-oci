@@ -23,6 +23,7 @@ class ConfigurationArgs:
                  email_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
         """
         The set of arguments for constructing a Configuration resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] email_ids: (Updatable) List of email IDs associated with the configuration.
                
@@ -71,6 +72,7 @@ class _ConfigurationState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Configuration resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] email_ids: (Updatable) List of email IDs associated with the configuration.
                
@@ -178,6 +180,7 @@ class Configuration(pulumi.CustomResource):
         $ pulumi import oci:LicenseManager/configuration:Configuration test_configuration "configuration/compartmentId/{compartmentId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
@@ -219,6 +222,7 @@ class Configuration(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:LicenseManager/configuration:Configuration test_configuration "configuration/compartmentId/{compartmentId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ConfigurationArgs args: The arguments to use to populate this resource's properties.

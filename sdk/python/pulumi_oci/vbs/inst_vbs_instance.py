@@ -29,6 +29,7 @@ class InstVbsInstanceArgs:
                  resource_compartment_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a InstVbsInstance resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier. It can only be the root compartment
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Display Name
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -177,6 +178,7 @@ class _InstVbsInstanceState:
                  vbs_access_url: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InstVbsInstance resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier. It can only be the root compartment
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Display Name
@@ -450,6 +452,7 @@ class InstVbsInstance(pulumi.CustomResource):
         $ pulumi import oci:Vbs/instVbsInstance:InstVbsInstance test_vbs_instance "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier. It can only be the root compartment
@@ -507,6 +510,7 @@ class InstVbsInstance(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Vbs/instVbsInstance:InstVbsInstance test_vbs_instance "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param InstVbsInstanceArgs args: The arguments to use to populate this resource's properties.

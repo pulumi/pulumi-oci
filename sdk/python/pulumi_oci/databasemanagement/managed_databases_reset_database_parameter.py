@@ -28,6 +28,7 @@ class ManagedDatabasesResetDatabaseParameterArgs:
                  database_credential: Optional[pulumi.Input['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs']] = None):
         """
         The set of arguments for constructing a ManagedDatabasesResetDatabaseParameter resource.
+
         :param pulumi.Input[_builtins.str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] parameters: A list of database parameter names.
         :param pulumi.Input[_builtins.str] scope: The clause used to specify when the parameter change takes effect.
@@ -125,6 +126,7 @@ class _ManagedDatabasesResetDatabaseParameterState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagedDatabasesResetDatabaseParameter resources.
+
         :param pulumi.Input['ManagedDatabasesResetDatabaseParameterCredentialsArgs'] credentials: The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
         :param pulumi.Input['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs'] database_credential: The credential to connect to the database to perform tablespace administration tasks.
         :param pulumi.Input[_builtins.str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -265,6 +267,7 @@ class ManagedDatabasesResetDatabaseParameter(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ManagedDatabasesResetDatabaseParameterCredentialsArgs', 'ManagedDatabasesResetDatabaseParameterCredentialsArgsDict']] credentials: The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
@@ -322,6 +325,7 @@ class ManagedDatabasesResetDatabaseParameter(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param ManagedDatabasesResetDatabaseParameterArgs args: The arguments to use to populate this resource's properties.

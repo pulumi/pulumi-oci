@@ -27,6 +27,7 @@ class CompartmentArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Compartment resource.
+
         :param pulumi.Input[_builtins.str] description: (Updatable) The description you assign to the compartment during creation. Does not have to be unique, and it's changeable.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the parent compartment containing the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -140,6 +141,7 @@ class _CompartmentState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Compartment resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the parent compartment containing the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description you assign to the compartment during creation. Does not have to be unique, and it's changeable.
@@ -363,6 +365,7 @@ class Compartment(pulumi.CustomResource):
         $ pulumi import oci:Identity/compartment:Compartment test_compartment "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the parent compartment containing the compartment.
@@ -431,6 +434,7 @@ class Compartment(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/compartment:Compartment test_compartment "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CompartmentArgs args: The arguments to use to populate this resource's properties.

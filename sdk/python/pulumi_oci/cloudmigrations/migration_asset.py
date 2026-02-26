@@ -29,6 +29,7 @@ class MigrationAssetArgs:
                  replication_schedule_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a MigrationAsset resource.
+
         :param pulumi.Input[_builtins.str] availability_domain: Availability domain
         :param pulumi.Input[_builtins.str] inventory_asset_id: OCID of an asset for an inventory.
         :param pulumi.Input[_builtins.str] migration_id: OCID of the associated migration.
@@ -176,6 +177,7 @@ class _MigrationAssetState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MigrationAsset resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: Availability domain
         :param pulumi.Input[_builtins.str] compartment_id: Compartment Identifier
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] depended_on_bies: List of migration assets that depend on the asset.
@@ -514,6 +516,7 @@ class MigrationAsset(pulumi.CustomResource):
         $ pulumi import oci:CloudMigrations/migrationAsset:MigrationAsset test_migration_asset "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: Availability domain
@@ -549,6 +552,7 @@ class MigrationAsset(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:CloudMigrations/migrationAsset:MigrationAsset test_migration_asset "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MigrationAssetArgs args: The arguments to use to populate this resource's properties.

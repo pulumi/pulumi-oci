@@ -30,6 +30,7 @@ class UsagePlanArgs:
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['UsagePlanLockArgs']]]] = None):
         """
         The set of arguments for constructing a UsagePlan resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
         :param pulumi.Input[Sequence[pulumi.Input['UsagePlanEntitlementArgs']]] entitlements: (Updatable) A collection of entitlements to assign to the newly created usage plan.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -149,6 +150,7 @@ class _UsagePlanState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UsagePlan resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
@@ -396,6 +398,7 @@ class UsagePlan(pulumi.CustomResource):
         $ pulumi import oci:ApiGateway/usagePlan:UsagePlan test_usage_plan "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
@@ -464,6 +467,7 @@ class UsagePlan(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ApiGateway/usagePlan:UsagePlan test_usage_plan "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param UsagePlanArgs args: The arguments to use to populate this resource's properties.

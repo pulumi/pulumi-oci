@@ -37,6 +37,7 @@ class DomainsGrantArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantTagArgs']]]] = None):
         """
         The set of arguments for constructing a DomainsGrant resource.
+
         :param pulumi.Input[_builtins.str] grant_mechanism: Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
                * 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
                * 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
@@ -467,6 +468,7 @@ class _DomainsGrantState:
                  tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DomainsGrant resources.
+
         :param pulumi.Input['DomainsGrantAppArgs'] app: Application that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
                
                **SCIM++ Properties:**
@@ -1362,6 +1364,7 @@ class DomainsGrant(pulumi.CustomResource):
         $ pulumi import oci:Identity/domainsGrant:DomainsGrant test_grant "idcsEndpoint/{idcsEndpoint}/grants/{grantId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['DomainsGrantAppArgs', 'DomainsGrantAppArgsDict']] app: Application that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
@@ -1532,6 +1535,7 @@ class DomainsGrant(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domainsGrant:DomainsGrant test_grant "idcsEndpoint/{idcsEndpoint}/grants/{grantId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainsGrantArgs args: The arguments to use to populate this resource's properties.

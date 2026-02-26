@@ -25,6 +25,7 @@ class ExternalContainerDatabaseManagementArgs:
                  license_model: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ExternalContainerDatabaseManagement resource.
+
         :param pulumi.Input[_builtins.str] external_container_database_id: The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[_builtins.str] license_model: The Oracle license model that applies to the external database. Required only for enabling database management.
@@ -96,6 +97,7 @@ class _ExternalContainerDatabaseManagementState:
                  license_model: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalContainerDatabaseManagement resources.
+
         :param pulumi.Input[_builtins.str] external_container_database_id: The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[_builtins.str] license_model: The Oracle license model that applies to the external database. Required only for enabling database management.
@@ -198,6 +200,7 @@ class ExternalContainerDatabaseManagement(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] external_container_database_id: The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -238,6 +241,7 @@ class ExternalContainerDatabaseManagement(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param ExternalContainerDatabaseManagementArgs args: The arguments to use to populate this resource's properties.

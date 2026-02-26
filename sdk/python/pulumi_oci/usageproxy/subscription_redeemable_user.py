@@ -27,6 +27,7 @@ class SubscriptionRedeemableUserArgs:
                  user_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a SubscriptionRedeemableUser resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['SubscriptionRedeemableUserItemArgs']]] items: The list of new user to be added to the list of user that can redeem rewards.
         :param pulumi.Input[_builtins.str] subscription_id: The subscription ID for which rewards information is requested for.
         :param pulumi.Input[_builtins.str] tenancy_id: The OCID of the tenancy.
@@ -104,6 +105,7 @@ class _SubscriptionRedeemableUserState:
                  user_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SubscriptionRedeemableUser resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['SubscriptionRedeemableUserItemArgs']]] items: The list of new user to be added to the list of user that can redeem rewards.
         :param pulumi.Input[_builtins.str] subscription_id: The subscription ID for which rewards information is requested for.
         :param pulumi.Input[_builtins.str] tenancy_id: The OCID of the tenancy.
@@ -219,6 +221,7 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
         $ pulumi import oci:UsageProxy/subscriptionRedeemableUser:SubscriptionRedeemableUser test_subscription_redeemable_user "subscriptions/{subscriptionId}/redeemableUsers/tenancyId/{tenancyId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['SubscriptionRedeemableUserItemArgs', 'SubscriptionRedeemableUserItemArgsDict']]]] items: The list of new user to be added to the list of user that can redeem rewards.
@@ -268,6 +271,7 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:UsageProxy/subscriptionRedeemableUser:SubscriptionRedeemableUser test_subscription_redeemable_user "subscriptions/{subscriptionId}/redeemableUsers/tenancyId/{tenancyId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SubscriptionRedeemableUserArgs args: The arguments to use to populate this resource's properties.

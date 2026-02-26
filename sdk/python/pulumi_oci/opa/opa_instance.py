@@ -34,6 +34,7 @@ class OpaInstanceArgs:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a OpaInstance resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[_builtins.str] display_name: (Updatable) OpaInstance Identifier. User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
         :param pulumi.Input[_builtins.str] shape_name: Shape of the instance.
@@ -232,6 +233,7 @@ class _OpaInstanceState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OpaInstance resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['OpaInstanceAttachmentArgs']]] attachments: A list of associated attachments to other services
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[_builtins.str] consumption_model: Parameter specifying which entitlement to use for billing purposes
@@ -600,6 +602,7 @@ class OpaInstance(pulumi.CustomResource):
         $ pulumi import oci:Opa/opaInstance:OpaInstance test_opa_instance "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier
@@ -662,6 +665,7 @@ class OpaInstance(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Opa/opaInstance:OpaInstance test_opa_instance "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OpaInstanceArgs args: The arguments to use to populate this resource's properties.

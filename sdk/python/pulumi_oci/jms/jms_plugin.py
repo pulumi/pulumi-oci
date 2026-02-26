@@ -27,6 +27,7 @@ class JmsPluginArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a JmsPlugin resource.
+
         :param pulumi.Input[_builtins.str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA),  or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
         :param pulumi.Input[_builtins.str] compartment_id: The OMA/OCA/OCMA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] agent_type: The agent type.
@@ -147,6 +148,7 @@ class _JmsPluginState:
                  time_registered: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering JmsPlugin resources.
+
         :param pulumi.Input[_builtins.str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA),  or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
         :param pulumi.Input[_builtins.str] agent_type: The agent type.
         :param pulumi.Input[_builtins.str] availability_status: The availability status.
@@ -448,6 +450,7 @@ class JmsPlugin(pulumi.CustomResource):
         $ pulumi import oci:Jms/jmsPlugin:JmsPlugin test_jms_plugin "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA),  or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
@@ -503,6 +506,7 @@ class JmsPlugin(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Jms/jmsPlugin:JmsPlugin test_jms_plugin "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param JmsPluginArgs args: The arguments to use to populate this resource's properties.

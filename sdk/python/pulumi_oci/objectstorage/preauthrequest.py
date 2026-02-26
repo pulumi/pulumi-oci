@@ -29,6 +29,7 @@ class PreauthrequestArgs:
                  object_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Preauthrequest resource.
+
         :param pulumi.Input[_builtins.str] access_type: The operation that can be performed on this resource. Allowed Values: `ObjectRead`, `ObjectWrite`, `ObjectReadWrite`, `AnyObjectReadWrite` or `AnyObjectRead`
         :param pulumi.Input[_builtins.str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         :param pulumi.Input[_builtins.str] namespace: The Object Storage namespace used for the request.
@@ -177,6 +178,7 @@ class _PreauthrequestState:
                  time_expires: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Preauthrequest resources.
+
         :param pulumi.Input[_builtins.str] access_type: The operation that can be performed on this resource. Allowed Values: `ObjectRead`, `ObjectWrite`, `ObjectReadWrite`, `AnyObjectReadWrite` or `AnyObjectRead`
         :param pulumi.Input[_builtins.str] access_uri: The URI to embed in the URL `https://objectstorage.${var.region}.oraclecloud.com{var.access_uri}` when using the pre-authenticated request.
         :param pulumi.Input[_builtins.str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -419,6 +421,7 @@ class Preauthrequest(pulumi.CustomResource):
         $ pulumi import oci:ObjectStorage/preauthrequest:Preauthrequest test_preauthenticated_request "n/{namespaceName}/b/{bucketName}/p/{parId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_type: The operation that can be performed on this resource. Allowed Values: `ObjectRead`, `ObjectWrite`, `ObjectReadWrite`, `AnyObjectReadWrite` or `AnyObjectRead`
@@ -471,6 +474,7 @@ class Preauthrequest(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ObjectStorage/preauthrequest:Preauthrequest test_preauthenticated_request "n/{namespaceName}/b/{bucketName}/p/{parId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param PreauthrequestArgs args: The arguments to use to populate this resource's properties.

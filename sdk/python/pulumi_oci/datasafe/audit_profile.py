@@ -36,6 +36,7 @@ class AuditProfileArgs:
                  online_months: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a AuditProfile resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create the audit profile.
         :param pulumi.Input[_builtins.str] target_id: The OCID of the target database or target database group for which the audit profile is created.
         :param pulumi.Input[_builtins.str] target_type: The resource type that is represented by the audit profile.
@@ -267,6 +268,7 @@ class _AuditProfileState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AuditProfile resources.
+
         :param pulumi.Input[_builtins.str] audit_collected_volume: Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
         :param pulumi.Input[Sequence[pulumi.Input['AuditProfileAuditTrailArgs']]] audit_trails: Contains the list of available audit trails on the target database.
         :param pulumi.Input[_builtins.int] change_retention_trigger: (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
@@ -685,6 +687,7 @@ class AuditProfile(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/auditProfile:AuditProfile test_audit_profile "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] change_retention_trigger: (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
@@ -752,6 +755,7 @@ class AuditProfile(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/auditProfile:AuditProfile test_audit_profile "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AuditProfileArgs args: The arguments to use to populate this resource's properties.

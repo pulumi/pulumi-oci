@@ -38,6 +38,7 @@ class FileStorageLustreFileSystemArgs:
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a FileStorageLustreFileSystem resource.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain the file system is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.int] capacity_in_gbs: (Updatable) Capacity of the Lustre file system in GB. You can increase capacity only in multiples of 5 TB.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Lustre file system.
@@ -296,6 +297,7 @@ class _FileStorageLustreFileSystemState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FileStorageLustreFileSystem resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain the file system is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.int] capacity_in_gbs: (Updatable) Capacity of the Lustre file system in GB. You can increase capacity only in multiples of 5 TB.
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group in which the Lustre file system exists.
@@ -737,6 +739,7 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
         $ pulumi import oci:Lustre/fileStorageLustreFileSystem:FileStorageLustreFileSystem test_lustre_file_system "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain the file system is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
@@ -812,6 +815,7 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Lustre/fileStorageLustreFileSystem:FileStorageLustreFileSystem test_lustre_file_system "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param FileStorageLustreFileSystemArgs args: The arguments to use to populate this resource's properties.

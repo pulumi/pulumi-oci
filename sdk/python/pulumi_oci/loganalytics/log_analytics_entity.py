@@ -37,6 +37,7 @@ class LogAnalyticsEntityArgs:
                  timezone_region: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a LogAnalyticsEntity resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] entity_type_name: Log analytics entity type name.
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
@@ -283,6 +284,7 @@ class _LogAnalyticsEntityState:
                  timezone_region: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LogAnalyticsEntity resources.
+
         :param pulumi.Input[_builtins.bool] are_logs_collected: The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
         :param pulumi.Input[_builtins.int] associated_sources_count: The count of associated log sources for a given log analytics entity.
         :param pulumi.Input[_builtins.str] cloud_resource_id: (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
@@ -709,6 +711,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         $ pulumi import oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity test_log_analytics_entity "namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cloud_resource_id: (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
@@ -784,6 +787,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity test_log_analytics_entity "namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param LogAnalyticsEntityArgs args: The arguments to use to populate this resource's properties.

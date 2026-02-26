@@ -31,6 +31,7 @@ class AutoScalingConfigurationArgs:
                  is_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a AutoScalingConfiguration resource.
+
         :param pulumi.Input['AutoScalingConfigurationAutoScalingResourcesArgs'] auto_scaling_resources: A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
                
                Each instance pool can have one autoscaling configuration.
@@ -175,6 +176,7 @@ class _AutoScalingConfigurationState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutoScalingConfiguration resources.
+
         :param pulumi.Input['AutoScalingConfigurationAutoScalingResourcesArgs'] auto_scaling_resources: A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
                
                Each instance pool can have one autoscaling configuration.
@@ -444,6 +446,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         $ pulumi import oci:Autoscaling/autoScalingConfiguration:AutoScalingConfiguration test_auto_scaling_configuration "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['AutoScalingConfigurationAutoScalingResourcesArgs', 'AutoScalingConfigurationAutoScalingResourcesArgsDict']] auto_scaling_resources: A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
@@ -542,6 +545,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Autoscaling/autoScalingConfiguration:AutoScalingConfiguration test_auto_scaling_configuration "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AutoScalingConfigurationArgs args: The arguments to use to populate this resource's properties.

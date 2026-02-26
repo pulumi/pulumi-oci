@@ -26,6 +26,7 @@ class RedisClusterCreateIdentityTokenArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a RedisClusterCreateIdentityToken resource.
+
         :param pulumi.Input[_builtins.str] public_key: User public key pair
         :param pulumi.Input[_builtins.str] redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
         :param pulumi.Input[_builtins.str] redis_user: Redis User generating identity token.
@@ -120,6 +121,7 @@ class _RedisClusterCreateIdentityTokenState:
                  redis_user: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RedisClusterCreateIdentityToken resources.
+
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] identity_token: Generated Identity token
@@ -259,6 +261,7 @@ class RedisClusterCreateIdentityToken(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -302,6 +305,7 @@ class RedisClusterCreateIdentityToken(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param RedisClusterCreateIdentityTokenArgs args: The arguments to use to populate this resource's properties.

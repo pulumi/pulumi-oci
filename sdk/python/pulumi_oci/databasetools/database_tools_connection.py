@@ -40,6 +40,7 @@ class DatabaseToolsConnectionArgs:
                  url: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DatabaseToolsConnection resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] type: (Updatable) The Database Tools connection type.
@@ -321,6 +322,7 @@ class _DatabaseToolsConnectionState:
                  user_password: Optional[pulumi.Input['DatabaseToolsConnectionUserPasswordArgs']] = None):
         """
         Input properties used for looking up and filtering DatabaseToolsConnection resources.
+
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] advanced_properties: (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
         :param pulumi.Input[_builtins.str] connection_string: (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
@@ -709,6 +711,7 @@ class DatabaseToolsConnection(pulumi.CustomResource):
         $ pulumi import oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection test_database_tools_connection "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] advanced_properties: (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
@@ -750,6 +753,7 @@ class DatabaseToolsConnection(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection test_database_tools_connection "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DatabaseToolsConnectionArgs args: The arguments to use to populate this resource's properties.

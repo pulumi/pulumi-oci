@@ -27,6 +27,7 @@ class ExadataInfrastructureComputeArgs:
                  additional_compute_system_model_compute_managed_resource: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ExadataInfrastructureCompute resource.
+
         :param pulumi.Input[_builtins.str] exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] activation_file: (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
         :param pulumi.Input[_builtins.int] additional_compute_count_compute_managed_resource: The requested number of additional compute servers for the Exadata infrastructure.
@@ -139,6 +140,7 @@ class _ExadataInfrastructureComputeState:
                  time_zone: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExadataInfrastructureCompute resources.
+
         :param pulumi.Input[_builtins.int] activated_storage_count: The requested number of additional storage servers activated for the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] activation_file: (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
         :param pulumi.Input[_builtins.int] additional_compute_count: The number of additional compute servers for the Exadata infrastructure.
@@ -827,6 +829,7 @@ class ExadataInfrastructureCompute(pulumi.CustomResource):
         """
         ## Example Usage
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] activation_file: (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
@@ -842,6 +845,7 @@ class ExadataInfrastructureCompute(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
 
         :param str resource_name: The name of the resource.
         :param ExadataInfrastructureComputeArgs args: The arguments to use to populate this resource's properties.

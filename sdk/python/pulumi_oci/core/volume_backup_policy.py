@@ -29,6 +29,7 @@ class VolumeBackupPolicyArgs:
                  schedules: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeBackupPolicyScheduleArgs']]]] = None):
         """
         The set of arguments for constructing a VolumeBackupPolicy resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] destination_region: (Updatable) The paired destination region for copying scheduled backups to. Example: `us-ashburn-1`. See [Region Pairs](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs) for details about paired regions.
@@ -133,6 +134,7 @@ class _VolumeBackupPolicyState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VolumeBackupPolicy resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] destination_region: (Updatable) The paired destination region for copying scheduled backups to. Example: `us-ashburn-1`. See [Region Pairs](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs) for details about paired regions.
@@ -303,6 +305,7 @@ class VolumeBackupPolicy(pulumi.CustomResource):
         $ pulumi import oci:Core/volumeBackupPolicy:VolumeBackupPolicy test_volume_backup_policy "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
@@ -366,6 +369,7 @@ class VolumeBackupPolicy(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/volumeBackupPolicy:VolumeBackupPolicy test_volume_backup_policy "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param VolumeBackupPolicyArgs args: The arguments to use to populate this resource's properties.

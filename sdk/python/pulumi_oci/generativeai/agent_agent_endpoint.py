@@ -40,6 +40,7 @@ class AgentAgentEndpointArgs:
                  should_enable_trace: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a AgentAgentEndpoint resource.
+
         :param pulumi.Input[_builtins.str] agent_id: The OCID of the agent that this endpoint is associated with.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the endpoint in.
         :param pulumi.Input['AgentAgentEndpointContentModerationConfigArgs'] content_moderation_config: (Updatable) The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
@@ -331,6 +332,7 @@ class _AgentAgentEndpointState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AgentAgentEndpoint resources.
+
         :param pulumi.Input[_builtins.str] agent_id: The OCID of the agent that this endpoint is associated with.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the endpoint in.
         :param pulumi.Input['AgentAgentEndpointContentModerationConfigArgs'] content_moderation_config: (Updatable) The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
@@ -779,6 +781,7 @@ class AgentAgentEndpoint(pulumi.CustomResource):
         $ pulumi import oci:GenerativeAi/agentAgentEndpoint:AgentAgentEndpoint test_agent_endpoint "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] agent_id: The OCID of the agent that this endpoint is associated with.
@@ -891,6 +894,7 @@ class AgentAgentEndpoint(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:GenerativeAi/agentAgentEndpoint:AgentAgentEndpoint test_agent_endpoint "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AgentAgentEndpointArgs args: The arguments to use to populate this resource's properties.

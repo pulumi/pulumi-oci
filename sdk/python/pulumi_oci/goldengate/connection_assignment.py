@@ -24,6 +24,7 @@ class ConnectionAssignmentArgs:
                  is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a ConnectionAssignment resource.
+
         :param pulumi.Input[_builtins.str] connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
         :param pulumi.Input[_builtins.str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param pulumi.Input[_builtins.bool] is_lock_override: Whether to override locks (if any exist).
@@ -91,6 +92,7 @@ class _ConnectionAssignmentState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ConnectionAssignment resources.
+
         :param pulumi.Input[_builtins.str] alias_name: Credential store alias.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[_builtins.str] connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
@@ -260,6 +262,7 @@ class ConnectionAssignment(pulumi.CustomResource):
         $ pulumi import oci:GoldenGate/connectionAssignment:ConnectionAssignment test_connection_assignment "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
@@ -303,6 +306,7 @@ class ConnectionAssignment(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:GoldenGate/connectionAssignment:ConnectionAssignment test_connection_assignment "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ConnectionAssignmentArgs args: The arguments to use to populate this resource's properties.

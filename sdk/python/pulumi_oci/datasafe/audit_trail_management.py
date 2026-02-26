@@ -35,6 +35,7 @@ class AuditTrailManagementArgs:
                  trail_location: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AuditTrailManagement resource.
+
         :param pulumi.Input[_builtins.str] audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
                
                
@@ -283,6 +284,7 @@ class _AuditTrailManagementState:
                  work_request_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AuditTrailManagement resources.
+
         :param pulumi.Input[_builtins.str] audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
                
                
@@ -679,6 +681,7 @@ class AuditTrailManagement(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
@@ -739,6 +742,7 @@ class AuditTrailManagement(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param AuditTrailManagementArgs args: The arguments to use to populate this resource's properties.

@@ -34,6 +34,7 @@ class DeployEnvironmentArgs:
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a DeployEnvironment resource.
+
         :param pulumi.Input[_builtins.str] deploy_environment_type: (Updatable) Deployment environment type.
         :param pulumi.Input[_builtins.str] project_id: The OCID of a project.
         :param pulumi.Input[_builtins.str] cluster_id: (Updatable) The OCID of the Kubernetes cluster.
@@ -230,6 +231,7 @@ class _DeployEnvironmentState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DeployEnvironment resources.
+
         :param pulumi.Input[_builtins.str] cluster_id: (Updatable) The OCID of the Kubernetes cluster.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of a compartment.
         :param pulumi.Input['DeployEnvironmentComputeInstanceGroupSelectorsArgs'] compute_instance_group_selectors: (Updatable) A collection of selectors. The combination of instances matching the selectors are included in the instance group.
@@ -565,6 +567,7 @@ class DeployEnvironment(pulumi.CustomResource):
         $ pulumi import oci:DevOps/deployEnvironment:DeployEnvironment test_deploy_environment "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cluster_id: (Updatable) The OCID of the Kubernetes cluster.
@@ -639,6 +642,7 @@ class DeployEnvironment(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DevOps/deployEnvironment:DeployEnvironment test_deploy_environment "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DeployEnvironmentArgs args: The arguments to use to populate this resource's properties.

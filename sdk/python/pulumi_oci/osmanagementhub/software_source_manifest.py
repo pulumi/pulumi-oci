@@ -23,6 +23,7 @@ class SoftwareSourceManifestArgs:
                  content: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a SoftwareSourceManifest resource.
+
         :param pulumi.Input[_builtins.str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
                
                
@@ -70,6 +71,7 @@ class _SoftwareSourceManifestState:
                  software_source_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SoftwareSourceManifest resources.
+
         :param pulumi.Input[_builtins.str] content: (Updatable) Provides the manifest content used to update the package list of the software source.
         :param pulumi.Input[_builtins.str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
                
@@ -147,6 +149,7 @@ class SoftwareSourceManifest(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/softwareSourceManifest:SoftwareSourceManifest test_software_source_manifest "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] content: (Updatable) Provides the manifest content used to update the package list of the software source.
@@ -188,6 +191,7 @@ class SoftwareSourceManifest(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/softwareSourceManifest:SoftwareSourceManifest test_software_source_manifest "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SoftwareSourceManifestArgs args: The arguments to use to populate this resource's properties.

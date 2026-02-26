@@ -30,6 +30,7 @@ class CaptureFilterArgs:
                  vtap_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterVtapCaptureFilterRuleArgs']]]] = None):
         """
         The set of arguments for constructing a CaptureFilter resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
         :param pulumi.Input[_builtins.str] filter_type: Indicates which service will use this capture filter
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -150,6 +151,7 @@ class _CaptureFilterState:
                  vtap_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterVtapCaptureFilterRuleArgs']]]] = None):
         """
         Input properties used for looking up and filtering CaptureFilter resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -409,6 +411,7 @@ class CaptureFilter(pulumi.CustomResource):
         $ pulumi import oci:Core/captureFilter:CaptureFilter test_capture_filter "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
@@ -531,6 +534,7 @@ class CaptureFilter(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/captureFilter:CaptureFilter test_capture_filter "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CaptureFilterArgs args: The arguments to use to populate this resource's properties.

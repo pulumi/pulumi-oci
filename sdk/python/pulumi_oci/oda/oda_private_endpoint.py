@@ -28,6 +28,7 @@ class OdaPrivateEndpointArgs:
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a OdaPrivateEndpoint resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint belongs to.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
                
@@ -157,6 +158,7 @@ class _OdaPrivateEndpointState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OdaPrivateEndpoint resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint belongs to.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of the ODA private endpoint.
@@ -371,6 +373,7 @@ class OdaPrivateEndpoint(pulumi.CustomResource):
         $ pulumi import oci:Oda/odaPrivateEndpoint:OdaPrivateEndpoint test_oda_private_endpoint "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint belongs to.
@@ -429,6 +432,7 @@ class OdaPrivateEndpoint(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Oda/odaPrivateEndpoint:OdaPrivateEndpoint test_oda_private_endpoint "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OdaPrivateEndpointArgs args: The arguments to use to populate this resource's properties.

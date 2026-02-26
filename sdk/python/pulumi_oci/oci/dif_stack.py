@@ -41,6 +41,7 @@ class DifStackArgs:
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DifStack resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the Stack in.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Should be unique per compartment. Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] services: (Updatable) List of services to be onboarded for the stack.
@@ -361,6 +362,7 @@ class _DifStackState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DifStack resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['DifStackAdbArgs']]] adbs: (Updatable) ADB details if adb is included in the services.
         :param pulumi.Input[_builtins.int] add_service_trigger: (Updatable) An optional property when incremented triggers Add Service. Could be set to any integer value.
         :param pulumi.Input[Sequence[pulumi.Input['DifStackAidataplatformArgs']]] aidataplatforms: AI Data Platform Details if aidataplatform is included in services.
@@ -941,6 +943,7 @@ class DifStack(pulumi.CustomResource):
             subnet_id=stack_deploy_artifacts_subnet_id)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DifStackAdbArgs', 'DifStackAdbArgsDict']]]] adbs: (Updatable) ADB details if adb is included in the services.
@@ -1148,6 +1151,7 @@ class DifStack(pulumi.CustomResource):
             }],
             subnet_id=stack_deploy_artifacts_subnet_id)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DifStackArgs args: The arguments to use to populate this resource's properties.

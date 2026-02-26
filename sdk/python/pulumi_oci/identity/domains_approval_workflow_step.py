@@ -36,6 +36,7 @@ class DomainsApprovalWorkflowStepArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsApprovalWorkflowStepTagArgs']]]] = None):
         """
         The set of arguments for constructing a DomainsApprovalWorkflowStep resource.
+
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[_builtins.int] order: Order of the ApprovalWorkflowStep.
                
@@ -433,6 +434,7 @@ class _DomainsApprovalWorkflowStepState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DomainsApprovalWorkflowStep resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['DomainsApprovalWorkflowStepApproverArgs']]] approvers: Approvers of the ApprovalWorkflowStep.
                
                **SCIM++ Properties:**
@@ -1178,6 +1180,7 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
         $ pulumi import oci:Identity/domainsApprovalWorkflowStep:DomainsApprovalWorkflowStep test_approval_workflow_step "idcsEndpoint/{idcsEndpoint}/approvalWorkflowSteps/{approvalWorkflowStepId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowStepApproverArgs', 'DomainsApprovalWorkflowStepApproverArgsDict']]]] approvers: Approvers of the ApprovalWorkflowStep.
@@ -1333,6 +1336,7 @@ class DomainsApprovalWorkflowStep(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domainsApprovalWorkflowStep:DomainsApprovalWorkflowStep test_approval_workflow_step "idcsEndpoint/{idcsEndpoint}/approvalWorkflowSteps/{approvalWorkflowStepId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainsApprovalWorkflowStepArgs args: The arguments to use to populate this resource's properties.

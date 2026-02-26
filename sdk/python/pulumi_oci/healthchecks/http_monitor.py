@@ -35,6 +35,7 @@ class HttpMonitorArgs:
                  vantage_point_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a HttpMonitor resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly and mutable name suitable for display in a user interface.
         :param pulumi.Input[_builtins.int] interval_in_seconds: (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
@@ -277,6 +278,7 @@ class _HttpMonitorState:
                  vantage_point_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering HttpMonitor resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly and mutable name suitable for display in a user interface.
@@ -613,6 +615,7 @@ class HttpMonitor(pulumi.CustomResource):
         $ pulumi import oci:HealthChecks/httpMonitor:HttpMonitor test_http_monitor "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
@@ -686,6 +689,7 @@ class HttpMonitor(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:HealthChecks/httpMonitor:HttpMonitor test_http_monitor "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param HttpMonitorArgs args: The arguments to use to populate this resource's properties.

@@ -25,6 +25,7 @@ class RunStatementArgs:
                  run_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a RunStatement resource.
+
         :param pulumi.Input[_builtins.str] code: The statement code to execute. Example: `println(sc.version)`
         :param pulumi.Input[_builtins.str] run_id: The unique ID for the run 
                
@@ -76,6 +77,7 @@ class _RunStatementState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RunStatement resources.
+
         :param pulumi.Input[_builtins.str] code: The statement code to execute. Example: `println(sc.version)`
         :param pulumi.Input[Sequence[pulumi.Input['RunStatementOutputArgs']]] outputs: The execution output of a statement.
         :param pulumi.Input[_builtins.float] progress: The execution progress.
@@ -228,6 +230,7 @@ class RunStatement(pulumi.CustomResource):
         $ pulumi import oci:DataFlow/runStatement:RunStatement test_run_statement "runs/{runId}/statements/{statementId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] code: The statement code to execute. Example: `println(sc.version)`
@@ -269,6 +272,7 @@ class RunStatement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataFlow/runStatement:RunStatement test_run_statement "runs/{runId}/statements/{statementId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param RunStatementArgs args: The arguments to use to populate this resource's properties.

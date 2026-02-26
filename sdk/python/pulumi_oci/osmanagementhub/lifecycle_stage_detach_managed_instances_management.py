@@ -25,6 +25,7 @@ class LifecycleStageDetachManagedInstancesManagementArgs:
                  managed_instance_details: pulumi.Input['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs']):
         """
         The set of arguments for constructing a LifecycleStageDetachManagedInstancesManagement resource.
+
         :param pulumi.Input[_builtins.str] lifecycle_stage_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
         :param pulumi.Input['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs'] managed_instance_details: The details about the managed instances.
         """
@@ -63,6 +64,7 @@ class _LifecycleStageDetachManagedInstancesManagementState:
                  managed_instance_details: Optional[pulumi.Input['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering LifecycleStageDetachManagedInstancesManagement resources.
+
         :param pulumi.Input[_builtins.str] lifecycle_stage_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
         :param pulumi.Input['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs'] managed_instance_details: The details about the managed instances.
         """
@@ -138,6 +140,7 @@ class LifecycleStageDetachManagedInstancesManagement(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/lifecycleStageDetachManagedInstancesManagement:LifecycleStageDetachManagedInstancesManagement test_lifecycle_stage_detach_managed_instances_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] lifecycle_stage_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
@@ -181,6 +184,7 @@ class LifecycleStageDetachManagedInstancesManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/lifecycleStageDetachManagedInstancesManagement:LifecycleStageDetachManagedInstancesManagement test_lifecycle_stage_detach_managed_instances_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param LifecycleStageDetachManagedInstancesManagementArgs args: The arguments to use to populate this resource's properties.

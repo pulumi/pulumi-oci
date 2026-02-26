@@ -29,6 +29,7 @@ class IotDigitalTwinInstanceInvokeRawCommandArgs:
                  response_endpoint: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a IotDigitalTwinInstanceInvokeRawCommand resource.
+
         :param pulumi.Input[_builtins.str] digital_twin_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of digital twin instance.
         :param pulumi.Input[_builtins.str] request_data_format: data format: json, binary, text
         :param pulumi.Input[_builtins.str] request_endpoint: Device endpoint where request should be forwarded to.
@@ -170,6 +171,7 @@ class _IotDigitalTwinInstanceInvokeRawCommandState:
                  response_endpoint: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IotDigitalTwinInstanceInvokeRawCommand resources.
+
         :param pulumi.Input[_builtins.str] digital_twin_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of digital twin instance.
         :param pulumi.Input[_builtins.str] request_data: base 64 encoded request data
         :param pulumi.Input[_builtins.str] request_data_content_type: Mime content type of data encoded using base64, default is application/octet-stream
@@ -345,6 +347,7 @@ class IotDigitalTwinInstanceInvokeRawCommand(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] digital_twin_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of digital twin instance.
@@ -394,6 +397,7 @@ class IotDigitalTwinInstanceInvokeRawCommand(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param IotDigitalTwinInstanceInvokeRawCommandArgs args: The arguments to use to populate this resource's properties.

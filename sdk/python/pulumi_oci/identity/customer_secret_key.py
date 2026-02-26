@@ -23,6 +23,7 @@ class CustomerSecretKeyArgs:
                  user_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a CustomerSecretKey resource.
+
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
         :param pulumi.Input[_builtins.str] user_id: The OCID of the user.
                
@@ -74,6 +75,7 @@ class _CustomerSecretKeyState:
                  user_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CustomerSecretKey resources.
+
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
         :param pulumi.Input[_builtins.str] inactive_state: The detailed status of INACTIVE lifecycleState.
         :param pulumi.Input[_builtins.str] key: The secret key.
@@ -236,6 +238,7 @@ class CustomerSecretKey(pulumi.CustomResource):
         $ pulumi import oci:Identity/customerSecretKey:CustomerSecretKey test_customer_secret_key "users/{userId}/customerSecretKeys/{customerSecretKeyId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
@@ -287,6 +290,7 @@ class CustomerSecretKey(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/customerSecretKey:CustomerSecretKey test_customer_secret_key "users/{userId}/customerSecretKeys/{customerSecretKeyId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CustomerSecretKeyArgs args: The arguments to use to populate this resource's properties.

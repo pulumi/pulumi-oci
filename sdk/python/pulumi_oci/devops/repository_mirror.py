@@ -22,6 +22,7 @@ class RepositoryMirrorArgs:
                  repository_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a RepositoryMirror resource.
+
         :param pulumi.Input[_builtins.str] repository_id: Unique repository identifier.
                
                
@@ -53,6 +54,7 @@ class _RepositoryMirrorState:
                  repository_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RepositoryMirror resources.
+
         :param pulumi.Input[_builtins.str] repository_id: Unique repository identifier.
                
                
@@ -112,6 +114,7 @@ class RepositoryMirror(pulumi.CustomResource):
         $ pulumi import oci:DevOps/repositoryMirror:RepositoryMirror test_repository_mirror "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] repository_id: Unique repository identifier.
@@ -150,6 +153,7 @@ class RepositoryMirror(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DevOps/repositoryMirror:RepositoryMirror test_repository_mirror "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param RepositoryMirrorArgs args: The arguments to use to populate this resource's properties.

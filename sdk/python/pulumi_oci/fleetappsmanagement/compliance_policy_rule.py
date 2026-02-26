@@ -32,6 +32,7 @@ class CompliancePolicyRuleArgs:
                  severities: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a CompliancePolicyRule resource.
+
         :param pulumi.Input[_builtins.str] compliance_policy_id: Unique OCID of the CompliancePolicy this CompliancePolicyRule belongs to.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input['CompliancePolicyRulePatchSelectionArgs'] patch_selection: (Updatable) Patch Selection Details
@@ -193,6 +194,7 @@ class _CompliancePolicyRuleState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CompliancePolicyRule resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment the CompliancePolicyRule belongs to.
         :param pulumi.Input[_builtins.str] compliance_policy_id: Unique OCID of the CompliancePolicy this CompliancePolicyRule belongs to.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -491,6 +493,7 @@ class CompliancePolicyRule(pulumi.CustomResource):
         $ pulumi import oci:FleetAppsManagement/compliancePolicyRule:CompliancePolicyRule test_compliance_policy_rule "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compliance_policy_id: Unique OCID of the CompliancePolicy this CompliancePolicyRule belongs to.
@@ -558,6 +561,7 @@ class CompliancePolicyRule(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:FleetAppsManagement/compliancePolicyRule:CompliancePolicyRule test_compliance_policy_rule "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CompliancePolicyRuleArgs args: The arguments to use to populate this resource's properties.

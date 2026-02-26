@@ -29,6 +29,7 @@ class IotIotDomainArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a IotIotDomain resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment corresponding to the resource.
         :param pulumi.Input[_builtins.str] iot_domain_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain group.
                
@@ -147,6 +148,7 @@ class _IotIotDomainState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IotIotDomain resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment corresponding to the resource.
         :param pulumi.Input[Sequence[pulumi.Input['IotIotDomainDataRetentionPeriodsInDayArgs']]] data_retention_periods_in_days: Data Retention periods
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] db_allow_listed_identity_group_names: List of IAM groups of form described in [here](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/mnqmn/#GUID-3634D6C9-A7F1-4875-9925-BAEA2D3C5197) that are allowed to directly connect to the data host.
@@ -416,6 +418,7 @@ class IotIotDomain(pulumi.CustomResource):
         $ pulumi import oci:oci/iotIotDomain:IotIotDomain test_iot_domain "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment corresponding to the resource.
@@ -469,6 +472,7 @@ class IotIotDomain(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:oci/iotIotDomain:IotIotDomain test_iot_domain "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param IotIotDomainArgs args: The arguments to use to populate this resource's properties.

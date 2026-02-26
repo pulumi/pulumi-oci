@@ -32,6 +32,7 @@ class OccAvailabilityCatalogArgs:
                  metadata_details: Optional[pulumi.Input['OccAvailabilityCatalogMetadataDetailsArgs']] = None):
         """
         The set of arguments for constructing a OccAvailabilityCatalog resource.
+
         :param pulumi.Input[_builtins.str] base64encoded_catalog_details: The base 64 encoded string corresponding to the catalog file contents.
         :param pulumi.Input[_builtins.str] compartment_id: Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the availability catalog.
@@ -194,6 +195,7 @@ class _OccAvailabilityCatalogState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OccAvailabilityCatalog resources.
+
         :param pulumi.Input[_builtins.str] base64encoded_catalog_details: The base 64 encoded string corresponding to the catalog file contents.
         :param pulumi.Input[_builtins.str] catalog_state: The different states associated with the availability catalog.
         :param pulumi.Input[_builtins.str] compartment_id: Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
@@ -501,6 +503,7 @@ class OccAvailabilityCatalog(pulumi.CustomResource):
         $ pulumi import oci:CapacityManagement/occAvailabilityCatalog:OccAvailabilityCatalog test_occ_availability_catalog "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] base64encoded_catalog_details: The base 64 encoded string corresponding to the catalog file contents.
@@ -562,6 +565,7 @@ class OccAvailabilityCatalog(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:CapacityManagement/occAvailabilityCatalog:OccAvailabilityCatalog test_occ_availability_catalog "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OccAvailabilityCatalogArgs args: The arguments to use to populate this resource's properties.

@@ -23,6 +23,7 @@ class AwrHubSourceAwrhubsourcesManagementArgs:
                  enable_awrhubsource: pulumi.Input[_builtins.bool]):
         """
         The set of arguments for constructing a AwrHubSourceAwrhubsourcesManagement resource.
+
         :param pulumi.Input[_builtins.str] awr_hub_source_id: Unique Awr Hub Source identifier
         :param pulumi.Input[_builtins.bool] enable_awrhubsource: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
@@ -69,6 +70,7 @@ class _AwrHubSourceAwrhubsourcesManagementState:
                  enable_awrhubsource: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering AwrHubSourceAwrhubsourcesManagement resources.
+
         :param pulumi.Input[_builtins.str] awr_hub_source_id: Unique Awr Hub Source identifier
         :param pulumi.Input[_builtins.bool] enable_awrhubsource: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
@@ -137,6 +139,7 @@ class AwrHubSourceAwrhubsourcesManagement(pulumi.CustomResource):
             enable_awrhubsource=enable_awrhubsource)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] awr_hub_source_id: Unique Awr Hub Source identifier
@@ -169,6 +172,7 @@ class AwrHubSourceAwrhubsourcesManagement(pulumi.CustomResource):
             awr_hub_source_id=test_awr_hub_source["id"],
             enable_awrhubsource=enable_awrhubsource)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AwrHubSourceAwrhubsourcesManagementArgs args: The arguments to use to populate this resource's properties.

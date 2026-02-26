@@ -34,6 +34,7 @@ class DbmulticloudOracleDbAzureConnectorArgs:
                  lifecycle_state_details: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DbmulticloudOracleDbAzureConnector resource.
+
         :param pulumi.Input[_builtins.str] access_token: (Updatable) Azure bearer access token.
         :param pulumi.Input[_builtins.str] azure_identity_mechanism: (Updatable) Azure Identity mechanism.
         :param pulumi.Input[_builtins.str] azure_resource_group: (Updatable) Azure Resource group name.
@@ -214,6 +215,7 @@ class _DbmulticloudOracleDbAzureConnectorState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DbmulticloudOracleDbAzureConnector resources.
+
         :param pulumi.Input[_builtins.str] access_token: (Updatable) Azure bearer access token.
         :param pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs']]] arc_agent_nodes: List of all VMs where Arc Agent is installed under Cloud VM Cluster.
         :param pulumi.Input[_builtins.str] azure_identity_connectivity_status: The current Connectivity status of Azure Identity Connector resource.
@@ -478,6 +480,7 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
         $ pulumi import oci:oci/dbmulticloudOracleDbAzureConnector:DbmulticloudOracleDbAzureConnector test_oracle_db_azure_connector "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_token: (Updatable) Azure bearer access token.
@@ -515,6 +518,7 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:oci/dbmulticloudOracleDbAzureConnector:DbmulticloudOracleDbAzureConnector test_oracle_db_azure_connector "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DbmulticloudOracleDbAzureConnectorArgs args: The arguments to use to populate this resource's properties.

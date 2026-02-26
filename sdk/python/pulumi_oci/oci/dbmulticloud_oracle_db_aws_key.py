@@ -32,6 +32,7 @@ class DbmulticloudOracleDbAwsKeyArgs:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DbmulticloudOracleDbAwsKey resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB AWS Key resource.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB AWS Key resource name.
         :param pulumi.Input[_builtins.str] oracle_db_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
@@ -226,6 +227,7 @@ class _DbmulticloudOracleDbAwsKeyState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DbmulticloudOracleDbAwsKey resources.
+
         :param pulumi.Input[_builtins.str] aws_account_id: AWS Account ID.
         :param pulumi.Input[_builtins.str] aws_key_arn: Amazon resource name of AWS Key.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB AWS Key resource.
@@ -535,6 +537,7 @@ class DbmulticloudOracleDbAwsKey(pulumi.CustomResource):
         $ pulumi import oci:oci/dbmulticloudOracleDbAwsKey:DbmulticloudOracleDbAwsKey test_oracle_db_aws_key "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] aws_account_id: AWS Account ID.
@@ -598,6 +601,7 @@ class DbmulticloudOracleDbAwsKey(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:oci/dbmulticloudOracleDbAwsKey:DbmulticloudOracleDbAwsKey test_oracle_db_aws_key "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DbmulticloudOracleDbAwsKeyArgs args: The arguments to use to populate this resource's properties.

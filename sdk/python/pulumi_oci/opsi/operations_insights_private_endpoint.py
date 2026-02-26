@@ -31,6 +31,7 @@ class OperationsInsightsPrivateEndpointArgs:
                  private_endpoint_status_details: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a OperationsInsightsPrivateEndpoint resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name for the private endpoint. It is changeable.
         :param pulumi.Input[_builtins.bool] is_used_for_rac_dbs: This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
@@ -207,6 +208,7 @@ class _OperationsInsightsPrivateEndpointState:
                  vcn_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OperationsInsightsPrivateEndpoint resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the private endpoint.
@@ -499,6 +501,7 @@ class OperationsInsightsPrivateEndpoint(pulumi.CustomResource):
         $ pulumi import oci:Opsi/operationsInsightsPrivateEndpoint:OperationsInsightsPrivateEndpoint test_operations_insights_private_endpoint "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
@@ -560,6 +563,7 @@ class OperationsInsightsPrivateEndpoint(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Opsi/operationsInsightsPrivateEndpoint:OperationsInsightsPrivateEndpoint test_operations_insights_private_endpoint "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OperationsInsightsPrivateEndpointArgs args: The arguments to use to populate this resource's properties.

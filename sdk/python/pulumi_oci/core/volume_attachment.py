@@ -35,6 +35,7 @@ class VolumeAttachmentArgs:
                  use_chap: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a VolumeAttachment resource.
+
         :param pulumi.Input[_builtins.str] attachment_type: The type of volume. The only supported values are "iscsi" and "paravirtualized".
         :param pulumi.Input[_builtins.str] instance_id: The OCID of the instance.
         :param pulumi.Input[_builtins.str] volume_id: The OCID of the volume.
@@ -257,6 +258,7 @@ class _VolumeAttachmentState:
                  volume_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VolumeAttachment resources.
+
         :param pulumi.Input[_builtins.str] attachment_type: The type of volume. The only supported values are "iscsi" and "paravirtualized".
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] chap_secret: The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name. (Also called the "CHAP password".)
@@ -702,6 +704,7 @@ class VolumeAttachment(pulumi.CustomResource):
         $ pulumi import oci:Core/volumeAttachment:VolumeAttachment test_volume_attachment "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] attachment_type: The type of volume. The only supported values are "iscsi" and "paravirtualized".
@@ -762,6 +765,7 @@ class VolumeAttachment(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/volumeAttachment:VolumeAttachment test_volume_attachment "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param VolumeAttachmentArgs args: The arguments to use to populate this resource's properties.

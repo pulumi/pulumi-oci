@@ -23,6 +23,7 @@ class BdsInstanceSoftwareUpdateActionArgs:
                  software_update_keys: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
         """
         The set of arguments for constructing a BdsInstanceSoftwareUpdateAction resource.
+
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
         """
         pulumi.set(__self__, "bds_instance_id", bds_instance_id)
@@ -57,6 +58,7 @@ class _BdsInstanceSoftwareUpdateActionState:
                  software_update_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering BdsInstanceSoftwareUpdateAction resources.
+
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
         """
         if bds_instance_id is not None:
@@ -111,6 +113,7 @@ class BdsInstanceSoftwareUpdateAction(pulumi.CustomResource):
             software_update_key=bds_instance_software_update_action_software_update_key)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
@@ -136,6 +139,7 @@ class BdsInstanceSoftwareUpdateAction(pulumi.CustomResource):
             bds_instance_id=test_bds_instance["id"],
             software_update_key=bds_instance_software_update_action_software_update_key)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param BdsInstanceSoftwareUpdateActionArgs args: The arguments to use to populate this resource's properties.

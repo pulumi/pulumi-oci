@@ -34,6 +34,7 @@ class ClusterPlacementGroupArgs:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ClusterPlacementGroup resource.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain where you want to create the cluster placement group.
         :param pulumi.Input[_builtins.str] cluster_placement_group_type: ClusterPlacementGroup Identifier.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the cluster placement group.
@@ -226,6 +227,7 @@ class _ClusterPlacementGroupState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ClusterPlacementGroup resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain where you want to create the cluster placement group.
         :param pulumi.Input['ClusterPlacementGroupCapabilitiesArgs'] capabilities: A list of resources that you can create in a cluster placement group.
         :param pulumi.Input[_builtins.str] cluster_placement_group_type: ClusterPlacementGroup Identifier.
@@ -527,6 +529,7 @@ class ClusterPlacementGroup(pulumi.CustomResource):
         $ pulumi import oci:ClusterPlacementGroups/clusterPlacementGroup:ClusterPlacementGroup test_cluster_placement_group "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain where you want to create the cluster placement group.
@@ -597,6 +600,7 @@ class ClusterPlacementGroup(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ClusterPlacementGroups/clusterPlacementGroup:ClusterPlacementGroup test_cluster_placement_group "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ClusterPlacementGroupArgs args: The arguments to use to populate this resource's properties.

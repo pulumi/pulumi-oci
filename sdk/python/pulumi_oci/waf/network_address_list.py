@@ -31,6 +31,7 @@ class NetworkAddressListArgs:
                  vcn_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkAddressListVcnAddressArgs']]]] = None):
         """
         The set of arguments for constructing a NetworkAddressList resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] type: (Updatable) Type of NetworkAddressList.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] addresses: (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
@@ -169,6 +170,7 @@ class _NetworkAddressListState:
                  vcn_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkAddressListVcnAddressArgs']]]] = None):
         """
         Input properties used for looking up and filtering NetworkAddressList resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] addresses: (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -407,6 +409,7 @@ class NetworkAddressList(pulumi.CustomResource):
         $ pulumi import oci:Waf/networkAddressList:NetworkAddressList test_network_address_list "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] addresses: (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
@@ -463,6 +466,7 @@ class NetworkAddressList(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Waf/networkAddressList:NetworkAddressList test_network_address_list "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NetworkAddressListArgs args: The arguments to use to populate this resource's properties.

@@ -39,6 +39,7 @@ class BlockchainPlatformArgs:
                  total_ocpu_capacity: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a BlockchainPlatform resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[_builtins.str] compute_shape: Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
         :param pulumi.Input[_builtins.str] display_name: Platform Instance Display name, can be renamed
@@ -317,6 +318,7 @@ class _BlockchainPlatformState:
                  total_ocpu_capacity: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering BlockchainPlatform resources.
+
         :param pulumi.Input[_builtins.str] ca_cert_archive_text: Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file. The Archive file is a zip file containing third part CA Certificates, the ca key and certificate files used when issuing enrollment certificates (ECerts) and transaction certificates (TCerts). The chainfile (if it exists) contains the certificate chain which should be trusted for this CA, where the 1st in the chain is always the root CA certificate. File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailArgs']]] component_details: Blockchain Platform component details.
@@ -797,6 +799,7 @@ class BlockchainPlatform(pulumi.CustomResource):
         $ pulumi import oci:Blockchain/blockchainPlatform:BlockchainPlatform test_blockchain_platform "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ca_cert_archive_text: Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file. The Archive file is a zip file containing third part CA Certificates, the ca key and certificate files used when issuing enrollment certificates (ECerts) and transaction certificates (TCerts). The chainfile (if it exists) contains the certificate chain which should be trusted for this CA, where the 1st in the chain is always the root CA certificate. File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
@@ -866,6 +869,7 @@ class BlockchainPlatform(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Blockchain/blockchainPlatform:BlockchainPlatform test_blockchain_platform "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param BlockchainPlatformArgs args: The arguments to use to populate this resource's properties.

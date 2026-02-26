@@ -24,6 +24,7 @@ class NamespaceIngestTimeRulesManagementArgs:
                  namespace: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a NamespaceIngestTimeRulesManagement resource.
+
         :param pulumi.Input[_builtins.bool] enable_ingest_time_rule: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                
@@ -85,6 +86,7 @@ class _NamespaceIngestTimeRulesManagementState:
                  namespace: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NamespaceIngestTimeRulesManagement resources.
+
         :param pulumi.Input[_builtins.bool] enable_ingest_time_rule: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                
@@ -170,6 +172,7 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
             enable_ingest_time_rule=enable_ingest_time_rule)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_ingest_time_rule: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -204,6 +207,7 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
             namespace=namespace_ingest_time_rules_management_namespace,
             enable_ingest_time_rule=enable_ingest_time_rule)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NamespaceIngestTimeRulesManagementArgs args: The arguments to use to populate this resource's properties.

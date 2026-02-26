@@ -35,6 +35,7 @@ class ApplicationArgs:
                  trace_config: Optional[pulumi.Input['ApplicationTraceConfigArgs']] = None):
         """
         The set of arguments for constructing a Application resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment to create the application within.
         :param pulumi.Input[_builtins.str] display_name: The display name of the application. The display name must be unique within the compartment containing the application. Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnet_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
@@ -239,6 +240,7 @@ class _ApplicationState:
                  trace_config: Optional[pulumi.Input['ApplicationTraceConfigArgs']] = None):
         """
         Input properties used for looking up and filtering Application resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment to create the application within.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] config: (Updatable) Application configuration. These values are passed on to the function as environment variables, functions may override application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
                
@@ -541,6 +543,7 @@ class Application(pulumi.CustomResource):
         $ pulumi import oci:Functions/application:Application test_application "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment to create the application within.
@@ -614,6 +617,7 @@ class Application(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Functions/application:Application test_application "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ApplicationArgs args: The arguments to use to populate this resource's properties.

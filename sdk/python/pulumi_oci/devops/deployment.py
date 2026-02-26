@@ -34,6 +34,7 @@ class DeploymentArgs:
                  trigger_new_devops_deployment: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a Deployment resource.
+
         :param pulumi.Input[_builtins.str] deploy_pipeline_id: The OCID of a pipeline.
         :param pulumi.Input[_builtins.str] deployment_type: (Updatable) Specifies type for this deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -234,6 +235,7 @@ class _DeploymentState:
                  trigger_new_devops_deployment: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering Deployment resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of a compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input['DeploymentDeployArtifactOverrideArgumentsArgs'] deploy_artifact_override_arguments: Specifies the list of artifact override arguments at the time of deployment.
@@ -594,6 +596,7 @@ class Deployment(pulumi.CustomResource):
         $ pulumi import oci:DevOps/deployment:Deployment test_deployment "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -633,6 +636,7 @@ class Deployment(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DevOps/deployment:Deployment test_deployment "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DeploymentArgs args: The arguments to use to populate this resource's properties.

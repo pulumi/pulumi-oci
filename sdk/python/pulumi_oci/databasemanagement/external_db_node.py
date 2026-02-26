@@ -25,6 +25,7 @@ class ExternalDbNodeArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ExternalDbNode resource.
+
         :param pulumi.Input[_builtins.str] external_db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] external_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
@@ -118,6 +119,7 @@ class _ExternalDbNodeState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalDbNode resources.
+
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_details: The additional details of the external DB node defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] component_name: The name of the external DB node.
@@ -426,6 +428,7 @@ class ExternalDbNode(pulumi.CustomResource):
         $ pulumi import oci:DatabaseManagement/externalDbNode:ExternalDbNode test_external_db_node "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -458,6 +461,7 @@ class ExternalDbNode(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DatabaseManagement/externalDbNode:ExternalDbNode test_external_db_node "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ExternalDbNodeArgs args: The arguments to use to populate this resource's properties.

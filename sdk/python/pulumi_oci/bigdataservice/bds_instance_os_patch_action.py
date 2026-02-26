@@ -28,6 +28,7 @@ class BdsInstanceOsPatchActionArgs:
                  patching_configs: Optional[pulumi.Input['BdsInstanceOsPatchActionPatchingConfigsArgs']] = None):
         """
         The set of arguments for constructing a BdsInstanceOsPatchAction resource.
+
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
                * `isDryRun` - (Optional) Perform dry run for the patch and stop without actually patching the cluster.
@@ -119,6 +120,7 @@ class _BdsInstanceOsPatchActionState:
                  patching_configs: Optional[pulumi.Input['BdsInstanceOsPatchActionPatchingConfigsArgs']] = None):
         """
         Input properties used for looking up and filtering BdsInstanceOsPatchAction resources.
+
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
                * `isDryRun` - (Optional) Perform dry run for the patch and stop without actually patching the cluster.
@@ -249,6 +251,7 @@ class BdsInstanceOsPatchAction(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
@@ -300,6 +303,7 @@ class BdsInstanceOsPatchAction(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param BdsInstanceOsPatchActionArgs args: The arguments to use to populate this resource's properties.

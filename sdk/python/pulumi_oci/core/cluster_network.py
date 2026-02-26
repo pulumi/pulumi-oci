@@ -30,6 +30,7 @@ class ClusterNetworkArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ClusterNetwork resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolArgs']]] instance_pools: (Updatable) The data to create the instance pools in the cluster network.
                
@@ -160,6 +161,7 @@ class _ClusterNetworkState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ClusterNetwork resources.
+
         :param pulumi.Input['ClusterNetworkClusterConfigurationArgs'] cluster_configuration: The HPC cluster configuration requested when launching instances of a cluster network.
                
                If the parameter is provided, instances will only be placed within the HPC island and list of network blocks that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are not valid, an error is returned.
@@ -445,6 +447,7 @@ class ClusterNetwork(pulumi.CustomResource):
         $ pulumi import oci:Core/clusterNetwork:ClusterNetwork test_cluster_network "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ClusterNetworkClusterConfigurationArgs', 'ClusterNetworkClusterConfigurationArgsDict']] cluster_configuration: The HPC cluster configuration requested when launching instances of a cluster network.
@@ -544,6 +547,7 @@ class ClusterNetwork(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/clusterNetwork:ClusterNetwork test_cluster_network "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ClusterNetworkArgs args: The arguments to use to populate this resource's properties.

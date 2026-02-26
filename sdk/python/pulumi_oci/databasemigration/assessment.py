@@ -39,6 +39,7 @@ class AssessmentArgs:
                  include_objects: Optional[pulumi.Input[Sequence[pulumi.Input['AssessmentIncludeObjectArgs']]]] = None):
         """
         The set of arguments for constructing a Assessment resource.
+
         :param pulumi.Input[_builtins.str] acceptable_downtime: (Updatable) Time allowed for the application downtime.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[_builtins.str] database_combination: (Updatable) The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
@@ -302,6 +303,7 @@ class _AssessmentState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Assessment resources.
+
         :param pulumi.Input[_builtins.str] acceptable_downtime: (Updatable) Time allowed for the application downtime.
         :param pulumi.Input[_builtins.str] assessment_migration_type: The migration type of the migration to be performed.
         :param pulumi.Input[_builtins.str] bulk_include_exclude_data: Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
@@ -738,6 +740,7 @@ class Assessment(pulumi.CustomResource):
         $ pulumi import oci:DatabaseMigration/assessment:Assessment test_assessment "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] acceptable_downtime: (Updatable) Time allowed for the application downtime.
@@ -827,6 +830,7 @@ class Assessment(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DatabaseMigration/assessment:Assessment test_assessment "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AssessmentArgs args: The arguments to use to populate this resource's properties.

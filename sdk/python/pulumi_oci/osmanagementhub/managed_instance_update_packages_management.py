@@ -27,6 +27,7 @@ class ManagedInstanceUpdatePackagesManagementArgs:
                  work_request_details: Optional[pulumi.Input['ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgs']] = None):
         """
         The set of arguments for constructing a ManagedInstanceUpdatePackagesManagement resource.
+
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] package_names: The list of package names.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] update_types: The types of updates to be applied.
@@ -98,6 +99,7 @@ class _ManagedInstanceUpdatePackagesManagementState:
                  work_request_details: Optional[pulumi.Input['ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering ManagedInstanceUpdatePackagesManagement resources.
+
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] package_names: The list of package names.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] update_types: The types of updates to be applied.
@@ -204,6 +206,7 @@ class ManagedInstanceUpdatePackagesManagement(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/managedInstanceUpdatePackagesManagement:ManagedInstanceUpdatePackagesManagement test_managed_instance_update_packages_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
@@ -248,6 +251,7 @@ class ManagedInstanceUpdatePackagesManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/managedInstanceUpdatePackagesManagement:ManagedInstanceUpdatePackagesManagement test_managed_instance_update_packages_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagedInstanceUpdatePackagesManagementArgs args: The arguments to use to populate this resource's properties.

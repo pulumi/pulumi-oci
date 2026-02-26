@@ -27,6 +27,7 @@ class PingProbeArgs:
                  vantage_point_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a PingProbe resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[_builtins.str] protocol: The protocols for ping probes.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] targets: A list of targets (hostnames or IP addresses) of the probe.
@@ -139,6 +140,7 @@ class _PingProbeState:
                  vantage_point_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering PingProbe resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[_builtins.str] home_region: The region where updates must be made and where results must be fetched from.
         :param pulumi.Input[_builtins.int] port: The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
@@ -332,6 +334,7 @@ class PingProbe(pulumi.CustomResource):
         $ pulumi import oci:HealthChecks/pingProbe:PingProbe test_ping_probe "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
@@ -384,6 +387,7 @@ class PingProbe(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:HealthChecks/pingProbe:PingProbe test_ping_probe "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param PingProbeArgs args: The arguments to use to populate this resource's properties.

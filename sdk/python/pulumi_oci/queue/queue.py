@@ -36,6 +36,7 @@ class QueueArgs:
                  visibility_in_seconds: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a Queue resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name of the queue.
         :param pulumi.Input[Sequence[pulumi.Input['QueueCapabilityArgs']]] capabilities: (Updatable) The capability to add on the queue
@@ -262,6 +263,7 @@ class _QueueState:
                  visibility_in_seconds: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering Queue resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['QueueCapabilityArgs']]] capabilities: (Updatable) The capability to add on the queue
         :param pulumi.Input[_builtins.int] channel_consumption_limit: (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
@@ -621,6 +623,7 @@ class Queue(pulumi.CustomResource):
         $ pulumi import oci:Queue/queue:Queue test_queue "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['QueueCapabilityArgs', 'QueueCapabilityArgsDict']]]] capabilities: (Updatable) The capability to add on the queue
@@ -690,6 +693,7 @@ class Queue(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Queue/queue:Queue test_queue "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param QueueArgs args: The arguments to use to populate this resource's properties.

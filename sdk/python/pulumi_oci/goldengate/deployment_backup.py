@@ -34,6 +34,7 @@ class DeploymentBackupArgs:
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentBackupLockArgs']]]] = None):
         """
         The set of arguments for constructing a DeploymentBackup resource.
+
         :param pulumi.Input[_builtins.str] bucket: Name of the bucket where the object is to be uploaded in the object storage
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[_builtins.str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
@@ -229,6 +230,7 @@ class _DeploymentBackupState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DeploymentBackup resources.
+
         :param pulumi.Input[_builtins.str] backup_source_type: Possible deployment backup source types.
         :param pulumi.Input[_builtins.str] backup_type: Possible Deployment backup types.
         :param pulumi.Input[_builtins.str] bucket: Name of the bucket where the object is to be uploaded in the object storage
@@ -656,6 +658,7 @@ class DeploymentBackup(pulumi.CustomResource):
         $ pulumi import oci:GoldenGate/deploymentBackup:DeploymentBackup test_deployment_backup "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bucket: Name of the bucket where the object is to be uploaded in the object storage
@@ -720,6 +723,7 @@ class DeploymentBackup(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:GoldenGate/deploymentBackup:DeploymentBackup test_deployment_backup "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DeploymentBackupArgs args: The arguments to use to populate this resource's properties.

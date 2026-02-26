@@ -23,6 +23,7 @@ class ManagementStationMirrorSynchronizeManagementArgs:
                  mirror_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ManagementStationMirrorSynchronizeManagement resource.
+
         :param pulumi.Input[_builtins.str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         :param pulumi.Input[_builtins.str] mirror_id: Unique Software Source identifier
                
@@ -69,6 +70,7 @@ class _ManagementStationMirrorSynchronizeManagementState:
                  mirror_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagementStationMirrorSynchronizeManagement resources.
+
         :param pulumi.Input[_builtins.str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         :param pulumi.Input[_builtins.str] mirror_id: Unique Software Source identifier
                
@@ -146,6 +148,7 @@ class ManagementStationMirrorSynchronizeManagement(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/managementStationMirrorSynchronizeManagement:ManagementStationMirrorSynchronizeManagement test_management_station_mirror_synchronize_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
@@ -187,6 +190,7 @@ class ManagementStationMirrorSynchronizeManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/managementStationMirrorSynchronizeManagement:ManagementStationMirrorSynchronizeManagement test_management_station_mirror_synchronize_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagementStationMirrorSynchronizeManagementArgs args: The arguments to use to populate this resource's properties.

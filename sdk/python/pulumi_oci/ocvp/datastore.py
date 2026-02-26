@@ -29,6 +29,7 @@ class DatastoreArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Datastore resource.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain to create the Datastore in.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] block_volume_ids: The List of Block volume [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s that belong to the Datastore.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the Datastore.
@@ -145,6 +146,7 @@ class _DatastoreState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Datastore resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain to create the Datastore in.
         :param pulumi.Input[Sequence[pulumi.Input['DatastoreBlockVolumeDetailArgs']]] block_volume_details: The list of Block Volume details that belong to the datastore.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] block_volume_ids: The List of Block volume [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s that belong to the Datastore.
@@ -418,6 +420,7 @@ class Datastore(pulumi.CustomResource):
         $ pulumi import oci:Ocvp/datastore:Datastore test_datastore "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain to create the Datastore in.
@@ -475,6 +478,7 @@ class Datastore(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Ocvp/datastore:Datastore test_datastore "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DatastoreArgs args: The arguments to use to populate this resource's properties.

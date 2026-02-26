@@ -37,6 +37,7 @@ class PipelineArgs:
                  storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineStorageMountConfigurationDetailsListArgs']]]] = None):
         """
         The set of arguments for constructing a Pipeline resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
         :param pulumi.Input[Sequence[pulumi.Input['PipelineStepDetailArgs']]] step_details: (Updatable) Array of step details for each step.
@@ -264,6 +265,7 @@ class _PipelineState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Pipeline resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
         :param pulumi.Input['PipelineConfigurationDetailsArgs'] configuration_details: (Updatable) The configuration details of a pipeline.
         :param pulumi.Input[_builtins.str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
@@ -596,6 +598,7 @@ class Pipeline(pulumi.CustomResource):
         $ pulumi import oci:DataScience/pipeline:Pipeline test_pipeline "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
@@ -632,6 +635,7 @@ class Pipeline(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataScience/pipeline:Pipeline test_pipeline "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param PipelineArgs args: The arguments to use to populate this resource's properties.

@@ -57,6 +57,7 @@ class SddcArgs:
                  workload_network_cidr: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Sddc resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
         :param pulumi.Input[_builtins.str] ssh_authorized_keys: (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorized_keys` file
         :param pulumi.Input[_builtins.str] vmware_software_version: (Updatable) The VMware software bundle to install on the ESXi hosts in the SDDC. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
@@ -739,6 +740,7 @@ class _SddcState:
                  workload_network_cidr: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Sddc resources.
+
         :param pulumi.Input[_builtins.int] actual_esxi_hosts_count: The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**.
         :param pulumi.Input[_builtins.str] capacity_reservation_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation. **Deprecated**. Please use `capacity_reservation_id` of `initial_cluster_configurations` instead.
         :param pulumi.Input[_builtins.int] clusters_count: The number of Clusters in the SDDC.
@@ -1957,6 +1959,7 @@ class Sddc(pulumi.CustomResource):
         $ pulumi import oci:Ocvp/sddc:Sddc test_sddc "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] capacity_reservation_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation. **Deprecated**. Please use `capacity_reservation_id` of `initial_cluster_configurations` instead.
@@ -2094,6 +2097,7 @@ class Sddc(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Ocvp/sddc:Sddc test_sddc "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SddcArgs args: The arguments to use to populate this resource's properties.

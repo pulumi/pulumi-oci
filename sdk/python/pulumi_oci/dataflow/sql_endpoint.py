@@ -43,6 +43,7 @@ class SqlEndpointArgs:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a SqlEndpoint resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The identifier of the compartment used with the SQL Endpoint.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The SQL Endpoint name, which can be changed.
         :param pulumi.Input[_builtins.str] driver_shape: The shape of the SQL Endpoint driver instance.
@@ -377,6 +378,7 @@ class _SqlEndpointState:
                  warehouse_bucket_uri: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SqlEndpoint resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The identifier of the compartment used with the SQL Endpoint.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of CreateSQLEndpointDetails.
@@ -893,6 +895,7 @@ class SqlEndpoint(pulumi.CustomResource):
         $ pulumi import oci:DataFlow/sqlEndpoint:SqlEndpoint test_sql_endpoint "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The identifier of the compartment used with the SQL Endpoint.
@@ -998,6 +1001,7 @@ class SqlEndpoint(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataFlow/sqlEndpoint:SqlEndpoint test_sql_endpoint "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SqlEndpointArgs args: The arguments to use to populate this resource's properties.

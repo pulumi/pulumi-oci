@@ -32,6 +32,7 @@ class TriggerArgs:
                  repository_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Trigger resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['TriggerActionArgs']]] actions: (Updatable) The list of actions that are to be performed for this trigger.
         :param pulumi.Input[_builtins.str] project_id: The OCID of the DevOps project to which the trigger belongs to.
         :param pulumi.Input[_builtins.str] trigger_source: (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
@@ -196,6 +197,7 @@ class _TriggerState:
                  trigger_url: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Trigger resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['TriggerActionArgs']]] actions: (Updatable) The list of actions that are to be performed for this trigger.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment that contains the trigger.
         :param pulumi.Input[_builtins.str] connection_id: (Updatable) The OCID of the connection resource used to get details for triggered events.
@@ -512,6 +514,7 @@ class Trigger(pulumi.CustomResource):
         $ pulumi import oci:DevOps/trigger:Trigger test_trigger "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['TriggerActionArgs', 'TriggerActionArgsDict']]]] actions: (Updatable) The list of actions that are to be performed for this trigger.
@@ -582,6 +585,7 @@ class Trigger(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DevOps/trigger:Trigger test_trigger "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param TriggerArgs args: The arguments to use to populate this resource's properties.

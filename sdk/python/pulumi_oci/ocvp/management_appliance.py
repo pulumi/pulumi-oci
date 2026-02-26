@@ -30,6 +30,7 @@ class ManagementApplianceArgs:
                  public_ssh_keys: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ManagementAppliance resource.
+
         :param pulumi.Input['ManagementApplianceConfigurationArgs'] configuration: (Updatable) Configuration of management appliance.
         :param pulumi.Input[Sequence[pulumi.Input['ManagementApplianceConnectionArgs']]] connections: (Updatable) Array of connections for management appliance.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the management appliance. It must be unique, start with a letter, and contain only letters, digits, whitespaces, dashes and underscores. Avoid entering confidential information.
@@ -165,6 +166,7 @@ class _ManagementApplianceState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagementAppliance resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of compartment in OCI, that this appliance is going to be created in.
         :param pulumi.Input[_builtins.str] compute_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of compute instance of management appliance in OCI.
         :param pulumi.Input['ManagementApplianceConfigurationArgs'] configuration: (Updatable) Configuration of management appliance.
@@ -501,6 +503,7 @@ class ManagementAppliance(pulumi.CustomResource):
         $ pulumi import oci:Ocvp/managementAppliance:ManagementAppliance test_management_appliance "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ManagementApplianceConfigurationArgs', 'ManagementApplianceConfigurationArgsDict']] configuration: (Updatable) Configuration of management appliance.
@@ -561,6 +564,7 @@ class ManagementAppliance(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Ocvp/managementAppliance:ManagementAppliance test_management_appliance "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagementApplianceArgs args: The arguments to use to populate this resource's properties.

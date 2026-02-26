@@ -61,6 +61,7 @@ class InstanceArgs:
                  update_operation_constraint: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Instance resource.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input['InstanceAgentConfigArgs'] agent_config: (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
@@ -849,6 +850,7 @@ class _InstanceState:
                  update_operation_constraint: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Instance resources.
+
         :param pulumi.Input['InstanceAgentConfigArgs'] agent_config: (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
         :param pulumi.Input[_builtins.bool] async_: Whether Terraform creates and destroys the resource asynchronously. The default value is false.
                * If `async` is true, all the creation and deletion of instances are asynchronous
@@ -1853,6 +1855,7 @@ class Instance(pulumi.CustomResource):
         $ pulumi import oci:Core/instance:Instance test_instance "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['InstanceAgentConfigArgs', 'InstanceAgentConfigArgsDict']] agent_config: (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
@@ -2041,6 +2044,7 @@ class Instance(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/instance:Instance test_instance "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param InstanceArgs args: The arguments to use to populate this resource's properties.

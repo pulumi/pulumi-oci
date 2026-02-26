@@ -36,6 +36,7 @@ class DomainsCloudGateArgs:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DomainsCloudGate resource.
+
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name/Host identifier for this Cloud Gate
                
                **Added In:** 19.2.1
@@ -440,6 +441,7 @@ class _DomainsCloudGateState:
                  upstream_servers: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsCloudGateUpstreamServerArgs']]]] = None):
         """
         Input properties used for looking up and filtering DomainsCloudGate resources.
+
         :param pulumi.Input[_builtins.bool] active: (Updatable) Activation status for this Cloud Gate
                
                **Added In:** 19.2.1
@@ -1410,6 +1412,7 @@ class DomainsCloudGate(pulumi.CustomResource):
         $ pulumi import oci:Identity/domainsCloudGate:DomainsCloudGate test_cloud_gate "idcsEndpoint/{idcsEndpoint}/cloudGates/{cloudGateId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] active: (Updatable) Activation status for this Cloud Gate
@@ -1560,6 +1563,7 @@ class DomainsCloudGate(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domainsCloudGate:DomainsCloudGate test_cloud_gate "idcsEndpoint/{idcsEndpoint}/cloudGates/{cloudGateId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainsCloudGateArgs args: The arguments to use to populate this resource's properties.

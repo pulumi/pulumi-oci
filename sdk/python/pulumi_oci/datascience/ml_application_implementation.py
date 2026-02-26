@@ -32,6 +32,7 @@ class MlApplicationImplementationArgs:
                  opc_ml_app_package_args: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a MlApplicationImplementation resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where ML Application Implementation is created.
         :param pulumi.Input[_builtins.str] ml_application_id: The OCID of the ML Application implemented by this ML Application Implementation
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_migration_destinations: (Updatable) List of ML Application Implementation OCIDs for which migration from this implementation is allowed. Migration means that if consumers change implementation for their instances to implementation with OCID from this list, instance components will be updated in place otherwise new instance components are created based on the new implementation and old instance components are removed.
@@ -201,6 +202,7 @@ class _MlApplicationImplementationState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MlApplicationImplementation resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_migration_destinations: (Updatable) List of ML Application Implementation OCIDs for which migration from this implementation is allowed. Migration means that if consumers change implementation for their instances to implementation with OCID from this list, instance components will be updated in place otherwise new instance components are created based on the new implementation and old instance components are removed.
         :param pulumi.Input[Sequence[pulumi.Input['MlApplicationImplementationApplicationComponentArgs']]] application_components: List of application components (OCI resources shared for all MlApplicationInstances). These have been created automatically based on their definitions in the ML Application package.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where ML Application Implementation is created.
@@ -585,6 +587,7 @@ class MlApplicationImplementation(pulumi.CustomResource):
         $ pulumi import oci:DataScience/mlApplicationImplementation:MlApplicationImplementation test_ml_application_implementation "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_migration_destinations: (Updatable) List of ML Application Implementation OCIDs for which migration from this implementation is allowed. Migration means that if consumers change implementation for their instances to implementation with OCID from this list, instance components will be updated in place otherwise new instance components are created based on the new implementation and old instance components are removed.
@@ -663,6 +666,7 @@ class MlApplicationImplementation(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataScience/mlApplicationImplementation:MlApplicationImplementation test_ml_application_implementation "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MlApplicationImplementationArgs args: The arguments to use to populate this resource's properties.

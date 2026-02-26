@@ -29,6 +29,7 @@ class CrossConnectGroupArgs:
                  macsec_properties: Optional[pulumi.Input['CrossConnectGroupMacsecPropertiesArgs']] = None):
         """
         The set of arguments for constructing a CrossConnectGroup resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the cross-connect group.
         :param pulumi.Input[_builtins.str] customer_reference_name: (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect group uses.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -136,6 +137,7 @@ class _CrossConnectGroupState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CrossConnectGroup resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the cross-connect group.
         :param pulumi.Input[_builtins.str] customer_reference_name: (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect group uses.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -359,6 +361,7 @@ class CrossConnectGroup(pulumi.CustomResource):
         $ pulumi import oci:Core/crossConnectGroup:CrossConnectGroup test_cross_connect_group "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the cross-connect group.
@@ -430,6 +433,7 @@ class CrossConnectGroup(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/crossConnectGroup:CrossConnectGroup test_cross_connect_group "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CrossConnectGroupArgs args: The arguments to use to populate this resource's properties.

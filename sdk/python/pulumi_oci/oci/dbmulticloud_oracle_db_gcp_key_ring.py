@@ -30,6 +30,7 @@ class DbmulticloudOracleDbGcpKeyRingArgs:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DbmulticloudOracleDbGcpKeyRing resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the Oracle DB GCP Key Ring resource resides.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name of DB GCP Key Ring resource.
         :param pulumi.Input[_builtins.str] oracle_db_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the Oracle DB GCP Identity Connector resource resides.
@@ -192,6 +193,7 @@ class _DbmulticloudOracleDbGcpKeyRingState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DbmulticloudOracleDbGcpKeyRing resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the Oracle DB GCP Key Ring resource resides.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name of DB GCP Key Ring resource.
@@ -467,6 +469,7 @@ class DbmulticloudOracleDbGcpKeyRing(pulumi.CustomResource):
         $ pulumi import oci:oci/dbmulticloudOracleDbGcpKeyRing:DbmulticloudOracleDbGcpKeyRing test_oracle_db_gcp_key_ring "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the Oracle DB GCP Key Ring resource resides.
@@ -526,6 +529,7 @@ class DbmulticloudOracleDbGcpKeyRing(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:oci/dbmulticloudOracleDbGcpKeyRing:DbmulticloudOracleDbGcpKeyRing test_oracle_db_gcp_key_ring "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DbmulticloudOracleDbGcpKeyRingArgs args: The arguments to use to populate this resource's properties.

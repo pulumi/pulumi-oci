@@ -24,6 +24,7 @@ class MaskingReportManagementArgs:
                  target_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a MaskingReportManagement resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment that contains the masking report.
         :param pulumi.Input[_builtins.str] masking_policy_id: The OCID of the masking policy.
         :param pulumi.Input[_builtins.str] target_id: The OCID of the target database masked.
@@ -95,6 +96,7 @@ class _MaskingReportManagementState:
                  total_masked_values: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MaskingReportManagement resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment that contains the masking report.
         :param pulumi.Input[_builtins.bool] is_drop_temp_tables_enabled: Indicates if the temporary tables created during the masking operation were dropped after masking.
         :param pulumi.Input[_builtins.bool] is_redo_logging_enabled: Indicates if redo logging was enabled during the masking operation.
@@ -398,6 +400,7 @@ class MaskingReportManagement(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment that contains the masking report.
@@ -429,6 +432,7 @@ class MaskingReportManagement(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param MaskingReportManagementArgs args: The arguments to use to populate this resource's properties.

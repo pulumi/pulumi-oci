@@ -24,6 +24,7 @@ class OciCacheConfigSetlistAssociatedOciCacheClusterArgs:
                  oci_cache_config_set_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a OciCacheConfigSetlistAssociatedOciCacheCluster resource.
+
         :param pulumi.Input[_builtins.str] oci_cache_config_set_id: Unique Oracle Cloud Infrastructure Cache Config Set identifier.
                
                
@@ -56,6 +57,7 @@ class _OciCacheConfigSetlistAssociatedOciCacheClusterState:
                  oci_cache_config_set_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OciCacheConfigSetlistAssociatedOciCacheCluster resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs']]] items: List of clusters with the same Oracle Cloud Infrastructure Cache Config Set ID.
         :param pulumi.Input[_builtins.str] oci_cache_config_set_id: Unique Oracle Cloud Infrastructure Cache Config Set identifier.
                
@@ -126,6 +128,7 @@ class OciCacheConfigSetlistAssociatedOciCacheCluster(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] oci_cache_config_set_id: Unique Oracle Cloud Infrastructure Cache Config Set identifier.
@@ -160,6 +163,7 @@ class OciCacheConfigSetlistAssociatedOciCacheCluster(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param OciCacheConfigSetlistAssociatedOciCacheClusterArgs args: The arguments to use to populate this resource's properties.

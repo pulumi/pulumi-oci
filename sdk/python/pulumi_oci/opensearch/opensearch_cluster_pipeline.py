@@ -40,6 +40,7 @@ class OpensearchClusterPipelineArgs:
                  vcn_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a OpensearchClusterPipeline resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment to create the pipeline in.
         :param pulumi.Input[_builtins.str] data_prepper_configuration_body: (Updatable) The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \\.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name of the cluster pipeline. Avoid entering confidential information.
@@ -328,6 +329,7 @@ class _OpensearchClusterPipelineState:
                  vcn_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OpensearchClusterPipeline resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment to create the pipeline in.
         :param pulumi.Input[_builtins.str] data_prepper_configuration_body: (Updatable) The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \\.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -772,6 +774,7 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
         $ pulumi import oci:Opensearch/opensearchClusterPipeline:OpensearchClusterPipeline test_opensearch_cluster_pipeline "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment to create the pipeline in.
@@ -850,6 +853,7 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Opensearch/opensearchClusterPipeline:OpensearchClusterPipeline test_opensearch_cluster_pipeline "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OpensearchClusterPipelineArgs args: The arguments to use to populate this resource's properties.

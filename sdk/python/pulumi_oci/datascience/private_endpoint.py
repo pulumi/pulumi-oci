@@ -30,6 +30,7 @@ class PrivateEndpointArgs:
                  sub_domain: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a PrivateEndpoint resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private endpoint.
         :param pulumi.Input[_builtins.str] data_science_resource_type: Data Science resource type.
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet. 
@@ -194,6 +195,7 @@ class _PrivateEndpointState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PrivateEndpoint resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private endpoint.
         :param pulumi.Input[_builtins.str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user that created the private endpoint.
         :param pulumi.Input[_builtins.str] data_science_resource_type: Data Science resource type.
@@ -499,6 +501,7 @@ class PrivateEndpoint(pulumi.CustomResource):
         $ pulumi import oci:DataScience/privateEndpoint:PrivateEndpoint test_data_science_private_endpoint "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private endpoint.
@@ -558,6 +561,7 @@ class PrivateEndpoint(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataScience/privateEndpoint:PrivateEndpoint test_data_science_private_endpoint "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param PrivateEndpointArgs args: The arguments to use to populate this resource's properties.

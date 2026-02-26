@@ -42,6 +42,7 @@ class NodePoolArgs:
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a NodePool resource.
+
         :param pulumi.Input[_builtins.str] cluster_id: The OCID of the cluster to which this node pool is attached.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment in which the node pool exists.
         :param pulumi.Input[_builtins.str] node_shape: (Updatable) The name of the node shape of the nodes in the node pool.
@@ -371,6 +372,7 @@ class _NodePoolState:
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering NodePool resources.
+
         :param pulumi.Input[_builtins.str] cluster_id: The OCID of the cluster to which this node pool is attached.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment in which the node pool exists.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -856,6 +858,7 @@ class NodePool(pulumi.CustomResource):
         $ pulumi import oci:ContainerEngine/nodePool:NodePool test_node_pool "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cluster_id: The OCID of the cluster to which this node pool is attached.
@@ -982,6 +985,7 @@ class NodePool(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ContainerEngine/nodePool:NodePool test_node_pool "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NodePoolArgs args: The arguments to use to populate this resource's properties.

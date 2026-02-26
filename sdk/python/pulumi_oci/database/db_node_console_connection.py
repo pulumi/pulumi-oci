@@ -25,6 +25,7 @@ class DbNodeConsoleConnectionArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a DbNodeConsoleConnection resource.
+
         :param pulumi.Input[_builtins.str] db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] public_key: The SSH public key used to authenticate the console connection.
                
@@ -109,6 +110,7 @@ class _DbNodeConsoleConnectionState:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DbNodeConsoleConnection resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment to contain the console connection.
         :param pulumi.Input[_builtins.str] connection_string: The SSH connection string for the console connection.
         :param pulumi.Input[_builtins.str] db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -314,6 +316,7 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
         $ pulumi import oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection test_db_node_console_connection "dbNodes/{dbNodeId}/consoleConnections/{consoleConnectionId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -363,6 +366,7 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection test_db_node_console_connection "dbNodes/{dbNodeId}/consoleConnections/{consoleConnectionId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DbNodeConsoleConnectionArgs args: The arguments to use to populate this resource's properties.

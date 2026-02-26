@@ -29,6 +29,7 @@ class KeyStoreArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a KeyStore resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the key store. The name does not need to be unique.
         :param pulumi.Input['KeyStoreTypeDetailsArgs'] type_details: (Updatable) Key store type details.
@@ -133,6 +134,7 @@ class _KeyStoreState:
                  type_details: Optional[pulumi.Input['KeyStoreTypeDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering KeyStore resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['KeyStoreAssociatedDatabaseArgs']]] associated_databases: List of databases associated with the key store.
         :param pulumi.Input[_builtins.int] associated_long_term_backup_count: Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
         :param pulumi.Input[Sequence[pulumi.Input['KeyStoreAssociatedLongTermBackupArgs']]] associated_long_term_backups: List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
@@ -378,6 +380,7 @@ class KeyStore(pulumi.CustomResource):
         $ pulumi import oci:Database/keyStore:KeyStore test_key_store "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -429,6 +432,7 @@ class KeyStore(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/keyStore:KeyStore test_key_store "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param KeyStoreArgs args: The arguments to use to populate this resource's properties.

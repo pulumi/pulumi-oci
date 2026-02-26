@@ -26,6 +26,7 @@ class ClusterWorkloadMappingArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ClusterWorkloadMapping resource.
+
         :param pulumi.Input[_builtins.str] cluster_id: The OCID of the cluster.
         :param pulumi.Input[_builtins.str] mapped_compartment_id: (Updatable) The OCID of the mapped customer compartment.
         :param pulumi.Input[_builtins.str] namespace: The namespace of the workloadMapping.
@@ -122,6 +123,7 @@ class _ClusterWorkloadMappingState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ClusterWorkloadMapping resources.
+
         :param pulumi.Input[_builtins.str] cluster_id: The OCID of the cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -299,6 +301,7 @@ class ClusterWorkloadMapping(pulumi.CustomResource):
         $ pulumi import oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping test_cluster_workload_mapping "clusters/{clusterId}/workloadMappings/{workloadMappingId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cluster_id: The OCID of the cluster.
@@ -350,6 +353,7 @@ class ClusterWorkloadMapping(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping test_cluster_workload_mapping "clusters/{clusterId}/workloadMappings/{workloadMappingId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ClusterWorkloadMappingArgs args: The arguments to use to populate this resource's properties.

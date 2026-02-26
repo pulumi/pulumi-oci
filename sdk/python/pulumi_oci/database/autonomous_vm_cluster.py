@@ -42,6 +42,7 @@ class AutonomousVmClusterArgs:
                  total_container_databases: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a AutonomousVmCluster resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
         :param pulumi.Input[_builtins.str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
@@ -391,6 +392,7 @@ class _AutonomousVmClusterState:
                  vm_cluster_network_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutonomousVmCluster resources.
+
         :param pulumi.Input[_builtins.float] autonomous_data_storage_size_in_tbs: (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
         :param pulumi.Input[_builtins.float] available_autonomous_data_storage_size_in_tbs: The data disk group size available for Autonomous Databases, in TBs.
         :param pulumi.Input[_builtins.int] available_container_databases: The number of Autonomous Container Databases that can be created with the currently available local storage.
@@ -1246,6 +1248,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         $ pulumi import oci:Database/autonomousVmCluster:AutonomousVmCluster test_autonomous_vm_cluster "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.float] autonomous_data_storage_size_in_tbs: (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
@@ -1335,6 +1338,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/autonomousVmCluster:AutonomousVmCluster test_autonomous_vm_cluster "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AutonomousVmClusterArgs args: The arguments to use to populate this resource's properties.

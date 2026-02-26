@@ -26,6 +26,7 @@ class ExternalExadataStorageServerArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ExternalExadataStorageServer resource.
+
         :param pulumi.Input[_builtins.str] external_exadata_storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
@@ -111,6 +112,7 @@ class _ExternalExadataStorageServerState:
                  version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalExadataStorageServer resources.
+
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input['ExternalExadataStorageServerConnectorArgs']]] connectors: The connector of the Exadata storage server.
         :param pulumi.Input[_builtins.float] cpu_count: The CPU count of the Exadata storage server.
@@ -523,6 +525,7 @@ class ExternalExadataStorageServer(pulumi.CustomResource):
         $ pulumi import oci:DatabaseManagement/externalExadataStorageServer:ExternalExadataStorageServer test_external_exadata_storage_server "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -554,6 +557,7 @@ class ExternalExadataStorageServer(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DatabaseManagement/externalExadataStorageServer:ExternalExadataStorageServer test_external_exadata_storage_server "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ExternalExadataStorageServerArgs args: The arguments to use to populate this resource's properties.

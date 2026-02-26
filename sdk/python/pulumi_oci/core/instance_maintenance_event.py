@@ -28,6 +28,7 @@ class InstanceMaintenanceEventArgs:
                  time_window_start: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a InstanceMaintenanceEvent resource.
+
         :param pulumi.Input[_builtins.str] instance_maintenance_event_id: The OCID of the instance maintenance event.
         :param pulumi.Input[_builtins.str] alternative_resolution_action: (Updatable) One of the alternativeResolutionActions that was provided in the InstanceMaintenanceEvent.
         :param pulumi.Input[_builtins.bool] can_delete_local_storage: (Updatable) This field is only applicable when setting the alternativeResolutionAction.
@@ -185,6 +186,7 @@ class _InstanceMaintenanceEventState:
                  time_window_start: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InstanceMaintenanceEvent resources.
+
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_details: Additional details of the maintenance in the form of json.
         :param pulumi.Input[_builtins.str] alternative_resolution_action: (Updatable) One of the alternativeResolutionActions that was provided in the InstanceMaintenanceEvent.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] alternative_resolution_actions: These are alternative actions to the requested instanceAction that can be taken to resolve the Maintenance.
@@ -610,6 +612,7 @@ class InstanceMaintenanceEvent(pulumi.CustomResource):
         $ pulumi import oci:Core/instanceMaintenanceEvent:InstanceMaintenanceEvent test_instance_maintenance_event "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] alternative_resolution_action: (Updatable) One of the alternativeResolutionActions that was provided in the InstanceMaintenanceEvent.
@@ -648,6 +651,7 @@ class InstanceMaintenanceEvent(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/instanceMaintenanceEvent:InstanceMaintenanceEvent test_instance_maintenance_event "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param InstanceMaintenanceEventArgs args: The arguments to use to populate this resource's properties.

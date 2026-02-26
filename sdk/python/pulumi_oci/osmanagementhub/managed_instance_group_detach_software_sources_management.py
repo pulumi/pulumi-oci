@@ -26,6 +26,7 @@ class ManagedInstanceGroupDetachSoftwareSourcesManagementArgs:
                  work_request_details: Optional[pulumi.Input['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs']] = None):
         """
         The set of arguments for constructing a ManagedInstanceGroupDetachSoftwareSourcesManagement resource.
+
         :param pulumi.Input[_builtins.str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] software_sources: List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from the group.
         :param pulumi.Input['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs'] work_request_details: Provides the name and description of the job.
@@ -80,6 +81,7 @@ class _ManagedInstanceGroupDetachSoftwareSourcesManagementState:
                  work_request_details: Optional[pulumi.Input['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering ManagedInstanceGroupDetachSoftwareSourcesManagement resources.
+
         :param pulumi.Input[_builtins.str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] software_sources: List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from the group.
         :param pulumi.Input['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs'] work_request_details: Provides the name and description of the job.
@@ -169,6 +171,7 @@ class ManagedInstanceGroupDetachSoftwareSourcesManagement(pulumi.CustomResource)
         $ pulumi import oci:OsManagementHub/managedInstanceGroupDetachSoftwareSourcesManagement:ManagedInstanceGroupDetachSoftwareSourcesManagement test_managed_instance_group_detach_software_sources_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
@@ -211,6 +214,7 @@ class ManagedInstanceGroupDetachSoftwareSourcesManagement(pulumi.CustomResource)
         ```sh
         $ pulumi import oci:OsManagementHub/managedInstanceGroupDetachSoftwareSourcesManagement:ManagedInstanceGroupDetachSoftwareSourcesManagement test_managed_instance_group_detach_software_sources_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagedInstanceGroupDetachSoftwareSourcesManagementArgs args: The arguments to use to populate this resource's properties.

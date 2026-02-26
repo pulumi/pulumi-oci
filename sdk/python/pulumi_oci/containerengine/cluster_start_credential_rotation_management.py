@@ -23,6 +23,7 @@ class ClusterStartCredentialRotationManagementArgs:
                  cluster_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ClusterStartCredentialRotationManagement resource.
+
         :param pulumi.Input[_builtins.str] auto_completion_delay_duration: The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
         :param pulumi.Input[_builtins.str] cluster_id: The OCID of the cluster.
                
@@ -69,6 +70,7 @@ class _ClusterStartCredentialRotationManagementState:
                  cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ClusterStartCredentialRotationManagement resources.
+
         :param pulumi.Input[_builtins.str] auto_completion_delay_duration: The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
         :param pulumi.Input[_builtins.str] cluster_id: The OCID of the cluster.
                
@@ -139,6 +141,7 @@ class ClusterStartCredentialRotationManagement(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] auto_completion_delay_duration: The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
@@ -173,6 +176,7 @@ class ClusterStartCredentialRotationManagement(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param ClusterStartCredentialRotationManagementArgs args: The arguments to use to populate this resource's properties.

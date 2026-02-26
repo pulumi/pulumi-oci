@@ -24,6 +24,7 @@ class LogAnalyticsEntityAssociationsAddArgs:
                  namespace: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a LogAnalyticsEntityAssociationsAdd resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] association_entities: Destination entities OCIDs with which associations are to be added.
         :param pulumi.Input[_builtins.str] log_analytics_entity_id: The Log analytics entity OCID.
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. 
@@ -85,6 +86,7 @@ class _LogAnalyticsEntityAssociationsAddState:
                  namespace: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LogAnalyticsEntityAssociationsAdd resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] association_entities: Destination entities OCIDs with which associations are to be added.
         :param pulumi.Input[_builtins.str] log_analytics_entity_id: The Log analytics entity OCID.
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. 
@@ -179,6 +181,7 @@ class LogAnalyticsEntityAssociationsAdd(pulumi.CustomResource):
         $ pulumi import oci:LogAnalytics/logAnalyticsEntityAssociationsAdd:LogAnalyticsEntityAssociationsAdd test_log_analytics_entity_associations_add "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] association_entities: Destination entities OCIDs with which associations are to be added.
@@ -222,6 +225,7 @@ class LogAnalyticsEntityAssociationsAdd(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:LogAnalytics/logAnalyticsEntityAssociationsAdd:LogAnalyticsEntityAssociationsAdd test_log_analytics_entity_associations_add "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param LogAnalyticsEntityAssociationsAddArgs args: The arguments to use to populate this resource's properties.

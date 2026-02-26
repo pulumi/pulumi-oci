@@ -25,6 +25,7 @@ class NetworkFirewallPolicyApplicationGroupArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyApplicationGroup resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] apps: (Updatable) Collection of application names.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
                
@@ -105,6 +106,7 @@ class _NetworkFirewallPolicyApplicationGroupState:
                  total_apps: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyApplicationGroup resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] apps: (Updatable) Collection of application names.
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the application group. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name of the application group.
@@ -246,6 +248,7 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyApplicationGroup:NetworkFirewallPolicyApplicationGroup test_network_firewall_policy_application_group "networkFirewallPolicies/{networkFirewallPolicyId}/applicationGroups/{applicationGroupName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] apps: (Updatable) Collection of application names.
@@ -291,6 +294,7 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyApplicationGroup:NetworkFirewallPolicyApplicationGroup test_network_firewall_policy_application_group "networkFirewallPolicies/{networkFirewallPolicyId}/applicationGroups/{applicationGroupName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NetworkFirewallPolicyApplicationGroupArgs args: The arguments to use to populate this resource's properties.

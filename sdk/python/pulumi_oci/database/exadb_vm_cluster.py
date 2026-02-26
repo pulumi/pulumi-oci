@@ -51,6 +51,7 @@ class ExadbVmClusterArgs:
                  time_zone: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ExadbVmCluster resource.
+
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain in which the Exadata VM cluster on Exascale Infrastructure is located.
         :param pulumi.Input[_builtins.str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -533,6 +534,7 @@ class _ExadbVmClusterState:
                  zone_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExadbVmCluster resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain in which the Exadata VM cluster on Exascale Infrastructure is located.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] backup_network_nsg_ids: (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         :param pulumi.Input[_builtins.str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
@@ -1308,6 +1310,7 @@ class ExadbVmCluster(pulumi.CustomResource):
         $ pulumi import oci:Database/exadbVmCluster:ExadbVmCluster test_exadb_vm_cluster "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain in which the Exadata VM cluster on Exascale Infrastructure is located.
@@ -1425,6 +1428,7 @@ class ExadbVmCluster(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/exadbVmCluster:ExadbVmCluster test_exadb_vm_cluster "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ExadbVmClusterArgs args: The arguments to use to populate this resource's properties.

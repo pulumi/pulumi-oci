@@ -38,6 +38,7 @@ class SecurityAssessmentArgs:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a SecurityAssessment resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the security assessment.
         :param pulumi.Input[_builtins.int] apply_template_trigger: (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
         :param pulumi.Input[_builtins.str] base_security_assessment_id: The OCID of the security assessment. The assessment should be of type SAVED.  It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
@@ -317,6 +318,7 @@ class _SecurityAssessmentState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SecurityAssessment resources.
+
         :param pulumi.Input[_builtins.int] apply_template_trigger: (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
         :param pulumi.Input[_builtins.str] base_security_assessment_id: The OCID of the security assessment. The assessment should be of type SAVED.  It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
         :param pulumi.Input[_builtins.str] baseline_assessment_id: The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
@@ -897,6 +899,7 @@ class SecurityAssessment(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/securityAssessment:SecurityAssessment test_security_assessment "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] apply_template_trigger: (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
@@ -944,6 +947,7 @@ class SecurityAssessment(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/securityAssessment:SecurityAssessment test_security_assessment "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SecurityAssessmentArgs args: The arguments to use to populate this resource's properties.

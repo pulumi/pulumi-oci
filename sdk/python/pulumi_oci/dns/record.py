@@ -27,6 +27,7 @@ class RecordArgs:
                  ttl: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a Record resource.
+
         :param pulumi.Input[_builtins.str] domain: The fully qualified domain name where the record can be located. Domain value is case insensitive.
         :param pulumi.Input[_builtins.str] rtype: The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
         :param pulumi.Input[_builtins.str] zone_name_or_id: The name or OCID of the target zone.
@@ -151,6 +152,7 @@ class _RecordState:
                  zone_name_or_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Record resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to. If supplied, it must match the Zone's compartment ocid.
         :param pulumi.Input[_builtins.str] domain: The fully qualified domain name where the record can be located. Domain value is case insensitive.
         :param pulumi.Input[_builtins.bool] is_protected: A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
@@ -357,6 +359,7 @@ class Record(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to. If supplied, it must match the Zone's compartment ocid.
@@ -410,6 +413,7 @@ class Record(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param RecordArgs args: The arguments to use to populate this resource's properties.

@@ -25,6 +25,7 @@ class ExportSetArgs:
                  max_fs_stat_files: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ExportSet resource.
+
         :param pulumi.Input[_builtins.str] mount_target_id: (Updatable) The OCID of the mount target that the export set is associated with
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My export set`
         :param pulumi.Input[_builtins.str] max_fs_stat_bytes: (Updatable) Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be '0'.
@@ -107,6 +108,7 @@ class _ExportSetState:
                  vcn_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExportSet resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain the export set is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the export set.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My export set`
@@ -303,6 +305,7 @@ class ExportSet(pulumi.CustomResource):
         $ pulumi import oci:FileStorage/exportSet:ExportSet test_export_set "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My export set`
@@ -359,6 +362,7 @@ class ExportSet(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:FileStorage/exportSet:ExportSet test_export_set "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ExportSetArgs args: The arguments to use to populate this resource's properties.

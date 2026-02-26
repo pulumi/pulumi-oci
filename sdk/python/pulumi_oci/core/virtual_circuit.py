@@ -42,6 +42,7 @@ class VirtualCircuitArgs:
                  routing_policies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a VirtualCircuit resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the virtual circuit.
         :param pulumi.Input[_builtins.str] type: The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16). 
                
@@ -374,6 +375,7 @@ class _VirtualCircuitState:
                  virtual_circuit_redundancy_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitVirtualCircuitRedundancyMetadataArgs']]]] = None):
         """
         Input properties used for looking up and filtering VirtualCircuit resources.
+
         :param pulumi.Input[_builtins.str] bandwidth_shape_name: (Updatable) The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
         :param pulumi.Input[_builtins.str] bgp_admin_state: (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
         :param pulumi.Input[_builtins.str] bgp_ipv6session_state: The state of the Ipv6 BGP session associated with the virtual circuit.
@@ -932,6 +934,7 @@ class VirtualCircuit(pulumi.CustomResource):
         $ pulumi import oci:Core/virtualCircuit:VirtualCircuit test_virtual_circuit "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bandwidth_shape_name: (Updatable) The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
@@ -1041,6 +1044,7 @@ class VirtualCircuit(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/virtualCircuit:VirtualCircuit test_virtual_circuit "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param VirtualCircuitArgs args: The arguments to use to populate this resource's properties.

@@ -73,6 +73,7 @@ class DomainsSettingArgs:
                  timezone: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DomainsSetting resource.
+
         :param pulumi.Input[_builtins.str] csr_access: (Updatable) This value indicates whether Customer Service Representatives can login and have readOnly or readWrite access.  A value of 'none' means CSR cannot login to the services.
                
                **SCIM++ Properties:**
@@ -1785,6 +1786,7 @@ class _DomainsSettingState:
                  timezone: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DomainsSetting resources.
+
         :param pulumi.Input[_builtins.bool] account_always_trust_scope: (Updatable) Indicates whether all the Apps in this customer tenancy should trust each other. A value of true overrides the 'defaultTrustScope' attribute here in Settings, as well as any App-specific 'trustScope' attribute, to force in effect 'trustScope=Account' for every App in this customer tenancy.
                
                **Added In:** 18.1.6
@@ -4160,6 +4162,7 @@ class DomainsSetting(pulumi.CustomResource):
         $ pulumi import oci:Identity/domainsSetting:DomainsSetting test_setting "idcsEndpoint/{idcsEndpoint}/settings/{settingId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] account_always_trust_scope: (Updatable) Indicates whether all the Apps in this customer tenancy should trust each other. A value of true overrides the 'defaultTrustScope' attribute here in Settings, as well as any App-specific 'trustScope' attribute, to force in effect 'trustScope=Account' for every App in this customer tenancy.
@@ -4781,6 +4784,7 @@ class DomainsSetting(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domainsSetting:DomainsSetting test_setting "idcsEndpoint/{idcsEndpoint}/settings/{settingId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainsSettingArgs args: The arguments to use to populate this resource's properties.

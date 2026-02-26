@@ -30,6 +30,7 @@ class CertificateArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Certificate resource.
+
         :param pulumi.Input['CertificateCertificateConfigArgs'] certificate_config: (Updatable) The details of the contents of the certificate and certificate metadata.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create the certificate.
         :param pulumi.Input[Sequence[pulumi.Input['CertificateCertificateRuleArgs']]] certificate_rules: (Updatable) An optional list of rules that control how the certificate is used and managed.
@@ -168,6 +169,7 @@ class _CertificateState:
                  time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Certificate resources.
+
         :param pulumi.Input['CertificateCertificateConfigArgs'] certificate_config: (Updatable) The details of the contents of the certificate and certificate metadata.
         :param pulumi.Input[_builtins.str] certificate_profile_type: The name of the profile used to create the certificate, which depends on the type of certificate you need.
         :param pulumi.Input[Sequence[pulumi.Input['CertificateCertificateRevocationListDetailArgs']]] certificate_revocation_list_details: The details of the certificate revocation list (CRL).
@@ -557,6 +559,7 @@ class Certificate(pulumi.CustomResource):
         $ pulumi import oci:CertificatesManagement/certificate:Certificate test_certificate "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['CertificateCertificateConfigArgs', 'CertificateCertificateConfigArgsDict']] certificate_config: (Updatable) The details of the contents of the certificate and certificate metadata.
@@ -655,6 +658,7 @@ class Certificate(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:CertificatesManagement/certificate:Certificate test_certificate "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CertificateArgs args: The arguments to use to populate this resource's properties.

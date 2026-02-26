@@ -30,6 +30,7 @@ class NetworkFirewallPolicyNatRuleArgs:
                  position: Optional[pulumi.Input['NetworkFirewallPolicyNatRulePositionArgs']] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyNatRule resource.
+
         :param pulumi.Input[_builtins.str] action: (Updatable) action:
                * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
         :param pulumi.Input['NetworkFirewallPolicyNatRuleConditionArgs'] condition: (Updatable) Match criteria used in NAT rule used on the firewall policy.
@@ -160,6 +161,7 @@ class _NetworkFirewallPolicyNatRuleState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyNatRule resources.
+
         :param pulumi.Input[_builtins.str] action: (Updatable) action:
                * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
         :param pulumi.Input['NetworkFirewallPolicyNatRuleConditionArgs'] condition: (Updatable) Match criteria used in NAT rule used on the firewall policy.
@@ -363,6 +365,7 @@ class NetworkFirewallPolicyNatRule(pulumi.CustomResource):
         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyNatRule:NetworkFirewallPolicyNatRule test_network_firewall_policy_nat_rule "networkFirewallPolicies/{networkFirewallPolicyId}/natRules/{natRuleName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: (Updatable) action:
@@ -423,6 +426,7 @@ class NetworkFirewallPolicyNatRule(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyNatRule:NetworkFirewallPolicyNatRule test_network_firewall_policy_nat_rule "networkFirewallPolicies/{networkFirewallPolicyId}/natRules/{natRuleName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NetworkFirewallPolicyNatRuleArgs args: The arguments to use to populate this resource's properties.

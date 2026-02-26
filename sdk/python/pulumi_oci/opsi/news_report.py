@@ -37,6 +37,7 @@ class NewsReportArgs:
                  tag_filters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a NewsReport resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier where the news report will be created.
         :param pulumi.Input['NewsReportContentTypesArgs'] content_types: (Updatable) Content types that the news report can handle.
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the news report.
@@ -276,6 +277,7 @@ class _NewsReportState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NewsReport resources.
+
         :param pulumi.Input[_builtins.bool] are_child_compartments_included: (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier where the news report will be created.
         :param pulumi.Input['NewsReportContentTypesArgs'] content_types: (Updatable) Content types that the news report can handle.
@@ -645,6 +647,7 @@ class NewsReport(pulumi.CustomResource):
         $ pulumi import oci:Opsi/newsReport:NewsReport test_news_report "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] are_child_compartments_included: (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
@@ -723,6 +726,7 @@ class NewsReport(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Opsi/newsReport:NewsReport test_news_report "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NewsReportArgs args: The arguments to use to populate this resource's properties.

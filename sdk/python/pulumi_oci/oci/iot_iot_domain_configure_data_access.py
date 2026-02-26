@@ -26,6 +26,7 @@ class IotIotDomainConfigureDataAccessArgs:
                  db_workspace_admin_initial_password: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a IotIotDomainConfigureDataAccess resource.
+
         :param pulumi.Input[_builtins.str] iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
         :param pulumi.Input[_builtins.str] type: configuration type
                
@@ -120,6 +121,7 @@ class _IotIotDomainConfigureDataAccessState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IotIotDomainConfigureDataAccess resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] db_allow_listed_identity_group_names: List of IAM groups of form described in [here](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/mnqmn/#GUID-3634D6C9-A7F1-4875-9925-BAEA2D3C5197) that are allowed to directly connect to the data host.
         :param pulumi.Input[_builtins.str] db_allowed_identity_domain_host: Host name of identity domain that is used for authenticating connect to data host via ORDS.
         :param pulumi.Input[_builtins.str] db_workspace_admin_initial_password: Initial admin password for APEX workspace associated with the IoT domain.
@@ -244,6 +246,7 @@ class IotIotDomainConfigureDataAccess(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] db_allow_listed_identity_group_names: List of IAM groups of form described in [here](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/mnqmn/#GUID-3634D6C9-A7F1-4875-9925-BAEA2D3C5197) that are allowed to directly connect to the data host.
@@ -287,6 +290,7 @@ class IotIotDomainConfigureDataAccess(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param IotIotDomainConfigureDataAccessArgs args: The arguments to use to populate this resource's properties.

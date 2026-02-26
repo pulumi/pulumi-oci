@@ -32,6 +32,7 @@ class ScheduleArgs:
                  log_details: Optional[pulumi.Input['ScheduleLogDetailsArgs']] = None):
         """
         The set of arguments for constructing a Schedule resource.
+
         :param pulumi.Input['ScheduleActionArgs'] action: (Updatable) The schedule action
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the schedule.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Avoid entering confidential information.
@@ -188,6 +189,7 @@ class _ScheduleState:
                  trigger: Optional[pulumi.Input['ScheduleTriggerArgs']] = None):
         """
         Input properties used for looking up and filtering Schedule resources.
+
         :param pulumi.Input['ScheduleActionArgs'] action: (Updatable) The schedule action
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the schedule.
         :param pulumi.Input[_builtins.str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the schedule.
@@ -610,6 +612,7 @@ class Schedule(pulumi.CustomResource):
         $ pulumi import oci:DataScience/schedule:Schedule test_schedule "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ScheduleActionArgs', 'ScheduleActionArgsDict']] action: (Updatable) The schedule action
@@ -760,6 +763,7 @@ class Schedule(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataScience/schedule:Schedule test_schedule "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ScheduleArgs args: The arguments to use to populate this resource's properties.

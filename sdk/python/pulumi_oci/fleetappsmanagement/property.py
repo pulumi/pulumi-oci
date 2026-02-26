@@ -28,6 +28,7 @@ class PropertyArgs:
                  values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Property resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment OCID
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input[_builtins.str] selection: (Updatable) Text selection of the property.
@@ -160,6 +161,7 @@ class _PropertyState:
                  values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering Property resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment OCID
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
@@ -446,6 +448,7 @@ class Property(pulumi.CustomResource):
         $ pulumi import oci:FleetAppsManagement/property:Property test_property "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment OCID
@@ -501,6 +504,7 @@ class Property(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:FleetAppsManagement/property:Property test_property "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param PropertyArgs args: The arguments to use to populate this resource's properties.

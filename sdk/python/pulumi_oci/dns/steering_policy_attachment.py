@@ -25,6 +25,7 @@ class SteeringPolicyAttachmentArgs:
                  display_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a SteeringPolicyAttachment resource.
+
         :param pulumi.Input[_builtins.str] domain_name: The attached domain within the attached zone. `domain_name` is case insensitive.
         :param pulumi.Input[_builtins.str] steering_policy_id: The OCID of the attached steering policy.
         :param pulumi.Input[_builtins.str] zone_id: The OCID of the attached zone. Must be a public zone.
@@ -107,6 +108,7 @@ class _SteeringPolicyAttachmentState:
                  zone_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SteeringPolicyAttachment resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment containing the steering policy attachment.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] domain_name: The attached domain within the attached zone. `domain_name` is case insensitive.
@@ -300,6 +302,7 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
         $ pulumi import oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment test_steering_policy_attachment "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information.
@@ -352,6 +355,7 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment test_steering_policy_attachment "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SteeringPolicyAttachmentArgs args: The arguments to use to populate this resource's properties.

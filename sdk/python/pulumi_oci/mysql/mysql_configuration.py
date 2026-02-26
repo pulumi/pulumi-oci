@@ -33,6 +33,7 @@ class MysqlConfigurationArgs:
                  variables: Optional[pulumi.Input['MysqlConfigurationVariablesArgs']] = None):
         """
         The set of arguments for constructing a MysqlConfiguration resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[_builtins.str] shape_name: The name of the associated Shape.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -204,6 +205,7 @@ class _MysqlConfigurationState:
                  variables: Optional[pulumi.Input['MysqlConfigurationVariablesArgs']] = None):
         """
         Input properties used for looking up and filtering MysqlConfiguration resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) User-provided data about the Configuration.
@@ -612,6 +614,7 @@ class MysqlConfiguration(pulumi.CustomResource):
         $ pulumi import oci:Mysql/mysqlConfiguration:MysqlConfiguration test_mysql_configuration "configurations/{configurationId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
@@ -793,6 +796,7 @@ class MysqlConfiguration(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Mysql/mysqlConfiguration:MysqlConfiguration test_mysql_configuration "configurations/{configurationId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MysqlConfigurationArgs args: The arguments to use to populate this resource's properties.

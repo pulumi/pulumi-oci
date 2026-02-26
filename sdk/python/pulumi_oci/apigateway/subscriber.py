@@ -31,6 +31,7 @@ class SubscriberArgs:
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriberLockArgs']]]] = None):
         """
         The set of arguments for constructing a Subscriber resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['SubscriberClientArgs']]] clients: (Updatable) The clients belonging to this subscriber.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] usage_plans: (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources. 
@@ -173,6 +174,7 @@ class _SubscriberState:
                  usage_plans: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering Subscriber resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['SubscriberClientArgs']]] clients: (Updatable) The clients belonging to this subscriber.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -432,6 +434,7 @@ class Subscriber(pulumi.CustomResource):
         $ pulumi import oci:ApiGateway/subscriber:Subscriber test_subscriber "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['SubscriberClientArgs', 'SubscriberClientArgsDict']]]] clients: (Updatable) The clients belonging to this subscriber.
@@ -493,6 +496,7 @@ class Subscriber(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ApiGateway/subscriber:Subscriber test_subscriber "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SubscriberArgs args: The arguments to use to populate this resource's properties.

@@ -23,6 +23,7 @@ class CostAnomalyMonitorCostanomalymonitorenabletogglesManagementArgs:
                  enable_costanomalymonitorenabletoggle: pulumi.Input[_builtins.bool]):
         """
         The set of arguments for constructing a CostAnomalyMonitorCostanomalymonitorenabletogglesManagement resource.
+
         :param pulumi.Input[_builtins.str] cost_anomaly_monitor_id: The unique costAnomalyMonitor OCID.
         :param pulumi.Input[_builtins.bool] enable_costanomalymonitorenabletoggle: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
@@ -69,6 +70,7 @@ class _CostAnomalyMonitorCostanomalymonitorenabletogglesManagementState:
                  enable_costanomalymonitorenabletoggle: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering CostAnomalyMonitorCostanomalymonitorenabletogglesManagement resources.
+
         :param pulumi.Input[_builtins.str] cost_anomaly_monitor_id: The unique costAnomalyMonitor OCID.
         :param pulumi.Input[_builtins.bool] enable_costanomalymonitorenabletoggle: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
@@ -138,6 +140,7 @@ class CostAnomalyMonitorCostanomalymonitorenabletogglesManagement(pulumi.CustomR
             enable_costanomalymonitorenabletoggle=enable_costanomalymonitorenabletoggle)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cost_anomaly_monitor_id: The unique costAnomalyMonitor OCID.
@@ -171,6 +174,7 @@ class CostAnomalyMonitorCostanomalymonitorenabletogglesManagement(pulumi.CustomR
             cost_anomaly_monitor_id=test_cost_anomaly_monitor["id"],
             enable_costanomalymonitorenabletoggle=enable_costanomalymonitorenabletoggle)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CostAnomalyMonitorCostanomalymonitorenabletogglesManagementArgs args: The arguments to use to populate this resource's properties.

@@ -38,6 +38,7 @@ class NetworkLoadBalancerArgs:
                  subnet_ipv6cidr: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkLoadBalancer resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Network load balancer identifier, which can be renamed.
         :param pulumi.Input[_builtins.str] subnet_id: The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -335,6 +336,7 @@ class _NetworkLoadBalancerState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkLoadBalancer resources.
+
         :param pulumi.Input[_builtins.str] assigned_ipv6: IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
         :param pulumi.Input[_builtins.str] assigned_private_ipv4: Private IP address to be assigned to the network load balancer being created. This IP address has to be in the CIDR range of the subnet where network load balancer is being created Example: "10.0.0.1"
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
@@ -737,6 +739,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
         $ pulumi import oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer test_network_load_balancer "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] assigned_ipv6: IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
@@ -799,6 +802,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer test_network_load_balancer "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NetworkLoadBalancerArgs args: The arguments to use to populate this resource's properties.

@@ -23,6 +23,7 @@ class AnnouncementSubscriptionsActionsChangeCompartmentArgs:
                  compartment_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a AnnouncementSubscriptionsActionsChangeCompartment resource.
+
         :param pulumi.Input[_builtins.str] announcement_subscription_id: The OCID of the announcement subscription.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment into which you want to move the announcement subscription. 
                
@@ -69,6 +70,7 @@ class _AnnouncementSubscriptionsActionsChangeCompartmentState:
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AnnouncementSubscriptionsActionsChangeCompartment resources.
+
         :param pulumi.Input[_builtins.str] announcement_subscription_id: The OCID of the announcement subscription.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment into which you want to move the announcement subscription. 
                
@@ -148,6 +150,7 @@ class AnnouncementSubscriptionsActionsChangeCompartment(pulumi.CustomResource):
         $ pulumi import oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment test_announcement_subscriptions_actions_change_compartment "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] announcement_subscription_id: The OCID of the announcement subscription.
@@ -191,6 +194,7 @@ class AnnouncementSubscriptionsActionsChangeCompartment(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment test_announcement_subscriptions_actions_change_compartment "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AnnouncementSubscriptionsActionsChangeCompartmentArgs args: The arguments to use to populate this resource's properties.

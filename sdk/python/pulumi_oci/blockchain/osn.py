@@ -26,6 +26,7 @@ class OsnArgs:
                  ocpu_allocation_param: Optional[pulumi.Input['OsnOcpuAllocationParamArgs']] = None):
         """
         The set of arguments for constructing a Osn resource.
+
         :param pulumi.Input[_builtins.str] ad: Availability Domain to place new OSN
         :param pulumi.Input[_builtins.str] blockchain_platform_id: Unique service identifier.
         :param pulumi.Input['OsnOcpuAllocationParamArgs'] ocpu_allocation_param: (Updatable) OCPU allocation parameter
@@ -82,6 +83,7 @@ class _OsnState:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Osn resources.
+
         :param pulumi.Input[_builtins.str] ad: Availability Domain to place new OSN
         :param pulumi.Input[_builtins.str] blockchain_platform_id: Unique service identifier.
         :param pulumi.Input['OsnOcpuAllocationParamArgs'] ocpu_allocation_param: (Updatable) OCPU allocation parameter
@@ -200,6 +202,7 @@ class Osn(pulumi.CustomResource):
         $ pulumi import oci:Blockchain/osn:Osn test_osn "blockchainPlatforms/{blockchainPlatformId}/osns/{osnId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ad: Availability Domain to place new OSN
@@ -241,6 +244,7 @@ class Osn(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Blockchain/osn:Osn test_osn "blockchainPlatforms/{blockchainPlatformId}/osns/{osnId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OsnArgs args: The arguments to use to populate this resource's properties.

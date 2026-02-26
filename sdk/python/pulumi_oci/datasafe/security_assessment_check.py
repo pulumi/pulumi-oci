@@ -25,6 +25,7 @@ class SecurityAssessmentCheckInitArgs:
                  patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckPatchOperationArgs']]]] = None):
         """
         The set of arguments for constructing a SecurityAssessmentCheck resource.
+
         :param pulumi.Input[_builtins.str] security_assessment_id: ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckPatchOperationArgs']]] patch_operations: (Updatable)
@@ -73,6 +74,7 @@ class _SecurityAssessmentCheckState:
                  title: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SecurityAssessmentCheck resources.
+
         :param pulumi.Input[_builtins.str] category: The category to which the check belongs to.
         :param pulumi.Input[_builtins.str] key: A unique identifier for the check.
         :param pulumi.Input[_builtins.str] oneline: Provides a recommended approach to take to remediate the check reported.
@@ -254,6 +256,7 @@ class SecurityAssessmentCheck(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/securityAssessmentCheck:SecurityAssessmentCheck test_security_assessment_check "securityAssessments/{securityAssessmentId}/checks"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentCheckPatchOperationArgs', 'SecurityAssessmentCheckPatchOperationArgsDict']]]] patch_operations: (Updatable)
@@ -297,6 +300,7 @@ class SecurityAssessmentCheck(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/securityAssessmentCheck:SecurityAssessmentCheck test_security_assessment_check "securityAssessments/{securityAssessmentId}/checks"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SecurityAssessmentCheckInitArgs args: The arguments to use to populate this resource's properties.

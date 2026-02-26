@@ -31,6 +31,7 @@ class StreamJobArgs:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a StreamJob resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment
         :param pulumi.Input[Sequence[pulumi.Input['StreamJobFeatureArgs']]] features: (Updatable) a list of stream analysis features.
         :param pulumi.Input['StreamJobStreamOutputLocationArgs'] stream_output_location: (Updatable) Details about a where results will be Sent
@@ -176,6 +177,7 @@ class _StreamJobState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering StreamJob resources.
+
         :param pulumi.Input[_builtins.str] agent_participant_id: participant id of agent where results need to be sent
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
@@ -448,6 +450,7 @@ class StreamJob(pulumi.CustomResource):
         $ pulumi import oci:AiVision/streamJob:StreamJob test_stream_job "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment
@@ -519,6 +522,7 @@ class StreamJob(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:AiVision/streamJob:StreamJob test_stream_job "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param StreamJobArgs args: The arguments to use to populate this resource's properties.

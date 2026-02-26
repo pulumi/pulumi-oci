@@ -31,6 +31,7 @@ class BackendSetArgs:
                  ssl_configuration: Optional[pulumi.Input['BackendSetSslConfigurationArgs']] = None):
         """
         The set of arguments for constructing a BackendSet resource.
+
         :param pulumi.Input['BackendSetHealthCheckerArgs'] health_checker: (Updatable) The health check policy's configuration details.
         :param pulumi.Input[_builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a backend set.
         :param pulumi.Input[_builtins.str] policy: (Updatable) The load balancer policy for the backend set. To get a list of available policies, use the [ListPolicies](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies) operation.  Example: `LEAST_CONNECTIONS`
@@ -238,6 +239,7 @@ class _BackendSetState:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BackendSet resources.
+
         :param pulumi.Input[_builtins.int] backend_max_connections: (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set or set to 0 then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.
                
                If setting backendMaxConnections to some value other than 0 then that value must be greater or equal to 256.
@@ -544,6 +546,7 @@ class BackendSet(pulumi.CustomResource):
         $ pulumi import oci:LoadBalancer/backendSet:BackendSet test_backend_set "loadBalancers/{loadBalancerId}/backendSets/{backendSetName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] backend_max_connections: (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set or set to 0 then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.
@@ -666,6 +669,7 @@ class BackendSet(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:LoadBalancer/backendSet:BackendSet test_backend_set "loadBalancers/{loadBalancerId}/backendSets/{backendSetName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param BackendSetArgs args: The arguments to use to populate this resource's properties.

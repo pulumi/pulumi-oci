@@ -27,6 +27,7 @@ class CalculateAuditVolumeAvailableArgs:
                  trail_locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a CalculateAuditVolumeAvailable resource.
+
         :param pulumi.Input[_builtins.str] audit_profile_id: The OCID of the audit.
         :param pulumi.Input[_builtins.str] audit_collection_start_time: The date from which the audit trail must start collecting data in UTC, in the format defined by RFC3339. If not specified, this will default to the date based on the retention period.
         :param pulumi.Input[_builtins.str] database_unique_name: Unique name of the database associated to the peer target database.
@@ -107,6 +108,7 @@ class _CalculateAuditVolumeAvailableState:
                  trail_locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering CalculateAuditVolumeAvailable resources.
+
         :param pulumi.Input[_builtins.str] audit_collection_start_time: The date from which the audit trail must start collecting data in UTC, in the format defined by RFC3339. If not specified, this will default to the date based on the retention period.
         :param pulumi.Input[_builtins.str] audit_profile_id: The OCID of the audit.
         :param pulumi.Input[Sequence[pulumi.Input['CalculateAuditVolumeAvailableAvailableAuditVolumeArgs']]] available_audit_volumes: List of available audit volumes.
@@ -230,6 +232,7 @@ class CalculateAuditVolumeAvailable(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/calculateAuditVolumeAvailable:CalculateAuditVolumeAvailable test_calculate_audit_volume_available "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] audit_collection_start_time: The date from which the audit trail must start collecting data in UTC, in the format defined by RFC3339. If not specified, this will default to the date based on the retention period.
@@ -272,6 +275,7 @@ class CalculateAuditVolumeAvailable(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/calculateAuditVolumeAvailable:CalculateAuditVolumeAvailable test_calculate_audit_volume_available "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CalculateAuditVolumeAvailableArgs args: The arguments to use to populate this resource's properties.

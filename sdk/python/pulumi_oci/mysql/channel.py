@@ -31,6 +31,7 @@ class ChannelArgs:
                  is_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a Channel resource.
+
         :param pulumi.Input['ChannelSourceArgs'] source: (Updatable) Parameters detailing how to provision the source for the given Channel.
         :param pulumi.Input['ChannelTargetArgs'] target: (Updatable) Parameters detailing how to provision the target for the given Channel.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
@@ -170,6 +171,7 @@ class _ChannelState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Channel resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) User provided information about the Channel.
@@ -399,6 +401,7 @@ class Channel(pulumi.CustomResource):
         $ pulumi import oci:Mysql/channel:Channel test_channel "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
@@ -431,6 +434,7 @@ class Channel(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Mysql/channel:Channel test_channel "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ChannelArgs args: The arguments to use to populate this resource's properties.

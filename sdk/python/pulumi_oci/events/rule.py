@@ -31,6 +31,7 @@ class RuleArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Rule resource.
+
         :param pulumi.Input['RuleActionsArgs'] actions: (Updatable) A list of ActionDetails objects to create for a rule.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
         :param pulumi.Input[_builtins.str] condition: (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
@@ -197,6 +198,7 @@ class _RuleState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Rule resources.
+
         :param pulumi.Input['RuleActionsArgs'] actions: (Updatable) A list of ActionDetails objects to create for a rule.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
         :param pulumi.Input[_builtins.str] condition: (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
@@ -458,6 +460,7 @@ class Rule(pulumi.CustomResource):
         $ pulumi import oci:Events/rule:Rule test_rule "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['RuleActionsArgs', 'RuleActionsArgsDict']] actions: (Updatable) A list of ActionDetails objects to create for a rule.
@@ -536,6 +539,7 @@ class Rule(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Events/rule:Rule test_rule "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param RuleArgs args: The arguments to use to populate this resource's properties.

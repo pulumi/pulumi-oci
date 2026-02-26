@@ -38,6 +38,7 @@ class DomainArgs:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Domain resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the Compartment where domain is created
         :param pulumi.Input[_builtins.str] description: (Updatable) Domain entity description
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The mutable display name of the domain.
@@ -295,6 +296,7 @@ class _DomainState:
                  url: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Domain resources.
+
         :param pulumi.Input[_builtins.str] admin_email: The admin email address
         :param pulumi.Input[_builtins.str] admin_first_name: The admin first name
         :param pulumi.Input[_builtins.str] admin_last_name: The admin last name
@@ -701,6 +703,7 @@ class Domain(pulumi.CustomResource):
         $ pulumi import oci:Identity/domain:Domain test_domain "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] admin_email: The admin email address
@@ -786,6 +789,7 @@ class Domain(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domain:Domain test_domain "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainArgs args: The arguments to use to populate this resource's properties.

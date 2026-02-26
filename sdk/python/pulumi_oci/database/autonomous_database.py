@@ -118,6 +118,7 @@ class AutonomousDatabaseArgs:
                  whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AutonomousDatabase resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous AI Database.
         :param pulumi.Input[_builtins.str] db_name: The database name. The name must begin with an alphabetic character and can contain a maximum of 30 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy. It is required in all cases except when creating a cross-region Autonomous Data Guard standby instance or a cross-region disaster recovery standby instance.
         :param pulumi.Input[_builtins.str] admin_password: (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE".
@@ -1835,6 +1836,7 @@ class _AutonomousDatabaseState:
                  whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering AutonomousDatabase resources.
+
         :param pulumi.Input[_builtins.float] actual_used_data_storage_size_in_tbs: The current amount of storage in use for user and system data, in terabytes (TB).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_attributes: Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ "gcpAccountName": "gcpName" }`
         :param pulumi.Input[_builtins.str] admin_password: (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE".
@@ -4510,6 +4512,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         $ pulumi import oci:Database/autonomousDatabase:AutonomousDatabase test_autonomous_database "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] admin_password: (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE".
@@ -4697,6 +4700,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/autonomousDatabase:AutonomousDatabase test_autonomous_database "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AutonomousDatabaseArgs args: The arguments to use to populate this resource's properties.

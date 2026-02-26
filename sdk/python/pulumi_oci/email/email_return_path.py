@@ -28,6 +28,7 @@ class EmailReturnPathArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a EmailReturnPath resource.
+
         :param pulumi.Input[_builtins.str] parent_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this email return path. 
                
                
@@ -132,6 +133,7 @@ class _EmailReturnPathState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering EmailReturnPath resources.
+
         :param pulumi.Input[_builtins.str] cname_record_value: The DNS CNAME record value to provision to the Return Patn DNS subdomain, when using the CNAME method for Email Return Path setup (preferred).
         :param pulumi.Input[_builtins.str] compartment_id: The lock compartment ID.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -399,6 +401,7 @@ class EmailReturnPath(pulumi.CustomResource):
         $ pulumi import oci:Email/emailReturnPath:EmailReturnPath test_email_return_path "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -450,6 +453,7 @@ class EmailReturnPath(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Email/emailReturnPath:EmailReturnPath test_email_return_path "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param EmailReturnPathArgs args: The arguments to use to populate this resource's properties.

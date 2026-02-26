@@ -31,6 +31,7 @@ class DbmulticloudOracleDbAzureVaultArgs:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DbmulticloudOracleDbAzureVault resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Vault resource name.
         :param pulumi.Input[_builtins.str] oracle_db_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
@@ -210,6 +211,7 @@ class _DbmulticloudOracleDbAzureVaultState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DbmulticloudOracleDbAzureVault resources.
+
         :param pulumi.Input[_builtins.str] azure_vault_id: (Updatable) Azure Vault ID.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -517,6 +519,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
         $ pulumi import oci:oci/dbmulticloudOracleDbAzureVault:DbmulticloudOracleDbAzureVault test_oracle_db_azure_vault "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] azure_vault_id: (Updatable) Azure Vault ID.
@@ -578,6 +581,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:oci/dbmulticloudOracleDbAzureVault:DbmulticloudOracleDbAzureVault test_oracle_db_azure_vault "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DbmulticloudOracleDbAzureVaultArgs args: The arguments to use to populate this resource's properties.

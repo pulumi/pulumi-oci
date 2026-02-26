@@ -50,6 +50,7 @@ class DesktopPoolArgs:
                  use_dedicated_vm_host: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DesktopPool resource.
+
         :param pulumi.Input[_builtins.bool] are_privileged_users: Indicates whether desktop pool users have administrative privileges on their desktop.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the desktop pool.
         :param pulumi.Input['DesktopPoolAvailabilityPolicyArgs'] availability_policy: (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
@@ -486,6 +487,7 @@ class _DesktopPoolState:
                  use_dedicated_vm_host: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DesktopPool resources.
+
         :param pulumi.Input[_builtins.int] active_desktops: The number of active desktops in the desktop pool.
         :param pulumi.Input[_builtins.bool] are_privileged_users: Indicates whether desktop pool users have administrative privileges on their desktop.
         :param pulumi.Input[_builtins.bool] are_volumes_preserved: (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
@@ -1079,6 +1081,7 @@ class DesktopPool(pulumi.CustomResource):
         $ pulumi import oci:Desktops/desktopPool:DesktopPool test_desktop_pool "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] are_privileged_users: Indicates whether desktop pool users have administrative privileges on their desktop.
@@ -1216,6 +1219,7 @@ class DesktopPool(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Desktops/desktopPool:DesktopPool test_desktop_pool "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DesktopPoolArgs args: The arguments to use to populate this resource's properties.

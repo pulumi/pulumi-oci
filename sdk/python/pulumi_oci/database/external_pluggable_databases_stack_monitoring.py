@@ -24,6 +24,7 @@ class ExternalPluggableDatabasesStackMonitoringArgs:
                  external_pluggable_database_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ExternalPluggableDatabasesStackMonitoring resource.
+
         :param pulumi.Input[_builtins.bool] enable_stack_monitoring: (Updatable) Enabling Stack Monitoring on External Pluggable Databases . Requires boolean value "true" or "false".
                
                
@@ -85,6 +86,7 @@ class _ExternalPluggableDatabasesStackMonitoringState:
                  external_pluggable_database_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalPluggableDatabasesStackMonitoring resources.
+
         :param pulumi.Input[_builtins.bool] enable_stack_monitoring: (Updatable) Enabling Stack Monitoring on External Pluggable Databases . Requires boolean value "true" or "false".
                
                
@@ -175,6 +177,7 @@ class ExternalPluggableDatabasesStackMonitoring(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_stack_monitoring: (Updatable) Enabling Stack Monitoring on External Pluggable Databases . Requires boolean value "true" or "false".
@@ -214,6 +217,7 @@ class ExternalPluggableDatabasesStackMonitoring(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param ExternalPluggableDatabasesStackMonitoringArgs args: The arguments to use to populate this resource's properties.

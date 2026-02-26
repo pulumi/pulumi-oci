@@ -32,6 +32,7 @@ class NamedCredentialArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NamedCredential resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the named credential resides.
         :param pulumi.Input['NamedCredentialContentArgs'] content: (Updatable) The details of the named credential.
         :param pulumi.Input[_builtins.str] scope: (Updatable) The scope of the named credential.
@@ -193,6 +194,7 @@ class _NamedCredentialState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NamedCredential resources.
+
         :param pulumi.Input[_builtins.str] associated_resource: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that  is associated to the named credential.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the named credential resides.
         :param pulumi.Input['NamedCredentialContentArgs'] content: (Updatable) The details of the named credential.
@@ -474,6 +476,7 @@ class NamedCredential(pulumi.CustomResource):
         $ pulumi import oci:DatabaseManagement/namedCredential:NamedCredential test_named_credential "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] associated_resource: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that  is associated to the named credential.
@@ -539,6 +542,7 @@ class NamedCredential(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DatabaseManagement/namedCredential:NamedCredential test_named_credential "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NamedCredentialArgs args: The arguments to use to populate this resource's properties.

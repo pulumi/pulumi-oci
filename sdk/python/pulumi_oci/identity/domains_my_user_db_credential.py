@@ -34,6 +34,7 @@ class DomainsMyUserDbCredentialArgs:
                  user: Optional[pulumi.Input['DomainsMyUserDbCredentialUserArgs']] = None):
         """
         The set of arguments for constructing a DomainsMyUserDbCredential resource.
+
         :param pulumi.Input[_builtins.str] db_password: The user's database password.
                
                **SCIM++ Properties:**
@@ -390,6 +391,7 @@ class _DomainsMyUserDbCredentialState:
                  user: Optional[pulumi.Input['DomainsMyUserDbCredentialUserArgs']] = None):
         """
         Input properties used for looking up and filtering DomainsMyUserDbCredential resources.
+
         :param pulumi.Input[_builtins.str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         :param pulumi.Input[_builtins.str] compartment_ocid: (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
                
@@ -1248,6 +1250,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
         $ pulumi import oci:Identity/domainsMyUserDbCredential:DomainsMyUserDbCredential test_my_user_db_credential "idcsEndpoint/{idcsEndpoint}/myUserDbCredentials/{myUserDbCredentialId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -1390,6 +1393,7 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domainsMyUserDbCredential:DomainsMyUserDbCredential test_my_user_db_credential "idcsEndpoint/{idcsEndpoint}/myUserDbCredentials/{myUserDbCredentialId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainsMyUserDbCredentialArgs args: The arguments to use to populate this resource's properties.

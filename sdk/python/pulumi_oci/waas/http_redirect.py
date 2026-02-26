@@ -30,6 +30,7 @@ class HttpRedirectArgs:
                  response_code: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a HttpRedirect resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirects compartment.
         :param pulumi.Input[_builtins.str] domain: The domain from which traffic will be redirected.
         :param pulumi.Input['HttpRedirectTargetArgs'] target: (Updatable) The redirect target object including all the redirect data.
@@ -149,6 +150,7 @@ class _HttpRedirectState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering HttpRedirect resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirects compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
@@ -343,6 +345,7 @@ class HttpRedirect(pulumi.CustomResource):
         $ pulumi import oci:Waas/httpRedirect:HttpRedirect test_http_redirect "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirects compartment.
@@ -400,6 +403,7 @@ class HttpRedirect(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Waas/httpRedirect:HttpRedirect test_http_redirect "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param HttpRedirectArgs args: The arguments to use to populate this resource's properties.

@@ -37,6 +37,7 @@ class WorkspaceApplicationArgs:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a WorkspaceApplication resource.
+
         :param pulumi.Input[_builtins.str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[_builtins.str] model_type: (Updatable) The type of the application.
         :param pulumi.Input[_builtins.str] workspace_id: The workspace ID.
@@ -285,6 +286,7 @@ class _WorkspaceApplicationState:
                  workspace_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WorkspaceApplication resources.
+
         :param pulumi.Input[_builtins.int] application_version: The source application version of the application.
         :param pulumi.Input[_builtins.str] compartment_id: OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -745,6 +747,7 @@ class WorkspaceApplication(pulumi.CustomResource):
         $ pulumi import oci:DataIntegration/workspaceApplication:WorkspaceApplication test_workspace_application "workspaces/{workspaceId}/applications/{applicationKey}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -824,6 +827,7 @@ class WorkspaceApplication(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataIntegration/workspaceApplication:WorkspaceApplication test_workspace_application "workspaces/{workspaceId}/applications/{applicationKey}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param WorkspaceApplicationArgs args: The arguments to use to populate this resource's properties.

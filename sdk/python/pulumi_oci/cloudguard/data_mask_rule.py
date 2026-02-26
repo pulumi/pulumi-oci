@@ -33,6 +33,7 @@ class DataMaskRuleArgs:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DataMaskRule resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment OCID where the resource is created
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] data_mask_categories: (Updatable) Data mask rule categories
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Data mask rule display name
@@ -208,6 +209,7 @@ class _DataMaskRuleState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DataMaskRule resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment OCID where the resource is created
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] data_mask_categories: (Updatable) Data mask rule categories
         :param pulumi.Input[_builtins.str] data_mask_rule_status: (Updatable) The current status of the data mask rule
@@ -488,6 +490,7 @@ class DataMaskRule(pulumi.CustomResource):
         $ pulumi import oci:CloudGuard/dataMaskRule:DataMaskRule test_data_mask_rule "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment OCID where the resource is created
@@ -552,6 +555,7 @@ class DataMaskRule(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:CloudGuard/dataMaskRule:DataMaskRule test_data_mask_rule "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DataMaskRuleArgs args: The arguments to use to populate this resource's properties.

@@ -37,6 +37,7 @@ class ConfigArgs:
                  version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Config resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment in which the configuration is created.
         :param pulumi.Input[_builtins.str] config_type: The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
         :param pulumi.Input['ConfigAdditionalConfigurationsArgs'] additional_configurations: (Updatable) Property Details
@@ -279,6 +280,7 @@ class _ConfigState:
                  version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Config resources.
+
         :param pulumi.Input['ConfigAdditionalConfigurationsArgs'] additional_configurations: (Updatable) Property Details
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment in which the configuration is created.
         :param pulumi.Input[_builtins.str] config_type: The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
@@ -624,6 +626,7 @@ class Config(pulumi.CustomResource):
         $ pulumi import oci:StackMonitoring/config:Config test_config "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ConfigAdditionalConfigurationsArgs', 'ConfigAdditionalConfigurationsArgsDict']] additional_configurations: (Updatable) Property Details
@@ -693,6 +696,7 @@ class Config(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:StackMonitoring/config:Config test_config "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ConfigArgs args: The arguments to use to populate this resource's properties.

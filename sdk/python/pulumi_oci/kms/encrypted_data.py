@@ -28,6 +28,7 @@ class EncryptedDataArgs:
                  logging_context: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a EncryptedData resource.
+
         :param pulumi.Input[_builtins.str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
         :param pulumi.Input[_builtins.str] key_id: The OCID of the key to encrypt with.
         :param pulumi.Input[_builtins.str] plaintext: The plaintext data to encrypt.
@@ -154,6 +155,7 @@ class _EncryptedDataState:
                  plaintext: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering EncryptedData resources.
+
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         :param pulumi.Input[_builtins.str] ciphertext: The encrypted data.
         :param pulumi.Input[_builtins.str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
@@ -328,6 +330,7 @@ class EncryptedData(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
@@ -376,6 +379,7 @@ class EncryptedData(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param EncryptedDataArgs args: The arguments to use to populate this resource's properties.

@@ -23,6 +23,7 @@ class ConfigurationArgs:
                  retention_period_days: pulumi.Input[_builtins.int]):
         """
         The set of arguments for constructing a Configuration resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: ID of the root compartment (tenancy)
         :param pulumi.Input[_builtins.int] retention_period_days: (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90` 
                
@@ -69,6 +70,7 @@ class _ConfigurationState:
                  retention_period_days: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering Configuration resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: ID of the root compartment (tenancy)
         :param pulumi.Input[_builtins.int] retention_period_days: (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90` 
                
@@ -140,6 +142,7 @@ class Configuration(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: ID of the root compartment (tenancy)
@@ -175,6 +178,7 @@ class Configuration(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param ConfigurationArgs args: The arguments to use to populate this resource's properties.

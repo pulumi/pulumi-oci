@@ -30,6 +30,7 @@ class FusionEnvironmentFamilyArgs:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a FusionEnvironmentFamily resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the environment family is located.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subscription_ids: (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
@@ -156,6 +157,7 @@ class _FusionEnvironmentFamilyState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FusionEnvironmentFamily resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the environment family is located.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
@@ -396,6 +398,7 @@ class FusionEnvironmentFamily(pulumi.CustomResource):
         $ pulumi import oci:FusionApps/fusionEnvironmentFamily:FusionEnvironmentFamily test_fusion_environment_family "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the environment family is located.
@@ -453,6 +456,7 @@ class FusionEnvironmentFamily(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:FusionApps/fusionEnvironmentFamily:FusionEnvironmentFamily test_fusion_environment_family "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param FusionEnvironmentFamilyArgs args: The arguments to use to populate this resource's properties.

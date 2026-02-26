@@ -28,6 +28,7 @@ class ManagedDatabasesChangeDatabaseParameterArgs:
                  database_credential: Optional[pulumi.Input['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs']] = None):
         """
         The set of arguments for constructing a ManagedDatabasesChangeDatabaseParameter resource.
+
         :param pulumi.Input[_builtins.str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
         :param pulumi.Input[Sequence[pulumi.Input['ManagedDatabasesChangeDatabaseParameterParameterArgs']]] parameters: A list of database parameters and their values.
         :param pulumi.Input[_builtins.str] scope: The clause used to specify when the parameter change takes effect.
@@ -125,6 +126,7 @@ class _ManagedDatabasesChangeDatabaseParameterState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagedDatabasesChangeDatabaseParameter resources.
+
         :param pulumi.Input['ManagedDatabasesChangeDatabaseParameterCredentialsArgs'] credentials: The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
         :param pulumi.Input['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs'] database_credential: The credential to connect to the database to perform tablespace administration tasks.
         :param pulumi.Input[_builtins.str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -281,6 +283,7 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ManagedDatabasesChangeDatabaseParameterCredentialsArgs', 'ManagedDatabasesChangeDatabaseParameterCredentialsArgsDict']] credentials: The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
@@ -354,6 +357,7 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param ManagedDatabasesChangeDatabaseParameterArgs args: The arguments to use to populate this resource's properties.

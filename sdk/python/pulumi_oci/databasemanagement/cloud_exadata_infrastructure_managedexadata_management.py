@@ -24,6 +24,7 @@ class CloudExadataInfrastructureManagedexadataManagementArgs:
                  license_model: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CloudExadataInfrastructureManagedexadataManagement resource.
+
         :param pulumi.Input[_builtins.str] cloud_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         :param pulumi.Input[_builtins.bool] enable_managedexadata: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
@@ -86,6 +87,7 @@ class _CloudExadataInfrastructureManagedexadataManagementState:
                  license_model: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudExadataInfrastructureManagedexadataManagement resources.
+
         :param pulumi.Input[_builtins.str] cloud_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         :param pulumi.Input[_builtins.bool] enable_managedexadata: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
@@ -174,6 +176,7 @@ class CloudExadataInfrastructureManagedexadataManagement(pulumi.CustomResource):
             license_model=cloud_exadata_infrastructure_managedexadata_management_license_model)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cloud_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
@@ -211,6 +214,7 @@ class CloudExadataInfrastructureManagedexadataManagement(pulumi.CustomResource):
             enable_managedexadata=enable_managedexadata,
             license_model=cloud_exadata_infrastructure_managedexadata_management_license_model)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CloudExadataInfrastructureManagedexadataManagementArgs args: The arguments to use to populate this resource's properties.

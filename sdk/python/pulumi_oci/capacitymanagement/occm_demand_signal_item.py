@@ -34,6 +34,7 @@ class OccmDemandSignalItemArgs:
                  target_compartment_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a OccmDemandSignalItem resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the tenancy from which the demand signal item was created.
         :param pulumi.Input[_builtins.str] demand_quantity: (Updatable) The quantity of the resource that you want to demand from OCI.
         :param pulumi.Input[_builtins.str] demand_signal_catalog_resource_id: The OCID of the correponding demand signal catalog resource.
@@ -258,6 +259,7 @@ class _OccmDemandSignalItemState:
                  time_needed_before: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OccmDemandSignalItem resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: (Updatable) The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the tenancy from which the demand signal item was created.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -590,6 +592,7 @@ class OccmDemandSignalItem(pulumi.CustomResource):
         $ pulumi import oci:CapacityManagement/occmDemandSignalItem:OccmDemandSignalItem test_occm_demand_signal_item "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: (Updatable) The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
@@ -659,6 +662,7 @@ class OccmDemandSignalItem(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:CapacityManagement/occmDemandSignalItem:OccmDemandSignalItem test_occm_demand_signal_item "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OccmDemandSignalItemArgs args: The arguments to use to populate this resource's properties.

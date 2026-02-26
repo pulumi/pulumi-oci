@@ -32,6 +32,7 @@ class ProfileArgs:
                  target_tags: Optional[pulumi.Input['ProfileTargetTagsArgs']] = None):
         """
         The set of arguments for constructing a Profile resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the tenancy. The tenancy is the root compartment.
         :param pulumi.Input[_builtins.str] description: (Updatable) Text describing the profile. Avoid entering confidential information.
         :param pulumi.Input['ProfileLevelsConfigurationArgs'] levels_configuration: (Updatable) A list of configuration levels for each recommendation.
@@ -185,6 +186,7 @@ class _ProfileState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Profile resources.
+
         :param pulumi.Input[_builtins.int] aggregation_interval_in_days: (Updatable) The time period over which to collect data for the recommendations, measured in number of days.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the tenancy. The tenancy is the root compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
@@ -447,6 +449,7 @@ class Profile(pulumi.CustomResource):
         $ pulumi import oci:Optimizer/profile:Profile test_profile "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] aggregation_interval_in_days: (Updatable) The time period over which to collect data for the recommendations, measured in number of days.
@@ -516,6 +519,7 @@ class Profile(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Optimizer/profile:Profile test_profile "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ProfileArgs args: The arguments to use to populate this resource's properties.

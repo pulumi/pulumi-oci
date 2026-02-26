@@ -38,6 +38,7 @@ class GatewayArgs:
                  response_cache_details: Optional[pulumi.Input['GatewayResponseCacheDetailsArgs']] = None):
         """
         The set of arguments for constructing a Gateway resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
         :param pulumi.Input[_builtins.str] endpoint_type: Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be accessible on a private IP address on the subnet.  Example: `PUBLIC` or `PRIVATE`
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which related resources are created. 
@@ -294,6 +295,7 @@ class _GatewayState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Gateway resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['GatewayCaBundleArgs']]] ca_bundles: (Updatable) An array of CA bundles that should be used on the Gateway for TLS validation.
         :param pulumi.Input[_builtins.str] certificate_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource which can be empty string.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
@@ -721,6 +723,7 @@ class Gateway(pulumi.CustomResource):
         $ pulumi import oci:ApiGateway/gateway:Gateway test_gateway "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['GatewayCaBundleArgs', 'GatewayCaBundleArgsDict']]]] ca_bundles: (Updatable) An array of CA bundles that should be used on the Gateway for TLS validation.
@@ -815,6 +818,7 @@ class Gateway(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ApiGateway/gateway:Gateway test_gateway "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param GatewayArgs args: The arguments to use to populate this resource's properties.

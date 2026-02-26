@@ -25,6 +25,7 @@ class ManagedKafkaKafkaClusterSuperusersManagementArgs:
                  secret_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ManagedKafkaKafkaClusterSuperusersManagement resource.
+
         :param pulumi.Input[_builtins.bool] enable_superuser: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                
@@ -103,6 +104,7 @@ class _ManagedKafkaKafkaClusterSuperusersManagementState:
                  secret_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagedKafkaKafkaClusterSuperusersManagement resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the superuser secret.
         :param pulumi.Input[_builtins.bool] enable_superuser: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
@@ -205,6 +207,7 @@ class ManagedKafkaKafkaClusterSuperusersManagement(pulumi.CustomResource):
             secret_id=test_secret["id"])
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the superuser secret.
@@ -241,6 +244,7 @@ class ManagedKafkaKafkaClusterSuperusersManagement(pulumi.CustomResource):
             compartment_id=compartment_id,
             secret_id=test_secret["id"])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagedKafkaKafkaClusterSuperusersManagementArgs args: The arguments to use to populate this resource's properties.

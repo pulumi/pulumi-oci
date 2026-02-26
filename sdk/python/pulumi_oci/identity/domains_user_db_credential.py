@@ -37,6 +37,7 @@ class DomainsUserDbCredentialArgs:
                  user: Optional[pulumi.Input['DomainsUserDbCredentialUserArgs']] = None):
         """
         The set of arguments for constructing a DomainsUserDbCredential resource.
+
         :param pulumi.Input[_builtins.str] db_password: The user's database password.
                
                **SCIM++ Properties:**
@@ -441,6 +442,7 @@ class _DomainsUserDbCredentialState:
                  user: Optional[pulumi.Input['DomainsUserDbCredentialUserArgs']] = None):
         """
         Input properties used for looking up and filtering DomainsUserDbCredential resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[_builtins.str] attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         :param pulumi.Input[_builtins.str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -1352,6 +1354,7 @@ class DomainsUserDbCredential(pulumi.CustomResource):
         $ pulumi import oci:Identity/domainsUserDbCredential:DomainsUserDbCredential test_user_db_credential "idcsEndpoint/{idcsEndpoint}/userDbCredentials/{userDbCredentialId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -1502,6 +1505,7 @@ class DomainsUserDbCredential(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domainsUserDbCredential:DomainsUserDbCredential test_user_db_credential "idcsEndpoint/{idcsEndpoint}/userDbCredentials/{userDbCredentialId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainsUserDbCredentialArgs args: The arguments to use to populate this resource's properties.

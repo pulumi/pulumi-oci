@@ -26,6 +26,7 @@ class AutonomousDatabaseWalletArgs:
                  is_regional: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a AutonomousDatabaseWallet resource.
+
         :param pulumi.Input[_builtins.str] autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
                
@@ -133,6 +134,7 @@ class _AutonomousDatabaseWalletState:
                  password: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutonomousDatabaseWallet resources.
+
         :param pulumi.Input[_builtins.str] autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.bool] base64_encode_content: Encodes the downloaded zipped wallet in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
         :param pulumi.Input[_builtins.str] content: content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
@@ -289,6 +291,7 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -343,6 +346,7 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param AutonomousDatabaseWalletArgs args: The arguments to use to populate this resource's properties.

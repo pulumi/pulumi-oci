@@ -34,6 +34,7 @@ class ListenerArgs:
                  ssl_configuration: Optional[pulumi.Input['ListenerSslConfigurationArgs']] = None):
         """
         The set of arguments for constructing a Listener resource.
+
         :param pulumi.Input[_builtins.str] default_backend_set_name: (Updatable) The name of the associated backend set.  Example: `example_backend_set`
         :param pulumi.Input[_builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a listener.
         :param pulumi.Input[_builtins.int] port: (Updatable) The communication port for the listener.  Example: `80`
@@ -227,6 +228,7 @@ class _ListenerState:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Listener resources.
+
         :param pulumi.Input['ListenerConnectionConfigurationArgs'] connection_configuration: (Updatable) Configuration details for the connection between the client and backend servers.
         :param pulumi.Input[_builtins.str] default_backend_set_name: (Updatable) The name of the associated backend set.  Example: `example_backend_set`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] hostname_names: (Updatable) An array of hostname resource names.
@@ -486,6 +488,7 @@ class Listener(pulumi.CustomResource):
         $ pulumi import oci:LoadBalancer/listener:Listener test_listener "loadBalancers/{loadBalancerId}/listeners/{listenerName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ListenerConnectionConfigurationArgs', 'ListenerConnectionConfigurationArgsDict']] connection_configuration: (Updatable) Configuration details for the connection between the client and backend servers.
@@ -561,6 +564,7 @@ class Listener(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:LoadBalancer/listener:Listener test_listener "loadBalancers/{loadBalancerId}/listeners/{listenerName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ListenerArgs args: The arguments to use to populate this resource's properties.

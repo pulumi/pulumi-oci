@@ -25,6 +25,7 @@ class DrgRouteTableRouteRuleArgs:
                  next_hop_drg_attachment_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a DrgRouteTableRouteRule resource.
+
         :param pulumi.Input[_builtins.str] destination: (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
                
                Potential values:
@@ -118,6 +119,7 @@ class _DrgRouteTableRouteRuleState:
                  route_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DrgRouteTableRouteRule resources.
+
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] attributes: Additional properties for the route, computed by the service.
         :param pulumi.Input[_builtins.str] destination: (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
                
@@ -316,6 +318,7 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
         $ pulumi import oci:Core/drgRouteTableRouteRule:DrgRouteTableRouteRule test_drg_route_table_route_rule "drgRouteTables/{drgRouteTableId}/routeRules/{id}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] destination: (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
@@ -367,6 +370,7 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/drgRouteTableRouteRule:DrgRouteTableRouteRule test_drg_route_table_route_rule "drgRouteTables/{drgRouteTableId}/routeRules/{id}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DrgRouteTableRouteRuleArgs args: The arguments to use to populate this resource's properties.

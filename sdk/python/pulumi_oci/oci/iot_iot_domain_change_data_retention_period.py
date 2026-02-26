@@ -24,6 +24,7 @@ class IotIotDomainChangeDataRetentionPeriodArgs:
                  type: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a IotIotDomainChangeDataRetentionPeriod resource.
+
         :param pulumi.Input[_builtins.int] data_retention_period_in_days: The duration (in days) for which data will be retained in the IoT domain.
         :param pulumi.Input[_builtins.str] iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
         :param pulumi.Input[_builtins.str] type: The type of data retention period to apply. Allowed values are RAW_DATA, REJECTED_DATA, HISTORIZED_DATA, and RAW_COMMAND_DATA. 
@@ -85,6 +86,7 @@ class _IotIotDomainChangeDataRetentionPeriodState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IotIotDomainChangeDataRetentionPeriod resources.
+
         :param pulumi.Input[_builtins.int] data_retention_period_in_days: The duration (in days) for which data will be retained in the IoT domain.
         :param pulumi.Input[_builtins.str] iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
         :param pulumi.Input[_builtins.str] type: The type of data retention period to apply. Allowed values are RAW_DATA, REJECTED_DATA, HISTORIZED_DATA, and RAW_COMMAND_DATA. 
@@ -175,6 +177,7 @@ class IotIotDomainChangeDataRetentionPeriod(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] data_retention_period_in_days: The duration (in days) for which data will be retained in the IoT domain.
@@ -214,6 +217,7 @@ class IotIotDomainChangeDataRetentionPeriod(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param IotIotDomainChangeDataRetentionPeriodArgs args: The arguments to use to populate this resource's properties.

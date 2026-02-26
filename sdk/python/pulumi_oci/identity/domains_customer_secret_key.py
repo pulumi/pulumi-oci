@@ -37,6 +37,7 @@ class DomainsCustomerSecretKeyArgs:
                  user: Optional[pulumi.Input['DomainsCustomerSecretKeyUserArgs']] = None):
         """
         The set of arguments for constructing a DomainsCustomerSecretKey resource.
+
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
                
@@ -434,6 +435,7 @@ class _DomainsCustomerSecretKeyState:
                  user: Optional[pulumi.Input['DomainsCustomerSecretKeyUserArgs']] = None):
         """
         Input properties used for looking up and filtering DomainsCustomerSecretKey resources.
+
         :param pulumi.Input[_builtins.str] access_key: (Updatable) The access key.
                
                **SCIM++ Properties:**
@@ -1235,6 +1237,7 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
         $ pulumi import oci:Identity/domainsCustomerSecretKey:DomainsCustomerSecretKey test_customer_secret_key "idcsEndpoint/{idcsEndpoint}/customerSecretKeys/{customerSecretKeyId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -1383,6 +1386,7 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domainsCustomerSecretKey:DomainsCustomerSecretKey test_customer_secret_key "idcsEndpoint/{idcsEndpoint}/customerSecretKeys/{customerSecretKeyId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainsCustomerSecretKeyArgs args: The arguments to use to populate this resource's properties.

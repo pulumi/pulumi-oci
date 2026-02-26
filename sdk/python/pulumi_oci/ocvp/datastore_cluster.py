@@ -28,6 +28,7 @@ class DatastoreClusterArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a DatastoreCluster resource.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain to create the Datastore Cluster in.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the Datastore Cluster.
         :param pulumi.Input[_builtins.str] datastore_cluster_type: Type of the datastore.
@@ -160,6 +161,7 @@ class _DatastoreClusterState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DatastoreCluster resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain to create the Datastore Cluster in.
         :param pulumi.Input[_builtins.float] capacity_in_gbs: Total size of all datastores associated with the datastore cluster in GB.
         :param pulumi.Input[_builtins.str] cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware Cluster that Datastore cluster is attached to.
@@ -446,6 +448,7 @@ class DatastoreCluster(pulumi.CustomResource):
         $ pulumi import oci:Ocvp/datastoreCluster:DatastoreCluster test_datastore_cluster "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain to create the Datastore Cluster in.
@@ -501,6 +504,7 @@ class DatastoreCluster(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Ocvp/datastoreCluster:DatastoreCluster test_datastore_cluster "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DatastoreClusterArgs args: The arguments to use to populate this resource's properties.

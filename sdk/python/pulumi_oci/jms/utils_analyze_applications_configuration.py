@@ -24,6 +24,7 @@ class UtilsAnalyzeApplicationsConfigurationArgs:
                  namespace: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a UtilsAnalyzeApplicationsConfiguration resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param pulumi.Input[_builtins.str] bucket: (Updatable) The name of the bucket used for analyzing applications.
         :param pulumi.Input[_builtins.str] namespace: (Updatable) The Object Storage namespace used for analyzing applications.
@@ -87,6 +88,7 @@ class _UtilsAnalyzeApplicationsConfigurationState:
                  namespace: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UtilsAnalyzeApplicationsConfiguration resources.
+
         :param pulumi.Input[_builtins.str] bucket: (Updatable) The name of the bucket used for analyzing applications.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param pulumi.Input[_builtins.str] namespace: (Updatable) The Object Storage namespace used for analyzing applications.
@@ -178,6 +180,7 @@ class UtilsAnalyzeApplicationsConfiguration(pulumi.CustomResource):
         $ pulumi import oci:Jms/utilsAnalyzeApplicationsConfiguration:UtilsAnalyzeApplicationsConfiguration test_analyze_applications_configuration "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bucket: (Updatable) The name of the bucket used for analyzing applications.
@@ -218,6 +221,7 @@ class UtilsAnalyzeApplicationsConfiguration(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Jms/utilsAnalyzeApplicationsConfiguration:UtilsAnalyzeApplicationsConfiguration test_analyze_applications_configuration "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param UtilsAnalyzeApplicationsConfigurationArgs args: The arguments to use to populate this resource's properties.

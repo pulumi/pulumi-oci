@@ -24,6 +24,7 @@ class CatalogAssociationArgs:
                  entity_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CatalogAssociation resource.
+
         :param pulumi.Input[_builtins.str] entity_id: Identifier of the entity being associated with service catalog.
         :param pulumi.Input[_builtins.str] service_catalog_id: Identifier of the service catalog.
                
@@ -87,6 +88,7 @@ class _CatalogAssociationState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CatalogAssociation resources.
+
         :param pulumi.Input[_builtins.str] entity_id: Identifier of the entity being associated with service catalog.
         :param pulumi.Input[_builtins.str] entity_type: The type of the entity that is associated with the service catalog.
         :param pulumi.Input[_builtins.str] service_catalog_id: Identifier of the service catalog.
@@ -196,6 +198,7 @@ class CatalogAssociation(pulumi.CustomResource):
         $ pulumi import oci:ServiceCatalog/catalogAssociation:CatalogAssociation test_service_catalog_association "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] entity_id: Identifier of the entity being associated with service catalog.
@@ -239,6 +242,7 @@ class CatalogAssociation(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ServiceCatalog/catalogAssociation:CatalogAssociation test_service_catalog_association "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CatalogAssociationArgs args: The arguments to use to populate this resource's properties.

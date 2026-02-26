@@ -30,6 +30,7 @@ class DedicatedVantagePointArgs:
                  status: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DedicatedVantagePoint resource.
+
         :param pulumi.Input[_builtins.str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
         :param pulumi.Input[_builtins.str] display_name: Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
         :param pulumi.Input['DedicatedVantagePointDvpStackDetailsArgs'] dvp_stack_details: (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
@@ -158,6 +159,7 @@ class _DedicatedVantagePointState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DedicatedVantagePoint resources.
+
         :param pulumi.Input[_builtins.str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
@@ -389,6 +391,7 @@ class DedicatedVantagePoint(pulumi.CustomResource):
         $ pulumi import oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint test_dedicated_vantage_point "dedicatedVantagePoints/{dedicatedVantagePointId}/apmDomainId/{apmDomainId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
@@ -449,6 +452,7 @@ class DedicatedVantagePoint(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint test_dedicated_vantage_point "dedicatedVantagePoints/{dedicatedVantagePointId}/apmDomainId/{apmDomainId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DedicatedVantagePointArgs args: The arguments to use to populate this resource's properties.

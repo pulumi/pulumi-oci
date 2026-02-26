@@ -31,6 +31,7 @@ class NamespaceIngestTimeRuleArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a NamespaceIngestTimeRule resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['NamespaceIngestTimeRuleActionArgs']]] actions: (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input['NamespaceIngestTimeRuleConditionsArgs'] conditions: (Updatable) The condition(s) to evaluate for an ingest time rule.
@@ -175,6 +176,7 @@ class _NamespaceIngestTimeRuleState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NamespaceIngestTimeRule resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['NamespaceIngestTimeRuleActionArgs']]] actions: (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input['NamespaceIngestTimeRuleConditionsArgs'] conditions: (Updatable) The condition(s) to evaluate for an ingest time rule.
@@ -446,6 +448,7 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
         $ pulumi import oci:LogAnalytics/namespaceIngestTimeRule:NamespaceIngestTimeRule test_namespace_ingest_time_rule "namespaces/{namespaceName}/ingestTimeRules/{ingestTimeRuleId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NamespaceIngestTimeRuleActionArgs', 'NamespaceIngestTimeRuleActionArgsDict']]]] actions: (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
@@ -520,6 +523,7 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:LogAnalytics/namespaceIngestTimeRule:NamespaceIngestTimeRule test_namespace_ingest_time_rule "namespaces/{namespaceName}/ingestTimeRules/{ingestTimeRuleId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NamespaceIngestTimeRuleArgs args: The arguments to use to populate this resource's properties.

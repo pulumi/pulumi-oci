@@ -29,6 +29,7 @@ class SessionArgs:
                  session_ttl_in_seconds: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a Session resource.
+
         :param pulumi.Input[_builtins.str] bastion_id: The unique identifier (OCID) of the bastion on which to create this session.
         :param pulumi.Input['SessionKeyDetailsArgs'] key_details: Public key details for a bastion session.
         :param pulumi.Input['SessionTargetResourceDetailsArgs'] target_resource_details: Details about a bastion session's target resource.
@@ -138,6 +139,7 @@ class _SessionState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Session resources.
+
         :param pulumi.Input[_builtins.str] bastion_id: The unique identifier (OCID) of the bastion on which to create this session.
         :param pulumi.Input[_builtins.str] bastion_name: The name of the bastion that is hosting this session.
         :param pulumi.Input[_builtins.str] bastion_public_host_key_info: The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
@@ -404,6 +406,7 @@ class Session(pulumi.CustomResource):
         $ pulumi import oci:Bastion/session:Session test_session "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bastion_id: The unique identifier (OCID) of the bastion on which to create this session.
@@ -458,6 +461,7 @@ class Session(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Bastion/session:Session test_session "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SessionArgs args: The arguments to use to populate this resource's properties.

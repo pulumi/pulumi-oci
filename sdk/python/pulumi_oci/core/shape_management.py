@@ -24,6 +24,7 @@ class ShapeManagementArgs:
                  shape_name: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ShapeManagement resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment containing the image.
         :param pulumi.Input[_builtins.str] image_id: The OCID of the Image to which the shape should be added.
         :param pulumi.Input[_builtins.str] shape_name: The compatible shape that is to be added to the compatible shapes list for the image.
@@ -77,6 +78,7 @@ class _ShapeManagementState:
                  shape_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ShapeManagement resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment containing the image.
         :param pulumi.Input[_builtins.str] image_id: The OCID of the Image to which the shape should be added.
         :param pulumi.Input[_builtins.str] shape_name: The compatible shape that is to be added to the compatible shapes list for the image.
@@ -140,6 +142,7 @@ class ShapeManagement(pulumi.CustomResource):
 
         Add/Remove the specified shape from the compatible shapes list for the image.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment containing the image.
@@ -156,6 +159,7 @@ class ShapeManagement(pulumi.CustomResource):
         This resource provides the Shape Management resource in Oracle Cloud Infrastructure Core service.
 
         Add/Remove the specified shape from the compatible shapes list for the image.
+
 
         :param str resource_name: The name of the resource.
         :param ShapeManagementArgs args: The arguments to use to populate this resource's properties.

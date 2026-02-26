@@ -30,6 +30,7 @@ class ApiArgs:
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['ApiLockArgs']]]] = None):
         """
         The set of arguments for constructing a Api resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
         :param pulumi.Input[_builtins.str] content: (Updatable) API Specification content in json or yaml format
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -152,6 +153,7 @@ class _ApiState:
                  validation_results: Optional[pulumi.Input[Sequence[pulumi.Input['ApiValidationResultArgs']]]] = None):
         """
         Input properties used for looking up and filtering Api resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
         :param pulumi.Input[_builtins.str] content: (Updatable) API Specification content in json or yaml format
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -427,6 +429,7 @@ class Api(pulumi.CustomResource):
         $ pulumi import oci:ApiGateway/api:Api test_api "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
@@ -479,6 +482,7 @@ class Api(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ApiGateway/api:Api test_api "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ApiArgs args: The arguments to use to populate this resource's properties.

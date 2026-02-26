@@ -40,6 +40,7 @@ class OperatorControlAssignmentArgs:
                  validate_assignment_trigger: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a OperatorControlAssignment resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the operator control assignment.
         :param pulumi.Input[_builtins.bool] is_enforced_always: (Updatable) If set, then the target resource is always governed by the operator control.
         :param pulumi.Input[_builtins.str] operator_control_id: The OCID of the operator control that is being assigned to a target resource.
@@ -364,6 +365,7 @@ class _OperatorControlAssignmentState:
                  validate_assignment_trigger: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering OperatorControlAssignment resources.
+
         :param pulumi.Input[_builtins.str] assigner_id: The OCID of the user who created this operator control assignment.
         :param pulumi.Input[_builtins.str] comment: (Updatable) Comment about the assignment of the operator control to this target resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the operator control assignment.
@@ -894,6 +896,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
         $ pulumi import oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment test_operator_control_assignment "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] comment: (Updatable) Comment about the assignment of the operator control to this target resource.
@@ -968,6 +971,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment test_operator_control_assignment "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OperatorControlAssignmentArgs args: The arguments to use to populate this resource's properties.

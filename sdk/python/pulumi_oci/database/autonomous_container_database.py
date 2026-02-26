@@ -68,6 +68,7 @@ class AutonomousContainerDatabaseArgs:
                  vm_failover_reservation: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a AutonomousContainerDatabase resource.
+
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name for the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] patch_model: (Updatable) Database Patch model preference.
         :param pulumi.Input[_builtins.str] autonomous_container_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
@@ -829,6 +830,7 @@ class _AutonomousContainerDatabaseState:
                  vm_failover_reservation: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering AutonomousContainerDatabase resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs']]] associated_backup_configuration_details: A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
         :param pulumi.Input[_builtins.str] autonomous_container_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
         :param pulumi.Input[_builtins.str] autonomous_exadata_infrastructure_id: **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
@@ -2203,6 +2205,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         $ pulumi import oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase test_autonomous_container_database "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] autonomous_container_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
@@ -2377,6 +2380,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase test_autonomous_container_database "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AutonomousContainerDatabaseArgs args: The arguments to use to populate this resource's properties.

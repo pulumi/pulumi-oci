@@ -33,6 +33,7 @@ class AuditPolicyManagementArgs:
                  target_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AuditPolicyManagement resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['AuditPolicyManagementAuditConditionArgs']]] audit_conditions: Required when provision_trigger is set. Lists the audit policy provisioning conditions for the target database.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the audit policy.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
@@ -209,6 +210,7 @@ class _AuditPolicyManagementState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AuditPolicyManagement resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['AuditPolicyManagementAuditConditionArgs']]] audit_conditions: Required when provision_trigger is set. Lists the audit policy provisioning conditions for the target database.
         :param pulumi.Input[Sequence[pulumi.Input['AuditPolicyManagementAuditSpecificationArgs']]] audit_specifications: Represents all available audit policy specifications relevant for the target database. For more details on available audit polcies, refer to [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827).
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the audit policy.
@@ -531,6 +533,7 @@ class AuditPolicyManagement(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AuditPolicyManagementAuditConditionArgs', 'AuditPolicyManagementAuditConditionArgsDict']]]] audit_conditions: Required when provision_trigger is set. Lists the audit policy provisioning conditions for the target database.
@@ -581,6 +584,7 @@ class AuditPolicyManagement(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param AuditPolicyManagementArgs args: The arguments to use to populate this resource's properties.

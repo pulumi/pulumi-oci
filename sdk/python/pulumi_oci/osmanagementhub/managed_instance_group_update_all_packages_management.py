@@ -26,6 +26,7 @@ class ManagedInstanceGroupUpdateAllPackagesManagementArgs:
                  work_request_details: Optional[pulumi.Input['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs']] = None):
         """
         The set of arguments for constructing a ManagedInstanceGroupUpdateAllPackagesManagement resource.
+
         :param pulumi.Input[_builtins.str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] update_types: The type of updates to be applied.
         :param pulumi.Input['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs'] work_request_details: Provides the name and description of the job.
@@ -81,6 +82,7 @@ class _ManagedInstanceGroupUpdateAllPackagesManagementState:
                  work_request_details: Optional[pulumi.Input['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering ManagedInstanceGroupUpdateAllPackagesManagement resources.
+
         :param pulumi.Input[_builtins.str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] update_types: The type of updates to be applied.
         :param pulumi.Input['ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs'] work_request_details: Provides the name and description of the job.
@@ -170,6 +172,7 @@ class ManagedInstanceGroupUpdateAllPackagesManagement(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/managedInstanceGroupUpdateAllPackagesManagement:ManagedInstanceGroupUpdateAllPackagesManagement test_managed_instance_group_update_all_packages_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
@@ -212,6 +215,7 @@ class ManagedInstanceGroupUpdateAllPackagesManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/managedInstanceGroupUpdateAllPackagesManagement:ManagedInstanceGroupUpdateAllPackagesManagement test_managed_instance_group_update_all_packages_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagedInstanceGroupUpdateAllPackagesManagementArgs args: The arguments to use to populate this resource's properties.

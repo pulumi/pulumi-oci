@@ -30,6 +30,7 @@ class DataSafePrivateEndpointArgs:
                  private_endpoint_ip: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DataSafePrivateEndpoint resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name for the private endpoint. The name does not have to be unique, and it's changeable.
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet.
@@ -191,6 +192,7 @@ class _DataSafePrivateEndpointState:
                  vcn_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DataSafePrivateEndpoint resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the private endpoint.
@@ -466,6 +468,7 @@ class DataSafePrivateEndpoint(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/dataSafePrivateEndpoint:DataSafePrivateEndpoint test_data_safe_private_endpoint "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
@@ -525,6 +528,7 @@ class DataSafePrivateEndpoint(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/dataSafePrivateEndpoint:DataSafePrivateEndpoint test_data_safe_private_endpoint "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DataSafePrivateEndpointArgs args: The arguments to use to populate this resource's properties.

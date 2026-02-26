@@ -32,6 +32,7 @@ class RepositoryArgs:
                  parent_repository_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Repository resource.
+
         :param pulumi.Input[_builtins.str] project_id: The OCID of the DevOps project containing the repository.
         :param pulumi.Input[_builtins.str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED` 
                
@@ -204,6 +205,7 @@ class _RepositoryState:
                  trigger_build_events: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering Repository resources.
+
         :param pulumi.Input[_builtins.int] branch_count: The count of the branches present in the repository.
         :param pulumi.Input[_builtins.int] commit_count: The count of the commits present in the repository.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the repository's compartment.
@@ -592,6 +594,7 @@ class Repository(pulumi.CustomResource):
         $ pulumi import oci:DevOps/repository:Repository test_repository "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] default_branch: (Updatable) The default branch of the repository.
@@ -629,6 +632,7 @@ class Repository(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DevOps/repository:Repository test_repository "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param RepositoryArgs args: The arguments to use to populate this resource's properties.

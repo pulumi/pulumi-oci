@@ -31,6 +31,7 @@ class NetworkFirewallPolicyTunnelInspectionRuleArgs:
                  profile: Optional[pulumi.Input['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs']] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyTunnelInspectionRule resource.
+
         :param pulumi.Input['NetworkFirewallPolicyTunnelInspectionRuleConditionArgs'] condition: (Updatable) Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] protocol: (Updatable) Types of Tunnel Inspection Protocol to be applied on the traffic.
@@ -180,6 +181,7 @@ class _NetworkFirewallPolicyTunnelInspectionRuleState:
                  protocol: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyTunnelInspectionRule resources.
+
         :param pulumi.Input[_builtins.str] action: (Updatable) Types of Inspect Action on the traffic flow.
                * INSPECT - Inspect the traffic.
                * INSPECT_AND_CAPTURE_LOG - Inspect and capture logs for the traffic.
@@ -403,6 +405,7 @@ class NetworkFirewallPolicyTunnelInspectionRule(pulumi.CustomResource):
         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyTunnelInspectionRule:NetworkFirewallPolicyTunnelInspectionRule test_network_firewall_policy_tunnel_inspection_rule "networkFirewallPolicies/{networkFirewallPolicyId}/tunnelInspectionRules/{tunnelInspectionRuleName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: (Updatable) Types of Inspect Action on the traffic flow.
@@ -467,6 +470,7 @@ class NetworkFirewallPolicyTunnelInspectionRule(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyTunnelInspectionRule:NetworkFirewallPolicyTunnelInspectionRule test_network_firewall_policy_tunnel_inspection_rule "networkFirewallPolicies/{networkFirewallPolicyId}/tunnelInspectionRules/{tunnelInspectionRuleName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NetworkFirewallPolicyTunnelInspectionRuleArgs args: The arguments to use to populate this resource's properties.

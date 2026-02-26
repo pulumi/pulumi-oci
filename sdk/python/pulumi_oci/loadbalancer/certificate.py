@@ -27,6 +27,7 @@ class CertificateArgs:
                  public_certificate: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Certificate resource.
+
         :param pulumi.Input[_builtins.str] certificate_name: A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
         :param pulumi.Input[_builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add the certificate bundle.
         :param pulumi.Input[_builtins.str] ca_certificate: The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
@@ -200,6 +201,7 @@ class _CertificateState:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Certificate resources.
+
         :param pulumi.Input[_builtins.str] ca_certificate: The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
                
                Example:
@@ -409,6 +411,7 @@ class Certificate(pulumi.CustomResource):
         $ pulumi import oci:LoadBalancer/certificate:Certificate test_certificate "loadBalancers/{loadBalancerId}/certificates/{certificateName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ca_certificate: The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
@@ -480,6 +483,7 @@ class Certificate(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:LoadBalancer/certificate:Certificate test_certificate "loadBalancers/{loadBalancerId}/certificates/{certificateName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CertificateArgs args: The arguments to use to populate this resource's properties.

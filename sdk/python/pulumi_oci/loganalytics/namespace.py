@@ -24,6 +24,7 @@ class NamespaceArgs:
                  namespace: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a Namespace resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the root compartment i.e. OCID of the tenancy.
         :param pulumi.Input[_builtins.bool] is_onboarded: Use `true` if tenancy is to be onboarded to logging analytics and `false` if tenancy is to be offboarded
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request.
@@ -77,6 +78,7 @@ class _NamespaceState:
                  namespace: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Namespace resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the root compartment i.e. OCID of the tenancy.
         :param pulumi.Input[_builtins.bool] is_onboarded: Use `true` if tenancy is to be onboarded to logging analytics and `false` if tenancy is to be offboarded
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request.
@@ -160,6 +162,7 @@ class Namespace(pulumi.CustomResource):
         $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace "compartmentId/{compartment_id}/namespace/{namespace}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the root compartment i.e. OCID of the tenancy.
@@ -196,6 +199,7 @@ class Namespace(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace "compartmentId/{compartment_id}/namespace/{namespace}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NamespaceArgs args: The arguments to use to populate this resource's properties.

@@ -26,6 +26,7 @@ class NetworkFirewallPolicyAddressListArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyAddressList resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] addresses: (Updatable) List of addresses.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] type: Type of address List. The accepted values are - * FQDN * IP
@@ -121,6 +122,7 @@ class _NetworkFirewallPolicyAddressListState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyAddressList resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] addresses: (Updatable) List of addresses.
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the address list. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Unique name to identify the group of addresses to be used in the policy rules.
@@ -279,6 +281,7 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyAddressList:NetworkFirewallPolicyAddressList test_network_firewall_policy_address_list "networkFirewallPolicies/{networkFirewallPolicyId}/addressLists/{addressListName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] addresses: (Updatable) List of addresses.
@@ -326,6 +329,7 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyAddressList:NetworkFirewallPolicyAddressList test_network_firewall_policy_address_list "networkFirewallPolicies/{networkFirewallPolicyId}/addressLists/{addressListName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NetworkFirewallPolicyAddressListArgs args: The arguments to use to populate this resource's properties.

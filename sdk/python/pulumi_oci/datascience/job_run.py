@@ -36,6 +36,7 @@ class JobRunArgs:
                  opc_parent_rpt_url: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a JobRun resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
         :param pulumi.Input[_builtins.str] job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
@@ -267,6 +268,7 @@ class _JobRunState:
                  time_started: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering JobRun resources.
+
         :param pulumi.Input[_builtins.bool] asynchronous: If set to true, do not wait for the JobRun to reach completion prior to returning. Can be useful for JobRuns with a long duration.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
         :param pulumi.Input[_builtins.str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job run.
@@ -772,6 +774,7 @@ class JobRun(pulumi.CustomResource):
         $ pulumi import oci:DataScience/jobRun:JobRun test_job_run "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] asynchronous: If set to true, do not wait for the JobRun to reach completion prior to returning. Can be useful for JobRuns with a long duration.
@@ -926,6 +929,7 @@ class JobRun(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataScience/jobRun:JobRun test_job_run "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param JobRunArgs args: The arguments to use to populate this resource's properties.

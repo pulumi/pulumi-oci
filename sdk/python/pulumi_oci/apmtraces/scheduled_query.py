@@ -37,6 +37,7 @@ class ScheduledQueryArgs:
                  scheduled_query_text: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ScheduledQuery resource.
+
         :param pulumi.Input[_builtins.str] apm_domain_id: (Updatable) The APM Domain ID for the intended request.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -280,6 +281,7 @@ class _ScheduledQueryState:
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering ScheduledQuery resources.
+
         :param pulumi.Input[_builtins.str] apm_domain_id: (Updatable) The APM Domain ID for the intended request.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -598,6 +600,7 @@ class ScheduledQuery(pulumi.CustomResource):
         $ pulumi import oci:ApmTraces/scheduledQuery:ScheduledQuery test_scheduled_query "scheduledQueries/{scheduledQueryId}/apmDomainId/{apmDomainId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] apm_domain_id: (Updatable) The APM Domain ID for the intended request.
@@ -640,6 +643,7 @@ class ScheduledQuery(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ApmTraces/scheduledQuery:ScheduledQuery test_scheduled_query "scheduledQueries/{scheduledQueryId}/apmDomainId/{apmDomainId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ScheduledQueryArgs args: The arguments to use to populate this resource's properties.

@@ -34,6 +34,7 @@ class ConnectionArgs:
                  username: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Connection resource.
+
         :param pulumi.Input[_builtins.str] connection_type: (Updatable) The type of connection.
         :param pulumi.Input[_builtins.str] project_id: The OCID of the DevOps project.
         :param pulumi.Input[_builtins.str] access_token: (Updatable) The OCID of personal access token saved in secret store.
@@ -230,6 +231,7 @@ class _ConnectionState:
                  username: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Connection resources.
+
         :param pulumi.Input[_builtins.str] access_token: (Updatable) The OCID of personal access token saved in secret store.
         :param pulumi.Input[_builtins.str] app_password: (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
         :param pulumi.Input[_builtins.str] base_url: (Updatable) The Base URL of the hosted BitbucketServer.
@@ -557,6 +559,7 @@ class Connection(pulumi.CustomResource):
         $ pulumi import oci:DevOps/connection:Connection test_connection "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_token: (Updatable) The OCID of personal access token saved in secret store.
@@ -623,6 +626,7 @@ class Connection(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DevOps/connection:Connection test_connection "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ConnectionArgs args: The arguments to use to populate this resource's properties.

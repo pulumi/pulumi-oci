@@ -23,6 +23,7 @@ class SetUserAssessmentBaselineManagementArgs:
                  target_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a SetUserAssessmentBaselineManagement resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID of the target.
                
                
@@ -71,6 +72,7 @@ class _SetUserAssessmentBaselineManagementState:
                  user_assessment_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SetUserAssessmentBaselineManagement resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID of the target.
                
                
@@ -167,6 +169,7 @@ class SetUserAssessmentBaselineManagement(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/setUserAssessmentBaselineManagement:SetUserAssessmentBaselineManagement test_set_user_assessment_baseline_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID of the target.
@@ -205,6 +208,7 @@ class SetUserAssessmentBaselineManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/setUserAssessmentBaselineManagement:SetUserAssessmentBaselineManagement test_set_user_assessment_baseline_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SetUserAssessmentBaselineManagementArgs args: The arguments to use to populate this resource's properties.

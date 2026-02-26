@@ -33,6 +33,7 @@ class TargetArgs:
                  target_responder_recipes: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeArgs']]]] = None):
         """
         The set of arguments for constructing a Target resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: Compartment OCID where the resource is created
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name for the target.
                
@@ -216,6 +217,7 @@ class _TargetState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Target resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: Compartment OCID where the resource is created
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: The target description.
@@ -567,6 +569,7 @@ class Target(pulumi.CustomResource):
         $ pulumi import oci:CloudGuard/target:Target test_target "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: Compartment OCID where the resource is created
@@ -655,6 +658,7 @@ class Target(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:CloudGuard/target:Target test_target "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param TargetArgs args: The arguments to use to populate this resource's properties.

@@ -28,6 +28,7 @@ class AiDataPlatformAiDataPlatformArgs:
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AiDataPlatformAiDataPlatform resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the AiDataPlatform in.
         :param pulumi.Input[_builtins.str] ai_data_platform_type: (Updatable) The AiDataPlatform type.
         :param pulumi.Input[_builtins.str] default_workspace_name: The name for the default workspace for the AiDataPlatform
@@ -162,6 +163,7 @@ class _AiDataPlatformAiDataPlatformState:
                  web_socket_endpoint: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AiDataPlatformAiDataPlatform resources.
+
         :param pulumi.Input[_builtins.str] ai_data_platform_type: (Updatable) The AiDataPlatform type.
         :param pulumi.Input[_builtins.str] alias_key: The alias Id of the AiDataPlatform which is the short form of OCID.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the AiDataPlatform in.
@@ -433,6 +435,7 @@ class AiDataPlatformAiDataPlatform(pulumi.CustomResource):
         $ pulumi import oci:oci/aiDataPlatformAiDataPlatform:AiDataPlatformAiDataPlatform test_ai_data_platform "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ai_data_platform_type: (Updatable) The AiDataPlatform type.
@@ -488,6 +491,7 @@ class AiDataPlatformAiDataPlatform(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:oci/aiDataPlatformAiDataPlatform:AiDataPlatformAiDataPlatform test_ai_data_platform "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AiDataPlatformAiDataPlatformArgs args: The arguments to use to populate this resource's properties.

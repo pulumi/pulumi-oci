@@ -27,6 +27,7 @@ class TsigKeyArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a TsigKey resource.
+
         :param pulumi.Input[_builtins.str] algorithm: TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the TSIG key.
         :param pulumi.Input[_builtins.str] secret: A base64 string encoding the binary shared secret.
@@ -148,6 +149,7 @@ class _TsigKeyState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering TsigKey resources.
+
         :param pulumi.Input[_builtins.str] algorithm: TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the TSIG key.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -362,6 +364,7 @@ class TsigKey(pulumi.CustomResource):
         $ pulumi import oci:Dns/tsigKey:TsigKey test_tsig_key "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] algorithm: TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
@@ -416,6 +419,7 @@ class TsigKey(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Dns/tsigKey:TsigKey test_tsig_key "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param TsigKeyArgs args: The arguments to use to populate this resource's properties.

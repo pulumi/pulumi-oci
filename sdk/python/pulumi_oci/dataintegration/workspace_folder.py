@@ -33,6 +33,7 @@ class WorkspaceFolderArgs:
                  object_status: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a WorkspaceFolder resource.
+
         :param pulumi.Input[_builtins.str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input['WorkspaceFolderRegistryMetadataArgs'] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[_builtins.str] workspace_id: The workspace ID.
@@ -207,6 +208,7 @@ class _WorkspaceFolderState:
                  workspace_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WorkspaceFolder resources.
+
         :param pulumi.Input[_builtins.str] category_name: (Updatable) The category name.
         :param pulumi.Input[_builtins.str] description: (Updatable) A user defined description for the folder.
         :param pulumi.Input[_builtins.str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
@@ -497,6 +499,7 @@ class WorkspaceFolder(pulumi.CustomResource):
         $ pulumi import oci:DataIntegration/workspaceFolder:WorkspaceFolder test_workspace_folder "workspaces/{workspaceId}/folders/{folderKey}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] category_name: (Updatable) The category name.
@@ -559,6 +562,7 @@ class WorkspaceFolder(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataIntegration/workspaceFolder:WorkspaceFolder test_workspace_folder "workspaces/{workspaceId}/folders/{folderKey}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param WorkspaceFolderArgs args: The arguments to use to populate this resource's properties.

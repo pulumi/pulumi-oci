@@ -23,6 +23,7 @@ class ResourceAnalyticsMonitoredRegionArgs:
                  resource_analytics_instance_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ResourceAnalyticsMonitoredRegion resource.
+
         :param pulumi.Input[_builtins.str] region_id: The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of this MonitoredRegion.
         :param pulumi.Input[_builtins.str] resource_analytics_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance associated with this MonitoredRegion.
                
@@ -74,6 +75,7 @@ class _ResourceAnalyticsMonitoredRegionState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ResourceAnalyticsMonitoredRegion resources.
+
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the MonitoredRegion in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param pulumi.Input[_builtins.str] region_id: The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of this MonitoredRegion.
         :param pulumi.Input[_builtins.str] resource_analytics_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance associated with this MonitoredRegion.
@@ -226,6 +228,7 @@ class ResourceAnalyticsMonitoredRegion(pulumi.CustomResource):
         $ pulumi import oci:oci/resourceAnalyticsMonitoredRegion:ResourceAnalyticsMonitoredRegion test_monitored_region "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] region_id: The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of this MonitoredRegion.
@@ -267,6 +270,7 @@ class ResourceAnalyticsMonitoredRegion(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:oci/resourceAnalyticsMonitoredRegion:ResourceAnalyticsMonitoredRegion test_monitored_region "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ResourceAnalyticsMonitoredRegionArgs args: The arguments to use to populate this resource's properties.

@@ -24,6 +24,7 @@ class SoftwareSourceChangeAvailabilityManagementArgs:
                  software_source_availabilities: pulumi.Input[Sequence[pulumi.Input['SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs']]]):
         """
         The set of arguments for constructing a SoftwareSourceChangeAvailabilityManagement resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs']]] software_source_availabilities: List of vendor software sources and their availability statuses.
         """
         pulumi.set(__self__, "software_source_availabilities", software_source_availabilities)
@@ -47,6 +48,7 @@ class _SoftwareSourceChangeAvailabilityManagementState:
                  software_source_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs']]]] = None):
         """
         Input properties used for looking up and filtering SoftwareSourceChangeAvailabilityManagement resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs']]] software_source_availabilities: List of vendor software sources and their availability statuses.
         """
         if software_source_availabilities is not None:
@@ -102,6 +104,7 @@ class SoftwareSourceChangeAvailabilityManagement(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/softwareSourceChangeAvailabilityManagement:SoftwareSourceChangeAvailabilityManagement test_software_source_change_availability_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs', 'SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgsDict']]]] software_source_availabilities: List of vendor software sources and their availability statuses.
@@ -140,6 +143,7 @@ class SoftwareSourceChangeAvailabilityManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/softwareSourceChangeAvailabilityManagement:SoftwareSourceChangeAvailabilityManagement test_software_source_change_availability_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SoftwareSourceChangeAvailabilityManagementArgs args: The arguments to use to populate this resource's properties.

@@ -34,6 +34,7 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyDecryptionProfile resource.
+
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
                
                
@@ -257,6 +258,7 @@ class _NetworkFirewallPolicyDecryptionProfileState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyDecryptionProfile resources.
+
         :param pulumi.Input[_builtins.bool] are_certificate_extensions_restricted: (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the decryption profile. This field can be used to add additional info.
         :param pulumi.Input[_builtins.bool] is_auto_include_alt_name: (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
@@ -536,6 +538,7 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyDecryptionProfile:NetworkFirewallPolicyDecryptionProfile test_network_firewall_policy_decryption_profile "networkFirewallPolicies/{networkFirewallPolicyId}/decryptionProfiles/{decryptionProfileName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] are_certificate_extensions_restricted: (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
@@ -599,6 +602,7 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyDecryptionProfile:NetworkFirewallPolicyDecryptionProfile test_network_firewall_policy_decryption_profile "networkFirewallPolicies/{networkFirewallPolicyId}/decryptionProfiles/{decryptionProfileName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NetworkFirewallPolicyDecryptionProfileArgs args: The arguments to use to populate this resource's properties.

@@ -32,6 +32,7 @@ class MlApplicationInstanceArgs:
                  is_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a MlApplicationInstance resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the MlApplicationInstance is created.
         :param pulumi.Input[_builtins.str] ml_application_id: The OCID of ML Application. This resource is an instance of ML Application referenced by this OCID.
         :param pulumi.Input[_builtins.str] ml_application_implementation_id: (Updatable) The OCID of ML Application Implementation selected as a certain solution for a given ML problem (ML Application)
@@ -198,6 +199,7 @@ class _MlApplicationInstanceState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MlApplicationInstance resources.
+
         :param pulumi.Input['MlApplicationInstanceAuthConfigurationArgs'] auth_configuration: AuthN/Z configuration for online prediction
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the MlApplicationInstance is created.
         :param pulumi.Input[Sequence[pulumi.Input['MlApplicationInstanceConfigurationArgs']]] configurations: (Updatable) Data that are used for provisioning of the given MlApplicationInstance. These are validated against configurationSchema defined in referenced MlApplicationImplementation.
@@ -544,6 +546,7 @@ class MlApplicationInstance(pulumi.CustomResource):
         $ pulumi import oci:DataScience/mlApplicationInstance:MlApplicationInstance test_ml_application_instance "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['MlApplicationInstanceAuthConfigurationArgs', 'MlApplicationInstanceAuthConfigurationArgsDict']] auth_configuration: AuthN/Z configuration for online prediction
@@ -614,6 +617,7 @@ class MlApplicationInstance(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataScience/mlApplicationInstance:MlApplicationInstance test_ml_application_instance "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MlApplicationInstanceArgs args: The arguments to use to populate this resource's properties.

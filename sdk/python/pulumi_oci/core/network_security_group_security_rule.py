@@ -35,6 +35,7 @@ class NetworkSecurityGroupSecurityRuleArgs:
                  udp_options: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleUdpOptionsArgs']] = None):
         """
         The set of arguments for constructing a NetworkSecurityGroupSecurityRule resource.
+
         :param pulumi.Input[_builtins.str] direction: Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
         :param pulumi.Input[_builtins.str] network_security_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
         :param pulumi.Input[_builtins.str] protocol: The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
@@ -244,6 +245,7 @@ class _NetworkSecurityGroupSecurityRuleState:
                  udp_options: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleUdpOptionsArgs']] = None):
         """
         Input properties used for looking up and filtering NetworkSecurityGroupSecurityRule resources.
+
         :param pulumi.Input[_builtins.str] description: An optional description of your choice for the rule.
         :param pulumi.Input[_builtins.str] destination: Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
         :param pulumi.Input[_builtins.str] destination_type: Type of destination for the rule. Required if `direction` = `EGRESS`.
@@ -544,6 +546,7 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
         $ pulumi import oci:Core/networkSecurityGroupSecurityRule:NetworkSecurityGroupSecurityRule test_network_security_group_security_rule "networkSecurityGroups/{networkSecurityGroupId}/securityRules/{securityRuleId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: An optional description of your choice for the rule.
@@ -627,6 +630,7 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/networkSecurityGroupSecurityRule:NetworkSecurityGroupSecurityRule test_network_security_group_security_rule "networkSecurityGroups/{networkSecurityGroupId}/securityRules/{securityRuleId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NetworkSecurityGroupSecurityRuleArgs args: The arguments to use to populate this resource's properties.

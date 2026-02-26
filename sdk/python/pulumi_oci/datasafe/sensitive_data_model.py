@@ -38,6 +38,7 @@ class SensitiveDataModelArgs:
                  tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input['SensitiveDataModelTablesForDiscoveryArgs']]]] = None):
         """
         The set of arguments for constructing a SensitiveDataModel resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the sensitive data model should be created.
         :param pulumi.Input[_builtins.str] target_id: (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database. 
                
@@ -296,6 +297,7 @@ class _SensitiveDataModelState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SensitiveDataModel resources.
+
         :param pulumi.Input[_builtins.str] app_suite_name: (Updatable) The application suite name identifying a collection of applications. It's useful only if maintaining a sensitive data model for a suite of applications.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the sensitive data model should be created.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
@@ -663,6 +665,7 @@ class SensitiveDataModel(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/sensitiveDataModel:SensitiveDataModel test_sensitive_data_model "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] app_suite_name: (Updatable) The application suite name identifying a collection of applications. It's useful only if maintaining a sensitive data model for a suite of applications.
@@ -739,6 +742,7 @@ class SensitiveDataModel(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/sensitiveDataModel:SensitiveDataModel test_sensitive_data_model "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SensitiveDataModelArgs args: The arguments to use to populate this resource's properties.

@@ -33,6 +33,7 @@ class TargetDatabaseArgs:
                  tls_config: Optional[pulumi.Input['TargetDatabaseTlsConfigArgs']] = None):
         """
         The set of arguments for constructing a TargetDatabase resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment in which to create the Data Safe target database.
         :param pulumi.Input['TargetDatabaseDatabaseDetailsArgs'] database_details: (Updatable) Details of the database for the registration in Data Safe.
         :param pulumi.Input['TargetDatabaseConnectionOptionArgs'] connection_option: (Updatable) Types of connection supported by Data Safe.
@@ -206,6 +207,7 @@ class _TargetDatabaseState:
                  tls_config: Optional[pulumi.Input['TargetDatabaseTlsConfigArgs']] = None):
         """
         Input properties used for looking up and filtering TargetDatabase resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] associated_resource_ids: The OCIDs of associated resources like database, Data Safe private endpoint etc.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment in which to create the Data Safe target database.
         :param pulumi.Input['TargetDatabaseConnectionOptionArgs'] connection_option: (Updatable) Types of connection supported by Data Safe.
@@ -567,6 +569,7 @@ class TargetDatabase(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/targetDatabase:TargetDatabase test_target_database "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment in which to create the Data Safe target database.
@@ -671,6 +674,7 @@ class TargetDatabase(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/targetDatabase:TargetDatabase test_target_database "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param TargetDatabaseArgs args: The arguments to use to populate this resource's properties.

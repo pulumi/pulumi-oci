@@ -31,6 +31,7 @@ class BootVolumeBackupArgs:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a BootVolumeBackup resource.
+
         :param pulumi.Input[_builtins.str] boot_volume_id: The OCID of the boot volume that needs to be backed up. Cannot be defined if `source_details` is defined.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the boot volume backup.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -177,6 +178,7 @@ class _BootVolumeBackupState:
                  unique_size_in_gbs: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BootVolumeBackup resources.
+
         :param pulumi.Input[_builtins.str] boot_volume_id: The OCID of the boot volume that needs to be backed up. Cannot be defined if `source_details` is defined.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the boot volume backup.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -505,6 +507,7 @@ class BootVolumeBackup(pulumi.CustomResource):
         $ pulumi import oci:Core/bootVolumeBackup:BootVolumeBackup test_boot_volume_backup "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] boot_volume_id: The OCID of the boot volume that needs to be backed up. Cannot be defined if `source_details` is defined.
@@ -561,6 +564,7 @@ class BootVolumeBackup(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/bootVolumeBackup:BootVolumeBackup test_boot_volume_backup "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param BootVolumeBackupArgs args: The arguments to use to populate this resource's properties.

@@ -51,6 +51,7 @@ class AddressActionVerificationArgs:
                  street_number: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AddressActionVerification resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] osp_home_region: The home region's public name of the logged in user.
         :param pulumi.Input[_builtins.str] address_key: Address identifier.
@@ -516,6 +517,7 @@ class _AddressActionVerificationState:
                  verification_code: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AddressActionVerification resources.
+
         :param pulumi.Input[_builtins.str] address_key: Address identifier.
         :param pulumi.Input[Sequence[pulumi.Input['AddressActionVerificationAddressArgs']]] addresses: Address details model.
         :param pulumi.Input[_builtins.str] city: Name of the city.
@@ -1080,6 +1082,7 @@ class AddressActionVerification(pulumi.CustomResource):
         $ pulumi import oci:OspGateway/addressActionVerification:AddressActionVerification test_address_action_verification "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] address_key: Address identifier.
@@ -1173,6 +1176,7 @@ class AddressActionVerification(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OspGateway/addressActionVerification:AddressActionVerification test_address_action_verification "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AddressActionVerificationArgs args: The arguments to use to populate this resource's properties.

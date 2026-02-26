@@ -34,6 +34,7 @@ class SensitiveTypeArgs:
                  short_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a SensitiveType resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the sensitive type should be created.
         :param pulumi.Input[_builtins.str] entity_type: (Updatable) The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
         :param pulumi.Input[_builtins.str] comment_pattern: (Updatable) A regular expression to be used by data discovery for matching column comments.
@@ -262,6 +263,7 @@ class _SensitiveTypeState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SensitiveType resources.
+
         :param pulumi.Input[_builtins.str] comment_pattern: (Updatable) A regular expression to be used by data discovery for matching column comments.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the sensitive type should be created.
         :param pulumi.Input[_builtins.str] data_pattern: (Updatable) A regular expression to be used by data discovery for matching column data values.
@@ -622,6 +624,7 @@ class SensitiveType(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/sensitiveType:SensitiveType test_sensitive_type "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] comment_pattern: (Updatable) A regular expression to be used by data discovery for matching column comments.
@@ -691,6 +694,7 @@ class SensitiveType(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/sensitiveType:SensitiveType test_sensitive_type "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SensitiveTypeArgs args: The arguments to use to populate this resource's properties.

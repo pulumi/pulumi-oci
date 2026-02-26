@@ -27,6 +27,7 @@ class BackupArgs:
                  retention_period_in_years: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a Backup resource.
+
         :param pulumi.Input[_builtins.str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the backup. The name does not have to be unique.
                
@@ -118,6 +119,7 @@ class _BackupState:
                  version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Backup resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain where the database backup is stored.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
@@ -518,6 +520,7 @@ class Backup(pulumi.CustomResource):
         $ pulumi import oci:Database/backup:Backup test_backup "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
@@ -559,6 +562,7 @@ class Backup(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/backup:Backup test_backup "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param BackupArgs args: The arguments to use to populate this resource's properties.

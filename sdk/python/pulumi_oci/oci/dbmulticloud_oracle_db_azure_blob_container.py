@@ -29,6 +29,7 @@ class DbmulticloudOracleDbAzureBlobContainerArgs:
                  private_endpoint_ip_address: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DbmulticloudOracleDbAzureBlobContainer resource.
+
         :param pulumi.Input[_builtins.str] azure_storage_account_name: (Updatable) Azure Storage account name.
         :param pulumi.Input[_builtins.str] azure_storage_container_name: (Updatable) Azure Storage container name.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
@@ -175,6 +176,7 @@ class _DbmulticloudOracleDbAzureBlobContainerState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DbmulticloudOracleDbAzureBlobContainer resources.
+
         :param pulumi.Input[_builtins.str] azure_storage_account_name: (Updatable) Azure Storage account name.
         :param pulumi.Input[_builtins.str] azure_storage_container_name: (Updatable) Azure Storage container name.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
@@ -448,6 +450,7 @@ class DbmulticloudOracleDbAzureBlobContainer(pulumi.CustomResource):
         $ pulumi import oci:oci/dbmulticloudOracleDbAzureBlobContainer:DbmulticloudOracleDbAzureBlobContainer test_oracle_db_azure_blob_container "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] azure_storage_account_name: (Updatable) Azure Storage account name.
@@ -505,6 +508,7 @@ class DbmulticloudOracleDbAzureBlobContainer(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:oci/dbmulticloudOracleDbAzureBlobContainer:DbmulticloudOracleDbAzureBlobContainer test_oracle_db_azure_blob_container "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DbmulticloudOracleDbAzureBlobContainerArgs args: The arguments to use to populate this resource's properties.

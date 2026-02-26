@@ -29,6 +29,7 @@ class JavaDownloadsJavaDownloadReportArgs:
                  time_start: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a JavaDownloadsJavaDownloadReport resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) here should be the tenancy OCID.
         :param pulumi.Input[_builtins.str] format: The format of the report that is generated.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
@@ -149,6 +150,7 @@ class _JavaDownloadsJavaDownloadReportState:
                  time_start: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering JavaDownloadsJavaDownloadReport resources.
+
         :param pulumi.Input[_builtins.str] checksum_type: The algorithm used for calculating the checksum.
         :param pulumi.Input[_builtins.str] checksum_value: The checksum value of the Java download report file.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) here should be the tenancy OCID.
@@ -437,6 +439,7 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) here should be the tenancy OCID.
@@ -487,6 +490,7 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param JavaDownloadsJavaDownloadReportArgs args: The arguments to use to populate this resource's properties.

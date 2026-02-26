@@ -28,6 +28,7 @@ class AutonomousDatabaseBackupArgs:
                  retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a AutonomousDatabaseBackup resource.
+
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
         :param pulumi.Input['AutonomousDatabaseBackupBackupDestinationDetailsArgs'] backup_destination_details: Backup destination details
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the backup. The name does not have to be unique.
@@ -143,6 +144,7 @@ class _AutonomousDatabaseBackupState:
                  vault_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutonomousDatabaseBackup resources.
+
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
         :param pulumi.Input['AutonomousDatabaseBackupBackupDestinationDetailsArgs'] backup_destination_details: Backup destination details
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -582,6 +584,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         $ pulumi import oci:Database/autonomousDatabaseBackup:AutonomousDatabaseBackup test_autonomous_database_backup "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
@@ -640,6 +643,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/autonomousDatabaseBackup:AutonomousDatabaseBackup test_autonomous_database_backup "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AutonomousDatabaseBackupArgs args: The arguments to use to populate this resource's properties.

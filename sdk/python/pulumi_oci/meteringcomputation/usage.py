@@ -34,6 +34,7 @@ class UsageArgs:
                  query_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Usage resource.
+
         :param pulumi.Input[_builtins.str] granularity: The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
         :param pulumi.Input[_builtins.str] tenant_id: Tenant ID.
         :param pulumi.Input[_builtins.str] time_usage_ended: The usage end time.
@@ -223,6 +224,7 @@ class _UsageState:
                  time_usage_started: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Usage resources.
+
         :param pulumi.Input[_builtins.float] compartment_depth: The compartment depth level.
         :param pulumi.Input[_builtins.str] filter: The filter object for query usage.
         :param pulumi.Input['UsageForecastArgs'] forecast: Forecast configuration of usage/cost.
@@ -472,6 +474,7 @@ class Usage(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.float] compartment_depth: The compartment depth level.
@@ -535,6 +538,7 @@ class Usage(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param UsageArgs args: The arguments to use to populate this resource's properties.

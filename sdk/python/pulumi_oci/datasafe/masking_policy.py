@@ -38,6 +38,7 @@ class MaskingPolicyArgs:
                  recompile: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a MaskingPolicy resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]] column_sources: (Updatable) Details to associate a column source with a masking policy.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the masking policy should be created.
         :param pulumi.Input[_builtins.int] add_masking_columns_from_sdm_trigger: (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
@@ -295,6 +296,7 @@ class _MaskingPolicyState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MaskingPolicy resources.
+
         :param pulumi.Input[_builtins.int] add_masking_columns_from_sdm_trigger: (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
         :param pulumi.Input[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]] column_sources: (Updatable) Details to associate a column source with a masking policy.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the masking policy should be created.
@@ -660,6 +662,7 @@ class MaskingPolicy(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/maskingPolicy:MaskingPolicy test_masking_policy "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] add_masking_columns_from_sdm_trigger: (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
@@ -749,6 +752,7 @@ class MaskingPolicy(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/maskingPolicy:MaskingPolicy test_masking_policy "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MaskingPolicyArgs args: The arguments to use to populate this resource's properties.

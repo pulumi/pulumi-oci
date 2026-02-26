@@ -27,6 +27,7 @@ class AwrHubArgs:
                  object_storage_bucket_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AwrHub resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) User-friedly name of AWR Hub that does not have to be unique.
         :param pulumi.Input[_builtins.str] operations_insights_warehouse_id: OPSI Warehouse OCID
@@ -143,6 +144,7 @@ class _AwrHubState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AwrHub resources.
+
         :param pulumi.Input[_builtins.str] awr_mailbox_url: Mailbox URL required for AWR hub and AWR source setup.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -398,6 +400,7 @@ class AwrHub(pulumi.CustomResource):
         $ pulumi import oci:Opsi/awrHub:AwrHub test_awr_hub "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -452,6 +455,7 @@ class AwrHub(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Opsi/awrHub:AwrHub test_awr_hub "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AwrHubArgs args: The arguments to use to populate this resource's properties.

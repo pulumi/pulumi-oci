@@ -28,6 +28,7 @@ class SchedulingPlanArgs:
                  is_using_recommended_scheduled_actions: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a SchedulingPlan resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         :param pulumi.Input[_builtins.str] scheduling_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Policy.
@@ -160,6 +161,7 @@ class _SchedulingPlanState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SchedulingPlan resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: The display name of the Scheduling Plan.
@@ -441,6 +443,7 @@ class SchedulingPlan(pulumi.CustomResource):
         $ pulumi import oci:Database/schedulingPlan:SchedulingPlan test_scheduling_plan "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -491,6 +494,7 @@ class SchedulingPlan(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/schedulingPlan:SchedulingPlan test_scheduling_plan "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SchedulingPlanArgs args: The arguments to use to populate this resource's properties.

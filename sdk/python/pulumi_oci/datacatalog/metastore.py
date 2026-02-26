@@ -29,6 +29,7 @@ class MetastoreArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Metastore resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) OCID of the compartment which holds the metastore.
         :param pulumi.Input[_builtins.str] default_external_table_location: Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
         :param pulumi.Input[_builtins.str] default_managed_table_location: Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
@@ -144,6 +145,7 @@ class _MetastoreState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Metastore resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) OCID of the compartment which holds the metastore.
         :param pulumi.Input[_builtins.str] default_external_table_location: Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
         :param pulumi.Input[_builtins.str] default_managed_table_location: Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
@@ -383,6 +385,7 @@ class Metastore(pulumi.CustomResource):
         $ pulumi import oci:DataCatalog/metastore:Metastore test_metastore "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) OCID of the compartment which holds the metastore.
@@ -436,6 +439,7 @@ class Metastore(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataCatalog/metastore:Metastore test_metastore "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MetastoreArgs args: The arguments to use to populate this resource's properties.

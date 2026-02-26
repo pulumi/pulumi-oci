@@ -30,6 +30,7 @@ class AnalyticsInstancePrivateAccessChannelArgs:
                  private_source_scan_hosts: Optional[pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs']]]] = None):
         """
         The set of arguments for constructing a AnalyticsInstancePrivateAccessChannel resource.
+
         :param pulumi.Input[_builtins.str] analytics_instance_id: The OCID of the AnalyticsInstance.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Display Name of the Private Access Channel.
         :param pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs']]] private_source_dns_zones: (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
@@ -156,6 +157,7 @@ class _AnalyticsInstancePrivateAccessChannelState:
                  vcn_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AnalyticsInstancePrivateAccessChannel resources.
+
         :param pulumi.Input[_builtins.str] analytics_instance_id: The OCID of the AnalyticsInstance.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Display Name of the Private Access Channel.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] egress_source_ip_addresses: The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to Private Sources.
@@ -371,6 +373,7 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
         $ pulumi import oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel test_analytics_instance_private_access_channel "analyticsInstances/{analyticsInstanceId}/privateAccessChannels/{privateAccessChannelKey}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] analytics_instance_id: The OCID of the AnalyticsInstance.
@@ -430,6 +433,7 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel test_analytics_instance_private_access_channel "analyticsInstances/{analyticsInstanceId}/privateAccessChannels/{privateAccessChannelKey}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AnalyticsInstancePrivateAccessChannelArgs args: The arguments to use to populate this resource's properties.

@@ -26,6 +26,7 @@ class DatabaseUpgradeArgs:
                  database_upgrade_source_details: Optional[pulumi.Input['DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs']] = None):
         """
         The set of arguments for constructing a DatabaseUpgrade resource.
+
         :param pulumi.Input[_builtins.str] action: The database upgrade action.
         :param pulumi.Input[_builtins.str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input['DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs'] database_upgrade_source_details: Details for the database upgrade source.
@@ -111,6 +112,7 @@ class _DatabaseUpgradeState:
                  vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DatabaseUpgrade resources.
+
         :param pulumi.Input[_builtins.str] action: The database upgrade action.
         :param pulumi.Input[_builtins.str] character_set: The character set for the database.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -674,6 +676,7 @@ class DatabaseUpgrade(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: The database upgrade action.
@@ -725,6 +728,7 @@ class DatabaseUpgrade(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param DatabaseUpgradeArgs args: The arguments to use to populate this resource's properties.

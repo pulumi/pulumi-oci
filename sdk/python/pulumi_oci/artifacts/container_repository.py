@@ -30,6 +30,7 @@ class ContainerRepositoryArgs:
                  readme: Optional[pulumi.Input['ContainerRepositoryReadmeArgs']] = None):
         """
         The set of arguments for constructing a ContainerRepository resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the resource.
         :param pulumi.Input[_builtins.str] display_name: The container repository name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -158,6 +159,7 @@ class _ContainerRepositoryState:
                  time_last_pushed: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ContainerRepository resources.
+
         :param pulumi.Input[_builtins.str] billable_size_in_gbs: Total storage size in GBs that will be charged.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the resource.
         :param pulumi.Input[_builtins.str] created_by: The id of the user or principal that created the resource.
@@ -469,6 +471,7 @@ class ContainerRepository(pulumi.CustomResource):
         $ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository "container/repositories/{repositoryId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the resource.
@@ -523,6 +526,7 @@ class ContainerRepository(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository "container/repositories/{repositoryId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ContainerRepositoryArgs args: The arguments to use to populate this resource's properties.

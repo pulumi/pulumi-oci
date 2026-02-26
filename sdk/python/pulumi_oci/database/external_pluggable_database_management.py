@@ -24,6 +24,7 @@ class ExternalPluggableDatabaseManagementArgs:
                  external_pluggable_database_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ExternalPluggableDatabaseManagement resource.
+
         :param pulumi.Input[_builtins.str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[_builtins.str] external_pluggable_database_id: The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
                
@@ -79,6 +80,7 @@ class _ExternalPluggableDatabaseManagementState:
                  external_pluggable_database_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalPluggableDatabaseManagement resources.
+
         :param pulumi.Input[_builtins.str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[_builtins.str] external_pluggable_database_id: The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
                
@@ -164,6 +166,7 @@ class ExternalPluggableDatabaseManagement(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
@@ -202,6 +205,7 @@ class ExternalPluggableDatabaseManagement(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param ExternalPluggableDatabaseManagementArgs args: The arguments to use to populate this resource's properties.

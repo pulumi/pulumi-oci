@@ -33,6 +33,7 @@ class ModelDeploymentArgs:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ModelDeployment resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the model deployment.
         :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsArgs'] model_deployment_configuration_details: (Updatable) The model deployment configuration details.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
@@ -211,6 +212,7 @@ class _ModelDeploymentState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ModelDeployment resources.
+
         :param pulumi.Input['ModelDeploymentCategoryLogDetailsArgs'] category_log_details: (Updatable) The log details for each category.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the model deployment.
         :param pulumi.Input[_builtins.str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model deployment.
@@ -480,6 +482,7 @@ class ModelDeployment(pulumi.CustomResource):
         $ pulumi import oci:DataScience/modelDeployment:ModelDeployment test_model_deployment "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ModelDeploymentCategoryLogDetailsArgs', 'ModelDeploymentCategoryLogDetailsArgsDict']] category_log_details: (Updatable) The log details for each category.
@@ -518,6 +521,7 @@ class ModelDeployment(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataScience/modelDeployment:ModelDeployment test_model_deployment "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ModelDeploymentArgs args: The arguments to use to populate this resource's properties.

@@ -27,6 +27,7 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementArgs:
                  feature_details: Optional[pulumi.Input['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs']] = None):
         """
         The set of arguments for constructing a ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement resource.
+
         :param pulumi.Input[_builtins.bool] enable_external_pluggable_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                
@@ -101,6 +102,7 @@ class _ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementState:
                  feature_details: Optional[pulumi.Input['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement resources.
+
         :param pulumi.Input[_builtins.bool] enable_external_pluggable_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                
@@ -207,6 +209,7 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
             })
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_external_pluggable_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -250,6 +253,7 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
                 },
             })
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementArgs args: The arguments to use to populate this resource's properties.

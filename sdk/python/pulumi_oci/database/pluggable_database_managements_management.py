@@ -32,6 +32,7 @@ class PluggableDatabaseManagementsManagementArgs:
                  ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a PluggableDatabaseManagementsManagement resource.
+
         :param pulumi.Input['PluggableDatabaseManagementsManagementCredentialDetailsArgs'] credential_details: Data for the credential used to connect to the database.
         :param pulumi.Input[_builtins.bool] enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
@@ -199,6 +200,7 @@ class _PluggableDatabaseManagementsManagementState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PluggableDatabaseManagementsManagement resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseManagementsManagementConnectionStringArgs']]] connection_strings: Connection strings to connect to an Oracle Pluggable Database.
         :param pulumi.Input[_builtins.str] container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
@@ -569,6 +571,7 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
             ssl_secret_id=test_secret["id"])
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['PluggableDatabaseManagementsManagementCredentialDetailsArgs', 'PluggableDatabaseManagementsManagementCredentialDetailsArgsDict']] credential_details: Data for the credential used to connect to the database.
@@ -618,6 +621,7 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
             role=pluggable_database_pluggabledatabasemanagements_management_role,
             ssl_secret_id=test_secret["id"])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param PluggableDatabaseManagementsManagementArgs args: The arguments to use to populate this resource's properties.

@@ -28,6 +28,7 @@ class SensitiveDataModelReferentialRelationArgs:
                  is_sensitive: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a SensitiveDataModelReferentialRelation resource.
+
         :param pulumi.Input['SensitiveDataModelReferentialRelationChildArgs'] child: columnsInfo object has details of column group with schema details.
         :param pulumi.Input['SensitiveDataModelReferentialRelationParentArgs'] parent: columnsInfo object has details of column group with schema details.
         :param pulumi.Input[_builtins.str] relation_type: The type of referential relationship the sensitive column has with its parent.  DB_DEFINED indicates that the relationship is defined in the database dictionary.  APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
@@ -122,6 +123,7 @@ class _SensitiveDataModelReferentialRelationState:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SensitiveDataModelReferentialRelation resources.
+
         :param pulumi.Input['SensitiveDataModelReferentialRelationChildArgs'] child: columnsInfo object has details of column group with schema details.
         :param pulumi.Input[_builtins.bool] is_sensitive: Add to sensitive data model if passed true. If false is passed, then the columns will not be added in the sensitive data model as sensitive columns and  if sensitive type OCIDs are assigned to the columns, then the sensitive type OCIDs will not be retained.
         :param pulumi.Input[_builtins.str] key: The unique key that identifies the referential relation. It's numeric and unique within a sensitive data model.
@@ -294,6 +296,7 @@ class SensitiveDataModelReferentialRelation(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/sensitiveDataModelReferentialRelation:SensitiveDataModelReferentialRelation test_sensitive_data_model_referential_relation "sensitiveDataModels/{sensitiveDataModelId}/referentialRelations/{referentialRelationKey}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['SensitiveDataModelReferentialRelationChildArgs', 'SensitiveDataModelReferentialRelationChildArgsDict']] child: columnsInfo object has details of column group with schema details.
@@ -355,6 +358,7 @@ class SensitiveDataModelReferentialRelation(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/sensitiveDataModelReferentialRelation:SensitiveDataModelReferentialRelation test_sensitive_data_model_referential_relation "sensitiveDataModels/{sensitiveDataModelId}/referentialRelations/{referentialRelationKey}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SensitiveDataModelReferentialRelationArgs args: The arguments to use to populate this resource's properties.

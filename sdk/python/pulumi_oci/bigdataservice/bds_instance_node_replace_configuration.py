@@ -29,6 +29,7 @@ class BdsInstanceNodeReplaceConfigurationArgs:
                  display_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a BdsInstanceNodeReplaceConfiguration resource.
+
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
         :param pulumi.Input[_builtins.int] duration_in_minutes: (Updatable) This value is the minimum period of time to wait before triggering node replacement. The value is in minutes.
@@ -131,6 +132,7 @@ class _BdsInstanceNodeReplaceConfigurationState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BdsInstanceNodeReplaceConfiguration resources.
+
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
@@ -317,6 +319,7 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
         $ pulumi import oci:BigDataService/bdsInstanceNodeReplaceConfiguration:BdsInstanceNodeReplaceConfiguration test_bds_instance_node_replace_configuration "bdsInstances/{bdsInstanceId}/nodeReplaceConfigurations/{nodeReplaceConfigurationId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
@@ -366,6 +369,7 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:BigDataService/bdsInstanceNodeReplaceConfiguration:BdsInstanceNodeReplaceConfiguration test_bds_instance_node_replace_configuration "bdsInstances/{bdsInstanceId}/nodeReplaceConfigurations/{nodeReplaceConfigurationId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param BdsInstanceNodeReplaceConfigurationArgs args: The arguments to use to populate this resource's properties.

@@ -30,6 +30,7 @@ class ReplicaArgs:
                  replica_overrides: Optional[pulumi.Input['ReplicaReplicaOverridesArgs']] = None):
         """
         The set of arguments for constructing a Replica resource.
+
         :param pulumi.Input[_builtins.str] db_system_id: The OCID of the DB System the read replica is associated with.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) User provided description of the read replica.
@@ -167,6 +168,7 @@ class _ReplicaState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Replica resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The name of the Availability Domain the read replica is located in.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment that contains the read replica.
         :param pulumi.Input[_builtins.str] configuration_id: The OCID of the Configuration to be used by the read replica.
@@ -611,6 +613,7 @@ class Replica(pulumi.CustomResource):
         $ pulumi import oci:Mysql/replica:Replica test_replica "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] db_system_id: The OCID of the DB System the read replica is associated with.
@@ -678,6 +681,7 @@ class Replica(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Mysql/replica:Replica test_replica "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ReplicaArgs args: The arguments to use to populate this resource's properties.

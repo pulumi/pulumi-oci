@@ -25,6 +25,7 @@ class DeploymentCertificateArgs:
                  is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a DeploymentCertificate resource.
+
         :param pulumi.Input[_builtins.str] certificate_content: The base64 encoded content of the PEM file containing the SSL certificate.
         :param pulumi.Input[_builtins.str] deployment_id: A unique Deployment identifier.
         :param pulumi.Input[_builtins.str] key: The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter. 
@@ -119,6 +120,7 @@ class _DeploymentCertificateState:
                  version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DeploymentCertificate resources.
+
         :param pulumi.Input[_builtins.str] authority_key_id: The Certificate authority key id.
         :param pulumi.Input[_builtins.str] certificate_content: The base64 encoded content of the PEM file containing the SSL certificate.
         :param pulumi.Input[_builtins.str] deployment_id: A unique Deployment identifier.
@@ -485,6 +487,7 @@ class DeploymentCertificate(pulumi.CustomResource):
         $ pulumi import oci:GoldenGate/deploymentCertificate:DeploymentCertificate test_deployment_certificate "deployments/{deploymentId}/certificates/{certificateKey}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] certificate_content: The base64 encoded content of the PEM file containing the SSL certificate.
@@ -530,6 +533,7 @@ class DeploymentCertificate(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:GoldenGate/deploymentCertificate:DeploymentCertificate test_deployment_certificate "deployments/{deploymentId}/certificates/{certificateKey}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DeploymentCertificateArgs args: The arguments to use to populate this resource's properties.

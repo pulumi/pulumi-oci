@@ -33,6 +33,7 @@ class PrivateIpArgs:
                  vnic_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a PrivateIp resource.
+
         :param pulumi.Input[_builtins.int] cidr_prefix_length: An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet's CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don't specify a value, this option will be ignored.  Example: 18
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -263,6 +264,7 @@ class _PrivateIpState:
                  vnic_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PrivateIp resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The private IP's availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.int] cidr_prefix_length: An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet's CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don't specify a value, this option will be ignored.  Example: 18
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
@@ -618,6 +620,7 @@ class PrivateIp(pulumi.CustomResource):
         $ pulumi import oci:Core/privateIp:PrivateIp test_private_ip "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] cidr_prefix_length: An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet's CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don't specify a value, this option will be ignored.  Example: 18
@@ -693,6 +696,7 @@ class PrivateIp(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/privateIp:PrivateIp test_private_ip "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param PrivateIpArgs args: The arguments to use to populate this resource's properties.

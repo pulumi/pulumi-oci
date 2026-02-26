@@ -25,6 +25,7 @@ class DbNodeConsoleHistoryArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a DbNodeConsoleHistory resource.
+
         :param pulumi.Input[_builtins.str] db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the console history. The name does not need to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -107,6 +108,7 @@ class _DbNodeConsoleHistoryState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DbNodeConsoleHistory resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment containing the console history.
         :param pulumi.Input[_builtins.str] db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -280,6 +282,7 @@ class DbNodeConsoleHistory(pulumi.CustomResource):
         $ pulumi import oci:Database/dbNodeConsoleHistory:DbNodeConsoleHistory test_db_node_console_history "dbNodes/{dbNodeId}/consoleHistories/{consoleHistoryId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -327,6 +330,7 @@ class DbNodeConsoleHistory(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/dbNodeConsoleHistory:DbNodeConsoleHistory test_db_node_console_history "dbNodes/{dbNodeId}/consoleHistories/{consoleHistoryId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DbNodeConsoleHistoryArgs args: The arguments to use to populate this resource's properties.

@@ -22,6 +22,7 @@ class ManagementStationRefreshManagementArgs:
                  management_station_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ManagementStationRefreshManagement resource.
+
         :param pulumi.Input[_builtins.str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
                
                
@@ -53,6 +54,7 @@ class _ManagementStationRefreshManagementState:
                  management_station_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagementStationRefreshManagement resources.
+
         :param pulumi.Input[_builtins.str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
                
                
@@ -112,6 +114,7 @@ class ManagementStationRefreshManagement(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/managementStationRefreshManagement:ManagementStationRefreshManagement test_management_station_refresh_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
@@ -150,6 +153,7 @@ class ManagementStationRefreshManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/managementStationRefreshManagement:ManagementStationRefreshManagement test_management_station_refresh_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagementStationRefreshManagementArgs args: The arguments to use to populate this resource's properties.

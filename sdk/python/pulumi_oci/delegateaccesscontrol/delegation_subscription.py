@@ -27,6 +27,7 @@ class DelegationSubscriptionArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a DelegationSubscription resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the Delegation Control.
         :param pulumi.Input[_builtins.str] service_provider_id: Unique identifier of the Service Provider.
         :param pulumi.Input[_builtins.str] subscribed_service_type: Subscribed Service Provider Service Type.
@@ -142,6 +143,7 @@ class _DelegationSubscriptionState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DelegationSubscription resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the Delegation Control.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of the Delegation Subscription.
@@ -378,6 +380,7 @@ class DelegationSubscription(pulumi.CustomResource):
         $ pulumi import oci:DelegateAccessControl/delegationSubscription:DelegationSubscription test_delegation_subscription "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the Delegation Control.
@@ -428,6 +431,7 @@ class DelegationSubscription(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DelegateAccessControl/delegationSubscription:DelegationSubscription test_delegation_subscription "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DelegationSubscriptionArgs args: The arguments to use to populate this resource's properties.

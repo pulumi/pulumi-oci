@@ -26,6 +26,7 @@ class WorkRequestRerunManagementArgs:
                  work_request_details: Optional[pulumi.Input['WorkRequestRerunManagementWorkRequestDetailsArgs']] = None):
         """
         The set of arguments for constructing a WorkRequestRerunManagement resource.
+
         :param pulumi.Input[_builtins.str] work_request_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
                
                
@@ -89,6 +90,7 @@ class _WorkRequestRerunManagementState:
                  work_request_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WorkRequestRerunManagement resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instances: List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to affected by the rerun of the work request.
         :param pulumi.Input['WorkRequestRerunManagementWorkRequestDetailsArgs'] work_request_details: Provides the name and description of the job.
         :param pulumi.Input[_builtins.str] work_request_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
@@ -186,6 +188,7 @@ class WorkRequestRerunManagement(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/workRequestRerunManagement:WorkRequestRerunManagement test_work_request_rerun_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instances: List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to affected by the rerun of the work request.
@@ -232,6 +235,7 @@ class WorkRequestRerunManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/workRequestRerunManagement:WorkRequestRerunManagement test_work_request_rerun_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param WorkRequestRerunManagementArgs args: The arguments to use to populate this resource's properties.

@@ -26,6 +26,7 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementArgs:
                  feature_details: Optional[pulumi.Input['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs']] = None):
         """
         The set of arguments for constructing a ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement resource.
+
         :param pulumi.Input[_builtins.bool] enable_external_non_container_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                
@@ -88,6 +89,7 @@ class _ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementStat
                  feature_details: Optional[pulumi.Input['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement resources.
+
         :param pulumi.Input[_builtins.bool] enable_external_non_container_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                
@@ -185,6 +187,7 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement(pulu
             })
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_external_non_container_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -231,6 +234,7 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement(pulu
                 "license_model": externalnoncontainerdatabase_external_non_container_dbm_features_management_feature_details_license_model,
             })
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementArgs args: The arguments to use to populate this resource's properties.

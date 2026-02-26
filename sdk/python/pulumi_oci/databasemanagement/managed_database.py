@@ -26,6 +26,7 @@ class ManagedDatabaseArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ManagedDatabase resource.
+
         :param pulumi.Input[_builtins.str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
                
                
@@ -108,6 +109,7 @@ class _ManagedDatabaseState:
                  workload_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagedDatabase resources.
+
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_details: The additional details specific to a type of database defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
         :param pulumi.Input[_builtins.str] database_platform_name: The operating system of database.
@@ -475,6 +477,7 @@ class ManagedDatabase(pulumi.CustomResource):
         $ pulumi import oci:DatabaseManagement/managedDatabase:ManagedDatabase test_managed_database "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -506,6 +509,7 @@ class ManagedDatabase(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DatabaseManagement/managedDatabase:ManagedDatabase test_managed_database "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagedDatabaseArgs args: The arguments to use to populate this resource's properties.

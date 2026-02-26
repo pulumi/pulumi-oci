@@ -34,6 +34,7 @@ class VbInstanceArgs:
                  network_endpoint_details: Optional[pulumi.Input['VbInstanceNetworkEndpointDetailsArgs']] = None):
         """
         The set of arguments for constructing a VbInstance resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Vb Instance Identifier.
         :param pulumi.Input[_builtins.int] node_count: (Updatable) The number of Nodes
@@ -233,6 +234,7 @@ class _VbInstanceState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VbInstance resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['VbInstanceAlternateCustomEndpointArgs']]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[_builtins.str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
@@ -593,6 +595,7 @@ class VbInstance(pulumi.CustomResource):
         $ pulumi import oci:VisualBuilder/vbInstance:VbInstance test_vb_instance "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VbInstanceAlternateCustomEndpointArgs', 'VbInstanceAlternateCustomEndpointArgsDict']]]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
@@ -632,6 +635,7 @@ class VbInstance(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:VisualBuilder/vbInstance:VbInstance test_vb_instance "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param VbInstanceArgs args: The arguments to use to populate this resource's properties.

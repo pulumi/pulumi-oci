@@ -39,6 +39,7 @@ class ContainerInstanceArgs:
                  volumes: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVolumeArgs']]]] = None):
         """
         The set of arguments for constructing a ContainerInstance resource.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain where the container instance runs.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment OCID.
         :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerArgs']]] containers: The containers to create on this container instance.
@@ -315,6 +316,7 @@ class _ContainerInstanceState:
                  volumes: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVolumeArgs']]]] = None):
         """
         Input properties used for looking up and filtering ContainerInstance resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain where the container instance runs.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment OCID.
         :param pulumi.Input[_builtins.int] container_count: The number of containers on the container instance.
@@ -807,6 +809,7 @@ class ContainerInstance(pulumi.CustomResource):
         $ pulumi import oci:ContainerEngine/containerInstance:ContainerInstance test_container_instance "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain where the container instance runs.
@@ -961,6 +964,7 @@ class ContainerInstance(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ContainerEngine/containerInstance:ContainerInstance test_container_instance "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ContainerInstanceArgs args: The arguments to use to populate this resource's properties.

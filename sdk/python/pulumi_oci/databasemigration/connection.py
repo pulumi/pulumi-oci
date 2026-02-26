@@ -56,6 +56,7 @@ class ConnectionArgs:
                  wallet: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Connection resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[_builtins.str] connection_type: (Updatable) Defines the type of connection. For example, ORACLE.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
@@ -600,6 +601,7 @@ class _ConnectionState:
                  wallet: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Connection resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]] additional_attributes: (Updatable) An array of name-value pair attribute entries.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[_builtins.str] connection_string: (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
@@ -1332,6 +1334,7 @@ class Connection(pulumi.CustomResource):
         $ pulumi import oci:DatabaseMigration/connection:Connection test_connection "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]] additional_attributes: (Updatable) An array of name-value pair attribute entries.
@@ -1443,6 +1446,7 @@ class Connection(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DatabaseMigration/connection:Connection test_connection "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ConnectionArgs args: The arguments to use to populate this resource's properties.

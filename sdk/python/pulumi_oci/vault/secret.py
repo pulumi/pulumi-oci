@@ -37,6 +37,7 @@ class SecretArgs:
                  secret_rules: Optional[pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]]] = None):
         """
         The set of arguments for constructing a Secret resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create the secret.
         :param pulumi.Input[_builtins.str] key_id: The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
         :param pulumi.Input[_builtins.str] secret_name: A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
@@ -285,6 +286,7 @@ class _SecretState:
                  vault_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Secret resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create the secret.
         :param pulumi.Input[_builtins.str] current_version_number: The version number of the secret version that's currently in use.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -723,6 +725,7 @@ class Secret(pulumi.CustomResource):
         $ pulumi import oci:Vault/secret:Secret test_secret "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create the secret.
@@ -765,6 +768,7 @@ class Secret(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Vault/secret:Secret test_secret "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SecretArgs args: The arguments to use to populate this resource's properties.

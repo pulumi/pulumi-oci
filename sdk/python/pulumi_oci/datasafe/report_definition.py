@@ -33,6 +33,7 @@ class ReportDefinitionArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ReportDefinition resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnFilterArgs']]] column_filters: (Updatable) An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
         :param pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnInfoArgs']]] column_infos: (Updatable) An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
         :param pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnSortingArgs']]] column_sortings: (Updatable) An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
@@ -211,6 +212,7 @@ class _ReportDefinitionState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ReportDefinition resources.
+
         :param pulumi.Input[_builtins.str] category: Specifies the name of the category that this report belongs to.
         :param pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnFilterArgs']]] column_filters: (Updatable) An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
         :param pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnInfoArgs']]] column_infos: (Updatable) An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
@@ -700,6 +702,7 @@ class ReportDefinition(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/reportDefinition:ReportDefinition test_report_definition "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionColumnFilterArgs', 'ReportDefinitionColumnFilterArgsDict']]]] column_filters: (Updatable) An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
@@ -782,6 +785,7 @@ class ReportDefinition(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/reportDefinition:ReportDefinition test_report_definition "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ReportDefinitionArgs args: The arguments to use to populate this resource's properties.

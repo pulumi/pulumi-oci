@@ -28,6 +28,7 @@ class ModelProvenanceArgs:
                  training_script: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ModelProvenance resource.
+
         :param pulumi.Input[_builtins.str] model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
         :param pulumi.Input[_builtins.str] git_branch: (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
         :param pulumi.Input[_builtins.str] git_commit: (Updatable) For model reproducibility purposes. Commit ID of the git repository associated with model training.
@@ -155,6 +156,7 @@ class _ModelProvenanceState:
                  training_script: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ModelProvenance resources.
+
         :param pulumi.Input[_builtins.str] git_branch: (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
         :param pulumi.Input[_builtins.str] git_commit: (Updatable) For model reproducibility purposes. Commit ID of the git repository associated with model training.
         :param pulumi.Input[_builtins.str] model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
@@ -317,6 +319,7 @@ class ModelProvenance(pulumi.CustomResource):
         $ pulumi import oci:DataScience/modelProvenance:ModelProvenance test_model_provenance "models/{modelId}/provenance"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] git_branch: (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
@@ -368,6 +371,7 @@ class ModelProvenance(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataScience/modelProvenance:ModelProvenance test_model_provenance "models/{modelId}/provenance"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ModelProvenanceArgs args: The arguments to use to populate this resource's properties.

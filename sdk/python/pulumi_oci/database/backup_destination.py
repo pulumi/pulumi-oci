@@ -32,6 +32,7 @@ class BackupDestinationArgs:
                  vpc_users: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a BackupDestination resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] display_name: The user-provided name of the backup destination.
         :param pulumi.Input[_builtins.str] type: Type of the backup destination.
@@ -206,6 +207,7 @@ class _BackupDestinationState:
                  vpc_users: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering BackupDestination resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['BackupDestinationAssociatedDatabaseArgs']]] associated_databases: List of databases associated with the backup destination.
         :param pulumi.Input[_builtins.int] associated_long_term_backup_count: Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
         :param pulumi.Input[Sequence[pulumi.Input['BackupDestinationAssociatedLongTermBackupArgs']]] associated_long_term_backups: List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
@@ -608,6 +610,7 @@ class BackupDestination(pulumi.CustomResource):
         $ pulumi import oci:Database/backupDestination:BackupDestination test_backup_destination "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -670,6 +673,7 @@ class BackupDestination(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/backupDestination:BackupDestination test_backup_destination "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param BackupDestinationArgs args: The arguments to use to populate this resource's properties.

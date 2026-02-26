@@ -28,6 +28,7 @@ class ExecutionWindowArgs:
                  is_enforced_duration: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a ExecutionWindow resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] execution_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution resource the execution window belongs to.
         :param pulumi.Input[_builtins.str] time_scheduled: (Updatable) The scheduled start date and time of the execution window.
@@ -164,6 +165,7 @@ class _ExecutionWindowState:
                  window_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExecutionWindow resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] description: Description of the execution window.
@@ -505,6 +507,7 @@ class ExecutionWindow(pulumi.CustomResource):
         $ pulumi import oci:Database/executionWindow:ExecutionWindow test_execution_window "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -555,6 +558,7 @@ class ExecutionWindow(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/executionWindow:ExecutionWindow test_execution_window "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ExecutionWindowArgs args: The arguments to use to populate this resource's properties.

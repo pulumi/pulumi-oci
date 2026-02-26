@@ -28,6 +28,7 @@ class MonitoredResourceTaskArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a MonitoredResourceTask resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment identifier.
         :param pulumi.Input['MonitoredResourceTaskTaskDetailsArgs'] task_details: The request details for the performing the task.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -121,6 +122,7 @@ class _MonitoredResourceTaskState:
                  work_request_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering MonitoredResourceTask resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment identifier.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -408,6 +410,7 @@ class MonitoredResourceTask(pulumi.CustomResource):
         $ pulumi import oci:StackMonitoring/monitoredResourceTask:MonitoredResourceTask test_monitored_resource_task "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment identifier.
@@ -513,6 +516,7 @@ class MonitoredResourceTask(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:StackMonitoring/monitoredResourceTask:MonitoredResourceTask test_monitored_resource_task "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MonitoredResourceTaskArgs args: The arguments to use to populate this resource's properties.

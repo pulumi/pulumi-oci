@@ -29,6 +29,7 @@ class ComputeGpuMemoryFabricArgs:
                  memory_fabric_preferences: Optional[pulumi.Input['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs']] = None):
         """
         The set of arguments for constructing a ComputeGpuMemoryFabric resource.
+
         :param pulumi.Input[_builtins.str] compute_gpu_memory_fabric_id: The OCID of the compute GPU memory fabric.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -149,6 +150,7 @@ class _ComputeGpuMemoryFabricState:
                  total_host_count: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ComputeGpuMemoryFabric resources.
+
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_data: Additional data that can be exposed to the customer. Right now it will include the switch tray ids.
         :param pulumi.Input[_builtins.str] available_host_count: The total number of available bare metal hosts located in this compute GPU memory fabric.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
@@ -527,6 +529,7 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
         $ pulumi import oci:Core/computeGpuMemoryFabric:ComputeGpuMemoryFabric test_compute_gpu_memory_fabric "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
@@ -558,6 +561,7 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/computeGpuMemoryFabric:ComputeGpuMemoryFabric test_compute_gpu_memory_fabric "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ComputeGpuMemoryFabricArgs args: The arguments to use to populate this resource's properties.

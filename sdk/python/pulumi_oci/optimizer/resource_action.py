@@ -26,6 +26,7 @@ class ResourceActionArgs:
                  time_status_end: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ResourceAction resource.
+
         :param pulumi.Input[_builtins.str] resource_action_id: The unique OCID associated with the resource action.
         :param pulumi.Input[_builtins.str] status: (Updatable) The status of the resource action.
         :param pulumi.Input[_builtins.str] time_status_end: (Updatable) The date and time the current status will change. The format is defined by RFC3339.
@@ -107,6 +108,7 @@ class _ResourceActionState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ResourceAction resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['ResourceActionActionArgs']]] actions: Details about the recommended action.
         :param pulumi.Input[_builtins.str] category_id: The unique OCID associated with the category.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
@@ -423,6 +425,7 @@ class ResourceAction(pulumi.CustomResource):
         $ pulumi import oci:Optimizer/resourceAction:ResourceAction test_resource_action "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] resource_action_id: The unique OCID associated with the resource action.
@@ -461,6 +464,7 @@ class ResourceAction(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Optimizer/resourceAction:ResourceAction test_resource_action "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ResourceActionArgs args: The arguments to use to populate this resource's properties.

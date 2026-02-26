@@ -31,6 +31,7 @@ class CloudDbSystemDiscoveryArgs:
                  patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryPatchOperationArgs']]]] = None):
         """
         The set of arguments for constructing a CloudDbSystemDiscovery resource.
+
         :param pulumi.Input[_builtins.str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
         :param pulumi.Input[_builtins.str] dbaas_parent_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
@@ -172,6 +173,7 @@ class _CloudDbSystemDiscoveryState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudDbSystemDiscovery resources.
+
         :param pulumi.Input[_builtins.str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
         :param pulumi.Input[_builtins.str] dbaas_parent_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
@@ -485,6 +487,7 @@ class CloudDbSystemDiscovery(pulumi.CustomResource):
         $ pulumi import oci:DatabaseManagement/cloudDbSystemDiscovery:CloudDbSystemDiscovery test_cloud_db_system_discovery "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
@@ -545,6 +548,7 @@ class CloudDbSystemDiscovery(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DatabaseManagement/cloudDbSystemDiscovery:CloudDbSystemDiscovery test_cloud_db_system_discovery "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CloudDbSystemDiscoveryArgs args: The arguments to use to populate this resource's properties.

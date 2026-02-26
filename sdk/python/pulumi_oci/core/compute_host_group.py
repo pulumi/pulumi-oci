@@ -30,6 +30,7 @@ class ComputeHostGroupArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ComputeHostGroup resource.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a host group.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains host group.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -158,6 +159,7 @@ class _ComputeHostGroupState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ComputeHostGroup resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a host group.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains host group.
         :param pulumi.Input[Sequence[pulumi.Input['ComputeHostGroupConfigurationArgs']]] configurations: (Updatable) A list of HostGroupConfiguration objects
@@ -389,6 +391,7 @@ class ComputeHostGroup(pulumi.CustomResource):
         $ pulumi import oci:Core/computeHostGroup:ComputeHostGroup test_compute_host_group "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a host group.  Example: `Uocm:PHX-AD-1`
@@ -449,6 +452,7 @@ class ComputeHostGroup(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/computeHostGroup:ComputeHostGroup test_compute_host_group "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ComputeHostGroupArgs args: The arguments to use to populate this resource's properties.

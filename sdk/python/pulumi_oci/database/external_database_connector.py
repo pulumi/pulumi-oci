@@ -31,6 +31,7 @@ class ExternalDatabaseConnectorArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ExternalDatabaseConnector resource.
+
         :param pulumi.Input['ExternalDatabaseConnectorConnectionCredentialsArgs'] connection_credentials: (Updatable) Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
         :param pulumi.Input['ExternalDatabaseConnectorConnectionStringArgs'] connection_string: (Updatable) The Oracle AI Database connection string.
         :param pulumi.Input[_builtins.str] connector_agent_id: The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
@@ -177,6 +178,7 @@ class _ExternalDatabaseConnectorState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalDatabaseConnector resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input['ExternalDatabaseConnectorConnectionCredentialsArgs'] connection_credentials: (Updatable) Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
         :param pulumi.Input[_builtins.str] connection_status: The status of connectivity to the external database.
@@ -475,6 +477,7 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
         $ pulumi import oci:Database/externalDatabaseConnector:ExternalDatabaseConnector test_external_database_connector "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ExternalDatabaseConnectorConnectionCredentialsArgs', 'ExternalDatabaseConnectorConnectionCredentialsArgsDict']] connection_credentials: (Updatable) Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
@@ -542,6 +545,7 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/externalDatabaseConnector:ExternalDatabaseConnector test_external_database_connector "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ExternalDatabaseConnectorArgs args: The arguments to use to populate this resource's properties.

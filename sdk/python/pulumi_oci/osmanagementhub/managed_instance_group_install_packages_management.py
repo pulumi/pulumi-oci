@@ -27,6 +27,7 @@ class ManagedInstanceGroupInstallPackagesManagementArgs:
                  work_request_details: Optional[pulumi.Input['ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs']] = None):
         """
         The set of arguments for constructing a ManagedInstanceGroupInstallPackagesManagement resource.
+
         :param pulumi.Input[_builtins.str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] package_names: The list of package names.
         :param pulumi.Input[_builtins.bool] is_latest: Indicates whether this is the latest package version.
@@ -97,6 +98,7 @@ class _ManagedInstanceGroupInstallPackagesManagementState:
                  work_request_details: Optional[pulumi.Input['ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering ManagedInstanceGroupInstallPackagesManagement resources.
+
         :param pulumi.Input[_builtins.bool] is_latest: Indicates whether this is the latest package version.
         :param pulumi.Input[_builtins.str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] package_names: The list of package names.
@@ -203,6 +205,7 @@ class ManagedInstanceGroupInstallPackagesManagement(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/managedInstanceGroupInstallPackagesManagement:ManagedInstanceGroupInstallPackagesManagement test_managed_instance_group_install_packages_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] is_latest: Indicates whether this is the latest package version.
@@ -247,6 +250,7 @@ class ManagedInstanceGroupInstallPackagesManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/managedInstanceGroupInstallPackagesManagement:ManagedInstanceGroupInstallPackagesManagement test_managed_instance_group_install_packages_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagedInstanceGroupInstallPackagesManagementArgs args: The arguments to use to populate this resource's properties.

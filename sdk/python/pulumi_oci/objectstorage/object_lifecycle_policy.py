@@ -26,6 +26,7 @@ class ObjectLifecyclePolicyArgs:
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectLifecyclePolicyRuleArgs']]]] = None):
         """
         The set of arguments for constructing a ObjectLifecyclePolicy resource.
+
         :param pulumi.Input[_builtins.str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         :param pulumi.Input[_builtins.str] namespace: The Object Storage namespace used for the request.
         :param pulumi.Input[Sequence[pulumi.Input['ObjectLifecyclePolicyRuleArgs']]] rules: (Updatable) The bucket's set of lifecycle policy rules.
@@ -81,6 +82,7 @@ class _ObjectLifecyclePolicyState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ObjectLifecyclePolicy resources.
+
         :param pulumi.Input[_builtins.str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         :param pulumi.Input[_builtins.str] namespace: The Object Storage namespace used for the request.
         :param pulumi.Input[Sequence[pulumi.Input['ObjectLifecyclePolicyRuleArgs']]] rules: (Updatable) The bucket's set of lifecycle policy rules.
@@ -194,6 +196,7 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
         $ pulumi import oci:ObjectStorage/objectLifecyclePolicy:ObjectLifecyclePolicy test_object_lifecycle_policy "n/{namespaceName}/b/{bucketName}/l"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -245,6 +248,7 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ObjectStorage/objectLifecyclePolicy:ObjectLifecyclePolicy test_object_lifecycle_policy "n/{namespaceName}/b/{bucketName}/l"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ObjectLifecyclePolicyArgs args: The arguments to use to populate this resource's properties.

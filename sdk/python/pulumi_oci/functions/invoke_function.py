@@ -29,6 +29,7 @@ class InvokeFunctionArgs:
                  is_dry_run: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a InvokeFunction resource.
+
         :param pulumi.Input[_builtins.str] function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
         :param pulumi.Input[_builtins.bool] base64_encode_content: Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
         :param pulumi.Input[_builtins.str] fn_intent: An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
@@ -172,6 +173,7 @@ class _InvokeFunctionState:
                  is_dry_run: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering InvokeFunction resources.
+
         :param pulumi.Input[_builtins.bool] base64_encode_content: Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
         :param pulumi.Input[_builtins.str] content: Content of the response string, if any. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
         :param pulumi.Input[_builtins.str] fn_intent: An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
@@ -369,6 +371,7 @@ class InvokeFunction(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] base64_encode_content: Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
@@ -415,6 +418,7 @@ class InvokeFunction(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param InvokeFunctionArgs args: The arguments to use to populate this resource's properties.

@@ -35,6 +35,7 @@ class OpsiConfigurationArgs:
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a OpsiConfiguration resource.
+
         :param pulumi.Input[_builtins.str] opsi_config_type: (Updatable) OPSI configuration type.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] config_item_custom_statuses: Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned. By default only customized configuration items are returned.
@@ -246,6 +247,7 @@ class _OpsiConfigurationState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OpsiConfiguration resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] config_item_custom_statuses: Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned. By default only customized configuration items are returned.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] config_item_fields: Specifies the fields to return in a config item summary.
@@ -561,6 +563,7 @@ class OpsiConfiguration(pulumi.CustomResource):
         $ pulumi import oci:Opsi/opsiConfiguration:OpsiConfiguration test_opsi_configuration "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -630,6 +633,7 @@ class OpsiConfiguration(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Opsi/opsiConfiguration:OpsiConfiguration test_opsi_configuration "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OpsiConfigurationArgs args: The arguments to use to populate this resource's properties.

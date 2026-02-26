@@ -27,6 +27,7 @@ class WlpAgentArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a WlpAgent resource.
+
         :param pulumi.Input[_builtins.str] agent_version: The version of the agent making the request
         :param pulumi.Input[_builtins.str] certificate_signed_request: (Updatable) The certificate signed request containing domain, organization names, organization units, city, state, country, email and public key, among other certificate details, signed by private key
         :param pulumi.Input[_builtins.str] compartment_id: Compartment OCID of the host
@@ -145,6 +146,7 @@ class _WlpAgentState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WlpAgent resources.
+
         :param pulumi.Input[_builtins.str] agent_version: The version of the agent making the request
         :param pulumi.Input[_builtins.str] certificate_id: The certificate ID returned by Oracle Cloud Infrastructure certificates service
         :param pulumi.Input[_builtins.str] certificate_signed_request: (Updatable) The certificate signed request containing domain, organization names, organization units, city, state, country, email and public key, among other certificate details, signed by private key
@@ -389,6 +391,7 @@ class WlpAgent(pulumi.CustomResource):
         $ pulumi import oci:CloudGuard/wlpAgent:WlpAgent test_wlp_agent "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] agent_version: The version of the agent making the request
@@ -445,6 +448,7 @@ class WlpAgent(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:CloudGuard/wlpAgent:WlpAgent test_wlp_agent "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param WlpAgentArgs args: The arguments to use to populate this resource's properties.

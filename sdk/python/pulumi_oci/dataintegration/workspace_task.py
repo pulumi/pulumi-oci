@@ -47,6 +47,7 @@ class WorkspaceTaskArgs:
                  typed_expressions: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskTypedExpressionArgs']]]] = None):
         """
         The set of arguments for constructing a WorkspaceTask resource.
+
         :param pulumi.Input[_builtins.str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[_builtins.str] model_type: (Updatable) The type of the task.
         :param pulumi.Input['WorkspaceTaskRegistryMetadataArgs'] registry_metadata: (Updatable) Information about the object and its parent.
@@ -446,6 +447,7 @@ class _WorkspaceTaskState:
                  workspace_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WorkspaceTask resources.
+
         :param pulumi.Input[_builtins.str] api_call_mode: (Updatable) The REST invocation pattern to use. ASYNC_OCI_WORKREQUEST is being deprecated as well as cancelEndpoint/MethodType.
         :param pulumi.Input['WorkspaceTaskAuthConfigArgs'] auth_config: (Updatable) Authentication configuration for Generic REST invocation.
         :param pulumi.Input['WorkspaceTaskCancelRestCallConfigArgs'] cancel_rest_call_config: (Updatable) The REST API configuration for cancelling the task.
@@ -1614,6 +1616,7 @@ class WorkspaceTask(pulumi.CustomResource):
         $ pulumi import oci:DataIntegration/workspaceTask:WorkspaceTask test_workspace_task "workspaces/{workspaceId}/tasks/{taskKey}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] api_call_mode: (Updatable) The REST invocation pattern to use. ASYNC_OCI_WORKREQUEST is being deprecated as well as cancelEndpoint/MethodType.
@@ -2371,6 +2374,7 @@ class WorkspaceTask(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataIntegration/workspaceTask:WorkspaceTask test_workspace_task "workspaces/{workspaceId}/tasks/{taskKey}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param WorkspaceTaskArgs args: The arguments to use to populate this resource's properties.

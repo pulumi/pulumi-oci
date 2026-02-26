@@ -30,6 +30,7 @@ class TableArgs:
                  table_limits: Optional[pulumi.Input['TableTableLimitsArgs']] = None):
         """
         The set of arguments for constructing a Table resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[_builtins.str] ddl_statement: (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
@@ -159,6 +160,7 @@ class _TableState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Table resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[_builtins.str] ddl_statement: (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
@@ -485,6 +487,7 @@ class Table(pulumi.CustomResource):
         $ pulumi import oci:Nosql/table:Table test_table "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier.
@@ -539,6 +542,7 @@ class Table(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Nosql/table:Table test_table "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param TableArgs args: The arguments to use to populate this resource's properties.

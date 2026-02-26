@@ -43,6 +43,7 @@ class MediaAssetArgs:
                  source_media_workflow_version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a MediaAsset resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of the media asset.
                
@@ -377,6 +378,7 @@ class _MediaAssetState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MediaAsset resources.
+
         :param pulumi.Input[_builtins.str] bucket: The name of the object storage bucket where this asset is located.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -787,6 +789,7 @@ class MediaAsset(pulumi.CustomResource):
         $ pulumi import oci:MediaServices/mediaAsset:MediaAsset test_media_asset "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bucket: The name of the object storage bucket where this asset is located.
@@ -834,6 +837,7 @@ class MediaAsset(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:MediaServices/mediaAsset:MediaAsset test_media_asset "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MediaAssetArgs args: The arguments to use to populate this resource's properties.

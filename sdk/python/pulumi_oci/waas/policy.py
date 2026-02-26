@@ -33,6 +33,7 @@ class PolicyArgs:
                  waf_config: Optional[pulumi.Input['PolicyWafConfigArgs']] = None):
         """
         The set of arguments for constructing a Policy resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the WAAS policy.
         :param pulumi.Input[_builtins.str] domain: The web application domain that the WAAS policy protects.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] additional_domains: (Updatable) An array of additional domains for the specified web application.
@@ -202,6 +203,7 @@ class _PolicyState:
                  waf_config: Optional[pulumi.Input['PolicyWafConfigArgs']] = None):
         """
         Input properties used for looking up and filtering Policy resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] additional_domains: (Updatable) An array of additional domains for the specified web application.
         :param pulumi.Input[_builtins.str] cname: The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the WAAS policy.
@@ -667,6 +669,7 @@ class Policy(pulumi.CustomResource):
         $ pulumi import oci:Waas/policy:Policy test_waas_policy "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] additional_domains: (Updatable) An array of additional domains for the specified web application.
@@ -935,6 +938,7 @@ class Policy(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Waas/policy:Policy test_waas_policy "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param PolicyArgs args: The arguments to use to populate this resource's properties.

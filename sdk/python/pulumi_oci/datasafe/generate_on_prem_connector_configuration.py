@@ -23,6 +23,7 @@ class GenerateOnPremConnectorConfigurationArgs:
                  password: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a GenerateOnPremConnectorConfiguration resource.
+
         :param pulumi.Input[_builtins.str] on_prem_connector_id: The OCID of the on-premises connector.
         :param pulumi.Input[_builtins.str] password: The password to encrypt the keys inside the wallet included as part of the configuration. The password must be between 12 and 30 characters long and must contain atleast 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
                
@@ -69,6 +70,7 @@ class _GenerateOnPremConnectorConfigurationState:
                  password: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering GenerateOnPremConnectorConfiguration resources.
+
         :param pulumi.Input[_builtins.str] on_prem_connector_id: The OCID of the on-premises connector.
         :param pulumi.Input[_builtins.str] password: The password to encrypt the keys inside the wallet included as part of the configuration. The password must be between 12 and 30 characters long and must contain atleast 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
                
@@ -143,6 +145,7 @@ class GenerateOnPremConnectorConfiguration(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/generateOnPremConnectorConfiguration:GenerateOnPremConnectorConfiguration test_generate_on_prem_connector_configuration "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] on_prem_connector_id: The OCID of the on-premises connector.
@@ -181,6 +184,7 @@ class GenerateOnPremConnectorConfiguration(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/generateOnPremConnectorConfiguration:GenerateOnPremConnectorConfiguration test_generate_on_prem_connector_configuration "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param GenerateOnPremConnectorConfigurationArgs args: The arguments to use to populate this resource's properties.

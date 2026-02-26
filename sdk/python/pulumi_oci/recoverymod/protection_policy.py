@@ -28,6 +28,7 @@ class ProtectionPolicyArgs:
                  policy_locked_date_time: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ProtectionPolicy resource.
+
         :param pulumi.Input[_builtins.int] backup_retention_period_in_days: (Updatable) The maximum number of days to retain backups for a protected database.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user provided name for the protection policy. The 'displayName' does not have to be unique, and it can be modified. Avoid entering confidential information.
@@ -171,6 +172,7 @@ class _ProtectionPolicyState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProtectionPolicy resources.
+
         :param pulumi.Input[_builtins.int] backup_retention_period_in_days: (Updatable) The maximum number of days to retain backups for a protected database.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -439,6 +441,7 @@ class ProtectionPolicy(pulumi.CustomResource):
         $ pulumi import oci:RecoveryMod/protectionPolicy:ProtectionPolicy test_protection_policy "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] backup_retention_period_in_days: (Updatable) The maximum number of days to retain backups for a protected database.
@@ -500,6 +503,7 @@ class ProtectionPolicy(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:RecoveryMod/protectionPolicy:ProtectionPolicy test_protection_policy "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ProtectionPolicyArgs args: The arguments to use to populate this resource's properties.

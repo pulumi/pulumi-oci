@@ -36,6 +36,7 @@ class ApiaccesscontrolPrivilegedApiRequestArgs:
                  time_requested_for_future_access: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ApiaccesscontrolPrivilegedApiRequest resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs']]] privileged_operation_lists: List of api names, attributes for which approval is sought by the user.
         :param pulumi.Input[_builtins.str] reason_summary: Summary comment by the operator creating the access request.
         :param pulumi.Input[_builtins.str] resource_id: The OCID of the target resource associated with the access request. The operator raises an access request to get approval to access the target resource.
@@ -274,6 +275,7 @@ class _ApiaccesscontrolPrivilegedApiRequestState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ApiaccesscontrolPrivilegedApiRequest resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs']]] approver_details: Contains the approver details who have approved the privilegedApi Request during the initial request.
         :param pulumi.Input[_builtins.str] closure_comment: The comment entered by the operator while closing the request.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -800,6 +802,7 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
         $ pulumi import oci:oci/apiaccesscontrolPrivilegedApiRequest:ApiaccesscontrolPrivilegedApiRequest test_privileged_api_request "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -870,6 +873,7 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:oci/apiaccesscontrolPrivilegedApiRequest:ApiaccesscontrolPrivilegedApiRequest test_privileged_api_request "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ApiaccesscontrolPrivilegedApiRequestArgs args: The arguments to use to populate this resource's properties.

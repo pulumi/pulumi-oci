@@ -28,6 +28,7 @@ class SecurityAttributeArgs:
                  validator: Optional[pulumi.Input['SecurityAttributeValidatorArgs']] = None):
         """
         The set of arguments for constructing a SecurityAttribute resource.
+
         :param pulumi.Input[_builtins.str] description: (Updatable) The description you assign to the security attribute during creation.
         :param pulumi.Input[_builtins.str] security_attribute_namespace_id: The OCID of the security attribute namespace.
         :param pulumi.Input[_builtins.bool] is_retired: Indicates whether the security attribute is retired. See [Managing Security Attribute Namespaces](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
@@ -127,6 +128,7 @@ class _SecurityAttributeState:
                  validator: Optional[pulumi.Input['SecurityAttributeValidatorArgs']] = None):
         """
         Input properties used for looking up and filtering SecurityAttribute resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment that contains the security attribute definition.
         :param pulumi.Input[_builtins.str] description: (Updatable) The description you assign to the security attribute during creation.
         :param pulumi.Input[_builtins.bool] is_retired: Indicates whether the security attribute is retired. See [Managing Security Attribute Namespaces](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
@@ -345,6 +347,7 @@ class SecurityAttribute(pulumi.CustomResource):
         $ pulumi import oci:SecurityAttribute/securityAttribute:SecurityAttribute test_security_attribute "securityAttributeNamespaces/{securityAttributeNamespaceId}/securityAttributes/{securityAttributeName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: (Updatable) The description you assign to the security attribute during creation.
@@ -407,6 +410,7 @@ class SecurityAttribute(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:SecurityAttribute/securityAttribute:SecurityAttribute test_security_attribute "securityAttributeNamespaces/{securityAttributeNamespaceId}/securityAttributes/{securityAttributeName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SecurityAttributeArgs args: The arguments to use to populate this resource's properties.

@@ -48,6 +48,7 @@ class WorkspaceApplicationTaskScheduleArgs:
                  start_time_millis: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a WorkspaceApplicationTaskSchedule resource.
+
         :param pulumi.Input[_builtins.str] application_key: The application key.
         :param pulumi.Input[_builtins.str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[_builtins.str] workspace_id: The workspace ID.
@@ -461,6 +462,7 @@ class _WorkspaceApplicationTaskScheduleState:
                  workspace_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WorkspaceApplicationTaskSchedule resources.
+
         :param pulumi.Input[_builtins.str] application_key: The application key.
         :param pulumi.Input[_builtins.str] auth_mode: (Updatable) The authorization mode for the task.
         :param pulumi.Input[_builtins.str] config_provider_delegate: (Updatable) The information about the configuration provider.
@@ -1049,6 +1051,7 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
         $ pulumi import oci:DataIntegration/workspaceApplicationTaskSchedule:WorkspaceApplicationTaskSchedule test_workspace_application_task_schedule "workspaces/{workspaceId}/applications/{applicationKey}/taskSchedules/{taskScheduleKey}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_key: The application key.
@@ -1199,6 +1202,7 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataIntegration/workspaceApplicationTaskSchedule:WorkspaceApplicationTaskSchedule test_workspace_application_task_schedule "workspaces/{workspaceId}/applications/{applicationKey}/taskSchedules/{taskScheduleKey}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param WorkspaceApplicationTaskScheduleArgs args: The arguments to use to populate this resource's properties.

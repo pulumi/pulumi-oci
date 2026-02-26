@@ -26,6 +26,7 @@ class ComputeHostArgs:
                  configuration_action_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ComputeHost resource.
+
         :param pulumi.Input[_builtins.str] compute_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host.
         :param pulumi.Input[_builtins.str] compute_host_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
         :param pulumi.Input[_builtins.str] configuration_action_type: (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
@@ -107,6 +108,7 @@ class _ComputeHostState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ComputeHost resources.
+
         :param pulumi.Input[_builtins.str] additional_data: Additional data that can be exposed to the customer.  Will include raw fault codes for strategic customers
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the compute host.  Example: `Uocm:US-CHICAGO-1-AD-2`
         :param pulumi.Input[_builtins.str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Capacity Reserver that is currently on host
@@ -571,6 +573,7 @@ class ComputeHost(pulumi.CustomResource):
         $ pulumi import oci:Core/computeHost:ComputeHost test_compute_host "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compute_host_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
@@ -598,6 +601,7 @@ class ComputeHost(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/computeHost:ComputeHost test_compute_host "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ComputeHostArgs args: The arguments to use to populate this resource's properties.

@@ -45,6 +45,7 @@ class MonitoredResourcesSearchArgs:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a MonitoredResourcesSearch resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] compartment_ids: Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] exclude_fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
@@ -429,6 +430,7 @@ class _MonitoredResourcesSearchState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MonitoredResourcesSearch resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] compartment_ids: Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] exclude_fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
@@ -877,6 +879,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         $ pulumi import oci:StackMonitoring/monitoredResourcesSearch:MonitoredResourcesSearch test_monitored_resources_search "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -966,6 +969,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:StackMonitoring/monitoredResourcesSearch:MonitoredResourcesSearch test_monitored_resources_search "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MonitoredResourcesSearchArgs args: The arguments to use to populate this resource's properties.

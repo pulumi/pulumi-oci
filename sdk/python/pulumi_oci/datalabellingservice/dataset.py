@@ -35,6 +35,7 @@ class DatasetArgs:
                  labeling_instructions: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Dataset resource.
+
         :param pulumi.Input[_builtins.str] annotation_format: The annotation format name required for labeling records.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment of the resource.
         :param pulumi.Input['DatasetDatasetFormatDetailsArgs'] dataset_format_details: It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
@@ -244,6 +245,7 @@ class _DatasetState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Dataset resources.
+
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_properties: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] annotation_format: The annotation format name required for labeling records.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment of the resource.
@@ -611,6 +613,7 @@ class Dataset(pulumi.CustomResource):
         $ pulumi import oci:DataLabellingService/dataset:Dataset test_dataset "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] annotation_format: The annotation format name required for labeling records.
@@ -702,6 +705,7 @@ class Dataset(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataLabellingService/dataset:Dataset test_dataset "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DatasetArgs args: The arguments to use to populate this resource's properties.

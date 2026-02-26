@@ -31,6 +31,7 @@ class UnifiedAgentConfigurationArgs:
                  group_association: Optional[pulumi.Input['UnifiedAgentConfigurationGroupAssociationArgs']] = None):
         """
         The set of arguments for constructing a UnifiedAgentConfiguration resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that the resource belongs to.
         :param pulumi.Input[_builtins.str] description: (Updatable) Description for this resource.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
@@ -166,6 +167,7 @@ class _UnifiedAgentConfigurationState:
                  time_last_modified: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UnifiedAgentConfiguration resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that the resource belongs to.
         :param pulumi.Input[_builtins.str] configuration_state: State of unified agent service configuration.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -380,6 +382,7 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
         $ pulumi import oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration test_unified_agent_configuration "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that the resource belongs to.
@@ -412,6 +415,7 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration test_unified_agent_configuration "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param UnifiedAgentConfigurationArgs args: The arguments to use to populate this resource's properties.

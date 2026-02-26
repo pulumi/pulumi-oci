@@ -23,6 +23,7 @@ class ExternalMySqlDatabaseArgs:
                  db_name: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ExternalMySqlDatabase resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: OCID of compartment for the External MySQL Database.
         :param pulumi.Input[_builtins.str] db_name: (Updatable) Name of the External MySQL Database.
                
@@ -70,6 +71,7 @@ class _ExternalMySqlDatabaseState:
                  external_database_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalMySqlDatabase resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: OCID of compartment for the External MySQL Database.
         :param pulumi.Input[_builtins.str] db_name: (Updatable) Name of the External MySQL Database.
                
@@ -162,6 +164,7 @@ class ExternalMySqlDatabase(pulumi.CustomResource):
         $ pulumi import oci:DatabaseManagement/externalMySqlDatabase:ExternalMySqlDatabase test_external_my_sql_database "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: OCID of compartment for the External MySQL Database.
@@ -203,6 +206,7 @@ class ExternalMySqlDatabase(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DatabaseManagement/externalMySqlDatabase:ExternalMySqlDatabase test_external_my_sql_database "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ExternalMySqlDatabaseArgs args: The arguments to use to populate this resource's properties.

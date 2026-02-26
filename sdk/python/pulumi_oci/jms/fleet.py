@@ -31,6 +31,7 @@ class FleetArgs:
                  operation_log: Optional[pulumi.Input['FleetOperationLogArgs']] = None):
         """
         The set of arguments for constructing a Fleet resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name of the Fleet. The displayName must be unique for Fleets in the same compartment.
         :param pulumi.Input['FleetInventoryLogArgs'] inventory_log: (Updatable) Custom Log for inventory or operation log.
@@ -175,6 +176,7 @@ class _FleetState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Fleet resources.
+
         :param pulumi.Input[_builtins.int] approximate_application_count: The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         :param pulumi.Input[_builtins.int] approximate_installation_count: The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         :param pulumi.Input[_builtins.int] approximate_java_server_count: The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
@@ -527,6 +529,7 @@ class Fleet(pulumi.CustomResource):
         $ pulumi import oci:Jms/fleet:Fleet test_fleet "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
@@ -592,6 +595,7 @@ class Fleet(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Jms/fleet:Fleet test_fleet "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param FleetArgs args: The arguments to use to populate this resource's properties.

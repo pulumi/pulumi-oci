@@ -31,6 +31,7 @@ class SecurityPolicyConfigArgs:
                  unified_audit_policy_config: Optional[pulumi.Input['SecurityPolicyConfigUnifiedAuditPolicyConfigArgs']] = None):
         """
         The set of arguments for constructing a SecurityPolicyConfig resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the security policy configuration.
         :param pulumi.Input[_builtins.str] security_policy_id: The OCID of the security policy corresponding to the security policy configuration.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
@@ -170,6 +171,7 @@ class _SecurityPolicyConfigState:
                  unified_audit_policy_config: Optional[pulumi.Input['SecurityPolicyConfigUnifiedAuditPolicyConfigArgs']] = None):
         """
         Input properties used for looking up and filtering SecurityPolicyConfig resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the security policy configuration.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the security policy.
@@ -426,6 +428,7 @@ class SecurityPolicyConfig(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/securityPolicyConfig:SecurityPolicyConfig test_security_policy_config "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the security policy configuration.
@@ -485,6 +488,7 @@ class SecurityPolicyConfig(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/securityPolicyConfig:SecurityPolicyConfig test_security_policy_config "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SecurityPolicyConfigArgs args: The arguments to use to populate this resource's properties.

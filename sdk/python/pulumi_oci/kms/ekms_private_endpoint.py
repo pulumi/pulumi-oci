@@ -29,6 +29,7 @@ class EkmsPrivateEndpointArgs:
                  port: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a EkmsPrivateEndpoint resource.
+
         :param pulumi.Input[_builtins.str] ca_bundle: CABundle to validate TLS certificate of the external key manager system in PEM format
         :param pulumi.Input[_builtins.str] compartment_id: Compartment identifier.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name of the EKMS private endpoint resource being created.
@@ -173,6 +174,7 @@ class _EkmsPrivateEndpointState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering EkmsPrivateEndpoint resources.
+
         :param pulumi.Input[_builtins.str] ca_bundle: CABundle to validate TLS certificate of the external key manager system in PEM format
         :param pulumi.Input[_builtins.str] compartment_id: Compartment identifier.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -431,6 +433,7 @@ class EkmsPrivateEndpoint(pulumi.CustomResource):
         $ pulumi import oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint test_ekms_private_endpoint "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ca_bundle: CABundle to validate TLS certificate of the external key manager system in PEM format
@@ -488,6 +491,7 @@ class EkmsPrivateEndpoint(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint test_ekms_private_endpoint "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param EkmsPrivateEndpointArgs args: The arguments to use to populate this resource's properties.

@@ -23,6 +23,7 @@ class UnsetUserAssessmentBaselineManagementArgs:
                  user_assessment_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a UnsetUserAssessmentBaselineManagement resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID where the assessment resides.
                
                
@@ -69,6 +70,7 @@ class _UnsetUserAssessmentBaselineManagementState:
                  user_assessment_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UnsetUserAssessmentBaselineManagement resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID where the assessment resides.
                
                
@@ -143,6 +145,7 @@ class UnsetUserAssessmentBaselineManagement(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/unsetUserAssessmentBaselineManagement:UnsetUserAssessmentBaselineManagement test_unset_user_assessment_baseline_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID where the assessment resides.
@@ -181,6 +184,7 @@ class UnsetUserAssessmentBaselineManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/unsetUserAssessmentBaselineManagement:UnsetUserAssessmentBaselineManagement test_unset_user_assessment_baseline_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param UnsetUserAssessmentBaselineManagementArgs args: The arguments to use to populate this resource's properties.

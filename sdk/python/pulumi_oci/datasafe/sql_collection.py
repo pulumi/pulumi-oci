@@ -35,6 +35,7 @@ class SqlCollectionArgs:
                  stop_trigger: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a SqlCollection resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the SQL collection.
         :param pulumi.Input[_builtins.str] db_user_name: The database user name.
         :param pulumi.Input[_builtins.str] target_id: The OCID of the target corresponding to the security policy deployment.
@@ -279,6 +280,7 @@ class _SqlCollectionState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SqlCollection resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the SQL collection.
         :param pulumi.Input[_builtins.str] db_user_name: The database user name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
@@ -664,6 +666,7 @@ class SqlCollection(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/sqlCollection:SqlCollection test_sql_collection "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the SQL collection.
@@ -728,6 +731,7 @@ class SqlCollection(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/sqlCollection:SqlCollection test_sql_collection "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SqlCollectionArgs args: The arguments to use to populate this resource's properties.

@@ -23,6 +23,7 @@ class ImportStandardTagsManagementArgs:
                  standard_tag_namespace_name: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ImportStandardTagsManagement resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
         :param pulumi.Input[_builtins.str] standard_tag_namespace_name: The name of standard tag namespace that will be imported in bulk 
                
@@ -70,6 +71,7 @@ class _ImportStandardTagsManagementState:
                  work_request_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ImportStandardTagsManagement resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
         :param pulumi.Input[_builtins.str] standard_tag_namespace_name: The name of standard tag namespace that will be imported in bulk 
                
@@ -159,6 +161,7 @@ class ImportStandardTagsManagement(pulumi.CustomResource):
         $ pulumi import oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement test_import_standard_tags_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
@@ -201,6 +204,7 @@ class ImportStandardTagsManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement test_import_standard_tags_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ImportStandardTagsManagementArgs args: The arguments to use to populate this resource's properties.

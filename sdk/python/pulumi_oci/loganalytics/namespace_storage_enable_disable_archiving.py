@@ -23,6 +23,7 @@ class NamespaceStorageEnableDisableArchivingArgs:
                  namespace: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a NamespaceStorageEnableDisableArchiving resource.
+
         :param pulumi.Input[_builtins.bool] enable_archiving_tenant: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                
@@ -70,6 +71,7 @@ class _NamespaceStorageEnableDisableArchivingState:
                  namespace: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NamespaceStorageEnableDisableArchiving resources.
+
         :param pulumi.Input[_builtins.bool] enable_archiving_tenant: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                
@@ -153,6 +155,7 @@ class NamespaceStorageEnableDisableArchiving(pulumi.CustomResource):
             enable_archiving_tenant=enable_archiving_tenant)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_archiving_tenant: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -185,6 +188,7 @@ class NamespaceStorageEnableDisableArchiving(pulumi.CustomResource):
             namespace=namespace_storage_enable_disable_archiving_namespace,
             enable_archiving_tenant=enable_archiving_tenant)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NamespaceStorageEnableDisableArchivingArgs args: The arguments to use to populate this resource's properties.

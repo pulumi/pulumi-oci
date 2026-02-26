@@ -30,6 +30,7 @@ class NamedCredentialArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NamedCredential resource.
+
         :param pulumi.Input[_builtins.str] management_agent_id: The Management Agent parent resource to associate this named credential with.  This is the ManagementAgent resource OCID.
         :param pulumi.Input[Sequence[pulumi.Input['NamedCredentialPropertyArgs']]] properties: (Updatable) Properties for the named credential
         :param pulumi.Input[_builtins.str] type: The type of the Named Credential.
@@ -159,6 +160,7 @@ class _NamedCredentialState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NamedCredential resources.
+
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of the Named Credential.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -419,6 +421,7 @@ class NamedCredential(pulumi.CustomResource):
         $ pulumi import oci:ManagementAgent/namedCredential:NamedCredential test_named_credential "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -508,6 +511,7 @@ class NamedCredential(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ManagementAgent/namedCredential:NamedCredential test_named_credential "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NamedCredentialArgs args: The arguments to use to populate this resource's properties.

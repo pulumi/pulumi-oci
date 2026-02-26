@@ -26,6 +26,7 @@ class CloudExadataInfrastructureConfigureExascaleManagementArgs:
                  total_vm_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a CloudExadataInfrastructureConfigureExascaleManagement resource.
+
         :param pulumi.Input[_builtins.str] cloud_exadata_infrastructure_id: The cloud Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.int] total_storage_in_gbs: Storage size needed for Exascale in GBs.
                
@@ -121,6 +122,7 @@ class _CloudExadataInfrastructureConfigureExascaleManagementState:
                  total_vm_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering CloudExadataInfrastructureConfigureExascaleManagement resources.
+
         :param pulumi.Input[_builtins.int] activated_storage_count: The requested number of additional storage servers activated for the Exadata infrastructure.
         :param pulumi.Input[_builtins.int] additional_storage_count: The requested number of additional storage servers for the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain that the cloud Exadata infrastructure resource is located in.
@@ -765,6 +767,7 @@ class CloudExadataInfrastructureConfigureExascaleManagement(pulumi.CustomResourc
         $ pulumi import oci:Database/cloudExadataInfrastructureConfigureExascaleManagement:CloudExadataInfrastructureConfigureExascaleManagement test_cloud_exadata_infrastructure_configure_exascale_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cloud_exadata_infrastructure_id: The cloud Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -806,6 +809,7 @@ class CloudExadataInfrastructureConfigureExascaleManagement(pulumi.CustomResourc
         ```sh
         $ pulumi import oci:Database/cloudExadataInfrastructureConfigureExascaleManagement:CloudExadataInfrastructureConfigureExascaleManagement test_cloud_exadata_infrastructure_configure_exascale_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CloudExadataInfrastructureConfigureExascaleManagementArgs args: The arguments to use to populate this resource's properties.

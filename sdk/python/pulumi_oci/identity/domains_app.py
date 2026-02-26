@@ -119,6 +119,7 @@ class DomainsAppArgs:
                  urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']] = None):
         """
         The set of arguments for constructing a DomainsApp resource.
+
         :param pulumi.Input['DomainsAppBasedOnTemplateArgs'] based_on_template: (Updatable) Application template on which the application is based.
                
                **SCIM++ Properties:**
@@ -3243,6 +3244,7 @@ class _DomainsAppState:
                  user_roles: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUserRoleArgs']]]] = None):
         """
         Input properties used for looking up and filtering DomainsApp resources.
+
         :param pulumi.Input[_builtins.int] access_token_expiry: (Updatable) Expiry-time in seconds for an Access Token. Any token that allows access to this App will expire after the specified duration.
                
                **SCIM++ Properties:**
@@ -7601,6 +7603,7 @@ class DomainsApp(pulumi.CustomResource):
         $ pulumi import oci:Identity/domainsApp:DomainsApp test_app "idcsEndpoint/{idcsEndpoint}/apps/{appId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] access_token_expiry: (Updatable) Expiry-time in seconds for an Access Token. Any token that allows access to this App will expire after the specified duration.
@@ -8834,6 +8837,7 @@ class DomainsApp(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domainsApp:DomainsApp test_app "idcsEndpoint/{idcsEndpoint}/apps/{appId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainsAppArgs args: The arguments to use to populate this resource's properties.

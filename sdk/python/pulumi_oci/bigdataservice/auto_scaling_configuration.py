@@ -30,6 +30,7 @@ class AutoScalingConfigurationArgs:
                  policy_details: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs']] = None):
         """
         The set of arguments for constructing a AutoScalingConfiguration resource.
+
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[_builtins.str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether the autoscale configuration is enabled.
@@ -169,6 +170,7 @@ class _AutoScalingConfigurationState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutoScalingConfiguration resources.
+
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[_builtins.str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
@@ -417,6 +419,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         $ pulumi import oci:BigDataService/autoScalingConfiguration:AutoScalingConfiguration test_auto_scaling_configuration "bdsInstances/{bdsInstanceId}/autoScalingConfiguration/{autoScalingConfigurationId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
@@ -503,6 +506,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:BigDataService/autoScalingConfiguration:AutoScalingConfiguration test_auto_scaling_configuration "bdsInstances/{bdsInstanceId}/autoScalingConfiguration/{autoScalingConfigurationId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AutoScalingConfigurationArgs args: The arguments to use to populate this resource's properties.

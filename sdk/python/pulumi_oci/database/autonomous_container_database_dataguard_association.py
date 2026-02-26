@@ -36,6 +36,7 @@ class AutonomousContainerDatabaseDataguardAssociationArgs:
                  standby_maintenance_buffer_in_days: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a AutonomousContainerDatabaseDataguardAssociation resource.
+
         :param pulumi.Input[_builtins.str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] peer_autonomous_container_database_display_name: The display name for the peer Autonomous Container Database.
         :param pulumi.Input[_builtins.str] protection_mode: (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
@@ -266,6 +267,7 @@ class _AutonomousContainerDatabaseDataguardAssociationState:
                  transport_lag: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutonomousContainerDatabaseDataguardAssociation resources.
+
         :param pulumi.Input[_builtins.str] apply_lag: The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database.  Example: `9 seconds`
         :param pulumi.Input[_builtins.str] apply_rate: The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
         :param pulumi.Input[_builtins.str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -734,6 +736,7 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
         $ pulumi import oci:Database/autonomousContainerDatabaseDataguardAssociation:AutonomousContainerDatabaseDataguardAssociation test_autonomous_container_database_dataguard_association "autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations/{autonomousContainerDatabaseDataguardAssociationId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -809,6 +812,7 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/autonomousContainerDatabaseDataguardAssociation:AutonomousContainerDatabaseDataguardAssociation test_autonomous_container_database_dataguard_association "autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations/{autonomousContainerDatabaseDataguardAssociationId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AutonomousContainerDatabaseDataguardAssociationArgs args: The arguments to use to populate this resource's properties.

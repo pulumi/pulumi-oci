@@ -24,6 +24,7 @@ class ExternalPluggableDatabaseOperationsInsightsManagementArgs:
                  external_pluggable_database_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ExternalPluggableDatabaseOperationsInsightsManagement resource.
+
         :param pulumi.Input[_builtins.bool] enable_operations_insights: (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false". 
                
                ** IMPORTANT **
@@ -83,6 +84,7 @@ class _ExternalPluggableDatabaseOperationsInsightsManagementState:
                  external_pluggable_database_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalPluggableDatabaseOperationsInsightsManagement resources.
+
         :param pulumi.Input[_builtins.bool] enable_operations_insights: (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false". 
                
                ** IMPORTANT **
@@ -172,6 +174,7 @@ class ExternalPluggableDatabaseOperationsInsightsManagement(pulumi.CustomResourc
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_operations_insights: (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false". 
@@ -211,6 +214,7 @@ class ExternalPluggableDatabaseOperationsInsightsManagement(pulumi.CustomResourc
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param ExternalPluggableDatabaseOperationsInsightsManagementArgs args: The arguments to use to populate this resource's properties.

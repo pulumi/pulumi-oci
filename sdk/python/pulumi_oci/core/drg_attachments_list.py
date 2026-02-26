@@ -26,6 +26,7 @@ class DrgAttachmentsListArgs:
                  is_cross_tenancy: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a DrgAttachmentsList resource.
+
         :param pulumi.Input[_builtins.str] drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
         :param pulumi.Input[_builtins.str] attachment_type: The type for the network resource attached to the DRG.
         :param pulumi.Input[_builtins.bool] is_cross_tenancy: Whether the DRG attachment lives in a different tenancy than the DRG.
@@ -90,6 +91,7 @@ class _DrgAttachmentsListState:
                  is_cross_tenancy: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering DrgAttachmentsList resources.
+
         :param pulumi.Input[_builtins.str] attachment_type: The type for the network resource attached to the DRG.
         :param pulumi.Input[Sequence[pulumi.Input['DrgAttachmentsListDrgAllAttachmentArgs']]] drg_all_attachments: The list of drg_attachments.
         :param pulumi.Input[_builtins.str] drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
@@ -195,6 +197,7 @@ class DrgAttachmentsList(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] attachment_type: The type for the network resource attached to the DRG.
@@ -234,6 +237,7 @@ class DrgAttachmentsList(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param DrgAttachmentsListArgs args: The arguments to use to populate this resource's properties.

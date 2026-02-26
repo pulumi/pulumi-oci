@@ -24,6 +24,7 @@ class IdpGroupMappingArgs:
                  idp_group_name: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a IdpGroupMapping resource.
+
         :param pulumi.Input[_builtins.str] group_id: (Updatable) The OCID of the IAM Service [group](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Group/) you want to map to the IdP group.
         :param pulumi.Input[_builtins.str] identity_provider_id: The OCID of the identity provider.
         :param pulumi.Input[_builtins.str] idp_group_name: (Updatable) The name of the IdP group you want to map.
@@ -89,6 +90,7 @@ class _IdpGroupMappingState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IdpGroupMapping resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the tenancy containing the `IdentityProvider`.
         :param pulumi.Input[_builtins.str] group_id: (Updatable) The OCID of the IAM Service [group](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Group/) you want to map to the IdP group.
         :param pulumi.Input[_builtins.str] identity_provider_id: The OCID of the identity provider.
@@ -246,6 +248,7 @@ class IdpGroupMapping(pulumi.CustomResource):
         $ pulumi import oci:Identity/idpGroupMapping:IdpGroupMapping test_idp_group_mapping "identityProviders/{identityProviderId}/groupMappings/{mappingId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] group_id: (Updatable) The OCID of the IAM Service [group](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Group/) you want to map to the IdP group.
@@ -292,6 +295,7 @@ class IdpGroupMapping(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/idpGroupMapping:IdpGroupMapping test_idp_group_mapping "identityProviders/{identityProviderId}/groupMappings/{mappingId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param IdpGroupMappingArgs args: The arguments to use to populate this resource's properties.

@@ -36,6 +36,7 @@ class BucketArgs:
                  versioning: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Bucket resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The ID of the compartment in which to create the bucket.
         :param pulumi.Input[_builtins.str] namespace: The Object Storage namespace used for the request.
         :param pulumi.Input[_builtins.str] access_type: (Updatable) The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
@@ -267,6 +268,7 @@ class _BucketState:
                  versioning: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Bucket resources.
+
         :param pulumi.Input[_builtins.str] access_type: (Updatable) The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
         :param pulumi.Input[_builtins.str] approximate_count: The approximate number of objects in the bucket. Count statistics are reported periodically. You will see a lag between what is displayed and the actual object count.
         :param pulumi.Input[_builtins.str] approximate_size: The approximate total size in bytes of all objects in the bucket. Size statistics are reported periodically. You will see a lag between what is displayed and the actual size of the bucket.
@@ -678,6 +680,7 @@ class Bucket(pulumi.CustomResource):
         $ pulumi import oci:ObjectStorage/bucket:Bucket test_bucket "n/{namespaceName}/b/{bucketName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_type: (Updatable) The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
@@ -753,6 +756,7 @@ class Bucket(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ObjectStorage/bucket:Bucket test_bucket "n/{namespaceName}/b/{bucketName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param BucketArgs args: The arguments to use to populate this resource's properties.

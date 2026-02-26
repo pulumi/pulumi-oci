@@ -23,6 +23,7 @@ class ManagedInstanceAttachProfileManagementArgs:
                  profile_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ManagedInstanceAttachProfileManagement resource.
+
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         :param pulumi.Input[_builtins.str] profile_id: The profile [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to the managed instance.
                
@@ -69,6 +70,7 @@ class _ManagedInstanceAttachProfileManagementState:
                  profile_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagedInstanceAttachProfileManagement resources.
+
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         :param pulumi.Input[_builtins.str] profile_id: The profile [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to the managed instance.
                
@@ -147,6 +149,7 @@ class ManagedInstanceAttachProfileManagement(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/managedInstanceAttachProfileManagement:ManagedInstanceAttachProfileManagement test_managed_instance_attach_profile_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
@@ -189,6 +192,7 @@ class ManagedInstanceAttachProfileManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/managedInstanceAttachProfileManagement:ManagedInstanceAttachProfileManagement test_managed_instance_attach_profile_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagedInstanceAttachProfileManagementArgs args: The arguments to use to populate this resource's properties.

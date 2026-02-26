@@ -28,6 +28,7 @@ class ByoasnArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Byoasn resource.
+
         :param pulumi.Input[_builtins.str] asn: The Autonomous System Number (ASN) you are importing to the Oracle cloud.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOASN Resource.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -127,6 +128,7 @@ class _ByoasnState:
                  validation_token: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Byoasn resources.
+
         :param pulumi.Input[_builtins.str] asn: The Autonomous System Number (ASN) you are importing to the Oracle cloud.
         :param pulumi.Input[Sequence[pulumi.Input['ByoasnByoipRangeArgs']]] byoip_ranges: The BYOIP Ranges that has the `Byoasn` as origin.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOASN Resource.
@@ -349,6 +351,7 @@ class Byoasn(pulumi.CustomResource):
         $ pulumi import oci:Core/byoasn:Byoasn test_byoasn "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] asn: The Autonomous System Number (ASN) you are importing to the Oracle cloud.
@@ -400,6 +403,7 @@ class Byoasn(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/byoasn:Byoasn test_byoasn "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ByoasnArgs args: The arguments to use to populate this resource's properties.

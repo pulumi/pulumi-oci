@@ -34,6 +34,7 @@ class BdsInstanceIdentityConfigurationArgs:
                  upst_configuration_details: Optional[pulumi.Input['BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs']] = None):
         """
         The set of arguments for constructing a BdsInstanceIdentityConfiguration resource.
+
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[_builtins.str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster admin user.
         :param pulumi.Input[_builtins.str] confidential_application_id: Identity domain confidential application ID for the identity config, required for creating identity configuration
@@ -226,6 +227,7 @@ class _BdsInstanceIdentityConfigurationState:
                  upst_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceIdentityConfigurationUpstConfigurationArgs']]]] = None):
         """
         Input properties used for looking up and filtering BdsInstanceIdentityConfiguration resources.
+
         :param pulumi.Input[_builtins.str] activate_iam_user_sync_configuration_trigger: (Updatable) An optional property when set to "true" triggers Activate Iam User Sync Configuration and when set to "false" triggers Deactivate Iam User Sync Configuration.
         :param pulumi.Input[_builtins.str] activate_upst_configuration_trigger: (Updatable) An optional property when set to "true" triggers Activate Upst Configuration and when set to "false" triggers Deactivate Upst Configuration.
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
@@ -532,6 +534,7 @@ class BdsInstanceIdentityConfiguration(pulumi.CustomResource):
         $ pulumi import oci:BigDataService/bdsInstanceIdentityConfiguration:BdsInstanceIdentityConfiguration test_bds_instance_identity_configuration "bdsInstances/{bdsInstanceId}/identityConfigurations/{identityConfigurationId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] activate_iam_user_sync_configuration_trigger: (Updatable) An optional property when set to "true" triggers Activate Iam User Sync Configuration and when set to "false" triggers Deactivate Iam User Sync Configuration.
@@ -592,6 +595,7 @@ class BdsInstanceIdentityConfiguration(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:BigDataService/bdsInstanceIdentityConfiguration:BdsInstanceIdentityConfiguration test_bds_instance_identity_configuration "bdsInstances/{bdsInstanceId}/identityConfigurations/{identityConfigurationId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param BdsInstanceIdentityConfigurationArgs args: The arguments to use to populate this resource's properties.

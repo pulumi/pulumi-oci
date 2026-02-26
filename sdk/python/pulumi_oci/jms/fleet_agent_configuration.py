@@ -35,6 +35,7 @@ class FleetAgentConfigurationArgs:
                  work_request_validity_period_in_days: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a FleetAgentConfiguration resource.
+
         :param pulumi.Input[_builtins.str] fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
         :param pulumi.Input[_builtins.int] agent_polling_interval_in_minutes: (Updatable) Agent polling interval in minutes
         :param pulumi.Input[_builtins.bool] is_capturing_ip_address_and_fqdn_enabled: (Updatable) Collect network addresses of managed instances in the fleet.
@@ -243,6 +244,7 @@ class _FleetAgentConfigurationState:
                  work_request_validity_period_in_days: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering FleetAgentConfiguration resources.
+
         :param pulumi.Input[_builtins.int] agent_polling_interval_in_minutes: (Updatable) Agent polling interval in minutes
         :param pulumi.Input[_builtins.str] fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
         :param pulumi.Input[_builtins.bool] is_capturing_ip_address_and_fqdn_enabled: (Updatable) Collect network addresses of managed instances in the fleet.
@@ -523,6 +525,7 @@ class FleetAgentConfiguration(pulumi.CustomResource):
         $ pulumi import oci:Jms/fleetAgentConfiguration:FleetAgentConfiguration test_fleet_agent_configuration "fleets/{fleetId}/agentConfiguration"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] agent_polling_interval_in_minutes: (Updatable) Agent polling interval in minutes
@@ -602,6 +605,7 @@ class FleetAgentConfiguration(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Jms/fleetAgentConfiguration:FleetAgentConfiguration test_fleet_agent_configuration "fleets/{fleetId}/agentConfiguration"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param FleetAgentConfigurationArgs args: The arguments to use to populate this resource's properties.

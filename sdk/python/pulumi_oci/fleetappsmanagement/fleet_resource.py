@@ -27,6 +27,7 @@ class FleetResourceInitArgs:
                  resource_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a FleetResource resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) OCID of the compartment to which the resource belongs to.
         :param pulumi.Input[_builtins.str] fleet_id: Unique Fleet identifier.
         :param pulumi.Input[_builtins.str] resource_id: The OCID of the resource.
@@ -149,6 +150,7 @@ class _FleetResourceState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FleetResource resources.
+
         :param pulumi.Input[_builtins.str] compartment: Resource Compartment name.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) OCID of the compartment to which the resource belongs to.
         :param pulumi.Input[_builtins.str] compliance_state: Compliance State of the Resource.
@@ -500,6 +502,7 @@ class FleetResource(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) OCID of the compartment to which the resource belongs to.
@@ -545,6 +548,7 @@ class FleetResource(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param FleetResourceInitArgs args: The arguments to use to populate this resource's properties.

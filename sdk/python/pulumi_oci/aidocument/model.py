@@ -42,6 +42,7 @@ class ModelArgs:
                  validation_dataset: Optional[pulumi.Input['ModelValidationDatasetArgs']] = None):
         """
         The set of arguments for constructing a Model resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment identifier.
         :param pulumi.Input[_builtins.str] model_type: The type of the Document model.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
@@ -357,6 +358,7 @@ class _ModelState:
                  validation_dataset: Optional[pulumi.Input['ModelValidationDatasetArgs']] = None):
         """
         Input properties used for looking up and filtering Model resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment identifier.
         :param pulumi.Input[Sequence[pulumi.Input['ModelComponentModelArgs']]] component_models: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
@@ -835,6 +837,7 @@ class Model(pulumi.CustomResource):
         $ pulumi import oci:AiDocument/model:Model test_model "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment identifier.
@@ -879,6 +882,7 @@ class Model(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:AiDocument/model:Model test_model "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ModelArgs args: The arguments to use to populate this resource's properties.

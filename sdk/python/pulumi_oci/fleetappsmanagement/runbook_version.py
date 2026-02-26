@@ -30,6 +30,7 @@ class RunbookVersionArgs:
                  rollback_workflow_details: Optional[pulumi.Input['RunbookVersionRollbackWorkflowDetailsArgs']] = None):
         """
         The set of arguments for constructing a RunbookVersion resource.
+
         :param pulumi.Input['RunbookVersionExecutionWorkflowDetailsArgs'] execution_workflow_details: (Updatable) Execution Workflow details.
                <<<<<<< ours
         :param pulumi.Input[Sequence[pulumi.Input['RunbookVersionGroupArgs']]] groups: (Updatable) The groups of the runbook.
@@ -162,6 +163,7 @@ class _RunbookVersionState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RunbookVersion resources.
+
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
                `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input['RunbookVersionExecutionWorkflowDetailsArgs'] execution_workflow_details: (Updatable) Execution Workflow details.
@@ -430,6 +432,7 @@ class RunbookVersion(pulumi.CustomResource):
         $ pulumi import oci:FleetAppsManagement/runbookVersion:RunbookVersion test_runbook_version "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
@@ -471,6 +474,7 @@ class RunbookVersion(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:FleetAppsManagement/runbookVersion:RunbookVersion test_runbook_version "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param RunbookVersionArgs args: The arguments to use to populate this resource's properties.

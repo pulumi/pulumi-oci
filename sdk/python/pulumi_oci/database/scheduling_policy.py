@@ -29,6 +29,7 @@ class SchedulingPolicyArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a SchedulingPolicy resource.
+
         :param pulumi.Input[_builtins.str] cadence: (Updatable) The cadence period.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the Scheduling Policy. The name does not need to be unique.
@@ -143,6 +144,7 @@ class _SchedulingPolicyState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SchedulingPolicy resources.
+
         :param pulumi.Input[_builtins.str] cadence: (Updatable) The cadence period.
         :param pulumi.Input['SchedulingPolicyCadenceStartMonthArgs'] cadence_start_month: (Updatable) Start of the month to be followed during the cadence period.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -364,6 +366,7 @@ class SchedulingPolicy(pulumi.CustomResource):
         $ pulumi import oci:Database/schedulingPolicy:SchedulingPolicy test_scheduling_policy "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cadence: (Updatable) The cadence period.
@@ -414,6 +417,7 @@ class SchedulingPolicy(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/schedulingPolicy:SchedulingPolicy test_scheduling_policy "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SchedulingPolicyArgs args: The arguments to use to populate this resource's properties.

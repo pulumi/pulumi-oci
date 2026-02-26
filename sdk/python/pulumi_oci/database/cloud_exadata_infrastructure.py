@@ -37,6 +37,7 @@ class CloudExadataInfrastructureArgs:
                  subscription_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CloudExadataInfrastructure resource.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain where the cloud Exadata infrastructure is located.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
@@ -299,6 +300,7 @@ class _CloudExadataInfrastructureState:
                  total_storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering CloudExadataInfrastructure resources.
+
         :param pulumi.Input[_builtins.int] activated_storage_count: The requested number of additional storage servers activated for the Exadata infrastructure.
         :param pulumi.Input[_builtins.int] additional_storage_count: The requested number of additional storage servers for the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain where the cloud Exadata infrastructure is located.
@@ -989,6 +991,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         $ pulumi import oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure test_cloud_exadata_infrastructure "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain where the cloud Exadata infrastructure is located.
@@ -1073,6 +1076,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure test_cloud_exadata_infrastructure "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CloudExadataInfrastructureArgs args: The arguments to use to populate this resource's properties.

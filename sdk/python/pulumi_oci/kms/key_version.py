@@ -27,6 +27,7 @@ class KeyVersionArgs:
                  time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a KeyVersion resource.
+
         :param pulumi.Input[_builtins.str] key_id: The OCID of the key.
         :param pulumi.Input[_builtins.str] management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
         :param pulumi.Input[_builtins.str] external_key_version_id: Key version ID associated with the external key.
@@ -115,6 +116,7 @@ class _KeyVersionState:
                  vault_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering KeyVersion resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment that contains this key version.
         :param pulumi.Input[Sequence[pulumi.Input['KeyVersionExternalKeyReferenceDetailArgs']]] external_key_reference_details: Key reference data to be returned to the customer as a response.
         :param pulumi.Input[_builtins.str] external_key_version_id: Key version ID associated with the external key.
@@ -389,6 +391,7 @@ class KeyVersion(pulumi.CustomResource):
         $ pulumi import oci:Kms/keyVersion:KeyVersion test_key_version "managementEndpoint/{managementEndpoint}/keys/{keyId}/keyVersions/{keyVersionId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] external_key_version_id: Key version ID associated with the external key.
@@ -426,6 +429,7 @@ class KeyVersion(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Kms/keyVersion:KeyVersion test_key_version "managementEndpoint/{managementEndpoint}/keys/{keyId}/keyVersions/{keyVersionId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param KeyVersionArgs args: The arguments to use to populate this resource's properties.

@@ -29,6 +29,7 @@ class FusionEnvironmentAdminUserArgs:
                  password: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a FusionEnvironmentAdminUser resource.
+
         :param pulumi.Input[_builtins.str] email_address: The email address for the administrator.
         :param pulumi.Input[_builtins.str] first_name: The administrator's first name.
         :param pulumi.Input[_builtins.str] fusion_environment_id: unique FusionEnvironment identifier
@@ -141,6 +142,7 @@ class _FusionEnvironmentAdminUserState:
                  username: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FusionEnvironmentAdminUser resources.
+
         :param pulumi.Input[_builtins.str] email_address: The email address for the administrator.
         :param pulumi.Input[_builtins.str] first_name: The administrator's first name.
         :param pulumi.Input[_builtins.str] fusion_environment_id: unique FusionEnvironment identifier
@@ -305,6 +307,7 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
         $ pulumi import oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser test_fusion_environment_admin_user "fusionEnvironments/{fusionEnvironmentId}/adminUsers/{adminUsername}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] email_address: The email address for the administrator.
@@ -354,6 +357,7 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser test_fusion_environment_admin_user "fusionEnvironments/{fusionEnvironmentId}/adminUsers/{adminUsername}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param FusionEnvironmentAdminUserArgs args: The arguments to use to populate this resource's properties.

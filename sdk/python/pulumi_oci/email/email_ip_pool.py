@@ -29,6 +29,7 @@ class EmailIpPoolArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a EmailIpPool resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this IpPool.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] outbound_ips: A list of outbound public IPs for assignment to the IpPool. These IPs must be in the AVAILABLE state to be eligible for assignment.
                
@@ -146,6 +147,7 @@ class _EmailIpPoolState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering EmailIpPool resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this IpPool.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the IpPool. Avoid entering confidential information.
@@ -393,6 +395,7 @@ class EmailIpPool(pulumi.CustomResource):
         $ pulumi import oci:Email/emailIpPool:EmailIpPool test_email_ip_pool "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this IpPool.
@@ -443,6 +446,7 @@ class EmailIpPool(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Email/emailIpPool:EmailIpPool test_email_ip_pool "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param EmailIpPoolArgs args: The arguments to use to populate this resource's properties.

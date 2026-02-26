@@ -38,6 +38,7 @@ class KeyArgs:
                  time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Key resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create the master encryption key.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
         :param pulumi.Input['KeyKeyShapeArgs'] key_shape: The cryptographic properties of a key.
@@ -296,6 +297,7 @@ class _KeyState:
                  vault_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Key resources.
+
         :param pulumi.Input['KeyAutoKeyRotationDetailsArgs'] auto_key_rotation_details: (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create the master encryption key.
         :param pulumi.Input[_builtins.str] current_key_version: The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
@@ -693,6 +695,7 @@ class Key(pulumi.CustomResource):
         $ pulumi import oci:Kms/key:Key test_key "managementEndpoint/{managementEndpoint}/keys/{keyId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['KeyAutoKeyRotationDetailsArgs', 'KeyAutoKeyRotationDetailsArgsDict']] auto_key_rotation_details: (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
@@ -740,6 +743,7 @@ class Key(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Kms/key:Key test_key "managementEndpoint/{managementEndpoint}/keys/{keyId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param KeyArgs args: The arguments to use to populate this resource's properties.

@@ -27,6 +27,7 @@ class InstancePoolInstanceArgs:
                  decrement_size_on_delete: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a InstancePoolInstance resource.
+
         :param pulumi.Input[_builtins.str] instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
         :param pulumi.Input[_builtins.str] instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
                
@@ -107,6 +108,7 @@ class _InstancePoolInstanceState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InstancePoolInstance resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain the instance is running in.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the instance.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -362,6 +364,7 @@ class InstancePoolInstance(pulumi.CustomResource):
         $ pulumi import oci:Core/instancePoolInstance:InstancePoolInstance test_instance_pool_instance "instancePools/{instancePoolId}/instances/compartmentId/{compartmentId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
@@ -407,6 +410,7 @@ class InstancePoolInstance(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/instancePoolInstance:InstancePoolInstance test_instance_pool_instance "instancePools/{instancePoolId}/instances/compartmentId/{compartmentId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param InstancePoolInstanceArgs args: The arguments to use to populate this resource's properties.

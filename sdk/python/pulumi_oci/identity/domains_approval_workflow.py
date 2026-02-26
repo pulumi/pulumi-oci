@@ -35,6 +35,7 @@ class DomainsApprovalWorkflowArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsApprovalWorkflowTagArgs']]]] = None):
         """
         The set of arguments for constructing a DomainsApprovalWorkflow resource.
+
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input['DomainsApprovalWorkflowMaxDurationArgs'] max_duration: (Updatable) Max duration of the ApprovalWorkflow must be acted at all levels.
                
@@ -383,6 +384,7 @@ class _DomainsApprovalWorkflowState:
                  tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DomainsApprovalWorkflow resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['DomainsApprovalWorkflowApprovalWorkflowStepArgs']]] approval_workflow_steps: (Updatable) ApprovalWorkflowSteps applicable for the ApprovalWorkflowInstance.
                
                **SCIM++ Properties:**
@@ -1088,6 +1090,7 @@ class DomainsApprovalWorkflow(pulumi.CustomResource):
         $ pulumi import oci:Identity/domainsApprovalWorkflow:DomainsApprovalWorkflow test_approval_workflow "idcsEndpoint/{idcsEndpoint}/approvalWorkflows/{approvalWorkflowId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowApprovalWorkflowStepArgs', 'DomainsApprovalWorkflowApprovalWorkflowStepArgsDict']]]] approval_workflow_steps: (Updatable) ApprovalWorkflowSteps applicable for the ApprovalWorkflowInstance.
@@ -1227,6 +1230,7 @@ class DomainsApprovalWorkflow(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domainsApprovalWorkflow:DomainsApprovalWorkflow test_approval_workflow "idcsEndpoint/{idcsEndpoint}/approvalWorkflows/{approvalWorkflowId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainsApprovalWorkflowArgs args: The arguments to use to populate this resource's properties.

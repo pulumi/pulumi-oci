@@ -31,6 +31,7 @@ class LicenseRecordArgs:
                  support_end_date: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a LicenseRecord resource.
+
         :param pulumi.Input[_builtins.str] display_name: (Updatable) License record name.
         :param pulumi.Input[_builtins.bool] is_perpetual: (Updatable) Specifies if the license record term is perpertual.
         :param pulumi.Input[_builtins.bool] is_unlimited: (Updatable) Specifies if the license count is unlimited.
@@ -210,6 +211,7 @@ class _LicenseRecordState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LicenseRecord resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) License record name.
@@ -532,6 +534,7 @@ class LicenseRecord(pulumi.CustomResource):
         $ pulumi import oci:LicenseManager/licenseRecord:LicenseRecord test_license_record "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -593,6 +596,7 @@ class LicenseRecord(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:LicenseManager/licenseRecord:LicenseRecord test_license_record "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param LicenseRecordArgs args: The arguments to use to populate this resource's properties.

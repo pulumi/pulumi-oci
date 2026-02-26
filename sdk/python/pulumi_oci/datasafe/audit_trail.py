@@ -30,6 +30,7 @@ class AuditTrailArgs:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AuditTrail resource.
+
         :param pulumi.Input[_builtins.str] audit_trail_id: The OCID of the audit trail.
         :param pulumi.Input[_builtins.bool] can_update_last_archive_time_on_target: (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
@@ -206,6 +207,7 @@ class _AuditTrailState:
                  work_request_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AuditTrail resources.
+
         :param pulumi.Input[_builtins.str] audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] audit_profile_id: The OCID of the  parent audit.
         :param pulumi.Input[_builtins.str] audit_trail_id: The OCID of the audit trail.
@@ -639,6 +641,7 @@ class AuditTrail(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/auditTrail:AuditTrail test_audit_trail "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] audit_trail_id: The OCID of the audit trail.
@@ -676,6 +679,7 @@ class AuditTrail(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/auditTrail:AuditTrail test_audit_trail "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AuditTrailArgs args: The arguments to use to populate this resource's properties.

@@ -32,6 +32,7 @@ class DatabaseSoftwareImageArgs:
                  source_db_home_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DatabaseSoftwareImage resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the database software image  belongs in.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the database software image. The name does not have to be unique.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] database_software_image_one_off_patches: List of one-off patches for Database Homes.
@@ -229,6 +230,7 @@ class _DatabaseSoftwareImageState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DatabaseSoftwareImage resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the database software image  belongs in.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] database_software_image_included_patches: List of one-off patches for Database Homes.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] database_software_image_one_off_patches: List of one-off patches for Database Homes.
@@ -566,6 +568,7 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
         $ pulumi import oci:Database/databaseSoftwareImage:DatabaseSoftwareImage test_database_software_image "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the database software image  belongs in.
@@ -627,6 +630,7 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/databaseSoftwareImage:DatabaseSoftwareImage test_database_software_image "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DatabaseSoftwareImageArgs args: The arguments to use to populate this resource's properties.

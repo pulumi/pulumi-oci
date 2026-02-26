@@ -29,6 +29,7 @@ class AgentKnowledgeBaseArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AgentKnowledgeBase resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the knowledge base in.
         :param pulumi.Input['AgentKnowledgeBaseIndexConfigArgs'] index_config: (Updatable) The index configuration of Knowledge bases.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -137,6 +138,7 @@ class _AgentKnowledgeBaseState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AgentKnowledgeBase resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the knowledge base in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-friendly description of the knowledge base.
@@ -395,6 +397,7 @@ class AgentKnowledgeBase(pulumi.CustomResource):
         $ pulumi import oci:GenerativeAi/agentKnowledgeBase:AgentKnowledgeBase test_knowledge_base "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the knowledge base in.
@@ -471,6 +474,7 @@ class AgentKnowledgeBase(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:GenerativeAi/agentKnowledgeBase:AgentKnowledgeBase test_knowledge_base "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AgentKnowledgeBaseArgs args: The arguments to use to populate this resource's properties.

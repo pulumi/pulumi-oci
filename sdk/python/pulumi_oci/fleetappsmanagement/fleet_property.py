@@ -25,6 +25,7 @@ class FleetPropertyInitArgs:
                  value: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a FleetProperty resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: Compartment OCID
         :param pulumi.Input[_builtins.str] fleet_id: Unique Fleet identifier.
         :param pulumi.Input[_builtins.str] property_id: OCID referring to global level metadata property.
@@ -109,6 +110,7 @@ class _FleetPropertyState:
                  value_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FleetProperty resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_values: Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
         :param pulumi.Input[_builtins.str] compartment_id: Compartment OCID
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
@@ -335,6 +337,7 @@ class FleetProperty(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: Compartment OCID
@@ -375,6 +378,7 @@ class FleetProperty(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param FleetPropertyInitArgs args: The arguments to use to populate this resource's properties.

@@ -33,6 +33,7 @@ class CertificateAuthorityArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CertificateAuthority resource.
+
         :param pulumi.Input['CertificateAuthorityCertificateAuthorityConfigArgs'] certificate_authority_config: (Updatable) The configuration details for creating a certificate authority (CA).
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment in which you want to create the CA.
         :param pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]] certificate_authority_rules: (Updatable) A list of rules that control how the CA is used and managed.
@@ -216,6 +217,7 @@ class _CertificateAuthorityState:
                  time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CertificateAuthority resources.
+
         :param pulumi.Input['CertificateAuthorityCertificateAuthorityConfigArgs'] certificate_authority_config: (Updatable) The configuration details for creating a certificate authority (CA).
         :param pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]] certificate_authority_rules: (Updatable) A list of rules that control how the CA is used and managed.
         :param pulumi.Input['CertificateAuthorityCertificateRevocationListDetailsArgs'] certificate_revocation_list_details: (Updatable) The details of the certificate revocation list (CRL).
@@ -545,6 +547,7 @@ class CertificateAuthority(pulumi.CustomResource):
         $ pulumi import oci:CertificatesManagement/certificateAuthority:CertificateAuthority test_certificate_authority "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['CertificateAuthorityCertificateAuthorityConfigArgs', 'CertificateAuthorityCertificateAuthorityConfigArgsDict']] certificate_authority_config: (Updatable) The configuration details for creating a certificate authority (CA).
@@ -583,6 +586,7 @@ class CertificateAuthority(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:CertificatesManagement/certificateAuthority:CertificateAuthority test_certificate_authority "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CertificateAuthorityArgs args: The arguments to use to populate this resource's properties.

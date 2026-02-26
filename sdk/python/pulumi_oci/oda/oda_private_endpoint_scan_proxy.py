@@ -27,6 +27,7 @@ class OdaPrivateEndpointScanProxyArgs:
                  scan_listener_type: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a OdaPrivateEndpointScanProxy resource.
+
         :param pulumi.Input[_builtins.str] oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] protocol: The protocol used for communication between client, scanProxy and RAC's scan listeners
         :param pulumi.Input[Sequence[pulumi.Input['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]] scan_listener_infos: The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
@@ -105,6 +106,7 @@ class _OdaPrivateEndpointScanProxyState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OdaPrivateEndpointScanProxy resources.
+
         :param pulumi.Input[_builtins.str] oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] protocol: The protocol used for communication between client, scanProxy and RAC's scan listeners
         :param pulumi.Input[Sequence[pulumi.Input['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]] scan_listener_infos: The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
@@ -253,6 +255,7 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
         $ pulumi import oci:Oda/odaPrivateEndpointScanProxy:OdaPrivateEndpointScanProxy test_oda_private_endpoint_scan_proxy "odaPrivateEndpoints/{odaPrivateEndpointId}/odaPrivateEndpointScanProxies/{odaPrivateEndpointScanProxyId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -305,6 +308,7 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Oda/odaPrivateEndpointScanProxy:OdaPrivateEndpointScanProxy test_oda_private_endpoint_scan_proxy "odaPrivateEndpoints/{odaPrivateEndpointId}/odaPrivateEndpointScanProxies/{odaPrivateEndpointScanProxyId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OdaPrivateEndpointScanProxyArgs args: The arguments to use to populate this resource's properties.

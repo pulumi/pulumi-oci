@@ -24,6 +24,7 @@ class ExternalContainerDatabasesStackMonitoringArgs:
                  external_database_connector_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ExternalContainerDatabasesStackMonitoring resource.
+
         :param pulumi.Input[_builtins.bool] enable_stack_monitoring: (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
                
                
@@ -85,6 +86,7 @@ class _ExternalContainerDatabasesStackMonitoringState:
                  external_database_connector_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalContainerDatabasesStackMonitoring resources.
+
         :param pulumi.Input[_builtins.bool] enable_stack_monitoring: (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
                
                
@@ -175,6 +177,7 @@ class ExternalContainerDatabasesStackMonitoring(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_stack_monitoring: (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
@@ -214,6 +217,7 @@ class ExternalContainerDatabasesStackMonitoring(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param ExternalContainerDatabasesStackMonitoringArgs args: The arguments to use to populate this resource's properties.

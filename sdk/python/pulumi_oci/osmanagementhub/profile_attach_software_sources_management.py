@@ -23,6 +23,7 @@ class ProfileAttachSoftwareSourcesManagementArgs:
                  software_sources: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
         """
         The set of arguments for constructing a ProfileAttachSoftwareSourcesManagement resource.
+
         :param pulumi.Input[_builtins.str] profile_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] software_sources: List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to the profile.
                
@@ -69,6 +70,7 @@ class _ProfileAttachSoftwareSourcesManagementState:
                  software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering ProfileAttachSoftwareSourcesManagement resources.
+
         :param pulumi.Input[_builtins.str] profile_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] software_sources: List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to the profile.
                
@@ -146,6 +148,7 @@ class ProfileAttachSoftwareSourcesManagement(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/profileAttachSoftwareSourcesManagement:ProfileAttachSoftwareSourcesManagement test_profile_attach_software_sources_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] profile_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
@@ -187,6 +190,7 @@ class ProfileAttachSoftwareSourcesManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/profileAttachSoftwareSourcesManagement:ProfileAttachSoftwareSourcesManagement test_profile_attach_software_sources_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ProfileAttachSoftwareSourcesManagementArgs args: The arguments to use to populate this resource's properties.

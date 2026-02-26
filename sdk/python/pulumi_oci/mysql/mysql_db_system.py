@@ -62,6 +62,7 @@ class MysqlDbSystemArgs:
                  telemetry_configuration: Optional[pulumi.Input['MysqlDbSystemTelemetryConfigurationArgs']] = None):
         """
         The set of arguments for constructing a MysqlDbSystem resource.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
                
                In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
@@ -744,6 +745,7 @@ class _MysqlDbSystemState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MysqlDbSystem resources.
+
         :param pulumi.Input[_builtins.str] access_mode: (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
                * UNRESTRICTED (default): the access to the database is not restricted;
                * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
@@ -1702,6 +1704,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         $ pulumi import oci:Mysql/mysqlDbSystem:MysqlDbSystem test_mysql_db_system "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_mode: (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
@@ -1901,6 +1904,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Mysql/mysqlDbSystem:MysqlDbSystem test_mysql_db_system "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MysqlDbSystemArgs args: The arguments to use to populate this resource's properties.

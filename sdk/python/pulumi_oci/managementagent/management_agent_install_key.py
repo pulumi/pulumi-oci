@@ -26,6 +26,7 @@ class ManagementAgentInstallKeyArgs:
                  time_expires: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ManagementAgentInstallKey resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: Compartment Identifier
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Management Agent install Key Name
         :param pulumi.Input[_builtins.int] allowed_key_install_count: Total number of install for this keys
@@ -130,6 +131,7 @@ class _ManagementAgentInstallKeyState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagementAgentInstallKey resources.
+
         :param pulumi.Input[_builtins.int] allowed_key_install_count: Total number of install for this keys
         :param pulumi.Input[_builtins.str] compartment_id: Compartment Identifier
         :param pulumi.Input[_builtins.str] created_by_principal_id: Principal id of user who created the Agent Install key
@@ -408,6 +410,7 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
         $ pulumi import oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey test_management_agent_install_key "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] allowed_key_install_count: Total number of install for this keys
@@ -455,6 +458,7 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey test_management_agent_install_key "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagementAgentInstallKeyArgs args: The arguments to use to populate this resource's properties.

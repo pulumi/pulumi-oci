@@ -63,6 +63,7 @@ class CloudVmClusterArgs:
                  vm_file_system_storage_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CloudVmCluster resource.
+
         :param pulumi.Input[_builtins.str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
         :param pulumi.Input[_builtins.str] cloud_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -768,6 +769,7 @@ class _CloudVmClusterState:
                  zone_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudVmCluster resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain that the cloud Exadata infrastructure resource is located in.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] backup_network_nsg_ids: (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         :param pulumi.Input[_builtins.str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
@@ -1875,6 +1877,7 @@ class CloudVmCluster(pulumi.CustomResource):
         $ pulumi import oci:Database/cloudVmCluster:CloudVmCluster test_cloud_vm_cluster "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] backup_network_nsg_ids: (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
@@ -2029,6 +2032,7 @@ class CloudVmCluster(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/cloudVmCluster:CloudVmCluster test_cloud_vm_cluster "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CloudVmClusterArgs args: The arguments to use to populate this resource's properties.

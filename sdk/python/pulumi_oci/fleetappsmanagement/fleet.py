@@ -38,6 +38,7 @@ class FleetArgs:
                  resources: Optional[pulumi.Input[Sequence[pulumi.Input['FleetResourceArgs']]]] = None):
         """
         The set of arguments for constructing a Fleet resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) compartment OCID
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input['FleetResourceSelectionArgs'] resource_selection: (Updatable) Resource Selection Type
@@ -289,6 +290,7 @@ class _FleetState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Fleet resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) compartment OCID
         :param pulumi.Input[Sequence[pulumi.Input['FleetCredentialArgs']]] credentials: Credentials associated with the Fleet.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -645,6 +647,7 @@ class Fleet(pulumi.CustomResource):
         $ pulumi import oci:FleetAppsManagement/fleet:Fleet test_fleet "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) compartment OCID
@@ -684,6 +687,7 @@ class Fleet(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:FleetAppsManagement/fleet:Fleet test_fleet "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param FleetArgs args: The arguments to use to populate this resource's properties.

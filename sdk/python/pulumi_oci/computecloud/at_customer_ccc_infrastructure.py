@@ -32,6 +32,7 @@ class AtCustomerCccInfrastructureArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AtCustomerCccInfrastructure resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the infrastructure.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
@@ -200,6 +201,7 @@ class _AtCustomerCccInfrastructureState:
                  upgrade_informations: Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureUpgradeInformationArgs']]]] = None):
         """
         Input properties used for looking up and filtering AtCustomerCccInfrastructure resources.
+
         :param pulumi.Input[_builtins.str] ccc_upgrade_schedule_id: (Updatable) Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be upgraded at any time.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the infrastructure.
         :param pulumi.Input[_builtins.str] connection_details: (Updatable) A message describing the current connection state in more detail.
@@ -566,6 +568,7 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
         $ pulumi import oci:ComputeCloud/atCustomerCccInfrastructure:AtCustomerCccInfrastructure test_ccc_infrastructure "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ccc_upgrade_schedule_id: (Updatable) Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be upgraded at any time.
@@ -626,6 +629,7 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ComputeCloud/atCustomerCccInfrastructure:AtCustomerCccInfrastructure test_ccc_infrastructure "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AtCustomerCccInfrastructureArgs args: The arguments to use to populate this resource's properties.

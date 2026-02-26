@@ -26,6 +26,7 @@ class ComputeCapacityReportArgs:
                  shape_availabilities: pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReportShapeAvailabilityArgs']]]):
         """
         The set of arguments for constructing a ComputeCapacityReport resource.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain for the capacity report.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
         :param pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReportShapeAvailabilityArgs']]] shape_availabilities: Information about the shapes in the capacity report.
@@ -80,6 +81,7 @@ class _ComputeCapacityReportState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ComputeCapacityReport resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain for the capacity report.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
         :param pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReportShapeAvailabilityArgs']]] shape_availabilities: Information about the shapes in the capacity report.
@@ -195,6 +197,7 @@ class ComputeCapacityReport(pulumi.CustomResource):
         $ pulumi import oci:Core/computeCapacityReport:ComputeCapacityReport test_compute_capacity_report "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain for the capacity report.  Example: `Uocm:PHX-AD-1`
@@ -248,6 +251,7 @@ class ComputeCapacityReport(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/computeCapacityReport:ComputeCapacityReport test_compute_capacity_report "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ComputeCapacityReportArgs args: The arguments to use to populate this resource's properties.

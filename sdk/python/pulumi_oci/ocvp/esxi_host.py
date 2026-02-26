@@ -41,6 +41,7 @@ class EsxiHostArgs:
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a EsxiHost resource.
+
         :param pulumi.Input[_builtins.str] billing_donor_host_id: (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
         :param pulumi.Input[_builtins.str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param pulumi.Input[_builtins.str] cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster to add the ESXi host to.
@@ -386,6 +387,7 @@ class _EsxiHostState:
                  vmware_software_version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering EsxiHost resources.
+
         :param pulumi.Input[_builtins.str] billing_contract_end_date: Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] billing_donor_host_id: (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
         :param pulumi.Input[_builtins.str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
@@ -1026,6 +1028,7 @@ class EsxiHost(pulumi.CustomResource):
         $ pulumi import oci:Ocvp/esxiHost:EsxiHost test_esxi_host "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] billing_donor_host_id: (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
@@ -1113,6 +1116,7 @@ class EsxiHost(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Ocvp/esxiHost:EsxiHost test_esxi_host "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param EsxiHostArgs args: The arguments to use to populate this resource's properties.

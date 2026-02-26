@@ -35,6 +35,7 @@ class ManagedKafkaKafkaClusterArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ManagedKafkaKafkaCluster resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['ManagedKafkaKafkaClusterAccessSubnetArgs']]] access_subnets: (Updatable) Subnets where broker/coordinator VNICs will be created.
         :param pulumi.Input['ManagedKafkaKafkaClusterBrokerShapeArgs'] broker_shape: (Updatable) Configuration of the broker node.
         :param pulumi.Input[_builtins.str] cluster_config_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Kafka Cluster configuration object
@@ -242,6 +243,7 @@ class _ManagedKafkaKafkaClusterState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagedKafkaKafkaCluster resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['ManagedKafkaKafkaClusterAccessSubnetArgs']]] access_subnets: (Updatable) Subnets where broker/coordinator VNICs will be created.
         :param pulumi.Input['ManagedKafkaKafkaClusterBrokerShapeArgs'] broker_shape: (Updatable) Configuration of the broker node.
         :param pulumi.Input[_builtins.str] client_certificate_bundle: (Updatable) CA certificate bundle for mTLS broker authentication.
@@ -605,6 +607,7 @@ class ManagedKafkaKafkaCluster(pulumi.CustomResource):
         $ pulumi import oci:oci/managedKafkaKafkaCluster:ManagedKafkaKafkaCluster test_kafka_cluster "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedKafkaKafkaClusterAccessSubnetArgs', 'ManagedKafkaKafkaClusterAccessSubnetArgsDict']]]] access_subnets: (Updatable) Subnets where broker/coordinator VNICs will be created.
@@ -677,6 +680,7 @@ class ManagedKafkaKafkaCluster(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:oci/managedKafkaKafkaCluster:ManagedKafkaKafkaCluster test_kafka_cluster "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagedKafkaKafkaClusterArgs args: The arguments to use to populate this resource's properties.

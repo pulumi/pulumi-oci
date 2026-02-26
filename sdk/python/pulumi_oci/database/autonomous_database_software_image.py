@@ -27,6 +27,7 @@ class AutonomousDatabaseSoftwareImageArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AutonomousDatabaseSoftwareImage resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
         :param pulumi.Input[_builtins.str] image_shape_family: To what shape the image is meant for.
@@ -142,6 +143,7 @@ class _AutonomousDatabaseSoftwareImageState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutonomousDatabaseSoftwareImage resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] autonomous_dsi_one_off_patches: One-off patches included in the Autonomous AI Database Software Image
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] database_version: The database version with which the Autonomous AI Database Software Image is to be built.
@@ -394,6 +396,7 @@ class AutonomousDatabaseSoftwareImage(pulumi.CustomResource):
         $ pulumi import oci:Database/autonomousDatabaseSoftwareImage:AutonomousDatabaseSoftwareImage test_autonomous_database_software_image "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -445,6 +448,7 @@ class AutonomousDatabaseSoftwareImage(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/autonomousDatabaseSoftwareImage:AutonomousDatabaseSoftwareImage test_autonomous_database_software_image "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AutonomousDatabaseSoftwareImageArgs args: The arguments to use to populate this resource's properties.

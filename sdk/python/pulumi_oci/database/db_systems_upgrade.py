@@ -29,6 +29,7 @@ class DbSystemsUpgradeArgs:
                  snapshot_retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a DbSystemsUpgrade resource.
+
         :param pulumi.Input[_builtins.str] action: The operating system upgrade action.
         :param pulumi.Input[_builtins.str] db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.bool] is_snapshot_retention_days_force_updated: If true, rollback time is updated even if operating system upgrade history contains errors.
@@ -179,6 +180,7 @@ class _DbSystemsUpgradeState:
                  zone_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DbSystemsUpgrade resources.
+
         :param pulumi.Input[_builtins.str] action: The operating system upgrade action.
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain that the DB system is located in.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
@@ -978,6 +980,7 @@ class DbSystemsUpgrade(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: The operating system upgrade action.
@@ -1018,6 +1021,7 @@ class DbSystemsUpgrade(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param DbSystemsUpgradeArgs args: The arguments to use to populate this resource's properties.

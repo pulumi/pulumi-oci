@@ -30,6 +30,7 @@ class MediaWorkflowConfigurationArgs:
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowConfigurationLockArgs']]]] = None):
         """
         The set of arguments for constructing a MediaWorkflowConfiguration resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) MediaWorkflowConfiguration identifier. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] parameters: (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue 
@@ -156,6 +157,7 @@ class _MediaWorkflowConfigurationState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MediaWorkflowConfiguration resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) MediaWorkflowConfiguration identifier. Avoid entering confidential information.
@@ -398,6 +400,7 @@ class MediaWorkflowConfiguration(pulumi.CustomResource):
         $ pulumi import oci:MediaServices/mediaWorkflowConfiguration:MediaWorkflowConfiguration test_media_workflow_configuration "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier.
@@ -457,6 +460,7 @@ class MediaWorkflowConfiguration(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:MediaServices/mediaWorkflowConfiguration:MediaWorkflowConfiguration test_media_workflow_configuration "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MediaWorkflowConfigurationArgs args: The arguments to use to populate this resource's properties.

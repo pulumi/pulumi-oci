@@ -39,6 +39,7 @@ class DatabaseRegistrationArgs:
                  wallet: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DatabaseRegistration resource.
+
         :param pulumi.Input[_builtins.str] alias_name: (Updatable) Credential store alias.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) An object's Display Name.
@@ -344,6 +345,7 @@ class _DatabaseRegistrationState:
                  wallet: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DatabaseRegistration resources.
+
         :param pulumi.Input[_builtins.str] alias_name: (Updatable) Credential store alias.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[_builtins.str] connection_string: (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
@@ -803,6 +805,7 @@ class DatabaseRegistration(pulumi.CustomResource):
         $ pulumi import oci:GoldenGate/databaseRegistration:DatabaseRegistration test_database_registration "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] alias_name: (Updatable) Credential store alias.
@@ -881,6 +884,7 @@ class DatabaseRegistration(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:GoldenGate/databaseRegistration:DatabaseRegistration test_database_registration "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DatabaseRegistrationArgs args: The arguments to use to populate this resource's properties.

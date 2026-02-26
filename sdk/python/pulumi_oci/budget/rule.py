@@ -31,6 +31,7 @@ class RuleArgs:
                  recipients: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Rule resource.
+
         :param pulumi.Input[_builtins.str] budget_id: The unique budget OCID.
         :param pulumi.Input[_builtins.float] threshold: (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
         :param pulumi.Input[_builtins.str] threshold_type: (Updatable) The type of threshold.
@@ -207,6 +208,7 @@ class _RuleState:
                  version: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering Rule resources.
+
         :param pulumi.Input[_builtins.str] budget_id: The unique budget OCID.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the alert rule.
@@ -484,6 +486,7 @@ class Rule(pulumi.CustomResource):
         $ pulumi import oci:Budget/rule:Rule test_alert_rule "budgets/{budgetId}/alertRules/{alertRuleId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] budget_id: The unique budget OCID.
@@ -545,6 +548,7 @@ class Rule(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Budget/rule:Rule test_alert_rule "budgets/{budgetId}/alertRules/{alertRuleId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param RuleArgs args: The arguments to use to populate this resource's properties.

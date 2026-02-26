@@ -22,6 +22,7 @@ class MonitorPluginManagementArgs:
                  monitored_instance_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a MonitorPluginManagement resource.
+
         :param pulumi.Input[_builtins.str] monitored_instance_id: OCID of monitored instance.
                
                
@@ -58,6 +59,7 @@ class _MonitorPluginManagementState:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MonitorPluginManagement resources.
+
         :param pulumi.Input[_builtins.str] monitored_instance_id: OCID of monitored instance.
                
                
@@ -171,6 +173,7 @@ class MonitorPluginManagement(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] monitored_instance_id: OCID of monitored instance.
@@ -208,6 +211,7 @@ class MonitorPluginManagement(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param MonitorPluginManagementArgs args: The arguments to use to populate this resource's properties.

@@ -50,6 +50,7 @@ class VmClusterArgs:
                  vm_file_system_storage_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a VmCluster resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `cpu_core_count` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the VM cluster. The name does not need to be unique.
@@ -498,6 +499,7 @@ class _VmClusterState:
                  vm_file_system_storage_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VmCluster resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain that the VM cluster is located in.
         :param pulumi.Input['VmClusterCloudAutomationUpdateDetailsArgs'] cloud_automation_update_details: (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -1175,6 +1177,7 @@ class VmCluster(pulumi.CustomResource):
         $ pulumi import oci:Database/vmCluster:VmCluster test_vm_cluster "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['VmClusterCloudAutomationUpdateDetailsArgs', 'VmClusterCloudAutomationUpdateDetailsArgsDict']] cloud_automation_update_details: (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
@@ -1283,6 +1286,7 @@ class VmCluster(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/vmCluster:VmCluster test_vm_cluster "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param VmClusterArgs args: The arguments to use to populate this resource's properties.

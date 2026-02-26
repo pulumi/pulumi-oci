@@ -68,6 +68,7 @@ class DomainsPasswordPolicyArgs:
                  user_name_disallowed: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a DomainsPasswordPolicy resource.
+
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
                
@@ -1564,6 +1565,7 @@ class _DomainsPasswordPolicyState:
                  user_name_disallowed: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering DomainsPasswordPolicy resources.
+
         :param pulumi.Input[_builtins.str] allowed_chars: (Updatable) A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value
                
                **SCIM++ Properties:**
@@ -3470,6 +3472,7 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
         $ pulumi import oci:Identity/domainsPasswordPolicy:DomainsPasswordPolicy test_password_policy "idcsEndpoint/{idcsEndpoint}/passwordPolicies/{passwordPolicyId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] allowed_chars: (Updatable) A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value
@@ -3979,6 +3982,7 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domainsPasswordPolicy:DomainsPasswordPolicy test_password_policy "idcsEndpoint/{idcsEndpoint}/passwordPolicies/{passwordPolicyId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainsPasswordPolicyArgs args: The arguments to use to populate this resource's properties.

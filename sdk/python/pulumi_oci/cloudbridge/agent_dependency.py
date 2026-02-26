@@ -32,6 +32,7 @@ class AgentDependencyArgs:
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AgentDependency resource.
+
         :param pulumi.Input[_builtins.str] bucket: (Updatable) Object storage bucket where the dependency is uploaded.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment identifier.
         :param pulumi.Input[_builtins.str] dependency_name: (Updatable) Name of the dependency type. This should match the whitelisted enum of dependency names.
@@ -223,6 +224,7 @@ class _AgentDependencyState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AgentDependency resources.
+
         :param pulumi.Input[_builtins.str] bucket: (Updatable) Object storage bucket where the dependency is uploaded.
         :param pulumi.Input[_builtins.str] checksum: The checksum associated with the dependency object returned by Object Storage.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment identifier.
@@ -532,6 +534,7 @@ class AgentDependency(pulumi.CustomResource):
         $ pulumi import oci:CloudBridge/agentDependency:AgentDependency test_agent_dependency "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bucket: (Updatable) Object storage bucket where the dependency is uploaded.
@@ -595,6 +598,7 @@ class AgentDependency(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:CloudBridge/agentDependency:AgentDependency test_agent_dependency "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AgentDependencyArgs args: The arguments to use to populate this resource's properties.

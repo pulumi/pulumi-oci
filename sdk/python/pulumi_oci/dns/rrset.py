@@ -30,6 +30,7 @@ class RrsetArgs:
                  view_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Rrset resource.
+
         :param pulumi.Input[_builtins.str] domain: The target fully-qualified domain name (FQDN) within the target zone.
         :param pulumi.Input[_builtins.str] rtype: The type of the target RRSet within the target zone.
         :param pulumi.Input[_builtins.str] zone_name_or_id: The name or OCID of the target zone.
@@ -169,6 +170,7 @@ class _RrsetState:
                  zone_name_or_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Rrset resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment the zone belongs to.
                
                This parameter is deprecated and should be omitted.
@@ -358,6 +360,7 @@ class Rrset(pulumi.CustomResource):
 
         skip adding `{view_id}` at the end if Rrset was created without `view_id`.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment the zone belongs to.
@@ -425,6 +428,7 @@ class Rrset(pulumi.CustomResource):
         ```
 
         skip adding `{view_id}` at the end if Rrset was created without `view_id`.
+
 
         :param str resource_name: The name of the resource.
         :param RrsetArgs args: The arguments to use to populate this resource's properties.

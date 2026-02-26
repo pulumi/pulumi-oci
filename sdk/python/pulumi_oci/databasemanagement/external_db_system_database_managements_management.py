@@ -24,6 +24,7 @@ class ExternalDbSystemDatabaseManagementsManagementArgs:
                  license_model: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ExternalDbSystemDatabaseManagementsManagement resource.
+
         :param pulumi.Input[_builtins.bool] enable_database_management: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                
@@ -86,6 +87,7 @@ class _ExternalDbSystemDatabaseManagementsManagementState:
                  license_model: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalDbSystemDatabaseManagementsManagement resources.
+
         :param pulumi.Input[_builtins.bool] enable_database_management: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                
@@ -172,6 +174,7 @@ class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
             license_model=external_db_system_database_managements_management_license_model)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_database_management: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -207,6 +210,7 @@ class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
             enable_database_management=enable_database_management,
             license_model=external_db_system_database_managements_management_license_model)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ExternalDbSystemDatabaseManagementsManagementArgs args: The arguments to use to populate this resource's properties.

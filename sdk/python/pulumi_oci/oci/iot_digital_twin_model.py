@@ -27,6 +27,7 @@ class IotDigitalTwinModelArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a IotDigitalTwinModel resource.
+
         :param pulumi.Input[_builtins.str] iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
         :param pulumi.Input[_builtins.str] spec: The specification of the digital twin model (DTDL).
                
@@ -142,6 +143,7 @@ class _IotDigitalTwinModelState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IotDigitalTwinModel resources.
+
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the resource. If left blank, the description will be derived from the spec.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  If left blank, the display name will be derived from the spec.
@@ -366,6 +368,7 @@ class IotDigitalTwinModel(pulumi.CustomResource):
         $ pulumi import oci:oci/iotDigitalTwinModel:IotDigitalTwinModel test_digital_twin_model "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -419,6 +422,7 @@ class IotDigitalTwinModel(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:oci/iotDigitalTwinModel:IotDigitalTwinModel test_digital_twin_model "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param IotDigitalTwinModelArgs args: The arguments to use to populate this resource's properties.

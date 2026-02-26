@@ -71,6 +71,7 @@ class DomainsUserArgs:
                  x509certificates: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]] = None):
         """
         The set of arguments for constructing a DomainsUser resource.
+
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
                
@@ -1429,6 +1430,7 @@ class _DomainsUserState:
                  x509certificates: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]] = None):
         """
         Input properties used for looking up and filtering DomainsUser resources.
+
         :param pulumi.Input[_builtins.bool] active: (Updatable) User status
                
                **SCIM++ Properties:**
@@ -3447,6 +3449,7 @@ class DomainsUser(pulumi.CustomResource):
         $ pulumi import oci:Identity/domainsUser:DomainsUser test_user "idcsEndpoint/{idcsEndpoint}/users/{userId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] active: (Updatable) User status
@@ -4072,6 +4075,7 @@ class DomainsUser(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domainsUser:DomainsUser test_user "idcsEndpoint/{idcsEndpoint}/users/{userId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainsUserArgs args: The arguments to use to populate this resource's properties.

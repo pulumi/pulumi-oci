@@ -41,6 +41,7 @@ class MonitoredResourceArgs:
                  resource_time_zone: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a MonitoredResource resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] type: Monitored Resource Type. 
                
@@ -350,6 +351,7 @@ class _MonitoredResourceState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MonitoredResource resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalAliasArgs']]] additional_aliases: (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialArgs']]] additional_credentials: (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
         :param pulumi.Input['MonitoredResourceAliasesArgs'] aliases: (Updatable) Monitored Resource Alias Credential Details
@@ -859,6 +861,7 @@ class MonitoredResource(pulumi.CustomResource):
         $ pulumi import oci:StackMonitoring/monitoredResource:MonitoredResource test_monitored_resource "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalAliasArgs', 'MonitoredResourceAdditionalAliasArgsDict']]]] additional_aliases: (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
@@ -987,6 +990,7 @@ class MonitoredResource(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:StackMonitoring/monitoredResource:MonitoredResource test_monitored_resource "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MonitoredResourceArgs args: The arguments to use to populate this resource's properties.

@@ -44,6 +44,7 @@ class MigrationArgs:
                  target_database_connection_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Migration resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[_builtins.str] database_combination: (Updatable) The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication. 
@@ -401,6 +402,7 @@ class _MigrationState:
                  wait_after: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Migration resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]] advanced_parameters: (Updatable) List of Migration Parameter objects.
         :param pulumi.Input['MigrationAdvisorSettingsArgs'] advisor_settings: (Updatable) Optional Pre-Migration advisor settings.
         :param pulumi.Input[_builtins.str] assessment_id: The OCID of the resource being referenced.
@@ -1030,6 +1032,7 @@ class Migration(pulumi.CustomResource):
         $ pulumi import oci:DatabaseMigration/migration:Migration test_migration "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict']]]] advanced_parameters: (Updatable) List of Migration Parameter objects.
@@ -1218,6 +1221,7 @@ class Migration(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DatabaseMigration/migration:Migration test_migration "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MigrationArgs args: The arguments to use to populate this resource's properties.

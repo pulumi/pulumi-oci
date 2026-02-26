@@ -25,6 +25,7 @@ class QueryArgs:
                  query_definition: pulumi.Input['QueryQueryDefinitionArgs']):
         """
         The set of arguments for constructing a Query resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID.
         :param pulumi.Input['QueryQueryDefinitionArgs'] query_definition: (Updatable) The common fields for queries.
         """
@@ -63,6 +64,7 @@ class _QueryState:
                  query_definition: Optional[pulumi.Input['QueryQueryDefinitionArgs']] = None):
         """
         Input properties used for looking up and filtering Query resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID.
         :param pulumi.Input['QueryQueryDefinitionArgs'] query_definition: (Updatable) The common fields for queries.
         """
@@ -161,6 +163,7 @@ class Query(pulumi.CustomResource):
         $ pulumi import oci:MeteringComputation/query:Query test_query "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID.
@@ -227,6 +230,7 @@ class Query(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:MeteringComputation/query:Query test_query "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param QueryArgs args: The arguments to use to populate this resource's properties.

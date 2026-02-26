@@ -23,6 +23,7 @@ class RedisClusterDetachOciCacheUserArgs:
                  redis_cluster_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a RedisClusterDetachOciCacheUser resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] oci_cache_users: List of Oracle Cloud Infrastructure cache user unique IDs (OCIDs).
         :param pulumi.Input[_builtins.str] redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
                
@@ -69,6 +70,7 @@ class _RedisClusterDetachOciCacheUserState:
                  redis_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RedisClusterDetachOciCacheUser resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] oci_cache_users: List of Oracle Cloud Infrastructure cache user unique IDs (OCIDs).
         :param pulumi.Input[_builtins.str] redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
                
@@ -142,6 +144,7 @@ class RedisClusterDetachOciCacheUser(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] oci_cache_users: List of Oracle Cloud Infrastructure cache user unique IDs (OCIDs).
@@ -179,6 +182,7 @@ class RedisClusterDetachOciCacheUser(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param RedisClusterDetachOciCacheUserArgs args: The arguments to use to populate this resource's properties.

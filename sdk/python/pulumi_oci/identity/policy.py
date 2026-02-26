@@ -28,6 +28,7 @@ class PolicyArgs:
                  version_date: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Policy resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment containing the policy (either the tenancy or another compartment).
         :param pulumi.Input[_builtins.str] description: (Updatable) The description you assign to the policy during creation. Does not have to be unique, and it's changeable.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] statements: (Updatable) An array of policy statements written in the policy language. See [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm) and [Common Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm).
@@ -159,6 +160,7 @@ class _PolicyState:
                  version_date: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Policy resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment containing the policy (either the tenancy or another compartment).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description you assign to the policy during creation. Does not have to be unique, and it's changeable.
@@ -427,6 +429,7 @@ class Policy(pulumi.CustomResource):
         $ pulumi import oci:Identity/policy:Policy test_policy "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment containing the policy (either the tenancy or another compartment).
@@ -494,6 +497,7 @@ class Policy(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/policy:Policy test_policy "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param PolicyArgs args: The arguments to use to populate this resource's properties.

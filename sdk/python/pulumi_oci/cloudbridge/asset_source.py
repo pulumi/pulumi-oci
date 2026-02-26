@@ -38,6 +38,7 @@ class AssetSourceArgs:
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AssetSource resource.
+
         :param pulumi.Input[_builtins.str] assets_compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that is going to be used to create assets.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
         :param pulumi.Input['AssetSourceDiscoveryCredentialsArgs'] discovery_credentials: (Updatable) Credentials for an asset source.
@@ -291,6 +292,7 @@ class _AssetSourceState:
                  vcenter_endpoint: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AssetSource resources.
+
         :param pulumi.Input[_builtins.bool] are_historical_metrics_collected: (Updatable) Flag indicating whether historical metrics are collected for assets, originating from this asset source.
         :param pulumi.Input[_builtins.bool] are_realtime_metrics_collected: (Updatable) Flag indicating whether real-time metrics are collected for assets, originating from this asset source.
         :param pulumi.Input[_builtins.str] assets_compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that is going to be used to create assets.
@@ -659,6 +661,7 @@ class AssetSource(pulumi.CustomResource):
         $ pulumi import oci:CloudBridge/assetSource:AssetSource test_asset_source "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] are_historical_metrics_collected: (Updatable) Flag indicating whether historical metrics are collected for assets, originating from this asset source.
@@ -736,6 +739,7 @@ class AssetSource(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:CloudBridge/assetSource:AssetSource test_asset_source "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AssetSourceArgs args: The arguments to use to populate this resource's properties.

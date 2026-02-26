@@ -29,6 +29,7 @@ class AtCustomerCccUpgradeScheduleArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AtCustomerCccUpgradeSchedule resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input['AtCustomerCccUpgradeScheduleEventArgs']]] events: (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
@@ -144,6 +145,7 @@ class _AtCustomerCccUpgradeScheduleState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AtCustomerCccUpgradeSchedule resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
@@ -388,6 +390,7 @@ class AtCustomerCccUpgradeSchedule(pulumi.CustomResource):
         $ pulumi import oci:ComputeCloud/atCustomerCccUpgradeSchedule:AtCustomerCccUpgradeSchedule test_ccc_upgrade_schedule "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
@@ -446,6 +449,7 @@ class AtCustomerCccUpgradeSchedule(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ComputeCloud/atCustomerCccUpgradeSchedule:AtCustomerCccUpgradeSchedule test_ccc_upgrade_schedule "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AtCustomerCccUpgradeScheduleArgs args: The arguments to use to populate this resource's properties.

@@ -23,6 +23,7 @@ class ApiKeyArgs:
                  user_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ApiKey resource.
+
         :param pulumi.Input[_builtins.str] key_value: The public key.  Must be an RSA key in PEM format.
         :param pulumi.Input[_builtins.str] user_id: The OCID of the user.
                
@@ -73,6 +74,7 @@ class _ApiKeyState:
                  user_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ApiKey resources.
+
         :param pulumi.Input[_builtins.str] fingerprint: The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
         :param pulumi.Input[_builtins.str] inactive_status: The detailed status of INACTIVE lifecycleState.
         :param pulumi.Input[_builtins.str] key_value: The public key.  Must be an RSA key in PEM format.
@@ -221,6 +223,7 @@ class ApiKey(pulumi.CustomResource):
         $ pulumi import oci:Identity/apiKey:ApiKey test_api_key "users/{userId}/apiKeys/{fingerprint}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] key_value: The public key.  Must be an RSA key in PEM format.
@@ -273,6 +276,7 @@ class ApiKey(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/apiKey:ApiKey test_api_key "users/{userId}/apiKeys/{fingerprint}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ApiKeyArgs args: The arguments to use to populate this resource's properties.

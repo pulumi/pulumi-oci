@@ -24,6 +24,7 @@ class ResourceAnalyticsTenancyAttachmentArgs:
                  description: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ResourceAnalyticsTenancyAttachment resource.
+
         :param pulumi.Input[_builtins.str] resource_analytics_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance associated with this TenancyAttachment.
         :param pulumi.Input[_builtins.str] tenancy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy associated with this TenancyAttachment.
                
@@ -92,6 +93,7 @@ class _ResourceAnalyticsTenancyAttachmentState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ResourceAnalyticsTenancyAttachment resources.
+
         :param pulumi.Input[_builtins.str] description: (Updatable) A description of the tenancy.
         :param pulumi.Input[_builtins.bool] is_reporting_tenancy: Whether the tenancy is the tenancy used when creating Resource Analytics Instance.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
@@ -276,6 +278,7 @@ class ResourceAnalyticsTenancyAttachment(pulumi.CustomResource):
         $ pulumi import oci:oci/resourceAnalyticsTenancyAttachment:ResourceAnalyticsTenancyAttachment test_tenancy_attachment "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: (Updatable) A description of the tenancy.
@@ -319,6 +322,7 @@ class ResourceAnalyticsTenancyAttachment(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:oci/resourceAnalyticsTenancyAttachment:ResourceAnalyticsTenancyAttachment test_tenancy_attachment "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ResourceAnalyticsTenancyAttachmentArgs args: The arguments to use to populate this resource's properties.

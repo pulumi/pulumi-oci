@@ -26,6 +26,7 @@ class MonitoredResourcesListMemberArgs:
                  limit_level: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a MonitoredResourcesListMember resource.
+
         :param pulumi.Input[_builtins.str] monitored_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
                
                
@@ -90,6 +91,7 @@ class _MonitoredResourcesListMemberState:
                  monitored_resource_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MonitoredResourcesListMember resources.
+
         :param pulumi.Input[_builtins.str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesListMemberItemArgs']]] items: List of member resources.
         :param pulumi.Input[_builtins.int] limit_level: The field which determines the depth of hierarchy while searching for members.
@@ -199,6 +201,7 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
         $ pulumi import oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember test_monitored_resources_list_member "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -242,6 +245,7 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember test_monitored_resources_list_member "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MonitoredResourcesListMemberArgs args: The arguments to use to populate this resource's properties.

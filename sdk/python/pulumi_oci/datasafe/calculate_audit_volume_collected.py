@@ -26,6 +26,7 @@ class CalculateAuditVolumeCollectedArgs:
                  time_to_month: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CalculateAuditVolumeCollected resource.
+
         :param pulumi.Input[_builtins.str] audit_profile_id: The OCID of the audit.
         :param pulumi.Input[_builtins.str] time_from_month: The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] time_to_month: The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339. If not specified, this will default to the current date.
@@ -89,6 +90,7 @@ class _CalculateAuditVolumeCollectedState:
                  time_to_month: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CalculateAuditVolumeCollected resources.
+
         :param pulumi.Input[_builtins.str] audit_profile_id: The OCID of the audit.
         :param pulumi.Input[Sequence[pulumi.Input['CalculateAuditVolumeCollectedCollectedAuditVolumeArgs']]] collected_audit_volumes: List of collected audit volumes.
         :param pulumi.Input[_builtins.str] time_from_month: The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339.
@@ -195,6 +197,7 @@ class CalculateAuditVolumeCollected(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/calculateAuditVolumeCollected:CalculateAuditVolumeCollected test_calculate_audit_volume_collected "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] audit_profile_id: The OCID of the audit.
@@ -235,6 +238,7 @@ class CalculateAuditVolumeCollected(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/calculateAuditVolumeCollected:CalculateAuditVolumeCollected test_calculate_audit_volume_collected "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CalculateAuditVolumeCollectedArgs args: The arguments to use to populate this resource's properties.

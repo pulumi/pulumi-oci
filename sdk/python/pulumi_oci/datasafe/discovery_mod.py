@@ -37,6 +37,7 @@ class DiscoveryModArgs:
                  tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input['DiscoveryModTablesForDiscoveryArgs']]]] = None):
         """
         The set of arguments for constructing a DiscoveryMod resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the discovery job resource should be created.
         :param pulumi.Input[_builtins.str] sensitive_data_model_id: The OCID of the sensitive data model.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
@@ -278,6 +279,7 @@ class _DiscoveryModState:
                  total_schemas_scanned: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DiscoveryMod resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the discovery job resource should be created.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] discovery_type: The type of the discovery job. It defines the job's scope. NEW identifies new sensitive columns in the target database that are not in the sensitive data model. DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database. MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
@@ -727,6 +729,7 @@ class DiscoveryMod(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/discoveryMod:DiscoveryMod test_discovery_job "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the discovery job resource should be created.
@@ -799,6 +802,7 @@ class DiscoveryMod(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/discoveryMod:DiscoveryMod test_discovery_job "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DiscoveryModArgs args: The arguments to use to populate this resource's properties.

@@ -30,6 +30,7 @@ class OciCacheConfigSetArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a OciCacheConfigSet resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Oracle Cloud Infrastructure Cache Config Set.
         :param pulumi.Input['OciCacheConfigSetConfigurationDetailsArgs'] configuration_details: List of Oracle Cloud Infrastructure Cache Config Set Values.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -159,6 +160,7 @@ class _OciCacheConfigSetState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OciCacheConfigSet resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Oracle Cloud Infrastructure Cache Config Set.
         :param pulumi.Input['OciCacheConfigSetConfigurationDetailsArgs'] configuration_details: List of Oracle Cloud Infrastructure Cache Config Set Values.
         :param pulumi.Input[_builtins.str] default_config_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the default Oracle Cloud Infrastructure Cache Config Set which the custom Oracle Cloud Infrastructure Cache Config Set is based upon.
@@ -405,6 +407,7 @@ class OciCacheConfigSet(pulumi.CustomResource):
         $ pulumi import oci:Redis/ociCacheConfigSet:OciCacheConfigSet test_oci_cache_config_set "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Oracle Cloud Infrastructure Cache Config Set.
@@ -465,6 +468,7 @@ class OciCacheConfigSet(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Redis/ociCacheConfigSet:OciCacheConfigSet test_oci_cache_config_set "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OciCacheConfigSetArgs args: The arguments to use to populate this resource's properties.

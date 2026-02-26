@@ -32,6 +32,7 @@ class EndpointArgs:
                  generative_ai_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Endpoint resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment OCID to create the endpoint in.
         :param pulumi.Input[_builtins.str] dedicated_ai_cluster_id: The OCID of the dedicated AI cluster on which a model will be deployed to.
         :param pulumi.Input[_builtins.str] model_id: The OCID of the model that's used to create this endpoint.
@@ -194,6 +195,7 @@ class _EndpointState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Endpoint resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment OCID to create the endpoint in.
         :param pulumi.Input['EndpointContentModerationConfigArgs'] content_moderation_config: (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
         :param pulumi.Input[_builtins.str] dedicated_ai_cluster_id: The OCID of the dedicated AI cluster on which a model will be deployed to.
@@ -475,6 +477,7 @@ class Endpoint(pulumi.CustomResource):
         $ pulumi import oci:GenerativeAi/endpoint:Endpoint test_endpoint "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment OCID to create the endpoint in.
@@ -540,6 +543,7 @@ class Endpoint(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:GenerativeAi/endpoint:Endpoint test_endpoint "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param EndpointArgs args: The arguments to use to populate this resource's properties.

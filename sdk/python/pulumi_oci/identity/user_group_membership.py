@@ -24,6 +24,7 @@ class UserGroupMembershipArgs:
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a UserGroupMembership resource.
+
         :param pulumi.Input[_builtins.str] group_id: The OCID of the group.
         :param pulumi.Input[_builtins.str] user_id: The OCID of the user.
                
@@ -89,6 +90,7 @@ class _UserGroupMembershipState:
                  user_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UserGroupMembership resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the tenancy containing the user, group, and membership object.
         :param pulumi.Input[_builtins.str] group_id: The OCID of the group.
         :param pulumi.Input[_builtins.str] inactive_state: The detailed status of INACTIVE lifecycleState.
@@ -227,6 +229,7 @@ class UserGroupMembership(pulumi.CustomResource):
         $ pulumi import oci:Identity/userGroupMembership:UserGroupMembership test_user_group_membership "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the tenancy containing the user, group, and membership object.
@@ -269,6 +272,7 @@ class UserGroupMembership(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/userGroupMembership:UserGroupMembership test_user_group_membership "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param UserGroupMembershipArgs args: The arguments to use to populate this resource's properties.

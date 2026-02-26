@@ -32,6 +32,7 @@ class PathAnalysiArgs:
                  source_endpoint: Optional[pulumi.Input['PathAnalysiSourceEndpointArgs']] = None):
         """
         The set of arguments for constructing a PathAnalysi resource.
+
         :param pulumi.Input[_builtins.str] type: The type of the `PathAnalysis` query.
                
                
@@ -191,6 +192,7 @@ class _PathAnalysiState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PathAnalysi resources.
+
         :param pulumi.Input[_builtins.str] cache_control: The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
         :param pulumi.Input['PathAnalysiDestinationEndpointArgs'] destination_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
@@ -424,6 +426,7 @@ class PathAnalysi(pulumi.CustomResource):
         $ pulumi import oci:VnMonitoring/pathAnalysi:PathAnalysi test_path_analysi "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cache_control: The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
@@ -516,6 +519,7 @@ class PathAnalysi(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:VnMonitoring/pathAnalysi:PathAnalysi test_path_analysi "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param PathAnalysiArgs args: The arguments to use to populate this resource's properties.

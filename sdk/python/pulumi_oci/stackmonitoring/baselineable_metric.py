@@ -27,6 +27,7 @@ class BaselineableMetricArgs:
                  resource_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a BaselineableMetric resource.
+
         :param pulumi.Input[_builtins.str] column: (Updatable) metric column name
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) OCID of the compartment
         :param pulumi.Input[_builtins.str] namespace: (Updatable) namespace of the metric
@@ -146,6 +147,7 @@ class _BaselineableMetricState:
                  time_last_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BaselineableMetric resources.
+
         :param pulumi.Input[_builtins.str] column: (Updatable) metric column name
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) OCID of the compartment
         :param pulumi.Input[_builtins.str] created_by: Created user id
@@ -441,6 +443,7 @@ class BaselineableMetric(pulumi.CustomResource):
         $ pulumi import oci:StackMonitoring/baselineableMetric:BaselineableMetric test_baselineable_metric "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] column: (Updatable) metric column name
@@ -490,6 +493,7 @@ class BaselineableMetric(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:StackMonitoring/baselineableMetric:BaselineableMetric test_baselineable_metric "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param BaselineableMetricArgs args: The arguments to use to populate this resource's properties.

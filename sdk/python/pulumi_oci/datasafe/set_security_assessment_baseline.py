@@ -23,6 +23,7 @@ class SetSecurityAssessmentBaselineArgs:
                  assessment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a SetSecurityAssessmentBaseline resource.
+
         :param pulumi.Input[_builtins.str] security_assessment_id: The OCID of the security assessment.
                
                
@@ -70,6 +71,7 @@ class _SetSecurityAssessmentBaselineState:
                  security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SetSecurityAssessmentBaseline resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] assessment_ids: The list of OCIDs for the security assessments that need to be updated while setting the baseline.
         :param pulumi.Input[_builtins.str] security_assessment_id: The OCID of the security assessment.
                
@@ -147,6 +149,7 @@ class SetSecurityAssessmentBaseline(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline test_set_security_assessment_baseline "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] assessment_ids: The list of OCIDs for the security assessments that need to be updated while setting the baseline.
@@ -188,6 +191,7 @@ class SetSecurityAssessmentBaseline(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline test_set_security_assessment_baseline "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SetSecurityAssessmentBaselineArgs args: The arguments to use to populate this resource's properties.

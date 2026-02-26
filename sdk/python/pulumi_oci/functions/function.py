@@ -38,6 +38,7 @@ class FunctionArgs:
                  trace_config: Optional[pulumi.Input['FunctionTraceConfigArgs']] = None):
         """
         The set of arguments for constructing a Function resource.
+
         :param pulumi.Input[_builtins.str] application_id: The OCID of the application this function belongs to.
         :param pulumi.Input[_builtins.str] display_name: The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] memory_in_mbs: (Updatable) Maximum usable memory for the function (MiB).
@@ -293,6 +294,7 @@ class _FunctionState:
                  trace_config: Optional[pulumi.Input['FunctionTraceConfigArgs']] = None):
         """
         Input properties used for looking up and filtering Function resources.
+
         :param pulumi.Input[_builtins.str] application_id: The OCID of the application this function belongs to.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment that contains the function.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] config: (Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
@@ -701,6 +703,7 @@ class Function(pulumi.CustomResource):
         $ pulumi import oci:Functions/function:Function test_function "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The OCID of the application this function belongs to.
@@ -790,6 +793,7 @@ class Function(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Functions/function:Function test_function "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param FunctionArgs args: The arguments to use to populate this resource's properties.

@@ -31,6 +31,7 @@ class MaintenanceWindowArgs:
                  recurrences: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a MaintenanceWindow resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: Compartment OCID
         :param pulumi.Input[_builtins.str] duration: (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
         :param pulumi.Input[_builtins.str] time_schedule_start: (Updatable) Specify the date and time of the day that the maintenance window starts.
@@ -210,6 +211,7 @@ class _MaintenanceWindowState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MaintenanceWindow resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: Compartment OCID
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
@@ -517,6 +519,7 @@ class MaintenanceWindow(pulumi.CustomResource):
         $ pulumi import oci:FleetAppsManagement/maintenanceWindow:MaintenanceWindow test_maintenance_window "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: Compartment OCID
@@ -578,6 +581,7 @@ class MaintenanceWindow(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:FleetAppsManagement/maintenanceWindow:MaintenanceWindow test_maintenance_window "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MaintenanceWindowArgs args: The arguments to use to populate this resource's properties.

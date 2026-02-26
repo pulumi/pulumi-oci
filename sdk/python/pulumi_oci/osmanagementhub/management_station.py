@@ -33,6 +33,7 @@ class ManagementStationArgs:
                  refresh_trigger: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a ManagementStation resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] hostname: (Updatable) Hostname of the management station.
@@ -222,6 +223,7 @@ class _ManagementStationState:
                  total_mirrors: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ManagementStation resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) User-specified description of the management station. Avoid entering confidential information.
@@ -719,6 +721,7 @@ class ManagementStation(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/managementStation:ManagementStation test_management_station "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
@@ -790,6 +793,7 @@ class ManagementStation(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/managementStation:ManagementStation test_management_station "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagementStationArgs args: The arguments to use to populate this resource's properties.

@@ -31,6 +31,7 @@ class PrivateApplicationArgs:
                  long_description: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a PrivateApplication resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private application.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name of the private application.
         :param pulumi.Input['PrivateApplicationPackageDetailsArgs'] package_details: A base object for creating a private application package.
@@ -177,6 +178,7 @@ class _PrivateApplicationState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PrivateApplication resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private application.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name of the private application.
@@ -454,6 +456,7 @@ class PrivateApplication(pulumi.CustomResource):
         $ pulumi import oci:ServiceCatalog/privateApplication:PrivateApplication test_private_application "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private application.
@@ -515,6 +518,7 @@ class PrivateApplication(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ServiceCatalog/privateApplication:PrivateApplication test_private_application "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param PrivateApplicationArgs args: The arguments to use to populate this resource's properties.

@@ -23,6 +23,7 @@ class MetricExtensionsTestManagementArgs:
                  resource_ids: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a MetricExtensionsTestManagement resource.
+
         :param pulumi.Input[_builtins.str] metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
         :param pulumi.Input[_builtins.str] resource_ids: List of Resource IDs [OCID]. Currently, supports only one resource id per request.
                
@@ -73,6 +74,7 @@ class _MetricExtensionsTestManagementState:
                  test_run_resource_group_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MetricExtensionsTestManagement resources.
+
         :param pulumi.Input[_builtins.str] metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
         :param pulumi.Input[_builtins.str] resource_ids: List of Resource IDs [OCID]. Currently, supports only one resource id per request.
                
@@ -206,6 +208,7 @@ class MetricExtensionsTestManagement(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
@@ -243,6 +246,7 @@ class MetricExtensionsTestManagement(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param MetricExtensionsTestManagementArgs args: The arguments to use to populate this resource's properties.

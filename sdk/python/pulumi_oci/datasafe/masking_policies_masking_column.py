@@ -32,6 +32,7 @@ class MaskingPoliciesMaskingColumnArgs:
                  sensitive_type_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a MaskingPoliciesMaskingColumn resource.
+
         :param pulumi.Input[_builtins.str] column_name: The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
         :param pulumi.Input[_builtins.str] masking_policy_id: The OCID of the masking policy.
         :param pulumi.Input[_builtins.str] object: The name of the object (table or editioning view) that contains the database column. This attribute cannot be updated for an existing masking column.
@@ -195,6 +196,7 @@ class _MaskingPoliciesMaskingColumnState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MaskingPoliciesMaskingColumn resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] child_columns: An array of child columns that are in referential relationship with the masking column.
         :param pulumi.Input[_builtins.str] column_name: The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
         :param pulumi.Input[_builtins.str] data_type: The data type of the masking column.
@@ -544,6 +546,7 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn test_masking_policies_masking_column "maskingPolicies/{maskingPolicyId}/maskingColumns/{maskingColumnKey}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] column_name: The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
@@ -647,6 +650,7 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn test_masking_policies_masking_column "maskingPolicies/{maskingPolicyId}/maskingColumns/{maskingColumnKey}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MaskingPoliciesMaskingColumnArgs args: The arguments to use to populate this resource's properties.

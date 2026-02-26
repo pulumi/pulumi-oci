@@ -24,6 +24,7 @@ class ExternalMySqlDatabaseExternalMysqlDatabasesManagementArgs:
                  connector_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ExternalMySqlDatabaseExternalMysqlDatabasesManagement resource.
+
         :param pulumi.Input[_builtins.bool] enable_external_mysql_database: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                
@@ -86,6 +87,7 @@ class _ExternalMySqlDatabaseExternalMysqlDatabasesManagementState:
                  external_my_sql_database_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalMySqlDatabaseExternalMysqlDatabasesManagement resources.
+
         :param pulumi.Input[_builtins.str] connector_id: OCID of External MySQL Database connector.
         :param pulumi.Input[_builtins.bool] enable_external_mysql_database: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
@@ -171,6 +173,7 @@ class ExternalMySqlDatabaseExternalMysqlDatabasesManagement(pulumi.CustomResourc
             connector_id=test_connector["id"])
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] connector_id: OCID of External MySQL Database connector.
@@ -205,6 +208,7 @@ class ExternalMySqlDatabaseExternalMysqlDatabasesManagement(pulumi.CustomResourc
             enable_external_mysql_database=enable_external_mysql_database,
             connector_id=test_connector["id"])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ExternalMySqlDatabaseExternalMysqlDatabasesManagementArgs args: The arguments to use to populate this resource's properties.

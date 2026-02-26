@@ -86,6 +86,7 @@ class DeployStageArgs:
                  wait_criteria: Optional[pulumi.Input['DeployStageWaitCriteriaArgs']] = None):
         """
         The set of arguments for constructing a DeployStage resource.
+
         :param pulumi.Input[_builtins.str] deploy_pipeline_id: The OCID of a pipeline.
         :param pulumi.Input['DeployStageDeployStagePredecessorCollectionArgs'] deploy_stage_predecessor_collection: (Updatable) Collection containing the predecessors of a stage.
         :param pulumi.Input[_builtins.str] deploy_stage_type: (Updatable) Deployment stage type.
@@ -1106,6 +1107,7 @@ class _DeployStageState:
                  wait_criteria: Optional[pulumi.Input['DeployStageWaitCriteriaArgs']] = None):
         """
         Input properties used for looking up and filtering DeployStage resources.
+
         :param pulumi.Input['DeployStageApprovalPolicyArgs'] approval_policy: (Updatable) Specifies the approval policy.
         :param pulumi.Input[_builtins.bool] are_hooks_enabled: (Updatable) Disable pre/post upgrade hooks. Set to false by default.
         :param pulumi.Input['DeployStageBlueBackendIpsArgs'] blue_backend_ips: (Updatable) Collection of backend environment IP addresses.
@@ -2245,6 +2247,7 @@ class DeployStage(pulumi.CustomResource):
         $ pulumi import oci:DevOps/deployStage:DeployStage test_deploy_stage "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['DeployStageApprovalPolicyArgs', 'DeployStageApprovalPolicyArgsDict']] approval_policy: (Updatable) Specifies the approval policy.
@@ -2332,6 +2335,7 @@ class DeployStage(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DevOps/deployStage:DeployStage test_deploy_stage "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DeployStageArgs args: The arguments to use to populate this resource's properties.

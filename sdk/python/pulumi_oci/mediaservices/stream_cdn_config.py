@@ -31,6 +31,7 @@ class StreamCdnConfigArgs:
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['StreamCdnConfigLockArgs']]]] = None):
         """
         The set of arguments for constructing a StreamCdnConfig resource.
+
         :param pulumi.Input['StreamCdnConfigConfigArgs'] config: (Updatable) Base fields of the StreamCdnConfig configuration object.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) CDN Config display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] distribution_channel_id: Distribution Channel Identifier.
@@ -166,6 +167,7 @@ class _StreamCdnConfigState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering StreamCdnConfig resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The compartment ID of the lock.
         :param pulumi.Input['StreamCdnConfigConfigArgs'] config: (Updatable) Base fields of the StreamCdnConfig configuration object.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -445,6 +447,7 @@ class StreamCdnConfig(pulumi.CustomResource):
         $ pulumi import oci:MediaServices/streamCdnConfig:StreamCdnConfig test_stream_cdn_config "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['StreamCdnConfigConfigArgs', 'StreamCdnConfigConfigArgsDict']] config: (Updatable) Base fields of the StreamCdnConfig configuration object.
@@ -515,6 +518,7 @@ class StreamCdnConfig(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:MediaServices/streamCdnConfig:StreamCdnConfig test_stream_cdn_config "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param StreamCdnConfigArgs args: The arguments to use to populate this resource's properties.

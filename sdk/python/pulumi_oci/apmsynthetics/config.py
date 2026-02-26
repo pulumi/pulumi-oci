@@ -44,6 +44,7 @@ class ConfigArgs:
                  timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a Config resource.
+
         :param pulumi.Input[_builtins.str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
         :param pulumi.Input[_builtins.str] monitor_type: Type of monitor.
@@ -397,6 +398,7 @@ class _ConfigState:
                  vantage_points: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]]] = None):
         """
         Input properties used for looking up and filtering Config resources.
+
         :param pulumi.Input[_builtins.str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
         :param pulumi.Input['ConfigAvailabilityConfigurationArgs'] availability_configuration: (Updatable) Monitor availability configuration details.
         :param pulumi.Input[_builtins.int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
@@ -992,6 +994,7 @@ class Config(pulumi.CustomResource):
         $ pulumi import oci:ApmSynthetics/config:Config test_monitor "monitors/{monitorId}/apmDomainId/{apmDomainId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
@@ -1176,6 +1179,7 @@ class Config(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ApmSynthetics/config:Config test_monitor "monitors/{monitorId}/apmDomainId/{apmDomainId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ConfigArgs args: The arguments to use to populate this resource's properties.

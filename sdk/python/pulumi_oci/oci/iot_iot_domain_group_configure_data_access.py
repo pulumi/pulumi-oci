@@ -23,6 +23,7 @@ class IotIotDomainGroupConfigureDataAccessArgs:
                  iot_domain_group_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a IotIotDomainGroupConfigureDataAccess resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] db_allow_listed_vcn_ids: This is an array of VCN OCID (virtual cloud network Oracle Cloud ID) that is allowed to connect the data host.
         :param pulumi.Input[_builtins.str] iot_domain_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an IoT Domain Group.
                
@@ -69,6 +70,7 @@ class _IotIotDomainGroupConfigureDataAccessState:
                  iot_domain_group_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IotIotDomainGroupConfigureDataAccess resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] db_allow_listed_vcn_ids: This is an array of VCN OCID (virtual cloud network Oracle Cloud ID) that is allowed to connect the data host.
         :param pulumi.Input[_builtins.str] iot_domain_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an IoT Domain Group.
                
@@ -142,6 +144,7 @@ class IotIotDomainGroupConfigureDataAccess(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] db_allow_listed_vcn_ids: This is an array of VCN OCID (virtual cloud network Oracle Cloud ID) that is allowed to connect the data host.
@@ -179,6 +182,7 @@ class IotIotDomainGroupConfigureDataAccess(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param IotIotDomainGroupConfigureDataAccessArgs args: The arguments to use to populate this resource's properties.

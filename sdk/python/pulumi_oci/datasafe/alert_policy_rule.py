@@ -25,6 +25,7 @@ class AlertPolicyRuleArgs:
                  display_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AlertPolicyRule resource.
+
         :param pulumi.Input[_builtins.str] alert_policy_id: The OCID of the alert policy.
         :param pulumi.Input[_builtins.str] expression: (Updatable) The conditional expression of the alert policy rule which evaluates to boolean value.
                
@@ -106,6 +107,7 @@ class _AlertPolicyRuleState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AlertPolicyRule resources.
+
         :param pulumi.Input[_builtins.str] alert_policy_id: The OCID of the alert policy.
         :param pulumi.Input[_builtins.str] description: (Updatable) Describes the alert policy rule.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the alert policy rule.
@@ -262,6 +264,7 @@ class AlertPolicyRule(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/alertPolicyRule:AlertPolicyRule test_alert_policy_rule "alertPolicies/{alertPolicyId}/rules/{ruleKey}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] alert_policy_id: The OCID of the alert policy.
@@ -307,6 +310,7 @@ class AlertPolicyRule(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/alertPolicyRule:AlertPolicyRule test_alert_policy_rule "alertPolicies/{alertPolicyId}/rules/{ruleKey}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AlertPolicyRuleArgs args: The arguments to use to populate this resource's properties.

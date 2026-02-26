@@ -26,6 +26,7 @@ class ManagedInstanceRebootManagementArgs:
                  work_request_details: Optional[pulumi.Input['ManagedInstanceRebootManagementWorkRequestDetailsArgs']] = None):
         """
         The set of arguments for constructing a ManagedInstanceRebootManagement resource.
+
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         :param pulumi.Input[_builtins.int] reboot_timeout_in_mins: The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within this  time, the reboot job status is set to failed.
         :param pulumi.Input['ManagedInstanceRebootManagementWorkRequestDetailsArgs'] work_request_details: Provides the name and description of the job.
@@ -81,6 +82,7 @@ class _ManagedInstanceRebootManagementState:
                  work_request_details: Optional[pulumi.Input['ManagedInstanceRebootManagementWorkRequestDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering ManagedInstanceRebootManagement resources.
+
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         :param pulumi.Input[_builtins.int] reboot_timeout_in_mins: The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within this  time, the reboot job status is set to failed.
         :param pulumi.Input['ManagedInstanceRebootManagementWorkRequestDetailsArgs'] work_request_details: Provides the name and description of the job.
@@ -171,6 +173,7 @@ class ManagedInstanceRebootManagement(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/managedInstanceRebootManagement:ManagedInstanceRebootManagement test_managed_instance_reboot_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
@@ -214,6 +217,7 @@ class ManagedInstanceRebootManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/managedInstanceRebootManagement:ManagedInstanceRebootManagement test_managed_instance_reboot_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagedInstanceRebootManagementArgs args: The arguments to use to populate this resource's properties.

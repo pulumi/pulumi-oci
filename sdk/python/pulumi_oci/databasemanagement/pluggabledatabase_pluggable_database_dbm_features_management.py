@@ -28,6 +28,7 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs:
                  modify_pluggable_database_dbm_feature: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a PluggabledatabasePluggableDatabaseDbmFeaturesManagement resource.
+
         :param pulumi.Input[_builtins.bool] enable_pluggable_database_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                
@@ -114,6 +115,7 @@ class _PluggabledatabasePluggableDatabaseDbmFeaturesManagementState:
                  pluggable_database_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PluggabledatabasePluggableDatabaseDbmFeaturesManagement resources.
+
         :param pulumi.Input[_builtins.bool] enable_pluggable_database_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                
@@ -252,6 +254,7 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
             })
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_pluggable_database_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -315,6 +318,7 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
                 "management_type": pluggabledatabase_pluggable_database_dbm_features_management_feature_details_management_type,
             })
         ```
+
 
         :param str resource_name: The name of the resource.
         :param PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs args: The arguments to use to populate this resource's properties.

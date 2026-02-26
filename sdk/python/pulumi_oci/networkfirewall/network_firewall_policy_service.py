@@ -28,6 +28,7 @@ class NetworkFirewallPolicyServiceArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyService resource.
+
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyServicePortRangeArgs']]] port_ranges: (Updatable) List of port-ranges to be used.
         :param pulumi.Input[_builtins.str] type: Describes the type of Service. The accepted values are 
@@ -122,6 +123,7 @@ class _NetworkFirewallPolicyServiceState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyService resources.
+
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the service. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name of the service
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
@@ -268,6 +270,7 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyService:NetworkFirewallPolicyService test_network_firewall_policy_service "networkFirewallPolicies/{networkFirewallPolicyId}/services/{serviceName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the service. This field can be used to add additional info.
@@ -318,6 +321,7 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyService:NetworkFirewallPolicyService test_network_firewall_policy_service "networkFirewallPolicies/{networkFirewallPolicyId}/services/{serviceName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NetworkFirewallPolicyServiceArgs args: The arguments to use to populate this resource's properties.

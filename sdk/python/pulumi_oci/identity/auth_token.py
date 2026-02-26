@@ -23,6 +23,7 @@ class AuthTokenArgs:
                  user_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a AuthToken resource.
+
         :param pulumi.Input[_builtins.str] description: (Updatable) The description you assign to the auth token during creation. Does not have to be unique, and it's changeable.
         :param pulumi.Input[_builtins.str] user_id: The OCID of the user.
                
@@ -74,6 +75,7 @@ class _AuthTokenState:
                  user_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AuthToken resources.
+
         :param pulumi.Input[_builtins.str] description: (Updatable) The description you assign to the auth token during creation. Does not have to be unique, and it's changeable.
         :param pulumi.Input[_builtins.str] inactive_state: The detailed status of INACTIVE lifecycleState.
         :param pulumi.Input[_builtins.str] state: The token's current state.
@@ -235,6 +237,7 @@ class AuthToken(pulumi.CustomResource):
         $ pulumi import oci:Identity/authToken:AuthToken test_auth_token "users/{userId}/authTokens/{authTokenId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: (Updatable) The description you assign to the auth token during creation. Does not have to be unique, and it's changeable.
@@ -285,6 +288,7 @@ class AuthToken(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/authToken:AuthToken test_auth_token "users/{userId}/authTokens/{authTokenId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AuthTokenArgs args: The arguments to use to populate this resource's properties.

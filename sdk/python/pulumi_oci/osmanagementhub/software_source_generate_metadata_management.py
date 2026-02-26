@@ -22,6 +22,7 @@ class SoftwareSourceGenerateMetadataManagementArgs:
                  software_source_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a SoftwareSourceGenerateMetadataManagement resource.
+
         :param pulumi.Input[_builtins.str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
                
                
@@ -53,6 +54,7 @@ class _SoftwareSourceGenerateMetadataManagementState:
                  software_source_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SoftwareSourceGenerateMetadataManagement resources.
+
         :param pulumi.Input[_builtins.str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
                
                
@@ -112,6 +114,7 @@ class SoftwareSourceGenerateMetadataManagement(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/softwareSourceGenerateMetadataManagement:SoftwareSourceGenerateMetadataManagement test_software_source_generate_metadata_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
@@ -150,6 +153,7 @@ class SoftwareSourceGenerateMetadataManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/softwareSourceGenerateMetadataManagement:SoftwareSourceGenerateMetadataManagement test_software_source_generate_metadata_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SoftwareSourceGenerateMetadataManagementArgs args: The arguments to use to populate this resource's properties.

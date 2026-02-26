@@ -36,6 +36,7 @@ class ProtectedDatabaseArgs:
                  subscription_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ProtectedDatabase resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the protected database.
         :param pulumi.Input[_builtins.str] db_unique_name: The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
@@ -269,6 +270,7 @@ class _ProtectedDatabaseState:
                  vpc_user_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProtectedDatabase resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the protected database.
         :param pulumi.Input[_builtins.str] database_id: The OCID of the protected database.
         :param pulumi.Input[_builtins.str] database_size: (Updatable) The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
@@ -708,6 +710,7 @@ class ProtectedDatabase(pulumi.CustomResource):
         $ pulumi import oci:RecoveryMod/protectedDatabase:ProtectedDatabase test_protected_database "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the protected database.
@@ -779,6 +782,7 @@ class ProtectedDatabase(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:RecoveryMod/protectedDatabase:ProtectedDatabase test_protected_database "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ProtectedDatabaseArgs args: The arguments to use to populate this resource's properties.

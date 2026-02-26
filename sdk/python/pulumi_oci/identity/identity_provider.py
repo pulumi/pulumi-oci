@@ -31,6 +31,7 @@ class IdentityProviderArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a IdentityProvider resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of your tenancy.
         :param pulumi.Input[_builtins.str] description: (Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
         :param pulumi.Input[_builtins.str] metadata: (Updatable) The XML that contains the information required for federating.
@@ -206,6 +207,7 @@ class _IdentityProviderState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IdentityProvider resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of your tenancy.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
@@ -513,6 +515,7 @@ class IdentityProvider(pulumi.CustomResource):
         $ pulumi import oci:Identity/identityProvider:IdentityProvider test_identity_provider "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of your tenancy.
@@ -589,6 +592,7 @@ class IdentityProvider(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/identityProvider:IdentityProvider test_identity_provider "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param IdentityProviderArgs args: The arguments to use to populate this resource's properties.

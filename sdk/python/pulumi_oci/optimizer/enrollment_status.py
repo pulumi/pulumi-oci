@@ -23,6 +23,7 @@ class EnrollmentStatusArgs:
                  status: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a EnrollmentStatus resource.
+
         :param pulumi.Input[_builtins.str] enrollment_status_id: The unique OCID associated with the enrollment status.
         :param pulumi.Input[_builtins.str] status: (Updatable) The Cloud Advisor enrollment status.
                
@@ -74,6 +75,7 @@ class _EnrollmentStatusState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering EnrollmentStatus resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[_builtins.str] enrollment_status_id: The unique OCID associated with the enrollment status.
         :param pulumi.Input[_builtins.str] state: The enrollment status' current state.
@@ -215,6 +217,7 @@ class EnrollmentStatus(pulumi.CustomResource):
         $ pulumi import oci:Optimizer/enrollmentStatus:EnrollmentStatus test_enrollment_status "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] enrollment_status_id: The unique OCID associated with the enrollment status.
@@ -245,6 +248,7 @@ class EnrollmentStatus(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Optimizer/enrollmentStatus:EnrollmentStatus test_enrollment_status "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param EnrollmentStatusArgs args: The arguments to use to populate this resource's properties.

@@ -24,6 +24,7 @@ class ExternalExadataInfrastructureExadataManagementArgs:
                  license_model: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ExternalExadataInfrastructureExadataManagement resource.
+
         :param pulumi.Input[_builtins.bool] enable_exadata: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                
@@ -86,6 +87,7 @@ class _ExternalExadataInfrastructureExadataManagementState:
                  license_model: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalExadataInfrastructureExadataManagement resources.
+
         :param pulumi.Input[_builtins.bool] enable_exadata: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                
@@ -176,6 +178,7 @@ class ExternalExadataInfrastructureExadataManagement(pulumi.CustomResource):
             license_model=external_exadata_infrastructure_exadata_management_license_model)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_exadata: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -215,6 +218,7 @@ class ExternalExadataInfrastructureExadataManagement(pulumi.CustomResource):
             enable_exadata=enable_exadata,
             license_model=external_exadata_infrastructure_exadata_management_license_model)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ExternalExadataInfrastructureExadataManagementArgs args: The arguments to use to populate this resource's properties.

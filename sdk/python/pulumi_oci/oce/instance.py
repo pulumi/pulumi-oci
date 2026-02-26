@@ -38,6 +38,7 @@ class InstanceArgs:
                  waf_primary_domain: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Instance resource.
+
         :param pulumi.Input[_builtins.str] admin_email: Admin Email for Notification
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[_builtins.str] idcs_access_token: Identity Cloud Service access token identifying a stripe and service administrator user
@@ -329,6 +330,7 @@ class _InstanceState:
                  waf_primary_domain: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Instance resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] add_on_features: (Updatable) a list of add-on features for the ocm instance
         :param pulumi.Input[_builtins.str] admin_email: Admin Email for Notification
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier
@@ -800,6 +802,7 @@ class Instance(pulumi.CustomResource):
         $ pulumi import oci:Oce/instance:Instance test_oce_instance "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] add_on_features: (Updatable) a list of add-on features for the ocm instance
@@ -875,6 +878,7 @@ class Instance(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Oce/instance:Instance test_oce_instance "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param InstanceArgs args: The arguments to use to populate this resource's properties.

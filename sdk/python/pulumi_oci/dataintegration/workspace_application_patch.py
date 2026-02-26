@@ -34,6 +34,7 @@ class WorkspaceApplicationPatchArgs:
                  registry_metadata: Optional[pulumi.Input['WorkspaceApplicationPatchRegistryMetadataArgs']] = None):
         """
         The set of arguments for constructing a WorkspaceApplicationPatch resource.
+
         :param pulumi.Input[_builtins.str] application_key: The application key.
         :param pulumi.Input[_builtins.str] patch_type: The type of the patch applied or being applied on the application.
         :param pulumi.Input[_builtins.str] workspace_id: The workspace ID.
@@ -234,6 +235,7 @@ class _WorkspaceApplicationPatchState:
                  workspace_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WorkspaceApplicationPatch resources.
+
         :param pulumi.Input[_builtins.str] application_key: The application key.
         :param pulumi.Input[_builtins.int] application_version: The application version of the patch.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchDependentObjectMetadataArgs']]] dependent_object_metadatas: List of dependent objects in this patch.
@@ -635,6 +637,7 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
         $ pulumi import oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch test_workspace_application_patch "workspaces/{workspaceId}/applications/{applicationKey}/patches/{patchKey}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_key: The application key.
@@ -700,6 +703,7 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch test_workspace_application_patch "workspaces/{workspaceId}/applications/{applicationKey}/patches/{patchKey}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param WorkspaceApplicationPatchArgs args: The arguments to use to populate this resource's properties.

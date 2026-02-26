@@ -29,6 +29,7 @@ class DatabaseDbmFeaturesManagementArgs:
                  modify_database_dbm_feature: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a DatabaseDbmFeaturesManagement resource.
+
         :param pulumi.Input[_builtins.str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
         :param pulumi.Input[_builtins.bool] enable_database_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
@@ -127,6 +128,7 @@ class _DatabaseDbmFeaturesManagementState:
                  modify_database_dbm_feature: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering DatabaseDbmFeaturesManagement resources.
+
         :param pulumi.Input[_builtins.str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
         :param pulumi.Input[_builtins.bool] enable_database_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
@@ -277,6 +279,7 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
             })
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
@@ -340,6 +343,7 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
                 "management_type": database_dbm_features_management_feature_details_management_type,
             })
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DatabaseDbmFeaturesManagementArgs args: The arguments to use to populate this resource's properties.

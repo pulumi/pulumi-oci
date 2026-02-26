@@ -38,6 +38,7 @@ class DomainsPolicyArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPolicyTagArgs']]]] = None):
         """
         The set of arguments for constructing a DomainsPolicy resource.
+
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input['DomainsPolicyPolicyTypeArgs'] policy_type: (Updatable) PolicyType on which the policy is based
                
@@ -488,6 +489,7 @@ class _DomainsPolicyState:
                  tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DomainsPolicy resources.
+
         :param pulumi.Input[_builtins.bool] active: (Updatable) If true, Policy is active.
                
                **SCIM++ Properties:**
@@ -1295,6 +1297,7 @@ class DomainsPolicy(pulumi.CustomResource):
         $ pulumi import oci:Identity/domainsPolicy:DomainsPolicy test_policy "idcsEndpoint/{idcsEndpoint}/policies/{policyId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] active: (Updatable) If true, Policy is active.
@@ -1464,6 +1467,7 @@ class DomainsPolicy(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domainsPolicy:DomainsPolicy test_policy "idcsEndpoint/{idcsEndpoint}/policies/{policyId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainsPolicyArgs args: The arguments to use to populate this resource's properties.

@@ -29,6 +29,7 @@ class AddonArgs:
                  version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Addon resource.
+
         :param pulumi.Input[_builtins.str] addon_name: The name of the addon.
         :param pulumi.Input[_builtins.str] cluster_id: The OCID of the cluster.
         :param pulumi.Input[_builtins.bool] remove_addon_resources_on_delete: Whether to remove addon resource in deletion.
@@ -142,6 +143,7 @@ class _AddonState:
                  version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Addon resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['AddonAddonErrorArgs']]] addon_errors: The error info of the addon.
         :param pulumi.Input[_builtins.str] addon_name: The name of the addon.
         :param pulumi.Input[_builtins.str] cluster_id: The OCID of the cluster.
@@ -332,6 +334,7 @@ class Addon(pulumi.CustomResource):
         $ pulumi import oci:ContainerEngine/addon:Addon test_addon "clusters/{clusterId}/addons/{addonName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] addon_name: The name of the addon.
@@ -366,6 +369,7 @@ class Addon(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ContainerEngine/addon:Addon test_addon "clusters/{clusterId}/addons/{addonName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AddonArgs args: The arguments to use to populate this resource's properties.

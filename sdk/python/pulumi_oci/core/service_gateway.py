@@ -30,6 +30,7 @@ class ServiceGatewayArgs:
                  route_table_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ServiceGateway resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
         :param pulumi.Input[Sequence[pulumi.Input['ServiceGatewayServiceArgs']]] services: (Updatable) List of the OCIDs of the [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) objects to enable for the service gateway. This list can be empty if you don't want to enable any `Service` objects when you create the gateway. You can enable a `Service` object later by using either [AttachServiceId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/AttachServiceId) or [UpdateServiceGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/UpdateServiceGateway).
                
@@ -170,6 +171,7 @@ class _ServiceGatewayState:
                  vcn_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ServiceGateway resources.
+
         :param pulumi.Input[_builtins.bool] block_traffic: Whether the service gateway blocks all traffic through it. The default is `false`. When this is `true`, traffic is not routed to any services, regardless of route rules.  Example: `true`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -406,6 +408,7 @@ class ServiceGateway(pulumi.CustomResource):
         $ pulumi import oci:Core/serviceGateway:ServiceGateway test_service_gateway "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
@@ -480,6 +483,7 @@ class ServiceGateway(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/serviceGateway:ServiceGateway test_service_gateway "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ServiceGatewayArgs args: The arguments to use to populate this resource's properties.

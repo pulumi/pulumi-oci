@@ -23,6 +23,7 @@ class SetUserAssessmentBaselineArgs:
                  assessment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a SetUserAssessmentBaseline resource.
+
         :param pulumi.Input[_builtins.str] user_assessment_id: The OCID of the user assessment.
                
                
@@ -70,6 +71,7 @@ class _SetUserAssessmentBaselineState:
                  user_assessment_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SetUserAssessmentBaseline resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] assessment_ids: The list of OCIDs for the user assessments that need to be updated while setting the baseline.
         :param pulumi.Input[_builtins.str] user_assessment_id: The OCID of the user assessment.
                
@@ -147,6 +149,7 @@ class SetUserAssessmentBaseline(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline test_set_user_assessment_baseline "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] assessment_ids: The list of OCIDs for the user assessments that need to be updated while setting the baseline.
@@ -188,6 +191,7 @@ class SetUserAssessmentBaseline(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline test_set_user_assessment_baseline "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SetUserAssessmentBaselineArgs args: The arguments to use to populate this resource's properties.

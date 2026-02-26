@@ -23,6 +23,7 @@ class ManagedInstanceGroupDetachManagedInstancesManagementArgs:
                  managed_instances: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
         """
         The set of arguments for constructing a ManagedInstanceGroupDetachManagedInstancesManagement resource.
+
         :param pulumi.Input[_builtins.str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instances: List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from the group.
                
@@ -69,6 +70,7 @@ class _ManagedInstanceGroupDetachManagedInstancesManagementState:
                  managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering ManagedInstanceGroupDetachManagedInstancesManagement resources.
+
         :param pulumi.Input[_builtins.str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instances: List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from the group.
                
@@ -146,6 +148,7 @@ class ManagedInstanceGroupDetachManagedInstancesManagement(pulumi.CustomResource
         $ pulumi import oci:OsManagementHub/managedInstanceGroupDetachManagedInstancesManagement:ManagedInstanceGroupDetachManagedInstancesManagement test_managed_instance_group_detach_managed_instances_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
@@ -187,6 +190,7 @@ class ManagedInstanceGroupDetachManagedInstancesManagement(pulumi.CustomResource
         ```sh
         $ pulumi import oci:OsManagementHub/managedInstanceGroupDetachManagedInstancesManagement:ManagedInstanceGroupDetachManagedInstancesManagement test_managed_instance_group_detach_managed_instances_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagedInstanceGroupDetachManagedInstancesManagementArgs args: The arguments to use to populate this resource's properties.

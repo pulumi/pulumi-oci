@@ -49,6 +49,7 @@ class DomainsIdentityPropagationTrustArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustTagArgs']]]] = None):
         """
         The set of arguments for constructing a DomainsIdentityPropagationTrust resource.
+
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[_builtins.str] issuer: (Updatable) The issuer claim of the Identity provider.
                
@@ -896,6 +897,7 @@ class _DomainsIdentityPropagationTrustState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DomainsIdentityPropagationTrust resources.
+
         :param pulumi.Input[_builtins.str] account_id: (Updatable) The Identity cloud provider service identifier, for example, the Azure Tenancy ID, AWS Account ID, or GCP Project ID.
                
                **SCIM++ Properties:**
@@ -2106,6 +2108,7 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
         $ pulumi import oci:Identity/domainsIdentityPropagationTrust:DomainsIdentityPropagationTrust test_identity_propagation_trust "idcsEndpoint/{idcsEndpoint}/identityPropagationTrusts/{identityPropagationTrustId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] account_id: (Updatable) The Identity cloud provider service identifier, for example, the Azure Tenancy ID, AWS Account ID, or GCP Project ID.
@@ -2410,6 +2413,7 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domainsIdentityPropagationTrust:DomainsIdentityPropagationTrust test_identity_propagation_trust "idcsEndpoint/{idcsEndpoint}/identityPropagationTrusts/{identityPropagationTrustId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainsIdentityPropagationTrustArgs args: The arguments to use to populate this resource's properties.

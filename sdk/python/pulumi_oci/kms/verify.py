@@ -28,6 +28,7 @@ class VerifyArgs:
                  message_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Verify resource.
+
         :param pulumi.Input[_builtins.str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,', 'GenerateDataEncryptionKey', 'Sign' and 'Verify' operations. see Vault Crypto endpoint.
         :param pulumi.Input[_builtins.str] key_id: The OCID of the key used to sign the message.
         :param pulumi.Input[_builtins.str] key_version_id: The OCID of the key version used to sign the message.
@@ -151,6 +152,7 @@ class _VerifyState:
                  signing_algorithm: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Verify resources.
+
         :param pulumi.Input[_builtins.str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,', 'GenerateDataEncryptionKey', 'Sign' and 'Verify' operations. see Vault Crypto endpoint.
         :param pulumi.Input[_builtins.bool] is_signature_valid: A Boolean value that indicates whether the signature was verified.
         :param pulumi.Input[_builtins.str] key_id: The OCID of the key used to sign the message.
@@ -331,6 +333,7 @@ class Verify(pulumi.CustomResource):
         $ pulumi import oci:Kms/verify:Verify test_verify "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,', 'GenerateDataEncryptionKey', 'Sign' and 'Verify' operations. see Vault Crypto endpoint.
@@ -385,6 +388,7 @@ class Verify(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Kms/verify:Verify test_verify "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param VerifyArgs args: The arguments to use to populate this resource's properties.

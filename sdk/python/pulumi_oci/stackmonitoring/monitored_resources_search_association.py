@@ -31,6 +31,7 @@ class MonitoredResourcesSearchAssociationArgs:
                  source_resource_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a MonitoredResourcesSearchAssociation resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] association_type: Association type filter to search associated resources.
         :param pulumi.Input[_builtins.str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -175,6 +176,7 @@ class _MonitoredResourcesSearchAssociationState:
                  source_resource_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MonitoredResourcesSearchAssociation resources.
+
         :param pulumi.Input[_builtins.str] association_type: Association type filter to search associated resources.
         :param pulumi.Input[_builtins.str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -369,6 +371,7 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
         $ pulumi import oci:StackMonitoring/monitoredResourcesSearchAssociation:MonitoredResourcesSearchAssociation test_monitored_resources_search_association "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] association_type: Association type filter to search associated resources.
@@ -422,6 +425,7 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:StackMonitoring/monitoredResourcesSearchAssociation:MonitoredResourcesSearchAssociation test_monitored_resources_search_association "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MonitoredResourcesSearchAssociationArgs args: The arguments to use to populate this resource's properties.

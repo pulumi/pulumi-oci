@@ -28,6 +28,7 @@ class AppCatalogSubscriptionArgs:
                  eula_link: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppCatalogSubscription resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The compartmentID for the subscription.
         :param pulumi.Input[_builtins.str] listing_id: The OCID of the listing.
         :param pulumi.Input[_builtins.str] listing_resource_version: Listing resource version.
@@ -155,6 +156,7 @@ class _AppCatalogSubscriptionState:
                  time_retrieved: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppCatalogSubscription resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The compartmentID for the subscription.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] eula_link: EULA link
@@ -392,6 +394,7 @@ class AppCatalogSubscription(pulumi.CustomResource):
         $ pulumi import oci:Core/appCatalogSubscription:AppCatalogSubscription test_app_catalog_subscription "compartmentId/{compartmentId}/listingId/{listingId}/listingResourceVersion/{listingResourceVersion}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The compartmentID for the subscription.
@@ -443,6 +446,7 @@ class AppCatalogSubscription(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/appCatalogSubscription:AppCatalogSubscription test_app_catalog_subscription "compartmentId/{compartmentId}/listingId/{listingId}/listingResourceVersion/{listingResourceVersion}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AppCatalogSubscriptionArgs args: The arguments to use to populate this resource's properties.

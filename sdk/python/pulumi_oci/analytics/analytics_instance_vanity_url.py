@@ -28,6 +28,7 @@ class AnalyticsInstanceVanityUrlArgs:
                  passphrase: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AnalyticsInstanceVanityUrl resource.
+
         :param pulumi.Input[_builtins.str] analytics_instance_id: The OCID of the AnalyticsInstance.
         :param pulumi.Input[_builtins.str] ca_certificate: (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] hosts: List of fully qualified hostnames supported by this vanity URL definition (max of 3).
@@ -151,6 +152,7 @@ class _AnalyticsInstanceVanityUrlState:
                  public_certificate: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AnalyticsInstanceVanityUrl resources.
+
         :param pulumi.Input[_builtins.str] analytics_instance_id: The OCID of the AnalyticsInstance.
         :param pulumi.Input[_builtins.str] ca_certificate: (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
         :param pulumi.Input[_builtins.str] description: Optional description.
@@ -314,6 +316,7 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
         $ pulumi import oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl test_analytics_instance_vanity_url "analyticsInstances/{analyticsInstanceId}/vanityUrls/{vanityUrlKey}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] analytics_instance_id: The OCID of the AnalyticsInstance.
@@ -366,6 +369,7 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl test_analytics_instance_vanity_url "analyticsInstances/{analyticsInstanceId}/vanityUrls/{vanityUrlKey}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AnalyticsInstanceVanityUrlArgs args: The arguments to use to populate this resource's properties.

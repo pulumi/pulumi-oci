@@ -22,6 +22,7 @@ class ClusterCompleteCredentialRotationManagementArgs:
                  cluster_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ClusterCompleteCredentialRotationManagement resource.
+
         :param pulumi.Input[_builtins.str] cluster_id: The OCID of the cluster.
                
                
@@ -53,6 +54,7 @@ class _ClusterCompleteCredentialRotationManagementState:
                  cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ClusterCompleteCredentialRotationManagement resources.
+
         :param pulumi.Input[_builtins.str] cluster_id: The OCID of the cluster.
                
                
@@ -106,6 +108,7 @@ class ClusterCompleteCredentialRotationManagement(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cluster_id: The OCID of the cluster.
@@ -138,6 +141,7 @@ class ClusterCompleteCredentialRotationManagement(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param ClusterCompleteCredentialRotationManagementArgs args: The arguments to use to populate this resource's properties.

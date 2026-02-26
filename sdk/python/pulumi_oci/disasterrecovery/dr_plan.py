@@ -31,6 +31,7 @@ class DrPlanArgs:
                  verify_trigger: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a DrPlan resource.
+
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
         :param pulumi.Input[_builtins.str] dr_protection_group_id: The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         :param pulumi.Input[_builtins.str] type: The type of DR plan to be created.
@@ -182,6 +183,7 @@ class _DrPlanState:
                  verify_trigger: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering DrPlan resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
@@ -513,6 +515,7 @@ class DrPlan(pulumi.CustomResource):
         $ pulumi import oci:DisasterRecovery/drPlan:DrPlan test_dr_plan "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
@@ -568,6 +571,7 @@ class DrPlan(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DisasterRecovery/drPlan:DrPlan test_dr_plan "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DrPlanArgs args: The arguments to use to populate this resource's properties.

@@ -26,6 +26,7 @@ class CloudVmClusterIormConfigArgs:
                  objective: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CloudVmClusterIormConfig resource.
+
         :param pulumi.Input[_builtins.str] cloud_vm_cluster_id: The Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigDbPlanArgs']]] db_plans: (Updatable) Array of IORM Setting for all the database in this Cloud Vm Cluster
         :param pulumi.Input[_builtins.str] objective: (Updatable) Value for the IORM objective Default is "Auto"
@@ -82,6 +83,7 @@ class _CloudVmClusterIormConfigState:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudVmClusterIormConfig resources.
+
         :param pulumi.Input[_builtins.str] cloud_vm_cluster_id: The Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigDbPlanArgs']]] db_plans: (Updatable) Array of IORM Setting for all the database in this Cloud Vm Cluster
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current `lifecycleState`.
@@ -203,6 +205,7 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
         $ pulumi import oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig test_cloud_vm_cluster_iorm_config "cloudVmClusters/{cloudVmClusterId}/CloudVmClusterIormConfig"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cloud_vm_cluster_id: The Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -247,6 +250,7 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig test_cloud_vm_cluster_iorm_config "cloudVmClusters/{cloudVmClusterId}/CloudVmClusterIormConfig"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CloudVmClusterIormConfigArgs args: The arguments to use to populate this resource's properties.

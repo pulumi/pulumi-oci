@@ -27,6 +27,7 @@ class NetworkFirewallPolicyUrlListArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyUrlList resource.
+
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListUrlArgs']]] urls: (Updatable) List of urls.
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the Url list. This field can be used to add additional info.
@@ -99,6 +100,7 @@ class _NetworkFirewallPolicyUrlListState:
                  urls: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListUrlArgs']]]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyUrlList resources.
+
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the Url list. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Unique name to identify the group of urls to be used in the policy rules.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
@@ -235,6 +237,7 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList test_network_firewall_policy_url_list "networkFirewallPolicies/{networkFirewallPolicyId}/urlLists/{urlListName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the Url list. This field can be used to add additional info.
@@ -279,6 +282,7 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList test_network_firewall_policy_url_list "networkFirewallPolicies/{networkFirewallPolicyId}/urlLists/{urlListName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NetworkFirewallPolicyUrlListArgs args: The arguments to use to populate this resource's properties.

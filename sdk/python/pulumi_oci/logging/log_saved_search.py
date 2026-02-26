@@ -27,6 +27,7 @@ class LogSavedSearchArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a LogSavedSearch resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that the resource belongs to.
         :param pulumi.Input[_builtins.str] query: (Updatable) The search query that is saved. 
                
@@ -140,6 +141,7 @@ class _LogSavedSearchState:
                  time_last_modified: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LogSavedSearch resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that the resource belongs to.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Description for this resource.
@@ -334,6 +336,7 @@ class LogSavedSearch(pulumi.CustomResource):
         $ pulumi import oci:Logging/logSavedSearch:LogSavedSearch test_log_saved_search "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that the resource belongs to.
@@ -387,6 +390,7 @@ class LogSavedSearch(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Logging/logSavedSearch:LogSavedSearch test_log_saved_search "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param LogSavedSearchArgs args: The arguments to use to populate this resource's properties.

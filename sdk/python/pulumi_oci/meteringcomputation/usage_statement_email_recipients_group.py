@@ -27,6 +27,7 @@ class UsageStatementEmailRecipientsGroupArgs:
                  email_recipients_group_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a UsageStatementEmailRecipientsGroup resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The customer tenancy.
         :param pulumi.Input[Sequence[pulumi.Input['UsageStatementEmailRecipientsGroupRecipientsListArgs']]] recipients_lists: (Updatable) The list of recipients that will receive usage statement emails.
         :param pulumi.Input[_builtins.str] subscription_id: The usage statement subscription unique OCID.
@@ -101,6 +102,7 @@ class _UsageStatementEmailRecipientsGroupState:
                  subscription_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UsageStatementEmailRecipientsGroup resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The customer tenancy.
         :param pulumi.Input[Sequence[pulumi.Input['UsageStatementEmailRecipientsGroupRecipientsListArgs']]] recipients_lists: (Updatable) The list of recipients that will receive usage statement emails.
         :param pulumi.Input[_builtins.str] state: The email recipients group lifecycle state.
@@ -227,6 +229,7 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
         $ pulumi import oci:MeteringComputation/usageStatementEmailRecipientsGroup:UsageStatementEmailRecipientsGroup test_usage_statement_email_recipients_group "usageStatements/{subscriptionId}/emailRecipientsGroups/{emailRecipientsGroupId}/compartmentId/{compartmentId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The customer tenancy.
@@ -275,6 +278,7 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:MeteringComputation/usageStatementEmailRecipientsGroup:UsageStatementEmailRecipientsGroup test_usage_statement_email_recipients_group "usageStatements/{subscriptionId}/emailRecipientsGroups/{emailRecipientsGroupId}/compartmentId/{compartmentId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param UsageStatementEmailRecipientsGroupArgs args: The arguments to use to populate this resource's properties.

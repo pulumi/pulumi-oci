@@ -31,6 +31,7 @@ class ResolverEndpointInitArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ResolverEndpoint resource.
+
         :param pulumi.Input[_builtins.bool] is_forwarding: A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
         :param pulumi.Input[_builtins.bool] is_listening: A Boolean flag indicating whether or not the resolver endpoint is for listening.
         :param pulumi.Input[_builtins.str] resolver_id: The OCID of the target resolver.
@@ -208,6 +209,7 @@ class _ResolverEndpointState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ResolverEndpoint resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
         :param pulumi.Input[_builtins.str] endpoint_type: (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
         :param pulumi.Input[_builtins.str] forwarding_address: An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
@@ -496,6 +498,7 @@ class ResolverEndpoint(pulumi.CustomResource):
         $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{name}/scope/{scope}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] endpoint_type: (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
@@ -553,6 +556,7 @@ class ResolverEndpoint(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{name}/scope/{scope}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ResolverEndpointInitArgs args: The arguments to use to populate this resource's properties.

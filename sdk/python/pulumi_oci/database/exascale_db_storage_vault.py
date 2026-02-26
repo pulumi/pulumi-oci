@@ -37,6 +37,7 @@ class ExascaleDbStorageVaultArgs:
                  time_zone: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ExascaleDbStorageVault resource.
+
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain in which the Exadata Database Storage Vault is located.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
@@ -280,6 +281,7 @@ class _ExascaleDbStorageVaultState:
                  vm_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering ExascaleDbStorageVault resources.
+
         :param pulumi.Input[_builtins.int] additional_flash_cache_in_percent: (Updatable) The size of additional Flash Cache in percentage of High Capacity database storage.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attached_shape_attributes: The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
         :param pulumi.Input[_builtins.int] autoscale_limit_in_gbs: (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
@@ -670,6 +672,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
         $ pulumi import oci:Database/exascaleDbStorageVault:ExascaleDbStorageVault test_exascale_db_storage_vault "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] additional_flash_cache_in_percent: (Updatable) The size of additional Flash Cache in percentage of High Capacity database storage.
@@ -739,6 +742,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/exascaleDbStorageVault:ExascaleDbStorageVault test_exascale_db_storage_vault "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ExascaleDbStorageVaultArgs args: The arguments to use to populate this resource's properties.

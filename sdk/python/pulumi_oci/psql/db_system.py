@@ -43,6 +43,7 @@ class DbSystemArgs:
                  system_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DbSystem resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
         :param pulumi.Input[_builtins.str] db_version: Version of database system software.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
@@ -380,6 +381,7 @@ class _DbSystemState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DbSystem resources.
+
         :param pulumi.Input[_builtins.str] admin_username: The database system administrator username.
         :param pulumi.Input[_builtins.str] apply_config: Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
@@ -915,6 +917,7 @@ class DbSystem(pulumi.CustomResource):
         $ pulumi import oci:Psql/dbSystem:DbSystem test_db_system "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] apply_config: Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
@@ -1039,6 +1042,7 @@ class DbSystem(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Psql/dbSystem:DbSystem test_db_system "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DbSystemArgs args: The arguments to use to populate this resource's properties.

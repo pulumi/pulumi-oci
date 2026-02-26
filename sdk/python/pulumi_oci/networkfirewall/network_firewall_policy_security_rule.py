@@ -31,6 +31,7 @@ class NetworkFirewallPolicySecurityRuleArgs:
                  priority_order: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicySecurityRule resource.
+
         :param pulumi.Input[_builtins.str] action: (Updatable) Types of Action on the Traffic flow.
                * ALLOW - Allows the traffic.
                * DROP - Silently drops the traffic, e.g. without sending a TCP reset.
@@ -173,6 +174,7 @@ class _NetworkFirewallPolicySecurityRuleState:
                  priority_order: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicySecurityRule resources.
+
         :param pulumi.Input[_builtins.str] action: (Updatable) Types of Action on the Traffic flow.
                * ALLOW - Allows the traffic.
                * DROP - Silently drops the traffic, e.g. without sending a TCP reset.
@@ -375,6 +377,7 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
         $ pulumi import oci:NetworkFirewall/networkFirewallPolicySecurityRule:NetworkFirewallPolicySecurityRule test_network_firewall_policy_security_rule "networkFirewallPolicies/{networkFirewallPolicyId}/securityRules/{securityRuleName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: (Updatable) Types of Action on the Traffic flow.
@@ -437,6 +440,7 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:NetworkFirewall/networkFirewallPolicySecurityRule:NetworkFirewallPolicySecurityRule test_network_firewall_policy_security_rule "networkFirewallPolicies/{networkFirewallPolicyId}/securityRules/{securityRuleName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NetworkFirewallPolicySecurityRuleArgs args: The arguments to use to populate this resource's properties.

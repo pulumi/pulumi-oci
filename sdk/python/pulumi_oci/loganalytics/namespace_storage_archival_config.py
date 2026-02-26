@@ -25,6 +25,7 @@ class NamespaceStorageArchivalConfigArgs:
                  namespace: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a NamespaceStorageArchivalConfig resource.
+
         :param pulumi.Input['NamespaceStorageArchivalConfigArchivingConfigurationArgs'] archiving_configuration: (Updatable) This is the configuration for data archiving in object storage
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
@@ -64,6 +65,7 @@ class _NamespaceStorageArchivalConfigState:
                  namespace: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NamespaceStorageArchivalConfig resources.
+
         :param pulumi.Input['NamespaceStorageArchivalConfigArchivingConfigurationArgs'] archiving_configuration: (Updatable) This is the configuration for data archiving in object storage
         :param pulumi.Input[_builtins.bool] is_archiving_enabled: This indicates if old data can be archived for a tenancy
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
@@ -144,6 +146,7 @@ class NamespaceStorageArchivalConfig(pulumi.CustomResource):
             namespace=namespace_storage_archival_config_namespace)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['NamespaceStorageArchivalConfigArchivingConfigurationArgs', 'NamespaceStorageArchivalConfigArchivingConfigurationArgsDict']] archiving_configuration: (Updatable) This is the configuration for data archiving in object storage
@@ -177,6 +180,7 @@ class NamespaceStorageArchivalConfig(pulumi.CustomResource):
             },
             namespace=namespace_storage_archival_config_namespace)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NamespaceStorageArchivalConfigArgs args: The arguments to use to populate this resource's properties.

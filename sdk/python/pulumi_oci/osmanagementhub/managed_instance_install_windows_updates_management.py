@@ -27,6 +27,7 @@ class ManagedInstanceInstallWindowsUpdatesManagementArgs:
                  work_request_details: Optional[pulumi.Input['ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs']] = None):
         """
         The set of arguments for constructing a ManagedInstanceInstallWindowsUpdatesManagement resource.
+
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] windows_update_names: The list of Windows update unique identifiers.  Note that this is not an OCID, but is a unique identifier assigned by Microsoft. Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] windows_update_types: The types of Windows updates to be installed.
@@ -98,6 +99,7 @@ class _ManagedInstanceInstallWindowsUpdatesManagementState:
                  work_request_details: Optional[pulumi.Input['ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering ManagedInstanceInstallWindowsUpdatesManagement resources.
+
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] windows_update_names: The list of Windows update unique identifiers.  Note that this is not an OCID, but is a unique identifier assigned by Microsoft. Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] windows_update_types: The types of Windows updates to be installed.
@@ -204,6 +206,7 @@ class ManagedInstanceInstallWindowsUpdatesManagement(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/managedInstanceInstallWindowsUpdatesManagement:ManagedInstanceInstallWindowsUpdatesManagement test_managed_instance_install_windows_updates_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
@@ -248,6 +251,7 @@ class ManagedInstanceInstallWindowsUpdatesManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/managedInstanceInstallWindowsUpdatesManagement:ManagedInstanceInstallWindowsUpdatesManagement test_managed_instance_install_windows_updates_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagedInstanceInstallWindowsUpdatesManagementArgs args: The arguments to use to populate this resource's properties.

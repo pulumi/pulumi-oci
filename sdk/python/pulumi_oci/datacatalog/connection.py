@@ -29,6 +29,7 @@ class ConnectionArgs:
                  is_default: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a Connection resource.
+
         :param pulumi.Input[_builtins.str] catalog_id: Unique catalog identifier.
         :param pulumi.Input[_builtins.str] data_asset_key: Unique data asset key.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -177,6 +178,7 @@ class _ConnectionState:
                  uri: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Connection resources.
+
         :param pulumi.Input[_builtins.str] catalog_id: Unique catalog identifier.
         :param pulumi.Input[_builtins.str] created_by_id: OCID of the user who created the connection.
         :param pulumi.Input[_builtins.str] data_asset_key: Unique data asset key.
@@ -491,6 +493,7 @@ class Connection(pulumi.CustomResource):
         $ pulumi import oci:DataCatalog/connection:Connection test_connection "catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections/{connectionKey}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] catalog_id: Unique catalog identifier.
@@ -544,6 +547,7 @@ class Connection(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataCatalog/connection:Connection test_connection "catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections/{connectionKey}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ConnectionArgs args: The arguments to use to populate this resource's properties.

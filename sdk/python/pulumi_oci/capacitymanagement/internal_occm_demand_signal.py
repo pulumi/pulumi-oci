@@ -23,6 +23,7 @@ class InternalOccmDemandSignalArgs:
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a InternalOccmDemandSignal resource.
+
         :param pulumi.Input[_builtins.str] occm_demand_signal_id: The OCID of the demand signal. 
                
                
@@ -84,6 +85,7 @@ class _InternalOccmDemandSignalState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InternalOccmDemandSignal resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the tenancy from which the request to create the demand signal was made.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: A short description about the demand signal.
@@ -315,6 +317,7 @@ class InternalOccmDemandSignal(pulumi.CustomResource):
         $ pulumi import oci:CapacityManagement/internalOccmDemandSignal:InternalOccmDemandSignal test_internal_occm_demand_signal "internal/occmDemandSignals/{occmDemandSignalId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] lifecycle_details: (Updatable) The subset of demand signal states available for operators for updating the demand signal.
@@ -358,6 +361,7 @@ class InternalOccmDemandSignal(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:CapacityManagement/internalOccmDemandSignal:InternalOccmDemandSignal test_internal_occm_demand_signal "internal/occmDemandSignals/{occmDemandSignalId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param InternalOccmDemandSignalArgs args: The arguments to use to populate this resource's properties.

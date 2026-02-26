@@ -23,6 +23,7 @@ class SoftwareSourceRemovePackagesManagementArgs:
                  software_source_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a SoftwareSourceRemovePackagesManagement resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] packages: List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
         :param pulumi.Input[_builtins.str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
                
@@ -69,6 +70,7 @@ class _SoftwareSourceRemovePackagesManagementState:
                  software_source_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SoftwareSourceRemovePackagesManagement resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] packages: List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
         :param pulumi.Input[_builtins.str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
                
@@ -150,6 +152,7 @@ class SoftwareSourceRemovePackagesManagement(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/softwareSourceRemovePackagesManagement:SoftwareSourceRemovePackagesManagement test_software_source_remove_packages_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] packages: List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
@@ -195,6 +198,7 @@ class SoftwareSourceRemovePackagesManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/softwareSourceRemovePackagesManagement:SoftwareSourceRemovePackagesManagement test_software_source_remove_packages_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SoftwareSourceRemovePackagesManagementArgs args: The arguments to use to populate this resource's properties.

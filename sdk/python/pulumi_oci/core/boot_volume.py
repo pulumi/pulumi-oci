@@ -39,6 +39,7 @@ class BootVolumeArgs:
                  xrc_kms_key_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a BootVolume resource.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the boot volume.
         :param pulumi.Input[Sequence[pulumi.Input['BootVolumeAutotunePolicyArgs']]] autotune_policies: (Updatable) The list of autotune policies to be enabled for this volume.
@@ -316,6 +317,7 @@ class _BootVolumeState:
                  xrc_kms_key_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BootVolume resources.
+
         :param pulumi.Input[_builtins.str] auto_tuned_vpus_per_gb: The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
         :param pulumi.Input[Sequence[pulumi.Input['BootVolumeAutotunePolicyArgs']]] autotune_policies: (Updatable) The list of autotune policies to be enabled for this volume.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
@@ -771,6 +773,7 @@ class BootVolume(pulumi.CustomResource):
         $ pulumi import oci:Core/bootVolume:BootVolume test_boot_volume "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['BootVolumeAutotunePolicyArgs', 'BootVolumeAutotunePolicyArgsDict']]]] autotune_policies: (Updatable) The list of autotune policies to be enabled for this volume.
@@ -860,6 +863,7 @@ class BootVolume(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/bootVolume:BootVolume test_boot_volume "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param BootVolumeArgs args: The arguments to use to populate this resource's properties.

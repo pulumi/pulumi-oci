@@ -58,6 +58,7 @@ class DomainsSocialIdentityProviderArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSocialIdentityProviderTagArgs']]]] = None):
         """
         The set of arguments for constructing a DomainsSocialIdentityProvider resource.
+
         :param pulumi.Input[_builtins.bool] account_linking_enabled: (Updatable) Whether account linking is enabled
                
                **SCIM++ Properties:**
@@ -1314,6 +1315,7 @@ class _DomainsSocialIdentityProviderState:
                  tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DomainsSocialIdentityProvider resources.
+
         :param pulumi.Input[_builtins.str] access_token_url: (Updatable) Social IDP Access token URL
                
                **SCIM++ Properties:**
@@ -2953,6 +2955,7 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
         $ pulumi import oci:Identity/domainsSocialIdentityProvider:DomainsSocialIdentityProvider test_social_identity_provider "idcsEndpoint/{idcsEndpoint}/socialIdentityProviders/{socialIdentityProviderId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_token_url: (Updatable) Social IDP Access token URL
@@ -3408,6 +3411,7 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domainsSocialIdentityProvider:DomainsSocialIdentityProvider test_social_identity_provider "idcsEndpoint/{idcsEndpoint}/socialIdentityProviders/{socialIdentityProviderId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainsSocialIdentityProviderArgs args: The arguments to use to populate this resource's properties.

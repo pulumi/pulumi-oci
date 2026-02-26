@@ -25,6 +25,7 @@ class ListingPackageAgreementArgs:
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ListingPackageAgreement resource.
+
         :param pulumi.Input[_builtins.str] agreement_id: The unique identifier for the agreement.
         :param pulumi.Input[_builtins.str] listing_id: The unique identifier for the listing.
         :param pulumi.Input[_builtins.str] package_version: The version of the package. Package versions are unique within a listing.
@@ -98,6 +99,7 @@ class _ListingPackageAgreementState:
                  signature: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ListingPackageAgreement resources.
+
         :param pulumi.Input[_builtins.str] agreement_id: The unique identifier for the agreement.
         :param pulumi.Input[_builtins.str] author: Who authored the agreement.
         :param pulumi.Input[_builtins.str] compartment_id: The unique identifier for the compartment, required in gov regions.
@@ -255,6 +257,7 @@ class ListingPackageAgreement(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] agreement_id: The unique identifier for the agreement.
@@ -290,6 +293,7 @@ class ListingPackageAgreement(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param ListingPackageAgreementArgs args: The arguments to use to populate this resource's properties.

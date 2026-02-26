@@ -30,6 +30,7 @@ class ExecutionActionArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ExecutionAction resource.
+
         :param pulumi.Input[_builtins.str] action_type: The action type of the execution action being performed
         :param pulumi.Input[_builtins.str] execution_window_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution window resource the execution action belongs to.
         :param pulumi.Input[Sequence[pulumi.Input['ExecutionActionActionMemberArgs']]] action_members: (Updatable) List of action members of this execution action.
@@ -166,6 +167,7 @@ class _ExecutionActionState:
                  total_time_taken_in_mins: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ExecutionAction resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['ExecutionActionActionMemberArgs']]] action_members: (Updatable) List of action members of this execution action.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] action_params: (Updatable) Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
         :param pulumi.Input[_builtins.str] action_type: The action type of the execution action being performed
@@ -483,6 +485,7 @@ class ExecutionAction(pulumi.CustomResource):
         $ pulumi import oci:Database/executionAction:ExecutionAction test_execution_action "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ExecutionActionActionMemberArgs', 'ExecutionActionActionMemberArgsDict']]]] action_members: (Updatable) List of action members of this execution action.
@@ -539,6 +542,7 @@ class ExecutionAction(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/executionAction:ExecutionAction test_execution_action "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ExecutionActionArgs args: The arguments to use to populate this resource's properties.

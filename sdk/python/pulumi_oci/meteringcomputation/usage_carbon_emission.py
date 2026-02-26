@@ -34,6 +34,7 @@ class UsageCarbonEmissionArgs:
                  usage_carbon_emission_filter: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a UsageCarbonEmission resource.
+
         :param pulumi.Input[_builtins.str] tenant_id: Tenant ID.
         :param pulumi.Input[_builtins.str] time_usage_ended: The usage end time.
         :param pulumi.Input[_builtins.str] time_usage_started: The usage start time.
@@ -224,6 +225,7 @@ class _UsageCarbonEmissionState:
                  usage_carbon_emission_filter: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UsageCarbonEmission resources.
+
         :param pulumi.Input[_builtins.int] compartment_depth: The compartment depth level.
         :param pulumi.Input[_builtins.str] emission_calculation_method: Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
         :param pulumi.Input[_builtins.str] emission_type: Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
@@ -473,6 +475,7 @@ class UsageCarbonEmission(pulumi.CustomResource):
         $ pulumi import oci:MeteringComputation/usageCarbonEmission:UsageCarbonEmission test_usage_carbon_emission "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] compartment_depth: The compartment depth level.
@@ -536,6 +539,7 @@ class UsageCarbonEmission(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:MeteringComputation/usageCarbonEmission:UsageCarbonEmission test_usage_carbon_emission "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param UsageCarbonEmissionArgs args: The arguments to use to populate this resource's properties.

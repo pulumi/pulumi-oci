@@ -25,6 +25,7 @@ class BdsCapacityReportArgs:
                  shape_availabilities: pulumi.Input[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityArgs']]]):
         """
         The set of arguments for constructing a BdsCapacityReport resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID for the compartment. This should always be the root compartment.
         :param pulumi.Input[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityArgs']]] shape_availabilities: Information about the shapes in the capacity report.
         """
@@ -64,6 +65,7 @@ class _BdsCapacityReportState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BdsCapacityReport resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID for the compartment. This should always be the root compartment.
         :param pulumi.Input[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityArgs']]] shape_availabilities: Information about the shapes in the capacity report.
         :param pulumi.Input[_builtins.str] time_created: The time the report was created, shown as an RFC 3339 formatted datetime string.
@@ -155,6 +157,7 @@ class BdsCapacityReport(pulumi.CustomResource):
         $ pulumi import oci:BigDataService/bdsCapacityReport:BdsCapacityReport test_bds_capacity_report "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID for the compartment. This should always be the root compartment.
@@ -199,6 +202,7 @@ class BdsCapacityReport(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:BigDataService/bdsCapacityReport:BdsCapacityReport test_bds_capacity_report "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param BdsCapacityReportArgs args: The arguments to use to populate this resource's properties.

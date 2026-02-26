@@ -75,6 +75,7 @@ class DomainsIdentityProviderArgs:
                  user_mapping_store_attribute: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DomainsIdentityProvider resource.
+
         :param pulumi.Input[_builtins.bool] enabled: (Updatable) Set to true to indicate Partner enabled.
                
                **SCIM++ Properties:**
@@ -1920,6 +1921,7 @@ class _DomainsIdentityProviderState:
                  user_mapping_store_attribute: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DomainsIdentityProvider resources.
+
         :param pulumi.Input[_builtins.str] assertion_attribute: (Updatable) Assertion attribute name.
                
                **Deprecated Since: 20.1.3**
@@ -4279,6 +4281,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
         $ pulumi import oci:Identity/domainsIdentityProvider:DomainsIdentityProvider test_identity_provider "idcsEndpoint/{idcsEndpoint}/identityProviders/{identityProviderId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] assertion_attribute: (Updatable) Assertion attribute name.
@@ -4974,6 +4977,7 @@ class DomainsIdentityProvider(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domainsIdentityProvider:DomainsIdentityProvider test_identity_provider "idcsEndpoint/{idcsEndpoint}/identityProviders/{identityProviderId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainsIdentityProviderArgs args: The arguments to use to populate this resource's properties.

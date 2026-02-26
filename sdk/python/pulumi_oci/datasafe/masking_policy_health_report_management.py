@@ -24,6 +24,7 @@ class MaskingPolicyHealthReportManagementArgs:
                  target_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a MaskingPolicyHealthReportManagement resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment that contains the masking report.
         :param pulumi.Input[_builtins.str] masking_policy_id: The OCID of the masking policy.
         :param pulumi.Input[_builtins.str] target_id: The OCID of the target database masked.
@@ -87,6 +88,7 @@ class _MaskingPolicyHealthReportManagementState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MaskingPolicyHealthReportManagement resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment that contains the masking report.
         :param pulumi.Input[_builtins.str] description: Description for the pre-masking report,
         :param pulumi.Input[_builtins.str] display_name: The display name of the pre-masking report,
@@ -262,6 +264,7 @@ class MaskingPolicyHealthReportManagement(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment that contains the masking report.
@@ -293,6 +296,7 @@ class MaskingPolicyHealthReportManagement(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param MaskingPolicyHealthReportManagementArgs args: The arguments to use to populate this resource's properties.

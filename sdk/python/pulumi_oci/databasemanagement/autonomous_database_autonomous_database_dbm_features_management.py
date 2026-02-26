@@ -26,6 +26,7 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementArgs:
                  feature_details: Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs']] = None):
         """
         The set of arguments for constructing a AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement resource.
+
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
         :param pulumi.Input[_builtins.bool] enable_autonomous_database_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
@@ -88,6 +89,7 @@ class _AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementState:
                  feature_details: Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement resources.
+
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
         :param pulumi.Input[_builtins.bool] enable_autonomous_database_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
@@ -198,6 +200,7 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
             })
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
@@ -257,6 +260,7 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
                 },
             })
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementArgs args: The arguments to use to populate this resource's properties.

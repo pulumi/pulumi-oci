@@ -22,6 +22,7 @@ class MaintenanceWindowsRetryFailedOperationArgs:
                  maintenance_window_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a MaintenanceWindowsRetryFailedOperation resource.
+
         :param pulumi.Input[_builtins.str] maintenance_window_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
                
                
@@ -53,6 +54,7 @@ class _MaintenanceWindowsRetryFailedOperationState:
                  maintenance_window_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MaintenanceWindowsRetryFailedOperation resources.
+
         :param pulumi.Input[_builtins.str] maintenance_window_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
                
                
@@ -112,6 +114,7 @@ class MaintenanceWindowsRetryFailedOperation(pulumi.CustomResource):
         $ pulumi import oci:StackMonitoring/maintenanceWindowsRetryFailedOperation:MaintenanceWindowsRetryFailedOperation test_maintenance_windows_retry_failed_operation "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] maintenance_window_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
@@ -150,6 +153,7 @@ class MaintenanceWindowsRetryFailedOperation(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:StackMonitoring/maintenanceWindowsRetryFailedOperation:MaintenanceWindowsRetryFailedOperation test_maintenance_windows_retry_failed_operation "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MaintenanceWindowsRetryFailedOperationArgs args: The arguments to use to populate this resource's properties.

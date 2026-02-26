@@ -28,6 +28,7 @@ class NetworkFirewallPolicyMappedSecretArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyMappedSecret resource.
+
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] source: Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`
         :param pulumi.Input[_builtins.str] type: Type of the secrets mapped based on the policy.
@@ -156,6 +157,7 @@ class _NetworkFirewallPolicyMappedSecretState:
                  version_number: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyMappedSecret resources.
+
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the mapped secret. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Unique name to identify the group of urls to be used in the policy rules.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
@@ -337,6 +339,7 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret test_network_firewall_policy_mapped_secret "networkFirewallPolicies/{networkFirewallPolicyId}/mappedSecrets/{mappedSecretName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the mapped secret. This field can be used to add additional info.
@@ -390,6 +393,7 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret test_network_firewall_policy_mapped_secret "networkFirewallPolicies/{networkFirewallPolicyId}/mappedSecrets/{mappedSecretName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NetworkFirewallPolicyMappedSecretArgs args: The arguments to use to populate this resource's properties.

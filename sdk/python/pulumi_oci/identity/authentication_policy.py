@@ -26,6 +26,7 @@ class AuthenticationPolicyArgs:
                  password_policy: Optional[pulumi.Input['AuthenticationPolicyPasswordPolicyArgs']] = None):
         """
         The set of arguments for constructing a AuthenticationPolicy resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
         :param pulumi.Input['AuthenticationPolicyNetworkPolicyArgs'] network_policy: (Updatable) Network policy, Consists of a list of Network Source ids.
         :param pulumi.Input['AuthenticationPolicyPasswordPolicyArgs'] password_policy: (Updatable) Password policy, currently set for the given compartment.
@@ -81,6 +82,7 @@ class _AuthenticationPolicyState:
                  password_policy: Optional[pulumi.Input['AuthenticationPolicyPasswordPolicyArgs']] = None):
         """
         Input properties used for looking up and filtering AuthenticationPolicy resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
         :param pulumi.Input['AuthenticationPolicyNetworkPolicyArgs'] network_policy: (Updatable) Network policy, Consists of a list of Network Source ids.
         :param pulumi.Input['AuthenticationPolicyPasswordPolicyArgs'] password_policy: (Updatable) Password policy, currently set for the given compartment.
@@ -176,6 +178,7 @@ class AuthenticationPolicy(pulumi.CustomResource):
         $ pulumi import oci:Identity/authenticationPolicy:AuthenticationPolicy test_authentication_policy "authenticationPolicies/{compartmentId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
@@ -224,6 +227,7 @@ class AuthenticationPolicy(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/authenticationPolicy:AuthenticationPolicy test_authentication_policy "authenticationPolicies/{compartmentId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AuthenticationPolicyArgs args: The arguments to use to populate this resource's properties.

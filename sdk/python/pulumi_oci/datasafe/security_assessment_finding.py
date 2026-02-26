@@ -25,6 +25,7 @@ class SecurityAssessmentFindingArgs:
                  patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentFindingPatchOperationArgs']]]] = None):
         """
         The set of arguments for constructing a SecurityAssessmentFinding resource.
+
         :param pulumi.Input[_builtins.str] security_assessment_id: ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentFindingPatchOperationArgs']]] patch_operations: (Updatable)
@@ -86,6 +87,7 @@ class _SecurityAssessmentFindingState:
                  title: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SecurityAssessmentFinding resources.
+
         :param pulumi.Input[_builtins.str] assessment_id: The OCID of the assessment that generated this finding.
         :param pulumi.Input[_builtins.str] category: The category to which the finding belongs to.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] details: The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
@@ -461,6 +463,7 @@ class SecurityAssessmentFinding(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/securityAssessmentFinding:SecurityAssessmentFinding test_security_assessment_finding "securityAssessments/{securityAssessmentId}/findings"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentFindingPatchOperationArgs', 'SecurityAssessmentFindingPatchOperationArgsDict']]]] patch_operations: (Updatable)
@@ -503,6 +506,7 @@ class SecurityAssessmentFinding(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/securityAssessmentFinding:SecurityAssessmentFinding test_security_assessment_finding "securityAssessments/{securityAssessmentId}/findings"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SecurityAssessmentFindingArgs args: The arguments to use to populate this resource's properties.

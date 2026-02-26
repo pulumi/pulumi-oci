@@ -31,6 +31,7 @@ class AgentArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Agent resource.
+
         :param pulumi.Input[_builtins.str] agent_type: Agent identifier.
         :param pulumi.Input[_builtins.str] agent_version: Agent identifier.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment identifier.
@@ -179,6 +180,7 @@ class _AgentState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Agent resources.
+
         :param pulumi.Input[_builtins.str] agent_pub_key: Resource principal public key.
         :param pulumi.Input[_builtins.str] agent_type: Agent identifier.
         :param pulumi.Input[_builtins.str] agent_version: Agent identifier.
@@ -512,6 +514,7 @@ class Agent(pulumi.CustomResource):
         $ pulumi import oci:CloudBridge/agent:Agent test_agent "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] agent_type: Agent identifier.
@@ -569,6 +572,7 @@ class Agent(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:CloudBridge/agent:Agent test_agent "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AgentArgs args: The arguments to use to populate this resource's properties.

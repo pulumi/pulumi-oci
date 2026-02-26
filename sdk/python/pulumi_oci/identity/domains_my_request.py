@@ -36,6 +36,7 @@ class DomainsMyRequestArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyRequestTagArgs']]]] = None):
         """
         The set of arguments for constructing a DomainsMyRequest resource.
+
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[_builtins.str] justification: justification
                
@@ -419,6 +420,7 @@ class _DomainsMyRequestState:
                  tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DomainsMyRequest resources.
+
         :param pulumi.Input[_builtins.str] action: Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
                
                **Added In:** 2307071836
@@ -1228,6 +1230,7 @@ class DomainsMyRequest(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
@@ -1375,6 +1378,7 @@ class DomainsMyRequest(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param DomainsMyRequestArgs args: The arguments to use to populate this resource's properties.

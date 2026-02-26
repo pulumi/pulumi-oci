@@ -23,6 +23,7 @@ class FusionEnvironmentDataMaskingActivityArgs:
                  is_resume_data_masking: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a FusionEnvironmentDataMaskingActivity resource.
+
         :param pulumi.Input[_builtins.str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[_builtins.bool] is_resume_data_masking: This allows the Data Safe service to resume the previously failed data masking activity.
                
@@ -73,6 +74,7 @@ class _FusionEnvironmentDataMaskingActivityState:
                  time_masking_start: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FusionEnvironmentDataMaskingActivity resources.
+
         :param pulumi.Input[_builtins.str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[_builtins.bool] is_resume_data_masking: This allows the Data Safe service to resume the previously failed data masking activity.
                
@@ -195,6 +197,7 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
         $ pulumi import oci:FusionApps/fusionEnvironmentDataMaskingActivity:FusionEnvironmentDataMaskingActivity test_fusion_environment_data_masking_activity "fusionEnvironments/{fusionEnvironmentId}/dataMaskingActivities/{dataMaskingActivityId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] fusion_environment_id: unique FusionEnvironment identifier
@@ -236,6 +239,7 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:FusionApps/fusionEnvironmentDataMaskingActivity:FusionEnvironmentDataMaskingActivity test_fusion_environment_data_masking_activity "fusionEnvironments/{fusionEnvironmentId}/dataMaskingActivities/{dataMaskingActivityId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param FusionEnvironmentDataMaskingActivityArgs args: The arguments to use to populate this resource's properties.

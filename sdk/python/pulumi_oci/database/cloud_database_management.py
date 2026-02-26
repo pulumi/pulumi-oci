@@ -33,6 +33,7 @@ class CloudDatabaseManagementArgs:
                  ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CloudDatabaseManagement resource.
+
         :param pulumi.Input[_builtins.str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.bool] enable_management: (Updatable) Use this flag to enable/disable database management
                
@@ -203,6 +204,7 @@ class _CloudDatabaseManagementState:
                  ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudDatabaseManagement resources.
+
         :param pulumi.Input[_builtins.str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.bool] enable_management: (Updatable) Use this flag to enable/disable database management
                
@@ -416,6 +418,7 @@ class CloudDatabaseManagement(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -474,6 +477,7 @@ class CloudDatabaseManagement(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param CloudDatabaseManagementArgs args: The arguments to use to populate this resource's properties.

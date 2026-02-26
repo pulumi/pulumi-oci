@@ -26,6 +26,7 @@ class LifecycleStagePromoteSoftwareSourceManagementArgs:
                  work_request_details: Optional[pulumi.Input['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs']] = None):
         """
         The set of arguments for constructing a LifecycleStagePromoteSoftwareSourceManagement resource.
+
         :param pulumi.Input[_builtins.str] lifecycle_stage_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
         :param pulumi.Input[_builtins.str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
         :param pulumi.Input['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs'] work_request_details: Provides the name and description of the job.
@@ -81,6 +82,7 @@ class _LifecycleStagePromoteSoftwareSourceManagementState:
                  work_request_details: Optional[pulumi.Input['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering LifecycleStagePromoteSoftwareSourceManagement resources.
+
         :param pulumi.Input[_builtins.str] lifecycle_stage_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
         :param pulumi.Input[_builtins.str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
         :param pulumi.Input['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs'] work_request_details: Provides the name and description of the job.
@@ -172,6 +174,7 @@ class LifecycleStagePromoteSoftwareSourceManagement(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/lifecycleStagePromoteSoftwareSourceManagement:LifecycleStagePromoteSoftwareSourceManagement test_lifecycle_stage_promote_software_source_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] lifecycle_stage_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
@@ -216,6 +219,7 @@ class LifecycleStagePromoteSoftwareSourceManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/lifecycleStagePromoteSoftwareSourceManagement:LifecycleStagePromoteSoftwareSourceManagement test_lifecycle_stage_promote_software_source_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param LifecycleStagePromoteSoftwareSourceManagementArgs args: The arguments to use to populate this resource's properties.

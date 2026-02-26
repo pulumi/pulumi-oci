@@ -28,6 +28,7 @@ class ProcessorJobArgs:
                  display_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ProcessorJob resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The compartment identifier.
         :param pulumi.Input['ProcessorJobInputLocationArgs'] input_location: The location of the inputs.
         :param pulumi.Input['ProcessorJobOutputLocationArgs'] output_location: The object storage location where to store analysis results.
@@ -118,6 +119,7 @@ class _ProcessorJobState:
                  time_started: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProcessorJob resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The compartment identifier.
         :param pulumi.Input[_builtins.str] display_name: The display name of the processor job.
         :param pulumi.Input['ProcessorJobInputLocationArgs'] input_location: The location of the inputs.
@@ -361,6 +363,7 @@ class ProcessorJob(pulumi.CustomResource):
         $ pulumi import oci:AiDocument/processorJob:ProcessorJob test_processor_job "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment identifier.
@@ -437,6 +440,7 @@ class ProcessorJob(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:AiDocument/processorJob:ProcessorJob test_processor_job "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ProcessorJobArgs args: The arguments to use to populate this resource's properties.

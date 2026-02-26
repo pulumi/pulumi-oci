@@ -34,6 +34,7 @@ class DomainsMyCustomerSecretKeyArgs:
                  user: Optional[pulumi.Input['DomainsMyCustomerSecretKeyUserArgs']] = None):
         """
         The set of arguments for constructing a DomainsMyCustomerSecretKey resource.
+
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
                
@@ -382,6 +383,7 @@ class _DomainsMyCustomerSecretKeyState:
                  user: Optional[pulumi.Input['DomainsMyCustomerSecretKeyUserArgs']] = None):
         """
         Input properties used for looking up and filtering DomainsMyCustomerSecretKey resources.
+
         :param pulumi.Input[_builtins.str] access_key: (Updatable) The access key.
                
                **SCIM++ Properties:**
@@ -1101,6 +1103,7 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
         $ pulumi import oci:Identity/domainsMyCustomerSecretKey:DomainsMyCustomerSecretKey test_my_customer_secret_key "idcsEndpoint/{idcsEndpoint}/myCustomerSecretKeys/{myCustomerSecretKeyId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -1241,6 +1244,7 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domainsMyCustomerSecretKey:DomainsMyCustomerSecretKey test_my_customer_secret_key "idcsEndpoint/{idcsEndpoint}/myCustomerSecretKeys/{myCustomerSecretKeyId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainsMyCustomerSecretKeyArgs args: The arguments to use to populate this resource's properties.

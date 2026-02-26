@@ -30,6 +30,7 @@ class NamespaceAssociationArgs:
                  is_from_republish: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a NamespaceAssociation resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The compartment ID
         :param pulumi.Input[_builtins.str] entity_id: The entity unique identifier.
         :param pulumi.Input[_builtins.str] log_group_id: (Updatable) The log group unique identifier.
@@ -167,6 +168,7 @@ class _NamespaceAssociationState:
                  time_last_attempted: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NamespaceAssociation resources.
+
         :param pulumi.Input[_builtins.str] agent_entity_name: The agent unique identifier.
         :param pulumi.Input[_builtins.str] agent_id: The agent unique identifier.
         :param pulumi.Input[Sequence[pulumi.Input['NamespaceAssociationAssociationPropertyArgs']]] association_properties: A list of association properties.
@@ -542,6 +544,7 @@ class NamespaceAssociation(pulumi.CustomResource):
         $ pulumi import oci:LogAnalytics/namespaceAssociation:NamespaceAssociation test_namespace_association "namespaces/{namespaceName}/associations/{compartmentId}/{entityId}/{sourceName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NamespaceAssociationAssociationPropertyArgs', 'NamespaceAssociationAssociationPropertyArgsDict']]]] association_properties: A list of association properties.
@@ -600,6 +603,7 @@ class NamespaceAssociation(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:LogAnalytics/namespaceAssociation:NamespaceAssociation test_namespace_association "namespaces/{namespaceName}/associations/{compartmentId}/{entityId}/{sourceName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NamespaceAssociationArgs args: The arguments to use to populate this resource's properties.

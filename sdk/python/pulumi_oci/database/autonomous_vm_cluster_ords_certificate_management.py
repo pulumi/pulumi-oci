@@ -26,6 +26,7 @@ class AutonomousVmClusterOrdsCertificateManagementArgs:
                  certificate_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AutonomousVmClusterOrdsCertificateManagement resource.
+
         :param pulumi.Input[_builtins.str] autonomous_vm_cluster_id: The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] certificate_generation_type: Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
         :param pulumi.Input[_builtins.str] ca_bundle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate bundle.
@@ -120,6 +121,7 @@ class _AutonomousVmClusterOrdsCertificateManagementState:
                  certificate_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutonomousVmClusterOrdsCertificateManagement resources.
+
         :param pulumi.Input[_builtins.str] autonomous_vm_cluster_id: The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] ca_bundle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate bundle.
         :param pulumi.Input[_builtins.str] certificate_authority_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
@@ -241,6 +243,7 @@ class AutonomousVmClusterOrdsCertificateManagement(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] autonomous_vm_cluster_id: The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -281,6 +284,7 @@ class AutonomousVmClusterOrdsCertificateManagement(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param AutonomousVmClusterOrdsCertificateManagementArgs args: The arguments to use to populate this resource's properties.

@@ -24,6 +24,7 @@ class PublicIpPoolCapacityArgs:
                  public_ip_pool_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a PublicIpPoolCapacity resource.
+
         :param pulumi.Input[_builtins.str] byoip_id: The OCID of the Byoip Range Id object to which the cidr block belongs.
         :param pulumi.Input[_builtins.str] cidr_block: The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
                
@@ -83,6 +84,7 @@ class _PublicIpPoolCapacityState:
                  public_ip_pool_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PublicIpPoolCapacity resources.
+
         :param pulumi.Input[_builtins.str] byoip_id: The OCID of the Byoip Range Id object to which the cidr block belongs.
         :param pulumi.Input[_builtins.str] cidr_block: The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
                
@@ -173,6 +175,7 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
         $ pulumi import oci:Core/publicIpPoolCapacity:PublicIpPoolCapacity test_public_ip_pool_capacity "publicIpPoolId/{publicIpPoolId}/byoipId/{byoipId}/cidrBlock/{cidrBlock}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] byoip_id: The OCID of the Byoip Range Id object to which the cidr block belongs.
@@ -213,6 +216,7 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/publicIpPoolCapacity:PublicIpPoolCapacity test_public_ip_pool_capacity "publicIpPoolId/{publicIpPoolId}/byoipId/{byoipId}/cidrBlock/{cidrBlock}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param PublicIpPoolCapacityArgs args: The arguments to use to populate this resource's properties.

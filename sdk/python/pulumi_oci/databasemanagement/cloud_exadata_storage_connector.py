@@ -30,6 +30,7 @@ class CloudExadataStorageConnectorArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a CloudExadataStorageConnector resource.
+
         :param pulumi.Input[_builtins.str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
         :param pulumi.Input[_builtins.str] connection_uri: (Updatable) The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
         :param pulumi.Input['CloudExadataStorageConnectorCredentialInfoArgs'] credential_info: (Updatable) The user credential information.
@@ -165,6 +166,7 @@ class _CloudExadataStorageConnectorState:
                  version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudExadataStorageConnector resources.
+
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
         :param pulumi.Input[_builtins.str] connection_uri: (Updatable) The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
@@ -499,6 +501,7 @@ class CloudExadataStorageConnector(pulumi.CustomResource):
         $ pulumi import oci:DatabaseManagement/cloudExadataStorageConnector:CloudExadataStorageConnector test_cloud_exadata_storage_connector "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
@@ -557,6 +560,7 @@ class CloudExadataStorageConnector(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DatabaseManagement/cloudExadataStorageConnector:CloudExadataStorageConnector test_cloud_exadata_storage_connector "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CloudExadataStorageConnectorArgs args: The arguments to use to populate this resource's properties.

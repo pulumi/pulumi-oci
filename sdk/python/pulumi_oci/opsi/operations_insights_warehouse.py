@@ -28,6 +28,7 @@ class OperationsInsightsWarehouseArgs:
                  storage_allocated_in_gbs: Optional[pulumi.Input[_builtins.float]] = None):
         """
         The set of arguments for constructing a OperationsInsightsWarehouse resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.float] cpu_allocated: (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
@@ -163,6 +164,7 @@ class _OperationsInsightsWarehouseState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OperationsInsightsWarehouse resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] compute_model: (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
         :param pulumi.Input[_builtins.float] cpu_allocated: (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
@@ -481,6 +483,7 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
         $ pulumi import oci:Opsi/operationsInsightsWarehouse:OperationsInsightsWarehouse test_operations_insights_warehouse "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -538,6 +541,7 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Opsi/operationsInsightsWarehouse:OperationsInsightsWarehouse test_operations_insights_warehouse "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OperationsInsightsWarehouseArgs args: The arguments to use to populate this resource's properties.

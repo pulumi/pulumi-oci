@@ -28,6 +28,7 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs:
                  feature_details: Optional[pulumi.Input['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs']] = None):
         """
         The set of arguments for constructing a ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement resource.
+
         :param pulumi.Input[_builtins.bool] enable_external_container_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                
@@ -114,6 +115,7 @@ class _ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState:
                  feature_details: Optional[pulumi.Input['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement resources.
+
         :param pulumi.Input[_builtins.bool] enable_external_container_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                
@@ -235,6 +237,7 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
             })
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_external_container_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -281,6 +284,7 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
                 "license_model": externalcontainerdatabase_external_container_dbm_features_management_feature_details_license_model,
             })
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs args: The arguments to use to populate this resource's properties.

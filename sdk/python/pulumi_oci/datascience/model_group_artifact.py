@@ -25,6 +25,7 @@ class ModelGroupArtifactArgs:
                  content_disposition: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ModelGroupArtifact resource.
+
         :param pulumi.Input[_builtins.str] content_length: The content length of the body.
         :param pulumi.Input[_builtins.str] model_group_artifact: The model group artifact to upload.
         :param pulumi.Input[_builtins.str] model_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the modelGroup.
@@ -102,6 +103,7 @@ class _ModelGroupArtifactState:
                  model_group_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ModelGroupArtifact resources.
+
         :param pulumi.Input[_builtins.str] content_disposition: This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file name when downloading. Example: `{"Content-Disposition": "attachment" "filename"="model.tar.gz" "Content-Length": "2347" "Content-Type": "application/gzip"}`
         :param pulumi.Input[_builtins.str] content_length: The content length of the body.
         :param pulumi.Input[_builtins.str] model_group_artifact: The model group artifact to upload.
@@ -213,6 +215,7 @@ class ModelGroupArtifact(pulumi.CustomResource):
         $ pulumi import oci:DataScience/modelGroupArtifact:ModelGroupArtifact test_model_group_artifact "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] content_disposition: This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file name when downloading. Example: `{"Content-Disposition": "attachment" "filename"="model.tar.gz" "Content-Length": "2347" "Content-Type": "application/gzip"}`
@@ -258,6 +261,7 @@ class ModelGroupArtifact(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataScience/modelGroupArtifact:ModelGroupArtifact test_model_group_artifact "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ModelGroupArtifactArgs args: The arguments to use to populate this resource's properties.

@@ -30,6 +30,7 @@ class ImageArgs:
                  launch_mode: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Image resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment you want the image to be created in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -180,6 +181,7 @@ class _ImageState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Image resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['ImageAgentFeatureArgs']]] agent_features: Oracle Cloud Agent features supported on the image.
         :param pulumi.Input[_builtins.str] base_image_id: The OCID of the image originally used to launch the instance.
         :param pulumi.Input[_builtins.str] billable_size_in_gbs: The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
@@ -583,6 +585,7 @@ class Image(pulumi.CustomResource):
         $ pulumi import oci:Core/image:Image test_image "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment you want the image to be created in.
@@ -705,6 +708,7 @@ class Image(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/image:Image test_image "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ImageArgs args: The arguments to use to populate this resource's properties.

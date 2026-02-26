@@ -38,6 +38,7 @@ class OccCapacityRequestArgs:
                  request_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a OccCapacityRequest resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
         :param pulumi.Input[_builtins.str] date_expected_capacity_handover: The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
         :param pulumi.Input[Sequence[pulumi.Input['OccCapacityRequestDetailArgs']]] details: A list of different resources requested by the user.
@@ -292,6 +293,7 @@ class _OccCapacityRequestState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OccCapacityRequest resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
         :param pulumi.Input[_builtins.str] compartment_id: Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
         :param pulumi.Input[_builtins.str] date_expected_capacity_handover: The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
@@ -694,6 +696,7 @@ class OccCapacityRequest(pulumi.CustomResource):
         $ pulumi import oci:CapacityManagement/occCapacityRequest:OccCapacityRequest test_occ_capacity_request "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
@@ -790,6 +793,7 @@ class OccCapacityRequest(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:CapacityManagement/occCapacityRequest:OccCapacityRequest test_occ_capacity_request "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OccCapacityRequestArgs args: The arguments to use to populate this resource's properties.

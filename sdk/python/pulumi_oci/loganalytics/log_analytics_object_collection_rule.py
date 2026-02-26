@@ -50,6 +50,7 @@ class LogAnalyticsObjectCollectionRuleArgs:
                  timezone: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a LogAnalyticsObjectCollectionRule resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
         :param pulumi.Input[_builtins.str] log_group_id: (Updatable) Log Analytics Log group OCID to associate the processed logs with.
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
@@ -498,6 +499,7 @@ class _LogAnalyticsObjectCollectionRuleState:
                  timezone: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LogAnalyticsObjectCollectionRule resources.
+
         :param pulumi.Input[_builtins.str] char_encoding: (Updatable) An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
         :param pulumi.Input[_builtins.str] collection_type: The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
@@ -1079,6 +1081,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         $ pulumi import oci:LogAnalytics/logAnalyticsObjectCollectionRule:LogAnalyticsObjectCollectionRule test_log_analytics_object_collection_rule "namespaces/{namespaceName}/logAnalyticsObjectCollectionRules/{logAnalyticsObjectCollectionRuleId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] char_encoding: (Updatable) An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
@@ -1174,6 +1177,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:LogAnalytics/logAnalyticsObjectCollectionRule:LogAnalyticsObjectCollectionRule test_log_analytics_object_collection_rule "namespaces/{namespaceName}/logAnalyticsObjectCollectionRules/{logAnalyticsObjectCollectionRuleId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param LogAnalyticsObjectCollectionRuleArgs args: The arguments to use to populate this resource's properties.

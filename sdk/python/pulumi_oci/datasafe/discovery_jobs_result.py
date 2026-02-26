@@ -24,6 +24,7 @@ class DiscoveryJobsResultArgs:
                  discovery_job_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a DiscoveryJobsResult resource.
+
         :param pulumi.Input[_builtins.str] discovery_job_id: The OCID of the discovery job.
         """
         if discovery_job_id is not None:
@@ -72,6 +73,7 @@ class _DiscoveryJobsResultState:
                  sensitive_type_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DiscoveryJobsResult resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] app_defined_child_column_keys: Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
         :param pulumi.Input[_builtins.str] app_name: The name of the application. An application is an entity that is identified by a schema and stores sensitive information for that schema. Its value will be same as schemaName, if no value is passed.
         :param pulumi.Input[_builtins.str] column_name: The name of the sensitive column.
@@ -439,6 +441,7 @@ class DiscoveryJobsResult(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/discoveryJobsResult:DiscoveryJobsResult test_discovery_jobs_result "discoveryJobs/{discoveryJobId}/results/{resultKey}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] discovery_job_id: The OCID of the discovery job.
@@ -470,6 +473,7 @@ class DiscoveryJobsResult(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/discoveryJobsResult:DiscoveryJobsResult test_discovery_jobs_result "discoveryJobs/{discoveryJobId}/results/{resultKey}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DiscoveryJobsResultArgs args: The arguments to use to populate this resource's properties.

@@ -30,6 +30,7 @@ class ExternalDbSystemArgs:
                  stack_monitoring_config: Optional[pulumi.Input['ExternalDbSystemStackMonitoringConfigArgs']] = None):
         """
         The set of arguments for constructing a ExternalDbSystem resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
         :param pulumi.Input[_builtins.str] db_system_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
         :param pulumi.Input['ExternalDbSystemDatabaseManagementConfigArgs'] database_management_config: The details required to enable Database Management for an external DB system.
@@ -156,6 +157,7 @@ class _ExternalDbSystemState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalDbSystem resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
         :param pulumi.Input['ExternalDbSystemDatabaseManagementConfigArgs'] database_management_config: The details required to enable Database Management for an external DB system.
         :param pulumi.Input[_builtins.str] db_system_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
@@ -439,6 +441,7 @@ class ExternalDbSystem(pulumi.CustomResource):
         $ pulumi import oci:DatabaseManagement/externalDbSystem:ExternalDbSystem test_external_db_system "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
@@ -495,6 +498,7 @@ class ExternalDbSystem(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DatabaseManagement/externalDbSystem:ExternalDbSystem test_external_db_system "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ExternalDbSystemArgs args: The arguments to use to populate this resource's properties.

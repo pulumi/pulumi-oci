@@ -26,6 +26,7 @@ class CustomTableArgs:
                  saved_report_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a CustomTable resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID.
         :param pulumi.Input['CustomTableSavedCustomTableArgs'] saved_custom_table: (Updatable) The custom table for Cost Analysis UI rendering.
         :param pulumi.Input[_builtins.str] saved_report_id: The associated saved report OCID.
@@ -87,6 +88,7 @@ class _CustomTableState:
                  saved_report_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CustomTable resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID.
         :param pulumi.Input['CustomTableSavedCustomTableArgs'] saved_custom_table: (Updatable) The custom table for Cost Analysis UI rendering.
         :param pulumi.Input[_builtins.str] saved_report_id: The associated saved report OCID.
@@ -192,6 +194,7 @@ class CustomTable(pulumi.CustomResource):
         $ pulumi import oci:MeteringComputation/customTable:CustomTable test_custom_table "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID.
@@ -246,6 +249,7 @@ class CustomTable(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:MeteringComputation/customTable:CustomTable test_custom_table "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CustomTableArgs args: The arguments to use to populate this resource's properties.

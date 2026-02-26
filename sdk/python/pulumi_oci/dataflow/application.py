@@ -52,6 +52,7 @@ class ApplicationArgs:
                  warehouse_bucket_uri: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Application resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of a compartment.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] driver_shape: (Updatable) The VM shape for the driver. Sets the driver cores and memory.
@@ -528,6 +529,7 @@ class _ApplicationState:
                  warehouse_bucket_uri: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Application resources.
+
         :param pulumi.Input['ApplicationApplicationLogConfigArgs'] application_log_config: (Updatable) Logging details of Application logs for Data Flow Run.
         :param pulumi.Input[_builtins.str] archive_uri: (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] arguments: (Updatable) The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
@@ -1153,6 +1155,7 @@ class Application(pulumi.CustomResource):
         $ pulumi import oci:DataFlow/application:Application test_application "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ApplicationApplicationLogConfigArgs', 'ApplicationApplicationLogConfigArgsDict']] application_log_config: (Updatable) Logging details of Application logs for Data Flow Run.
@@ -1263,6 +1266,7 @@ class Application(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataFlow/application:Application test_application "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ApplicationArgs args: The arguments to use to populate this resource's properties.

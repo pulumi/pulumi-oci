@@ -27,6 +27,7 @@ class ModelVersionSetArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ModelVersionSet resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model version set in.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model version set.
                
@@ -143,6 +144,7 @@ class _ModelVersionSetState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ModelVersionSet resources.
+
         :param pulumi.Input[_builtins.str] category: The category of the model version set.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model version set in.
         :param pulumi.Input[_builtins.str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model version set.
@@ -382,6 +384,7 @@ class ModelVersionSet(pulumi.CustomResource):
         $ pulumi import oci:DataScience/modelVersionSet:ModelVersionSet test_model_version_set "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model version set in.
@@ -435,6 +438,7 @@ class ModelVersionSet(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataScience/modelVersionSet:ModelVersionSet test_model_version_set "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ModelVersionSetArgs args: The arguments to use to populate this resource's properties.

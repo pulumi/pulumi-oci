@@ -42,6 +42,7 @@ class ModelArgs:
                  version_label: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Model resource.
+
         :param pulumi.Input[_builtins.str] artifact_content_length: The content length of the model_artifact.
                
                ** IMPORTANT **
@@ -366,6 +367,7 @@ class _ModelState:
                  version_label: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Model resources.
+
         :param pulumi.Input[_builtins.str] artifact_content_disposition: This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
         :param pulumi.Input[_builtins.str] artifact_content_length: The content length of the model_artifact.
                
@@ -888,6 +890,7 @@ class Model(pulumi.CustomResource):
         $ pulumi import oci:DataScience/model:Model test_model "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] artifact_content_disposition: This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
@@ -982,6 +985,7 @@ class Model(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataScience/model:Model test_model "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ModelArgs args: The arguments to use to populate this resource's properties.

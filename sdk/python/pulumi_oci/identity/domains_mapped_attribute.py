@@ -37,6 +37,7 @@ class DomainsMappedAttributeArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMappedAttributeTagArgs']]]] = None):
         """
         The set of arguments for constructing a DomainsMappedAttribute resource.
+
         :param pulumi.Input[_builtins.str] direction: (Updatable) Direction of the attribute mapping. inbound indicates mapping is from source ManagedObjectClass to Oracle Identity Cloud Service ResourceType. outbound indicates mapping is from Oracle Identity Cloud Service Resource Type to target ManagedObjectClass.
                
                **SCIM++ Properties:**
@@ -439,6 +440,7 @@ class _DomainsMappedAttributeState:
                  tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DomainsMappedAttribute resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['DomainsMappedAttributeAttributeMappingArgs']]] attribute_mappings: (Updatable) A list of attribute mappings between Oracle Identity Cloud Service Resource Type and Account Object Class
                
                **SCIM++ Properties:**
@@ -1170,6 +1172,7 @@ class DomainsMappedAttribute(pulumi.CustomResource):
         $ pulumi import oci:Identity/domainsMappedAttribute:DomainsMappedAttribute test_mapped_attribute "idcsEndpoint/{idcsEndpoint}/mappedAttributes/{mappedAttributeId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsMappedAttributeAttributeMappingArgs', 'DomainsMappedAttributeAttributeMappingArgsDict']]]] attribute_mappings: (Updatable) A list of attribute mappings between Oracle Identity Cloud Service Resource Type and Account Object Class
@@ -1292,6 +1295,7 @@ class DomainsMappedAttribute(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domainsMappedAttribute:DomainsMappedAttribute test_mapped_attribute "idcsEndpoint/{idcsEndpoint}/mappedAttributes/{mappedAttributeId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainsMappedAttributeArgs args: The arguments to use to populate this resource's properties.

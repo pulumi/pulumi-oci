@@ -25,6 +25,7 @@ class InventoryArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Inventory resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the tenantId.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Inventory displayName.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -108,6 +109,7 @@ class _InventoryState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Inventory resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the tenantId.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Inventory displayName.
@@ -298,6 +300,7 @@ class Inventory(pulumi.CustomResource):
         $ pulumi import oci:CloudBridge/inventory:Inventory test_inventory "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the tenantId.
@@ -347,6 +350,7 @@ class Inventory(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:CloudBridge/inventory:Inventory test_inventory "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param InventoryArgs args: The arguments to use to populate this resource's properties.

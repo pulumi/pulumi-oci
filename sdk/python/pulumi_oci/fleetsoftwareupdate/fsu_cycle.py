@@ -39,6 +39,7 @@ class FsuCycleArgs:
                  upgrade_details: Optional[pulumi.Input['FsuCycleUpgradeDetailsArgs']] = None):
         """
         The set of arguments for constructing a FsuCycle resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
         :param pulumi.Input[_builtins.str] fsu_collection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
         :param pulumi.Input['FsuCycleGoalVersionDetailsArgs'] goal_version_details: (Updatable) Goal version or image details for the Exadata Fleet Update Cycle.
@@ -311,6 +312,7 @@ class _FsuCycleState:
                  upgrade_details: Optional[pulumi.Input['FsuCycleUpgradeDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering FsuCycle resources.
+
         :param pulumi.Input['FsuCycleApplyActionScheduleArgs'] apply_action_schedule: Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
         :param pulumi.Input['FsuCycleBatchingStrategyArgs'] batching_strategy: (Updatable) Batching strategy details to use during PRECHECK and APPLY Cycle Actions.
         :param pulumi.Input[_builtins.str] collection_type: Type of Exadata Fleet Update collection being upgraded.
@@ -838,6 +840,7 @@ class FsuCycle(pulumi.CustomResource):
         $ pulumi import oci:FleetSoftwareUpdate/fsuCycle:FsuCycle test_fsu_cycle "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['FsuCycleApplyActionScheduleArgs', 'FsuCycleApplyActionScheduleArgsDict']] apply_action_schedule: Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
@@ -943,6 +946,7 @@ class FsuCycle(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:FleetSoftwareUpdate/fsuCycle:FsuCycle test_fsu_cycle "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param FsuCycleArgs args: The arguments to use to populate this resource's properties.

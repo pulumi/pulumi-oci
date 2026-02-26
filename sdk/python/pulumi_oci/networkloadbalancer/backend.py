@@ -31,6 +31,7 @@ class BackendArgs:
                  weight: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a Backend resource.
+
         :param pulumi.Input[_builtins.str] backend_set_name: The name of the backend set to which to add the backend server.  Example: `example_backend_set`
         :param pulumi.Input[_builtins.str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
         :param pulumi.Input[_builtins.int] port: The communication port for the backend server.  Example: `8080`
@@ -204,6 +205,7 @@ class _BackendState:
                  weight: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering Backend resources.
+
         :param pulumi.Input[_builtins.str] backend_set_name: The name of the backend set to which to add the backend server.  Example: `example_backend_set`
         :param pulumi.Input[_builtins.str] ip_address: The IP address of the backend server. Example: `10.0.0.3`
         :param pulumi.Input[_builtins.bool] is_backup: (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
@@ -417,6 +419,7 @@ class Backend(pulumi.CustomResource):
         $ pulumi import oci:NetworkLoadBalancer/backend:Backend test_backend "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] backend_set_name: The name of the backend set to which to add the backend server.  Example: `example_backend_set`
@@ -474,6 +477,7 @@ class Backend(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:NetworkLoadBalancer/backend:Backend test_backend "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param BackendArgs args: The arguments to use to populate this resource's properties.

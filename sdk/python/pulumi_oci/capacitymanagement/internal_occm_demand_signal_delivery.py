@@ -31,6 +31,7 @@ class InternalOccmDemandSignalDeliveryArgs:
                  notes: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a InternalOccmDemandSignalDelivery resource.
+
         :param pulumi.Input[_builtins.str] accepted_quantity: (Updatable) The quantity of the resource that Oracle Cloud Infrastructure will supply to the customer.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the tenancy from which the demand signal delivery resource is created.
         :param pulumi.Input[_builtins.str] demand_signal_id: The OCID of the demand signal under which this delivery will be grouped.
@@ -205,6 +206,7 @@ class _InternalOccmDemandSignalDeliveryState:
                  time_delivered: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InternalOccmDemandSignalDelivery resources.
+
         :param pulumi.Input[_builtins.str] accepted_quantity: (Updatable) The quantity of the resource that Oracle Cloud Infrastructure will supply to the customer.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the tenancy from which the demand signal delivery resource is created.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -468,6 +470,7 @@ class InternalOccmDemandSignalDelivery(pulumi.CustomResource):
         $ pulumi import oci:CapacityManagement/internalOccmDemandSignalDelivery:InternalOccmDemandSignalDelivery test_internal_occm_demand_signal_delivery "internal/occmDemandSignalDeliveries/{occmDemandSignalDeliveryId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] accepted_quantity: (Updatable) The quantity of the resource that Oracle Cloud Infrastructure will supply to the customer.
@@ -530,6 +533,7 @@ class InternalOccmDemandSignalDelivery(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:CapacityManagement/internalOccmDemandSignalDelivery:InternalOccmDemandSignalDelivery test_internal_occm_demand_signal_delivery "internal/occmDemandSignalDeliveries/{occmDemandSignalDeliveryId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param InternalOccmDemandSignalDeliveryArgs args: The arguments to use to populate this resource's properties.

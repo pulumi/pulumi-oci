@@ -27,6 +27,7 @@ class ConfigurationArgs:
                  kms_key: Optional[pulumi.Input['ConfigurationKmsKeyArgs']] = None):
         """
         The set of arguments for constructing a Configuration resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The tenancy's OCID
         :param pulumi.Input[_builtins.str] environment: (Updatable) The service environment type.
         :param pulumi.Input[_builtins.bool] is_opc_dry_run: (Updatable) If true, indicates that the request is a dry run. A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
@@ -97,6 +98,7 @@ class _ConfigurationState:
                  kms_key: Optional[pulumi.Input['ConfigurationKmsKeyArgs']] = None):
         """
         Input properties used for looking up and filtering Configuration resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The tenancy's OCID
         :param pulumi.Input[_builtins.str] environment: (Updatable) The service environment type.
         :param pulumi.Input[_builtins.bool] is_opc_dry_run: (Updatable) If true, indicates that the request is a dry run. A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
@@ -220,6 +222,7 @@ class Configuration(pulumi.CustomResource):
         $ pulumi import oci:Nosql/configuration:Configuration test_configuration "configuration/compartmentId/{compartmentId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The tenancy's OCID
@@ -281,6 +284,7 @@ class Configuration(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Nosql/configuration:Configuration test_configuration "configuration/compartmentId/{compartmentId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ConfigurationArgs args: The arguments to use to populate this resource's properties.

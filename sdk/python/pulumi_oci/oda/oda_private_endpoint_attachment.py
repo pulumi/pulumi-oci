@@ -23,6 +23,7 @@ class OdaPrivateEndpointAttachmentArgs:
                  oda_private_endpoint_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a OdaPrivateEndpointAttachment resource.
+
         :param pulumi.Input[_builtins.str] oda_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
         :param pulumi.Input[_builtins.str] oda_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
                
@@ -73,6 +74,7 @@ class _OdaPrivateEndpointAttachmentState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OdaPrivateEndpointAttachment resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint attachment belongs to.
         :param pulumi.Input[_builtins.str] oda_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
         :param pulumi.Input[_builtins.str] oda_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
@@ -213,6 +215,7 @@ class OdaPrivateEndpointAttachment(pulumi.CustomResource):
         $ pulumi import oci:Oda/odaPrivateEndpointAttachment:OdaPrivateEndpointAttachment test_oda_private_endpoint_attachment "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] oda_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
@@ -257,6 +260,7 @@ class OdaPrivateEndpointAttachment(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Oda/odaPrivateEndpointAttachment:OdaPrivateEndpointAttachment test_oda_private_endpoint_attachment "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OdaPrivateEndpointAttachmentArgs args: The arguments to use to populate this resource's properties.

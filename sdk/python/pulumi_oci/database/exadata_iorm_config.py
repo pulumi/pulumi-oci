@@ -26,6 +26,7 @@ class ExadataIormConfigArgs:
                  objective: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ExadataIormConfig resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['ExadataIormConfigDbPlanArgs']]] db_plans: (Updatable) Array of IORM Setting for all the database in this Exadata DB System
         :param pulumi.Input[_builtins.str] db_system_id: (Updatable) The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] objective: (Updatable) Value for the IORM objective Default is "Auto" 
@@ -90,6 +91,7 @@ class _ExadataIormConfigState:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExadataIormConfig resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['ExadataIormConfigDbPlanArgs']]] db_plans: (Updatable) Array of IORM Setting for all the database in this Exadata DB System
         :param pulumi.Input[_builtins.str] db_system_id: (Updatable) The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current `lifecycleState`.
@@ -220,6 +222,7 @@ class ExadataIormConfig(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ExadataIormConfigDbPlanArgs', 'ExadataIormConfigDbPlanArgsDict']]]] db_plans: (Updatable) Array of IORM Setting for all the database in this Exadata DB System
@@ -269,6 +272,7 @@ class ExadataIormConfig(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param ExadataIormConfigArgs args: The arguments to use to populate this resource's properties.

@@ -23,6 +23,7 @@ class MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementArgs:
                  monitoring_template_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement resource.
+
         :param pulumi.Input[_builtins.bool] enable_monitoring_template_on_given_resources: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                
@@ -69,6 +70,7 @@ class _MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementState:
                  monitoring_template_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement resources.
+
         :param pulumi.Input[_builtins.bool] enable_monitoring_template_on_given_resources: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                
@@ -137,6 +139,7 @@ class MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement(pulumi.Cust
             enable_monitoring_template_on_given_resources=enable_monitoring_template_on_given_resources)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_monitoring_template_on_given_resources: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -169,6 +172,7 @@ class MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement(pulumi.Cust
             monitoring_template_id=test_monitoring_template["id"],
             enable_monitoring_template_on_given_resources=enable_monitoring_template_on_given_resources)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementArgs args: The arguments to use to populate this resource's properties.

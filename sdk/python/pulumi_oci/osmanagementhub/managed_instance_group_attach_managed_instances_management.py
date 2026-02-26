@@ -26,6 +26,7 @@ class ManagedInstanceGroupAttachManagedInstancesManagementArgs:
                  work_request_details: Optional[pulumi.Input['ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs']] = None):
         """
         The set of arguments for constructing a ManagedInstanceGroupAttachManagedInstancesManagement resource.
+
         :param pulumi.Input[_builtins.str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instances: List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to the group.
         :param pulumi.Input['ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs'] work_request_details: Provides the name and description of the job.
@@ -80,6 +81,7 @@ class _ManagedInstanceGroupAttachManagedInstancesManagementState:
                  work_request_details: Optional[pulumi.Input['ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering ManagedInstanceGroupAttachManagedInstancesManagement resources.
+
         :param pulumi.Input[_builtins.str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instances: List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to the group.
         :param pulumi.Input['ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs'] work_request_details: Provides the name and description of the job.
@@ -169,6 +171,7 @@ class ManagedInstanceGroupAttachManagedInstancesManagement(pulumi.CustomResource
         $ pulumi import oci:OsManagementHub/managedInstanceGroupAttachManagedInstancesManagement:ManagedInstanceGroupAttachManagedInstancesManagement test_managed_instance_group_attach_managed_instances_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
@@ -211,6 +214,7 @@ class ManagedInstanceGroupAttachManagedInstancesManagement(pulumi.CustomResource
         ```sh
         $ pulumi import oci:OsManagementHub/managedInstanceGroupAttachManagedInstancesManagement:ManagedInstanceGroupAttachManagedInstancesManagement test_managed_instance_group_attach_managed_instances_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagedInstanceGroupAttachManagedInstancesManagementArgs args: The arguments to use to populate this resource's properties.

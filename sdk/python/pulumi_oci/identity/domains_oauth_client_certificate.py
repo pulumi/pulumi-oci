@@ -36,6 +36,7 @@ class DomainsOauthClientCertificateArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsOauthClientCertificateTagArgs']]]] = None):
         """
         The set of arguments for constructing a DomainsOauthClientCertificate resource.
+
         :param pulumi.Input[_builtins.str] certificate_alias: Certificate alias
                
                **SCIM++ Properties:**
@@ -453,6 +454,7 @@ class _DomainsOauthClientCertificateState:
                  x509base64certificate: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DomainsOauthClientCertificate resources.
+
         :param pulumi.Input[_builtins.str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         :param pulumi.Input[_builtins.str] cert_end_date: (Updatable) Certificate end date
                
@@ -1332,6 +1334,7 @@ class DomainsOauthClientCertificate(pulumi.CustomResource):
         $ pulumi import oci:Identity/domainsOauthClientCertificate:DomainsOauthClientCertificate test_oauth_client_certificate "idcsEndpoint/{idcsEndpoint}/oAuthClientCertificates/{oAuthClientCertificateId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -1481,6 +1484,7 @@ class DomainsOauthClientCertificate(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domainsOauthClientCertificate:DomainsOauthClientCertificate test_oauth_client_certificate "idcsEndpoint/{idcsEndpoint}/oAuthClientCertificates/{oAuthClientCertificateId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainsOauthClientCertificateArgs args: The arguments to use to populate this resource's properties.

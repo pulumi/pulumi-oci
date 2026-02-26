@@ -32,6 +32,7 @@ class ImportedModelArgs:
                  version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ImportedModel resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment OCID from which the model is imported.
         :param pulumi.Input['ImportedModelDataSourceArgs'] data_source: Defines the source location and method used to import the model. Supports importing from Hugging Face,  an Object Storage location, or by referencing an already imported model.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] capabilities: Specifies the intended use or supported capabilities of the imported model.
@@ -196,6 +197,7 @@ class _ImportedModelState:
                  version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ImportedModel resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] capabilities: Specifies the intended use or supported capabilities of the imported model.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment OCID from which the model is imported.
         :param pulumi.Input['ImportedModelDataSourceArgs'] data_source: Defines the source location and method used to import the model. Supports importing from Hugging Face,  an Object Storage location, or by referencing an already imported model.
@@ -495,6 +497,7 @@ class ImportedModel(pulumi.CustomResource):
         $ pulumi import oci:GenerativeAi/importedModel:ImportedModel test_imported_model "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] capabilities: Specifies the intended use or supported capabilities of the imported model.
@@ -563,6 +566,7 @@ class ImportedModel(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:GenerativeAi/importedModel:ImportedModel test_imported_model "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ImportedModelArgs args: The arguments to use to populate this resource's properties.

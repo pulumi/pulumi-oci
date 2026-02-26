@@ -29,6 +29,7 @@ class ExternalPluggableDatabaseArgs:
                  source_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ExternalPluggableDatabase resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the external database. The name does not have to be unique.
         :param pulumi.Input[_builtins.str] external_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalContainerDatabaseDetails) that contains the specified [external pluggable database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails) resource.
@@ -154,6 +155,7 @@ class _ExternalPluggableDatabaseState:
                  time_zone: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalPluggableDatabase resources.
+
         :param pulumi.Input[_builtins.str] character_set: The character set of the external database.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] database_configuration: The Oracle Database configuration
@@ -542,6 +544,7 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
         $ pulumi import oci:Database/externalPluggableDatabase:ExternalPluggableDatabase test_external_pluggable_database "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -594,6 +597,7 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/externalPluggableDatabase:ExternalPluggableDatabase test_external_pluggable_database "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ExternalPluggableDatabaseArgs args: The arguments to use to populate this resource's properties.

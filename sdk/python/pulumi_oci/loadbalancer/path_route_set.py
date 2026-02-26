@@ -26,6 +26,7 @@ class PathRouteSetArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a PathRouteSet resource.
+
         :param pulumi.Input[_builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
         :param pulumi.Input[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]] path_routes: (Updatable) The set of path route rules.
         :param pulumi.Input[_builtins.str] name: The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
@@ -81,6 +82,7 @@ class _PathRouteSetState:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PathRouteSet resources.
+
         :param pulumi.Input[_builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
         :param pulumi.Input[_builtins.str] name: The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
         :param pulumi.Input[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]] path_routes: (Updatable) The set of path route rules.
@@ -185,6 +187,7 @@ class PathRouteSet(pulumi.CustomResource):
         $ pulumi import oci:LoadBalancer/pathRouteSet:PathRouteSet test_path_route_set "loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
@@ -231,6 +234,7 @@ class PathRouteSet(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:LoadBalancer/pathRouteSet:PathRouteSet test_path_route_set "loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param PathRouteSetArgs args: The arguments to use to populate this resource's properties.

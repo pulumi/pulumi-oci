@@ -47,6 +47,7 @@ class DatabaseInsightArgs:
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a DatabaseInsight resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier of database
         :param pulumi.Input[_builtins.str] entity_source: (Updatable) Source of the database entity.
         :param pulumi.Input['DatabaseInsightConnectionCredentialDetailsArgs'] connection_credential_details: User credential details to connect to the database.
@@ -459,6 +460,7 @@ class _DatabaseInsightState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DatabaseInsight resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier of database
         :param pulumi.Input['DatabaseInsightConnectionCredentialDetailsArgs'] connection_credential_details: User credential details to connect to the database.
         :param pulumi.Input['DatabaseInsightConnectionDetailsArgs'] connection_details: Connection details to connect to the database. HostName, protocol, and port should be specified.
@@ -1115,6 +1117,7 @@ class DatabaseInsight(pulumi.CustomResource):
         $ pulumi import oci:Opsi/databaseInsight:DatabaseInsight test_database_insight "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier of database
@@ -1166,6 +1169,7 @@ class DatabaseInsight(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Opsi/databaseInsight:DatabaseInsight test_database_insight "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DatabaseInsightArgs args: The arguments to use to populate this resource's properties.

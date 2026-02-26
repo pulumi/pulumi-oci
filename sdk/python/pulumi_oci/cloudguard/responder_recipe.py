@@ -30,6 +30,7 @@ class ResponderRecipeArgs:
                  responder_rules: Optional[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeResponderRuleArgs']]]] = None):
         """
         The set of arguments for constructing a ResponderRecipe resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment OCID
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Responder recipe display name.
                
@@ -174,6 +175,7 @@ class _ResponderRecipeState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ResponderRecipe resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment OCID
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Responder recipe description.
@@ -438,6 +440,7 @@ class ResponderRecipe(pulumi.CustomResource):
         $ pulumi import oci:CloudGuard/responderRecipe:ResponderRecipe test_responder_recipe "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment OCID
@@ -480,6 +483,7 @@ class ResponderRecipe(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:CloudGuard/responderRecipe:ResponderRecipe test_responder_recipe "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ResponderRecipeArgs args: The arguments to use to populate this resource's properties.

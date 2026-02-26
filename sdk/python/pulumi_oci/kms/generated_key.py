@@ -29,6 +29,7 @@ class GeneratedKeyArgs:
                  logging_context: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a GeneratedKey resource.
+
         :param pulumi.Input[_builtins.str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
         :param pulumi.Input[_builtins.bool] include_plaintext_key: If true, the generated key is also returned unencrypted.
         :param pulumi.Input[_builtins.str] key_id: The OCID of the master encryption key to encrypt the generated data encryption key with.
@@ -140,6 +141,7 @@ class _GeneratedKeyState:
                  plaintext_checksum: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering GeneratedKey resources.
+
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         :param pulumi.Input[_builtins.str] ciphertext: The encrypted data encryption key generated from a master encryption key.
         :param pulumi.Input[_builtins.str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
@@ -330,6 +332,7 @@ class GeneratedKey(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
@@ -379,6 +382,7 @@ class GeneratedKey(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param GeneratedKeyArgs args: The arguments to use to populate this resource's properties.

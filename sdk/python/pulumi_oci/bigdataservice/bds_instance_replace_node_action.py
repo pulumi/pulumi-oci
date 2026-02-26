@@ -26,6 +26,7 @@ class BdsInstanceReplaceNodeActionArgs:
                  shape: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a BdsInstanceReplaceNodeAction resource.
+
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
         :param pulumi.Input[_builtins.str] node_backup_id: The id of the nodeBackup to use for replacing the node.
@@ -118,6 +119,7 @@ class _BdsInstanceReplaceNodeActionState:
                  shape: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BdsInstanceReplaceNodeAction resources.
+
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
         :param pulumi.Input[_builtins.str] node_backup_id: The id of the nodeBackup to use for replacing the node.
@@ -235,6 +237,7 @@ class BdsInstanceReplaceNodeAction(pulumi.CustomResource):
             shape=shape)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
@@ -271,6 +274,7 @@ class BdsInstanceReplaceNodeAction(pulumi.CustomResource):
             cluster_admin_password=test_bds_instance["clusterAdminPassword"],
             shape=shape)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param BdsInstanceReplaceNodeActionArgs args: The arguments to use to populate this resource's properties.

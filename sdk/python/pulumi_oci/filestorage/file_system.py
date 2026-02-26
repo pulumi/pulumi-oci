@@ -36,6 +36,7 @@ class FileSystemArgs:
                  source_snapshot_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a FileSystem resource.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
         :param pulumi.Input[_builtins.bool] are_quota_rules_enabled: (Updatable) Specifies the enforcement of quota rules on the file system.
@@ -271,6 +272,7 @@ class _FileSystemState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FileSystem resources.
+
         :param pulumi.Input[_builtins.bool] are_quota_rules_enabled: (Updatable) Specifies the enforcement of quota rules on the file system.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] clone_attach_status: Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
@@ -765,6 +767,7 @@ class FileSystem(pulumi.CustomResource):
         $ pulumi import oci:FileStorage/fileSystem:FileSystem test_file_system "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] are_quota_rules_enabled: (Updatable) Specifies the enforcement of quota rules on the file system.
@@ -864,6 +867,7 @@ class FileSystem(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:FileStorage/fileSystem:FileSystem test_file_system "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param FileSystemArgs args: The arguments to use to populate this resource's properties.

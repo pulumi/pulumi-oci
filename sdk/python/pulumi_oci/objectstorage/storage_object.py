@@ -39,6 +39,7 @@ class StorageObjectArgs:
                  storage_tier: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a StorageObject resource.
+
         :param pulumi.Input[_builtins.str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         :param pulumi.Input[_builtins.str] namespace: The Object Storage namespace used for the request.
         :param pulumi.Input[_builtins.str] object: (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
@@ -312,6 +313,7 @@ class _StorageObjectState:
                  work_request_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering StorageObject resources.
+
         :param pulumi.Input[_builtins.str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         :param pulumi.Input[_builtins.str] cache_control: The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify objects that require caching restrictions.
         :param pulumi.Input[_builtins.str] content: The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
@@ -679,6 +681,7 @@ class StorageObject(pulumi.CustomResource):
         $ pulumi import oci:ObjectStorage/storageObject:StorageObject test_object "n/{namespaceName}/b/{bucketName}/o/{objectName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -752,6 +755,7 @@ class StorageObject(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ObjectStorage/storageObject:StorageObject test_object "n/{namespaceName}/b/{bucketName}/o/{objectName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param StorageObjectArgs args: The arguments to use to populate this resource's properties.

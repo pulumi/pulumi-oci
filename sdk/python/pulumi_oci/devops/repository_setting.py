@@ -27,6 +27,7 @@ class RepositorySettingArgs:
                  merge_settings: Optional[pulumi.Input['RepositorySettingMergeSettingsArgs']] = None):
         """
         The set of arguments for constructing a RepositorySetting resource.
+
         :param pulumi.Input[_builtins.str] repository_id: Unique repository identifier.
                
                
@@ -106,6 +107,7 @@ class _RepositorySettingState:
                  repository_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RepositorySetting resources.
+
         :param pulumi.Input['RepositorySettingApprovalRulesArgs'] approval_rules: (Updatable) List of approval rules which must be statisfied before pull requests which match the rules can be merged
         :param pulumi.Input['RepositorySettingMergeChecksArgs'] merge_checks: (Updatable) Criteria which must be satisfied to merge a pull request.
         :param pulumi.Input['RepositorySettingMergeSettingsArgs'] merge_settings: (Updatable) Enabled and disabled merge strategies for a project or repository, also contains a default strategy.
@@ -231,6 +233,7 @@ class RepositorySetting(pulumi.CustomResource):
         $ pulumi import oci:DevOps/repositorySetting:RepositorySetting test_repository_setting "repositories/{repositoryId}/repositorySettings"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['RepositorySettingApprovalRulesArgs', 'RepositorySettingApprovalRulesArgsDict']] approval_rules: (Updatable) List of approval rules which must be statisfied before pull requests which match the rules can be merged
@@ -290,6 +293,7 @@ class RepositorySetting(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DevOps/repositorySetting:RepositorySetting test_repository_setting "repositories/{repositoryId}/repositorySettings"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param RepositorySettingArgs args: The arguments to use to populate this resource's properties.

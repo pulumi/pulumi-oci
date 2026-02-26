@@ -35,6 +35,7 @@ class ModelGroupArgs:
                  version_label: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ModelGroup resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the modelGroup in.
         :param pulumi.Input[_builtins.str] create_type: The type of the model group create operation.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the modelGroup.
@@ -249,6 +250,7 @@ class _ModelGroupState:
                  version_label: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ModelGroup resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the modelGroup in.
         :param pulumi.Input[_builtins.str] create_type: The type of the model group create operation.
         :param pulumi.Input[_builtins.str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the modelGroup.
@@ -679,6 +681,7 @@ class ModelGroup(pulumi.CustomResource):
         $ pulumi import oci:DataScience/modelGroup:ModelGroup test_model_group "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the modelGroup in.
@@ -788,6 +791,7 @@ class ModelGroup(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataScience/modelGroup:ModelGroup test_model_group "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ModelGroupArgs args: The arguments to use to populate this resource's properties.

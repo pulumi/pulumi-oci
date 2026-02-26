@@ -37,6 +37,7 @@ class CrossConnectArgs:
                  oci_physical_device_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CrossConnect resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment to contain the cross-connect.
         :param pulumi.Input[_builtins.str] location_name: The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
         :param pulumi.Input[_builtins.str] port_speed_shape_name: The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps` 
@@ -278,6 +279,7 @@ class _CrossConnectState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CrossConnect resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment to contain the cross-connect.
         :param pulumi.Input[_builtins.str] cross_connect_group_id: The OCID of the cross-connect group to put this cross-connect in.
         :param pulumi.Input[_builtins.str] customer_reference_name: (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect uses.
@@ -648,6 +650,7 @@ class CrossConnect(pulumi.CustomResource):
         $ pulumi import oci:Core/crossConnect:CrossConnect test_cross_connect "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment to contain the cross-connect.
@@ -742,6 +745,7 @@ class CrossConnect(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/crossConnect:CrossConnect test_cross_connect "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CrossConnectArgs args: The arguments to use to populate this resource's properties.

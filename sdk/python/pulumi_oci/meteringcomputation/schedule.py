@@ -34,6 +34,7 @@ class ScheduleArgs:
                  saved_report_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Schedule resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The customer tenancy.
         :param pulumi.Input['ScheduleResultLocationArgs'] result_location: (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
         :param pulumi.Input[_builtins.str] schedule_recurrences: Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
@@ -226,6 +227,7 @@ class _ScheduleState:
                  time_scheduled: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Schedule resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The customer tenancy.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the schedule.
@@ -543,6 +545,7 @@ class Schedule(pulumi.CustomResource):
         $ pulumi import oci:MeteringComputation/schedule:Schedule test_schedule "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The customer tenancy.
@@ -629,6 +632,7 @@ class Schedule(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:MeteringComputation/schedule:Schedule test_schedule "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ScheduleArgs args: The arguments to use to populate this resource's properties.

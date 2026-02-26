@@ -26,6 +26,7 @@ class ManagementStationAssociateManagedInstancesManagementArgs:
                  work_request_details: Optional[pulumi.Input['ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs']] = None):
         """
         The set of arguments for constructing a ManagementStationAssociateManagedInstancesManagement resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instances: List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to associate to the management station.
         :param pulumi.Input[_builtins.str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         :param pulumi.Input['ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs'] work_request_details: Provides the name and description of the job.
@@ -80,6 +81,7 @@ class _ManagementStationAssociateManagedInstancesManagementState:
                  work_request_details: Optional[pulumi.Input['ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering ManagementStationAssociateManagedInstancesManagement resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instances: List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to associate to the management station.
         :param pulumi.Input[_builtins.str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         :param pulumi.Input['ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs'] work_request_details: Provides the name and description of the job.
@@ -169,6 +171,7 @@ class ManagementStationAssociateManagedInstancesManagement(pulumi.CustomResource
         $ pulumi import oci:OsManagementHub/managementStationAssociateManagedInstancesManagement:ManagementStationAssociateManagedInstancesManagement test_management_station_associate_managed_instances_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instances: List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to associate to the management station.
@@ -211,6 +214,7 @@ class ManagementStationAssociateManagedInstancesManagement(pulumi.CustomResource
         ```sh
         $ pulumi import oci:OsManagementHub/managementStationAssociateManagedInstancesManagement:ManagementStationAssociateManagedInstancesManagement test_management_station_associate_managed_instances_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagementStationAssociateManagedInstancesManagementArgs args: The arguments to use to populate this resource's properties.

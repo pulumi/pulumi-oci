@@ -24,6 +24,7 @@ class SslCipherSuiteArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a SslCipherSuite resource.
+
         :param pulumi.Input[_builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
         :param pulumi.Input[_builtins.str] name: A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
                
@@ -113,6 +114,7 @@ class _SslCipherSuiteState:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SslCipherSuite resources.
+
         :param pulumi.Input[_builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
         :param pulumi.Input[_builtins.str] name: A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
                
@@ -244,6 +246,7 @@ class SslCipherSuite(pulumi.CustomResource):
         $ pulumi import oci:LoadBalancer/sslCipherSuite:SslCipherSuite test_ssl_cipher_suite "loadBalancers/{loadBalancerId}/sslCipherSuites/{name}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
@@ -301,6 +304,7 @@ class SslCipherSuite(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:LoadBalancer/sslCipherSuite:SslCipherSuite test_ssl_cipher_suite "loadBalancers/{loadBalancerId}/sslCipherSuites/{name}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SslCipherSuiteArgs args: The arguments to use to populate this resource's properties.

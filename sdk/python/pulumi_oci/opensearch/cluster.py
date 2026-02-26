@@ -70,6 +70,7 @@ class ClusterArgs:
                  upgrade_major_version_trigger: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a Cluster resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment to create the cluster in.
         :param pulumi.Input[_builtins.int] data_node_count: (Updatable) The number of data nodes to configure for the cluster.
         :param pulumi.Input[_builtins.int] data_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
@@ -832,6 +833,7 @@ class _ClusterState:
                  vcn_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Cluster resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] availability_domains: The availability domains to distribute the cluser nodes across.
         :param pulumi.Input['ClusterCertificateConfigArgs'] certificate_config: (Updatable) Custom certificate config for customer provided certs.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment to create the cluster in.
@@ -1822,6 +1824,7 @@ class Cluster(pulumi.CustomResource):
         $ pulumi import oci:Opensearch/cluster:Cluster test_opensearch_cluster "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ClusterCertificateConfigArgs', 'ClusterCertificateConfigArgsDict']] certificate_config: (Updatable) Custom certificate config for customer provided certs.
@@ -1906,6 +1909,7 @@ class Cluster(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Opensearch/cluster:Cluster test_opensearch_cluster "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ClusterArgs args: The arguments to use to populate this resource's properties.

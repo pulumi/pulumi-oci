@@ -39,6 +39,7 @@ class MountTargetArgs:
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a MountTarget resource.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain in which to create the mount target.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the mount target.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target. 
@@ -329,6 +330,7 @@ class _MountTargetState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MountTarget resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain in which to create the mount target.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the mount target.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -846,6 +848,7 @@ class MountTarget(pulumi.CustomResource):
         $ pulumi import oci:FileStorage/mountTarget:MountTarget test_mount_target "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain in which to create the mount target.  Example: `Uocm:PHX-AD-1`
@@ -976,6 +979,7 @@ class MountTarget(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:FileStorage/mountTarget:MountTarget test_mount_target "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MountTargetArgs args: The arguments to use to populate this resource's properties.

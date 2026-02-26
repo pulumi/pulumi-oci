@@ -23,6 +23,7 @@ class MarketplaceExternalAttestedMetadataArgs:
                  instance_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a MarketplaceExternalAttestedMetadata resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: compartment that associated instance is in
         :param pulumi.Input[_builtins.str] instance_id: unique id that identifies the associated instance
                
@@ -70,6 +71,7 @@ class _MarketplaceExternalAttestedMetadataState:
                  serialized_jwt: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MarketplaceExternalAttestedMetadata resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: compartment that associated instance is in
         :param pulumi.Input[_builtins.str] instance_id: unique id that identifies the associated instance
                
@@ -162,6 +164,7 @@ class MarketplaceExternalAttestedMetadata(pulumi.CustomResource):
         $ pulumi import oci:Marketplace/marketplaceExternalAttestedMetadata:MarketplaceExternalAttestedMetadata test_marketplace_external_attested_metadata "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: compartment that associated instance is in
@@ -203,6 +206,7 @@ class MarketplaceExternalAttestedMetadata(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Marketplace/marketplaceExternalAttestedMetadata:MarketplaceExternalAttestedMetadata test_marketplace_external_attested_metadata "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MarketplaceExternalAttestedMetadataArgs args: The arguments to use to populate this resource's properties.

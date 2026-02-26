@@ -28,6 +28,7 @@ class BdsInstanceMetastoreConfigArgs:
                  display_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a BdsInstanceMetastoreConfig resource.
+
         :param pulumi.Input[_builtins.str] bds_api_key_id: (Updatable) The ID of BDS Api Key used for Data Catalog metastore integration.
         :param pulumi.Input[_builtins.str] bds_api_key_passphrase: (Updatable) Base-64 encoded passphrase of the BDS Api Key.
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
@@ -155,6 +156,7 @@ class _BdsInstanceMetastoreConfigState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BdsInstanceMetastoreConfig resources.
+
         :param pulumi.Input[_builtins.int] activate_trigger: (Updatable) An optional integer, when flipped triggers activation of metastore config.
                
                
@@ -376,6 +378,7 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
         $ pulumi import oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig test_bds_instance_metastore_config "bdsInstances/{bdsInstanceId}/metastoreConfigs/{metastoreConfigId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] activate_trigger: (Updatable) An optional integer, when flipped triggers activation of metastore config.
@@ -426,6 +429,7 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig test_bds_instance_metastore_config "bdsInstances/{bdsInstanceId}/metastoreConfigs/{metastoreConfigId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param BdsInstanceMetastoreConfigArgs args: The arguments to use to populate this resource's properties.

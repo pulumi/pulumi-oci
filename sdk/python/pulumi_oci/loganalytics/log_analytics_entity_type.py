@@ -27,6 +27,7 @@ class LogAnalyticsEntityTypeArgs:
                  properties: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsEntityTypePropertyArgs']]]] = None):
         """
         The set of arguments for constructing a LogAnalyticsEntityType resource.
+
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param pulumi.Input[_builtins.str] category: Log analytics entity type category. Category will be used for grouping and filtering.
         :param pulumi.Input[_builtins.str] name: Log analytics entity type name.
@@ -104,6 +105,7 @@ class _LogAnalyticsEntityTypeState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LogAnalyticsEntityType resources.
+
         :param pulumi.Input[_builtins.str] category: Log analytics entity type category. Category will be used for grouping and filtering.
         :param pulumi.Input[_builtins.str] cloud_type: Log analytics entity type group. This can be CLOUD (OCI) or NON_CLOUD otherwise.
         :param pulumi.Input[_builtins.str] internal_name: Internal name for the log analytics entity type.
@@ -296,6 +298,7 @@ class LogAnalyticsEntityType(pulumi.CustomResource):
         $ pulumi import oci:LogAnalytics/logAnalyticsEntityType:LogAnalyticsEntityType test_log_analytics_entity_type "namespaces/{namespaceName}/logAnalyticsEntityTypes"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] category: Log analytics entity type category. Category will be used for grouping and filtering.
@@ -340,6 +343,7 @@ class LogAnalyticsEntityType(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:LogAnalytics/logAnalyticsEntityType:LogAnalyticsEntityType test_log_analytics_entity_type "namespaces/{namespaceName}/logAnalyticsEntityTypes"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param LogAnalyticsEntityTypeArgs args: The arguments to use to populate this resource's properties.

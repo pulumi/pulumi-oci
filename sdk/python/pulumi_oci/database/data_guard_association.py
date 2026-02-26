@@ -64,6 +64,7 @@ class DataGuardAssociationArgs:
                  time_zone: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DataGuardAssociation resource.
+
         :param pulumi.Input[_builtins.str] creation_type: Specifies whether to create the peer database in an existing DB system or in a new DB system.
         :param pulumi.Input[_builtins.str] database_admin_password: (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
                
@@ -789,6 +790,7 @@ class _DataGuardAssociationState:
                  transport_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DataGuardAssociation resources.
+
         :param pulumi.Input[_builtins.str] apply_lag: The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
         :param pulumi.Input[_builtins.str] apply_rate: The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
@@ -1717,6 +1719,7 @@ class DataGuardAssociation(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
@@ -1867,6 +1870,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param DataGuardAssociationArgs args: The arguments to use to populate this resource's properties.

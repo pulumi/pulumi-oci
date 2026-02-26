@@ -32,6 +32,7 @@ class DomainsMyApiKeyArgs:
                  user: Optional[pulumi.Input['DomainsMyApiKeyUserArgs']] = None):
         """
         The set of arguments for constructing a DomainsMyApiKey resource.
+
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[_builtins.str] key: Key
                
@@ -309,6 +310,7 @@ class _DomainsMyApiKeyState:
                  user: Optional[pulumi.Input['DomainsMyApiKeyUserArgs']] = None):
         """
         Input properties used for looking up and filtering DomainsMyApiKey resources.
+
         :param pulumi.Input[_builtins.str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         :param pulumi.Input[_builtins.str] compartment_ocid: (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
                
@@ -962,6 +964,7 @@ class DomainsMyApiKey(pulumi.CustomResource):
         $ pulumi import oci:Identity/domainsMyApiKey:DomainsMyApiKey test_my_api_key "idcsEndpoint/{idcsEndpoint}/myApiKeys/{myApiKeyId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -1079,6 +1082,7 @@ class DomainsMyApiKey(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domainsMyApiKey:DomainsMyApiKey test_my_api_key "idcsEndpoint/{idcsEndpoint}/myApiKeys/{myApiKeyId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainsMyApiKeyArgs args: The arguments to use to populate this resource's properties.

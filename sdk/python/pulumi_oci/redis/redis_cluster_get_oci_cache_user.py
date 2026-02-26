@@ -26,6 +26,7 @@ class RedisClusterGetOciCacheUserArgs:
                  display_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a RedisClusterGetOciCacheUser resource.
+
         :param pulumi.Input[_builtins.str] redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
                
                
@@ -90,6 +91,7 @@ class _RedisClusterGetOciCacheUserState:
                  redis_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RedisClusterGetOciCacheUser resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The ID of the compartment in which to list resources.
         :param pulumi.Input[_builtins.str] display_name: A filter to return only resources that match the entire display name given.
         :param pulumi.Input[_builtins.str] redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
@@ -191,6 +193,7 @@ class RedisClusterGetOciCacheUser(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The ID of the compartment in which to list resources.
@@ -230,6 +233,7 @@ class RedisClusterGetOciCacheUser(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param RedisClusterGetOciCacheUserArgs args: The arguments to use to populate this resource's properties.

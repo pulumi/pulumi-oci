@@ -31,6 +31,7 @@ class OccCustomerGroupArgs:
                  status: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a OccCustomerGroup resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name of the customer group.
         :param pulumi.Input[Sequence[pulumi.Input['OccCustomerGroupCustomersListArgs']]] customers_lists: A list containing all the customers that belong to this customer group.
@@ -177,6 +178,7 @@ class _OccCustomerGroupState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OccCustomerGroup resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
         :param pulumi.Input[Sequence[pulumi.Input['OccCustomerGroupCustomersListArgs']]] customers_lists: A list containing all the customers that belong to this customer group.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -425,6 +427,7 @@ class OccCustomerGroup(pulumi.CustomResource):
         $ pulumi import oci:CapacityManagement/occCustomerGroup:OccCustomerGroup test_occ_customer_group "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
@@ -487,6 +490,7 @@ class OccCustomerGroup(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:CapacityManagement/occCustomerGroup:OccCustomerGroup test_occ_customer_group "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OccCustomerGroupArgs args: The arguments to use to populate this resource's properties.

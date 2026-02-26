@@ -28,6 +28,7 @@ class HeatWaveClusterArgs:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a HeatWaveCluster resource.
+
         :param pulumi.Input[_builtins.int] cluster_size: (Updatable) A change to the number of nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with the new cluster of nodes. This may result in a significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
         :param pulumi.Input[_builtins.str] db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] shape_name: (Updatable) A change to the shape of the nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
@@ -123,6 +124,7 @@ class _HeatWaveClusterState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering HeatWaveCluster resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['HeatWaveClusterClusterNodeArgs']]] cluster_nodes: A HeatWave node is a compute host that is part of a HeatWave cluster.
         :param pulumi.Input[_builtins.int] cluster_size: (Updatable) A change to the number of nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with the new cluster of nodes. This may result in a significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
         :param pulumi.Input[_builtins.str] db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -308,6 +310,7 @@ class HeatWaveCluster(pulumi.CustomResource):
         $ pulumi import oci:Mysql/heatWaveCluster:HeatWaveCluster test_heat_wave_cluster "dbSystem/{dbSystemId}/heatWaveCluster"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] cluster_size: (Updatable) A change to the number of nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with the new cluster of nodes. This may result in a significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
@@ -353,6 +356,7 @@ class HeatWaveCluster(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Mysql/heatWaveCluster:HeatWaveCluster test_heat_wave_cluster "dbSystem/{dbSystemId}/heatWaveCluster"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param HeatWaveClusterArgs args: The arguments to use to populate this resource's properties.

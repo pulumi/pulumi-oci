@@ -23,6 +23,7 @@ class ProfileAttachManagementStationManagementArgs:
                  profile_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ProfileAttachManagementStationManagement resource.
+
         :param pulumi.Input[_builtins.str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station that the instance will be associated with.
         :param pulumi.Input[_builtins.str] profile_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
                
@@ -69,6 +70,7 @@ class _ProfileAttachManagementStationManagementState:
                  profile_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProfileAttachManagementStationManagement resources.
+
         :param pulumi.Input[_builtins.str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station that the instance will be associated with.
         :param pulumi.Input[_builtins.str] profile_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
                
@@ -146,6 +148,7 @@ class ProfileAttachManagementStationManagement(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/profileAttachManagementStationManagement:ProfileAttachManagementStationManagement test_profile_attach_management_station_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station that the instance will be associated with.
@@ -187,6 +190,7 @@ class ProfileAttachManagementStationManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/profileAttachManagementStationManagement:ProfileAttachManagementStationManagement test_profile_attach_management_station_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ProfileAttachManagementStationManagementArgs args: The arguments to use to populate this resource's properties.

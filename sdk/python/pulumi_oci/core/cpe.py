@@ -28,6 +28,7 @@ class CpeArgs:
                  is_private: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a Cpe resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the CPE.
         :param pulumi.Input[_builtins.str] ip_address: The public IP address of the on-premises router.  Example: `203.0.113.2`
         :param pulumi.Input[_builtins.str] cpe_device_shape_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device type. You can provide a value if you want to later generate CPE device configuration content for IPSec connections that use this CPE. You can also call [UpdateCpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/UpdateCpe) later to provide a value. For a list of possible values, see [ListCpeDeviceShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CpeDeviceShapeSummary/ListCpeDeviceShapes).
@@ -167,6 +168,7 @@ class _CpeState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Cpe resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the CPE.
         :param pulumi.Input[_builtins.str] cpe_device_shape_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device type. You can provide a value if you want to later generate CPE device configuration content for IPSec connections that use this CPE. You can also call [UpdateCpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/UpdateCpe) later to provide a value. For a list of possible values, see [ListCpeDeviceShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CpeDeviceShapeSummary/ListCpeDeviceShapes).
                
@@ -374,6 +376,7 @@ class Cpe(pulumi.CustomResource):
         $ pulumi import oci:Core/cpe:Cpe test_cpe "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the CPE.
@@ -449,6 +452,7 @@ class Cpe(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/cpe:Cpe test_cpe "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CpeArgs args: The arguments to use to populate this resource's properties.

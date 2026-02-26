@@ -30,6 +30,7 @@ class HttpProbeArgs:
                  vantage_point_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a HttpProbe resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[_builtins.str] protocol: The supported protocols available for HTTP probes.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] targets: A list of targets (hostnames or IP addresses) of the probe.
@@ -194,6 +195,7 @@ class _HttpProbeState:
                  vantage_point_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering HttpProbe resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] headers: A dictionary of HTTP request headers.
                
@@ -442,6 +444,7 @@ class HttpProbe(pulumi.CustomResource):
         $ pulumi import oci:HealthChecks/httpProbe:HttpProbe test_http_probe "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
@@ -502,6 +505,7 @@ class HttpProbe(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:HealthChecks/httpProbe:HttpProbe test_http_probe "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param HttpProbeArgs args: The arguments to use to populate this resource's properties.

@@ -24,6 +24,7 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagementArgs:
                  resource_ids: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a MetricExtensionMetricExtensionOnGivenResourcesManagement resource.
+
         :param pulumi.Input[_builtins.bool] enable_metric_extension_on_given_resources: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                
@@ -85,6 +86,7 @@ class _MetricExtensionMetricExtensionOnGivenResourcesManagementState:
                  resource_ids: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MetricExtensionMetricExtensionOnGivenResourcesManagement resources.
+
         :param pulumi.Input[_builtins.bool] enable_metric_extension_on_given_resources: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                
@@ -170,6 +172,7 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomReso
             enable_metric_extension_on_given_resources=enable_metric_extension_on_given_resources)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_metric_extension_on_given_resources: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -204,6 +207,7 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomReso
             resource_ids=metric_extension_metric_extension_on_given_resources_management_resource_ids[0],
             enable_metric_extension_on_given_resources=enable_metric_extension_on_given_resources)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MetricExtensionMetricExtensionOnGivenResourcesManagementArgs args: The arguments to use to populate this resource's properties.

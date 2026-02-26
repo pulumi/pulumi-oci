@@ -28,6 +28,7 @@ class ComputeImageCapabilitySchemaArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ComputeImageCapabilitySchema resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the resource.
         :param pulumi.Input[_builtins.str] compute_global_image_capability_schema_version_name: The name of the compute global image capability schema version
         :param pulumi.Input[_builtins.str] image_id: The ocid of the image
@@ -146,6 +147,7 @@ class _ComputeImageCapabilitySchemaState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ComputeImageCapabilitySchema resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the resource.
         :param pulumi.Input[_builtins.str] compute_global_image_capability_schema_id: The ocid of the compute global image capability schema
         :param pulumi.Input[_builtins.str] compute_global_image_capability_schema_version_name: The name of the compute global image capability schema version
@@ -316,6 +318,7 @@ class ComputeImageCapabilitySchema(pulumi.CustomResource):
         $ pulumi import oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema test_compute_image_capability_schema "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the resource.
@@ -349,6 +352,7 @@ class ComputeImageCapabilitySchema(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema test_compute_image_capability_schema "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ComputeImageCapabilitySchemaArgs args: The arguments to use to populate this resource's properties.

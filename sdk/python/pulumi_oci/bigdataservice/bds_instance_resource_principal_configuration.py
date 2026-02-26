@@ -26,6 +26,7 @@ class BdsInstanceResourcePrincipalConfigurationArgs:
                  session_token_life_span_duration_in_hours: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a BdsInstanceResourcePrincipalConfiguration resource.
+
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded Cluster Admin Password for cluster admin user.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
@@ -116,6 +117,7 @@ class _BdsInstanceResourcePrincipalConfigurationState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BdsInstanceResourcePrincipalConfiguration resources.
+
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded Cluster Admin Password for cluster admin user.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
@@ -310,6 +312,7 @@ class BdsInstanceResourcePrincipalConfiguration(pulumi.CustomResource):
         $ pulumi import oci:BigDataService/bdsInstanceResourcePrincipalConfiguration:BdsInstanceResourcePrincipalConfiguration test_bds_instance_resource_principal_configuration "bdsInstances/{bdsInstanceId}/resourcePrincipalConfigurations/{resourcePrincipalConfigurationId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
@@ -352,6 +355,7 @@ class BdsInstanceResourcePrincipalConfiguration(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:BigDataService/bdsInstanceResourcePrincipalConfiguration:BdsInstanceResourcePrincipalConfiguration test_bds_instance_resource_principal_configuration "bdsInstances/{bdsInstanceId}/resourcePrincipalConfigurations/{resourcePrincipalConfigurationId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param BdsInstanceResourcePrincipalConfigurationArgs args: The arguments to use to populate this resource's properties.

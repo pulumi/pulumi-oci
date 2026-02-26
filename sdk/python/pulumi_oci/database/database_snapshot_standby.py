@@ -27,6 +27,7 @@ class DatabaseSnapshotStandbyArgs:
                  snapshot_duration_in_days: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a DatabaseSnapshotStandby resource.
+
         :param pulumi.Input[_builtins.str] database_admin_password: The administrator password of the primary database in this Data Guard association.
                
                **The password MUST be the same as the primary admin password.**
@@ -151,6 +152,7 @@ class _DatabaseSnapshotStandbyState:
                  vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DatabaseSnapshotStandby resources.
+
         :param pulumi.Input[_builtins.str] character_set: The character set for the database.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyConnectionStringArgs']]] connection_strings: The Connection strings used to connect to the Oracle Database.
@@ -743,6 +745,7 @@ class DatabaseSnapshotStandby(pulumi.CustomResource):
         $ pulumi import oci:Database/databaseSnapshotStandby:DatabaseSnapshotStandby test_database_snapshot_standby "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] database_admin_password: The administrator password of the primary database in this Data Guard association.
@@ -796,6 +799,7 @@ class DatabaseSnapshotStandby(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/databaseSnapshotStandby:DatabaseSnapshotStandby test_database_snapshot_standby "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DatabaseSnapshotStandbyArgs args: The arguments to use to populate this resource's properties.

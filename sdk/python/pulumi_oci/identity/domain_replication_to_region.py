@@ -23,6 +23,7 @@ class DomainReplicationToRegionArgs:
                  replica_region: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DomainReplicationToRegion resource.
+
         :param pulumi.Input[_builtins.str] domain_id: The OCID of the domain
         :param pulumi.Input[_builtins.str] replica_region: A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1` 
                
@@ -70,6 +71,7 @@ class _DomainReplicationToRegionState:
                  replica_region: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DomainReplicationToRegion resources.
+
         :param pulumi.Input[_builtins.str] domain_id: The OCID of the domain
         :param pulumi.Input[_builtins.str] replica_region: A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1` 
                
@@ -155,6 +157,7 @@ class DomainReplicationToRegion(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] domain_id: The OCID of the domain
@@ -204,6 +207,7 @@ class DomainReplicationToRegion(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param DomainReplicationToRegionArgs args: The arguments to use to populate this resource's properties.

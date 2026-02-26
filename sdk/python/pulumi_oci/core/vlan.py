@@ -31,6 +31,7 @@ class VlanArgs:
                  vlan_tag: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a Vlan resource.
+
         :param pulumi.Input[_builtins.str] cidr_block: (Updatable) The range of IPv4 addresses that will be used for layer 3 communication with hosts outside the VLAN. The CIDR must maintain the following rules -
                
                a. The CIDR block is valid and correctly formatted. b. The new range is within one of the parent VCN ranges.
@@ -226,6 +227,7 @@ class _VlanState:
                  vlan_tag: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering Vlan resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: Controls whether the VLAN is regional or specific to an availability domain. A regional VLAN has the flexibility to implement failover across availability domains. Previously, all VLANs were AD-specific.
                
                To create a regional VLAN, omit this attribute. Resources created subsequently in this VLAN (such as a Compute instance) can be created in any availability domain in the region.
@@ -493,6 +495,7 @@ class Vlan(pulumi.CustomResource):
         $ pulumi import oci:Core/vlan:Vlan test_vlan "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: Controls whether the VLAN is regional or specific to an availability domain. A regional VLAN has the flexibility to implement failover across availability domains. Previously, all VLANs were AD-specific.
@@ -564,6 +567,7 @@ class Vlan(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/vlan:Vlan test_vlan "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param VlanArgs args: The arguments to use to populate this resource's properties.

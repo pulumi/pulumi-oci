@@ -31,6 +31,7 @@ class DeployArtifactArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a DeployArtifact resource.
+
         :param pulumi.Input[_builtins.str] argument_substitution_mode: (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
         :param pulumi.Input['DeployArtifactDeployArtifactSourceArgs'] deploy_artifact_source: (Updatable) Specifies source of an artifact.
         :param pulumi.Input[_builtins.str] deploy_artifact_type: (Updatable) Type of the deployment artifact.
@@ -177,6 +178,7 @@ class _DeployArtifactState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DeployArtifact resources.
+
         :param pulumi.Input[_builtins.str] argument_substitution_mode: (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of a compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -466,6 +468,7 @@ class DeployArtifact(pulumi.CustomResource):
         $ pulumi import oci:DevOps/deployArtifact:DeployArtifact test_deploy_artifact "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] argument_substitution_mode: (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
@@ -539,6 +542,7 @@ class DeployArtifact(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DevOps/deployArtifact:DeployArtifact test_deploy_artifact "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DeployArtifactArgs args: The arguments to use to populate this resource's properties.

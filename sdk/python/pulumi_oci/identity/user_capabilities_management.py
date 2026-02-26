@@ -27,6 +27,7 @@ class UserCapabilitiesManagementArgs:
                  can_use_smtp_credentials: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a UserCapabilitiesManagement resource.
+
         :param pulumi.Input[_builtins.str] user_id: The OCID of the user.
         :param pulumi.Input[_builtins.bool] can_use_api_keys: (Updatable) Indicates if the user can use API keys.
         :param pulumi.Input[_builtins.bool] can_use_auth_tokens: (Updatable) Indicates if the user can use SWIFT passwords / auth tokens.
@@ -138,6 +139,7 @@ class _UserCapabilitiesManagementState:
                  user_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UserCapabilitiesManagement resources.
+
         :param pulumi.Input[_builtins.bool] can_use_api_keys: (Updatable) Indicates if the user can use API keys.
         :param pulumi.Input[_builtins.bool] can_use_auth_tokens: (Updatable) Indicates if the user can use SWIFT passwords / auth tokens.
         :param pulumi.Input[_builtins.bool] can_use_console_password: (Updatable) Indicates if the user can log in to the console.
@@ -282,6 +284,7 @@ class UserCapabilitiesManagement(pulumi.CustomResource):
         $ pulumi import oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement test_user_capabilities_management "capabilities/{userId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] can_use_api_keys: (Updatable) Indicates if the user can use API keys.
@@ -330,6 +333,7 @@ class UserCapabilitiesManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement test_user_capabilities_management "capabilities/{userId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param UserCapabilitiesManagementArgs args: The arguments to use to populate this resource's properties.

@@ -28,6 +28,7 @@ class PeerArgs:
                  alias: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Peer resource.
+
         :param pulumi.Input[_builtins.str] ad: Availability Domain to place new peer
         :param pulumi.Input[_builtins.str] blockchain_platform_id: Unique service identifier.
         :param pulumi.Input['PeerOcpuAllocationParamArgs'] ocpu_allocation_param: (Updatable) OCPU allocation parameter
@@ -123,6 +124,7 @@ class _PeerState:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Peer resources.
+
         :param pulumi.Input[_builtins.str] ad: Availability Domain to place new peer
         :param pulumi.Input[_builtins.str] alias: peer alias
         :param pulumi.Input[_builtins.str] blockchain_platform_id: Unique service identifier.
@@ -298,6 +300,7 @@ class Peer(pulumi.CustomResource):
         $ pulumi import oci:Blockchain/peer:Peer test_peer "blockchainPlatforms/{blockchainPlatformId}/peers/{peerId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ad: Availability Domain to place new peer
@@ -347,6 +350,7 @@ class Peer(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Blockchain/peer:Peer test_peer "blockchainPlatforms/{blockchainPlatformId}/peers/{peerId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param PeerArgs args: The arguments to use to populate this resource's properties.

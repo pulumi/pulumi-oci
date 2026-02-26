@@ -29,6 +29,7 @@ class BuildRunArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a BuildRun resource.
+
         :param pulumi.Input[_builtins.str] build_pipeline_id: The OCID of the build pipeline.
         :param pulumi.Input['BuildRunBuildRunArgumentsArgs'] build_run_arguments: Specifies list of arguments passed along with the build run.
         :param pulumi.Input['BuildRunCommitInfoArgs'] commit_info: Commit details that need to be used for the build run.
@@ -150,6 +151,7 @@ class _BuildRunState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BuildRun resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputArgs']]] build_outputs: Outputs from the build.
         :param pulumi.Input[_builtins.str] build_pipeline_id: The OCID of the build pipeline.
         :param pulumi.Input['BuildRunBuildRunArgumentsArgs'] build_run_arguments: Specifies list of arguments passed along with the build run.
@@ -458,6 +460,7 @@ class BuildRun(pulumi.CustomResource):
         $ pulumi import oci:DevOps/buildRun:BuildRun test_build_run "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] build_pipeline_id: The OCID of the build pipeline.
@@ -520,6 +523,7 @@ class BuildRun(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DevOps/buildRun:BuildRun test_build_run "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param BuildRunArgs args: The arguments to use to populate this resource's properties.

@@ -34,6 +34,7 @@ class AutonomousContainerDatabaseAddStandbyArgs:
                  standby_maintenance_buffer_in_days: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a AutonomousContainerDatabaseAddStandby resource.
+
         :param pulumi.Input[_builtins.str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.int] fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
         :param pulumi.Input[_builtins.bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
@@ -280,6 +281,7 @@ class _AutonomousContainerDatabaseAddStandbyState:
                  vm_failover_reservation: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering AutonomousContainerDatabaseAddStandby resources.
+
         :param pulumi.Input[_builtins.str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] autonomous_exadata_infrastructure_id: **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
         :param pulumi.Input[_builtins.str] autonomous_vm_cluster_id: The OCID of the Autonomous VM Cluster.
@@ -1350,6 +1352,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
         $ pulumi import oci:Database/autonomousContainerDatabaseAddStandby:AutonomousContainerDatabaseAddStandby test_autonomous_container_database_add_standby "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -1424,6 +1427,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/autonomousContainerDatabaseAddStandby:AutonomousContainerDatabaseAddStandby test_autonomous_container_database_add_standby "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AutonomousContainerDatabaseAddStandbyArgs args: The arguments to use to populate this resource's properties.

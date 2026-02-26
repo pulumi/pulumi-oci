@@ -26,6 +26,7 @@ class ModelDefinedMetadataArtifactArgs:
                  content_disposition: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ModelDefinedMetadataArtifact resource.
+
         :param pulumi.Input[_builtins.str] content_length: (Updatable) The content length of the body.
         :param pulumi.Input[_builtins.str] metadatum_key_name: The name of the model metadatum in the metadata.
         :param pulumi.Input[_builtins.str] model_defined_metadatum_artifact: (Updatable) The model defined metadata artifact to upload.
@@ -118,6 +119,7 @@ class _ModelDefinedMetadataArtifactState:
                  model_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ModelDefinedMetadataArtifact resources.
+
         :param pulumi.Input[_builtins.str] content_disposition: (Updatable) This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file name when downloading. Example: `{"Content-Disposition": "attachment" "filename"="model.tar.gz" "Content-Length": "2347" "Content-Type": "application/gzip"}`
         :param pulumi.Input[_builtins.str] content_length: (Updatable) The content length of the body.
         :param pulumi.Input[_builtins.str] metadatum_key_name: The name of the model metadatum in the metadata.
@@ -243,6 +245,7 @@ class ModelDefinedMetadataArtifact(pulumi.CustomResource):
         $ pulumi import oci:DataScience/modelDefinedMetadataArtifact:ModelDefinedMetadataArtifact test_model_defined_metadata_artifact "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] content_disposition: (Updatable) This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file name when downloading. Example: `{"Content-Disposition": "attachment" "filename"="model.tar.gz" "Content-Length": "2347" "Content-Type": "application/gzip"}`
@@ -287,6 +290,7 @@ class ModelDefinedMetadataArtifact(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataScience/modelDefinedMetadataArtifact:ModelDefinedMetadataArtifact test_model_defined_metadata_artifact "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ModelDefinedMetadataArtifactArgs args: The arguments to use to populate this resource's properties.

@@ -26,6 +26,7 @@ class ArtifactByPathArgs:
                  source: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ArtifactByPath resource.
+
         :param pulumi.Input[_builtins.str] artifact_path: A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
         :param pulumi.Input[_builtins.str] repository_id: The [OCID](https://www.terraform.io/iaas/Content/General/Concepts/identifiers.htm) of the repository.
         :param pulumi.Input[_builtins.str] version: A user-defined string to describe the artifact version. Example: `1.1.0` or `1.2-beta-2`
@@ -128,6 +129,7 @@ class _ArtifactByPathState:
                  version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ArtifactByPath resources.
+
         :param pulumi.Input[_builtins.str] artifact_path: A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
         :param pulumi.Input[_builtins.str] content: Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
@@ -378,6 +380,7 @@ class ArtifactByPath(pulumi.CustomResource):
             source=source)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] artifact_path: A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
@@ -416,6 +419,7 @@ class ArtifactByPath(pulumi.CustomResource):
             version=version,
             source=source)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ArtifactByPathArgs args: The arguments to use to populate this resource's properties.

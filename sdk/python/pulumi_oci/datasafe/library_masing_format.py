@@ -30,6 +30,7 @@ class LibraryMasingFormatArgs:
                  sensitive_type_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a LibraryMasingFormat resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the library masking format should be created.
         :param pulumi.Input[Sequence[pulumi.Input['LibraryMasingFormatFormatEntryArgs']]] format_entries: (Updatable) An array of format entries. The combined output of all the format entries is used for masking.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
@@ -160,6 +161,7 @@ class _LibraryMasingFormatState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LibraryMasingFormat resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the library masking format should be created.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the library masking format.
@@ -370,6 +372,7 @@ class LibraryMasingFormat(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/libraryMasingFormat:LibraryMasingFormat test_library_masking_format "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the library masking format should be created.
@@ -409,6 +412,7 @@ class LibraryMasingFormat(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/libraryMasingFormat:LibraryMasingFormat test_library_masking_format "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param LibraryMasingFormatArgs args: The arguments to use to populate this resource's properties.

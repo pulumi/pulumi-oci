@@ -26,6 +26,7 @@ class FusionEnvironmentRefreshActivityArgs:
                  is_data_masking_opted: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a FusionEnvironmentRefreshActivity resource.
+
         :param pulumi.Input[_builtins.str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[_builtins.str] source_fusion_environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
         :param pulumi.Input[_builtins.bool] is_data_masking_opted: Represents if the customer opted for Data Masking or not during refreshActivity.
@@ -91,6 +92,7 @@ class _FusionEnvironmentRefreshActivityState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FusionEnvironmentRefreshActivity resources.
+
         :param pulumi.Input[_builtins.str] display_name: A friendly name for the refresh activity. Can be changed later.
         :param pulumi.Input[_builtins.str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[_builtins.bool] is_data_masking_opted: Represents if the customer opted for Data Masking or not during refreshActivity.
@@ -339,6 +341,7 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         $ pulumi import oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity test_fusion_environment_refresh_activity "fusionEnvironments/{fusionEnvironmentId}/refreshActivities/{refreshActivityId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] fusion_environment_id: unique FusionEnvironment identifier
@@ -379,6 +382,7 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity test_fusion_environment_refresh_activity "fusionEnvironments/{fusionEnvironmentId}/refreshActivities/{refreshActivityId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param FusionEnvironmentRefreshActivityArgs args: The arguments to use to populate this resource's properties.

@@ -25,6 +25,7 @@ class CloudDbSystemCloudStackMonitoringsManagementArgs:
                  metadata: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CloudDbSystemCloudStackMonitoringsManagement resource.
+
         :param pulumi.Input[_builtins.str] cloud_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
         :param pulumi.Input[_builtins.bool] enable_cloud_stack_monitoring: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
@@ -103,6 +104,7 @@ class _CloudDbSystemCloudStackMonitoringsManagementState:
                  metadata: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudDbSystemCloudStackMonitoringsManagement resources.
+
         :param pulumi.Input[_builtins.str] cloud_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
         :param pulumi.Input[_builtins.bool] enable_cloud_stack_monitoring: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
@@ -206,6 +208,7 @@ class CloudDbSystemCloudStackMonitoringsManagement(pulumi.CustomResource):
             metadata=cloud_db_system_cloud_stack_monitorings_management_metadata)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cloud_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
@@ -243,6 +246,7 @@ class CloudDbSystemCloudStackMonitoringsManagement(pulumi.CustomResource):
             is_enabled=cloud_db_system_cloud_stack_monitorings_management_is_enabled,
             metadata=cloud_db_system_cloud_stack_monitorings_management_metadata)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CloudDbSystemCloudStackMonitoringsManagementArgs args: The arguments to use to populate this resource's properties.

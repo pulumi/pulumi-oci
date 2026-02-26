@@ -33,6 +33,7 @@ class ResourceAnalyticsResourceAnalyticsInstanceArgs:
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ResourceAnalyticsResourceAnalyticsInstance resource.
+
         :param pulumi.Input['ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs'] adw_admin_password: Details for the ADW Admin password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.  Example: `{"passwordType":"PLAIN_TEXT","password":"..."}` Example: `{"passwordType":"VAULT_SECRET","secretId":"ocid..."}`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the ResourceAnalyticsInstance in.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
@@ -213,6 +214,7 @@ class _ResourceAnalyticsResourceAnalyticsInstanceState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ResourceAnalyticsResourceAnalyticsInstance resources.
+
         :param pulumi.Input['ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs'] adw_admin_password: Details for the ADW Admin password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.  Example: `{"passwordType":"PLAIN_TEXT","password":"..."}` Example: `{"passwordType":"VAULT_SECRET","secretId":"ocid..."}`
         :param pulumi.Input[_builtins.str] adw_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the created ADW instance.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the ResourceAnalyticsInstance in.
@@ -539,6 +541,7 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
         $ pulumi import oci:oci/resourceAnalyticsResourceAnalyticsInstance:ResourceAnalyticsResourceAnalyticsInstance test_resource_analytics_instance "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs', 'ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgsDict']] adw_admin_password: Details for the ADW Admin password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.  Example: `{"passwordType":"PLAIN_TEXT","password":"..."}` Example: `{"passwordType":"VAULT_SECRET","secretId":"ocid..."}`
@@ -604,6 +607,7 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:oci/resourceAnalyticsResourceAnalyticsInstance:ResourceAnalyticsResourceAnalyticsInstance test_resource_analytics_instance "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ResourceAnalyticsResourceAnalyticsInstanceArgs args: The arguments to use to populate this resource's properties.

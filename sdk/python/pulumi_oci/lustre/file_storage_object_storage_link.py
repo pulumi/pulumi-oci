@@ -34,6 +34,7 @@ class FileStorageObjectStorageLinkArgs:
                  stop_import_from_object_trigger: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a FileStorageObjectStorageLink resource.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain that the Lustre file system is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Object Storage link.
         :param pulumi.Input[_builtins.str] file_system_path: The path in the Lustre file system used for this Object Storage link.  Example: `myFileSystem/mount/myDirectory`
@@ -259,6 +260,7 @@ class _FileStorageObjectStorageLinkState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FileStorageObjectStorageLink resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain that the Lustre file system is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Object Storage link.
         :param pulumi.Input[_builtins.str] current_job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of currently running sync job. If no sync job is running, then this will be empty.
@@ -625,6 +627,7 @@ class FileStorageObjectStorageLink(pulumi.CustomResource):
         $ pulumi import oci:Lustre/fileStorageObjectStorageLink:FileStorageObjectStorageLink test_object_storage_link "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain that the Lustre file system is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
@@ -685,6 +688,7 @@ class FileStorageObjectStorageLink(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Lustre/fileStorageObjectStorageLink:FileStorageObjectStorageLink test_object_storage_link "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param FileStorageObjectStorageLinkArgs args: The arguments to use to populate this resource's properties.

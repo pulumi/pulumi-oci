@@ -29,6 +29,7 @@ class AwrHubSourceArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AwrHubSource resource.
+
         :param pulumi.Input[_builtins.str] awr_hub_id: AWR Hub OCID
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] type: (Updatable) source type of the database
@@ -184,6 +185,7 @@ class _AwrHubSourceState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AwrHubSource resources.
+
         :param pulumi.Input[_builtins.str] associated_opsi_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
         :param pulumi.Input[_builtins.str] associated_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
         :param pulumi.Input[_builtins.str] awr_hub_id: AWR Hub OCID
@@ -577,6 +579,7 @@ class AwrHubSource(pulumi.CustomResource):
         $ pulumi import oci:Opsi/awrHubSource:AwrHubSource test_awr_hub_source "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] associated_opsi_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
@@ -634,6 +637,7 @@ class AwrHubSource(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Opsi/awrHubSource:AwrHubSource test_awr_hub_source "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AwrHubSourceArgs args: The arguments to use to populate this resource's properties.

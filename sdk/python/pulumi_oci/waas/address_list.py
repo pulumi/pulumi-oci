@@ -26,6 +26,7 @@ class AddressListArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AddressList resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] addresses: (Updatable) A list of IP addresses or CIDR notations.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the address list.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name for the address list.
@@ -122,6 +123,7 @@ class _AddressListState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AddressList resources.
+
         :param pulumi.Input[_builtins.float] address_count: The total number of unique IP addresses in the address list.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] addresses: (Updatable) A list of IP addresses or CIDR notations.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the address list.
@@ -299,6 +301,7 @@ class AddressList(pulumi.CustomResource):
         $ pulumi import oci:Waas/addressList:AddressList test_address_list "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] addresses: (Updatable) A list of IP addresses or CIDR notations.
@@ -350,6 +353,7 @@ class AddressList(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Waas/addressList:AddressList test_address_list "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AddressListArgs args: The arguments to use to populate this resource's properties.

@@ -34,6 +34,7 @@ class OperatorControlArgs:
                  system_message: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a OperatorControl resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] approver_groups_lists: (Updatable) List of user groups who can approve an access request associated with a resource governed by this operator control.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains this operator control.
         :param pulumi.Input[_builtins.bool] is_fully_pre_approved: (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
@@ -260,6 +261,7 @@ class _OperatorControlState:
                  time_of_modification: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OperatorControl resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] approval_required_op_action_lists: List of operator actions that need explicit approval. Any operator action not in the pre-approved list will require explicit approval. Access requests associated with a resource governed by this operator control will be require explicit approval if the access request contains any operator action in this list.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] approver_groups_lists: (Updatable) List of user groups who can approve an access request associated with a resource governed by this operator control.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] approvers_lists: (Updatable) List of users who can approve an access request associated with a resource governed by this operator control.
@@ -607,6 +609,7 @@ class OperatorControl(pulumi.CustomResource):
         $ pulumi import oci:OperatorAccessControl/operatorControl:OperatorControl test_operator_control "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] approver_groups_lists: (Updatable) List of user groups who can approve an access request associated with a resource governed by this operator control.
@@ -648,6 +651,7 @@ class OperatorControl(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OperatorAccessControl/operatorControl:OperatorControl test_operator_control "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OperatorControlArgs args: The arguments to use to populate this resource's properties.

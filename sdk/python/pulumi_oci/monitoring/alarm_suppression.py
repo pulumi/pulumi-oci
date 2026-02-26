@@ -33,6 +33,7 @@ class AlarmSuppressionInitArgs:
                  suppression_conditions: Optional[pulumi.Input[Sequence[pulumi.Input['AlarmSuppressionSuppressionConditionArgs']]]] = None):
         """
         The set of arguments for constructing a AlarmSuppression resource.
+
         :param pulumi.Input['AlarmSuppressionAlarmSuppressionTargetArgs'] alarm_suppression_target: The target of the alarm suppression.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
@@ -225,6 +226,7 @@ class _AlarmSuppressionState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AlarmSuppression resources.
+
         :param pulumi.Input['AlarmSuppressionAlarmSuppressionTargetArgs'] alarm_suppression_target: The target of the alarm suppression.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
@@ -537,6 +539,7 @@ class AlarmSuppression(pulumi.CustomResource):
         $ pulumi import oci:Monitoring/alarmSuppression:AlarmSuppression test_alarm_suppression "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict']] alarm_suppression_target: The target of the alarm suppression.
@@ -625,6 +628,7 @@ class AlarmSuppression(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Monitoring/alarmSuppression:AlarmSuppression test_alarm_suppression "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AlarmSuppressionInitArgs args: The arguments to use to populate this resource's properties.

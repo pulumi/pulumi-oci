@@ -28,6 +28,7 @@ class AutonomousDatabaseSaasAdminUserArgs:
                  time_saas_admin_user_enabled: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AutonomousDatabaseSaasAdminUser resource.
+
         :param pulumi.Input[_builtins.str] autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] access_type: The access type for the SaaS administrative user. If no access type is specified, the READ_ONLY access type is used.
         :param pulumi.Input[_builtins.int] duration: How long, in hours, the SaaS administrative user will stay enabled. If no duration is specified, the default value 1 will be used.
@@ -155,6 +156,7 @@ class _AutonomousDatabaseSaasAdminUserState:
                  time_saas_admin_user_enabled: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutonomousDatabaseSaasAdminUser resources.
+
         :param pulumi.Input[_builtins.str] access_type: The access type for the SaaS administrative user. If no access type is specified, the READ_ONLY access type is used.
         :param pulumi.Input[_builtins.str] autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.int] duration: How long, in hours, the SaaS administrative user will stay enabled. If no duration is specified, the default value 1 will be used.
@@ -307,6 +309,7 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_type: The access type for the SaaS administrative user. If no access type is specified, the READ_ONLY access type is used.
@@ -348,6 +351,7 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param AutonomousDatabaseSaasAdminUserArgs args: The arguments to use to populate this resource's properties.

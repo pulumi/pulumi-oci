@@ -26,6 +26,7 @@ class JobAdvisorReportCheckArgs:
                  job_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a JobAdvisorReportCheck resource.
+
         :param pulumi.Input[_builtins.str] advisor_report_check_id: The ID of the advisor check
         :param pulumi.Input[_builtins.bool] is_reviewed: (Updatable) User flag for advisor report check.
         :param pulumi.Input[_builtins.str] job_id: The OCID of the job 
@@ -89,6 +90,7 @@ class _JobAdvisorReportCheckState:
                  summaries: Optional[pulumi.Input[Sequence[pulumi.Input['JobAdvisorReportCheckSummaryArgs']]]] = None):
         """
         Input properties used for looking up and filtering JobAdvisorReportCheck resources.
+
         :param pulumi.Input[_builtins.str] advisor_report_check_id: The ID of the advisor check
         :param pulumi.Input[_builtins.bool] is_reviewed: (Updatable) User flag for advisor report check.
         :param pulumi.Input[Sequence[pulumi.Input['JobAdvisorReportCheckItemArgs']]] items: Array of advisor check items.
@@ -213,6 +215,7 @@ class JobAdvisorReportCheck(pulumi.CustomResource):
         $ pulumi import oci:DatabaseMigration/jobAdvisorReportCheck:JobAdvisorReportCheck test_job_advisor_report_check "jobs/{jobId}/advisorReportChecks/{advisorReportCheckId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] advisor_report_check_id: The ID of the advisor check
@@ -256,6 +259,7 @@ class JobAdvisorReportCheck(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DatabaseMigration/jobAdvisorReportCheck:JobAdvisorReportCheck test_job_advisor_report_check "jobs/{jobId}/advisorReportChecks/{advisorReportCheckId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param JobAdvisorReportCheckArgs args: The arguments to use to populate this resource's properties.

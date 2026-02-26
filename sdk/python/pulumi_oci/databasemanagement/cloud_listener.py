@@ -27,6 +27,7 @@ class CloudListenerArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a CloudListener resource.
+
         :param pulumi.Input[_builtins.str] cloud_listener_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud listener.
         :param pulumi.Input[_builtins.str] cloud_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud connector.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -131,6 +132,7 @@ class _CloudListenerState:
                  version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudListener resources.
+
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_details: The additional details of the cloud listener defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] adr_home_directory: The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
         :param pulumi.Input[_builtins.str] cloud_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud connector.
@@ -604,6 +606,7 @@ class CloudListener(pulumi.CustomResource):
         $ pulumi import oci:DatabaseManagement/cloudListener:CloudListener test_cloud_listener "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cloud_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud connector.
@@ -636,6 +639,7 @@ class CloudListener(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DatabaseManagement/cloudListener:CloudListener test_cloud_listener "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CloudListenerArgs args: The arguments to use to populate this resource's properties.

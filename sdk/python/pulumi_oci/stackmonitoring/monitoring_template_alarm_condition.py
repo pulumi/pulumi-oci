@@ -32,6 +32,7 @@ class MonitoringTemplateAlarmConditionArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a MonitoringTemplateAlarmCondition resource.
+
         :param pulumi.Input[_builtins.str] condition_type: (Updatable) Type of defined monitoring template.
         :param pulumi.Input[Sequence[pulumi.Input['MonitoringTemplateAlarmConditionConditionArgs']]] conditions: (Updatable) Monitoring template conditions.
         :param pulumi.Input[_builtins.str] metric_name: (Updatable) The metric name.
@@ -191,6 +192,7 @@ class _MonitoringTemplateAlarmConditionState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MonitoringTemplateAlarmCondition resources.
+
         :param pulumi.Input[_builtins.str] composite_type: (Updatable) The OCID of the composite resource type like EBS/PEOPLE_SOFT.
         :param pulumi.Input[_builtins.str] condition_type: (Updatable) Type of defined monitoring template.
         :param pulumi.Input[Sequence[pulumi.Input['MonitoringTemplateAlarmConditionConditionArgs']]] conditions: (Updatable) Monitoring template conditions.
@@ -473,6 +475,7 @@ class MonitoringTemplateAlarmCondition(pulumi.CustomResource):
         $ pulumi import oci:StackMonitoring/monitoringTemplateAlarmCondition:MonitoringTemplateAlarmCondition test_monitoring_template_alarm_condition "monitoringTemplates/{monitoringTemplateId}/alarmConditions/{alarmConditionId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] composite_type: (Updatable) The OCID of the composite resource type like EBS/PEOPLE_SOFT.
@@ -539,6 +542,7 @@ class MonitoringTemplateAlarmCondition(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:StackMonitoring/monitoringTemplateAlarmCondition:MonitoringTemplateAlarmCondition test_monitoring_template_alarm_condition "monitoringTemplates/{monitoringTemplateId}/alarmConditions/{alarmConditionId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MonitoringTemplateAlarmConditionArgs args: The arguments to use to populate this resource's properties.

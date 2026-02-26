@@ -37,6 +37,7 @@ class ManagementAgentDataSourceArgs:
                  schedule_mins: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a ManagementAgentDataSource resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: Compartment owning this DataSource.
         :param pulumi.Input[_builtins.str] management_agent_id: Unique Management Agent identifier
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of the DataSource. Support types: PROMETHEUS_EMITTER
@@ -279,6 +280,7 @@ class _ManagementAgentDataSourceState:
                  url: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagementAgentDataSource resources.
+
         :param pulumi.Input[_builtins.str] allow_metrics: (Updatable) Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
         :param pulumi.Input[_builtins.str] compartment_id: Compartment owning this DataSource.
         :param pulumi.Input[_builtins.int] connection_timeout: (Updatable) Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
@@ -649,6 +651,7 @@ class ManagementAgentDataSource(pulumi.CustomResource):
         $ pulumi import oci:ManagementAgent/managementAgentDataSource:ManagementAgentDataSource test_management_agent_data_source "managementAgents/{managementAgentId}/dataSources/{key}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] allow_metrics: (Updatable) Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
@@ -717,6 +720,7 @@ class ManagementAgentDataSource(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ManagementAgent/managementAgentDataSource:ManagementAgentDataSource test_management_agent_data_source "managementAgents/{managementAgentId}/dataSources/{key}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagementAgentDataSourceArgs args: The arguments to use to populate this resource's properties.

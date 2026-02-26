@@ -36,6 +36,7 @@ class ManagedInstanceGroupArgs:
                  software_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ManagedInstanceGroup resource.
+
         :param pulumi.Input[_builtins.str] arch_type: The CPU architecture type of the managed instances that will be attached to this group.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
@@ -263,6 +264,7 @@ class _ManagedInstanceGroupState:
                  vendor_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagedInstanceGroup resources.
+
         :param pulumi.Input[_builtins.str] arch_type: The CPU architecture type of the managed instances that will be attached to this group.
         :param pulumi.Input['ManagedInstanceGroupAutonomousSettingsArgs'] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
@@ -653,6 +655,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/managedInstanceGroup:ManagedInstanceGroup test_managed_instance_group "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] arch_type: The CPU architecture type of the managed instances that will be attached to this group.
@@ -722,6 +725,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/managedInstanceGroup:ManagedInstanceGroup test_managed_instance_group "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagedInstanceGroupArgs args: The arguments to use to populate this resource's properties.

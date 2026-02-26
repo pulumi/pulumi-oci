@@ -26,6 +26,7 @@ class LifecycleStageRebootManagementArgs:
                  work_request_details: Optional[pulumi.Input['LifecycleStageRebootManagementWorkRequestDetailsArgs']] = None):
         """
         The set of arguments for constructing a LifecycleStageRebootManagement resource.
+
         :param pulumi.Input[_builtins.str] lifecycle_stage_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
         :param pulumi.Input[_builtins.int] reboot_timeout_in_mins: The number of minutes the service waits for the reboot to complete. If the instances in the stage don't reboot  within this time, the reboot job status is set to failed.
         :param pulumi.Input['LifecycleStageRebootManagementWorkRequestDetailsArgs'] work_request_details: Provides the name and description of the job.
@@ -81,6 +82,7 @@ class _LifecycleStageRebootManagementState:
                  work_request_details: Optional[pulumi.Input['LifecycleStageRebootManagementWorkRequestDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering LifecycleStageRebootManagement resources.
+
         :param pulumi.Input[_builtins.str] lifecycle_stage_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
         :param pulumi.Input[_builtins.int] reboot_timeout_in_mins: The number of minutes the service waits for the reboot to complete. If the instances in the stage don't reboot  within this time, the reboot job status is set to failed.
         :param pulumi.Input['LifecycleStageRebootManagementWorkRequestDetailsArgs'] work_request_details: Provides the name and description of the job.
@@ -170,6 +172,7 @@ class LifecycleStageRebootManagement(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/lifecycleStageRebootManagement:LifecycleStageRebootManagement test_lifecycle_stage_reboot_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] lifecycle_stage_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
@@ -212,6 +215,7 @@ class LifecycleStageRebootManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/lifecycleStageRebootManagement:LifecycleStageRebootManagement test_lifecycle_stage_reboot_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param LifecycleStageRebootManagementArgs args: The arguments to use to populate this resource's properties.

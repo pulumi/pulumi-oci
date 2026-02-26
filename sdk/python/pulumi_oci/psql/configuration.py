@@ -36,6 +36,7 @@ class ConfigurationArgs:
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Configuration resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
         :param pulumi.Input['ConfigurationDbConfigurationOverridesArgs'] db_configuration_overrides: Configuration overrides for a PostgreSQL instance.
         :param pulumi.Input[_builtins.str] db_version: Version of the PostgreSQL database.
@@ -274,6 +275,7 @@ class _ConfigurationState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Configuration resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] compatible_shapes: (Updatable) Indicates the collection of compatible shapes for this configuration.
         :param pulumi.Input[_builtins.str] config_type: The type of configuration. Either user-created or a default configuration.
@@ -649,6 +651,7 @@ class Configuration(pulumi.CustomResource):
         $ pulumi import oci:Psql/configuration:Configuration test_configuration "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
@@ -727,6 +730,7 @@ class Configuration(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Psql/configuration:Configuration test_configuration "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ConfigurationArgs args: The arguments to use to populate this resource's properties.

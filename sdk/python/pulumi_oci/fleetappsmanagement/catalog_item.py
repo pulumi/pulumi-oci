@@ -37,6 +37,7 @@ class CatalogItemArgs:
                  version_description: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CatalogItem resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] config_source_type: Config source type Eg: STACK_TEMPLATE_CATALOG_SOURCE, PAR_CATALOG_SOURCE, GIT_CATALOG_SOURCE, MARKETPLACE_CATALOG_SOURCE.
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the CatalogItem.
@@ -273,6 +274,7 @@ class _CatalogItemState:
                  version_description: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CatalogItem resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['CatalogItemCatalogResultPayloadArgs']]] catalog_result_payloads: Catalog result payload.
         :param pulumi.Input['CatalogItemCatalogSourcePayloadArgs'] catalog_source_payload: Catalog source payload.
         :param pulumi.Input[_builtins.int] clone_catalog_item_trigger: (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
@@ -702,6 +704,7 @@ class CatalogItem(pulumi.CustomResource):
         $ pulumi import oci:FleetAppsManagement/catalogItem:CatalogItem test_catalog_item "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['CatalogItemCatalogSourcePayloadArgs', 'CatalogItemCatalogSourcePayloadArgsDict']] catalog_source_payload: Catalog source payload.
@@ -784,6 +787,7 @@ class CatalogItem(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:FleetAppsManagement/catalogItem:CatalogItem test_catalog_item "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CatalogItemArgs args: The arguments to use to populate this resource's properties.

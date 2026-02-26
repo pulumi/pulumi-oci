@@ -38,6 +38,7 @@ class PipelineRunArgs:
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a PipelineRun resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
         :param pulumi.Input[_builtins.str] pipeline_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
@@ -297,6 +298,7 @@ class _PipelineRunState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PipelineRun resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
         :param pulumi.Input[Sequence[pulumi.Input['PipelineRunConfigurationDetailArgs']]] configuration_details: The configuration details of a pipeline.
         :param pulumi.Input['PipelineRunConfigurationOverrideDetailsArgs'] configuration_override_details: The configuration details of a pipeline.
@@ -833,6 +835,7 @@ class PipelineRun(pulumi.CustomResource):
         $ pulumi import oci:DataScience/pipelineRun:PipelineRun test_pipeline_run "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
@@ -991,6 +994,7 @@ class PipelineRun(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataScience/pipelineRun:PipelineRun test_pipeline_run "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param PipelineRunArgs args: The arguments to use to populate this resource's properties.

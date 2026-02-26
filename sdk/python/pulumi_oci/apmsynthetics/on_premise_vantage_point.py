@@ -29,6 +29,7 @@ class OnPremiseVantagePointArgs:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a OnPremiseVantagePoint resource.
+
         :param pulumi.Input[_builtins.str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description about the On-premise vantage point.
@@ -144,6 +145,7 @@ class _OnPremiseVantagePointState:
                  workers_summaries: Optional[pulumi.Input[Sequence[pulumi.Input['OnPremiseVantagePointWorkersSummaryArgs']]]] = None):
         """
         Input properties used for looking up and filtering OnPremiseVantagePoint resources.
+
         :param pulumi.Input[_builtins.str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description about the On-premise vantage point.
@@ -353,6 +355,7 @@ class OnPremiseVantagePoint(pulumi.CustomResource):
         $ pulumi import oci:ApmSynthetics/onPremiseVantagePoint:OnPremiseVantagePoint test_on_premise_vantage_point "onPremiseVantagePoints/{onPremiseVantagePointId}/apmDomainId/{apmDomainId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
@@ -406,6 +409,7 @@ class OnPremiseVantagePoint(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ApmSynthetics/onPremiseVantagePoint:OnPremiseVantagePoint test_on_premise_vantage_point "onPremiseVantagePoints/{onPremiseVantagePointId}/apmDomainId/{apmDomainId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OnPremiseVantagePointArgs args: The arguments to use to populate this resource's properties.

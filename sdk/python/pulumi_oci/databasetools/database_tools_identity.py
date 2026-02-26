@@ -31,6 +31,7 @@ class DatabaseToolsIdentityArgs:
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsIdentityLockArgs']]]] = None):
         """
         The set of arguments for constructing a DatabaseToolsIdentity resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools identity.
         :param pulumi.Input[_builtins.str] credential_key: The name of the credential object created in the Oracle Database.
         :param pulumi.Input[_builtins.str] database_tools_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Database Tools connection.
@@ -175,6 +176,7 @@ class _DatabaseToolsIdentityState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DatabaseToolsIdentity resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools identity.
         :param pulumi.Input[_builtins.str] credential_key: The name of the credential object created in the Oracle Database.
         :param pulumi.Input[_builtins.str] database_tools_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Database Tools connection.
@@ -435,6 +437,7 @@ class DatabaseToolsIdentity(pulumi.CustomResource):
         $ pulumi import oci:DatabaseTools/databaseToolsIdentity:DatabaseToolsIdentity test_database_tools_identity "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools identity.
@@ -494,6 +497,7 @@ class DatabaseToolsIdentity(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DatabaseTools/databaseToolsIdentity:DatabaseToolsIdentity test_database_tools_identity "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DatabaseToolsIdentityArgs args: The arguments to use to populate this resource's properties.

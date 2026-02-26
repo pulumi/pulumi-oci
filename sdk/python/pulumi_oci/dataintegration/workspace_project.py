@@ -32,6 +32,7 @@ class WorkspaceProjectArgs:
                  registry_metadata: Optional[pulumi.Input['WorkspaceProjectRegistryMetadataArgs']] = None):
         """
         The set of arguments for constructing a WorkspaceProject resource.
+
         :param pulumi.Input[_builtins.str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[_builtins.str] workspace_id: The workspace ID.
                
@@ -191,6 +192,7 @@ class _WorkspaceProjectState:
                  workspace_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WorkspaceProject resources.
+
         :param pulumi.Input[_builtins.str] description: (Updatable) A user defined description for the project.
         :param pulumi.Input[_builtins.str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[_builtins.str] key: (Updatable) Generated key that can be used in API calls to identify project.
@@ -463,6 +465,7 @@ class WorkspaceProject(pulumi.CustomResource):
         $ pulumi import oci:DataIntegration/workspaceProject:WorkspaceProject test_workspace_project "workspaces/{workspaceId}/projects/{projectKey}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: (Updatable) A user defined description for the project.
@@ -522,6 +525,7 @@ class WorkspaceProject(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataIntegration/workspaceProject:WorkspaceProject test_workspace_project "workspaces/{workspaceId}/projects/{projectKey}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param WorkspaceProjectArgs args: The arguments to use to populate this resource's properties.

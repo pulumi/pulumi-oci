@@ -30,6 +30,7 @@ class IotDigitalTwinRelationshipArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a IotDigitalTwinRelationship resource.
+
         :param pulumi.Input[_builtins.str] content_path: Its the name of the relationship that links two digital twin instances. Here, it is the relationship name of the source digital twin model.
         :param pulumi.Input[_builtins.str] iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
         :param pulumi.Input[_builtins.str] source_digital_twin_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source digital twin instance.
@@ -190,6 +191,7 @@ class _IotDigitalTwinRelationshipState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IotDigitalTwinRelationship resources.
+
         :param pulumi.Input[_builtins.str] content: (Updatable) The value(s) of the relationship properties defined in the source digital twin model.
         :param pulumi.Input[_builtins.str] content_path: Its the name of the relationship that links two digital twin instances. Here, it is the relationship name of the source digital twin model.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -450,6 +452,7 @@ class IotDigitalTwinRelationship(pulumi.CustomResource):
         $ pulumi import oci:oci/iotDigitalTwinRelationship:IotDigitalTwinRelationship test_digital_twin_relationship "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] content: (Updatable) The value(s) of the relationship properties defined in the source digital twin model.
@@ -509,6 +512,7 @@ class IotDigitalTwinRelationship(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:oci/iotDigitalTwinRelationship:IotDigitalTwinRelationship test_digital_twin_relationship "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param IotDigitalTwinRelationshipArgs args: The arguments to use to populate this resource's properties.

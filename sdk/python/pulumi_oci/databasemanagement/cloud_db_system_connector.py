@@ -30,6 +30,7 @@ class CloudDbSystemConnectorArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a CloudDbSystemConnector resource.
+
         :param pulumi.Input[_builtins.str] cloud_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
         :param pulumi.Input[_builtins.str] connector_type: (Updatable) The type of connector.
         :param pulumi.Input[_builtins.str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
@@ -165,6 +166,7 @@ class _CloudDbSystemConnectorState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudDbSystemConnector resources.
+
         :param pulumi.Input[_builtins.str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
         :param pulumi.Input[_builtins.str] cloud_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -458,6 +460,7 @@ class CloudDbSystemConnector(pulumi.CustomResource):
         $ pulumi import oci:DatabaseManagement/cloudDbSystemConnector:CloudDbSystemConnector test_cloud_db_system_connector "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
@@ -505,6 +508,7 @@ class CloudDbSystemConnector(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DatabaseManagement/cloudDbSystemConnector:CloudDbSystemConnector test_cloud_db_system_connector "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CloudDbSystemConnectorArgs args: The arguments to use to populate this resource's properties.

@@ -33,6 +33,7 @@ class IpsecArgs:
                  tunnel_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecTunnelConfigurationArgs']]]] = None):
         """
         The set of arguments for constructing a Ipsec resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
         :param pulumi.Input[_builtins.str] cpe_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object.
         :param pulumi.Input[_builtins.str] drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
@@ -246,6 +247,7 @@ class _IpsecState:
                  tunnel_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecTunnelConfigurationArgs']]]] = None):
         """
         Input properties used for looking up and filtering Ipsec resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
         :param pulumi.Input[_builtins.str] cpe_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object.
         :param pulumi.Input[_builtins.str] cpe_local_identifier: (Updatable) Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier you provide here must correspond to the value for `cpeLocalIdentifierType`.
@@ -604,6 +606,7 @@ class Ipsec(pulumi.CustomResource):
         $ pulumi import oci:Core/ipsec:Ipsec test_ip_sec_connection "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
@@ -742,6 +745,7 @@ class Ipsec(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/ipsec:Ipsec test_ip_sec_connection "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param IpsecArgs args: The arguments to use to populate this resource's properties.

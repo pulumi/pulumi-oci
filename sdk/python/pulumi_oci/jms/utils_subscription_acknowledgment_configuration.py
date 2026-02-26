@@ -23,6 +23,7 @@ class UtilsSubscriptionAcknowledgmentConfigurationArgs:
                  is_acknowledged: pulumi.Input[_builtins.bool]):
         """
         The set of arguments for constructing a UtilsSubscriptionAcknowledgmentConfiguration resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param pulumi.Input[_builtins.bool] is_acknowledged: (Updatable) Flag to determine whether the subscription was acknowledged or not.
                
@@ -71,6 +72,7 @@ class _UtilsSubscriptionAcknowledgmentConfigurationState:
                  time_acknowledged: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UtilsSubscriptionAcknowledgmentConfiguration resources.
+
         :param pulumi.Input[_builtins.str] acknowledged_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal that ackwnoledged the subscription.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param pulumi.Input[_builtins.bool] is_acknowledged: (Updatable) Flag to determine whether the subscription was acknowledged or not.
@@ -175,6 +177,7 @@ class UtilsSubscriptionAcknowledgmentConfiguration(pulumi.CustomResource):
         $ pulumi import oci:Jms/utilsSubscriptionAcknowledgmentConfiguration:UtilsSubscriptionAcknowledgmentConfiguration test_subscription_acknowledgment_configuration "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -213,6 +216,7 @@ class UtilsSubscriptionAcknowledgmentConfiguration(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Jms/utilsSubscriptionAcknowledgmentConfiguration:UtilsSubscriptionAcknowledgmentConfiguration test_subscription_acknowledgment_configuration "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param UtilsSubscriptionAcknowledgmentConfigurationArgs args: The arguments to use to populate this resource's properties.

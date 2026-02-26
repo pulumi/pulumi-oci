@@ -24,6 +24,7 @@ class AutonomousContainerDatabaseSnapshotStandbyArgs:
                  connection_strings_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AutonomousContainerDatabaseSnapshotStandby resource.
+
         :param pulumi.Input[_builtins.str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled. 
                
@@ -86,6 +87,7 @@ class _AutonomousContainerDatabaseSnapshotStandbyState:
                  role: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutonomousContainerDatabaseSnapshotStandby resources.
+
         :param pulumi.Input[_builtins.str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] connection_strings_type: type of connection strings when converting database to snapshot mode
         :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled. 
@@ -181,6 +183,7 @@ class AutonomousContainerDatabaseSnapshotStandby(pulumi.CustomResource):
         $ pulumi import oci:Database/autonomousContainerDatabaseSnapshotStandby:AutonomousContainerDatabaseSnapshotStandby test_autonomous_container_database_snapshot_standby "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -225,6 +228,7 @@ class AutonomousContainerDatabaseSnapshotStandby(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/autonomousContainerDatabaseSnapshotStandby:AutonomousContainerDatabaseSnapshotStandby test_autonomous_container_database_snapshot_standby "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AutonomousContainerDatabaseSnapshotStandbyArgs args: The arguments to use to populate this resource's properties.

@@ -29,6 +29,7 @@ class ManagedInstanceArgs:
                  secondary_management_station_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ManagedInstance resource.
+
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         :param pulumi.Input['ManagedInstanceAutonomousSettingsArgs'] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
         :param pulumi.Input[_builtins.str] description: (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
@@ -174,6 +175,7 @@ class _ManagedInstanceState:
                  work_request_count: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ManagedInstance resources.
+
         :param pulumi.Input[_builtins.str] agent_version: The version of osmh-agent running on the managed instance
         :param pulumi.Input[_builtins.str] architecture: The CPU architecture type of the managed instance.
         :param pulumi.Input['ManagedInstanceAutonomousSettingsArgs'] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
@@ -814,6 +816,7 @@ class ManagedInstance(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/managedInstance:ManagedInstance test_managed_instance "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict']] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
@@ -848,6 +851,7 @@ class ManagedInstance(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/managedInstance:ManagedInstance test_managed_instance "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagedInstanceArgs args: The arguments to use to populate this resource's properties.

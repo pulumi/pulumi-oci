@@ -36,6 +36,7 @@ class ModelArgs:
                  validation_dataset: Optional[pulumi.Input['ModelValidationDatasetArgs']] = None):
         """
         The set of arguments for constructing a Model resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment identifier.
         :param pulumi.Input[_builtins.str] model_type: Which type of Vision model this is.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
@@ -261,6 +262,7 @@ class _ModelState:
                  validation_dataset: Optional[pulumi.Input['ModelValidationDatasetArgs']] = None):
         """
         Input properties used for looking up and filtering Model resources.
+
         :param pulumi.Input[_builtins.float] average_precision: The mean average precision of the trained model.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment identifier.
         :param pulumi.Input[_builtins.float] confidence_threshold: The intersection over the union threshold used for calculating precision and recall.
@@ -730,6 +732,7 @@ class Model(pulumi.CustomResource):
         $ pulumi import oci:AiVision/model:Model test_model "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment identifier.
@@ -807,6 +810,7 @@ class Model(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:AiVision/model:Model test_model "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ModelArgs args: The arguments to use to populate this resource's properties.

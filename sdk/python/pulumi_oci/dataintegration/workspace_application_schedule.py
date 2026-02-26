@@ -36,6 +36,7 @@ class WorkspaceApplicationScheduleArgs:
                  timezone: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a WorkspaceApplicationSchedule resource.
+
         :param pulumi.Input[_builtins.str] application_key: The application key.
         :param pulumi.Input[_builtins.str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[_builtins.str] workspace_id: The workspace ID.
@@ -260,6 +261,7 @@ class _WorkspaceApplicationScheduleState:
                  workspace_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WorkspaceApplicationSchedule resources.
+
         :param pulumi.Input[_builtins.str] application_key: The application key.
         :param pulumi.Input[_builtins.str] description: (Updatable) Detailed description for the object.
         :param pulumi.Input['WorkspaceApplicationScheduleFrequencyDetailsArgs'] frequency_details: (Updatable) The model that holds the frequency details.
@@ -588,6 +590,7 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
         $ pulumi import oci:DataIntegration/workspaceApplicationSchedule:WorkspaceApplicationSchedule test_workspace_application_schedule "workspaces/{workspaceId}/applications/{applicationKey}/schedules/{scheduleKey}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_key: The application key.
@@ -670,6 +673,7 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataIntegration/workspaceApplicationSchedule:WorkspaceApplicationSchedule test_workspace_application_schedule "workspaces/{workspaceId}/applications/{applicationKey}/schedules/{scheduleKey}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param WorkspaceApplicationScheduleArgs args: The arguments to use to populate this resource's properties.

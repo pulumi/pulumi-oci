@@ -29,6 +29,7 @@ class BdsInstanceNodeBackupArgs:
                  node_instance_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a BdsInstanceNodeBackup resource.
+
         :param pulumi.Input[_builtins.str] backup_type: Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input['BdsInstanceNodeBackupLevelTypeDetailsArgs'] level_type_details: Details of the type of level used to trigger the creation of a new node backup.
@@ -121,6 +122,7 @@ class _BdsInstanceNodeBackupState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BdsInstanceNodeBackup resources.
+
         :param pulumi.Input[_builtins.str] backup_type: Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input['BdsInstanceNodeBackupLevelTypeDetailsArgs'] level_type_details: Details of the type of level used to trigger the creation of a new node backup.
@@ -289,6 +291,7 @@ class BdsInstanceNodeBackup(pulumi.CustomResource):
         $ pulumi import oci:BigDataService/bdsInstanceNodeBackup:BdsInstanceNodeBackup test_bds_instance_node_backup "bdsInstances/{bdsInstanceId}/nodeBackup/{nodeBackupId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] backup_type: Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
@@ -333,6 +336,7 @@ class BdsInstanceNodeBackup(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:BigDataService/bdsInstanceNodeBackup:BdsInstanceNodeBackup test_bds_instance_node_backup "bdsInstances/{bdsInstanceId}/nodeBackup/{nodeBackupId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param BdsInstanceNodeBackupArgs args: The arguments to use to populate this resource's properties.

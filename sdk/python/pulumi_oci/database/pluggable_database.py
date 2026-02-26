@@ -37,6 +37,7 @@ class PluggableDatabaseArgs:
                  tde_wallet_password: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a PluggableDatabase resource.
+
         :param pulumi.Input[_builtins.str] container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB
         :param pulumi.Input[_builtins.str] pdb_name: The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
         :param pulumi.Input[_builtins.str] container_database_admin_password: The DB system administrator password of the Container Database.
@@ -287,6 +288,7 @@ class _PluggableDatabaseState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PluggableDatabase resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseConnectionStringArgs']]] connection_strings: Connection strings to connect to an Oracle Pluggable Database.
         :param pulumi.Input[_builtins.str] container_database_admin_password: The DB system administrator password of the Container Database.
@@ -727,6 +729,7 @@ class PluggableDatabase(pulumi.CustomResource):
         $ pulumi import oci:Database/pluggableDatabase:PluggableDatabase test_pluggable_database "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] container_database_admin_password: The DB system administrator password of the Container Database.
@@ -771,6 +774,7 @@ class PluggableDatabase(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/pluggableDatabase:PluggableDatabase test_pluggable_database "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param PluggableDatabaseArgs args: The arguments to use to populate this resource's properties.

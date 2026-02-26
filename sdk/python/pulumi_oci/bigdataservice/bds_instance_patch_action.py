@@ -27,6 +27,7 @@ class BdsInstancePatchActionArgs:
                  patching_config: Optional[pulumi.Input['BdsInstancePatchActionPatchingConfigArgs']] = None):
         """
         The set of arguments for constructing a BdsInstancePatchAction resource.
+
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
         :param pulumi.Input[_builtins.str] version: The version of the patch to be installed.
@@ -104,6 +105,7 @@ class _BdsInstancePatchActionState:
                  version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BdsInstancePatchAction resources.
+
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
         :param pulumi.Input['BdsInstancePatchActionPatchingConfigArgs'] patching_config: Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
@@ -218,6 +220,7 @@ class BdsInstancePatchAction(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
@@ -266,6 +269,7 @@ class BdsInstancePatchAction(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param BdsInstancePatchActionArgs args: The arguments to use to populate this resource's properties.

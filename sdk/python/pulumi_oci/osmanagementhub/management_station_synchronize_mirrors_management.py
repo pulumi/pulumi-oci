@@ -23,6 +23,7 @@ class ManagementStationSynchronizeMirrorsManagementArgs:
                  software_source_lists: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
         """
         The set of arguments for constructing a ManagementStationSynchronizeMirrorsManagement resource.
+
         :param pulumi.Input[_builtins.str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] software_source_lists: List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
                
@@ -69,6 +70,7 @@ class _ManagementStationSynchronizeMirrorsManagementState:
                  software_source_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering ManagementStationSynchronizeMirrorsManagement resources.
+
         :param pulumi.Input[_builtins.str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] software_source_lists: List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
                
@@ -146,6 +148,7 @@ class ManagementStationSynchronizeMirrorsManagement(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/managementStationSynchronizeMirrorsManagement:ManagementStationSynchronizeMirrorsManagement test_management_station_synchronize_mirrors_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
@@ -187,6 +190,7 @@ class ManagementStationSynchronizeMirrorsManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/managementStationSynchronizeMirrorsManagement:ManagementStationSynchronizeMirrorsManagement test_management_station_synchronize_mirrors_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagementStationSynchronizeMirrorsManagementArgs args: The arguments to use to populate this resource's properties.

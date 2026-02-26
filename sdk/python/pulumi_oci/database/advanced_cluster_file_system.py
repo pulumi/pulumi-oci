@@ -27,6 +27,7 @@ class AdvancedClusterFileSystemArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AdvancedClusterFileSystem resource.
+
         :param pulumi.Input[_builtins.int] storage_in_gbs: (Updatable) The total storage needed for advanced cluster file system in GBs.
         :param pulumi.Input[_builtins.str] vm_cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -138,6 +139,7 @@ class _AdvancedClusterFileSystemState:
                  vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AdvancedClusterFileSystem resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] description: Description of the advanced cluster file system.
@@ -420,6 +422,7 @@ class AdvancedClusterFileSystem(pulumi.CustomResource):
         $ pulumi import oci:Database/advancedClusterFileSystem:AdvancedClusterFileSystem test_advanced_cluster_file_system "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -467,6 +470,7 @@ class AdvancedClusterFileSystem(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/advancedClusterFileSystem:AdvancedClusterFileSystem test_advanced_cluster_file_system "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AdvancedClusterFileSystemArgs args: The arguments to use to populate this resource's properties.

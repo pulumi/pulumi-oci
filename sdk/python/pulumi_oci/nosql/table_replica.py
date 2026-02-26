@@ -26,6 +26,7 @@ class TableReplicaInitArgs:
                  max_write_units: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a TableReplica resource.
+
         :param pulumi.Input[_builtins.str] region: Name of the remote region in standard Oracle Cloud Infrastructure format, i.e. us-ashburn-1
         :param pulumi.Input[_builtins.str] table_name_or_id: A table name within the compartment, or a table OCID.
                
@@ -120,6 +121,7 @@ class _TableReplicaState:
                  table_name_or_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering TableReplica resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
         :param pulumi.Input[_builtins.int] max_read_units: Maximum sustained read throughput limit for the new replica table. If not specified, the local table's read limit is used.
         :param pulumi.Input[_builtins.int] max_write_units: Maximum sustained write throughput limit for the new replica table. If not specified, the local table's write limit is used.
@@ -248,6 +250,7 @@ class TableReplica(pulumi.CustomResource):
         $ pulumi import oci:Nosql/tableReplica:TableReplica test_table_replica "tables/{tableNameOrId}/replicas/{region}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
@@ -295,6 +298,7 @@ class TableReplica(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Nosql/tableReplica:TableReplica test_table_replica "tables/{tableNameOrId}/replicas/{region}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param TableReplicaInitArgs args: The arguments to use to populate this resource's properties.

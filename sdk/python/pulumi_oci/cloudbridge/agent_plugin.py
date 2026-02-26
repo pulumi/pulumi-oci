@@ -24,6 +24,7 @@ class AgentPluginArgs:
                  desired_state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AgentPlugin resource.
+
         :param pulumi.Input[_builtins.str] agent_id: Unique Agent identifier path parameter.
         :param pulumi.Input[_builtins.str] plugin_name: Unique plugin identifier path parameter.
                
@@ -95,6 +96,7 @@ class _AgentPluginState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AgentPlugin resources.
+
         :param pulumi.Input[_builtins.str] agent_id: Unique Agent identifier path parameter.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] desired_state: (Updatable) State to which the customer wants the plugin to move to.
@@ -324,6 +326,7 @@ class AgentPlugin(pulumi.CustomResource):
         $ pulumi import oci:CloudBridge/agentPlugin:AgentPlugin test_agent_plugin "agents/{agentId}/plugins/{pluginName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] agent_id: Unique Agent identifier path parameter.
@@ -367,6 +370,7 @@ class AgentPlugin(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:CloudBridge/agentPlugin:AgentPlugin test_agent_plugin "agents/{agentId}/plugins/{pluginName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AgentPluginArgs args: The arguments to use to populate this resource's properties.

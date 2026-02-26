@@ -36,6 +36,7 @@ class RedisClusterArgs:
                  shard_count: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a RedisCluster resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.int] node_count: (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
@@ -266,6 +267,7 @@ class _RedisClusterState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RedisCluster resources.
+
         :param pulumi.Input[_builtins.str] cluster_mode: Specifies whether the cluster is sharded or non-sharded.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -714,6 +716,7 @@ class RedisCluster(pulumi.CustomResource):
         $ pulumi import oci:Redis/redisCluster:RedisCluster test_redis_cluster "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cluster_mode: Specifies whether the cluster is sharded or non-sharded.
@@ -781,6 +784,7 @@ class RedisCluster(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Redis/redisCluster:RedisCluster test_redis_cluster "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param RedisClusterArgs args: The arguments to use to populate this resource's properties.

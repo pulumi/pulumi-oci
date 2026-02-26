@@ -35,6 +35,7 @@ class OutboundConnectorArgs:
                  password_secret_version: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a OutboundConnector resource.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain the outbound connector is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] bind_distinguished_name: The LDAP Distinguished Name of the bind account.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the outbound connector.
@@ -237,6 +238,7 @@ class _OutboundConnectorState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OutboundConnector resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain the outbound connector is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] bind_distinguished_name: The LDAP Distinguished Name of the bind account.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the outbound connector.
@@ -555,6 +557,7 @@ class OutboundConnector(pulumi.CustomResource):
         $ pulumi import oci:FileStorage/outboundConnector:OutboundConnector test_outbound_connector "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain the outbound connector is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
@@ -645,6 +648,7 @@ class OutboundConnector(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:FileStorage/outboundConnector:OutboundConnector test_outbound_connector "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OutboundConnectorArgs args: The arguments to use to populate this resource's properties.

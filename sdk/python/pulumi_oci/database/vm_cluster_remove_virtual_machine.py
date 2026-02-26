@@ -25,6 +25,7 @@ class VmClusterRemoveVirtualMachineArgs:
                  vm_cluster_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a VmClusterRemoveVirtualMachine resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineDbServerArgs']]] db_servers: The list of Exacc DB servers for the cluster to be removed.
         :param pulumi.Input[_builtins.str] vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
                
@@ -101,6 +102,7 @@ class _VmClusterRemoveVirtualMachineState:
                  vm_cluster_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VmClusterRemoveVirtualMachine resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain that the VM cluster is located in.
         :param pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgs']]] cloud_automation_update_details: Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -630,6 +632,7 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
         $ pulumi import oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine test_vm_cluster_remove_virtual_machine "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineDbServerArgs', 'VmClusterRemoveVirtualMachineDbServerArgsDict']]]] db_servers: The list of Exacc DB servers for the cluster to be removed.
@@ -673,6 +676,7 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine test_vm_cluster_remove_virtual_machine "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param VmClusterRemoveVirtualMachineArgs args: The arguments to use to populate this resource's properties.

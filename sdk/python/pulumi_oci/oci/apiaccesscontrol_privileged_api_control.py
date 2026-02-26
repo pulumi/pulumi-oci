@@ -34,6 +34,7 @@ class ApiaccesscontrolPrivilegedApiControlArgs:
                  number_of_approvers: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a ApiaccesscontrolPrivilegedApiControl resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] approver_group_id_lists: (Updatable) List of user IAM group ids who can approve an privilegedApi request associated with a resource governed by this operator control.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the PrivilegedApiControl in.
         :param pulumi.Input[_builtins.str] notification_topic_id: (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
@@ -227,6 +228,7 @@ class _ApiaccesscontrolPrivilegedApiControlState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ApiaccesscontrolPrivilegedApiControl resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] approver_group_id_lists: (Updatable) List of user IAM group ids who can approve an privilegedApi request associated with a resource governed by this operator control.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the PrivilegedApiControl in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -570,6 +572,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
         $ pulumi import oci:oci/apiaccesscontrolPrivilegedApiControl:ApiaccesscontrolPrivilegedApiControl test_privileged_api_control "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] approver_group_id_lists: (Updatable) List of user IAM group ids who can approve an privilegedApi request associated with a resource governed by this operator control.
@@ -637,6 +640,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:oci/apiaccesscontrolPrivilegedApiControl:ApiaccesscontrolPrivilegedApiControl test_privileged_api_control "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ApiaccesscontrolPrivilegedApiControlArgs args: The arguments to use to populate this resource's properties.

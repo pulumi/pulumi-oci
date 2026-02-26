@@ -28,6 +28,7 @@ class OnboardingArgs:
                  is_fams_tag_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a Onboarding resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: Tenancy OCID
                <<<<<<< ours
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -139,6 +140,7 @@ class _OnboardingState:
                  version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Onboarding resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['OnboardingAppliedPolicyArgs']]] applied_policies: Summary of the Fleet Application Management Onboard Policy.
         :param pulumi.Input[_builtins.str] compartment_id: Tenancy OCID
                <<<<<<< ours
@@ -385,6 +387,7 @@ class Onboarding(pulumi.CustomResource):
         $ pulumi import oci:FleetAppsManagement/onboarding:Onboarding test_onboarding "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: Tenancy OCID
@@ -424,6 +427,7 @@ class Onboarding(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:FleetAppsManagement/onboarding:Onboarding test_onboarding "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OnboardingArgs args: The arguments to use to populate this resource's properties.

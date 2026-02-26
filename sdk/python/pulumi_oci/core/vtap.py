@@ -39,6 +39,7 @@ class VtapArgs:
                  vxlan_network_identifier: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Vtap resource.
+
         :param pulumi.Input[_builtins.str] capture_filter_id: (Updatable) The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the `Vtap` resource.
         :param pulumi.Input[_builtins.str] source_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
@@ -346,6 +347,7 @@ class _VtapState:
                  vxlan_network_identifier: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Vtap resources.
+
         :param pulumi.Input[_builtins.str] capture_filter_id: (Updatable) The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the `Vtap` resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -756,6 +758,7 @@ class Vtap(pulumi.CustomResource):
         $ pulumi import oci:Core/vtap:Vtap test_vtap "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] capture_filter_id: (Updatable) The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
@@ -843,6 +846,7 @@ class Vtap(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/vtap:Vtap test_vtap "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param VtapArgs args: The arguments to use to populate this resource's properties.

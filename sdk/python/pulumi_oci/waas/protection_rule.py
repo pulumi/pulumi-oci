@@ -27,6 +27,7 @@ class ProtectionRuleArgs:
                  exclusions: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]]] = None):
         """
         The set of arguments for constructing a ProtectionRule resource.
+
         :param pulumi.Input[_builtins.str] key: (Updatable) The unique key of the protection rule.
         :param pulumi.Input[_builtins.str] waas_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
         :param pulumi.Input[_builtins.str] action: (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
@@ -101,6 +102,7 @@ class _ProtectionRuleState:
                  waas_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProtectionRule resources.
+
         :param pulumi.Input[_builtins.str] action: (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
         :param pulumi.Input[_builtins.str] description: The description of the protection rule.
         :param pulumi.Input[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]] exclusions: (Updatable)
@@ -268,6 +270,7 @@ class ProtectionRule(pulumi.CustomResource):
         $ pulumi import oci:Waas/protectionRule:ProtectionRule test_protection_rule "waasPolicyId/{waasPolicyId}/key/{key}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
@@ -313,6 +316,7 @@ class ProtectionRule(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Waas/protectionRule:ProtectionRule test_protection_rule "waasPolicyId/{waasPolicyId}/key/{key}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ProtectionRuleArgs args: The arguments to use to populate this resource's properties.

@@ -25,6 +25,7 @@ class NetworkFirewallPolicyServiceListArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyServiceList resource.
+
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] services: (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list. 
                
@@ -105,6 +106,7 @@ class _NetworkFirewallPolicyServiceListState:
                  total_services: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyServiceList resources.
+
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the service list. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name of the service Group.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
@@ -246,6 +248,7 @@ class NetworkFirewallPolicyServiceList(pulumi.CustomResource):
         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyServiceList:NetworkFirewallPolicyServiceList test_network_firewall_policy_service_list "networkFirewallPolicies/{networkFirewallPolicyId}/serviceLists/{serviceListName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the service list. This field can be used to add additional info.
@@ -291,6 +294,7 @@ class NetworkFirewallPolicyServiceList(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyServiceList:NetworkFirewallPolicyServiceList test_network_firewall_policy_service_list "networkFirewallPolicies/{networkFirewallPolicyId}/serviceLists/{serviceListName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NetworkFirewallPolicyServiceListArgs args: The arguments to use to populate this resource's properties.

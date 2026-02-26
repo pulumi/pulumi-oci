@@ -25,6 +25,7 @@ class CloudDbNodeArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a CloudDbNode resource.
+
         :param pulumi.Input[_builtins.str] cloud_db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database node.
         :param pulumi.Input[_builtins.str] cloud_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud connector.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -119,6 +120,7 @@ class _CloudDbNodeState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudDbNode resources.
+
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_details: The additional details of the cloud DB node defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] cloud_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud connector.
         :param pulumi.Input[_builtins.str] cloud_db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database node.
@@ -442,6 +444,7 @@ class CloudDbNode(pulumi.CustomResource):
         $ pulumi import oci:DatabaseManagement/cloudDbNode:CloudDbNode test_cloud_db_node "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cloud_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud connector.
@@ -474,6 +477,7 @@ class CloudDbNode(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DatabaseManagement/cloudDbNode:CloudDbNode test_cloud_db_node "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CloudDbNodeArgs args: The arguments to use to populate this resource's properties.

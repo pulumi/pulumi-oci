@@ -26,6 +26,7 @@ class RecommendationArgs:
                  time_status_end: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Recommendation resource.
+
         :param pulumi.Input[_builtins.str] recommendation_id: The unique OCID associated with the recommendation.
         :param pulumi.Input[_builtins.str] status: (Updatable) The status of the recommendation.
         :param pulumi.Input[_builtins.str] time_status_end: (Updatable) The date and time the current status will change. The format is defined by RFC3339.
@@ -105,6 +106,7 @@ class _RecommendationState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Recommendation resources.
+
         :param pulumi.Input[_builtins.str] category_id: The unique OCID associated with the category.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the tenancy. The tenancy is the root compartment.
         :param pulumi.Input[_builtins.str] description: Text describing the recommendation.
@@ -391,6 +393,7 @@ class Recommendation(pulumi.CustomResource):
         $ pulumi import oci:Optimizer/recommendation:Recommendation test_recommendation "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] recommendation_id: The unique OCID associated with the recommendation.
@@ -429,6 +432,7 @@ class Recommendation(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Optimizer/recommendation:Recommendation test_recommendation "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param RecommendationArgs args: The arguments to use to populate this resource's properties.

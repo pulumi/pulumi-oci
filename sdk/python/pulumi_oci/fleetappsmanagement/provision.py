@@ -35,6 +35,7 @@ class ProvisionArgs:
                  tf_variable_current_user_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Provision resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the FamProvision in.
         :param pulumi.Input[_builtins.str] config_catalog_item_id: A [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Catalog Item to a file with key/value pairs to set up variables for createStack API.
         :param pulumi.Input[_builtins.str] fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
@@ -252,6 +253,7 @@ class _ProvisionState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Provision resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the FamProvision in.
         :param pulumi.Input[_builtins.str] config_catalog_item_display_name: A display Name of the Catalog Item in the Catalog.
         :param pulumi.Input[_builtins.str] config_catalog_item_id: A [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Catalog Item to a file with key/value pairs to set up variables for createStack API.
@@ -728,6 +730,7 @@ class Provision(pulumi.CustomResource):
         $ pulumi import oci:FleetAppsManagement/provision:Provision test_provision "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the FamProvision in.
@@ -793,6 +796,7 @@ class Provision(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:FleetAppsManagement/provision:Provision test_provision "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ProvisionArgs args: The arguments to use to populate this resource's properties.

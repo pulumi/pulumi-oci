@@ -22,6 +22,7 @@ class OperationsInsightsWarehouseRotateWarehouseWalletArgs:
                  operations_insights_warehouse_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a OperationsInsightsWarehouseRotateWarehouseWallet resource.
+
         :param pulumi.Input[_builtins.str] operations_insights_warehouse_id: Unique Ops Insights Warehouse identifier
                
                
@@ -53,6 +54,7 @@ class _OperationsInsightsWarehouseRotateWarehouseWalletState:
                  operations_insights_warehouse_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OperationsInsightsWarehouseRotateWarehouseWallet resources.
+
         :param pulumi.Input[_builtins.str] operations_insights_warehouse_id: Unique Ops Insights Warehouse identifier
                
                
@@ -112,6 +114,7 @@ class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
         $ pulumi import oci:Opsi/operationsInsightsWarehouseRotateWarehouseWallet:OperationsInsightsWarehouseRotateWarehouseWallet test_operations_insights_warehouse_rotate_warehouse_wallet "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] operations_insights_warehouse_id: Unique Ops Insights Warehouse identifier
@@ -150,6 +153,7 @@ class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Opsi/operationsInsightsWarehouseRotateWarehouseWallet:OperationsInsightsWarehouseRotateWarehouseWallet test_operations_insights_warehouse_rotate_warehouse_wallet "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OperationsInsightsWarehouseRotateWarehouseWalletArgs args: The arguments to use to populate this resource's properties.

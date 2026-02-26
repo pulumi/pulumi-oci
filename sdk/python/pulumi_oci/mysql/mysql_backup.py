@@ -37,6 +37,7 @@ class MysqlBackupArgs:
                  validate_trigger: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a MysqlBackup resource.
+
         :param pulumi.Input[_builtins.str] backup_type: The type of backup.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment the backup exists in.
         :param pulumi.Input[_builtins.str] db_system_id: The OCID of the DB System the Backup is associated with.
@@ -278,6 +279,7 @@ class _MysqlBackupState:
                  validate_trigger: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering MysqlBackup resources.
+
         :param pulumi.Input[_builtins.int] backup_size_in_gbs: The size of the backup in base-2 (IEC) gibibytes. (GiB).
         :param pulumi.Input[_builtins.str] backup_type: The type of backup.
         :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupBackupValidationDetailArgs']]] backup_validation_details: Backup validation details.
@@ -768,6 +770,7 @@ class MysqlBackup(pulumi.CustomResource):
         $ pulumi import oci:Mysql/mysqlBackup:MysqlBackup test_mysql_backup "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] backup_type: The type of backup.
@@ -826,6 +829,7 @@ class MysqlBackup(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Mysql/mysqlBackup:MysqlBackup test_mysql_backup "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MysqlBackupArgs args: The arguments to use to populate this resource's properties.

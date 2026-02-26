@@ -32,6 +32,7 @@ class FleetAdvancedFeatureConfigurationArgs:
                  performance_tuning_analysis: Optional[pulumi.Input['FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs']] = None):
         """
         The set of arguments for constructing a FleetAdvancedFeatureConfiguration resource.
+
         :param pulumi.Input[_builtins.str] fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
         :param pulumi.Input['FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs'] advanced_usage_tracking: (Updatable) AdvancedUsageTracking configuration
         :param pulumi.Input[_builtins.str] analytic_bucket_name: (Updatable) Bucket name required to store JFR and related data.
@@ -184,6 +185,7 @@ class _FleetAdvancedFeatureConfigurationState:
                  time_last_modified: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FleetAdvancedFeatureConfiguration resources.
+
         :param pulumi.Input['FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs'] advanced_usage_tracking: (Updatable) AdvancedUsageTracking configuration
         :param pulumi.Input[_builtins.str] analytic_bucket_name: (Updatable) Bucket name required to store JFR and related data.
         :param pulumi.Input[_builtins.str] analytic_namespace: (Updatable) Namespace for the Fleet advanced feature.
@@ -435,6 +437,7 @@ class FleetAdvancedFeatureConfiguration(pulumi.CustomResource):
         $ pulumi import oci:Jms/fleetAdvancedFeatureConfiguration:FleetAdvancedFeatureConfiguration test_fleet_advanced_feature_configuration "fleets/{fleetId}/advancedFeatureConfiguration"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs', 'FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgsDict']] advanced_usage_tracking: (Updatable) AdvancedUsageTracking configuration
@@ -534,6 +537,7 @@ class FleetAdvancedFeatureConfiguration(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Jms/fleetAdvancedFeatureConfiguration:FleetAdvancedFeatureConfiguration test_fleet_advanced_feature_configuration "fleets/{fleetId}/advancedFeatureConfiguration"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param FleetAdvancedFeatureConfigurationArgs args: The arguments to use to populate this resource's properties.

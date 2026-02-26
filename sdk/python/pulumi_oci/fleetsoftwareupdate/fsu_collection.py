@@ -32,6 +32,7 @@ class FsuCollectionArgs:
                  source_major_version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a FsuCollection resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
         :param pulumi.Input[_builtins.str] service_type: Exadata service type for the target resource members.
         :param pulumi.Input[_builtins.str] type: Collection type. DB: Only Database entity type resources allowed. GI: CloudVMCluster and VMCluster entity type resources allowed. GUEST_OS: CloudVmCluster and VmCluster entity type resources are allowed. EXADB_STACK: CloudVmCluster and VmCluster entity type resources are allowed. 
@@ -197,6 +198,7 @@ class _FsuCollectionState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FsuCollection resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['FsuCollectionActiveFsuCycleArgs']]] active_fsu_cycles: Active Exadata Fleet Update Cycle resource for this Collection. Object would be null if there is no active Cycle.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
         :param pulumi.Input[Sequence[pulumi.Input['FsuCollectionComponentArgs']]] components: Details of components in an Exadata software stack.
@@ -560,6 +562,7 @@ class FsuCollection(pulumi.CustomResource):
         $ pulumi import oci:FleetSoftwareUpdate/fsuCollection:FsuCollection test_fsu_collection "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
@@ -662,6 +665,7 @@ class FsuCollection(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:FleetSoftwareUpdate/fsuCollection:FsuCollection test_fsu_collection "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param FsuCollectionArgs args: The arguments to use to populate this resource's properties.

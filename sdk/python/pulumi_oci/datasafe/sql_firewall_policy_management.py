@@ -37,6 +37,7 @@ class SqlFirewallPolicyManagementArgs:
                  violation_audit: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a SqlFirewallPolicyManagement resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_client_ips: (Updatable) List of allowed ip addresses for the SQL Firewall policy.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_client_os_usernames: (Updatable) List of allowed operating system user names for the SQL Firewall policy.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_client_programs: (Updatable) List of allowed client programs for the SQL Firewall policy.
@@ -315,6 +316,7 @@ class _SqlFirewallPolicyManagementState:
                  violation_audit: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SqlFirewallPolicyManagement resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_client_ips: (Updatable) List of allowed ip addresses for the SQL Firewall policy.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_client_os_usernames: (Updatable) List of allowed operating system user names for the SQL Firewall policy.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_client_programs: (Updatable) List of allowed client programs for the SQL Firewall policy.
@@ -718,6 +720,7 @@ class SqlFirewallPolicyManagement(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_client_ips: (Updatable) List of allowed ip addresses for the SQL Firewall policy.
@@ -785,6 +788,7 @@ class SqlFirewallPolicyManagement(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param SqlFirewallPolicyManagementArgs args: The arguments to use to populate this resource's properties.

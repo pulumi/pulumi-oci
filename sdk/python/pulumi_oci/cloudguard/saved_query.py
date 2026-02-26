@@ -27,6 +27,7 @@ class SavedQueryArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a SavedQuery resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment OCID of the saved query
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name of the saved query
         :param pulumi.Input[_builtins.str] query: (Updatable) The adhoc query expression that is run
@@ -144,6 +145,7 @@ class _SavedQueryState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SavedQuery resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment OCID of the saved query
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of the saved query
@@ -357,6 +359,7 @@ class SavedQuery(pulumi.CustomResource):
         $ pulumi import oci:CloudGuard/savedQuery:SavedQuery test_saved_query "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment OCID of the saved query
@@ -412,6 +415,7 @@ class SavedQuery(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:CloudGuard/savedQuery:SavedQuery test_saved_query "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SavedQueryArgs args: The arguments to use to populate this resource's properties.

@@ -36,6 +36,7 @@ class DomainsAccountRecoverySettingArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAccountRecoverySettingTagArgs']]]] = None):
         """
         The set of arguments for constructing a DomainsAccountRecoverySetting resource.
+
         :param pulumi.Input[_builtins.str] account_recovery_setting_id: ID of the resource
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] factors: (Updatable) The account recovery factor used (for example, email, mobile number (SMS), security questions, mobile application push or TOTP) to verify the identity of the user and reset the user's password.
                
@@ -397,6 +398,7 @@ class _DomainsAccountRecoverySettingState:
                  tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DomainsAccountRecoverySetting resources.
+
         :param pulumi.Input[_builtins.str] account_recovery_setting_id: ID of the resource
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[_builtins.str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
@@ -1086,6 +1088,7 @@ class DomainsAccountRecoverySetting(pulumi.CustomResource):
         $ pulumi import oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting test_account_recovery_setting "idcsEndpoint/{idcsEndpoint}/accountRecoverySettings/{accountRecoverySettingId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] account_recovery_setting_id: ID of the resource
@@ -1194,6 +1197,7 @@ class DomainsAccountRecoverySetting(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting test_account_recovery_setting "idcsEndpoint/{idcsEndpoint}/accountRecoverySettings/{accountRecoverySettingId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainsAccountRecoverySettingArgs args: The arguments to use to populate this resource's properties.

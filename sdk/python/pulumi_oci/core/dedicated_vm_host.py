@@ -33,6 +33,7 @@ class DedicatedVmHostArgs:
                  placement_constraint_details: Optional[pulumi.Input['DedicatedVmHostPlacementConstraintDetailsArgs']] = None):
         """
         The set of arguments for constructing a DedicatedVmHost resource.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[_builtins.str] dedicated_vm_host_shape: The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
@@ -214,6 +215,7 @@ class _DedicatedVmHostState:
                  total_ocpus: Optional[pulumi.Input[_builtins.float]] = None):
         """
         Input properties used for looking up and filtering DedicatedVmHost resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[Sequence[pulumi.Input['DedicatedVmHostCapacityBinArgs']]] capacity_bins: A list of total and remaining CPU and memory per capacity bucket.
         :param pulumi.Input[_builtins.str] capacity_config: The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
@@ -557,6 +559,7 @@ class DedicatedVmHost(pulumi.CustomResource):
         $ pulumi import oci:Core/dedicatedVmHost:DedicatedVmHost test_dedicated_vm_host "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
@@ -624,6 +627,7 @@ class DedicatedVmHost(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/dedicatedVmHost:DedicatedVmHost test_dedicated_vm_host "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DedicatedVmHostArgs args: The arguments to use to populate this resource's properties.

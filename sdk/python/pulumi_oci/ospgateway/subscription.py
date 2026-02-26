@@ -28,6 +28,7 @@ class SubscriptionArgs:
                  subscription_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a Subscription resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] email: (Updatable) User email
         :param pulumi.Input[_builtins.str] osp_home_region: (Updatable) The home region's public name of the logged in user.
@@ -140,6 +141,7 @@ class _SubscriptionState:
                  upgrade_state_details: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Subscription resources.
+
         :param pulumi.Input[_builtins.str] account_type: Account type.
         :param pulumi.Input[_builtins.str] bill_to_cust_account_id: Bill to customer Account id.
         :param pulumi.Input[Sequence[pulumi.Input['SubscriptionBillingAddressArgs']]] billing_addresses: Address details model.
@@ -569,6 +571,7 @@ class Subscription(pulumi.CustomResource):
         $ pulumi import oci:OspGateway/subscription:Subscription test_subscription "subscriptions/{subscriptionId}/compartmentId/{compartmentId}/ospHomeRegion/{ospHomeRegion}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -602,6 +605,7 @@ class Subscription(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OspGateway/subscription:Subscription test_subscription "subscriptions/{subscriptionId}/compartmentId/{compartmentId}/ospHomeRegion/{ospHomeRegion}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SubscriptionArgs args: The arguments to use to populate this resource's properties.

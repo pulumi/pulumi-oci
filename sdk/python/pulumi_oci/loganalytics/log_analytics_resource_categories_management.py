@@ -25,6 +25,7 @@ class LogAnalyticsResourceCategoriesManagementArgs:
                  resource_type: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a LogAnalyticsResourceCategoriesManagement resource.
+
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] resource_categories: The list of categories to be assigned to the resource.
         :param pulumi.Input[_builtins.str] resource_id: The resource unique identifier for which catagories are managed.
@@ -101,6 +102,7 @@ class _LogAnalyticsResourceCategoriesManagementState:
                  resource_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LogAnalyticsResourceCategoriesManagement resources.
+
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] resource_categories: The list of categories to be assigned to the resource.
         :param pulumi.Input[_builtins.str] resource_id: The resource unique identifier for which catagories are managed.
@@ -208,6 +210,7 @@ class LogAnalyticsResourceCategoriesManagement(pulumi.CustomResource):
 
         LogAnalyticsResourceCategoriesManagement cannot be imported.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
@@ -249,6 +252,7 @@ class LogAnalyticsResourceCategoriesManagement(pulumi.CustomResource):
         ## Import
 
         LogAnalyticsResourceCategoriesManagement cannot be imported.
+
 
         :param str resource_name: The name of the resource.
         :param LogAnalyticsResourceCategoriesManagementArgs args: The arguments to use to populate this resource's properties.

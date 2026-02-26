@@ -54,6 +54,7 @@ class BdsInstanceArgs:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a BdsInstance resource.
+
         :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
         :param pulumi.Input[_builtins.str] cluster_public_key: The SSH public key used to authenticate the cluster connection.
         :param pulumi.Input[_builtins.str] cluster_version: Version of the Hadoop distribution
@@ -535,6 +536,7 @@ class _BdsInstanceState:
                  worker_node: Optional[pulumi.Input['BdsInstanceWorkerNodeArgs']] = None):
         """
         Input properties used for looking up and filtering BdsInstance resources.
+
         :param pulumi.Input['BdsInstanceBdsClusterVersionSummaryArgs'] bds_cluster_version_summary: Cluster version details including bds and odh version information.
         :param pulumi.Input[_builtins.str] bootstrap_script_url: (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
         :param pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]] cloud_sql_details: The information about added Cloud SQL capability
@@ -1239,6 +1241,7 @@ class BdsInstance(pulumi.CustomResource):
         $ pulumi import oci:BigDataService/bdsInstance:BdsInstance test_bds_instance "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['BdsInstanceBdsClusterVersionSummaryArgs', 'BdsInstanceBdsClusterVersionSummaryArgsDict']] bds_cluster_version_summary: Cluster version details including bds and odh version information.
@@ -1386,6 +1389,7 @@ class BdsInstance(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:BigDataService/bdsInstance:BdsInstance test_bds_instance "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param BdsInstanceArgs args: The arguments to use to populate this resource's properties.

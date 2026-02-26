@@ -40,6 +40,7 @@ class DomainsAppRoleArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleTagArgs']]]] = None):
         """
         The set of arguments for constructing a DomainsAppRole resource.
+
         :param pulumi.Input['DomainsAppRoleAppArgs'] app: A unique identifier for the application that references this role.
                
                **SCIM++ Properties:**
@@ -563,6 +564,7 @@ class _DomainsAppRoleState:
                  unique_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DomainsAppRole resources.
+
         :param pulumi.Input[_builtins.bool] admin_role: If true, the role provides administrative access privileges.
                
                **SCIM++ Properties:**
@@ -1588,6 +1590,7 @@ class DomainsAppRole(pulumi.CustomResource):
         $ pulumi import oci:Identity/domainsAppRole:DomainsAppRole test_app_role "idcsEndpoint/{idcsEndpoint}/appRoles/{appRoleId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] admin_role: If true, the role provides administrative access privileges.
@@ -1778,6 +1781,7 @@ class DomainsAppRole(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domainsAppRole:DomainsAppRole test_app_role "idcsEndpoint/{idcsEndpoint}/appRoles/{appRoleId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainsAppRoleArgs args: The arguments to use to populate this resource's properties.

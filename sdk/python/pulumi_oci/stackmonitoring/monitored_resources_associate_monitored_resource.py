@@ -27,6 +27,7 @@ class MonitoredResourcesAssociateMonitoredResourceArgs:
                  source_resource_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a MonitoredResourcesAssociateMonitoredResource resource.
+
         :param pulumi.Input[_builtins.str] association_type: Association type to be created between source and destination resources.
         :param pulumi.Input[_builtins.str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -108,6 +109,7 @@ class _MonitoredResourcesAssociateMonitoredResourceState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MonitoredResourcesAssociateMonitoredResource resources.
+
         :param pulumi.Input[_builtins.str] association_type: Association type to be created between source and destination resources.
         :param pulumi.Input[_builtins.str] category: Association category. Possible values are:
                * System created (SYSTEM),
@@ -302,6 +304,7 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
         $ pulumi import oci:StackMonitoring/monitoredResourcesAssociateMonitoredResource:MonitoredResourcesAssociateMonitoredResource test_monitored_resources_associate_monitored_resource "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] association_type: Association type to be created between source and destination resources.
@@ -349,6 +352,7 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:StackMonitoring/monitoredResourcesAssociateMonitoredResource:MonitoredResourcesAssociateMonitoredResource test_monitored_resources_associate_monitored_resource "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MonitoredResourcesAssociateMonitoredResourceArgs args: The arguments to use to populate this resource's properties.

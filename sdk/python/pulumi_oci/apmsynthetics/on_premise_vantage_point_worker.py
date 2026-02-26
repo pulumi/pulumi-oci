@@ -34,6 +34,7 @@ class OnPremiseVantagePointWorkerArgs:
                  worker_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a OnPremiseVantagePointWorker resource.
+
         :param pulumi.Input[_builtins.str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
         :param pulumi.Input[_builtins.str] on_premise_vantage_point_id: The OCID of the On-premise vantage point.
         :param pulumi.Input[_builtins.str] resource_principal_token_public_key: public key for resource Principal Token based validation to be used in further calls.
@@ -233,6 +234,7 @@ class _OnPremiseVantagePointWorkerState:
                  worker_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OnPremiseVantagePointWorker resources.
+
         :param pulumi.Input[_builtins.str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
         :param pulumi.Input[_builtins.str] configuration_details: (Updatable) Configuration details of the On-premise VP worker.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -632,6 +634,7 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
         $ pulumi import oci:ApmSynthetics/onPremiseVantagePointWorker:OnPremiseVantagePointWorker test_on_premise_vantage_point_worker "onPremiseVantagePoints/{onPremiseVantagePointId}/workers/{workerId}/apmDomainId/{apmDomainId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
@@ -695,6 +698,7 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ApmSynthetics/onPremiseVantagePointWorker:OnPremiseVantagePointWorker test_on_premise_vantage_point_worker "onPremiseVantagePoints/{onPremiseVantagePointId}/workers/{workerId}/apmDomainId/{apmDomainId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OnPremiseVantagePointWorkerArgs args: The arguments to use to populate this resource's properties.

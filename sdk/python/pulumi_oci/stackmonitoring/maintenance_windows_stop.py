@@ -22,6 +22,7 @@ class MaintenanceWindowsStopArgs:
                  maintenance_window_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a MaintenanceWindowsStop resource.
+
         :param pulumi.Input[_builtins.str] maintenance_window_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
                
                
@@ -53,6 +54,7 @@ class _MaintenanceWindowsStopState:
                  maintenance_window_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MaintenanceWindowsStop resources.
+
         :param pulumi.Input[_builtins.str] maintenance_window_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
                
                
@@ -112,6 +114,7 @@ class MaintenanceWindowsStop(pulumi.CustomResource):
         $ pulumi import oci:StackMonitoring/maintenanceWindowsStop:MaintenanceWindowsStop test_maintenance_windows_stop "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] maintenance_window_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
@@ -150,6 +153,7 @@ class MaintenanceWindowsStop(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:StackMonitoring/maintenanceWindowsStop:MaintenanceWindowsStop test_maintenance_windows_stop "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MaintenanceWindowsStopArgs args: The arguments to use to populate this resource's properties.

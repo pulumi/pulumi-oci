@@ -27,6 +27,7 @@ class ApplicationVipArgs:
                  ipv6address: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ApplicationVip resource.
+
         :param pulumi.Input[_builtins.str] cloud_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
         :param pulumi.Input[_builtins.str] hostname_label: The hostname of the application virtual IP (VIP) address.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
@@ -142,6 +143,7 @@ class _ApplicationVipState:
                  time_assigned: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ApplicationVip resources.
+
         :param pulumi.Input[_builtins.str] cloud_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB node associated with the application virtual IP (VIP) address.
@@ -377,6 +379,7 @@ class ApplicationVip(pulumi.CustomResource):
         $ pulumi import oci:Database/applicationVip:ApplicationVip test_application_vip "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cloud_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
@@ -426,6 +429,7 @@ class ApplicationVip(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/applicationVip:ApplicationVip test_application_vip "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ApplicationVipArgs args: The arguments to use to populate this resource's properties.

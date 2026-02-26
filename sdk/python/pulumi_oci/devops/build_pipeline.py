@@ -29,6 +29,7 @@ class BuildPipelineArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a BuildPipeline resource.
+
         :param pulumi.Input[_builtins.str] project_id: The OCID of the DevOps project.
                
                
@@ -146,6 +147,7 @@ class _BuildPipelineState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BuildPipeline resources.
+
         :param pulumi.Input['BuildPipelineBuildPipelineParametersArgs'] build_pipeline_parameters: (Updatable) Specifies list of parameters present in a build pipeline. An UPDATE operation replaces the existing parameters list entirely.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment where the build pipeline is created.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -391,6 +393,7 @@ class BuildPipeline(pulumi.CustomResource):
         $ pulumi import oci:DevOps/buildPipeline:BuildPipeline test_build_pipeline "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['BuildPipelineBuildPipelineParametersArgs', 'BuildPipelineBuildPipelineParametersArgsDict']] build_pipeline_parameters: (Updatable) Specifies list of parameters present in a build pipeline. An UPDATE operation replaces the existing parameters list entirely.
@@ -450,6 +453,7 @@ class BuildPipeline(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DevOps/buildPipeline:BuildPipeline test_build_pipeline "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param BuildPipelineArgs args: The arguments to use to populate this resource's properties.

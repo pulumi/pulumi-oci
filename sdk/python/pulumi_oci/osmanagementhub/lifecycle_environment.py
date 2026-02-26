@@ -33,6 +33,7 @@ class LifecycleEnvironmentArgs:
                  location: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a LifecycleEnvironment resource.
+
         :param pulumi.Input[_builtins.str] arch_type: The CPU architecture of the managed instances in the lifecycle environment.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle environment.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
@@ -208,6 +209,7 @@ class _LifecycleEnvironmentState:
                  vendor_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LifecycleEnvironment resources.
+
         :param pulumi.Input[_builtins.str] arch_type: The CPU architecture of the managed instances in the lifecycle environment.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle environment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -521,6 +523,7 @@ class LifecycleEnvironment(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/lifecycleEnvironment:LifecycleEnvironment test_lifecycle_environment "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] arch_type: The CPU architecture of the managed instances in the lifecycle environment.
@@ -603,6 +606,7 @@ class LifecycleEnvironment(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/lifecycleEnvironment:LifecycleEnvironment test_lifecycle_environment "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param LifecycleEnvironmentArgs args: The arguments to use to populate this resource's properties.

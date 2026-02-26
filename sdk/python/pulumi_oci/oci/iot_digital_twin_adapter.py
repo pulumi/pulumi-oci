@@ -32,6 +32,7 @@ class IotDigitalTwinAdapterArgs:
                  inbound_routes: Optional[pulumi.Input[Sequence[pulumi.Input['IotDigitalTwinAdapterInboundRouteArgs']]]] = None):
         """
         The set of arguments for constructing a IotDigitalTwinAdapter resource.
+
         :param pulumi.Input[_builtins.str] iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
                
                
@@ -195,6 +196,7 @@ class _IotDigitalTwinAdapterState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IotDigitalTwinAdapter resources.
+
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the resource.
         :param pulumi.Input[_builtins.str] digital_twin_model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
@@ -472,6 +474,7 @@ class IotDigitalTwinAdapter(pulumi.CustomResource):
         $ pulumi import oci:oci/iotDigitalTwinAdapter:IotDigitalTwinAdapter test_digital_twin_adapter "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -548,6 +551,7 @@ class IotDigitalTwinAdapter(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:oci/iotDigitalTwinAdapter:IotDigitalTwinAdapter test_digital_twin_adapter "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param IotDigitalTwinAdapterArgs args: The arguments to use to populate this resource's properties.

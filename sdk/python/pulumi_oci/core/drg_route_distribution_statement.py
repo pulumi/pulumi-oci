@@ -27,6 +27,7 @@ class DrgRouteDistributionStatementArgs:
                  priority: pulumi.Input[_builtins.int]):
         """
         The set of arguments for constructing a DrgRouteDistributionStatement resource.
+
         :param pulumi.Input[_builtins.str] action: Accept: import/export the route "as is"
         :param pulumi.Input[_builtins.str] drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
         :param pulumi.Input['DrgRouteDistributionStatementMatchCriteriaArgs'] match_criteria: (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
@@ -103,6 +104,7 @@ class _DrgRouteDistributionStatementState:
                  priority: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering DrgRouteDistributionStatement resources.
+
         :param pulumi.Input[_builtins.str] action: Accept: import/export the route "as is"
         :param pulumi.Input[_builtins.str] drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
         :param pulumi.Input['DrgRouteDistributionStatementMatchCriteriaArgs'] match_criteria: (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
@@ -218,6 +220,7 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
         $ pulumi import oci:Core/drgRouteDistributionStatement:DrgRouteDistributionStatement test_drg_route_distribution_statement "drgRouteDistributions/{drgRouteDistributionId}/statements/{id}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: Accept: import/export the route "as is"
@@ -267,6 +270,7 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/drgRouteDistributionStatement:DrgRouteDistributionStatement test_drg_route_distribution_statement "drgRouteDistributions/{drgRouteDistributionId}/statements/{id}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DrgRouteDistributionStatementArgs args: The arguments to use to populate this resource's properties.

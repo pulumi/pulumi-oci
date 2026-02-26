@@ -34,6 +34,7 @@ class NetworkLoadBalancersBackendSetsUnifiedArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkLoadBalancersBackendSetsUnified resource.
+
         :param pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs'] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
         :param pulumi.Input[_builtins.str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
         :param pulumi.Input[_builtins.str] policy: (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
@@ -231,6 +232,7 @@ class _NetworkLoadBalancersBackendSetsUnifiedState:
                  policy: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkLoadBalancersBackendSetsUnified resources.
+
         :param pulumi.Input[_builtins.bool] are_operationally_active_backends_preferred: (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedBackendArgs']]] backends: (Updatable) An array of backends to be associated with the backend set.
         :param pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs'] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
@@ -496,6 +498,7 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
         $ pulumi import oci:NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified:NetworkLoadBalancersBackendSetsUnified test_network_load_balancers_backend_sets_unified "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] are_operationally_active_backends_preferred: (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
@@ -586,6 +589,7 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified:NetworkLoadBalancersBackendSetsUnified test_network_load_balancers_backend_sets_unified "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NetworkLoadBalancersBackendSetsUnifiedArgs args: The arguments to use to populate this resource's properties.

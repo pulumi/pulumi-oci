@@ -27,6 +27,7 @@ class DkimArgs:
                  private_key: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Dkim resource.
+
         :param pulumi.Input[_builtins.str] email_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this DKIM.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A string that describes the details about the DKIM. It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -155,6 +156,7 @@ class _DkimState:
                  txt_record_value: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Dkim resources.
+
         :param pulumi.Input[_builtins.str] cname_record_value: The DNS CNAME record value to provision to the DKIM DNS subdomain, when using the CNAME method for DKIM setup (preferred).
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this DKIM.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -479,6 +481,7 @@ class Dkim(pulumi.CustomResource):
         $ pulumi import oci:Email/dkim:Dkim test_dkim "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -539,6 +542,7 @@ class Dkim(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Email/dkim:Dkim test_dkim "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DkimArgs args: The arguments to use to populate this resource's properties.

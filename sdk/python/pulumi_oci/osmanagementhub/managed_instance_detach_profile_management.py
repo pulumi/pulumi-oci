@@ -22,6 +22,7 @@ class ManagedInstanceDetachProfileManagementArgs:
                  managed_instance_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ManagedInstanceDetachProfileManagement resource.
+
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
                
                
@@ -53,6 +54,7 @@ class _ManagedInstanceDetachProfileManagementState:
                  managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagedInstanceDetachProfileManagement resources.
+
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
                
                
@@ -113,6 +115,7 @@ class ManagedInstanceDetachProfileManagement(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/managedInstanceDetachProfileManagement:ManagedInstanceDetachProfileManagement test_managed_instance_detach_profile_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
@@ -152,6 +155,7 @@ class ManagedInstanceDetachProfileManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/managedInstanceDetachProfileManagement:ManagedInstanceDetachProfileManagement test_managed_instance_detach_profile_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagedInstanceDetachProfileManagementArgs args: The arguments to use to populate this resource's properties.

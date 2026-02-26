@@ -31,6 +31,7 @@ class ResolverArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Resolver resource.
+
         :param pulumi.Input[_builtins.str] resolver_id: The OCID of the target resolver.
         :param pulumi.Input[Sequence[pulumi.Input['ResolverAttachedViewArgs']]] attached_views: (Updatable) The attached views. Views are evaluated in order.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the owning compartment.
@@ -182,6 +183,7 @@ class _ResolverState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Resolver resources.
+
         :param pulumi.Input[_builtins.str] attached_vcn_id: The OCID of the attached VCN.
         :param pulumi.Input[Sequence[pulumi.Input['ResolverAttachedViewArgs']]] attached_views: (Updatable) The attached views. Views are evaluated in order.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the owning compartment.
@@ -471,6 +473,7 @@ class Resolver(pulumi.CustomResource):
         $ pulumi import oci:Dns/resolver:Resolver test_resolver "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ResolverAttachedViewArgs', 'ResolverAttachedViewArgsDict']]]] attached_views: (Updatable) The attached views. Views are evaluated in order.
@@ -514,6 +517,7 @@ class Resolver(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Dns/resolver:Resolver test_resolver "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ResolverArgs args: The arguments to use to populate this resource's properties.

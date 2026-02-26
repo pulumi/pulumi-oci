@@ -25,6 +25,7 @@ class LogAnalyticsPreferencesManagementArgs:
                  items: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsPreferencesManagementItemArgs']]]] = None):
         """
         The set of arguments for constructing a LogAnalyticsPreferencesManagement resource.
+
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
                
                
@@ -72,6 +73,7 @@ class _LogAnalyticsPreferencesManagementState:
                  namespace: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LogAnalyticsPreferencesManagement resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['LogAnalyticsPreferencesManagementItemArgs']]] items: An array of tenant preference details.
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
                
@@ -148,6 +150,7 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
 
         Import is not supported for LogAnalyticsPreferencesManagement
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsPreferencesManagementItemArgs', 'LogAnalyticsPreferencesManagementItemArgsDict']]]] items: An array of tenant preference details.
@@ -188,6 +191,7 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
         ## Import
 
         Import is not supported for LogAnalyticsPreferencesManagement
+
 
         :param str resource_name: The name of the resource.
         :param LogAnalyticsPreferencesManagementArgs args: The arguments to use to populate this resource's properties.

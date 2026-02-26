@@ -31,6 +31,7 @@ class ProductLicenseArgs:
                  vendor_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ProductLicense resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where product licenses are created.
         :param pulumi.Input[_builtins.str] display_name: Name of the product license.
         :param pulumi.Input[_builtins.bool] is_vendor_oracle: Specifies if the product license vendor is Oracle or a third party.
@@ -183,6 +184,7 @@ class _ProductLicenseState:
                  vendor_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProductLicense resources.
+
         :param pulumi.Input[_builtins.int] active_license_record_count: The number of active license records associated with the product license.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where product licenses are created.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -549,6 +551,7 @@ class ProductLicense(pulumi.CustomResource):
         $ pulumi import oci:LicenseManager/productLicense:ProductLicense test_product_license "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where product licenses are created.
@@ -609,6 +612,7 @@ class ProductLicense(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:LicenseManager/productLicense:ProductLicense test_product_license "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ProductLicenseArgs args: The arguments to use to populate this resource's properties.

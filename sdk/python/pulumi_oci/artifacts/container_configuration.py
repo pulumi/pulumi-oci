@@ -23,6 +23,7 @@ class ContainerConfigurationArgs:
                  is_repository_created_on_first_push: pulumi.Input[_builtins.bool]):
         """
         The set of arguments for constructing a ContainerConfiguration resource.
+
         :param pulumi.Input[_builtins.bool] is_repository_created_on_first_push: Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -58,6 +59,7 @@ class _ContainerConfigurationState:
                  namespace: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ContainerConfiguration resources.
+
         :param pulumi.Input[_builtins.bool] is_repository_created_on_first_push: Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
         :param pulumi.Input[_builtins.str] namespace: The tenancy namespace used in the container repository path.
         """
@@ -134,6 +136,7 @@ class ContainerConfiguration(pulumi.CustomResource):
         $ pulumi import oci:Artifacts/containerConfiguration:ContainerConfiguration test_container_configuration "container/configuration/compartmentId/{compartmentId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] is_repository_created_on_first_push: Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
@@ -166,6 +169,7 @@ class ContainerConfiguration(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Artifacts/containerConfiguration:ContainerConfiguration test_container_configuration "container/configuration/compartmentId/{compartmentId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ContainerConfigurationArgs args: The arguments to use to populate this resource's properties.

@@ -25,6 +25,7 @@ class UsageCarbonEmissionsQueryArgs:
                  query_definition: pulumi.Input['UsageCarbonEmissionsQueryQueryDefinitionArgs']):
         """
         The set of arguments for constructing a UsageCarbonEmissionsQuery resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID.
         :param pulumi.Input['UsageCarbonEmissionsQueryQueryDefinitionArgs'] query_definition: (Updatable) The common fields for queries.
         """
@@ -63,6 +64,7 @@ class _UsageCarbonEmissionsQueryState:
                  query_definition: Optional[pulumi.Input['UsageCarbonEmissionsQueryQueryDefinitionArgs']] = None):
         """
         Input properties used for looking up and filtering UsageCarbonEmissionsQuery resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID.
         :param pulumi.Input['UsageCarbonEmissionsQueryQueryDefinitionArgs'] query_definition: (Updatable) The common fields for queries.
         """
@@ -157,6 +159,7 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
         $ pulumi import oci:MeteringComputation/usageCarbonEmissionsQuery:UsageCarbonEmissionsQuery test_usage_carbon_emissions_query "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID.
@@ -219,6 +222,7 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:MeteringComputation/usageCarbonEmissionsQuery:UsageCarbonEmissionsQuery test_usage_carbon_emissions_query "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param UsageCarbonEmissionsQueryArgs args: The arguments to use to populate this resource's properties.

@@ -30,6 +30,7 @@ class ExportArgs:
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['ExportLockArgs']]]] = None):
         """
         The set of arguments for constructing a Export resource.
+
         :param pulumi.Input[_builtins.str] export_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
         :param pulumi.Input[_builtins.str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
         :param pulumi.Input[_builtins.str] path: Path used to access the associated file system.
@@ -181,6 +182,7 @@ class _ExportState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Export resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['ExportExportOptionArgs']]] export_options: (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
                
                [ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534, "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
@@ -411,6 +413,7 @@ class Export(pulumi.CustomResource):
         $ pulumi import oci:FileStorage/export:Export test_export "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ExportExportOptionArgs', 'ExportExportOptionArgsDict']]]] export_options: (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
@@ -489,6 +492,7 @@ class Export(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:FileStorage/export:Export test_export "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ExportArgs args: The arguments to use to populate this resource's properties.

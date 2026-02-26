@@ -23,6 +23,7 @@ class AppCatalogListingResourceVersionAgreementArgs:
                  listing_resource_version: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a AppCatalogListingResourceVersionAgreement resource.
+
         :param pulumi.Input[_builtins.str] listing_id: The OCID of the listing.
         :param pulumi.Input[_builtins.str] listing_resource_version: Listing Resource Version.
         """
@@ -65,6 +66,7 @@ class _AppCatalogListingResourceVersionAgreementState:
                  time_retrieved: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppCatalogListingResourceVersionAgreement resources.
+
         :param pulumi.Input[_builtins.str] eula_link: EULA link
         :param pulumi.Input[_builtins.str] listing_id: The OCID of the listing.
         :param pulumi.Input[_builtins.str] listing_resource_version: Listing Resource Version.
@@ -181,6 +183,7 @@ class AppCatalogListingResourceVersionAgreement(pulumi.CustomResource):
             listing_resource_version=app_catalog_listing_resource_version_agreement_listing_resource_version)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] listing_id: The OCID of the listing.
@@ -205,6 +208,7 @@ class AppCatalogListingResourceVersionAgreement(pulumi.CustomResource):
             listing_id=test_listing["id"],
             listing_resource_version=app_catalog_listing_resource_version_agreement_listing_resource_version)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AppCatalogListingResourceVersionAgreementArgs args: The arguments to use to populate this resource's properties.

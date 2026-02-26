@@ -24,6 +24,7 @@ class DbCredentialArgs:
                  user_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a DbCredential resource.
+
         :param pulumi.Input[_builtins.str] description: The description you assign to the DB credentials during creation.
         :param pulumi.Input[_builtins.str] password: The password for the DB credentials during creation.
         :param pulumi.Input[_builtins.str] user_id: The OCID of the user.
@@ -89,6 +90,7 @@ class _DbCredentialState:
                  user_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DbCredential resources.
+
         :param pulumi.Input[_builtins.str] description: The description you assign to the DB credentials during creation.
         :param pulumi.Input[_builtins.str] lifecycle_details: The detailed status of INACTIVE lifecycleState.
         :param pulumi.Input[_builtins.str] password: The password for the DB credentials during creation.
@@ -239,6 +241,7 @@ class DbCredential(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: The description you assign to the DB credentials during creation.
@@ -278,6 +281,7 @@ class DbCredential(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param DbCredentialArgs args: The arguments to use to populate this resource's properties.

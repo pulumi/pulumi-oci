@@ -23,6 +23,7 @@ class SoftwareSourceReplacePackagesManagementArgs:
                  software_source_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a SoftwareSourceReplacePackagesManagement resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] packages: List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
         :param pulumi.Input[_builtins.str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
                
@@ -69,6 +70,7 @@ class _SoftwareSourceReplacePackagesManagementState:
                  software_source_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SoftwareSourceReplacePackagesManagement resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] packages: List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
         :param pulumi.Input[_builtins.str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
                
@@ -150,6 +152,7 @@ class SoftwareSourceReplacePackagesManagement(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/softwareSourceReplacePackagesManagement:SoftwareSourceReplacePackagesManagement test_software_source_replace_packages_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] packages: List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
@@ -195,6 +198,7 @@ class SoftwareSourceReplacePackagesManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/softwareSourceReplacePackagesManagement:SoftwareSourceReplacePackagesManagement test_software_source_replace_packages_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SoftwareSourceReplacePackagesManagementArgs args: The arguments to use to populate this resource's properties.

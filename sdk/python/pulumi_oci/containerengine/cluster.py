@@ -35,6 +35,7 @@ class ClusterArgs:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Cluster resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment in which to create the cluster.
         :param pulumi.Input[_builtins.str] kubernetes_version: (Updatable) The version of Kubernetes to install into the cluster masters.
         :param pulumi.Input[_builtins.str] vcn_id: The OCID of the virtual cloud network (VCN) in which to create the cluster.
@@ -247,6 +248,7 @@ class _ClusterState:
                  vcn_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Cluster resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] available_kubernetes_upgrades: Available Kubernetes versions to which the clusters masters may be upgraded.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterClusterPodNetworkOptionArgs']]] cluster_pod_network_options: Available CNIs and network options for existing and new node pools of the cluster
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment in which to create the cluster.
@@ -664,6 +666,7 @@ class Cluster(pulumi.CustomResource):
         $ pulumi import oci:ContainerEngine/cluster:Cluster test_cluster "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterClusterPodNetworkOptionArgs', 'ClusterClusterPodNetworkOptionArgsDict']]]] cluster_pod_network_options: Available CNIs and network options for existing and new node pools of the cluster
@@ -790,6 +793,7 @@ class Cluster(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ContainerEngine/cluster:Cluster test_cluster "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ClusterArgs args: The arguments to use to populate this resource's properties.

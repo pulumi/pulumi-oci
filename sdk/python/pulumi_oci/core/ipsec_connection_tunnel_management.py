@@ -36,6 +36,7 @@ class IpsecConnectionTunnelManagementArgs:
                  shared_secret: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a IpsecConnectionTunnelManagement resource.
+
         :param pulumi.Input[_builtins.str] ipsec_id: The OCID of the IPSec connection.
         :param pulumi.Input[_builtins.str] tunnel_id: The OCID of the IPSec connection's tunnel.
         :param pulumi.Input['IpsecConnectionTunnelManagementBgpSessionInfoArgs'] bgp_session_info: Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
@@ -276,6 +277,7 @@ class _IpsecConnectionTunnelManagementState:
                  vpn_ip: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IpsecConnectionTunnelManagement resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] associated_virtual_circuits: The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
         :param pulumi.Input['IpsecConnectionTunnelManagementBgpSessionInfoArgs'] bgp_session_info: Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
                
@@ -706,6 +708,7 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
             ike_version="V1")
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['IpsecConnectionTunnelManagementBgpSessionInfoArgs', 'IpsecConnectionTunnelManagementBgpSessionInfoArgsDict']] bgp_session_info: Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
@@ -782,6 +785,7 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
             shared_secret=ip_sec_connection_tunnel_management_shared_secret,
             ike_version="V1")
         ```
+
 
         :param str resource_name: The name of the resource.
         :param IpsecConnectionTunnelManagementArgs args: The arguments to use to populate this resource's properties.

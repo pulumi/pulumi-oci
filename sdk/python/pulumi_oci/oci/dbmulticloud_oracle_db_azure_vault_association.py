@@ -27,6 +27,7 @@ class DbmulticloudOracleDbAzureVaultAssociationArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a DbmulticloudOracleDbAzureVaultAssociation resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association resource.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Vault Association resource name.
         :param pulumi.Input[_builtins.str] oracle_db_azure_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
@@ -142,6 +143,7 @@ class _DbmulticloudOracleDbAzureVaultAssociationState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DbmulticloudOracleDbAzureVaultAssociation resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Vault Association resource name.
@@ -396,6 +398,7 @@ class DbmulticloudOracleDbAzureVaultAssociation(pulumi.CustomResource):
         $ pulumi import oci:oci/dbmulticloudOracleDbAzureVaultAssociation:DbmulticloudOracleDbAzureVaultAssociation test_oracle_db_azure_vault_association "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association resource.
@@ -449,6 +452,7 @@ class DbmulticloudOracleDbAzureVaultAssociation(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:oci/dbmulticloudOracleDbAzureVaultAssociation:DbmulticloudOracleDbAzureVaultAssociation test_oracle_db_azure_vault_association "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DbmulticloudOracleDbAzureVaultAssociationArgs args: The arguments to use to populate this resource's properties.

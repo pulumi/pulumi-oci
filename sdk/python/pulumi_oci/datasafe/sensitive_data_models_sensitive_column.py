@@ -36,6 +36,7 @@ class SensitiveDataModelsSensitiveColumnArgs:
                  status: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a SensitiveDataModelsSensitiveColumn resource.
+
         :param pulumi.Input[_builtins.str] column_name: The name of the sensitive column.
         :param pulumi.Input[_builtins.str] object: The database object that contains the sensitive column.
         :param pulumi.Input[_builtins.str] schema_name: The database schema that contains the sensitive column.
@@ -267,6 +268,7 @@ class _SensitiveDataModelsSensitiveColumnState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SensitiveDataModelsSensitiveColumn resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] app_defined_child_column_keys: (Updatable) Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
         :param pulumi.Input[_builtins.str] app_name: The name of the application associated with the sensitive column. It's useful when the application name is different from the schema name. Otherwise, it can be ignored. If this attribute is not provided, it's automatically populated with the value provided for the schemaName attribute.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] column_groups: The composite key groups to which the sensitive column belongs. If the column is part of a composite key, it's assigned a column group. It helps identify and manage referential relationships that involve composite keys.
@@ -696,6 +698,7 @@ class SensitiveDataModelsSensitiveColumn(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/sensitiveDataModelsSensitiveColumn:SensitiveDataModelsSensitiveColumn test_sensitive_data_models_sensitive_column "sensitiveDataModels/{sensitiveDataModelId}/sensitiveColumns/{sensitiveColumnKey}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] app_defined_child_column_keys: (Updatable) Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
@@ -759,6 +762,7 @@ class SensitiveDataModelsSensitiveColumn(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/sensitiveDataModelsSensitiveColumn:SensitiveDataModelsSensitiveColumn test_sensitive_data_models_sensitive_column "sensitiveDataModels/{sensitiveDataModelId}/sensitiveColumns/{sensitiveColumnKey}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SensitiveDataModelsSensitiveColumnArgs args: The arguments to use to populate this resource's properties.

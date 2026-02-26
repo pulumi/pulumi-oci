@@ -36,6 +36,7 @@ class AssetArgs:
                  vmware_vm: Optional[pulumi.Input['AssetVmwareVmArgs']] = None):
         """
         The set of arguments for constructing a Asset resource.
+
         :param pulumi.Input[_builtins.str] asset_type: (Updatable) The type of asset.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that the asset belongs to.
         :param pulumi.Input[_builtins.str] external_asset_key: The key of the asset from the external environment.
@@ -251,6 +252,7 @@ class _AssetState:
                  vmware_vm: Optional[pulumi.Input['AssetVmwareVmArgs']] = None):
         """
         Input properties used for looking up and filtering Asset resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] asset_source_ids: (Updatable) List of asset source OCID.
         :param pulumi.Input[_builtins.str] asset_type: (Updatable) The type of asset.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that the asset belongs to.
@@ -656,6 +658,7 @@ class Asset(pulumi.CustomResource):
         $ pulumi import oci:CloudBridge/asset:Asset test_asset "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] asset_source_ids: (Updatable) List of asset source OCID.
@@ -804,6 +807,7 @@ class Asset(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:CloudBridge/asset:Asset test_asset "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AssetArgs args: The arguments to use to populate this resource's properties.

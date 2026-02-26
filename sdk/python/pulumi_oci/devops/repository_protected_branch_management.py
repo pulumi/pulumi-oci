@@ -24,6 +24,7 @@ class RepositoryProtectedBranchManagementArgs:
                  protection_levels: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a RepositoryProtectedBranchManagement resource.
+
         :param pulumi.Input[_builtins.str] branch_name: Name of a branch to protect.
         :param pulumi.Input[_builtins.str] repository_id: Unique repository identifier.
                
@@ -87,6 +88,7 @@ class _RepositoryProtectedBranchManagementState:
                  repository_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RepositoryProtectedBranchManagement resources.
+
         :param pulumi.Input[_builtins.str] branch_name: Name of a branch to protect.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] protection_levels: Level of protection to add on a branch.
@@ -192,6 +194,7 @@ class RepositoryProtectedBranchManagement(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] branch_name: Name of a branch to protect.
@@ -231,6 +234,7 @@ class RepositoryProtectedBranchManagement(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param RepositoryProtectedBranchManagementArgs args: The arguments to use to populate this resource's properties.

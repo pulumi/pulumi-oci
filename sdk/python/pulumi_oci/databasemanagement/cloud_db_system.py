@@ -30,6 +30,7 @@ class CloudDbSystemArgs:
                  stack_monitoring_config: Optional[pulumi.Input['CloudDbSystemStackMonitoringConfigArgs']] = None):
         """
         The set of arguments for constructing a CloudDbSystem resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
         :param pulumi.Input[_builtins.str] db_system_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
         :param pulumi.Input['CloudDbSystemDatabaseManagementConfigArgs'] database_management_config: The configuration details of Database Management for a cloud DB system.
@@ -158,6 +159,7 @@ class _CloudDbSystemState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudDbSystem resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
         :param pulumi.Input['CloudDbSystemDatabaseManagementConfigArgs'] database_management_config: The configuration details of Database Management for a cloud DB system.
         :param pulumi.Input[_builtins.str] db_system_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
@@ -472,6 +474,7 @@ class CloudDbSystem(pulumi.CustomResource):
         $ pulumi import oci:DatabaseManagement/cloudDbSystem:CloudDbSystem test_cloud_db_system "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
@@ -529,6 +532,7 @@ class CloudDbSystem(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DatabaseManagement/cloudDbSystem:CloudDbSystem test_cloud_db_system "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CloudDbSystemArgs args: The arguments to use to populate this resource's properties.

@@ -31,6 +31,7 @@ class OciCacheUserArgs:
                  status: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a OciCacheUser resource.
+
         :param pulumi.Input[_builtins.str] acl_string: (Updatable) ACL string of Oracle Cloud Infrastructure cache user.
         :param pulumi.Input['OciCacheUserAuthenticationModeArgs'] authentication_mode: (Updatable) These are the Authentication details of an Oracle Cloud Infrastructure cache user.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Oracle Cloud Infrastructure cache user compartment ID.
@@ -175,6 +176,7 @@ class _OciCacheUserState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OciCacheUser resources.
+
         :param pulumi.Input[_builtins.str] acl_string: (Updatable) ACL string of Oracle Cloud Infrastructure cache user.
         :param pulumi.Input['OciCacheUserAuthenticationModeArgs'] authentication_mode: (Updatable) These are the Authentication details of an Oracle Cloud Infrastructure cache user.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Oracle Cloud Infrastructure cache user compartment ID.
@@ -421,6 +423,7 @@ class OciCacheUser(pulumi.CustomResource):
         $ pulumi import oci:Redis/ociCacheUser:OciCacheUser test_oci_cache_user "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] acl_string: (Updatable) ACL string of Oracle Cloud Infrastructure cache user.
@@ -481,6 +484,7 @@ class OciCacheUser(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Redis/ociCacheUser:OciCacheUser test_oci_cache_user "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OciCacheUserArgs args: The arguments to use to populate this resource's properties.

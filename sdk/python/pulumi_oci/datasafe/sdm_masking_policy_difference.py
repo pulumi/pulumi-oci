@@ -27,6 +27,7 @@ class SdmMaskingPolicyDifferenceArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a SdmMaskingPolicyDifference resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the SDM masking policy difference resource should be created.
         :param pulumi.Input[_builtins.str] masking_policy_id: The OCID of the masking policy. Note that if the masking policy is not associated with an SDM, CreateSdmMaskingPolicyDifference operation won't be allowed. 
                
@@ -142,6 +143,7 @@ class _SdmMaskingPolicyDifferenceState:
                  time_creation_started: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SdmMaskingPolicyDifference resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the SDM masking policy difference resource should be created.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] difference_type: The type of the SDM masking policy difference. It defines the difference scope. NEW identifies new sensitive columns in the sensitive data model that are not in the masking policy. DELETED identifies columns that are present in the masking policy but have been deleted from the sensitive data model. MODIFIED identifies columns that are present in the sensitive data model as well as the masking policy but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
@@ -370,6 +372,7 @@ class SdmMaskingPolicyDifference(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/sdmMaskingPolicyDifference:SdmMaskingPolicyDifference test_sdm_masking_policy_difference "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the SDM masking policy difference resource should be created.
@@ -427,6 +430,7 @@ class SdmMaskingPolicyDifference(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/sdmMaskingPolicyDifference:SdmMaskingPolicyDifference test_sdm_masking_policy_difference "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SdmMaskingPolicyDifferenceArgs args: The arguments to use to populate this resource's properties.

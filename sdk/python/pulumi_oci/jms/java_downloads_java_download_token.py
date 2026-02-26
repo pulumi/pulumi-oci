@@ -32,6 +32,7 @@ class JavaDownloadsJavaDownloadTokenArgs:
                  is_default: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a JavaDownloadsJavaDownloadToken resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy scoped to the JavaDownloadToken.
         :param pulumi.Input[_builtins.str] description: (Updatable) User provided description of the JavaDownloadToken.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) User provided display name of the JavaDownloadToken.
@@ -195,6 +196,7 @@ class _JavaDownloadsJavaDownloadTokenState:
                  value: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering JavaDownloadsJavaDownloadToken resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy scoped to the JavaDownloadToken.
         :param pulumi.Input[Sequence[pulumi.Input['JavaDownloadsJavaDownloadTokenCreatedByArgs']]] created_bies: An authorized principal.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
@@ -527,6 +529,7 @@ class JavaDownloadsJavaDownloadToken(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy scoped to the JavaDownloadToken.
@@ -583,6 +586,7 @@ class JavaDownloadsJavaDownloadToken(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param JavaDownloadsJavaDownloadTokenArgs args: The arguments to use to populate this resource's properties.

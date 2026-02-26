@@ -26,6 +26,7 @@ class ProjectRepositorySettingArgs:
                  merge_settings: Optional[pulumi.Input['ProjectRepositorySettingMergeSettingsArgs']] = None):
         """
         The set of arguments for constructing a ProjectRepositorySetting resource.
+
         :param pulumi.Input[_builtins.str] project_id: Unique project identifier.
                
                
@@ -89,6 +90,7 @@ class _ProjectRepositorySettingState:
                  project_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProjectRepositorySetting resources.
+
         :param pulumi.Input['ProjectRepositorySettingApprovalRulesArgs'] approval_rules: (Updatable) List of approval rules which must be statisfied before pull requests which match the rules can be merged
         :param pulumi.Input['ProjectRepositorySettingMergeSettingsArgs'] merge_settings: (Updatable) Enabled and disabled merge strategies for a project or repository, also contains a default strategy.
         :param pulumi.Input[_builtins.str] project_id: Unique project identifier.
@@ -195,6 +197,7 @@ class ProjectRepositorySetting(pulumi.CustomResource):
         $ pulumi import oci:DevOps/projectRepositorySetting:ProjectRepositorySetting test_project_repository_setting "projects/{projectId}/repositorySettings"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ProjectRepositorySettingApprovalRulesArgs', 'ProjectRepositorySettingApprovalRulesArgsDict']] approval_rules: (Updatable) List of approval rules which must be statisfied before pull requests which match the rules can be merged
@@ -250,6 +253,7 @@ class ProjectRepositorySetting(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DevOps/projectRepositorySetting:ProjectRepositorySetting test_project_repository_setting "projects/{projectId}/repositorySettings"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ProjectRepositorySettingArgs args: The arguments to use to populate this resource's properties.

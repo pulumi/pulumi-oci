@@ -27,6 +27,7 @@ class ReplicationPolicyArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ReplicationPolicy resource.
+
         :param pulumi.Input[_builtins.str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         :param pulumi.Input[_builtins.str] destination_bucket_name: The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
         :param pulumi.Input[_builtins.str] destination_region_name: The destination region to replicate to, for example "us-ashburn-1".
@@ -139,6 +140,7 @@ class _ReplicationPolicyState:
                  time_last_sync: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ReplicationPolicy resources.
+
         :param pulumi.Input[_builtins.str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         :param pulumi.Input[_builtins.str] destination_bucket_name: The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
         :param pulumi.Input[_builtins.str] destination_region_name: The destination region to replicate to, for example "us-ashburn-1".
@@ -343,6 +345,7 @@ class ReplicationPolicy(pulumi.CustomResource):
         $ pulumi import oci:ObjectStorage/replicationPolicy:ReplicationPolicy test_replication_policy "n/{namespaceName}/b/{bucketName}/replicationPolicies/{replicationId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -390,6 +393,7 @@ class ReplicationPolicy(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ObjectStorage/replicationPolicy:ReplicationPolicy test_replication_policy "n/{namespaceName}/b/{bucketName}/replicationPolicies/{replicationId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ReplicationPolicyArgs args: The arguments to use to populate this resource's properties.

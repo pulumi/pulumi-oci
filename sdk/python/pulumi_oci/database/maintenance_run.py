@@ -30,6 +30,7 @@ class MaintenanceRunArgs:
                  patching_mode: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a MaintenanceRun resource.
+
         :param pulumi.Input[_builtins.str] patch_type: Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
         :param pulumi.Input[_builtins.str] target_resource_id: The ID of the target resource for which the maintenance run should be created.
         :param pulumi.Input[_builtins.str] time_scheduled: (Updatable) The date and time that update should be scheduled.
@@ -186,6 +187,7 @@ class _MaintenanceRunState:
                  total_time_taken_in_mins: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering MaintenanceRun resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
         :param pulumi.Input[_builtins.int] current_custom_action_timeout_in_mins: Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
         :param pulumi.Input[_builtins.str] current_patching_component: The name of the current infrastruture component that is getting patched.
@@ -760,6 +762,7 @@ class MaintenanceRun(pulumi.CustomResource):
         $ pulumi import oci:Database/maintenanceRun:MaintenanceRun test_maintenance_run "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
@@ -816,6 +819,7 @@ class MaintenanceRun(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/maintenanceRun:MaintenanceRun test_maintenance_run "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param MaintenanceRunArgs args: The arguments to use to populate this resource's properties.

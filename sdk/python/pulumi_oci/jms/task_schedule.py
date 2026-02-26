@@ -26,6 +26,7 @@ class TaskScheduleArgs:
                  task_details: pulumi.Input['TaskScheduleTaskDetailsArgs']):
         """
         The set of arguments for constructing a TaskSchedule resource.
+
         :param pulumi.Input[_builtins.str] execution_recurrences: (Updatable) Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 EDT, it should be 'DTSTART;TZID=America/New_York:20240902T090000 RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 EDT, it should be 'DTSTART;TZID=America/New_York:20240805T090000 RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
         :param pulumi.Input[_builtins.str] fleet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
         :param pulumi.Input['TaskScheduleTaskDetailsArgs'] task_details: (Updatable) The minimum details of a task.
@@ -86,6 +87,7 @@ class _TaskScheduleState:
                  time_next_run: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering TaskSchedule resources.
+
         :param pulumi.Input[_builtins.str] created_by: Name of the task creator.
         :param pulumi.Input[_builtins.str] execution_recurrences: (Updatable) Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 EDT, it should be 'DTSTART;TZID=America/New_York:20240902T090000 RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 EDT, it should be 'DTSTART;TZID=America/New_York:20240805T090000 RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
         :param pulumi.Input[_builtins.str] fleet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
@@ -361,6 +363,7 @@ class TaskSchedule(pulumi.CustomResource):
         $ pulumi import oci:Jms/taskSchedule:TaskSchedule test_task_schedule "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] execution_recurrences: (Updatable) Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 EDT, it should be 'DTSTART;TZID=America/New_York:20240902T090000 RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 EDT, it should be 'DTSTART;TZID=America/New_York:20240805T090000 RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
@@ -484,6 +487,7 @@ class TaskSchedule(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Jms/taskSchedule:TaskSchedule test_task_schedule "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param TaskScheduleArgs args: The arguments to use to populate this resource's properties.

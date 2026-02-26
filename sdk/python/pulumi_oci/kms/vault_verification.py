@@ -26,6 +26,7 @@ class VaultVerificationArgs:
                  replica_vault_metadata: Optional[pulumi.Input['VaultVerificationReplicaVaultMetadataArgs']] = None):
         """
         The set of arguments for constructing a VaultVerification resource.
+
         :param pulumi.Input[_builtins.str] replica_region: (Updatable) The region to be created replica to. When updated,
                replica will be deleted from old region, and created to updated region.
         :param pulumi.Input[_builtins.str] vault_id: The OCID of the primary vault to create replica from.
@@ -81,6 +82,7 @@ class _VaultVerificationState:
                  vault_replica_status: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VaultVerification resources.
+
         :param pulumi.Input[_builtins.str] replica_region: (Updatable) The region to be created replica to. When updated,
                replica will be deleted from old region, and created to updated region.
         :param pulumi.Input[_builtins.str] vault_id: The OCID of the primary vault to create replica from.
@@ -190,6 +192,7 @@ class VaultVerification(pulumi.CustomResource):
             replica_region=replica_region)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] replica_region: (Updatable) The region to be created replica to. When updated,
@@ -221,6 +224,7 @@ class VaultVerification(pulumi.CustomResource):
             vault_id=test_vault["id"],
             replica_region=replica_region)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param VaultVerificationArgs args: The arguments to use to populate this resource's properties.

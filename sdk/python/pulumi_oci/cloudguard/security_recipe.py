@@ -27,6 +27,7 @@ class SecurityRecipeArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a SecurityRecipe resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment in which to create the recipe
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The recipe's display name.
                
@@ -149,6 +150,7 @@ class _SecurityRecipeState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SecurityRecipe resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment in which to create the recipe
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The recipe's description
@@ -382,6 +384,7 @@ class SecurityRecipe(pulumi.CustomResource):
         $ pulumi import oci:CloudGuard/securityRecipe:SecurityRecipe test_security_recipe "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment in which to create the recipe
@@ -440,6 +443,7 @@ class SecurityRecipe(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:CloudGuard/securityRecipe:SecurityRecipe test_security_recipe "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SecurityRecipeArgs args: The arguments to use to populate this resource's properties.

@@ -26,6 +26,7 @@ class RepositoryRefArgs:
                  object_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a RepositoryRef resource.
+
         :param pulumi.Input[_builtins.str] ref_name: A filter to return only resources that match the given reference name.
         :param pulumi.Input[_builtins.str] ref_type: (Updatable) The type of reference (BRANCH or TAG).
         :param pulumi.Input[_builtins.str] repository_id: Unique repository identifier.
@@ -122,6 +123,7 @@ class _RepositoryRefState:
                  repository_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RepositoryRef resources.
+
         :param pulumi.Input[_builtins.str] commit_id: (Updatable) Commit ID pointed to by the new branch.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
@@ -295,6 +297,7 @@ class RepositoryRef(pulumi.CustomResource):
         $ pulumi import oci:DevOps/repositoryRef:RepositoryRef test_repository_ref "repositories/{repositoryId}/refs/{refName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] commit_id: (Updatable) Commit ID pointed to by the new branch.
@@ -342,6 +345,7 @@ class RepositoryRef(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DevOps/repositoryRef:RepositoryRef test_repository_ref "repositories/{repositoryId}/refs/{refName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param RepositoryRefArgs args: The arguments to use to populate this resource's properties.

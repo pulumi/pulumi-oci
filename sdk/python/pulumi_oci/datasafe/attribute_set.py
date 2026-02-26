@@ -28,6 +28,7 @@ class AttributeSetArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AttributeSet resource.
+
         :param pulumi.Input[_builtins.str] attribute_set_type: The type of attribute set.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attribute_set_values: (Updatable) The list of values in an attribute set
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the attribute set.
@@ -158,6 +159,7 @@ class _AttributeSetState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AttributeSet resources.
+
         :param pulumi.Input[_builtins.str] attribute_set_type: The type of attribute set.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attribute_set_values: (Updatable) The list of values in an attribute set
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the attribute set.
@@ -414,6 +416,7 @@ class AttributeSet(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/attributeSet:AttributeSet test_attribute_set "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] attribute_set_type: The type of attribute set.
@@ -469,6 +472,7 @@ class AttributeSet(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/attributeSet:AttributeSet test_attribute_set "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AttributeSetArgs args: The arguments to use to populate this resource's properties.

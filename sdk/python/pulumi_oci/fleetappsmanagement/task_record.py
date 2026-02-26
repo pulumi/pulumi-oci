@@ -29,6 +29,7 @@ class TaskRecordArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a TaskRecord resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable)
         :param pulumi.Input['TaskRecordDetailsArgs'] details: (Updatable) The details of the task.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
@@ -146,6 +147,7 @@ class _TaskRecordState:
                  version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering TaskRecord resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable)
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
@@ -458,6 +460,7 @@ class TaskRecord(pulumi.CustomResource):
         $ pulumi import oci:FleetAppsManagement/taskRecord:TaskRecord test_task_record "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable)
@@ -554,6 +557,7 @@ class TaskRecord(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:FleetAppsManagement/taskRecord:TaskRecord test_task_record "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param TaskRecordArgs args: The arguments to use to populate this resource's properties.

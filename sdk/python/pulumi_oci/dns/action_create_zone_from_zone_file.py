@@ -27,6 +27,7 @@ class ActionCreateZoneFromZoneFileArgs:
                  view_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ActionCreateZoneFromZoneFile resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment the resource belongs to.
         :param pulumi.Input[_builtins.str] create_zone_from_zone_file_details: The zone file contents.
         :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
@@ -121,6 +122,7 @@ class _ActionCreateZoneFromZoneFileState:
                  zone_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ActionCreateZoneFromZoneFile resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment the resource belongs to.
         :param pulumi.Input[_builtins.str] create_zone_from_zone_file_details: The zone file contents.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -463,6 +465,7 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
         $ pulumi import oci:Dns/actionCreateZoneFromZoneFile:ActionCreateZoneFromZoneFile test_action_create_zone_from_zone_file "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment the resource belongs to.
@@ -507,6 +510,7 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Dns/actionCreateZoneFromZoneFile:ActionCreateZoneFromZoneFile test_action_create_zone_from_zone_file "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ActionCreateZoneFromZoneFileArgs args: The arguments to use to populate this resource's properties.

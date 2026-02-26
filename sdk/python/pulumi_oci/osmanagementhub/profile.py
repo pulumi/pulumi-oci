@@ -38,6 +38,7 @@ class ProfileArgs:
                  vendor_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Profile resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
         :param pulumi.Input[_builtins.str] profile_type: The type of profile.
@@ -301,6 +302,7 @@ class _ProfileState:
                  vendor_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Profile resources.
+
         :param pulumi.Input[_builtins.str] arch_type: The architecture type.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -753,6 +755,7 @@ class Profile(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/profile:Profile test_profile "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] arch_type: The architecture type.
@@ -824,6 +827,7 @@ class Profile(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/profile:Profile test_profile "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ProfileArgs args: The arguments to use to populate this resource's properties.

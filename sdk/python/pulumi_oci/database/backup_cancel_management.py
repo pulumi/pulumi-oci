@@ -23,6 +23,7 @@ class BackupCancelManagementArgs:
                  cancel_backup_trigger: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a BackupCancelManagement resource.
+
         :param pulumi.Input[_builtins.str] backup_id: The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.int] cancel_backup_trigger: When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
                
@@ -70,6 +71,7 @@ class _BackupCancelManagementState:
                  cancel_backup_trigger: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering BackupCancelManagement resources.
+
         :param pulumi.Input[_builtins.str] backup_id: The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.int] cancel_backup_trigger: When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
                
@@ -143,6 +145,7 @@ class BackupCancelManagement(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] backup_id: The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -180,6 +183,7 @@ class BackupCancelManagement(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param BackupCancelManagementArgs args: The arguments to use to populate this resource's properties.

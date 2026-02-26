@@ -35,6 +35,7 @@ class AutonomousExadataInfrastructureArgs:
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AutonomousExadataInfrastructure resource.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain where the Autonomous Exadata Infrastructure is located.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the Autonomous Exadata Infrastructure belongs in.
         :param pulumi.Input[_builtins.str] shape: The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
@@ -260,6 +261,7 @@ class _AutonomousExadataInfrastructureState:
                  zone_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutonomousExadataInfrastructure resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain where the Autonomous Exadata Infrastructure is located.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the Autonomous Exadata Infrastructure belongs in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -672,6 +674,7 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
         $ pulumi import oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure test_autonomous_exadata_infrastructure "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain where the Autonomous Exadata Infrastructure is located.
@@ -756,6 +759,7 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure test_autonomous_exadata_infrastructure "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AutonomousExadataInfrastructureArgs args: The arguments to use to populate this resource's properties.

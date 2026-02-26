@@ -27,6 +27,7 @@ class LoadBalancerRoutingPolicyArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a LoadBalancerRoutingPolicy resource.
+
         :param pulumi.Input[_builtins.str] condition_language_version: (Updatable) The version of the language in which `condition` of `rules` are composed.
         :param pulumi.Input[_builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
         :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleArgs']]] rules: (Updatable) The list of routing rules.
@@ -97,6 +98,7 @@ class _LoadBalancerRoutingPolicyState:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LoadBalancerRoutingPolicy resources.
+
         :param pulumi.Input[_builtins.str] condition_language_version: (Updatable) The version of the language in which `condition` of `rules` are composed.
         :param pulumi.Input[_builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
         :param pulumi.Input[_builtins.str] name: The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_routing_rules`
@@ -219,6 +221,7 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
         $ pulumi import oci:LoadBalancer/loadBalancerRoutingPolicy:LoadBalancerRoutingPolicy test_load_balancer_routing_policy "loadBalancers/{loadBalancerId}/routingPolicies/{routingPolicyName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] condition_language_version: (Updatable) The version of the language in which `condition` of `rules` are composed.
@@ -268,6 +271,7 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:LoadBalancer/loadBalancerRoutingPolicy:LoadBalancerRoutingPolicy test_load_balancer_routing_policy "loadBalancers/{loadBalancerId}/routingPolicies/{routingPolicyName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param LoadBalancerRoutingPolicyArgs args: The arguments to use to populate this resource's properties.

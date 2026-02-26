@@ -29,6 +29,7 @@ class FileSystemQuotaRuleArgs:
                  quota_rule_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a FileSystemQuotaRule resource.
+
         :param pulumi.Input[_builtins.str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
         :param pulumi.Input[_builtins.bool] is_hard_quota: The flag is an identifier to tell whether the quota rule will be enforced. If `isHardQuota` is true, the quota rule will be enforced so the write will be blocked if usage exceeds the hard quota limit. If `isHardQuota` is false, usage can exceed the soft quota limit. An alarm or notification will be sent to the customer, if the specific usage exceeds.
         :param pulumi.Input[_builtins.str] principal_type: The type of the owner of this quota rule and usage.
@@ -163,6 +164,7 @@ class _FileSystemQuotaRuleState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FileSystemQuotaRule resources.
+
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. Example: `UserXYZ's quota`
         :param pulumi.Input[_builtins.str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
         :param pulumi.Input[_builtins.bool] is_hard_quota: The flag is an identifier to tell whether the quota rule will be enforced. If `isHardQuota` is true, the quota rule will be enforced so the write will be blocked if usage exceeds the hard quota limit. If `isHardQuota` is false, usage can exceed the soft quota limit. An alarm or notification will be sent to the customer, if the specific usage exceeds.
@@ -363,6 +365,7 @@ class FileSystemQuotaRule(pulumi.CustomResource):
         $ pulumi import oci:FileStorage/fileSystemQuotaRule:FileSystemQuotaRule test_file_system_quota_rule "fileSystems/{fileSystemId}/quotaRules/{quotaRuleId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. Example: `UserXYZ's quota`
@@ -413,6 +416,7 @@ class FileSystemQuotaRule(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:FileStorage/fileSystemQuotaRule:FileSystemQuotaRule test_file_system_quota_rule "fileSystems/{fileSystemId}/quotaRules/{quotaRuleId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param FileSystemQuotaRuleArgs args: The arguments to use to populate this resource's properties.

@@ -34,6 +34,7 @@ class ZoneArgs:
                  view_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Zone resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the zone.
         :param pulumi.Input[_builtins.str] zone_type: The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
                
@@ -269,6 +270,7 @@ class _ZoneState:
                  zone_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Zone resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the zone.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
@@ -677,6 +679,7 @@ class Zone(pulumi.CustomResource):
         $ pulumi import oci:Dns/zone:Zone test_zone "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the zone.
@@ -765,6 +768,7 @@ class Zone(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Dns/zone:Zone test_zone "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ZoneArgs args: The arguments to use to populate this resource's properties.

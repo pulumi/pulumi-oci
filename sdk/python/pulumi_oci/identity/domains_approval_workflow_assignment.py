@@ -34,6 +34,7 @@ class DomainsApprovalWorkflowAssignmentArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsApprovalWorkflowAssignmentTagArgs']]]] = None):
         """
         The set of arguments for constructing a DomainsApprovalWorkflowAssignment resource.
+
         :param pulumi.Input['DomainsApprovalWorkflowAssignmentApprovalWorkflowArgs'] approval_workflow: Details of the Approval Workflow
                
                **SCIM++ Properties:**
@@ -342,6 +343,7 @@ class _DomainsApprovalWorkflowAssignmentState:
                  tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DomainsApprovalWorkflowAssignment resources.
+
         :param pulumi.Input['DomainsApprovalWorkflowAssignmentApprovalWorkflowArgs'] approval_workflow: Details of the Approval Workflow
                
                **SCIM++ Properties:**
@@ -1009,6 +1011,7 @@ class DomainsApprovalWorkflowAssignment(pulumi.CustomResource):
         $ pulumi import oci:Identity/domainsApprovalWorkflowAssignment:DomainsApprovalWorkflowAssignment test_approval_workflow_assignment "idcsEndpoint/{idcsEndpoint}/approvalWorkflowAssignments/{approvalWorkflowAssignmentId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['DomainsApprovalWorkflowAssignmentApprovalWorkflowArgs', 'DomainsApprovalWorkflowAssignmentApprovalWorkflowArgsDict']] approval_workflow: Details of the Approval Workflow
@@ -1136,6 +1139,7 @@ class DomainsApprovalWorkflowAssignment(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domainsApprovalWorkflowAssignment:DomainsApprovalWorkflowAssignment test_approval_workflow_assignment "idcsEndpoint/{idcsEndpoint}/approvalWorkflowAssignments/{approvalWorkflowAssignmentId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainsApprovalWorkflowAssignmentArgs args: The arguments to use to populate this resource's properties.

@@ -37,6 +37,7 @@ class NamespaceLookupArgs:
                  max_matches: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NamespaceLookup resource.
+
         :param pulumi.Input[_builtins.str] lookup_name: The name of the lookup to operate on.
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param pulumi.Input[_builtins.str] register_lookup_file: Path to the file containing data for lookup creation.
@@ -284,6 +285,7 @@ class _NamespaceLookupState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NamespaceLookup resources.
+
         :param pulumi.Input[_builtins.str] active_edit_version: The active edit version.
         :param pulumi.Input[_builtins.str] canonical_link: The canonical link.
         :param pulumi.Input[Sequence[pulumi.Input['NamespaceLookupCategoryArgs']]] categories: (Updatable) An array of categories to assign to the lookup. Specifying the name attribute for each category would suffice. Oracle-defined category assignments cannot be removed.
@@ -748,6 +750,7 @@ class NamespaceLookup(pulumi.CustomResource):
         $ pulumi import oci:LogAnalytics/namespaceLookup:NamespaceLookup test_namespace_lookup "namespaces/{namespaceName}/lookups/{lookupName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NamespaceLookupCategoryArgs', 'NamespaceLookupCategoryArgsDict']]]] categories: (Updatable) An array of categories to assign to the lookup. Specifying the name attribute for each category would suffice. Oracle-defined category assignments cannot be removed.
@@ -831,6 +834,7 @@ class NamespaceLookup(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:LogAnalytics/namespaceLookup:NamespaceLookup test_namespace_lookup "namespaces/{namespaceName}/lookups/{lookupName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NamespaceLookupArgs args: The arguments to use to populate this resource's properties.

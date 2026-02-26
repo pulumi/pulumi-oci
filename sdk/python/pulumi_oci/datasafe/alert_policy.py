@@ -31,6 +31,7 @@ class AlertPolicyArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AlertPolicy resource.
+
         :param pulumi.Input[_builtins.str] alert_policy_type: Indicates the Data Safe feature the alert policy belongs to
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create the alert policy.
         :param pulumi.Input[_builtins.str] severity: (Updatable) Severity level of the alert raised by this policy.
@@ -178,6 +179,7 @@ class _AlertPolicyState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AlertPolicy resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['AlertPolicyAlertPolicyRuleDetailArgs']]] alert_policy_rule_details: The details of the alert policy rule.
         :param pulumi.Input[_builtins.str] alert_policy_type: Indicates the Data Safe feature the alert policy belongs to
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create the alert policy.
@@ -455,6 +457,7 @@ class AlertPolicy(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/alertPolicy:AlertPolicy test_alert_policy "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AlertPolicyAlertPolicyRuleDetailArgs', 'AlertPolicyAlertPolicyRuleDetailArgsDict']]]] alert_policy_rule_details: The details of the alert policy rule.
@@ -516,6 +519,7 @@ class AlertPolicy(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/alertPolicy:AlertPolicy test_alert_policy "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AlertPolicyArgs args: The arguments to use to populate this resource's properties.

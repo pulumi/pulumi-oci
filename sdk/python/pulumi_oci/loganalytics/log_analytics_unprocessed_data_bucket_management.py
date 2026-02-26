@@ -24,6 +24,7 @@ class LogAnalyticsUnprocessedDataBucketManagementArgs:
                  is_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a LogAnalyticsUnprocessedDataBucketManagement resource.
+
         :param pulumi.Input[_builtins.str] bucket: Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
                
@@ -88,6 +89,7 @@ class _LogAnalyticsUnprocessedDataBucketManagementState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LogAnalyticsUnprocessedDataBucketManagement resources.
+
         :param pulumi.Input[_builtins.str] bucket: Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
         :param pulumi.Input[_builtins.bool] is_enabled: Flag that specifies if this configuration is enabled or not.
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
@@ -209,6 +211,7 @@ class LogAnalyticsUnprocessedDataBucketManagement(pulumi.CustomResource):
 
         Import is not supported for LogAnalyticsUnprocessedDataBucketManagement
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bucket: Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
@@ -249,6 +252,7 @@ class LogAnalyticsUnprocessedDataBucketManagement(pulumi.CustomResource):
         ## Import
 
         Import is not supported for LogAnalyticsUnprocessedDataBucketManagement
+
 
         :param str resource_name: The name of the resource.
         :param LogAnalyticsUnprocessedDataBucketManagementArgs args: The arguments to use to populate this resource's properties.

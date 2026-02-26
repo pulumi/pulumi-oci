@@ -135,6 +135,7 @@ class ConnectionArgs:
                  wallet_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Connection resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[_builtins.str] connection_type: (Updatable) The connection type.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) An object's Display Name.
@@ -1969,6 +1970,7 @@ class _ConnectionState:
                  wallet_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Connection resources.
+
         :param pulumi.Input[_builtins.str] access_key_id: (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
         :param pulumi.Input[_builtins.str] account_key: (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] account_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
@@ -4065,6 +4067,7 @@ class Connection(pulumi.CustomResource):
         $ pulumi import oci:GoldenGate/connection:Connection test_connection "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_key_id: (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
@@ -4375,6 +4378,7 @@ class Connection(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:GoldenGate/connection:Connection test_connection "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ConnectionArgs args: The arguments to use to populate this resource's properties.

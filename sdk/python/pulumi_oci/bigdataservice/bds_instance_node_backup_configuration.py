@@ -30,6 +30,7 @@ class BdsInstanceNodeBackupConfigurationArgs:
                  timezone: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a BdsInstanceNodeBackupConfiguration resource.
+
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input['BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs'] level_type_details: (Updatable) Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
         :param pulumi.Input[_builtins.str] schedule: (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger the backup process. Currently only DAILY, WEEKLY and MONTHLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR. Other fields are not supported.
@@ -158,6 +159,7 @@ class _BdsInstanceNodeBackupConfigurationState:
                  timezone: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BdsInstanceNodeBackupConfiguration resources.
+
         :param pulumi.Input[_builtins.str] backup_type: (Updatable) Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
@@ -369,6 +371,7 @@ class BdsInstanceNodeBackupConfiguration(pulumi.CustomResource):
         $ pulumi import oci:BigDataService/bdsInstanceNodeBackupConfiguration:BdsInstanceNodeBackupConfiguration test_bds_instance_node_backup_configuration "bdsInstances/{bdsInstanceId}/nodeBackupConfigurations/{nodeBackupConfigurationId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] backup_type: (Updatable) Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
@@ -424,6 +427,7 @@ class BdsInstanceNodeBackupConfiguration(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:BigDataService/bdsInstanceNodeBackupConfiguration:BdsInstanceNodeBackupConfiguration test_bds_instance_node_backup_configuration "bdsInstances/{bdsInstanceId}/nodeBackupConfigurations/{nodeBackupConfigurationId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param BdsInstanceNodeBackupConfigurationArgs args: The arguments to use to populate this resource's properties.

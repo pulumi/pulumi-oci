@@ -37,6 +37,7 @@ class DbHomeArgs:
                  vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DbHome resource.
+
         :param pulumi.Input['DbHomeDatabaseArgs'] database: (Updatable) Details for creating a database.
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
@@ -288,6 +289,7 @@ class _DbHomeState:
                  vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DbHome resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input['DbHomeDatabaseArgs'] database: (Updatable) Details for creating a database.
                
@@ -675,6 +677,7 @@ class DbHome(pulumi.CustomResource):
 
         The creation of an Database.DbSystem requires that it be created with exactly one oci_database_db_home. Therefore the first db home will have to be a property of the db system resource and any further db homes to be added to the db system will have to be added as first class resources using "Database.DbHome".
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['DbHomeDatabaseArgs', 'DbHomeDatabaseArgsDict']] database: (Updatable) Details for creating a database.
@@ -740,6 +743,7 @@ class DbHome(pulumi.CustomResource):
         ```
 
         The creation of an Database.DbSystem requires that it be created with exactly one oci_database_db_home. Therefore the first db home will have to be a property of the db system resource and any further db homes to be added to the db system will have to be added as first class resources using "Database.DbHome".
+
 
         :param str resource_name: The name of the resource.
         :param DbHomeArgs args: The arguments to use to populate this resource's properties.

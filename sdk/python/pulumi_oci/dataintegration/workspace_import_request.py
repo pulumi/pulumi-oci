@@ -31,6 +31,7 @@ class WorkspaceImportRequestArgs:
                  object_storage_tenancy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a WorkspaceImportRequest resource.
+
         :param pulumi.Input[_builtins.str] bucket: Name of the Object Storage bucket where the object will be imported from.
         :param pulumi.Input[_builtins.str] file_name: Name of the zip file to be imported.
         :param pulumi.Input[_builtins.str] workspace_id: The workspace ID.
@@ -181,6 +182,7 @@ class _WorkspaceImportRequestState:
                  workspace_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WorkspaceImportRequest resources.
+
         :param pulumi.Input[_builtins.bool] are_data_asset_references_included: This field controls if the data asset references will be included during import.
         :param pulumi.Input[_builtins.str] bucket: Name of the Object Storage bucket where the object will be imported from.
         :param pulumi.Input[_builtins.str] created_by: Name of the user who initiated import request.
@@ -499,6 +501,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
         $ pulumi import oci:DataIntegration/workspaceImportRequest:WorkspaceImportRequest test_workspace_import_request "workspaces/{workspaceId}/importRequests/{importRequestKey}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] are_data_asset_references_included: This field controls if the data asset references will be included during import.
@@ -556,6 +559,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataIntegration/workspaceImportRequest:WorkspaceImportRequest test_workspace_import_request "workspaces/{workspaceId}/importRequests/{importRequestKey}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param WorkspaceImportRequestArgs args: The arguments to use to populate this resource's properties.

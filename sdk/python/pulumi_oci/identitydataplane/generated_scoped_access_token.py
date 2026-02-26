@@ -23,6 +23,7 @@ class GeneratedScopedAccessTokenArgs:
                  scope: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a GeneratedScopedAccessToken resource.
+
         :param pulumi.Input[_builtins.str] public_key: A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
         :param pulumi.Input[_builtins.str] scope: Scope definition for the scoped access token 
                
@@ -70,6 +71,7 @@ class _GeneratedScopedAccessTokenState:
                  token: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering GeneratedScopedAccessToken resources.
+
         :param pulumi.Input[_builtins.str] public_key: A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
         :param pulumi.Input[_builtins.str] scope: Scope definition for the scoped access token 
                
@@ -162,6 +164,7 @@ class GeneratedScopedAccessToken(pulumi.CustomResource):
         $ pulumi import oci:IdentityDataPlane/generatedScopedAccessToken:GeneratedScopedAccessToken test_generate_scoped_access_token "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] public_key: A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
@@ -203,6 +206,7 @@ class GeneratedScopedAccessToken(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:IdentityDataPlane/generatedScopedAccessToken:GeneratedScopedAccessToken test_generate_scoped_access_token "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param GeneratedScopedAccessTokenArgs args: The arguments to use to populate this resource's properties.

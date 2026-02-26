@@ -27,6 +27,7 @@ class VnicAttachmentArgs:
                  nic_index: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a VnicAttachment resource.
+
         :param pulumi.Input['VnicAttachmentCreateVnicDetailsArgs'] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[_builtins.str] instance_id: The OCID of the instance.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -113,6 +114,7 @@ class _VnicAttachmentState:
                  vnic_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VnicAttachment resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment the VNIC attachment is in, which is the same compartment the instance is in.
         :param pulumi.Input['VnicAttachmentCreateVnicDetailsArgs'] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
@@ -362,6 +364,7 @@ class VnicAttachment(pulumi.CustomResource):
         $ pulumi import oci:Core/vnicAttachment:VnicAttachment test_vnic_attachment "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['VnicAttachmentCreateVnicDetailsArgs', 'VnicAttachmentCreateVnicDetailsArgsDict']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
@@ -425,6 +428,7 @@ class VnicAttachment(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/vnicAttachment:VnicAttachment test_vnic_attachment "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param VnicAttachmentArgs args: The arguments to use to populate this resource's properties.

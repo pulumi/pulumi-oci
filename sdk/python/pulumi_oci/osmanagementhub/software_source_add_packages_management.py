@@ -24,6 +24,7 @@ class SoftwareSourceAddPackagesManagementArgs:
                  is_continue_on_missing_packages: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a SoftwareSourceAddPackagesManagement resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] packages: List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
         :param pulumi.Input[_builtins.str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
                
@@ -86,6 +87,7 @@ class _SoftwareSourceAddPackagesManagementState:
                  software_source_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SoftwareSourceAddPackagesManagement resources.
+
         :param pulumi.Input[_builtins.bool] is_continue_on_missing_packages: Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] packages: List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
         :param pulumi.Input[_builtins.str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
@@ -185,6 +187,7 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/softwareSourceAddPackagesManagement:SoftwareSourceAddPackagesManagement test_software_source_add_packages_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] is_continue_on_missing_packages: Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
@@ -233,6 +236,7 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/softwareSourceAddPackagesManagement:SoftwareSourceAddPackagesManagement test_software_source_add_packages_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SoftwareSourceAddPackagesManagementArgs args: The arguments to use to populate this resource's properties.

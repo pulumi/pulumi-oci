@@ -23,6 +23,7 @@ class ProfileAttachManagedInstanceGroupManagementArgs:
                  profile_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ProfileAttachManagedInstanceGroupManagement resource.
+
         :param pulumi.Input[_builtins.str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group that the instance will be associated with.
         :param pulumi.Input[_builtins.str] profile_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
                
@@ -69,6 +70,7 @@ class _ProfileAttachManagedInstanceGroupManagementState:
                  profile_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProfileAttachManagedInstanceGroupManagement resources.
+
         :param pulumi.Input[_builtins.str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group that the instance will be associated with.
         :param pulumi.Input[_builtins.str] profile_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
                
@@ -146,6 +148,7 @@ class ProfileAttachManagedInstanceGroupManagement(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/profileAttachManagedInstanceGroupManagement:ProfileAttachManagedInstanceGroupManagement test_profile_attach_managed_instance_group_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group that the instance will be associated with.
@@ -187,6 +190,7 @@ class ProfileAttachManagedInstanceGroupManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/profileAttachManagedInstanceGroupManagement:ProfileAttachManagedInstanceGroupManagement test_profile_attach_managed_instance_group_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ProfileAttachManagedInstanceGroupManagementArgs args: The arguments to use to populate this resource's properties.

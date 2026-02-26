@@ -32,6 +32,7 @@ class HostInsightArgs:
                  status: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a HostInsight resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier of host
         :param pulumi.Input[_builtins.str] entity_source: (Updatable) Source of the host entity.
         :param pulumi.Input[_builtins.str] compute_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
@@ -237,6 +238,7 @@ class _HostInsightState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering HostInsight resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier of host
         :param pulumi.Input[_builtins.str] compute_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -668,6 +670,7 @@ class HostInsight(pulumi.CustomResource):
         $ pulumi import oci:Opsi/hostInsight:HostInsight test_host_insight "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier of host
@@ -707,6 +710,7 @@ class HostInsight(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Opsi/hostInsight:HostInsight test_host_insight "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param HostInsightArgs args: The arguments to use to populate this resource's properties.

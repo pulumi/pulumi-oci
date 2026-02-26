@@ -35,6 +35,7 @@ class DomainsSecurityQuestionArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSecurityQuestionTagArgs']]]] = None):
         """
         The set of arguments for constructing a DomainsSecurityQuestion resource.
+
         :param pulumi.Input[_builtins.bool] active: This indicates if the question is selected by the Security Admin and is available for the end user.
                
                **SCIM++ Properties:**
@@ -387,6 +388,7 @@ class _DomainsSecurityQuestionState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DomainsSecurityQuestion resources.
+
         :param pulumi.Input[_builtins.bool] active: This indicates if the question is selected by the Security Admin and is available for the end user.
                
                **SCIM++ Properties:**
@@ -1087,6 +1089,7 @@ class DomainsSecurityQuestion(pulumi.CustomResource):
         $ pulumi import oci:Identity/domainsSecurityQuestion:DomainsSecurityQuestion test_security_question "idcsEndpoint/{idcsEndpoint}/securityQuestions/{securityQuestionId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] active: This indicates if the question is selected by the Security Admin and is available for the end user.
@@ -1226,6 +1229,7 @@ class DomainsSecurityQuestion(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Identity/domainsSecurityQuestion:DomainsSecurityQuestion test_security_question "idcsEndpoint/{idcsEndpoint}/securityQuestions/{securityQuestionId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DomainsSecurityQuestionArgs args: The arguments to use to populate this resource's properties.

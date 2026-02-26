@@ -31,6 +31,7 @@ class DrProtectionGroupArgs:
                  members: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberArgs']]]] = None):
         """
         The set of arguments for constructing a DrProtectionGroup resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
         :param pulumi.Input['DrProtectionGroupLogLocationArgs'] log_location: (Updatable) The details for creating an object storage log location for a DR protection group.
@@ -181,6 +182,7 @@ class _DrProtectionGroupState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DrProtectionGroup resources.
+
         :param pulumi.Input['DrProtectionGroupAssociationArgs'] association: The details for associating a DR protection group with a peer DR protection group.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
@@ -658,6 +660,7 @@ class DrProtectionGroup(pulumi.CustomResource):
         $ pulumi import oci:DisasterRecovery/drProtectionGroup:DrProtectionGroup test_dr_protection_group "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['DrProtectionGroupAssociationArgs', 'DrProtectionGroupAssociationArgsDict']] association: The details for associating a DR protection group with a peer DR protection group.
@@ -874,6 +877,7 @@ class DrProtectionGroup(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DisasterRecovery/drProtectionGroup:DrProtectionGroup test_dr_protection_group "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DrProtectionGroupArgs args: The arguments to use to populate this resource's properties.

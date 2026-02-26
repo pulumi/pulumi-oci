@@ -26,6 +26,7 @@ class OccCustomerGroupOccCustomerArgs:
                  status: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a OccCustomerGroupOccCustomer resource.
+
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name for the customer.
         :param pulumi.Input[_builtins.str] occ_customer_group_id: The OCID of the customer group.
         :param pulumi.Input[_builtins.str] tenancy_id: The OCID of the tenancy belonging to the customer.
@@ -119,6 +120,7 @@ class _OccCustomerGroupOccCustomerState:
                  tenancy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OccCustomerGroupOccCustomer resources.
+
         :param pulumi.Input[_builtins.str] description: (Updatable) The description about the customer group.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name for the customer.
         :param pulumi.Input[_builtins.str] occ_customer_group_id: The OCID of the customer group.
@@ -247,6 +249,7 @@ class OccCustomerGroupOccCustomer(pulumi.CustomResource):
         $ pulumi import oci:CapacityManagement/occCustomerGroupOccCustomer:OccCustomerGroupOccCustomer test_occ_customer_group_occ_customer "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: (Updatable) The description about the customer group.
@@ -294,6 +297,7 @@ class OccCustomerGroupOccCustomer(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:CapacityManagement/occCustomerGroupOccCustomer:OccCustomerGroupOccCustomer test_occ_customer_group_occ_customer "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OccCustomerGroupOccCustomerArgs args: The arguments to use to populate this resource's properties.

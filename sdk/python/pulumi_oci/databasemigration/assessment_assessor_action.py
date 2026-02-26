@@ -27,6 +27,7 @@ class AssessmentAssessorActionArgs:
                  items: pulumi.Input[Sequence[pulumi.Input['AssessmentAssessorActionItemArgs']]]):
         """
         The set of arguments for constructing a AssessmentAssessorAction resource.
+
         :param pulumi.Input[_builtins.str] assessment_id: The OCID of the Assessment
         :param pulumi.Input[_builtins.str] assessor_action: The Accessor Action
         :param pulumi.Input[_builtins.str] assessor_name: The name of the Assessor
@@ -95,6 +96,7 @@ class _AssessmentAssessorActionState:
                  items: Optional[pulumi.Input[Sequence[pulumi.Input['AssessmentAssessorActionItemArgs']]]] = None):
         """
         Input properties used for looking up and filtering AssessmentAssessorAction resources.
+
         :param pulumi.Input[_builtins.str] assessment_id: The OCID of the Assessment
         :param pulumi.Input[_builtins.str] assessor_action: The Accessor Action
         :param pulumi.Input[_builtins.str] assessor_name: The name of the Assessor
@@ -201,6 +203,7 @@ class AssessmentAssessorAction(pulumi.CustomResource):
         $ pulumi import oci:DatabaseMigration/assessmentAssessorAction:AssessmentAssessorAction test_assessment_assessor_action "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] assessment_id: The OCID of the Assessment
@@ -245,6 +248,7 @@ class AssessmentAssessorAction(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DatabaseMigration/assessmentAssessorAction:AssessmentAssessorAction test_assessment_assessor_action "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AssessmentAssessorActionArgs args: The arguments to use to populate this resource's properties.

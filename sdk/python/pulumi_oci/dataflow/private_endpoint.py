@@ -33,6 +33,7 @@ class PrivateEndpointArgs:
                  scan_details: Optional[pulumi.Input[Sequence[pulumi.Input['PrivateEndpointScanDetailArgs']]]] = None):
         """
         The set of arguments for constructing a PrivateEndpoint resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of a compartment.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dns_zones: (Updatable) An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of a subnet. 
@@ -212,6 +213,7 @@ class _PrivateEndpointState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PrivateEndpoint resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of a compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-friendly description. Avoid entering confidential information.
@@ -526,6 +528,7 @@ class PrivateEndpoint(pulumi.CustomResource):
         $ pulumi import oci:DataFlow/privateEndpoint:PrivateEndpoint test_private_endpoint "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of a compartment.
@@ -594,6 +597,7 @@ class PrivateEndpoint(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataFlow/privateEndpoint:PrivateEndpoint test_private_endpoint "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param PrivateEndpointArgs args: The arguments to use to populate this resource's properties.

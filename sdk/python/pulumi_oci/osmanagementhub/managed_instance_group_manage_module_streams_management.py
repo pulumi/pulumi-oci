@@ -30,6 +30,7 @@ class ManagedInstanceGroupManageModuleStreamsManagementArgs:
                  work_request_details: Optional[pulumi.Input['ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs']] = None):
         """
         The set of arguments for constructing a ManagedInstanceGroupManageModuleStreamsManagement resource.
+
         :param pulumi.Input[_builtins.str] managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         :param pulumi.Input[Sequence[pulumi.Input['ManagedInstanceGroupManageModuleStreamsManagementDisableArgs']]] disables: The set of module streams to disable.
         :param pulumi.Input[Sequence[pulumi.Input['ManagedInstanceGroupManageModuleStreamsManagementEnableArgs']]] enables: The set of module streams to enable.
@@ -149,6 +150,7 @@ class _ManagedInstanceGroupManageModuleStreamsManagementState:
                  work_request_details: Optional[pulumi.Input['ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering ManagedInstanceGroupManageModuleStreamsManagement resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['ManagedInstanceGroupManageModuleStreamsManagementDisableArgs']]] disables: The set of module streams to disable.
         :param pulumi.Input[Sequence[pulumi.Input['ManagedInstanceGroupManageModuleStreamsManagementEnableArgs']]] enables: The set of module streams to enable.
         :param pulumi.Input[Sequence[pulumi.Input['ManagedInstanceGroupManageModuleStreamsManagementInstallArgs']]] installs: The set of module stream profiles to install.
@@ -325,6 +327,7 @@ class ManagedInstanceGroupManageModuleStreamsManagement(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/managedInstanceGroupManageModuleStreamsManagement:ManagedInstanceGroupManageModuleStreamsManagement test_managed_instance_group_manage_module_streams_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementDisableArgs', 'ManagedInstanceGroupManageModuleStreamsManagementDisableArgsDict']]]] disables: The set of module streams to disable.
@@ -394,6 +397,7 @@ class ManagedInstanceGroupManageModuleStreamsManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/managedInstanceGroupManageModuleStreamsManagement:ManagedInstanceGroupManageModuleStreamsManagement test_managed_instance_group_manage_module_streams_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagedInstanceGroupManageModuleStreamsManagementArgs args: The arguments to use to populate this resource's properties.

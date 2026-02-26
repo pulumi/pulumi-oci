@@ -24,6 +24,7 @@ class ZonePromoteDnssecKeyVersionArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ZonePromoteDnssecKeyVersion resource.
+
         :param pulumi.Input[_builtins.str] dnssec_key_version_uuid: The UUID of the `DnssecKeyVersion` that is being promoted.
         :param pulumi.Input[_builtins.str] zone_id: The OCID of the target zone.
                
@@ -86,6 +87,7 @@ class _ZonePromoteDnssecKeyVersionState:
                  zone_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ZonePromoteDnssecKeyVersion resources.
+
         :param pulumi.Input[_builtins.str] dnssec_key_version_uuid: The UUID of the `DnssecKeyVersion` that is being promoted.
         :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] zone_id: The OCID of the target zone.
@@ -185,6 +187,7 @@ class ZonePromoteDnssecKeyVersion(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] dnssec_key_version_uuid: The UUID of the `DnssecKeyVersion` that is being promoted.
@@ -233,6 +236,7 @@ class ZonePromoteDnssecKeyVersion(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param ZonePromoteDnssecKeyVersionArgs args: The arguments to use to populate this resource's properties.

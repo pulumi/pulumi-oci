@@ -33,6 +33,7 @@ class FilesystemSnapshotPolicyArgs:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a FilesystemSnapshotPolicy resource.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain that the file system snapshot policy is in.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system snapshot policy.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -209,6 +210,7 @@ class _FilesystemSnapshotPolicyState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FilesystemSnapshotPolicy resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain that the file system snapshot policy is in.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system snapshot policy.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -473,6 +475,7 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
         $ pulumi import oci:FileStorage/filesystemSnapshotPolicy:FilesystemSnapshotPolicy test_filesystem_snapshot_policy "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain that the file system snapshot policy is in.  Example: `Uocm:PHX-AD-1`
@@ -552,6 +555,7 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:FileStorage/filesystemSnapshotPolicy:FilesystemSnapshotPolicy test_filesystem_snapshot_policy "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param FilesystemSnapshotPolicyArgs args: The arguments to use to populate this resource's properties.

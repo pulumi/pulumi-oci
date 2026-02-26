@@ -26,6 +26,7 @@ class AnnouncementSubscriptionsFilterGroupArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AnnouncementSubscriptionsFilterGroup resource.
+
         :param pulumi.Input[_builtins.str] announcement_subscription_id: The OCID of the announcement subscription.
         :param pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionsFilterGroupFilterArgs']]] filters: (Updatable) A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
         :param pulumi.Input[_builtins.str] name: The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
@@ -88,6 +89,7 @@ class _AnnouncementSubscriptionsFilterGroupState:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AnnouncementSubscriptionsFilterGroup resources.
+
         :param pulumi.Input[_builtins.str] announcement_subscription_id: The OCID of the announcement subscription.
         :param pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionsFilterGroupFilterArgs']]] filters: (Updatable) A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
         :param pulumi.Input[_builtins.str] name: The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
@@ -187,6 +189,7 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
         $ pulumi import oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup test_announcement_subscriptions_filter_group "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] announcement_subscription_id: The OCID of the announcement subscription.
@@ -235,6 +238,7 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup test_announcement_subscriptions_filter_group "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AnnouncementSubscriptionsFilterGroupArgs args: The arguments to use to populate this resource's properties.

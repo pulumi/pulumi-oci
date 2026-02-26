@@ -32,6 +32,7 @@ class WorkspaceExportRequestArgs:
                  object_storage_tenancy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a WorkspaceExportRequest resource.
+
         :param pulumi.Input[_builtins.str] bucket: Name of the Object Storage bucket where the object will be exported.
         :param pulumi.Input[_builtins.str] workspace_id: The workspace ID.
                
@@ -200,6 +201,7 @@ class _WorkspaceExportRequestState:
                  workspace_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WorkspaceExportRequest resources.
+
         :param pulumi.Input[_builtins.bool] are_references_included: This field controls if the references will be exported along with the objects
         :param pulumi.Input[_builtins.str] bucket: Name of the Object Storage bucket where the object will be exported.
         :param pulumi.Input[_builtins.str] created_by: Name of the user who initiated export request.
@@ -546,6 +548,7 @@ class WorkspaceExportRequest(pulumi.CustomResource):
         $ pulumi import oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest test_workspace_export_request "workspaces/{workspaceId}/exportRequests/{exportRequestKey}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] are_references_included: This field controls if the references will be exported along with the objects
@@ -601,6 +604,7 @@ class WorkspaceExportRequest(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest test_workspace_export_request "workspaces/{workspaceId}/exportRequests/{exportRequestKey}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param WorkspaceExportRequestArgs args: The arguments to use to populate this resource's properties.

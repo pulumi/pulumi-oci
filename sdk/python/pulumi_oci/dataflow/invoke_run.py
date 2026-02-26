@@ -49,6 +49,7 @@ class InvokeRunArgs:
                  warehouse_bucket_uri: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a InvokeRun resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of a compartment.
         :param pulumi.Input[_builtins.str] application_id: The OCID of the associated application. If this value is set, then no value for the execute parameter is required. If this value is not set, then a value for the execute parameter is required, and a new application is created and associated with the new run.
         :param pulumi.Input['InvokeRunApplicationLogConfigArgs'] application_log_config: Logging details of Application logs for Data Flow Run.
@@ -499,6 +500,7 @@ class _InvokeRunState:
                  warehouse_bucket_uri: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InvokeRun resources.
+
         :param pulumi.Input[_builtins.str] application_id: The OCID of the associated application. If this value is set, then no value for the execute parameter is required. If this value is not set, then a value for the execute parameter is required, and a new application is created and associated with the new run.
         :param pulumi.Input['InvokeRunApplicationLogConfigArgs'] application_log_config: Logging details of Application logs for Data Flow Run.
         :param pulumi.Input[_builtins.str] archive_uri: A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
@@ -1288,6 +1290,7 @@ class InvokeRun(pulumi.CustomResource):
         $ pulumi import oci:DataFlow/invokeRun:InvokeRun test_invoke_run "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The OCID of the associated application. If this value is set, then no value for the execute parameter is required. If this value is not set, then a value for the execute parameter is required, and a new application is created and associated with the new run.
@@ -1396,6 +1399,7 @@ class InvokeRun(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataFlow/invokeRun:InvokeRun test_invoke_run "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param InvokeRunArgs args: The arguments to use to populate this resource's properties.

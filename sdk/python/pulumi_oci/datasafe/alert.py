@@ -27,6 +27,7 @@ class AlertArgs:
                  status: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Alert resource.
+
         :param pulumi.Input[_builtins.str] alert_id: The OCID of alert.
         :param pulumi.Input[_builtins.str] comment: (Updatable) A comment can be entered to track the alert changes done by the user.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the alert.
@@ -156,6 +157,7 @@ class _AlertState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Alert resources.
+
         :param pulumi.Input[_builtins.str] alert_id: The OCID of alert.
         :param pulumi.Input[_builtins.str] alert_policy_rule_key: The key of the rule of alert policy that triggered alert.
         :param pulumi.Input[_builtins.str] alert_policy_rule_name: The display name of the rule of alert policy that triggered alert.
@@ -556,6 +558,7 @@ class Alert(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/alert:Alert test_alert "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] alert_id: The OCID of alert.
@@ -590,6 +593,7 @@ class Alert(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/alert:Alert test_alert "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AlertArgs args: The arguments to use to populate this resource's properties.

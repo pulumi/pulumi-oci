@@ -23,6 +23,7 @@ class CompareSecurityAssessmentArgs:
                  security_assessment_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a CompareSecurityAssessment resource.
+
         :param pulumi.Input[_builtins.str] comparison_security_assessment_id: The OCID of the security assessment. In this case a security assessment can be another security assessment, a latest assessment or a baseline.
         :param pulumi.Input[_builtins.str] security_assessment_id: The OCID of the security assessment.
                
@@ -69,6 +70,7 @@ class _CompareSecurityAssessmentState:
                  security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CompareSecurityAssessment resources.
+
         :param pulumi.Input[_builtins.str] comparison_security_assessment_id: The OCID of the security assessment. In this case a security assessment can be another security assessment, a latest assessment or a baseline.
         :param pulumi.Input[_builtins.str] security_assessment_id: The OCID of the security assessment.
                
@@ -147,6 +149,7 @@ class CompareSecurityAssessment(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/compareSecurityAssessment:CompareSecurityAssessment test_compare_security_assessment "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] comparison_security_assessment_id: The OCID of the security assessment. In this case a security assessment can be another security assessment, a latest assessment or a baseline.
@@ -189,6 +192,7 @@ class CompareSecurityAssessment(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/compareSecurityAssessment:CompareSecurityAssessment test_compare_security_assessment "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CompareSecurityAssessmentArgs args: The arguments to use to populate this resource's properties.

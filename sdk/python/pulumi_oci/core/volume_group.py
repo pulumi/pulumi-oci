@@ -36,6 +36,7 @@ class VolumeGroupArgs:
                  xrc_kms_key_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a VolumeGroup resource.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the volume group.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the volume group.
         :param pulumi.Input['VolumeGroupSourceDetailsArgs'] source_details: Specifies the source for a volume group.
@@ -256,6 +257,7 @@ class _VolumeGroupState:
                  xrc_kms_key_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VolumeGroup resources.
+
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the volume group.
         :param pulumi.Input[_builtins.str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a volume group.
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The clusterPlacementGroup Id of the volume group for volume group placement.
@@ -606,6 +608,7 @@ class VolumeGroup(pulumi.CustomResource):
         $ pulumi import oci:Core/volumeGroup:VolumeGroup test_volume_group "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the volume group.
@@ -683,6 +686,7 @@ class VolumeGroup(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/volumeGroup:VolumeGroup test_volume_group "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param VolumeGroupArgs args: The arguments to use to populate this resource's properties.

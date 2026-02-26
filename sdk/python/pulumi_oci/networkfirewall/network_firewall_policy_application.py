@@ -27,6 +27,7 @@ class NetworkFirewallPolicyApplicationArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyApplication resource.
+
         :param pulumi.Input[_builtins.int] icmp_type: (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] type: Describes the type of application. The accepted values are - * ICMP * ICMP_V6
@@ -137,6 +138,7 @@ class _NetworkFirewallPolicyApplicationState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyApplication resources.
+
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the application. This field can be used to add additional info.
         :param pulumi.Input[_builtins.int] icmp_code: (Updatable) The value of the ICMP/ICMP_V6 message code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         :param pulumi.Input[_builtins.int] icmp_type: (Updatable) The value of the ICMP/ICMP_V6 message type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
@@ -297,6 +299,7 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyApplication:NetworkFirewallPolicyApplication test_network_firewall_policy_application "networkFirewallPolicies/{networkFirewallPolicyId}/applications/{applicationName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the application. This field can be used to add additional info.
@@ -346,6 +349,7 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyApplication:NetworkFirewallPolicyApplication test_network_firewall_policy_application "networkFirewallPolicies/{networkFirewallPolicyId}/applications/{applicationName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param NetworkFirewallPolicyApplicationArgs args: The arguments to use to populate this resource's properties.

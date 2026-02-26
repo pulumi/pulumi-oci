@@ -30,6 +30,7 @@ class TargetAssetArgs:
                  ms_license: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a TargetAsset resource.
+
         :param pulumi.Input[_builtins.bool] is_excluded_from_execution: (Updatable) A boolean indicating whether the asset should be migrated.
         :param pulumi.Input[_builtins.str] migration_plan_id: OCID of the associated migration plan.
         :param pulumi.Input[_builtins.str] preferred_shape_type: (Updatable) Preferred VM shape type that you provide.
@@ -158,6 +159,7 @@ class _TargetAssetState:
                  user_spec: Optional[pulumi.Input['TargetAssetUserSpecArgs']] = None):
         """
         Input properties used for looking up and filtering TargetAsset resources.
+
         :param pulumi.Input[_builtins.int] block_volumes_performance: (Updatable) Performance of the block volumes.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input['TargetAssetCompatibilityMessageArgs']]] compatibility_messages: Messages about the compatibility issues.
@@ -572,6 +574,7 @@ class TargetAsset(pulumi.CustomResource):
         $ pulumi import oci:CloudMigrations/targetAsset:TargetAsset test_target_asset "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] block_volumes_performance: (Updatable) Performance of the block volumes.
@@ -684,6 +687,7 @@ class TargetAsset(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:CloudMigrations/targetAsset:TargetAsset test_target_asset "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param TargetAssetArgs args: The arguments to use to populate this resource's properties.

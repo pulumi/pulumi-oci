@@ -29,6 +29,7 @@ class FleetCredentialInitArgs:
                  user: pulumi.Input['FleetCredentialUserArgs']):
         """
         The set of arguments for constructing a FleetCredential resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: Compartment OCID
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input['FleetCredentialEntitySpecificsArgs'] entity_specifics: (Updatable) Credential specific Details.
@@ -132,6 +133,7 @@ class _FleetCredentialState:
                  user: Optional[pulumi.Input['FleetCredentialUserArgs']] = None):
         """
         Input properties used for looking up and filtering FleetCredential resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: Compartment OCID
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input['FleetCredentialEntitySpecificsArgs'] entity_specifics: (Updatable) Credential specific Details.
@@ -363,6 +365,7 @@ class FleetCredential(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: Compartment OCID
@@ -427,6 +430,7 @@ class FleetCredential(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param FleetCredentialInitArgs args: The arguments to use to populate this resource's properties.

@@ -49,6 +49,7 @@ class IntegrationInstanceArgs:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a IntegrationInstance resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Integration Instance Identifier.
         :param pulumi.Input[_builtins.str] integration_instance_type: (Updatable) Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
@@ -489,6 +490,7 @@ class _IntegrationInstanceState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IntegrationInstance resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAlternateCustomEndpointArgs']]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
         :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAttachmentArgs']]] attachments: A list of associated attachments to other services
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier.
@@ -1165,6 +1167,7 @@ class IntegrationInstance(pulumi.CustomResource):
         $ pulumi import oci:Integration/integrationInstance:IntegrationInstance test_integration_instance "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceAlternateCustomEndpointArgs', 'IntegrationInstanceAlternateCustomEndpointArgsDict']]]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
@@ -1284,6 +1287,7 @@ class IntegrationInstance(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Integration/integrationInstance:IntegrationInstance test_integration_instance "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param IntegrationInstanceArgs args: The arguments to use to populate this resource's properties.

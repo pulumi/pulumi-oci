@@ -40,6 +40,7 @@ class AnalyticsInstanceArgs:
                  update_channel: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AnalyticsInstance resource.
+
         :param pulumi.Input['AnalyticsInstanceCapacityArgs'] capacity: Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[_builtins.str] feature_set: Analytics feature set.
@@ -328,6 +329,7 @@ class _AnalyticsInstanceState:
                  update_channel: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AnalyticsInstance resources.
+
         :param pulumi.Input[_builtins.str] admin_user: user name of the authorized user.
         :param pulumi.Input['AnalyticsInstanceCapacityArgs'] capacity: Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
@@ -738,6 +740,7 @@ class AnalyticsInstance(pulumi.CustomResource):
         $ pulumi import oci:Analytics/analyticsInstance:AnalyticsInstance test_analytics_instance "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] admin_user: user name of the authorized user.
@@ -827,6 +830,7 @@ class AnalyticsInstance(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Analytics/analyticsInstance:AnalyticsInstance test_analytics_instance "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AnalyticsInstanceArgs args: The arguments to use to populate this resource's properties.

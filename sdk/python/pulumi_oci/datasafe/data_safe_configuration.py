@@ -25,6 +25,7 @@ class DataSafeConfigurationArgs:
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DataSafeConfiguration resource.
+
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Indicates if Data Safe is enabled.
                
                
@@ -79,6 +80,7 @@ class _DataSafeConfigurationState:
                  url: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DataSafeConfiguration resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) A filter to return only resources that match the specified compartment OCID.
         :param pulumi.Input[_builtins.str] data_safe_nat_gateway_ip_address: The Oracle Data Safe's NAT Gateway IP Address.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
@@ -257,6 +259,7 @@ class DataSafeConfiguration(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) A filter to return only resources that match the specified compartment OCID.
@@ -294,6 +297,7 @@ class DataSafeConfiguration(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param DataSafeConfigurationArgs args: The arguments to use to populate this resource's properties.

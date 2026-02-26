@@ -30,6 +30,7 @@ class JobArgs:
                  input_configuration: Optional[pulumi.Input['JobInputConfigurationArgs']] = None):
         """
         The set of arguments for constructing a Job resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
         :param pulumi.Input['JobInputLocationArgs'] input_location: document location and other meta data about documents For TXT only ObjectStoragePrefixLocation supported For CSV only ObjectStorageFileNameLocation is supported For this release only one file is supported for ObjectStorageFileNameLocation i.e CSV file type
         :param pulumi.Input[Sequence[pulumi.Input['JobModelMetadataDetailArgs']]] model_metadata_details: training model details For this release only one model is allowed to be input here. One of the three modelType, ModelId, endpointId should be given other wise error will be thrown from API
@@ -159,6 +160,7 @@ class _JobState:
                  warnings_count: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering Job resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
         :param pulumi.Input[_builtins.int] completed_documents: Number of documents processed for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
         :param pulumi.Input[_builtins.str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job.
@@ -528,6 +530,7 @@ class Job(pulumi.CustomResource):
         $ pulumi import oci:AiLanguage/job:Job test_job "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
@@ -595,6 +598,7 @@ class Job(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:AiLanguage/job:Job test_job "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param JobArgs args: The arguments to use to populate this resource's properties.

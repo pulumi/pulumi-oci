@@ -24,6 +24,7 @@ class ZoneStageDnssecKeyVersionArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ZoneStageDnssecKeyVersion resource.
+
         :param pulumi.Input[_builtins.str] predecessor_dnssec_key_version_uuid: The UUID of the `DnssecKeyVersion` for which a new successor should be generated.
         :param pulumi.Input[_builtins.str] zone_id: The OCID of the target zone.
                
@@ -86,6 +87,7 @@ class _ZoneStageDnssecKeyVersionState:
                  zone_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ZoneStageDnssecKeyVersion resources.
+
         :param pulumi.Input[_builtins.str] predecessor_dnssec_key_version_uuid: The UUID of the `DnssecKeyVersion` for which a new successor should be generated.
         :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] zone_id: The OCID of the target zone.
@@ -180,6 +182,7 @@ class ZoneStageDnssecKeyVersion(pulumi.CustomResource):
 
         Import is not supported for this resource.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] predecessor_dnssec_key_version_uuid: The UUID of the `DnssecKeyVersion` for which a new successor should be generated.
@@ -223,6 +226,7 @@ class ZoneStageDnssecKeyVersion(pulumi.CustomResource):
         ## Import
 
         Import is not supported for this resource.
+
 
         :param str resource_name: The name of the resource.
         :param ZoneStageDnssecKeyVersionArgs args: The arguments to use to populate this resource's properties.

@@ -28,6 +28,7 @@ class ConsumerGroupArgs:
                  is_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a ConsumerGroup resource.
+
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name of the consumer group.
         :param pulumi.Input[_builtins.str] queue_id: The OCID of the associated queue.
                
@@ -159,6 +160,7 @@ class _ConsumerGroupState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ConsumerGroup resources.
+
         :param pulumi.Input[_builtins.str] consumer_group_filter: (Updatable) The filter used by the consumer group. Only messages matching the filter will be available by consumers of the group. The primary consumer group cannot have any filter.
         :param pulumi.Input[_builtins.int] dead_letter_queue_delivery_count: (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue.  A value of 0 indicates that the DLQ is not used. If the value isn't specified, it will be using the value defined at the queue level.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -397,6 +399,7 @@ class ConsumerGroup(pulumi.CustomResource):
         $ pulumi import oci:Queue/consumerGroup:ConsumerGroup test_consumer_group "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] consumer_group_filter: (Updatable) The filter used by the consumer group. Only messages matching the filter will be available by consumers of the group. The primary consumer group cannot have any filter.
@@ -449,6 +452,7 @@ class ConsumerGroup(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Queue/consumerGroup:ConsumerGroup test_consumer_group "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ConsumerGroupArgs args: The arguments to use to populate this resource's properties.

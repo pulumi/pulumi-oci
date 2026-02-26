@@ -25,6 +25,7 @@ class ExternalDbSystemStackMonitoringsManagementArgs:
                  metadata: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ExternalDbSystemStackMonitoringsManagement resource.
+
         :param pulumi.Input[_builtins.bool] enable_stack_monitoring: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                
@@ -103,6 +104,7 @@ class _ExternalDbSystemStackMonitoringsManagementState:
                  metadata: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalDbSystemStackMonitoringsManagement resources.
+
         :param pulumi.Input[_builtins.bool] enable_stack_monitoring: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
                
@@ -206,6 +208,7 @@ class ExternalDbSystemStackMonitoringsManagement(pulumi.CustomResource):
             metadata=external_db_system_stack_monitorings_management_metadata)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_stack_monitoring: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -243,6 +246,7 @@ class ExternalDbSystemStackMonitoringsManagement(pulumi.CustomResource):
             is_enabled=external_db_system_stack_monitorings_management_is_enabled,
             metadata=external_db_system_stack_monitorings_management_metadata)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ExternalDbSystemStackMonitoringsManagementArgs args: The arguments to use to populate this resource's properties.

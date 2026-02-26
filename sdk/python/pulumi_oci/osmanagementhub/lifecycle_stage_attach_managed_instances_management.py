@@ -25,6 +25,7 @@ class LifecycleStageAttachManagedInstancesManagementArgs:
                  managed_instance_details: pulumi.Input['LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs']):
         """
         The set of arguments for constructing a LifecycleStageAttachManagedInstancesManagement resource.
+
         :param pulumi.Input[_builtins.str] lifecycle_stage_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
         :param pulumi.Input['LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs'] managed_instance_details: The details about the managed instances.
         """
@@ -63,6 +64,7 @@ class _LifecycleStageAttachManagedInstancesManagementState:
                  managed_instance_details: Optional[pulumi.Input['LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering LifecycleStageAttachManagedInstancesManagement resources.
+
         :param pulumi.Input[_builtins.str] lifecycle_stage_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
         :param pulumi.Input['LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs'] managed_instance_details: The details about the managed instances.
         """
@@ -138,6 +140,7 @@ class LifecycleStageAttachManagedInstancesManagement(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/lifecycleStageAttachManagedInstancesManagement:LifecycleStageAttachManagedInstancesManagement test_lifecycle_stage_attach_managed_instances_management "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] lifecycle_stage_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
@@ -181,6 +184,7 @@ class LifecycleStageAttachManagedInstancesManagement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/lifecycleStageAttachManagedInstancesManagement:LifecycleStageAttachManagedInstancesManagement test_lifecycle_stage_attach_managed_instances_management "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param LifecycleStageAttachManagedInstancesManagementArgs args: The arguments to use to populate this resource's properties.

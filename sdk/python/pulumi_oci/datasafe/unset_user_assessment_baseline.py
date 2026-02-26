@@ -23,6 +23,7 @@ class UnsetUserAssessmentBaselineArgs:
                  target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a UnsetUserAssessmentBaseline resource.
+
         :param pulumi.Input[_builtins.str] user_assessment_id: The OCID of the user assessment.
                
                
@@ -70,6 +71,7 @@ class _UnsetUserAssessmentBaselineState:
                  user_assessment_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UnsetUserAssessmentBaseline resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] target_ids: The list of database target OCIDs for which the user intends to unset the baseline.
         :param pulumi.Input[_builtins.str] user_assessment_id: The OCID of the user assessment.
                
@@ -149,6 +151,7 @@ class UnsetUserAssessmentBaseline(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/unsetUserAssessmentBaseline:UnsetUserAssessmentBaseline test_unset_user_assessment_baseline "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] target_ids: The list of database target OCIDs for which the user intends to unset the baseline.
@@ -192,6 +195,7 @@ class UnsetUserAssessmentBaseline(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/unsetUserAssessmentBaseline:UnsetUserAssessmentBaseline test_unset_user_assessment_baseline "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param UnsetUserAssessmentBaselineArgs args: The arguments to use to populate this resource's properties.

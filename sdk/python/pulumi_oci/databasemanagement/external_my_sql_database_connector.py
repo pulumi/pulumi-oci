@@ -27,6 +27,7 @@ class ExternalMySqlDatabaseConnectorArgs:
                  check_connection_status_trigger: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a ExternalMySqlDatabaseConnector resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) OCID of compartment for the External MySQL Database.
         :param pulumi.Input['ExternalMySqlDatabaseConnectorConnectorDetailsArgs'] connector_details: (Updatable) Create Details of external database connector.
         :param pulumi.Input[_builtins.bool] is_test_connection_param: Parameter indicating whether database connection needs to be tested.
@@ -122,6 +123,7 @@ class _ExternalMySqlDatabaseConnectorState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalMySqlDatabaseConnector resources.
+
         :param pulumi.Input[_builtins.str] associated_services: Oracle Cloud Infrastructure Services associated with this connector.
         :param pulumi.Input[_builtins.int] check_connection_status_trigger: (Updatable) An optional property when incremented triggers Check Connection Status. Could be set to any integer value.
                
@@ -511,6 +513,7 @@ class ExternalMySqlDatabaseConnector(pulumi.CustomResource):
         $ pulumi import oci:DatabaseManagement/externalMySqlDatabaseConnector:ExternalMySqlDatabaseConnector test_external_my_sql_database_connector "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] check_connection_status_trigger: (Updatable) An optional property when incremented triggers Check Connection Status. Could be set to any integer value.
@@ -564,6 +567,7 @@ class ExternalMySqlDatabaseConnector(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DatabaseManagement/externalMySqlDatabaseConnector:ExternalMySqlDatabaseConnector test_external_my_sql_database_connector "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ExternalMySqlDatabaseConnectorArgs args: The arguments to use to populate this resource's properties.

@@ -32,6 +32,7 @@ class PoolArgs:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Pool resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of a compartment.
         :param pulumi.Input[Sequence[pulumi.Input['PoolConfigurationArgs']]] configurations: (Updatable) List of PoolConfig items.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
@@ -195,6 +196,7 @@ class _PoolState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Pool resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of a compartment.
         :param pulumi.Input[Sequence[pulumi.Input['PoolConfigurationArgs']]] configurations: (Updatable) List of PoolConfig items.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -496,6 +498,7 @@ class Pool(pulumi.CustomResource):
         $ pulumi import oci:DataFlow/pool:Pool test_pool "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of a compartment.
@@ -566,6 +569,7 @@ class Pool(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataFlow/pool:Pool test_pool "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param PoolArgs args: The arguments to use to populate this resource's properties.

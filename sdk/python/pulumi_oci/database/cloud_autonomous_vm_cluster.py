@@ -50,6 +50,7 @@ class CloudAutonomousVmClusterArgs:
                  unregister_pkcs_trigger: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a CloudAutonomousVmCluster resource.
+
         :param pulumi.Input[_builtins.str] cloud_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
@@ -537,6 +538,7 @@ class _CloudAutonomousVmClusterState:
                  unregister_pkcs_trigger: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering CloudAutonomousVmCluster resources.
+
         :param pulumi.Input[_builtins.float] autonomous_data_storage_percentage: The percentage of the data storage used for the Autonomous AI Databases in an Autonomous VM Cluster.
         :param pulumi.Input[_builtins.float] autonomous_data_storage_size_in_tbs: (Updatable) The data disk group size to be allocated for Autonomous AI Databases, in TBs.
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain that the cloud Autonomous VM cluster is located in.
@@ -1642,6 +1644,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         $ pulumi import oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster test_cloud_autonomous_vm_cluster "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.float] autonomous_data_storage_size_in_tbs: (Updatable) The data disk group size to be allocated for Autonomous AI Databases, in TBs.
@@ -1749,6 +1752,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster test_cloud_autonomous_vm_cluster "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param CloudAutonomousVmClusterArgs args: The arguments to use to populate this resource's properties.

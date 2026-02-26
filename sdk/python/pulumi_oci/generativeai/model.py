@@ -32,6 +32,7 @@ class ModelArgs:
                  version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Model resource.
+
         :param pulumi.Input[_builtins.str] base_model_id: The OCID of the base model that's used for fine-tuning.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment OCID for fine-tuned models. For pretrained models, this value is null.
         :param pulumi.Input['ModelFineTuneDetailsArgs'] fine_tune_details: Details about fine-tuning a custom model.
@@ -199,6 +200,7 @@ class _ModelState:
                  version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Model resources.
+
         :param pulumi.Input[_builtins.str] base_model_id: The OCID of the base model that's used for fine-tuning.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] capabilities: Describes what this model can be used for.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment OCID for fine-tuned models. For pretrained models, this value is null.
@@ -529,6 +531,7 @@ class Model(pulumi.CustomResource):
         $ pulumi import oci:GenerativeAi/model:Model test_model "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] base_model_id: The OCID of the base model that's used for fine-tuning.
@@ -568,6 +571,7 @@ class Model(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:GenerativeAi/model:Model test_model "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ModelArgs args: The arguments to use to populate this resource's properties.

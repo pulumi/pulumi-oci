@@ -35,6 +35,7 @@ class VcnArgs:
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Vcn resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the VCN.
         :param pulumi.Input[Sequence[pulumi.Input['VcnByoipv6cidrDetailArgs']]] byoipv6cidr_details: The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
         :param pulumi.Input[_builtins.str] cidr_block: **Deprecated.** Do *not* set this value. Use `cidr_blocks` instead. Example: `10.0.0.0/16`
@@ -276,6 +277,7 @@ class _VcnState:
                  vcn_domain_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Vcn resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] byoipv6cidr_blocks: The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
         :param pulumi.Input[Sequence[pulumi.Input['VcnByoipv6cidrDetailArgs']]] byoipv6cidr_details: The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
         :param pulumi.Input[_builtins.str] cidr_block: **Deprecated.** Do *not* set this value. Use `cidr_blocks` instead. Example: `10.0.0.0/16`
@@ -715,6 +717,7 @@ class Vcn(pulumi.CustomResource):
         $ pulumi import oci:Core/vcn:Vcn test_vcn "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VcnByoipv6cidrDetailArgs', 'VcnByoipv6cidrDetailArgsDict']]]] byoipv6cidr_details: The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
@@ -835,6 +838,7 @@ class Vcn(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Core/vcn:Vcn test_vcn "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param VcnArgs args: The arguments to use to populate this resource's properties.

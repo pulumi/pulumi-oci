@@ -26,6 +26,7 @@ class DataAssetArgs:
                  properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a DataAsset resource.
+
         :param pulumi.Input[_builtins.str] catalog_id: Unique catalog identifier.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] type_key: The key of the data asset type. This can be obtained via the '/types' endpoint.
@@ -129,6 +130,7 @@ class _DataAssetState:
                  uri: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DataAsset resources.
+
         :param pulumi.Input[_builtins.str] catalog_id: Unique catalog identifier.
         :param pulumi.Input[_builtins.str] created_by_id: OCID of the user who created the data asset.
         :param pulumi.Input[_builtins.str] description: (Updatable) Detailed description of the data asset.
@@ -407,6 +409,7 @@ class DataAsset(pulumi.CustomResource):
         $ pulumi import oci:DataCatalog/dataAsset:DataAsset test_data_asset "catalogs/{catalogId}/dataAssets/{dataAssetKey}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] catalog_id: Unique catalog identifier.
@@ -454,6 +457,7 @@ class DataAsset(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataCatalog/dataAsset:DataAsset test_data_asset "catalogs/{catalogId}/dataAssets/{dataAssetKey}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DataAssetArgs args: The arguments to use to populate this resource's properties.

@@ -28,6 +28,7 @@ class IndexArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Index resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['IndexKeyArgs']]] keys: A set of keys for a secondary index.
         :param pulumi.Input[_builtins.str] table_name_or_id: A table name within the compartment, or a table OCID.
                
@@ -126,6 +127,7 @@ class _IndexState:
                  table_name_or_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Index resources.
+
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
         :param pulumi.Input[_builtins.bool] is_if_not_exists: If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
         :param pulumi.Input[Sequence[pulumi.Input['IndexKeyArgs']]] keys: A set of keys for a secondary index.
@@ -318,6 +320,7 @@ class Index(pulumi.CustomResource):
         $ pulumi import oci:Nosql/index:Index test_index "tables/{tableNameOrId}/indexes/{indexName}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
@@ -369,6 +372,7 @@ class Index(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Nosql/index:Index test_index "tables/{tableNameOrId}/indexes/{indexName}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param IndexArgs args: The arguments to use to populate this resource's properties.

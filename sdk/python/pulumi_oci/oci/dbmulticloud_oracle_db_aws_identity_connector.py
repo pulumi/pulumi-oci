@@ -34,6 +34,7 @@ class DbmulticloudOracleDbAwsIdentityConnectorArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a DbmulticloudOracleDbAwsIdentityConnector resource.
+
         :param pulumi.Input[_builtins.str] aws_location: (Updatable) AWS resource location.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB AWS Identity Connector resource.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Google AWS Identity Connector resource name.
@@ -216,6 +217,7 @@ class _DbmulticloudOracleDbAwsIdentityConnectorState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DbmulticloudOracleDbAwsIdentityConnector resources.
+
         :param pulumi.Input[_builtins.str] aws_account_id: (Updatable) AWS Account ID.
         :param pulumi.Input[_builtins.str] aws_location: (Updatable) AWS resource location.
         :param pulumi.Input[_builtins.str] aws_sts_private_endpoint: (Updatable) Private endpoint of AWS Security Token Service.
@@ -521,6 +523,7 @@ class DbmulticloudOracleDbAwsIdentityConnector(pulumi.CustomResource):
         $ pulumi import oci:oci/dbmulticloudOracleDbAwsIdentityConnector:DbmulticloudOracleDbAwsIdentityConnector test_oracle_db_aws_identity_connector "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] aws_account_id: (Updatable) AWS Account ID.
@@ -584,6 +587,7 @@ class DbmulticloudOracleDbAwsIdentityConnector(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:oci/dbmulticloudOracleDbAwsIdentityConnector:DbmulticloudOracleDbAwsIdentityConnector test_oracle_db_aws_identity_connector "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DbmulticloudOracleDbAwsIdentityConnectorArgs args: The arguments to use to populate this resource's properties.

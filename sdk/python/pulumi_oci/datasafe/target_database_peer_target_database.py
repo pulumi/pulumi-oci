@@ -29,6 +29,7 @@ class TargetDatabasePeerTargetDatabaseInitArgs:
                  tls_config: Optional[pulumi.Input['TargetDatabasePeerTargetDatabaseTlsConfigArgs']] = None):
         """
         The set of arguments for constructing a TargetDatabasePeerTargetDatabase resource.
+
         :param pulumi.Input['TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs'] database_details: (Updatable) Details of the database for the registration in Data Safe.
         :param pulumi.Input[_builtins.str] target_database_id: The OCID of the Data Safe target database.
         :param pulumi.Input[_builtins.str] dataguard_association_id: The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
@@ -137,6 +138,7 @@ class _TargetDatabasePeerTargetDatabaseState:
                  tls_config: Optional[pulumi.Input['TargetDatabasePeerTargetDatabaseTlsConfigArgs']] = None):
         """
         Input properties used for looking up and filtering TargetDatabasePeerTargetDatabase resources.
+
         :param pulumi.Input['TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs'] database_details: (Updatable) Details of the database for the registration in Data Safe.
         :param pulumi.Input[_builtins.str] database_unique_name: Unique name of the database associated to the peer target database.
         :param pulumi.Input[_builtins.str] dataguard_association_id: The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
@@ -381,6 +383,7 @@ class TargetDatabasePeerTargetDatabase(pulumi.CustomResource):
         $ pulumi import oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase test_target_database_peer_target_database "targetDatabases/{targetDatabaseId}/peerTargetDatabases/{peerTargetDatabaseId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs', 'TargetDatabasePeerTargetDatabaseDatabaseDetailsArgsDict']] database_details: (Updatable) Details of the database for the registration in Data Safe.
@@ -443,6 +446,7 @@ class TargetDatabasePeerTargetDatabase(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase test_target_database_peer_target_database "targetDatabases/{targetDatabaseId}/peerTargetDatabases/{peerTargetDatabaseId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param TargetDatabasePeerTargetDatabaseInitArgs args: The arguments to use to populate this resource's properties.

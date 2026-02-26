@@ -31,6 +31,7 @@ class ScheduledActionArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ScheduledAction resource.
+
         :param pulumi.Input[_builtins.str] action_type: The type of the scheduled action being performed
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] scheduling_plan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Plan.
@@ -178,6 +179,7 @@ class _ScheduledActionState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ScheduledAction resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['ScheduledActionActionMemberArgs']]] action_members: (Updatable) The list of action members in a scheduled action.
         :param pulumi.Input[_builtins.int] action_order: The order of the scheduled action.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] action_params: (Updatable) Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
@@ -465,6 +467,7 @@ class ScheduledAction(pulumi.CustomResource):
         $ pulumi import oci:Database/scheduledAction:ScheduledAction test_scheduled_action "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduledActionActionMemberArgs', 'ScheduledActionActionMemberArgsDict']]]] action_members: (Updatable) The list of action members in a scheduled action.
@@ -521,6 +524,7 @@ class ScheduledAction(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Database/scheduledAction:ScheduledAction test_scheduled_action "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ScheduledActionArgs args: The arguments to use to populate this resource's properties.

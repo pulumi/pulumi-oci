@@ -29,6 +29,7 @@ class AcceptedAgreementArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AcceptedAgreement resource.
+
         :param pulumi.Input[_builtins.str] agreement_id: The agreement to accept.
         :param pulumi.Input[_builtins.str] compartment_id: The unique identifier for the compartment where the agreement will be accepted.
         :param pulumi.Input[_builtins.str] listing_id: The unique identifier for the listing associated with the agreement.
@@ -169,6 +170,7 @@ class _AcceptedAgreementState:
                  time_accepted: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AcceptedAgreement resources.
+
         :param pulumi.Input[_builtins.str] agreement_id: The agreement to accept.
         :param pulumi.Input[_builtins.str] compartment_id: The unique identifier for the compartment where the agreement will be accepted.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -368,6 +370,7 @@ class AcceptedAgreement(pulumi.CustomResource):
         $ pulumi import oci:Marketplace/acceptedAgreement:AcceptedAgreement test_accepted_agreement "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] agreement_id: The agreement to accept.
@@ -426,6 +429,7 @@ class AcceptedAgreement(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Marketplace/acceptedAgreement:AcceptedAgreement test_accepted_agreement "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AcceptedAgreementArgs args: The arguments to use to populate this resource's properties.

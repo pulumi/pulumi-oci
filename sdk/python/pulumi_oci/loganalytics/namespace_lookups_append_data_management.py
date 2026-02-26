@@ -27,6 +27,7 @@ class NamespaceLookupsAppendDataManagementArgs:
                  is_force: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a NamespaceLookupsAppendDataManagement resource.
+
         :param pulumi.Input[_builtins.str] append_lookup_file: Path to the file containing data for the lookup append.
         :param pulumi.Input[_builtins.str] lookup_name: The name of the lookup to operate on.
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
@@ -136,6 +137,7 @@ class _NamespaceLookupsAppendDataManagementState:
                  namespace: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NamespaceLookupsAppendDataManagement resources.
+
         :param pulumi.Input[_builtins.str] append_lookup_file: Path to the file containing data for the lookup append.
         :param pulumi.Input[_builtins.str] char_encoding: The character encoding of the uploaded file.
         :param pulumi.Input[_builtins.str] expect: A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
@@ -277,6 +279,7 @@ class NamespaceLookupsAppendDataManagement(pulumi.CustomResource):
 
         Import is not supported for NamespaceLookupsAppendDataManagement
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] append_lookup_file: Path to the file containing data for the lookup append.
@@ -322,6 +325,7 @@ class NamespaceLookupsAppendDataManagement(pulumi.CustomResource):
         ## Import
 
         Import is not supported for NamespaceLookupsAppendDataManagement
+
 
         :param str resource_name: The name of the resource.
         :param NamespaceLookupsAppendDataManagementArgs args: The arguments to use to populate this resource's properties.

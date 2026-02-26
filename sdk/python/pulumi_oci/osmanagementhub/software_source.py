@@ -47,6 +47,7 @@ class SoftwareSourceArgs:
                  vendor_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceVendorSoftwareSourceArgs']]]] = None):
         """
         The set of arguments for constructing a SoftwareSource resource.
+
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
         :param pulumi.Input[_builtins.str] software_source_type: (Updatable) Type of software source.
         :param pulumi.Input[_builtins.str] advanced_repo_options: (Updatable) Advanced repository options for the software source
@@ -461,6 +462,7 @@ class _SoftwareSourceState:
                  vendor_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceVendorSoftwareSourceArgs']]]] = None):
         """
         Input properties used for looking up and filtering SoftwareSource resources.
+
         :param pulumi.Input[_builtins.str] advanced_repo_options: (Updatable) Advanced repository options for the software source
         :param pulumi.Input[_builtins.str] arch_type: The architecture type supported by the third-party software source.
         :param pulumi.Input[_builtins.str] availability: Availability of the software source (for non-OCI environments).
@@ -1091,6 +1093,7 @@ class SoftwareSource(pulumi.CustomResource):
         $ pulumi import oci:OsManagementHub/softwareSource:SoftwareSource test_software_source "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] advanced_repo_options: (Updatable) Advanced repository options for the software source
@@ -1144,6 +1147,7 @@ class SoftwareSource(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:OsManagementHub/softwareSource:SoftwareSource test_software_source "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SoftwareSourceArgs args: The arguments to use to populate this resource's properties.

@@ -33,6 +33,7 @@ class BastionArgs:
                  static_jump_host_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Bastion resource.
+
         :param pulumi.Input[_builtins.str] bastion_type: The type of bastion. Use `standard`.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
         :param pulumi.Input[_builtins.str] target_subnet_id: The unique identifier (OCID) of the subnet that the bastion connects to.
@@ -246,6 +247,7 @@ class _BastionState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Bastion resources.
+
         :param pulumi.Input[_builtins.str] bastion_type: The type of bastion. Use `standard`.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] client_cidr_block_allow_lists: (Updatable) A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
@@ -617,6 +619,7 @@ class Bastion(pulumi.CustomResource):
         $ pulumi import oci:Bastion/bastion:Bastion test_bastion "id"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bastion_type: The type of bastion. Use `standard`.
@@ -682,6 +685,7 @@ class Bastion(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:Bastion/bastion:Bastion test_bastion "id"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param BastionArgs args: The arguments to use to populate this resource's properties.

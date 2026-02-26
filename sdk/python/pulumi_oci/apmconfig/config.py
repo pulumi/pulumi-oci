@@ -48,6 +48,7 @@ class ConfigArgs:
                  service_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Config resource.
+
         :param pulumi.Input[_builtins.str] apm_domain_id: (Updatable) The APM Domain ID the request is intended for.
         :param pulumi.Input[_builtins.str] config_type: (Updatable) The type of configuration item.
         :param pulumi.Input[_builtins.str] agent_version: (Updatable) The version of the referenced agent bundle.
@@ -468,6 +469,7 @@ class _ConfigState:
                  updated_by: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Config resources.
+
         :param pulumi.Input[_builtins.str] agent_version: (Updatable) The version of the referenced agent bundle.
         :param pulumi.Input[_builtins.str] apm_domain_id: (Updatable) The APM Domain ID the request is intended for.
         :param pulumi.Input[_builtins.str] attach_install_dir: (Updatable) The directory owned by runAsUser.
@@ -1056,6 +1058,7 @@ class Config(pulumi.CustomResource):
         $ pulumi import oci:ApmConfig/config:Config test_config "configs/{configId}/apmDomainId/{apmDomainId}"
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] agent_version: (Updatable) The version of the referenced agent bundle.
@@ -1173,6 +1176,7 @@ class Config(pulumi.CustomResource):
         ```sh
         $ pulumi import oci:ApmConfig/config:Config test_config "configs/{configId}/apmDomainId/{apmDomainId}"
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ConfigArgs args: The arguments to use to populate this resource's properties.

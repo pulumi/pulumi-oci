@@ -161,6 +161,8 @@ import (
 type ExadataInsight struct {
 	pulumi.CustomResourceState
 
+	// Object containing chargeback plan details
+	ChargebackPlanDetails ExadataInsightChargebackPlanDetailArrayOutput `pulumi:"chargebackPlanDetails"`
 	// (Updatable) Compartment Identifier of Exadata insight
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -207,6 +209,8 @@ type ExadataInsight struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringOutput `pulumi:"status"`
+	// A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+	StatusDetails pulumi.StringOutput `pulumi:"statusDetails"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
@@ -251,6 +255,8 @@ func GetExadataInsight(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ExadataInsight resources.
 type exadataInsightState struct {
+	// Object containing chargeback plan details
+	ChargebackPlanDetails []ExadataInsightChargebackPlanDetail `pulumi:"chargebackPlanDetails"`
 	// (Updatable) Compartment Identifier of Exadata insight
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -297,6 +303,8 @@ type exadataInsightState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status *string `pulumi:"status"`
+	// A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+	StatusDetails *string `pulumi:"statusDetails"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
@@ -306,6 +314,8 @@ type exadataInsightState struct {
 }
 
 type ExadataInsightState struct {
+	// Object containing chargeback plan details
+	ChargebackPlanDetails ExadataInsightChargebackPlanDetailArrayInput
 	// (Updatable) Compartment Identifier of Exadata insight
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -352,6 +362,8 @@ type ExadataInsightState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringPtrInput
+	// A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+	StatusDetails pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
 	// The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
@@ -506,6 +518,11 @@ func (o ExadataInsightOutput) ToExadataInsightOutputWithContext(ctx context.Cont
 	return o
 }
 
+// Object containing chargeback plan details
+func (o ExadataInsightOutput) ChargebackPlanDetails() ExadataInsightChargebackPlanDetailArrayOutput {
+	return o.ApplyT(func(v *ExadataInsight) ExadataInsightChargebackPlanDetailArrayOutput { return v.ChargebackPlanDetails }).(ExadataInsightChargebackPlanDetailArrayOutput)
+}
+
 // (Updatable) Compartment Identifier of Exadata insight
 func (o ExadataInsightOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadataInsight) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -621,6 +638,11 @@ func (o ExadataInsightOutput) State() pulumi.StringOutput {
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExadataInsightOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadataInsight) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+}
+
+// A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+func (o ExadataInsightOutput) StatusDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v *ExadataInsight) pulumi.StringOutput { return v.StatusDetails }).(pulumi.StringOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`

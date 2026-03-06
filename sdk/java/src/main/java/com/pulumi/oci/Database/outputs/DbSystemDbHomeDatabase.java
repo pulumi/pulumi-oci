@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.DbSystemDbHomeDatabaseConnectionString;
 import com.pulumi.oci.Database.outputs.DbSystemDbHomeDatabaseDbBackupConfig;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -39,6 +40,16 @@ public final class DbSystemDbHomeDatabase {
      */
     private @Nullable String characterSet;
     private @Nullable List<DbSystemDbHomeDatabaseConnectionString> connectionStrings;
+    /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    private @Nullable Map<String,String> databaseDefinedTags;
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    private @Nullable Map<String,String> databaseFreeformTags;
     /**
      * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -88,6 +99,16 @@ public final class DbSystemDbHomeDatabase {
      */
     private @Nullable String id;
     /**
+     * @return True if active Data Guard is enabled.
+     * 
+     */
+    private @Nullable Boolean isActiveDataGuardEnabled;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+     * 
+     */
+    private @Nullable String keyStoreId;
+    /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -118,6 +139,16 @@ public final class DbSystemDbHomeDatabase {
      */
     private @Nullable List<String> pluggableDatabases;
     /**
+     * @return The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * 
+     */
+    private @Nullable String protectionMode;
+    /**
+     * @return Specifies a prefix for the `Oracle SID` of the database to be created.
+     * 
+     */
+    private @Nullable String sidPrefix;
+    /**
      * @return The current state of the DB system.
      * 
      */
@@ -137,6 +168,18 @@ public final class DbSystemDbHomeDatabase {
      * 
      */
     private @Nullable String timeStampForPointInTimeRecovery;
+    /**
+     * @return The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+     * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+     * * MAXIMUM_PERFORMANCE - ASYNC
+     * * MAXIMUM_PROTECTION - SYNC
+     * 
+     * For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+     * 
+     * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+     * 
+     */
+    private @Nullable String transportType;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      * 
@@ -176,6 +219,20 @@ public final class DbSystemDbHomeDatabase {
     }
     public List<DbSystemDbHomeDatabaseConnectionString> connectionStrings() {
         return this.connectionStrings == null ? List.of() : this.connectionStrings;
+    }
+    /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Map<String,String> databaseDefinedTags() {
+        return this.databaseDefinedTags == null ? Map.of() : this.databaseDefinedTags;
+    }
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Map<String,String> databaseFreeformTags() {
+        return this.databaseFreeformTags == null ? Map.of() : this.databaseFreeformTags;
     }
     /**
      * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -246,6 +303,20 @@ public final class DbSystemDbHomeDatabase {
         return Optional.ofNullable(this.id);
     }
     /**
+     * @return True if active Data Guard is enabled.
+     * 
+     */
+    public Optional<Boolean> isActiveDataGuardEnabled() {
+        return Optional.ofNullable(this.isActiveDataGuardEnabled);
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+     * 
+     */
+    public Optional<String> keyStoreId() {
+        return Optional.ofNullable(this.keyStoreId);
+    }
+    /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -288,6 +359,20 @@ public final class DbSystemDbHomeDatabase {
         return this.pluggableDatabases == null ? List.of() : this.pluggableDatabases;
     }
     /**
+     * @return The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * 
+     */
+    public Optional<String> protectionMode() {
+        return Optional.ofNullable(this.protectionMode);
+    }
+    /**
+     * @return Specifies a prefix for the `Oracle SID` of the database to be created.
+     * 
+     */
+    public Optional<String> sidPrefix() {
+        return Optional.ofNullable(this.sidPrefix);
+    }
+    /**
      * @return The current state of the DB system.
      * 
      */
@@ -316,6 +401,20 @@ public final class DbSystemDbHomeDatabase {
         return Optional.ofNullable(this.timeStampForPointInTimeRecovery);
     }
     /**
+     * @return The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+     * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+     * * MAXIMUM_PERFORMANCE - ASYNC
+     * * MAXIMUM_PROTECTION - SYNC
+     * 
+     * For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+     * 
+     * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+     * 
+     */
+    public Optional<String> transportType() {
+        return Optional.ofNullable(this.transportType);
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      * 
      */
@@ -337,6 +436,8 @@ public final class DbSystemDbHomeDatabase {
         private @Nullable String backupTdePassword;
         private @Nullable String characterSet;
         private @Nullable List<DbSystemDbHomeDatabaseConnectionString> connectionStrings;
+        private @Nullable Map<String,String> databaseDefinedTags;
+        private @Nullable Map<String,String> databaseFreeformTags;
         private @Nullable String databaseId;
         private @Nullable String databaseSoftwareImageId;
         private @Nullable DbSystemDbHomeDatabaseDbBackupConfig dbBackupConfig;
@@ -347,16 +448,21 @@ public final class DbSystemDbHomeDatabase {
         private @Nullable Map<String,String> definedTags;
         private @Nullable Map<String,String> freeformTags;
         private @Nullable String id;
+        private @Nullable Boolean isActiveDataGuardEnabled;
+        private @Nullable String keyStoreId;
         private @Nullable String kmsKeyId;
         private @Nullable String kmsKeyVersionId;
         private @Nullable String lifecycleDetails;
         private @Nullable String ncharacterSet;
         private @Nullable String pdbName;
         private @Nullable List<String> pluggableDatabases;
+        private @Nullable String protectionMode;
+        private @Nullable String sidPrefix;
         private @Nullable String state;
         private @Nullable String tdeWalletPassword;
         private @Nullable String timeCreated;
         private @Nullable String timeStampForPointInTimeRecovery;
+        private @Nullable String transportType;
         private @Nullable String vaultId;
         public Builder() {}
         public Builder(DbSystemDbHomeDatabase defaults) {
@@ -366,6 +472,8 @@ public final class DbSystemDbHomeDatabase {
     	      this.backupTdePassword = defaults.backupTdePassword;
     	      this.characterSet = defaults.characterSet;
     	      this.connectionStrings = defaults.connectionStrings;
+    	      this.databaseDefinedTags = defaults.databaseDefinedTags;
+    	      this.databaseFreeformTags = defaults.databaseFreeformTags;
     	      this.databaseId = defaults.databaseId;
     	      this.databaseSoftwareImageId = defaults.databaseSoftwareImageId;
     	      this.dbBackupConfig = defaults.dbBackupConfig;
@@ -376,16 +484,21 @@ public final class DbSystemDbHomeDatabase {
     	      this.definedTags = defaults.definedTags;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isActiveDataGuardEnabled = defaults.isActiveDataGuardEnabled;
+    	      this.keyStoreId = defaults.keyStoreId;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.pdbName = defaults.pdbName;
     	      this.pluggableDatabases = defaults.pluggableDatabases;
+    	      this.protectionMode = defaults.protectionMode;
+    	      this.sidPrefix = defaults.sidPrefix;
     	      this.state = defaults.state;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeStampForPointInTimeRecovery = defaults.timeStampForPointInTimeRecovery;
+    	      this.transportType = defaults.transportType;
     	      this.vaultId = defaults.vaultId;
         }
 
@@ -423,6 +536,18 @@ public final class DbSystemDbHomeDatabase {
         }
         public Builder connectionStrings(DbSystemDbHomeDatabaseConnectionString... connectionStrings) {
             return connectionStrings(List.of(connectionStrings));
+        }
+        @CustomType.Setter
+        public Builder databaseDefinedTags(@Nullable Map<String,String> databaseDefinedTags) {
+
+            this.databaseDefinedTags = databaseDefinedTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseFreeformTags(@Nullable Map<String,String> databaseFreeformTags) {
+
+            this.databaseFreeformTags = databaseFreeformTags;
+            return this;
         }
         @CustomType.Setter
         public Builder databaseId(@Nullable String databaseId) {
@@ -485,6 +610,18 @@ public final class DbSystemDbHomeDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder isActiveDataGuardEnabled(@Nullable Boolean isActiveDataGuardEnabled) {
+
+            this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder keyStoreId(@Nullable String keyStoreId) {
+
+            this.keyStoreId = keyStoreId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder kmsKeyId(@Nullable String kmsKeyId) {
 
             this.kmsKeyId = kmsKeyId;
@@ -524,6 +661,18 @@ public final class DbSystemDbHomeDatabase {
             return pluggableDatabases(List.of(pluggableDatabases));
         }
         @CustomType.Setter
+        public Builder protectionMode(@Nullable String protectionMode) {
+
+            this.protectionMode = protectionMode;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sidPrefix(@Nullable String sidPrefix) {
+
+            this.sidPrefix = sidPrefix;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
 
             this.state = state;
@@ -548,6 +697,12 @@ public final class DbSystemDbHomeDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder transportType(@Nullable String transportType) {
+
+            this.transportType = transportType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder vaultId(@Nullable String vaultId) {
 
             this.vaultId = vaultId;
@@ -560,6 +715,8 @@ public final class DbSystemDbHomeDatabase {
             _resultValue.backupTdePassword = backupTdePassword;
             _resultValue.characterSet = characterSet;
             _resultValue.connectionStrings = connectionStrings;
+            _resultValue.databaseDefinedTags = databaseDefinedTags;
+            _resultValue.databaseFreeformTags = databaseFreeformTags;
             _resultValue.databaseId = databaseId;
             _resultValue.databaseSoftwareImageId = databaseSoftwareImageId;
             _resultValue.dbBackupConfig = dbBackupConfig;
@@ -570,16 +727,21 @@ public final class DbSystemDbHomeDatabase {
             _resultValue.definedTags = definedTags;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            _resultValue.keyStoreId = keyStoreId;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.ncharacterSet = ncharacterSet;
             _resultValue.pdbName = pdbName;
             _resultValue.pluggableDatabases = pluggableDatabases;
+            _resultValue.protectionMode = protectionMode;
+            _resultValue.sidPrefix = sidPrefix;
             _resultValue.state = state;
             _resultValue.tdeWalletPassword = tdeWalletPassword;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;
+            _resultValue.transportType = transportType;
             _resultValue.vaultId = vaultId;
             return _resultValue;
         }

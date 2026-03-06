@@ -9,8 +9,10 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DataSafe.MaskDataArgs;
 import com.pulumi.oci.DataSafe.inputs.MaskDataState;
+import com.pulumi.oci.DataSafe.outputs.MaskDataTargetCredentials;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @ResourceType(type="oci:DataSafe/maskData:MaskData")
@@ -20,6 +22,12 @@ public class MaskData extends com.pulumi.resources.CustomResource {
 
     public Output<String> maskingPolicyId() {
         return this.maskingPolicyId;
+    }
+    @Export(name="targetCredentials", refs={MaskDataTargetCredentials.class}, tree="[0]")
+    private Output</* @Nullable */ MaskDataTargetCredentials> targetCredentials;
+
+    public Output<Optional<MaskDataTargetCredentials>> targetCredentials() {
+        return Codegen.optional(this.targetCredentials);
     }
     @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output<String> targetId;

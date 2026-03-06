@@ -5,7 +5,9 @@ package com.pulumi.oci.Lustre.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Lustre.inputs.FileStorageLustreFileSystemDateTimeDetailsArgs;
 import com.pulumi.oci.Lustre.inputs.FileStorageLustreFileSystemMaintenanceWindowArgs;
+import com.pulumi.oci.Lustre.inputs.FileStorageLustreFileSystemMaintenanceWindowMetadataArgs;
 import com.pulumi.oci.Lustre.inputs.FileStorageLustreFileSystemRootSquashConfigurationArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -78,6 +80,13 @@ public final class FileStorageLustreFileSystemState extends com.pulumi.resources
      */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+
+    @Import(name="dateTimeDetails")
+    private @Nullable Output<FileStorageLustreFileSystemDateTimeDetailsArgs> dateTimeDetails;
+
+    public Optional<Output<FileStorageLustreFileSystemDateTimeDetailsArgs>> dateTimeDetails() {
+        return Optional.ofNullable(this.dateTimeDetails);
     }
 
     /**
@@ -201,14 +210,29 @@ public final class FileStorageLustreFileSystemState extends com.pulumi.resources
     }
 
     /**
-     * The preferred day and time to perform maintenance.
+     * The meta-data for maintenance window.
+     * 
+     */
+    @Import(name="maintenanceWindowMetadatas")
+    private @Nullable Output<List<FileStorageLustreFileSystemMaintenanceWindowMetadataArgs>> maintenanceWindowMetadatas;
+
+    /**
+     * @return The meta-data for maintenance window.
+     * 
+     */
+    public Optional<Output<List<FileStorageLustreFileSystemMaintenanceWindowMetadataArgs>>> maintenanceWindowMetadatas() {
+        return Optional.ofNullable(this.maintenanceWindowMetadatas);
+    }
+
+    /**
+     * (Updatable) The preferred day and time to perform maintenance.
      * 
      */
     @Import(name="maintenanceWindows")
     private @Nullable Output<List<FileStorageLustreFileSystemMaintenanceWindowArgs>> maintenanceWindows;
 
     /**
-     * @return The preferred day and time to perform maintenance.
+     * @return (Updatable) The preferred day and time to perform maintenance.
      * 
      */
     public Optional<Output<List<FileStorageLustreFileSystemMaintenanceWindowArgs>>> maintenanceWindows() {
@@ -261,6 +285,27 @@ public final class FileStorageLustreFileSystemState extends com.pulumi.resources
     }
 
     /**
+     * (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="overrideMaintenanceTrigger")
+    private @Nullable Output<Integer> overrideMaintenanceTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Integer>> overrideMaintenanceTrigger() {
+        return Optional.ofNullable(this.overrideMaintenanceTrigger);
+    }
+
+    /**
      * The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
      * 
      */
@@ -308,18 +353,12 @@ public final class FileStorageLustreFileSystemState extends com.pulumi.resources
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Lustre file system is in.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Lustre file system is in.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -393,6 +432,7 @@ public final class FileStorageLustreFileSystemState extends com.pulumi.resources
         this.capacityInGbs = $.capacityInGbs;
         this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
+        this.dateTimeDetails = $.dateTimeDetails;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.fileSystemDescription = $.fileSystemDescription;
@@ -401,10 +441,12 @@ public final class FileStorageLustreFileSystemState extends com.pulumi.resources
         this.kmsKeyId = $.kmsKeyId;
         this.lifecycleDetails = $.lifecycleDetails;
         this.lnet = $.lnet;
+        this.maintenanceWindowMetadatas = $.maintenanceWindowMetadatas;
         this.maintenanceWindows = $.maintenanceWindows;
         this.majorVersion = $.majorVersion;
         this.managementServiceAddress = $.managementServiceAddress;
         this.nsgIds = $.nsgIds;
+        this.overrideMaintenanceTrigger = $.overrideMaintenanceTrigger;
         this.performanceTier = $.performanceTier;
         this.rootSquashConfiguration = $.rootSquashConfiguration;
         this.state = $.state;
@@ -515,6 +557,15 @@ public final class FileStorageLustreFileSystemState extends com.pulumi.resources
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        public Builder dateTimeDetails(@Nullable Output<FileStorageLustreFileSystemDateTimeDetailsArgs> dateTimeDetails) {
+            $.dateTimeDetails = dateTimeDetails;
+            return this;
+        }
+
+        public Builder dateTimeDetails(FileStorageLustreFileSystemDateTimeDetailsArgs dateTimeDetails) {
+            return dateTimeDetails(Output.of(dateTimeDetails));
         }
 
         /**
@@ -686,7 +737,38 @@ public final class FileStorageLustreFileSystemState extends com.pulumi.resources
         }
 
         /**
-         * @param maintenanceWindows The preferred day and time to perform maintenance.
+         * @param maintenanceWindowMetadatas The meta-data for maintenance window.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceWindowMetadatas(@Nullable Output<List<FileStorageLustreFileSystemMaintenanceWindowMetadataArgs>> maintenanceWindowMetadatas) {
+            $.maintenanceWindowMetadatas = maintenanceWindowMetadatas;
+            return this;
+        }
+
+        /**
+         * @param maintenanceWindowMetadatas The meta-data for maintenance window.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceWindowMetadatas(List<FileStorageLustreFileSystemMaintenanceWindowMetadataArgs> maintenanceWindowMetadatas) {
+            return maintenanceWindowMetadatas(Output.of(maintenanceWindowMetadatas));
+        }
+
+        /**
+         * @param maintenanceWindowMetadatas The meta-data for maintenance window.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceWindowMetadatas(FileStorageLustreFileSystemMaintenanceWindowMetadataArgs... maintenanceWindowMetadatas) {
+            return maintenanceWindowMetadatas(List.of(maintenanceWindowMetadatas));
+        }
+
+        /**
+         * @param maintenanceWindows (Updatable) The preferred day and time to perform maintenance.
          * 
          * @return builder
          * 
@@ -697,7 +779,7 @@ public final class FileStorageLustreFileSystemState extends com.pulumi.resources
         }
 
         /**
-         * @param maintenanceWindows The preferred day and time to perform maintenance.
+         * @param maintenanceWindows (Updatable) The preferred day and time to perform maintenance.
          * 
          * @return builder
          * 
@@ -707,7 +789,7 @@ public final class FileStorageLustreFileSystemState extends com.pulumi.resources
         }
 
         /**
-         * @param maintenanceWindows The preferred day and time to perform maintenance.
+         * @param maintenanceWindows (Updatable) The preferred day and time to perform maintenance.
          * 
          * @return builder
          * 
@@ -790,6 +872,33 @@ public final class FileStorageLustreFileSystemState extends com.pulumi.resources
         }
 
         /**
+         * @param overrideMaintenanceTrigger (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder overrideMaintenanceTrigger(@Nullable Output<Integer> overrideMaintenanceTrigger) {
+            $.overrideMaintenanceTrigger = overrideMaintenanceTrigger;
+            return this;
+        }
+
+        /**
+         * @param overrideMaintenanceTrigger (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder overrideMaintenanceTrigger(Integer overrideMaintenanceTrigger) {
+            return overrideMaintenanceTrigger(Output.of(overrideMaintenanceTrigger));
+        }
+
+        /**
          * @param performanceTier The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
          * 
          * @return builder
@@ -855,9 +964,6 @@ public final class FileStorageLustreFileSystemState extends com.pulumi.resources
         /**
          * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Lustre file system is in.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -868,9 +974,6 @@ public final class FileStorageLustreFileSystemState extends com.pulumi.resources
 
         /**
          * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Lustre file system is in.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -59,6 +59,8 @@ type LookupMaskingPolicyArgs struct {
 // A collection of values returned by getMaskingPolicy.
 type LookupMaskingPolicyResult struct {
 	AddMaskingColumnsFromSdmTrigger int `pulumi:"addMaskingColumnsFromSdmTrigger"`
+	// Specifies whether target database credentials are required to perform masking with this policy
+	AreTargetCredentialsRequired bool `pulumi:"areTargetCredentialsRequired"`
 	// The source of masking columns.
 	ColumnSources []GetMaskingPolicyColumnSource `pulumi:"columnSources"`
 	// The OCID of the compartment that contains the masking policy.
@@ -133,6 +135,11 @@ func (o LookupMaskingPolicyResultOutput) ToLookupMaskingPolicyResultOutputWithCo
 
 func (o LookupMaskingPolicyResultOutput) AddMaskingColumnsFromSdmTrigger() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupMaskingPolicyResult) int { return v.AddMaskingColumnsFromSdmTrigger }).(pulumi.IntOutput)
+}
+
+// Specifies whether target database credentials are required to perform masking with this policy
+func (o LookupMaskingPolicyResultOutput) AreTargetCredentialsRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupMaskingPolicyResult) bool { return v.AreTargetCredentialsRequired }).(pulumi.BoolOutput)
 }
 
 // The source of masking columns.

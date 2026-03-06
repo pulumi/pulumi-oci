@@ -62,10 +62,6 @@ export interface GetFusionEnvironmentAdminUserResult {
      */
     readonly lastName: string;
     /**
-     * @deprecated The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
-     */
-    readonly password: string;
-    /**
      * Admin username
      */
     readonly username: string;

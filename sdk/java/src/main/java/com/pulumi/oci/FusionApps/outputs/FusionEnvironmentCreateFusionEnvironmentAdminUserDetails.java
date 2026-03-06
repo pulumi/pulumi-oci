@@ -7,8 +7,6 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 @CustomType
 public final class FusionEnvironmentCreateFusionEnvironmentAdminUserDetails {
@@ -27,15 +25,6 @@ public final class FusionEnvironmentCreateFusionEnvironmentAdminUserDetails {
      * 
      */
     private String lastName;
-    /**
-     * @return The password for the administrator.
-     * 
-     * @deprecated
-     * The &#39;password&#39; field is deprecated. Please use the OCI Console or email link to reset the password.
-     * 
-     */
-    @Deprecated /* The 'password' field is deprecated. Please use the OCI Console or email link to reset the password. */
-    private @Nullable String password;
     /**
      * @return The username for the administrator.
      * 
@@ -65,17 +54,6 @@ public final class FusionEnvironmentCreateFusionEnvironmentAdminUserDetails {
         return this.lastName;
     }
     /**
-     * @return The password for the administrator.
-     * 
-     * @deprecated
-     * The &#39;password&#39; field is deprecated. Please use the OCI Console or email link to reset the password.
-     * 
-     */
-    @Deprecated /* The 'password' field is deprecated. Please use the OCI Console or email link to reset the password. */
-    public Optional<String> password() {
-        return Optional.ofNullable(this.password);
-    }
-    /**
      * @return The username for the administrator.
      * 
      */
@@ -95,7 +73,6 @@ public final class FusionEnvironmentCreateFusionEnvironmentAdminUserDetails {
         private String emailAddress;
         private String firstName;
         private String lastName;
-        private @Nullable String password;
         private String username;
         public Builder() {}
         public Builder(FusionEnvironmentCreateFusionEnvironmentAdminUserDetails defaults) {
@@ -103,7 +80,6 @@ public final class FusionEnvironmentCreateFusionEnvironmentAdminUserDetails {
     	      this.emailAddress = defaults.emailAddress;
     	      this.firstName = defaults.firstName;
     	      this.lastName = defaults.lastName;
-    	      this.password = defaults.password;
     	      this.username = defaults.username;
         }
 
@@ -132,12 +108,6 @@ public final class FusionEnvironmentCreateFusionEnvironmentAdminUserDetails {
             return this;
         }
         @CustomType.Setter
-        public Builder password(@Nullable String password) {
-
-            this.password = password;
-            return this;
-        }
-        @CustomType.Setter
         public Builder username(String username) {
             if (username == null) {
               throw new MissingRequiredPropertyException("FusionEnvironmentCreateFusionEnvironmentAdminUserDetails", "username");
@@ -150,7 +120,6 @@ public final class FusionEnvironmentCreateFusionEnvironmentAdminUserDetails {
             _resultValue.emailAddress = emailAddress;
             _resultValue.firstName = firstName;
             _resultValue.lastName = lastName;
-            _resultValue.password = password;
             _resultValue.username = username;
             return _resultValue;
         }

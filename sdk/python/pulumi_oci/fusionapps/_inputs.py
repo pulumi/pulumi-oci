@@ -155,10 +155,6 @@ class FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict(TypedDict
     """
     The username for the administrator.
     """
-    password: NotRequired[pulumi.Input[_builtins.str]]
-    """
-    The password for the administrator.
-    """
 
 @pulumi.input_type
 class FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs:
@@ -166,24 +162,17 @@ class FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs:
                  email_address: pulumi.Input[_builtins.str],
                  first_name: pulumi.Input[_builtins.str],
                  last_name: pulumi.Input[_builtins.str],
-                 username: pulumi.Input[_builtins.str],
-                 password: Optional[pulumi.Input[_builtins.str]] = None):
+                 username: pulumi.Input[_builtins.str]):
         """
         :param pulumi.Input[_builtins.str] email_address: The email address for the administrator.
         :param pulumi.Input[_builtins.str] first_name: The administrator's first name.
         :param pulumi.Input[_builtins.str] last_name: The administrator's last name.
         :param pulumi.Input[_builtins.str] username: The username for the administrator.
-        :param pulumi.Input[_builtins.str] password: The password for the administrator.
         """
         pulumi.set(__self__, "email_address", email_address)
         pulumi.set(__self__, "first_name", first_name)
         pulumi.set(__self__, "last_name", last_name)
         pulumi.set(__self__, "username", username)
-        if password is not None:
-            warnings.warn("""The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.""", DeprecationWarning)
-            pulumi.log.warn("""password is deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.""")
-        if password is not None:
-            pulumi.set(__self__, "password", password)
 
     @_builtins.property
     @pulumi.getter(name="emailAddress")
@@ -232,19 +221,6 @@ class FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs:
     @username.setter
     def username(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "username", value)
-
-    @_builtins.property
-    @pulumi.getter
-    @_utilities.deprecated("""The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.""")
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        The password for the administrator.
-        """
-        return pulumi.get(self, "password")
-
-    @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "password", value)
 
 
 class FusionEnvironmentFamilyFamilyMaintenancePolicyArgsDict(TypedDict):

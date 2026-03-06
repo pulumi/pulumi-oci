@@ -27,7 +27,7 @@ class GetFileStorageLustreFileSystemResult:
     """
     A collection of values returned by getFileStorageLustreFileSystem.
     """
-    def __init__(__self__, availability_domain=None, capacity_in_gbs=None, cluster_placement_group_id=None, compartment_id=None, defined_tags=None, display_name=None, file_system_description=None, file_system_name=None, freeform_tags=None, id=None, kms_key_id=None, lifecycle_details=None, lnet=None, lustre_file_system_id=None, maintenance_windows=None, major_version=None, management_service_address=None, nsg_ids=None, performance_tier=None, root_squash_configurations=None, state=None, subnet_id=None, system_tags=None, time_billing_cycle_end=None, time_created=None, time_updated=None):
+    def __init__(__self__, availability_domain=None, capacity_in_gbs=None, cluster_placement_group_id=None, compartment_id=None, date_time_details=None, defined_tags=None, display_name=None, file_system_description=None, file_system_name=None, freeform_tags=None, id=None, kms_key_id=None, lifecycle_details=None, lnet=None, lustre_file_system_id=None, maintenance_window_metadatas=None, maintenance_windows=None, major_version=None, management_service_address=None, nsg_ids=None, override_maintenance_trigger=None, performance_tier=None, root_squash_configurations=None, state=None, subnet_id=None, system_tags=None, time_billing_cycle_end=None, time_created=None, time_updated=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -40,6 +40,9 @@ class GetFileStorageLustreFileSystemResult:
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if date_time_details and not isinstance(date_time_details, list):
+            raise TypeError("Expected argument 'date_time_details' to be a list")
+        pulumi.set(__self__, "date_time_details", date_time_details)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -70,6 +73,9 @@ class GetFileStorageLustreFileSystemResult:
         if lustre_file_system_id and not isinstance(lustre_file_system_id, str):
             raise TypeError("Expected argument 'lustre_file_system_id' to be a str")
         pulumi.set(__self__, "lustre_file_system_id", lustre_file_system_id)
+        if maintenance_window_metadatas and not isinstance(maintenance_window_metadatas, list):
+            raise TypeError("Expected argument 'maintenance_window_metadatas' to be a list")
+        pulumi.set(__self__, "maintenance_window_metadatas", maintenance_window_metadatas)
         if maintenance_windows and not isinstance(maintenance_windows, list):
             raise TypeError("Expected argument 'maintenance_windows' to be a list")
         pulumi.set(__self__, "maintenance_windows", maintenance_windows)
@@ -82,6 +88,9 @@ class GetFileStorageLustreFileSystemResult:
         if nsg_ids and not isinstance(nsg_ids, list):
             raise TypeError("Expected argument 'nsg_ids' to be a list")
         pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if override_maintenance_trigger and not isinstance(override_maintenance_trigger, int):
+            raise TypeError("Expected argument 'override_maintenance_trigger' to be a int")
+        pulumi.set(__self__, "override_maintenance_trigger", override_maintenance_trigger)
         if performance_tier and not isinstance(performance_tier, str):
             raise TypeError("Expected argument 'performance_tier' to be a str")
         pulumi.set(__self__, "performance_tier", performance_tier)
@@ -138,6 +147,11 @@ class GetFileStorageLustreFileSystemResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Lustre file system.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dateTimeDetails")
+    def date_time_details(self) -> Sequence['outputs.GetFileStorageLustreFileSystemDateTimeDetailResult']:
+        return pulumi.get(self, "date_time_details")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -217,6 +231,14 @@ class GetFileStorageLustreFileSystemResult:
         return pulumi.get(self, "lustre_file_system_id")
 
     @_builtins.property
+    @pulumi.getter(name="maintenanceWindowMetadatas")
+    def maintenance_window_metadatas(self) -> Sequence['outputs.GetFileStorageLustreFileSystemMaintenanceWindowMetadataResult']:
+        """
+        The meta-data for maintenance window.
+        """
+        return pulumi.get(self, "maintenance_window_metadatas")
+
+    @_builtins.property
     @pulumi.getter(name="maintenanceWindows")
     def maintenance_windows(self) -> Sequence['outputs.GetFileStorageLustreFileSystemMaintenanceWindowResult']:
         """
@@ -247,6 +269,11 @@ class GetFileStorageLustreFileSystemResult:
         A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         """
         return pulumi.get(self, "nsg_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="overrideMaintenanceTrigger")
+    def override_maintenance_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "override_maintenance_trigger")
 
     @_builtins.property
     @pulumi.getter(name="performanceTier")
@@ -323,6 +350,7 @@ class AwaitableGetFileStorageLustreFileSystemResult(GetFileStorageLustreFileSyst
             capacity_in_gbs=self.capacity_in_gbs,
             cluster_placement_group_id=self.cluster_placement_group_id,
             compartment_id=self.compartment_id,
+            date_time_details=self.date_time_details,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             file_system_description=self.file_system_description,
@@ -333,10 +361,12 @@ class AwaitableGetFileStorageLustreFileSystemResult(GetFileStorageLustreFileSyst
             lifecycle_details=self.lifecycle_details,
             lnet=self.lnet,
             lustre_file_system_id=self.lustre_file_system_id,
+            maintenance_window_metadatas=self.maintenance_window_metadatas,
             maintenance_windows=self.maintenance_windows,
             major_version=self.major_version,
             management_service_address=self.management_service_address,
             nsg_ids=self.nsg_ids,
+            override_maintenance_trigger=self.override_maintenance_trigger,
             performance_tier=self.performance_tier,
             root_squash_configurations=self.root_squash_configurations,
             state=self.state,
@@ -376,6 +406,7 @@ def get_file_storage_lustre_file_system(lustre_file_system_id: Optional[_builtin
         capacity_in_gbs=pulumi.get(__ret__, 'capacity_in_gbs'),
         cluster_placement_group_id=pulumi.get(__ret__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        date_time_details=pulumi.get(__ret__, 'date_time_details'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         file_system_description=pulumi.get(__ret__, 'file_system_description'),
@@ -386,10 +417,12 @@ def get_file_storage_lustre_file_system(lustre_file_system_id: Optional[_builtin
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         lnet=pulumi.get(__ret__, 'lnet'),
         lustre_file_system_id=pulumi.get(__ret__, 'lustre_file_system_id'),
+        maintenance_window_metadatas=pulumi.get(__ret__, 'maintenance_window_metadatas'),
         maintenance_windows=pulumi.get(__ret__, 'maintenance_windows'),
         major_version=pulumi.get(__ret__, 'major_version'),
         management_service_address=pulumi.get(__ret__, 'management_service_address'),
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
+        override_maintenance_trigger=pulumi.get(__ret__, 'override_maintenance_trigger'),
         performance_tier=pulumi.get(__ret__, 'performance_tier'),
         root_squash_configurations=pulumi.get(__ret__, 'root_squash_configurations'),
         state=pulumi.get(__ret__, 'state'),
@@ -426,6 +459,7 @@ def get_file_storage_lustre_file_system_output(lustre_file_system_id: Optional[p
         capacity_in_gbs=pulumi.get(__response__, 'capacity_in_gbs'),
         cluster_placement_group_id=pulumi.get(__response__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        date_time_details=pulumi.get(__response__, 'date_time_details'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         display_name=pulumi.get(__response__, 'display_name'),
         file_system_description=pulumi.get(__response__, 'file_system_description'),
@@ -436,10 +470,12 @@ def get_file_storage_lustre_file_system_output(lustre_file_system_id: Optional[p
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         lnet=pulumi.get(__response__, 'lnet'),
         lustre_file_system_id=pulumi.get(__response__, 'lustre_file_system_id'),
+        maintenance_window_metadatas=pulumi.get(__response__, 'maintenance_window_metadatas'),
         maintenance_windows=pulumi.get(__response__, 'maintenance_windows'),
         major_version=pulumi.get(__response__, 'major_version'),
         management_service_address=pulumi.get(__response__, 'management_service_address'),
         nsg_ids=pulumi.get(__response__, 'nsg_ids'),
+        override_maintenance_trigger=pulumi.get(__response__, 'override_maintenance_trigger'),
         performance_tier=pulumi.get(__response__, 'performance_tier'),
         root_squash_configurations=pulumi.get(__response__, 'root_squash_configurations'),
         state=pulumi.get(__response__, 'state'),

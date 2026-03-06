@@ -15,10 +15,22 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'FileStorageLustreFileSystemDateTimeDetailsArgs',
+    'FileStorageLustreFileSystemDateTimeDetailsArgsDict',
     'FileStorageLustreFileSystemMaintenanceWindowArgs',
     'FileStorageLustreFileSystemMaintenanceWindowArgsDict',
+    'FileStorageLustreFileSystemMaintenanceWindowMetadataArgs',
+    'FileStorageLustreFileSystemMaintenanceWindowMetadataArgsDict',
+    'FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs',
+    'FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgsDict',
+    'FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs',
+    'FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgsDict',
     'FileStorageLustreFileSystemRootSquashConfigurationArgs',
     'FileStorageLustreFileSystemRootSquashConfigurationArgsDict',
+    'GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgs',
+    'GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgsDict',
+    'GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgs',
+    'GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgsDict',
     'GetFileStorageLustreFileSystemsFilterArgs',
     'GetFileStorageLustreFileSystemsFilterArgsDict',
     'GetFileStorageObjectStorageLinkSyncJobsFilterArgs',
@@ -27,14 +39,61 @@ __all__ = [
     'GetFileStorageObjectStorageLinksFilterArgsDict',
 ]
 
+class FileStorageLustreFileSystemDateTimeDetailsArgsDict(TypedDict):
+    date: pulumi.Input[_builtins.str]
+    """
+    A user-friendly date. Example: `2025-04-25`
+    """
+    time: pulumi.Input[_builtins.str]
+    """
+    A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+    """
+
+@pulumi.input_type
+class FileStorageLustreFileSystemDateTimeDetailsArgs:
+    def __init__(__self__, *,
+                 date: pulumi.Input[_builtins.str],
+                 time: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] date: A user-friendly date. Example: `2025-04-25`
+        :param pulumi.Input[_builtins.str] time: A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+        """
+        pulumi.set(__self__, "date", date)
+        pulumi.set(__self__, "time", time)
+
+    @_builtins.property
+    @pulumi.getter
+    def date(self) -> pulumi.Input[_builtins.str]:
+        """
+        A user-friendly date. Example: `2025-04-25`
+        """
+        return pulumi.get(self, "date")
+
+    @date.setter
+    def date(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "date", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def time(self) -> pulumi.Input[_builtins.str]:
+        """
+        A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+        """
+        return pulumi.get(self, "time")
+
+    @time.setter
+    def time(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "time", value)
+
+
 class FileStorageLustreFileSystemMaintenanceWindowArgsDict(TypedDict):
     day_of_week: NotRequired[pulumi.Input[_builtins.str]]
     """
-    Day of the week when the maintainence window starts.
+    (Updatable) Day of the week when the maintainence window starts.
     """
     time_start: NotRequired[pulumi.Input[_builtins.str]]
     """
-    The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
+    (Updatable) The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
     """
 
 @pulumi.input_type
@@ -43,8 +102,8 @@ class FileStorageLustreFileSystemMaintenanceWindowArgs:
                  day_of_week: Optional[pulumi.Input[_builtins.str]] = None,
                  time_start: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] day_of_week: Day of the week when the maintainence window starts.
-        :param pulumi.Input[_builtins.str] time_start: The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
+        :param pulumi.Input[_builtins.str] day_of_week: (Updatable) Day of the week when the maintainence window starts.
+        :param pulumi.Input[_builtins.str] time_start: (Updatable) The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
         """
         if day_of_week is not None:
             pulumi.set(__self__, "day_of_week", day_of_week)
@@ -55,7 +114,7 @@ class FileStorageLustreFileSystemMaintenanceWindowArgs:
     @pulumi.getter(name="dayOfWeek")
     def day_of_week(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Day of the week when the maintainence window starts.
+        (Updatable) Day of the week when the maintainence window starts.
         """
         return pulumi.get(self, "day_of_week")
 
@@ -67,13 +126,180 @@ class FileStorageLustreFileSystemMaintenanceWindowArgs:
     @pulumi.getter(name="timeStart")
     def time_start(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
+        (Updatable) The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
         """
         return pulumi.get(self, "time_start")
 
     @time_start.setter
     def time_start(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "time_start", value)
+
+
+class FileStorageLustreFileSystemMaintenanceWindowMetadataArgsDict(TypedDict):
+    active_or_next_planned_maintenances: NotRequired[pulumi.Input[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgsDict']]]]
+    """
+    A generic object to show date and time in the below specified format
+    """
+    finished_maintenances: NotRequired[pulumi.Input[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgsDict']]]]
+    """
+    A generic object to show date and time in the below specified format
+    """
+    is_maintenance_in_progress: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    whether or not an active maintenance is going on for the LustreFileSystem
+    """
+
+@pulumi.input_type
+class FileStorageLustreFileSystemMaintenanceWindowMetadataArgs:
+    def __init__(__self__, *,
+                 active_or_next_planned_maintenances: Optional[pulumi.Input[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs']]]] = None,
+                 finished_maintenances: Optional[pulumi.Input[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs']]]] = None,
+                 is_maintenance_in_progress: Optional[pulumi.Input[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs']]] active_or_next_planned_maintenances: A generic object to show date and time in the below specified format
+        :param pulumi.Input[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs']]] finished_maintenances: A generic object to show date and time in the below specified format
+        :param pulumi.Input[_builtins.bool] is_maintenance_in_progress: whether or not an active maintenance is going on for the LustreFileSystem
+        """
+        if active_or_next_planned_maintenances is not None:
+            pulumi.set(__self__, "active_or_next_planned_maintenances", active_or_next_planned_maintenances)
+        if finished_maintenances is not None:
+            pulumi.set(__self__, "finished_maintenances", finished_maintenances)
+        if is_maintenance_in_progress is not None:
+            pulumi.set(__self__, "is_maintenance_in_progress", is_maintenance_in_progress)
+
+    @_builtins.property
+    @pulumi.getter(name="activeOrNextPlannedMaintenances")
+    def active_or_next_planned_maintenances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs']]]]:
+        """
+        A generic object to show date and time in the below specified format
+        """
+        return pulumi.get(self, "active_or_next_planned_maintenances")
+
+    @active_or_next_planned_maintenances.setter
+    def active_or_next_planned_maintenances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs']]]]):
+        pulumi.set(self, "active_or_next_planned_maintenances", value)
+
+    @_builtins.property
+    @pulumi.getter(name="finishedMaintenances")
+    def finished_maintenances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs']]]]:
+        """
+        A generic object to show date and time in the below specified format
+        """
+        return pulumi.get(self, "finished_maintenances")
+
+    @finished_maintenances.setter
+    def finished_maintenances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs']]]]):
+        pulumi.set(self, "finished_maintenances", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isMaintenanceInProgress")
+    def is_maintenance_in_progress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        whether or not an active maintenance is going on for the LustreFileSystem
+        """
+        return pulumi.get(self, "is_maintenance_in_progress")
+
+    @is_maintenance_in_progress.setter
+    def is_maintenance_in_progress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_maintenance_in_progress", value)
+
+
+class FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgsDict(TypedDict):
+    date: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly date. Example: `2025-04-25`
+    """
+    time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+    """
+
+@pulumi.input_type
+class FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs:
+    def __init__(__self__, *,
+                 date: Optional[pulumi.Input[_builtins.str]] = None,
+                 time: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] date: A user-friendly date. Example: `2025-04-25`
+        :param pulumi.Input[_builtins.str] time: A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+        """
+        if date is not None:
+            pulumi.set(__self__, "date", date)
+        if time is not None:
+            pulumi.set(__self__, "time", time)
+
+    @_builtins.property
+    @pulumi.getter
+    def date(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A user-friendly date. Example: `2025-04-25`
+        """
+        return pulumi.get(self, "date")
+
+    @date.setter
+    def date(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "date", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def time(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+        """
+        return pulumi.get(self, "time")
+
+    @time.setter
+    def time(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time", value)
+
+
+class FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgsDict(TypedDict):
+    date: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly date. Example: `2025-04-25`
+    """
+    time: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+    """
+
+@pulumi.input_type
+class FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs:
+    def __init__(__self__, *,
+                 date: Optional[pulumi.Input[_builtins.str]] = None,
+                 time: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] date: A user-friendly date. Example: `2025-04-25`
+        :param pulumi.Input[_builtins.str] time: A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+        """
+        if date is not None:
+            pulumi.set(__self__, "date", date)
+        if time is not None:
+            pulumi.set(__self__, "time", time)
+
+    @_builtins.property
+    @pulumi.getter
+    def date(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A user-friendly date. Example: `2025-04-25`
+        """
+        return pulumi.get(self, "date")
+
+    @date.setter
+    def date(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "date", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def time(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+        """
+        return pulumi.get(self, "time")
+
+    @time.setter
+    def time(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time", value)
 
 
 class FileStorageLustreFileSystemRootSquashConfigurationArgsDict(TypedDict):
@@ -163,6 +389,94 @@ class FileStorageLustreFileSystemRootSquashConfigurationArgs:
     @squash_uid.setter
     def squash_uid(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "squash_uid", value)
+
+
+class GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
 
 
 class GetFileStorageLustreFileSystemsFilterArgsDict(TypedDict):

@@ -17,14 +17,14 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailAr
     public static final DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs Empty = new DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs();
 
     /**
-     * Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
+     * Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
      * 
      */
     @Import(name="backupRetentionPolicyOnTerminate")
     private @Nullable Output<String> backupRetentionPolicyOnTerminate;
 
     /**
-     * @return Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
+     * @return Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
      * 
      */
     public Optional<Output<String>> backupRetentionPolicyOnTerminate() {
@@ -152,7 +152,7 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailAr
         }
 
         /**
-         * @param backupRetentionPolicyOnTerminate Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
+         * @param backupRetentionPolicyOnTerminate Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailAr
         }
 
         /**
-         * @param backupRetentionPolicyOnTerminate Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
+         * @param backupRetentionPolicyOnTerminate Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
          * 
          * @return builder
          * 

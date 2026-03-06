@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 export class MaskData extends pulumi.CustomResource {
@@ -33,6 +35,7 @@ export class MaskData extends pulumi.CustomResource {
     }
 
     declare public readonly maskingPolicyId: pulumi.Output<string>;
+    declare public readonly targetCredentials: pulumi.Output<outputs.DataSafe.MaskDataTargetCredentials | undefined>;
     declare public readonly targetId: pulumi.Output<string>;
 
     /**
@@ -49,6 +52,7 @@ export class MaskData extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as MaskDataState | undefined;
             resourceInputs["maskingPolicyId"] = state?.maskingPolicyId;
+            resourceInputs["targetCredentials"] = state?.targetCredentials;
             resourceInputs["targetId"] = state?.targetId;
         } else {
             const args = argsOrState as MaskDataArgs | undefined;
@@ -59,6 +63,7 @@ export class MaskData extends pulumi.CustomResource {
                 throw new Error("Missing required property 'targetId'");
             }
             resourceInputs["maskingPolicyId"] = args?.maskingPolicyId;
+            resourceInputs["targetCredentials"] = args?.targetCredentials;
             resourceInputs["targetId"] = args?.targetId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -71,6 +76,7 @@ export class MaskData extends pulumi.CustomResource {
  */
 export interface MaskDataState {
     maskingPolicyId?: pulumi.Input<string>;
+    targetCredentials?: pulumi.Input<inputs.DataSafe.MaskDataTargetCredentials>;
     targetId?: pulumi.Input<string>;
 }
 
@@ -79,5 +85,6 @@ export interface MaskDataState {
  */
 export interface MaskDataArgs {
     maskingPolicyId: pulumi.Input<string>;
+    targetCredentials?: pulumi.Input<inputs.DataSafe.MaskDataTargetCredentials>;
     targetId: pulumi.Input<string>;
 }

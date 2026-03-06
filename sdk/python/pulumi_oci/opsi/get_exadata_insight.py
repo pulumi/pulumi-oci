@@ -27,7 +27,10 @@ class GetExadataInsightResult:
     """
     A collection of values returned by getExadataInsight.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, enterprise_manager_bridge_id=None, enterprise_manager_entity_display_name=None, enterprise_manager_entity_identifier=None, enterprise_manager_entity_name=None, enterprise_manager_entity_type=None, enterprise_manager_identifier=None, entity_source=None, exadata_display_name=None, exadata_infra_id=None, exadata_infra_resource_type=None, exadata_insight_id=None, exadata_name=None, exadata_rack_type=None, exadata_shape=None, exadata_type=None, freeform_tags=None, id=None, is_auto_sync_enabled=None, is_virtualized_exadata=None, lifecycle_details=None, member_vm_cluster_details=None, state=None, status=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, chargeback_plan_details=None, compartment_id=None, defined_tags=None, enterprise_manager_bridge_id=None, enterprise_manager_entity_display_name=None, enterprise_manager_entity_identifier=None, enterprise_manager_entity_name=None, enterprise_manager_entity_type=None, enterprise_manager_identifier=None, entity_source=None, exadata_display_name=None, exadata_infra_id=None, exadata_infra_resource_type=None, exadata_insight_id=None, exadata_name=None, exadata_rack_type=None, exadata_shape=None, exadata_type=None, freeform_tags=None, id=None, is_auto_sync_enabled=None, is_virtualized_exadata=None, lifecycle_details=None, member_vm_cluster_details=None, state=None, status=None, status_details=None, system_tags=None, time_created=None, time_updated=None):
+        if chargeback_plan_details and not isinstance(chargeback_plan_details, list):
+            raise TypeError("Expected argument 'chargeback_plan_details' to be a list")
+        pulumi.set(__self__, "chargeback_plan_details", chargeback_plan_details)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -103,6 +106,9 @@ class GetExadataInsightResult:
         if status and not isinstance(status, str):
             raise TypeError("Expected argument 'status' to be a str")
         pulumi.set(__self__, "status", status)
+        if status_details and not isinstance(status_details, str):
+            raise TypeError("Expected argument 'status_details' to be a str")
+        pulumi.set(__self__, "status_details", status_details)
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
@@ -112,6 +118,14 @@ class GetExadataInsightResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="chargebackPlanDetails")
+    def chargeback_plan_details(self) -> Sequence['outputs.GetExadataInsightChargebackPlanDetailResult']:
+        """
+        Object containing chargeback plan details
+        """
+        return pulumi.get(self, "chargeback_plan_details")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -308,6 +322,14 @@ class GetExadataInsightResult:
         return pulumi.get(self, "status")
 
     @_builtins.property
+    @pulumi.getter(name="statusDetails")
+    def status_details(self) -> _builtins.str:
+        """
+        A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+        """
+        return pulumi.get(self, "status_details")
+
+    @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
         """
@@ -338,6 +360,7 @@ class AwaitableGetExadataInsightResult(GetExadataInsightResult):
         if False:
             yield self
         return GetExadataInsightResult(
+            chargeback_plan_details=self.chargeback_plan_details,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             enterprise_manager_bridge_id=self.enterprise_manager_bridge_id,
@@ -363,6 +386,7 @@ class AwaitableGetExadataInsightResult(GetExadataInsightResult):
             member_vm_cluster_details=self.member_vm_cluster_details,
             state=self.state,
             status=self.status,
+            status_details=self.status_details,
             system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated)
@@ -393,6 +417,7 @@ def get_exadata_insight(exadata_insight_id: Optional[_builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Opsi/getExadataInsight:getExadataInsight', __args__, opts=opts, typ=GetExadataInsightResult).value
 
     return AwaitableGetExadataInsightResult(
+        chargeback_plan_details=pulumi.get(__ret__, 'chargeback_plan_details'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         enterprise_manager_bridge_id=pulumi.get(__ret__, 'enterprise_manager_bridge_id'),
@@ -418,6 +443,7 @@ def get_exadata_insight(exadata_insight_id: Optional[_builtins.str] = None,
         member_vm_cluster_details=pulumi.get(__ret__, 'member_vm_cluster_details'),
         state=pulumi.get(__ret__, 'state'),
         status=pulumi.get(__ret__, 'status'),
+        status_details=pulumi.get(__ret__, 'status_details'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
@@ -445,6 +471,7 @@ def get_exadata_insight_output(exadata_insight_id: Optional[pulumi.Input[_builti
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Opsi/getExadataInsight:getExadataInsight', __args__, opts=opts, typ=GetExadataInsightResult)
     return __ret__.apply(lambda __response__: GetExadataInsightResult(
+        chargeback_plan_details=pulumi.get(__response__, 'chargeback_plan_details'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         enterprise_manager_bridge_id=pulumi.get(__response__, 'enterprise_manager_bridge_id'),
@@ -470,6 +497,7 @@ def get_exadata_insight_output(exadata_insight_id: Optional[pulumi.Input[_builti
         member_vm_cluster_details=pulumi.get(__response__, 'member_vm_cluster_details'),
         state=pulumi.get(__response__, 'state'),
         status=pulumi.get(__response__, 'status'),
+        status_details=pulumi.get(__response__, 'status_details'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated')))

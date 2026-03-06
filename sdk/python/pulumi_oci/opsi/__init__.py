@@ -9,6 +9,7 @@ import typing
 from .awr_hub import *
 from .awr_hub_source import *
 from .awr_hub_source_awrhubsources_management import *
+from .chargeback_plan import *
 from .database_insight import *
 from .enterprise_manager_bridge import *
 from .exadata_insight import *
@@ -19,6 +20,8 @@ from .get_awr_hub_awr_sources_summary import *
 from .get_awr_hub_source import *
 from .get_awr_hub_sources import *
 from .get_awr_hubs import *
+from .get_chargeback_plan import *
+from .get_chargeback_plans import *
 from .get_database_insight import *
 from .get_database_insights import *
 from .get_enterprise_manager_bridge import *

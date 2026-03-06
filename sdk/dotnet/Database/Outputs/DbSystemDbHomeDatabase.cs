@@ -33,6 +33,14 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly string? CharacterSet;
         public readonly ImmutableArray<Outputs.DbSystemDbHomeDatabaseConnectionString> ConnectionStrings;
         /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        public readonly ImmutableDictionary<string, string>? DatabaseDefinedTags;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string>? DatabaseFreeformTags;
+        /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string? DatabaseId;
@@ -72,6 +80,14 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? Id;
         /// <summary>
+        /// True if active Data Guard is enabled.
+        /// </summary>
+        public readonly bool? IsActiveDataGuardEnabled;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        /// </summary>
+        public readonly string? KeyStoreId;
+        /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         public readonly string? KmsKeyId;
@@ -96,6 +112,14 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<string> PluggableDatabases;
         /// <summary>
+        /// The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        /// </summary>
+        public readonly string? ProtectionMode;
+        /// <summary>
+        /// Specifies a prefix for the `Oracle SID` of the database to be created.
+        /// </summary>
+        public readonly string? SidPrefix;
+        /// <summary>
         /// The current state of the DB system.
         /// </summary>
         public readonly string? State;
@@ -112,6 +136,17 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? TimeStampForPointInTimeRecovery;
         /// <summary>
+        /// The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+        /// * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+        /// * MAXIMUM_PERFORMANCE - ASYNC
+        /// * MAXIMUM_PROTECTION - SYNC
+        /// 
+        /// For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+        /// 
+        /// **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+        /// </summary>
+        public readonly string? TransportType;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         /// </summary>
         public readonly string? VaultId;
@@ -127,6 +162,10 @@ namespace Pulumi.Oci.Database.Outputs
             string? characterSet,
 
             ImmutableArray<Outputs.DbSystemDbHomeDatabaseConnectionString> connectionStrings,
+
+            ImmutableDictionary<string, string>? databaseDefinedTags,
+
+            ImmutableDictionary<string, string>? databaseFreeformTags,
 
             string? databaseId,
 
@@ -148,6 +187,10 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? id,
 
+            bool? isActiveDataGuardEnabled,
+
+            string? keyStoreId,
+
             string? kmsKeyId,
 
             string? kmsKeyVersionId,
@@ -160,6 +203,10 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<string> pluggableDatabases,
 
+            string? protectionMode,
+
+            string? sidPrefix,
+
             string? state,
 
             string? tdeWalletPassword,
@@ -168,6 +215,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? timeStampForPointInTimeRecovery,
 
+            string? transportType,
+
             string? vaultId)
         {
             AdminPassword = adminPassword;
@@ -175,6 +224,8 @@ namespace Pulumi.Oci.Database.Outputs
             BackupTdePassword = backupTdePassword;
             CharacterSet = characterSet;
             ConnectionStrings = connectionStrings;
+            DatabaseDefinedTags = databaseDefinedTags;
+            DatabaseFreeformTags = databaseFreeformTags;
             DatabaseId = databaseId;
             DatabaseSoftwareImageId = databaseSoftwareImageId;
             DbBackupConfig = dbBackupConfig;
@@ -185,16 +236,21 @@ namespace Pulumi.Oci.Database.Outputs
             DefinedTags = definedTags;
             FreeformTags = freeformTags;
             Id = id;
+            IsActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            KeyStoreId = keyStoreId;
             KmsKeyId = kmsKeyId;
             KmsKeyVersionId = kmsKeyVersionId;
             LifecycleDetails = lifecycleDetails;
             NcharacterSet = ncharacterSet;
             PdbName = pdbName;
             PluggableDatabases = pluggableDatabases;
+            ProtectionMode = protectionMode;
+            SidPrefix = sidPrefix;
             State = state;
             TdeWalletPassword = tdeWalletPassword;
             TimeCreated = timeCreated;
             TimeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;
+            TransportType = transportType;
             VaultId = vaultId;
         }
     }

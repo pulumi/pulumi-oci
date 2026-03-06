@@ -119,7 +119,9 @@ type AutonomousDatabase struct {
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
 	DbToolsDetails AutonomousDatabaseDbToolsDetailArrayOutput `pulumi:"dbToolsDetails"`
-	// (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
+	// (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
+	//
+	// **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
 	DbVersion pulumi.StringOutput `pulumi:"dbVersion"`
 	// (Updatable) The Autonomous AI Database workload type. The following values are valid:
 	// * OLTP - indicates an Autonomous AI Transaction Processing database
@@ -127,6 +129,8 @@ type AutonomousDatabase struct {
 	// * AJD - indicates an Autonomous AI JSON Database
 	// * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
 	// * LH - indicates an Oracle Autonomous AI Lakehouse database
+	//
+	// **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
 	DbWorkload pulumi.StringOutput `pulumi:"dbWorkload"`
@@ -558,7 +562,9 @@ type autonomousDatabaseState struct {
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
 	DbToolsDetails []AutonomousDatabaseDbToolsDetail `pulumi:"dbToolsDetails"`
-	// (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
+	// (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
+	//
+	// **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
 	DbVersion *string `pulumi:"dbVersion"`
 	// (Updatable) The Autonomous AI Database workload type. The following values are valid:
 	// * OLTP - indicates an Autonomous AI Transaction Processing database
@@ -566,6 +572,8 @@ type autonomousDatabaseState struct {
 	// * AJD - indicates an Autonomous AI JSON Database
 	// * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
 	// * LH - indicates an Oracle Autonomous AI Lakehouse database
+	//
+	// **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
 	DbWorkload *string `pulumi:"dbWorkload"`
@@ -955,7 +963,9 @@ type AutonomousDatabaseState struct {
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
 	DbToolsDetails AutonomousDatabaseDbToolsDetailArrayInput
-	// (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
+	// (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
+	//
+	// **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
 	DbVersion pulumi.StringPtrInput
 	// (Updatable) The Autonomous AI Database workload type. The following values are valid:
 	// * OLTP - indicates an Autonomous AI Transaction Processing database
@@ -963,6 +973,8 @@ type AutonomousDatabaseState struct {
 	// * AJD - indicates an Autonomous AI JSON Database
 	// * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
 	// * LH - indicates an Oracle Autonomous AI Lakehouse database
+	//
+	// **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
 	DbWorkload pulumi.StringPtrInput
@@ -1334,7 +1346,9 @@ type autonomousDatabaseArgs struct {
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
 	DbToolsDetails []AutonomousDatabaseDbToolsDetail `pulumi:"dbToolsDetails"`
-	// (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
+	// (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
+	//
+	// **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
 	DbVersion *string `pulumi:"dbVersion"`
 	// (Updatable) The Autonomous AI Database workload type. The following values are valid:
 	// * OLTP - indicates an Autonomous AI Transaction Processing database
@@ -1342,6 +1356,8 @@ type autonomousDatabaseArgs struct {
 	// * AJD - indicates an Autonomous AI JSON Database
 	// * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
 	// * LH - indicates an Oracle Autonomous AI Lakehouse database
+	//
+	// **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
 	DbWorkload *string `pulumi:"dbWorkload"`
@@ -1598,7 +1614,9 @@ type AutonomousDatabaseArgs struct {
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
 	DbToolsDetails AutonomousDatabaseDbToolsDetailArrayInput
-	// (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
+	// (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
+	//
+	// **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
 	DbVersion pulumi.StringPtrInput
 	// (Updatable) The Autonomous AI Database workload type. The following values are valid:
 	// * OLTP - indicates an Autonomous AI Transaction Processing database
@@ -1606,6 +1624,8 @@ type AutonomousDatabaseArgs struct {
 	// * AJD - indicates an Autonomous AI JSON Database
 	// * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
 	// * LH - indicates an Oracle Autonomous AI Lakehouse database
+	//
+	// **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
 	DbWorkload pulumi.StringPtrInput
@@ -2082,7 +2102,9 @@ func (o AutonomousDatabaseOutput) DbToolsDetails() AutonomousDatabaseDbToolsDeta
 	return o.ApplyT(func(v *AutonomousDatabase) AutonomousDatabaseDbToolsDetailArrayOutput { return v.DbToolsDetails }).(AutonomousDatabaseDbToolsDetailArrayOutput)
 }
 
-// (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
+// (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
+//
+// **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
 func (o AutonomousDatabaseOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.DbVersion }).(pulumi.StringOutput)
 }
@@ -2093,6 +2115,8 @@ func (o AutonomousDatabaseOutput) DbVersion() pulumi.StringOutput {
 // * AJD - indicates an Autonomous AI JSON Database
 // * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
 // * LH - indicates an Oracle Autonomous AI Lakehouse database
+//
+// **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
 //
 // This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
 func (o AutonomousDatabaseOutput) DbWorkload() pulumi.StringOutput {

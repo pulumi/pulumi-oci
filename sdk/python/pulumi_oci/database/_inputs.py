@@ -613,6 +613,8 @@ __all__ = [
     'GetDbSystemComputePerformancesFilterArgsDict',
     'GetDbSystemHistoryEntriesFilterArgs',
     'GetDbSystemHistoryEntriesFilterArgsDict',
+    'GetDbSystemOsPatchHistoryEntriesFilterArgs',
+    'GetDbSystemOsPatchHistoryEntriesFilterArgsDict',
     'GetDbSystemPatchesFilterArgs',
     'GetDbSystemPatchesFilterArgsDict',
     'GetDbSystemShapesFilterArgs',
@@ -17814,6 +17816,14 @@ class DbSystemDbHomeDatabaseArgsDict(TypedDict):
     AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
     """
     connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemDbHomeDatabaseConnectionStringArgsDict']]]]
+    database_defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+    """
+    database_freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+    """
     database_id: NotRequired[pulumi.Input[_builtins.str]]
     """
     The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -17853,6 +17863,14 @@ class DbSystemDbHomeDatabaseArgsDict(TypedDict):
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
     """
+    is_active_data_guard_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    True if active Data Guard is enabled.
+    """
+    key_store_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+    """
     kms_key_id: NotRequired[pulumi.Input[_builtins.str]]
     """
     The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -17877,6 +17895,14 @@ class DbSystemDbHomeDatabaseArgsDict(TypedDict):
     """
     The list of pluggable databases that needs to be restored into new database.
     """
+    protection_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+    """
+    sid_prefix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Specifies a prefix for the `Oracle SID` of the database to be created.
+    """
     state: NotRequired[pulumi.Input[_builtins.str]]
     """
     The current state of the DB system.
@@ -17893,6 +17919,17 @@ class DbSystemDbHomeDatabaseArgsDict(TypedDict):
     """
     The point in time of the original database from which the new database is created. If not specifed, the latest backup is used to create the database.
     """
+    transport_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+    * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+    * MAXIMUM_PERFORMANCE - ASYNC
+    * MAXIMUM_PROTECTION - SYNC
+
+    For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+
+    **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+    """
     vault_id: NotRequired[pulumi.Input[_builtins.str]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
@@ -17906,6 +17943,8 @@ class DbSystemDbHomeDatabaseArgs:
                  backup_tde_password: Optional[pulumi.Input[_builtins.str]] = None,
                  character_set: Optional[pulumi.Input[_builtins.str]] = None,
                  connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemDbHomeDatabaseConnectionStringArgs']]]] = None,
+                 database_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 database_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
                  db_backup_config: Optional[pulumi.Input['DbSystemDbHomeDatabaseDbBackupConfigArgs']] = None,
@@ -17916,16 +17955,21 @@ class DbSystemDbHomeDatabaseArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  id: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_active_data_guard_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 key_store_id: Optional[pulumi.Input[_builtins.str]] = None,
                  kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
                  kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  ncharacter_set: Optional[pulumi.Input[_builtins.str]] = None,
                  pdb_name: Optional[pulumi.Input[_builtins.str]] = None,
                  pluggable_databases: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 protection_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 sid_prefix: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  tde_wallet_password: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_stamp_for_point_in_time_recovery: Optional[pulumi.Input[_builtins.str]] = None,
+                 transport_type: Optional[pulumi.Input[_builtins.str]] = None,
                  vault_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] admin_password: A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
@@ -17934,6 +17978,8 @@ class DbSystemDbHomeDatabaseArgs:
         :param pulumi.Input[_builtins.str] character_set: The character set for the database.  The default is AL32UTF8. Allowed values are:
                
                AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] database_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] database_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param pulumi.Input['DbSystemDbHomeDatabaseDbBackupConfigArgs'] db_backup_config: (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
@@ -17945,16 +17991,28 @@ class DbSystemDbHomeDatabaseArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        :param pulumi.Input[_builtins.bool] is_active_data_guard_enabled: True if active Data Guard is enabled.
+        :param pulumi.Input[_builtins.str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param pulumi.Input[_builtins.str] pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pluggable_databases: The list of pluggable databases that needs to be restored into new database.
+        :param pulumi.Input[_builtins.str] protection_mode: The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        :param pulumi.Input[_builtins.str] sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
         :param pulumi.Input[_builtins.str] state: The current state of the DB system.
         :param pulumi.Input[_builtins.str] tde_wallet_password: The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
         :param pulumi.Input[_builtins.str] time_created: The date and time the DB system was created.
         :param pulumi.Input[_builtins.str] time_stamp_for_point_in_time_recovery: The point in time of the original database from which the new database is created. If not specifed, the latest backup is used to create the database.
+        :param pulumi.Input[_builtins.str] transport_type: The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+               * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+               * MAXIMUM_PERFORMANCE - ASYNC
+               * MAXIMUM_PROTECTION - SYNC
+               
+               For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+               
+               **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         pulumi.set(__self__, "admin_password", admin_password)
@@ -17966,6 +18024,10 @@ class DbSystemDbHomeDatabaseArgs:
             pulumi.set(__self__, "character_set", character_set)
         if connection_strings is not None:
             pulumi.set(__self__, "connection_strings", connection_strings)
+        if database_defined_tags is not None:
+            pulumi.set(__self__, "database_defined_tags", database_defined_tags)
+        if database_freeform_tags is not None:
+            pulumi.set(__self__, "database_freeform_tags", database_freeform_tags)
         if database_id is not None:
             pulumi.set(__self__, "database_id", database_id)
         if database_software_image_id is not None:
@@ -17986,6 +18048,10 @@ class DbSystemDbHomeDatabaseArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id is not None:
             pulumi.set(__self__, "id", id)
+        if is_active_data_guard_enabled is not None:
+            pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+        if key_store_id is not None:
+            pulumi.set(__self__, "key_store_id", key_store_id)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if kms_key_version_id is not None:
@@ -17998,6 +18064,10 @@ class DbSystemDbHomeDatabaseArgs:
             pulumi.set(__self__, "pdb_name", pdb_name)
         if pluggable_databases is not None:
             pulumi.set(__self__, "pluggable_databases", pluggable_databases)
+        if protection_mode is not None:
+            pulumi.set(__self__, "protection_mode", protection_mode)
+        if sid_prefix is not None:
+            pulumi.set(__self__, "sid_prefix", sid_prefix)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if tde_wallet_password is not None:
@@ -18006,6 +18076,8 @@ class DbSystemDbHomeDatabaseArgs:
             pulumi.set(__self__, "time_created", time_created)
         if time_stamp_for_point_in_time_recovery is not None:
             pulumi.set(__self__, "time_stamp_for_point_in_time_recovery", time_stamp_for_point_in_time_recovery)
+        if transport_type is not None:
+            pulumi.set(__self__, "transport_type", transport_type)
         if vault_id is not None:
             pulumi.set(__self__, "vault_id", vault_id)
 
@@ -18067,6 +18139,30 @@ class DbSystemDbHomeDatabaseArgs:
     @connection_strings.setter
     def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemDbHomeDatabaseConnectionStringArgs']]]]):
         pulumi.set(self, "connection_strings", value)
+
+    @_builtins.property
+    @pulumi.getter(name="databaseDefinedTags")
+    def database_defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "database_defined_tags")
+
+    @database_defined_tags.setter
+    def database_defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "database_defined_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="databaseFreeformTags")
+    def database_freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "database_freeform_tags")
+
+    @database_freeform_tags.setter
+    def database_freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "database_freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseId")
@@ -18188,6 +18284,30 @@ class DbSystemDbHomeDatabaseArgs:
         pulumi.set(self, "id", value)
 
     @_builtins.property
+    @pulumi.getter(name="isActiveDataGuardEnabled")
+    def is_active_data_guard_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        True if active Data Guard is enabled.
+        """
+        return pulumi.get(self, "is_active_data_guard_enabled")
+
+    @is_active_data_guard_enabled.setter
+    def is_active_data_guard_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_active_data_guard_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        """
+        return pulumi.get(self, "key_store_id")
+
+    @key_store_id.setter
+    def key_store_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "key_store_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -18260,6 +18380,30 @@ class DbSystemDbHomeDatabaseArgs:
         pulumi.set(self, "pluggable_databases", value)
 
     @_builtins.property
+    @pulumi.getter(name="protectionMode")
+    def protection_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
+        return pulumi.get(self, "protection_mode")
+
+    @protection_mode.setter
+    def protection_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "protection_mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sidPrefix")
+    def sid_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Specifies a prefix for the `Oracle SID` of the database to be created.
+        """
+        return pulumi.get(self, "sid_prefix")
+
+    @sid_prefix.setter
+    def sid_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "sid_prefix", value)
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -18306,6 +18450,25 @@ class DbSystemDbHomeDatabaseArgs:
     @time_stamp_for_point_in_time_recovery.setter
     def time_stamp_for_point_in_time_recovery(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "time_stamp_for_point_in_time_recovery", value)
+
+    @_builtins.property
+    @pulumi.getter(name="transportType")
+    def transport_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+        * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+        * MAXIMUM_PERFORMANCE - ASYNC
+        * MAXIMUM_PROTECTION - SYNC
+
+        For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+
+        **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+        """
+        return pulumi.get(self, "transport_type")
+
+    @transport_type.setter
+    def transport_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "transport_type", value)
 
     @_builtins.property
     @pulumi.getter(name="vaultId")
@@ -18538,7 +18701,7 @@ class DbSystemDbHomeDatabaseDbBackupConfigArgs:
 class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgsDict(TypedDict):
     backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
     """
-    Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+    Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
     """
     dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
     """
@@ -18576,7 +18739,7 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
                  remote_region: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        :param pulumi.Input[_builtins.str] backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param pulumi.Input[_builtins.str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param pulumi.Input[_builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local.
@@ -18603,7 +18766,7 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
     @pulumi.getter(name="backupRetentionPolicyOnTerminate")
     def backup_retention_policy_on_terminate(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         """
         return pulumi.get(self, "backup_retention_policy_on_terminate")
 
@@ -28128,6 +28291,50 @@ class GetDbSystemHistoryEntriesFilterArgsDict(TypedDict):
 
 @pulumi.input_type
 class GetDbSystemHistoryEntriesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetDbSystemOsPatchHistoryEntriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetDbSystemOsPatchHistoryEntriesFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

@@ -17,6 +17,11 @@ import java.util.Objects;
 public final class GetMaskingPolicyResult {
     private Integer addMaskingColumnsFromSdmTrigger;
     /**
+     * @return Specifies whether target database credentials are required to perform masking with this policy
+     * 
+     */
+    private Boolean areTargetCredentialsRequired;
+    /**
      * @return The source of masking columns.
      * 
      */
@@ -107,6 +112,13 @@ public final class GetMaskingPolicyResult {
     private GetMaskingPolicyResult() {}
     public Integer addMaskingColumnsFromSdmTrigger() {
         return this.addMaskingColumnsFromSdmTrigger;
+    }
+    /**
+     * @return Specifies whether target database credentials are required to perform masking with this policy
+     * 
+     */
+    public Boolean areTargetCredentialsRequired() {
+        return this.areTargetCredentialsRequired;
     }
     /**
      * @return The source of masking columns.
@@ -244,6 +256,7 @@ public final class GetMaskingPolicyResult {
     @CustomType.Builder
     public static final class Builder {
         private Integer addMaskingColumnsFromSdmTrigger;
+        private Boolean areTargetCredentialsRequired;
         private List<GetMaskingPolicyColumnSource> columnSources;
         private String compartmentId;
         private Map<String,String> definedTags;
@@ -267,6 +280,7 @@ public final class GetMaskingPolicyResult {
         public Builder(GetMaskingPolicyResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.addMaskingColumnsFromSdmTrigger = defaults.addMaskingColumnsFromSdmTrigger;
+    	      this.areTargetCredentialsRequired = defaults.areTargetCredentialsRequired;
     	      this.columnSources = defaults.columnSources;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
@@ -294,6 +308,14 @@ public final class GetMaskingPolicyResult {
               throw new MissingRequiredPropertyException("GetMaskingPolicyResult", "addMaskingColumnsFromSdmTrigger");
             }
             this.addMaskingColumnsFromSdmTrigger = addMaskingColumnsFromSdmTrigger;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder areTargetCredentialsRequired(Boolean areTargetCredentialsRequired) {
+            if (areTargetCredentialsRequired == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPolicyResult", "areTargetCredentialsRequired");
+            }
+            this.areTargetCredentialsRequired = areTargetCredentialsRequired;
             return this;
         }
         @CustomType.Setter
@@ -454,6 +476,7 @@ public final class GetMaskingPolicyResult {
         public GetMaskingPolicyResult build() {
             final var _resultValue = new GetMaskingPolicyResult();
             _resultValue.addMaskingColumnsFromSdmTrigger = addMaskingColumnsFromSdmTrigger;
+            _resultValue.areTargetCredentialsRequired = areTargetCredentialsRequired;
             _resultValue.columnSources = columnSources;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;

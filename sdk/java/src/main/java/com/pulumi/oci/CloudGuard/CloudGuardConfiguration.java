@@ -52,10 +52,6 @@ import javax.annotation.Nullable;
  *             .reportingRegion(cloudGuardConfigurationReportingRegion)
  *             .status(cloudGuardConfigurationStatus)
  *             .selfManageResources(cloudGuardConfigurationSelfManageResources)
- *             .serviceConfigurations(List.of(Map.ofEntries(
- *                 Map.entry("serviceConfigurationType", cloudGuardConfigurationServiceConfigurationsServiceConfigurationType),
- *                 Map.entry("status", cloudGuardConfigurationServiceConfigurationsStatus)
- *             )))
  *             .build());
  * 
  *     }

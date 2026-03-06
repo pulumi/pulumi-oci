@@ -15,6 +15,9 @@ namespace Pulumi.Oci.DataSafe
         [Output("maskingPolicyId")]
         public Output<string> MaskingPolicyId { get; private set; } = null!;
 
+        [Output("targetCredentials")]
+        public Output<Outputs.MaskDataTargetCredentials?> TargetCredentials { get; private set; } = null!;
+
         [Output("targetId")]
         public Output<string> TargetId { get; private set; } = null!;
 
@@ -67,6 +70,9 @@ namespace Pulumi.Oci.DataSafe
         [Input("maskingPolicyId", required: true)]
         public Input<string> MaskingPolicyId { get; set; } = null!;
 
+        [Input("targetCredentials")]
+        public Input<Inputs.MaskDataTargetCredentialsArgs>? TargetCredentials { get; set; }
+
         [Input("targetId", required: true)]
         public Input<string> TargetId { get; set; } = null!;
 
@@ -80,6 +86,9 @@ namespace Pulumi.Oci.DataSafe
     {
         [Input("maskingPolicyId")]
         public Input<string>? MaskingPolicyId { get; set; }
+
+        [Input("targetCredentials")]
+        public Input<Inputs.MaskDataTargetCredentialsGetArgs>? TargetCredentials { get; set; }
 
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }

@@ -36,6 +36,21 @@ public final class MaskingPolicyState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * Specifies whether target database credentials are required to perform masking with this policy
+     * 
+     */
+    @Import(name="areTargetCredentialsRequired")
+    private @Nullable Output<Boolean> areTargetCredentialsRequired;
+
+    /**
+     * @return Specifies whether target database credentials are required to perform masking with this policy
+     * 
+     */
+    public Optional<Output<Boolean>> areTargetCredentialsRequired() {
+        return Optional.ofNullable(this.areTargetCredentialsRequired);
+    }
+
+    /**
      * (Updatable) Details to associate a column source with a masking policy.
      * 
      */
@@ -300,6 +315,7 @@ public final class MaskingPolicyState extends com.pulumi.resources.ResourceArgs 
 
     private MaskingPolicyState(MaskingPolicyState $) {
         this.addMaskingColumnsFromSdmTrigger = $.addMaskingColumnsFromSdmTrigger;
+        this.areTargetCredentialsRequired = $.areTargetCredentialsRequired;
         this.columnSources = $.columnSources;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
@@ -356,6 +372,27 @@ public final class MaskingPolicyState extends com.pulumi.resources.ResourceArgs 
          */
         public Builder addMaskingColumnsFromSdmTrigger(Integer addMaskingColumnsFromSdmTrigger) {
             return addMaskingColumnsFromSdmTrigger(Output.of(addMaskingColumnsFromSdmTrigger));
+        }
+
+        /**
+         * @param areTargetCredentialsRequired Specifies whether target database credentials are required to perform masking with this policy
+         * 
+         * @return builder
+         * 
+         */
+        public Builder areTargetCredentialsRequired(@Nullable Output<Boolean> areTargetCredentialsRequired) {
+            $.areTargetCredentialsRequired = areTargetCredentialsRequired;
+            return this;
+        }
+
+        /**
+         * @param areTargetCredentialsRequired Specifies whether target database credentials are required to perform masking with this policy
+         * 
+         * @return builder
+         * 
+         */
+        public Builder areTargetCredentialsRequired(Boolean areTargetCredentialsRequired) {
+            return areTargetCredentialsRequired(Output.of(areTargetCredentialsRequired));
         }
 
         /**

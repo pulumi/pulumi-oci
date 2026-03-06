@@ -63,7 +63,6 @@ import javax.annotation.Nullable;
  *                 .firstName(fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsFirstName)
  *                 .lastName(fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsLastName)
  *                 .username(fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsUsername)
- *                 .password(fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsPassword)
  *                 .build())
  *             .displayName(fusionEnvironmentDisplayName)
  *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamily.id())

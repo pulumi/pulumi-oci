@@ -26,7 +26,6 @@ import * as utilities from "../utilities";
  *     fusionEnvironmentId: testFusionEnvironment.id,
  *     lastName: fusionEnvironmentAdminUserLastName,
  *     username: fusionEnvironmentAdminUserUsername,
- *     password: fusionEnvironmentAdminUserPassword,
  * });
  * ```
  *
@@ -87,12 +86,6 @@ export class FusionEnvironmentAdminUser extends pulumi.CustomResource {
      */
     declare public readonly lastName: pulumi.Output<string>;
     /**
-     * The password for the administrator.
-     *
-     * @deprecated The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
-     */
-    declare public readonly password: pulumi.Output<string>;
-    /**
      * The username for the administrator.
      *
      *
@@ -119,7 +112,6 @@ export class FusionEnvironmentAdminUser extends pulumi.CustomResource {
             resourceInputs["fusionEnvironmentId"] = state?.fusionEnvironmentId;
             resourceInputs["items"] = state?.items;
             resourceInputs["lastName"] = state?.lastName;
-            resourceInputs["password"] = state?.password;
             resourceInputs["username"] = state?.username;
         } else {
             const args = argsOrState as FusionEnvironmentAdminUserArgs | undefined;
@@ -142,13 +134,10 @@ export class FusionEnvironmentAdminUser extends pulumi.CustomResource {
             resourceInputs["firstName"] = args?.firstName;
             resourceInputs["fusionEnvironmentId"] = args?.fusionEnvironmentId;
             resourceInputs["lastName"] = args?.lastName;
-            resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
             resourceInputs["username"] = args?.username;
             resourceInputs["items"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
-        const secretOpts = { additionalSecretOutputs: ["password"] };
-        opts = pulumi.mergeOptions(opts, secretOpts);
         super(FusionEnvironmentAdminUser.__pulumiType, name, resourceInputs, opts);
     }
 }
@@ -177,12 +166,6 @@ export interface FusionEnvironmentAdminUserState {
      * The administrator's last name.
      */
     lastName?: pulumi.Input<string>;
-    /**
-     * The password for the administrator.
-     *
-     * @deprecated The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
-     */
-    password?: pulumi.Input<string>;
     /**
      * The username for the administrator.
      *
@@ -213,12 +196,6 @@ export interface FusionEnvironmentAdminUserArgs {
      * The administrator's last name.
      */
     lastName: pulumi.Input<string>;
-    /**
-     * The password for the administrator.
-     *
-     * @deprecated The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
-     */
-    password?: pulumi.Input<string>;
     /**
      * The username for the administrator.
      *

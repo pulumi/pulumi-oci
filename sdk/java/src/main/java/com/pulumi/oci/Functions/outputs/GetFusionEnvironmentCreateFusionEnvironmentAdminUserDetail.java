@@ -13,13 +13,6 @@ public final class GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail {
     private String emailAddress;
     private String firstName;
     private String lastName;
-    /**
-     * @deprecated
-     * The &#39;password&#39; field is deprecated. Please use the OCI Console or email link to reset the password.
-     * 
-     */
-    @Deprecated /* The 'password' field is deprecated. Please use the OCI Console or email link to reset the password. */
-    private String password;
     private String username;
 
     private GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail() {}
@@ -31,15 +24,6 @@ public final class GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail {
     }
     public String lastName() {
         return this.lastName;
-    }
-    /**
-     * @deprecated
-     * The &#39;password&#39; field is deprecated. Please use the OCI Console or email link to reset the password.
-     * 
-     */
-    @Deprecated /* The 'password' field is deprecated. Please use the OCI Console or email link to reset the password. */
-    public String password() {
-        return this.password;
     }
     public String username() {
         return this.username;
@@ -57,7 +41,6 @@ public final class GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail {
         private String emailAddress;
         private String firstName;
         private String lastName;
-        private String password;
         private String username;
         public Builder() {}
         public Builder(GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail defaults) {
@@ -65,7 +48,6 @@ public final class GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail {
     	      this.emailAddress = defaults.emailAddress;
     	      this.firstName = defaults.firstName;
     	      this.lastName = defaults.lastName;
-    	      this.password = defaults.password;
     	      this.username = defaults.username;
         }
 
@@ -94,14 +76,6 @@ public final class GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail {
             return this;
         }
         @CustomType.Setter
-        public Builder password(String password) {
-            if (password == null) {
-              throw new MissingRequiredPropertyException("GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail", "password");
-            }
-            this.password = password;
-            return this;
-        }
-        @CustomType.Setter
         public Builder username(String username) {
             if (username == null) {
               throw new MissingRequiredPropertyException("GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail", "username");
@@ -114,7 +88,6 @@ public final class GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail {
             _resultValue.emailAddress = emailAddress;
             _resultValue.firstName = firstName;
             _resultValue.lastName = lastName;
-            _resultValue.password = password;
             _resultValue.username = username;
             return _resultValue;
         }

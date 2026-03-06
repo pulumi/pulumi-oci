@@ -16,14 +16,14 @@ public final class FileStorageLustreFileSystemMaintenanceWindowArgs extends com.
     public static final FileStorageLustreFileSystemMaintenanceWindowArgs Empty = new FileStorageLustreFileSystemMaintenanceWindowArgs();
 
     /**
-     * Day of the week when the maintainence window starts.
+     * (Updatable) Day of the week when the maintainence window starts.
      * 
      */
     @Import(name="dayOfWeek")
     private @Nullable Output<String> dayOfWeek;
 
     /**
-     * @return Day of the week when the maintainence window starts.
+     * @return (Updatable) Day of the week when the maintainence window starts.
      * 
      */
     public Optional<Output<String>> dayOfWeek() {
@@ -31,14 +31,14 @@ public final class FileStorageLustreFileSystemMaintenanceWindowArgs extends com.
     }
 
     /**
-     * The time to start the maintenance window. The format is &#39;HH:MM&#39;, &#39;HH:MM&#39; represents the time in UTC.   Example: `22:00`
+     * (Updatable) The time to start the maintenance window. The format is &#39;HH:MM&#39;, &#39;HH:MM&#39; represents the time in UTC.   Example: `22:00`
      * 
      */
     @Import(name="timeStart")
     private @Nullable Output<String> timeStart;
 
     /**
-     * @return The time to start the maintenance window. The format is &#39;HH:MM&#39;, &#39;HH:MM&#39; represents the time in UTC.   Example: `22:00`
+     * @return (Updatable) The time to start the maintenance window. The format is &#39;HH:MM&#39;, &#39;HH:MM&#39; represents the time in UTC.   Example: `22:00`
      * 
      */
     public Optional<Output<String>> timeStart() {
@@ -71,7 +71,7 @@ public final class FileStorageLustreFileSystemMaintenanceWindowArgs extends com.
         }
 
         /**
-         * @param dayOfWeek Day of the week when the maintainence window starts.
+         * @param dayOfWeek (Updatable) Day of the week when the maintainence window starts.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class FileStorageLustreFileSystemMaintenanceWindowArgs extends com.
         }
 
         /**
-         * @param dayOfWeek Day of the week when the maintainence window starts.
+         * @param dayOfWeek (Updatable) Day of the week when the maintainence window starts.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class FileStorageLustreFileSystemMaintenanceWindowArgs extends com.
         }
 
         /**
-         * @param timeStart The time to start the maintenance window. The format is &#39;HH:MM&#39;, &#39;HH:MM&#39; represents the time in UTC.   Example: `22:00`
+         * @param timeStart (Updatable) The time to start the maintenance window. The format is &#39;HH:MM&#39;, &#39;HH:MM&#39; represents the time in UTC.   Example: `22:00`
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class FileStorageLustreFileSystemMaintenanceWindowArgs extends com.
         }
 
         /**
-         * @param timeStart The time to start the maintenance window. The format is &#39;HH:MM&#39;, &#39;HH:MM&#39; represents the time in UTC.   Example: `22:00`
+         * @param timeStart (Updatable) The time to start the maintenance window. The format is &#39;HH:MM&#39;, &#39;HH:MM&#39; represents the time in UTC.   Example: `22:00`
          * 
          * @return builder
          * 

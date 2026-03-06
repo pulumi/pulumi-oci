@@ -119,6 +119,20 @@ public class MaskingPolicy extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.addMaskingColumnsFromSdmTrigger);
     }
     /**
+     * Specifies whether target database credentials are required to perform masking with this policy
+     * 
+     */
+    @Export(name="areTargetCredentialsRequired", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> areTargetCredentialsRequired;
+
+    /**
+     * @return Specifies whether target database credentials are required to perform masking with this policy
+     * 
+     */
+    public Output<Boolean> areTargetCredentialsRequired() {
+        return this.areTargetCredentialsRequired;
+    }
+    /**
      * (Updatable) Details to associate a column source with a masking policy.
      * 
      */

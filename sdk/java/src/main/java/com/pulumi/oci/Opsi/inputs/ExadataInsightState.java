@@ -5,6 +5,7 @@ package com.pulumi.oci.Opsi.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Opsi.inputs.ExadataInsightChargebackPlanDetailArgs;
 import com.pulumi.oci.Opsi.inputs.ExadataInsightMemberVmClusterDetailArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -18,6 +19,21 @@ import javax.annotation.Nullable;
 public final class ExadataInsightState extends com.pulumi.resources.ResourceArgs {
 
     public static final ExadataInsightState Empty = new ExadataInsightState();
+
+    /**
+     * Object containing chargeback plan details
+     * 
+     */
+    @Import(name="chargebackPlanDetails")
+    private @Nullable Output<List<ExadataInsightChargebackPlanDetailArgs>> chargebackPlanDetails;
+
+    /**
+     * @return Object containing chargeback plan details
+     * 
+     */
+    public Optional<Output<List<ExadataInsightChargebackPlanDetailArgs>>> chargebackPlanDetails() {
+        return Optional.ofNullable(this.chargebackPlanDetails);
+    }
 
     /**
      * (Updatable) Compartment Identifier of Exadata insight
@@ -347,6 +363,21 @@ public final class ExadataInsightState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+     * 
+     */
+    @Import(name="statusDetails")
+    private @Nullable Output<String> statusDetails;
+
+    /**
+     * @return A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+     * 
+     */
+    public Optional<Output<String>> statusDetails() {
+        return Optional.ofNullable(this.statusDetails);
+    }
+
+    /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
@@ -394,6 +425,7 @@ public final class ExadataInsightState extends com.pulumi.resources.ResourceArgs
     private ExadataInsightState() {}
 
     private ExadataInsightState(ExadataInsightState $) {
+        this.chargebackPlanDetails = $.chargebackPlanDetails;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.enterpriseManagerBridgeId = $.enterpriseManagerBridgeId;
@@ -417,6 +449,7 @@ public final class ExadataInsightState extends com.pulumi.resources.ResourceArgs
         this.memberVmClusterDetails = $.memberVmClusterDetails;
         this.state = $.state;
         this.status = $.status;
+        this.statusDetails = $.statusDetails;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
@@ -438,6 +471,37 @@ public final class ExadataInsightState extends com.pulumi.resources.ResourceArgs
 
         public Builder(ExadataInsightState defaults) {
             $ = new ExadataInsightState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param chargebackPlanDetails Object containing chargeback plan details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder chargebackPlanDetails(@Nullable Output<List<ExadataInsightChargebackPlanDetailArgs>> chargebackPlanDetails) {
+            $.chargebackPlanDetails = chargebackPlanDetails;
+            return this;
+        }
+
+        /**
+         * @param chargebackPlanDetails Object containing chargeback plan details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder chargebackPlanDetails(List<ExadataInsightChargebackPlanDetailArgs> chargebackPlanDetails) {
+            return chargebackPlanDetails(Output.of(chargebackPlanDetails));
+        }
+
+        /**
+         * @param chargebackPlanDetails Object containing chargeback plan details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder chargebackPlanDetails(ExadataInsightChargebackPlanDetailArgs... chargebackPlanDetails) {
+            return chargebackPlanDetails(List.of(chargebackPlanDetails));
         }
 
         /**
@@ -895,6 +959,27 @@ public final class ExadataInsightState extends com.pulumi.resources.ResourceArgs
          */
         public Builder status(String status) {
             return status(Output.of(status));
+        }
+
+        /**
+         * @param statusDetails A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder statusDetails(@Nullable Output<String> statusDetails) {
+            $.statusDetails = statusDetails;
+            return this;
+        }
+
+        /**
+         * @param statusDetails A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder statusDetails(String statusDetails) {
+            return statusDetails(Output.of(statusDetails));
         }
 
         /**

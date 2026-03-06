@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class FileStorageLustreFileSystemMaintenanceWindow {
     /**
-     * @return Day of the week when the maintainence window starts.
+     * @return (Updatable) Day of the week when the maintainence window starts.
      * 
      */
     private @Nullable String dayOfWeek;
     /**
-     * @return The time to start the maintenance window. The format is &#39;HH:MM&#39;, &#39;HH:MM&#39; represents the time in UTC.   Example: `22:00`
+     * @return (Updatable) The time to start the maintenance window. The format is &#39;HH:MM&#39;, &#39;HH:MM&#39; represents the time in UTC.   Example: `22:00`
      * 
      */
     private @Nullable String timeStart;
 
     private FileStorageLustreFileSystemMaintenanceWindow() {}
     /**
-     * @return Day of the week when the maintainence window starts.
+     * @return (Updatable) Day of the week when the maintainence window starts.
      * 
      */
     public Optional<String> dayOfWeek() {
         return Optional.ofNullable(this.dayOfWeek);
     }
     /**
-     * @return The time to start the maintenance window. The format is &#39;HH:MM&#39;, &#39;HH:MM&#39; represents the time in UTC.   Example: `22:00`
+     * @return (Updatable) The time to start the maintenance window. The format is &#39;HH:MM&#39;, &#39;HH:MM&#39; represents the time in UTC.   Example: `22:00`
      * 
      */
     public Optional<String> timeStart() {

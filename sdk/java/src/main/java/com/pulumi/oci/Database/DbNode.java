@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.DbNodeArgs;
 import com.pulumi.oci.Database.inputs.DbNodeState;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
@@ -291,6 +292,20 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      */
     public Output<String> hostname() {
         return this.hostname;
+    }
+    /**
+     * Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+     * 
+     */
+    @Export(name="isOsPatchRebootRequired", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isOsPatchRebootRequired;
+
+    /**
+     * @return Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+     * 
+     */
+    public Output<Boolean> isOsPatchRebootRequired() {
+        return this.isOsPatchRebootRequired;
     }
     /**
      * Information about the current lifecycle state.

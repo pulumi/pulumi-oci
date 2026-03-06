@@ -141,7 +141,6 @@ namespace Pulumi.Oci.Functions
         /// Admin users last name
         /// </summary>
         public readonly string LastName;
-        public readonly string Password;
         /// <summary>
         /// Admin username
         /// </summary>
@@ -161,8 +160,6 @@ namespace Pulumi.Oci.Functions
 
             string lastName,
 
-            string password,
-
             string username)
         {
             EmailAddress = emailAddress;
@@ -171,7 +168,6 @@ namespace Pulumi.Oci.Functions
             Id = id;
             Items = items;
             LastName = lastName;
-            Password = password;
             Username = username;
         }
     }

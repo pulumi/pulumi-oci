@@ -8,6 +8,10 @@ import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
+import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableMaintenanceScheduleStartTimesArgs;
+import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableMaintenanceScheduleStartTimesPlainArgs;
+import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableOverrideMaintenanceStartTimesArgs;
+import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableOverrideMaintenanceStartTimesPlainArgs;
 import com.pulumi.oci.Lustre.inputs.GetFileStorageLustreFileSystemArgs;
 import com.pulumi.oci.Lustre.inputs.GetFileStorageLustreFileSystemPlainArgs;
 import com.pulumi.oci.Lustre.inputs.GetFileStorageLustreFileSystemsArgs;
@@ -20,6 +24,8 @@ import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobsArgs;
 import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobsPlainArgs;
 import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinksArgs;
 import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinksPlainArgs;
+import com.pulumi.oci.Lustre.outputs.GetFileStorageAvailableMaintenanceScheduleStartTimesResult;
+import com.pulumi.oci.Lustre.outputs.GetFileStorageAvailableOverrideMaintenanceStartTimesResult;
 import com.pulumi.oci.Lustre.outputs.GetFileStorageLustreFileSystemResult;
 import com.pulumi.oci.Lustre.outputs.GetFileStorageLustreFileSystemsResult;
 import com.pulumi.oci.Lustre.outputs.GetFileStorageObjectStorageLinkResult;
@@ -30,6 +36,536 @@ import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class LustreFunctions {
+    /**
+     * This data source provides the list of Available Maintenance Schedule Start Times in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets the list of available maintenance schedule start times for both Create and Update operation
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableMaintenanceScheduleStartTimesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAvailableMaintenanceScheduleStartTimes = LustreFunctions.getFileStorageAvailableMaintenanceScheduleStartTimes(GetFileStorageAvailableMaintenanceScheduleStartTimesArgs.builder()
+     *             .availabilityDomain(availableMaintenanceScheduleStartTimeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .dayOfWeek(availableMaintenanceScheduleStartTimeDayOfWeek)
+     *             .id(availableMaintenanceScheduleStartTimeId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFileStorageAvailableMaintenanceScheduleStartTimesResult> getFileStorageAvailableMaintenanceScheduleStartTimes() {
+        return getFileStorageAvailableMaintenanceScheduleStartTimes(GetFileStorageAvailableMaintenanceScheduleStartTimesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Available Maintenance Schedule Start Times in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets the list of available maintenance schedule start times for both Create and Update operation
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableMaintenanceScheduleStartTimesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAvailableMaintenanceScheduleStartTimes = LustreFunctions.getFileStorageAvailableMaintenanceScheduleStartTimes(GetFileStorageAvailableMaintenanceScheduleStartTimesArgs.builder()
+     *             .availabilityDomain(availableMaintenanceScheduleStartTimeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .dayOfWeek(availableMaintenanceScheduleStartTimeDayOfWeek)
+     *             .id(availableMaintenanceScheduleStartTimeId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFileStorageAvailableMaintenanceScheduleStartTimesResult> getFileStorageAvailableMaintenanceScheduleStartTimesPlain() {
+        return getFileStorageAvailableMaintenanceScheduleStartTimesPlain(GetFileStorageAvailableMaintenanceScheduleStartTimesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Available Maintenance Schedule Start Times in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets the list of available maintenance schedule start times for both Create and Update operation
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableMaintenanceScheduleStartTimesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAvailableMaintenanceScheduleStartTimes = LustreFunctions.getFileStorageAvailableMaintenanceScheduleStartTimes(GetFileStorageAvailableMaintenanceScheduleStartTimesArgs.builder()
+     *             .availabilityDomain(availableMaintenanceScheduleStartTimeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .dayOfWeek(availableMaintenanceScheduleStartTimeDayOfWeek)
+     *             .id(availableMaintenanceScheduleStartTimeId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFileStorageAvailableMaintenanceScheduleStartTimesResult> getFileStorageAvailableMaintenanceScheduleStartTimes(GetFileStorageAvailableMaintenanceScheduleStartTimesArgs args) {
+        return getFileStorageAvailableMaintenanceScheduleStartTimes(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Available Maintenance Schedule Start Times in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets the list of available maintenance schedule start times for both Create and Update operation
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableMaintenanceScheduleStartTimesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAvailableMaintenanceScheduleStartTimes = LustreFunctions.getFileStorageAvailableMaintenanceScheduleStartTimes(GetFileStorageAvailableMaintenanceScheduleStartTimesArgs.builder()
+     *             .availabilityDomain(availableMaintenanceScheduleStartTimeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .dayOfWeek(availableMaintenanceScheduleStartTimeDayOfWeek)
+     *             .id(availableMaintenanceScheduleStartTimeId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFileStorageAvailableMaintenanceScheduleStartTimesResult> getFileStorageAvailableMaintenanceScheduleStartTimesPlain(GetFileStorageAvailableMaintenanceScheduleStartTimesPlainArgs args) {
+        return getFileStorageAvailableMaintenanceScheduleStartTimesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Available Maintenance Schedule Start Times in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets the list of available maintenance schedule start times for both Create and Update operation
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableMaintenanceScheduleStartTimesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAvailableMaintenanceScheduleStartTimes = LustreFunctions.getFileStorageAvailableMaintenanceScheduleStartTimes(GetFileStorageAvailableMaintenanceScheduleStartTimesArgs.builder()
+     *             .availabilityDomain(availableMaintenanceScheduleStartTimeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .dayOfWeek(availableMaintenanceScheduleStartTimeDayOfWeek)
+     *             .id(availableMaintenanceScheduleStartTimeId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFileStorageAvailableMaintenanceScheduleStartTimesResult> getFileStorageAvailableMaintenanceScheduleStartTimes(GetFileStorageAvailableMaintenanceScheduleStartTimesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Lustre/getFileStorageAvailableMaintenanceScheduleStartTimes:getFileStorageAvailableMaintenanceScheduleStartTimes", TypeShape.of(GetFileStorageAvailableMaintenanceScheduleStartTimesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Available Maintenance Schedule Start Times in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets the list of available maintenance schedule start times for both Create and Update operation
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableMaintenanceScheduleStartTimesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAvailableMaintenanceScheduleStartTimes = LustreFunctions.getFileStorageAvailableMaintenanceScheduleStartTimes(GetFileStorageAvailableMaintenanceScheduleStartTimesArgs.builder()
+     *             .availabilityDomain(availableMaintenanceScheduleStartTimeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .dayOfWeek(availableMaintenanceScheduleStartTimeDayOfWeek)
+     *             .id(availableMaintenanceScheduleStartTimeId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFileStorageAvailableMaintenanceScheduleStartTimesResult> getFileStorageAvailableMaintenanceScheduleStartTimes(GetFileStorageAvailableMaintenanceScheduleStartTimesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Lustre/getFileStorageAvailableMaintenanceScheduleStartTimes:getFileStorageAvailableMaintenanceScheduleStartTimes", TypeShape.of(GetFileStorageAvailableMaintenanceScheduleStartTimesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Available Maintenance Schedule Start Times in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets the list of available maintenance schedule start times for both Create and Update operation
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableMaintenanceScheduleStartTimesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAvailableMaintenanceScheduleStartTimes = LustreFunctions.getFileStorageAvailableMaintenanceScheduleStartTimes(GetFileStorageAvailableMaintenanceScheduleStartTimesArgs.builder()
+     *             .availabilityDomain(availableMaintenanceScheduleStartTimeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .dayOfWeek(availableMaintenanceScheduleStartTimeDayOfWeek)
+     *             .id(availableMaintenanceScheduleStartTimeId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFileStorageAvailableMaintenanceScheduleStartTimesResult> getFileStorageAvailableMaintenanceScheduleStartTimesPlain(GetFileStorageAvailableMaintenanceScheduleStartTimesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Lustre/getFileStorageAvailableMaintenanceScheduleStartTimes:getFileStorageAvailableMaintenanceScheduleStartTimes", TypeShape.of(GetFileStorageAvailableMaintenanceScheduleStartTimesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Available Override Maintenance Start Times in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets the list of available maintenance start times for Override operation
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableOverrideMaintenanceStartTimesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAvailableOverrideMaintenanceStartTimes = LustreFunctions.getFileStorageAvailableOverrideMaintenanceStartTimes(GetFileStorageAvailableOverrideMaintenanceStartTimesArgs.builder()
+     *             .id(availableOverrideMaintenanceStartTimeId)
+     *             .date(availableOverrideMaintenanceStartTimeDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFileStorageAvailableOverrideMaintenanceStartTimesResult> getFileStorageAvailableOverrideMaintenanceStartTimes(GetFileStorageAvailableOverrideMaintenanceStartTimesArgs args) {
+        return getFileStorageAvailableOverrideMaintenanceStartTimes(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Available Override Maintenance Start Times in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets the list of available maintenance start times for Override operation
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableOverrideMaintenanceStartTimesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAvailableOverrideMaintenanceStartTimes = LustreFunctions.getFileStorageAvailableOverrideMaintenanceStartTimes(GetFileStorageAvailableOverrideMaintenanceStartTimesArgs.builder()
+     *             .id(availableOverrideMaintenanceStartTimeId)
+     *             .date(availableOverrideMaintenanceStartTimeDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFileStorageAvailableOverrideMaintenanceStartTimesResult> getFileStorageAvailableOverrideMaintenanceStartTimesPlain(GetFileStorageAvailableOverrideMaintenanceStartTimesPlainArgs args) {
+        return getFileStorageAvailableOverrideMaintenanceStartTimesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Available Override Maintenance Start Times in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets the list of available maintenance start times for Override operation
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableOverrideMaintenanceStartTimesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAvailableOverrideMaintenanceStartTimes = LustreFunctions.getFileStorageAvailableOverrideMaintenanceStartTimes(GetFileStorageAvailableOverrideMaintenanceStartTimesArgs.builder()
+     *             .id(availableOverrideMaintenanceStartTimeId)
+     *             .date(availableOverrideMaintenanceStartTimeDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFileStorageAvailableOverrideMaintenanceStartTimesResult> getFileStorageAvailableOverrideMaintenanceStartTimes(GetFileStorageAvailableOverrideMaintenanceStartTimesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Lustre/getFileStorageAvailableOverrideMaintenanceStartTimes:getFileStorageAvailableOverrideMaintenanceStartTimes", TypeShape.of(GetFileStorageAvailableOverrideMaintenanceStartTimesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Available Override Maintenance Start Times in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets the list of available maintenance start times for Override operation
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableOverrideMaintenanceStartTimesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAvailableOverrideMaintenanceStartTimes = LustreFunctions.getFileStorageAvailableOverrideMaintenanceStartTimes(GetFileStorageAvailableOverrideMaintenanceStartTimesArgs.builder()
+     *             .id(availableOverrideMaintenanceStartTimeId)
+     *             .date(availableOverrideMaintenanceStartTimeDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFileStorageAvailableOverrideMaintenanceStartTimesResult> getFileStorageAvailableOverrideMaintenanceStartTimes(GetFileStorageAvailableOverrideMaintenanceStartTimesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Lustre/getFileStorageAvailableOverrideMaintenanceStartTimes:getFileStorageAvailableOverrideMaintenanceStartTimes", TypeShape.of(GetFileStorageAvailableOverrideMaintenanceStartTimesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Available Override Maintenance Start Times in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets the list of available maintenance start times for Override operation
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageAvailableOverrideMaintenanceStartTimesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAvailableOverrideMaintenanceStartTimes = LustreFunctions.getFileStorageAvailableOverrideMaintenanceStartTimes(GetFileStorageAvailableOverrideMaintenanceStartTimesArgs.builder()
+     *             .id(availableOverrideMaintenanceStartTimeId)
+     *             .date(availableOverrideMaintenanceStartTimeDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFileStorageAvailableOverrideMaintenanceStartTimesResult> getFileStorageAvailableOverrideMaintenanceStartTimesPlain(GetFileStorageAvailableOverrideMaintenanceStartTimesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Lustre/getFileStorageAvailableOverrideMaintenanceStartTimes:getFileStorageAvailableOverrideMaintenanceStartTimes", TypeShape.of(GetFileStorageAvailableOverrideMaintenanceStartTimesResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Lustre File System resource in Oracle Cloud Infrastructure Lustre File Storage service.
      * 

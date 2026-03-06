@@ -22,6 +22,10 @@ import com.pulumi.oci.Opsi.inputs.GetAwrHubSourcesArgs;
 import com.pulumi.oci.Opsi.inputs.GetAwrHubSourcesPlainArgs;
 import com.pulumi.oci.Opsi.inputs.GetAwrHubsArgs;
 import com.pulumi.oci.Opsi.inputs.GetAwrHubsPlainArgs;
+import com.pulumi.oci.Opsi.inputs.GetChargebackPlanArgs;
+import com.pulumi.oci.Opsi.inputs.GetChargebackPlanPlainArgs;
+import com.pulumi.oci.Opsi.inputs.GetChargebackPlansArgs;
+import com.pulumi.oci.Opsi.inputs.GetChargebackPlansPlainArgs;
 import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightArgs;
 import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightPlainArgs;
 import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightsArgs;
@@ -77,6 +81,8 @@ import com.pulumi.oci.Opsi.outputs.GetAwrHubResult;
 import com.pulumi.oci.Opsi.outputs.GetAwrHubSourceResult;
 import com.pulumi.oci.Opsi.outputs.GetAwrHubSourcesResult;
 import com.pulumi.oci.Opsi.outputs.GetAwrHubsResult;
+import com.pulumi.oci.Opsi.outputs.GetChargebackPlanResult;
+import com.pulumi.oci.Opsi.outputs.GetChargebackPlansResult;
 import com.pulumi.oci.Opsi.outputs.GetDatabaseInsightResult;
 import com.pulumi.oci.Opsi.outputs.GetDatabaseInsightsResult;
 import com.pulumi.oci.Opsi.outputs.GetEnterpriseManagerBridgeResult;
@@ -1674,6 +1680,524 @@ public final class OpsiFunctions {
      */
     public static CompletableFuture<GetAwrHubsResult> getAwrHubsPlain(GetAwrHubsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Opsi/getAwrHubs:getAwrHubs", TypeShape.of(GetAwrHubsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Chargeback Plan resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets the details of the specified chargeback plan.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetChargebackPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testChargebackPlan = OpsiFunctions.getChargebackPlan(GetChargebackPlanArgs.builder()
+     *             .chargebackplanId(testChargebackplan.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetChargebackPlanResult> getChargebackPlan(GetChargebackPlanArgs args) {
+        return getChargebackPlan(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Chargeback Plan resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets the details of the specified chargeback plan.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetChargebackPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testChargebackPlan = OpsiFunctions.getChargebackPlan(GetChargebackPlanArgs.builder()
+     *             .chargebackplanId(testChargebackplan.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetChargebackPlanResult> getChargebackPlanPlain(GetChargebackPlanPlainArgs args) {
+        return getChargebackPlanPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Chargeback Plan resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets the details of the specified chargeback plan.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetChargebackPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testChargebackPlan = OpsiFunctions.getChargebackPlan(GetChargebackPlanArgs.builder()
+     *             .chargebackplanId(testChargebackplan.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetChargebackPlanResult> getChargebackPlan(GetChargebackPlanArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getChargebackPlan:getChargebackPlan", TypeShape.of(GetChargebackPlanResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Chargeback Plan resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets the details of the specified chargeback plan.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetChargebackPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testChargebackPlan = OpsiFunctions.getChargebackPlan(GetChargebackPlanArgs.builder()
+     *             .chargebackplanId(testChargebackplan.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetChargebackPlanResult> getChargebackPlan(GetChargebackPlanArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getChargebackPlan:getChargebackPlan", TypeShape.of(GetChargebackPlanResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Chargeback Plan resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets the details of the specified chargeback plan.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetChargebackPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testChargebackPlan = OpsiFunctions.getChargebackPlan(GetChargebackPlanArgs.builder()
+     *             .chargebackplanId(testChargebackplan.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetChargebackPlanResult> getChargebackPlanPlain(GetChargebackPlanPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Opsi/getChargebackPlan:getChargebackPlan", TypeShape.of(GetChargebackPlanResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Chargeback Plans in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of Ops Insights chargeback plans.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetChargebackPlansArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testChargebackPlans = OpsiFunctions.getChargebackPlans(GetChargebackPlansArgs.builder()
+     *             .chargebackplanId(testChargebackplan.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(chargebackPlanCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetChargebackPlansResult> getChargebackPlans() {
+        return getChargebackPlans(GetChargebackPlansArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Chargeback Plans in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of Ops Insights chargeback plans.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetChargebackPlansArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testChargebackPlans = OpsiFunctions.getChargebackPlans(GetChargebackPlansArgs.builder()
+     *             .chargebackplanId(testChargebackplan.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(chargebackPlanCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetChargebackPlansResult> getChargebackPlansPlain() {
+        return getChargebackPlansPlain(GetChargebackPlansPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Chargeback Plans in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of Ops Insights chargeback plans.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetChargebackPlansArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testChargebackPlans = OpsiFunctions.getChargebackPlans(GetChargebackPlansArgs.builder()
+     *             .chargebackplanId(testChargebackplan.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(chargebackPlanCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetChargebackPlansResult> getChargebackPlans(GetChargebackPlansArgs args) {
+        return getChargebackPlans(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Chargeback Plans in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of Ops Insights chargeback plans.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetChargebackPlansArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testChargebackPlans = OpsiFunctions.getChargebackPlans(GetChargebackPlansArgs.builder()
+     *             .chargebackplanId(testChargebackplan.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(chargebackPlanCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetChargebackPlansResult> getChargebackPlansPlain(GetChargebackPlansPlainArgs args) {
+        return getChargebackPlansPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Chargeback Plans in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of Ops Insights chargeback plans.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetChargebackPlansArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testChargebackPlans = OpsiFunctions.getChargebackPlans(GetChargebackPlansArgs.builder()
+     *             .chargebackplanId(testChargebackplan.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(chargebackPlanCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetChargebackPlansResult> getChargebackPlans(GetChargebackPlansArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getChargebackPlans:getChargebackPlans", TypeShape.of(GetChargebackPlansResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Chargeback Plans in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of Ops Insights chargeback plans.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetChargebackPlansArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testChargebackPlans = OpsiFunctions.getChargebackPlans(GetChargebackPlansArgs.builder()
+     *             .chargebackplanId(testChargebackplan.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(chargebackPlanCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetChargebackPlansResult> getChargebackPlans(GetChargebackPlansArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getChargebackPlans:getChargebackPlans", TypeShape.of(GetChargebackPlansResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Chargeback Plans in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of Ops Insights chargeback plans.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetChargebackPlansArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testChargebackPlans = OpsiFunctions.getChargebackPlans(GetChargebackPlansArgs.builder()
+     *             .chargebackplanId(testChargebackplan.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(chargebackPlanCompartmentIdInSubtree)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetChargebackPlansResult> getChargebackPlansPlain(GetChargebackPlansPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Opsi/getChargebackPlans:getChargebackPlans", TypeShape.of(GetChargebackPlansResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Database Insight resource in Oracle Cloud Infrastructure Opsi service.

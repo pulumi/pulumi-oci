@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
@@ -294,6 +295,21 @@ public final class DbNodeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+     * 
+     */
+    @Import(name="isOsPatchRebootRequired")
+    private @Nullable Output<Boolean> isOsPatchRebootRequired;
+
+    /**
+     * @return Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+     * 
+     */
+    public Optional<Output<Boolean>> isOsPatchRebootRequired() {
+        return Optional.ofNullable(this.isOsPatchRebootRequired);
+    }
+
+    /**
      * Information about the current lifecycle state.
      * 
      */
@@ -494,6 +510,7 @@ public final class DbNodeState extends com.pulumi.resources.ResourceArgs {
         this.hostIpId = $.hostIpId;
         this.hostIpv6id = $.hostIpv6id;
         this.hostname = $.hostname;
+        this.isOsPatchRebootRequired = $.isOsPatchRebootRequired;
         this.lifecycleDetails = $.lifecycleDetails;
         this.maintenanceType = $.maintenanceType;
         this.memorySizeInGbs = $.memorySizeInGbs;
@@ -908,6 +925,27 @@ public final class DbNodeState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder hostname(String hostname) {
             return hostname(Output.of(hostname));
+        }
+
+        /**
+         * @param isOsPatchRebootRequired Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOsPatchRebootRequired(@Nullable Output<Boolean> isOsPatchRebootRequired) {
+            $.isOsPatchRebootRequired = isOsPatchRebootRequired;
+            return this;
+        }
+
+        /**
+         * @param isOsPatchRebootRequired Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOsPatchRebootRequired(Boolean isOsPatchRebootRequired) {
+            return isOsPatchRebootRequired(Output.of(isOsPatchRebootRequired));
         }
 
         /**

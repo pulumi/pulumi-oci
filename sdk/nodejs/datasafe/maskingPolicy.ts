@@ -102,6 +102,10 @@ export class MaskingPolicy extends pulumi.CustomResource {
      */
     declare public readonly addMaskingColumnsFromSdmTrigger: pulumi.Output<number | undefined>;
     /**
+     * Specifies whether target database credentials are required to perform masking with this policy
+     */
+    declare public /*out*/ readonly areTargetCredentialsRequired: pulumi.Output<boolean>;
+    /**
      * (Updatable) Details to associate a column source with a masking policy.
      */
     declare public readonly columnSources: pulumi.Output<outputs.DataSafe.MaskingPolicyColumnSource[]>;
@@ -188,6 +192,7 @@ export class MaskingPolicy extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as MaskingPolicyState | undefined;
             resourceInputs["addMaskingColumnsFromSdmTrigger"] = state?.addMaskingColumnsFromSdmTrigger;
+            resourceInputs["areTargetCredentialsRequired"] = state?.areTargetCredentialsRequired;
             resourceInputs["columnSources"] = state?.columnSources;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["definedTags"] = state?.definedTags;
@@ -228,6 +233,7 @@ export class MaskingPolicy extends pulumi.CustomResource {
             resourceInputs["postMaskingScript"] = args?.postMaskingScript;
             resourceInputs["preMaskingScript"] = args?.preMaskingScript;
             resourceInputs["recompile"] = args?.recompile;
+            resourceInputs["areTargetCredentialsRequired"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
@@ -245,6 +251,10 @@ export interface MaskingPolicyState {
      * (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
      */
     addMaskingColumnsFromSdmTrigger?: pulumi.Input<number>;
+    /**
+     * Specifies whether target database credentials are required to perform masking with this policy
+     */
+    areTargetCredentialsRequired?: pulumi.Input<boolean>;
     /**
      * (Updatable) Details to associate a column source with a masking policy.
      */

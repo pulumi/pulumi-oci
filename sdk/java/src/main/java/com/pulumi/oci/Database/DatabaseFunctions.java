@@ -178,6 +178,10 @@ import com.pulumi.oci.Database.inputs.GetDbSystemComputePerformancesArgs;
 import com.pulumi.oci.Database.inputs.GetDbSystemComputePerformancesPlainArgs;
 import com.pulumi.oci.Database.inputs.GetDbSystemHistoryEntriesArgs;
 import com.pulumi.oci.Database.inputs.GetDbSystemHistoryEntriesPlainArgs;
+import com.pulumi.oci.Database.inputs.GetDbSystemOsPatchHistoryEntriesArgs;
+import com.pulumi.oci.Database.inputs.GetDbSystemOsPatchHistoryEntriesPlainArgs;
+import com.pulumi.oci.Database.inputs.GetDbSystemOsPatchHistoryEntryArgs;
+import com.pulumi.oci.Database.inputs.GetDbSystemOsPatchHistoryEntryPlainArgs;
 import com.pulumi.oci.Database.inputs.GetDbSystemPatchesArgs;
 import com.pulumi.oci.Database.inputs.GetDbSystemPatchesPlainArgs;
 import com.pulumi.oci.Database.inputs.GetDbSystemShapesArgs;
@@ -412,6 +416,8 @@ import com.pulumi.oci.Database.outputs.GetDbServerResult;
 import com.pulumi.oci.Database.outputs.GetDbServersResult;
 import com.pulumi.oci.Database.outputs.GetDbSystemComputePerformancesResult;
 import com.pulumi.oci.Database.outputs.GetDbSystemHistoryEntriesResult;
+import com.pulumi.oci.Database.outputs.GetDbSystemOsPatchHistoryEntriesResult;
+import com.pulumi.oci.Database.outputs.GetDbSystemOsPatchHistoryEntryResult;
 import com.pulumi.oci.Database.outputs.GetDbSystemPatchesResult;
 import com.pulumi.oci.Database.outputs.GetDbSystemShapesResult;
 import com.pulumi.oci.Database.outputs.GetDbSystemStoragePerformancesResult;
@@ -19502,6 +19508,441 @@ public final class DatabaseFunctions {
      */
     public static CompletableFuture<GetDbSystemHistoryEntriesResult> getDbSystemHistoryEntriesPlain(GetDbSystemHistoryEntriesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDbSystemHistoryEntries:getDbSystemHistoryEntries", TypeShape.of(GetDbSystemHistoryEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db System Os Patch History Entries in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the history of the OS patch actions performed on the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemOsPatchHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemOsPatchHistoryEntries = DatabaseFunctions.getDbSystemOsPatchHistoryEntries(GetDbSystemOsPatchHistoryEntriesArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .action(dbSystemOsPatchHistoryEntryAction)
+     *             .state(dbSystemOsPatchHistoryEntryState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbSystemOsPatchHistoryEntriesResult> getDbSystemOsPatchHistoryEntries(GetDbSystemOsPatchHistoryEntriesArgs args) {
+        return getDbSystemOsPatchHistoryEntries(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Db System Os Patch History Entries in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the history of the OS patch actions performed on the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemOsPatchHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemOsPatchHistoryEntries = DatabaseFunctions.getDbSystemOsPatchHistoryEntries(GetDbSystemOsPatchHistoryEntriesArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .action(dbSystemOsPatchHistoryEntryAction)
+     *             .state(dbSystemOsPatchHistoryEntryState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbSystemOsPatchHistoryEntriesResult> getDbSystemOsPatchHistoryEntriesPlain(GetDbSystemOsPatchHistoryEntriesPlainArgs args) {
+        return getDbSystemOsPatchHistoryEntriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Db System Os Patch History Entries in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the history of the OS patch actions performed on the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemOsPatchHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemOsPatchHistoryEntries = DatabaseFunctions.getDbSystemOsPatchHistoryEntries(GetDbSystemOsPatchHistoryEntriesArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .action(dbSystemOsPatchHistoryEntryAction)
+     *             .state(dbSystemOsPatchHistoryEntryState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbSystemOsPatchHistoryEntriesResult> getDbSystemOsPatchHistoryEntries(GetDbSystemOsPatchHistoryEntriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbSystemOsPatchHistoryEntries:getDbSystemOsPatchHistoryEntries", TypeShape.of(GetDbSystemOsPatchHistoryEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db System Os Patch History Entries in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the history of the OS patch actions performed on the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemOsPatchHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemOsPatchHistoryEntries = DatabaseFunctions.getDbSystemOsPatchHistoryEntries(GetDbSystemOsPatchHistoryEntriesArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .action(dbSystemOsPatchHistoryEntryAction)
+     *             .state(dbSystemOsPatchHistoryEntryState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbSystemOsPatchHistoryEntriesResult> getDbSystemOsPatchHistoryEntries(GetDbSystemOsPatchHistoryEntriesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbSystemOsPatchHistoryEntries:getDbSystemOsPatchHistoryEntries", TypeShape.of(GetDbSystemOsPatchHistoryEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db System Os Patch History Entries in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the history of the OS patch actions performed on the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemOsPatchHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemOsPatchHistoryEntries = DatabaseFunctions.getDbSystemOsPatchHistoryEntries(GetDbSystemOsPatchHistoryEntriesArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .action(dbSystemOsPatchHistoryEntryAction)
+     *             .state(dbSystemOsPatchHistoryEntryState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbSystemOsPatchHistoryEntriesResult> getDbSystemOsPatchHistoryEntriesPlain(GetDbSystemOsPatchHistoryEntriesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getDbSystemOsPatchHistoryEntries:getDbSystemOsPatchHistoryEntries", TypeShape.of(GetDbSystemOsPatchHistoryEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db System Os Patch History Entry resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the details of the specified OS patch action for the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemOsPatchHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemOsPatchHistoryEntry = DatabaseFunctions.getDbSystemOsPatchHistoryEntry(GetDbSystemOsPatchHistoryEntryArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .osPatchHistoryEntryId(testOsPatchHistoryEntry.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbSystemOsPatchHistoryEntryResult> getDbSystemOsPatchHistoryEntry(GetDbSystemOsPatchHistoryEntryArgs args) {
+        return getDbSystemOsPatchHistoryEntry(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Db System Os Patch History Entry resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the details of the specified OS patch action for the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemOsPatchHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemOsPatchHistoryEntry = DatabaseFunctions.getDbSystemOsPatchHistoryEntry(GetDbSystemOsPatchHistoryEntryArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .osPatchHistoryEntryId(testOsPatchHistoryEntry.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbSystemOsPatchHistoryEntryResult> getDbSystemOsPatchHistoryEntryPlain(GetDbSystemOsPatchHistoryEntryPlainArgs args) {
+        return getDbSystemOsPatchHistoryEntryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Db System Os Patch History Entry resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the details of the specified OS patch action for the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemOsPatchHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemOsPatchHistoryEntry = DatabaseFunctions.getDbSystemOsPatchHistoryEntry(GetDbSystemOsPatchHistoryEntryArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .osPatchHistoryEntryId(testOsPatchHistoryEntry.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbSystemOsPatchHistoryEntryResult> getDbSystemOsPatchHistoryEntry(GetDbSystemOsPatchHistoryEntryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbSystemOsPatchHistoryEntry:getDbSystemOsPatchHistoryEntry", TypeShape.of(GetDbSystemOsPatchHistoryEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db System Os Patch History Entry resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the details of the specified OS patch action for the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemOsPatchHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemOsPatchHistoryEntry = DatabaseFunctions.getDbSystemOsPatchHistoryEntry(GetDbSystemOsPatchHistoryEntryArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .osPatchHistoryEntryId(testOsPatchHistoryEntry.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbSystemOsPatchHistoryEntryResult> getDbSystemOsPatchHistoryEntry(GetDbSystemOsPatchHistoryEntryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbSystemOsPatchHistoryEntry:getDbSystemOsPatchHistoryEntry", TypeShape.of(GetDbSystemOsPatchHistoryEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db System Os Patch History Entry resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the details of the specified OS patch action for the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemOsPatchHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemOsPatchHistoryEntry = DatabaseFunctions.getDbSystemOsPatchHistoryEntry(GetDbSystemOsPatchHistoryEntryArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .osPatchHistoryEntryId(testOsPatchHistoryEntry.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbSystemOsPatchHistoryEntryResult> getDbSystemOsPatchHistoryEntryPlain(GetDbSystemOsPatchHistoryEntryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getDbSystemOsPatchHistoryEntry:getDbSystemOsPatchHistoryEntry", TypeShape.of(GetDbSystemOsPatchHistoryEntryResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Db System Patches in Oracle Cloud Infrastructure Database service.

@@ -13,13 +13,13 @@ namespace Pulumi.Oci.Lustre.Inputs
     public sealed class FileStorageLustreFileSystemMaintenanceWindowArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Day of the week when the maintainence window starts.
+        /// (Updatable) Day of the week when the maintainence window starts.
         /// </summary>
         [Input("dayOfWeek")]
         public Input<string>? DayOfWeek { get; set; }
 
         /// <summary>
-        /// The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
+        /// (Updatable) The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
         /// </summary>
         [Input("timeStart")]
         public Input<string>? TimeStart { get; set; }

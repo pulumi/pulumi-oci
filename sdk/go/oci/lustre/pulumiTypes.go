@@ -13,10 +13,166 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type FileStorageLustreFileSystemDateTimeDetails struct {
+	// A user-friendly date. Example: `2025-04-25`
+	Date string `pulumi:"date"`
+	// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+	Time string `pulumi:"time"`
+}
+
+// FileStorageLustreFileSystemDateTimeDetailsInput is an input type that accepts FileStorageLustreFileSystemDateTimeDetailsArgs and FileStorageLustreFileSystemDateTimeDetailsOutput values.
+// You can construct a concrete instance of `FileStorageLustreFileSystemDateTimeDetailsInput` via:
+//
+//	FileStorageLustreFileSystemDateTimeDetailsArgs{...}
+type FileStorageLustreFileSystemDateTimeDetailsInput interface {
+	pulumi.Input
+
+	ToFileStorageLustreFileSystemDateTimeDetailsOutput() FileStorageLustreFileSystemDateTimeDetailsOutput
+	ToFileStorageLustreFileSystemDateTimeDetailsOutputWithContext(context.Context) FileStorageLustreFileSystemDateTimeDetailsOutput
+}
+
+type FileStorageLustreFileSystemDateTimeDetailsArgs struct {
+	// A user-friendly date. Example: `2025-04-25`
+	Date pulumi.StringInput `pulumi:"date"`
+	// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+	Time pulumi.StringInput `pulumi:"time"`
+}
+
+func (FileStorageLustreFileSystemDateTimeDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FileStorageLustreFileSystemDateTimeDetails)(nil)).Elem()
+}
+
+func (i FileStorageLustreFileSystemDateTimeDetailsArgs) ToFileStorageLustreFileSystemDateTimeDetailsOutput() FileStorageLustreFileSystemDateTimeDetailsOutput {
+	return i.ToFileStorageLustreFileSystemDateTimeDetailsOutputWithContext(context.Background())
+}
+
+func (i FileStorageLustreFileSystemDateTimeDetailsArgs) ToFileStorageLustreFileSystemDateTimeDetailsOutputWithContext(ctx context.Context) FileStorageLustreFileSystemDateTimeDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FileStorageLustreFileSystemDateTimeDetailsOutput)
+}
+
+func (i FileStorageLustreFileSystemDateTimeDetailsArgs) ToFileStorageLustreFileSystemDateTimeDetailsPtrOutput() FileStorageLustreFileSystemDateTimeDetailsPtrOutput {
+	return i.ToFileStorageLustreFileSystemDateTimeDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i FileStorageLustreFileSystemDateTimeDetailsArgs) ToFileStorageLustreFileSystemDateTimeDetailsPtrOutputWithContext(ctx context.Context) FileStorageLustreFileSystemDateTimeDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FileStorageLustreFileSystemDateTimeDetailsOutput).ToFileStorageLustreFileSystemDateTimeDetailsPtrOutputWithContext(ctx)
+}
+
+// FileStorageLustreFileSystemDateTimeDetailsPtrInput is an input type that accepts FileStorageLustreFileSystemDateTimeDetailsArgs, FileStorageLustreFileSystemDateTimeDetailsPtr and FileStorageLustreFileSystemDateTimeDetailsPtrOutput values.
+// You can construct a concrete instance of `FileStorageLustreFileSystemDateTimeDetailsPtrInput` via:
+//
+//	        FileStorageLustreFileSystemDateTimeDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type FileStorageLustreFileSystemDateTimeDetailsPtrInput interface {
+	pulumi.Input
+
+	ToFileStorageLustreFileSystemDateTimeDetailsPtrOutput() FileStorageLustreFileSystemDateTimeDetailsPtrOutput
+	ToFileStorageLustreFileSystemDateTimeDetailsPtrOutputWithContext(context.Context) FileStorageLustreFileSystemDateTimeDetailsPtrOutput
+}
+
+type fileStorageLustreFileSystemDateTimeDetailsPtrType FileStorageLustreFileSystemDateTimeDetailsArgs
+
+func FileStorageLustreFileSystemDateTimeDetailsPtr(v *FileStorageLustreFileSystemDateTimeDetailsArgs) FileStorageLustreFileSystemDateTimeDetailsPtrInput {
+	return (*fileStorageLustreFileSystemDateTimeDetailsPtrType)(v)
+}
+
+func (*fileStorageLustreFileSystemDateTimeDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FileStorageLustreFileSystemDateTimeDetails)(nil)).Elem()
+}
+
+func (i *fileStorageLustreFileSystemDateTimeDetailsPtrType) ToFileStorageLustreFileSystemDateTimeDetailsPtrOutput() FileStorageLustreFileSystemDateTimeDetailsPtrOutput {
+	return i.ToFileStorageLustreFileSystemDateTimeDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *fileStorageLustreFileSystemDateTimeDetailsPtrType) ToFileStorageLustreFileSystemDateTimeDetailsPtrOutputWithContext(ctx context.Context) FileStorageLustreFileSystemDateTimeDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FileStorageLustreFileSystemDateTimeDetailsPtrOutput)
+}
+
+type FileStorageLustreFileSystemDateTimeDetailsOutput struct{ *pulumi.OutputState }
+
+func (FileStorageLustreFileSystemDateTimeDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FileStorageLustreFileSystemDateTimeDetails)(nil)).Elem()
+}
+
+func (o FileStorageLustreFileSystemDateTimeDetailsOutput) ToFileStorageLustreFileSystemDateTimeDetailsOutput() FileStorageLustreFileSystemDateTimeDetailsOutput {
+	return o
+}
+
+func (o FileStorageLustreFileSystemDateTimeDetailsOutput) ToFileStorageLustreFileSystemDateTimeDetailsOutputWithContext(ctx context.Context) FileStorageLustreFileSystemDateTimeDetailsOutput {
+	return o
+}
+
+func (o FileStorageLustreFileSystemDateTimeDetailsOutput) ToFileStorageLustreFileSystemDateTimeDetailsPtrOutput() FileStorageLustreFileSystemDateTimeDetailsPtrOutput {
+	return o.ToFileStorageLustreFileSystemDateTimeDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o FileStorageLustreFileSystemDateTimeDetailsOutput) ToFileStorageLustreFileSystemDateTimeDetailsPtrOutputWithContext(ctx context.Context) FileStorageLustreFileSystemDateTimeDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FileStorageLustreFileSystemDateTimeDetails) *FileStorageLustreFileSystemDateTimeDetails {
+		return &v
+	}).(FileStorageLustreFileSystemDateTimeDetailsPtrOutput)
+}
+
+// A user-friendly date. Example: `2025-04-25`
+func (o FileStorageLustreFileSystemDateTimeDetailsOutput) Date() pulumi.StringOutput {
+	return o.ApplyT(func(v FileStorageLustreFileSystemDateTimeDetails) string { return v.Date }).(pulumi.StringOutput)
+}
+
+// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+func (o FileStorageLustreFileSystemDateTimeDetailsOutput) Time() pulumi.StringOutput {
+	return o.ApplyT(func(v FileStorageLustreFileSystemDateTimeDetails) string { return v.Time }).(pulumi.StringOutput)
+}
+
+type FileStorageLustreFileSystemDateTimeDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (FileStorageLustreFileSystemDateTimeDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FileStorageLustreFileSystemDateTimeDetails)(nil)).Elem()
+}
+
+func (o FileStorageLustreFileSystemDateTimeDetailsPtrOutput) ToFileStorageLustreFileSystemDateTimeDetailsPtrOutput() FileStorageLustreFileSystemDateTimeDetailsPtrOutput {
+	return o
+}
+
+func (o FileStorageLustreFileSystemDateTimeDetailsPtrOutput) ToFileStorageLustreFileSystemDateTimeDetailsPtrOutputWithContext(ctx context.Context) FileStorageLustreFileSystemDateTimeDetailsPtrOutput {
+	return o
+}
+
+func (o FileStorageLustreFileSystemDateTimeDetailsPtrOutput) Elem() FileStorageLustreFileSystemDateTimeDetailsOutput {
+	return o.ApplyT(func(v *FileStorageLustreFileSystemDateTimeDetails) FileStorageLustreFileSystemDateTimeDetails {
+		if v != nil {
+			return *v
+		}
+		var ret FileStorageLustreFileSystemDateTimeDetails
+		return ret
+	}).(FileStorageLustreFileSystemDateTimeDetailsOutput)
+}
+
+// A user-friendly date. Example: `2025-04-25`
+func (o FileStorageLustreFileSystemDateTimeDetailsPtrOutput) Date() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FileStorageLustreFileSystemDateTimeDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Date
+	}).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+func (o FileStorageLustreFileSystemDateTimeDetailsPtrOutput) Time() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FileStorageLustreFileSystemDateTimeDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Time
+	}).(pulumi.StringPtrOutput)
+}
+
 type FileStorageLustreFileSystemMaintenanceWindow struct {
-	// Day of the week when the maintainence window starts.
+	// (Updatable) Day of the week when the maintainence window starts.
 	DayOfWeek *string `pulumi:"dayOfWeek"`
-	// The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
+	// (Updatable) The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
 	TimeStart *string `pulumi:"timeStart"`
 }
 
@@ -32,9 +188,9 @@ type FileStorageLustreFileSystemMaintenanceWindowInput interface {
 }
 
 type FileStorageLustreFileSystemMaintenanceWindowArgs struct {
-	// Day of the week when the maintainence window starts.
+	// (Updatable) Day of the week when the maintainence window starts.
 	DayOfWeek pulumi.StringPtrInput `pulumi:"dayOfWeek"`
-	// The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
+	// (Updatable) The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
 	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 }
 
@@ -89,12 +245,12 @@ func (o FileStorageLustreFileSystemMaintenanceWindowOutput) ToFileStorageLustreF
 	return o
 }
 
-// Day of the week when the maintainence window starts.
+// (Updatable) Day of the week when the maintainence window starts.
 func (o FileStorageLustreFileSystemMaintenanceWindowOutput) DayOfWeek() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FileStorageLustreFileSystemMaintenanceWindow) *string { return v.DayOfWeek }).(pulumi.StringPtrOutput)
 }
 
-// The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
+// (Updatable) The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
 func (o FileStorageLustreFileSystemMaintenanceWindowOutput) TimeStart() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FileStorageLustreFileSystemMaintenanceWindow) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
@@ -117,6 +273,341 @@ func (o FileStorageLustreFileSystemMaintenanceWindowArrayOutput) Index(i pulumi.
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FileStorageLustreFileSystemMaintenanceWindow {
 		return vs[0].([]FileStorageLustreFileSystemMaintenanceWindow)[vs[1].(int)]
 	}).(FileStorageLustreFileSystemMaintenanceWindowOutput)
+}
+
+type FileStorageLustreFileSystemMaintenanceWindowMetadata struct {
+	// A generic object to show date and time in the below specified format
+	ActiveOrNextPlannedMaintenances []FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance `pulumi:"activeOrNextPlannedMaintenances"`
+	// A generic object to show date and time in the below specified format
+	FinishedMaintenances []FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance `pulumi:"finishedMaintenances"`
+	// whether or not an active maintenance is going on for the LustreFileSystem
+	IsMaintenanceInProgress *bool `pulumi:"isMaintenanceInProgress"`
+}
+
+// FileStorageLustreFileSystemMaintenanceWindowMetadataInput is an input type that accepts FileStorageLustreFileSystemMaintenanceWindowMetadataArgs and FileStorageLustreFileSystemMaintenanceWindowMetadataOutput values.
+// You can construct a concrete instance of `FileStorageLustreFileSystemMaintenanceWindowMetadataInput` via:
+//
+//	FileStorageLustreFileSystemMaintenanceWindowMetadataArgs{...}
+type FileStorageLustreFileSystemMaintenanceWindowMetadataInput interface {
+	pulumi.Input
+
+	ToFileStorageLustreFileSystemMaintenanceWindowMetadataOutput() FileStorageLustreFileSystemMaintenanceWindowMetadataOutput
+	ToFileStorageLustreFileSystemMaintenanceWindowMetadataOutputWithContext(context.Context) FileStorageLustreFileSystemMaintenanceWindowMetadataOutput
+}
+
+type FileStorageLustreFileSystemMaintenanceWindowMetadataArgs struct {
+	// A generic object to show date and time in the below specified format
+	ActiveOrNextPlannedMaintenances FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayInput `pulumi:"activeOrNextPlannedMaintenances"`
+	// A generic object to show date and time in the below specified format
+	FinishedMaintenances FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayInput `pulumi:"finishedMaintenances"`
+	// whether or not an active maintenance is going on for the LustreFileSystem
+	IsMaintenanceInProgress pulumi.BoolPtrInput `pulumi:"isMaintenanceInProgress"`
+}
+
+func (FileStorageLustreFileSystemMaintenanceWindowMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FileStorageLustreFileSystemMaintenanceWindowMetadata)(nil)).Elem()
+}
+
+func (i FileStorageLustreFileSystemMaintenanceWindowMetadataArgs) ToFileStorageLustreFileSystemMaintenanceWindowMetadataOutput() FileStorageLustreFileSystemMaintenanceWindowMetadataOutput {
+	return i.ToFileStorageLustreFileSystemMaintenanceWindowMetadataOutputWithContext(context.Background())
+}
+
+func (i FileStorageLustreFileSystemMaintenanceWindowMetadataArgs) ToFileStorageLustreFileSystemMaintenanceWindowMetadataOutputWithContext(ctx context.Context) FileStorageLustreFileSystemMaintenanceWindowMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FileStorageLustreFileSystemMaintenanceWindowMetadataOutput)
+}
+
+// FileStorageLustreFileSystemMaintenanceWindowMetadataArrayInput is an input type that accepts FileStorageLustreFileSystemMaintenanceWindowMetadataArray and FileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput values.
+// You can construct a concrete instance of `FileStorageLustreFileSystemMaintenanceWindowMetadataArrayInput` via:
+//
+//	FileStorageLustreFileSystemMaintenanceWindowMetadataArray{ FileStorageLustreFileSystemMaintenanceWindowMetadataArgs{...} }
+type FileStorageLustreFileSystemMaintenanceWindowMetadataArrayInput interface {
+	pulumi.Input
+
+	ToFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput() FileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput
+	ToFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutputWithContext(context.Context) FileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput
+}
+
+type FileStorageLustreFileSystemMaintenanceWindowMetadataArray []FileStorageLustreFileSystemMaintenanceWindowMetadataInput
+
+func (FileStorageLustreFileSystemMaintenanceWindowMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FileStorageLustreFileSystemMaintenanceWindowMetadata)(nil)).Elem()
+}
+
+func (i FileStorageLustreFileSystemMaintenanceWindowMetadataArray) ToFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput() FileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput {
+	return i.ToFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i FileStorageLustreFileSystemMaintenanceWindowMetadataArray) ToFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutputWithContext(ctx context.Context) FileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput)
+}
+
+type FileStorageLustreFileSystemMaintenanceWindowMetadataOutput struct{ *pulumi.OutputState }
+
+func (FileStorageLustreFileSystemMaintenanceWindowMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FileStorageLustreFileSystemMaintenanceWindowMetadata)(nil)).Elem()
+}
+
+func (o FileStorageLustreFileSystemMaintenanceWindowMetadataOutput) ToFileStorageLustreFileSystemMaintenanceWindowMetadataOutput() FileStorageLustreFileSystemMaintenanceWindowMetadataOutput {
+	return o
+}
+
+func (o FileStorageLustreFileSystemMaintenanceWindowMetadataOutput) ToFileStorageLustreFileSystemMaintenanceWindowMetadataOutputWithContext(ctx context.Context) FileStorageLustreFileSystemMaintenanceWindowMetadataOutput {
+	return o
+}
+
+// A generic object to show date and time in the below specified format
+func (o FileStorageLustreFileSystemMaintenanceWindowMetadataOutput) ActiveOrNextPlannedMaintenances() FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput {
+	return o.ApplyT(func(v FileStorageLustreFileSystemMaintenanceWindowMetadata) []FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance {
+		return v.ActiveOrNextPlannedMaintenances
+	}).(FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput)
+}
+
+// A generic object to show date and time in the below specified format
+func (o FileStorageLustreFileSystemMaintenanceWindowMetadataOutput) FinishedMaintenances() FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput {
+	return o.ApplyT(func(v FileStorageLustreFileSystemMaintenanceWindowMetadata) []FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance {
+		return v.FinishedMaintenances
+	}).(FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput)
+}
+
+// whether or not an active maintenance is going on for the LustreFileSystem
+func (o FileStorageLustreFileSystemMaintenanceWindowMetadataOutput) IsMaintenanceInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FileStorageLustreFileSystemMaintenanceWindowMetadata) *bool { return v.IsMaintenanceInProgress }).(pulumi.BoolPtrOutput)
+}
+
+type FileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (FileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FileStorageLustreFileSystemMaintenanceWindowMetadata)(nil)).Elem()
+}
+
+func (o FileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput) ToFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput() FileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput {
+	return o
+}
+
+func (o FileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput) ToFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutputWithContext(ctx context.Context) FileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput {
+	return o
+}
+
+func (o FileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput) Index(i pulumi.IntInput) FileStorageLustreFileSystemMaintenanceWindowMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FileStorageLustreFileSystemMaintenanceWindowMetadata {
+		return vs[0].([]FileStorageLustreFileSystemMaintenanceWindowMetadata)[vs[1].(int)]
+	}).(FileStorageLustreFileSystemMaintenanceWindowMetadataOutput)
+}
+
+type FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance struct {
+	// A user-friendly date. Example: `2025-04-25`
+	Date *string `pulumi:"date"`
+	// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+	Time *string `pulumi:"time"`
+}
+
+// FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceInput is an input type that accepts FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs and FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput values.
+// You can construct a concrete instance of `FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceInput` via:
+//
+//	FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs{...}
+type FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceInput interface {
+	pulumi.Input
+
+	ToFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput() FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput
+	ToFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutputWithContext(context.Context) FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput
+}
+
+type FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs struct {
+	// A user-friendly date. Example: `2025-04-25`
+	Date pulumi.StringPtrInput `pulumi:"date"`
+	// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+	Time pulumi.StringPtrInput `pulumi:"time"`
+}
+
+func (FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance)(nil)).Elem()
+}
+
+func (i FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs) ToFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput() FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput {
+	return i.ToFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutputWithContext(context.Background())
+}
+
+func (i FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs) ToFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutputWithContext(ctx context.Context) FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput)
+}
+
+// FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayInput is an input type that accepts FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArray and FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput values.
+// You can construct a concrete instance of `FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayInput` via:
+//
+//	FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArray{ FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs{...} }
+type FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayInput interface {
+	pulumi.Input
+
+	ToFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput() FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput
+	ToFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutputWithContext(context.Context) FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput
+}
+
+type FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArray []FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceInput
+
+func (FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance)(nil)).Elem()
+}
+
+func (i FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArray) ToFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput() FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput {
+	return i.ToFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutputWithContext(context.Background())
+}
+
+func (i FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArray) ToFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutputWithContext(ctx context.Context) FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput)
+}
+
+type FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput struct{ *pulumi.OutputState }
+
+func (FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance)(nil)).Elem()
+}
+
+func (o FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput) ToFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput() FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput {
+	return o
+}
+
+func (o FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput) ToFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutputWithContext(ctx context.Context) FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput {
+	return o
+}
+
+// A user-friendly date. Example: `2025-04-25`
+func (o FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput) Date() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance) *string {
+		return v.Date
+	}).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+func (o FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput) Time() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance) *string {
+		return v.Time
+	}).(pulumi.StringPtrOutput)
+}
+
+type FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput struct{ *pulumi.OutputState }
+
+func (FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance)(nil)).Elem()
+}
+
+func (o FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput) ToFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput() FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput {
+	return o
+}
+
+func (o FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput) ToFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutputWithContext(ctx context.Context) FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput {
+	return o
+}
+
+func (o FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput) Index(i pulumi.IntInput) FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance {
+		return vs[0].([]FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance)[vs[1].(int)]
+	}).(FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput)
+}
+
+type FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance struct {
+	// A user-friendly date. Example: `2025-04-25`
+	Date *string `pulumi:"date"`
+	// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+	Time *string `pulumi:"time"`
+}
+
+// FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceInput is an input type that accepts FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs and FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput values.
+// You can construct a concrete instance of `FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceInput` via:
+//
+//	FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs{...}
+type FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceInput interface {
+	pulumi.Input
+
+	ToFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput() FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput
+	ToFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutputWithContext(context.Context) FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput
+}
+
+type FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs struct {
+	// A user-friendly date. Example: `2025-04-25`
+	Date pulumi.StringPtrInput `pulumi:"date"`
+	// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+	Time pulumi.StringPtrInput `pulumi:"time"`
+}
+
+func (FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance)(nil)).Elem()
+}
+
+func (i FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs) ToFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput() FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput {
+	return i.ToFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutputWithContext(context.Background())
+}
+
+func (i FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs) ToFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutputWithContext(ctx context.Context) FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput)
+}
+
+// FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayInput is an input type that accepts FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArray and FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput values.
+// You can construct a concrete instance of `FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayInput` via:
+//
+//	FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArray{ FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs{...} }
+type FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayInput interface {
+	pulumi.Input
+
+	ToFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput() FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput
+	ToFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutputWithContext(context.Context) FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput
+}
+
+type FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArray []FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceInput
+
+func (FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance)(nil)).Elem()
+}
+
+func (i FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArray) ToFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput() FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput {
+	return i.ToFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutputWithContext(context.Background())
+}
+
+func (i FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArray) ToFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutputWithContext(ctx context.Context) FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput)
+}
+
+type FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput struct{ *pulumi.OutputState }
+
+func (FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance)(nil)).Elem()
+}
+
+func (o FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput) ToFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput() FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput {
+	return o
+}
+
+func (o FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput) ToFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutputWithContext(ctx context.Context) FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput {
+	return o
+}
+
+// A user-friendly date. Example: `2025-04-25`
+func (o FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput) Date() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance) *string { return v.Date }).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+func (o FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput) Time() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance) *string { return v.Time }).(pulumi.StringPtrOutput)
+}
+
+type FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput struct{ *pulumi.OutputState }
+
+func (FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance)(nil)).Elem()
+}
+
+func (o FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput) ToFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput() FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput {
+	return o
+}
+
+func (o FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput) ToFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutputWithContext(ctx context.Context) FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput {
+	return o
+}
+
+func (o FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput) Index(i pulumi.IntInput) FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance {
+		return vs[0].([]FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance)[vs[1].(int)]
+	}).(FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput)
 }
 
 type FileStorageLustreFileSystemRootSquashConfiguration struct {
@@ -313,6 +804,742 @@ func (o FileStorageLustreFileSystemRootSquashConfigurationPtrOutput) SquashUid()
 	}).(pulumi.StringPtrOutput)
 }
 
+type GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollection struct {
+	// List of available start times on every day of the week
+	Items []GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItem `pulumi:"items"`
+}
+
+// GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionInput is an input type that accepts GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArgs and GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionOutput values.
+// You can construct a concrete instance of `GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionInput` via:
+//
+//	GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArgs{...}
+type GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionInput interface {
+	pulumi.Input
+
+	ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionOutput() GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionOutput
+	ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionOutputWithContext(context.Context) GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionOutput
+}
+
+type GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArgs struct {
+	// List of available start times on every day of the week
+	Items GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollection)(nil)).Elem()
+}
+
+func (i GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArgs) ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionOutput() GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionOutput {
+	return i.ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArgs) ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionOutputWithContext(ctx context.Context) GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionOutput)
+}
+
+// GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayInput is an input type that accepts GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArray and GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayInput` via:
+//
+//	GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArray{ GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArgs{...} }
+type GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayOutput() GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayOutput
+	ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayOutputWithContext(context.Context) GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayOutput
+}
+
+type GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArray []GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionInput
+
+func (GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollection)(nil)).Elem()
+}
+
+func (i GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArray) ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayOutput() GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayOutput {
+	return i.ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArray) ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayOutputWithContext(ctx context.Context) GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayOutput)
+}
+
+type GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollection)(nil)).Elem()
+}
+
+func (o GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionOutput) ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionOutput() GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionOutput {
+	return o
+}
+
+func (o GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionOutput) ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionOutputWithContext(ctx context.Context) GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionOutput {
+	return o
+}
+
+// List of available start times on every day of the week
+func (o GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionOutput) Items() GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollection) []GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItem {
+		return v.Items
+	}).(GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayOutput)
+}
+
+type GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollection)(nil)).Elem()
+}
+
+func (o GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayOutput) ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayOutput() GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayOutput {
+	return o
+}
+
+func (o GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayOutput) ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayOutputWithContext(ctx context.Context) GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayOutput {
+	return o
+}
+
+func (o GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayOutput) Index(i pulumi.IntInput) GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollection {
+		return vs[0].([]GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollection)[vs[1].(int)]
+	}).(GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionOutput)
+}
+
+type GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItem struct {
+	// Day of the week filter
+	DayOfWeek string `pulumi:"dayOfWeek"`
+	// List of available start times. Each array item is of the format `HH:mm`
+	StartTimes []string `pulumi:"startTimes"`
+}
+
+// GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemInput is an input type that accepts GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArgs and GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutput values.
+// You can construct a concrete instance of `GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemInput` via:
+//
+//	GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArgs{...}
+type GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutput() GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutput
+	ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutputWithContext(context.Context) GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutput
+}
+
+type GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArgs struct {
+	// Day of the week filter
+	DayOfWeek pulumi.StringInput `pulumi:"dayOfWeek"`
+	// List of available start times. Each array item is of the format `HH:mm`
+	StartTimes pulumi.StringArrayInput `pulumi:"startTimes"`
+}
+
+func (GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItem)(nil)).Elem()
+}
+
+func (i GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArgs) ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutput() GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutput {
+	return i.ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArgs) ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutputWithContext(ctx context.Context) GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutput)
+}
+
+// GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayInput is an input type that accepts GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArray and GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayInput` via:
+//
+//	GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArray{ GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArgs{...} }
+type GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayOutput() GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayOutput
+	ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayOutputWithContext(context.Context) GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayOutput
+}
+
+type GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArray []GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemInput
+
+func (GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItem)(nil)).Elem()
+}
+
+func (i GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArray) ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayOutput() GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayOutput {
+	return i.ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArray) ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayOutputWithContext(ctx context.Context) GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayOutput)
+}
+
+type GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItem)(nil)).Elem()
+}
+
+func (o GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutput) ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutput() GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutput {
+	return o
+}
+
+func (o GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutput) ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutputWithContext(ctx context.Context) GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutput {
+	return o
+}
+
+// Day of the week filter
+func (o GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutput) DayOfWeek() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItem) string {
+		return v.DayOfWeek
+	}).(pulumi.StringOutput)
+}
+
+// List of available start times. Each array item is of the format `HH:mm`
+func (o GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutput) StartTimes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItem) []string {
+		return v.StartTimes
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItem)(nil)).Elem()
+}
+
+func (o GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayOutput) ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayOutput() GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayOutput) ToGetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayOutputWithContext(ctx context.Context) GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItem {
+		return vs[0].([]GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItem)[vs[1].(int)]
+	}).(GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutput)
+}
+
+type GetFileStorageAvailableMaintenanceScheduleStartTimesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFileStorageAvailableMaintenanceScheduleStartTimesFilterInput is an input type that accepts GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgs and GetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutput values.
+// You can construct a concrete instance of `GetFileStorageAvailableMaintenanceScheduleStartTimesFilterInput` via:
+//
+//	GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgs{...}
+type GetFileStorageAvailableMaintenanceScheduleStartTimesFilterInput interface {
+	pulumi.Input
+
+	ToGetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutput() GetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutput
+	ToGetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutputWithContext(context.Context) GetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutput
+}
+
+type GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageAvailableMaintenanceScheduleStartTimesFilter)(nil)).Elem()
+}
+
+func (i GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgs) ToGetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutput() GetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutput {
+	return i.ToGetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgs) ToGetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutputWithContext(ctx context.Context) GetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutput)
+}
+
+// GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayInput is an input type that accepts GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArray and GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayOutput values.
+// You can construct a concrete instance of `GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayInput` via:
+//
+//	GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArray{ GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgs{...} }
+type GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayOutput() GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayOutput
+	ToGetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayOutputWithContext(context.Context) GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayOutput
+}
+
+type GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArray []GetFileStorageAvailableMaintenanceScheduleStartTimesFilterInput
+
+func (GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageAvailableMaintenanceScheduleStartTimesFilter)(nil)).Elem()
+}
+
+func (i GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArray) ToGetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayOutput() GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayOutput {
+	return i.ToGetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArray) ToGetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayOutputWithContext(ctx context.Context) GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayOutput)
+}
+
+type GetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageAvailableMaintenanceScheduleStartTimesFilter)(nil)).Elem()
+}
+
+func (o GetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutput) ToGetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutput() GetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutput {
+	return o
+}
+
+func (o GetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutput) ToGetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutputWithContext(ctx context.Context) GetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutput {
+	return o
+}
+
+func (o GetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageAvailableMaintenanceScheduleStartTimesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFileStorageAvailableMaintenanceScheduleStartTimesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFileStorageAvailableMaintenanceScheduleStartTimesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageAvailableMaintenanceScheduleStartTimesFilter)(nil)).Elem()
+}
+
+func (o GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayOutput) ToGetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayOutput() GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayOutput {
+	return o
+}
+
+func (o GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayOutput) ToGetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayOutputWithContext(ctx context.Context) GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayOutput {
+	return o
+}
+
+func (o GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayOutput) Index(i pulumi.IntInput) GetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageAvailableMaintenanceScheduleStartTimesFilter {
+		return vs[0].([]GetFileStorageAvailableMaintenanceScheduleStartTimesFilter)[vs[1].(int)]
+	}).(GetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutput)
+}
+
+type GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollection struct {
+	// List of available start times on every day of the week
+	Items []GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItem `pulumi:"items"`
+}
+
+// GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionInput is an input type that accepts GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArgs and GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionOutput values.
+// You can construct a concrete instance of `GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionInput` via:
+//
+//	GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArgs{...}
+type GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionInput interface {
+	pulumi.Input
+
+	ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionOutput() GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionOutput
+	ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionOutputWithContext(context.Context) GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionOutput
+}
+
+type GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArgs struct {
+	// List of available start times on every day of the week
+	Items GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollection)(nil)).Elem()
+}
+
+func (i GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArgs) ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionOutput() GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionOutput {
+	return i.ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArgs) ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionOutputWithContext(ctx context.Context) GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionOutput)
+}
+
+// GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayInput is an input type that accepts GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArray and GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayInput` via:
+//
+//	GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArray{ GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArgs{...} }
+type GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayOutput() GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayOutput
+	ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayOutputWithContext(context.Context) GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayOutput
+}
+
+type GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArray []GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionInput
+
+func (GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollection)(nil)).Elem()
+}
+
+func (i GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArray) ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayOutput() GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayOutput {
+	return i.ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArray) ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayOutputWithContext(ctx context.Context) GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayOutput)
+}
+
+type GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollection)(nil)).Elem()
+}
+
+func (o GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionOutput) ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionOutput() GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionOutput {
+	return o
+}
+
+func (o GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionOutput) ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionOutputWithContext(ctx context.Context) GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionOutput {
+	return o
+}
+
+// List of available start times on every day of the week
+func (o GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionOutput) Items() GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollection) []GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItem {
+		return v.Items
+	}).(GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayOutput)
+}
+
+type GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollection)(nil)).Elem()
+}
+
+func (o GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayOutput) ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayOutput() GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayOutput {
+	return o
+}
+
+func (o GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayOutput) ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayOutputWithContext(ctx context.Context) GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayOutput {
+	return o
+}
+
+func (o GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayOutput) Index(i pulumi.IntInput) GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollection {
+		return vs[0].([]GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollection)[vs[1].(int)]
+	}).(GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionOutput)
+}
+
+type GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItem struct {
+	// List of available start times. Each array item is of the format `HH:mm`
+	StartTimes []string `pulumi:"startTimes"`
+	// The date corresponding to the list of start times available.  Example: `2024-04-25T00:00:00.000Z`
+	TimeDateAvailable string `pulumi:"timeDateAvailable"`
+}
+
+// GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemInput is an input type that accepts GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArgs and GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemOutput values.
+// You can construct a concrete instance of `GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemInput` via:
+//
+//	GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArgs{...}
+type GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemOutput() GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemOutput
+	ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemOutputWithContext(context.Context) GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemOutput
+}
+
+type GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArgs struct {
+	// List of available start times. Each array item is of the format `HH:mm`
+	StartTimes pulumi.StringArrayInput `pulumi:"startTimes"`
+	// The date corresponding to the list of start times available.  Example: `2024-04-25T00:00:00.000Z`
+	TimeDateAvailable pulumi.StringInput `pulumi:"timeDateAvailable"`
+}
+
+func (GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItem)(nil)).Elem()
+}
+
+func (i GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArgs) ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemOutput() GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemOutput {
+	return i.ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArgs) ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemOutputWithContext(ctx context.Context) GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemOutput)
+}
+
+// GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayInput is an input type that accepts GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArray and GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayInput` via:
+//
+//	GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArray{ GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArgs{...} }
+type GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayOutput() GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayOutput
+	ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayOutputWithContext(context.Context) GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayOutput
+}
+
+type GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArray []GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemInput
+
+func (GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItem)(nil)).Elem()
+}
+
+func (i GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArray) ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayOutput() GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayOutput {
+	return i.ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArray) ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayOutputWithContext(ctx context.Context) GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayOutput)
+}
+
+type GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItem)(nil)).Elem()
+}
+
+func (o GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemOutput) ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemOutput() GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemOutput {
+	return o
+}
+
+func (o GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemOutput) ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemOutputWithContext(ctx context.Context) GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemOutput {
+	return o
+}
+
+// List of available start times. Each array item is of the format `HH:mm`
+func (o GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemOutput) StartTimes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItem) []string {
+		return v.StartTimes
+	}).(pulumi.StringArrayOutput)
+}
+
+// The date corresponding to the list of start times available.  Example: `2024-04-25T00:00:00.000Z`
+func (o GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemOutput) TimeDateAvailable() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItem) string {
+		return v.TimeDateAvailable
+	}).(pulumi.StringOutput)
+}
+
+type GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItem)(nil)).Elem()
+}
+
+func (o GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayOutput) ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayOutput() GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayOutput) ToGetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayOutputWithContext(ctx context.Context) GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItem {
+		return vs[0].([]GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItem)[vs[1].(int)]
+	}).(GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemOutput)
+}
+
+type GetFileStorageAvailableOverrideMaintenanceStartTimesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFileStorageAvailableOverrideMaintenanceStartTimesFilterInput is an input type that accepts GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgs and GetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutput values.
+// You can construct a concrete instance of `GetFileStorageAvailableOverrideMaintenanceStartTimesFilterInput` via:
+//
+//	GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgs{...}
+type GetFileStorageAvailableOverrideMaintenanceStartTimesFilterInput interface {
+	pulumi.Input
+
+	ToGetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutput() GetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutput
+	ToGetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutputWithContext(context.Context) GetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutput
+}
+
+type GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageAvailableOverrideMaintenanceStartTimesFilter)(nil)).Elem()
+}
+
+func (i GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgs) ToGetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutput() GetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutput {
+	return i.ToGetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgs) ToGetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutputWithContext(ctx context.Context) GetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutput)
+}
+
+// GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayInput is an input type that accepts GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArray and GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayOutput values.
+// You can construct a concrete instance of `GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayInput` via:
+//
+//	GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArray{ GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgs{...} }
+type GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayOutput() GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayOutput
+	ToGetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayOutputWithContext(context.Context) GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayOutput
+}
+
+type GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArray []GetFileStorageAvailableOverrideMaintenanceStartTimesFilterInput
+
+func (GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageAvailableOverrideMaintenanceStartTimesFilter)(nil)).Elem()
+}
+
+func (i GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArray) ToGetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayOutput() GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayOutput {
+	return i.ToGetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArray) ToGetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayOutputWithContext(ctx context.Context) GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayOutput)
+}
+
+type GetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageAvailableOverrideMaintenanceStartTimesFilter)(nil)).Elem()
+}
+
+func (o GetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutput) ToGetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutput() GetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutput {
+	return o
+}
+
+func (o GetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutput) ToGetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutputWithContext(ctx context.Context) GetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutput {
+	return o
+}
+
+func (o GetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageAvailableOverrideMaintenanceStartTimesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFileStorageAvailableOverrideMaintenanceStartTimesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFileStorageAvailableOverrideMaintenanceStartTimesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageAvailableOverrideMaintenanceStartTimesFilter)(nil)).Elem()
+}
+
+func (o GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayOutput) ToGetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayOutput() GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayOutput {
+	return o
+}
+
+func (o GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayOutput) ToGetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayOutputWithContext(ctx context.Context) GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayOutput {
+	return o
+}
+
+func (o GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayOutput) Index(i pulumi.IntInput) GetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageAvailableOverrideMaintenanceStartTimesFilter {
+		return vs[0].([]GetFileStorageAvailableOverrideMaintenanceStartTimesFilter)[vs[1].(int)]
+	}).(GetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutput)
+}
+
+type GetFileStorageLustreFileSystemDateTimeDetail struct {
+	// A user-friendly date. Example: `2025-04-25`
+	Date string `pulumi:"date"`
+	// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+	Time string `pulumi:"time"`
+}
+
+// GetFileStorageLustreFileSystemDateTimeDetailInput is an input type that accepts GetFileStorageLustreFileSystemDateTimeDetailArgs and GetFileStorageLustreFileSystemDateTimeDetailOutput values.
+// You can construct a concrete instance of `GetFileStorageLustreFileSystemDateTimeDetailInput` via:
+//
+//	GetFileStorageLustreFileSystemDateTimeDetailArgs{...}
+type GetFileStorageLustreFileSystemDateTimeDetailInput interface {
+	pulumi.Input
+
+	ToGetFileStorageLustreFileSystemDateTimeDetailOutput() GetFileStorageLustreFileSystemDateTimeDetailOutput
+	ToGetFileStorageLustreFileSystemDateTimeDetailOutputWithContext(context.Context) GetFileStorageLustreFileSystemDateTimeDetailOutput
+}
+
+type GetFileStorageLustreFileSystemDateTimeDetailArgs struct {
+	// A user-friendly date. Example: `2025-04-25`
+	Date pulumi.StringInput `pulumi:"date"`
+	// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+	Time pulumi.StringInput `pulumi:"time"`
+}
+
+func (GetFileStorageLustreFileSystemDateTimeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageLustreFileSystemDateTimeDetail)(nil)).Elem()
+}
+
+func (i GetFileStorageLustreFileSystemDateTimeDetailArgs) ToGetFileStorageLustreFileSystemDateTimeDetailOutput() GetFileStorageLustreFileSystemDateTimeDetailOutput {
+	return i.ToGetFileStorageLustreFileSystemDateTimeDetailOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageLustreFileSystemDateTimeDetailArgs) ToGetFileStorageLustreFileSystemDateTimeDetailOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemDateTimeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageLustreFileSystemDateTimeDetailOutput)
+}
+
+// GetFileStorageLustreFileSystemDateTimeDetailArrayInput is an input type that accepts GetFileStorageLustreFileSystemDateTimeDetailArray and GetFileStorageLustreFileSystemDateTimeDetailArrayOutput values.
+// You can construct a concrete instance of `GetFileStorageLustreFileSystemDateTimeDetailArrayInput` via:
+//
+//	GetFileStorageLustreFileSystemDateTimeDetailArray{ GetFileStorageLustreFileSystemDateTimeDetailArgs{...} }
+type GetFileStorageLustreFileSystemDateTimeDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetFileStorageLustreFileSystemDateTimeDetailArrayOutput() GetFileStorageLustreFileSystemDateTimeDetailArrayOutput
+	ToGetFileStorageLustreFileSystemDateTimeDetailArrayOutputWithContext(context.Context) GetFileStorageLustreFileSystemDateTimeDetailArrayOutput
+}
+
+type GetFileStorageLustreFileSystemDateTimeDetailArray []GetFileStorageLustreFileSystemDateTimeDetailInput
+
+func (GetFileStorageLustreFileSystemDateTimeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageLustreFileSystemDateTimeDetail)(nil)).Elem()
+}
+
+func (i GetFileStorageLustreFileSystemDateTimeDetailArray) ToGetFileStorageLustreFileSystemDateTimeDetailArrayOutput() GetFileStorageLustreFileSystemDateTimeDetailArrayOutput {
+	return i.ToGetFileStorageLustreFileSystemDateTimeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageLustreFileSystemDateTimeDetailArray) ToGetFileStorageLustreFileSystemDateTimeDetailArrayOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemDateTimeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageLustreFileSystemDateTimeDetailArrayOutput)
+}
+
+type GetFileStorageLustreFileSystemDateTimeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageLustreFileSystemDateTimeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageLustreFileSystemDateTimeDetail)(nil)).Elem()
+}
+
+func (o GetFileStorageLustreFileSystemDateTimeDetailOutput) ToGetFileStorageLustreFileSystemDateTimeDetailOutput() GetFileStorageLustreFileSystemDateTimeDetailOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemDateTimeDetailOutput) ToGetFileStorageLustreFileSystemDateTimeDetailOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemDateTimeDetailOutput {
+	return o
+}
+
+// A user-friendly date. Example: `2025-04-25`
+func (o GetFileStorageLustreFileSystemDateTimeDetailOutput) Date() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemDateTimeDetail) string { return v.Date }).(pulumi.StringOutput)
+}
+
+// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+func (o GetFileStorageLustreFileSystemDateTimeDetailOutput) Time() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemDateTimeDetail) string { return v.Time }).(pulumi.StringOutput)
+}
+
+type GetFileStorageLustreFileSystemDateTimeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageLustreFileSystemDateTimeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageLustreFileSystemDateTimeDetail)(nil)).Elem()
+}
+
+func (o GetFileStorageLustreFileSystemDateTimeDetailArrayOutput) ToGetFileStorageLustreFileSystemDateTimeDetailArrayOutput() GetFileStorageLustreFileSystemDateTimeDetailArrayOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemDateTimeDetailArrayOutput) ToGetFileStorageLustreFileSystemDateTimeDetailArrayOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemDateTimeDetailArrayOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemDateTimeDetailArrayOutput) Index(i pulumi.IntInput) GetFileStorageLustreFileSystemDateTimeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageLustreFileSystemDateTimeDetail {
+		return vs[0].([]GetFileStorageLustreFileSystemDateTimeDetail)[vs[1].(int)]
+	}).(GetFileStorageLustreFileSystemDateTimeDetailOutput)
+}
+
 type GetFileStorageLustreFileSystemMaintenanceWindow struct {
 	// Day of the week when the maintainence window starts.
 	DayOfWeek string `pulumi:"dayOfWeek"`
@@ -417,6 +1644,345 @@ func (o GetFileStorageLustreFileSystemMaintenanceWindowArrayOutput) Index(i pulu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageLustreFileSystemMaintenanceWindow {
 		return vs[0].([]GetFileStorageLustreFileSystemMaintenanceWindow)[vs[1].(int)]
 	}).(GetFileStorageLustreFileSystemMaintenanceWindowOutput)
+}
+
+type GetFileStorageLustreFileSystemMaintenanceWindowMetadata struct {
+	// A generic object to show date and time in the below specified format
+	ActiveOrNextPlannedMaintenances []GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance `pulumi:"activeOrNextPlannedMaintenances"`
+	// A generic object to show date and time in the below specified format
+	FinishedMaintenances []GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance `pulumi:"finishedMaintenances"`
+	// whether or not an active maintenance is going on for the LustreFileSystem
+	IsMaintenanceInProgress bool `pulumi:"isMaintenanceInProgress"`
+}
+
+// GetFileStorageLustreFileSystemMaintenanceWindowMetadataInput is an input type that accepts GetFileStorageLustreFileSystemMaintenanceWindowMetadataArgs and GetFileStorageLustreFileSystemMaintenanceWindowMetadataOutput values.
+// You can construct a concrete instance of `GetFileStorageLustreFileSystemMaintenanceWindowMetadataInput` via:
+//
+//	GetFileStorageLustreFileSystemMaintenanceWindowMetadataArgs{...}
+type GetFileStorageLustreFileSystemMaintenanceWindowMetadataInput interface {
+	pulumi.Input
+
+	ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataOutput() GetFileStorageLustreFileSystemMaintenanceWindowMetadataOutput
+	ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataOutputWithContext(context.Context) GetFileStorageLustreFileSystemMaintenanceWindowMetadataOutput
+}
+
+type GetFileStorageLustreFileSystemMaintenanceWindowMetadataArgs struct {
+	// A generic object to show date and time in the below specified format
+	ActiveOrNextPlannedMaintenances GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayInput `pulumi:"activeOrNextPlannedMaintenances"`
+	// A generic object to show date and time in the below specified format
+	FinishedMaintenances GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayInput `pulumi:"finishedMaintenances"`
+	// whether or not an active maintenance is going on for the LustreFileSystem
+	IsMaintenanceInProgress pulumi.BoolInput `pulumi:"isMaintenanceInProgress"`
+}
+
+func (GetFileStorageLustreFileSystemMaintenanceWindowMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageLustreFileSystemMaintenanceWindowMetadata)(nil)).Elem()
+}
+
+func (i GetFileStorageLustreFileSystemMaintenanceWindowMetadataArgs) ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataOutput() GetFileStorageLustreFileSystemMaintenanceWindowMetadataOutput {
+	return i.ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageLustreFileSystemMaintenanceWindowMetadataArgs) ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemMaintenanceWindowMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageLustreFileSystemMaintenanceWindowMetadataOutput)
+}
+
+// GetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayInput is an input type that accepts GetFileStorageLustreFileSystemMaintenanceWindowMetadataArray and GetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput values.
+// You can construct a concrete instance of `GetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayInput` via:
+//
+//	GetFileStorageLustreFileSystemMaintenanceWindowMetadataArray{ GetFileStorageLustreFileSystemMaintenanceWindowMetadataArgs{...} }
+type GetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput() GetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput
+	ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutputWithContext(context.Context) GetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput
+}
+
+type GetFileStorageLustreFileSystemMaintenanceWindowMetadataArray []GetFileStorageLustreFileSystemMaintenanceWindowMetadataInput
+
+func (GetFileStorageLustreFileSystemMaintenanceWindowMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageLustreFileSystemMaintenanceWindowMetadata)(nil)).Elem()
+}
+
+func (i GetFileStorageLustreFileSystemMaintenanceWindowMetadataArray) ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput() GetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput {
+	return i.ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageLustreFileSystemMaintenanceWindowMetadataArray) ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput)
+}
+
+type GetFileStorageLustreFileSystemMaintenanceWindowMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageLustreFileSystemMaintenanceWindowMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageLustreFileSystemMaintenanceWindowMetadata)(nil)).Elem()
+}
+
+func (o GetFileStorageLustreFileSystemMaintenanceWindowMetadataOutput) ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataOutput() GetFileStorageLustreFileSystemMaintenanceWindowMetadataOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemMaintenanceWindowMetadataOutput) ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemMaintenanceWindowMetadataOutput {
+	return o
+}
+
+// A generic object to show date and time in the below specified format
+func (o GetFileStorageLustreFileSystemMaintenanceWindowMetadataOutput) ActiveOrNextPlannedMaintenances() GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemMaintenanceWindowMetadata) []GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance {
+		return v.ActiveOrNextPlannedMaintenances
+	}).(GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput)
+}
+
+// A generic object to show date and time in the below specified format
+func (o GetFileStorageLustreFileSystemMaintenanceWindowMetadataOutput) FinishedMaintenances() GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemMaintenanceWindowMetadata) []GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance {
+		return v.FinishedMaintenances
+	}).(GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput)
+}
+
+// whether or not an active maintenance is going on for the LustreFileSystem
+func (o GetFileStorageLustreFileSystemMaintenanceWindowMetadataOutput) IsMaintenanceInProgress() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemMaintenanceWindowMetadata) bool { return v.IsMaintenanceInProgress }).(pulumi.BoolOutput)
+}
+
+type GetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageLustreFileSystemMaintenanceWindowMetadata)(nil)).Elem()
+}
+
+func (o GetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput) ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput() GetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput) ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput) Index(i pulumi.IntInput) GetFileStorageLustreFileSystemMaintenanceWindowMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageLustreFileSystemMaintenanceWindowMetadata {
+		return vs[0].([]GetFileStorageLustreFileSystemMaintenanceWindowMetadata)[vs[1].(int)]
+	}).(GetFileStorageLustreFileSystemMaintenanceWindowMetadataOutput)
+}
+
+type GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance struct {
+	// A user-friendly date. Example: `2025-04-25`
+	Date string `pulumi:"date"`
+	// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+	Time string `pulumi:"time"`
+}
+
+// GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceInput is an input type that accepts GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs and GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput values.
+// You can construct a concrete instance of `GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceInput` via:
+//
+//	GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs{...}
+type GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceInput interface {
+	pulumi.Input
+
+	ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput() GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput
+	ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutputWithContext(context.Context) GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput
+}
+
+type GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs struct {
+	// A user-friendly date. Example: `2025-04-25`
+	Date pulumi.StringInput `pulumi:"date"`
+	// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+	Time pulumi.StringInput `pulumi:"time"`
+}
+
+func (GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance)(nil)).Elem()
+}
+
+func (i GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs) ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput() GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput {
+	return i.ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs) ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput)
+}
+
+// GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayInput is an input type that accepts GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArray and GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput values.
+// You can construct a concrete instance of `GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayInput` via:
+//
+//	GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArray{ GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs{...} }
+type GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayInput interface {
+	pulumi.Input
+
+	ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput() GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput
+	ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutputWithContext(context.Context) GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput
+}
+
+type GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArray []GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceInput
+
+func (GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance)(nil)).Elem()
+}
+
+func (i GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArray) ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput() GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput {
+	return i.ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArray) ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput)
+}
+
+type GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance)(nil)).Elem()
+}
+
+func (o GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput) ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput() GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput) ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput {
+	return o
+}
+
+// A user-friendly date. Example: `2025-04-25`
+func (o GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput) Date() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance) string {
+		return v.Date
+	}).(pulumi.StringOutput)
+}
+
+// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+func (o GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput) Time() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance) string {
+		return v.Time
+	}).(pulumi.StringOutput)
+}
+
+type GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance)(nil)).Elem()
+}
+
+func (o GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput) ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput() GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput) ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput) Index(i pulumi.IntInput) GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance {
+		return vs[0].([]GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance)[vs[1].(int)]
+	}).(GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput)
+}
+
+type GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance struct {
+	// A user-friendly date. Example: `2025-04-25`
+	Date string `pulumi:"date"`
+	// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+	Time string `pulumi:"time"`
+}
+
+// GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceInput is an input type that accepts GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs and GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput values.
+// You can construct a concrete instance of `GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceInput` via:
+//
+//	GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs{...}
+type GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceInput interface {
+	pulumi.Input
+
+	ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput() GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput
+	ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutputWithContext(context.Context) GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput
+}
+
+type GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs struct {
+	// A user-friendly date. Example: `2025-04-25`
+	Date pulumi.StringInput `pulumi:"date"`
+	// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+	Time pulumi.StringInput `pulumi:"time"`
+}
+
+func (GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance)(nil)).Elem()
+}
+
+func (i GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs) ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput() GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput {
+	return i.ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs) ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput)
+}
+
+// GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayInput is an input type that accepts GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArray and GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput values.
+// You can construct a concrete instance of `GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayInput` via:
+//
+//	GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArray{ GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs{...} }
+type GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayInput interface {
+	pulumi.Input
+
+	ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput() GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput
+	ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutputWithContext(context.Context) GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput
+}
+
+type GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArray []GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceInput
+
+func (GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance)(nil)).Elem()
+}
+
+func (i GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArray) ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput() GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput {
+	return i.ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArray) ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput)
+}
+
+type GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance)(nil)).Elem()
+}
+
+func (o GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput) ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput() GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput) ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput {
+	return o
+}
+
+// A user-friendly date. Example: `2025-04-25`
+func (o GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput) Date() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance) string {
+		return v.Date
+	}).(pulumi.StringOutput)
+}
+
+// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+func (o GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput) Time() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance) string {
+		return v.Time
+	}).(pulumi.StringOutput)
+}
+
+type GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance)(nil)).Elem()
+}
+
+func (o GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput) ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput() GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput) ToGetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput) Index(i pulumi.IntInput) GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance {
+		return vs[0].([]GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance)[vs[1].(int)]
+	}).(GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput)
 }
 
 type GetFileStorageLustreFileSystemRootSquashConfiguration struct {
@@ -753,7 +2319,8 @@ type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group in which the Lustre file system exists.
 	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId   string                                                                        `pulumi:"compartmentId"`
+	DateTimeDetails []GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetail `pulumi:"dateTimeDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
@@ -772,6 +2339,8 @@ type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Type of network used by clients to mount the file system.   Example: `tcp`
 	Lnet string `pulumi:"lnet"`
+	// The meta-data for maintenance window.
+	MaintenanceWindowMetadatas []GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadata `pulumi:"maintenanceWindowMetadatas"`
 	// The preferred day and time to perform maintenance.
 	MaintenanceWindows []GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindow `pulumi:"maintenanceWindows"`
 	// Major version of Lustre running in the Lustre file system.  Example: `2.15`
@@ -779,7 +2348,8 @@ type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem struct {
 	// The IPv4 address of MGS (Lustre Management Service) used by clients to mount the file system. For example '10.0.0.4'.
 	ManagementServiceAddress string `pulumi:"managementServiceAddress"`
 	// A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-	NsgIds []string `pulumi:"nsgIds"`
+	NsgIds                     []string `pulumi:"nsgIds"`
+	OverrideMaintenanceTrigger int      `pulumi:"overrideMaintenanceTrigger"`
 	// The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
 	PerformanceTier string `pulumi:"performanceTier"`
 	// An administrative feature that allows you to restrict root level access from clients that try to access your Lustre file system as root.
@@ -817,7 +2387,8 @@ type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group in which the Lustre file system exists.
 	ClusterPlacementGroupId pulumi.StringInput `pulumi:"clusterPlacementGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId   pulumi.StringInput                                                                    `pulumi:"compartmentId"`
+	DateTimeDetails GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayInput `pulumi:"dateTimeDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
@@ -836,6 +2407,8 @@ type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Type of network used by clients to mount the file system.   Example: `tcp`
 	Lnet pulumi.StringInput `pulumi:"lnet"`
+	// The meta-data for maintenance window.
+	MaintenanceWindowMetadatas GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayInput `pulumi:"maintenanceWindowMetadatas"`
 	// The preferred day and time to perform maintenance.
 	MaintenanceWindows GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowArrayInput `pulumi:"maintenanceWindows"`
 	// Major version of Lustre running in the Lustre file system.  Example: `2.15`
@@ -843,7 +2416,8 @@ type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemArgs struct {
 	// The IPv4 address of MGS (Lustre Management Service) used by clients to mount the file system. For example '10.0.0.4'.
 	ManagementServiceAddress pulumi.StringInput `pulumi:"managementServiceAddress"`
 	// A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	NsgIds                     pulumi.StringArrayInput `pulumi:"nsgIds"`
+	OverrideMaintenanceTrigger pulumi.IntInput         `pulumi:"overrideMaintenanceTrigger"`
 	// The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
 	PerformanceTier pulumi.StringInput `pulumi:"performanceTier"`
 	// An administrative feature that allows you to restrict root level access from clients that try to access your Lustre file system as root.
@@ -937,6 +2511,12 @@ func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemOutput) Com
 	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemOutput) DateTimeDetails() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem) []GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetail {
+		return v.DateTimeDetails
+	}).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayOutput)
+}
+
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem) map[string]string {
@@ -990,6 +2570,13 @@ func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemOutput) Lne
 	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem) string { return v.Lnet }).(pulumi.StringOutput)
 }
 
+// The meta-data for maintenance window.
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemOutput) MaintenanceWindowMetadatas() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem) []GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadata {
+		return v.MaintenanceWindowMetadatas
+	}).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayOutput)
+}
+
 // The preferred day and time to perform maintenance.
 func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemOutput) MaintenanceWindows() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowArrayOutput {
 	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem) []GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindow {
@@ -1012,6 +2599,12 @@ func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemOutput) Man
 // A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemOutput) OverrideMaintenanceTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem) int {
+		return v.OverrideMaintenanceTrigger
+	}).(pulumi.IntOutput)
 }
 
 // The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
@@ -1078,6 +2671,116 @@ func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemArrayOutput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem {
 		return vs[0].([]GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem)[vs[1].(int)]
 	}).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemOutput)
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetail struct {
+	// A user-friendly date. Example: `2025-04-25`
+	Date string `pulumi:"date"`
+	// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+	Time string `pulumi:"time"`
+}
+
+// GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailInput is an input type that accepts GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArgs and GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailOutput values.
+// You can construct a concrete instance of `GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailInput` via:
+//
+//	GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArgs{...}
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailInput interface {
+	pulumi.Input
+
+	ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailOutput
+	ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailOutputWithContext(context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailOutput
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArgs struct {
+	// A user-friendly date. Example: `2025-04-25`
+	Date pulumi.StringInput `pulumi:"date"`
+	// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+	Time pulumi.StringInput `pulumi:"time"`
+}
+
+func (GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetail)(nil)).Elem()
+}
+
+func (i GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArgs) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailOutput {
+	return i.ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArgs) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailOutput)
+}
+
+// GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayInput is an input type that accepts GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArray and GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayOutput values.
+// You can construct a concrete instance of `GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayInput` via:
+//
+//	GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArray{ GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArgs{...} }
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayOutput
+	ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayOutputWithContext(context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayOutput
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArray []GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailInput
+
+func (GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetail)(nil)).Elem()
+}
+
+func (i GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArray) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayOutput {
+	return i.ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArray) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayOutput)
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetail)(nil)).Elem()
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailOutput) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailOutput) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailOutput {
+	return o
+}
+
+// A user-friendly date. Example: `2025-04-25`
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailOutput) Date() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetail) string {
+		return v.Date
+	}).(pulumi.StringOutput)
+}
+
+// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailOutput) Time() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetail) string {
+		return v.Time
+	}).(pulumi.StringOutput)
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetail)(nil)).Elem()
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayOutput) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayOutput) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayOutput) Index(i pulumi.IntInput) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetail {
+		return vs[0].([]GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetail)[vs[1].(int)]
+	}).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailOutput)
 }
 
 type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindow struct {
@@ -1188,6 +2891,347 @@ func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenance
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindow {
 		return vs[0].([]GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindow)[vs[1].(int)]
 	}).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowOutput)
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadata struct {
+	// A generic object to show date and time in the below specified format
+	ActiveOrNextPlannedMaintenances []GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance `pulumi:"activeOrNextPlannedMaintenances"`
+	// A generic object to show date and time in the below specified format
+	FinishedMaintenances []GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenance `pulumi:"finishedMaintenances"`
+	// whether or not an active maintenance is going on for the LustreFileSystem
+	IsMaintenanceInProgress bool `pulumi:"isMaintenanceInProgress"`
+}
+
+// GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataInput is an input type that accepts GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArgs and GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutput values.
+// You can construct a concrete instance of `GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataInput` via:
+//
+//	GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArgs{...}
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataInput interface {
+	pulumi.Input
+
+	ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutput
+	ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutputWithContext(context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutput
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArgs struct {
+	// A generic object to show date and time in the below specified format
+	ActiveOrNextPlannedMaintenances GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayInput `pulumi:"activeOrNextPlannedMaintenances"`
+	// A generic object to show date and time in the below specified format
+	FinishedMaintenances GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayInput `pulumi:"finishedMaintenances"`
+	// whether or not an active maintenance is going on for the LustreFileSystem
+	IsMaintenanceInProgress pulumi.BoolInput `pulumi:"isMaintenanceInProgress"`
+}
+
+func (GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadata)(nil)).Elem()
+}
+
+func (i GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArgs) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutput {
+	return i.ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArgs) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutput)
+}
+
+// GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayInput is an input type that accepts GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArray and GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayOutput values.
+// You can construct a concrete instance of `GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayInput` via:
+//
+//	GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArray{ GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArgs{...} }
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayOutput
+	ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayOutputWithContext(context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayOutput
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArray []GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataInput
+
+func (GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadata)(nil)).Elem()
+}
+
+func (i GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArray) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayOutput {
+	return i.ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArray) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayOutput)
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadata)(nil)).Elem()
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutput) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutput) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutput {
+	return o
+}
+
+// A generic object to show date and time in the below specified format
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutput) ActiveOrNextPlannedMaintenances() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadata) []GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance {
+		return v.ActiveOrNextPlannedMaintenances
+	}).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput)
+}
+
+// A generic object to show date and time in the below specified format
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutput) FinishedMaintenances() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadata) []GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenance {
+		return v.FinishedMaintenances
+	}).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput)
+}
+
+// whether or not an active maintenance is going on for the LustreFileSystem
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutput) IsMaintenanceInProgress() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadata) bool {
+		return v.IsMaintenanceInProgress
+	}).(pulumi.BoolOutput)
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadata)(nil)).Elem()
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayOutput) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayOutput) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayOutput) Index(i pulumi.IntInput) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadata {
+		return vs[0].([]GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadata)[vs[1].(int)]
+	}).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutput)
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance struct {
+	// A user-friendly date. Example: `2025-04-25`
+	Date string `pulumi:"date"`
+	// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+	Time string `pulumi:"time"`
+}
+
+// GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceInput is an input type that accepts GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs and GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput values.
+// You can construct a concrete instance of `GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceInput` via:
+//
+//	GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs{...}
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceInput interface {
+	pulumi.Input
+
+	ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput
+	ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutputWithContext(context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs struct {
+	// A user-friendly date. Example: `2025-04-25`
+	Date pulumi.StringInput `pulumi:"date"`
+	// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+	Time pulumi.StringInput `pulumi:"time"`
+}
+
+func (GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance)(nil)).Elem()
+}
+
+func (i GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput {
+	return i.ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput)
+}
+
+// GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayInput is an input type that accepts GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArray and GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput values.
+// You can construct a concrete instance of `GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayInput` via:
+//
+//	GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArray{ GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs{...} }
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayInput interface {
+	pulumi.Input
+
+	ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput
+	ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutputWithContext(context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArray []GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceInput
+
+func (GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance)(nil)).Elem()
+}
+
+func (i GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArray) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput {
+	return i.ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArray) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput)
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance)(nil)).Elem()
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput {
+	return o
+}
+
+// A user-friendly date. Example: `2025-04-25`
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput) Date() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance) string {
+		return v.Date
+	}).(pulumi.StringOutput)
+}
+
+// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput) Time() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance) string {
+		return v.Time
+	}).(pulumi.StringOutput)
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance)(nil)).Elem()
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput) Index(i pulumi.IntInput) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance {
+		return vs[0].([]GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance)[vs[1].(int)]
+	}).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput)
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenance struct {
+	// A user-friendly date. Example: `2025-04-25`
+	Date string `pulumi:"date"`
+	// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+	Time string `pulumi:"time"`
+}
+
+// GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceInput is an input type that accepts GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArgs and GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceOutput values.
+// You can construct a concrete instance of `GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceInput` via:
+//
+//	GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArgs{...}
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceInput interface {
+	pulumi.Input
+
+	ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceOutput
+	ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceOutputWithContext(context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceOutput
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArgs struct {
+	// A user-friendly date. Example: `2025-04-25`
+	Date pulumi.StringInput `pulumi:"date"`
+	// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+	Time pulumi.StringInput `pulumi:"time"`
+}
+
+func (GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenance)(nil)).Elem()
+}
+
+func (i GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArgs) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceOutput {
+	return i.ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArgs) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceOutput)
+}
+
+// GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayInput is an input type that accepts GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArray and GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput values.
+// You can construct a concrete instance of `GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayInput` via:
+//
+//	GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArray{ GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArgs{...} }
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayInput interface {
+	pulumi.Input
+
+	ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput
+	ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayOutputWithContext(context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArray []GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceInput
+
+func (GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenance)(nil)).Elem()
+}
+
+func (i GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArray) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput {
+	return i.ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArray) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput)
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenance)(nil)).Elem()
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceOutput) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceOutput) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceOutput {
+	return o
+}
+
+// A user-friendly date. Example: `2025-04-25`
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceOutput) Date() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenance) string {
+		return v.Date
+	}).(pulumi.StringOutput)
+}
+
+// A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceOutput) Time() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenance) string {
+		return v.Time
+	}).(pulumi.StringOutput)
+}
+
+type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenance)(nil)).Elem()
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput() GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput) ToGetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayOutputWithContext(ctx context.Context) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput {
+	return o
+}
+
+func (o GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput) Index(i pulumi.IntInput) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenance {
+		return vs[0].([]GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenance)[vs[1].(int)]
+	}).(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceOutput)
 }
 
 type GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfiguration struct {
@@ -2273,12 +4317,40 @@ func (o GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayOutp
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*FileStorageLustreFileSystemDateTimeDetailsInput)(nil)).Elem(), FileStorageLustreFileSystemDateTimeDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FileStorageLustreFileSystemDateTimeDetailsPtrInput)(nil)).Elem(), FileStorageLustreFileSystemDateTimeDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FileStorageLustreFileSystemMaintenanceWindowInput)(nil)).Elem(), FileStorageLustreFileSystemMaintenanceWindowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FileStorageLustreFileSystemMaintenanceWindowArrayInput)(nil)).Elem(), FileStorageLustreFileSystemMaintenanceWindowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FileStorageLustreFileSystemMaintenanceWindowMetadataInput)(nil)).Elem(), FileStorageLustreFileSystemMaintenanceWindowMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FileStorageLustreFileSystemMaintenanceWindowMetadataArrayInput)(nil)).Elem(), FileStorageLustreFileSystemMaintenanceWindowMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceInput)(nil)).Elem(), FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayInput)(nil)).Elem(), FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceInput)(nil)).Elem(), FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayInput)(nil)).Elem(), FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FileStorageLustreFileSystemRootSquashConfigurationInput)(nil)).Elem(), FileStorageLustreFileSystemRootSquashConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FileStorageLustreFileSystemRootSquashConfigurationPtrInput)(nil)).Elem(), FileStorageLustreFileSystemRootSquashConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionInput)(nil)).Elem(), GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayInput)(nil)).Elem(), GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemInput)(nil)).Elem(), GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayInput)(nil)).Elem(), GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageAvailableMaintenanceScheduleStartTimesFilterInput)(nil)).Elem(), GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayInput)(nil)).Elem(), GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionInput)(nil)).Elem(), GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayInput)(nil)).Elem(), GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemInput)(nil)).Elem(), GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayInput)(nil)).Elem(), GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageAvailableOverrideMaintenanceStartTimesFilterInput)(nil)).Elem(), GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayInput)(nil)).Elem(), GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemDateTimeDetailInput)(nil)).Elem(), GetFileStorageLustreFileSystemDateTimeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemDateTimeDetailArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemDateTimeDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemMaintenanceWindowInput)(nil)).Elem(), GetFileStorageLustreFileSystemMaintenanceWindowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemMaintenanceWindowArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemMaintenanceWindowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemMaintenanceWindowMetadataInput)(nil)).Elem(), GetFileStorageLustreFileSystemMaintenanceWindowMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemMaintenanceWindowMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceInput)(nil)).Elem(), GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceInput)(nil)).Elem(), GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemRootSquashConfigurationInput)(nil)).Elem(), GetFileStorageLustreFileSystemRootSquashConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemRootSquashConfigurationArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemRootSquashConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsFilterInput)(nil)).Elem(), GetFileStorageLustreFileSystemsFilterArgs{})
@@ -2287,8 +4359,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfigurationInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfigurationArrayInput)(nil)).Elem(), GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageObjectStorageLinkSyncJobsFilterInput)(nil)).Elem(), GetFileStorageObjectStorageLinkSyncJobsFilterArgs{})
@@ -2303,12 +4383,40 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArrayInput)(nil)).Elem(), GetFileStorageObjectStorageLinksObjectStorageLinkCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemInput)(nil)).Elem(), GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArrayInput)(nil)).Elem(), GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemArray{})
+	pulumi.RegisterOutputType(FileStorageLustreFileSystemDateTimeDetailsOutput{})
+	pulumi.RegisterOutputType(FileStorageLustreFileSystemDateTimeDetailsPtrOutput{})
 	pulumi.RegisterOutputType(FileStorageLustreFileSystemMaintenanceWindowOutput{})
 	pulumi.RegisterOutputType(FileStorageLustreFileSystemMaintenanceWindowArrayOutput{})
+	pulumi.RegisterOutputType(FileStorageLustreFileSystemMaintenanceWindowMetadataOutput{})
+	pulumi.RegisterOutputType(FileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput{})
+	pulumi.RegisterOutputType(FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput{})
+	pulumi.RegisterOutputType(FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput{})
+	pulumi.RegisterOutputType(FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput{})
+	pulumi.RegisterOutputType(FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput{})
 	pulumi.RegisterOutputType(FileStorageLustreFileSystemRootSquashConfigurationOutput{})
 	pulumi.RegisterOutputType(FileStorageLustreFileSystemRootSquashConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionOutput{})
+	pulumi.RegisterOutputType(GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFileStorageAvailableMaintenanceScheduleStartTimesFilterOutput{})
+	pulumi.RegisterOutputType(GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionOutput{})
+	pulumi.RegisterOutputType(GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFileStorageAvailableOverrideMaintenanceStartTimesFilterOutput{})
+	pulumi.RegisterOutputType(GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemDateTimeDetailOutput{})
+	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemDateTimeDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemMaintenanceWindowOutput{})
 	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemMaintenanceWindowArrayOutput{})
+	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemMaintenanceWindowMetadataOutput{})
+	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput{})
+	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput{})
+	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceOutput{})
+	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput{})
 	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemRootSquashConfigurationOutput{})
 	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemRootSquashConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsFilterOutput{})
@@ -2317,8 +4425,16 @@ func init() {
 	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailOutput{})
+	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowOutput{})
 	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowArrayOutput{})
+	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataOutput{})
+	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceOutput{})
+	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArrayOutput{})
+	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceOutput{})
+	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArrayOutput{})
 	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfigurationOutput{})
 	pulumi.RegisterOutputType(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetFileStorageObjectStorageLinkSyncJobsFilterOutput{})

@@ -6487,6 +6487,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Opsi/chargebackPlan",
+  "fqn": "pulumi_oci.opsi",
+  "classes": {
+   "oci:Opsi/chargebackPlan:ChargebackPlan": "ChargebackPlan"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Opsi/databaseInsight",
   "fqn": "pulumi_oci.opsi",
   "classes": {

@@ -66,6 +66,30 @@ namespace Pulumi.Oci.Database.Inputs
             set => _connectionStrings = value;
         }
 
+        [Input("databaseDefinedTags")]
+        private InputMap<string>? _databaseDefinedTags;
+
+        /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        public InputMap<string> DatabaseDefinedTags
+        {
+            get => _databaseDefinedTags ?? (_databaseDefinedTags = new InputMap<string>());
+            set => _databaseDefinedTags = value;
+        }
+
+        [Input("databaseFreeformTags")]
+        private InputMap<string>? _databaseFreeformTags;
+
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
+        public InputMap<string> DatabaseFreeformTags
+        {
+            get => _databaseFreeformTags ?? (_databaseFreeformTags = new InputMap<string>());
+            set => _databaseFreeformTags = value;
+        }
+
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -138,6 +162,18 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? Id { get; set; }
 
         /// <summary>
+        /// True if active Data Guard is enabled.
+        /// </summary>
+        [Input("isActiveDataGuardEnabled")]
+        public Input<bool>? IsActiveDataGuardEnabled { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        /// </summary>
+        [Input("keyStoreId")]
+        public Input<string>? KeyStoreId { get; set; }
+
+        /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         [Input("kmsKeyId")]
@@ -180,6 +216,18 @@ namespace Pulumi.Oci.Database.Inputs
         }
 
         /// <summary>
+        /// The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        /// </summary>
+        [Input("protectionMode")]
+        public Input<string>? ProtectionMode { get; set; }
+
+        /// <summary>
+        /// Specifies a prefix for the `Oracle SID` of the database to be created.
+        /// </summary>
+        [Input("sidPrefix")]
+        public Input<string>? SidPrefix { get; set; }
+
+        /// <summary>
         /// The current state of the DB system.
         /// </summary>
         [Input("state")]
@@ -212,6 +260,19 @@ namespace Pulumi.Oci.Database.Inputs
         /// </summary>
         [Input("timeStampForPointInTimeRecovery")]
         public Input<string>? TimeStampForPointInTimeRecovery { get; set; }
+
+        /// <summary>
+        /// The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+        /// * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+        /// * MAXIMUM_PERFORMANCE - ASYNC
+        /// * MAXIMUM_PROTECTION - SYNC
+        /// 
+        /// For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+        /// 
+        /// **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+        /// </summary>
+        [Input("transportType")]
+        public Input<string>? TransportType { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.

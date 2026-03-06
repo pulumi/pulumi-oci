@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Opsi.ExadataInsightArgs;
 import com.pulumi.oci.Opsi.inputs.ExadataInsightState;
+import com.pulumi.oci.Opsi.outputs.ExadataInsightChargebackPlanDetail;
 import com.pulumi.oci.Opsi.outputs.ExadataInsightMemberVmClusterDetail;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -164,6 +165,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Opsi/exadataInsight:ExadataInsight")
 public class ExadataInsight extends com.pulumi.resources.CustomResource {
+    /**
+     * Object containing chargeback plan details
+     * 
+     */
+    @Export(name="chargebackPlanDetails", refs={List.class,ExadataInsightChargebackPlanDetail.class}, tree="[0,1]")
+    private Output<List<ExadataInsightChargebackPlanDetail>> chargebackPlanDetails;
+
+    /**
+     * @return Object containing chargeback plan details
+     * 
+     */
+    public Output<List<ExadataInsightChargebackPlanDetail>> chargebackPlanDetails() {
+        return this.chargebackPlanDetails;
+    }
     /**
      * (Updatable) Compartment Identifier of Exadata insight
      * 
@@ -467,6 +482,20 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      */
     public Output<String> status() {
         return this.status;
+    }
+    /**
+     * A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+     * 
+     */
+    @Export(name="statusDetails", refs={String.class}, tree="[0]")
+    private Output<String> statusDetails;
+
+    /**
+     * @return A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+     * 
+     */
+    public Output<String> statusDetails() {
+        return this.statusDetails;
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`

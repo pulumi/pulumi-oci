@@ -208,6 +208,7 @@ class ExadataInsightArgs:
 @pulumi.input_type
 class _ExadataInsightState:
     def __init__(__self__, *,
+                 chargeback_plan_details: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightChargebackPlanDetailArgs']]]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  enterprise_manager_bridge_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -231,12 +232,14 @@ class _ExadataInsightState:
                  member_vm_cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailArgs']]]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  status: Optional[pulumi.Input[_builtins.str]] = None,
+                 status_details: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExadataInsight resources.
 
+        :param pulumi.Input[Sequence[pulumi.Input['ExadataInsightChargebackPlanDetailArgs']]] chargeback_plan_details: Object containing chargeback plan details
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier of Exadata insight
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] enterprise_manager_bridge_id: OPSI Enterprise Manager Bridge OCID
@@ -261,10 +264,13 @@ class _ExadataInsightState:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] status_details: A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] time_updated: The time the Exadata insight was updated. An RFC3339 formatted datetime string
         """
+        if chargeback_plan_details is not None:
+            pulumi.set(__self__, "chargeback_plan_details", chargeback_plan_details)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -311,12 +317,26 @@ class _ExadataInsightState:
             pulumi.set(__self__, "state", state)
         if status is not None:
             pulumi.set(__self__, "status", status)
+        if status_details is not None:
+            pulumi.set(__self__, "status_details", status_details)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="chargebackPlanDetails")
+    def chargeback_plan_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightChargebackPlanDetailArgs']]]]:
+        """
+        Object containing chargeback plan details
+        """
+        return pulumi.get(self, "chargeback_plan_details")
+
+    @chargeback_plan_details.setter
+    def chargeback_plan_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightChargebackPlanDetailArgs']]]]):
+        pulumi.set(self, "chargeback_plan_details", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -588,6 +608,18 @@ class _ExadataInsightState:
     @status.setter
     def status(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="statusDetails")
+    def status_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+        """
+        return pulumi.get(self, "status_details")
+
+    @status_details.setter
+    def status_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "status_details", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
@@ -967,6 +999,7 @@ class ExadataInsight(pulumi.CustomResource):
             __props__.__dict__["is_auto_sync_enabled"] = is_auto_sync_enabled
             __props__.__dict__["member_vm_cluster_details"] = member_vm_cluster_details
             __props__.__dict__["status"] = status
+            __props__.__dict__["chargeback_plan_details"] = None
             __props__.__dict__["enterprise_manager_entity_display_name"] = None
             __props__.__dict__["enterprise_manager_entity_name"] = None
             __props__.__dict__["enterprise_manager_entity_type"] = None
@@ -979,6 +1012,7 @@ class ExadataInsight(pulumi.CustomResource):
             __props__.__dict__["is_virtualized_exadata"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["status_details"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
@@ -992,6 +1026,7 @@ class ExadataInsight(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            chargeback_plan_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadataInsightChargebackPlanDetailArgs', 'ExadataInsightChargebackPlanDetailArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             enterprise_manager_bridge_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1015,6 +1050,7 @@ class ExadataInsight(pulumi.CustomResource):
             member_vm_cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadataInsightMemberVmClusterDetailArgs', 'ExadataInsightMemberVmClusterDetailArgsDict']]]]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             status: Optional[pulumi.Input[_builtins.str]] = None,
+            status_details: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'ExadataInsight':
@@ -1025,6 +1061,7 @@ class ExadataInsight(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadataInsightChargebackPlanDetailArgs', 'ExadataInsightChargebackPlanDetailArgsDict']]]] chargeback_plan_details: Object containing chargeback plan details
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier of Exadata insight
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] enterprise_manager_bridge_id: OPSI Enterprise Manager Bridge OCID
@@ -1049,6 +1086,7 @@ class ExadataInsight(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] status_details: A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] time_updated: The time the Exadata insight was updated. An RFC3339 formatted datetime string
@@ -1057,6 +1095,7 @@ class ExadataInsight(pulumi.CustomResource):
 
         __props__ = _ExadataInsightState.__new__(_ExadataInsightState)
 
+        __props__.__dict__["chargeback_plan_details"] = chargeback_plan_details
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["enterprise_manager_bridge_id"] = enterprise_manager_bridge_id
@@ -1080,10 +1119,19 @@ class ExadataInsight(pulumi.CustomResource):
         __props__.__dict__["member_vm_cluster_details"] = member_vm_cluster_details
         __props__.__dict__["state"] = state
         __props__.__dict__["status"] = status
+        __props__.__dict__["status_details"] = status_details
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return ExadataInsight(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter(name="chargebackPlanDetails")
+    def chargeback_plan_details(self) -> pulumi.Output[Sequence['outputs.ExadataInsightChargebackPlanDetail']]:
+        """
+        Object containing chargeback plan details
+        """
+        return pulumi.get(self, "chargeback_plan_details")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -1263,6 +1311,14 @@ class ExadataInsight(pulumi.CustomResource):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="statusDetails")
+    def status_details(self) -> pulumi.Output[_builtins.str]:
+        """
+        A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+        """
+        return pulumi.get(self, "status_details")
 
     @_builtins.property
     @pulumi.getter(name="systemTags")

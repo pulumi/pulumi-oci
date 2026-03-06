@@ -150,6 +150,9 @@ namespace Pulumi.Oci.Database.Outputs
         /// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
+        public readonly string OsPatchAction;
+        public readonly string OsPatchDbNodeId;
+        public readonly int OsPatchTrigger;
         /// <summary>
         /// The most recent OS Patch Version applied on the DB system.
         /// </summary>
@@ -158,6 +161,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         public readonly string PointInTimeDataDiskCloneTimestamp;
+        public readonly string PrimaryDbSystemId;
         public readonly string PrivateIp;
         public readonly string PrivateIpV6;
         /// <summary>
@@ -324,9 +328,17 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<string> nsgIds,
 
+            string osPatchAction,
+
+            string osPatchDbNodeId,
+
+            int osPatchTrigger,
+
             string osVersion,
 
             string pointInTimeDataDiskCloneTimestamp,
+
+            string primaryDbSystemId,
 
             string privateIp,
 
@@ -413,8 +425,12 @@ namespace Pulumi.Oci.Database.Outputs
             NextMaintenanceRunId = nextMaintenanceRunId;
             NodeCount = nodeCount;
             NsgIds = nsgIds;
+            OsPatchAction = osPatchAction;
+            OsPatchDbNodeId = osPatchDbNodeId;
+            OsPatchTrigger = osPatchTrigger;
             OsVersion = osVersion;
             PointInTimeDataDiskCloneTimestamp = pointInTimeDataDiskCloneTimestamp;
+            PrimaryDbSystemId = primaryDbSystemId;
             PrivateIp = privateIp;
             PrivateIpV6 = privateIpV6;
             RecoStorageSizeInGb = recoStorageSizeInGb;

@@ -40,7 +40,6 @@ import (
 //					FirstName:    pulumi.Any(fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsFirstName),
 //					LastName:     pulumi.Any(fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsLastName),
 //					Username:     pulumi.Any(fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsUsername),
-//					Password:     pulumi.Any(fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsPassword),
 //				},
 //				DisplayName:               pulumi.Any(fusionEnvironmentDisplayName),
 //				FusionEnvironmentFamilyId: pulumi.Any(testFusionEnvironmentFamily.Id),

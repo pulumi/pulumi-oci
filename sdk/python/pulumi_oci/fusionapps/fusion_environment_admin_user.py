@@ -25,8 +25,7 @@ class FusionEnvironmentAdminUserArgs:
                  first_name: pulumi.Input[_builtins.str],
                  fusion_environment_id: pulumi.Input[_builtins.str],
                  last_name: pulumi.Input[_builtins.str],
-                 username: pulumi.Input[_builtins.str],
-                 password: Optional[pulumi.Input[_builtins.str]] = None):
+                 username: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a FusionEnvironmentAdminUser resource.
 
@@ -39,18 +38,12 @@ class FusionEnvironmentAdminUserArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] password: The password for the administrator.
         """
         pulumi.set(__self__, "email_address", email_address)
         pulumi.set(__self__, "first_name", first_name)
         pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
         pulumi.set(__self__, "last_name", last_name)
         pulumi.set(__self__, "username", username)
-        if password is not None:
-            warnings.warn("""The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.""", DeprecationWarning)
-            pulumi.log.warn("""password is deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.""")
-        if password is not None:
-            pulumi.set(__self__, "password", password)
 
     @_builtins.property
     @pulumi.getter(name="emailAddress")
@@ -116,19 +109,6 @@ class FusionEnvironmentAdminUserArgs:
     def username(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "username", value)
 
-    @_builtins.property
-    @pulumi.getter
-    @_utilities.deprecated("""The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.""")
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        The password for the administrator.
-        """
-        return pulumi.get(self, "password")
-
-    @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "password", value)
-
 
 @pulumi.input_type
 class _FusionEnvironmentAdminUserState:
@@ -138,7 +118,6 @@ class _FusionEnvironmentAdminUserState:
                  fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  items: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentAdminUserItemArgs']]]] = None,
                  last_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
                  username: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FusionEnvironmentAdminUser resources.
@@ -148,7 +127,6 @@ class _FusionEnvironmentAdminUserState:
         :param pulumi.Input[_builtins.str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentAdminUserItemArgs']]] items: A page of AdminUserSummary objects.
         :param pulumi.Input[_builtins.str] last_name: The administrator's last name.
-        :param pulumi.Input[_builtins.str] password: The password for the administrator.
         :param pulumi.Input[_builtins.str] username: The username for the administrator.
                
                
@@ -165,11 +143,6 @@ class _FusionEnvironmentAdminUserState:
             pulumi.set(__self__, "items", items)
         if last_name is not None:
             pulumi.set(__self__, "last_name", last_name)
-        if password is not None:
-            warnings.warn("""The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.""", DeprecationWarning)
-            pulumi.log.warn("""password is deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.""")
-        if password is not None:
-            pulumi.set(__self__, "password", password)
         if username is not None:
             pulumi.set(__self__, "username", username)
 
@@ -235,19 +208,6 @@ class _FusionEnvironmentAdminUserState:
 
     @_builtins.property
     @pulumi.getter
-    @_utilities.deprecated("""The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.""")
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        The password for the administrator.
-        """
-        return pulumi.get(self, "password")
-
-    @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "password", value)
-
-    @_builtins.property
-    @pulumi.getter
     def username(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The username for the administrator.
@@ -273,7 +233,6 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
                  first_name: Optional[pulumi.Input[_builtins.str]] = None,
                  fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  last_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
                  username: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
@@ -295,8 +254,7 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
             first_name=fusion_environment_admin_user_first_name,
             fusion_environment_id=test_fusion_environment["id"],
             last_name=fusion_environment_admin_user_last_name,
-            username=fusion_environment_admin_user_username,
-            password=fusion_environment_admin_user_password)
+            username=fusion_environment_admin_user_username)
         ```
 
         ## Import
@@ -314,7 +272,6 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] first_name: The administrator's first name.
         :param pulumi.Input[_builtins.str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[_builtins.str] last_name: The administrator's last name.
-        :param pulumi.Input[_builtins.str] password: The password for the administrator.
         :param pulumi.Input[_builtins.str] username: The username for the administrator.
                
                
@@ -346,8 +303,7 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
             first_name=fusion_environment_admin_user_first_name,
             fusion_environment_id=test_fusion_environment["id"],
             last_name=fusion_environment_admin_user_last_name,
-            username=fusion_environment_admin_user_username,
-            password=fusion_environment_admin_user_password)
+            username=fusion_environment_admin_user_username)
         ```
 
         ## Import
@@ -378,7 +334,6 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
                  first_name: Optional[pulumi.Input[_builtins.str]] = None,
                  fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  last_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
                  username: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -401,13 +356,10 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
             if last_name is None and not opts.urn:
                 raise TypeError("Missing required property 'last_name'")
             __props__.__dict__["last_name"] = last_name
-            __props__.__dict__["password"] = None if password is None else pulumi.Output.secret(password)
             if username is None and not opts.urn:
                 raise TypeError("Missing required property 'username'")
             __props__.__dict__["username"] = username
             __props__.__dict__["items"] = None
-        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["password"])
-        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(FusionEnvironmentAdminUser, __self__).__init__(
             'oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser',
             resource_name,
@@ -423,7 +375,6 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
             fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
             items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentAdminUserItemArgs', 'FusionEnvironmentAdminUserItemArgsDict']]]]] = None,
             last_name: Optional[pulumi.Input[_builtins.str]] = None,
-            password: Optional[pulumi.Input[_builtins.str]] = None,
             username: Optional[pulumi.Input[_builtins.str]] = None) -> 'FusionEnvironmentAdminUser':
         """
         Get an existing FusionEnvironmentAdminUser resource's state with the given name, id, and optional extra
@@ -437,7 +388,6 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentAdminUserItemArgs', 'FusionEnvironmentAdminUserItemArgsDict']]]] items: A page of AdminUserSummary objects.
         :param pulumi.Input[_builtins.str] last_name: The administrator's last name.
-        :param pulumi.Input[_builtins.str] password: The password for the administrator.
         :param pulumi.Input[_builtins.str] username: The username for the administrator.
                
                
@@ -453,7 +403,6 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
         __props__.__dict__["fusion_environment_id"] = fusion_environment_id
         __props__.__dict__["items"] = items
         __props__.__dict__["last_name"] = last_name
-        __props__.__dict__["password"] = password
         __props__.__dict__["username"] = username
         return FusionEnvironmentAdminUser(resource_name, opts=opts, __props__=__props__)
 
@@ -496,15 +445,6 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
         The administrator's last name.
         """
         return pulumi.get(self, "last_name")
-
-    @_builtins.property
-    @pulumi.getter
-    @_utilities.deprecated("""The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.""")
-    def password(self) -> pulumi.Output[_builtins.str]:
-        """
-        The password for the administrator.
-        """
-        return pulumi.get(self, "password")
 
     @_builtins.property
     @pulumi.getter

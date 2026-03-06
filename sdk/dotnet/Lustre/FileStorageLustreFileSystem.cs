@@ -54,6 +54,14 @@ namespace Pulumi.Oci.Lustre
     ///             { "Department", "Finance" },
     ///         },
     ///         KmsKeyId = testKey.Id,
+    ///         MaintenanceWindows = new[]
+    ///         {
+    ///             new Oci.Lustre.Inputs.FileStorageLustreFileSystemMaintenanceWindowArgs
+    ///             {
+    ///                 DayOfWeek = lustreFileSystemMaintenanceWindowDayOfWeek,
+    ///                 TimeStart = lustreFileSystemMaintenanceWindowTimeStart,
+    ///             },
+    ///         },
     ///         NsgIds = lustreFileSystemNsgIds,
     ///     });
     /// 
@@ -94,6 +102,9 @@ namespace Pulumi.Oci.Lustre
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
+
+        [Output("dateTimeDetails")]
+        public Output<Outputs.FileStorageLustreFileSystemDateTimeDetails?> DateTimeDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -144,7 +155,13 @@ namespace Pulumi.Oci.Lustre
         public Output<string> Lnet { get; private set; } = null!;
 
         /// <summary>
-        /// The preferred day and time to perform maintenance.
+        /// The meta-data for maintenance window.
+        /// </summary>
+        [Output("maintenanceWindowMetadatas")]
+        public Output<ImmutableArray<Outputs.FileStorageLustreFileSystemMaintenanceWindowMetadata>> MaintenanceWindowMetadatas { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The preferred day and time to perform maintenance.
         /// </summary>
         [Output("maintenanceWindows")]
         public Output<ImmutableArray<Outputs.FileStorageLustreFileSystemMaintenanceWindow>> MaintenanceWindows { get; private set; } = null!;
@@ -168,6 +185,16 @@ namespace Pulumi.Oci.Lustre
         public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("overrideMaintenanceTrigger")]
+        public Output<int?> OverrideMaintenanceTrigger { get; private set; } = null!;
+
+        /// <summary>
         /// The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
         /// </summary>
         [Output("performanceTier")]
@@ -187,10 +214,6 @@ namespace Pulumi.Oci.Lustre
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Lustre file system is in.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
@@ -293,6 +316,9 @@ namespace Pulumi.Oci.Lustre
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
+        [Input("dateTimeDetails")]
+        public Input<Inputs.FileStorageLustreFileSystemDateTimeDetailsArgs>? DateTimeDetails { get; set; }
+
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
 
@@ -341,6 +367,18 @@ namespace Pulumi.Oci.Lustre
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }
 
+        [Input("maintenanceWindows")]
+        private InputList<Inputs.FileStorageLustreFileSystemMaintenanceWindowArgs>? _maintenanceWindows;
+
+        /// <summary>
+        /// (Updatable) The preferred day and time to perform maintenance.
+        /// </summary>
+        public InputList<Inputs.FileStorageLustreFileSystemMaintenanceWindowArgs> MaintenanceWindows
+        {
+            get => _maintenanceWindows ?? (_maintenanceWindows = new InputList<Inputs.FileStorageLustreFileSystemMaintenanceWindowArgs>());
+            set => _maintenanceWindows = value;
+        }
+
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
 
@@ -352,6 +390,16 @@ namespace Pulumi.Oci.Lustre
             get => _nsgIds ?? (_nsgIds = new InputList<string>());
             set => _nsgIds = value;
         }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("overrideMaintenanceTrigger")]
+        public Input<int>? OverrideMaintenanceTrigger { get; set; }
 
         /// <summary>
         /// The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
@@ -367,10 +415,6 @@ namespace Pulumi.Oci.Lustre
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Lustre file system is in.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;
@@ -418,6 +462,9 @@ namespace Pulumi.Oci.Lustre
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        [Input("dateTimeDetails")]
+        public Input<Inputs.FileStorageLustreFileSystemDateTimeDetailsGetArgs>? DateTimeDetails { get; set; }
 
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
@@ -479,11 +526,23 @@ namespace Pulumi.Oci.Lustre
         [Input("lnet")]
         public Input<string>? Lnet { get; set; }
 
+        [Input("maintenanceWindowMetadatas")]
+        private InputList<Inputs.FileStorageLustreFileSystemMaintenanceWindowMetadataGetArgs>? _maintenanceWindowMetadatas;
+
+        /// <summary>
+        /// The meta-data for maintenance window.
+        /// </summary>
+        public InputList<Inputs.FileStorageLustreFileSystemMaintenanceWindowMetadataGetArgs> MaintenanceWindowMetadatas
+        {
+            get => _maintenanceWindowMetadatas ?? (_maintenanceWindowMetadatas = new InputList<Inputs.FileStorageLustreFileSystemMaintenanceWindowMetadataGetArgs>());
+            set => _maintenanceWindowMetadatas = value;
+        }
+
         [Input("maintenanceWindows")]
         private InputList<Inputs.FileStorageLustreFileSystemMaintenanceWindowGetArgs>? _maintenanceWindows;
 
         /// <summary>
-        /// The preferred day and time to perform maintenance.
+        /// (Updatable) The preferred day and time to perform maintenance.
         /// </summary>
         public InputList<Inputs.FileStorageLustreFileSystemMaintenanceWindowGetArgs> MaintenanceWindows
         {
@@ -516,6 +575,16 @@ namespace Pulumi.Oci.Lustre
         }
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("overrideMaintenanceTrigger")]
+        public Input<int>? OverrideMaintenanceTrigger { get; set; }
+
+        /// <summary>
         /// The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
         /// </summary>
         [Input("performanceTier")]
@@ -535,10 +604,6 @@ namespace Pulumi.Oci.Lustre
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Lustre file system is in.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }

@@ -8,8 +8,6 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 
 public final class FusionEnvironmentAdminUserArgs extends com.pulumi.resources.ResourceArgs {
@@ -77,29 +75,6 @@ public final class FusionEnvironmentAdminUserArgs extends com.pulumi.resources.R
     }
 
     /**
-     * The password for the administrator.
-     * 
-     * @deprecated
-     * The &#39;password&#39; field is deprecated. Please use the OCI Console or email link to reset the password.
-     * 
-     */
-    @Deprecated /* The 'password' field is deprecated. Please use the OCI Console or email link to reset the password. */
-    @Import(name="password")
-    private @Nullable Output<String> password;
-
-    /**
-     * @return The password for the administrator.
-     * 
-     * @deprecated
-     * The &#39;password&#39; field is deprecated. Please use the OCI Console or email link to reset the password.
-     * 
-     */
-    @Deprecated /* The 'password' field is deprecated. Please use the OCI Console or email link to reset the password. */
-    public Optional<Output<String>> password() {
-        return Optional.ofNullable(this.password);
-    }
-
-    /**
      * The username for the administrator.
      * 
      * ** IMPORTANT **
@@ -127,7 +102,6 @@ public final class FusionEnvironmentAdminUserArgs extends com.pulumi.resources.R
         this.firstName = $.firstName;
         this.fusionEnvironmentId = $.fusionEnvironmentId;
         this.lastName = $.lastName;
-        this.password = $.password;
         this.username = $.username;
     }
 
@@ -231,35 +205,6 @@ public final class FusionEnvironmentAdminUserArgs extends com.pulumi.resources.R
          */
         public Builder lastName(String lastName) {
             return lastName(Output.of(lastName));
-        }
-
-        /**
-         * @param password The password for the administrator.
-         * 
-         * @return builder
-         * 
-         * @deprecated
-         * The &#39;password&#39; field is deprecated. Please use the OCI Console or email link to reset the password.
-         * 
-         */
-        @Deprecated /* The 'password' field is deprecated. Please use the OCI Console or email link to reset the password. */
-        public Builder password(@Nullable Output<String> password) {
-            $.password = password;
-            return this;
-        }
-
-        /**
-         * @param password The password for the administrator.
-         * 
-         * @return builder
-         * 
-         * @deprecated
-         * The &#39;password&#39; field is deprecated. Please use the OCI Console or email link to reset the password.
-         * 
-         */
-        @Deprecated /* The 'password' field is deprecated. Please use the OCI Console or email link to reset the password. */
-        public Builder password(String password) {
-            return password(Output.of(password));
         }
 
         /**

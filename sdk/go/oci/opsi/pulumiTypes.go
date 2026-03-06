@@ -13,6 +13,121 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ChargebackPlanPlanCustomItem struct {
+	// (Updatable) Indicates whether the chargeback plan customization item can be customized.
+	IsCustomizable *bool `pulumi:"isCustomizable"`
+	// (Updatable) Name of chargeback plan customization item. Example items for Exadata Insights Chargeback are statistic, percentile, infrastructureCost, additionalServerCost etc.
+	Name string `pulumi:"name"`
+	// (Updatable) Value of chargeback plan customization item.
+	Value string `pulumi:"value"`
+}
+
+// ChargebackPlanPlanCustomItemInput is an input type that accepts ChargebackPlanPlanCustomItemArgs and ChargebackPlanPlanCustomItemOutput values.
+// You can construct a concrete instance of `ChargebackPlanPlanCustomItemInput` via:
+//
+//	ChargebackPlanPlanCustomItemArgs{...}
+type ChargebackPlanPlanCustomItemInput interface {
+	pulumi.Input
+
+	ToChargebackPlanPlanCustomItemOutput() ChargebackPlanPlanCustomItemOutput
+	ToChargebackPlanPlanCustomItemOutputWithContext(context.Context) ChargebackPlanPlanCustomItemOutput
+}
+
+type ChargebackPlanPlanCustomItemArgs struct {
+	// (Updatable) Indicates whether the chargeback plan customization item can be customized.
+	IsCustomizable pulumi.BoolPtrInput `pulumi:"isCustomizable"`
+	// (Updatable) Name of chargeback plan customization item. Example items for Exadata Insights Chargeback are statistic, percentile, infrastructureCost, additionalServerCost etc.
+	Name pulumi.StringInput `pulumi:"name"`
+	// (Updatable) Value of chargeback plan customization item.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (ChargebackPlanPlanCustomItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ChargebackPlanPlanCustomItem)(nil)).Elem()
+}
+
+func (i ChargebackPlanPlanCustomItemArgs) ToChargebackPlanPlanCustomItemOutput() ChargebackPlanPlanCustomItemOutput {
+	return i.ToChargebackPlanPlanCustomItemOutputWithContext(context.Background())
+}
+
+func (i ChargebackPlanPlanCustomItemArgs) ToChargebackPlanPlanCustomItemOutputWithContext(ctx context.Context) ChargebackPlanPlanCustomItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ChargebackPlanPlanCustomItemOutput)
+}
+
+// ChargebackPlanPlanCustomItemArrayInput is an input type that accepts ChargebackPlanPlanCustomItemArray and ChargebackPlanPlanCustomItemArrayOutput values.
+// You can construct a concrete instance of `ChargebackPlanPlanCustomItemArrayInput` via:
+//
+//	ChargebackPlanPlanCustomItemArray{ ChargebackPlanPlanCustomItemArgs{...} }
+type ChargebackPlanPlanCustomItemArrayInput interface {
+	pulumi.Input
+
+	ToChargebackPlanPlanCustomItemArrayOutput() ChargebackPlanPlanCustomItemArrayOutput
+	ToChargebackPlanPlanCustomItemArrayOutputWithContext(context.Context) ChargebackPlanPlanCustomItemArrayOutput
+}
+
+type ChargebackPlanPlanCustomItemArray []ChargebackPlanPlanCustomItemInput
+
+func (ChargebackPlanPlanCustomItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ChargebackPlanPlanCustomItem)(nil)).Elem()
+}
+
+func (i ChargebackPlanPlanCustomItemArray) ToChargebackPlanPlanCustomItemArrayOutput() ChargebackPlanPlanCustomItemArrayOutput {
+	return i.ToChargebackPlanPlanCustomItemArrayOutputWithContext(context.Background())
+}
+
+func (i ChargebackPlanPlanCustomItemArray) ToChargebackPlanPlanCustomItemArrayOutputWithContext(ctx context.Context) ChargebackPlanPlanCustomItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ChargebackPlanPlanCustomItemArrayOutput)
+}
+
+type ChargebackPlanPlanCustomItemOutput struct{ *pulumi.OutputState }
+
+func (ChargebackPlanPlanCustomItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ChargebackPlanPlanCustomItem)(nil)).Elem()
+}
+
+func (o ChargebackPlanPlanCustomItemOutput) ToChargebackPlanPlanCustomItemOutput() ChargebackPlanPlanCustomItemOutput {
+	return o
+}
+
+func (o ChargebackPlanPlanCustomItemOutput) ToChargebackPlanPlanCustomItemOutputWithContext(ctx context.Context) ChargebackPlanPlanCustomItemOutput {
+	return o
+}
+
+// (Updatable) Indicates whether the chargeback plan customization item can be customized.
+func (o ChargebackPlanPlanCustomItemOutput) IsCustomizable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ChargebackPlanPlanCustomItem) *bool { return v.IsCustomizable }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Name of chargeback plan customization item. Example items for Exadata Insights Chargeback are statistic, percentile, infrastructureCost, additionalServerCost etc.
+func (o ChargebackPlanPlanCustomItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v ChargebackPlanPlanCustomItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// (Updatable) Value of chargeback plan customization item.
+func (o ChargebackPlanPlanCustomItemOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v ChargebackPlanPlanCustomItem) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type ChargebackPlanPlanCustomItemArrayOutput struct{ *pulumi.OutputState }
+
+func (ChargebackPlanPlanCustomItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ChargebackPlanPlanCustomItem)(nil)).Elem()
+}
+
+func (o ChargebackPlanPlanCustomItemArrayOutput) ToChargebackPlanPlanCustomItemArrayOutput() ChargebackPlanPlanCustomItemArrayOutput {
+	return o
+}
+
+func (o ChargebackPlanPlanCustomItemArrayOutput) ToChargebackPlanPlanCustomItemArrayOutputWithContext(ctx context.Context) ChargebackPlanPlanCustomItemArrayOutput {
+	return o
+}
+
+func (o ChargebackPlanPlanCustomItemArrayOutput) Index(i pulumi.IntInput) ChargebackPlanPlanCustomItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ChargebackPlanPlanCustomItem {
+		return vs[0].([]ChargebackPlanPlanCustomItem)[vs[1].(int)]
+	}).(ChargebackPlanPlanCustomItemOutput)
+}
+
 type DatabaseInsightConnectionCredentialDetails struct {
 	// Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
 	CredentialSourceName *string `pulumi:"credentialSourceName"`
@@ -813,6 +928,121 @@ func (o DatabaseInsightCredentialDetailsPtrOutput) WalletSecretId() pulumi.Strin
 		}
 		return v.WalletSecretId
 	}).(pulumi.StringPtrOutput)
+}
+
+type ExadataInsightChargebackPlanDetail struct {
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI Chargeback plan resource.
+	PlanId *string `pulumi:"planId"`
+	// Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
+	PlanType *string `pulumi:"planType"`
+	// The date and time the chargeback plan was enabled on the resource, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeEnabled *string `pulumi:"timeEnabled"`
+}
+
+// ExadataInsightChargebackPlanDetailInput is an input type that accepts ExadataInsightChargebackPlanDetailArgs and ExadataInsightChargebackPlanDetailOutput values.
+// You can construct a concrete instance of `ExadataInsightChargebackPlanDetailInput` via:
+//
+//	ExadataInsightChargebackPlanDetailArgs{...}
+type ExadataInsightChargebackPlanDetailInput interface {
+	pulumi.Input
+
+	ToExadataInsightChargebackPlanDetailOutput() ExadataInsightChargebackPlanDetailOutput
+	ToExadataInsightChargebackPlanDetailOutputWithContext(context.Context) ExadataInsightChargebackPlanDetailOutput
+}
+
+type ExadataInsightChargebackPlanDetailArgs struct {
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI Chargeback plan resource.
+	PlanId pulumi.StringPtrInput `pulumi:"planId"`
+	// Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
+	PlanType pulumi.StringPtrInput `pulumi:"planType"`
+	// The date and time the chargeback plan was enabled on the resource, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeEnabled pulumi.StringPtrInput `pulumi:"timeEnabled"`
+}
+
+func (ExadataInsightChargebackPlanDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExadataInsightChargebackPlanDetail)(nil)).Elem()
+}
+
+func (i ExadataInsightChargebackPlanDetailArgs) ToExadataInsightChargebackPlanDetailOutput() ExadataInsightChargebackPlanDetailOutput {
+	return i.ToExadataInsightChargebackPlanDetailOutputWithContext(context.Background())
+}
+
+func (i ExadataInsightChargebackPlanDetailArgs) ToExadataInsightChargebackPlanDetailOutputWithContext(ctx context.Context) ExadataInsightChargebackPlanDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightChargebackPlanDetailOutput)
+}
+
+// ExadataInsightChargebackPlanDetailArrayInput is an input type that accepts ExadataInsightChargebackPlanDetailArray and ExadataInsightChargebackPlanDetailArrayOutput values.
+// You can construct a concrete instance of `ExadataInsightChargebackPlanDetailArrayInput` via:
+//
+//	ExadataInsightChargebackPlanDetailArray{ ExadataInsightChargebackPlanDetailArgs{...} }
+type ExadataInsightChargebackPlanDetailArrayInput interface {
+	pulumi.Input
+
+	ToExadataInsightChargebackPlanDetailArrayOutput() ExadataInsightChargebackPlanDetailArrayOutput
+	ToExadataInsightChargebackPlanDetailArrayOutputWithContext(context.Context) ExadataInsightChargebackPlanDetailArrayOutput
+}
+
+type ExadataInsightChargebackPlanDetailArray []ExadataInsightChargebackPlanDetailInput
+
+func (ExadataInsightChargebackPlanDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExadataInsightChargebackPlanDetail)(nil)).Elem()
+}
+
+func (i ExadataInsightChargebackPlanDetailArray) ToExadataInsightChargebackPlanDetailArrayOutput() ExadataInsightChargebackPlanDetailArrayOutput {
+	return i.ToExadataInsightChargebackPlanDetailArrayOutputWithContext(context.Background())
+}
+
+func (i ExadataInsightChargebackPlanDetailArray) ToExadataInsightChargebackPlanDetailArrayOutputWithContext(ctx context.Context) ExadataInsightChargebackPlanDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightChargebackPlanDetailArrayOutput)
+}
+
+type ExadataInsightChargebackPlanDetailOutput struct{ *pulumi.OutputState }
+
+func (ExadataInsightChargebackPlanDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExadataInsightChargebackPlanDetail)(nil)).Elem()
+}
+
+func (o ExadataInsightChargebackPlanDetailOutput) ToExadataInsightChargebackPlanDetailOutput() ExadataInsightChargebackPlanDetailOutput {
+	return o
+}
+
+func (o ExadataInsightChargebackPlanDetailOutput) ToExadataInsightChargebackPlanDetailOutputWithContext(ctx context.Context) ExadataInsightChargebackPlanDetailOutput {
+	return o
+}
+
+// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI Chargeback plan resource.
+func (o ExadataInsightChargebackPlanDetailOutput) PlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightChargebackPlanDetail) *string { return v.PlanId }).(pulumi.StringPtrOutput)
+}
+
+// Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
+func (o ExadataInsightChargebackPlanDetailOutput) PlanType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightChargebackPlanDetail) *string { return v.PlanType }).(pulumi.StringPtrOutput)
+}
+
+// The date and time the chargeback plan was enabled on the resource, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o ExadataInsightChargebackPlanDetailOutput) TimeEnabled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightChargebackPlanDetail) *string { return v.TimeEnabled }).(pulumi.StringPtrOutput)
+}
+
+type ExadataInsightChargebackPlanDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (ExadataInsightChargebackPlanDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExadataInsightChargebackPlanDetail)(nil)).Elem()
+}
+
+func (o ExadataInsightChargebackPlanDetailArrayOutput) ToExadataInsightChargebackPlanDetailArrayOutput() ExadataInsightChargebackPlanDetailArrayOutput {
+	return o
+}
+
+func (o ExadataInsightChargebackPlanDetailArrayOutput) ToExadataInsightChargebackPlanDetailArrayOutputWithContext(ctx context.Context) ExadataInsightChargebackPlanDetailArrayOutput {
+	return o
+}
+
+func (o ExadataInsightChargebackPlanDetailArrayOutput) Index(i pulumi.IntInput) ExadataInsightChargebackPlanDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ExadataInsightChargebackPlanDetail {
+		return vs[0].([]ExadataInsightChargebackPlanDetail)[vs[1].(int)]
+	}).(ExadataInsightChargebackPlanDetailOutput)
 }
 
 type ExadataInsightMemberVmClusterDetail struct {
@@ -5505,6 +5735,675 @@ func (o GetAwrHubsFilterArrayOutput) Index(i pulumi.IntInput) GetAwrHubsFilterOu
 	}).(GetAwrHubsFilterOutput)
 }
 
+type GetChargebackPlanPlanCustomItem struct {
+	// Indicates whether the chargeback plan customization item can be customized.
+	IsCustomizable bool `pulumi:"isCustomizable"`
+	// Name of chargeback plan customization item. Example items for Exadata Insights Chargeback are statistic, percentile, infrastructureCost, additionalServerCost etc.
+	Name string `pulumi:"name"`
+	// Value of chargeback plan customization item.
+	Value string `pulumi:"value"`
+}
+
+// GetChargebackPlanPlanCustomItemInput is an input type that accepts GetChargebackPlanPlanCustomItemArgs and GetChargebackPlanPlanCustomItemOutput values.
+// You can construct a concrete instance of `GetChargebackPlanPlanCustomItemInput` via:
+//
+//	GetChargebackPlanPlanCustomItemArgs{...}
+type GetChargebackPlanPlanCustomItemInput interface {
+	pulumi.Input
+
+	ToGetChargebackPlanPlanCustomItemOutput() GetChargebackPlanPlanCustomItemOutput
+	ToGetChargebackPlanPlanCustomItemOutputWithContext(context.Context) GetChargebackPlanPlanCustomItemOutput
+}
+
+type GetChargebackPlanPlanCustomItemArgs struct {
+	// Indicates whether the chargeback plan customization item can be customized.
+	IsCustomizable pulumi.BoolInput `pulumi:"isCustomizable"`
+	// Name of chargeback plan customization item. Example items for Exadata Insights Chargeback are statistic, percentile, infrastructureCost, additionalServerCost etc.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Value of chargeback plan customization item.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetChargebackPlanPlanCustomItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetChargebackPlanPlanCustomItem)(nil)).Elem()
+}
+
+func (i GetChargebackPlanPlanCustomItemArgs) ToGetChargebackPlanPlanCustomItemOutput() GetChargebackPlanPlanCustomItemOutput {
+	return i.ToGetChargebackPlanPlanCustomItemOutputWithContext(context.Background())
+}
+
+func (i GetChargebackPlanPlanCustomItemArgs) ToGetChargebackPlanPlanCustomItemOutputWithContext(ctx context.Context) GetChargebackPlanPlanCustomItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetChargebackPlanPlanCustomItemOutput)
+}
+
+// GetChargebackPlanPlanCustomItemArrayInput is an input type that accepts GetChargebackPlanPlanCustomItemArray and GetChargebackPlanPlanCustomItemArrayOutput values.
+// You can construct a concrete instance of `GetChargebackPlanPlanCustomItemArrayInput` via:
+//
+//	GetChargebackPlanPlanCustomItemArray{ GetChargebackPlanPlanCustomItemArgs{...} }
+type GetChargebackPlanPlanCustomItemArrayInput interface {
+	pulumi.Input
+
+	ToGetChargebackPlanPlanCustomItemArrayOutput() GetChargebackPlanPlanCustomItemArrayOutput
+	ToGetChargebackPlanPlanCustomItemArrayOutputWithContext(context.Context) GetChargebackPlanPlanCustomItemArrayOutput
+}
+
+type GetChargebackPlanPlanCustomItemArray []GetChargebackPlanPlanCustomItemInput
+
+func (GetChargebackPlanPlanCustomItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetChargebackPlanPlanCustomItem)(nil)).Elem()
+}
+
+func (i GetChargebackPlanPlanCustomItemArray) ToGetChargebackPlanPlanCustomItemArrayOutput() GetChargebackPlanPlanCustomItemArrayOutput {
+	return i.ToGetChargebackPlanPlanCustomItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetChargebackPlanPlanCustomItemArray) ToGetChargebackPlanPlanCustomItemArrayOutputWithContext(ctx context.Context) GetChargebackPlanPlanCustomItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetChargebackPlanPlanCustomItemArrayOutput)
+}
+
+type GetChargebackPlanPlanCustomItemOutput struct{ *pulumi.OutputState }
+
+func (GetChargebackPlanPlanCustomItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetChargebackPlanPlanCustomItem)(nil)).Elem()
+}
+
+func (o GetChargebackPlanPlanCustomItemOutput) ToGetChargebackPlanPlanCustomItemOutput() GetChargebackPlanPlanCustomItemOutput {
+	return o
+}
+
+func (o GetChargebackPlanPlanCustomItemOutput) ToGetChargebackPlanPlanCustomItemOutputWithContext(ctx context.Context) GetChargebackPlanPlanCustomItemOutput {
+	return o
+}
+
+// Indicates whether the chargeback plan customization item can be customized.
+func (o GetChargebackPlanPlanCustomItemOutput) IsCustomizable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetChargebackPlanPlanCustomItem) bool { return v.IsCustomizable }).(pulumi.BoolOutput)
+}
+
+// Name of chargeback plan customization item. Example items for Exadata Insights Chargeback are statistic, percentile, infrastructureCost, additionalServerCost etc.
+func (o GetChargebackPlanPlanCustomItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChargebackPlanPlanCustomItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Value of chargeback plan customization item.
+func (o GetChargebackPlanPlanCustomItemOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChargebackPlanPlanCustomItem) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetChargebackPlanPlanCustomItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetChargebackPlanPlanCustomItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetChargebackPlanPlanCustomItem)(nil)).Elem()
+}
+
+func (o GetChargebackPlanPlanCustomItemArrayOutput) ToGetChargebackPlanPlanCustomItemArrayOutput() GetChargebackPlanPlanCustomItemArrayOutput {
+	return o
+}
+
+func (o GetChargebackPlanPlanCustomItemArrayOutput) ToGetChargebackPlanPlanCustomItemArrayOutputWithContext(ctx context.Context) GetChargebackPlanPlanCustomItemArrayOutput {
+	return o
+}
+
+func (o GetChargebackPlanPlanCustomItemArrayOutput) Index(i pulumi.IntInput) GetChargebackPlanPlanCustomItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChargebackPlanPlanCustomItem {
+		return vs[0].([]GetChargebackPlanPlanCustomItem)[vs[1].(int)]
+	}).(GetChargebackPlanPlanCustomItemOutput)
+}
+
+type GetChargebackPlansChargebackPlanCollection struct {
+	Items []GetChargebackPlansChargebackPlanCollectionItem `pulumi:"items"`
+}
+
+// GetChargebackPlansChargebackPlanCollectionInput is an input type that accepts GetChargebackPlansChargebackPlanCollectionArgs and GetChargebackPlansChargebackPlanCollectionOutput values.
+// You can construct a concrete instance of `GetChargebackPlansChargebackPlanCollectionInput` via:
+//
+//	GetChargebackPlansChargebackPlanCollectionArgs{...}
+type GetChargebackPlansChargebackPlanCollectionInput interface {
+	pulumi.Input
+
+	ToGetChargebackPlansChargebackPlanCollectionOutput() GetChargebackPlansChargebackPlanCollectionOutput
+	ToGetChargebackPlansChargebackPlanCollectionOutputWithContext(context.Context) GetChargebackPlansChargebackPlanCollectionOutput
+}
+
+type GetChargebackPlansChargebackPlanCollectionArgs struct {
+	Items GetChargebackPlansChargebackPlanCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetChargebackPlansChargebackPlanCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetChargebackPlansChargebackPlanCollection)(nil)).Elem()
+}
+
+func (i GetChargebackPlansChargebackPlanCollectionArgs) ToGetChargebackPlansChargebackPlanCollectionOutput() GetChargebackPlansChargebackPlanCollectionOutput {
+	return i.ToGetChargebackPlansChargebackPlanCollectionOutputWithContext(context.Background())
+}
+
+func (i GetChargebackPlansChargebackPlanCollectionArgs) ToGetChargebackPlansChargebackPlanCollectionOutputWithContext(ctx context.Context) GetChargebackPlansChargebackPlanCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetChargebackPlansChargebackPlanCollectionOutput)
+}
+
+// GetChargebackPlansChargebackPlanCollectionArrayInput is an input type that accepts GetChargebackPlansChargebackPlanCollectionArray and GetChargebackPlansChargebackPlanCollectionArrayOutput values.
+// You can construct a concrete instance of `GetChargebackPlansChargebackPlanCollectionArrayInput` via:
+//
+//	GetChargebackPlansChargebackPlanCollectionArray{ GetChargebackPlansChargebackPlanCollectionArgs{...} }
+type GetChargebackPlansChargebackPlanCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetChargebackPlansChargebackPlanCollectionArrayOutput() GetChargebackPlansChargebackPlanCollectionArrayOutput
+	ToGetChargebackPlansChargebackPlanCollectionArrayOutputWithContext(context.Context) GetChargebackPlansChargebackPlanCollectionArrayOutput
+}
+
+type GetChargebackPlansChargebackPlanCollectionArray []GetChargebackPlansChargebackPlanCollectionInput
+
+func (GetChargebackPlansChargebackPlanCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetChargebackPlansChargebackPlanCollection)(nil)).Elem()
+}
+
+func (i GetChargebackPlansChargebackPlanCollectionArray) ToGetChargebackPlansChargebackPlanCollectionArrayOutput() GetChargebackPlansChargebackPlanCollectionArrayOutput {
+	return i.ToGetChargebackPlansChargebackPlanCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetChargebackPlansChargebackPlanCollectionArray) ToGetChargebackPlansChargebackPlanCollectionArrayOutputWithContext(ctx context.Context) GetChargebackPlansChargebackPlanCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetChargebackPlansChargebackPlanCollectionArrayOutput)
+}
+
+type GetChargebackPlansChargebackPlanCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetChargebackPlansChargebackPlanCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetChargebackPlansChargebackPlanCollection)(nil)).Elem()
+}
+
+func (o GetChargebackPlansChargebackPlanCollectionOutput) ToGetChargebackPlansChargebackPlanCollectionOutput() GetChargebackPlansChargebackPlanCollectionOutput {
+	return o
+}
+
+func (o GetChargebackPlansChargebackPlanCollectionOutput) ToGetChargebackPlansChargebackPlanCollectionOutputWithContext(ctx context.Context) GetChargebackPlansChargebackPlanCollectionOutput {
+	return o
+}
+
+func (o GetChargebackPlansChargebackPlanCollectionOutput) Items() GetChargebackPlansChargebackPlanCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetChargebackPlansChargebackPlanCollection) []GetChargebackPlansChargebackPlanCollectionItem {
+		return v.Items
+	}).(GetChargebackPlansChargebackPlanCollectionItemArrayOutput)
+}
+
+type GetChargebackPlansChargebackPlanCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetChargebackPlansChargebackPlanCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetChargebackPlansChargebackPlanCollection)(nil)).Elem()
+}
+
+func (o GetChargebackPlansChargebackPlanCollectionArrayOutput) ToGetChargebackPlansChargebackPlanCollectionArrayOutput() GetChargebackPlansChargebackPlanCollectionArrayOutput {
+	return o
+}
+
+func (o GetChargebackPlansChargebackPlanCollectionArrayOutput) ToGetChargebackPlansChargebackPlanCollectionArrayOutputWithContext(ctx context.Context) GetChargebackPlansChargebackPlanCollectionArrayOutput {
+	return o
+}
+
+func (o GetChargebackPlansChargebackPlanCollectionArrayOutput) Index(i pulumi.IntInput) GetChargebackPlansChargebackPlanCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChargebackPlansChargebackPlanCollection {
+		return vs[0].([]GetChargebackPlansChargebackPlanCollection)[vs[1].(int)]
+	}).(GetChargebackPlansChargebackPlanCollectionOutput)
+}
+
+type GetChargebackPlansChargebackPlanCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Source of the chargeback plan.
+	EntitySource string `pulumi:"entitySource"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI Chargeback plan resource.
+	Id string `pulumi:"id"`
+	// Indicates whether the chargeback plan customization item can be customized.
+	IsCustomizable bool `pulumi:"isCustomizable"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Chargeback Plan category of the chargeback entity. It can be OOB, or CUSTOM.
+	PlanCategory string `pulumi:"planCategory"`
+	// List of chargeback plan customizations.
+	PlanCustomItems []GetChargebackPlansChargebackPlanCollectionItemPlanCustomItem `pulumi:"planCustomItems"`
+	// Description of OPSI Chargeback Plan.
+	PlanDescription string `pulumi:"planDescription"`
+	// Name for the OPSI Chargeback plan.
+	PlanName string `pulumi:"planName"`
+	// Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
+	PlanType string `pulumi:"planType"`
+	// Chargeback Plan lifecycle states
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the chargeback plan was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time chargeback plan was updated. An RFC3339 formatted datetime string
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetChargebackPlansChargebackPlanCollectionItemInput is an input type that accepts GetChargebackPlansChargebackPlanCollectionItemArgs and GetChargebackPlansChargebackPlanCollectionItemOutput values.
+// You can construct a concrete instance of `GetChargebackPlansChargebackPlanCollectionItemInput` via:
+//
+//	GetChargebackPlansChargebackPlanCollectionItemArgs{...}
+type GetChargebackPlansChargebackPlanCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetChargebackPlansChargebackPlanCollectionItemOutput() GetChargebackPlansChargebackPlanCollectionItemOutput
+	ToGetChargebackPlansChargebackPlanCollectionItemOutputWithContext(context.Context) GetChargebackPlansChargebackPlanCollectionItemOutput
+}
+
+type GetChargebackPlansChargebackPlanCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Source of the chargeback plan.
+	EntitySource pulumi.StringInput `pulumi:"entitySource"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI Chargeback plan resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates whether the chargeback plan customization item can be customized.
+	IsCustomizable pulumi.BoolInput `pulumi:"isCustomizable"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Chargeback Plan category of the chargeback entity. It can be OOB, or CUSTOM.
+	PlanCategory pulumi.StringInput `pulumi:"planCategory"`
+	// List of chargeback plan customizations.
+	PlanCustomItems GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayInput `pulumi:"planCustomItems"`
+	// Description of OPSI Chargeback Plan.
+	PlanDescription pulumi.StringInput `pulumi:"planDescription"`
+	// Name for the OPSI Chargeback plan.
+	PlanName pulumi.StringInput `pulumi:"planName"`
+	// Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
+	PlanType pulumi.StringInput `pulumi:"planType"`
+	// Chargeback Plan lifecycle states
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the chargeback plan was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time chargeback plan was updated. An RFC3339 formatted datetime string
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetChargebackPlansChargebackPlanCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetChargebackPlansChargebackPlanCollectionItem)(nil)).Elem()
+}
+
+func (i GetChargebackPlansChargebackPlanCollectionItemArgs) ToGetChargebackPlansChargebackPlanCollectionItemOutput() GetChargebackPlansChargebackPlanCollectionItemOutput {
+	return i.ToGetChargebackPlansChargebackPlanCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetChargebackPlansChargebackPlanCollectionItemArgs) ToGetChargebackPlansChargebackPlanCollectionItemOutputWithContext(ctx context.Context) GetChargebackPlansChargebackPlanCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetChargebackPlansChargebackPlanCollectionItemOutput)
+}
+
+// GetChargebackPlansChargebackPlanCollectionItemArrayInput is an input type that accepts GetChargebackPlansChargebackPlanCollectionItemArray and GetChargebackPlansChargebackPlanCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetChargebackPlansChargebackPlanCollectionItemArrayInput` via:
+//
+//	GetChargebackPlansChargebackPlanCollectionItemArray{ GetChargebackPlansChargebackPlanCollectionItemArgs{...} }
+type GetChargebackPlansChargebackPlanCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetChargebackPlansChargebackPlanCollectionItemArrayOutput() GetChargebackPlansChargebackPlanCollectionItemArrayOutput
+	ToGetChargebackPlansChargebackPlanCollectionItemArrayOutputWithContext(context.Context) GetChargebackPlansChargebackPlanCollectionItemArrayOutput
+}
+
+type GetChargebackPlansChargebackPlanCollectionItemArray []GetChargebackPlansChargebackPlanCollectionItemInput
+
+func (GetChargebackPlansChargebackPlanCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetChargebackPlansChargebackPlanCollectionItem)(nil)).Elem()
+}
+
+func (i GetChargebackPlansChargebackPlanCollectionItemArray) ToGetChargebackPlansChargebackPlanCollectionItemArrayOutput() GetChargebackPlansChargebackPlanCollectionItemArrayOutput {
+	return i.ToGetChargebackPlansChargebackPlanCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetChargebackPlansChargebackPlanCollectionItemArray) ToGetChargebackPlansChargebackPlanCollectionItemArrayOutputWithContext(ctx context.Context) GetChargebackPlansChargebackPlanCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetChargebackPlansChargebackPlanCollectionItemArrayOutput)
+}
+
+type GetChargebackPlansChargebackPlanCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetChargebackPlansChargebackPlanCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetChargebackPlansChargebackPlanCollectionItem)(nil)).Elem()
+}
+
+func (o GetChargebackPlansChargebackPlanCollectionItemOutput) ToGetChargebackPlansChargebackPlanCollectionItemOutput() GetChargebackPlansChargebackPlanCollectionItemOutput {
+	return o
+}
+
+func (o GetChargebackPlansChargebackPlanCollectionItemOutput) ToGetChargebackPlansChargebackPlanCollectionItemOutputWithContext(ctx context.Context) GetChargebackPlansChargebackPlanCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetChargebackPlansChargebackPlanCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChargebackPlansChargebackPlanCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetChargebackPlansChargebackPlanCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetChargebackPlansChargebackPlanCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Source of the chargeback plan.
+func (o GetChargebackPlansChargebackPlanCollectionItemOutput) EntitySource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChargebackPlansChargebackPlanCollectionItem) string { return v.EntitySource }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetChargebackPlansChargebackPlanCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetChargebackPlansChargebackPlanCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI Chargeback plan resource.
+func (o GetChargebackPlansChargebackPlanCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChargebackPlansChargebackPlanCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates whether the chargeback plan customization item can be customized.
+func (o GetChargebackPlansChargebackPlanCollectionItemOutput) IsCustomizable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetChargebackPlansChargebackPlanCollectionItem) bool { return v.IsCustomizable }).(pulumi.BoolOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+func (o GetChargebackPlansChargebackPlanCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChargebackPlansChargebackPlanCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Chargeback Plan category of the chargeback entity. It can be OOB, or CUSTOM.
+func (o GetChargebackPlansChargebackPlanCollectionItemOutput) PlanCategory() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChargebackPlansChargebackPlanCollectionItem) string { return v.PlanCategory }).(pulumi.StringOutput)
+}
+
+// List of chargeback plan customizations.
+func (o GetChargebackPlansChargebackPlanCollectionItemOutput) PlanCustomItems() GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayOutput {
+	return o.ApplyT(func(v GetChargebackPlansChargebackPlanCollectionItem) []GetChargebackPlansChargebackPlanCollectionItemPlanCustomItem {
+		return v.PlanCustomItems
+	}).(GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayOutput)
+}
+
+// Description of OPSI Chargeback Plan.
+func (o GetChargebackPlansChargebackPlanCollectionItemOutput) PlanDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChargebackPlansChargebackPlanCollectionItem) string { return v.PlanDescription }).(pulumi.StringOutput)
+}
+
+// Name for the OPSI Chargeback plan.
+func (o GetChargebackPlansChargebackPlanCollectionItemOutput) PlanName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChargebackPlansChargebackPlanCollectionItem) string { return v.PlanName }).(pulumi.StringOutput)
+}
+
+// Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
+func (o GetChargebackPlansChargebackPlanCollectionItemOutput) PlanType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChargebackPlansChargebackPlanCollectionItem) string { return v.PlanType }).(pulumi.StringOutput)
+}
+
+// Chargeback Plan lifecycle states
+func (o GetChargebackPlansChargebackPlanCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChargebackPlansChargebackPlanCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetChargebackPlansChargebackPlanCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetChargebackPlansChargebackPlanCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the chargeback plan was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetChargebackPlansChargebackPlanCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChargebackPlansChargebackPlanCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time chargeback plan was updated. An RFC3339 formatted datetime string
+func (o GetChargebackPlansChargebackPlanCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChargebackPlansChargebackPlanCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetChargebackPlansChargebackPlanCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetChargebackPlansChargebackPlanCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetChargebackPlansChargebackPlanCollectionItem)(nil)).Elem()
+}
+
+func (o GetChargebackPlansChargebackPlanCollectionItemArrayOutput) ToGetChargebackPlansChargebackPlanCollectionItemArrayOutput() GetChargebackPlansChargebackPlanCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetChargebackPlansChargebackPlanCollectionItemArrayOutput) ToGetChargebackPlansChargebackPlanCollectionItemArrayOutputWithContext(ctx context.Context) GetChargebackPlansChargebackPlanCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetChargebackPlansChargebackPlanCollectionItemArrayOutput) Index(i pulumi.IntInput) GetChargebackPlansChargebackPlanCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChargebackPlansChargebackPlanCollectionItem {
+		return vs[0].([]GetChargebackPlansChargebackPlanCollectionItem)[vs[1].(int)]
+	}).(GetChargebackPlansChargebackPlanCollectionItemOutput)
+}
+
+type GetChargebackPlansChargebackPlanCollectionItemPlanCustomItem struct {
+	// Indicates whether the chargeback plan customization item can be customized.
+	IsCustomizable bool `pulumi:"isCustomizable"`
+	// Name of chargeback plan customization item. Example items for Exadata Insights Chargeback are statistic, percentile, infrastructureCost, additionalServerCost etc.
+	Name string `pulumi:"name"`
+	// Value of chargeback plan customization item.
+	Value string `pulumi:"value"`
+}
+
+// GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemInput is an input type that accepts GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArgs and GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutput values.
+// You can construct a concrete instance of `GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemInput` via:
+//
+//	GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArgs{...}
+type GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemInput interface {
+	pulumi.Input
+
+	ToGetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutput() GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutput
+	ToGetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutputWithContext(context.Context) GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutput
+}
+
+type GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArgs struct {
+	// Indicates whether the chargeback plan customization item can be customized.
+	IsCustomizable pulumi.BoolInput `pulumi:"isCustomizable"`
+	// Name of chargeback plan customization item. Example items for Exadata Insights Chargeback are statistic, percentile, infrastructureCost, additionalServerCost etc.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Value of chargeback plan customization item.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetChargebackPlansChargebackPlanCollectionItemPlanCustomItem)(nil)).Elem()
+}
+
+func (i GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArgs) ToGetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutput() GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutput {
+	return i.ToGetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutputWithContext(context.Background())
+}
+
+func (i GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArgs) ToGetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutputWithContext(ctx context.Context) GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutput)
+}
+
+// GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayInput is an input type that accepts GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArray and GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayOutput values.
+// You can construct a concrete instance of `GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayInput` via:
+//
+//	GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArray{ GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArgs{...} }
+type GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayInput interface {
+	pulumi.Input
+
+	ToGetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayOutput() GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayOutput
+	ToGetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayOutputWithContext(context.Context) GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayOutput
+}
+
+type GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArray []GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemInput
+
+func (GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetChargebackPlansChargebackPlanCollectionItemPlanCustomItem)(nil)).Elem()
+}
+
+func (i GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArray) ToGetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayOutput() GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayOutput {
+	return i.ToGetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArray) ToGetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayOutputWithContext(ctx context.Context) GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayOutput)
+}
+
+type GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutput struct{ *pulumi.OutputState }
+
+func (GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetChargebackPlansChargebackPlanCollectionItemPlanCustomItem)(nil)).Elem()
+}
+
+func (o GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutput) ToGetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutput() GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutput {
+	return o
+}
+
+func (o GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutput) ToGetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutputWithContext(ctx context.Context) GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutput {
+	return o
+}
+
+// Indicates whether the chargeback plan customization item can be customized.
+func (o GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutput) IsCustomizable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetChargebackPlansChargebackPlanCollectionItemPlanCustomItem) bool { return v.IsCustomizable }).(pulumi.BoolOutput)
+}
+
+// Name of chargeback plan customization item. Example items for Exadata Insights Chargeback are statistic, percentile, infrastructureCost, additionalServerCost etc.
+func (o GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChargebackPlansChargebackPlanCollectionItemPlanCustomItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Value of chargeback plan customization item.
+func (o GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChargebackPlansChargebackPlanCollectionItemPlanCustomItem) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetChargebackPlansChargebackPlanCollectionItemPlanCustomItem)(nil)).Elem()
+}
+
+func (o GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayOutput) ToGetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayOutput() GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayOutput {
+	return o
+}
+
+func (o GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayOutput) ToGetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayOutputWithContext(ctx context.Context) GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayOutput {
+	return o
+}
+
+func (o GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayOutput) Index(i pulumi.IntInput) GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChargebackPlansChargebackPlanCollectionItemPlanCustomItem {
+		return vs[0].([]GetChargebackPlansChargebackPlanCollectionItemPlanCustomItem)[vs[1].(int)]
+	}).(GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutput)
+}
+
+type GetChargebackPlansFilter struct {
+	// Name of chargeback plan customization item. Example items for Exadata Insights Chargeback are statistic, percentile, infrastructureCost, additionalServerCost etc.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetChargebackPlansFilterInput is an input type that accepts GetChargebackPlansFilterArgs and GetChargebackPlansFilterOutput values.
+// You can construct a concrete instance of `GetChargebackPlansFilterInput` via:
+//
+//	GetChargebackPlansFilterArgs{...}
+type GetChargebackPlansFilterInput interface {
+	pulumi.Input
+
+	ToGetChargebackPlansFilterOutput() GetChargebackPlansFilterOutput
+	ToGetChargebackPlansFilterOutputWithContext(context.Context) GetChargebackPlansFilterOutput
+}
+
+type GetChargebackPlansFilterArgs struct {
+	// Name of chargeback plan customization item. Example items for Exadata Insights Chargeback are statistic, percentile, infrastructureCost, additionalServerCost etc.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetChargebackPlansFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetChargebackPlansFilter)(nil)).Elem()
+}
+
+func (i GetChargebackPlansFilterArgs) ToGetChargebackPlansFilterOutput() GetChargebackPlansFilterOutput {
+	return i.ToGetChargebackPlansFilterOutputWithContext(context.Background())
+}
+
+func (i GetChargebackPlansFilterArgs) ToGetChargebackPlansFilterOutputWithContext(ctx context.Context) GetChargebackPlansFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetChargebackPlansFilterOutput)
+}
+
+// GetChargebackPlansFilterArrayInput is an input type that accepts GetChargebackPlansFilterArray and GetChargebackPlansFilterArrayOutput values.
+// You can construct a concrete instance of `GetChargebackPlansFilterArrayInput` via:
+//
+//	GetChargebackPlansFilterArray{ GetChargebackPlansFilterArgs{...} }
+type GetChargebackPlansFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetChargebackPlansFilterArrayOutput() GetChargebackPlansFilterArrayOutput
+	ToGetChargebackPlansFilterArrayOutputWithContext(context.Context) GetChargebackPlansFilterArrayOutput
+}
+
+type GetChargebackPlansFilterArray []GetChargebackPlansFilterInput
+
+func (GetChargebackPlansFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetChargebackPlansFilter)(nil)).Elem()
+}
+
+func (i GetChargebackPlansFilterArray) ToGetChargebackPlansFilterArrayOutput() GetChargebackPlansFilterArrayOutput {
+	return i.ToGetChargebackPlansFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetChargebackPlansFilterArray) ToGetChargebackPlansFilterArrayOutputWithContext(ctx context.Context) GetChargebackPlansFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetChargebackPlansFilterArrayOutput)
+}
+
+type GetChargebackPlansFilterOutput struct{ *pulumi.OutputState }
+
+func (GetChargebackPlansFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetChargebackPlansFilter)(nil)).Elem()
+}
+
+func (o GetChargebackPlansFilterOutput) ToGetChargebackPlansFilterOutput() GetChargebackPlansFilterOutput {
+	return o
+}
+
+func (o GetChargebackPlansFilterOutput) ToGetChargebackPlansFilterOutputWithContext(ctx context.Context) GetChargebackPlansFilterOutput {
+	return o
+}
+
+// Name of chargeback plan customization item. Example items for Exadata Insights Chargeback are statistic, percentile, infrastructureCost, additionalServerCost etc.
+func (o GetChargebackPlansFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChargebackPlansFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetChargebackPlansFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetChargebackPlansFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetChargebackPlansFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetChargebackPlansFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetChargebackPlansFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetChargebackPlansFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetChargebackPlansFilter)(nil)).Elem()
+}
+
+func (o GetChargebackPlansFilterArrayOutput) ToGetChargebackPlansFilterArrayOutput() GetChargebackPlansFilterArrayOutput {
+	return o
+}
+
+func (o GetChargebackPlansFilterArrayOutput) ToGetChargebackPlansFilterArrayOutputWithContext(ctx context.Context) GetChargebackPlansFilterArrayOutput {
+	return o
+}
+
+func (o GetChargebackPlansFilterArrayOutput) Index(i pulumi.IntInput) GetChargebackPlansFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChargebackPlansFilter {
+		return vs[0].([]GetChargebackPlansFilter)[vs[1].(int)]
+	}).(GetChargebackPlansFilterOutput)
+}
+
 type GetDatabaseInsightConnectionCredentialDetail struct {
 	// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
 	CredentialSourceName string `pulumi:"credentialSourceName"`
@@ -7687,6 +8586,121 @@ func (o GetEnterpriseManagerBridgesFilterArrayOutput) Index(i pulumi.IntInput) G
 	}).(GetEnterpriseManagerBridgesFilterOutput)
 }
 
+type GetExadataInsightChargebackPlanDetail struct {
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI Chargeback plan resource.
+	PlanId string `pulumi:"planId"`
+	// Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
+	PlanType string `pulumi:"planType"`
+	// The date and time the chargeback plan was enabled on the resource, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeEnabled string `pulumi:"timeEnabled"`
+}
+
+// GetExadataInsightChargebackPlanDetailInput is an input type that accepts GetExadataInsightChargebackPlanDetailArgs and GetExadataInsightChargebackPlanDetailOutput values.
+// You can construct a concrete instance of `GetExadataInsightChargebackPlanDetailInput` via:
+//
+//	GetExadataInsightChargebackPlanDetailArgs{...}
+type GetExadataInsightChargebackPlanDetailInput interface {
+	pulumi.Input
+
+	ToGetExadataInsightChargebackPlanDetailOutput() GetExadataInsightChargebackPlanDetailOutput
+	ToGetExadataInsightChargebackPlanDetailOutputWithContext(context.Context) GetExadataInsightChargebackPlanDetailOutput
+}
+
+type GetExadataInsightChargebackPlanDetailArgs struct {
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI Chargeback plan resource.
+	PlanId pulumi.StringInput `pulumi:"planId"`
+	// Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
+	PlanType pulumi.StringInput `pulumi:"planType"`
+	// The date and time the chargeback plan was enabled on the resource, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeEnabled pulumi.StringInput `pulumi:"timeEnabled"`
+}
+
+func (GetExadataInsightChargebackPlanDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInsightChargebackPlanDetail)(nil)).Elem()
+}
+
+func (i GetExadataInsightChargebackPlanDetailArgs) ToGetExadataInsightChargebackPlanDetailOutput() GetExadataInsightChargebackPlanDetailOutput {
+	return i.ToGetExadataInsightChargebackPlanDetailOutputWithContext(context.Background())
+}
+
+func (i GetExadataInsightChargebackPlanDetailArgs) ToGetExadataInsightChargebackPlanDetailOutputWithContext(ctx context.Context) GetExadataInsightChargebackPlanDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightChargebackPlanDetailOutput)
+}
+
+// GetExadataInsightChargebackPlanDetailArrayInput is an input type that accepts GetExadataInsightChargebackPlanDetailArray and GetExadataInsightChargebackPlanDetailArrayOutput values.
+// You can construct a concrete instance of `GetExadataInsightChargebackPlanDetailArrayInput` via:
+//
+//	GetExadataInsightChargebackPlanDetailArray{ GetExadataInsightChargebackPlanDetailArgs{...} }
+type GetExadataInsightChargebackPlanDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInsightChargebackPlanDetailArrayOutput() GetExadataInsightChargebackPlanDetailArrayOutput
+	ToGetExadataInsightChargebackPlanDetailArrayOutputWithContext(context.Context) GetExadataInsightChargebackPlanDetailArrayOutput
+}
+
+type GetExadataInsightChargebackPlanDetailArray []GetExadataInsightChargebackPlanDetailInput
+
+func (GetExadataInsightChargebackPlanDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInsightChargebackPlanDetail)(nil)).Elem()
+}
+
+func (i GetExadataInsightChargebackPlanDetailArray) ToGetExadataInsightChargebackPlanDetailArrayOutput() GetExadataInsightChargebackPlanDetailArrayOutput {
+	return i.ToGetExadataInsightChargebackPlanDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInsightChargebackPlanDetailArray) ToGetExadataInsightChargebackPlanDetailArrayOutputWithContext(ctx context.Context) GetExadataInsightChargebackPlanDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightChargebackPlanDetailArrayOutput)
+}
+
+type GetExadataInsightChargebackPlanDetailOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInsightChargebackPlanDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInsightChargebackPlanDetail)(nil)).Elem()
+}
+
+func (o GetExadataInsightChargebackPlanDetailOutput) ToGetExadataInsightChargebackPlanDetailOutput() GetExadataInsightChargebackPlanDetailOutput {
+	return o
+}
+
+func (o GetExadataInsightChargebackPlanDetailOutput) ToGetExadataInsightChargebackPlanDetailOutputWithContext(ctx context.Context) GetExadataInsightChargebackPlanDetailOutput {
+	return o
+}
+
+// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI Chargeback plan resource.
+func (o GetExadataInsightChargebackPlanDetailOutput) PlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightChargebackPlanDetail) string { return v.PlanId }).(pulumi.StringOutput)
+}
+
+// Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
+func (o GetExadataInsightChargebackPlanDetailOutput) PlanType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightChargebackPlanDetail) string { return v.PlanType }).(pulumi.StringOutput)
+}
+
+// The date and time the chargeback plan was enabled on the resource, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetExadataInsightChargebackPlanDetailOutput) TimeEnabled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightChargebackPlanDetail) string { return v.TimeEnabled }).(pulumi.StringOutput)
+}
+
+type GetExadataInsightChargebackPlanDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInsightChargebackPlanDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInsightChargebackPlanDetail)(nil)).Elem()
+}
+
+func (o GetExadataInsightChargebackPlanDetailArrayOutput) ToGetExadataInsightChargebackPlanDetailArrayOutput() GetExadataInsightChargebackPlanDetailArrayOutput {
+	return o
+}
+
+func (o GetExadataInsightChargebackPlanDetailArrayOutput) ToGetExadataInsightChargebackPlanDetailArrayOutputWithContext(ctx context.Context) GetExadataInsightChargebackPlanDetailArrayOutput {
+	return o
+}
+
+func (o GetExadataInsightChargebackPlanDetailArrayOutput) Index(i pulumi.IntInput) GetExadataInsightChargebackPlanDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInsightChargebackPlanDetail {
+		return vs[0].([]GetExadataInsightChargebackPlanDetail)[vs[1].(int)]
+	}).(GetExadataInsightChargebackPlanDetailOutput)
+}
+
 type GetExadataInsightMemberVmClusterDetail struct {
 	// Compartment identifier of the Exadata insight resource
 	CompartmentId           string                                                         `pulumi:"compartmentId"`
@@ -9265,6 +10279,8 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionArrayOutput) Index(i pu
 }
 
 type GetExadataInsightsExadataInsightSummaryCollectionItem struct {
+	// Object containing chargeback plan details
+	ChargebackPlanDetails []GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetail `pulumi:"chargebackPlanDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -9312,6 +10328,8 @@ type GetExadataInsightsExadataInsightSummaryCollectionItem struct {
 	State string `pulumi:"state"`
 	// Resource Status
 	Status string `pulumi:"status"`
+	// A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+	StatusDetails string `pulumi:"statusDetails"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
@@ -9332,6 +10350,8 @@ type GetExadataInsightsExadataInsightSummaryCollectionItemInput interface {
 }
 
 type GetExadataInsightsExadataInsightSummaryCollectionItemArgs struct {
+	// Object containing chargeback plan details
+	ChargebackPlanDetails GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayInput `pulumi:"chargebackPlanDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -9379,6 +10399,8 @@ type GetExadataInsightsExadataInsightSummaryCollectionItemArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// Resource Status
 	Status pulumi.StringInput `pulumi:"status"`
+	// A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+	StatusDetails pulumi.StringInput `pulumi:"statusDetails"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
@@ -9436,6 +10458,13 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ToGetExadat
 
 func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ToGetExadataInsightsExadataInsightSummaryCollectionItemOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemOutput {
 	return o
+}
+
+// Object containing chargeback plan details
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ChargebackPlanDetails() GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) []GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetail {
+		return v.ChargebackPlanDetails
+	}).(GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -9573,6 +10602,11 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) Status() pu
 	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string { return v.Status }).(pulumi.StringOutput)
 }
 
+// A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) StatusDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string { return v.StatusDetails }).(pulumi.StringOutput)
+}
+
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
@@ -9606,6 +10640,127 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemArrayOutput) Index(
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInsightsExadataInsightSummaryCollectionItem {
 		return vs[0].([]GetExadataInsightsExadataInsightSummaryCollectionItem)[vs[1].(int)]
 	}).(GetExadataInsightsExadataInsightSummaryCollectionItemOutput)
+}
+
+type GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetail struct {
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI Chargeback plan resource.
+	PlanId string `pulumi:"planId"`
+	// Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
+	PlanType string `pulumi:"planType"`
+	// The date and time the chargeback plan was enabled on the resource, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeEnabled string `pulumi:"timeEnabled"`
+}
+
+// GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArgs and GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutput values.
+// You can construct a concrete instance of `GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailInput` via:
+//
+//	GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArgs{...}
+type GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailInput interface {
+	pulumi.Input
+
+	ToGetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutput() GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutput
+	ToGetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutputWithContext(context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutput
+}
+
+type GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArgs struct {
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI Chargeback plan resource.
+	PlanId pulumi.StringInput `pulumi:"planId"`
+	// Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
+	PlanType pulumi.StringInput `pulumi:"planType"`
+	// The date and time the chargeback plan was enabled on the resource, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeEnabled pulumi.StringInput `pulumi:"timeEnabled"`
+}
+
+func (GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetail)(nil)).Elem()
+}
+
+func (i GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArgs) ToGetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutput() GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutput {
+	return i.ToGetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutputWithContext(context.Background())
+}
+
+func (i GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArgs) ToGetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutput)
+}
+
+// GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArray and GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayOutput values.
+// You can construct a concrete instance of `GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayInput` via:
+//
+//	GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArray{ GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArgs{...} }
+type GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayOutput() GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayOutput
+	ToGetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayOutputWithContext(context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayOutput
+}
+
+type GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArray []GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailInput
+
+func (GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetail)(nil)).Elem()
+}
+
+func (i GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArray) ToGetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayOutput() GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayOutput {
+	return i.ToGetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArray) ToGetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayOutput)
+}
+
+type GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetail)(nil)).Elem()
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutput) ToGetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutput() GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutput {
+	return o
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutput) ToGetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutput {
+	return o
+}
+
+// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI Chargeback plan resource.
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutput) PlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetail) string {
+		return v.PlanId
+	}).(pulumi.StringOutput)
+}
+
+// Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutput) PlanType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetail) string {
+		return v.PlanType
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the chargeback plan was enabled on the resource, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutput) TimeEnabled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetail) string {
+		return v.TimeEnabled
+	}).(pulumi.StringOutput)
+}
+
+type GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetail)(nil)).Elem()
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayOutput) ToGetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayOutput() GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayOutput {
+	return o
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayOutput) ToGetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayOutput {
+	return o
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayOutput) Index(i pulumi.IntInput) GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetail {
+		return vs[0].([]GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetail)[vs[1].(int)]
+	}).(GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutput)
 }
 
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail struct {
@@ -16573,6 +17728,8 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataV
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ChargebackPlanPlanCustomItemInput)(nil)).Elem(), ChargebackPlanPlanCustomItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ChargebackPlanPlanCustomItemArrayInput)(nil)).Elem(), ChargebackPlanPlanCustomItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseInsightConnectionCredentialDetailsInput)(nil)).Elem(), DatabaseInsightConnectionCredentialDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseInsightConnectionCredentialDetailsPtrInput)(nil)).Elem(), DatabaseInsightConnectionCredentialDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseInsightConnectionDetailsInput)(nil)).Elem(), DatabaseInsightConnectionDetailsArgs{})
@@ -16581,6 +17738,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseInsightConnectionDetailsHostArrayInput)(nil)).Elem(), DatabaseInsightConnectionDetailsHostArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseInsightCredentialDetailsInput)(nil)).Elem(), DatabaseInsightCredentialDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseInsightCredentialDetailsPtrInput)(nil)).Elem(), DatabaseInsightCredentialDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightChargebackPlanDetailInput)(nil)).Elem(), ExadataInsightChargebackPlanDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightChargebackPlanDetailArrayInput)(nil)).Elem(), ExadataInsightChargebackPlanDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightMemberVmClusterDetailInput)(nil)).Elem(), ExadataInsightMemberVmClusterDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightMemberVmClusterDetailArrayInput)(nil)).Elem(), ExadataInsightMemberVmClusterDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightMemberVmClusterDetailMemberAutonomousDetailInput)(nil)).Elem(), ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs{})
@@ -16635,6 +17794,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAwrHubsAwrHubSummaryCollectionItemArrayInput)(nil)).Elem(), GetAwrHubsAwrHubSummaryCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAwrHubsFilterInput)(nil)).Elem(), GetAwrHubsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAwrHubsFilterArrayInput)(nil)).Elem(), GetAwrHubsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetChargebackPlanPlanCustomItemInput)(nil)).Elem(), GetChargebackPlanPlanCustomItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetChargebackPlanPlanCustomItemArrayInput)(nil)).Elem(), GetChargebackPlanPlanCustomItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetChargebackPlansChargebackPlanCollectionInput)(nil)).Elem(), GetChargebackPlansChargebackPlanCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetChargebackPlansChargebackPlanCollectionArrayInput)(nil)).Elem(), GetChargebackPlansChargebackPlanCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetChargebackPlansChargebackPlanCollectionItemInput)(nil)).Elem(), GetChargebackPlansChargebackPlanCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetChargebackPlansChargebackPlanCollectionItemArrayInput)(nil)).Elem(), GetChargebackPlansChargebackPlanCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemInput)(nil)).Elem(), GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayInput)(nil)).Elem(), GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetChargebackPlansFilterInput)(nil)).Elem(), GetChargebackPlansFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetChargebackPlansFilterArrayInput)(nil)).Elem(), GetChargebackPlansFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseInsightConnectionCredentialDetailInput)(nil)).Elem(), GetDatabaseInsightConnectionCredentialDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseInsightConnectionCredentialDetailArrayInput)(nil)).Elem(), GetDatabaseInsightConnectionCredentialDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseInsightConnectionDetailInput)(nil)).Elem(), GetDatabaseInsightConnectionDetailArgs{})
@@ -16663,6 +17832,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArrayInput)(nil)).Elem(), GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEnterpriseManagerBridgesFilterInput)(nil)).Elem(), GetEnterpriseManagerBridgesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEnterpriseManagerBridgesFilterArrayInput)(nil)).Elem(), GetEnterpriseManagerBridgesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightChargebackPlanDetailInput)(nil)).Elem(), GetExadataInsightChargebackPlanDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightChargebackPlanDetailArrayInput)(nil)).Elem(), GetExadataInsightChargebackPlanDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightMemberVmClusterDetailInput)(nil)).Elem(), GetExadataInsightMemberVmClusterDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightMemberVmClusterDetailArrayInput)(nil)).Elem(), GetExadataInsightMemberVmClusterDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightMemberVmClusterDetailMemberAutonomousDetailInput)(nil)).Elem(), GetExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs{})
@@ -16687,6 +17858,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionArrayInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemArrayInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberAutonomousDetailInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberAutonomousDetailArgs{})
@@ -16781,6 +17954,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArrayInput)(nil)).Elem(), GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailInput)(nil)).Elem(), GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArrayInput)(nil)).Elem(), GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArray{})
+	pulumi.RegisterOutputType(ChargebackPlanPlanCustomItemOutput{})
+	pulumi.RegisterOutputType(ChargebackPlanPlanCustomItemArrayOutput{})
 	pulumi.RegisterOutputType(DatabaseInsightConnectionCredentialDetailsOutput{})
 	pulumi.RegisterOutputType(DatabaseInsightConnectionCredentialDetailsPtrOutput{})
 	pulumi.RegisterOutputType(DatabaseInsightConnectionDetailsOutput{})
@@ -16789,6 +17964,8 @@ func init() {
 	pulumi.RegisterOutputType(DatabaseInsightConnectionDetailsHostArrayOutput{})
 	pulumi.RegisterOutputType(DatabaseInsightCredentialDetailsOutput{})
 	pulumi.RegisterOutputType(DatabaseInsightCredentialDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ExadataInsightChargebackPlanDetailOutput{})
+	pulumi.RegisterOutputType(ExadataInsightChargebackPlanDetailArrayOutput{})
 	pulumi.RegisterOutputType(ExadataInsightMemberVmClusterDetailOutput{})
 	pulumi.RegisterOutputType(ExadataInsightMemberVmClusterDetailArrayOutput{})
 	pulumi.RegisterOutputType(ExadataInsightMemberVmClusterDetailMemberAutonomousDetailOutput{})
@@ -16843,6 +18020,16 @@ func init() {
 	pulumi.RegisterOutputType(GetAwrHubsAwrHubSummaryCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetAwrHubsFilterOutput{})
 	pulumi.RegisterOutputType(GetAwrHubsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetChargebackPlanPlanCustomItemOutput{})
+	pulumi.RegisterOutputType(GetChargebackPlanPlanCustomItemArrayOutput{})
+	pulumi.RegisterOutputType(GetChargebackPlansChargebackPlanCollectionOutput{})
+	pulumi.RegisterOutputType(GetChargebackPlansChargebackPlanCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetChargebackPlansChargebackPlanCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetChargebackPlansChargebackPlanCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemOutput{})
+	pulumi.RegisterOutputType(GetChargebackPlansChargebackPlanCollectionItemPlanCustomItemArrayOutput{})
+	pulumi.RegisterOutputType(GetChargebackPlansFilterOutput{})
+	pulumi.RegisterOutputType(GetChargebackPlansFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseInsightConnectionCredentialDetailOutput{})
 	pulumi.RegisterOutputType(GetDatabaseInsightConnectionCredentialDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseInsightConnectionDetailOutput{})
@@ -16871,6 +18058,8 @@ func init() {
 	pulumi.RegisterOutputType(GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetEnterpriseManagerBridgesFilterOutput{})
 	pulumi.RegisterOutputType(GetEnterpriseManagerBridgesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInsightChargebackPlanDetailOutput{})
+	pulumi.RegisterOutputType(GetExadataInsightChargebackPlanDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInsightMemberVmClusterDetailOutput{})
 	pulumi.RegisterOutputType(GetExadataInsightMemberVmClusterDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInsightMemberVmClusterDetailMemberAutonomousDetailOutput{})
@@ -16895,6 +18084,8 @@ func init() {
 	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailOutput{})
+	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput{})
 	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberAutonomousDetailOutput{})

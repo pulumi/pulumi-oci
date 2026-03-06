@@ -38,6 +38,10 @@ __all__ = [
     'GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemResult',
     'GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailResult',
     'GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemResult',
+    'GetOciCacheEngineOptionsFilterResult',
+    'GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionResult',
+    'GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemResult',
+    'GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionResult',
     'GetOciCacheUserAuthenticationModeResult',
     'GetOciCacheUsersFilterResult',
     'GetOciCacheUsersOciCacheUserCollectionResult',
@@ -941,6 +945,104 @@ class GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultC
         Indicates if the configuration is modifiable.
         """
         return pulumi.get(self, "is_modifiable")
+
+
+@pulumi.output_type
+class GetOciCacheEngineOptionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Oracle Cloud Infrastructure Cache engine version friendly name
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Oracle Cloud Infrastructure Cache engine version friendly name
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemResult']):
+        """
+        :param Sequence['GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArgs'] items: List of Oracle Cloud Infrastructure Cache Engine Options
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemResult']:
+        """
+        List of Oracle Cloud Infrastructure Cache Engine Options
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 engine_versions: Sequence['outputs.GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionResult']):
+        """
+        :param Sequence['GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArgs'] engine_versions: List of available engine versions
+        """
+        pulumi.set(__self__, "engine_versions", engine_versions)
+
+    @_builtins.property
+    @pulumi.getter(name="engineVersions")
+    def engine_versions(self) -> Sequence['outputs.GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionResult']:
+        """
+        List of available engine versions
+        """
+        return pulumi.get(self, "engine_versions")
+
+
+@pulumi.output_type
+class GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 version: _builtins.str):
+        """
+        :param _builtins.str name: Oracle Cloud Infrastructure Cache engine version friendly name
+        :param _builtins.str version: Oracle Cloud Infrastructure Cache engine version
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Oracle Cloud Infrastructure Cache engine version friendly name
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> _builtins.str:
+        """
+        Oracle Cloud Infrastructure Cache engine version
+        """
+        return pulumi.get(self, "version")
 
 
 @pulumi.output_type

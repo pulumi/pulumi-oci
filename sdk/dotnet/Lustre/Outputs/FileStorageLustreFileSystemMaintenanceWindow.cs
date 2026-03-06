@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Lustre.Outputs
     public sealed class FileStorageLustreFileSystemMaintenanceWindow
     {
         /// <summary>
-        /// Day of the week when the maintainence window starts.
+        /// (Updatable) Day of the week when the maintainence window starts.
         /// </summary>
         public readonly string? DayOfWeek;
         /// <summary>
-        /// The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
+        /// (Updatable) The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
         /// </summary>
         public readonly string? TimeStart;
 

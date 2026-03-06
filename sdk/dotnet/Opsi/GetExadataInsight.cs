@@ -124,6 +124,10 @@ namespace Pulumi.Oci.Opsi
     public sealed class GetExadataInsightResult
     {
         /// <summary>
+        /// Object containing chargeback plan details
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetExadataInsightChargebackPlanDetailResult> ChargebackPlanDetails;
+        /// <summary>
         /// Compartment identifier of the Exadata insight resource
         /// </summary>
         public readonly string CompartmentId;
@@ -218,6 +222,10 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public readonly string Status;
         /// <summary>
+        /// A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+        /// </summary>
+        public readonly string StatusDetails;
+        /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
@@ -232,6 +240,8 @@ namespace Pulumi.Oci.Opsi
 
         [OutputConstructor]
         private GetExadataInsightResult(
+            ImmutableArray<Outputs.GetExadataInsightChargebackPlanDetailResult> chargebackPlanDetails,
+
             string compartmentId,
 
             ImmutableDictionary<string, string> definedTags,
@@ -282,12 +292,15 @@ namespace Pulumi.Oci.Opsi
 
             string status,
 
+            string statusDetails,
+
             ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 
             string timeUpdated)
         {
+            ChargebackPlanDetails = chargebackPlanDetails;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             EnterpriseManagerBridgeId = enterpriseManagerBridgeId;
@@ -313,6 +326,7 @@ namespace Pulumi.Oci.Opsi
             MemberVmClusterDetails = memberVmClusterDetails;
             State = state;
             Status = status;
+            StatusDetails = statusDetails;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

@@ -27,7 +27,7 @@ class GetFusionEnvironmentAdminUserResult:
     """
     A collection of values returned by getFusionEnvironmentAdminUser.
     """
-    def __init__(__self__, email_address=None, first_name=None, fusion_environment_id=None, id=None, items=None, last_name=None, password=None, username=None):
+    def __init__(__self__, email_address=None, first_name=None, fusion_environment_id=None, id=None, items=None, last_name=None, username=None):
         if email_address and not isinstance(email_address, str):
             raise TypeError("Expected argument 'email_address' to be a str")
         pulumi.set(__self__, "email_address", email_address)
@@ -46,9 +46,6 @@ class GetFusionEnvironmentAdminUserResult:
         if last_name and not isinstance(last_name, str):
             raise TypeError("Expected argument 'last_name' to be a str")
         pulumi.set(__self__, "last_name", last_name)
-        if password and not isinstance(password, str):
-            raise TypeError("Expected argument 'password' to be a str")
-        pulumi.set(__self__, "password", password)
         if username and not isinstance(username, str):
             raise TypeError("Expected argument 'username' to be a str")
         pulumi.set(__self__, "username", username)
@@ -97,12 +94,6 @@ class GetFusionEnvironmentAdminUserResult:
 
     @_builtins.property
     @pulumi.getter
-    @_utilities.deprecated("""The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.""")
-    def password(self) -> _builtins.str:
-        return pulumi.get(self, "password")
-
-    @_builtins.property
-    @pulumi.getter
     def username(self) -> _builtins.str:
         """
         Admin username
@@ -122,7 +113,6 @@ class AwaitableGetFusionEnvironmentAdminUserResult(GetFusionEnvironmentAdminUser
             id=self.id,
             items=self.items,
             last_name=self.last_name,
-            password=self.password,
             username=self.username)
 
 
@@ -157,7 +147,6 @@ def get_fusion_environment_admin_user(fusion_environment_id: Optional[_builtins.
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'),
         last_name=pulumi.get(__ret__, 'last_name'),
-        password=pulumi.get(__ret__, 'password'),
         username=pulumi.get(__ret__, 'username'))
 def get_fusion_environment_admin_user_output(fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentAdminUserResult]:
@@ -189,5 +178,4 @@ def get_fusion_environment_admin_user_output(fusion_environment_id: Optional[pul
         id=pulumi.get(__response__, 'id'),
         items=pulumi.get(__response__, 'items'),
         last_name=pulumi.get(__response__, 'last_name'),
-        password=pulumi.get(__response__, 'password'),
         username=pulumi.get(__response__, 'username')))

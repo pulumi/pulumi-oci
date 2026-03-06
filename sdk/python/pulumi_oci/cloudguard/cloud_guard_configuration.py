@@ -205,11 +205,7 @@ class CloudGuardConfiguration(pulumi.CustomResource):
             compartment_id=compartment_id,
             reporting_region=cloud_guard_configuration_reporting_region,
             status=cloud_guard_configuration_status,
-            self_manage_resources=cloud_guard_configuration_self_manage_resources,
-            service_configurations=[{
-                "serviceConfigurationType": cloud_guard_configuration_service_configurations_service_configuration_type,
-                "status": cloud_guard_configuration_service_configurations_status,
-            }])
+            self_manage_resources=cloud_guard_configuration_self_manage_resources)
         ```
 
         ## Import
@@ -253,11 +249,7 @@ class CloudGuardConfiguration(pulumi.CustomResource):
             compartment_id=compartment_id,
             reporting_region=cloud_guard_configuration_reporting_region,
             status=cloud_guard_configuration_status,
-            self_manage_resources=cloud_guard_configuration_self_manage_resources,
-            service_configurations=[{
-                "serviceConfigurationType": cloud_guard_configuration_service_configurations_service_configuration_type,
-                "status": cloud_guard_configuration_service_configurations_status,
-            }])
+            self_manage_resources=cloud_guard_configuration_self_manage_resources)
         ```
 
         ## Import

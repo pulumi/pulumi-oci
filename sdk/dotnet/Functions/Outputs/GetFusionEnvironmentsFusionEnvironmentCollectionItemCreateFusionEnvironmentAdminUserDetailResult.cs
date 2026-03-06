@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Functions.Outputs
         public readonly string EmailAddress;
         public readonly string FirstName;
         public readonly string LastName;
-        public readonly string Password;
         public readonly string Username;
 
         [OutputConstructor]
@@ -27,14 +26,11 @@ namespace Pulumi.Oci.Functions.Outputs
 
             string lastName,
 
-            string password,
-
             string username)
         {
             EmailAddress = emailAddress;
             FirstName = firstName;
             LastName = lastName;
-            Password = password;
             Username = username;
         }
     }

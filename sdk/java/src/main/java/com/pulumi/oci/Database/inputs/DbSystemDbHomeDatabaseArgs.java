@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.DbSystemDbHomeDatabaseConnectionStringArgs;
 import com.pulumi.oci.Database.inputs.DbSystemDbHomeDatabaseDbBackupConfigArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -89,6 +90,36 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
 
     public Optional<Output<List<DbSystemDbHomeDatabaseConnectionStringArgs>>> connectionStrings() {
         return Optional.ofNullable(this.connectionStrings);
+    }
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    @Import(name="databaseDefinedTags")
+    private @Nullable Output<Map<String,String>> databaseDefinedTags;
+
+    /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Optional<Output<Map<String,String>>> databaseDefinedTags() {
+        return Optional.ofNullable(this.databaseDefinedTags);
+    }
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    @Import(name="databaseFreeformTags")
+    private @Nullable Output<Map<String,String>> databaseFreeformTags;
+
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> databaseFreeformTags() {
+        return Optional.ofNullable(this.databaseFreeformTags);
     }
 
     /**
@@ -238,6 +269,36 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
     }
 
     /**
+     * True if active Data Guard is enabled.
+     * 
+     */
+    @Import(name="isActiveDataGuardEnabled")
+    private @Nullable Output<Boolean> isActiveDataGuardEnabled;
+
+    /**
+     * @return True if active Data Guard is enabled.
+     * 
+     */
+    public Optional<Output<Boolean>> isActiveDataGuardEnabled() {
+        return Optional.ofNullable(this.isActiveDataGuardEnabled);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+     * 
+     */
+    @Import(name="keyStoreId")
+    private @Nullable Output<String> keyStoreId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+     * 
+     */
+    public Optional<Output<String>> keyStoreId() {
+        return Optional.ofNullable(this.keyStoreId);
+    }
+
+    /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -328,6 +389,36 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
     }
 
     /**
+     * The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * 
+     */
+    @Import(name="protectionMode")
+    private @Nullable Output<String> protectionMode;
+
+    /**
+     * @return The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * 
+     */
+    public Optional<Output<String>> protectionMode() {
+        return Optional.ofNullable(this.protectionMode);
+    }
+
+    /**
+     * Specifies a prefix for the `Oracle SID` of the database to be created.
+     * 
+     */
+    @Import(name="sidPrefix")
+    private @Nullable Output<String> sidPrefix;
+
+    /**
+     * @return Specifies a prefix for the `Oracle SID` of the database to be created.
+     * 
+     */
+    public Optional<Output<String>> sidPrefix() {
+        return Optional.ofNullable(this.sidPrefix);
+    }
+
+    /**
      * The current state of the DB system.
      * 
      */
@@ -388,6 +479,35 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
     }
 
     /**
+     * The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+     * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+     * * MAXIMUM_PERFORMANCE - ASYNC
+     * * MAXIMUM_PROTECTION - SYNC
+     * 
+     * For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+     * 
+     * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+     * 
+     */
+    @Import(name="transportType")
+    private @Nullable Output<String> transportType;
+
+    /**
+     * @return The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+     * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+     * * MAXIMUM_PERFORMANCE - ASYNC
+     * * MAXIMUM_PROTECTION - SYNC
+     * 
+     * For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+     * 
+     * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+     * 
+     */
+    public Optional<Output<String>> transportType() {
+        return Optional.ofNullable(this.transportType);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      * 
      */
@@ -410,6 +530,8 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
         this.backupTdePassword = $.backupTdePassword;
         this.characterSet = $.characterSet;
         this.connectionStrings = $.connectionStrings;
+        this.databaseDefinedTags = $.databaseDefinedTags;
+        this.databaseFreeformTags = $.databaseFreeformTags;
         this.databaseId = $.databaseId;
         this.databaseSoftwareImageId = $.databaseSoftwareImageId;
         this.dbBackupConfig = $.dbBackupConfig;
@@ -420,16 +542,21 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
         this.definedTags = $.definedTags;
         this.freeformTags = $.freeformTags;
         this.id = $.id;
+        this.isActiveDataGuardEnabled = $.isActiveDataGuardEnabled;
+        this.keyStoreId = $.keyStoreId;
         this.kmsKeyId = $.kmsKeyId;
         this.kmsKeyVersionId = $.kmsKeyVersionId;
         this.lifecycleDetails = $.lifecycleDetails;
         this.ncharacterSet = $.ncharacterSet;
         this.pdbName = $.pdbName;
         this.pluggableDatabases = $.pluggableDatabases;
+        this.protectionMode = $.protectionMode;
+        this.sidPrefix = $.sidPrefix;
         this.state = $.state;
         this.tdeWalletPassword = $.tdeWalletPassword;
         this.timeCreated = $.timeCreated;
         this.timeStampForPointInTimeRecovery = $.timeStampForPointInTimeRecovery;
+        this.transportType = $.transportType;
         this.vaultId = $.vaultId;
     }
 
@@ -550,6 +677,48 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
 
         public Builder connectionStrings(DbSystemDbHomeDatabaseConnectionStringArgs... connectionStrings) {
             return connectionStrings(List.of(connectionStrings));
+        }
+
+        /**
+         * @param databaseDefinedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseDefinedTags(@Nullable Output<Map<String,String>> databaseDefinedTags) {
+            $.databaseDefinedTags = databaseDefinedTags;
+            return this;
+        }
+
+        /**
+         * @param databaseDefinedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseDefinedTags(Map<String,String> databaseDefinedTags) {
+            return databaseDefinedTags(Output.of(databaseDefinedTags));
+        }
+
+        /**
+         * @param databaseFreeformTags Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseFreeformTags(@Nullable Output<Map<String,String>> databaseFreeformTags) {
+            $.databaseFreeformTags = databaseFreeformTags;
+            return this;
+        }
+
+        /**
+         * @param databaseFreeformTags Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseFreeformTags(Map<String,String> databaseFreeformTags) {
+            return databaseFreeformTags(Output.of(databaseFreeformTags));
         }
 
         /**
@@ -755,6 +924,48 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
         }
 
         /**
+         * @param isActiveDataGuardEnabled True if active Data Guard is enabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isActiveDataGuardEnabled(@Nullable Output<Boolean> isActiveDataGuardEnabled) {
+            $.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            return this;
+        }
+
+        /**
+         * @param isActiveDataGuardEnabled True if active Data Guard is enabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isActiveDataGuardEnabled(Boolean isActiveDataGuardEnabled) {
+            return isActiveDataGuardEnabled(Output.of(isActiveDataGuardEnabled));
+        }
+
+        /**
+         * @param keyStoreId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyStoreId(@Nullable Output<String> keyStoreId) {
+            $.keyStoreId = keyStoreId;
+            return this;
+        }
+
+        /**
+         * @param keyStoreId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyStoreId(String keyStoreId) {
+            return keyStoreId(Output.of(keyStoreId));
+        }
+
+        /**
          * @param kmsKeyId The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
          * 
          * @return builder
@@ -891,6 +1102,48 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
         }
 
         /**
+         * @param protectionMode The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder protectionMode(@Nullable Output<String> protectionMode) {
+            $.protectionMode = protectionMode;
+            return this;
+        }
+
+        /**
+         * @param protectionMode The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder protectionMode(String protectionMode) {
+            return protectionMode(Output.of(protectionMode));
+        }
+
+        /**
+         * @param sidPrefix Specifies a prefix for the `Oracle SID` of the database to be created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sidPrefix(@Nullable Output<String> sidPrefix) {
+            $.sidPrefix = sidPrefix;
+            return this;
+        }
+
+        /**
+         * @param sidPrefix Specifies a prefix for the `Oracle SID` of the database to be created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sidPrefix(String sidPrefix) {
+            return sidPrefix(Output.of(sidPrefix));
+        }
+
+        /**
          * @param state The current state of the DB system.
          * 
          * @return builder
@@ -972,6 +1225,41 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
          */
         public Builder timeStampForPointInTimeRecovery(String timeStampForPointInTimeRecovery) {
             return timeStampForPointInTimeRecovery(Output.of(timeStampForPointInTimeRecovery));
+        }
+
+        /**
+         * @param transportType The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+         * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+         * * MAXIMUM_PERFORMANCE - ASYNC
+         * * MAXIMUM_PROTECTION - SYNC
+         * 
+         * For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+         * 
+         * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder transportType(@Nullable Output<String> transportType) {
+            $.transportType = transportType;
+            return this;
+        }
+
+        /**
+         * @param transportType The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+         * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+         * * MAXIMUM_PERFORMANCE - ASYNC
+         * * MAXIMUM_PROTECTION - SYNC
+         * 
+         * For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+         * 
+         * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder transportType(String transportType) {
+            return transportType(Output.of(transportType));
         }
 
         /**

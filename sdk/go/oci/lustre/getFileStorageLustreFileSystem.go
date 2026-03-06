@@ -65,7 +65,8 @@ type LookupFileStorageLustreFileSystemResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group in which the Lustre file system exists.
 	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Lustre file system.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId   string                                         `pulumi:"compartmentId"`
+	DateTimeDetails []GetFileStorageLustreFileSystemDateTimeDetail `pulumi:"dateTimeDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My Lustre file system`
@@ -85,6 +86,8 @@ type LookupFileStorageLustreFileSystemResult struct {
 	// Type of network used by clients to mount the file system.   Example: `tcp`
 	Lnet               string `pulumi:"lnet"`
 	LustreFileSystemId string `pulumi:"lustreFileSystemId"`
+	// The meta-data for maintenance window.
+	MaintenanceWindowMetadatas []GetFileStorageLustreFileSystemMaintenanceWindowMetadata `pulumi:"maintenanceWindowMetadatas"`
 	// The preferred day and time to perform maintenance.
 	MaintenanceWindows []GetFileStorageLustreFileSystemMaintenanceWindow `pulumi:"maintenanceWindows"`
 	// Major version of Lustre running in the Lustre file system.  Example: `2.15`
@@ -92,7 +95,8 @@ type LookupFileStorageLustreFileSystemResult struct {
 	// The IPv4 address of MGS (Lustre Management Service) used by clients to mount the file system. For example '10.0.0.4'.
 	ManagementServiceAddress string `pulumi:"managementServiceAddress"`
 	// A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-	NsgIds []string `pulumi:"nsgIds"`
+	NsgIds                     []string `pulumi:"nsgIds"`
+	OverrideMaintenanceTrigger int      `pulumi:"overrideMaintenanceTrigger"`
 	// The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
 	PerformanceTier string `pulumi:"performanceTier"`
 	// An administrative feature that allows you to restrict root level access from clients that try to access your Lustre file system as root.
@@ -165,6 +169,12 @@ func (o LookupFileStorageLustreFileSystemResultOutput) CompartmentId() pulumi.St
 	return o.ApplyT(func(v LookupFileStorageLustreFileSystemResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+func (o LookupFileStorageLustreFileSystemResultOutput) DateTimeDetails() GetFileStorageLustreFileSystemDateTimeDetailArrayOutput {
+	return o.ApplyT(func(v LookupFileStorageLustreFileSystemResult) []GetFileStorageLustreFileSystemDateTimeDetail {
+		return v.DateTimeDetails
+	}).(GetFileStorageLustreFileSystemDateTimeDetailArrayOutput)
+}
+
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 func (o LookupFileStorageLustreFileSystemResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupFileStorageLustreFileSystemResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
@@ -214,6 +224,13 @@ func (o LookupFileStorageLustreFileSystemResultOutput) LustreFileSystemId() pulu
 	return o.ApplyT(func(v LookupFileStorageLustreFileSystemResult) string { return v.LustreFileSystemId }).(pulumi.StringOutput)
 }
 
+// The meta-data for maintenance window.
+func (o LookupFileStorageLustreFileSystemResultOutput) MaintenanceWindowMetadatas() GetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput {
+	return o.ApplyT(func(v LookupFileStorageLustreFileSystemResult) []GetFileStorageLustreFileSystemMaintenanceWindowMetadata {
+		return v.MaintenanceWindowMetadatas
+	}).(GetFileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput)
+}
+
 // The preferred day and time to perform maintenance.
 func (o LookupFileStorageLustreFileSystemResultOutput) MaintenanceWindows() GetFileStorageLustreFileSystemMaintenanceWindowArrayOutput {
 	return o.ApplyT(func(v LookupFileStorageLustreFileSystemResult) []GetFileStorageLustreFileSystemMaintenanceWindow {
@@ -234,6 +251,10 @@ func (o LookupFileStorageLustreFileSystemResultOutput) ManagementServiceAddress(
 // A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 func (o LookupFileStorageLustreFileSystemResultOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupFileStorageLustreFileSystemResult) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+func (o LookupFileStorageLustreFileSystemResultOutput) OverrideMaintenanceTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupFileStorageLustreFileSystemResult) int { return v.OverrideMaintenanceTrigger }).(pulumi.IntOutput)
 }
 
 // The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.

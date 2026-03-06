@@ -23742,6 +23742,11 @@ export namespace DataSafe {
         userDefinedFunction?: pulumi.Input<string>;
     }
 
+    export interface MaskDataTargetCredentials {
+        password: pulumi.Input<string>;
+        userName: pulumi.Input<string>;
+    }
+
     export interface MaskingPoliciesMaskingColumnMaskingFormat {
         /**
          * (Updatable) A condition that must be true for applying the masking format. It can be any valid  SQL construct that can be used in a SQL predicate. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions.
@@ -31907,6 +31912,14 @@ export namespace Database {
         characterSet?: pulumi.Input<string>;
         connectionStrings?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemDbHomeDatabaseConnectionString>[]>;
         /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        databaseDefinedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        databaseFreeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
          * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         databaseId?: pulumi.Input<string>;
@@ -31946,6 +31959,14 @@ export namespace Database {
          */
         id?: pulumi.Input<string>;
         /**
+         * True if active Data Guard is enabled.
+         */
+        isActiveDataGuardEnabled?: pulumi.Input<boolean>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+         */
+        keyStoreId?: pulumi.Input<string>;
+        /**
          * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
          */
         kmsKeyId?: pulumi.Input<string>;
@@ -31970,6 +31991,14 @@ export namespace Database {
          */
         pluggableDatabases?: pulumi.Input<pulumi.Input<string>[]>;
         /**
+         * The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+         */
+        protectionMode?: pulumi.Input<string>;
+        /**
+         * Specifies a prefix for the `Oracle SID` of the database to be created.
+         */
+        sidPrefix?: pulumi.Input<string>;
+        /**
          * The current state of the DB system.
          */
         state?: pulumi.Input<string>;
@@ -31985,6 +32014,17 @@ export namespace Database {
          * The point in time of the original database from which the new database is created. If not specifed, the latest backup is used to create the database.
          */
         timeStampForPointInTimeRecovery?: pulumi.Input<string>;
+        /**
+         * The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+         * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+         * * MAXIMUM_PERFORMANCE - ASYNC
+         * * MAXIMUM_PROTECTION - SYNC
+         *
+         * For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+         *
+         * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+         */
+        transportType?: pulumi.Input<string>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
          */
@@ -32034,7 +32074,7 @@ export namespace Database {
 
     export interface DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
         /**
-         * Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+         * Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
          */
         backupRetentionPolicyOnTerminate?: pulumi.Input<string>;
         /**
@@ -33614,6 +33654,18 @@ export namespace Database {
     }
 
     export interface GetDbSystemHistoryEntriesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDbSystemOsPatchHistoryEntriesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDbSystemOsPatchHistoryEntriesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -48475,12 +48527,6 @@ export namespace FusionApps {
          * The administrator's last name.
          */
         lastName: pulumi.Input<string>;
-        /**
-         * The password for the administrator.
-         *
-         * @deprecated The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
-         */
-        password?: pulumi.Input<string>;
         /**
          * The username for the administrator.
          */
@@ -82857,15 +82903,63 @@ export namespace Logging {
 }
 
 export namespace Lustre {
+    export interface FileStorageLustreFileSystemDateTimeDetails {
+        /**
+         * A user-friendly date. Example: `2025-04-25`
+         */
+        date: pulumi.Input<string>;
+        /**
+         * A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+         */
+        time: pulumi.Input<string>;
+    }
+
     export interface FileStorageLustreFileSystemMaintenanceWindow {
         /**
-         * Day of the week when the maintainence window starts.
+         * (Updatable) Day of the week when the maintainence window starts.
          */
         dayOfWeek?: pulumi.Input<string>;
         /**
-         * The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
+         * (Updatable) The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
          */
         timeStart?: pulumi.Input<string>;
+    }
+
+    export interface FileStorageLustreFileSystemMaintenanceWindowMetadata {
+        /**
+         * A generic object to show date and time in the below specified format
+         */
+        activeOrNextPlannedMaintenances?: pulumi.Input<pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance>[]>;
+        /**
+         * A generic object to show date and time in the below specified format
+         */
+        finishedMaintenances?: pulumi.Input<pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance>[]>;
+        /**
+         * whether or not an active maintenance is going on for the LustreFileSystem
+         */
+        isMaintenanceInProgress?: pulumi.Input<boolean>;
+    }
+
+    export interface FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance {
+        /**
+         * A user-friendly date. Example: `2025-04-25`
+         */
+        date?: pulumi.Input<string>;
+        /**
+         * A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+         */
+        time?: pulumi.Input<string>;
+    }
+
+    export interface FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance {
+        /**
+         * A user-friendly date. Example: `2025-04-25`
+         */
+        date?: pulumi.Input<string>;
+        /**
+         * A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+         */
+        time?: pulumi.Input<string>;
     }
 
     export interface FileStorageLustreFileSystemRootSquashConfiguration {
@@ -82885,6 +82979,30 @@ export namespace Lustre {
          * (Updatable) The UID value to remap to when squashing a client UID. See `identitySquash` for more details. If unspecified, defaults to `65534`.
          */
         squashUid?: pulumi.Input<string>;
+    }
+
+    export interface GetFileStorageAvailableMaintenanceScheduleStartTimesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFileStorageAvailableMaintenanceScheduleStartTimesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFileStorageAvailableOverrideMaintenanceStartTimesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetFileStorageLustreFileSystemsFilter {
@@ -89306,6 +89424,21 @@ export namespace OperatorAccessControl {
 }
 
 export namespace Opsi {
+    export interface ChargebackPlanPlanCustomItem {
+        /**
+         * (Updatable) Indicates whether the chargeback plan customization item can be customized.
+         */
+        isCustomizable?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Name of chargeback plan customization item. Example items for Exadata Insights Chargeback are statistic, percentile, infrastructureCost, additionalServerCost etc.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of chargeback plan customization item.
+         */
+        value: pulumi.Input<string>;
+    }
+
     export interface DatabaseInsightConnectionCredentialDetails {
         /**
          * Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
@@ -89396,6 +89529,21 @@ export namespace Opsi {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
          */
         walletSecretId?: pulumi.Input<string>;
+    }
+
+    export interface ExadataInsightChargebackPlanDetail {
+        /**
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI Chargeback plan resource.
+         */
+        planId?: pulumi.Input<string>;
+        /**
+         * Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
+         */
+        planType?: pulumi.Input<string>;
+        /**
+         * The date and time the chargeback plan was enabled on the resource, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
+        timeEnabled?: pulumi.Input<string>;
     }
 
     export interface ExadataInsightMemberVmClusterDetail {
@@ -89765,6 +89913,24 @@ export namespace Opsi {
     }
 
     export interface GetAwrHubsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetChargebackPlansFilter {
+        /**
+         * Name of chargeback plan customization item. Example items for Exadata Insights Chargeback are statistic, percentile, infrastructureCost, additionalServerCost etc.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetChargebackPlansFilterArgs {
+        /**
+         * Name of chargeback plan customization item. Example items for Exadata Insights Chargeback are statistic, percentile, infrastructureCost, additionalServerCost etc.
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -93217,6 +93383,24 @@ export namespace Redis {
     }
 
     export interface GetOciCacheDefaultConfigSetsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetOciCacheEngineOptionsFilter {
+        /**
+         * Oracle Cloud Infrastructure Cache engine version friendly name
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOciCacheEngineOptionsFilterArgs {
+        /**
+         * Oracle Cloud Infrastructure Cache engine version friendly name
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;

@@ -23381,6 +23381,7 @@ class GetModelGroupModelsModelGroupModelResult(dict):
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 inference_key: _builtins.str,
                  is_model_by_reference: _builtins.bool,
                  lifecycle_details: _builtins.str,
                  model_id: _builtins.str,
@@ -23397,6 +23398,7 @@ class GetModelGroupModelsModelGroupModelResult(dict):
         :param _builtins.str display_name: <b>Filter</b> results by its user-friendly name.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param _builtins.str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+        :param _builtins.str inference_key: SaaS friendly name of the model.
         :param _builtins.bool is_model_by_reference: Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
         :param _builtins.str lifecycle_details: Details about the lifecycle state of the model.
         :param _builtins.str model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
@@ -23413,6 +23415,7 @@ class GetModelGroupModelsModelGroupModelResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "inference_key", inference_key)
         pulumi.set(__self__, "is_model_by_reference", is_model_by_reference)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "model_id", model_id)
@@ -23477,6 +23480,14 @@ class GetModelGroupModelsModelGroupModelResult(dict):
         <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="inferenceKey")
+    def inference_key(self) -> _builtins.str:
+        """
+        SaaS friendly name of the model.
+        """
+        return pulumi.get(self, "inference_key")
 
     @_builtins.property
     @pulumi.getter(name="isModelByReference")

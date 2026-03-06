@@ -167,11 +167,20 @@ type DbSystem struct {
 	NodeCount pulumi.IntOutput `pulumi:"nodeCount"`
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
-	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
+	NsgIds          pulumi.StringArrayOutput `pulumi:"nsgIds"`
+	OsPatchAction   pulumi.StringPtrOutput   `pulumi:"osPatchAction"`
+	OsPatchDbNodeId pulumi.StringPtrOutput   `pulumi:"osPatchDbNodeId"`
+	// (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	OsPatchTrigger pulumi.IntPtrOutput `pulumi:"osPatchTrigger"`
 	// The most recent OS Patch Version applied on the DB system.
 	OsVersion pulumi.StringOutput `pulumi:"osVersion"`
 	// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	PointInTimeDataDiskCloneTimestamp pulumi.StringOutput `pulumi:"pointInTimeDataDiskCloneTimestamp"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+	PrimaryDbSystemId pulumi.StringOutput `pulumi:"primaryDbSystemId"`
 	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
 	PrivateIp pulumi.StringOutput `pulumi:"privateIp"`
 	// A private IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
@@ -220,9 +229,6 @@ type DbSystem struct {
 	// The date and time the DB system was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeZone pulumi.StringOutput `pulumi:"timeZone"`
 	// The Oracle Database version of the DB system.
 	Version pulumi.StringOutput `pulumi:"version"`
@@ -384,11 +390,20 @@ type dbSystemState struct {
 	NodeCount *int `pulumi:"nodeCount"`
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
-	NsgIds []string `pulumi:"nsgIds"`
+	NsgIds          []string `pulumi:"nsgIds"`
+	OsPatchAction   *string  `pulumi:"osPatchAction"`
+	OsPatchDbNodeId *string  `pulumi:"osPatchDbNodeId"`
+	// (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	OsPatchTrigger *int `pulumi:"osPatchTrigger"`
 	// The most recent OS Patch Version applied on the DB system.
 	OsVersion *string `pulumi:"osVersion"`
 	// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	PointInTimeDataDiskCloneTimestamp *string `pulumi:"pointInTimeDataDiskCloneTimestamp"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+	PrimaryDbSystemId *string `pulumi:"primaryDbSystemId"`
 	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
 	PrivateIp *string `pulumi:"privateIp"`
 	// A private IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
@@ -437,9 +452,6 @@ type dbSystemState struct {
 	// The date and time the DB system was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeZone *string `pulumi:"timeZone"`
 	// The Oracle Database version of the DB system.
 	Version *string `pulumi:"version"`
@@ -551,11 +563,20 @@ type DbSystemState struct {
 	NodeCount pulumi.IntPtrInput
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
-	NsgIds pulumi.StringArrayInput
+	NsgIds          pulumi.StringArrayInput
+	OsPatchAction   pulumi.StringPtrInput
+	OsPatchDbNodeId pulumi.StringPtrInput
+	// (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	OsPatchTrigger pulumi.IntPtrInput
 	// The most recent OS Patch Version applied on the DB system.
 	OsVersion pulumi.StringPtrInput
 	// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	PointInTimeDataDiskCloneTimestamp pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+	PrimaryDbSystemId pulumi.StringPtrInput
 	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
 	PrivateIp pulumi.StringPtrInput
 	// A private IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
@@ -604,9 +625,6 @@ type DbSystemState struct {
 	// The date and time the DB system was created.
 	TimeCreated pulumi.StringPtrInput
 	// The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeZone pulumi.StringPtrInput
 	// The Oracle Database version of the DB system.
 	Version pulumi.StringPtrInput
@@ -706,7 +724,16 @@ type dbSystemArgs struct {
 	NodeCount *int `pulumi:"nodeCount"`
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
-	NsgIds []string `pulumi:"nsgIds"`
+	NsgIds          []string `pulumi:"nsgIds"`
+	OsPatchAction   *string  `pulumi:"osPatchAction"`
+	OsPatchDbNodeId *string  `pulumi:"osPatchDbNodeId"`
+	// (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	OsPatchTrigger *int `pulumi:"osPatchTrigger"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+	PrimaryDbSystemId *string `pulumi:"primaryDbSystemId"`
 	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
 	PrivateIp *string `pulumi:"privateIp"`
 	// A private IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
@@ -741,9 +768,6 @@ type dbSystemArgs struct {
 	SubnetId       string  `pulumi:"subnetId"`
 	SubscriptionId *string `pulumi:"subscriptionId"`
 	// The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeZone *string `pulumi:"timeZone"`
 }
 
@@ -832,7 +856,16 @@ type DbSystemArgs struct {
 	NodeCount pulumi.IntPtrInput
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
-	NsgIds pulumi.StringArrayInput
+	NsgIds          pulumi.StringArrayInput
+	OsPatchAction   pulumi.StringPtrInput
+	OsPatchDbNodeId pulumi.StringPtrInput
+	// (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	OsPatchTrigger pulumi.IntPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+	PrimaryDbSystemId pulumi.StringPtrInput
 	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
 	PrivateIp pulumi.StringPtrInput
 	// A private IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
@@ -867,9 +900,6 @@ type DbSystemArgs struct {
 	SubnetId       pulumi.StringInput
 	SubscriptionId pulumi.StringPtrInput
 	// The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeZone pulumi.StringPtrInput
 }
 
@@ -1168,6 +1198,22 @@ func (o DbSystemOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.StringArrayOutput { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
+func (o DbSystemOutput) OsPatchAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystem) pulumi.StringPtrOutput { return v.OsPatchAction }).(pulumi.StringPtrOutput)
+}
+
+func (o DbSystemOutput) OsPatchDbNodeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystem) pulumi.StringPtrOutput { return v.OsPatchDbNodeId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o DbSystemOutput) OsPatchTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DbSystem) pulumi.IntPtrOutput { return v.OsPatchTrigger }).(pulumi.IntPtrOutput)
+}
+
 // The most recent OS Patch Version applied on the DB system.
 func (o DbSystemOutput) OsVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.OsVersion }).(pulumi.StringOutput)
@@ -1176,6 +1222,11 @@ func (o DbSystemOutput) OsVersion() pulumi.StringOutput {
 // The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 func (o DbSystemOutput) PointInTimeDataDiskCloneTimestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.PointInTimeDataDiskCloneTimestamp }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+func (o DbSystemOutput) PrimaryDbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.PrimaryDbSystemId }).(pulumi.StringOutput)
 }
 
 // A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
@@ -1283,9 +1334,6 @@ func (o DbSystemOutput) TimeCreated() pulumi.StringOutput {
 }
 
 // The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DbSystemOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.TimeZone }).(pulumi.StringOutput)
 }

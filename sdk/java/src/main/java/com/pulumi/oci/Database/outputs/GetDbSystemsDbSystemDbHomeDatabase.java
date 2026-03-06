@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDbSystemsDbSystemDbHomeDatabaseConnectionString;
 import com.pulumi.oci.Database.outputs.GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -23,6 +24,8 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
     private String backupTdePassword;
     private String characterSet;
     private List<GetDbSystemsDbSystemDbHomeDatabaseConnectionString> connectionStrings;
+    private Map<String,String> databaseDefinedTags;
+    private Map<String,String> databaseFreeformTags;
     private String databaseId;
     private String databaseSoftwareImageId;
     private List<GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig> dbBackupConfigs;
@@ -45,6 +48,8 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
      * 
      */
     private String id;
+    private Boolean isActiveDataGuardEnabled;
+    private String keyStoreId;
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
@@ -59,6 +64,8 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
     private String ncharacterSet;
     private String pdbName;
     private List<String> pluggableDatabases;
+    private String protectionMode;
+    private String sidPrefix;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
@@ -71,6 +78,7 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
      */
     private String timeCreated;
     private String timeStampForPointInTimeRecovery;
+    private String transportType;
     private String vaultId;
 
     private GetDbSystemsDbSystemDbHomeDatabase() {}
@@ -92,6 +100,12 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
     }
     public List<GetDbSystemsDbSystemDbHomeDatabaseConnectionString> connectionStrings() {
         return this.connectionStrings;
+    }
+    public Map<String,String> databaseDefinedTags() {
+        return this.databaseDefinedTags;
+    }
+    public Map<String,String> databaseFreeformTags() {
+        return this.databaseFreeformTags;
     }
     public String databaseId() {
         return this.databaseId;
@@ -135,6 +149,12 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
     public String id() {
         return this.id;
     }
+    public Boolean isActiveDataGuardEnabled() {
+        return this.isActiveDataGuardEnabled;
+    }
+    public String keyStoreId() {
+        return this.keyStoreId;
+    }
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
@@ -161,6 +181,12 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
     public List<String> pluggableDatabases() {
         return this.pluggableDatabases;
     }
+    public String protectionMode() {
+        return this.protectionMode;
+    }
+    public String sidPrefix() {
+        return this.sidPrefix;
+    }
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
@@ -181,6 +207,9 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
     public String timeStampForPointInTimeRecovery() {
         return this.timeStampForPointInTimeRecovery;
     }
+    public String transportType() {
+        return this.transportType;
+    }
     public String vaultId() {
         return this.vaultId;
     }
@@ -199,6 +228,8 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
         private String backupTdePassword;
         private String characterSet;
         private List<GetDbSystemsDbSystemDbHomeDatabaseConnectionString> connectionStrings;
+        private Map<String,String> databaseDefinedTags;
+        private Map<String,String> databaseFreeformTags;
         private String databaseId;
         private String databaseSoftwareImageId;
         private List<GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig> dbBackupConfigs;
@@ -209,16 +240,21 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
         private Map<String,String> definedTags;
         private Map<String,String> freeformTags;
         private String id;
+        private Boolean isActiveDataGuardEnabled;
+        private String keyStoreId;
         private String kmsKeyId;
         private String kmsKeyVersionId;
         private String lifecycleDetails;
         private String ncharacterSet;
         private String pdbName;
         private List<String> pluggableDatabases;
+        private String protectionMode;
+        private String sidPrefix;
         private String state;
         private String tdeWalletPassword;
         private String timeCreated;
         private String timeStampForPointInTimeRecovery;
+        private String transportType;
         private String vaultId;
         public Builder() {}
         public Builder(GetDbSystemsDbSystemDbHomeDatabase defaults) {
@@ -228,6 +264,8 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
     	      this.backupTdePassword = defaults.backupTdePassword;
     	      this.characterSet = defaults.characterSet;
     	      this.connectionStrings = defaults.connectionStrings;
+    	      this.databaseDefinedTags = defaults.databaseDefinedTags;
+    	      this.databaseFreeformTags = defaults.databaseFreeformTags;
     	      this.databaseId = defaults.databaseId;
     	      this.databaseSoftwareImageId = defaults.databaseSoftwareImageId;
     	      this.dbBackupConfigs = defaults.dbBackupConfigs;
@@ -238,16 +276,21 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
     	      this.definedTags = defaults.definedTags;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isActiveDataGuardEnabled = defaults.isActiveDataGuardEnabled;
+    	      this.keyStoreId = defaults.keyStoreId;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.pdbName = defaults.pdbName;
     	      this.pluggableDatabases = defaults.pluggableDatabases;
+    	      this.protectionMode = defaults.protectionMode;
+    	      this.sidPrefix = defaults.sidPrefix;
     	      this.state = defaults.state;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeStampForPointInTimeRecovery = defaults.timeStampForPointInTimeRecovery;
+    	      this.transportType = defaults.transportType;
     	      this.vaultId = defaults.vaultId;
         }
 
@@ -293,6 +336,22 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
         }
         public Builder connectionStrings(GetDbSystemsDbSystemDbHomeDatabaseConnectionString... connectionStrings) {
             return connectionStrings(List.of(connectionStrings));
+        }
+        @CustomType.Setter
+        public Builder databaseDefinedTags(Map<String,String> databaseDefinedTags) {
+            if (databaseDefinedTags == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "databaseDefinedTags");
+            }
+            this.databaseDefinedTags = databaseDefinedTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseFreeformTags(Map<String,String> databaseFreeformTags) {
+            if (databaseFreeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "databaseFreeformTags");
+            }
+            this.databaseFreeformTags = databaseFreeformTags;
+            return this;
         }
         @CustomType.Setter
         public Builder databaseId(String databaseId) {
@@ -378,6 +437,22 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder isActiveDataGuardEnabled(Boolean isActiveDataGuardEnabled) {
+            if (isActiveDataGuardEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "isActiveDataGuardEnabled");
+            }
+            this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder keyStoreId(String keyStoreId) {
+            if (keyStoreId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "keyStoreId");
+            }
+            this.keyStoreId = keyStoreId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             if (kmsKeyId == null) {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "kmsKeyId");
@@ -429,6 +504,22 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
             return pluggableDatabases(List.of(pluggableDatabases));
         }
         @CustomType.Setter
+        public Builder protectionMode(String protectionMode) {
+            if (protectionMode == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "protectionMode");
+            }
+            this.protectionMode = protectionMode;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sidPrefix(String sidPrefix) {
+            if (sidPrefix == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "sidPrefix");
+            }
+            this.sidPrefix = sidPrefix;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "state");
@@ -461,6 +552,14 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder transportType(String transportType) {
+            if (transportType == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "transportType");
+            }
+            this.transportType = transportType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder vaultId(String vaultId) {
             if (vaultId == null) {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabase", "vaultId");
@@ -475,6 +574,8 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
             _resultValue.backupTdePassword = backupTdePassword;
             _resultValue.characterSet = characterSet;
             _resultValue.connectionStrings = connectionStrings;
+            _resultValue.databaseDefinedTags = databaseDefinedTags;
+            _resultValue.databaseFreeformTags = databaseFreeformTags;
             _resultValue.databaseId = databaseId;
             _resultValue.databaseSoftwareImageId = databaseSoftwareImageId;
             _resultValue.dbBackupConfigs = dbBackupConfigs;
@@ -485,16 +586,21 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
             _resultValue.definedTags = definedTags;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            _resultValue.keyStoreId = keyStoreId;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.ncharacterSet = ncharacterSet;
             _resultValue.pdbName = pdbName;
             _resultValue.pluggableDatabases = pluggableDatabases;
+            _resultValue.protectionMode = protectionMode;
+            _resultValue.sidPrefix = sidPrefix;
             _resultValue.state = state;
             _resultValue.tdeWalletPassword = tdeWalletPassword;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;
+            _resultValue.transportType = transportType;
             _resultValue.vaultId = vaultId;
             return _resultValue;
         }

@@ -39,12 +39,6 @@ import (
 //				ReportingRegion:     pulumi.Any(cloudGuardConfigurationReportingRegion),
 //				Status:              pulumi.Any(cloudGuardConfigurationStatus),
 //				SelfManageResources: pulumi.Any(cloudGuardConfigurationSelfManageResources),
-//				ServiceConfigurations: []map[string]interface{}{
-//					map[string]interface{}{
-//						"serviceConfigurationType": cloudGuardConfigurationServiceConfigurationsServiceConfigurationType,
-//						"status":                   cloudGuardConfigurationServiceConfigurationsStatus,
-//					},
-//				},
 //			})
 //			if err != nil {
 //				return err

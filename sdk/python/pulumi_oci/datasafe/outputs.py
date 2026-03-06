@@ -34,6 +34,7 @@ __all__ = [
     'DiscoveryJobsResultModifiedAttribute',
     'DiscoveryModTablesForDiscovery',
     'LibraryMasingFormatFormatEntry',
+    'MaskDataTargetCredentials',
     'MaskingPoliciesMaskingColumnMaskingFormat',
     'MaskingPoliciesMaskingColumnMaskingFormatFormatEntry',
     'MaskingPolicyColumnSource',
@@ -2908,6 +2909,42 @@ class LibraryMasingFormatFormatEntry(dict):
         (Updatable) The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         """
         return pulumi.get(self, "user_defined_function")
+
+
+@pulumi.output_type
+class MaskDataTargetCredentials(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "userName":
+            suggest = "user_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MaskDataTargetCredentials. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MaskDataTargetCredentials.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MaskDataTargetCredentials.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 password: _builtins.str,
+                 user_name: _builtins.str):
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def password(self) -> _builtins.str:
+        return pulumi.get(self, "password")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        return pulumi.get(self, "user_name")
 
 
 @pulumi.output_type
@@ -15603,6 +15640,7 @@ class GetMaskingPoliciesMaskingPolicyCollectionResult(dict):
 class GetMaskingPoliciesMaskingPolicyCollectionItemResult(dict):
     def __init__(__self__, *,
                  add_masking_columns_from_sdm_trigger: _builtins.int,
+                 are_target_credentials_required: _builtins.bool,
                  column_sources: Sequence['outputs.GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceResult'],
                  compartment_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
@@ -15622,6 +15660,7 @@ class GetMaskingPoliciesMaskingPolicyCollectionItemResult(dict):
                  time_created: _builtins.str,
                  time_updated: _builtins.str):
         """
+        :param _builtins.bool are_target_credentials_required: Specifies whether target database credentials are required to perform masking with this policy
         :param Sequence['GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArgs'] column_sources: The source of masking columns.
         :param _builtins.str compartment_id: A filter to return only resources that match the specified compartment OCID.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
@@ -15641,6 +15680,7 @@ class GetMaskingPoliciesMaskingPolicyCollectionItemResult(dict):
         :param _builtins.str time_updated: The date and time the masking policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
         """
         pulumi.set(__self__, "add_masking_columns_from_sdm_trigger", add_masking_columns_from_sdm_trigger)
+        pulumi.set(__self__, "are_target_credentials_required", are_target_credentials_required)
         pulumi.set(__self__, "column_sources", column_sources)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -15664,6 +15704,14 @@ class GetMaskingPoliciesMaskingPolicyCollectionItemResult(dict):
     @pulumi.getter(name="addMaskingColumnsFromSdmTrigger")
     def add_masking_columns_from_sdm_trigger(self) -> _builtins.int:
         return pulumi.get(self, "add_masking_columns_from_sdm_trigger")
+
+    @_builtins.property
+    @pulumi.getter(name="areTargetCredentialsRequired")
+    def are_target_credentials_required(self) -> _builtins.bool:
+        """
+        Specifies whether target database credentials are required to perform masking with this policy
+        """
+        return pulumi.get(self, "are_target_credentials_required")
 
     @_builtins.property
     @pulumi.getter(name="columnSources")
@@ -15943,7 +15991,7 @@ class GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem
                  timestamp: _builtins.str):
         """
         :param _builtins.str description: A human-readable description for the log entry.
-        :param _builtins.str health_check_type: An enum type entry for each health check in the masking policy. Each enum describes a type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking. TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. Also verifies that the specified tablespace by the user is valid, if user has provided one DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available. UNDO_TABLESPACE_CHECK checks if for all the instances of undo tablespace the AUTOEXTEND feature is enabled.  If it's not enabled, it further checks if the undo tablespace has any space remaining. STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not. ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database. DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns are available in the target database. TIME_TRAVEL_CHECK checks if the masking tables have Time Travel enabled. INVALID_PACKAGE_CHECK checks if any of the required packages are in invalid state.
+        :param _builtins.str health_check_type: An enum type entry for each health check in the masking policy. Each enum describes a type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking. TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. Also verifies that the specified tablespace by the user is valid, if user has provided one DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available. UNDO_TABLESPACE_CHECK checks if for all the instances of undo tablespace the AUTOEXTEND feature is enabled.  If it's not enabled, it further checks if the undo tablespace has any space remaining. STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not. ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database. DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns are available in the target database. TIME_TRAVEL_CHECK checks if the masking tables have Time Travel enabled. SYSTEM_OBJECTS_CHECK checks if the masking tables have dependent objects present in SYS schema. INVALID_PACKAGE_CHECK checks if any of the required packages are in invalid state. AUDIT_POLICY_CHECK checks if the masking tables have Audit policies enabled. USER_CREDENTIALS_CHECK checks if target database user credentials are required to run masking using the policy
         :param _builtins.str message: A human-readable log entry.
         :param _builtins.str message_type: A filter to return only the resources that match the specified log message type.
         :param _builtins.str remediation: A human-readable log entry to remedy any error or warnings in the masking policy.
@@ -15968,7 +16016,7 @@ class GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem
     @pulumi.getter(name="healthCheckType")
     def health_check_type(self) -> _builtins.str:
         """
-        An enum type entry for each health check in the masking policy. Each enum describes a type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking. TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. Also verifies that the specified tablespace by the user is valid, if user has provided one DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available. UNDO_TABLESPACE_CHECK checks if for all the instances of undo tablespace the AUTOEXTEND feature is enabled.  If it's not enabled, it further checks if the undo tablespace has any space remaining. STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not. ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database. DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns are available in the target database. TIME_TRAVEL_CHECK checks if the masking tables have Time Travel enabled. INVALID_PACKAGE_CHECK checks if any of the required packages are in invalid state.
+        An enum type entry for each health check in the masking policy. Each enum describes a type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking. TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. Also verifies that the specified tablespace by the user is valid, if user has provided one DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available. UNDO_TABLESPACE_CHECK checks if for all the instances of undo tablespace the AUTOEXTEND feature is enabled.  If it's not enabled, it further checks if the undo tablespace has any space remaining. STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not. ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database. DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns are available in the target database. TIME_TRAVEL_CHECK checks if the masking tables have Time Travel enabled. SYSTEM_OBJECTS_CHECK checks if the masking tables have dependent objects present in SYS schema. INVALID_PACKAGE_CHECK checks if any of the required packages are in invalid state. AUDIT_POLICY_CHECK checks if the masking tables have Audit policies enabled. USER_CREDENTIALS_CHECK checks if target database user credentials are required to run masking using the policy
         """
         return pulumi.get(self, "health_check_type")
 

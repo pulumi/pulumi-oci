@@ -56,7 +56,13 @@ import (
 //					"Department": pulumi.String("Finance"),
 //				},
 //				KmsKeyId: pulumi.Any(testKey.Id),
-//				NsgIds:   pulumi.Any(lustreFileSystemNsgIds),
+//				MaintenanceWindows: lustre.FileStorageLustreFileSystemMaintenanceWindowArray{
+//					&lustre.FileStorageLustreFileSystemMaintenanceWindowArgs{
+//						DayOfWeek: pulumi.Any(lustreFileSystemMaintenanceWindowDayOfWeek),
+//						TimeStart: pulumi.Any(lustreFileSystemMaintenanceWindowTimeStart),
+//					},
+//				},
+//				NsgIds: pulumi.Any(lustreFileSystemNsgIds),
 //			})
 //			if err != nil {
 //				return err
@@ -84,7 +90,8 @@ type FileStorageLustreFileSystem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group in which the Lustre file system exists.
 	ClusterPlacementGroupId pulumi.StringOutput `pulumi:"clusterPlacementGroupId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Lustre file system.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId   pulumi.StringOutput                                 `pulumi:"compartmentId"`
+	DateTimeDetails FileStorageLustreFileSystemDateTimeDetailsPtrOutput `pulumi:"dateTimeDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My Lustre file system`
@@ -101,7 +108,9 @@ type FileStorageLustreFileSystem struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Type of network used by clients to mount the file system.   Example: `tcp`
 	Lnet pulumi.StringOutput `pulumi:"lnet"`
-	// The preferred day and time to perform maintenance.
+	// The meta-data for maintenance window.
+	MaintenanceWindowMetadatas FileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput `pulumi:"maintenanceWindowMetadatas"`
+	// (Updatable) The preferred day and time to perform maintenance.
 	MaintenanceWindows FileStorageLustreFileSystemMaintenanceWindowArrayOutput `pulumi:"maintenanceWindows"`
 	// Major version of Lustre running in the Lustre file system.  Example: `2.15`
 	MajorVersion pulumi.StringOutput `pulumi:"majorVersion"`
@@ -109,6 +118,11 @@ type FileStorageLustreFileSystem struct {
 	ManagementServiceAddress pulumi.StringOutput `pulumi:"managementServiceAddress"`
 	// (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
+	// (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	OverrideMaintenanceTrigger pulumi.IntPtrOutput `pulumi:"overrideMaintenanceTrigger"`
 	// The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
 	PerformanceTier pulumi.StringOutput `pulumi:"performanceTier"`
 	// (Updatable) An administrative feature that allows you to restrict root level access from clients that try to access your Lustre file system as root.
@@ -116,9 +130,6 @@ type FileStorageLustreFileSystem struct {
 	// The current state of the Lustre file system.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Lustre file system is in.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
@@ -194,7 +205,8 @@ type fileStorageLustreFileSystemState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group in which the Lustre file system exists.
 	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Lustre file system.
-	CompartmentId *string `pulumi:"compartmentId"`
+	CompartmentId   *string                                     `pulumi:"compartmentId"`
+	DateTimeDetails *FileStorageLustreFileSystemDateTimeDetails `pulumi:"dateTimeDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My Lustre file system`
@@ -211,7 +223,9 @@ type fileStorageLustreFileSystemState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Type of network used by clients to mount the file system.   Example: `tcp`
 	Lnet *string `pulumi:"lnet"`
-	// The preferred day and time to perform maintenance.
+	// The meta-data for maintenance window.
+	MaintenanceWindowMetadatas []FileStorageLustreFileSystemMaintenanceWindowMetadata `pulumi:"maintenanceWindowMetadatas"`
+	// (Updatable) The preferred day and time to perform maintenance.
 	MaintenanceWindows []FileStorageLustreFileSystemMaintenanceWindow `pulumi:"maintenanceWindows"`
 	// Major version of Lustre running in the Lustre file system.  Example: `2.15`
 	MajorVersion *string `pulumi:"majorVersion"`
@@ -219,6 +233,11 @@ type fileStorageLustreFileSystemState struct {
 	ManagementServiceAddress *string `pulumi:"managementServiceAddress"`
 	// (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds []string `pulumi:"nsgIds"`
+	// (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	OverrideMaintenanceTrigger *int `pulumi:"overrideMaintenanceTrigger"`
 	// The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
 	PerformanceTier *string `pulumi:"performanceTier"`
 	// (Updatable) An administrative feature that allows you to restrict root level access from clients that try to access your Lustre file system as root.
@@ -226,9 +245,6 @@ type fileStorageLustreFileSystemState struct {
 	// The current state of the Lustre file system.
 	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Lustre file system is in.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId *string `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
@@ -248,7 +264,8 @@ type FileStorageLustreFileSystemState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group in which the Lustre file system exists.
 	ClusterPlacementGroupId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Lustre file system.
-	CompartmentId pulumi.StringPtrInput
+	CompartmentId   pulumi.StringPtrInput
+	DateTimeDetails FileStorageLustreFileSystemDateTimeDetailsPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My Lustre file system`
@@ -265,7 +282,9 @@ type FileStorageLustreFileSystemState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// Type of network used by clients to mount the file system.   Example: `tcp`
 	Lnet pulumi.StringPtrInput
-	// The preferred day and time to perform maintenance.
+	// The meta-data for maintenance window.
+	MaintenanceWindowMetadatas FileStorageLustreFileSystemMaintenanceWindowMetadataArrayInput
+	// (Updatable) The preferred day and time to perform maintenance.
 	MaintenanceWindows FileStorageLustreFileSystemMaintenanceWindowArrayInput
 	// Major version of Lustre running in the Lustre file system.  Example: `2.15`
 	MajorVersion pulumi.StringPtrInput
@@ -273,6 +292,11 @@ type FileStorageLustreFileSystemState struct {
 	ManagementServiceAddress pulumi.StringPtrInput
 	// (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds pulumi.StringArrayInput
+	// (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	OverrideMaintenanceTrigger pulumi.IntPtrInput
 	// The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
 	PerformanceTier pulumi.StringPtrInput
 	// (Updatable) An administrative feature that allows you to restrict root level access from clients that try to access your Lustre file system as root.
@@ -280,9 +304,6 @@ type FileStorageLustreFileSystemState struct {
 	// The current state of the Lustre file system.
 	State pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Lustre file system is in.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
@@ -306,7 +327,8 @@ type fileStorageLustreFileSystemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group in which the Lustre file system exists.
 	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Lustre file system.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId   string                                      `pulumi:"compartmentId"`
+	DateTimeDetails *FileStorageLustreFileSystemDateTimeDetails `pulumi:"dateTimeDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My Lustre file system`
@@ -319,16 +341,20 @@ type fileStorageLustreFileSystemArgs struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
+	// (Updatable) The preferred day and time to perform maintenance.
+	MaintenanceWindows []FileStorageLustreFileSystemMaintenanceWindow `pulumi:"maintenanceWindows"`
 	// (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds []string `pulumi:"nsgIds"`
+	// (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	OverrideMaintenanceTrigger *int `pulumi:"overrideMaintenanceTrigger"`
 	// The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
 	PerformanceTier string `pulumi:"performanceTier"`
 	// (Updatable) An administrative feature that allows you to restrict root level access from clients that try to access your Lustre file system as root.
 	RootSquashConfiguration FileStorageLustreFileSystemRootSquashConfiguration `pulumi:"rootSquashConfiguration"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Lustre file system is in.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId string `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
@@ -343,7 +369,8 @@ type FileStorageLustreFileSystemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group in which the Lustre file system exists.
 	ClusterPlacementGroupId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Lustre file system.
-	CompartmentId pulumi.StringInput
+	CompartmentId   pulumi.StringInput
+	DateTimeDetails FileStorageLustreFileSystemDateTimeDetailsPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My Lustre file system`
@@ -356,16 +383,20 @@ type FileStorageLustreFileSystemArgs struct {
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
 	KmsKeyId pulumi.StringPtrInput
+	// (Updatable) The preferred day and time to perform maintenance.
+	MaintenanceWindows FileStorageLustreFileSystemMaintenanceWindowArrayInput
 	// (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds pulumi.StringArrayInput
+	// (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	OverrideMaintenanceTrigger pulumi.IntPtrInput
 	// The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
 	PerformanceTier pulumi.StringInput
 	// (Updatable) An administrative feature that allows you to restrict root level access from clients that try to access your Lustre file system as root.
 	RootSquashConfiguration FileStorageLustreFileSystemRootSquashConfigurationInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Lustre file system is in.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
@@ -478,6 +509,12 @@ func (o FileStorageLustreFileSystemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *FileStorageLustreFileSystem) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+func (o FileStorageLustreFileSystemOutput) DateTimeDetails() FileStorageLustreFileSystemDateTimeDetailsPtrOutput {
+	return o.ApplyT(func(v *FileStorageLustreFileSystem) FileStorageLustreFileSystemDateTimeDetailsPtrOutput {
+		return v.DateTimeDetails
+	}).(FileStorageLustreFileSystemDateTimeDetailsPtrOutput)
+}
+
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 func (o FileStorageLustreFileSystemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *FileStorageLustreFileSystem) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
@@ -518,7 +555,14 @@ func (o FileStorageLustreFileSystemOutput) Lnet() pulumi.StringOutput {
 	return o.ApplyT(func(v *FileStorageLustreFileSystem) pulumi.StringOutput { return v.Lnet }).(pulumi.StringOutput)
 }
 
-// The preferred day and time to perform maintenance.
+// The meta-data for maintenance window.
+func (o FileStorageLustreFileSystemOutput) MaintenanceWindowMetadatas() FileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput {
+	return o.ApplyT(func(v *FileStorageLustreFileSystem) FileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput {
+		return v.MaintenanceWindowMetadatas
+	}).(FileStorageLustreFileSystemMaintenanceWindowMetadataArrayOutput)
+}
+
+// (Updatable) The preferred day and time to perform maintenance.
 func (o FileStorageLustreFileSystemOutput) MaintenanceWindows() FileStorageLustreFileSystemMaintenanceWindowArrayOutput {
 	return o.ApplyT(func(v *FileStorageLustreFileSystem) FileStorageLustreFileSystemMaintenanceWindowArrayOutput {
 		return v.MaintenanceWindows
@@ -540,6 +584,14 @@ func (o FileStorageLustreFileSystemOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *FileStorageLustreFileSystem) pulumi.StringArrayOutput { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
+// (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o FileStorageLustreFileSystemOutput) OverrideMaintenanceTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *FileStorageLustreFileSystem) pulumi.IntPtrOutput { return v.OverrideMaintenanceTrigger }).(pulumi.IntPtrOutput)
+}
+
 // The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
 func (o FileStorageLustreFileSystemOutput) PerformanceTier() pulumi.StringOutput {
 	return o.ApplyT(func(v *FileStorageLustreFileSystem) pulumi.StringOutput { return v.PerformanceTier }).(pulumi.StringOutput)
@@ -558,9 +610,6 @@ func (o FileStorageLustreFileSystemOutput) State() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Lustre file system is in.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o FileStorageLustreFileSystemOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *FileStorageLustreFileSystem) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
 }

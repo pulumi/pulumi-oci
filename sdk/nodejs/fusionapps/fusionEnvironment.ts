@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  *         firstName: fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsFirstName,
  *         lastName: fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsLastName,
  *         username: fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsUsername,
- *         password: fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsPassword,
  *     },
  *     displayName: fusionEnvironmentDisplayName,
  *     fusionEnvironmentFamilyId: testFusionEnvironmentFamily.id,

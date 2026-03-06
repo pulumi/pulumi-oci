@@ -27,10 +27,13 @@ class GetMaskingPolicyResult:
     """
     A collection of values returned by getMaskingPolicy.
     """
-    def __init__(__self__, add_masking_columns_from_sdm_trigger=None, column_sources=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, generate_health_report_trigger=None, id=None, is_drop_temp_tables_enabled=None, is_redo_logging_enabled=None, is_refresh_stats_enabled=None, masking_policy_id=None, parallel_degree=None, post_masking_script=None, pre_masking_script=None, recompile=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, add_masking_columns_from_sdm_trigger=None, are_target_credentials_required=None, column_sources=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, generate_health_report_trigger=None, id=None, is_drop_temp_tables_enabled=None, is_redo_logging_enabled=None, is_refresh_stats_enabled=None, masking_policy_id=None, parallel_degree=None, post_masking_script=None, pre_masking_script=None, recompile=None, state=None, time_created=None, time_updated=None):
         if add_masking_columns_from_sdm_trigger and not isinstance(add_masking_columns_from_sdm_trigger, int):
             raise TypeError("Expected argument 'add_masking_columns_from_sdm_trigger' to be a int")
         pulumi.set(__self__, "add_masking_columns_from_sdm_trigger", add_masking_columns_from_sdm_trigger)
+        if are_target_credentials_required and not isinstance(are_target_credentials_required, bool):
+            raise TypeError("Expected argument 'are_target_credentials_required' to be a bool")
+        pulumi.set(__self__, "are_target_credentials_required", are_target_credentials_required)
         if column_sources and not isinstance(column_sources, list):
             raise TypeError("Expected argument 'column_sources' to be a list")
         pulumi.set(__self__, "column_sources", column_sources)
@@ -93,6 +96,14 @@ class GetMaskingPolicyResult:
     @pulumi.getter(name="addMaskingColumnsFromSdmTrigger")
     def add_masking_columns_from_sdm_trigger(self) -> _builtins.int:
         return pulumi.get(self, "add_masking_columns_from_sdm_trigger")
+
+    @_builtins.property
+    @pulumi.getter(name="areTargetCredentialsRequired")
+    def are_target_credentials_required(self) -> _builtins.bool:
+        """
+        Specifies whether target database credentials are required to perform masking with this policy
+        """
+        return pulumi.get(self, "are_target_credentials_required")
 
     @_builtins.property
     @pulumi.getter(name="columnSources")
@@ -248,6 +259,7 @@ class AwaitableGetMaskingPolicyResult(GetMaskingPolicyResult):
             yield self
         return GetMaskingPolicyResult(
             add_masking_columns_from_sdm_trigger=self.add_masking_columns_from_sdm_trigger,
+            are_target_credentials_required=self.are_target_credentials_required,
             column_sources=self.column_sources,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
@@ -295,6 +307,7 @@ def get_masking_policy(masking_policy_id: Optional[_builtins.str] = None,
 
     return AwaitableGetMaskingPolicyResult(
         add_masking_columns_from_sdm_trigger=pulumi.get(__ret__, 'add_masking_columns_from_sdm_trigger'),
+        are_target_credentials_required=pulumi.get(__ret__, 'are_target_credentials_required'),
         column_sources=pulumi.get(__ret__, 'column_sources'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
@@ -339,6 +352,7 @@ def get_masking_policy_output(masking_policy_id: Optional[pulumi.Input[_builtins
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getMaskingPolicy:getMaskingPolicy', __args__, opts=opts, typ=GetMaskingPolicyResult)
     return __ret__.apply(lambda __response__: GetMaskingPolicyResult(
         add_masking_columns_from_sdm_trigger=pulumi.get(__response__, 'add_masking_columns_from_sdm_trigger'),
+        are_target_credentials_required=pulumi.get(__response__, 'are_target_credentials_required'),
         column_sources=pulumi.get(__response__, 'column_sources'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),

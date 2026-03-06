@@ -59,6 +59,7 @@ export interface GetFileStorageLustreFileSystemResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Lustre file system.
      */
     readonly compartmentId: string;
+    readonly dateTimeDetails: outputs.Lustre.GetFileStorageLustreFileSystemDateTimeDetail[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
@@ -97,6 +98,10 @@ export interface GetFileStorageLustreFileSystemResult {
     readonly lnet: string;
     readonly lustreFileSystemId: string;
     /**
+     * The meta-data for maintenance window.
+     */
+    readonly maintenanceWindowMetadatas: outputs.Lustre.GetFileStorageLustreFileSystemMaintenanceWindowMetadata[];
+    /**
      * The preferred day and time to perform maintenance.
      */
     readonly maintenanceWindows: outputs.Lustre.GetFileStorageLustreFileSystemMaintenanceWindow[];
@@ -112,6 +117,7 @@ export interface GetFileStorageLustreFileSystemResult {
      * A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      */
     readonly nsgIds: string[];
+    readonly overrideMaintenanceTrigger: number;
     /**
      * The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
      */

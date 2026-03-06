@@ -139,21 +139,17 @@ class FusionEnvironmentCreateFusionEnvironmentAdminUserDetails(dict):
                  email_address: _builtins.str,
                  first_name: _builtins.str,
                  last_name: _builtins.str,
-                 username: _builtins.str,
-                 password: Optional[_builtins.str] = None):
+                 username: _builtins.str):
         """
         :param _builtins.str email_address: The email address for the administrator.
         :param _builtins.str first_name: The administrator's first name.
         :param _builtins.str last_name: The administrator's last name.
         :param _builtins.str username: The username for the administrator.
-        :param _builtins.str password: The password for the administrator.
         """
         pulumi.set(__self__, "email_address", email_address)
         pulumi.set(__self__, "first_name", first_name)
         pulumi.set(__self__, "last_name", last_name)
         pulumi.set(__self__, "username", username)
-        if password is not None:
-            pulumi.set(__self__, "password", password)
 
     @_builtins.property
     @pulumi.getter(name="emailAddress")
@@ -186,15 +182,6 @@ class FusionEnvironmentCreateFusionEnvironmentAdminUserDetails(dict):
         The username for the administrator.
         """
         return pulumi.get(self, "username")
-
-    @_builtins.property
-    @pulumi.getter
-    @_utilities.deprecated("""The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.""")
-    def password(self) -> Optional[_builtins.str]:
-        """
-        The password for the administrator.
-        """
-        return pulumi.get(self, "password")
 
 
 @pulumi.output_type

@@ -24,10 +24,6 @@ import * as utilities from "../utilities";
  *     reportingRegion: cloudGuardConfigurationReportingRegion,
  *     status: cloudGuardConfigurationStatus,
  *     selfManageResources: cloudGuardConfigurationSelfManageResources,
- *     serviceConfigurations: [{
- *         serviceConfigurationType: cloudGuardConfigurationServiceConfigurationsServiceConfigurationType,
- *         status: cloudGuardConfigurationServiceConfigurationsStatus,
- *     }],
  * });
  * ```
  *

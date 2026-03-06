@@ -95,6 +95,12 @@ namespace Pulumi.Oci.DataSafe
         public Output<int?> AddMaskingColumnsFromSdmTrigger { get; private set; } = null!;
 
         /// <summary>
+        /// Specifies whether target database credentials are required to perform masking with this policy
+        /// </summary>
+        [Output("areTargetCredentialsRequired")]
+        public Output<bool> AreTargetCredentialsRequired { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Details to associate a column source with a masking policy.
         /// </summary>
         [Output("columnSources")]
@@ -371,6 +377,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("addMaskingColumnsFromSdmTrigger")]
         public Input<int>? AddMaskingColumnsFromSdmTrigger { get; set; }
+
+        /// <summary>
+        /// Specifies whether target database credentials are required to perform masking with this policy
+        /// </summary>
+        [Input("areTargetCredentialsRequired")]
+        public Input<bool>? AreTargetCredentialsRequired { get; set; }
 
         [Input("columnSources")]
         private InputList<Inputs.MaskingPolicyColumnSourceGetArgs>? _columnSources;

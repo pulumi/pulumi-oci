@@ -44,6 +44,10 @@ export interface GetExadataInsightArgs {
  */
 export interface GetExadataInsightResult {
     /**
+     * Object containing chargeback plan details
+     */
+    readonly chargebackPlanDetails: outputs.Opsi.GetExadataInsightChargebackPlanDetail[];
+    /**
      * Compartment identifier of the Exadata insight resource
      */
     readonly compartmentId: string;
@@ -137,6 +141,10 @@ export interface GetExadataInsightResult {
      * Indicates the status of an Exadata insight in Operations Insights
      */
     readonly status: string;
+    /**
+     * A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+     */
+    readonly statusDetails: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */

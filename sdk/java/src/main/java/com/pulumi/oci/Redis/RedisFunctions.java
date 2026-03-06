@@ -16,6 +16,8 @@ import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetArgs;
 import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetPlainArgs;
 import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetsArgs;
 import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetsPlainArgs;
+import com.pulumi.oci.Redis.inputs.GetOciCacheEngineOptionsArgs;
+import com.pulumi.oci.Redis.inputs.GetOciCacheEngineOptionsPlainArgs;
 import com.pulumi.oci.Redis.inputs.GetOciCacheUserArgs;
 import com.pulumi.oci.Redis.inputs.GetOciCacheUserPlainArgs;
 import com.pulumi.oci.Redis.inputs.GetOciCacheUsersArgs;
@@ -30,6 +32,7 @@ import com.pulumi.oci.Redis.outputs.GetOciCacheConfigSetResult;
 import com.pulumi.oci.Redis.outputs.GetOciCacheConfigSetsResult;
 import com.pulumi.oci.Redis.outputs.GetOciCacheDefaultConfigSetResult;
 import com.pulumi.oci.Redis.outputs.GetOciCacheDefaultConfigSetsResult;
+import com.pulumi.oci.Redis.outputs.GetOciCacheEngineOptionsResult;
 import com.pulumi.oci.Redis.outputs.GetOciCacheUserResult;
 import com.pulumi.oci.Redis.outputs.GetOciCacheUsersResult;
 import com.pulumi.oci.Redis.outputs.GetRedisClusterNodesResult;
@@ -1015,6 +1018,216 @@ public final class RedisFunctions {
      */
     public static CompletableFuture<GetOciCacheDefaultConfigSetsResult> getOciCacheDefaultConfigSetsPlain(GetOciCacheDefaultConfigSetsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Redis/getOciCacheDefaultConfigSets:getOciCacheDefaultConfigSets", TypeShape.of(GetOciCacheDefaultConfigSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oci Cache Engine Options in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Lists Oracle Cloud Infrastructure Cache Engine options
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheEngineOptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheEngineOptions = RedisFunctions.getOciCacheEngineOptions(GetOciCacheEngineOptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetOciCacheEngineOptionsResult> getOciCacheEngineOptions(GetOciCacheEngineOptionsArgs args) {
+        return getOciCacheEngineOptions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oci Cache Engine Options in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Lists Oracle Cloud Infrastructure Cache Engine options
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheEngineOptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheEngineOptions = RedisFunctions.getOciCacheEngineOptions(GetOciCacheEngineOptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetOciCacheEngineOptionsResult> getOciCacheEngineOptionsPlain(GetOciCacheEngineOptionsPlainArgs args) {
+        return getOciCacheEngineOptionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oci Cache Engine Options in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Lists Oracle Cloud Infrastructure Cache Engine options
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheEngineOptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheEngineOptions = RedisFunctions.getOciCacheEngineOptions(GetOciCacheEngineOptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetOciCacheEngineOptionsResult> getOciCacheEngineOptions(GetOciCacheEngineOptionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Redis/getOciCacheEngineOptions:getOciCacheEngineOptions", TypeShape.of(GetOciCacheEngineOptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oci Cache Engine Options in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Lists Oracle Cloud Infrastructure Cache Engine options
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheEngineOptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheEngineOptions = RedisFunctions.getOciCacheEngineOptions(GetOciCacheEngineOptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetOciCacheEngineOptionsResult> getOciCacheEngineOptions(GetOciCacheEngineOptionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Redis/getOciCacheEngineOptions:getOciCacheEngineOptions", TypeShape.of(GetOciCacheEngineOptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oci Cache Engine Options in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Lists Oracle Cloud Infrastructure Cache Engine options
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheEngineOptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheEngineOptions = RedisFunctions.getOciCacheEngineOptions(GetOciCacheEngineOptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetOciCacheEngineOptionsResult> getOciCacheEngineOptionsPlain(GetOciCacheEngineOptionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Redis/getOciCacheEngineOptions:getOciCacheEngineOptions", TypeShape.of(GetOciCacheEngineOptionsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Oci Cache User resource in Oracle Cloud Infrastructure Redis service.

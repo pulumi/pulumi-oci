@@ -10,6 +10,7 @@ from .get_oci_cache_config_set import *
 from .get_oci_cache_config_sets import *
 from .get_oci_cache_default_config_set import *
 from .get_oci_cache_default_config_sets import *
+from .get_oci_cache_engine_options import *
 from .get_oci_cache_user import *
 from .get_oci_cache_users import *
 from .get_redis_cluster import *

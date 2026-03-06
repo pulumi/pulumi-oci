@@ -644,6 +644,13 @@ __all__ = [
     'GetDbSystemComputePerformancesFilterResult',
     'GetDbSystemHistoryEntriesFilterResult',
     'GetDbSystemHistoryEntriesPatchHistoryEntryResult',
+    'GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionResult',
+    'GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemResult',
+    'GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailResult',
+    'GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemResult',
+    'GetDbSystemOsPatchHistoryEntriesFilterResult',
+    'GetDbSystemOsPatchHistoryEntryOsPatchDetailResult',
+    'GetDbSystemOsPatchHistoryEntryOsPatchDetailItemResult',
     'GetDbSystemPatchesFilterResult',
     'GetDbSystemPatchesPatchResult',
     'GetDbSystemShapesDbSystemShapeResult',
@@ -14403,6 +14410,10 @@ class DbSystemDbHomeDatabase(dict):
             suggest = "character_set"
         elif key == "connectionStrings":
             suggest = "connection_strings"
+        elif key == "databaseDefinedTags":
+            suggest = "database_defined_tags"
+        elif key == "databaseFreeformTags":
+            suggest = "database_freeform_tags"
         elif key == "databaseId":
             suggest = "database_id"
         elif key == "databaseSoftwareImageId":
@@ -14421,6 +14432,10 @@ class DbSystemDbHomeDatabase(dict):
             suggest = "defined_tags"
         elif key == "freeformTags":
             suggest = "freeform_tags"
+        elif key == "isActiveDataGuardEnabled":
+            suggest = "is_active_data_guard_enabled"
+        elif key == "keyStoreId":
+            suggest = "key_store_id"
         elif key == "kmsKeyId":
             suggest = "kms_key_id"
         elif key == "kmsKeyVersionId":
@@ -14433,12 +14448,18 @@ class DbSystemDbHomeDatabase(dict):
             suggest = "pdb_name"
         elif key == "pluggableDatabases":
             suggest = "pluggable_databases"
+        elif key == "protectionMode":
+            suggest = "protection_mode"
+        elif key == "sidPrefix":
+            suggest = "sid_prefix"
         elif key == "tdeWalletPassword":
             suggest = "tde_wallet_password"
         elif key == "timeCreated":
             suggest = "time_created"
         elif key == "timeStampForPointInTimeRecovery":
             suggest = "time_stamp_for_point_in_time_recovery"
+        elif key == "transportType":
+            suggest = "transport_type"
         elif key == "vaultId":
             suggest = "vault_id"
 
@@ -14459,6 +14480,8 @@ class DbSystemDbHomeDatabase(dict):
                  backup_tde_password: Optional[_builtins.str] = None,
                  character_set: Optional[_builtins.str] = None,
                  connection_strings: Optional[Sequence['outputs.DbSystemDbHomeDatabaseConnectionString']] = None,
+                 database_defined_tags: Optional[Mapping[str, _builtins.str]] = None,
+                 database_freeform_tags: Optional[Mapping[str, _builtins.str]] = None,
                  database_id: Optional[_builtins.str] = None,
                  database_software_image_id: Optional[_builtins.str] = None,
                  db_backup_config: Optional['outputs.DbSystemDbHomeDatabaseDbBackupConfig'] = None,
@@ -14469,16 +14492,21 @@ class DbSystemDbHomeDatabase(dict):
                  defined_tags: Optional[Mapping[str, _builtins.str]] = None,
                  freeform_tags: Optional[Mapping[str, _builtins.str]] = None,
                  id: Optional[_builtins.str] = None,
+                 is_active_data_guard_enabled: Optional[_builtins.bool] = None,
+                 key_store_id: Optional[_builtins.str] = None,
                  kms_key_id: Optional[_builtins.str] = None,
                  kms_key_version_id: Optional[_builtins.str] = None,
                  lifecycle_details: Optional[_builtins.str] = None,
                  ncharacter_set: Optional[_builtins.str] = None,
                  pdb_name: Optional[_builtins.str] = None,
                  pluggable_databases: Optional[Sequence[_builtins.str]] = None,
+                 protection_mode: Optional[_builtins.str] = None,
+                 sid_prefix: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None,
                  tde_wallet_password: Optional[_builtins.str] = None,
                  time_created: Optional[_builtins.str] = None,
                  time_stamp_for_point_in_time_recovery: Optional[_builtins.str] = None,
+                 transport_type: Optional[_builtins.str] = None,
                  vault_id: Optional[_builtins.str] = None):
         """
         :param _builtins.str admin_password: A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
@@ -14487,6 +14515,8 @@ class DbSystemDbHomeDatabase(dict):
         :param _builtins.str character_set: The character set for the database.  The default is AL32UTF8. Allowed values are:
                
                AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
+        :param Mapping[str, _builtins.str] database_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, _builtins.str] database_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param _builtins.str database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param 'DbSystemDbHomeDatabaseDbBackupConfigArgs' db_backup_config: (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
@@ -14498,16 +14528,28 @@ class DbSystemDbHomeDatabase(dict):
         :param Mapping[str, _builtins.str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param Mapping[str, _builtins.str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        :param _builtins.bool is_active_data_guard_enabled: True if active Data Guard is enabled.
+        :param _builtins.str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param _builtins.str pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         :param Sequence[_builtins.str] pluggable_databases: The list of pluggable databases that needs to be restored into new database.
+        :param _builtins.str protection_mode: The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        :param _builtins.str sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
         :param _builtins.str state: The current state of the DB system.
         :param _builtins.str tde_wallet_password: The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
         :param _builtins.str time_created: The date and time the DB system was created.
         :param _builtins.str time_stamp_for_point_in_time_recovery: The point in time of the original database from which the new database is created. If not specifed, the latest backup is used to create the database.
+        :param _builtins.str transport_type: The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+               * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+               * MAXIMUM_PERFORMANCE - ASYNC
+               * MAXIMUM_PROTECTION - SYNC
+               
+               For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+               
+               **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
         :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         pulumi.set(__self__, "admin_password", admin_password)
@@ -14519,6 +14561,10 @@ class DbSystemDbHomeDatabase(dict):
             pulumi.set(__self__, "character_set", character_set)
         if connection_strings is not None:
             pulumi.set(__self__, "connection_strings", connection_strings)
+        if database_defined_tags is not None:
+            pulumi.set(__self__, "database_defined_tags", database_defined_tags)
+        if database_freeform_tags is not None:
+            pulumi.set(__self__, "database_freeform_tags", database_freeform_tags)
         if database_id is not None:
             pulumi.set(__self__, "database_id", database_id)
         if database_software_image_id is not None:
@@ -14539,6 +14585,10 @@ class DbSystemDbHomeDatabase(dict):
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id is not None:
             pulumi.set(__self__, "id", id)
+        if is_active_data_guard_enabled is not None:
+            pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+        if key_store_id is not None:
+            pulumi.set(__self__, "key_store_id", key_store_id)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if kms_key_version_id is not None:
@@ -14551,6 +14601,10 @@ class DbSystemDbHomeDatabase(dict):
             pulumi.set(__self__, "pdb_name", pdb_name)
         if pluggable_databases is not None:
             pulumi.set(__self__, "pluggable_databases", pluggable_databases)
+        if protection_mode is not None:
+            pulumi.set(__self__, "protection_mode", protection_mode)
+        if sid_prefix is not None:
+            pulumi.set(__self__, "sid_prefix", sid_prefix)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if tde_wallet_password is not None:
@@ -14559,6 +14613,8 @@ class DbSystemDbHomeDatabase(dict):
             pulumi.set(__self__, "time_created", time_created)
         if time_stamp_for_point_in_time_recovery is not None:
             pulumi.set(__self__, "time_stamp_for_point_in_time_recovery", time_stamp_for_point_in_time_recovery)
+        if transport_type is not None:
+            pulumi.set(__self__, "transport_type", transport_type)
         if vault_id is not None:
             pulumi.set(__self__, "vault_id", vault_id)
 
@@ -14600,6 +14656,22 @@ class DbSystemDbHomeDatabase(dict):
     @pulumi.getter(name="connectionStrings")
     def connection_strings(self) -> Optional[Sequence['outputs.DbSystemDbHomeDatabaseConnectionString']]:
         return pulumi.get(self, "connection_strings")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseDefinedTags")
+    def database_defined_tags(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "database_defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseFreeformTags")
+    def database_freeform_tags(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "database_freeform_tags")
 
     @_builtins.property
     @pulumi.getter(name="databaseId")
@@ -14681,6 +14753,22 @@ class DbSystemDbHomeDatabase(dict):
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="isActiveDataGuardEnabled")
+    def is_active_data_guard_enabled(self) -> Optional[_builtins.bool]:
+        """
+        True if active Data Guard is enabled.
+        """
+        return pulumi.get(self, "is_active_data_guard_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        """
+        return pulumi.get(self, "key_store_id")
+
+    @_builtins.property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[_builtins.str]:
         """
@@ -14729,6 +14817,22 @@ class DbSystemDbHomeDatabase(dict):
         return pulumi.get(self, "pluggable_databases")
 
     @_builtins.property
+    @pulumi.getter(name="protectionMode")
+    def protection_mode(self) -> Optional[_builtins.str]:
+        """
+        The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
+        return pulumi.get(self, "protection_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="sidPrefix")
+    def sid_prefix(self) -> Optional[_builtins.str]:
+        """
+        Specifies a prefix for the `Oracle SID` of the database to be created.
+        """
+        return pulumi.get(self, "sid_prefix")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
@@ -14759,6 +14863,21 @@ class DbSystemDbHomeDatabase(dict):
         The point in time of the original database from which the new database is created. If not specifed, the latest backup is used to create the database.
         """
         return pulumi.get(self, "time_stamp_for_point_in_time_recovery")
+
+    @_builtins.property
+    @pulumi.getter(name="transportType")
+    def transport_type(self) -> Optional[_builtins.str]:
+        """
+        The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+        * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+        * MAXIMUM_PERFORMANCE - ASYNC
+        * MAXIMUM_PROTECTION - SYNC
+
+        For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+
+        **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+        """
+        return pulumi.get(self, "transport_type")
 
     @_builtins.property
     @pulumi.getter(name="vaultId")
@@ -14989,7 +15108,7 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail(dict):
                  remote_region: Optional[_builtins.str] = None,
                  type: Optional[_builtins.str] = None):
         """
-        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param _builtins.str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local.
@@ -15016,7 +15135,7 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail(dict):
     @pulumi.getter(name="backupRetentionPolicyOnTerminate")
     def backup_retention_policy_on_terminate(self) -> Optional[_builtins.str]:
         """
-        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         """
         return pulumi.get(self, "backup_retention_policy_on_terminate")
 
@@ -53054,6 +53173,7 @@ class GetDbNodesDbNodeResult(dict):
                  host_ipv6id: _builtins.str,
                  hostname: _builtins.str,
                  id: _builtins.str,
+                 is_os_patch_reboot_required: _builtins.bool,
                  lifecycle_details: _builtins.str,
                  maintenance_type: _builtins.str,
                  memory_size_in_gbs: _builtins.int,
@@ -53085,6 +53205,7 @@ class GetDbNodesDbNodeResult(dict):
         :param _builtins.str host_ipv6id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
         :param _builtins.str hostname: The host name for the database node.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database node.
+        :param _builtins.bool is_os_patch_reboot_required: Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
         :param _builtins.str lifecycle_details: Information about the current lifecycle state.
         :param _builtins.str maintenance_type: The type of database node maintenance.
         :param _builtins.int memory_size_in_gbs: The allocated memory in GBs on the Db node.
@@ -53117,6 +53238,7 @@ class GetDbNodesDbNodeResult(dict):
         pulumi.set(__self__, "host_ipv6id", host_ipv6id)
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_os_patch_reboot_required", is_os_patch_reboot_required)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "maintenance_type", maintenance_type)
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
@@ -53278,6 +53400,14 @@ class GetDbNodesDbNodeResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database node.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isOsPatchRebootRequired")
+    def is_os_patch_reboot_required(self) -> _builtins.bool:
+        """
+        Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+        """
+        return pulumi.get(self, "is_os_patch_reboot_required")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
@@ -54033,6 +54163,262 @@ class GetDbSystemHistoryEntriesPatchHistoryEntryResult(dict):
 
 
 @pulumi.output_type
+class GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemResult']):
+        """
+        :param Sequence['GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArgs'] items: Array of OS patch details for a DB System.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemResult']:
+        """
+        Array of OS patch details for a DB System.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 action: _builtins.str,
+                 db_system_id: _builtins.str,
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 os_patch_details: Sequence['outputs.GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailResult'],
+                 state: _builtins.str,
+                 time_ended: _builtins.str,
+                 time_started: _builtins.str):
+        """
+        :param _builtins.str action: A filter to return only OS patch history entries that match the specified OS patch action.
+        :param _builtins.str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OS patch history entry.
+        :param _builtins.str lifecycle_details: A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
+        :param Sequence['GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArgs'] os_patch_details: Results of OS patch details for a DB System.
+        :param _builtins.str state: A filter to return only OS patch history entries that match the given lifecycle state exactly.
+        :param _builtins.str time_ended: The date and time when the patch action completed
+        :param _builtins.str time_started: The date and time when the patch action started.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "db_system_id", db_system_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "os_patch_details", os_patch_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_ended", time_ended)
+        pulumi.set(__self__, "time_started", time_started)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> _builtins.str:
+        """
+        A filter to return only OS patch history entries that match the specified OS patch action.
+        """
+        return pulumi.get(self, "action")
+
+    @_builtins.property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> _builtins.str:
+        """
+        The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "db_system_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OS patch history entry.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="osPatchDetails")
+    def os_patch_details(self) -> Sequence['outputs.GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailResult']:
+        """
+        Results of OS patch details for a DB System.
+        """
+        return pulumi.get(self, "os_patch_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only OS patch history entries that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="timeEnded")
+    def time_ended(self) -> _builtins.str:
+        """
+        The date and time when the patch action completed
+        """
+        return pulumi.get(self, "time_ended")
+
+    @_builtins.property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> _builtins.str:
+        """
+        The date and time when the patch action started.
+        """
+        return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
+class GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemResult']):
+        """
+        :param Sequence['GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArgs'] items: Array of OS patch details for a DB System.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemResult']:
+        """
+        Array of OS patch details for a DB System.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemResult(dict):
+    def __init__(__self__, *,
+                 db_node_id: _builtins.str,
+                 is_reboot_required: _builtins.bool,
+                 rpms: Sequence[_builtins.str]):
+        """
+        :param _builtins.str db_node_id: The OCID of the DB node targeted for this patch action.
+        :param _builtins.bool is_reboot_required: Indicates whether a reboot is required after applying the patch.
+        :param Sequence[_builtins.str] rpms: List of OS package identifiers (e.g., RPM strings).
+        """
+        pulumi.set(__self__, "db_node_id", db_node_id)
+        pulumi.set(__self__, "is_reboot_required", is_reboot_required)
+        pulumi.set(__self__, "rpms", rpms)
+
+    @_builtins.property
+    @pulumi.getter(name="dbNodeId")
+    def db_node_id(self) -> _builtins.str:
+        """
+        The OCID of the DB node targeted for this patch action.
+        """
+        return pulumi.get(self, "db_node_id")
+
+    @_builtins.property
+    @pulumi.getter(name="isRebootRequired")
+    def is_reboot_required(self) -> _builtins.bool:
+        """
+        Indicates whether a reboot is required after applying the patch.
+        """
+        return pulumi.get(self, "is_reboot_required")
+
+    @_builtins.property
+    @pulumi.getter
+    def rpms(self) -> Sequence[_builtins.str]:
+        """
+        List of OS package identifiers (e.g., RPM strings).
+        """
+        return pulumi.get(self, "rpms")
+
+
+@pulumi.output_type
+class GetDbSystemOsPatchHistoryEntriesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDbSystemOsPatchHistoryEntryOsPatchDetailResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDbSystemOsPatchHistoryEntryOsPatchDetailItemResult']):
+        """
+        :param Sequence['GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArgs'] items: Array of OS patch details for a DB System.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDbSystemOsPatchHistoryEntryOsPatchDetailItemResult']:
+        """
+        Array of OS patch details for a DB System.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDbSystemOsPatchHistoryEntryOsPatchDetailItemResult(dict):
+    def __init__(__self__, *,
+                 db_node_id: _builtins.str,
+                 is_reboot_required: _builtins.bool,
+                 rpms: Sequence[_builtins.str]):
+        """
+        :param _builtins.str db_node_id: The OCID of the DB node targeted for this patch action.
+        :param _builtins.bool is_reboot_required: Indicates whether a reboot is required after applying the patch.
+        :param Sequence[_builtins.str] rpms: List of OS package identifiers (e.g., RPM strings).
+        """
+        pulumi.set(__self__, "db_node_id", db_node_id)
+        pulumi.set(__self__, "is_reboot_required", is_reboot_required)
+        pulumi.set(__self__, "rpms", rpms)
+
+    @_builtins.property
+    @pulumi.getter(name="dbNodeId")
+    def db_node_id(self) -> _builtins.str:
+        """
+        The OCID of the DB node targeted for this patch action.
+        """
+        return pulumi.get(self, "db_node_id")
+
+    @_builtins.property
+    @pulumi.getter(name="isRebootRequired")
+    def is_reboot_required(self) -> _builtins.bool:
+        """
+        Indicates whether a reboot is required after applying the patch.
+        """
+        return pulumi.get(self, "is_reboot_required")
+
+    @_builtins.property
+    @pulumi.getter
+    def rpms(self) -> Sequence[_builtins.str]:
+        """
+        List of OS package identifiers (e.g., RPM strings).
+        """
+        return pulumi.get(self, "rpms")
+
+
+@pulumi.output_type
 class GetDbSystemPatchesFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -54784,8 +55170,12 @@ class GetDbSystemsDbSystemResult(dict):
                  next_maintenance_run_id: _builtins.str,
                  node_count: _builtins.int,
                  nsg_ids: Sequence[_builtins.str],
+                 os_patch_action: _builtins.str,
+                 os_patch_db_node_id: _builtins.str,
+                 os_patch_trigger: _builtins.int,
                  os_version: _builtins.str,
                  point_in_time_data_disk_clone_timestamp: _builtins.str,
+                 primary_db_system_id: _builtins.str,
                  private_ip: _builtins.str,
                  private_ip_v6: _builtins.str,
                  reco_storage_size_in_gb: _builtins.int,
@@ -54908,8 +55298,12 @@ class GetDbSystemsDbSystemResult(dict):
         pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
         pulumi.set(__self__, "node_count", node_count)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "os_patch_action", os_patch_action)
+        pulumi.set(__self__, "os_patch_db_node_id", os_patch_db_node_id)
+        pulumi.set(__self__, "os_patch_trigger", os_patch_trigger)
         pulumi.set(__self__, "os_version", os_version)
         pulumi.set(__self__, "point_in_time_data_disk_clone_timestamp", point_in_time_data_disk_clone_timestamp)
+        pulumi.set(__self__, "primary_db_system_id", primary_db_system_id)
         pulumi.set(__self__, "private_ip", private_ip)
         pulumi.set(__self__, "private_ip_v6", private_ip_v6)
         pulumi.set(__self__, "reco_storage_size_in_gb", reco_storage_size_in_gb)
@@ -55221,6 +55615,21 @@ class GetDbSystemsDbSystemResult(dict):
         return pulumi.get(self, "nsg_ids")
 
     @_builtins.property
+    @pulumi.getter(name="osPatchAction")
+    def os_patch_action(self) -> _builtins.str:
+        return pulumi.get(self, "os_patch_action")
+
+    @_builtins.property
+    @pulumi.getter(name="osPatchDbNodeId")
+    def os_patch_db_node_id(self) -> _builtins.str:
+        return pulumi.get(self, "os_patch_db_node_id")
+
+    @_builtins.property
+    @pulumi.getter(name="osPatchTrigger")
+    def os_patch_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "os_patch_trigger")
+
+    @_builtins.property
     @pulumi.getter(name="osVersion")
     def os_version(self) -> _builtins.str:
         """
@@ -55235,6 +55644,11 @@ class GetDbSystemsDbSystemResult(dict):
         The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "point_in_time_data_disk_clone_timestamp")
+
+    @_builtins.property
+    @pulumi.getter(name="primaryDbSystemId")
+    def primary_db_system_id(self) -> _builtins.str:
+        return pulumi.get(self, "primary_db_system_id")
 
     @_builtins.property
     @pulumi.getter(name="privateIp")
@@ -55607,6 +56021,8 @@ class GetDbSystemsDbSystemDbHomeDatabaseResult(dict):
                  backup_tde_password: _builtins.str,
                  character_set: _builtins.str,
                  connection_strings: Sequence['outputs.GetDbSystemsDbSystemDbHomeDatabaseConnectionStringResult'],
+                 database_defined_tags: Mapping[str, _builtins.str],
+                 database_freeform_tags: Mapping[str, _builtins.str],
                  database_id: _builtins.str,
                  database_software_image_id: _builtins.str,
                  db_backup_configs: Sequence['outputs.GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigResult'],
@@ -55617,16 +56033,21 @@ class GetDbSystemsDbSystemDbHomeDatabaseResult(dict):
                  defined_tags: Mapping[str, _builtins.str],
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 is_active_data_guard_enabled: _builtins.bool,
+                 key_store_id: _builtins.str,
                  kms_key_id: _builtins.str,
                  kms_key_version_id: _builtins.str,
                  lifecycle_details: _builtins.str,
                  ncharacter_set: _builtins.str,
                  pdb_name: _builtins.str,
                  pluggable_databases: Sequence[_builtins.str],
+                 protection_mode: _builtins.str,
+                 sid_prefix: _builtins.str,
                  state: _builtins.str,
                  tde_wallet_password: _builtins.str,
                  time_created: _builtins.str,
                  time_stamp_for_point_in_time_recovery: _builtins.str,
+                 transport_type: _builtins.str,
                  vault_id: _builtins.str):
         """
         :param _builtins.str backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup. Specify a backupId to list only the DB systems or DB homes that support creating a database using this backup in this compartment.
@@ -55643,6 +56064,8 @@ class GetDbSystemsDbSystemDbHomeDatabaseResult(dict):
         pulumi.set(__self__, "backup_tde_password", backup_tde_password)
         pulumi.set(__self__, "character_set", character_set)
         pulumi.set(__self__, "connection_strings", connection_strings)
+        pulumi.set(__self__, "database_defined_tags", database_defined_tags)
+        pulumi.set(__self__, "database_freeform_tags", database_freeform_tags)
         pulumi.set(__self__, "database_id", database_id)
         pulumi.set(__self__, "database_software_image_id", database_software_image_id)
         pulumi.set(__self__, "db_backup_configs", db_backup_configs)
@@ -55653,16 +56076,21 @@ class GetDbSystemsDbSystemDbHomeDatabaseResult(dict):
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+        pulumi.set(__self__, "key_store_id", key_store_id)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "ncharacter_set", ncharacter_set)
         pulumi.set(__self__, "pdb_name", pdb_name)
         pulumi.set(__self__, "pluggable_databases", pluggable_databases)
+        pulumi.set(__self__, "protection_mode", protection_mode)
+        pulumi.set(__self__, "sid_prefix", sid_prefix)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "tde_wallet_password", tde_wallet_password)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_stamp_for_point_in_time_recovery", time_stamp_for_point_in_time_recovery)
+        pulumi.set(__self__, "transport_type", transport_type)
         pulumi.set(__self__, "vault_id", vault_id)
 
     @_builtins.property
@@ -55692,6 +56120,16 @@ class GetDbSystemsDbSystemDbHomeDatabaseResult(dict):
     @pulumi.getter(name="connectionStrings")
     def connection_strings(self) -> Sequence['outputs.GetDbSystemsDbSystemDbHomeDatabaseConnectionStringResult']:
         return pulumi.get(self, "connection_strings")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseDefinedTags")
+    def database_defined_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "database_defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseFreeformTags")
+    def database_freeform_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "database_freeform_tags")
 
     @_builtins.property
     @pulumi.getter(name="databaseId")
@@ -55753,6 +56191,16 @@ class GetDbSystemsDbSystemDbHomeDatabaseResult(dict):
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="isActiveDataGuardEnabled")
+    def is_active_data_guard_enabled(self) -> _builtins.bool:
+        return pulumi.get(self, "is_active_data_guard_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> _builtins.str:
+        return pulumi.get(self, "key_store_id")
+
+    @_builtins.property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> _builtins.str:
         """
@@ -55789,6 +56237,16 @@ class GetDbSystemsDbSystemDbHomeDatabaseResult(dict):
         return pulumi.get(self, "pluggable_databases")
 
     @_builtins.property
+    @pulumi.getter(name="protectionMode")
+    def protection_mode(self) -> _builtins.str:
+        return pulumi.get(self, "protection_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="sidPrefix")
+    def sid_prefix(self) -> _builtins.str:
+        return pulumi.get(self, "sid_prefix")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -55813,6 +56271,11 @@ class GetDbSystemsDbSystemDbHomeDatabaseResult(dict):
     @pulumi.getter(name="timeStampForPointInTimeRecovery")
     def time_stamp_for_point_in_time_recovery(self) -> _builtins.str:
         return pulumi.get(self, "time_stamp_for_point_in_time_recovery")
+
+    @_builtins.property
+    @pulumi.getter(name="transportType")
+    def transport_type(self) -> _builtins.str:
+        return pulumi.get(self, "transport_type")
 
     @_builtins.property
     @pulumi.getter(name="vaultId")

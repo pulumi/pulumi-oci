@@ -20,6 +20,11 @@ export type AwrHubSourceAwrhubsourcesManagement = import("./awrHubSourceAwrhubso
 export const AwrHubSourceAwrhubsourcesManagement: typeof import("./awrHubSourceAwrhubsourcesManagement").AwrHubSourceAwrhubsourcesManagement = null as any;
 utilities.lazyLoad(exports, ["AwrHubSourceAwrhubsourcesManagement"], () => require("./awrHubSourceAwrhubsourcesManagement"));
 
+export { ChargebackPlanArgs, ChargebackPlanState } from "./chargebackPlan";
+export type ChargebackPlan = import("./chargebackPlan").ChargebackPlan;
+export const ChargebackPlan: typeof import("./chargebackPlan").ChargebackPlan = null as any;
+utilities.lazyLoad(exports, ["ChargebackPlan"], () => require("./chargebackPlan"));
+
 export { DatabaseInsightArgs, DatabaseInsightState } from "./databaseInsight";
 export type DatabaseInsight = import("./databaseInsight").DatabaseInsight;
 export const DatabaseInsight: typeof import("./databaseInsight").DatabaseInsight = null as any;
@@ -69,6 +74,16 @@ export { GetAwrHubsArgs, GetAwrHubsResult, GetAwrHubsOutputArgs } from "./getAwr
 export const getAwrHubs: typeof import("./getAwrHubs").getAwrHubs = null as any;
 export const getAwrHubsOutput: typeof import("./getAwrHubs").getAwrHubsOutput = null as any;
 utilities.lazyLoad(exports, ["getAwrHubs","getAwrHubsOutput"], () => require("./getAwrHubs"));
+
+export { GetChargebackPlanArgs, GetChargebackPlanResult, GetChargebackPlanOutputArgs } from "./getChargebackPlan";
+export const getChargebackPlan: typeof import("./getChargebackPlan").getChargebackPlan = null as any;
+export const getChargebackPlanOutput: typeof import("./getChargebackPlan").getChargebackPlanOutput = null as any;
+utilities.lazyLoad(exports, ["getChargebackPlan","getChargebackPlanOutput"], () => require("./getChargebackPlan"));
+
+export { GetChargebackPlansArgs, GetChargebackPlansResult, GetChargebackPlansOutputArgs } from "./getChargebackPlans";
+export const getChargebackPlans: typeof import("./getChargebackPlans").getChargebackPlans = null as any;
+export const getChargebackPlansOutput: typeof import("./getChargebackPlans").getChargebackPlansOutput = null as any;
+utilities.lazyLoad(exports, ["getChargebackPlans","getChargebackPlansOutput"], () => require("./getChargebackPlans"));
 
 export { GetDatabaseInsightArgs, GetDatabaseInsightResult, GetDatabaseInsightOutputArgs } from "./getDatabaseInsight";
 export const getDatabaseInsight: typeof import("./getDatabaseInsight").getDatabaseInsight = null as any;
@@ -241,6 +256,8 @@ const _module = {
                 return new AwrHubSource(name, <any>undefined, { urn })
             case "oci:Opsi/awrHubSourceAwrhubsourcesManagement:AwrHubSourceAwrhubsourcesManagement":
                 return new AwrHubSourceAwrhubsourcesManagement(name, <any>undefined, { urn })
+            case "oci:Opsi/chargebackPlan:ChargebackPlan":
+                return new ChargebackPlan(name, <any>undefined, { urn })
             case "oci:Opsi/databaseInsight:DatabaseInsight":
                 return new DatabaseInsight(name, <any>undefined, { urn })
             case "oci:Opsi/enterpriseManagerBridge:EnterpriseManagerBridge":
@@ -271,6 +288,7 @@ const _module = {
 pulumi.runtime.registerResourceModule("oci", "Opsi/awrHub", _module)
 pulumi.runtime.registerResourceModule("oci", "Opsi/awrHubSource", _module)
 pulumi.runtime.registerResourceModule("oci", "Opsi/awrHubSourceAwrhubsourcesManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "Opsi/chargebackPlan", _module)
 pulumi.runtime.registerResourceModule("oci", "Opsi/databaseInsight", _module)
 pulumi.runtime.registerResourceModule("oci", "Opsi/enterpriseManagerBridge", _module)
 pulumi.runtime.registerResourceModule("oci", "Opsi/exadataInsight", _module)

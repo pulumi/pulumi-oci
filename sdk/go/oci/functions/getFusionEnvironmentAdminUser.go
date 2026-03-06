@@ -68,8 +68,6 @@ type GetFusionEnvironmentAdminUserResult struct {
 	Items []GetFusionEnvironmentAdminUserItem `pulumi:"items"`
 	// Admin users last name
 	LastName string `pulumi:"lastName"`
-	// Deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
-	Password string `pulumi:"password"`
 	// Admin username
 	Username string `pulumi:"username"`
 }
@@ -134,11 +132,6 @@ func (o GetFusionEnvironmentAdminUserResultOutput) Items() GetFusionEnvironmentA
 // Admin users last name
 func (o GetFusionEnvironmentAdminUserResultOutput) LastName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentAdminUserResult) string { return v.LastName }).(pulumi.StringOutput)
-}
-
-// Deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
-func (o GetFusionEnvironmentAdminUserResultOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentAdminUserResult) string { return v.Password }).(pulumi.StringOutput)
 }
 
 // Admin username

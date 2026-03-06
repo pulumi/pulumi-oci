@@ -760,6 +760,16 @@ export const getDbSystemHistoryEntries: typeof import("./getDbSystemHistoryEntri
 export const getDbSystemHistoryEntriesOutput: typeof import("./getDbSystemHistoryEntries").getDbSystemHistoryEntriesOutput = null as any;
 utilities.lazyLoad(exports, ["getDbSystemHistoryEntries","getDbSystemHistoryEntriesOutput"], () => require("./getDbSystemHistoryEntries"));
 
+export { GetDbSystemOsPatchHistoryEntriesArgs, GetDbSystemOsPatchHistoryEntriesResult, GetDbSystemOsPatchHistoryEntriesOutputArgs } from "./getDbSystemOsPatchHistoryEntries";
+export const getDbSystemOsPatchHistoryEntries: typeof import("./getDbSystemOsPatchHistoryEntries").getDbSystemOsPatchHistoryEntries = null as any;
+export const getDbSystemOsPatchHistoryEntriesOutput: typeof import("./getDbSystemOsPatchHistoryEntries").getDbSystemOsPatchHistoryEntriesOutput = null as any;
+utilities.lazyLoad(exports, ["getDbSystemOsPatchHistoryEntries","getDbSystemOsPatchHistoryEntriesOutput"], () => require("./getDbSystemOsPatchHistoryEntries"));
+
+export { GetDbSystemOsPatchHistoryEntryArgs, GetDbSystemOsPatchHistoryEntryResult, GetDbSystemOsPatchHistoryEntryOutputArgs } from "./getDbSystemOsPatchHistoryEntry";
+export const getDbSystemOsPatchHistoryEntry: typeof import("./getDbSystemOsPatchHistoryEntry").getDbSystemOsPatchHistoryEntry = null as any;
+export const getDbSystemOsPatchHistoryEntryOutput: typeof import("./getDbSystemOsPatchHistoryEntry").getDbSystemOsPatchHistoryEntryOutput = null as any;
+utilities.lazyLoad(exports, ["getDbSystemOsPatchHistoryEntry","getDbSystemOsPatchHistoryEntryOutput"], () => require("./getDbSystemOsPatchHistoryEntry"));
+
 export { GetDbSystemPatchesArgs, GetDbSystemPatchesResult, GetDbSystemPatchesOutputArgs } from "./getDbSystemPatches";
 export const getDbSystemPatches: typeof import("./getDbSystemPatches").getDbSystemPatches = null as any;
 export const getDbSystemPatchesOutput: typeof import("./getDbSystemPatches").getDbSystemPatchesOutput = null as any;

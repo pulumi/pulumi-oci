@@ -6,8 +6,11 @@ package com.pulumi.oci.DataSafe;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.DataSafe.inputs.MaskDataTargetCredentialsArgs;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class MaskDataArgs extends com.pulumi.resources.ResourceArgs {
@@ -21,6 +24,13 @@ public final class MaskDataArgs extends com.pulumi.resources.ResourceArgs {
         return this.maskingPolicyId;
     }
 
+    @Import(name="targetCredentials")
+    private @Nullable Output<MaskDataTargetCredentialsArgs> targetCredentials;
+
+    public Optional<Output<MaskDataTargetCredentialsArgs>> targetCredentials() {
+        return Optional.ofNullable(this.targetCredentials);
+    }
+
     @Import(name="targetId", required=true)
     private Output<String> targetId;
 
@@ -32,6 +42,7 @@ public final class MaskDataArgs extends com.pulumi.resources.ResourceArgs {
 
     private MaskDataArgs(MaskDataArgs $) {
         this.maskingPolicyId = $.maskingPolicyId;
+        this.targetCredentials = $.targetCredentials;
         this.targetId = $.targetId;
     }
 
@@ -60,6 +71,15 @@ public final class MaskDataArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder maskingPolicyId(String maskingPolicyId) {
             return maskingPolicyId(Output.of(maskingPolicyId));
+        }
+
+        public Builder targetCredentials(@Nullable Output<MaskDataTargetCredentialsArgs> targetCredentials) {
+            $.targetCredentials = targetCredentials;
+            return this;
+        }
+
+        public Builder targetCredentials(MaskDataTargetCredentialsArgs targetCredentials) {
+            return targetCredentials(Output.of(targetCredentials));
         }
 
         public Builder targetId(Output<String> targetId) {

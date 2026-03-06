@@ -197,6 +197,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+        /// </summary>
+        public readonly bool IsOsPatchRebootRequired;
+        /// <summary>
         /// Information about the current lifecycle state.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -285,6 +289,8 @@ namespace Pulumi.Oci.Database
 
             string id,
 
+            bool isOsPatchRebootRequired,
+
             string lifecycleDetails,
 
             string maintenanceType,
@@ -328,6 +334,7 @@ namespace Pulumi.Oci.Database
             HostIpv6id = hostIpv6id;
             Hostname = hostname;
             Id = id;
+            IsOsPatchRebootRequired = isOsPatchRebootRequired;
             LifecycleDetails = lifecycleDetails;
             MaintenanceType = maintenanceType;
             MemorySizeInGbs = memorySizeInGbs;

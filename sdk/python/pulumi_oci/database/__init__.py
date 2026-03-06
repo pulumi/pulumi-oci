@@ -157,6 +157,8 @@ from .get_db_server import *
 from .get_db_servers import *
 from .get_db_system_compute_performances import *
 from .get_db_system_history_entries import *
+from .get_db_system_os_patch_history_entries import *
+from .get_db_system_os_patch_history_entry import *
 from .get_db_system_patches import *
 from .get_db_system_shapes import *
 from .get_db_system_storage_performances import *

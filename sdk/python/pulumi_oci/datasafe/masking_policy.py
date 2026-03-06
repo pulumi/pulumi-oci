@@ -277,6 +277,7 @@ class MaskingPolicyArgs:
 class _MaskingPolicyState:
     def __init__(__self__, *,
                  add_masking_columns_from_sdm_trigger: Optional[pulumi.Input[_builtins.int]] = None,
+                 are_target_credentials_required: Optional[pulumi.Input[_builtins.bool]] = None,
                  column_sources: Optional[pulumi.Input[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -298,6 +299,7 @@ class _MaskingPolicyState:
         Input properties used for looking up and filtering MaskingPolicy resources.
 
         :param pulumi.Input[_builtins.int] add_masking_columns_from_sdm_trigger: (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
+        :param pulumi.Input[_builtins.bool] are_target_credentials_required: Specifies whether target database credentials are required to perform masking with this policy
         :param pulumi.Input[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]] column_sources: (Updatable) Details to associate a column source with a masking policy.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the masking policy should be created.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
@@ -322,6 +324,8 @@ class _MaskingPolicyState:
         """
         if add_masking_columns_from_sdm_trigger is not None:
             pulumi.set(__self__, "add_masking_columns_from_sdm_trigger", add_masking_columns_from_sdm_trigger)
+        if are_target_credentials_required is not None:
+            pulumi.set(__self__, "are_target_credentials_required", are_target_credentials_required)
         if column_sources is not None:
             pulumi.set(__self__, "column_sources", column_sources)
         if compartment_id is not None:
@@ -368,6 +372,18 @@ class _MaskingPolicyState:
     @add_masking_columns_from_sdm_trigger.setter
     def add_masking_columns_from_sdm_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "add_masking_columns_from_sdm_trigger", value)
+
+    @_builtins.property
+    @pulumi.getter(name="areTargetCredentialsRequired")
+    def are_target_credentials_required(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Specifies whether target database credentials are required to perform masking with this policy
+        """
+        return pulumi.get(self, "are_target_credentials_required")
+
+    @are_target_credentials_required.setter
+    def are_target_credentials_required(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "are_target_credentials_required", value)
 
     @_builtins.property
     @pulumi.getter(name="columnSources")
@@ -812,6 +828,7 @@ class MaskingPolicy(pulumi.CustomResource):
             __props__.__dict__["post_masking_script"] = post_masking_script
             __props__.__dict__["pre_masking_script"] = pre_masking_script
             __props__.__dict__["recompile"] = recompile
+            __props__.__dict__["are_target_credentials_required"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
@@ -826,6 +843,7 @@ class MaskingPolicy(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             add_masking_columns_from_sdm_trigger: Optional[pulumi.Input[_builtins.int]] = None,
+            are_target_credentials_required: Optional[pulumi.Input[_builtins.bool]] = None,
             column_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MaskingPolicyColumnSourceArgs', 'MaskingPolicyColumnSourceArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -851,6 +869,7 @@ class MaskingPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] add_masking_columns_from_sdm_trigger: (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
+        :param pulumi.Input[_builtins.bool] are_target_credentials_required: Specifies whether target database credentials are required to perform masking with this policy
         :param pulumi.Input[Sequence[pulumi.Input[Union['MaskingPolicyColumnSourceArgs', 'MaskingPolicyColumnSourceArgsDict']]]] column_sources: (Updatable) Details to associate a column source with a masking policy.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the masking policy should be created.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
@@ -878,6 +897,7 @@ class MaskingPolicy(pulumi.CustomResource):
         __props__ = _MaskingPolicyState.__new__(_MaskingPolicyState)
 
         __props__.__dict__["add_masking_columns_from_sdm_trigger"] = add_masking_columns_from_sdm_trigger
+        __props__.__dict__["are_target_credentials_required"] = are_target_credentials_required
         __props__.__dict__["column_sources"] = column_sources
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
@@ -904,6 +924,14 @@ class MaskingPolicy(pulumi.CustomResource):
         (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
         """
         return pulumi.get(self, "add_masking_columns_from_sdm_trigger")
+
+    @_builtins.property
+    @pulumi.getter(name="areTargetCredentialsRequired")
+    def are_target_credentials_required(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Specifies whether target database credentials are required to perform masking with this policy
+        """
+        return pulumi.get(self, "are_target_credentials_required")
 
     @_builtins.property
     @pulumi.getter(name="columnSources")

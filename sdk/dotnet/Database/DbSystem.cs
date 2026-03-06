@@ -305,6 +305,22 @@ namespace Pulumi.Oci.Database
         [Output("nsgIds")]
         public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
 
+        [Output("osPatchAction")]
+        public Output<string?> OsPatchAction { get; private set; } = null!;
+
+        [Output("osPatchDbNodeId")]
+        public Output<string?> OsPatchDbNodeId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("osPatchTrigger")]
+        public Output<int?> OsPatchTrigger { get; private set; } = null!;
+
         /// <summary>
         /// The most recent OS Patch Version applied on the DB system.
         /// </summary>
@@ -316,6 +332,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("pointInTimeDataDiskCloneTimestamp")]
         public Output<string> PointInTimeDataDiskCloneTimestamp { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        /// </summary>
+        [Output("primaryDbSystemId")]
+        public Output<string> PrimaryDbSystemId { get; private set; } = null!;
 
         /// <summary>
         /// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
@@ -440,10 +462,6 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("timeZone")]
         public Output<string> TimeZone { get; private set; } = null!;
@@ -742,6 +760,28 @@ namespace Pulumi.Oci.Database
             set => _nsgIds = value;
         }
 
+        [Input("osPatchAction")]
+        public Input<string>? OsPatchAction { get; set; }
+
+        [Input("osPatchDbNodeId")]
+        public Input<string>? OsPatchDbNodeId { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("osPatchTrigger")]
+        public Input<int>? OsPatchTrigger { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        /// </summary>
+        [Input("primaryDbSystemId")]
+        public Input<string>? PrimaryDbSystemId { get; set; }
+
         /// <summary>
         /// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
         /// </summary>
@@ -835,10 +875,6 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("timeZone")]
         public Input<string>? TimeZone { get; set; }
@@ -1135,6 +1171,22 @@ namespace Pulumi.Oci.Database
             set => _nsgIds = value;
         }
 
+        [Input("osPatchAction")]
+        public Input<string>? OsPatchAction { get; set; }
+
+        [Input("osPatchDbNodeId")]
+        public Input<string>? OsPatchDbNodeId { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("osPatchTrigger")]
+        public Input<int>? OsPatchTrigger { get; set; }
+
         /// <summary>
         /// The most recent OS Patch Version applied on the DB system.
         /// </summary>
@@ -1146,6 +1198,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("pointInTimeDataDiskCloneTimestamp")]
         public Input<string>? PointInTimeDataDiskCloneTimestamp { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        /// </summary>
+        [Input("primaryDbSystemId")]
+        public Input<string>? PrimaryDbSystemId { get; set; }
 
         /// <summary>
         /// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
@@ -1300,10 +1358,6 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("timeZone")]
         public Input<string>? TimeZone { get; set; }

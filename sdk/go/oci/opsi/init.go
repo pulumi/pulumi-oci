@@ -27,6 +27,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AwrHubSource{}
 	case "oci:Opsi/awrHubSourceAwrhubsourcesManagement:AwrHubSourceAwrhubsourcesManagement":
 		r = &AwrHubSourceAwrhubsourcesManagement{}
+	case "oci:Opsi/chargebackPlan:ChargebackPlan":
+		r = &ChargebackPlan{}
 	case "oci:Opsi/databaseInsight:DatabaseInsight":
 		r = &DatabaseInsight{}
 	case "oci:Opsi/enterpriseManagerBridge:EnterpriseManagerBridge":
@@ -75,6 +77,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Opsi/awrHubSourceAwrhubsourcesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Opsi/chargebackPlan",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

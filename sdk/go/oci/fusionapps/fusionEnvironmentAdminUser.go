@@ -39,7 +39,6 @@ import (
 //				FusionEnvironmentId: pulumi.Any(testFusionEnvironment.Id),
 //				LastName:            pulumi.Any(fusionEnvironmentAdminUserLastName),
 //				Username:            pulumi.Any(fusionEnvironmentAdminUserUsername),
-//				Password:            pulumi.Any(fusionEnvironmentAdminUserPassword),
 //			})
 //			if err != nil {
 //				return err
@@ -70,10 +69,6 @@ type FusionEnvironmentAdminUser struct {
 	Items FusionEnvironmentAdminUserItemArrayOutput `pulumi:"items"`
 	// The administrator's last name.
 	LastName pulumi.StringOutput `pulumi:"lastName"`
-	// The password for the administrator.
-	//
-	// Deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
-	Password pulumi.StringOutput `pulumi:"password"`
 	// The username for the administrator.
 	//
 	// ** IMPORTANT **
@@ -103,13 +98,6 @@ func NewFusionEnvironmentAdminUser(ctx *pulumi.Context,
 	if args.Username == nil {
 		return nil, errors.New("invalid value for required argument 'Username'")
 	}
-	if args.Password != nil {
-		args.Password = pulumi.ToSecret(args.Password).(pulumi.StringPtrInput)
-	}
-	secrets := pulumi.AdditionalSecretOutputs([]string{
-		"password",
-	})
-	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource FusionEnvironmentAdminUser
 	err := ctx.RegisterResource("oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser", name, args, &resource, opts...)
@@ -143,10 +131,6 @@ type fusionEnvironmentAdminUserState struct {
 	Items []FusionEnvironmentAdminUserItem `pulumi:"items"`
 	// The administrator's last name.
 	LastName *string `pulumi:"lastName"`
-	// The password for the administrator.
-	//
-	// Deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
-	Password *string `pulumi:"password"`
 	// The username for the administrator.
 	//
 	// ** IMPORTANT **
@@ -165,10 +149,6 @@ type FusionEnvironmentAdminUserState struct {
 	Items FusionEnvironmentAdminUserItemArrayInput
 	// The administrator's last name.
 	LastName pulumi.StringPtrInput
-	// The password for the administrator.
-	//
-	// Deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
-	Password pulumi.StringPtrInput
 	// The username for the administrator.
 	//
 	// ** IMPORTANT **
@@ -189,10 +169,6 @@ type fusionEnvironmentAdminUserArgs struct {
 	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
 	// The administrator's last name.
 	LastName string `pulumi:"lastName"`
-	// The password for the administrator.
-	//
-	// Deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
-	Password *string `pulumi:"password"`
 	// The username for the administrator.
 	//
 	// ** IMPORTANT **
@@ -210,10 +186,6 @@ type FusionEnvironmentAdminUserArgs struct {
 	FusionEnvironmentId pulumi.StringInput
 	// The administrator's last name.
 	LastName pulumi.StringInput
-	// The password for the administrator.
-	//
-	// Deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
-	Password pulumi.StringPtrInput
 	// The username for the administrator.
 	//
 	// ** IMPORTANT **
@@ -331,13 +303,6 @@ func (o FusionEnvironmentAdminUserOutput) Items() FusionEnvironmentAdminUserItem
 // The administrator's last name.
 func (o FusionEnvironmentAdminUserOutput) LastName() pulumi.StringOutput {
 	return o.ApplyT(func(v *FusionEnvironmentAdminUser) pulumi.StringOutput { return v.LastName }).(pulumi.StringOutput)
-}
-
-// The password for the administrator.
-//
-// Deprecated: The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.
-func (o FusionEnvironmentAdminUserOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironmentAdminUser) pulumi.StringOutput { return v.Password }).(pulumi.StringOutput)
 }
 
 // The username for the administrator.

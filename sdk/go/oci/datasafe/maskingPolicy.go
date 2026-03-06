@@ -95,6 +95,8 @@ type MaskingPolicy struct {
 
 	// (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
 	AddMaskingColumnsFromSdmTrigger pulumi.IntPtrOutput `pulumi:"addMaskingColumnsFromSdmTrigger"`
+	// Specifies whether target database credentials are required to perform masking with this policy
+	AreTargetCredentialsRequired pulumi.BoolOutput `pulumi:"areTargetCredentialsRequired"`
 	// (Updatable) Details to associate a column source with a masking policy.
 	ColumnSources MaskingPolicyColumnSourceArrayOutput `pulumi:"columnSources"`
 	// (Updatable) The OCID of the compartment where the masking policy should be created.
@@ -172,6 +174,8 @@ func GetMaskingPolicy(ctx *pulumi.Context,
 type maskingPolicyState struct {
 	// (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
 	AddMaskingColumnsFromSdmTrigger *int `pulumi:"addMaskingColumnsFromSdmTrigger"`
+	// Specifies whether target database credentials are required to perform masking with this policy
+	AreTargetCredentialsRequired *bool `pulumi:"areTargetCredentialsRequired"`
 	// (Updatable) Details to associate a column source with a masking policy.
 	ColumnSources []MaskingPolicyColumnSource `pulumi:"columnSources"`
 	// (Updatable) The OCID of the compartment where the masking policy should be created.
@@ -214,6 +218,8 @@ type maskingPolicyState struct {
 type MaskingPolicyState struct {
 	// (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
 	AddMaskingColumnsFromSdmTrigger pulumi.IntPtrInput
+	// Specifies whether target database credentials are required to perform masking with this policy
+	AreTargetCredentialsRequired pulumi.BoolPtrInput
 	// (Updatable) Details to associate a column source with a masking policy.
 	ColumnSources MaskingPolicyColumnSourceArrayInput
 	// (Updatable) The OCID of the compartment where the masking policy should be created.
@@ -420,6 +426,11 @@ func (o MaskingPolicyOutput) ToMaskingPolicyOutputWithContext(ctx context.Contex
 // (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
 func (o MaskingPolicyOutput) AddMaskingColumnsFromSdmTrigger() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *MaskingPolicy) pulumi.IntPtrOutput { return v.AddMaskingColumnsFromSdmTrigger }).(pulumi.IntPtrOutput)
+}
+
+// Specifies whether target database credentials are required to perform masking with this policy
+func (o MaskingPolicyOutput) AreTargetCredentialsRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v *MaskingPolicy) pulumi.BoolOutput { return v.AreTargetCredentialsRequired }).(pulumi.BoolOutput)
 }
 
 // (Updatable) Details to associate a column source with a masking policy.

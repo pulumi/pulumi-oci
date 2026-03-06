@@ -125,6 +125,10 @@ export class DbNode extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly hostname: pulumi.Output<string>;
     /**
+     * Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+     */
+    declare public /*out*/ readonly isOsPatchRebootRequired: pulumi.Output<boolean>;
+    /**
      * Information about the current lifecycle state.
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
@@ -204,6 +208,7 @@ export class DbNode extends pulumi.CustomResource {
             resourceInputs["hostIpId"] = state?.hostIpId;
             resourceInputs["hostIpv6id"] = state?.hostIpv6id;
             resourceInputs["hostname"] = state?.hostname;
+            resourceInputs["isOsPatchRebootRequired"] = state?.isOsPatchRebootRequired;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["maintenanceType"] = state?.maintenanceType;
             resourceInputs["memorySizeInGbs"] = state?.memorySizeInGbs;
@@ -239,6 +244,7 @@ export class DbNode extends pulumi.CustomResource {
             resourceInputs["hostIpId"] = undefined /*out*/;
             resourceInputs["hostIpv6id"] = undefined /*out*/;
             resourceInputs["hostname"] = undefined /*out*/;
+            resourceInputs["isOsPatchRebootRequired"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["maintenanceType"] = undefined /*out*/;
             resourceInputs["memorySizeInGbs"] = undefined /*out*/;
@@ -337,6 +343,10 @@ export interface DbNodeState {
      * The host name for the database node.
      */
     hostname?: pulumi.Input<string>;
+    /**
+     * Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+     */
+    isOsPatchRebootRequired?: pulumi.Input<boolean>;
     /**
      * Information about the current lifecycle state.
      */

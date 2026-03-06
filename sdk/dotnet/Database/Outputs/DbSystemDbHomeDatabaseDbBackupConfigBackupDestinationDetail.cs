@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail
     {
         /// <summary>
-        /// Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        /// Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         /// </summary>
         public readonly string? BackupRetentionPolicyOnTerminate;
         /// <summary>

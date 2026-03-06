@@ -10,13 +10,16 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Lustre.FileStorageLustreFileSystemArgs;
 import com.pulumi.oci.Lustre.inputs.FileStorageLustreFileSystemState;
+import com.pulumi.oci.Lustre.outputs.FileStorageLustreFileSystemDateTimeDetails;
 import com.pulumi.oci.Lustre.outputs.FileStorageLustreFileSystemMaintenanceWindow;
+import com.pulumi.oci.Lustre.outputs.FileStorageLustreFileSystemMaintenanceWindowMetadata;
 import com.pulumi.oci.Lustre.outputs.FileStorageLustreFileSystemRootSquashConfiguration;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -39,6 +42,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Lustre.FileStorageLustreFileSystem;
  * import com.pulumi.oci.Lustre.FileStorageLustreFileSystemArgs;
  * import com.pulumi.oci.Lustre.inputs.FileStorageLustreFileSystemRootSquashConfigurationArgs;
+ * import com.pulumi.oci.Lustre.inputs.FileStorageLustreFileSystemMaintenanceWindowArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -71,6 +75,10 @@ import javax.annotation.Nullable;
  *             .fileSystemDescription(lustreFileSystemFileSystemDescription)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .kmsKeyId(testKey.id())
+ *             .maintenanceWindows(FileStorageLustreFileSystemMaintenanceWindowArgs.builder()
+ *                 .dayOfWeek(lustreFileSystemMaintenanceWindowDayOfWeek)
+ *                 .timeStart(lustreFileSystemMaintenanceWindowTimeStart)
+ *                 .build())
  *             .nsgIds(lustreFileSystemNsgIds)
  *             .build());
  * 
@@ -145,6 +153,12 @@ public class FileStorageLustreFileSystem extends com.pulumi.resources.CustomReso
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+    @Export(name="dateTimeDetails", refs={FileStorageLustreFileSystemDateTimeDetails.class}, tree="[0]")
+    private Output</* @Nullable */ FileStorageLustreFileSystemDateTimeDetails> dateTimeDetails;
+
+    public Output<Optional<FileStorageLustreFileSystemDateTimeDetails>> dateTimeDetails() {
+        return Codegen.optional(this.dateTimeDetails);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -259,14 +273,28 @@ public class FileStorageLustreFileSystem extends com.pulumi.resources.CustomReso
         return this.lnet;
     }
     /**
-     * The preferred day and time to perform maintenance.
+     * The meta-data for maintenance window.
+     * 
+     */
+    @Export(name="maintenanceWindowMetadatas", refs={List.class,FileStorageLustreFileSystemMaintenanceWindowMetadata.class}, tree="[0,1]")
+    private Output<List<FileStorageLustreFileSystemMaintenanceWindowMetadata>> maintenanceWindowMetadatas;
+
+    /**
+     * @return The meta-data for maintenance window.
+     * 
+     */
+    public Output<List<FileStorageLustreFileSystemMaintenanceWindowMetadata>> maintenanceWindowMetadatas() {
+        return this.maintenanceWindowMetadatas;
+    }
+    /**
+     * (Updatable) The preferred day and time to perform maintenance.
      * 
      */
     @Export(name="maintenanceWindows", refs={List.class,FileStorageLustreFileSystemMaintenanceWindow.class}, tree="[0,1]")
     private Output<List<FileStorageLustreFileSystemMaintenanceWindow>> maintenanceWindows;
 
     /**
-     * @return The preferred day and time to perform maintenance.
+     * @return (Updatable) The preferred day and time to perform maintenance.
      * 
      */
     public Output<List<FileStorageLustreFileSystemMaintenanceWindow>> maintenanceWindows() {
@@ -315,6 +343,26 @@ public class FileStorageLustreFileSystem extends com.pulumi.resources.CustomReso
         return this.nsgIds;
     }
     /**
+     * (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="overrideMaintenanceTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> overrideMaintenanceTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Optional<Integer>> overrideMaintenanceTrigger() {
+        return Codegen.optional(this.overrideMaintenanceTrigger);
+    }
+    /**
      * The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
      * 
      */
@@ -359,18 +407,12 @@ public class FileStorageLustreFileSystem extends com.pulumi.resources.CustomReso
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Lustre file system is in.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Lustre file system is in.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> subnetId() {

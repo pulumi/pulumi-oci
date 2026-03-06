@@ -5,6 +5,7 @@ package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Opsi.outputs.GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetail;
 import com.pulumi.oci.Opsi.outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail;
 import java.lang.Boolean;
 import java.lang.String;
@@ -14,6 +15,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetExadataInsightsExadataInsightSummaryCollectionItem {
+    /**
+     * @return Object containing chargeback plan details
+     * 
+     */
+    private List<GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetail> chargebackPlanDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -131,6 +137,11 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItem {
      */
     private String status;
     /**
+     * @return A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+     * 
+     */
+    private String statusDetails;
+    /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
@@ -147,6 +158,13 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItem {
     private String timeUpdated;
 
     private GetExadataInsightsExadataInsightSummaryCollectionItem() {}
+    /**
+     * @return Object containing chargeback plan details
+     * 
+     */
+    public List<GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetail> chargebackPlanDetails() {
+        return this.chargebackPlanDetails;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -312,6 +330,13 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItem {
         return this.status;
     }
     /**
+     * @return A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+     * 
+     */
+    public String statusDetails() {
+        return this.statusDetails;
+    }
+    /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
@@ -342,6 +367,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetail> chargebackPlanDetails;
         private String compartmentId;
         private Map<String,String> definedTags;
         private String enterpriseManagerBridgeId;
@@ -366,12 +392,14 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItem {
         private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail> memberVmClusterDetails;
         private String state;
         private String status;
+        private String statusDetails;
         private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
         public Builder(GetExadataInsightsExadataInsightSummaryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.chargebackPlanDetails = defaults.chargebackPlanDetails;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.enterpriseManagerBridgeId = defaults.enterpriseManagerBridgeId;
@@ -396,11 +424,23 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItem {
     	      this.memberVmClusterDetails = defaults.memberVmClusterDetails;
     	      this.state = defaults.state;
     	      this.status = defaults.status;
+    	      this.statusDetails = defaults.statusDetails;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder chargebackPlanDetails(List<GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetail> chargebackPlanDetails) {
+            if (chargebackPlanDetails == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightsExadataInsightSummaryCollectionItem", "chargebackPlanDetails");
+            }
+            this.chargebackPlanDetails = chargebackPlanDetails;
+            return this;
+        }
+        public Builder chargebackPlanDetails(GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetail... chargebackPlanDetails) {
+            return chargebackPlanDetails(List.of(chargebackPlanDetails));
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
@@ -597,6 +637,14 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder statusDetails(String statusDetails) {
+            if (statusDetails == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightsExadataInsightSummaryCollectionItem", "statusDetails");
+            }
+            this.statusDetails = statusDetails;
+            return this;
+        }
+        @CustomType.Setter
         public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetExadataInsightsExadataInsightSummaryCollectionItem", "systemTags");
@@ -622,6 +670,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItem {
         }
         public GetExadataInsightsExadataInsightSummaryCollectionItem build() {
             final var _resultValue = new GetExadataInsightsExadataInsightSummaryCollectionItem();
+            _resultValue.chargebackPlanDetails = chargebackPlanDetails;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
@@ -646,6 +695,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItem {
             _resultValue.memberVmClusterDetails = memberVmClusterDetails;
             _resultValue.state = state;
             _resultValue.status = status;
+            _resultValue.statusDetails = statusDetails;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;

@@ -2603,6 +2603,421 @@ func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaul
 	}).(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput)
 }
 
+type GetOciCacheEngineOptionsFilter struct {
+	// Oracle Cloud Infrastructure Cache engine version friendly name
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetOciCacheEngineOptionsFilterInput is an input type that accepts GetOciCacheEngineOptionsFilterArgs and GetOciCacheEngineOptionsFilterOutput values.
+// You can construct a concrete instance of `GetOciCacheEngineOptionsFilterInput` via:
+//
+//	GetOciCacheEngineOptionsFilterArgs{...}
+type GetOciCacheEngineOptionsFilterInput interface {
+	pulumi.Input
+
+	ToGetOciCacheEngineOptionsFilterOutput() GetOciCacheEngineOptionsFilterOutput
+	ToGetOciCacheEngineOptionsFilterOutputWithContext(context.Context) GetOciCacheEngineOptionsFilterOutput
+}
+
+type GetOciCacheEngineOptionsFilterArgs struct {
+	// Oracle Cloud Infrastructure Cache engine version friendly name
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetOciCacheEngineOptionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheEngineOptionsFilter)(nil)).Elem()
+}
+
+func (i GetOciCacheEngineOptionsFilterArgs) ToGetOciCacheEngineOptionsFilterOutput() GetOciCacheEngineOptionsFilterOutput {
+	return i.ToGetOciCacheEngineOptionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheEngineOptionsFilterArgs) ToGetOciCacheEngineOptionsFilterOutputWithContext(ctx context.Context) GetOciCacheEngineOptionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheEngineOptionsFilterOutput)
+}
+
+// GetOciCacheEngineOptionsFilterArrayInput is an input type that accepts GetOciCacheEngineOptionsFilterArray and GetOciCacheEngineOptionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheEngineOptionsFilterArrayInput` via:
+//
+//	GetOciCacheEngineOptionsFilterArray{ GetOciCacheEngineOptionsFilterArgs{...} }
+type GetOciCacheEngineOptionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheEngineOptionsFilterArrayOutput() GetOciCacheEngineOptionsFilterArrayOutput
+	ToGetOciCacheEngineOptionsFilterArrayOutputWithContext(context.Context) GetOciCacheEngineOptionsFilterArrayOutput
+}
+
+type GetOciCacheEngineOptionsFilterArray []GetOciCacheEngineOptionsFilterInput
+
+func (GetOciCacheEngineOptionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheEngineOptionsFilter)(nil)).Elem()
+}
+
+func (i GetOciCacheEngineOptionsFilterArray) ToGetOciCacheEngineOptionsFilterArrayOutput() GetOciCacheEngineOptionsFilterArrayOutput {
+	return i.ToGetOciCacheEngineOptionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheEngineOptionsFilterArray) ToGetOciCacheEngineOptionsFilterArrayOutputWithContext(ctx context.Context) GetOciCacheEngineOptionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheEngineOptionsFilterArrayOutput)
+}
+
+type GetOciCacheEngineOptionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheEngineOptionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheEngineOptionsFilter)(nil)).Elem()
+}
+
+func (o GetOciCacheEngineOptionsFilterOutput) ToGetOciCacheEngineOptionsFilterOutput() GetOciCacheEngineOptionsFilterOutput {
+	return o
+}
+
+func (o GetOciCacheEngineOptionsFilterOutput) ToGetOciCacheEngineOptionsFilterOutputWithContext(ctx context.Context) GetOciCacheEngineOptionsFilterOutput {
+	return o
+}
+
+// Oracle Cloud Infrastructure Cache engine version friendly name
+func (o GetOciCacheEngineOptionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheEngineOptionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetOciCacheEngineOptionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOciCacheEngineOptionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetOciCacheEngineOptionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOciCacheEngineOptionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetOciCacheEngineOptionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheEngineOptionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheEngineOptionsFilter)(nil)).Elem()
+}
+
+func (o GetOciCacheEngineOptionsFilterArrayOutput) ToGetOciCacheEngineOptionsFilterArrayOutput() GetOciCacheEngineOptionsFilterArrayOutput {
+	return o
+}
+
+func (o GetOciCacheEngineOptionsFilterArrayOutput) ToGetOciCacheEngineOptionsFilterArrayOutputWithContext(ctx context.Context) GetOciCacheEngineOptionsFilterArrayOutput {
+	return o
+}
+
+func (o GetOciCacheEngineOptionsFilterArrayOutput) Index(i pulumi.IntInput) GetOciCacheEngineOptionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheEngineOptionsFilter {
+		return vs[0].([]GetOciCacheEngineOptionsFilter)[vs[1].(int)]
+	}).(GetOciCacheEngineOptionsFilterOutput)
+}
+
+type GetOciCacheEngineOptionsOciCacheEngineOptionsCollection struct {
+	// List of Oracle Cloud Infrastructure Cache Engine Options
+	Items []GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItem `pulumi:"items"`
+}
+
+// GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionInput is an input type that accepts GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArgs and GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionOutput values.
+// You can construct a concrete instance of `GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionInput` via:
+//
+//	GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArgs{...}
+type GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionInput interface {
+	pulumi.Input
+
+	ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionOutput() GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionOutput
+	ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionOutputWithContext(context.Context) GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionOutput
+}
+
+type GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArgs struct {
+	// List of Oracle Cloud Infrastructure Cache Engine Options
+	Items GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheEngineOptionsOciCacheEngineOptionsCollection)(nil)).Elem()
+}
+
+func (i GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArgs) ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionOutput() GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionOutput {
+	return i.ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArgs) ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionOutputWithContext(ctx context.Context) GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionOutput)
+}
+
+// GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayInput is an input type that accepts GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArray and GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayInput` via:
+//
+//	GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArray{ GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArgs{...} }
+type GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayOutput() GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayOutput
+	ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayOutputWithContext(context.Context) GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayOutput
+}
+
+type GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArray []GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionInput
+
+func (GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheEngineOptionsOciCacheEngineOptionsCollection)(nil)).Elem()
+}
+
+func (i GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArray) ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayOutput() GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayOutput {
+	return i.ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArray) ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayOutputWithContext(ctx context.Context) GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayOutput)
+}
+
+type GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheEngineOptionsOciCacheEngineOptionsCollection)(nil)).Elem()
+}
+
+func (o GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionOutput) ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionOutput() GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionOutput {
+	return o
+}
+
+func (o GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionOutput) ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionOutputWithContext(ctx context.Context) GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionOutput {
+	return o
+}
+
+// List of Oracle Cloud Infrastructure Cache Engine Options
+func (o GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionOutput) Items() GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetOciCacheEngineOptionsOciCacheEngineOptionsCollection) []GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItem {
+		return v.Items
+	}).(GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayOutput)
+}
+
+type GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheEngineOptionsOciCacheEngineOptionsCollection)(nil)).Elem()
+}
+
+func (o GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayOutput) ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayOutput() GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayOutput {
+	return o
+}
+
+func (o GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayOutput) ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayOutputWithContext(ctx context.Context) GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayOutput {
+	return o
+}
+
+func (o GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayOutput) Index(i pulumi.IntInput) GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheEngineOptionsOciCacheEngineOptionsCollection {
+		return vs[0].([]GetOciCacheEngineOptionsOciCacheEngineOptionsCollection)[vs[1].(int)]
+	}).(GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionOutput)
+}
+
+type GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItem struct {
+	// List of available engine versions
+	EngineVersions []GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersion `pulumi:"engineVersions"`
+}
+
+// GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemInput is an input type that accepts GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArgs and GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemOutput values.
+// You can construct a concrete instance of `GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemInput` via:
+//
+//	GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArgs{...}
+type GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemOutput() GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemOutput
+	ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemOutputWithContext(context.Context) GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemOutput
+}
+
+type GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArgs struct {
+	// List of available engine versions
+	EngineVersions GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayInput `pulumi:"engineVersions"`
+}
+
+func (GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItem)(nil)).Elem()
+}
+
+func (i GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArgs) ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemOutput() GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemOutput {
+	return i.ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArgs) ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemOutputWithContext(ctx context.Context) GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemOutput)
+}
+
+// GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayInput is an input type that accepts GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArray and GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayInput` via:
+//
+//	GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArray{ GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArgs{...} }
+type GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayOutput() GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayOutput
+	ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayOutputWithContext(context.Context) GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayOutput
+}
+
+type GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArray []GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemInput
+
+func (GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItem)(nil)).Elem()
+}
+
+func (i GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArray) ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayOutput() GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayOutput {
+	return i.ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArray) ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayOutputWithContext(ctx context.Context) GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayOutput)
+}
+
+type GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItem)(nil)).Elem()
+}
+
+func (o GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemOutput) ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemOutput() GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemOutput {
+	return o
+}
+
+func (o GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemOutput) ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemOutputWithContext(ctx context.Context) GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemOutput {
+	return o
+}
+
+// List of available engine versions
+func (o GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemOutput) EngineVersions() GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayOutput {
+	return o.ApplyT(func(v GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItem) []GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersion {
+		return v.EngineVersions
+	}).(GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayOutput)
+}
+
+type GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItem)(nil)).Elem()
+}
+
+func (o GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayOutput) ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayOutput() GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayOutput) ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayOutputWithContext(ctx context.Context) GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItem {
+		return vs[0].([]GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItem)[vs[1].(int)]
+	}).(GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemOutput)
+}
+
+type GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersion struct {
+	// Oracle Cloud Infrastructure Cache engine version friendly name
+	Name string `pulumi:"name"`
+	// Oracle Cloud Infrastructure Cache engine version
+	Version string `pulumi:"version"`
+}
+
+// GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionInput is an input type that accepts GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArgs and GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionOutput values.
+// You can construct a concrete instance of `GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionInput` via:
+//
+//	GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArgs{...}
+type GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionInput interface {
+	pulumi.Input
+
+	ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionOutput() GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionOutput
+	ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionOutputWithContext(context.Context) GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionOutput
+}
+
+type GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArgs struct {
+	// Oracle Cloud Infrastructure Cache engine version friendly name
+	Name pulumi.StringInput `pulumi:"name"`
+	// Oracle Cloud Infrastructure Cache engine version
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersion)(nil)).Elem()
+}
+
+func (i GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArgs) ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionOutput() GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionOutput {
+	return i.ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArgs) ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionOutputWithContext(ctx context.Context) GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionOutput)
+}
+
+// GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayInput is an input type that accepts GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArray and GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayInput` via:
+//
+//	GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArray{ GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArgs{...} }
+type GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayOutput() GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayOutput
+	ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayOutputWithContext(context.Context) GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayOutput
+}
+
+type GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArray []GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionInput
+
+func (GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersion)(nil)).Elem()
+}
+
+func (i GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArray) ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayOutput() GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayOutput {
+	return i.ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArray) ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayOutputWithContext(ctx context.Context) GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayOutput)
+}
+
+type GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersion)(nil)).Elem()
+}
+
+func (o GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionOutput) ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionOutput() GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionOutput {
+	return o
+}
+
+func (o GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionOutput) ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionOutputWithContext(ctx context.Context) GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionOutput {
+	return o
+}
+
+// Oracle Cloud Infrastructure Cache engine version friendly name
+func (o GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersion) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure Cache engine version
+func (o GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersion) string {
+		return v.Version
+	}).(pulumi.StringOutput)
+}
+
+type GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersion)(nil)).Elem()
+}
+
+func (o GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayOutput) ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayOutput() GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayOutput {
+	return o
+}
+
+func (o GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayOutput) ToGetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayOutputWithContext(ctx context.Context) GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayOutput {
+	return o
+}
+
+func (o GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayOutput) Index(i pulumi.IntInput) GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersion {
+		return vs[0].([]GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersion)[vs[1].(int)]
+	}).(GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionOutput)
+}
+
 type GetOciCacheUserAuthenticationMode struct {
 	// This is Authentication Type of Oracle Cloud Infrastructure cache user
 	AuthenticationType string `pulumi:"authenticationType"`
@@ -4443,6 +4858,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayInput)(nil)).Elem(), GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemInput)(nil)).Elem(), GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayInput)(nil)).Elem(), GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheEngineOptionsFilterInput)(nil)).Elem(), GetOciCacheEngineOptionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheEngineOptionsFilterArrayInput)(nil)).Elem(), GetOciCacheEngineOptionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionInput)(nil)).Elem(), GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayInput)(nil)).Elem(), GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemInput)(nil)).Elem(), GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayInput)(nil)).Elem(), GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionInput)(nil)).Elem(), GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayInput)(nil)).Elem(), GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheUserAuthenticationModeInput)(nil)).Elem(), GetOciCacheUserAuthenticationModeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheUserAuthenticationModeArrayInput)(nil)).Elem(), GetOciCacheUserAuthenticationModeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheUsersFilterInput)(nil)).Elem(), GetOciCacheUsersFilterArgs{})
@@ -4515,6 +4938,14 @@ func init() {
 	pulumi.RegisterOutputType(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput{})
 	pulumi.RegisterOutputType(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheEngineOptionsFilterOutput{})
+	pulumi.RegisterOutputType(GetOciCacheEngineOptionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionOutput{})
+	pulumi.RegisterOutputType(GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionOutput{})
+	pulumi.RegisterOutputType(GetOciCacheEngineOptionsOciCacheEngineOptionsCollectionItemEngineVersionArrayOutput{})
 	pulumi.RegisterOutputType(GetOciCacheUserAuthenticationModeOutput{})
 	pulumi.RegisterOutputType(GetOciCacheUserAuthenticationModeArrayOutput{})
 	pulumi.RegisterOutputType(GetOciCacheUsersFilterOutput{})

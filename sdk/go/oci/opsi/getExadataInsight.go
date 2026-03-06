@@ -58,6 +58,8 @@ type LookupExadataInsightArgs struct {
 
 // A collection of values returned by getExadataInsight.
 type LookupExadataInsightResult struct {
+	// Object containing chargeback plan details
+	ChargebackPlanDetails []GetExadataInsightChargebackPlanDetail `pulumi:"chargebackPlanDetails"`
 	// Compartment identifier of the Exadata insight resource
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -106,6 +108,8 @@ type LookupExadataInsightResult struct {
 	State string `pulumi:"state"`
 	// Indicates the status of an Exadata insight in Operations Insights
 	Status string `pulumi:"status"`
+	// A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+	StatusDetails string `pulumi:"statusDetails"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
@@ -146,6 +150,13 @@ func (o LookupExadataInsightResultOutput) ToLookupExadataInsightResultOutput() L
 
 func (o LookupExadataInsightResultOutput) ToLookupExadataInsightResultOutputWithContext(ctx context.Context) LookupExadataInsightResultOutput {
 	return o
+}
+
+// Object containing chargeback plan details
+func (o LookupExadataInsightResultOutput) ChargebackPlanDetails() GetExadataInsightChargebackPlanDetailArrayOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) []GetExadataInsightChargebackPlanDetail {
+		return v.ChargebackPlanDetails
+	}).(GetExadataInsightChargebackPlanDetailArrayOutput)
 }
 
 // Compartment identifier of the Exadata insight resource
@@ -271,6 +282,11 @@ func (o LookupExadataInsightResultOutput) State() pulumi.StringOutput {
 // Indicates the status of an Exadata insight in Operations Insights
 func (o LookupExadataInsightResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+func (o LookupExadataInsightResultOutput) StatusDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) string { return v.StatusDetails }).(pulumi.StringOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`

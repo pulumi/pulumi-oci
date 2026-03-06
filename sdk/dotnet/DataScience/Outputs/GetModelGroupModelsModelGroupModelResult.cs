@@ -42,6 +42,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// SaaS friendly name of the model.
+        /// </summary>
+        public readonly string InferenceKey;
+        /// <summary>
         /// Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
         /// </summary>
         public readonly bool IsModelByReference;
@@ -90,6 +94,8 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             string id,
 
+            string inferenceKey,
+
             bool isModelByReference,
 
             string lifecycleDetails,
@@ -113,6 +119,7 @@ namespace Pulumi.Oci.DataScience.Outputs
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            InferenceKey = inferenceKey;
             IsModelByReference = isModelByReference;
             LifecycleDetails = lifecycleDetails;
             ModelId = modelId;

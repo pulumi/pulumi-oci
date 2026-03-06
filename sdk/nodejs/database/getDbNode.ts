@@ -115,6 +115,10 @@ export interface GetDbNodeResult {
      */
     readonly id: string;
     /**
+     * Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+     */
+    readonly isOsPatchRebootRequired: boolean;
+    /**
      * Information about the current lifecycle state.
      */
     readonly lifecycleDetails: string;

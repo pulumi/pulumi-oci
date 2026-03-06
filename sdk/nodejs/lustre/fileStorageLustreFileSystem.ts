@@ -43,6 +43,10 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     kmsKeyId: testKey.id,
+ *     maintenanceWindows: [{
+ *         dayOfWeek: lustreFileSystemMaintenanceWindowDayOfWeek,
+ *         timeStart: lustreFileSystemMaintenanceWindowTimeStart,
+ *     }],
  *     nsgIds: lustreFileSystemNsgIds,
  * });
  * ```
@@ -99,6 +103,7 @@ export class FileStorageLustreFileSystem extends pulumi.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Lustre file system.
      */
     declare public readonly compartmentId: pulumi.Output<string>;
+    declare public readonly dateTimeDetails: pulumi.Output<outputs.Lustre.FileStorageLustreFileSystemDateTimeDetails | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
@@ -132,9 +137,13 @@ export class FileStorageLustreFileSystem extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly lnet: pulumi.Output<string>;
     /**
-     * The preferred day and time to perform maintenance.
+     * The meta-data for maintenance window.
      */
-    declare public /*out*/ readonly maintenanceWindows: pulumi.Output<outputs.Lustre.FileStorageLustreFileSystemMaintenanceWindow[]>;
+    declare public /*out*/ readonly maintenanceWindowMetadatas: pulumi.Output<outputs.Lustre.FileStorageLustreFileSystemMaintenanceWindowMetadata[]>;
+    /**
+     * (Updatable) The preferred day and time to perform maintenance.
+     */
+    declare public readonly maintenanceWindows: pulumi.Output<outputs.Lustre.FileStorageLustreFileSystemMaintenanceWindow[]>;
     /**
      * Major version of Lustre running in the Lustre file system.  Example: `2.15`
      */
@@ -147,6 +156,14 @@ export class FileStorageLustreFileSystem extends pulumi.CustomResource {
      * (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      */
     declare public readonly nsgIds: pulumi.Output<string[]>;
+    /**
+     * (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    declare public readonly overrideMaintenanceTrigger: pulumi.Output<number | undefined>;
     /**
      * The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
      */
@@ -161,10 +178,6 @@ export class FileStorageLustreFileSystem extends pulumi.CustomResource {
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Lustre file system is in.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     declare public readonly subnetId: pulumi.Output<string>;
     /**
@@ -201,6 +214,7 @@ export class FileStorageLustreFileSystem extends pulumi.CustomResource {
             resourceInputs["capacityInGbs"] = state?.capacityInGbs;
             resourceInputs["clusterPlacementGroupId"] = state?.clusterPlacementGroupId;
             resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["dateTimeDetails"] = state?.dateTimeDetails;
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["fileSystemDescription"] = state?.fileSystemDescription;
@@ -209,10 +223,12 @@ export class FileStorageLustreFileSystem extends pulumi.CustomResource {
             resourceInputs["kmsKeyId"] = state?.kmsKeyId;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["lnet"] = state?.lnet;
+            resourceInputs["maintenanceWindowMetadatas"] = state?.maintenanceWindowMetadatas;
             resourceInputs["maintenanceWindows"] = state?.maintenanceWindows;
             resourceInputs["majorVersion"] = state?.majorVersion;
             resourceInputs["managementServiceAddress"] = state?.managementServiceAddress;
             resourceInputs["nsgIds"] = state?.nsgIds;
+            resourceInputs["overrideMaintenanceTrigger"] = state?.overrideMaintenanceTrigger;
             resourceInputs["performanceTier"] = state?.performanceTier;
             resourceInputs["rootSquashConfiguration"] = state?.rootSquashConfiguration;
             resourceInputs["state"] = state?.state;
@@ -248,20 +264,23 @@ export class FileStorageLustreFileSystem extends pulumi.CustomResource {
             resourceInputs["capacityInGbs"] = args?.capacityInGbs;
             resourceInputs["clusterPlacementGroupId"] = args?.clusterPlacementGroupId;
             resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["dateTimeDetails"] = args?.dateTimeDetails;
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["fileSystemDescription"] = args?.fileSystemDescription;
             resourceInputs["fileSystemName"] = args?.fileSystemName;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["kmsKeyId"] = args?.kmsKeyId;
+            resourceInputs["maintenanceWindows"] = args?.maintenanceWindows;
             resourceInputs["nsgIds"] = args?.nsgIds;
+            resourceInputs["overrideMaintenanceTrigger"] = args?.overrideMaintenanceTrigger;
             resourceInputs["performanceTier"] = args?.performanceTier;
             resourceInputs["rootSquashConfiguration"] = args?.rootSquashConfiguration;
             resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["systemTags"] = args?.systemTags;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["lnet"] = undefined /*out*/;
-            resourceInputs["maintenanceWindows"] = undefined /*out*/;
+            resourceInputs["maintenanceWindowMetadatas"] = undefined /*out*/;
             resourceInputs["majorVersion"] = undefined /*out*/;
             resourceInputs["managementServiceAddress"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -296,6 +315,7 @@ export interface FileStorageLustreFileSystemState {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Lustre file system.
      */
     compartmentId?: pulumi.Input<string>;
+    dateTimeDetails?: pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemDateTimeDetails>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
@@ -329,7 +349,11 @@ export interface FileStorageLustreFileSystemState {
      */
     lnet?: pulumi.Input<string>;
     /**
-     * The preferred day and time to perform maintenance.
+     * The meta-data for maintenance window.
+     */
+    maintenanceWindowMetadatas?: pulumi.Input<pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemMaintenanceWindowMetadata>[]>;
+    /**
+     * (Updatable) The preferred day and time to perform maintenance.
      */
     maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemMaintenanceWindow>[]>;
     /**
@@ -345,6 +369,14 @@ export interface FileStorageLustreFileSystemState {
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
+     * (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    overrideMaintenanceTrigger?: pulumi.Input<number>;
+    /**
      * The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
      */
     performanceTier?: pulumi.Input<string>;
@@ -358,10 +390,6 @@ export interface FileStorageLustreFileSystemState {
     state?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Lustre file system is in.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     subnetId?: pulumi.Input<string>;
     /**
@@ -402,6 +430,7 @@ export interface FileStorageLustreFileSystemArgs {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Lustre file system.
      */
     compartmentId: pulumi.Input<string>;
+    dateTimeDetails?: pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemDateTimeDetails>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
@@ -427,9 +456,21 @@ export interface FileStorageLustreFileSystemArgs {
      */
     kmsKeyId?: pulumi.Input<string>;
     /**
+     * (Updatable) The preferred day and time to perform maintenance.
+     */
+    maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemMaintenanceWindow>[]>;
+    /**
      * (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    overrideMaintenanceTrigger?: pulumi.Input<number>;
     /**
      * The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
      */
@@ -440,10 +481,6 @@ export interface FileStorageLustreFileSystemArgs {
     rootSquashConfiguration: pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemRootSquashConfiguration>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Lustre file system is in.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     subnetId: pulumi.Input<string>;
     /**

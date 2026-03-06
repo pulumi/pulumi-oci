@@ -169,6 +169,12 @@ namespace Pulumi.Oci.Opsi
     public partial class ExadataInsight : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// Object containing chargeback plan details
+        /// </summary>
+        [Output("chargebackPlanDetails")]
+        public Output<ImmutableArray<Outputs.ExadataInsightChargebackPlanDetail>> ChargebackPlanDetails { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Compartment Identifier of Exadata insight
         /// </summary>
         [Output("compartmentId")]
@@ -300,6 +306,12 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
+
+        /// <summary>
+        /// A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+        /// </summary>
+        [Output("statusDetails")]
+        public Output<string> StatusDetails { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -457,6 +469,18 @@ namespace Pulumi.Oci.Opsi
 
     public sealed class ExadataInsightState : global::Pulumi.ResourceArgs
     {
+        [Input("chargebackPlanDetails")]
+        private InputList<Inputs.ExadataInsightChargebackPlanDetailGetArgs>? _chargebackPlanDetails;
+
+        /// <summary>
+        /// Object containing chargeback plan details
+        /// </summary>
+        public InputList<Inputs.ExadataInsightChargebackPlanDetailGetArgs> ChargebackPlanDetails
+        {
+            get => _chargebackPlanDetails ?? (_chargebackPlanDetails = new InputList<Inputs.ExadataInsightChargebackPlanDetailGetArgs>());
+            set => _chargebackPlanDetails = value;
+        }
+
         /// <summary>
         /// (Updatable) Compartment Identifier of Exadata insight
         /// </summary>
@@ -606,6 +630,12 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
+
+        /// <summary>
+        /// A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+        /// </summary>
+        [Input("statusDetails")]
+        public Input<string>? StatusDetails { get; set; }
 
         [Input("systemTags")]
         private InputMap<string>? _systemTags;

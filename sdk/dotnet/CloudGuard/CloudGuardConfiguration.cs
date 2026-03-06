@@ -34,14 +34,6 @@ namespace Pulumi.Oci.CloudGuard
     ///         ReportingRegion = cloudGuardConfigurationReportingRegion,
     ///         Status = cloudGuardConfigurationStatus,
     ///         SelfManageResources = cloudGuardConfigurationSelfManageResources,
-    ///         ServiceConfigurations = new[]
-    ///         {
-    ///             
-    ///             {
-    ///                 { "serviceConfigurationType", cloudGuardConfigurationServiceConfigurationsServiceConfigurationType },
-    ///                 { "status", cloudGuardConfigurationServiceConfigurationsStatus },
-    ///             },
-    ///         },
     ///     });
     /// 
     /// });

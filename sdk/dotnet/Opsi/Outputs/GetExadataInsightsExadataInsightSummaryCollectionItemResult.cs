@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Opsi.Outputs
     public sealed class GetExadataInsightsExadataInsightSummaryCollectionItemResult
     {
         /// <summary>
+        /// Object containing chargeback plan details
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailResult> ChargebackPlanDetails;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -107,6 +111,10 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string Status;
         /// <summary>
+        /// A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+        /// </summary>
+        public readonly string StatusDetails;
+        /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
@@ -121,6 +129,8 @@ namespace Pulumi.Oci.Opsi.Outputs
 
         [OutputConstructor]
         private GetExadataInsightsExadataInsightSummaryCollectionItemResult(
+            ImmutableArray<Outputs.GetExadataInsightsExadataInsightSummaryCollectionItemChargebackPlanDetailResult> chargebackPlanDetails,
+
             string compartmentId,
 
             ImmutableDictionary<string, string> definedTags,
@@ -169,12 +179,15 @@ namespace Pulumi.Oci.Opsi.Outputs
 
             string status,
 
+            string statusDetails,
+
             ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 
             string timeUpdated)
         {
+            ChargebackPlanDetails = chargebackPlanDetails;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             EnterpriseManagerBridgeId = enterpriseManagerBridgeId;
@@ -199,6 +212,7 @@ namespace Pulumi.Oci.Opsi.Outputs
             MemberVmClusterDetails = memberVmClusterDetails;
             State = state;
             Status = status;
+            StatusDetails = statusDetails;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

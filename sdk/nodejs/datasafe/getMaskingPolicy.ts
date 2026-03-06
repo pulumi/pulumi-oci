@@ -45,6 +45,10 @@ export interface GetMaskingPolicyArgs {
 export interface GetMaskingPolicyResult {
     readonly addMaskingColumnsFromSdmTrigger: number;
     /**
+     * Specifies whether target database credentials are required to perform masking with this policy
+     */
+    readonly areTargetCredentialsRequired: boolean;
+    /**
      * The source of masking columns.
      */
     readonly columnSources: outputs.DataSafe.GetMaskingPolicyColumnSource[];

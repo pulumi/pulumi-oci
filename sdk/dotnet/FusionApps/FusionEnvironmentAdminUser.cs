@@ -34,7 +34,6 @@ namespace Pulumi.Oci.FusionApps
     ///         FusionEnvironmentId = testFusionEnvironment.Id,
     ///         LastName = fusionEnvironmentAdminUserLastName,
     ///         Username = fusionEnvironmentAdminUserUsername,
-    ///         Password = fusionEnvironmentAdminUserPassword,
     ///     });
     /// 
     /// });
@@ -82,12 +81,6 @@ namespace Pulumi.Oci.FusionApps
         public Output<string> LastName { get; private set; } = null!;
 
         /// <summary>
-        /// The password for the administrator.
-        /// </summary>
-        [Output("password")]
-        public Output<string> Password { get; private set; } = null!;
-
-        /// <summary>
         /// The username for the administrator.
         /// 
         /// 
@@ -120,10 +113,6 @@ namespace Pulumi.Oci.FusionApps
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
-                AdditionalSecretOutputs =
-                {
-                    "password",
-                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -170,23 +159,6 @@ namespace Pulumi.Oci.FusionApps
         /// </summary>
         [Input("lastName", required: true)]
         public Input<string> LastName { get; set; } = null!;
-
-        [Input("password")]
-        private Input<string>? _password;
-
-        /// <summary>
-        /// The password for the administrator.
-        /// </summary>
-        [Obsolete(@"The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.")]
-        public Input<string>? Password
-        {
-            get => _password;
-            set
-            {
-                var emptySecret = Output.CreateSecret(0);
-                _password = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
-            }
-        }
 
         /// <summary>
         /// The username for the administrator.
@@ -241,23 +213,6 @@ namespace Pulumi.Oci.FusionApps
         /// </summary>
         [Input("lastName")]
         public Input<string>? LastName { get; set; }
-
-        [Input("password")]
-        private Input<string>? _password;
-
-        /// <summary>
-        /// The password for the administrator.
-        /// </summary>
-        [Obsolete(@"The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.")]
-        public Input<string>? Password
-        {
-            get => _password;
-            set
-            {
-                var emptySecret = Output.CreateSecret(0);
-                _password = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
-            }
-        }
 
         /// <summary>
         /// The username for the administrator.

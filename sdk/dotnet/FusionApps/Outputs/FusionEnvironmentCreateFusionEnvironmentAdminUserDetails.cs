@@ -26,10 +26,6 @@ namespace Pulumi.Oci.FusionApps.Outputs
         /// </summary>
         public readonly string LastName;
         /// <summary>
-        /// The password for the administrator.
-        /// </summary>
-        public readonly string? Password;
-        /// <summary>
         /// The username for the administrator.
         /// </summary>
         public readonly string Username;
@@ -42,14 +38,11 @@ namespace Pulumi.Oci.FusionApps.Outputs
 
             string lastName,
 
-            string? password,
-
             string username)
         {
             EmailAddress = emailAddress;
             FirstName = firstName;
             LastName = lastName;
-            Password = password;
             Username = username;
         }
     }

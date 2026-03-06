@@ -160,6 +160,10 @@ export class ExadataInsight extends pulumi.CustomResource {
     }
 
     /**
+     * Object containing chargeback plan details
+     */
+    declare public /*out*/ readonly chargebackPlanDetails: pulumi.Output<outputs.Opsi.ExadataInsightChargebackPlanDetail[]>;
+    /**
      * (Updatable) Compartment Identifier of Exadata insight
      */
     declare public readonly compartmentId: pulumi.Output<string>;
@@ -247,6 +251,10 @@ export class ExadataInsight extends pulumi.CustomResource {
      */
     declare public readonly status: pulumi.Output<string>;
     /**
+     * A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+     */
+    declare public /*out*/ readonly statusDetails: pulumi.Output<string>;
+    /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
@@ -272,6 +280,7 @@ export class ExadataInsight extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExadataInsightState | undefined;
+            resourceInputs["chargebackPlanDetails"] = state?.chargebackPlanDetails;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["enterpriseManagerBridgeId"] = state?.enterpriseManagerBridgeId;
@@ -295,6 +304,7 @@ export class ExadataInsight extends pulumi.CustomResource {
             resourceInputs["memberVmClusterDetails"] = state?.memberVmClusterDetails;
             resourceInputs["state"] = state?.state;
             resourceInputs["status"] = state?.status;
+            resourceInputs["statusDetails"] = state?.statusDetails;
             resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
@@ -317,6 +327,7 @@ export class ExadataInsight extends pulumi.CustomResource {
             resourceInputs["isAutoSyncEnabled"] = args?.isAutoSyncEnabled;
             resourceInputs["memberVmClusterDetails"] = args?.memberVmClusterDetails;
             resourceInputs["status"] = args?.status;
+            resourceInputs["chargebackPlanDetails"] = undefined /*out*/;
             resourceInputs["enterpriseManagerEntityDisplayName"] = undefined /*out*/;
             resourceInputs["enterpriseManagerEntityName"] = undefined /*out*/;
             resourceInputs["enterpriseManagerEntityType"] = undefined /*out*/;
@@ -329,6 +340,7 @@ export class ExadataInsight extends pulumi.CustomResource {
             resourceInputs["isVirtualizedExadata"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["statusDetails"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
@@ -342,6 +354,10 @@ export class ExadataInsight extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ExadataInsight resources.
  */
 export interface ExadataInsightState {
+    /**
+     * Object containing chargeback plan details
+     */
+    chargebackPlanDetails?: pulumi.Input<pulumi.Input<inputs.Opsi.ExadataInsightChargebackPlanDetail>[]>;
     /**
      * (Updatable) Compartment Identifier of Exadata insight
      */
@@ -429,6 +445,10 @@ export interface ExadataInsightState {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     status?: pulumi.Input<string>;
+    /**
+     * A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+     */
+    statusDetails?: pulumi.Input<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */

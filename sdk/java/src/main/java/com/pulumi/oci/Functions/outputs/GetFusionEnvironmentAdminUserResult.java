@@ -35,13 +35,6 @@ public final class GetFusionEnvironmentAdminUserResult {
      */
     private String lastName;
     /**
-     * @deprecated
-     * The &#39;password&#39; field is deprecated. Please use the OCI Console or email link to reset the password.
-     * 
-     */
-    @Deprecated /* The 'password' field is deprecated. Please use the OCI Console or email link to reset the password. */
-    private String password;
-    /**
      * @return Admin username
      * 
      */
@@ -83,15 +76,6 @@ public final class GetFusionEnvironmentAdminUserResult {
         return this.lastName;
     }
     /**
-     * @deprecated
-     * The &#39;password&#39; field is deprecated. Please use the OCI Console or email link to reset the password.
-     * 
-     */
-    @Deprecated /* The 'password' field is deprecated. Please use the OCI Console or email link to reset the password. */
-    public String password() {
-        return this.password;
-    }
-    /**
      * @return Admin username
      * 
      */
@@ -114,7 +98,6 @@ public final class GetFusionEnvironmentAdminUserResult {
         private String id;
         private List<GetFusionEnvironmentAdminUserItem> items;
         private String lastName;
-        private String password;
         private String username;
         public Builder() {}
         public Builder(GetFusionEnvironmentAdminUserResult defaults) {
@@ -125,7 +108,6 @@ public final class GetFusionEnvironmentAdminUserResult {
     	      this.id = defaults.id;
     	      this.items = defaults.items;
     	      this.lastName = defaults.lastName;
-    	      this.password = defaults.password;
     	      this.username = defaults.username;
         }
 
@@ -181,14 +163,6 @@ public final class GetFusionEnvironmentAdminUserResult {
             return this;
         }
         @CustomType.Setter
-        public Builder password(String password) {
-            if (password == null) {
-              throw new MissingRequiredPropertyException("GetFusionEnvironmentAdminUserResult", "password");
-            }
-            this.password = password;
-            return this;
-        }
-        @CustomType.Setter
         public Builder username(String username) {
             if (username == null) {
               throw new MissingRequiredPropertyException("GetFusionEnvironmentAdminUserResult", "username");
@@ -204,7 +178,6 @@ public final class GetFusionEnvironmentAdminUserResult {
             _resultValue.id = id;
             _resultValue.items = items;
             _resultValue.lastName = lastName;
-            _resultValue.password = password;
             _resultValue.username = username;
             return _resultValue;
         }

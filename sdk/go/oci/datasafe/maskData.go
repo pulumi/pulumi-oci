@@ -15,8 +15,9 @@ import (
 type MaskData struct {
 	pulumi.CustomResourceState
 
-	MaskingPolicyId pulumi.StringOutput `pulumi:"maskingPolicyId"`
-	TargetId        pulumi.StringOutput `pulumi:"targetId"`
+	MaskingPolicyId   pulumi.StringOutput                `pulumi:"maskingPolicyId"`
+	TargetCredentials MaskDataTargetCredentialsPtrOutput `pulumi:"targetCredentials"`
+	TargetId          pulumi.StringOutput                `pulumi:"targetId"`
 }
 
 // NewMaskData registers a new resource with the given unique name, arguments, and options.
@@ -55,13 +56,15 @@ func GetMaskData(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering MaskData resources.
 type maskDataState struct {
-	MaskingPolicyId *string `pulumi:"maskingPolicyId"`
-	TargetId        *string `pulumi:"targetId"`
+	MaskingPolicyId   *string                    `pulumi:"maskingPolicyId"`
+	TargetCredentials *MaskDataTargetCredentials `pulumi:"targetCredentials"`
+	TargetId          *string                    `pulumi:"targetId"`
 }
 
 type MaskDataState struct {
-	MaskingPolicyId pulumi.StringPtrInput
-	TargetId        pulumi.StringPtrInput
+	MaskingPolicyId   pulumi.StringPtrInput
+	TargetCredentials MaskDataTargetCredentialsPtrInput
+	TargetId          pulumi.StringPtrInput
 }
 
 func (MaskDataState) ElementType() reflect.Type {
@@ -69,14 +72,16 @@ func (MaskDataState) ElementType() reflect.Type {
 }
 
 type maskDataArgs struct {
-	MaskingPolicyId string `pulumi:"maskingPolicyId"`
-	TargetId        string `pulumi:"targetId"`
+	MaskingPolicyId   string                     `pulumi:"maskingPolicyId"`
+	TargetCredentials *MaskDataTargetCredentials `pulumi:"targetCredentials"`
+	TargetId          string                     `pulumi:"targetId"`
 }
 
 // The set of arguments for constructing a MaskData resource.
 type MaskDataArgs struct {
-	MaskingPolicyId pulumi.StringInput
-	TargetId        pulumi.StringInput
+	MaskingPolicyId   pulumi.StringInput
+	TargetCredentials MaskDataTargetCredentialsPtrInput
+	TargetId          pulumi.StringInput
 }
 
 func (MaskDataArgs) ElementType() reflect.Type {
@@ -168,6 +173,10 @@ func (o MaskDataOutput) ToMaskDataOutputWithContext(ctx context.Context) MaskDat
 
 func (o MaskDataOutput) MaskingPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaskData) pulumi.StringOutput { return v.MaskingPolicyId }).(pulumi.StringOutput)
+}
+
+func (o MaskDataOutput) TargetCredentials() MaskDataTargetCredentialsPtrOutput {
+	return o.ApplyT(func(v *MaskData) MaskDataTargetCredentialsPtrOutput { return v.TargetCredentials }).(MaskDataTargetCredentialsPtrOutput)
 }
 
 func (o MaskDataOutput) TargetId() pulumi.StringOutput {

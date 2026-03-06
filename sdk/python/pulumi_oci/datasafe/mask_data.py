@@ -13,6 +13,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['MaskDataArgs', 'MaskData']
 
@@ -20,12 +22,15 @@ __all__ = ['MaskDataArgs', 'MaskData']
 class MaskDataArgs:
     def __init__(__self__, *,
                  masking_policy_id: pulumi.Input[_builtins.str],
-                 target_id: pulumi.Input[_builtins.str]):
+                 target_id: pulumi.Input[_builtins.str],
+                 target_credentials: Optional[pulumi.Input['MaskDataTargetCredentialsArgs']] = None):
         """
         The set of arguments for constructing a MaskData resource.
         """
         pulumi.set(__self__, "masking_policy_id", masking_policy_id)
         pulumi.set(__self__, "target_id", target_id)
+        if target_credentials is not None:
+            pulumi.set(__self__, "target_credentials", target_credentials)
 
     @_builtins.property
     @pulumi.getter(name="maskingPolicyId")
@@ -45,17 +50,29 @@ class MaskDataArgs:
     def target_id(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "target_id", value)
 
+    @_builtins.property
+    @pulumi.getter(name="targetCredentials")
+    def target_credentials(self) -> Optional[pulumi.Input['MaskDataTargetCredentialsArgs']]:
+        return pulumi.get(self, "target_credentials")
+
+    @target_credentials.setter
+    def target_credentials(self, value: Optional[pulumi.Input['MaskDataTargetCredentialsArgs']]):
+        pulumi.set(self, "target_credentials", value)
+
 
 @pulumi.input_type
 class _MaskDataState:
     def __init__(__self__, *,
                  masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_credentials: Optional[pulumi.Input['MaskDataTargetCredentialsArgs']] = None,
                  target_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MaskData resources.
         """
         if masking_policy_id is not None:
             pulumi.set(__self__, "masking_policy_id", masking_policy_id)
+        if target_credentials is not None:
+            pulumi.set(__self__, "target_credentials", target_credentials)
         if target_id is not None:
             pulumi.set(__self__, "target_id", target_id)
 
@@ -67,6 +84,15 @@ class _MaskDataState:
     @masking_policy_id.setter
     def masking_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "masking_policy_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetCredentials")
+    def target_credentials(self) -> Optional[pulumi.Input['MaskDataTargetCredentialsArgs']]:
+        return pulumi.get(self, "target_credentials")
+
+    @target_credentials.setter
+    def target_credentials(self, value: Optional[pulumi.Input['MaskDataTargetCredentialsArgs']]):
+        pulumi.set(self, "target_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="targetId")
@@ -85,6 +111,7 @@ class MaskData(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_credentials: Optional[pulumi.Input[Union['MaskDataTargetCredentialsArgs', 'MaskDataTargetCredentialsArgsDict']]] = None,
                  target_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
@@ -118,6 +145,7 @@ class MaskData(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_credentials: Optional[pulumi.Input[Union['MaskDataTargetCredentialsArgs', 'MaskDataTargetCredentialsArgsDict']]] = None,
                  target_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -131,6 +159,7 @@ class MaskData(pulumi.CustomResource):
             if masking_policy_id is None and not opts.urn:
                 raise TypeError("Missing required property 'masking_policy_id'")
             __props__.__dict__["masking_policy_id"] = masking_policy_id
+            __props__.__dict__["target_credentials"] = target_credentials
             if target_id is None and not opts.urn:
                 raise TypeError("Missing required property 'target_id'")
             __props__.__dict__["target_id"] = target_id
@@ -145,6 +174,7 @@ class MaskData(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+            target_credentials: Optional[pulumi.Input[Union['MaskDataTargetCredentialsArgs', 'MaskDataTargetCredentialsArgsDict']]] = None,
             target_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'MaskData':
         """
         Get an existing MaskData resource's state with the given name, id, and optional extra
@@ -159,6 +189,7 @@ class MaskData(pulumi.CustomResource):
         __props__ = _MaskDataState.__new__(_MaskDataState)
 
         __props__.__dict__["masking_policy_id"] = masking_policy_id
+        __props__.__dict__["target_credentials"] = target_credentials
         __props__.__dict__["target_id"] = target_id
         return MaskData(resource_name, opts=opts, __props__=__props__)
 
@@ -166,6 +197,11 @@ class MaskData(pulumi.CustomResource):
     @pulumi.getter(name="maskingPolicyId")
     def masking_policy_id(self) -> pulumi.Output[_builtins.str]:
         return pulumi.get(self, "masking_policy_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetCredentials")
+    def target_credentials(self) -> pulumi.Output[Optional['outputs.MaskDataTargetCredentials']]:
+        return pulumi.get(self, "target_credentials")
 
     @_builtins.property
     @pulumi.getter(name="targetId")

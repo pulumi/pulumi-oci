@@ -16,14 +16,32 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'FileStorageLustreFileSystemDateTimeDetails',
     'FileStorageLustreFileSystemMaintenanceWindow',
+    'FileStorageLustreFileSystemMaintenanceWindowMetadata',
+    'FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance',
+    'FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance',
     'FileStorageLustreFileSystemRootSquashConfiguration',
+    'GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionResult',
+    'GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemResult',
+    'GetFileStorageAvailableMaintenanceScheduleStartTimesFilterResult',
+    'GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionResult',
+    'GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemResult',
+    'GetFileStorageAvailableOverrideMaintenanceStartTimesFilterResult',
+    'GetFileStorageLustreFileSystemDateTimeDetailResult',
     'GetFileStorageLustreFileSystemMaintenanceWindowResult',
+    'GetFileStorageLustreFileSystemMaintenanceWindowMetadataResult',
+    'GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceResult',
+    'GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceResult',
     'GetFileStorageLustreFileSystemRootSquashConfigurationResult',
     'GetFileStorageLustreFileSystemsFilterResult',
     'GetFileStorageLustreFileSystemsLustreFileSystemCollectionResult',
     'GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemResult',
+    'GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailResult',
     'GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowResult',
+    'GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataResult',
+    'GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceResult',
+    'GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceResult',
     'GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfigurationResult',
     'GetFileStorageObjectStorageLinkSyncJobsFilterResult',
     'GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionResult',
@@ -32,6 +50,35 @@ __all__ = [
     'GetFileStorageObjectStorageLinksObjectStorageLinkCollectionResult',
     'GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemResult',
 ]
+
+@pulumi.output_type
+class FileStorageLustreFileSystemDateTimeDetails(dict):
+    def __init__(__self__, *,
+                 date: _builtins.str,
+                 time: _builtins.str):
+        """
+        :param _builtins.str date: A user-friendly date. Example: `2025-04-25`
+        :param _builtins.str time: A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+        """
+        pulumi.set(__self__, "date", date)
+        pulumi.set(__self__, "time", time)
+
+    @_builtins.property
+    @pulumi.getter
+    def date(self) -> _builtins.str:
+        """
+        A user-friendly date. Example: `2025-04-25`
+        """
+        return pulumi.get(self, "date")
+
+    @_builtins.property
+    @pulumi.getter
+    def time(self) -> _builtins.str:
+        """
+        A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+        """
+        return pulumi.get(self, "time")
+
 
 @pulumi.output_type
 class FileStorageLustreFileSystemMaintenanceWindow(dict):
@@ -58,8 +105,8 @@ class FileStorageLustreFileSystemMaintenanceWindow(dict):
                  day_of_week: Optional[_builtins.str] = None,
                  time_start: Optional[_builtins.str] = None):
         """
-        :param _builtins.str day_of_week: Day of the week when the maintainence window starts.
-        :param _builtins.str time_start: The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
+        :param _builtins.str day_of_week: (Updatable) Day of the week when the maintainence window starts.
+        :param _builtins.str time_start: (Updatable) The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
         """
         if day_of_week is not None:
             pulumi.set(__self__, "day_of_week", day_of_week)
@@ -70,7 +117,7 @@ class FileStorageLustreFileSystemMaintenanceWindow(dict):
     @pulumi.getter(name="dayOfWeek")
     def day_of_week(self) -> Optional[_builtins.str]:
         """
-        Day of the week when the maintainence window starts.
+        (Updatable) Day of the week when the maintainence window starts.
         """
         return pulumi.get(self, "day_of_week")
 
@@ -78,9 +125,135 @@ class FileStorageLustreFileSystemMaintenanceWindow(dict):
     @pulumi.getter(name="timeStart")
     def time_start(self) -> Optional[_builtins.str]:
         """
-        The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
+        (Updatable) The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
         """
         return pulumi.get(self, "time_start")
+
+
+@pulumi.output_type
+class FileStorageLustreFileSystemMaintenanceWindowMetadata(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "activeOrNextPlannedMaintenances":
+            suggest = "active_or_next_planned_maintenances"
+        elif key == "finishedMaintenances":
+            suggest = "finished_maintenances"
+        elif key == "isMaintenanceInProgress":
+            suggest = "is_maintenance_in_progress"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FileStorageLustreFileSystemMaintenanceWindowMetadata. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FileStorageLustreFileSystemMaintenanceWindowMetadata.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FileStorageLustreFileSystemMaintenanceWindowMetadata.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 active_or_next_planned_maintenances: Optional[Sequence['outputs.FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance']] = None,
+                 finished_maintenances: Optional[Sequence['outputs.FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance']] = None,
+                 is_maintenance_in_progress: Optional[_builtins.bool] = None):
+        """
+        :param Sequence['FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs'] active_or_next_planned_maintenances: A generic object to show date and time in the below specified format
+        :param Sequence['FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs'] finished_maintenances: A generic object to show date and time in the below specified format
+        :param _builtins.bool is_maintenance_in_progress: whether or not an active maintenance is going on for the LustreFileSystem
+        """
+        if active_or_next_planned_maintenances is not None:
+            pulumi.set(__self__, "active_or_next_planned_maintenances", active_or_next_planned_maintenances)
+        if finished_maintenances is not None:
+            pulumi.set(__self__, "finished_maintenances", finished_maintenances)
+        if is_maintenance_in_progress is not None:
+            pulumi.set(__self__, "is_maintenance_in_progress", is_maintenance_in_progress)
+
+    @_builtins.property
+    @pulumi.getter(name="activeOrNextPlannedMaintenances")
+    def active_or_next_planned_maintenances(self) -> Optional[Sequence['outputs.FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance']]:
+        """
+        A generic object to show date and time in the below specified format
+        """
+        return pulumi.get(self, "active_or_next_planned_maintenances")
+
+    @_builtins.property
+    @pulumi.getter(name="finishedMaintenances")
+    def finished_maintenances(self) -> Optional[Sequence['outputs.FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance']]:
+        """
+        A generic object to show date and time in the below specified format
+        """
+        return pulumi.get(self, "finished_maintenances")
+
+    @_builtins.property
+    @pulumi.getter(name="isMaintenanceInProgress")
+    def is_maintenance_in_progress(self) -> Optional[_builtins.bool]:
+        """
+        whether or not an active maintenance is going on for the LustreFileSystem
+        """
+        return pulumi.get(self, "is_maintenance_in_progress")
+
+
+@pulumi.output_type
+class FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenance(dict):
+    def __init__(__self__, *,
+                 date: Optional[_builtins.str] = None,
+                 time: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str date: A user-friendly date. Example: `2025-04-25`
+        :param _builtins.str time: A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+        """
+        if date is not None:
+            pulumi.set(__self__, "date", date)
+        if time is not None:
+            pulumi.set(__self__, "time", time)
+
+    @_builtins.property
+    @pulumi.getter
+    def date(self) -> Optional[_builtins.str]:
+        """
+        A user-friendly date. Example: `2025-04-25`
+        """
+        return pulumi.get(self, "date")
+
+    @_builtins.property
+    @pulumi.getter
+    def time(self) -> Optional[_builtins.str]:
+        """
+        A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+        """
+        return pulumi.get(self, "time")
+
+
+@pulumi.output_type
+class FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenance(dict):
+    def __init__(__self__, *,
+                 date: Optional[_builtins.str] = None,
+                 time: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str date: A user-friendly date. Example: `2025-04-25`
+        :param _builtins.str time: A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+        """
+        if date is not None:
+            pulumi.set(__self__, "date", date)
+        if time is not None:
+            pulumi.set(__self__, "time", time)
+
+    @_builtins.property
+    @pulumi.getter
+    def date(self) -> Optional[_builtins.str]:
+        """
+        A user-friendly date. Example: `2025-04-25`
+        """
+        return pulumi.get(self, "date")
+
+    @_builtins.property
+    @pulumi.getter
+    def time(self) -> Optional[_builtins.str]:
+        """
+        A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+        """
+        return pulumi.get(self, "time")
 
 
 @pulumi.output_type
@@ -162,6 +335,183 @@ class FileStorageLustreFileSystemRootSquashConfiguration(dict):
 
 
 @pulumi.output_type
+class GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemResult']):
+        """
+        :param Sequence['GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemArgs'] items: List of available start times on every day of the week
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemResult']:
+        """
+        List of available start times on every day of the week
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFileStorageAvailableMaintenanceScheduleStartTimesAvailableMaintenanceScheduleStartTimeCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 day_of_week: _builtins.str,
+                 start_times: Sequence[_builtins.str]):
+        """
+        :param _builtins.str day_of_week: Day of the week filter
+        :param Sequence[_builtins.str] start_times: List of available start times. Each array item is of the format `HH:mm`
+        """
+        pulumi.set(__self__, "day_of_week", day_of_week)
+        pulumi.set(__self__, "start_times", start_times)
+
+    @_builtins.property
+    @pulumi.getter(name="dayOfWeek")
+    def day_of_week(self) -> _builtins.str:
+        """
+        Day of the week filter
+        """
+        return pulumi.get(self, "day_of_week")
+
+    @_builtins.property
+    @pulumi.getter(name="startTimes")
+    def start_times(self) -> Sequence[_builtins.str]:
+        """
+        List of available start times. Each array item is of the format `HH:mm`
+        """
+        return pulumi.get(self, "start_times")
+
+
+@pulumi.output_type
+class GetFileStorageAvailableMaintenanceScheduleStartTimesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemResult']):
+        """
+        :param Sequence['GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemArgs'] items: List of available start times on every day of the week
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemResult']:
+        """
+        List of available start times on every day of the week
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFileStorageAvailableOverrideMaintenanceStartTimesAvailableOverrideMaintenanceStartTimeCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 start_times: Sequence[_builtins.str],
+                 time_date_available: _builtins.str):
+        """
+        :param Sequence[_builtins.str] start_times: List of available start times. Each array item is of the format `HH:mm`
+        :param _builtins.str time_date_available: The date corresponding to the list of start times available.  Example: `2024-04-25T00:00:00.000Z`
+        """
+        pulumi.set(__self__, "start_times", start_times)
+        pulumi.set(__self__, "time_date_available", time_date_available)
+
+    @_builtins.property
+    @pulumi.getter(name="startTimes")
+    def start_times(self) -> Sequence[_builtins.str]:
+        """
+        List of available start times. Each array item is of the format `HH:mm`
+        """
+        return pulumi.get(self, "start_times")
+
+    @_builtins.property
+    @pulumi.getter(name="timeDateAvailable")
+    def time_date_available(self) -> _builtins.str:
+        """
+        The date corresponding to the list of start times available.  Example: `2024-04-25T00:00:00.000Z`
+        """
+        return pulumi.get(self, "time_date_available")
+
+
+@pulumi.output_type
+class GetFileStorageAvailableOverrideMaintenanceStartTimesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFileStorageLustreFileSystemDateTimeDetailResult(dict):
+    def __init__(__self__, *,
+                 date: _builtins.str,
+                 time: _builtins.str):
+        """
+        :param _builtins.str date: A user-friendly date. Example: `2025-04-25`
+        :param _builtins.str time: A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+        """
+        pulumi.set(__self__, "date", date)
+        pulumi.set(__self__, "time", time)
+
+    @_builtins.property
+    @pulumi.getter
+    def date(self) -> _builtins.str:
+        """
+        A user-friendly date. Example: `2025-04-25`
+        """
+        return pulumi.get(self, "date")
+
+    @_builtins.property
+    @pulumi.getter
+    def time(self) -> _builtins.str:
+        """
+        A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+        """
+        return pulumi.get(self, "time")
+
+
+@pulumi.output_type
 class GetFileStorageLustreFileSystemMaintenanceWindowResult(dict):
     def __init__(__self__, *,
                  day_of_week: _builtins.str,
@@ -188,6 +538,104 @@ class GetFileStorageLustreFileSystemMaintenanceWindowResult(dict):
         The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
         """
         return pulumi.get(self, "time_start")
+
+
+@pulumi.output_type
+class GetFileStorageLustreFileSystemMaintenanceWindowMetadataResult(dict):
+    def __init__(__self__, *,
+                 active_or_next_planned_maintenances: Sequence['outputs.GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceResult'],
+                 finished_maintenances: Sequence['outputs.GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceResult'],
+                 is_maintenance_in_progress: _builtins.bool):
+        """
+        :param Sequence['GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs'] active_or_next_planned_maintenances: A generic object to show date and time in the below specified format
+        :param Sequence['GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs'] finished_maintenances: A generic object to show date and time in the below specified format
+        :param _builtins.bool is_maintenance_in_progress: whether or not an active maintenance is going on for the LustreFileSystem
+        """
+        pulumi.set(__self__, "active_or_next_planned_maintenances", active_or_next_planned_maintenances)
+        pulumi.set(__self__, "finished_maintenances", finished_maintenances)
+        pulumi.set(__self__, "is_maintenance_in_progress", is_maintenance_in_progress)
+
+    @_builtins.property
+    @pulumi.getter(name="activeOrNextPlannedMaintenances")
+    def active_or_next_planned_maintenances(self) -> Sequence['outputs.GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceResult']:
+        """
+        A generic object to show date and time in the below specified format
+        """
+        return pulumi.get(self, "active_or_next_planned_maintenances")
+
+    @_builtins.property
+    @pulumi.getter(name="finishedMaintenances")
+    def finished_maintenances(self) -> Sequence['outputs.GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceResult']:
+        """
+        A generic object to show date and time in the below specified format
+        """
+        return pulumi.get(self, "finished_maintenances")
+
+    @_builtins.property
+    @pulumi.getter(name="isMaintenanceInProgress")
+    def is_maintenance_in_progress(self) -> _builtins.bool:
+        """
+        whether or not an active maintenance is going on for the LustreFileSystem
+        """
+        return pulumi.get(self, "is_maintenance_in_progress")
+
+
+@pulumi.output_type
+class GetFileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceResult(dict):
+    def __init__(__self__, *,
+                 date: _builtins.str,
+                 time: _builtins.str):
+        """
+        :param _builtins.str date: A user-friendly date. Example: `2025-04-25`
+        :param _builtins.str time: A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+        """
+        pulumi.set(__self__, "date", date)
+        pulumi.set(__self__, "time", time)
+
+    @_builtins.property
+    @pulumi.getter
+    def date(self) -> _builtins.str:
+        """
+        A user-friendly date. Example: `2025-04-25`
+        """
+        return pulumi.get(self, "date")
+
+    @_builtins.property
+    @pulumi.getter
+    def time(self) -> _builtins.str:
+        """
+        A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+        """
+        return pulumi.get(self, "time")
+
+
+@pulumi.output_type
+class GetFileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceResult(dict):
+    def __init__(__self__, *,
+                 date: _builtins.str,
+                 time: _builtins.str):
+        """
+        :param _builtins.str date: A user-friendly date. Example: `2025-04-25`
+        :param _builtins.str time: A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+        """
+        pulumi.set(__self__, "date", date)
+        pulumi.set(__self__, "time", time)
+
+    @_builtins.property
+    @pulumi.getter
+    def date(self) -> _builtins.str:
+        """
+        A user-friendly date. Example: `2025-04-25`
+        """
+        return pulumi.get(self, "date")
+
+    @_builtins.property
+    @pulumi.getter
+    def time(self) -> _builtins.str:
+        """
+        A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+        """
+        return pulumi.get(self, "time")
 
 
 @pulumi.output_type
@@ -287,6 +735,7 @@ class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemResult(dict):
                  capacity_in_gbs: _builtins.int,
                  cluster_placement_group_id: _builtins.str,
                  compartment_id: _builtins.str,
+                 date_time_details: Sequence['outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailResult'],
                  defined_tags: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
                  file_system_description: _builtins.str,
@@ -296,10 +745,12 @@ class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemResult(dict):
                  kms_key_id: _builtins.str,
                  lifecycle_details: _builtins.str,
                  lnet: _builtins.str,
+                 maintenance_window_metadatas: Sequence['outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataResult'],
                  maintenance_windows: Sequence['outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowResult'],
                  major_version: _builtins.str,
                  management_service_address: _builtins.str,
                  nsg_ids: Sequence[_builtins.str],
+                 override_maintenance_trigger: _builtins.int,
                  performance_tier: _builtins.str,
                  root_squash_configurations: Sequence['outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfigurationResult'],
                  state: _builtins.str,
@@ -322,6 +773,7 @@ class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemResult(dict):
         :param _builtins.str kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
         :param _builtins.str lifecycle_details: A message that describes the current state of the Lustre file system in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param _builtins.str lnet: Type of network used by clients to mount the file system.   Example: `tcp`
+        :param Sequence['GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataArgs'] maintenance_window_metadatas: The meta-data for maintenance window.
         :param Sequence['GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowArgs'] maintenance_windows: The preferred day and time to perform maintenance.
         :param _builtins.str major_version: Major version of Lustre running in the Lustre file system.  Example: `2.15`
         :param _builtins.str management_service_address: The IPv4 address of MGS (Lustre Management Service) used by clients to mount the file system. For example '10.0.0.4'.
@@ -339,6 +791,7 @@ class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemResult(dict):
         pulumi.set(__self__, "capacity_in_gbs", capacity_in_gbs)
         pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "date_time_details", date_time_details)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "file_system_description", file_system_description)
@@ -348,10 +801,12 @@ class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemResult(dict):
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "lnet", lnet)
+        pulumi.set(__self__, "maintenance_window_metadatas", maintenance_window_metadatas)
         pulumi.set(__self__, "maintenance_windows", maintenance_windows)
         pulumi.set(__self__, "major_version", major_version)
         pulumi.set(__self__, "management_service_address", management_service_address)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "override_maintenance_trigger", override_maintenance_trigger)
         pulumi.set(__self__, "performance_tier", performance_tier)
         pulumi.set(__self__, "root_squash_configurations", root_squash_configurations)
         pulumi.set(__self__, "state", state)
@@ -392,6 +847,11 @@ class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dateTimeDetails")
+    def date_time_details(self) -> Sequence['outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailResult']:
+        return pulumi.get(self, "date_time_details")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -466,6 +926,14 @@ class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemResult(dict):
         return pulumi.get(self, "lnet")
 
     @_builtins.property
+    @pulumi.getter(name="maintenanceWindowMetadatas")
+    def maintenance_window_metadatas(self) -> Sequence['outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataResult']:
+        """
+        The meta-data for maintenance window.
+        """
+        return pulumi.get(self, "maintenance_window_metadatas")
+
+    @_builtins.property
     @pulumi.getter(name="maintenanceWindows")
     def maintenance_windows(self) -> Sequence['outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowResult']:
         """
@@ -496,6 +964,11 @@ class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemResult(dict):
         A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         """
         return pulumi.get(self, "nsg_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="overrideMaintenanceTrigger")
+    def override_maintenance_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "override_maintenance_trigger")
 
     @_builtins.property
     @pulumi.getter(name="performanceTier")
@@ -563,6 +1036,35 @@ class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemResult(dict):
 
 
 @pulumi.output_type
+class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailResult(dict):
+    def __init__(__self__, *,
+                 date: _builtins.str,
+                 time: _builtins.str):
+        """
+        :param _builtins.str date: A user-friendly date. Example: `2025-04-25`
+        :param _builtins.str time: A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+        """
+        pulumi.set(__self__, "date", date)
+        pulumi.set(__self__, "time", time)
+
+    @_builtins.property
+    @pulumi.getter
+    def date(self) -> _builtins.str:
+        """
+        A user-friendly date. Example: `2025-04-25`
+        """
+        return pulumi.get(self, "date")
+
+    @_builtins.property
+    @pulumi.getter
+    def time(self) -> _builtins.str:
+        """
+        A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+        """
+        return pulumi.get(self, "time")
+
+
+@pulumi.output_type
 class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowResult(dict):
     def __init__(__self__, *,
                  day_of_week: _builtins.str,
@@ -589,6 +1091,104 @@ class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWi
         The time to start the maintenance window. The format is 'HH:MM', 'HH:MM' represents the time in UTC.   Example: `22:00`
         """
         return pulumi.get(self, "time_start")
+
+
+@pulumi.output_type
+class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataResult(dict):
+    def __init__(__self__, *,
+                 active_or_next_planned_maintenances: Sequence['outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceResult'],
+                 finished_maintenances: Sequence['outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceResult'],
+                 is_maintenance_in_progress: _builtins.bool):
+        """
+        :param Sequence['GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs'] active_or_next_planned_maintenances: A generic object to show date and time in the below specified format
+        :param Sequence['GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceArgs'] finished_maintenances: A generic object to show date and time in the below specified format
+        :param _builtins.bool is_maintenance_in_progress: whether or not an active maintenance is going on for the LustreFileSystem
+        """
+        pulumi.set(__self__, "active_or_next_planned_maintenances", active_or_next_planned_maintenances)
+        pulumi.set(__self__, "finished_maintenances", finished_maintenances)
+        pulumi.set(__self__, "is_maintenance_in_progress", is_maintenance_in_progress)
+
+    @_builtins.property
+    @pulumi.getter(name="activeOrNextPlannedMaintenances")
+    def active_or_next_planned_maintenances(self) -> Sequence['outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceResult']:
+        """
+        A generic object to show date and time in the below specified format
+        """
+        return pulumi.get(self, "active_or_next_planned_maintenances")
+
+    @_builtins.property
+    @pulumi.getter(name="finishedMaintenances")
+    def finished_maintenances(self) -> Sequence['outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceResult']:
+        """
+        A generic object to show date and time in the below specified format
+        """
+        return pulumi.get(self, "finished_maintenances")
+
+    @_builtins.property
+    @pulumi.getter(name="isMaintenanceInProgress")
+    def is_maintenance_in_progress(self) -> _builtins.bool:
+        """
+        whether or not an active maintenance is going on for the LustreFileSystem
+        """
+        return pulumi.get(self, "is_maintenance_in_progress")
+
+
+@pulumi.output_type
+class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceResult(dict):
+    def __init__(__self__, *,
+                 date: _builtins.str,
+                 time: _builtins.str):
+        """
+        :param _builtins.str date: A user-friendly date. Example: `2025-04-25`
+        :param _builtins.str time: A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+        """
+        pulumi.set(__self__, "date", date)
+        pulumi.set(__self__, "time", time)
+
+    @_builtins.property
+    @pulumi.getter
+    def date(self) -> _builtins.str:
+        """
+        A user-friendly date. Example: `2025-04-25`
+        """
+        return pulumi.get(self, "date")
+
+    @_builtins.property
+    @pulumi.getter
+    def time(self) -> _builtins.str:
+        """
+        A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+        """
+        return pulumi.get(self, "time")
+
+
+@pulumi.output_type
+class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataFinishedMaintenanceResult(dict):
+    def __init__(__self__, *,
+                 date: _builtins.str,
+                 time: _builtins.str):
+        """
+        :param _builtins.str date: A user-friendly date. Example: `2025-04-25`
+        :param _builtins.str time: A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+        """
+        pulumi.set(__self__, "date", date)
+        pulumi.set(__self__, "time", time)
+
+    @_builtins.property
+    @pulumi.getter
+    def date(self) -> _builtins.str:
+        """
+        A user-friendly date. Example: `2025-04-25`
+        """
+        return pulumi.get(self, "date")
+
+    @_builtins.property
+    @pulumi.getter
+    def time(self) -> _builtins.str:
+        """
+        A user-friendly time. The format is 'HH:MM', 'HH:MM' represents the time in UTC. Example: `22:00`
+        """
+        return pulumi.get(self, "time")
 
 
 @pulumi.output_type

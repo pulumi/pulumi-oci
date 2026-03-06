@@ -255,6 +255,16 @@ export class DbSystem extends pulumi.CustomResource {
      * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      */
     declare public readonly nsgIds: pulumi.Output<string[] | undefined>;
+    declare public readonly osPatchAction: pulumi.Output<string | undefined>;
+    declare public readonly osPatchDbNodeId: pulumi.Output<string | undefined>;
+    /**
+     * (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    declare public readonly osPatchTrigger: pulumi.Output<number | undefined>;
     /**
      * The most recent OS Patch Version applied on the DB system.
      */
@@ -263,6 +273,10 @@ export class DbSystem extends pulumi.CustomResource {
      * The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
     declare public /*out*/ readonly pointInTimeDataDiskCloneTimestamp: pulumi.Output<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+     */
+    declare public readonly primaryDbSystemId: pulumi.Output<string>;
     /**
      * A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
      */
@@ -348,10 +362,6 @@ export class DbSystem extends pulumi.CustomResource {
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     declare public readonly timeZone: pulumi.Output<string>;
     /**
@@ -420,8 +430,12 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["nextMaintenanceRunId"] = state?.nextMaintenanceRunId;
             resourceInputs["nodeCount"] = state?.nodeCount;
             resourceInputs["nsgIds"] = state?.nsgIds;
+            resourceInputs["osPatchAction"] = state?.osPatchAction;
+            resourceInputs["osPatchDbNodeId"] = state?.osPatchDbNodeId;
+            resourceInputs["osPatchTrigger"] = state?.osPatchTrigger;
             resourceInputs["osVersion"] = state?.osVersion;
             resourceInputs["pointInTimeDataDiskCloneTimestamp"] = state?.pointInTimeDataDiskCloneTimestamp;
+            resourceInputs["primaryDbSystemId"] = state?.primaryDbSystemId;
             resourceInputs["privateIp"] = state?.privateIp;
             resourceInputs["privateIpV6"] = state?.privateIpV6;
             resourceInputs["recoStorageSizeInGb"] = state?.recoStorageSizeInGb;
@@ -497,6 +511,10 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["maintenanceWindowDetails"] = args?.maintenanceWindowDetails;
             resourceInputs["nodeCount"] = args?.nodeCount;
             resourceInputs["nsgIds"] = args?.nsgIds;
+            resourceInputs["osPatchAction"] = args?.osPatchAction;
+            resourceInputs["osPatchDbNodeId"] = args?.osPatchDbNodeId;
+            resourceInputs["osPatchTrigger"] = args?.osPatchTrigger;
+            resourceInputs["primaryDbSystemId"] = args?.primaryDbSystemId;
             resourceInputs["privateIp"] = args?.privateIp;
             resourceInputs["privateIpV6"] = args?.privateIpV6;
             resourceInputs["recoStorageSizeInGb"] = args?.recoStorageSizeInGb;
@@ -711,6 +729,16 @@ export interface DbSystemState {
      * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    osPatchAction?: pulumi.Input<string>;
+    osPatchDbNodeId?: pulumi.Input<string>;
+    /**
+     * (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    osPatchTrigger?: pulumi.Input<number>;
     /**
      * The most recent OS Patch Version applied on the DB system.
      */
@@ -719,6 +747,10 @@ export interface DbSystemState {
      * The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
     pointInTimeDataDiskCloneTimestamp?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+     */
+    primaryDbSystemId?: pulumi.Input<string>;
     /**
      * A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
      */
@@ -804,10 +836,6 @@ export interface DbSystemState {
     timeCreated?: pulumi.Input<string>;
     /**
      * The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     timeZone?: pulumi.Input<string>;
     /**
@@ -970,6 +998,20 @@ export interface DbSystemArgs {
      * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    osPatchAction?: pulumi.Input<string>;
+    osPatchDbNodeId?: pulumi.Input<string>;
+    /**
+     * (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    osPatchTrigger?: pulumi.Input<number>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+     */
+    primaryDbSystemId?: pulumi.Input<string>;
     /**
      * A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
      */
@@ -1027,10 +1069,6 @@ export interface DbSystemArgs {
     subscriptionId?: pulumi.Input<string>;
     /**
      * The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     timeZone?: pulumi.Input<string>;
 }

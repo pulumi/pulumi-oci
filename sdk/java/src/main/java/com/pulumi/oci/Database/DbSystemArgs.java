@@ -494,6 +494,56 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.nsgIds);
     }
 
+    @Import(name="osPatchAction")
+    private @Nullable Output<String> osPatchAction;
+
+    public Optional<Output<String>> osPatchAction() {
+        return Optional.ofNullable(this.osPatchAction);
+    }
+
+    @Import(name="osPatchDbNodeId")
+    private @Nullable Output<String> osPatchDbNodeId;
+
+    public Optional<Output<String>> osPatchDbNodeId() {
+        return Optional.ofNullable(this.osPatchDbNodeId);
+    }
+
+    /**
+     * (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="osPatchTrigger")
+    private @Nullable Output<Integer> osPatchTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Integer>> osPatchTrigger() {
+        return Optional.ofNullable(this.osPatchTrigger);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+     * 
+     */
+    @Import(name="primaryDbSystemId")
+    private @Nullable Output<String> primaryDbSystemId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+     * 
+     */
+    public Optional<Output<String>> primaryDbSystemId() {
+        return Optional.ofNullable(this.primaryDbSystemId);
+    }
+
     /**
      * A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
      * 
@@ -689,18 +739,12 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="timeZone")
     private @Nullable Output<String> timeZone;
 
     /**
      * @return The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> timeZone() {
@@ -738,6 +782,10 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         this.maintenanceWindowDetails = $.maintenanceWindowDetails;
         this.nodeCount = $.nodeCount;
         this.nsgIds = $.nsgIds;
+        this.osPatchAction = $.osPatchAction;
+        this.osPatchDbNodeId = $.osPatchDbNodeId;
+        this.osPatchTrigger = $.osPatchTrigger;
+        this.primaryDbSystemId = $.primaryDbSystemId;
         this.privateIp = $.privateIp;
         this.privateIpV6 = $.privateIpV6;
         this.recoStorageSizeInGb = $.recoStorageSizeInGb;
@@ -1444,6 +1492,72 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
             return nsgIds(List.of(nsgIds));
         }
 
+        public Builder osPatchAction(@Nullable Output<String> osPatchAction) {
+            $.osPatchAction = osPatchAction;
+            return this;
+        }
+
+        public Builder osPatchAction(String osPatchAction) {
+            return osPatchAction(Output.of(osPatchAction));
+        }
+
+        public Builder osPatchDbNodeId(@Nullable Output<String> osPatchDbNodeId) {
+            $.osPatchDbNodeId = osPatchDbNodeId;
+            return this;
+        }
+
+        public Builder osPatchDbNodeId(String osPatchDbNodeId) {
+            return osPatchDbNodeId(Output.of(osPatchDbNodeId));
+        }
+
+        /**
+         * @param osPatchTrigger (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder osPatchTrigger(@Nullable Output<Integer> osPatchTrigger) {
+            $.osPatchTrigger = osPatchTrigger;
+            return this;
+        }
+
+        /**
+         * @param osPatchTrigger (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder osPatchTrigger(Integer osPatchTrigger) {
+            return osPatchTrigger(Output.of(osPatchTrigger));
+        }
+
+        /**
+         * @param primaryDbSystemId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder primaryDbSystemId(@Nullable Output<String> primaryDbSystemId) {
+            $.primaryDbSystemId = primaryDbSystemId;
+            return this;
+        }
+
+        /**
+         * @param primaryDbSystemId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder primaryDbSystemId(String primaryDbSystemId) {
+            return primaryDbSystemId(Output.of(primaryDbSystemId));
+        }
+
         /**
          * @param privateIp A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
          * 
@@ -1717,9 +1831,6 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param timeZone The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -1730,9 +1841,6 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param timeZone The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

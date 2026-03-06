@@ -632,6 +632,38 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
     public Output<Optional<List<String>>> nsgIds() {
         return Codegen.optional(this.nsgIds);
     }
+    @Export(name="osPatchAction", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> osPatchAction;
+
+    public Output<Optional<String>> osPatchAction() {
+        return Codegen.optional(this.osPatchAction);
+    }
+    @Export(name="osPatchDbNodeId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> osPatchDbNodeId;
+
+    public Output<Optional<String>> osPatchDbNodeId() {
+        return Codegen.optional(this.osPatchDbNodeId);
+    }
+    /**
+     * (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="osPatchTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> osPatchTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Optional<Integer>> osPatchTrigger() {
+        return Codegen.optional(this.osPatchTrigger);
+    }
     /**
      * The most recent OS Patch Version applied on the DB system.
      * 
@@ -659,6 +691,20 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<String> pointInTimeDataDiskCloneTimestamp() {
         return this.pointInTimeDataDiskCloneTimestamp;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+     * 
+     */
+    @Export(name="primaryDbSystemId", refs={String.class}, tree="[0]")
+    private Output<String> primaryDbSystemId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+     * 
+     */
+    public Output<String> primaryDbSystemId() {
+        return this.primaryDbSystemId;
     }
     /**
      * A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
@@ -941,18 +987,12 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
     /**
      * The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="timeZone", refs={String.class}, tree="[0]")
     private Output<String> timeZone;
 
     /**
      * @return The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> timeZone() {

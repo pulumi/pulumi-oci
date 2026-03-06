@@ -26,7 +26,7 @@ class GetDbNodeResult:
     """
     A collection of values returned by getDbNode.
     """
-    def __init__(__self__, additional_details=None, backup_ip_id=None, backup_ipv6id=None, backup_vnic2id=None, backup_vnic_id=None, compute_count=None, compute_model=None, cpu_core_count=None, db_node_id=None, db_node_storage_size_in_gbs=None, db_server_id=None, db_system_id=None, defined_tags=None, fault_domain=None, freeform_tags=None, host_ip_id=None, host_ipv6id=None, hostname=None, id=None, lifecycle_details=None, maintenance_type=None, memory_size_in_gbs=None, software_storage_size_in_gb=None, state=None, system_tags=None, time_created=None, time_maintenance_window_end=None, time_maintenance_window_start=None, total_cpu_core_count=None, vnic2id=None, vnic_id=None):
+    def __init__(__self__, additional_details=None, backup_ip_id=None, backup_ipv6id=None, backup_vnic2id=None, backup_vnic_id=None, compute_count=None, compute_model=None, cpu_core_count=None, db_node_id=None, db_node_storage_size_in_gbs=None, db_server_id=None, db_system_id=None, defined_tags=None, fault_domain=None, freeform_tags=None, host_ip_id=None, host_ipv6id=None, hostname=None, id=None, is_os_patch_reboot_required=None, lifecycle_details=None, maintenance_type=None, memory_size_in_gbs=None, software_storage_size_in_gb=None, state=None, system_tags=None, time_created=None, time_maintenance_window_end=None, time_maintenance_window_start=None, total_cpu_core_count=None, vnic2id=None, vnic_id=None):
         if additional_details and not isinstance(additional_details, str):
             raise TypeError("Expected argument 'additional_details' to be a str")
         pulumi.set(__self__, "additional_details", additional_details)
@@ -84,6 +84,9 @@ class GetDbNodeResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_os_patch_reboot_required and not isinstance(is_os_patch_reboot_required, bool):
+            raise TypeError("Expected argument 'is_os_patch_reboot_required' to be a bool")
+        pulumi.set(__self__, "is_os_patch_reboot_required", is_os_patch_reboot_required)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -271,6 +274,14 @@ class GetDbNodeResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="isOsPatchRebootRequired")
+    def is_os_patch_reboot_required(self) -> _builtins.bool:
+        """
+        Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+        """
+        return pulumi.get(self, "is_os_patch_reboot_required")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
@@ -392,6 +403,7 @@ class AwaitableGetDbNodeResult(GetDbNodeResult):
             host_ipv6id=self.host_ipv6id,
             hostname=self.hostname,
             id=self.id,
+            is_os_patch_reboot_required=self.is_os_patch_reboot_required,
             lifecycle_details=self.lifecycle_details,
             maintenance_type=self.maintenance_type,
             memory_size_in_gbs=self.memory_size_in_gbs,
@@ -450,6 +462,7 @@ def get_db_node(db_node_id: Optional[_builtins.str] = None,
         host_ipv6id=pulumi.get(__ret__, 'host_ipv6id'),
         hostname=pulumi.get(__ret__, 'hostname'),
         id=pulumi.get(__ret__, 'id'),
+        is_os_patch_reboot_required=pulumi.get(__ret__, 'is_os_patch_reboot_required'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         maintenance_type=pulumi.get(__ret__, 'maintenance_type'),
         memory_size_in_gbs=pulumi.get(__ret__, 'memory_size_in_gbs'),
@@ -505,6 +518,7 @@ def get_db_node_output(db_node_id: Optional[pulumi.Input[_builtins.str]] = None,
         host_ipv6id=pulumi.get(__response__, 'host_ipv6id'),
         hostname=pulumi.get(__response__, 'hostname'),
         id=pulumi.get(__response__, 'id'),
+        is_os_patch_reboot_required=pulumi.get(__response__, 'is_os_patch_reboot_required'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         maintenance_type=pulumi.get(__response__, 'maintenance_type'),
         memory_size_in_gbs=pulumi.get(__response__, 'memory_size_in_gbs'),

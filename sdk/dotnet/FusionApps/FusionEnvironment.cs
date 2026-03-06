@@ -36,7 +36,6 @@ namespace Pulumi.Oci.FusionApps
     ///             FirstName = fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsFirstName,
     ///             LastName = fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsLastName,
     ///             Username = fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsUsername,
-    ///             Password = fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsPassword,
     ///         },
     ///         DisplayName = fusionEnvironmentDisplayName,
     ///         FusionEnvironmentFamilyId = testFusionEnvironmentFamily.Id,

@@ -101,6 +101,7 @@ class _DbNodeState:
                  host_ip_id: Optional[pulumi.Input[_builtins.str]] = None,
                  host_ipv6id: Optional[pulumi.Input[_builtins.str]] = None,
                  hostname: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_os_patch_reboot_required: Optional[pulumi.Input[_builtins.bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  maintenance_type: Optional[pulumi.Input[_builtins.str]] = None,
                  memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
@@ -138,6 +139,7 @@ class _DbNodeState:
         :param pulumi.Input[_builtins.str] host_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
         :param pulumi.Input[_builtins.str] host_ipv6id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
         :param pulumi.Input[_builtins.str] hostname: The host name for the database node.
+        :param pulumi.Input[_builtins.bool] is_os_patch_reboot_required: Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
         :param pulumi.Input[_builtins.str] lifecycle_details: Information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] maintenance_type: The type of database node maintenance.
         :param pulumi.Input[_builtins.int] memory_size_in_gbs: The allocated memory in GBs on the Db node.
@@ -187,6 +189,8 @@ class _DbNodeState:
             pulumi.set(__self__, "host_ipv6id", host_ipv6id)
         if hostname is not None:
             pulumi.set(__self__, "hostname", hostname)
+        if is_os_patch_reboot_required is not None:
+            pulumi.set(__self__, "is_os_patch_reboot_required", is_os_patch_reboot_required)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if maintenance_type is not None:
@@ -431,6 +435,18 @@ class _DbNodeState:
     @hostname.setter
     def hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "hostname", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isOsPatchRebootRequired")
+    def is_os_patch_reboot_required(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+        """
+        return pulumi.get(self, "is_os_patch_reboot_required")
+
+    @is_os_patch_reboot_required.setter
+    def is_os_patch_reboot_required(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_os_patch_reboot_required", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
@@ -684,6 +700,7 @@ class DbNode(pulumi.CustomResource):
             __props__.__dict__["host_ip_id"] = None
             __props__.__dict__["host_ipv6id"] = None
             __props__.__dict__["hostname"] = None
+            __props__.__dict__["is_os_patch_reboot_required"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["maintenance_type"] = None
             __props__.__dict__["memory_size_in_gbs"] = None
@@ -724,6 +741,7 @@ class DbNode(pulumi.CustomResource):
             host_ip_id: Optional[pulumi.Input[_builtins.str]] = None,
             host_ipv6id: Optional[pulumi.Input[_builtins.str]] = None,
             hostname: Optional[pulumi.Input[_builtins.str]] = None,
+            is_os_patch_reboot_required: Optional[pulumi.Input[_builtins.bool]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
             maintenance_type: Optional[pulumi.Input[_builtins.str]] = None,
             memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
@@ -765,6 +783,7 @@ class DbNode(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] host_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
         :param pulumi.Input[_builtins.str] host_ipv6id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
         :param pulumi.Input[_builtins.str] hostname: The host name for the database node.
+        :param pulumi.Input[_builtins.bool] is_os_patch_reboot_required: Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
         :param pulumi.Input[_builtins.str] lifecycle_details: Information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] maintenance_type: The type of database node maintenance.
         :param pulumi.Input[_builtins.int] memory_size_in_gbs: The allocated memory in GBs on the Db node.
@@ -800,6 +819,7 @@ class DbNode(pulumi.CustomResource):
         __props__.__dict__["host_ip_id"] = host_ip_id
         __props__.__dict__["host_ipv6id"] = host_ipv6id
         __props__.__dict__["hostname"] = hostname
+        __props__.__dict__["is_os_patch_reboot_required"] = is_os_patch_reboot_required
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["maintenance_type"] = maintenance_type
         __props__.__dict__["memory_size_in_gbs"] = memory_size_in_gbs
@@ -961,6 +981,14 @@ class DbNode(pulumi.CustomResource):
         The host name for the database node.
         """
         return pulumi.get(self, "hostname")
+
+    @_builtins.property
+    @pulumi.getter(name="isOsPatchRebootRequired")
+    def is_os_patch_reboot_required(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+        """
+        return pulumi.get(self, "is_os_patch_reboot_required")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")

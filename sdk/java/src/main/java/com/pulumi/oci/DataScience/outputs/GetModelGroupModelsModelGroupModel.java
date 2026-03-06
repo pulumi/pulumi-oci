@@ -48,6 +48,11 @@ public final class GetModelGroupModelsModelGroupModel {
      */
     private String id;
     /**
+     * @return SaaS friendly name of the model.
+     * 
+     */
+    private String inferenceKey;
+    /**
      * @return Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
      * 
      */
@@ -139,6 +144,13 @@ public final class GetModelGroupModelsModelGroupModel {
         return this.id;
     }
     /**
+     * @return SaaS friendly name of the model.
+     * 
+     */
+    public String inferenceKey() {
+        return this.inferenceKey;
+    }
+    /**
      * @return Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
      * 
      */
@@ -211,6 +223,7 @@ public final class GetModelGroupModelsModelGroupModel {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private String inferenceKey;
         private Boolean isModelByReference;
         private String lifecycleDetails;
         private String modelId;
@@ -229,6 +242,7 @@ public final class GetModelGroupModelsModelGroupModel {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.inferenceKey = defaults.inferenceKey;
     	      this.isModelByReference = defaults.isModelByReference;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.modelId = defaults.modelId;
@@ -293,6 +307,14 @@ public final class GetModelGroupModelsModelGroupModel {
               throw new MissingRequiredPropertyException("GetModelGroupModelsModelGroupModel", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder inferenceKey(String inferenceKey) {
+            if (inferenceKey == null) {
+              throw new MissingRequiredPropertyException("GetModelGroupModelsModelGroupModel", "inferenceKey");
+            }
+            this.inferenceKey = inferenceKey;
             return this;
         }
         @CustomType.Setter
@@ -368,6 +390,7 @@ public final class GetModelGroupModelsModelGroupModel {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.inferenceKey = inferenceKey;
             _resultValue.isModelByReference = isModelByReference;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.modelId = modelId;

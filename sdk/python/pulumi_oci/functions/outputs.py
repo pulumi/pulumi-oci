@@ -1677,7 +1677,6 @@ class GetFusionEnvironmentAdminUsersAdminUserCollectionItemResult(dict):
                  id: _builtins.str,
                  items: Sequence['outputs.GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemResult'],
                  last_name: _builtins.str,
-                 password: _builtins.str,
                  username: _builtins.str):
         """
         :param _builtins.str email_address: Admin users email address
@@ -1693,7 +1692,6 @@ class GetFusionEnvironmentAdminUsersAdminUserCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "items", items)
         pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
 
     @_builtins.property
@@ -1740,12 +1738,6 @@ class GetFusionEnvironmentAdminUsersAdminUserCollectionItemResult(dict):
         Admin users last name
         """
         return pulumi.get(self, "last_name")
-
-    @_builtins.property
-    @pulumi.getter
-    @_utilities.deprecated("""The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.""")
-    def password(self) -> _builtins.str:
-        return pulumi.get(self, "password")
 
     @_builtins.property
     @pulumi.getter
@@ -1840,12 +1832,10 @@ class GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailResult(dict):
                  email_address: _builtins.str,
                  first_name: _builtins.str,
                  last_name: _builtins.str,
-                 password: _builtins.str,
                  username: _builtins.str):
         pulumi.set(__self__, "email_address", email_address)
         pulumi.set(__self__, "first_name", first_name)
         pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
 
     @_builtins.property
@@ -1862,12 +1852,6 @@ class GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailResult(dict):
     @pulumi.getter(name="lastName")
     def last_name(self) -> _builtins.str:
         return pulumi.get(self, "last_name")
-
-    @_builtins.property
-    @pulumi.getter
-    @_utilities.deprecated("""The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.""")
-    def password(self) -> _builtins.str:
-        return pulumi.get(self, "password")
 
     @_builtins.property
     @pulumi.getter
@@ -3970,12 +3954,10 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmen
                  email_address: _builtins.str,
                  first_name: _builtins.str,
                  last_name: _builtins.str,
-                 password: _builtins.str,
                  username: _builtins.str):
         pulumi.set(__self__, "email_address", email_address)
         pulumi.set(__self__, "first_name", first_name)
         pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
 
     @_builtins.property
@@ -3992,12 +3974,6 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmen
     @pulumi.getter(name="lastName")
     def last_name(self) -> _builtins.str:
         return pulumi.get(self, "last_name")
-
-    @_builtins.property
-    @pulumi.getter
-    @_utilities.deprecated("""The 'password' field is deprecated. Please use the OCI Console or email link to reset the password.""")
-    def password(self) -> _builtins.str:
-        return pulumi.get(self, "password")
 
     @_builtins.property
     @pulumi.getter

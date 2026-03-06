@@ -5,7 +5,9 @@ package com.pulumi.oci.Lustre.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Lustre.outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetail;
 import com.pulumi.oci.Lustre.outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindow;
+import com.pulumi.oci.Lustre.outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadata;
 import com.pulumi.oci.Lustre.outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfiguration;
 import java.lang.Integer;
 import java.lang.String;
@@ -35,6 +37,7 @@ public final class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem
      * 
      */
     private String compartmentId;
+    private List<GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetail> dateTimeDetails;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
@@ -81,6 +84,11 @@ public final class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem
      */
     private String lnet;
     /**
+     * @return The meta-data for maintenance window.
+     * 
+     */
+    private List<GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadata> maintenanceWindowMetadatas;
+    /**
      * @return The preferred day and time to perform maintenance.
      * 
      */
@@ -100,6 +108,7 @@ public final class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem
      * 
      */
     private List<String> nsgIds;
+    private Integer overrideMaintenanceTrigger;
     /**
      * @return The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
      * 
@@ -170,6 +179,9 @@ public final class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem
     public String compartmentId() {
         return this.compartmentId;
     }
+    public List<GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetail> dateTimeDetails() {
+        return this.dateTimeDetails;
+    }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
@@ -234,6 +246,13 @@ public final class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem
         return this.lnet;
     }
     /**
+     * @return The meta-data for maintenance window.
+     * 
+     */
+    public List<GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadata> maintenanceWindowMetadatas() {
+        return this.maintenanceWindowMetadatas;
+    }
+    /**
      * @return The preferred day and time to perform maintenance.
      * 
      */
@@ -260,6 +279,9 @@ public final class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem
      */
     public List<String> nsgIds() {
         return this.nsgIds;
+    }
+    public Integer overrideMaintenanceTrigger() {
+        return this.overrideMaintenanceTrigger;
     }
     /**
      * @return The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
@@ -331,6 +353,7 @@ public final class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem
         private Integer capacityInGbs;
         private String clusterPlacementGroupId;
         private String compartmentId;
+        private List<GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetail> dateTimeDetails;
         private Map<String,String> definedTags;
         private String displayName;
         private String fileSystemDescription;
@@ -340,10 +363,12 @@ public final class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem
         private String kmsKeyId;
         private String lifecycleDetails;
         private String lnet;
+        private List<GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadata> maintenanceWindowMetadatas;
         private List<GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindow> maintenanceWindows;
         private String majorVersion;
         private String managementServiceAddress;
         private List<String> nsgIds;
+        private Integer overrideMaintenanceTrigger;
         private String performanceTier;
         private List<GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfiguration> rootSquashConfigurations;
         private String state;
@@ -359,6 +384,7 @@ public final class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem
     	      this.capacityInGbs = defaults.capacityInGbs;
     	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.dateTimeDetails = defaults.dateTimeDetails;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.fileSystemDescription = defaults.fileSystemDescription;
@@ -368,10 +394,12 @@ public final class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.lnet = defaults.lnet;
+    	      this.maintenanceWindowMetadatas = defaults.maintenanceWindowMetadatas;
     	      this.maintenanceWindows = defaults.maintenanceWindows;
     	      this.majorVersion = defaults.majorVersion;
     	      this.managementServiceAddress = defaults.managementServiceAddress;
     	      this.nsgIds = defaults.nsgIds;
+    	      this.overrideMaintenanceTrigger = defaults.overrideMaintenanceTrigger;
     	      this.performanceTier = defaults.performanceTier;
     	      this.rootSquashConfigurations = defaults.rootSquashConfigurations;
     	      this.state = defaults.state;
@@ -413,6 +441,17 @@ public final class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem
             }
             this.compartmentId = compartmentId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder dateTimeDetails(List<GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetail> dateTimeDetails) {
+            if (dateTimeDetails == null) {
+              throw new MissingRequiredPropertyException("GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem", "dateTimeDetails");
+            }
+            this.dateTimeDetails = dateTimeDetails;
+            return this;
+        }
+        public Builder dateTimeDetails(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetail... dateTimeDetails) {
+            return dateTimeDetails(List.of(dateTimeDetails));
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,String> definedTags) {
@@ -487,6 +526,17 @@ public final class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem
             return this;
         }
         @CustomType.Setter
+        public Builder maintenanceWindowMetadatas(List<GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadata> maintenanceWindowMetadatas) {
+            if (maintenanceWindowMetadatas == null) {
+              throw new MissingRequiredPropertyException("GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem", "maintenanceWindowMetadatas");
+            }
+            this.maintenanceWindowMetadatas = maintenanceWindowMetadatas;
+            return this;
+        }
+        public Builder maintenanceWindowMetadatas(GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadata... maintenanceWindowMetadatas) {
+            return maintenanceWindowMetadatas(List.of(maintenanceWindowMetadatas));
+        }
+        @CustomType.Setter
         public Builder maintenanceWindows(List<GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindow> maintenanceWindows) {
             if (maintenanceWindows == null) {
               throw new MissingRequiredPropertyException("GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem", "maintenanceWindows");
@@ -523,6 +573,14 @@ public final class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem
         }
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
+        }
+        @CustomType.Setter
+        public Builder overrideMaintenanceTrigger(Integer overrideMaintenanceTrigger) {
+            if (overrideMaintenanceTrigger == null) {
+              throw new MissingRequiredPropertyException("GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem", "overrideMaintenanceTrigger");
+            }
+            this.overrideMaintenanceTrigger = overrideMaintenanceTrigger;
+            return this;
         }
         @CustomType.Setter
         public Builder performanceTier(String performanceTier) {
@@ -597,6 +655,7 @@ public final class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem
             _resultValue.capacityInGbs = capacityInGbs;
             _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.dateTimeDetails = dateTimeDetails;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.fileSystemDescription = fileSystemDescription;
@@ -606,10 +665,12 @@ public final class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItem
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.lnet = lnet;
+            _resultValue.maintenanceWindowMetadatas = maintenanceWindowMetadatas;
             _resultValue.maintenanceWindows = maintenanceWindows;
             _resultValue.majorVersion = majorVersion;
             _resultValue.managementServiceAddress = managementServiceAddress;
             _resultValue.nsgIds = nsgIds;
+            _resultValue.overrideMaintenanceTrigger = overrideMaintenanceTrigger;
             _resultValue.performanceTier = performanceTier;
             _resultValue.rootSquashConfigurations = rootSquashConfigurations;
             _resultValue.state = state;

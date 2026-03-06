@@ -51,6 +51,8 @@ __all__ = [
     'DiscoveryModTablesForDiscoveryArgsDict',
     'LibraryMasingFormatFormatEntryArgs',
     'LibraryMasingFormatFormatEntryArgsDict',
+    'MaskDataTargetCredentialsArgs',
+    'MaskDataTargetCredentialsArgsDict',
     'MaskingPoliciesMaskingColumnMaskingFormatArgs',
     'MaskingPoliciesMaskingColumnMaskingFormatArgsDict',
     'MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs',
@@ -3332,6 +3334,37 @@ class LibraryMasingFormatFormatEntryArgs:
     @user_defined_function.setter
     def user_defined_function(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "user_defined_function", value)
+
+
+class MaskDataTargetCredentialsArgsDict(TypedDict):
+    password: pulumi.Input[_builtins.str]
+    user_name: pulumi.Input[_builtins.str]
+
+@pulumi.input_type
+class MaskDataTargetCredentialsArgs:
+    def __init__(__self__, *,
+                 password: pulumi.Input[_builtins.str],
+                 user_name: pulumi.Input[_builtins.str]):
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def password(self) -> pulumi.Input[_builtins.str]:
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "password", value)
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> pulumi.Input[_builtins.str]:
+        return pulumi.get(self, "user_name")
+
+    @user_name.setter
+    def user_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "user_name", value)
 
 
 class MaskingPoliciesMaskingColumnMaskingFormatArgsDict(TypedDict):

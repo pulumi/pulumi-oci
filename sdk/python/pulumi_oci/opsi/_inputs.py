@@ -15,6 +15,8 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'ChargebackPlanPlanCustomItemArgs',
+    'ChargebackPlanPlanCustomItemArgsDict',
     'DatabaseInsightConnectionCredentialDetailsArgs',
     'DatabaseInsightConnectionCredentialDetailsArgsDict',
     'DatabaseInsightConnectionDetailsArgs',
@@ -23,6 +25,8 @@ __all__ = [
     'DatabaseInsightConnectionDetailsHostArgsDict',
     'DatabaseInsightCredentialDetailsArgs',
     'DatabaseInsightCredentialDetailsArgsDict',
+    'ExadataInsightChargebackPlanDetailArgs',
+    'ExadataInsightChargebackPlanDetailArgsDict',
     'ExadataInsightMemberVmClusterDetailArgs',
     'ExadataInsightMemberVmClusterDetailArgsDict',
     'ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs',
@@ -59,6 +63,8 @@ __all__ = [
     'GetAwrHubSourcesFilterArgsDict',
     'GetAwrHubsFilterArgs',
     'GetAwrHubsFilterArgsDict',
+    'GetChargebackPlansFilterArgs',
+    'GetChargebackPlansFilterArgsDict',
     'GetDatabaseInsightsFilterArgs',
     'GetDatabaseInsightsFilterArgsDict',
     'GetEnterpriseManagerBridgesFilterArgs',
@@ -78,6 +84,73 @@ __all__ = [
     'GetOpsiConfigurationsFilterArgs',
     'GetOpsiConfigurationsFilterArgsDict',
 ]
+
+class ChargebackPlanPlanCustomItemArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of chargeback plan customization item. Example items for Exadata Insights Chargeback are statistic, percentile, infrastructureCost, additionalServerCost etc.
+    """
+    value: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Value of chargeback plan customization item.
+    """
+    is_customizable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether the chargeback plan customization item can be customized.
+    """
+
+@pulumi.input_type
+class ChargebackPlanPlanCustomItemArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[_builtins.str],
+                 value: pulumi.Input[_builtins.str],
+                 is_customizable: Optional[pulumi.Input[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: (Updatable) Name of chargeback plan customization item. Example items for Exadata Insights Chargeback are statistic, percentile, infrastructureCost, additionalServerCost etc.
+        :param pulumi.Input[_builtins.str] value: (Updatable) Value of chargeback plan customization item.
+        :param pulumi.Input[_builtins.bool] is_customizable: (Updatable) Indicates whether the chargeback plan customization item can be customized.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+        if is_customizable is not None:
+            pulumi.set(__self__, "is_customizable", is_customizable)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Name of chargeback plan customization item. Example items for Exadata Insights Chargeback are statistic, percentile, infrastructureCost, additionalServerCost etc.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Value of chargeback plan customization item.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isCustomizable")
+    def is_customizable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Indicates whether the chargeback plan customization item can be customized.
+        """
+        return pulumi.get(self, "is_customizable")
+
+    @is_customizable.setter
+    def is_customizable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_customizable", value)
+
 
 class DatabaseInsightConnectionCredentialDetailsArgsDict(TypedDict):
     credential_type: pulumi.Input[_builtins.str]
@@ -511,6 +584,75 @@ class DatabaseInsightCredentialDetailsArgs:
     @wallet_secret_id.setter
     def wallet_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "wallet_secret_id", value)
+
+
+class ExadataInsightChargebackPlanDetailArgsDict(TypedDict):
+    plan_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI Chargeback plan resource.
+    """
+    plan_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
+    """
+    time_enabled: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the chargeback plan was enabled on the resource, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+    """
+
+@pulumi.input_type
+class ExadataInsightChargebackPlanDetailArgs:
+    def __init__(__self__, *,
+                 plan_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 plan_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_enabled: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] plan_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI Chargeback plan resource.
+        :param pulumi.Input[_builtins.str] plan_type: Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
+        :param pulumi.Input[_builtins.str] time_enabled: The date and time the chargeback plan was enabled on the resource, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        if plan_id is not None:
+            pulumi.set(__self__, "plan_id", plan_id)
+        if plan_type is not None:
+            pulumi.set(__self__, "plan_type", plan_type)
+        if time_enabled is not None:
+            pulumi.set(__self__, "time_enabled", time_enabled)
+
+    @_builtins.property
+    @pulumi.getter(name="planId")
+    def plan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI Chargeback plan resource.
+        """
+        return pulumi.get(self, "plan_id")
+
+    @plan_id.setter
+    def plan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "plan_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="planType")
+    def plan_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
+        """
+        return pulumi.get(self, "plan_type")
+
+    @plan_type.setter
+    def plan_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "plan_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeEnabled")
+    def time_enabled(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The date and time the chargeback plan was enabled on the resource, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_enabled")
+
+    @time_enabled.setter
+    def time_enabled(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_enabled", value)
 
 
 class ExadataInsightMemberVmClusterDetailArgsDict(TypedDict):
@@ -2779,6 +2921,59 @@ class GetAwrHubsFilterArgs:
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetChargebackPlansFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of chargeback plan customization item. Example items for Exadata Insights Chargeback are statistic, percentile, infrastructureCost, additionalServerCost etc.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetChargebackPlansFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Name of chargeback plan customization item. Example items for Exadata Insights Chargeback are statistic, percentile, infrastructureCost, additionalServerCost etc.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of chargeback plan customization item. Example items for Exadata Insights Chargeback are statistic, percentile, infrastructureCost, additionalServerCost etc.
+        """
         return pulumi.get(self, "name")
 
     @name.setter

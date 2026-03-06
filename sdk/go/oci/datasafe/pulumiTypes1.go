@@ -13,6 +13,102 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetUnifiedAuditPoliciesUnifiedAuditPolicyCollection struct {
+	Items []GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem `pulumi:"items"`
+}
+
+// GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionInput is an input type that accepts GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArgs and GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionOutput values.
+// You can construct a concrete instance of `GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionInput` via:
+//
+//	GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArgs{...}
+type GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionOutput() GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionOutput
+	ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionOutputWithContext(context.Context) GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionOutput
+}
+
+type GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArgs struct {
+	Items GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAuditPoliciesUnifiedAuditPolicyCollection)(nil)).Elem()
+}
+
+func (i GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArgs) ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionOutput() GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionOutput {
+	return i.ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArgs) ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionOutputWithContext(ctx context.Context) GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionOutput)
+}
+
+// GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayInput is an input type that accepts GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArray and GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayInput` via:
+//
+//	GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArray{ GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArgs{...} }
+type GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayOutput() GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayOutput
+	ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayOutputWithContext(context.Context) GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayOutput
+}
+
+type GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArray []GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionInput
+
+func (GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAuditPoliciesUnifiedAuditPolicyCollection)(nil)).Elem()
+}
+
+func (i GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArray) ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayOutput() GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayOutput {
+	return i.ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArray) ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayOutputWithContext(ctx context.Context) GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayOutput)
+}
+
+type GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAuditPoliciesUnifiedAuditPolicyCollection)(nil)).Elem()
+}
+
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionOutput) ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionOutput() GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionOutput) ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionOutputWithContext(ctx context.Context) GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionOutput) Items() GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesUnifiedAuditPolicyCollection) []GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem {
+		return v.Items
+	}).(GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayOutput)
+}
+
+type GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAuditPoliciesUnifiedAuditPolicyCollection)(nil)).Elem()
+}
+
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayOutput) ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayOutput() GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayOutput) ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayOutputWithContext(ctx context.Context) GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayOutput) Index(i pulumi.IntInput) GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAuditPoliciesUnifiedAuditPolicyCollection {
+		return vs[0].([]GetUnifiedAuditPoliciesUnifiedAuditPolicyCollection)[vs[1].(int)]
+	}).(GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionOutput)
+}
+
 type GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -3987,6 +4083,8 @@ func (o GetUserAssessmentsUserAssessmentIgnoredTargetArrayOutput) Index(i pulumi
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionInput)(nil)).Elem(), GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayInput)(nil)).Elem(), GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemInput)(nil)).Elem(), GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayInput)(nil)).Elem(), GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionInput)(nil)).Elem(), GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArgs{})
@@ -4045,6 +4143,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentsUserAssessmentArrayInput)(nil)).Elem(), GetUserAssessmentsUserAssessmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentsUserAssessmentIgnoredTargetInput)(nil)).Elem(), GetUserAssessmentsUserAssessmentIgnoredTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentsUserAssessmentIgnoredTargetArrayInput)(nil)).Elem(), GetUserAssessmentsUserAssessmentIgnoredTargetArray{})
+	pulumi.RegisterOutputType(GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput{})

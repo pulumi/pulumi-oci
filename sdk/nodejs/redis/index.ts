@@ -25,6 +25,11 @@ export const getOciCacheDefaultConfigSets: typeof import("./getOciCacheDefaultCo
 export const getOciCacheDefaultConfigSetsOutput: typeof import("./getOciCacheDefaultConfigSets").getOciCacheDefaultConfigSetsOutput = null as any;
 utilities.lazyLoad(exports, ["getOciCacheDefaultConfigSets","getOciCacheDefaultConfigSetsOutput"], () => require("./getOciCacheDefaultConfigSets"));
 
+export { GetOciCacheEngineOptionsArgs, GetOciCacheEngineOptionsResult, GetOciCacheEngineOptionsOutputArgs } from "./getOciCacheEngineOptions";
+export const getOciCacheEngineOptions: typeof import("./getOciCacheEngineOptions").getOciCacheEngineOptions = null as any;
+export const getOciCacheEngineOptionsOutput: typeof import("./getOciCacheEngineOptions").getOciCacheEngineOptionsOutput = null as any;
+utilities.lazyLoad(exports, ["getOciCacheEngineOptions","getOciCacheEngineOptionsOutput"], () => require("./getOciCacheEngineOptions"));
+
 export { GetOciCacheUserArgs, GetOciCacheUserResult, GetOciCacheUserOutputArgs } from "./getOciCacheUser";
 export const getOciCacheUser: typeof import("./getOciCacheUser").getOciCacheUser = null as any;
 export const getOciCacheUserOutput: typeof import("./getOciCacheUser").getOciCacheUserOutput = null as any;

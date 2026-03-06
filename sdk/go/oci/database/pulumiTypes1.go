@@ -18582,6 +18582,8 @@ type GetDbNodesDbNode struct {
 	Hostname string `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database node.
 	Id string `pulumi:"id"`
+	// Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+	IsOsPatchRebootRequired bool `pulumi:"isOsPatchRebootRequired"`
 	// Information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The type of database node maintenance.
@@ -18657,6 +18659,8 @@ type GetDbNodesDbNodeArgs struct {
 	Hostname pulumi.StringInput `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database node.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+	IsOsPatchRebootRequired pulumi.BoolInput `pulumi:"isOsPatchRebootRequired"`
 	// Information about the current lifecycle state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The type of database node maintenance.
@@ -18826,6 +18830,11 @@ func (o GetDbNodesDbNodeOutput) Hostname() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database node.
 func (o GetDbNodesDbNodeOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+func (o GetDbNodesDbNodeOutput) IsOsPatchRebootRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbNodesDbNode) bool { return v.IsOsPatchRebootRequired }).(pulumi.BoolOutput)
 }
 
 // Information about the current lifecycle state.
@@ -20286,6 +20295,819 @@ func (o GetDbSystemHistoryEntriesPatchHistoryEntryArrayOutput) Index(i pulumi.In
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemHistoryEntriesPatchHistoryEntry {
 		return vs[0].([]GetDbSystemHistoryEntriesPatchHistoryEntry)[vs[1].(int)]
 	}).(GetDbSystemHistoryEntriesPatchHistoryEntryOutput)
+}
+
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollection struct {
+	// Array of OS patch details for a DB System.
+	Items []GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItem `pulumi:"items"`
+}
+
+// GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionInput is an input type that accepts GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArgs and GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionOutput values.
+// You can construct a concrete instance of `GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionInput` via:
+//
+//	GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArgs{...}
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionInput interface {
+	pulumi.Input
+
+	ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionOutput() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionOutput
+	ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionOutputWithContext(context.Context) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionOutput
+}
+
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArgs struct {
+	// Array of OS patch details for a DB System.
+	Items GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollection)(nil)).Elem()
+}
+
+func (i GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArgs) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionOutput() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionOutput {
+	return i.ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArgs) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionOutput)
+}
+
+// GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayInput is an input type that accepts GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArray and GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayInput` via:
+//
+//	GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArray{ GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArgs{...} }
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayOutput() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayOutput
+	ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayOutputWithContext(context.Context) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayOutput
+}
+
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArray []GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionInput
+
+func (GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollection)(nil)).Elem()
+}
+
+func (i GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArray) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayOutput() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayOutput {
+	return i.ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArray) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayOutput)
+}
+
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollection)(nil)).Elem()
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionOutput) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionOutput() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionOutput {
+	return o
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionOutput) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionOutput {
+	return o
+}
+
+// Array of OS patch details for a DB System.
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionOutput) Items() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollection) []GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItem {
+		return v.Items
+	}).(GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayOutput)
+}
+
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollection)(nil)).Elem()
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayOutput) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayOutput() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayOutput) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayOutput) Index(i pulumi.IntInput) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollection {
+		return vs[0].([]GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollection)[vs[1].(int)]
+	}).(GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionOutput)
+}
+
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItem struct {
+	// A filter to return only OS patch history entries that match the specified OS patch action.
+	Action string `pulumi:"action"`
+	// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	DbSystemId string `pulumi:"dbSystemId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OS patch history entry.
+	Id string `pulumi:"id"`
+	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Results of OS patch details for a DB System.
+	OsPatchDetails []GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetail `pulumi:"osPatchDetails"`
+	// A filter to return only OS patch history entries that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The date and time when the patch action completed
+	TimeEnded string `pulumi:"timeEnded"`
+	// The date and time when the patch action started.
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemInput is an input type that accepts GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArgs and GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput values.
+// You can construct a concrete instance of `GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemInput` via:
+//
+//	GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArgs{...}
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput
+	ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutputWithContext(context.Context) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput
+}
+
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArgs struct {
+	// A filter to return only OS patch history entries that match the specified OS patch action.
+	Action pulumi.StringInput `pulumi:"action"`
+	// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OS patch history entry.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Results of OS patch details for a DB System.
+	OsPatchDetails GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayInput `pulumi:"osPatchDetails"`
+	// A filter to return only OS patch history entries that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time when the patch action completed
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// The date and time when the patch action started.
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArgs) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput {
+	return i.ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArgs) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput)
+}
+
+// GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayInput is an input type that accepts GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArray and GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayInput` via:
+//
+//	GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArray{ GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArgs{...} }
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayOutput() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayOutput
+	ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayOutputWithContext(context.Context) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayOutput
+}
+
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArray []GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemInput
+
+func (GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArray) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayOutput() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayOutput {
+	return i.ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArray) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayOutput)
+}
+
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput {
+	return o
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput {
+	return o
+}
+
+// A filter to return only OS patch history entries that match the specified OS patch action.
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItem) string {
+		return v.Action
+	}).(pulumi.StringOutput)
+}
+
+// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItem) string {
+		return v.DbSystemId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OS patch history entry.
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// Results of OS patch details for a DB System.
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput) OsPatchDetails() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayOutput {
+	return o.ApplyT(func(v GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItem) []GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetail {
+		return v.OsPatchDetails
+	}).(GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayOutput)
+}
+
+// A filter to return only OS patch history entries that match the given lifecycle state exactly.
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// The date and time when the patch action completed
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItem) string {
+		return v.TimeEnded
+	}).(pulumi.StringOutput)
+}
+
+// The date and time when the patch action started.
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItem) string {
+		return v.TimeStarted
+	}).(pulumi.StringOutput)
+}
+
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayOutput) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayOutput() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayOutput) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItem {
+		return vs[0].([]GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItem)[vs[1].(int)]
+	}).(GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput)
+}
+
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetail struct {
+	// Array of OS patch details for a DB System.
+	Items []GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItem `pulumi:"items"`
+}
+
+// GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailInput is an input type that accepts GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArgs and GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailOutput values.
+// You can construct a concrete instance of `GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailInput` via:
+//
+//	GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArgs{...}
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailInput interface {
+	pulumi.Input
+
+	ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailOutput() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailOutput
+	ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailOutputWithContext(context.Context) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailOutput
+}
+
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArgs struct {
+	// Array of OS patch details for a DB System.
+	Items GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayInput `pulumi:"items"`
+}
+
+func (GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetail)(nil)).Elem()
+}
+
+func (i GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArgs) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailOutput() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailOutput {
+	return i.ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArgs) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailOutput)
+}
+
+// GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayInput is an input type that accepts GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArray and GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayInput` via:
+//
+//	GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArray{ GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArgs{...} }
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayOutput() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayOutput
+	ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayOutputWithContext(context.Context) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayOutput
+}
+
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArray []GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailInput
+
+func (GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetail)(nil)).Elem()
+}
+
+func (i GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArray) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayOutput() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayOutput {
+	return i.ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArray) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayOutput)
+}
+
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetail)(nil)).Elem()
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailOutput) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailOutput() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailOutput {
+	return o
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailOutput) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailOutput {
+	return o
+}
+
+// Array of OS patch details for a DB System.
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailOutput) Items() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayOutput {
+	return o.ApplyT(func(v GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetail) []GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItem {
+		return v.Items
+	}).(GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayOutput)
+}
+
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetail)(nil)).Elem()
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayOutput) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayOutput() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayOutput {
+	return o
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayOutput) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayOutput {
+	return o
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayOutput) Index(i pulumi.IntInput) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetail {
+		return vs[0].([]GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetail)[vs[1].(int)]
+	}).(GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailOutput)
+}
+
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItem struct {
+	// The OCID of the DB node targeted for this patch action.
+	DbNodeId string `pulumi:"dbNodeId"`
+	// Indicates whether a reboot is required after applying the patch.
+	IsRebootRequired bool `pulumi:"isRebootRequired"`
+	// List of OS package identifiers (e.g., RPM strings).
+	Rpms []string `pulumi:"rpms"`
+}
+
+// GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemInput is an input type that accepts GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArgs and GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutput values.
+// You can construct a concrete instance of `GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemInput` via:
+//
+//	GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArgs{...}
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemInput interface {
+	pulumi.Input
+
+	ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutput() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutput
+	ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutputWithContext(context.Context) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutput
+}
+
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArgs struct {
+	// The OCID of the DB node targeted for this patch action.
+	DbNodeId pulumi.StringInput `pulumi:"dbNodeId"`
+	// Indicates whether a reboot is required after applying the patch.
+	IsRebootRequired pulumi.BoolInput `pulumi:"isRebootRequired"`
+	// List of OS package identifiers (e.g., RPM strings).
+	Rpms pulumi.StringArrayInput `pulumi:"rpms"`
+}
+
+func (GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItem)(nil)).Elem()
+}
+
+func (i GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArgs) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutput() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutput {
+	return i.ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArgs) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutput)
+}
+
+// GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayInput is an input type that accepts GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArray and GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayInput` via:
+//
+//	GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArray{ GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArgs{...} }
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayOutput() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayOutput
+	ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayOutputWithContext(context.Context) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayOutput
+}
+
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArray []GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemInput
+
+func (GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItem)(nil)).Elem()
+}
+
+func (i GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArray) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayOutput() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayOutput {
+	return i.ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArray) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayOutput)
+}
+
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItem)(nil)).Elem()
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutput) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutput() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutput {
+	return o
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutput) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutput {
+	return o
+}
+
+// The OCID of the DB node targeted for this patch action.
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutput) DbNodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItem) string {
+		return v.DbNodeId
+	}).(pulumi.StringOutput)
+}
+
+// Indicates whether a reboot is required after applying the patch.
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutput) IsRebootRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItem) bool {
+		return v.IsRebootRequired
+	}).(pulumi.BoolOutput)
+}
+
+// List of OS package identifiers (e.g., RPM strings).
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutput) Rpms() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItem) []string {
+		return v.Rpms
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItem)(nil)).Elem()
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayOutput) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayOutput() GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayOutput {
+	return o
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayOutput) ToGetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayOutput {
+	return o
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayOutput) Index(i pulumi.IntInput) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItem {
+		return vs[0].([]GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItem)[vs[1].(int)]
+	}).(GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutput)
+}
+
+type GetDbSystemOsPatchHistoryEntriesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbSystemOsPatchHistoryEntriesFilterInput is an input type that accepts GetDbSystemOsPatchHistoryEntriesFilterArgs and GetDbSystemOsPatchHistoryEntriesFilterOutput values.
+// You can construct a concrete instance of `GetDbSystemOsPatchHistoryEntriesFilterInput` via:
+//
+//	GetDbSystemOsPatchHistoryEntriesFilterArgs{...}
+type GetDbSystemOsPatchHistoryEntriesFilterInput interface {
+	pulumi.Input
+
+	ToGetDbSystemOsPatchHistoryEntriesFilterOutput() GetDbSystemOsPatchHistoryEntriesFilterOutput
+	ToGetDbSystemOsPatchHistoryEntriesFilterOutputWithContext(context.Context) GetDbSystemOsPatchHistoryEntriesFilterOutput
+}
+
+type GetDbSystemOsPatchHistoryEntriesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbSystemOsPatchHistoryEntriesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemOsPatchHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemOsPatchHistoryEntriesFilterArgs) ToGetDbSystemOsPatchHistoryEntriesFilterOutput() GetDbSystemOsPatchHistoryEntriesFilterOutput {
+	return i.ToGetDbSystemOsPatchHistoryEntriesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemOsPatchHistoryEntriesFilterArgs) ToGetDbSystemOsPatchHistoryEntriesFilterOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntriesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemOsPatchHistoryEntriesFilterOutput)
+}
+
+// GetDbSystemOsPatchHistoryEntriesFilterArrayInput is an input type that accepts GetDbSystemOsPatchHistoryEntriesFilterArray and GetDbSystemOsPatchHistoryEntriesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemOsPatchHistoryEntriesFilterArrayInput` via:
+//
+//	GetDbSystemOsPatchHistoryEntriesFilterArray{ GetDbSystemOsPatchHistoryEntriesFilterArgs{...} }
+type GetDbSystemOsPatchHistoryEntriesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemOsPatchHistoryEntriesFilterArrayOutput() GetDbSystemOsPatchHistoryEntriesFilterArrayOutput
+	ToGetDbSystemOsPatchHistoryEntriesFilterArrayOutputWithContext(context.Context) GetDbSystemOsPatchHistoryEntriesFilterArrayOutput
+}
+
+type GetDbSystemOsPatchHistoryEntriesFilterArray []GetDbSystemOsPatchHistoryEntriesFilterInput
+
+func (GetDbSystemOsPatchHistoryEntriesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemOsPatchHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemOsPatchHistoryEntriesFilterArray) ToGetDbSystemOsPatchHistoryEntriesFilterArrayOutput() GetDbSystemOsPatchHistoryEntriesFilterArrayOutput {
+	return i.ToGetDbSystemOsPatchHistoryEntriesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemOsPatchHistoryEntriesFilterArray) ToGetDbSystemOsPatchHistoryEntriesFilterArrayOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntriesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemOsPatchHistoryEntriesFilterArrayOutput)
+}
+
+type GetDbSystemOsPatchHistoryEntriesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemOsPatchHistoryEntriesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemOsPatchHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesFilterOutput) ToGetDbSystemOsPatchHistoryEntriesFilterOutput() GetDbSystemOsPatchHistoryEntriesFilterOutput {
+	return o
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesFilterOutput) ToGetDbSystemOsPatchHistoryEntriesFilterOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntriesFilterOutput {
+	return o
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemOsPatchHistoryEntriesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbSystemOsPatchHistoryEntriesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemOsPatchHistoryEntriesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbSystemOsPatchHistoryEntriesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemOsPatchHistoryEntriesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemOsPatchHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesFilterArrayOutput) ToGetDbSystemOsPatchHistoryEntriesFilterArrayOutput() GetDbSystemOsPatchHistoryEntriesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesFilterArrayOutput) ToGetDbSystemOsPatchHistoryEntriesFilterArrayOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntriesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemOsPatchHistoryEntriesFilterArrayOutput) Index(i pulumi.IntInput) GetDbSystemOsPatchHistoryEntriesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemOsPatchHistoryEntriesFilter {
+		return vs[0].([]GetDbSystemOsPatchHistoryEntriesFilter)[vs[1].(int)]
+	}).(GetDbSystemOsPatchHistoryEntriesFilterOutput)
+}
+
+type GetDbSystemOsPatchHistoryEntryOsPatchDetail struct {
+	// Array of OS patch details for a DB System.
+	Items []GetDbSystemOsPatchHistoryEntryOsPatchDetailItem `pulumi:"items"`
+}
+
+// GetDbSystemOsPatchHistoryEntryOsPatchDetailInput is an input type that accepts GetDbSystemOsPatchHistoryEntryOsPatchDetailArgs and GetDbSystemOsPatchHistoryEntryOsPatchDetailOutput values.
+// You can construct a concrete instance of `GetDbSystemOsPatchHistoryEntryOsPatchDetailInput` via:
+//
+//	GetDbSystemOsPatchHistoryEntryOsPatchDetailArgs{...}
+type GetDbSystemOsPatchHistoryEntryOsPatchDetailInput interface {
+	pulumi.Input
+
+	ToGetDbSystemOsPatchHistoryEntryOsPatchDetailOutput() GetDbSystemOsPatchHistoryEntryOsPatchDetailOutput
+	ToGetDbSystemOsPatchHistoryEntryOsPatchDetailOutputWithContext(context.Context) GetDbSystemOsPatchHistoryEntryOsPatchDetailOutput
+}
+
+type GetDbSystemOsPatchHistoryEntryOsPatchDetailArgs struct {
+	// Array of OS patch details for a DB System.
+	Items GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayInput `pulumi:"items"`
+}
+
+func (GetDbSystemOsPatchHistoryEntryOsPatchDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemOsPatchHistoryEntryOsPatchDetail)(nil)).Elem()
+}
+
+func (i GetDbSystemOsPatchHistoryEntryOsPatchDetailArgs) ToGetDbSystemOsPatchHistoryEntryOsPatchDetailOutput() GetDbSystemOsPatchHistoryEntryOsPatchDetailOutput {
+	return i.ToGetDbSystemOsPatchHistoryEntryOsPatchDetailOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemOsPatchHistoryEntryOsPatchDetailArgs) ToGetDbSystemOsPatchHistoryEntryOsPatchDetailOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntryOsPatchDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemOsPatchHistoryEntryOsPatchDetailOutput)
+}
+
+// GetDbSystemOsPatchHistoryEntryOsPatchDetailArrayInput is an input type that accepts GetDbSystemOsPatchHistoryEntryOsPatchDetailArray and GetDbSystemOsPatchHistoryEntryOsPatchDetailArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemOsPatchHistoryEntryOsPatchDetailArrayInput` via:
+//
+//	GetDbSystemOsPatchHistoryEntryOsPatchDetailArray{ GetDbSystemOsPatchHistoryEntryOsPatchDetailArgs{...} }
+type GetDbSystemOsPatchHistoryEntryOsPatchDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemOsPatchHistoryEntryOsPatchDetailArrayOutput() GetDbSystemOsPatchHistoryEntryOsPatchDetailArrayOutput
+	ToGetDbSystemOsPatchHistoryEntryOsPatchDetailArrayOutputWithContext(context.Context) GetDbSystemOsPatchHistoryEntryOsPatchDetailArrayOutput
+}
+
+type GetDbSystemOsPatchHistoryEntryOsPatchDetailArray []GetDbSystemOsPatchHistoryEntryOsPatchDetailInput
+
+func (GetDbSystemOsPatchHistoryEntryOsPatchDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemOsPatchHistoryEntryOsPatchDetail)(nil)).Elem()
+}
+
+func (i GetDbSystemOsPatchHistoryEntryOsPatchDetailArray) ToGetDbSystemOsPatchHistoryEntryOsPatchDetailArrayOutput() GetDbSystemOsPatchHistoryEntryOsPatchDetailArrayOutput {
+	return i.ToGetDbSystemOsPatchHistoryEntryOsPatchDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemOsPatchHistoryEntryOsPatchDetailArray) ToGetDbSystemOsPatchHistoryEntryOsPatchDetailArrayOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntryOsPatchDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemOsPatchHistoryEntryOsPatchDetailArrayOutput)
+}
+
+type GetDbSystemOsPatchHistoryEntryOsPatchDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemOsPatchHistoryEntryOsPatchDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemOsPatchHistoryEntryOsPatchDetail)(nil)).Elem()
+}
+
+func (o GetDbSystemOsPatchHistoryEntryOsPatchDetailOutput) ToGetDbSystemOsPatchHistoryEntryOsPatchDetailOutput() GetDbSystemOsPatchHistoryEntryOsPatchDetailOutput {
+	return o
+}
+
+func (o GetDbSystemOsPatchHistoryEntryOsPatchDetailOutput) ToGetDbSystemOsPatchHistoryEntryOsPatchDetailOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntryOsPatchDetailOutput {
+	return o
+}
+
+// Array of OS patch details for a DB System.
+func (o GetDbSystemOsPatchHistoryEntryOsPatchDetailOutput) Items() GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayOutput {
+	return o.ApplyT(func(v GetDbSystemOsPatchHistoryEntryOsPatchDetail) []GetDbSystemOsPatchHistoryEntryOsPatchDetailItem {
+		return v.Items
+	}).(GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayOutput)
+}
+
+type GetDbSystemOsPatchHistoryEntryOsPatchDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemOsPatchHistoryEntryOsPatchDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemOsPatchHistoryEntryOsPatchDetail)(nil)).Elem()
+}
+
+func (o GetDbSystemOsPatchHistoryEntryOsPatchDetailArrayOutput) ToGetDbSystemOsPatchHistoryEntryOsPatchDetailArrayOutput() GetDbSystemOsPatchHistoryEntryOsPatchDetailArrayOutput {
+	return o
+}
+
+func (o GetDbSystemOsPatchHistoryEntryOsPatchDetailArrayOutput) ToGetDbSystemOsPatchHistoryEntryOsPatchDetailArrayOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntryOsPatchDetailArrayOutput {
+	return o
+}
+
+func (o GetDbSystemOsPatchHistoryEntryOsPatchDetailArrayOutput) Index(i pulumi.IntInput) GetDbSystemOsPatchHistoryEntryOsPatchDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemOsPatchHistoryEntryOsPatchDetail {
+		return vs[0].([]GetDbSystemOsPatchHistoryEntryOsPatchDetail)[vs[1].(int)]
+	}).(GetDbSystemOsPatchHistoryEntryOsPatchDetailOutput)
+}
+
+type GetDbSystemOsPatchHistoryEntryOsPatchDetailItem struct {
+	// The OCID of the DB node targeted for this patch action.
+	DbNodeId string `pulumi:"dbNodeId"`
+	// Indicates whether a reboot is required after applying the patch.
+	IsRebootRequired bool `pulumi:"isRebootRequired"`
+	// List of OS package identifiers (e.g., RPM strings).
+	Rpms []string `pulumi:"rpms"`
+}
+
+// GetDbSystemOsPatchHistoryEntryOsPatchDetailItemInput is an input type that accepts GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArgs and GetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutput values.
+// You can construct a concrete instance of `GetDbSystemOsPatchHistoryEntryOsPatchDetailItemInput` via:
+//
+//	GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArgs{...}
+type GetDbSystemOsPatchHistoryEntryOsPatchDetailItemInput interface {
+	pulumi.Input
+
+	ToGetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutput() GetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutput
+	ToGetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutputWithContext(context.Context) GetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutput
+}
+
+type GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArgs struct {
+	// The OCID of the DB node targeted for this patch action.
+	DbNodeId pulumi.StringInput `pulumi:"dbNodeId"`
+	// Indicates whether a reboot is required after applying the patch.
+	IsRebootRequired pulumi.BoolInput `pulumi:"isRebootRequired"`
+	// List of OS package identifiers (e.g., RPM strings).
+	Rpms pulumi.StringArrayInput `pulumi:"rpms"`
+}
+
+func (GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemOsPatchHistoryEntryOsPatchDetailItem)(nil)).Elem()
+}
+
+func (i GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArgs) ToGetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutput() GetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutput {
+	return i.ToGetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArgs) ToGetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutput)
+}
+
+// GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayInput is an input type that accepts GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArray and GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayInput` via:
+//
+//	GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArray{ GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArgs{...} }
+type GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayOutput() GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayOutput
+	ToGetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayOutputWithContext(context.Context) GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayOutput
+}
+
+type GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArray []GetDbSystemOsPatchHistoryEntryOsPatchDetailItemInput
+
+func (GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemOsPatchHistoryEntryOsPatchDetailItem)(nil)).Elem()
+}
+
+func (i GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArray) ToGetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayOutput() GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayOutput {
+	return i.ToGetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArray) ToGetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayOutput)
+}
+
+type GetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemOsPatchHistoryEntryOsPatchDetailItem)(nil)).Elem()
+}
+
+func (o GetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutput) ToGetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutput() GetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutput {
+	return o
+}
+
+func (o GetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutput) ToGetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutput {
+	return o
+}
+
+// The OCID of the DB node targeted for this patch action.
+func (o GetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutput) DbNodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemOsPatchHistoryEntryOsPatchDetailItem) string { return v.DbNodeId }).(pulumi.StringOutput)
+}
+
+// Indicates whether a reboot is required after applying the patch.
+func (o GetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutput) IsRebootRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemOsPatchHistoryEntryOsPatchDetailItem) bool { return v.IsRebootRequired }).(pulumi.BoolOutput)
+}
+
+// List of OS package identifiers (e.g., RPM strings).
+func (o GetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutput) Rpms() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemOsPatchHistoryEntryOsPatchDetailItem) []string { return v.Rpms }).(pulumi.StringArrayOutput)
+}
+
+type GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemOsPatchHistoryEntryOsPatchDetailItem)(nil)).Elem()
+}
+
+func (o GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayOutput) ToGetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayOutput() GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayOutput {
+	return o
+}
+
+func (o GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayOutput) ToGetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayOutputWithContext(ctx context.Context) GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayOutput {
+	return o
+}
+
+func (o GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayOutput) Index(i pulumi.IntInput) GetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemOsPatchHistoryEntryOsPatchDetailItem {
+		return vs[0].([]GetDbSystemOsPatchHistoryEntryOsPatchDetailItem)[vs[1].(int)]
+	}).(GetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutput)
 }
 
 type GetDbSystemPatchesFilter struct {
@@ -21969,11 +22791,15 @@ type GetDbSystemsDbSystem struct {
 	NodeCount int `pulumi:"nodeCount"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
-	NsgIds []string `pulumi:"nsgIds"`
+	NsgIds          []string `pulumi:"nsgIds"`
+	OsPatchAction   string   `pulumi:"osPatchAction"`
+	OsPatchDbNodeId string   `pulumi:"osPatchDbNodeId"`
+	OsPatchTrigger  int      `pulumi:"osPatchTrigger"`
 	// The most recent OS Patch Version applied on the DB system.
 	OsVersion string `pulumi:"osVersion"`
 	// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	PointInTimeDataDiskCloneTimestamp string `pulumi:"pointInTimeDataDiskCloneTimestamp"`
+	PrimaryDbSystemId                 string `pulumi:"primaryDbSystemId"`
 	PrivateIp                         string `pulumi:"privateIp"`
 	PrivateIpV6                       string `pulumi:"privateIpV6"`
 	// The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
@@ -22105,11 +22931,15 @@ type GetDbSystemsDbSystemArgs struct {
 	NodeCount pulumi.IntInput `pulumi:"nodeCount"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
-	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	NsgIds          pulumi.StringArrayInput `pulumi:"nsgIds"`
+	OsPatchAction   pulumi.StringInput      `pulumi:"osPatchAction"`
+	OsPatchDbNodeId pulumi.StringInput      `pulumi:"osPatchDbNodeId"`
+	OsPatchTrigger  pulumi.IntInput         `pulumi:"osPatchTrigger"`
 	// The most recent OS Patch Version applied on the DB system.
 	OsVersion pulumi.StringInput `pulumi:"osVersion"`
 	// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	PointInTimeDataDiskCloneTimestamp pulumi.StringInput `pulumi:"pointInTimeDataDiskCloneTimestamp"`
+	PrimaryDbSystemId                 pulumi.StringInput `pulumi:"primaryDbSystemId"`
 	PrivateIp                         pulumi.StringInput `pulumi:"privateIp"`
 	PrivateIpV6                       pulumi.StringInput `pulumi:"privateIpV6"`
 	// The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
@@ -22396,6 +23226,18 @@ func (o GetDbSystemsDbSystemOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystem) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
+func (o GetDbSystemsDbSystemOutput) OsPatchAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.OsPatchAction }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemOutput) OsPatchDbNodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.OsPatchDbNodeId }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemOutput) OsPatchTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) int { return v.OsPatchTrigger }).(pulumi.IntOutput)
+}
+
 // The most recent OS Patch Version applied on the DB system.
 func (o GetDbSystemsDbSystemOutput) OsVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.OsVersion }).(pulumi.StringOutput)
@@ -22404,6 +23246,10 @@ func (o GetDbSystemsDbSystemOutput) OsVersion() pulumi.StringOutput {
 // The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 func (o GetDbSystemsDbSystemOutput) PointInTimeDataDiskCloneTimestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.PointInTimeDataDiskCloneTimestamp }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemOutput) PrimaryDbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.PrimaryDbSystemId }).(pulumi.StringOutput)
 }
 
 func (o GetDbSystemsDbSystemOutput) PrivateIp() pulumi.StringOutput {
@@ -22863,6 +23709,8 @@ type GetDbSystemsDbSystemDbHomeDatabase struct {
 	BackupTdePassword       string                                               `pulumi:"backupTdePassword"`
 	CharacterSet            string                                               `pulumi:"characterSet"`
 	ConnectionStrings       []GetDbSystemsDbSystemDbHomeDatabaseConnectionString `pulumi:"connectionStrings"`
+	DatabaseDefinedTags     map[string]string                                    `pulumi:"databaseDefinedTags"`
+	DatabaseFreeformTags    map[string]string                                    `pulumi:"databaseFreeformTags"`
 	DatabaseId              string                                               `pulumi:"databaseId"`
 	DatabaseSoftwareImageId string                                               `pulumi:"databaseSoftwareImageId"`
 	DbBackupConfigs         []GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig   `pulumi:"dbBackupConfigs"`
@@ -22875,7 +23723,9 @@ type GetDbSystemsDbSystemDbHomeDatabase struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-	Id string `pulumi:"id"`
+	Id                       string `pulumi:"id"`
+	IsActiveDataGuardEnabled bool   `pulumi:"isActiveDataGuardEnabled"`
+	KeyStoreId               string `pulumi:"keyStoreId"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId        string `pulumi:"kmsKeyId"`
 	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
@@ -22884,12 +23734,15 @@ type GetDbSystemsDbSystemDbHomeDatabase struct {
 	NcharacterSet      string   `pulumi:"ncharacterSet"`
 	PdbName            string   `pulumi:"pdbName"`
 	PluggableDatabases []string `pulumi:"pluggableDatabases"`
+	ProtectionMode     string   `pulumi:"protectionMode"`
+	SidPrefix          string   `pulumi:"sidPrefix"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State             string `pulumi:"state"`
 	TdeWalletPassword string `pulumi:"tdeWalletPassword"`
 	// The date and time the DB system was created.
 	TimeCreated                     string `pulumi:"timeCreated"`
 	TimeStampForPointInTimeRecovery string `pulumi:"timeStampForPointInTimeRecovery"`
+	TransportType                   string `pulumi:"transportType"`
 	VaultId                         string `pulumi:"vaultId"`
 }
 
@@ -22911,6 +23764,8 @@ type GetDbSystemsDbSystemDbHomeDatabaseArgs struct {
 	BackupTdePassword       pulumi.StringInput                                           `pulumi:"backupTdePassword"`
 	CharacterSet            pulumi.StringInput                                           `pulumi:"characterSet"`
 	ConnectionStrings       GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayInput `pulumi:"connectionStrings"`
+	DatabaseDefinedTags     pulumi.StringMapInput                                        `pulumi:"databaseDefinedTags"`
+	DatabaseFreeformTags    pulumi.StringMapInput                                        `pulumi:"databaseFreeformTags"`
 	DatabaseId              pulumi.StringInput                                           `pulumi:"databaseId"`
 	DatabaseSoftwareImageId pulumi.StringInput                                           `pulumi:"databaseSoftwareImageId"`
 	DbBackupConfigs         GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigArrayInput   `pulumi:"dbBackupConfigs"`
@@ -22923,7 +23778,9 @@ type GetDbSystemsDbSystemDbHomeDatabaseArgs struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id                       pulumi.StringInput `pulumi:"id"`
+	IsActiveDataGuardEnabled pulumi.BoolInput   `pulumi:"isActiveDataGuardEnabled"`
+	KeyStoreId               pulumi.StringInput `pulumi:"keyStoreId"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId        pulumi.StringInput `pulumi:"kmsKeyId"`
 	KmsKeyVersionId pulumi.StringInput `pulumi:"kmsKeyVersionId"`
@@ -22932,12 +23789,15 @@ type GetDbSystemsDbSystemDbHomeDatabaseArgs struct {
 	NcharacterSet      pulumi.StringInput      `pulumi:"ncharacterSet"`
 	PdbName            pulumi.StringInput      `pulumi:"pdbName"`
 	PluggableDatabases pulumi.StringArrayInput `pulumi:"pluggableDatabases"`
+	ProtectionMode     pulumi.StringInput      `pulumi:"protectionMode"`
+	SidPrefix          pulumi.StringInput      `pulumi:"sidPrefix"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State             pulumi.StringInput `pulumi:"state"`
 	TdeWalletPassword pulumi.StringInput `pulumi:"tdeWalletPassword"`
 	// The date and time the DB system was created.
 	TimeCreated                     pulumi.StringInput `pulumi:"timeCreated"`
 	TimeStampForPointInTimeRecovery pulumi.StringInput `pulumi:"timeStampForPointInTimeRecovery"`
+	TransportType                   pulumi.StringInput `pulumi:"transportType"`
 	VaultId                         pulumi.StringInput `pulumi:"vaultId"`
 }
 
@@ -23015,6 +23875,14 @@ func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) ConnectionStrings() GetDbSyste
 	}).(GetDbSystemsDbSystemDbHomeDatabaseConnectionStringArrayOutput)
 }
 
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) DatabaseDefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) map[string]string { return v.DatabaseDefinedTags }).(pulumi.StringMapOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) DatabaseFreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) map[string]string { return v.DatabaseFreeformTags }).(pulumi.StringMapOutput)
+}
+
 func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) DatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.DatabaseId }).(pulumi.StringOutput)
 }
@@ -23060,6 +23928,14 @@ func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.Id }).(pulumi.StringOutput)
 }
 
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) IsActiveDataGuardEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) bool { return v.IsActiveDataGuardEnabled }).(pulumi.BoolOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) KeyStoreId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.KeyStoreId }).(pulumi.StringOutput)
+}
+
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.KmsKeyId }).(pulumi.StringOutput)
@@ -23086,6 +23962,14 @@ func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) PluggableDatabases() pulumi.St
 	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) []string { return v.PluggableDatabases }).(pulumi.StringArrayOutput)
 }
 
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) ProtectionMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.ProtectionMode }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) SidPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.SidPrefix }).(pulumi.StringOutput)
+}
+
 // A filter to return only resources that match the given lifecycle state exactly.
 func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.State }).(pulumi.StringOutput)
@@ -23102,6 +23986,10 @@ func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) TimeCreated() pulumi.StringOut
 
 func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) TimeStampForPointInTimeRecovery() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.TimeStampForPointInTimeRecovery }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) TransportType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemDbHomeDatabase) string { return v.TransportType }).(pulumi.StringOutput)
 }
 
 func (o GetDbSystemsDbSystemDbHomeDatabaseOutput) VaultId() pulumi.StringOutput {
@@ -50400,6 +51288,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemHistoryEntriesFilterArrayInput)(nil)).Elem(), GetDbSystemHistoryEntriesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemHistoryEntriesPatchHistoryEntryInput)(nil)).Elem(), GetDbSystemHistoryEntriesPatchHistoryEntryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemHistoryEntriesPatchHistoryEntryArrayInput)(nil)).Elem(), GetDbSystemHistoryEntriesPatchHistoryEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionInput)(nil)).Elem(), GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayInput)(nil)).Elem(), GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemInput)(nil)).Elem(), GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayInput)(nil)).Elem(), GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailInput)(nil)).Elem(), GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayInput)(nil)).Elem(), GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemInput)(nil)).Elem(), GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayInput)(nil)).Elem(), GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemOsPatchHistoryEntriesFilterInput)(nil)).Elem(), GetDbSystemOsPatchHistoryEntriesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemOsPatchHistoryEntriesFilterArrayInput)(nil)).Elem(), GetDbSystemOsPatchHistoryEntriesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemOsPatchHistoryEntryOsPatchDetailInput)(nil)).Elem(), GetDbSystemOsPatchHistoryEntryOsPatchDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemOsPatchHistoryEntryOsPatchDetailArrayInput)(nil)).Elem(), GetDbSystemOsPatchHistoryEntryOsPatchDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemOsPatchHistoryEntryOsPatchDetailItemInput)(nil)).Elem(), GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayInput)(nil)).Elem(), GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemPatchesFilterInput)(nil)).Elem(), GetDbSystemPatchesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemPatchesFilterArrayInput)(nil)).Elem(), GetDbSystemPatchesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemPatchesPatchInput)(nil)).Elem(), GetDbSystemPatchesPatchArgs{})
@@ -51082,6 +51984,20 @@ func init() {
 	pulumi.RegisterOutputType(GetDbSystemHistoryEntriesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemHistoryEntriesPatchHistoryEntryOutput{})
 	pulumi.RegisterOutputType(GetDbSystemHistoryEntriesPatchHistoryEntryArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionOutput{})
+	pulumi.RegisterOutputType(GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailOutput{})
+	pulumi.RegisterOutputType(GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemOutput{})
+	pulumi.RegisterOutputType(GetDbSystemOsPatchHistoryEntriesDbSystemOsPatchHistoryEntryCollectionItemOsPatchDetailItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemOsPatchHistoryEntriesFilterOutput{})
+	pulumi.RegisterOutputType(GetDbSystemOsPatchHistoryEntriesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemOsPatchHistoryEntryOsPatchDetailOutput{})
+	pulumi.RegisterOutputType(GetDbSystemOsPatchHistoryEntryOsPatchDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemOsPatchHistoryEntryOsPatchDetailItemOutput{})
+	pulumi.RegisterOutputType(GetDbSystemOsPatchHistoryEntryOsPatchDetailItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemPatchesFilterOutput{})
 	pulumi.RegisterOutputType(GetDbSystemPatchesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemPatchesPatchOutput{})

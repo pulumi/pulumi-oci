@@ -15,6 +15,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
     {
         public readonly int AddMaskingColumnsFromSdmTrigger;
         /// <summary>
+        /// Specifies whether target database credentials are required to perform masking with this policy
+        /// </summary>
+        public readonly bool AreTargetCredentialsRequired;
+        /// <summary>
         /// The source of masking columns.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceResult> ColumnSources;
@@ -88,6 +92,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
         private GetMaskingPoliciesMaskingPolicyCollectionItemResult(
             int addMaskingColumnsFromSdmTrigger,
 
+            bool areTargetCredentialsRequired,
+
             ImmutableArray<Outputs.GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceResult> columnSources,
 
             string compartmentId,
@@ -125,6 +131,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             string timeUpdated)
         {
             AddMaskingColumnsFromSdmTrigger = addMaskingColumnsFromSdmTrigger;
+            AreTargetCredentialsRequired = areTargetCredentialsRequired;
             ColumnSources = columnSources;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

@@ -34,7 +34,6 @@ namespace Pulumi.Oci.Functions.Outputs
         /// Admin users last name
         /// </summary>
         public readonly string LastName;
-        public readonly string Password;
         /// <summary>
         /// Admin username
         /// </summary>
@@ -54,8 +53,6 @@ namespace Pulumi.Oci.Functions.Outputs
 
             string lastName,
 
-            string password,
-
             string username)
         {
             EmailAddress = emailAddress;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.Functions.Outputs
             Id = id;
             Items = items;
             LastName = lastName;
-            Password = password;
             Username = username;
         }
     }

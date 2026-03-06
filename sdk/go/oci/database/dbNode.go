@@ -68,6 +68,8 @@ type DbNode struct {
 	HostIpv6id pulumi.StringOutput `pulumi:"hostIpv6id"`
 	// The host name for the database node.
 	Hostname pulumi.StringOutput `pulumi:"hostname"`
+	// Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+	IsOsPatchRebootRequired pulumi.BoolOutput `pulumi:"isOsPatchRebootRequired"`
 	// Information about the current lifecycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The type of database node maintenance.
@@ -166,6 +168,8 @@ type dbNodeState struct {
 	HostIpv6id *string `pulumi:"hostIpv6id"`
 	// The host name for the database node.
 	Hostname *string `pulumi:"hostname"`
+	// Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+	IsOsPatchRebootRequired *bool `pulumi:"isOsPatchRebootRequired"`
 	// Information about the current lifecycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The type of database node maintenance.
@@ -232,6 +236,8 @@ type DbNodeState struct {
 	HostIpv6id pulumi.StringPtrInput
 	// The host name for the database node.
 	Hostname pulumi.StringPtrInput
+	// Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+	IsOsPatchRebootRequired pulumi.BoolPtrInput
 	// Information about the current lifecycle state.
 	LifecycleDetails pulumi.StringPtrInput
 	// The type of database node maintenance.
@@ -465,6 +471,11 @@ func (o DbNodeOutput) HostIpv6id() pulumi.StringOutput {
 // The host name for the database node.
 func (o DbNodeOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbNode) pulumi.StringOutput { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+func (o DbNodeOutput) IsOsPatchRebootRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DbNode) pulumi.BoolOutput { return v.IsOsPatchRebootRequired }).(pulumi.BoolOutput)
 }
 
 // Information about the current lifecycle state.

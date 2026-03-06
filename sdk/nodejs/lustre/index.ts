@@ -15,6 +15,16 @@ export type FileStorageObjectStorageLink = import("./fileStorageObjectStorageLin
 export const FileStorageObjectStorageLink: typeof import("./fileStorageObjectStorageLink").FileStorageObjectStorageLink = null as any;
 utilities.lazyLoad(exports, ["FileStorageObjectStorageLink"], () => require("./fileStorageObjectStorageLink"));
 
+export { GetFileStorageAvailableMaintenanceScheduleStartTimesArgs, GetFileStorageAvailableMaintenanceScheduleStartTimesResult, GetFileStorageAvailableMaintenanceScheduleStartTimesOutputArgs } from "./getFileStorageAvailableMaintenanceScheduleStartTimes";
+export const getFileStorageAvailableMaintenanceScheduleStartTimes: typeof import("./getFileStorageAvailableMaintenanceScheduleStartTimes").getFileStorageAvailableMaintenanceScheduleStartTimes = null as any;
+export const getFileStorageAvailableMaintenanceScheduleStartTimesOutput: typeof import("./getFileStorageAvailableMaintenanceScheduleStartTimes").getFileStorageAvailableMaintenanceScheduleStartTimesOutput = null as any;
+utilities.lazyLoad(exports, ["getFileStorageAvailableMaintenanceScheduleStartTimes","getFileStorageAvailableMaintenanceScheduleStartTimesOutput"], () => require("./getFileStorageAvailableMaintenanceScheduleStartTimes"));
+
+export { GetFileStorageAvailableOverrideMaintenanceStartTimesArgs, GetFileStorageAvailableOverrideMaintenanceStartTimesResult, GetFileStorageAvailableOverrideMaintenanceStartTimesOutputArgs } from "./getFileStorageAvailableOverrideMaintenanceStartTimes";
+export const getFileStorageAvailableOverrideMaintenanceStartTimes: typeof import("./getFileStorageAvailableOverrideMaintenanceStartTimes").getFileStorageAvailableOverrideMaintenanceStartTimes = null as any;
+export const getFileStorageAvailableOverrideMaintenanceStartTimesOutput: typeof import("./getFileStorageAvailableOverrideMaintenanceStartTimes").getFileStorageAvailableOverrideMaintenanceStartTimesOutput = null as any;
+utilities.lazyLoad(exports, ["getFileStorageAvailableOverrideMaintenanceStartTimes","getFileStorageAvailableOverrideMaintenanceStartTimesOutput"], () => require("./getFileStorageAvailableOverrideMaintenanceStartTimes"));
+
 export { GetFileStorageLustreFileSystemArgs, GetFileStorageLustreFileSystemResult, GetFileStorageLustreFileSystemOutputArgs } from "./getFileStorageLustreFileSystem";
 export const getFileStorageLustreFileSystem: typeof import("./getFileStorageLustreFileSystem").getFileStorageLustreFileSystem = null as any;
 export const getFileStorageLustreFileSystemOutput: typeof import("./getFileStorageLustreFileSystem").getFileStorageLustreFileSystemOutput = null as any;

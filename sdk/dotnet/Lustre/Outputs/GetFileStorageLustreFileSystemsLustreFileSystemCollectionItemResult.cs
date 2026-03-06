@@ -29,6 +29,7 @@ namespace Pulumi.Oci.Lustre.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
+        public readonly ImmutableArray<Outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailResult> DateTimeDetails;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
@@ -66,6 +67,10 @@ namespace Pulumi.Oci.Lustre.Outputs
         /// </summary>
         public readonly string Lnet;
         /// <summary>
+        /// The meta-data for maintenance window.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataResult> MaintenanceWindowMetadatas;
+        /// <summary>
         /// The preferred day and time to perform maintenance.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowResult> MaintenanceWindows;
@@ -81,6 +86,7 @@ namespace Pulumi.Oci.Lustre.Outputs
         /// A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
+        public readonly int OverrideMaintenanceTrigger;
         /// <summary>
         /// The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
         /// </summary>
@@ -124,6 +130,8 @@ namespace Pulumi.Oci.Lustre.Outputs
 
             string compartmentId,
 
+            ImmutableArray<Outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemDateTimeDetailResult> dateTimeDetails,
+
             ImmutableDictionary<string, string> definedTags,
 
             string displayName,
@@ -142,6 +150,8 @@ namespace Pulumi.Oci.Lustre.Outputs
 
             string lnet,
 
+            ImmutableArray<Outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowMetadataResult> maintenanceWindowMetadatas,
+
             ImmutableArray<Outputs.GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowResult> maintenanceWindows,
 
             string majorVersion,
@@ -149,6 +159,8 @@ namespace Pulumi.Oci.Lustre.Outputs
             string managementServiceAddress,
 
             ImmutableArray<string> nsgIds,
+
+            int overrideMaintenanceTrigger,
 
             string performanceTier,
 
@@ -170,6 +182,7 @@ namespace Pulumi.Oci.Lustre.Outputs
             CapacityInGbs = capacityInGbs;
             ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
+            DateTimeDetails = dateTimeDetails;
             DefinedTags = definedTags;
             DisplayName = displayName;
             FileSystemDescription = fileSystemDescription;
@@ -179,10 +192,12 @@ namespace Pulumi.Oci.Lustre.Outputs
             KmsKeyId = kmsKeyId;
             LifecycleDetails = lifecycleDetails;
             Lnet = lnet;
+            MaintenanceWindowMetadatas = maintenanceWindowMetadatas;
             MaintenanceWindows = maintenanceWindows;
             MajorVersion = majorVersion;
             ManagementServiceAddress = managementServiceAddress;
             NsgIds = nsgIds;
+            OverrideMaintenanceTrigger = overrideMaintenanceTrigger;
             PerformanceTier = performanceTier;
             RootSquashConfigurations = rootSquashConfigurations;
             State = state;

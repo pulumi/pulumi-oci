@@ -52,6 +52,10 @@ class DbSystemArgs:
                  maintenance_window_details: Optional[pulumi.Input['DbSystemMaintenanceWindowDetailsArgs']] = None,
                  node_count: Optional[pulumi.Input[_builtins.int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 os_patch_action: Optional[pulumi.Input[_builtins.str]] = None,
+                 os_patch_db_node_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 os_patch_trigger: Optional[pulumi.Input[_builtins.int]] = None,
+                 primary_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
                  private_ip: Optional[pulumi.Input[_builtins.str]] = None,
                  private_ip_v6: Optional[pulumi.Input[_builtins.str]] = None,
                  reco_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
@@ -134,6 +138,12 @@ class DbSystemArgs:
         :param pulumi.Input[_builtins.int] node_count: The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
+        :param pulumi.Input[_builtins.int] os_patch_trigger: (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] primary_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param pulumi.Input[_builtins.str] private_ip: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
         :param pulumi.Input[_builtins.str] private_ip_v6: A private IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
         :param pulumi.Input[_builtins.int] reco_storage_size_in_gb: The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
@@ -143,10 +153,6 @@ class DbSystemArgs:
         :param pulumi.Input[_builtins.bool] sparse_diskgroup: If true, Sparse Diskgroup is configured for Exadata dbsystem. If False, Sparse diskgroup is not configured. Only applied for Exadata shape.
         :param pulumi.Input[_builtins.str] storage_volume_performance_mode: The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
         :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -203,6 +209,14 @@ class DbSystemArgs:
             pulumi.set(__self__, "node_count", node_count)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if os_patch_action is not None:
+            pulumi.set(__self__, "os_patch_action", os_patch_action)
+        if os_patch_db_node_id is not None:
+            pulumi.set(__self__, "os_patch_db_node_id", os_patch_db_node_id)
+        if os_patch_trigger is not None:
+            pulumi.set(__self__, "os_patch_trigger", os_patch_trigger)
+        if primary_db_system_id is not None:
+            pulumi.set(__self__, "primary_db_system_id", primary_db_system_id)
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
         if private_ip_v6 is not None:
@@ -633,6 +647,52 @@ class DbSystemArgs:
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
+    @pulumi.getter(name="osPatchAction")
+    def os_patch_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "os_patch_action")
+
+    @os_patch_action.setter
+    def os_patch_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "os_patch_action", value)
+
+    @_builtins.property
+    @pulumi.getter(name="osPatchDbNodeId")
+    def os_patch_db_node_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "os_patch_db_node_id")
+
+    @os_patch_db_node_id.setter
+    def os_patch_db_node_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "os_patch_db_node_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="osPatchTrigger")
+    def os_patch_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "os_patch_trigger")
+
+    @os_patch_trigger.setter
+    def os_patch_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "os_patch_trigger", value)
+
+    @_builtins.property
+    @pulumi.getter(name="primaryDbSystemId")
+    def primary_db_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        """
+        return pulumi.get(self, "primary_db_system_id")
+
+    @primary_db_system_id.setter
+    def primary_db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "primary_db_system_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -742,10 +802,6 @@ class DbSystemArgs:
     def time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_zone")
 
@@ -793,8 +849,12 @@ class _DbSystemState:
                  next_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
                  node_count: Optional[pulumi.Input[_builtins.int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 os_patch_action: Optional[pulumi.Input[_builtins.str]] = None,
+                 os_patch_db_node_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 os_patch_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  os_version: Optional[pulumi.Input[_builtins.str]] = None,
                  point_in_time_data_disk_clone_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
+                 primary_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
                  private_ip: Optional[pulumi.Input[_builtins.str]] = None,
                  private_ip_v6: Optional[pulumi.Input[_builtins.str]] = None,
                  reco_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
@@ -886,8 +946,14 @@ class _DbSystemState:
         :param pulumi.Input[_builtins.int] node_count: The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
+        :param pulumi.Input[_builtins.int] os_patch_trigger: (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] os_version: The most recent OS Patch Version applied on the DB system.
         :param pulumi.Input[_builtins.str] point_in_time_data_disk_clone_timestamp: The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param pulumi.Input[_builtins.str] primary_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param pulumi.Input[_builtins.str] private_ip: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
         :param pulumi.Input[_builtins.str] private_ip_v6: A private IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
         :param pulumi.Input[_builtins.int] reco_storage_size_in_gb: The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
@@ -917,10 +983,6 @@ class _DbSystemState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] time_created: The date and time the DB system was created.
         :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] version: The Oracle Database version of the DB system.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIPv4 address for each node in the DB system to enable failover. If one node fails, the VIPv4 is reassigned to another active node in the cluster.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vipv6ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP IpV6 address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
@@ -998,10 +1060,18 @@ class _DbSystemState:
             pulumi.set(__self__, "node_count", node_count)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if os_patch_action is not None:
+            pulumi.set(__self__, "os_patch_action", os_patch_action)
+        if os_patch_db_node_id is not None:
+            pulumi.set(__self__, "os_patch_db_node_id", os_patch_db_node_id)
+        if os_patch_trigger is not None:
+            pulumi.set(__self__, "os_patch_trigger", os_patch_trigger)
         if os_version is not None:
             pulumi.set(__self__, "os_version", os_version)
         if point_in_time_data_disk_clone_timestamp is not None:
             pulumi.set(__self__, "point_in_time_data_disk_clone_timestamp", point_in_time_data_disk_clone_timestamp)
+        if primary_db_system_id is not None:
+            pulumi.set(__self__, "primary_db_system_id", primary_db_system_id)
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
         if private_ip_v6 is not None:
@@ -1510,6 +1580,40 @@ class _DbSystemState:
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
+    @pulumi.getter(name="osPatchAction")
+    def os_patch_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "os_patch_action")
+
+    @os_patch_action.setter
+    def os_patch_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "os_patch_action", value)
+
+    @_builtins.property
+    @pulumi.getter(name="osPatchDbNodeId")
+    def os_patch_db_node_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "os_patch_db_node_id")
+
+    @os_patch_db_node_id.setter
+    def os_patch_db_node_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "os_patch_db_node_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="osPatchTrigger")
+    def os_patch_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "os_patch_trigger")
+
+    @os_patch_trigger.setter
+    def os_patch_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "os_patch_trigger", value)
+
+    @_builtins.property
     @pulumi.getter(name="osVersion")
     def os_version(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -1532,6 +1636,18 @@ class _DbSystemState:
     @point_in_time_data_disk_clone_timestamp.setter
     def point_in_time_data_disk_clone_timestamp(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "point_in_time_data_disk_clone_timestamp", value)
+
+    @_builtins.property
+    @pulumi.getter(name="primaryDbSystemId")
+    def primary_db_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        """
+        return pulumi.get(self, "primary_db_system_id")
+
+    @primary_db_system_id.setter
+    def primary_db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "primary_db_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIp")
@@ -1773,10 +1889,6 @@ class _DbSystemState:
     def time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_zone")
 
@@ -1867,6 +1979,10 @@ class DbSystem(pulumi.CustomResource):
                  maintenance_window_details: Optional[pulumi.Input[Union['DbSystemMaintenanceWindowDetailsArgs', 'DbSystemMaintenanceWindowDetailsArgsDict']]] = None,
                  node_count: Optional[pulumi.Input[_builtins.int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 os_patch_action: Optional[pulumi.Input[_builtins.str]] = None,
+                 os_patch_db_node_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 os_patch_trigger: Optional[pulumi.Input[_builtins.int]] = None,
+                 primary_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
                  private_ip: Optional[pulumi.Input[_builtins.str]] = None,
                  private_ip_v6: Optional[pulumi.Input[_builtins.str]] = None,
                  reco_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
@@ -1991,6 +2107,12 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] node_count: The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
+        :param pulumi.Input[_builtins.int] os_patch_trigger: (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] primary_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param pulumi.Input[_builtins.str] private_ip: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
         :param pulumi.Input[_builtins.str] private_ip_v6: A private IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
         :param pulumi.Input[_builtins.int] reco_storage_size_in_gb: The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
@@ -2013,10 +2135,6 @@ class DbSystem(pulumi.CustomResource):
                
                These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
         :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -2119,6 +2237,10 @@ class DbSystem(pulumi.CustomResource):
                  maintenance_window_details: Optional[pulumi.Input[Union['DbSystemMaintenanceWindowDetailsArgs', 'DbSystemMaintenanceWindowDetailsArgsDict']]] = None,
                  node_count: Optional[pulumi.Input[_builtins.int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 os_patch_action: Optional[pulumi.Input[_builtins.str]] = None,
+                 os_patch_db_node_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 os_patch_trigger: Optional[pulumi.Input[_builtins.int]] = None,
+                 primary_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
                  private_ip: Optional[pulumi.Input[_builtins.str]] = None,
                  private_ip_v6: Optional[pulumi.Input[_builtins.str]] = None,
                  reco_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
@@ -2177,6 +2299,10 @@ class DbSystem(pulumi.CustomResource):
             __props__.__dict__["maintenance_window_details"] = maintenance_window_details
             __props__.__dict__["node_count"] = node_count
             __props__.__dict__["nsg_ids"] = nsg_ids
+            __props__.__dict__["os_patch_action"] = os_patch_action
+            __props__.__dict__["os_patch_db_node_id"] = os_patch_db_node_id
+            __props__.__dict__["os_patch_trigger"] = os_patch_trigger
+            __props__.__dict__["primary_db_system_id"] = primary_db_system_id
             __props__.__dict__["private_ip"] = private_ip
             __props__.__dict__["private_ip_v6"] = private_ip_v6
             __props__.__dict__["reco_storage_size_in_gb"] = reco_storage_size_in_gb
@@ -2263,8 +2389,12 @@ class DbSystem(pulumi.CustomResource):
             next_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
             node_count: Optional[pulumi.Input[_builtins.int]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            os_patch_action: Optional[pulumi.Input[_builtins.str]] = None,
+            os_patch_db_node_id: Optional[pulumi.Input[_builtins.str]] = None,
+            os_patch_trigger: Optional[pulumi.Input[_builtins.int]] = None,
             os_version: Optional[pulumi.Input[_builtins.str]] = None,
             point_in_time_data_disk_clone_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
+            primary_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
             private_ip: Optional[pulumi.Input[_builtins.str]] = None,
             private_ip_v6: Optional[pulumi.Input[_builtins.str]] = None,
             reco_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
@@ -2360,8 +2490,14 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] node_count: The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
+        :param pulumi.Input[_builtins.int] os_patch_trigger: (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] os_version: The most recent OS Patch Version applied on the DB system.
         :param pulumi.Input[_builtins.str] point_in_time_data_disk_clone_timestamp: The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param pulumi.Input[_builtins.str] primary_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param pulumi.Input[_builtins.str] private_ip: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
         :param pulumi.Input[_builtins.str] private_ip_v6: A private IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
         :param pulumi.Input[_builtins.int] reco_storage_size_in_gb: The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
@@ -2391,10 +2527,6 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] time_created: The date and time the DB system was created.
         :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] version: The Oracle Database version of the DB system.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIPv4 address for each node in the DB system to enable failover. If one node fails, the VIPv4 is reassigned to another active node in the cluster.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vipv6ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP IpV6 address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
@@ -2440,8 +2572,12 @@ class DbSystem(pulumi.CustomResource):
         __props__.__dict__["next_maintenance_run_id"] = next_maintenance_run_id
         __props__.__dict__["node_count"] = node_count
         __props__.__dict__["nsg_ids"] = nsg_ids
+        __props__.__dict__["os_patch_action"] = os_patch_action
+        __props__.__dict__["os_patch_db_node_id"] = os_patch_db_node_id
+        __props__.__dict__["os_patch_trigger"] = os_patch_trigger
         __props__.__dict__["os_version"] = os_version
         __props__.__dict__["point_in_time_data_disk_clone_timestamp"] = point_in_time_data_disk_clone_timestamp
+        __props__.__dict__["primary_db_system_id"] = primary_db_system_id
         __props__.__dict__["private_ip"] = private_ip
         __props__.__dict__["private_ip_v6"] = private_ip_v6
         __props__.__dict__["reco_storage_size_in_gb"] = reco_storage_size_in_gb
@@ -2783,6 +2919,28 @@ class DbSystem(pulumi.CustomResource):
         return pulumi.get(self, "nsg_ids")
 
     @_builtins.property
+    @pulumi.getter(name="osPatchAction")
+    def os_patch_action(self) -> pulumi.Output[Optional[_builtins.str]]:
+        return pulumi.get(self, "os_patch_action")
+
+    @_builtins.property
+    @pulumi.getter(name="osPatchDbNodeId")
+    def os_patch_db_node_id(self) -> pulumi.Output[Optional[_builtins.str]]:
+        return pulumi.get(self, "os_patch_db_node_id")
+
+    @_builtins.property
+    @pulumi.getter(name="osPatchTrigger")
+    def os_patch_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "os_patch_trigger")
+
+    @_builtins.property
     @pulumi.getter(name="osVersion")
     def os_version(self) -> pulumi.Output[_builtins.str]:
         """
@@ -2797,6 +2955,14 @@ class DbSystem(pulumi.CustomResource):
         The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "point_in_time_data_disk_clone_timestamp")
+
+    @_builtins.property
+    @pulumi.getter(name="primaryDbSystemId")
+    def primary_db_system_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        """
+        return pulumi.get(self, "primary_db_system_id")
 
     @_builtins.property
     @pulumi.getter(name="privateIp")
@@ -2962,10 +3128,6 @@ class DbSystem(pulumi.CustomResource):
     def time_zone(self) -> pulumi.Output[_builtins.str]:
         """
         The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_zone")
 

@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
@@ -103,6 +104,11 @@ public final class GetDbNodesDbNode {
      * 
      */
     private String id;
+    /**
+     * @return Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+     * 
+     */
+    private Boolean isOsPatchRebootRequired;
     /**
      * @return Information about the current lifecycle state.
      * 
@@ -295,6 +301,13 @@ public final class GetDbNodesDbNode {
         return this.id;
     }
     /**
+     * @return Indicates whether the database node must be rebooted after applying Operating System patches. This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+     * 
+     */
+    public Boolean isOsPatchRebootRequired() {
+        return this.isOsPatchRebootRequired;
+    }
+    /**
      * @return Information about the current lifecycle state.
      * 
      */
@@ -407,6 +420,7 @@ public final class GetDbNodesDbNode {
         private String hostIpv6id;
         private String hostname;
         private String id;
+        private Boolean isOsPatchRebootRequired;
         private String lifecycleDetails;
         private String maintenanceType;
         private Integer memorySizeInGbs;
@@ -441,6 +455,7 @@ public final class GetDbNodesDbNode {
     	      this.hostIpv6id = defaults.hostIpv6id;
     	      this.hostname = defaults.hostname;
     	      this.id = defaults.id;
+    	      this.isOsPatchRebootRequired = defaults.isOsPatchRebootRequired;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.maintenanceType = defaults.maintenanceType;
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
@@ -608,6 +623,14 @@ public final class GetDbNodesDbNode {
             return this;
         }
         @CustomType.Setter
+        public Builder isOsPatchRebootRequired(Boolean isOsPatchRebootRequired) {
+            if (isOsPatchRebootRequired == null) {
+              throw new MissingRequiredPropertyException("GetDbNodesDbNode", "isOsPatchRebootRequired");
+            }
+            this.isOsPatchRebootRequired = isOsPatchRebootRequired;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetDbNodesDbNode", "lifecycleDetails");
@@ -724,6 +747,7 @@ public final class GetDbNodesDbNode {
             _resultValue.hostIpv6id = hostIpv6id;
             _resultValue.hostname = hostname;
             _resultValue.id = id;
+            _resultValue.isOsPatchRebootRequired = isOsPatchRebootRequired;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.maintenanceType = maintenanceType;
             _resultValue.memorySizeInGbs = memorySizeInGbs;

@@ -190,6 +190,9 @@ public final class GetDbSystemsDbSystem {
      * 
      */
     private List<String> nsgIds;
+    private String osPatchAction;
+    private String osPatchDbNodeId;
+    private Integer osPatchTrigger;
     /**
      * @return The most recent OS Patch Version applied on the DB system.
      * 
@@ -200,6 +203,7 @@ public final class GetDbSystemsDbSystem {
      * 
      */
     private String pointInTimeDataDiskCloneTimestamp;
+    private String primaryDbSystemId;
     private String privateIp;
     private String privateIpV6;
     /**
@@ -556,6 +560,15 @@ public final class GetDbSystemsDbSystem {
     public List<String> nsgIds() {
         return this.nsgIds;
     }
+    public String osPatchAction() {
+        return this.osPatchAction;
+    }
+    public String osPatchDbNodeId() {
+        return this.osPatchDbNodeId;
+    }
+    public Integer osPatchTrigger() {
+        return this.osPatchTrigger;
+    }
     /**
      * @return The most recent OS Patch Version applied on the DB system.
      * 
@@ -569,6 +582,9 @@ public final class GetDbSystemsDbSystem {
      */
     public String pointInTimeDataDiskCloneTimestamp() {
         return this.pointInTimeDataDiskCloneTimestamp;
+    }
+    public String primaryDbSystemId() {
+        return this.primaryDbSystemId;
     }
     public String privateIp() {
         return this.privateIp;
@@ -775,8 +791,12 @@ public final class GetDbSystemsDbSystem {
         private String nextMaintenanceRunId;
         private Integer nodeCount;
         private List<String> nsgIds;
+        private String osPatchAction;
+        private String osPatchDbNodeId;
+        private Integer osPatchTrigger;
         private String osVersion;
         private String pointInTimeDataDiskCloneTimestamp;
+        private String primaryDbSystemId;
         private String privateIp;
         private String privateIpV6;
         private Integer recoStorageSizeInGb;
@@ -841,8 +861,12 @@ public final class GetDbSystemsDbSystem {
     	      this.nextMaintenanceRunId = defaults.nextMaintenanceRunId;
     	      this.nodeCount = defaults.nodeCount;
     	      this.nsgIds = defaults.nsgIds;
+    	      this.osPatchAction = defaults.osPatchAction;
+    	      this.osPatchDbNodeId = defaults.osPatchDbNodeId;
+    	      this.osPatchTrigger = defaults.osPatchTrigger;
     	      this.osVersion = defaults.osVersion;
     	      this.pointInTimeDataDiskCloneTimestamp = defaults.pointInTimeDataDiskCloneTimestamp;
+    	      this.primaryDbSystemId = defaults.primaryDbSystemId;
     	      this.privateIp = defaults.privateIp;
     	      this.privateIpV6 = defaults.privateIpV6;
     	      this.recoStorageSizeInGb = defaults.recoStorageSizeInGb;
@@ -1193,6 +1217,30 @@ public final class GetDbSystemsDbSystem {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
+        public Builder osPatchAction(String osPatchAction) {
+            if (osPatchAction == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystem", "osPatchAction");
+            }
+            this.osPatchAction = osPatchAction;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder osPatchDbNodeId(String osPatchDbNodeId) {
+            if (osPatchDbNodeId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystem", "osPatchDbNodeId");
+            }
+            this.osPatchDbNodeId = osPatchDbNodeId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder osPatchTrigger(Integer osPatchTrigger) {
+            if (osPatchTrigger == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystem", "osPatchTrigger");
+            }
+            this.osPatchTrigger = osPatchTrigger;
+            return this;
+        }
+        @CustomType.Setter
         public Builder osVersion(String osVersion) {
             if (osVersion == null) {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystem", "osVersion");
@@ -1206,6 +1254,14 @@ public final class GetDbSystemsDbSystem {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystem", "pointInTimeDataDiskCloneTimestamp");
             }
             this.pointInTimeDataDiskCloneTimestamp = pointInTimeDataDiskCloneTimestamp;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder primaryDbSystemId(String primaryDbSystemId) {
+            if (primaryDbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystem", "primaryDbSystemId");
+            }
+            this.primaryDbSystemId = primaryDbSystemId;
             return this;
         }
         @CustomType.Setter
@@ -1454,8 +1510,12 @@ public final class GetDbSystemsDbSystem {
             _resultValue.nextMaintenanceRunId = nextMaintenanceRunId;
             _resultValue.nodeCount = nodeCount;
             _resultValue.nsgIds = nsgIds;
+            _resultValue.osPatchAction = osPatchAction;
+            _resultValue.osPatchDbNodeId = osPatchDbNodeId;
+            _resultValue.osPatchTrigger = osPatchTrigger;
             _resultValue.osVersion = osVersion;
             _resultValue.pointInTimeDataDiskCloneTimestamp = pointInTimeDataDiskCloneTimestamp;
+            _resultValue.primaryDbSystemId = primaryDbSystemId;
             _resultValue.privateIp = privateIp;
             _resultValue.privateIpV6 = privateIpV6;
             _resultValue.recoStorageSizeInGb = recoStorageSizeInGb;

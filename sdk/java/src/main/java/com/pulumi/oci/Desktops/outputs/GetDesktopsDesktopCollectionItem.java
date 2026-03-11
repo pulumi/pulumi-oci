@@ -6,6 +6,7 @@ package com.pulumi.oci.Desktops.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Desktops.outputs.GetDesktopsDesktopCollectionItemDesktopConnection;
+import com.pulumi.oci.Desktops.outputs.GetDesktopsDesktopCollectionItemImage;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -38,6 +39,7 @@ public final class GetDesktopsDesktopCollectionItem {
      * 
      */
     private String id;
+    private List<GetDesktopsDesktopCollectionItemImage> images;
     /**
      * @return The OCID of the desktop pool the desktop is a member of.
      * 
@@ -95,6 +97,9 @@ public final class GetDesktopsDesktopCollectionItem {
     public String id() {
         return this.id;
     }
+    public List<GetDesktopsDesktopCollectionItemImage> images() {
+        return this.images;
+    }
     /**
      * @return The OCID of the desktop pool the desktop is a member of.
      * 
@@ -138,6 +143,7 @@ public final class GetDesktopsDesktopCollectionItem {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private List<GetDesktopsDesktopCollectionItemImage> images;
         private String poolId;
         private String state;
         private String timeCreated;
@@ -150,6 +156,7 @@ public final class GetDesktopsDesktopCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.images = defaults.images;
     	      this.poolId = defaults.poolId;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
@@ -200,6 +207,17 @@ public final class GetDesktopsDesktopCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder images(List<GetDesktopsDesktopCollectionItemImage> images) {
+            if (images == null) {
+              throw new MissingRequiredPropertyException("GetDesktopsDesktopCollectionItem", "images");
+            }
+            this.images = images;
+            return this;
+        }
+        public Builder images(GetDesktopsDesktopCollectionItemImage... images) {
+            return images(List.of(images));
+        }
+        @CustomType.Setter
         public Builder poolId(String poolId) {
             if (poolId == null) {
               throw new MissingRequiredPropertyException("GetDesktopsDesktopCollectionItem", "poolId");
@@ -238,6 +256,7 @@ public final class GetDesktopsDesktopCollectionItem {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.images = images;
             _resultValue.poolId = poolId;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;

@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Email.outputs.GetEmailIpPoolLock;
 import com.pulumi.oci.Email.outputs.GetEmailIpPoolOutboundIpsResponse;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -40,6 +41,11 @@ public final class GetEmailIpPoolResult {
      * 
      */
     private String id;
+    /**
+     * @return Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+     * 
+     */
+    private Integer lastIpDrainPeriodInHours;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in &#39;DRAINING&#39; state.
      * 
@@ -122,6 +128,13 @@ public final class GetEmailIpPoolResult {
         return this.id;
     }
     /**
+     * @return Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+     * 
+     */
+    public Integer lastIpDrainPeriodInHours() {
+        return this.lastIpDrainPeriodInHours;
+    }
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in &#39;DRAINING&#39; state.
      * 
      */
@@ -196,6 +209,7 @@ public final class GetEmailIpPoolResult {
         private String emailIpPoolId;
         private Map<String,String> freeformTags;
         private String id;
+        private Integer lastIpDrainPeriodInHours;
         private String lifecycleDetails;
         private List<GetEmailIpPoolLock> locks;
         private String name;
@@ -214,6 +228,7 @@ public final class GetEmailIpPoolResult {
     	      this.emailIpPoolId = defaults.emailIpPoolId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.lastIpDrainPeriodInHours = defaults.lastIpDrainPeriodInHours;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.locks = defaults.locks;
     	      this.name = defaults.name;
@@ -271,6 +286,14 @@ public final class GetEmailIpPoolResult {
               throw new MissingRequiredPropertyException("GetEmailIpPoolResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lastIpDrainPeriodInHours(Integer lastIpDrainPeriodInHours) {
+            if (lastIpDrainPeriodInHours == null) {
+              throw new MissingRequiredPropertyException("GetEmailIpPoolResult", "lastIpDrainPeriodInHours");
+            }
+            this.lastIpDrainPeriodInHours = lastIpDrainPeriodInHours;
             return this;
         }
         @CustomType.Setter
@@ -362,6 +385,7 @@ public final class GetEmailIpPoolResult {
             _resultValue.emailIpPoolId = emailIpPoolId;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.lastIpDrainPeriodInHours = lastIpDrainPeriodInHours;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.locks = locks;
             _resultValue.name = name;

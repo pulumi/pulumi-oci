@@ -54,6 +54,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string PrivateIp;
         /// <summary>
+        /// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        /// </summary>
+        public readonly string PrivateIpId;
+        /// <summary>
         /// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> SecurityAttributes;
@@ -92,6 +96,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string privateIp,
 
+            string privateIpId,
+
             ImmutableDictionary<string, string> securityAttributes,
 
             bool skipSourceDestCheck,
@@ -110,6 +116,7 @@ namespace Pulumi.Oci.Core.Outputs
             Ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             NsgIds = nsgIds;
             PrivateIp = privateIp;
+            PrivateIpId = privateIpId;
             SecurityAttributes = securityAttributes;
             SkipSourceDestCheck = skipSourceDestCheck;
             SubnetCidr = subnetCidr;

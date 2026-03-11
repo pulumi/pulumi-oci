@@ -12,11 +12,25 @@ namespace Pulumi.Oci.Core.Inputs
 
     public sealed class VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs : global::Pulumi.ResourceArgs
     {
-        [Input("ipv6Address")]
-        public Input<string>? Ipv6Address { get; set; }
+        /// <summary>
+        /// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix. If an IPv6 address is not provided:
+        /// * Oracle will automatically assign an IPv6 address from the subnet's IPv6 prefix if and only if there is only one IPv6 prefix on the subnet.
+        /// * Oracle will automatically assign an IPv6 address from the subnet's IPv6 Oracle GUA prefix if it exists on the subnet.
+        /// </summary>
+        [Input("ipv6address")]
+        public Input<string>? Ipv6address { get; set; }
 
-        [Input("ipv6SubnetCidr")]
-        public Input<string>? Ipv6SubnetCidr { get; set; }
+        /// <summary>
+        /// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+        /// </summary>
+        [Input("ipv6id")]
+        public Input<string>? Ipv6id { get; set; }
+
+        /// <summary>
+        /// The IPv6 prefix allocated to the subnet.
+        /// </summary>
+        [Input("ipv6subnetCidr")]
+        public Input<string>? Ipv6subnetCidr { get; set; }
 
         public VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs()
         {

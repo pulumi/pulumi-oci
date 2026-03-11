@@ -6374,6 +6374,130 @@ func (o DifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput) Index(i 
 	}).(DifStackServiceDetailAdditionalDetailEndpointDetailOutput)
 }
 
+type GdpGdpPipelineBucketDetail struct {
+	// Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
+	BucketType string `pulumi:"bucketType"`
+	// OCID of the bucket.
+	Id string `pulumi:"id"`
+	// Name of the bucket.
+	Name string `pulumi:"name"`
+	// Namespace of the bucket.
+	Namespace string `pulumi:"namespace"`
+}
+
+// GdpGdpPipelineBucketDetailInput is an input type that accepts GdpGdpPipelineBucketDetailArgs and GdpGdpPipelineBucketDetailOutput values.
+// You can construct a concrete instance of `GdpGdpPipelineBucketDetailInput` via:
+//
+//	GdpGdpPipelineBucketDetailArgs{...}
+type GdpGdpPipelineBucketDetailInput interface {
+	pulumi.Input
+
+	ToGdpGdpPipelineBucketDetailOutput() GdpGdpPipelineBucketDetailOutput
+	ToGdpGdpPipelineBucketDetailOutputWithContext(context.Context) GdpGdpPipelineBucketDetailOutput
+}
+
+type GdpGdpPipelineBucketDetailArgs struct {
+	// Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
+	BucketType pulumi.StringInput `pulumi:"bucketType"`
+	// OCID of the bucket.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Name of the bucket.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Namespace of the bucket.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+}
+
+func (GdpGdpPipelineBucketDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GdpGdpPipelineBucketDetail)(nil)).Elem()
+}
+
+func (i GdpGdpPipelineBucketDetailArgs) ToGdpGdpPipelineBucketDetailOutput() GdpGdpPipelineBucketDetailOutput {
+	return i.ToGdpGdpPipelineBucketDetailOutputWithContext(context.Background())
+}
+
+func (i GdpGdpPipelineBucketDetailArgs) ToGdpGdpPipelineBucketDetailOutputWithContext(ctx context.Context) GdpGdpPipelineBucketDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GdpGdpPipelineBucketDetailOutput)
+}
+
+// GdpGdpPipelineBucketDetailArrayInput is an input type that accepts GdpGdpPipelineBucketDetailArray and GdpGdpPipelineBucketDetailArrayOutput values.
+// You can construct a concrete instance of `GdpGdpPipelineBucketDetailArrayInput` via:
+//
+//	GdpGdpPipelineBucketDetailArray{ GdpGdpPipelineBucketDetailArgs{...} }
+type GdpGdpPipelineBucketDetailArrayInput interface {
+	pulumi.Input
+
+	ToGdpGdpPipelineBucketDetailArrayOutput() GdpGdpPipelineBucketDetailArrayOutput
+	ToGdpGdpPipelineBucketDetailArrayOutputWithContext(context.Context) GdpGdpPipelineBucketDetailArrayOutput
+}
+
+type GdpGdpPipelineBucketDetailArray []GdpGdpPipelineBucketDetailInput
+
+func (GdpGdpPipelineBucketDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GdpGdpPipelineBucketDetail)(nil)).Elem()
+}
+
+func (i GdpGdpPipelineBucketDetailArray) ToGdpGdpPipelineBucketDetailArrayOutput() GdpGdpPipelineBucketDetailArrayOutput {
+	return i.ToGdpGdpPipelineBucketDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GdpGdpPipelineBucketDetailArray) ToGdpGdpPipelineBucketDetailArrayOutputWithContext(ctx context.Context) GdpGdpPipelineBucketDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GdpGdpPipelineBucketDetailArrayOutput)
+}
+
+type GdpGdpPipelineBucketDetailOutput struct{ *pulumi.OutputState }
+
+func (GdpGdpPipelineBucketDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GdpGdpPipelineBucketDetail)(nil)).Elem()
+}
+
+func (o GdpGdpPipelineBucketDetailOutput) ToGdpGdpPipelineBucketDetailOutput() GdpGdpPipelineBucketDetailOutput {
+	return o
+}
+
+func (o GdpGdpPipelineBucketDetailOutput) ToGdpGdpPipelineBucketDetailOutputWithContext(ctx context.Context) GdpGdpPipelineBucketDetailOutput {
+	return o
+}
+
+// Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
+func (o GdpGdpPipelineBucketDetailOutput) BucketType() pulumi.StringOutput {
+	return o.ApplyT(func(v GdpGdpPipelineBucketDetail) string { return v.BucketType }).(pulumi.StringOutput)
+}
+
+// OCID of the bucket.
+func (o GdpGdpPipelineBucketDetailOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GdpGdpPipelineBucketDetail) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Name of the bucket.
+func (o GdpGdpPipelineBucketDetailOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GdpGdpPipelineBucketDetail) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Namespace of the bucket.
+func (o GdpGdpPipelineBucketDetailOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GdpGdpPipelineBucketDetail) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+type GdpGdpPipelineBucketDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GdpGdpPipelineBucketDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GdpGdpPipelineBucketDetail)(nil)).Elem()
+}
+
+func (o GdpGdpPipelineBucketDetailArrayOutput) ToGdpGdpPipelineBucketDetailArrayOutput() GdpGdpPipelineBucketDetailArrayOutput {
+	return o
+}
+
+func (o GdpGdpPipelineBucketDetailArrayOutput) ToGdpGdpPipelineBucketDetailArrayOutputWithContext(ctx context.Context) GdpGdpPipelineBucketDetailArrayOutput {
+	return o
+}
+
+func (o GdpGdpPipelineBucketDetailArrayOutput) Index(i pulumi.IntInput) GdpGdpPipelineBucketDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GdpGdpPipelineBucketDetail {
+		return vs[0].([]GdpGdpPipelineBucketDetail)[vs[1].(int)]
+	}).(GdpGdpPipelineBucketDetailOutput)
+}
+
 type IotDigitalTwinAdapterInboundEnvelope struct {
 	// (Updatable) Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
 	EnvelopeMapping *IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping `pulumi:"envelopeMapping"`
@@ -31706,6 +31830,765 @@ func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDeta
 	}).(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutput)
 }
 
+type GetGdpGdpPipelineBucketDetail struct {
+	// Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
+	BucketType string `pulumi:"bucketType"`
+	// The OCID of the pipeline.
+	Id string `pulumi:"id"`
+	// Name of the bucket.
+	Name string `pulumi:"name"`
+	// Namespace of the bucket.
+	Namespace string `pulumi:"namespace"`
+}
+
+// GetGdpGdpPipelineBucketDetailInput is an input type that accepts GetGdpGdpPipelineBucketDetailArgs and GetGdpGdpPipelineBucketDetailOutput values.
+// You can construct a concrete instance of `GetGdpGdpPipelineBucketDetailInput` via:
+//
+//	GetGdpGdpPipelineBucketDetailArgs{...}
+type GetGdpGdpPipelineBucketDetailInput interface {
+	pulumi.Input
+
+	ToGetGdpGdpPipelineBucketDetailOutput() GetGdpGdpPipelineBucketDetailOutput
+	ToGetGdpGdpPipelineBucketDetailOutputWithContext(context.Context) GetGdpGdpPipelineBucketDetailOutput
+}
+
+type GetGdpGdpPipelineBucketDetailArgs struct {
+	// Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
+	BucketType pulumi.StringInput `pulumi:"bucketType"`
+	// The OCID of the pipeline.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Name of the bucket.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Namespace of the bucket.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+}
+
+func (GetGdpGdpPipelineBucketDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGdpGdpPipelineBucketDetail)(nil)).Elem()
+}
+
+func (i GetGdpGdpPipelineBucketDetailArgs) ToGetGdpGdpPipelineBucketDetailOutput() GetGdpGdpPipelineBucketDetailOutput {
+	return i.ToGetGdpGdpPipelineBucketDetailOutputWithContext(context.Background())
+}
+
+func (i GetGdpGdpPipelineBucketDetailArgs) ToGetGdpGdpPipelineBucketDetailOutputWithContext(ctx context.Context) GetGdpGdpPipelineBucketDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGdpGdpPipelineBucketDetailOutput)
+}
+
+// GetGdpGdpPipelineBucketDetailArrayInput is an input type that accepts GetGdpGdpPipelineBucketDetailArray and GetGdpGdpPipelineBucketDetailArrayOutput values.
+// You can construct a concrete instance of `GetGdpGdpPipelineBucketDetailArrayInput` via:
+//
+//	GetGdpGdpPipelineBucketDetailArray{ GetGdpGdpPipelineBucketDetailArgs{...} }
+type GetGdpGdpPipelineBucketDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetGdpGdpPipelineBucketDetailArrayOutput() GetGdpGdpPipelineBucketDetailArrayOutput
+	ToGetGdpGdpPipelineBucketDetailArrayOutputWithContext(context.Context) GetGdpGdpPipelineBucketDetailArrayOutput
+}
+
+type GetGdpGdpPipelineBucketDetailArray []GetGdpGdpPipelineBucketDetailInput
+
+func (GetGdpGdpPipelineBucketDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGdpGdpPipelineBucketDetail)(nil)).Elem()
+}
+
+func (i GetGdpGdpPipelineBucketDetailArray) ToGetGdpGdpPipelineBucketDetailArrayOutput() GetGdpGdpPipelineBucketDetailArrayOutput {
+	return i.ToGetGdpGdpPipelineBucketDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetGdpGdpPipelineBucketDetailArray) ToGetGdpGdpPipelineBucketDetailArrayOutputWithContext(ctx context.Context) GetGdpGdpPipelineBucketDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGdpGdpPipelineBucketDetailArrayOutput)
+}
+
+type GetGdpGdpPipelineBucketDetailOutput struct{ *pulumi.OutputState }
+
+func (GetGdpGdpPipelineBucketDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGdpGdpPipelineBucketDetail)(nil)).Elem()
+}
+
+func (o GetGdpGdpPipelineBucketDetailOutput) ToGetGdpGdpPipelineBucketDetailOutput() GetGdpGdpPipelineBucketDetailOutput {
+	return o
+}
+
+func (o GetGdpGdpPipelineBucketDetailOutput) ToGetGdpGdpPipelineBucketDetailOutputWithContext(ctx context.Context) GetGdpGdpPipelineBucketDetailOutput {
+	return o
+}
+
+// Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
+func (o GetGdpGdpPipelineBucketDetailOutput) BucketType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelineBucketDetail) string { return v.BucketType }).(pulumi.StringOutput)
+}
+
+// The OCID of the pipeline.
+func (o GetGdpGdpPipelineBucketDetailOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelineBucketDetail) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Name of the bucket.
+func (o GetGdpGdpPipelineBucketDetailOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelineBucketDetail) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Namespace of the bucket.
+func (o GetGdpGdpPipelineBucketDetailOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelineBucketDetail) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+type GetGdpGdpPipelineBucketDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGdpGdpPipelineBucketDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGdpGdpPipelineBucketDetail)(nil)).Elem()
+}
+
+func (o GetGdpGdpPipelineBucketDetailArrayOutput) ToGetGdpGdpPipelineBucketDetailArrayOutput() GetGdpGdpPipelineBucketDetailArrayOutput {
+	return o
+}
+
+func (o GetGdpGdpPipelineBucketDetailArrayOutput) ToGetGdpGdpPipelineBucketDetailArrayOutputWithContext(ctx context.Context) GetGdpGdpPipelineBucketDetailArrayOutput {
+	return o
+}
+
+func (o GetGdpGdpPipelineBucketDetailArrayOutput) Index(i pulumi.IntInput) GetGdpGdpPipelineBucketDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGdpGdpPipelineBucketDetail {
+		return vs[0].([]GetGdpGdpPipelineBucketDetail)[vs[1].(int)]
+	}).(GetGdpGdpPipelineBucketDetailOutput)
+}
+
+type GetGdpGdpPipelinesFilter struct {
+	// Name of the bucket.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetGdpGdpPipelinesFilterInput is an input type that accepts GetGdpGdpPipelinesFilterArgs and GetGdpGdpPipelinesFilterOutput values.
+// You can construct a concrete instance of `GetGdpGdpPipelinesFilterInput` via:
+//
+//	GetGdpGdpPipelinesFilterArgs{...}
+type GetGdpGdpPipelinesFilterInput interface {
+	pulumi.Input
+
+	ToGetGdpGdpPipelinesFilterOutput() GetGdpGdpPipelinesFilterOutput
+	ToGetGdpGdpPipelinesFilterOutputWithContext(context.Context) GetGdpGdpPipelinesFilterOutput
+}
+
+type GetGdpGdpPipelinesFilterArgs struct {
+	// Name of the bucket.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetGdpGdpPipelinesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGdpGdpPipelinesFilter)(nil)).Elem()
+}
+
+func (i GetGdpGdpPipelinesFilterArgs) ToGetGdpGdpPipelinesFilterOutput() GetGdpGdpPipelinesFilterOutput {
+	return i.ToGetGdpGdpPipelinesFilterOutputWithContext(context.Background())
+}
+
+func (i GetGdpGdpPipelinesFilterArgs) ToGetGdpGdpPipelinesFilterOutputWithContext(ctx context.Context) GetGdpGdpPipelinesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGdpGdpPipelinesFilterOutput)
+}
+
+// GetGdpGdpPipelinesFilterArrayInput is an input type that accepts GetGdpGdpPipelinesFilterArray and GetGdpGdpPipelinesFilterArrayOutput values.
+// You can construct a concrete instance of `GetGdpGdpPipelinesFilterArrayInput` via:
+//
+//	GetGdpGdpPipelinesFilterArray{ GetGdpGdpPipelinesFilterArgs{...} }
+type GetGdpGdpPipelinesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetGdpGdpPipelinesFilterArrayOutput() GetGdpGdpPipelinesFilterArrayOutput
+	ToGetGdpGdpPipelinesFilterArrayOutputWithContext(context.Context) GetGdpGdpPipelinesFilterArrayOutput
+}
+
+type GetGdpGdpPipelinesFilterArray []GetGdpGdpPipelinesFilterInput
+
+func (GetGdpGdpPipelinesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGdpGdpPipelinesFilter)(nil)).Elem()
+}
+
+func (i GetGdpGdpPipelinesFilterArray) ToGetGdpGdpPipelinesFilterArrayOutput() GetGdpGdpPipelinesFilterArrayOutput {
+	return i.ToGetGdpGdpPipelinesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetGdpGdpPipelinesFilterArray) ToGetGdpGdpPipelinesFilterArrayOutputWithContext(ctx context.Context) GetGdpGdpPipelinesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGdpGdpPipelinesFilterArrayOutput)
+}
+
+type GetGdpGdpPipelinesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetGdpGdpPipelinesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGdpGdpPipelinesFilter)(nil)).Elem()
+}
+
+func (o GetGdpGdpPipelinesFilterOutput) ToGetGdpGdpPipelinesFilterOutput() GetGdpGdpPipelinesFilterOutput {
+	return o
+}
+
+func (o GetGdpGdpPipelinesFilterOutput) ToGetGdpGdpPipelinesFilterOutputWithContext(ctx context.Context) GetGdpGdpPipelinesFilterOutput {
+	return o
+}
+
+// Name of the bucket.
+func (o GetGdpGdpPipelinesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetGdpGdpPipelinesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetGdpGdpPipelinesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetGdpGdpPipelinesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGdpGdpPipelinesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGdpGdpPipelinesFilter)(nil)).Elem()
+}
+
+func (o GetGdpGdpPipelinesFilterArrayOutput) ToGetGdpGdpPipelinesFilterArrayOutput() GetGdpGdpPipelinesFilterArrayOutput {
+	return o
+}
+
+func (o GetGdpGdpPipelinesFilterArrayOutput) ToGetGdpGdpPipelinesFilterArrayOutputWithContext(ctx context.Context) GetGdpGdpPipelinesFilterArrayOutput {
+	return o
+}
+
+func (o GetGdpGdpPipelinesFilterArrayOutput) Index(i pulumi.IntInput) GetGdpGdpPipelinesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGdpGdpPipelinesFilter {
+		return vs[0].([]GetGdpGdpPipelinesFilter)[vs[1].(int)]
+	}).(GetGdpGdpPipelinesFilterOutput)
+}
+
+type GetGdpGdpPipelinesGdpPipelineCollection struct {
+	Items []GetGdpGdpPipelinesGdpPipelineCollectionItem `pulumi:"items"`
+}
+
+// GetGdpGdpPipelinesGdpPipelineCollectionInput is an input type that accepts GetGdpGdpPipelinesGdpPipelineCollectionArgs and GetGdpGdpPipelinesGdpPipelineCollectionOutput values.
+// You can construct a concrete instance of `GetGdpGdpPipelinesGdpPipelineCollectionInput` via:
+//
+//	GetGdpGdpPipelinesGdpPipelineCollectionArgs{...}
+type GetGdpGdpPipelinesGdpPipelineCollectionInput interface {
+	pulumi.Input
+
+	ToGetGdpGdpPipelinesGdpPipelineCollectionOutput() GetGdpGdpPipelinesGdpPipelineCollectionOutput
+	ToGetGdpGdpPipelinesGdpPipelineCollectionOutputWithContext(context.Context) GetGdpGdpPipelinesGdpPipelineCollectionOutput
+}
+
+type GetGdpGdpPipelinesGdpPipelineCollectionArgs struct {
+	Items GetGdpGdpPipelinesGdpPipelineCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetGdpGdpPipelinesGdpPipelineCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGdpGdpPipelinesGdpPipelineCollection)(nil)).Elem()
+}
+
+func (i GetGdpGdpPipelinesGdpPipelineCollectionArgs) ToGetGdpGdpPipelinesGdpPipelineCollectionOutput() GetGdpGdpPipelinesGdpPipelineCollectionOutput {
+	return i.ToGetGdpGdpPipelinesGdpPipelineCollectionOutputWithContext(context.Background())
+}
+
+func (i GetGdpGdpPipelinesGdpPipelineCollectionArgs) ToGetGdpGdpPipelinesGdpPipelineCollectionOutputWithContext(ctx context.Context) GetGdpGdpPipelinesGdpPipelineCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGdpGdpPipelinesGdpPipelineCollectionOutput)
+}
+
+// GetGdpGdpPipelinesGdpPipelineCollectionArrayInput is an input type that accepts GetGdpGdpPipelinesGdpPipelineCollectionArray and GetGdpGdpPipelinesGdpPipelineCollectionArrayOutput values.
+// You can construct a concrete instance of `GetGdpGdpPipelinesGdpPipelineCollectionArrayInput` via:
+//
+//	GetGdpGdpPipelinesGdpPipelineCollectionArray{ GetGdpGdpPipelinesGdpPipelineCollectionArgs{...} }
+type GetGdpGdpPipelinesGdpPipelineCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetGdpGdpPipelinesGdpPipelineCollectionArrayOutput() GetGdpGdpPipelinesGdpPipelineCollectionArrayOutput
+	ToGetGdpGdpPipelinesGdpPipelineCollectionArrayOutputWithContext(context.Context) GetGdpGdpPipelinesGdpPipelineCollectionArrayOutput
+}
+
+type GetGdpGdpPipelinesGdpPipelineCollectionArray []GetGdpGdpPipelinesGdpPipelineCollectionInput
+
+func (GetGdpGdpPipelinesGdpPipelineCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGdpGdpPipelinesGdpPipelineCollection)(nil)).Elem()
+}
+
+func (i GetGdpGdpPipelinesGdpPipelineCollectionArray) ToGetGdpGdpPipelinesGdpPipelineCollectionArrayOutput() GetGdpGdpPipelinesGdpPipelineCollectionArrayOutput {
+	return i.ToGetGdpGdpPipelinesGdpPipelineCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetGdpGdpPipelinesGdpPipelineCollectionArray) ToGetGdpGdpPipelinesGdpPipelineCollectionArrayOutputWithContext(ctx context.Context) GetGdpGdpPipelinesGdpPipelineCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGdpGdpPipelinesGdpPipelineCollectionArrayOutput)
+}
+
+type GetGdpGdpPipelinesGdpPipelineCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetGdpGdpPipelinesGdpPipelineCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGdpGdpPipelinesGdpPipelineCollection)(nil)).Elem()
+}
+
+func (o GetGdpGdpPipelinesGdpPipelineCollectionOutput) ToGetGdpGdpPipelinesGdpPipelineCollectionOutput() GetGdpGdpPipelinesGdpPipelineCollectionOutput {
+	return o
+}
+
+func (o GetGdpGdpPipelinesGdpPipelineCollectionOutput) ToGetGdpGdpPipelinesGdpPipelineCollectionOutputWithContext(ctx context.Context) GetGdpGdpPipelinesGdpPipelineCollectionOutput {
+	return o
+}
+
+func (o GetGdpGdpPipelinesGdpPipelineCollectionOutput) Items() GetGdpGdpPipelinesGdpPipelineCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollection) []GetGdpGdpPipelinesGdpPipelineCollectionItem {
+		return v.Items
+	}).(GetGdpGdpPipelinesGdpPipelineCollectionItemArrayOutput)
+}
+
+type GetGdpGdpPipelinesGdpPipelineCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGdpGdpPipelinesGdpPipelineCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGdpGdpPipelinesGdpPipelineCollection)(nil)).Elem()
+}
+
+func (o GetGdpGdpPipelinesGdpPipelineCollectionArrayOutput) ToGetGdpGdpPipelinesGdpPipelineCollectionArrayOutput() GetGdpGdpPipelinesGdpPipelineCollectionArrayOutput {
+	return o
+}
+
+func (o GetGdpGdpPipelinesGdpPipelineCollectionArrayOutput) ToGetGdpGdpPipelinesGdpPipelineCollectionArrayOutputWithContext(ctx context.Context) GetGdpGdpPipelinesGdpPipelineCollectionArrayOutput {
+	return o
+}
+
+func (o GetGdpGdpPipelinesGdpPipelineCollectionArrayOutput) Index(i pulumi.IntInput) GetGdpGdpPipelinesGdpPipelineCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGdpGdpPipelinesGdpPipelineCollection {
+		return vs[0].([]GetGdpGdpPipelinesGdpPipelineCollection)[vs[1].(int)]
+	}).(GetGdpGdpPipelinesGdpPipelineCollectionOutput)
+}
+
+type GetGdpGdpPipelinesGdpPipelineCollectionItem struct {
+	// The KMS vault OCID used for cryptographic approvals of transfers.
+	ApprovalKeyVaultId string `pulumi:"approvalKeyVaultId"`
+	// Authorization information about the pipeline being configured.
+	AuthorizationDetails string `pulumi:"authorizationDetails"`
+	// Configuration information about the buckets used for this pipeline.
+	BucketDetails []GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetail `pulumi:"bucketDetails"`
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Short field input by customer for a description of the data pipeline use-case.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// The environment where the pipeline resides. Valid values are COMMERCIAL or USGOV. Defaults to COMMERCIAL.
+	Env string `pulumi:"env"`
+	// List of file types allowed to be transferred in the pipeline according to the authorization details (e.g. .pdf, .xml, .doc).
+	FileTypes []string `pulumi:"fileTypes"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the pipeline.
+	Id string `pulumi:"id"`
+	// Determines whether file transfers need to go through an approval workflow.
+	IsApprovalNeeded bool `pulumi:"isApprovalNeeded"`
+	// Determines whether file must be chunked during the transfer. This is only a property of SENDER pipelines.
+	IsChunkingEnabled bool `pulumi:"isChunkingEnabled"`
+	// Enable file override feature in destination bucket. If 2 files with same name exist in destination bucket, original file will be overwritten.
+	IsFileOverrideInDestinationEnabled bool `pulumi:"isFileOverrideInDestinationEnabled"`
+	// Determines whether GDP Scanning should be enabled for the pipeline.
+	IsScanningEnabled bool `pulumi:"isScanningEnabled"`
+	// Additional details about the current state of the pipeline.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// OCID of the peered pipeline. This null for SENDER pipeline.
+	PeeredGdpPipelineId string `pulumi:"peeredGdpPipelineId"`
+	// Public region name where the peered pipeline exists.
+	PeeringRegion string `pulumi:"peeringRegion"`
+	// Type of pipeline. Can be SENDER or RECEIVER.
+	PipelineType string `pulumi:"pipelineType"`
+	// the OCID of the service log group.
+	ServiceLogGroupId string `pulumi:"serviceLogGroupId"`
+	// The current state of the pipeline.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The time the the pipeline was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the pipeline was updated. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetGdpGdpPipelinesGdpPipelineCollectionItemInput is an input type that accepts GetGdpGdpPipelinesGdpPipelineCollectionItemArgs and GetGdpGdpPipelinesGdpPipelineCollectionItemOutput values.
+// You can construct a concrete instance of `GetGdpGdpPipelinesGdpPipelineCollectionItemInput` via:
+//
+//	GetGdpGdpPipelinesGdpPipelineCollectionItemArgs{...}
+type GetGdpGdpPipelinesGdpPipelineCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetGdpGdpPipelinesGdpPipelineCollectionItemOutput() GetGdpGdpPipelinesGdpPipelineCollectionItemOutput
+	ToGetGdpGdpPipelinesGdpPipelineCollectionItemOutputWithContext(context.Context) GetGdpGdpPipelinesGdpPipelineCollectionItemOutput
+}
+
+type GetGdpGdpPipelinesGdpPipelineCollectionItemArgs struct {
+	// The KMS vault OCID used for cryptographic approvals of transfers.
+	ApprovalKeyVaultId pulumi.StringInput `pulumi:"approvalKeyVaultId"`
+	// Authorization information about the pipeline being configured.
+	AuthorizationDetails pulumi.StringInput `pulumi:"authorizationDetails"`
+	// Configuration information about the buckets used for this pipeline.
+	BucketDetails GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayInput `pulumi:"bucketDetails"`
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Short field input by customer for a description of the data pipeline use-case.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The environment where the pipeline resides. Valid values are COMMERCIAL or USGOV. Defaults to COMMERCIAL.
+	Env pulumi.StringInput `pulumi:"env"`
+	// List of file types allowed to be transferred in the pipeline according to the authorization details (e.g. .pdf, .xml, .doc).
+	FileTypes pulumi.StringArrayInput `pulumi:"fileTypes"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the pipeline.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Determines whether file transfers need to go through an approval workflow.
+	IsApprovalNeeded pulumi.BoolInput `pulumi:"isApprovalNeeded"`
+	// Determines whether file must be chunked during the transfer. This is only a property of SENDER pipelines.
+	IsChunkingEnabled pulumi.BoolInput `pulumi:"isChunkingEnabled"`
+	// Enable file override feature in destination bucket. If 2 files with same name exist in destination bucket, original file will be overwritten.
+	IsFileOverrideInDestinationEnabled pulumi.BoolInput `pulumi:"isFileOverrideInDestinationEnabled"`
+	// Determines whether GDP Scanning should be enabled for the pipeline.
+	IsScanningEnabled pulumi.BoolInput `pulumi:"isScanningEnabled"`
+	// Additional details about the current state of the pipeline.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// OCID of the peered pipeline. This null for SENDER pipeline.
+	PeeredGdpPipelineId pulumi.StringInput `pulumi:"peeredGdpPipelineId"`
+	// Public region name where the peered pipeline exists.
+	PeeringRegion pulumi.StringInput `pulumi:"peeringRegion"`
+	// Type of pipeline. Can be SENDER or RECEIVER.
+	PipelineType pulumi.StringInput `pulumi:"pipelineType"`
+	// the OCID of the service log group.
+	ServiceLogGroupId pulumi.StringInput `pulumi:"serviceLogGroupId"`
+	// The current state of the pipeline.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The time the the pipeline was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the pipeline was updated. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetGdpGdpPipelinesGdpPipelineCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGdpGdpPipelinesGdpPipelineCollectionItem)(nil)).Elem()
+}
+
+func (i GetGdpGdpPipelinesGdpPipelineCollectionItemArgs) ToGetGdpGdpPipelinesGdpPipelineCollectionItemOutput() GetGdpGdpPipelinesGdpPipelineCollectionItemOutput {
+	return i.ToGetGdpGdpPipelinesGdpPipelineCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetGdpGdpPipelinesGdpPipelineCollectionItemArgs) ToGetGdpGdpPipelinesGdpPipelineCollectionItemOutputWithContext(ctx context.Context) GetGdpGdpPipelinesGdpPipelineCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGdpGdpPipelinesGdpPipelineCollectionItemOutput)
+}
+
+// GetGdpGdpPipelinesGdpPipelineCollectionItemArrayInput is an input type that accepts GetGdpGdpPipelinesGdpPipelineCollectionItemArray and GetGdpGdpPipelinesGdpPipelineCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetGdpGdpPipelinesGdpPipelineCollectionItemArrayInput` via:
+//
+//	GetGdpGdpPipelinesGdpPipelineCollectionItemArray{ GetGdpGdpPipelinesGdpPipelineCollectionItemArgs{...} }
+type GetGdpGdpPipelinesGdpPipelineCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetGdpGdpPipelinesGdpPipelineCollectionItemArrayOutput() GetGdpGdpPipelinesGdpPipelineCollectionItemArrayOutput
+	ToGetGdpGdpPipelinesGdpPipelineCollectionItemArrayOutputWithContext(context.Context) GetGdpGdpPipelinesGdpPipelineCollectionItemArrayOutput
+}
+
+type GetGdpGdpPipelinesGdpPipelineCollectionItemArray []GetGdpGdpPipelinesGdpPipelineCollectionItemInput
+
+func (GetGdpGdpPipelinesGdpPipelineCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGdpGdpPipelinesGdpPipelineCollectionItem)(nil)).Elem()
+}
+
+func (i GetGdpGdpPipelinesGdpPipelineCollectionItemArray) ToGetGdpGdpPipelinesGdpPipelineCollectionItemArrayOutput() GetGdpGdpPipelinesGdpPipelineCollectionItemArrayOutput {
+	return i.ToGetGdpGdpPipelinesGdpPipelineCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetGdpGdpPipelinesGdpPipelineCollectionItemArray) ToGetGdpGdpPipelinesGdpPipelineCollectionItemArrayOutputWithContext(ctx context.Context) GetGdpGdpPipelinesGdpPipelineCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGdpGdpPipelinesGdpPipelineCollectionItemArrayOutput)
+}
+
+type GetGdpGdpPipelinesGdpPipelineCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGdpGdpPipelinesGdpPipelineCollectionItem)(nil)).Elem()
+}
+
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) ToGetGdpGdpPipelinesGdpPipelineCollectionItemOutput() GetGdpGdpPipelinesGdpPipelineCollectionItemOutput {
+	return o
+}
+
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) ToGetGdpGdpPipelinesGdpPipelineCollectionItemOutputWithContext(ctx context.Context) GetGdpGdpPipelinesGdpPipelineCollectionItemOutput {
+	return o
+}
+
+// The KMS vault OCID used for cryptographic approvals of transfers.
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) ApprovalKeyVaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItem) string { return v.ApprovalKeyVaultId }).(pulumi.StringOutput)
+}
+
+// Authorization information about the pipeline being configured.
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) AuthorizationDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItem) string { return v.AuthorizationDetails }).(pulumi.StringOutput)
+}
+
+// Configuration information about the buckets used for this pipeline.
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) BucketDetails() GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItem) []GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetail {
+		return v.BucketDetails
+	}).(GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayOutput)
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Short field input by customer for a description of the data pipeline use-case.
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The environment where the pipeline resides. Valid values are COMMERCIAL or USGOV. Defaults to COMMERCIAL.
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) Env() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItem) string { return v.Env }).(pulumi.StringOutput)
+}
+
+// List of file types allowed to be transferred in the pipeline according to the authorization details (e.g. .pdf, .xml, .doc).
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) FileTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItem) []string { return v.FileTypes }).(pulumi.StringArrayOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The OCID of the pipeline.
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Determines whether file transfers need to go through an approval workflow.
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) IsApprovalNeeded() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItem) bool { return v.IsApprovalNeeded }).(pulumi.BoolOutput)
+}
+
+// Determines whether file must be chunked during the transfer. This is only a property of SENDER pipelines.
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) IsChunkingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItem) bool { return v.IsChunkingEnabled }).(pulumi.BoolOutput)
+}
+
+// Enable file override feature in destination bucket. If 2 files with same name exist in destination bucket, original file will be overwritten.
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) IsFileOverrideInDestinationEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItem) bool { return v.IsFileOverrideInDestinationEnabled }).(pulumi.BoolOutput)
+}
+
+// Determines whether GDP Scanning should be enabled for the pipeline.
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) IsScanningEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItem) bool { return v.IsScanningEnabled }).(pulumi.BoolOutput)
+}
+
+// Additional details about the current state of the pipeline.
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// OCID of the peered pipeline. This null for SENDER pipeline.
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) PeeredGdpPipelineId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItem) string { return v.PeeredGdpPipelineId }).(pulumi.StringOutput)
+}
+
+// Public region name where the peered pipeline exists.
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) PeeringRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItem) string { return v.PeeringRegion }).(pulumi.StringOutput)
+}
+
+// Type of pipeline. Can be SENDER or RECEIVER.
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) PipelineType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItem) string { return v.PipelineType }).(pulumi.StringOutput)
+}
+
+// the OCID of the service log group.
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) ServiceLogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItem) string { return v.ServiceLogGroupId }).(pulumi.StringOutput)
+}
+
+// The current state of the pipeline.
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The time the the pipeline was created. An RFC3339 formatted datetime string.
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the pipeline was updated. An RFC3339 formatted datetime string.
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetGdpGdpPipelinesGdpPipelineCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGdpGdpPipelinesGdpPipelineCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGdpGdpPipelinesGdpPipelineCollectionItem)(nil)).Elem()
+}
+
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemArrayOutput) ToGetGdpGdpPipelinesGdpPipelineCollectionItemArrayOutput() GetGdpGdpPipelinesGdpPipelineCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemArrayOutput) ToGetGdpGdpPipelinesGdpPipelineCollectionItemArrayOutputWithContext(ctx context.Context) GetGdpGdpPipelinesGdpPipelineCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemArrayOutput) Index(i pulumi.IntInput) GetGdpGdpPipelinesGdpPipelineCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGdpGdpPipelinesGdpPipelineCollectionItem {
+		return vs[0].([]GetGdpGdpPipelinesGdpPipelineCollectionItem)[vs[1].(int)]
+	}).(GetGdpGdpPipelinesGdpPipelineCollectionItemOutput)
+}
+
+type GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetail struct {
+	// Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
+	BucketType string `pulumi:"bucketType"`
+	// The OCID of the pipeline.
+	Id string `pulumi:"id"`
+	// Name of the bucket.
+	Name string `pulumi:"name"`
+	// Namespace of the bucket.
+	Namespace string `pulumi:"namespace"`
+}
+
+// GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailInput is an input type that accepts GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArgs and GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutput values.
+// You can construct a concrete instance of `GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailInput` via:
+//
+//	GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArgs{...}
+type GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailInput interface {
+	pulumi.Input
+
+	ToGetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutput() GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutput
+	ToGetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutputWithContext(context.Context) GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutput
+}
+
+type GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArgs struct {
+	// Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
+	BucketType pulumi.StringInput `pulumi:"bucketType"`
+	// The OCID of the pipeline.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Name of the bucket.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Namespace of the bucket.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+}
+
+func (GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetail)(nil)).Elem()
+}
+
+func (i GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArgs) ToGetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutput() GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutput {
+	return i.ToGetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutputWithContext(context.Background())
+}
+
+func (i GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArgs) ToGetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutputWithContext(ctx context.Context) GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutput)
+}
+
+// GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayInput is an input type that accepts GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArray and GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayOutput values.
+// You can construct a concrete instance of `GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayInput` via:
+//
+//	GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArray{ GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArgs{...} }
+type GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayOutput() GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayOutput
+	ToGetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayOutputWithContext(context.Context) GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayOutput
+}
+
+type GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArray []GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailInput
+
+func (GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetail)(nil)).Elem()
+}
+
+func (i GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArray) ToGetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayOutput() GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayOutput {
+	return i.ToGetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArray) ToGetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayOutputWithContext(ctx context.Context) GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayOutput)
+}
+
+type GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutput struct{ *pulumi.OutputState }
+
+func (GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetail)(nil)).Elem()
+}
+
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutput) ToGetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutput() GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutput {
+	return o
+}
+
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutput) ToGetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutputWithContext(ctx context.Context) GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutput {
+	return o
+}
+
+// Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutput) BucketType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetail) string { return v.BucketType }).(pulumi.StringOutput)
+}
+
+// The OCID of the pipeline.
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetail) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Name of the bucket.
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetail) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Namespace of the bucket.
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetail) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+type GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetail)(nil)).Elem()
+}
+
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayOutput) ToGetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayOutput() GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayOutput {
+	return o
+}
+
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayOutput) ToGetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayOutputWithContext(ctx context.Context) GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayOutput {
+	return o
+}
+
+func (o GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayOutput) Index(i pulumi.IntInput) GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetail {
+		return vs[0].([]GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetail)[vs[1].(int)]
+	}).(GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutput)
+}
+
 type GetIotDigitalTwinAdapterInboundEnvelope struct {
 	// Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
 	EnvelopeMappings []GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping `pulumi:"envelopeMappings"`
@@ -50916,6 +51799,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DifStackServiceDetailAdditionalDetailAssignedConnectionArrayInput)(nil)).Elem(), DifStackServiceDetailAdditionalDetailAssignedConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DifStackServiceDetailAdditionalDetailEndpointDetailInput)(nil)).Elem(), DifStackServiceDetailAdditionalDetailEndpointDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DifStackServiceDetailAdditionalDetailEndpointDetailArrayInput)(nil)).Elem(), DifStackServiceDetailAdditionalDetailEndpointDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GdpGdpPipelineBucketDetailInput)(nil)).Elem(), GdpGdpPipelineBucketDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GdpGdpPipelineBucketDetailArrayInput)(nil)).Elem(), GdpGdpPipelineBucketDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IotDigitalTwinAdapterInboundEnvelopeInput)(nil)).Elem(), IotDigitalTwinAdapterInboundEnvelopeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IotDigitalTwinAdapterInboundEnvelopePtrInput)(nil)).Elem(), IotDigitalTwinAdapterInboundEnvelopeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingInput)(nil)).Elem(), IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs{})
@@ -51286,6 +52171,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailInput)(nil)).Elem(), GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGdpGdpPipelineBucketDetailInput)(nil)).Elem(), GetGdpGdpPipelineBucketDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGdpGdpPipelineBucketDetailArrayInput)(nil)).Elem(), GetGdpGdpPipelineBucketDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGdpGdpPipelinesFilterInput)(nil)).Elem(), GetGdpGdpPipelinesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGdpGdpPipelinesFilterArrayInput)(nil)).Elem(), GetGdpGdpPipelinesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGdpGdpPipelinesGdpPipelineCollectionInput)(nil)).Elem(), GetGdpGdpPipelinesGdpPipelineCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGdpGdpPipelinesGdpPipelineCollectionArrayInput)(nil)).Elem(), GetGdpGdpPipelinesGdpPipelineCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGdpGdpPipelinesGdpPipelineCollectionItemInput)(nil)).Elem(), GetGdpGdpPipelinesGdpPipelineCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGdpGdpPipelinesGdpPipelineCollectionItemArrayInput)(nil)).Elem(), GetGdpGdpPipelinesGdpPipelineCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailInput)(nil)).Elem(), GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayInput)(nil)).Elem(), GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdapterInboundEnvelopeInput)(nil)).Elem(), GetIotDigitalTwinAdapterInboundEnvelopeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdapterInboundEnvelopeArrayInput)(nil)).Elem(), GetIotDigitalTwinAdapterInboundEnvelopeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingInput)(nil)).Elem(), GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs{})
@@ -51675,6 +52570,8 @@ func init() {
 	pulumi.RegisterOutputType(DifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput{})
 	pulumi.RegisterOutputType(DifStackServiceDetailAdditionalDetailEndpointDetailOutput{})
 	pulumi.RegisterOutputType(DifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput{})
+	pulumi.RegisterOutputType(GdpGdpPipelineBucketDetailOutput{})
+	pulumi.RegisterOutputType(GdpGdpPipelineBucketDetailArrayOutput{})
 	pulumi.RegisterOutputType(IotDigitalTwinAdapterInboundEnvelopeOutput{})
 	pulumi.RegisterOutputType(IotDigitalTwinAdapterInboundEnvelopePtrOutput{})
 	pulumi.RegisterOutputType(IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput{})
@@ -52045,6 +52942,16 @@ func init() {
 	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailOutput{})
 	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetGdpGdpPipelineBucketDetailOutput{})
+	pulumi.RegisterOutputType(GetGdpGdpPipelineBucketDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetGdpGdpPipelinesFilterOutput{})
+	pulumi.RegisterOutputType(GetGdpGdpPipelinesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetGdpGdpPipelinesGdpPipelineCollectionOutput{})
+	pulumi.RegisterOutputType(GetGdpGdpPipelinesGdpPipelineCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetGdpGdpPipelinesGdpPipelineCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetGdpGdpPipelinesGdpPipelineCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailOutput{})
+	pulumi.RegisterOutputType(GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetIotDigitalTwinAdapterInboundEnvelopeOutput{})
 	pulumi.RegisterOutputType(GetIotDigitalTwinAdapterInboundEnvelopeArrayOutput{})
 	pulumi.RegisterOutputType(GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingOutput{})

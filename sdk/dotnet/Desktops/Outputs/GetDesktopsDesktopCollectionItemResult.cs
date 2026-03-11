@@ -33,6 +33,7 @@ namespace Pulumi.Oci.Desktops.Outputs
         /// A filter to return only results with the given OCID.
         /// </summary>
         public readonly string Id;
+        public readonly ImmutableArray<Outputs.GetDesktopsDesktopCollectionItemImageResult> Images;
         /// <summary>
         /// The OCID of the desktop pool the desktop is a member of.
         /// </summary>
@@ -62,6 +63,8 @@ namespace Pulumi.Oci.Desktops.Outputs
 
             string id,
 
+            ImmutableArray<Outputs.GetDesktopsDesktopCollectionItemImageResult> images,
+
             string poolId,
 
             string state,
@@ -75,6 +78,7 @@ namespace Pulumi.Oci.Desktops.Outputs
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            Images = images;
             PoolId = poolId;
             State = state;
             TimeCreated = timeCreated;

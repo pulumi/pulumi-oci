@@ -31,6 +31,21 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDe
     }
 
     /**
+     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+     * 
+     */
+    @Import(name="ipv6id")
+    private @Nullable Output<String> ipv6id;
+
+    /**
+     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+     * 
+     */
+    public Optional<Output<String>> ipv6id() {
+        return Optional.ofNullable(this.ipv6id);
+    }
+
+    /**
      * Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
      * 
      */
@@ -49,6 +64,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDe
 
     private InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs(InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs $) {
         this.ipv6address = $.ipv6address;
+        this.ipv6id = $.ipv6id;
         this.ipv6subnetCidr = $.ipv6subnetCidr;
     }
 
@@ -89,6 +105,27 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDe
          */
         public Builder ipv6address(String ipv6address) {
             return ipv6address(Output.of(ipv6address));
+        }
+
+        /**
+         * @param ipv6id An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6id(@Nullable Output<String> ipv6id) {
+            $.ipv6id = ipv6id;
+            return this;
+        }
+
+        /**
+         * @param ipv6id An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6id(String ipv6id) {
+            return ipv6id(Output.of(ipv6id));
         }
 
         /**

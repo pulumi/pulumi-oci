@@ -220,6 +220,8 @@ export class MysqlConfiguration extends pulumi.CustomResource {
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+     *
+     * @deprecated The 'init_variables' field has been deprecated. Please use 'options' instead.
      */
     declare public readonly initVariables: pulumi.Output<outputs.Mysql.MysqlConfigurationInitVariables>;
     /**
@@ -256,6 +258,8 @@ export class MysqlConfiguration extends pulumi.CustomResource {
     declare public /*out*/ readonly type: pulumi.Output<string>;
     /**
      * DEPRECATED -- please use the `options` field instead. User-defined service variables.
+     *
+     * @deprecated The 'variables' field has been deprecated. Please use 'options' instead.
      */
     declare public readonly variables: pulumi.Output<outputs.Mysql.MysqlConfigurationVariables>;
 
@@ -342,6 +346,8 @@ export interface MysqlConfigurationState {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+     *
+     * @deprecated The 'init_variables' field has been deprecated. Please use 'options' instead.
      */
     initVariables?: pulumi.Input<inputs.Mysql.MysqlConfigurationInitVariables>;
     /**
@@ -378,6 +384,8 @@ export interface MysqlConfigurationState {
     type?: pulumi.Input<string>;
     /**
      * DEPRECATED -- please use the `options` field instead. User-defined service variables.
+     *
+     * @deprecated The 'variables' field has been deprecated. Please use 'options' instead.
      */
     variables?: pulumi.Input<inputs.Mysql.MysqlConfigurationVariables>;
 }
@@ -408,6 +416,8 @@ export interface MysqlConfigurationArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+     *
+     * @deprecated The 'init_variables' field has been deprecated. Please use 'options' instead.
      */
     initVariables?: pulumi.Input<inputs.Mysql.MysqlConfigurationInitVariables>;
     /**
@@ -424,6 +434,8 @@ export interface MysqlConfigurationArgs {
     shapeName: pulumi.Input<string>;
     /**
      * DEPRECATED -- please use the `options` field instead. User-defined service variables.
+     *
+     * @deprecated The 'variables' field has been deprecated. Please use 'options' instead.
      */
     variables?: pulumi.Input<inputs.Mysql.MysqlConfigurationVariables>;
 }

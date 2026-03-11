@@ -124,9 +124,17 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
         return Optional.ofNullable(this.hostnameLabel);
     }
 
+    /**
+     * A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+     * 
+     */
     @Import(name="ipv6addressIpv6subnetCidrPairDetails")
     private @Nullable Output<List<InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs>> ipv6addressIpv6subnetCidrPairDetails;
 
+    /**
+     * @return A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+     * 
+     */
     public Optional<Output<List<InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs>>> ipv6addressIpv6subnetCidrPairDetails() {
         return Optional.ofNullable(this.ipv6addressIpv6subnetCidrPairDetails);
     }
@@ -159,6 +167,21 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
      */
     public Optional<Output<String>> privateIp() {
         return Optional.ofNullable(this.privateIp);
+    }
+
+    /**
+     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+     * 
+     */
+    @Import(name="privateIpId")
+    private @Nullable Output<String> privateIpId;
+
+    /**
+     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+     * 
+     */
+    public Optional<Output<String>> privateIpId() {
+        return Optional.ofNullable(this.privateIpId);
     }
 
     /**
@@ -234,6 +257,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
         this.ipv6addressIpv6subnetCidrPairDetails = $.ipv6addressIpv6subnetCidrPairDetails;
         this.nsgIds = $.nsgIds;
         this.privateIp = $.privateIp;
+        this.privateIpId = $.privateIpId;
         this.securityAttributes = $.securityAttributes;
         this.skipSourceDestCheck = $.skipSourceDestCheck;
         this.subnetCidr = $.subnetCidr;
@@ -405,15 +429,33 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
             return hostnameLabel(Output.of(hostnameLabel));
         }
 
+        /**
+         * @param ipv6addressIpv6subnetCidrPairDetails A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipv6addressIpv6subnetCidrPairDetails(@Nullable Output<List<InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs>> ipv6addressIpv6subnetCidrPairDetails) {
             $.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             return this;
         }
 
+        /**
+         * @param ipv6addressIpv6subnetCidrPairDetails A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipv6addressIpv6subnetCidrPairDetails(List<InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs> ipv6addressIpv6subnetCidrPairDetails) {
             return ipv6addressIpv6subnetCidrPairDetails(Output.of(ipv6addressIpv6subnetCidrPairDetails));
         }
 
+        /**
+         * @param ipv6addressIpv6subnetCidrPairDetails A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipv6addressIpv6subnetCidrPairDetails(InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs... ipv6addressIpv6subnetCidrPairDetails) {
             return ipv6addressIpv6subnetCidrPairDetails(List.of(ipv6addressIpv6subnetCidrPairDetails));
         }
@@ -468,6 +510,27 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
          */
         public Builder privateIp(String privateIp) {
             return privateIp(Output.of(privateIp));
+        }
+
+        /**
+         * @param privateIpId An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateIpId(@Nullable Output<String> privateIpId) {
+            $.privateIpId = privateIpId;
+            return this;
+        }
+
+        /**
+         * @param privateIpId An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateIpId(String privateIpId) {
+            return privateIpId(Output.of(privateIpId));
         }
 
         /**

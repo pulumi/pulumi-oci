@@ -44,6 +44,7 @@ public final class GetInstanceCreateVnicDetail {
      * 
      */
     private String privateIp;
+    private String privateIpId;
     /**
      * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
      * 
@@ -105,6 +106,9 @@ public final class GetInstanceCreateVnicDetail {
     public String privateIp() {
         return this.privateIp;
     }
+    public String privateIpId() {
+        return this.privateIpId;
+    }
     /**
      * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
      * 
@@ -144,6 +148,7 @@ public final class GetInstanceCreateVnicDetail {
         private List<GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
         private List<String> nsgIds;
         private String privateIp;
+        private String privateIpId;
         private Map<String,String> securityAttributes;
         private Boolean skipSourceDestCheck;
         private String subnetCidr;
@@ -162,6 +167,7 @@ public final class GetInstanceCreateVnicDetail {
     	      this.ipv6addressIpv6subnetCidrPairDetails = defaults.ipv6addressIpv6subnetCidrPairDetails;
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateIp = defaults.privateIp;
+    	      this.privateIpId = defaults.privateIpId;
     	      this.securityAttributes = defaults.securityAttributes;
     	      this.skipSourceDestCheck = defaults.skipSourceDestCheck;
     	      this.subnetCidr = defaults.subnetCidr;
@@ -256,6 +262,14 @@ public final class GetInstanceCreateVnicDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder privateIpId(String privateIpId) {
+            if (privateIpId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceCreateVnicDetail", "privateIpId");
+            }
+            this.privateIpId = privateIpId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder securityAttributes(Map<String,String> securityAttributes) {
             if (securityAttributes == null) {
               throw new MissingRequiredPropertyException("GetInstanceCreateVnicDetail", "securityAttributes");
@@ -307,6 +321,7 @@ public final class GetInstanceCreateVnicDetail {
             _resultValue.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             _resultValue.nsgIds = nsgIds;
             _resultValue.privateIp = privateIp;
+            _resultValue.privateIpId = privateIpId;
             _resultValue.securityAttributes = securityAttributes;
             _resultValue.skipSourceDestCheck = skipSourceDestCheck;
             _resultValue.subnetCidr = subnetCidr;

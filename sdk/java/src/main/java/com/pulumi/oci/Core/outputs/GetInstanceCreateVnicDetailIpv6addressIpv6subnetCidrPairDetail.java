@@ -11,11 +11,15 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail {
     private String ipv6address;
+    private String ipv6id;
     private String ipv6subnetCidr;
 
     private GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail() {}
     public String ipv6address() {
         return this.ipv6address;
+    }
+    public String ipv6id() {
+        return this.ipv6id;
     }
     public String ipv6subnetCidr() {
         return this.ipv6subnetCidr;
@@ -31,11 +35,13 @@ public final class GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetai
     @CustomType.Builder
     public static final class Builder {
         private String ipv6address;
+        private String ipv6id;
         private String ipv6subnetCidr;
         public Builder() {}
         public Builder(GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ipv6address = defaults.ipv6address;
+    	      this.ipv6id = defaults.ipv6id;
     	      this.ipv6subnetCidr = defaults.ipv6subnetCidr;
         }
 
@@ -45,6 +51,14 @@ public final class GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetai
               throw new MissingRequiredPropertyException("GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail", "ipv6address");
             }
             this.ipv6address = ipv6address;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ipv6id(String ipv6id) {
+            if (ipv6id == null) {
+              throw new MissingRequiredPropertyException("GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail", "ipv6id");
+            }
+            this.ipv6id = ipv6id;
             return this;
         }
         @CustomType.Setter
@@ -58,6 +72,7 @@ public final class GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetai
         public GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail build() {
             final var _resultValue = new GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail();
             _resultValue.ipv6address = ipv6address;
+            _resultValue.ipv6id = ipv6id;
             _resultValue.ipv6subnetCidr = ipv6subnetCidr;
             return _resultValue;
         }

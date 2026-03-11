@@ -69,7 +69,7 @@ public final class VnicAttachmentCreateVnicDetails {
      */
     private @Nullable String hostnameLabel;
     /**
-     * @return A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+     * @return A list of IPv6 prefix ranges from which the VNIC is assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address within that range to use.
      * 
      */
     private @Nullable List<VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
@@ -85,13 +85,20 @@ public final class VnicAttachmentCreateVnicDetails {
      * 
      * If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      * 
+     * If you specify a &#39;privateIpId&#39;, the &#39;privateIp&#39; cannot be specified.
+     * 
      * Example: `10.0.3.3`
      * 
      */
     private @Nullable String privateIp;
+    /**
+     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC.
+     * 
+     */
+    private @Nullable String privateIpId;
     private @Nullable String routeTableId;
     /**
-     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
      * 
      */
     private @Nullable Map<String,String> securityAttributes;
@@ -193,7 +200,7 @@ public final class VnicAttachmentCreateVnicDetails {
         return Optional.ofNullable(this.hostnameLabel);
     }
     /**
-     * @return A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+     * @return A list of IPv6 prefix ranges from which the VNIC is assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address within that range to use.
      * 
      */
     public List<VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails() {
@@ -213,17 +220,26 @@ public final class VnicAttachmentCreateVnicDetails {
      * 
      * If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      * 
+     * If you specify a &#39;privateIpId&#39;, the &#39;privateIp&#39; cannot be specified.
+     * 
      * Example: `10.0.3.3`
      * 
      */
     public Optional<String> privateIp() {
         return Optional.ofNullable(this.privateIp);
     }
+    /**
+     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC.
+     * 
+     */
+    public Optional<String> privateIpId() {
+        return Optional.ofNullable(this.privateIpId);
+    }
     public Optional<String> routeTableId() {
         return Optional.ofNullable(this.routeTableId);
     }
     /**
-     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
      * 
      */
     public Map<String,String> securityAttributes() {
@@ -285,6 +301,7 @@ public final class VnicAttachmentCreateVnicDetails {
         private @Nullable List<VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
         private @Nullable List<String> nsgIds;
         private @Nullable String privateIp;
+        private @Nullable String privateIpId;
         private @Nullable String routeTableId;
         private @Nullable Map<String,String> securityAttributes;
         private @Nullable Boolean skipSourceDestCheck;
@@ -304,6 +321,7 @@ public final class VnicAttachmentCreateVnicDetails {
     	      this.ipv6addressIpv6subnetCidrPairDetails = defaults.ipv6addressIpv6subnetCidrPairDetails;
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateIp = defaults.privateIp;
+    	      this.privateIpId = defaults.privateIpId;
     	      this.routeTableId = defaults.routeTableId;
     	      this.securityAttributes = defaults.securityAttributes;
     	      this.skipSourceDestCheck = defaults.skipSourceDestCheck;
@@ -379,6 +397,12 @@ public final class VnicAttachmentCreateVnicDetails {
             return this;
         }
         @CustomType.Setter
+        public Builder privateIpId(@Nullable String privateIpId) {
+
+            this.privateIpId = privateIpId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder routeTableId(@Nullable String routeTableId) {
 
             this.routeTableId = routeTableId;
@@ -426,6 +450,7 @@ public final class VnicAttachmentCreateVnicDetails {
             _resultValue.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             _resultValue.nsgIds = nsgIds;
             _resultValue.privateIp = privateIp;
+            _resultValue.privateIpId = privateIpId;
             _resultValue.routeTableId = routeTableId;
             _resultValue.securityAttributes = securityAttributes;
             _resultValue.skipSourceDestCheck = skipSourceDestCheck;

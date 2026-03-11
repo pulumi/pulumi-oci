@@ -205,6 +205,8 @@ type MysqlConfiguration struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+	//
+	// Deprecated: The 'init_variables' field has been deprecated. Please use 'options' instead.
 	InitVariables MysqlConfigurationInitVariablesOutput `pulumi:"initVariables"`
 	// The MySQL options defined in the Configuration.
 	Options MysqlConfigurationOptionArrayOutput `pulumi:"options"`
@@ -223,6 +225,8 @@ type MysqlConfiguration struct {
 	// The Configuration type, DEFAULT or CUSTOM.
 	Type pulumi.StringOutput `pulumi:"type"`
 	// DEPRECATED -- please use the `options` field instead. User-defined service variables.
+	//
+	// Deprecated: The 'variables' field has been deprecated. Please use 'options' instead.
 	Variables MysqlConfigurationVariablesOutput `pulumi:"variables"`
 }
 
@@ -273,6 +277,8 @@ type mysqlConfigurationState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+	//
+	// Deprecated: The 'init_variables' field has been deprecated. Please use 'options' instead.
 	InitVariables *MysqlConfigurationInitVariables `pulumi:"initVariables"`
 	// The MySQL options defined in the Configuration.
 	Options []MysqlConfigurationOption `pulumi:"options"`
@@ -291,6 +297,8 @@ type mysqlConfigurationState struct {
 	// The Configuration type, DEFAULT or CUSTOM.
 	Type *string `pulumi:"type"`
 	// DEPRECATED -- please use the `options` field instead. User-defined service variables.
+	//
+	// Deprecated: The 'variables' field has been deprecated. Please use 'options' instead.
 	Variables *MysqlConfigurationVariables `pulumi:"variables"`
 }
 
@@ -306,6 +314,8 @@ type MysqlConfigurationState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+	//
+	// Deprecated: The 'init_variables' field has been deprecated. Please use 'options' instead.
 	InitVariables MysqlConfigurationInitVariablesPtrInput
 	// The MySQL options defined in the Configuration.
 	Options MysqlConfigurationOptionArrayInput
@@ -324,6 +334,8 @@ type MysqlConfigurationState struct {
 	// The Configuration type, DEFAULT or CUSTOM.
 	Type pulumi.StringPtrInput
 	// DEPRECATED -- please use the `options` field instead. User-defined service variables.
+	//
+	// Deprecated: The 'variables' field has been deprecated. Please use 'options' instead.
 	Variables MysqlConfigurationVariablesPtrInput
 }
 
@@ -343,6 +355,8 @@ type mysqlConfigurationArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+	//
+	// Deprecated: The 'init_variables' field has been deprecated. Please use 'options' instead.
 	InitVariables *MysqlConfigurationInitVariables `pulumi:"initVariables"`
 	// The MySQL options defined in the Configuration.
 	Options []MysqlConfigurationOption `pulumi:"options"`
@@ -351,6 +365,8 @@ type mysqlConfigurationArgs struct {
 	// The name of the associated Shape.
 	ShapeName string `pulumi:"shapeName"`
 	// DEPRECATED -- please use the `options` field instead. User-defined service variables.
+	//
+	// Deprecated: The 'variables' field has been deprecated. Please use 'options' instead.
 	Variables *MysqlConfigurationVariables `pulumi:"variables"`
 }
 
@@ -367,6 +383,8 @@ type MysqlConfigurationArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+	//
+	// Deprecated: The 'init_variables' field has been deprecated. Please use 'options' instead.
 	InitVariables MysqlConfigurationInitVariablesPtrInput
 	// The MySQL options defined in the Configuration.
 	Options MysqlConfigurationOptionArrayInput
@@ -375,6 +393,8 @@ type MysqlConfigurationArgs struct {
 	// The name of the associated Shape.
 	ShapeName pulumi.StringInput
 	// DEPRECATED -- please use the `options` field instead. User-defined service variables.
+	//
+	// Deprecated: The 'variables' field has been deprecated. Please use 'options' instead.
 	Variables MysqlConfigurationVariablesPtrInput
 }
 
@@ -491,6 +511,8 @@ func (o MysqlConfigurationOutput) FreeformTags() pulumi.StringMapOutput {
 }
 
 // DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+//
+// Deprecated: The 'init_variables' field has been deprecated. Please use 'options' instead.
 func (o MysqlConfigurationOutput) InitVariables() MysqlConfigurationInitVariablesOutput {
 	return o.ApplyT(func(v *MysqlConfiguration) MysqlConfigurationInitVariablesOutput { return v.InitVariables }).(MysqlConfigurationInitVariablesOutput)
 }
@@ -536,6 +558,8 @@ func (o MysqlConfigurationOutput) Type() pulumi.StringOutput {
 }
 
 // DEPRECATED -- please use the `options` field instead. User-defined service variables.
+//
+// Deprecated: The 'variables' field has been deprecated. Please use 'options' instead.
 func (o MysqlConfigurationOutput) Variables() MysqlConfigurationVariablesOutput {
 	return o.ApplyT(func(v *MysqlConfiguration) MysqlConfigurationVariablesOutput { return v.Variables }).(MysqlConfigurationVariablesOutput)
 }

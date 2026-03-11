@@ -2075,7 +2075,7 @@ class DomainsGroup(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
-    def members(self) -> pulumi.Output[Sequence['outputs.DomainsGroupMember']]:
+    def members(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsGroupMember']]]:
         """
         (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
 

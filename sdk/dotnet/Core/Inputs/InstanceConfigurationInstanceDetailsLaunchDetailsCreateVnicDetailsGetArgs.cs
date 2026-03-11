@@ -70,7 +70,7 @@ namespace Pulumi.Oci.Core.Inputs
         private InputList<Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailGetArgs>? _ipv6addressIpv6subnetCidrPairDetails;
 
         /// <summary>
-        /// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        /// A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         /// </summary>
         public InputList<Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailGetArgs> Ipv6addressIpv6subnetCidrPairDetails
         {
@@ -95,6 +95,12 @@ namespace Pulumi.Oci.Core.Inputs
         /// </summary>
         [Input("privateIp")]
         public Input<string>? PrivateIp { get; set; }
+
+        /// <summary>
+        /// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        /// </summary>
+        [Input("privateIpId")]
+        public Input<string>? PrivateIpId { get; set; }
 
         [Input("securityAttributes")]
         private InputMap<string>? _securityAttributes;

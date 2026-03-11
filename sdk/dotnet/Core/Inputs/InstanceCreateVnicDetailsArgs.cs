@@ -87,7 +87,7 @@ namespace Pulumi.Oci.Core.Inputs
         private InputList<Inputs.InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs>? _ipv6addressIpv6subnetCidrPairDetails;
 
         /// <summary>
-        /// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        /// A list of IPv6 prefix ranges from which the VNIC is assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address within that range to use.
         /// </summary>
         public InputList<Inputs.InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs> Ipv6addressIpv6subnetCidrPairDetails
         {
@@ -114,16 +114,24 @@ namespace Pulumi.Oci.Core.Inputs
         /// 
         /// If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         /// 
+        /// If you specify a 'privateIpId', the 'privateIp' cannot be specified.
+        /// 
         /// Example: `10.0.3.3`
         /// </summary>
         [Input("privateIp")]
         public Input<string>? PrivateIp { get; set; }
 
+        /// <summary>
+        /// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC.
+        /// </summary>
+        [Input("privateIpId")]
+        public Input<string>? PrivateIpId { get; set; }
+
         [Input("securityAttributes")]
         private InputMap<string>? _securityAttributes;
 
         /// <summary>
-        /// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+        /// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         /// </summary>
         public InputMap<string> SecurityAttributes
         {

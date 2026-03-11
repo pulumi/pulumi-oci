@@ -7223,7 +7223,8 @@ type GetDesktopsDesktopCollectionItem struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A filter to return only results with the given OCID.
-	Id string `pulumi:"id"`
+	Id     string                                  `pulumi:"id"`
+	Images []GetDesktopsDesktopCollectionItemImage `pulumi:"images"`
 	// The OCID of the desktop pool the desktop is a member of.
 	PoolId string `pulumi:"poolId"`
 	// A filter to return only results with the given lifecycleState.
@@ -7255,7 +7256,8 @@ type GetDesktopsDesktopCollectionItemArgs struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A filter to return only results with the given OCID.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id     pulumi.StringInput                              `pulumi:"id"`
+	Images GetDesktopsDesktopCollectionItemImageArrayInput `pulumi:"images"`
 	// The OCID of the desktop pool the desktop is a member of.
 	PoolId pulumi.StringInput `pulumi:"poolId"`
 	// A filter to return only results with the given lifecycleState.
@@ -7342,6 +7344,10 @@ func (o GetDesktopsDesktopCollectionItemOutput) FreeformTags() pulumi.StringMapO
 // A filter to return only results with the given OCID.
 func (o GetDesktopsDesktopCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDesktopsDesktopCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetDesktopsDesktopCollectionItemOutput) Images() GetDesktopsDesktopCollectionItemImageArrayOutput {
+	return o.ApplyT(func(v GetDesktopsDesktopCollectionItem) []GetDesktopsDesktopCollectionItemImage { return v.Images }).(GetDesktopsDesktopCollectionItemImageArrayOutput)
 }
 
 // The OCID of the desktop pool the desktop is a member of.
@@ -7751,6 +7757,112 @@ func (o GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutput) 
 	}).(GetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutput)
 }
 
+type GetDesktopsDesktopCollectionItemImage struct {
+	ImageId         string `pulumi:"imageId"`
+	ImageName       string `pulumi:"imageName"`
+	OperatingSystem string `pulumi:"operatingSystem"`
+}
+
+// GetDesktopsDesktopCollectionItemImageInput is an input type that accepts GetDesktopsDesktopCollectionItemImageArgs and GetDesktopsDesktopCollectionItemImageOutput values.
+// You can construct a concrete instance of `GetDesktopsDesktopCollectionItemImageInput` via:
+//
+//	GetDesktopsDesktopCollectionItemImageArgs{...}
+type GetDesktopsDesktopCollectionItemImageInput interface {
+	pulumi.Input
+
+	ToGetDesktopsDesktopCollectionItemImageOutput() GetDesktopsDesktopCollectionItemImageOutput
+	ToGetDesktopsDesktopCollectionItemImageOutputWithContext(context.Context) GetDesktopsDesktopCollectionItemImageOutput
+}
+
+type GetDesktopsDesktopCollectionItemImageArgs struct {
+	ImageId         pulumi.StringInput `pulumi:"imageId"`
+	ImageName       pulumi.StringInput `pulumi:"imageName"`
+	OperatingSystem pulumi.StringInput `pulumi:"operatingSystem"`
+}
+
+func (GetDesktopsDesktopCollectionItemImageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopsDesktopCollectionItemImage)(nil)).Elem()
+}
+
+func (i GetDesktopsDesktopCollectionItemImageArgs) ToGetDesktopsDesktopCollectionItemImageOutput() GetDesktopsDesktopCollectionItemImageOutput {
+	return i.ToGetDesktopsDesktopCollectionItemImageOutputWithContext(context.Background())
+}
+
+func (i GetDesktopsDesktopCollectionItemImageArgs) ToGetDesktopsDesktopCollectionItemImageOutputWithContext(ctx context.Context) GetDesktopsDesktopCollectionItemImageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopsDesktopCollectionItemImageOutput)
+}
+
+// GetDesktopsDesktopCollectionItemImageArrayInput is an input type that accepts GetDesktopsDesktopCollectionItemImageArray and GetDesktopsDesktopCollectionItemImageArrayOutput values.
+// You can construct a concrete instance of `GetDesktopsDesktopCollectionItemImageArrayInput` via:
+//
+//	GetDesktopsDesktopCollectionItemImageArray{ GetDesktopsDesktopCollectionItemImageArgs{...} }
+type GetDesktopsDesktopCollectionItemImageArrayInput interface {
+	pulumi.Input
+
+	ToGetDesktopsDesktopCollectionItemImageArrayOutput() GetDesktopsDesktopCollectionItemImageArrayOutput
+	ToGetDesktopsDesktopCollectionItemImageArrayOutputWithContext(context.Context) GetDesktopsDesktopCollectionItemImageArrayOutput
+}
+
+type GetDesktopsDesktopCollectionItemImageArray []GetDesktopsDesktopCollectionItemImageInput
+
+func (GetDesktopsDesktopCollectionItemImageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopsDesktopCollectionItemImage)(nil)).Elem()
+}
+
+func (i GetDesktopsDesktopCollectionItemImageArray) ToGetDesktopsDesktopCollectionItemImageArrayOutput() GetDesktopsDesktopCollectionItemImageArrayOutput {
+	return i.ToGetDesktopsDesktopCollectionItemImageArrayOutputWithContext(context.Background())
+}
+
+func (i GetDesktopsDesktopCollectionItemImageArray) ToGetDesktopsDesktopCollectionItemImageArrayOutputWithContext(ctx context.Context) GetDesktopsDesktopCollectionItemImageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDesktopsDesktopCollectionItemImageArrayOutput)
+}
+
+type GetDesktopsDesktopCollectionItemImageOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopsDesktopCollectionItemImageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDesktopsDesktopCollectionItemImage)(nil)).Elem()
+}
+
+func (o GetDesktopsDesktopCollectionItemImageOutput) ToGetDesktopsDesktopCollectionItemImageOutput() GetDesktopsDesktopCollectionItemImageOutput {
+	return o
+}
+
+func (o GetDesktopsDesktopCollectionItemImageOutput) ToGetDesktopsDesktopCollectionItemImageOutputWithContext(ctx context.Context) GetDesktopsDesktopCollectionItemImageOutput {
+	return o
+}
+
+func (o GetDesktopsDesktopCollectionItemImageOutput) ImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopsDesktopCollectionItemImage) string { return v.ImageId }).(pulumi.StringOutput)
+}
+
+func (o GetDesktopsDesktopCollectionItemImageOutput) ImageName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopsDesktopCollectionItemImage) string { return v.ImageName }).(pulumi.StringOutput)
+}
+
+func (o GetDesktopsDesktopCollectionItemImageOutput) OperatingSystem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDesktopsDesktopCollectionItemImage) string { return v.OperatingSystem }).(pulumi.StringOutput)
+}
+
+type GetDesktopsDesktopCollectionItemImageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDesktopsDesktopCollectionItemImageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDesktopsDesktopCollectionItemImage)(nil)).Elem()
+}
+
+func (o GetDesktopsDesktopCollectionItemImageArrayOutput) ToGetDesktopsDesktopCollectionItemImageArrayOutput() GetDesktopsDesktopCollectionItemImageArrayOutput {
+	return o
+}
+
+func (o GetDesktopsDesktopCollectionItemImageArrayOutput) ToGetDesktopsDesktopCollectionItemImageArrayOutputWithContext(ctx context.Context) GetDesktopsDesktopCollectionItemImageArrayOutput {
+	return o
+}
+
+func (o GetDesktopsDesktopCollectionItemImageArrayOutput) Index(i pulumi.IntInput) GetDesktopsDesktopCollectionItemImageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDesktopsDesktopCollectionItemImage {
+		return vs[0].([]GetDesktopsDesktopCollectionItemImage)[vs[1].(int)]
+	}).(GetDesktopsDesktopCollectionItemImageOutput)
+}
+
 type GetDesktopsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -7972,6 +8084,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayInput)(nil)).Elem(), GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopsDesktopCollectionItemDesktopConnectionNextActionInput)(nil)).Elem(), GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayInput)(nil)).Elem(), GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopsDesktopCollectionItemImageInput)(nil)).Elem(), GetDesktopsDesktopCollectionItemImageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopsDesktopCollectionItemImageArrayInput)(nil)).Elem(), GetDesktopsDesktopCollectionItemImageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopsFilterInput)(nil)).Elem(), GetDesktopsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDesktopsFilterArrayInput)(nil)).Elem(), GetDesktopsFilterArray{})
 	pulumi.RegisterOutputType(DesktopPoolAvailabilityPolicyOutput{})
@@ -8088,6 +8202,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDesktopsDesktopCollectionItemDesktopConnectionLastActionArrayOutput{})
 	pulumi.RegisterOutputType(GetDesktopsDesktopCollectionItemDesktopConnectionNextActionOutput{})
 	pulumi.RegisterOutputType(GetDesktopsDesktopCollectionItemDesktopConnectionNextActionArrayOutput{})
+	pulumi.RegisterOutputType(GetDesktopsDesktopCollectionItemImageOutput{})
+	pulumi.RegisterOutputType(GetDesktopsDesktopCollectionItemImageArrayOutput{})
 	pulumi.RegisterOutputType(GetDesktopsFilterOutput{})
 	pulumi.RegisterOutputType(GetDesktopsFilterArrayOutput{})
 }

@@ -13,17 +13,32 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail
     {
-        public readonly string? Ipv6Address;
-        public readonly string? Ipv6SubnetCidr;
+        /// <summary>
+        /// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix. If an IPv6 address is not provided:
+        /// * Oracle will automatically assign an IPv6 address from the subnet's IPv6 prefix if and only if there is only one IPv6 prefix on the subnet.
+        /// * Oracle will automatically assign an IPv6 address from the subnet's IPv6 Oracle GUA prefix if it exists on the subnet.
+        /// </summary>
+        public readonly string? Ipv6address;
+        /// <summary>
+        /// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+        /// </summary>
+        public readonly string? Ipv6id;
+        /// <summary>
+        /// The IPv6 prefix allocated to the subnet.
+        /// </summary>
+        public readonly string? Ipv6subnetCidr;
 
         [OutputConstructor]
         private VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail(
-            string? ipv6Address,
+            string? ipv6address,
 
-            string? ipv6SubnetCidr)
+            string? ipv6id,
+
+            string? ipv6subnetCidr)
         {
-            Ipv6Address = ipv6Address;
-            Ipv6SubnetCidr = ipv6SubnetCidr;
+            Ipv6address = ipv6address;
+            Ipv6id = ipv6id;
+            Ipv6subnetCidr = ipv6subnetCidr;
         }
     }
 }

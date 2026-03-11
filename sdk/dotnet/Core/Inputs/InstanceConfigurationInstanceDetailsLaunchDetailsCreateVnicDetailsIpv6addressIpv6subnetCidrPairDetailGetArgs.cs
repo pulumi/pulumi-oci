@@ -19,6 +19,12 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? Ipv6address { get; set; }
 
         /// <summary>
+        /// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+        /// </summary>
+        [Input("ipv6id")]
+        public Input<string>? Ipv6id { get; set; }
+
+        /// <summary>
         /// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
         /// </summary>
         [Input("ipv6subnetCidr")]

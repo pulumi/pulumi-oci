@@ -25,6 +25,7 @@ from .dbmulticloud_oracle_db_azure_vault_association import *
 from .dbmulticloud_oracle_db_gcp_identity_connector import *
 from .dbmulticloud_oracle_db_gcp_key_ring import *
 from .dif_stack import *
+from .gdp_gdp_pipeline import *
 from .get_ai_data_platform_ai_data_platform import *
 from .get_ai_data_platform_ai_data_platforms import *
 from .get_api_platform_api_platform_instance import *
@@ -71,6 +72,8 @@ from .get_dbmulticloud_oracle_db_gcp_key_rings import *
 from .get_dbmulticloud_oracle_db_gcp_keys import *
 from .get_dif_stack import *
 from .get_dif_stacks import *
+from .get_gdp_gdp_pipeline import *
+from .get_gdp_gdp_pipelines import *
 from .get_iot_digital_twin_adapter import *
 from .get_iot_digital_twin_adapters import *
 from .get_iot_digital_twin_instance import *

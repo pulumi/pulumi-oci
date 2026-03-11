@@ -11,15 +11,47 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail {
-    private @Nullable String ipv6Address;
-    private @Nullable String ipv6SubnetCidr;
+    /**
+     * @return An IPv6 address of your choice. Must be an available IPv6 address within the subnet&#39;s prefix. If an IPv6 address is not provided:
+     * * Oracle will automatically assign an IPv6 address from the subnet&#39;s IPv6 prefix if and only if there is only one IPv6 prefix on the subnet.
+     * * Oracle will automatically assign an IPv6 address from the subnet&#39;s IPv6 Oracle GUA prefix if it exists on the subnet.
+     * 
+     */
+    private @Nullable String ipv6address;
+    /**
+     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+     * 
+     */
+    private @Nullable String ipv6id;
+    /**
+     * @return The IPv6 prefix allocated to the subnet.
+     * 
+     */
+    private @Nullable String ipv6subnetCidr;
 
     private VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail() {}
-    public Optional<String> ipv6Address() {
-        return Optional.ofNullable(this.ipv6Address);
+    /**
+     * @return An IPv6 address of your choice. Must be an available IPv6 address within the subnet&#39;s prefix. If an IPv6 address is not provided:
+     * * Oracle will automatically assign an IPv6 address from the subnet&#39;s IPv6 prefix if and only if there is only one IPv6 prefix on the subnet.
+     * * Oracle will automatically assign an IPv6 address from the subnet&#39;s IPv6 Oracle GUA prefix if it exists on the subnet.
+     * 
+     */
+    public Optional<String> ipv6address() {
+        return Optional.ofNullable(this.ipv6address);
     }
-    public Optional<String> ipv6SubnetCidr() {
-        return Optional.ofNullable(this.ipv6SubnetCidr);
+    /**
+     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+     * 
+     */
+    public Optional<String> ipv6id() {
+        return Optional.ofNullable(this.ipv6id);
+    }
+    /**
+     * @return The IPv6 prefix allocated to the subnet.
+     * 
+     */
+    public Optional<String> ipv6subnetCidr() {
+        return Optional.ofNullable(this.ipv6subnetCidr);
     }
 
     public static Builder builder() {
@@ -31,31 +63,40 @@ public final class VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairD
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable String ipv6Address;
-        private @Nullable String ipv6SubnetCidr;
+        private @Nullable String ipv6address;
+        private @Nullable String ipv6id;
+        private @Nullable String ipv6subnetCidr;
         public Builder() {}
         public Builder(VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.ipv6Address = defaults.ipv6Address;
-    	      this.ipv6SubnetCidr = defaults.ipv6SubnetCidr;
+    	      this.ipv6address = defaults.ipv6address;
+    	      this.ipv6id = defaults.ipv6id;
+    	      this.ipv6subnetCidr = defaults.ipv6subnetCidr;
         }
 
         @CustomType.Setter
-        public Builder ipv6Address(@Nullable String ipv6Address) {
+        public Builder ipv6address(@Nullable String ipv6address) {
 
-            this.ipv6Address = ipv6Address;
+            this.ipv6address = ipv6address;
             return this;
         }
         @CustomType.Setter
-        public Builder ipv6SubnetCidr(@Nullable String ipv6SubnetCidr) {
+        public Builder ipv6id(@Nullable String ipv6id) {
 
-            this.ipv6SubnetCidr = ipv6SubnetCidr;
+            this.ipv6id = ipv6id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ipv6subnetCidr(@Nullable String ipv6subnetCidr) {
+
+            this.ipv6subnetCidr = ipv6subnetCidr;
             return this;
         }
         public VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail build() {
             final var _resultValue = new VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail();
-            _resultValue.ipv6Address = ipv6Address;
-            _resultValue.ipv6SubnetCidr = ipv6SubnetCidr;
+            _resultValue.ipv6address = ipv6address;
+            _resultValue.ipv6id = ipv6id;
+            _resultValue.ipv6subnetCidr = ipv6subnetCidr;
             return _resultValue;
         }
     }

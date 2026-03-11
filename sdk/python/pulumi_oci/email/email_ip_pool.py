@@ -26,6 +26,7 @@ class EmailIpPoolArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 last_ip_drain_period_in_hours: Optional[pulumi.Input[_builtins.int]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a EmailIpPool resource.
@@ -39,6 +40,7 @@ class EmailIpPoolArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the IpPool. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.int] last_ip_drain_period_in_hours: (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
         :param pulumi.Input[_builtins.str] name: The name of the IpPool. The name must be unique within a region.  The name is case sensitive and supported characters include alphanumeric, hyphens ("-") and underscore ("_") characters.  Example: green_pool-1
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -49,6 +51,8 @@ class EmailIpPoolArgs:
             pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if last_ip_drain_period_in_hours is not None:
+            pulumi.set(__self__, "last_ip_drain_period_in_hours", last_ip_drain_period_in_hours)
         if name is not None:
             pulumi.set(__self__, "name", name)
 
@@ -117,6 +121,18 @@ class EmailIpPoolArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="lastIpDrainPeriodInHours")
+    def last_ip_drain_period_in_hours(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+        """
+        return pulumi.get(self, "last_ip_drain_period_in_hours")
+
+    @last_ip_drain_period_in_hours.setter
+    def last_ip_drain_period_in_hours(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "last_ip_drain_period_in_hours", value)
+
+    @_builtins.property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -136,6 +152,7 @@ class _EmailIpPoolState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 last_ip_drain_period_in_hours: Optional[pulumi.Input[_builtins.int]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['EmailIpPoolLockArgs']]]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -152,6 +169,7 @@ class _EmailIpPoolState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the IpPool. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.int] last_ip_drain_period_in_hours: (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
         :param pulumi.Input[Sequence[pulumi.Input['EmailIpPoolLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] name: The name of the IpPool. The name must be unique within a region.  The name is case sensitive and supported characters include alphanumeric, hyphens ("-") and underscore ("_") characters.  Example: green_pool-1
@@ -173,6 +191,8 @@ class _EmailIpPoolState:
             pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if last_ip_drain_period_in_hours is not None:
+            pulumi.set(__self__, "last_ip_drain_period_in_hours", last_ip_drain_period_in_hours)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if locks is not None:
@@ -239,6 +259,18 @@ class _EmailIpPoolState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="lastIpDrainPeriodInHours")
+    def last_ip_drain_period_in_hours(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+        """
+        return pulumi.get(self, "last_ip_drain_period_in_hours")
+
+    @last_ip_drain_period_in_hours.setter
+    def last_ip_drain_period_in_hours(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "last_ip_drain_period_in_hours", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
@@ -360,6 +392,7 @@ class EmailIpPool(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 last_ip_drain_period_in_hours: Optional[pulumi.Input[_builtins.int]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  outbound_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -384,7 +417,8 @@ class EmailIpPool(pulumi.CustomResource):
             description=email_ip_pool_description,
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            last_ip_drain_period_in_hours=email_ip_pool_last_ip_drain_period_in_hours)
         ```
 
         ## Import
@@ -402,6 +436,7 @@ class EmailIpPool(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the IpPool. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.int] last_ip_drain_period_in_hours: (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
         :param pulumi.Input[_builtins.str] name: The name of the IpPool. The name must be unique within a region.  The name is case sensitive and supported characters include alphanumeric, hyphens ("-") and underscore ("_") characters.  Example: green_pool-1
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] outbound_ips: A list of outbound public IPs for assignment to the IpPool. These IPs must be in the AVAILABLE state to be eligible for assignment.
                
@@ -436,7 +471,8 @@ class EmailIpPool(pulumi.CustomResource):
             description=email_ip_pool_description,
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            last_ip_drain_period_in_hours=email_ip_pool_last_ip_drain_period_in_hours)
         ```
 
         ## Import
@@ -467,6 +503,7 @@ class EmailIpPool(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 last_ip_drain_period_in_hours: Optional[pulumi.Input[_builtins.int]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  outbound_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -484,6 +521,7 @@ class EmailIpPool(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["last_ip_drain_period_in_hours"] = last_ip_drain_period_in_hours
             __props__.__dict__["name"] = name
             if outbound_ips is None and not opts.urn:
                 raise TypeError("Missing required property 'outbound_ips'")
@@ -509,6 +547,7 @@ class EmailIpPool(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            last_ip_drain_period_in_hours: Optional[pulumi.Input[_builtins.int]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
             locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['EmailIpPoolLockArgs', 'EmailIpPoolLockArgsDict']]]]] = None,
             name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -529,6 +568,7 @@ class EmailIpPool(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the IpPool. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.int] last_ip_drain_period_in_hours: (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
         :param pulumi.Input[Sequence[pulumi.Input[Union['EmailIpPoolLockArgs', 'EmailIpPoolLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] name: The name of the IpPool. The name must be unique within a region.  The name is case sensitive and supported characters include alphanumeric, hyphens ("-") and underscore ("_") characters.  Example: green_pool-1
@@ -550,6 +590,7 @@ class EmailIpPool(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["last_ip_drain_period_in_hours"] = last_ip_drain_period_in_hours
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["locks"] = locks
         __props__.__dict__["name"] = name
@@ -592,6 +633,14 @@ class EmailIpPool(pulumi.CustomResource):
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="lastIpDrainPeriodInHours")
+    def last_ip_drain_period_in_hours(self) -> pulumi.Output[_builtins.int]:
+        """
+        (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+        """
+        return pulumi.get(self, "last_ip_drain_period_in_hours")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")

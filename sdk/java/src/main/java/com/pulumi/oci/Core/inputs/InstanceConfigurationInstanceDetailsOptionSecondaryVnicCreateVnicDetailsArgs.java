@@ -124,9 +124,17 @@ public final class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreate
         return Optional.ofNullable(this.hostnameLabel);
     }
 
+    /**
+     * A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+     * 
+     */
     @Import(name="ipv6addressIpv6subnetCidrPairDetails")
     private @Nullable Output<List<InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs>> ipv6addressIpv6subnetCidrPairDetails;
 
+    /**
+     * @return A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+     * 
+     */
     public Optional<Output<List<InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs>>> ipv6addressIpv6subnetCidrPairDetails() {
         return Optional.ofNullable(this.ipv6addressIpv6subnetCidrPairDetails);
     }
@@ -162,14 +170,29 @@ public final class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreate
     }
 
     /**
-     * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+     * 
+     */
+    @Import(name="privateIpId")
+    private @Nullable Output<String> privateIpId;
+
+    /**
+     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+     * 
+     */
+    public Optional<Output<String>> privateIpId() {
+        return Optional.ofNullable(this.privateIpId);
+    }
+
+    /**
+     * [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
      * 
      */
     @Import(name="securityAttributes")
     private @Nullable Output<Map<String,String>> securityAttributes;
 
     /**
-     * @return Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
      * 
      */
     public Optional<Output<Map<String,String>>> securityAttributes() {
@@ -234,6 +257,7 @@ public final class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreate
         this.ipv6addressIpv6subnetCidrPairDetails = $.ipv6addressIpv6subnetCidrPairDetails;
         this.nsgIds = $.nsgIds;
         this.privateIp = $.privateIp;
+        this.privateIpId = $.privateIpId;
         this.securityAttributes = $.securityAttributes;
         this.skipSourceDestCheck = $.skipSourceDestCheck;
         this.subnetCidr = $.subnetCidr;
@@ -405,15 +429,33 @@ public final class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreate
             return hostnameLabel(Output.of(hostnameLabel));
         }
 
+        /**
+         * @param ipv6addressIpv6subnetCidrPairDetails A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipv6addressIpv6subnetCidrPairDetails(@Nullable Output<List<InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs>> ipv6addressIpv6subnetCidrPairDetails) {
             $.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             return this;
         }
 
+        /**
+         * @param ipv6addressIpv6subnetCidrPairDetails A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipv6addressIpv6subnetCidrPairDetails(List<InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs> ipv6addressIpv6subnetCidrPairDetails) {
             return ipv6addressIpv6subnetCidrPairDetails(Output.of(ipv6addressIpv6subnetCidrPairDetails));
         }
 
+        /**
+         * @param ipv6addressIpv6subnetCidrPairDetails A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipv6addressIpv6subnetCidrPairDetails(InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs... ipv6addressIpv6subnetCidrPairDetails) {
             return ipv6addressIpv6subnetCidrPairDetails(List.of(ipv6addressIpv6subnetCidrPairDetails));
         }
@@ -471,7 +513,28 @@ public final class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreate
         }
 
         /**
-         * @param securityAttributes Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+         * @param privateIpId An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateIpId(@Nullable Output<String> privateIpId) {
+            $.privateIpId = privateIpId;
+            return this;
+        }
+
+        /**
+         * @param privateIpId An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateIpId(String privateIpId) {
+            return privateIpId(Output.of(privateIpId));
+        }
+
+        /**
+         * @param securityAttributes [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
          * 
          * @return builder
          * 
@@ -482,7 +545,7 @@ public final class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreate
         }
 
         /**
-         * @param securityAttributes Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+         * @param securityAttributes [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
          * 
          * @return builder
          * 

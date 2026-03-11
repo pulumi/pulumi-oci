@@ -40,9 +40,18 @@ namespace Pulumi.Oci.Core
     ///             DisplayName = vnicAttachmentCreateVnicDetailsDisplayName,
     ///             FreeformTags = vnicAttachmentCreateVnicDetailsFreeformTags,
     ///             HostnameLabel = vnicAttachmentCreateVnicDetailsHostnameLabel,
-    ///             Ipv6addressIpv6subnetCidrPairDetails = vnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetails,
+    ///             Ipv6addressIpv6subnetCidrPairDetails = new[]
+    ///             {
+    ///                 new Oci.Core.Inputs.VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs
+    ///                 {
+    ///                     Ipv6address = vnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address,
+    ///                     Ipv6id = testIpv6.Id,
+    ///                     Ipv6subnetCidr = vnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
+    ///                 },
+    ///             },
     ///             NsgIds = vnicAttachmentCreateVnicDetailsNsgIds,
     ///             PrivateIp = vnicAttachmentCreateVnicDetailsPrivateIp,
+    ///             PrivateIpId = testPrivateIp.Id,
     ///             SecurityAttributes = vnicAttachmentCreateVnicDetailsSecurityAttributes,
     ///             SkipSourceDestCheck = vnicAttachmentCreateVnicDetailsSkipSourceDestCheck,
     ///             SubnetCidr = vnicAttachmentCreateVnicDetailsSubnetCidr,

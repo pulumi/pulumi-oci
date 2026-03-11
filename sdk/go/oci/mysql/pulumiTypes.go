@@ -20220,6 +20220,8 @@ type GetMysqlConfigurationsConfiguration struct {
 	// The OCID of the Configuration.
 	Id string `pulumi:"id"`
 	// DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+	//
+	// Deprecated: The 'init_variables' field has been deprecated. Please use 'options' instead.
 	InitVariables []GetMysqlConfigurationsConfigurationInitVariable `pulumi:"initVariables"`
 	// The MySQL options defined in the Configuration.
 	Options []GetMysqlConfigurationsConfigurationOption `pulumi:"options"`
@@ -20238,6 +20240,8 @@ type GetMysqlConfigurationsConfiguration struct {
 	// The requested Configuration types.
 	Type string `pulumi:"type"`
 	// DEPRECATED -- please use the `options` field instead. User-defined service variables.
+	//
+	// Deprecated: The 'variables' field has been deprecated. Please use 'options' instead.
 	Variables []GetMysqlConfigurationsConfigurationVariable `pulumi:"variables"`
 }
 
@@ -20266,6 +20270,8 @@ type GetMysqlConfigurationsConfigurationArgs struct {
 	// The OCID of the Configuration.
 	Id pulumi.StringInput `pulumi:"id"`
 	// DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+	//
+	// Deprecated: The 'init_variables' field has been deprecated. Please use 'options' instead.
 	InitVariables GetMysqlConfigurationsConfigurationInitVariableArrayInput `pulumi:"initVariables"`
 	// The MySQL options defined in the Configuration.
 	Options GetMysqlConfigurationsConfigurationOptionArrayInput `pulumi:"options"`
@@ -20284,6 +20290,8 @@ type GetMysqlConfigurationsConfigurationArgs struct {
 	// The requested Configuration types.
 	Type pulumi.StringInput `pulumi:"type"`
 	// DEPRECATED -- please use the `options` field instead. User-defined service variables.
+	//
+	// Deprecated: The 'variables' field has been deprecated. Please use 'options' instead.
 	Variables GetMysqlConfigurationsConfigurationVariableArrayInput `pulumi:"variables"`
 }
 
@@ -20369,6 +20377,8 @@ func (o GetMysqlConfigurationsConfigurationOutput) Id() pulumi.StringOutput {
 }
 
 // DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+//
+// Deprecated: The 'init_variables' field has been deprecated. Please use 'options' instead.
 func (o GetMysqlConfigurationsConfigurationOutput) InitVariables() GetMysqlConfigurationsConfigurationInitVariableArrayOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) []GetMysqlConfigurationsConfigurationInitVariable {
 		return v.InitVariables
@@ -20418,6 +20428,8 @@ func (o GetMysqlConfigurationsConfigurationOutput) Type() pulumi.StringOutput {
 }
 
 // DEPRECATED -- please use the `options` field instead. User-defined service variables.
+//
+// Deprecated: The 'variables' field has been deprecated. Please use 'options' instead.
 func (o GetMysqlConfigurationsConfigurationOutput) Variables() GetMysqlConfigurationsConfigurationVariableArrayOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) []GetMysqlConfigurationsConfigurationVariable {
 		return v.Variables

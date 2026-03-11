@@ -31,6 +31,11 @@ public final class EmailIpPoolOutboundIpsResponse {
      * 
      */
     private @Nullable String state;
+    /**
+     * @return The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, &#34;YYYY-MM-ddThh:mmZ&#34;. Example: `2021-02-12T22:47:12.613Z`
+     * 
+     */
+    private @Nullable String timeUnassigned;
 
     private EmailIpPoolOutboundIpsResponse() {}
     /**
@@ -61,6 +66,13 @@ public final class EmailIpPoolOutboundIpsResponse {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    /**
+     * @return The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, &#34;YYYY-MM-ddThh:mmZ&#34;. Example: `2021-02-12T22:47:12.613Z`
+     * 
+     */
+    public Optional<String> timeUnassigned() {
+        return Optional.ofNullable(this.timeUnassigned);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -75,6 +87,7 @@ public final class EmailIpPoolOutboundIpsResponse {
         private @Nullable String lifecycleDetails;
         private @Nullable String outboundIp;
         private @Nullable String state;
+        private @Nullable String timeUnassigned;
         public Builder() {}
         public Builder(EmailIpPoolOutboundIpsResponse defaults) {
     	      Objects.requireNonNull(defaults);
@@ -82,6 +95,7 @@ public final class EmailIpPoolOutboundIpsResponse {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.outboundIp = defaults.outboundIp;
     	      this.state = defaults.state;
+    	      this.timeUnassigned = defaults.timeUnassigned;
         }
 
         @CustomType.Setter
@@ -108,12 +122,19 @@ public final class EmailIpPoolOutboundIpsResponse {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
+        public Builder timeUnassigned(@Nullable String timeUnassigned) {
+
+            this.timeUnassigned = timeUnassigned;
+            return this;
+        }
         public EmailIpPoolOutboundIpsResponse build() {
             final var _resultValue = new EmailIpPoolOutboundIpsResponse();
             _resultValue.assignmentState = assignmentState;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.outboundIp = outboundIp;
             _resultValue.state = state;
+            _resultValue.timeUnassigned = timeUnassigned;
             return _resultValue;
         }
     }

@@ -75,6 +75,21 @@ public final class EmailIpPoolOutboundIpsResponseArgs extends com.pulumi.resourc
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, &#34;YYYY-MM-ddThh:mmZ&#34;. Example: `2021-02-12T22:47:12.613Z`
+     * 
+     */
+    @Import(name="timeUnassigned")
+    private @Nullable Output<String> timeUnassigned;
+
+    /**
+     * @return The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, &#34;YYYY-MM-ddThh:mmZ&#34;. Example: `2021-02-12T22:47:12.613Z`
+     * 
+     */
+    public Optional<Output<String>> timeUnassigned() {
+        return Optional.ofNullable(this.timeUnassigned);
+    }
+
     private EmailIpPoolOutboundIpsResponseArgs() {}
 
     private EmailIpPoolOutboundIpsResponseArgs(EmailIpPoolOutboundIpsResponseArgs $) {
@@ -82,6 +97,7 @@ public final class EmailIpPoolOutboundIpsResponseArgs extends com.pulumi.resourc
         this.lifecycleDetails = $.lifecycleDetails;
         this.outboundIp = $.outboundIp;
         this.state = $.state;
+        this.timeUnassigned = $.timeUnassigned;
     }
 
     public static Builder builder() {
@@ -184,6 +200,27 @@ public final class EmailIpPoolOutboundIpsResponseArgs extends com.pulumi.resourc
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param timeUnassigned The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, &#34;YYYY-MM-ddThh:mmZ&#34;. Example: `2021-02-12T22:47:12.613Z`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeUnassigned(@Nullable Output<String> timeUnassigned) {
+            $.timeUnassigned = timeUnassigned;
+            return this;
+        }
+
+        /**
+         * @param timeUnassigned The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, &#34;YYYY-MM-ddThh:mmZ&#34;. Example: `2021-02-12T22:47:12.613Z`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeUnassigned(String timeUnassigned) {
+            return timeUnassigned(Output.of(timeUnassigned));
         }
 
         public EmailIpPoolOutboundIpsResponseArgs build() {

@@ -15,25 +15,61 @@ public final class VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairD
 
     public static final VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs Empty = new VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs();
 
-    @Import(name="ipv6Address")
-    private @Nullable Output<String> ipv6Address;
+    /**
+     * An IPv6 address of your choice. Must be an available IPv6 address within the subnet&#39;s prefix. If an IPv6 address is not provided:
+     * * Oracle will automatically assign an IPv6 address from the subnet&#39;s IPv6 prefix if and only if there is only one IPv6 prefix on the subnet.
+     * * Oracle will automatically assign an IPv6 address from the subnet&#39;s IPv6 Oracle GUA prefix if it exists on the subnet.
+     * 
+     */
+    @Import(name="ipv6address")
+    private @Nullable Output<String> ipv6address;
 
-    public Optional<Output<String>> ipv6Address() {
-        return Optional.ofNullable(this.ipv6Address);
+    /**
+     * @return An IPv6 address of your choice. Must be an available IPv6 address within the subnet&#39;s prefix. If an IPv6 address is not provided:
+     * * Oracle will automatically assign an IPv6 address from the subnet&#39;s IPv6 prefix if and only if there is only one IPv6 prefix on the subnet.
+     * * Oracle will automatically assign an IPv6 address from the subnet&#39;s IPv6 Oracle GUA prefix if it exists on the subnet.
+     * 
+     */
+    public Optional<Output<String>> ipv6address() {
+        return Optional.ofNullable(this.ipv6address);
     }
 
-    @Import(name="ipv6SubnetCidr")
-    private @Nullable Output<String> ipv6SubnetCidr;
+    /**
+     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+     * 
+     */
+    @Import(name="ipv6id")
+    private @Nullable Output<String> ipv6id;
 
-    public Optional<Output<String>> ipv6SubnetCidr() {
-        return Optional.ofNullable(this.ipv6SubnetCidr);
+    /**
+     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+     * 
+     */
+    public Optional<Output<String>> ipv6id() {
+        return Optional.ofNullable(this.ipv6id);
+    }
+
+    /**
+     * The IPv6 prefix allocated to the subnet.
+     * 
+     */
+    @Import(name="ipv6subnetCidr")
+    private @Nullable Output<String> ipv6subnetCidr;
+
+    /**
+     * @return The IPv6 prefix allocated to the subnet.
+     * 
+     */
+    public Optional<Output<String>> ipv6subnetCidr() {
+        return Optional.ofNullable(this.ipv6subnetCidr);
     }
 
     private VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs() {}
 
     private VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs(VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs $) {
-        this.ipv6Address = $.ipv6Address;
-        this.ipv6SubnetCidr = $.ipv6SubnetCidr;
+        this.ipv6address = $.ipv6address;
+        this.ipv6id = $.ipv6id;
+        this.ipv6subnetCidr = $.ipv6subnetCidr;
     }
 
     public static Builder builder() {
@@ -54,22 +90,71 @@ public final class VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairD
             $ = new VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder ipv6Address(@Nullable Output<String> ipv6Address) {
-            $.ipv6Address = ipv6Address;
+        /**
+         * @param ipv6address An IPv6 address of your choice. Must be an available IPv6 address within the subnet&#39;s prefix. If an IPv6 address is not provided:
+         * * Oracle will automatically assign an IPv6 address from the subnet&#39;s IPv6 prefix if and only if there is only one IPv6 prefix on the subnet.
+         * * Oracle will automatically assign an IPv6 address from the subnet&#39;s IPv6 Oracle GUA prefix if it exists on the subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6address(@Nullable Output<String> ipv6address) {
+            $.ipv6address = ipv6address;
             return this;
         }
 
-        public Builder ipv6Address(String ipv6Address) {
-            return ipv6Address(Output.of(ipv6Address));
+        /**
+         * @param ipv6address An IPv6 address of your choice. Must be an available IPv6 address within the subnet&#39;s prefix. If an IPv6 address is not provided:
+         * * Oracle will automatically assign an IPv6 address from the subnet&#39;s IPv6 prefix if and only if there is only one IPv6 prefix on the subnet.
+         * * Oracle will automatically assign an IPv6 address from the subnet&#39;s IPv6 Oracle GUA prefix if it exists on the subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6address(String ipv6address) {
+            return ipv6address(Output.of(ipv6address));
         }
 
-        public Builder ipv6SubnetCidr(@Nullable Output<String> ipv6SubnetCidr) {
-            $.ipv6SubnetCidr = ipv6SubnetCidr;
+        /**
+         * @param ipv6id An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6id(@Nullable Output<String> ipv6id) {
+            $.ipv6id = ipv6id;
             return this;
         }
 
-        public Builder ipv6SubnetCidr(String ipv6SubnetCidr) {
-            return ipv6SubnetCidr(Output.of(ipv6SubnetCidr));
+        /**
+         * @param ipv6id An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6id(String ipv6id) {
+            return ipv6id(Output.of(ipv6id));
+        }
+
+        /**
+         * @param ipv6subnetCidr The IPv6 prefix allocated to the subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6subnetCidr(@Nullable Output<String> ipv6subnetCidr) {
+            $.ipv6subnetCidr = ipv6subnetCidr;
+            return this;
+        }
+
+        /**
+         * @param ipv6subnetCidr The IPv6 prefix allocated to the subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6subnetCidr(String ipv6subnetCidr) {
+            return ipv6subnetCidr(Output.of(ipv6subnetCidr));
         }
 
         public VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs build() {

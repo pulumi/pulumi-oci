@@ -38,6 +38,7 @@ namespace Pulumi.Oci.Email
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         LastIpDrainPeriodInHours = emailIpPoolLastIpDrainPeriodInHours,
     ///     });
     /// 
     /// });
@@ -77,6 +78,12 @@ namespace Pulumi.Oci.Email
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+        /// </summary>
+        [Output("lastIpDrainPeriodInHours")]
+        public Output<int> LastIpDrainPeriodInHours { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
@@ -216,6 +223,12 @@ namespace Pulumi.Oci.Email
         }
 
         /// <summary>
+        /// (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+        /// </summary>
+        [Input("lastIpDrainPeriodInHours")]
+        public Input<int>? LastIpDrainPeriodInHours { get; set; }
+
+        /// <summary>
         /// The name of the IpPool. The name must be unique within a region.  The name is case sensitive and supported characters include alphanumeric, hyphens ("-") and underscore ("_") characters.  Example: green_pool-1
         /// </summary>
         [Input("name")]
@@ -280,6 +293,12 @@ namespace Pulumi.Oci.Email
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+        /// </summary>
+        [Input("lastIpDrainPeriodInHours")]
+        public Input<int>? LastIpDrainPeriodInHours { get; set; }
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.

@@ -99,14 +99,22 @@ public final class MysqlConfigurationArgs extends com.pulumi.resources.ResourceA
     /**
      * DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
      * 
+     * @deprecated
+     * The &#39;init_variables&#39; field has been deprecated. Please use &#39;options&#39; instead.
+     * 
      */
+    @Deprecated /* The 'init_variables' field has been deprecated. Please use 'options' instead. */
     @Import(name="initVariables")
     private @Nullable Output<MysqlConfigurationInitVariablesArgs> initVariables;
 
     /**
      * @return DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
      * 
+     * @deprecated
+     * The &#39;init_variables&#39; field has been deprecated. Please use &#39;options&#39; instead.
+     * 
      */
+    @Deprecated /* The 'init_variables' field has been deprecated. Please use 'options' instead. */
     public Optional<Output<MysqlConfigurationInitVariablesArgs>> initVariables() {
         return Optional.ofNullable(this.initVariables);
     }
@@ -159,14 +167,22 @@ public final class MysqlConfigurationArgs extends com.pulumi.resources.ResourceA
     /**
      * DEPRECATED -- please use the `options` field instead. User-defined service variables.
      * 
+     * @deprecated
+     * The &#39;variables&#39; field has been deprecated. Please use &#39;options&#39; instead.
+     * 
      */
+    @Deprecated /* The 'variables' field has been deprecated. Please use 'options' instead. */
     @Import(name="variables")
     private @Nullable Output<MysqlConfigurationVariablesArgs> variables;
 
     /**
      * @return DEPRECATED -- please use the `options` field instead. User-defined service variables.
      * 
+     * @deprecated
+     * The &#39;variables&#39; field has been deprecated. Please use &#39;options&#39; instead.
+     * 
      */
+    @Deprecated /* The 'variables' field has been deprecated. Please use 'options' instead. */
     public Optional<Output<MysqlConfigurationVariablesArgs>> variables() {
         return Optional.ofNullable(this.variables);
     }
@@ -314,7 +330,11 @@ public final class MysqlConfigurationArgs extends com.pulumi.resources.ResourceA
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;init_variables&#39; field has been deprecated. Please use &#39;options&#39; instead.
+         * 
          */
+        @Deprecated /* The 'init_variables' field has been deprecated. Please use 'options' instead. */
         public Builder initVariables(@Nullable Output<MysqlConfigurationInitVariablesArgs> initVariables) {
             $.initVariables = initVariables;
             return this;
@@ -325,7 +345,11 @@ public final class MysqlConfigurationArgs extends com.pulumi.resources.ResourceA
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;init_variables&#39; field has been deprecated. Please use &#39;options&#39; instead.
+         * 
          */
+        @Deprecated /* The 'init_variables' field has been deprecated. Please use 'options' instead. */
         public Builder initVariables(MysqlConfigurationInitVariablesArgs initVariables) {
             return initVariables(Output.of(initVariables));
         }
@@ -408,7 +432,11 @@ public final class MysqlConfigurationArgs extends com.pulumi.resources.ResourceA
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;variables&#39; field has been deprecated. Please use &#39;options&#39; instead.
+         * 
          */
+        @Deprecated /* The 'variables' field has been deprecated. Please use 'options' instead. */
         public Builder variables(@Nullable Output<MysqlConfigurationVariablesArgs> variables) {
             $.variables = variables;
             return this;
@@ -419,7 +447,11 @@ public final class MysqlConfigurationArgs extends com.pulumi.resources.ResourceA
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;variables&#39; field has been deprecated. Please use &#39;options&#39; instead.
+         * 
          */
+        @Deprecated /* The 'variables' field has been deprecated. Please use 'options' instead. */
         public Builder variables(MysqlConfigurationVariablesArgs variables) {
             return variables(Output.of(variables));
         }

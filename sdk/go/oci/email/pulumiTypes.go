@@ -288,6 +288,8 @@ type EmailIpPoolOutboundIpsResponse struct {
 	OutboundIp *string `pulumi:"outboundIp"`
 	// The current state of the IpPool.
 	State *string `pulumi:"state"`
+	// The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
+	TimeUnassigned *string `pulumi:"timeUnassigned"`
 }
 
 // EmailIpPoolOutboundIpsResponseInput is an input type that accepts EmailIpPoolOutboundIpsResponseArgs and EmailIpPoolOutboundIpsResponseOutput values.
@@ -310,6 +312,8 @@ type EmailIpPoolOutboundIpsResponseArgs struct {
 	OutboundIp pulumi.StringPtrInput `pulumi:"outboundIp"`
 	// The current state of the IpPool.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
+	TimeUnassigned pulumi.StringPtrInput `pulumi:"timeUnassigned"`
 }
 
 func (EmailIpPoolOutboundIpsResponseArgs) ElementType() reflect.Type {
@@ -381,6 +385,11 @@ func (o EmailIpPoolOutboundIpsResponseOutput) OutboundIp() pulumi.StringPtrOutpu
 // The current state of the IpPool.
 func (o EmailIpPoolOutboundIpsResponseOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EmailIpPoolOutboundIpsResponse) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
+func (o EmailIpPoolOutboundIpsResponseOutput) TimeUnassigned() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EmailIpPoolOutboundIpsResponse) *string { return v.TimeUnassigned }).(pulumi.StringPtrOutput)
 }
 
 type EmailIpPoolOutboundIpsResponseArrayOutput struct{ *pulumi.OutputState }
@@ -1948,6 +1957,8 @@ type GetEmailIpPoolOutboundIpsResponse struct {
 	OutboundIp string `pulumi:"outboundIp"`
 	// The current state of the IpPool.
 	State string `pulumi:"state"`
+	// The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
+	TimeUnassigned string `pulumi:"timeUnassigned"`
 }
 
 // GetEmailIpPoolOutboundIpsResponseInput is an input type that accepts GetEmailIpPoolOutboundIpsResponseArgs and GetEmailIpPoolOutboundIpsResponseOutput values.
@@ -1970,6 +1981,8 @@ type GetEmailIpPoolOutboundIpsResponseArgs struct {
 	OutboundIp pulumi.StringInput `pulumi:"outboundIp"`
 	// The current state of the IpPool.
 	State pulumi.StringInput `pulumi:"state"`
+	// The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
+	TimeUnassigned pulumi.StringInput `pulumi:"timeUnassigned"`
 }
 
 func (GetEmailIpPoolOutboundIpsResponseArgs) ElementType() reflect.Type {
@@ -2041,6 +2054,11 @@ func (o GetEmailIpPoolOutboundIpsResponseOutput) OutboundIp() pulumi.StringOutpu
 // The current state of the IpPool.
 func (o GetEmailIpPoolOutboundIpsResponseOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEmailIpPoolOutboundIpsResponse) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
+func (o GetEmailIpPoolOutboundIpsResponseOutput) TimeUnassigned() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolOutboundIpsResponse) string { return v.TimeUnassigned }).(pulumi.StringOutput)
 }
 
 type GetEmailIpPoolOutboundIpsResponseArrayOutput struct{ *pulumi.OutputState }
@@ -2170,6 +2188,8 @@ type GetEmailIpPoolsEmailIpPoolCollectionItem struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A filter to only return resources that match the given id exactly.
 	Id string `pulumi:"id"`
+	// Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+	LastIpDrainPeriodInHours int `pulumi:"lastIpDrainPeriodInHours"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
@@ -2211,6 +2231,8 @@ type GetEmailIpPoolsEmailIpPoolCollectionItemArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A filter to only return resources that match the given id exactly.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+	LastIpDrainPeriodInHours pulumi.IntInput `pulumi:"lastIpDrainPeriodInHours"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
@@ -2304,6 +2326,11 @@ func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutput) FreeformTags() pulumi.St
 // A filter to only return resources that match the given id exactly.
 func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutput) LastIpDrainPeriodInHours() pulumi.IntOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItem) int { return v.LastIpDrainPeriodInHours }).(pulumi.IntOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
@@ -2516,6 +2543,8 @@ type GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponse struct {
 	OutboundIp string `pulumi:"outboundIp"`
 	// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
 	State string `pulumi:"state"`
+	// The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
+	TimeUnassigned string `pulumi:"timeUnassigned"`
 }
 
 // GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseInput is an input type that accepts GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArgs and GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput values.
@@ -2538,6 +2567,8 @@ type GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArgs struct {
 	OutboundIp pulumi.StringInput `pulumi:"outboundIp"`
 	// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
 	State pulumi.StringInput `pulumi:"state"`
+	// The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
+	TimeUnassigned pulumi.StringInput `pulumi:"timeUnassigned"`
 }
 
 func (GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArgs) ElementType() reflect.Type {
@@ -2609,6 +2640,11 @@ func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput) Outbo
 // Filter returned list by specified lifecycle state. This parameter is case-insensitive.
 func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponse) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
+func (o GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseOutput) TimeUnassigned() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponse) string { return v.TimeUnassigned }).(pulumi.StringOutput)
 }
 
 type GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseArrayOutput struct{ *pulumi.OutputState }
@@ -2848,6 +2884,8 @@ type GetEmailOutboundIpsEmailOutboundIpCollectionItem struct {
 	OutboundIp string `pulumi:"outboundIp"`
 	// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
 	State string `pulumi:"state"`
+	// The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
+	TimeUnassigned string `pulumi:"timeUnassigned"`
 }
 
 // GetEmailOutboundIpsEmailOutboundIpCollectionItemInput is an input type that accepts GetEmailOutboundIpsEmailOutboundIpCollectionItemArgs and GetEmailOutboundIpsEmailOutboundIpCollectionItemOutput values.
@@ -2870,6 +2908,8 @@ type GetEmailOutboundIpsEmailOutboundIpCollectionItemArgs struct {
 	OutboundIp pulumi.StringInput `pulumi:"outboundIp"`
 	// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
 	State pulumi.StringInput `pulumi:"state"`
+	// The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
+	TimeUnassigned pulumi.StringInput `pulumi:"timeUnassigned"`
 }
 
 func (GetEmailOutboundIpsEmailOutboundIpCollectionItemArgs) ElementType() reflect.Type {
@@ -2941,6 +2981,11 @@ func (o GetEmailOutboundIpsEmailOutboundIpCollectionItemOutput) OutboundIp() pul
 // Filter returned list by specified lifecycle state. This parameter is case-insensitive.
 func (o GetEmailOutboundIpsEmailOutboundIpCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEmailOutboundIpsEmailOutboundIpCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
+func (o GetEmailOutboundIpsEmailOutboundIpCollectionItemOutput) TimeUnassigned() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailOutboundIpsEmailOutboundIpCollectionItem) string { return v.TimeUnassigned }).(pulumi.StringOutput)
 }
 
 type GetEmailOutboundIpsEmailOutboundIpCollectionItemArrayOutput struct{ *pulumi.OutputState }

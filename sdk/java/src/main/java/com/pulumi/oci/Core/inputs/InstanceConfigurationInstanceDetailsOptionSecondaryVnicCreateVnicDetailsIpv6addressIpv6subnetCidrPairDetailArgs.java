@@ -15,16 +15,47 @@ public final class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreate
 
     public static final InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs Empty = new InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs();
 
+    /**
+     * Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+     * 
+     */
     @Import(name="ipv6address")
     private @Nullable Output<String> ipv6address;
 
+    /**
+     * @return Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+     * 
+     */
     public Optional<Output<String>> ipv6address() {
         return Optional.ofNullable(this.ipv6address);
     }
 
+    /**
+     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+     * 
+     */
+    @Import(name="ipv6id")
+    private @Nullable Output<String> ipv6id;
+
+    /**
+     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+     * 
+     */
+    public Optional<Output<String>> ipv6id() {
+        return Optional.ofNullable(this.ipv6id);
+    }
+
+    /**
+     * Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+     * 
+     */
     @Import(name="ipv6subnetCidr")
     private @Nullable Output<String> ipv6subnetCidr;
 
+    /**
+     * @return Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+     * 
+     */
     public Optional<Output<String>> ipv6subnetCidr() {
         return Optional.ofNullable(this.ipv6subnetCidr);
     }
@@ -33,6 +64,7 @@ public final class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreate
 
     private InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs(InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs $) {
         this.ipv6address = $.ipv6address;
+        this.ipv6id = $.ipv6id;
         this.ipv6subnetCidr = $.ipv6subnetCidr;
     }
 
@@ -54,20 +86,65 @@ public final class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreate
             $ = new InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param ipv6address Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipv6address(@Nullable Output<String> ipv6address) {
             $.ipv6address = ipv6address;
             return this;
         }
 
+        /**
+         * @param ipv6address Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipv6address(String ipv6address) {
             return ipv6address(Output.of(ipv6address));
         }
 
+        /**
+         * @param ipv6id An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6id(@Nullable Output<String> ipv6id) {
+            $.ipv6id = ipv6id;
+            return this;
+        }
+
+        /**
+         * @param ipv6id An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6id(String ipv6id) {
+            return ipv6id(Output.of(ipv6id));
+        }
+
+        /**
+         * @param ipv6subnetCidr Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipv6subnetCidr(@Nullable Output<String> ipv6subnetCidr) {
             $.ipv6subnetCidr = ipv6subnetCidr;
             return this;
         }
 
+        /**
+         * @param ipv6subnetCidr Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipv6subnetCidr(String ipv6subnetCidr) {
             return ipv6subnetCidr(Output.of(ipv6subnetCidr));
         }

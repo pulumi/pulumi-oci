@@ -27,7 +27,7 @@ class GetEmailIpPoolResult:
     """
     A collection of values returned by getEmailIpPool.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, email_ip_pool_id=None, freeform_tags=None, id=None, lifecycle_details=None, locks=None, name=None, outbound_ips=None, outbound_ips_responses=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, email_ip_pool_id=None, freeform_tags=None, id=None, last_ip_drain_period_in_hours=None, lifecycle_details=None, locks=None, name=None, outbound_ips=None, outbound_ips_responses=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -46,6 +46,9 @@ class GetEmailIpPoolResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if last_ip_drain_period_in_hours and not isinstance(last_ip_drain_period_in_hours, int):
+            raise TypeError("Expected argument 'last_ip_drain_period_in_hours' to be a int")
+        pulumi.set(__self__, "last_ip_drain_period_in_hours", last_ip_drain_period_in_hours)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -118,6 +121,14 @@ class GetEmailIpPoolResult:
         The unique [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IpPool resource that is immutable on creation.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lastIpDrainPeriodInHours")
+    def last_ip_drain_period_in_hours(self) -> _builtins.int:
+        """
+        Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+        """
+        return pulumi.get(self, "last_ip_drain_period_in_hours")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
@@ -201,6 +212,7 @@ class AwaitableGetEmailIpPoolResult(GetEmailIpPoolResult):
             email_ip_pool_id=self.email_ip_pool_id,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            last_ip_drain_period_in_hours=self.last_ip_drain_period_in_hours,
             lifecycle_details=self.lifecycle_details,
             locks=self.locks,
             name=self.name,
@@ -243,6 +255,7 @@ def get_email_ip_pool(email_ip_pool_id: Optional[_builtins.str] = None,
         email_ip_pool_id=pulumi.get(__ret__, 'email_ip_pool_id'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        last_ip_drain_period_in_hours=pulumi.get(__ret__, 'last_ip_drain_period_in_hours'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         locks=pulumi.get(__ret__, 'locks'),
         name=pulumi.get(__ret__, 'name'),
@@ -282,6 +295,7 @@ def get_email_ip_pool_output(email_ip_pool_id: Optional[pulumi.Input[_builtins.s
         email_ip_pool_id=pulumi.get(__response__, 'email_ip_pool_id'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        last_ip_drain_period_in_hours=pulumi.get(__response__, 'last_ip_drain_period_in_hours'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         locks=pulumi.get(__response__, 'locks'),
         name=pulumi.get(__response__, 'name'),

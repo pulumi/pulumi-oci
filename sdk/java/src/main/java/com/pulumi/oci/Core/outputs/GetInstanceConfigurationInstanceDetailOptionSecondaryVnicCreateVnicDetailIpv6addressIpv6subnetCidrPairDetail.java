@@ -16,6 +16,11 @@ public final class GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCrea
      */
     private String ipv6address;
     /**
+     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+     * 
+     */
+    private String ipv6id;
+    /**
      * @return Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
      * 
      */
@@ -28,6 +33,13 @@ public final class GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCrea
      */
     public String ipv6address() {
         return this.ipv6address;
+    }
+    /**
+     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+     * 
+     */
+    public String ipv6id() {
+        return this.ipv6id;
     }
     /**
      * @return Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
@@ -47,11 +59,13 @@ public final class GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCrea
     @CustomType.Builder
     public static final class Builder {
         private String ipv6address;
+        private String ipv6id;
         private String ipv6subnetCidr;
         public Builder() {}
         public Builder(GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ipv6address = defaults.ipv6address;
+    	      this.ipv6id = defaults.ipv6id;
     	      this.ipv6subnetCidr = defaults.ipv6subnetCidr;
         }
 
@@ -61,6 +75,14 @@ public final class GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCrea
               throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail", "ipv6address");
             }
             this.ipv6address = ipv6address;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ipv6id(String ipv6id) {
+            if (ipv6id == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail", "ipv6id");
+            }
+            this.ipv6id = ipv6id;
             return this;
         }
         @CustomType.Setter
@@ -74,6 +96,7 @@ public final class GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCrea
         public GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail build() {
             final var _resultValue = new GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail();
             _resultValue.ipv6address = ipv6address;
+            _resultValue.ipv6id = ipv6id;
             _resultValue.ipv6subnetCidr = ipv6subnetCidr;
             return _resultValue;
         }

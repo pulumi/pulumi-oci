@@ -109,6 +109,14 @@ import com.pulumi.oci.Identity.inputs.GetDomainsGroupArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsGroupPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsGroupsArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsGroupsPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderTemplateArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderTemplatePlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderTemplatesArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderTemplatesPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProvidersArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProvidersPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustsArgs;
@@ -364,6 +372,10 @@ import com.pulumi.oci.Identity.outputs.GetDomainsGrantResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsGrantsResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsGroupResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsGroupsResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsIdentityProofingProviderResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsIdentityProofingProviderTemplateResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsIdentityProofingProviderTemplatesResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsIdentityProofingProvidersResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsIdentityPropagationTrustResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsIdentityPropagationTrustsResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsIdentityProviderResult;
@@ -12659,6 +12671,966 @@ public final class IdentityFunctions {
      */
     public static CompletableFuture<GetDomainsGroupsResult> getDomainsGroupsPlain(GetDomainsGroupsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsGroups:getDomainsGroups", TypeShape.of(GetDomainsGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Identity Proofing Provider resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get an IdentityProofingProvider.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProofingProvider = IdentityFunctions.getDomainsIdentityProofingProvider(GetDomainsIdentityProofingProviderArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProofingProviderId(testIdentityProofingProviderOciIdentityDomainsIdentityProofingProvider.id())
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(identityProofingProviderAuthorization)
+     *             .resourceTypeSchemaVersion(identityProofingProviderResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDomainsIdentityProofingProviderResult> getDomainsIdentityProofingProvider(GetDomainsIdentityProofingProviderArgs args) {
+        return getDomainsIdentityProofingProvider(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Identity Proofing Provider resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get an IdentityProofingProvider.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProofingProvider = IdentityFunctions.getDomainsIdentityProofingProvider(GetDomainsIdentityProofingProviderArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProofingProviderId(testIdentityProofingProviderOciIdentityDomainsIdentityProofingProvider.id())
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(identityProofingProviderAuthorization)
+     *             .resourceTypeSchemaVersion(identityProofingProviderResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDomainsIdentityProofingProviderResult> getDomainsIdentityProofingProviderPlain(GetDomainsIdentityProofingProviderPlainArgs args) {
+        return getDomainsIdentityProofingProviderPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Identity Proofing Provider resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get an IdentityProofingProvider.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProofingProvider = IdentityFunctions.getDomainsIdentityProofingProvider(GetDomainsIdentityProofingProviderArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProofingProviderId(testIdentityProofingProviderOciIdentityDomainsIdentityProofingProvider.id())
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(identityProofingProviderAuthorization)
+     *             .resourceTypeSchemaVersion(identityProofingProviderResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDomainsIdentityProofingProviderResult> getDomainsIdentityProofingProvider(GetDomainsIdentityProofingProviderArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsIdentityProofingProvider:getDomainsIdentityProofingProvider", TypeShape.of(GetDomainsIdentityProofingProviderResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Identity Proofing Provider resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get an IdentityProofingProvider.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProofingProvider = IdentityFunctions.getDomainsIdentityProofingProvider(GetDomainsIdentityProofingProviderArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProofingProviderId(testIdentityProofingProviderOciIdentityDomainsIdentityProofingProvider.id())
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(identityProofingProviderAuthorization)
+     *             .resourceTypeSchemaVersion(identityProofingProviderResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDomainsIdentityProofingProviderResult> getDomainsIdentityProofingProvider(GetDomainsIdentityProofingProviderArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsIdentityProofingProvider:getDomainsIdentityProofingProvider", TypeShape.of(GetDomainsIdentityProofingProviderResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Identity Proofing Provider resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get an IdentityProofingProvider.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProofingProvider = IdentityFunctions.getDomainsIdentityProofingProvider(GetDomainsIdentityProofingProviderArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProofingProviderId(testIdentityProofingProviderOciIdentityDomainsIdentityProofingProvider.id())
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(identityProofingProviderAuthorization)
+     *             .resourceTypeSchemaVersion(identityProofingProviderResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDomainsIdentityProofingProviderResult> getDomainsIdentityProofingProviderPlain(GetDomainsIdentityProofingProviderPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsIdentityProofingProvider:getDomainsIdentityProofingProvider", TypeShape.of(GetDomainsIdentityProofingProviderResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Identity Proofing Provider Template resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get Identity Proofing Provider Configuration template.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderTemplateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProofingProviderTemplate = IdentityFunctions.getDomainsIdentityProofingProviderTemplate(GetDomainsIdentityProofingProviderTemplateArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProofingProviderTemplateId(testIdentityProofingProviderTemplateOciIdentityDomainsIdentityProofingProviderTemplate.id())
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(identityProofingProviderTemplateAuthorization)
+     *             .resourceTypeSchemaVersion(identityProofingProviderTemplateResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDomainsIdentityProofingProviderTemplateResult> getDomainsIdentityProofingProviderTemplate(GetDomainsIdentityProofingProviderTemplateArgs args) {
+        return getDomainsIdentityProofingProviderTemplate(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Identity Proofing Provider Template resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get Identity Proofing Provider Configuration template.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderTemplateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProofingProviderTemplate = IdentityFunctions.getDomainsIdentityProofingProviderTemplate(GetDomainsIdentityProofingProviderTemplateArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProofingProviderTemplateId(testIdentityProofingProviderTemplateOciIdentityDomainsIdentityProofingProviderTemplate.id())
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(identityProofingProviderTemplateAuthorization)
+     *             .resourceTypeSchemaVersion(identityProofingProviderTemplateResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDomainsIdentityProofingProviderTemplateResult> getDomainsIdentityProofingProviderTemplatePlain(GetDomainsIdentityProofingProviderTemplatePlainArgs args) {
+        return getDomainsIdentityProofingProviderTemplatePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Identity Proofing Provider Template resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get Identity Proofing Provider Configuration template.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderTemplateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProofingProviderTemplate = IdentityFunctions.getDomainsIdentityProofingProviderTemplate(GetDomainsIdentityProofingProviderTemplateArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProofingProviderTemplateId(testIdentityProofingProviderTemplateOciIdentityDomainsIdentityProofingProviderTemplate.id())
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(identityProofingProviderTemplateAuthorization)
+     *             .resourceTypeSchemaVersion(identityProofingProviderTemplateResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDomainsIdentityProofingProviderTemplateResult> getDomainsIdentityProofingProviderTemplate(GetDomainsIdentityProofingProviderTemplateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsIdentityProofingProviderTemplate:getDomainsIdentityProofingProviderTemplate", TypeShape.of(GetDomainsIdentityProofingProviderTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Identity Proofing Provider Template resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get Identity Proofing Provider Configuration template.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderTemplateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProofingProviderTemplate = IdentityFunctions.getDomainsIdentityProofingProviderTemplate(GetDomainsIdentityProofingProviderTemplateArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProofingProviderTemplateId(testIdentityProofingProviderTemplateOciIdentityDomainsIdentityProofingProviderTemplate.id())
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(identityProofingProviderTemplateAuthorization)
+     *             .resourceTypeSchemaVersion(identityProofingProviderTemplateResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDomainsIdentityProofingProviderTemplateResult> getDomainsIdentityProofingProviderTemplate(GetDomainsIdentityProofingProviderTemplateArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsIdentityProofingProviderTemplate:getDomainsIdentityProofingProviderTemplate", TypeShape.of(GetDomainsIdentityProofingProviderTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Identity Proofing Provider Template resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get Identity Proofing Provider Configuration template.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderTemplateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProofingProviderTemplate = IdentityFunctions.getDomainsIdentityProofingProviderTemplate(GetDomainsIdentityProofingProviderTemplateArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProofingProviderTemplateId(testIdentityProofingProviderTemplateOciIdentityDomainsIdentityProofingProviderTemplate.id())
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(identityProofingProviderTemplateAuthorization)
+     *             .resourceTypeSchemaVersion(identityProofingProviderTemplateResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDomainsIdentityProofingProviderTemplateResult> getDomainsIdentityProofingProviderTemplatePlain(GetDomainsIdentityProofingProviderTemplatePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsIdentityProofingProviderTemplate:getDomainsIdentityProofingProviderTemplate", TypeShape.of(GetDomainsIdentityProofingProviderTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Identity Proofing Provider Templates in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Identity Proofing Provider Configuration templates..
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderTemplatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProofingProviderTemplates = IdentityFunctions.getDomainsIdentityProofingProviderTemplates(GetDomainsIdentityProofingProviderTemplatesArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProofingProviderTemplateCount(identityProofingProviderTemplateIdentityProofingProviderTemplateCount)
+     *             .identityProofingProviderTemplateFilter(identityProofingProviderTemplateIdentityProofingProviderTemplateFilter)
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(identityProofingProviderTemplateAuthorization)
+     *             .resourceTypeSchemaVersion(identityProofingProviderTemplateResourceTypeSchemaVersion)
+     *             .startIndex(identityProofingProviderTemplateStartIndex)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDomainsIdentityProofingProviderTemplatesResult> getDomainsIdentityProofingProviderTemplates(GetDomainsIdentityProofingProviderTemplatesArgs args) {
+        return getDomainsIdentityProofingProviderTemplates(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Identity Proofing Provider Templates in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Identity Proofing Provider Configuration templates..
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderTemplatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProofingProviderTemplates = IdentityFunctions.getDomainsIdentityProofingProviderTemplates(GetDomainsIdentityProofingProviderTemplatesArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProofingProviderTemplateCount(identityProofingProviderTemplateIdentityProofingProviderTemplateCount)
+     *             .identityProofingProviderTemplateFilter(identityProofingProviderTemplateIdentityProofingProviderTemplateFilter)
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(identityProofingProviderTemplateAuthorization)
+     *             .resourceTypeSchemaVersion(identityProofingProviderTemplateResourceTypeSchemaVersion)
+     *             .startIndex(identityProofingProviderTemplateStartIndex)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDomainsIdentityProofingProviderTemplatesResult> getDomainsIdentityProofingProviderTemplatesPlain(GetDomainsIdentityProofingProviderTemplatesPlainArgs args) {
+        return getDomainsIdentityProofingProviderTemplatesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Identity Proofing Provider Templates in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Identity Proofing Provider Configuration templates..
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderTemplatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProofingProviderTemplates = IdentityFunctions.getDomainsIdentityProofingProviderTemplates(GetDomainsIdentityProofingProviderTemplatesArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProofingProviderTemplateCount(identityProofingProviderTemplateIdentityProofingProviderTemplateCount)
+     *             .identityProofingProviderTemplateFilter(identityProofingProviderTemplateIdentityProofingProviderTemplateFilter)
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(identityProofingProviderTemplateAuthorization)
+     *             .resourceTypeSchemaVersion(identityProofingProviderTemplateResourceTypeSchemaVersion)
+     *             .startIndex(identityProofingProviderTemplateStartIndex)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDomainsIdentityProofingProviderTemplatesResult> getDomainsIdentityProofingProviderTemplates(GetDomainsIdentityProofingProviderTemplatesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsIdentityProofingProviderTemplates:getDomainsIdentityProofingProviderTemplates", TypeShape.of(GetDomainsIdentityProofingProviderTemplatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Identity Proofing Provider Templates in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Identity Proofing Provider Configuration templates..
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderTemplatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProofingProviderTemplates = IdentityFunctions.getDomainsIdentityProofingProviderTemplates(GetDomainsIdentityProofingProviderTemplatesArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProofingProviderTemplateCount(identityProofingProviderTemplateIdentityProofingProviderTemplateCount)
+     *             .identityProofingProviderTemplateFilter(identityProofingProviderTemplateIdentityProofingProviderTemplateFilter)
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(identityProofingProviderTemplateAuthorization)
+     *             .resourceTypeSchemaVersion(identityProofingProviderTemplateResourceTypeSchemaVersion)
+     *             .startIndex(identityProofingProviderTemplateStartIndex)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDomainsIdentityProofingProviderTemplatesResult> getDomainsIdentityProofingProviderTemplates(GetDomainsIdentityProofingProviderTemplatesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsIdentityProofingProviderTemplates:getDomainsIdentityProofingProviderTemplates", TypeShape.of(GetDomainsIdentityProofingProviderTemplatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Identity Proofing Provider Templates in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Identity Proofing Provider Configuration templates..
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderTemplatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProofingProviderTemplates = IdentityFunctions.getDomainsIdentityProofingProviderTemplates(GetDomainsIdentityProofingProviderTemplatesArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProofingProviderTemplateCount(identityProofingProviderTemplateIdentityProofingProviderTemplateCount)
+     *             .identityProofingProviderTemplateFilter(identityProofingProviderTemplateIdentityProofingProviderTemplateFilter)
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(identityProofingProviderTemplateAuthorization)
+     *             .resourceTypeSchemaVersion(identityProofingProviderTemplateResourceTypeSchemaVersion)
+     *             .startIndex(identityProofingProviderTemplateStartIndex)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDomainsIdentityProofingProviderTemplatesResult> getDomainsIdentityProofingProviderTemplatesPlain(GetDomainsIdentityProofingProviderTemplatesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsIdentityProofingProviderTemplates:getDomainsIdentityProofingProviderTemplates", TypeShape.of(GetDomainsIdentityProofingProviderTemplatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Identity Proofing Providers in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search IdentityProofingProvider.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProvidersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProofingProviders = IdentityFunctions.getDomainsIdentityProofingProviders(GetDomainsIdentityProofingProvidersArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProofingProviderCount(identityProofingProviderIdentityProofingProviderCount)
+     *             .identityProofingProviderFilter(identityProofingProviderIdentityProofingProviderFilter)
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(identityProofingProviderAuthorization)
+     *             .resourceTypeSchemaVersion(identityProofingProviderResourceTypeSchemaVersion)
+     *             .startIndex(identityProofingProviderStartIndex)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDomainsIdentityProofingProvidersResult> getDomainsIdentityProofingProviders(GetDomainsIdentityProofingProvidersArgs args) {
+        return getDomainsIdentityProofingProviders(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Identity Proofing Providers in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search IdentityProofingProvider.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProvidersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProofingProviders = IdentityFunctions.getDomainsIdentityProofingProviders(GetDomainsIdentityProofingProvidersArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProofingProviderCount(identityProofingProviderIdentityProofingProviderCount)
+     *             .identityProofingProviderFilter(identityProofingProviderIdentityProofingProviderFilter)
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(identityProofingProviderAuthorization)
+     *             .resourceTypeSchemaVersion(identityProofingProviderResourceTypeSchemaVersion)
+     *             .startIndex(identityProofingProviderStartIndex)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDomainsIdentityProofingProvidersResult> getDomainsIdentityProofingProvidersPlain(GetDomainsIdentityProofingProvidersPlainArgs args) {
+        return getDomainsIdentityProofingProvidersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Identity Proofing Providers in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search IdentityProofingProvider.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProvidersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProofingProviders = IdentityFunctions.getDomainsIdentityProofingProviders(GetDomainsIdentityProofingProvidersArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProofingProviderCount(identityProofingProviderIdentityProofingProviderCount)
+     *             .identityProofingProviderFilter(identityProofingProviderIdentityProofingProviderFilter)
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(identityProofingProviderAuthorization)
+     *             .resourceTypeSchemaVersion(identityProofingProviderResourceTypeSchemaVersion)
+     *             .startIndex(identityProofingProviderStartIndex)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDomainsIdentityProofingProvidersResult> getDomainsIdentityProofingProviders(GetDomainsIdentityProofingProvidersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsIdentityProofingProviders:getDomainsIdentityProofingProviders", TypeShape.of(GetDomainsIdentityProofingProvidersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Identity Proofing Providers in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search IdentityProofingProvider.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProvidersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProofingProviders = IdentityFunctions.getDomainsIdentityProofingProviders(GetDomainsIdentityProofingProvidersArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProofingProviderCount(identityProofingProviderIdentityProofingProviderCount)
+     *             .identityProofingProviderFilter(identityProofingProviderIdentityProofingProviderFilter)
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(identityProofingProviderAuthorization)
+     *             .resourceTypeSchemaVersion(identityProofingProviderResourceTypeSchemaVersion)
+     *             .startIndex(identityProofingProviderStartIndex)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDomainsIdentityProofingProvidersResult> getDomainsIdentityProofingProviders(GetDomainsIdentityProofingProvidersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsIdentityProofingProviders:getDomainsIdentityProofingProviders", TypeShape.of(GetDomainsIdentityProofingProvidersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Identity Proofing Providers in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search IdentityProofingProvider.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProvidersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProofingProviders = IdentityFunctions.getDomainsIdentityProofingProviders(GetDomainsIdentityProofingProvidersArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProofingProviderCount(identityProofingProviderIdentityProofingProviderCount)
+     *             .identityProofingProviderFilter(identityProofingProviderIdentityProofingProviderFilter)
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(identityProofingProviderAuthorization)
+     *             .resourceTypeSchemaVersion(identityProofingProviderResourceTypeSchemaVersion)
+     *             .startIndex(identityProofingProviderStartIndex)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDomainsIdentityProofingProvidersResult> getDomainsIdentityProofingProvidersPlain(GetDomainsIdentityProofingProvidersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsIdentityProofingProviders:getDomainsIdentityProofingProviders", TypeShape.of(GetDomainsIdentityProofingProvidersResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Identity Propagation Trust resource in Oracle Cloud Infrastructure Identity Domains service.

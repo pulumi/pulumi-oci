@@ -279,7 +279,11 @@ public class MysqlConfiguration extends com.pulumi.resources.CustomResource {
     /**
      * DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
      * 
+     * @deprecated
+     * The &#39;init_variables&#39; field has been deprecated. Please use &#39;options&#39; instead.
+     * 
      */
+    @Deprecated /* The 'init_variables' field has been deprecated. Please use 'options' instead. */
     @Export(name="initVariables", refs={MysqlConfigurationInitVariables.class}, tree="[0]")
     private Output<MysqlConfigurationInitVariables> initVariables;
 
@@ -405,7 +409,11 @@ public class MysqlConfiguration extends com.pulumi.resources.CustomResource {
     /**
      * DEPRECATED -- please use the `options` field instead. User-defined service variables.
      * 
+     * @deprecated
+     * The &#39;variables&#39; field has been deprecated. Please use &#39;options&#39; instead.
+     * 
      */
+    @Deprecated /* The 'variables' field has been deprecated. Please use 'options' instead. */
     @Export(name="variables", refs={MysqlConfigurationVariables.class}, tree="[0]")
     private Output<MysqlConfigurationVariables> variables;
 

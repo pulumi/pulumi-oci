@@ -13,6 +13,4850 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetDomainsUsersUserRole struct {
+	// A human readable name, primarily used for display purposes.
+	Display string `pulumi:"display"`
+	// A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+	Primary bool `pulumi:"primary"`
+	// A label indicating the attribute's function.
+	Type string `pulumi:"type"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserRoleInput is an input type that accepts GetDomainsUsersUserRoleArgs and GetDomainsUsersUserRoleOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserRoleInput` via:
+//
+//	GetDomainsUsersUserRoleArgs{...}
+type GetDomainsUsersUserRoleInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserRoleOutput() GetDomainsUsersUserRoleOutput
+	ToGetDomainsUsersUserRoleOutputWithContext(context.Context) GetDomainsUsersUserRoleOutput
+}
+
+type GetDomainsUsersUserRoleArgs struct {
+	// A human readable name, primarily used for display purposes.
+	Display pulumi.StringInput `pulumi:"display"`
+	// A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+	Primary pulumi.BoolInput `pulumi:"primary"`
+	// A label indicating the attribute's function.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserRoleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserRole)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserRoleArgs) ToGetDomainsUsersUserRoleOutput() GetDomainsUsersUserRoleOutput {
+	return i.ToGetDomainsUsersUserRoleOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserRoleArgs) ToGetDomainsUsersUserRoleOutputWithContext(ctx context.Context) GetDomainsUsersUserRoleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserRoleOutput)
+}
+
+// GetDomainsUsersUserRoleArrayInput is an input type that accepts GetDomainsUsersUserRoleArray and GetDomainsUsersUserRoleArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserRoleArrayInput` via:
+//
+//	GetDomainsUsersUserRoleArray{ GetDomainsUsersUserRoleArgs{...} }
+type GetDomainsUsersUserRoleArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserRoleArrayOutput() GetDomainsUsersUserRoleArrayOutput
+	ToGetDomainsUsersUserRoleArrayOutputWithContext(context.Context) GetDomainsUsersUserRoleArrayOutput
+}
+
+type GetDomainsUsersUserRoleArray []GetDomainsUsersUserRoleInput
+
+func (GetDomainsUsersUserRoleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserRole)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserRoleArray) ToGetDomainsUsersUserRoleArrayOutput() GetDomainsUsersUserRoleArrayOutput {
+	return i.ToGetDomainsUsersUserRoleArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserRoleArray) ToGetDomainsUsersUserRoleArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserRoleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserRoleArrayOutput)
+}
+
+type GetDomainsUsersUserRoleOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserRoleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserRole)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserRoleOutput) ToGetDomainsUsersUserRoleOutput() GetDomainsUsersUserRoleOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserRoleOutput) ToGetDomainsUsersUserRoleOutputWithContext(ctx context.Context) GetDomainsUsersUserRoleOutput {
+	return o
+}
+
+// A human readable name, primarily used for display purposes.
+func (o GetDomainsUsersUserRoleOutput) Display() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserRole) string { return v.Display }).(pulumi.StringOutput)
+}
+
+// A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+func (o GetDomainsUsersUserRoleOutput) Primary() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserRole) bool { return v.Primary }).(pulumi.BoolOutput)
+}
+
+// A label indicating the attribute's function.
+func (o GetDomainsUsersUserRoleOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserRole) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserRoleOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserRole) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserRoleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserRoleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserRole)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserRoleArrayOutput) ToGetDomainsUsersUserRoleArrayOutput() GetDomainsUsersUserRoleArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserRoleArrayOutput) ToGetDomainsUsersUserRoleArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserRoleArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserRoleArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserRoleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserRole {
+		return vs[0].([]GetDomainsUsersUserRole)[vs[1].(int)]
+	}).(GetDomainsUsersUserRoleOutput)
+}
+
+type GetDomainsUsersUserTag struct {
+	// The user's API key value.
+	Key string `pulumi:"key"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserTagInput is an input type that accepts GetDomainsUsersUserTagArgs and GetDomainsUsersUserTagOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserTagInput` via:
+//
+//	GetDomainsUsersUserTagArgs{...}
+type GetDomainsUsersUserTagInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserTagOutput() GetDomainsUsersUserTagOutput
+	ToGetDomainsUsersUserTagOutputWithContext(context.Context) GetDomainsUsersUserTagOutput
+}
+
+type GetDomainsUsersUserTagArgs struct {
+	// The user's API key value.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserTag)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserTagArgs) ToGetDomainsUsersUserTagOutput() GetDomainsUsersUserTagOutput {
+	return i.ToGetDomainsUsersUserTagOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserTagArgs) ToGetDomainsUsersUserTagOutputWithContext(ctx context.Context) GetDomainsUsersUserTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserTagOutput)
+}
+
+// GetDomainsUsersUserTagArrayInput is an input type that accepts GetDomainsUsersUserTagArray and GetDomainsUsersUserTagArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserTagArrayInput` via:
+//
+//	GetDomainsUsersUserTagArray{ GetDomainsUsersUserTagArgs{...} }
+type GetDomainsUsersUserTagArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserTagArrayOutput() GetDomainsUsersUserTagArrayOutput
+	ToGetDomainsUsersUserTagArrayOutputWithContext(context.Context) GetDomainsUsersUserTagArrayOutput
+}
+
+type GetDomainsUsersUserTagArray []GetDomainsUsersUserTagInput
+
+func (GetDomainsUsersUserTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserTag)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserTagArray) ToGetDomainsUsersUserTagArrayOutput() GetDomainsUsersUserTagArrayOutput {
+	return i.ToGetDomainsUsersUserTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserTagArray) ToGetDomainsUsersUserTagArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserTagArrayOutput)
+}
+
+type GetDomainsUsersUserTagOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserTag)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserTagOutput) ToGetDomainsUsersUserTagOutput() GetDomainsUsersUserTagOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserTagOutput) ToGetDomainsUsersUserTagOutputWithContext(ctx context.Context) GetDomainsUsersUserTagOutput {
+	return o
+}
+
+// The user's API key value.
+func (o GetDomainsUsersUserTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserTag)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserTagArrayOutput) ToGetDomainsUsersUserTagArrayOutput() GetDomainsUsersUserTagArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserTagArrayOutput) ToGetDomainsUsersUserTagArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserTagArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserTagArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserTag {
+		return vs[0].([]GetDomainsUsersUserTag)[vs[1].(int)]
+	}).(GetDomainsUsersUserTagOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user struct {
+	// Identifies the name of a cost center.
+	CostCenter string `pulumi:"costCenter"`
+	// Identifies the name of a department.
+	Department string `pulumi:"department"`
+	// Identifies the name of a division.
+	Division string `pulumi:"division"`
+	// Numeric or alphanumeric identifier assigned to  a person, typically based on order of hire or association with an organization.
+	EmployeeNumber string `pulumi:"employeeNumber"`
+	// The User's manager. A complex type that optionally allows Service Providers to represent organizational hierarchy by referencing the 'id' attribute of another User.
+	Managers []GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager `pulumi:"managers"`
+	// Identifies the name of an organization.
+	Organization string `pulumi:"organization"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArgs and GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput() GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArgs struct {
+	// Identifies the name of a cost center.
+	CostCenter pulumi.StringInput `pulumi:"costCenter"`
+	// Identifies the name of a department.
+	Department pulumi.StringInput `pulumi:"department"`
+	// Identifies the name of a division.
+	Division pulumi.StringInput `pulumi:"division"`
+	// Numeric or alphanumeric identifier assigned to  a person, typically based on order of hire or association with an organization.
+	EmployeeNumber pulumi.StringInput `pulumi:"employeeNumber"`
+	// The User's manager. A complex type that optionally allows Service Providers to represent organizational hierarchy by referencing the 'id' attribute of another User.
+	Managers GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayInput `pulumi:"managers"`
+	// Identifies the name of an organization.
+	Organization pulumi.StringInput `pulumi:"organization"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput() GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArray and GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArray{ GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArray []GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArray) ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArray) ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput() GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput {
+	return o
+}
+
+// Identifies the name of a cost center.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput) CostCenter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user) string {
+		return v.CostCenter
+	}).(pulumi.StringOutput)
+}
+
+// Identifies the name of a department.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput) Department() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user) string {
+		return v.Department
+	}).(pulumi.StringOutput)
+}
+
+// Identifies the name of a division.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput) Division() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user) string { return v.Division }).(pulumi.StringOutput)
+}
+
+// Numeric or alphanumeric identifier assigned to  a person, typically based on order of hire or association with an organization.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput) EmployeeNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user) string {
+		return v.EmployeeNumber
+	}).(pulumi.StringOutput)
+}
+
+// The User's manager. A complex type that optionally allows Service Providers to represent organizational hierarchy by referencing the 'id' attribute of another User.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput) Managers() GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user) []GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager {
+		return v.Managers
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput)
+}
+
+// Identifies the name of an organization.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput) Organization() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user) string {
+		return v.Organization
+	}).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager struct {
+	// The displayName of the User's manager. OPTIONAL and READ-ONLY.
+	DisplayName string `pulumi:"displayName"`
+	// User Token URI
+	Ref string `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs and GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput() GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs struct {
+	// The displayName of the User's manager. OPTIONAL and READ-ONLY.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// User Token URI
+	Ref pulumi.StringInput `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput() GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArray and GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArray{ GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArray []GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArray) ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArray) ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput() GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput {
+	return o
+}
+
+// The displayName of the User's manager. OPTIONAL and READ-ONLY.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// User Token URI
+func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput) Ref() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager) string {
+		return v.Ref
+	}).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag struct {
+	// Oracle Cloud Infrastructure Defined Tags
+	DefinedTags []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag `pulumi:"definedTags"`
+	// Oracle Cloud Infrastructure Freeform Tags
+	FreeformTags []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag `pulumi:"freeformTags"`
+	// Oracle Cloud Infrastructure Tag slug
+	TagSlug string `pulumi:"tagSlug"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArgs struct {
+	// Oracle Cloud Infrastructure Defined Tags
+	DefinedTags GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayInput `pulumi:"definedTags"`
+	// Oracle Cloud Infrastructure Freeform Tags
+	FreeformTags GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayInput `pulumi:"freeformTags"`
+	// Oracle Cloud Infrastructure Tag slug
+	TagSlug pulumi.StringInput `pulumi:"tagSlug"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput {
+	return o
+}
+
+// Oracle Cloud Infrastructure Defined Tags
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput) DefinedTags() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag) []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag {
+		return v.DefinedTags
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput)
+}
+
+// Oracle Cloud Infrastructure Freeform Tags
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput) FreeformTags() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag) []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag {
+		return v.FreeformTags
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput)
+}
+
+// Oracle Cloud Infrastructure Tag slug
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput) TagSlug() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag) string { return v.TagSlug }).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag struct {
+	// The user's API key value.
+	Key string `pulumi:"key"`
+	// Oracle Cloud Infrastructure Tag namespace
+	Namespace string `pulumi:"namespace"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArgs struct {
+	// The user's API key value.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Oracle Cloud Infrastructure Tag namespace
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput {
+	return o
+}
+
+// The user's API key value.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure Tag namespace
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag struct {
+	// The user's API key value.
+	Key string `pulumi:"key"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArgs struct {
+	// The user's API key value.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput {
+	return o
+}
+
+// The user's API key value.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser struct {
+	// Risk Level
+	RiskLevel string `pulumi:"riskLevel"`
+	// The risk score pertaining to the user.
+	RiskScores []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore `pulumi:"riskScores"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs struct {
+	// Risk Level
+	RiskLevel pulumi.StringInput `pulumi:"riskLevel"`
+	// The risk score pertaining to the user.
+	RiskScores GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayInput `pulumi:"riskScores"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput {
+	return o
+}
+
+// Risk Level
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput) RiskLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser) string {
+		return v.RiskLevel
+	}).(pulumi.StringOutput)
+}
+
+// The risk score pertaining to the user.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput) RiskScores() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser) []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore {
+		return v.RiskScores
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore struct {
+	// Last update timestamp for the risk score
+	LastUpdateTimestamp string `pulumi:"lastUpdateTimestamp"`
+	// User Token URI
+	Ref string `pulumi:"ref"`
+	// Risk Level
+	RiskLevel string `pulumi:"riskLevel"`
+	// Risk Score value
+	Score int `pulumi:"score"`
+	// Risk Provider Profile Source
+	Source string `pulumi:"source"`
+	// A supplemental status indicating the reason why a user is disabled
+	Status string `pulumi:"status"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs struct {
+	// Last update timestamp for the risk score
+	LastUpdateTimestamp pulumi.StringInput `pulumi:"lastUpdateTimestamp"`
+	// User Token URI
+	Ref pulumi.StringInput `pulumi:"ref"`
+	// Risk Level
+	RiskLevel pulumi.StringInput `pulumi:"riskLevel"`
+	// Risk Score value
+	Score pulumi.IntInput `pulumi:"score"`
+	// Risk Provider Profile Source
+	Source pulumi.StringInput `pulumi:"source"`
+	// A supplemental status indicating the reason why a user is disabled
+	Status pulumi.StringInput `pulumi:"status"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput {
+	return o
+}
+
+// Last update timestamp for the risk score
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput) LastUpdateTimestamp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore) string {
+		return v.LastUpdateTimestamp
+	}).(pulumi.StringOutput)
+}
+
+// User Token URI
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput) Ref() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore) string {
+		return v.Ref
+	}).(pulumi.StringOutput)
+}
+
+// Risk Level
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput) RiskLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore) string {
+		return v.RiskLevel
+	}).(pulumi.StringOutput)
+}
+
+// Risk Score value
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput) Score() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore) int {
+		return v.Score
+	}).(pulumi.IntOutput)
+}
+
+// Risk Provider Profile Source
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore) string {
+		return v.Source
+	}).(pulumi.StringOutput)
+}
+
+// A supplemental status indicating the reason why a user is disabled
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore) string {
+		return v.Status
+	}).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser struct {
+	// Indicates whether a user can use API keys.
+	CanUseApiKeys bool `pulumi:"canUseApiKeys"`
+	// Indicates whether a user can use Auth tokens.
+	CanUseAuthTokens bool `pulumi:"canUseAuthTokens"`
+	// Specifies whether user can access the Console.
+	CanUseConsole bool `pulumi:"canUseConsole"`
+	// Indicates whether a user can use Console passwords.
+	CanUseConsolePassword bool `pulumi:"canUseConsolePassword"`
+	// Indicates whether a user can use customer secret keys.
+	CanUseCustomerSecretKeys bool `pulumi:"canUseCustomerSecretKeys"`
+	// Indicates whether a user can use database credentials.
+	CanUseDbCredentials bool `pulumi:"canUseDbCredentials"`
+	// Indicates whether a user can use OAuth2 client credentials.
+	CanUseOauth2clientCredentials bool `pulumi:"canUseOauth2clientCredentials"`
+	// Indicates whether a user can use SMTP credentials.
+	CanUseSmtpCredentials bool `pulumi:"canUseSmtpCredentials"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs struct {
+	// Indicates whether a user can use API keys.
+	CanUseApiKeys pulumi.BoolInput `pulumi:"canUseApiKeys"`
+	// Indicates whether a user can use Auth tokens.
+	CanUseAuthTokens pulumi.BoolInput `pulumi:"canUseAuthTokens"`
+	// Specifies whether user can access the Console.
+	CanUseConsole pulumi.BoolInput `pulumi:"canUseConsole"`
+	// Indicates whether a user can use Console passwords.
+	CanUseConsolePassword pulumi.BoolInput `pulumi:"canUseConsolePassword"`
+	// Indicates whether a user can use customer secret keys.
+	CanUseCustomerSecretKeys pulumi.BoolInput `pulumi:"canUseCustomerSecretKeys"`
+	// Indicates whether a user can use database credentials.
+	CanUseDbCredentials pulumi.BoolInput `pulumi:"canUseDbCredentials"`
+	// Indicates whether a user can use OAuth2 client credentials.
+	CanUseOauth2clientCredentials pulumi.BoolInput `pulumi:"canUseOauth2clientCredentials"`
+	// Indicates whether a user can use SMTP credentials.
+	CanUseSmtpCredentials pulumi.BoolInput `pulumi:"canUseSmtpCredentials"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput {
+	return o
+}
+
+// Indicates whether a user can use API keys.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput) CanUseApiKeys() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser) bool {
+		return v.CanUseApiKeys
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates whether a user can use Auth tokens.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput) CanUseAuthTokens() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser) bool {
+		return v.CanUseAuthTokens
+	}).(pulumi.BoolOutput)
+}
+
+// Specifies whether user can access the Console.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput) CanUseConsole() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser) bool {
+		return v.CanUseConsole
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates whether a user can use Console passwords.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput) CanUseConsolePassword() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser) bool {
+		return v.CanUseConsolePassword
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates whether a user can use customer secret keys.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput) CanUseCustomerSecretKeys() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser) bool {
+		return v.CanUseCustomerSecretKeys
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates whether a user can use database credentials.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput) CanUseDbCredentials() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser) bool {
+		return v.CanUseDbCredentials
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates whether a user can use OAuth2 client credentials.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput) CanUseOauth2clientCredentials() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser) bool {
+		return v.CanUseOauth2clientCredentials
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates whether a user can use SMTP credentials.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput) CanUseSmtpCredentials() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser) bool {
+		return v.CanUseSmtpCredentials
+	}).(pulumi.BoolOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser struct {
+	// The number of failed login attempts. The value is reset to 0 after a successful login.
+	DbLoginAttempts int `pulumi:"dbLoginAttempts"`
+	// The database username.
+	DbUserName string `pulumi:"dbUserName"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs struct {
+	// The number of failed login attempts. The value is reset to 0 after a successful login.
+	DbLoginAttempts pulumi.IntInput `pulumi:"dbLoginAttempts"`
+	// The database username.
+	DbUserName pulumi.StringInput `pulumi:"dbUserName"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput {
+	return o
+}
+
+// The number of failed login attempts. The value is reset to 0 after a successful login.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput) DbLoginAttempts() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser) int {
+		return v.DbLoginAttempts
+	}).(pulumi.IntOutput)
+}
+
+// The database username.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput) DbUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser) string {
+		return v.DbUserName
+	}).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser struct {
+	// DB global roles to which the user is granted access.
+	DbGlobalRoles []string `pulumi:"dbGlobalRoles"`
+	// DB domain level schema to which the user is granted access.
+	DomainLevelSchema string `pulumi:"domainLevelSchema"`
+	// DB instance level schema to which the user is granted access.
+	InstanceLevelSchema string `pulumi:"instanceLevelSchema"`
+	// If true, indicates this is a database user.
+	IsDbUser bool `pulumi:"isDbUser"`
+	// Password Verifiers for DB User.
+	PasswordVerifiers []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier `pulumi:"passwordVerifiers"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs struct {
+	// DB global roles to which the user is granted access.
+	DbGlobalRoles pulumi.StringArrayInput `pulumi:"dbGlobalRoles"`
+	// DB domain level schema to which the user is granted access.
+	DomainLevelSchema pulumi.StringInput `pulumi:"domainLevelSchema"`
+	// DB instance level schema to which the user is granted access.
+	InstanceLevelSchema pulumi.StringInput `pulumi:"instanceLevelSchema"`
+	// If true, indicates this is a database user.
+	IsDbUser pulumi.BoolInput `pulumi:"isDbUser"`
+	// Password Verifiers for DB User.
+	PasswordVerifiers GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayInput `pulumi:"passwordVerifiers"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput {
+	return o
+}
+
+// DB global roles to which the user is granted access.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput) DbGlobalRoles() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser) []string {
+		return v.DbGlobalRoles
+	}).(pulumi.StringArrayOutput)
+}
+
+// DB domain level schema to which the user is granted access.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput) DomainLevelSchema() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser) string {
+		return v.DomainLevelSchema
+	}).(pulumi.StringOutput)
+}
+
+// DB instance level schema to which the user is granted access.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput) InstanceLevelSchema() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser) string {
+		return v.InstanceLevelSchema
+	}).(pulumi.StringOutput)
+}
+
+// If true, indicates this is a database user.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput) IsDbUser() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser) bool {
+		return v.IsDbUser
+	}).(pulumi.BoolOutput)
+}
+
+// Password Verifiers for DB User.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput) PasswordVerifiers() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser) []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier {
+		return v.PasswordVerifiers
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier struct {
+	// A label indicating the attribute's function.
+	Type string `pulumi:"type"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArgs struct {
+	// A label indicating the attribute's function.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput {
+	return o
+}
+
+// A label indicating the attribute's function.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser struct {
+	// A list of kerberos realm users for an Oracle Identity Cloud Service User
+	RealmUsers []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser `pulumi:"realmUsers"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs struct {
+	// A list of kerberos realm users for an Oracle Identity Cloud Service User
+	RealmUsers GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayInput `pulumi:"realmUsers"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput {
+	return o
+}
+
+// A list of kerberos realm users for an Oracle Identity Cloud Service User
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput) RealmUsers() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser) []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser {
+		return v.RealmUsers
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser struct {
+	// Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
+	PrincipalName string `pulumi:"principalName"`
+	// Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
+	RealmName string `pulumi:"realmName"`
+	// User Token URI
+	Ref string `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs struct {
+	// Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
+	PrincipalName pulumi.StringInput `pulumi:"principalName"`
+	// Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
+	RealmName pulumi.StringInput `pulumi:"realmName"`
+	// User Token URI
+	Ref pulumi.StringInput `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput {
+	return o
+}
+
+// Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput) PrincipalName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser) string {
+		return v.PrincipalName
+	}).(pulumi.StringOutput)
+}
+
+// Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput) RealmName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser) string {
+		return v.RealmName
+	}).(pulumi.StringOutput)
+}
+
+// User Token URI
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput) Ref() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser) string {
+		return v.Ref
+	}).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser struct {
+	// A list of bypass codes that belongs to the user.
+	BypassCodes []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode `pulumi:"bypassCodes"`
+	// A list of devices enrolled by the user.
+	Devices []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice `pulumi:"devices"`
+	// The number of failed login attempts. The value is reset to 0 after a successful login.
+	LoginAttempts int `pulumi:"loginAttempts"`
+	// The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
+	MfaEnabledOn string `pulumi:"mfaEnabledOn"`
+	// User MFA Ignored Apps Identifiers
+	MfaIgnoredApps []string `pulumi:"mfaIgnoredApps"`
+	// The user opted for MFA.
+	MfaStatus string `pulumi:"mfaStatus"`
+	// The preferred authentication factor type.
+	PreferredAuthenticationFactor string `pulumi:"preferredAuthenticationFactor"`
+	// The preferred authentication method.
+	PreferredAuthenticationMethod string `pulumi:"preferredAuthenticationMethod"`
+	// The user's preferred device.
+	PreferredDevices []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice `pulumi:"preferredDevices"`
+	// The preferred third-party vendor name.
+	PreferredThirdPartyVendor string `pulumi:"preferredThirdPartyVendor"`
+	// A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User Agents to authenticate users.  A User Agent is software application that a user uses to issue requests. For example, a User Agent could be a particular browser (possibly one of several executing on a desktop or laptop) or a particular mobile application (again, oneof several executing on a particular mobile device). A User Agent is trusted once the Multi-Factor Authentication has verified it in some way.
+	TrustedUserAgents []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent `pulumi:"trustedUserAgents"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs struct {
+	// A list of bypass codes that belongs to the user.
+	BypassCodes GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayInput `pulumi:"bypassCodes"`
+	// A list of devices enrolled by the user.
+	Devices GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayInput `pulumi:"devices"`
+	// The number of failed login attempts. The value is reset to 0 after a successful login.
+	LoginAttempts pulumi.IntInput `pulumi:"loginAttempts"`
+	// The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
+	MfaEnabledOn pulumi.StringInput `pulumi:"mfaEnabledOn"`
+	// User MFA Ignored Apps Identifiers
+	MfaIgnoredApps pulumi.StringArrayInput `pulumi:"mfaIgnoredApps"`
+	// The user opted for MFA.
+	MfaStatus pulumi.StringInput `pulumi:"mfaStatus"`
+	// The preferred authentication factor type.
+	PreferredAuthenticationFactor pulumi.StringInput `pulumi:"preferredAuthenticationFactor"`
+	// The preferred authentication method.
+	PreferredAuthenticationMethod pulumi.StringInput `pulumi:"preferredAuthenticationMethod"`
+	// The user's preferred device.
+	PreferredDevices GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayInput `pulumi:"preferredDevices"`
+	// The preferred third-party vendor name.
+	PreferredThirdPartyVendor pulumi.StringInput `pulumi:"preferredThirdPartyVendor"`
+	// A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User Agents to authenticate users.  A User Agent is software application that a user uses to issue requests. For example, a User Agent could be a particular browser (possibly one of several executing on a desktop or laptop) or a particular mobile application (again, oneof several executing on a particular mobile device). A User Agent is trusted once the Multi-Factor Authentication has verified it in some way.
+	TrustedUserAgents GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayInput `pulumi:"trustedUserAgents"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput {
+	return o
+}
+
+// A list of bypass codes that belongs to the user.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput) BypassCodes() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser) []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode {
+		return v.BypassCodes
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput)
+}
+
+// A list of devices enrolled by the user.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput) Devices() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser) []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice {
+		return v.Devices
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutput)
+}
+
+// The number of failed login attempts. The value is reset to 0 after a successful login.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput) LoginAttempts() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser) int {
+		return v.LoginAttempts
+	}).(pulumi.IntOutput)
+}
+
+// The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput) MfaEnabledOn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser) string {
+		return v.MfaEnabledOn
+	}).(pulumi.StringOutput)
+}
+
+// User MFA Ignored Apps Identifiers
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput) MfaIgnoredApps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser) []string {
+		return v.MfaIgnoredApps
+	}).(pulumi.StringArrayOutput)
+}
+
+// The user opted for MFA.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput) MfaStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser) string {
+		return v.MfaStatus
+	}).(pulumi.StringOutput)
+}
+
+// The preferred authentication factor type.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput) PreferredAuthenticationFactor() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser) string {
+		return v.PreferredAuthenticationFactor
+	}).(pulumi.StringOutput)
+}
+
+// The preferred authentication method.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput) PreferredAuthenticationMethod() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser) string {
+		return v.PreferredAuthenticationMethod
+	}).(pulumi.StringOutput)
+}
+
+// The user's preferred device.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput) PreferredDevices() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser) []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice {
+		return v.PreferredDevices
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput)
+}
+
+// The preferred third-party vendor name.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput) PreferredThirdPartyVendor() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser) string {
+		return v.PreferredThirdPartyVendor
+	}).(pulumi.StringOutput)
+}
+
+// A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User Agents to authenticate users.  A User Agent is software application that a user uses to issue requests. For example, a User Agent could be a particular browser (possibly one of several executing on a desktop or laptop) or a particular mobile application (again, oneof several executing on a particular mobile device). A User Agent is trusted once the Multi-Factor Authentication has verified it in some way.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput) TrustedUserAgents() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser) []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent {
+		return v.TrustedUserAgents
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode struct {
+	// User Token URI
+	Ref string `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs struct {
+	// User Token URI
+	Ref pulumi.StringInput `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput {
+	return o
+}
+
+// User Token URI
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput) Ref() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode) string {
+		return v.Ref
+	}).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice struct {
+	// The authentication method.
+	AuthenticationMethod string `pulumi:"authenticationMethod"`
+	// A human readable name, primarily used for display purposes.
+	Display string `pulumi:"display"`
+	// The device authentication factor status.
+	FactorStatus string `pulumi:"factorStatus"`
+	// Authentication Factor Type
+	FactorType string `pulumi:"factorType"`
+	// The last sync time for device.
+	LastSyncTime string `pulumi:"lastSyncTime"`
+	// User Token URI
+	Ref string `pulumi:"ref"`
+	// A supplemental status indicating the reason why a user is disabled
+	Status string `pulumi:"status"`
+	// The third-party factor vendor name.
+	ThirdPartyVendorName string `pulumi:"thirdPartyVendorName"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs struct {
+	// The authentication method.
+	AuthenticationMethod pulumi.StringInput `pulumi:"authenticationMethod"`
+	// A human readable name, primarily used for display purposes.
+	Display pulumi.StringInput `pulumi:"display"`
+	// The device authentication factor status.
+	FactorStatus pulumi.StringInput `pulumi:"factorStatus"`
+	// Authentication Factor Type
+	FactorType pulumi.StringInput `pulumi:"factorType"`
+	// The last sync time for device.
+	LastSyncTime pulumi.StringInput `pulumi:"lastSyncTime"`
+	// User Token URI
+	Ref pulumi.StringInput `pulumi:"ref"`
+	// A supplemental status indicating the reason why a user is disabled
+	Status pulumi.StringInput `pulumi:"status"`
+	// The third-party factor vendor name.
+	ThirdPartyVendorName pulumi.StringInput `pulumi:"thirdPartyVendorName"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput {
+	return o
+}
+
+// The authentication method.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput) AuthenticationMethod() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice) string {
+		return v.AuthenticationMethod
+	}).(pulumi.StringOutput)
+}
+
+// A human readable name, primarily used for display purposes.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput) Display() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice) string {
+		return v.Display
+	}).(pulumi.StringOutput)
+}
+
+// The device authentication factor status.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput) FactorStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice) string {
+		return v.FactorStatus
+	}).(pulumi.StringOutput)
+}
+
+// Authentication Factor Type
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput) FactorType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice) string {
+		return v.FactorType
+	}).(pulumi.StringOutput)
+}
+
+// The last sync time for device.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput) LastSyncTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice) string {
+		return v.LastSyncTime
+	}).(pulumi.StringOutput)
+}
+
+// User Token URI
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput) Ref() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice) string {
+		return v.Ref
+	}).(pulumi.StringOutput)
+}
+
+// A supplemental status indicating the reason why a user is disabled
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice) string {
+		return v.Status
+	}).(pulumi.StringOutput)
+}
+
+// The third-party factor vendor name.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput) ThirdPartyVendorName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice) string {
+		return v.ThirdPartyVendorName
+	}).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice struct {
+	// A human readable name, primarily used for display purposes.
+	Display string `pulumi:"display"`
+	// User Token URI
+	Ref string `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs struct {
+	// A human readable name, primarily used for display purposes.
+	Display pulumi.StringInput `pulumi:"display"`
+	// User Token URI
+	Ref pulumi.StringInput `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput {
+	return o
+}
+
+// A human readable name, primarily used for display purposes.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput) Display() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice) string {
+		return v.Display
+	}).(pulumi.StringOutput)
+}
+
+// User Token URI
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput) Ref() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice) string {
+		return v.Ref
+	}).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent struct {
+	// A human readable name, primarily used for display purposes.
+	Display string `pulumi:"display"`
+	// User Token URI
+	Ref string `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs struct {
+	// A human readable name, primarily used for display purposes.
+	Display pulumi.StringInput `pulumi:"display"`
+	// User Token URI
+	Ref pulumi.StringInput `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput {
+	return o
+}
+
+// A human readable name, primarily used for display purposes.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput) Display() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent) string {
+		return v.Display
+	}).(pulumi.StringOutput)
+}
+
+// User Token URI
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput) Ref() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent) string {
+		return v.Ref
+	}).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser struct {
+	// Applicable Password Policy
+	ApplicablePasswordPolicies []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy `pulumi:"applicablePasswordPolicies"`
+	// Indicates that the current password MAY NOT be changed and all other password expiry settings SHALL be ignored
+	CantChange bool `pulumi:"cantChange"`
+	// Indicates that the password expiry policy will not be applied for the current Resource
+	CantExpire bool `pulumi:"cantExpire"`
+	// Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
+	Expired bool `pulumi:"expired"`
+	// A DateTime that specifies the date and time when last failed password validation was set
+	LastFailedValidationDate string `pulumi:"lastFailedValidationDate"`
+	// A DateTime that specifies the date and time when the current password was set
+	LastSuccessfulSetDate string `pulumi:"lastSuccessfulSetDate"`
+	// A DateTime that specifies the date and time when last successful password validation was set
+	LastSuccessfulValidationDate string `pulumi:"lastSuccessfulValidationDate"`
+	// Indicates that the subject password value MUST change on next login. If not changed, typically the account is locked. The value may be set indirectly when the subject's current password expires or directly set by an administrator.
+	MustChange bool `pulumi:"mustChange"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs struct {
+	// Applicable Password Policy
+	ApplicablePasswordPolicies GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayInput `pulumi:"applicablePasswordPolicies"`
+	// Indicates that the current password MAY NOT be changed and all other password expiry settings SHALL be ignored
+	CantChange pulumi.BoolInput `pulumi:"cantChange"`
+	// Indicates that the password expiry policy will not be applied for the current Resource
+	CantExpire pulumi.BoolInput `pulumi:"cantExpire"`
+	// Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
+	Expired pulumi.BoolInput `pulumi:"expired"`
+	// A DateTime that specifies the date and time when last failed password validation was set
+	LastFailedValidationDate pulumi.StringInput `pulumi:"lastFailedValidationDate"`
+	// A DateTime that specifies the date and time when the current password was set
+	LastSuccessfulSetDate pulumi.StringInput `pulumi:"lastSuccessfulSetDate"`
+	// A DateTime that specifies the date and time when last successful password validation was set
+	LastSuccessfulValidationDate pulumi.StringInput `pulumi:"lastSuccessfulValidationDate"`
+	// Indicates that the subject password value MUST change on next login. If not changed, typically the account is locked. The value may be set indirectly when the subject's current password expires or directly set by an administrator.
+	MustChange pulumi.BoolInput `pulumi:"mustChange"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput {
+	return o
+}
+
+// Applicable Password Policy
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput) ApplicablePasswordPolicies() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser) []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy {
+		return v.ApplicablePasswordPolicies
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput)
+}
+
+// Indicates that the current password MAY NOT be changed and all other password expiry settings SHALL be ignored
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput) CantChange() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser) bool {
+		return v.CantChange
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates that the password expiry policy will not be applied for the current Resource
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput) CantExpire() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser) bool {
+		return v.CantExpire
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput) Expired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser) bool {
+		return v.Expired
+	}).(pulumi.BoolOutput)
+}
+
+// A DateTime that specifies the date and time when last failed password validation was set
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput) LastFailedValidationDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser) string {
+		return v.LastFailedValidationDate
+	}).(pulumi.StringOutput)
+}
+
+// A DateTime that specifies the date and time when the current password was set
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput) LastSuccessfulSetDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser) string {
+		return v.LastSuccessfulSetDate
+	}).(pulumi.StringOutput)
+}
+
+// A DateTime that specifies the date and time when last successful password validation was set
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput) LastSuccessfulValidationDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser) string {
+		return v.LastSuccessfulValidationDate
+	}).(pulumi.StringOutput)
+}
+
+// Indicates that the subject password value MUST change on next login. If not changed, typically the account is locked. The value may be set indirectly when the subject's current password expires or directly set by an administrator.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput) MustChange() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser) bool {
+		return v.MustChange
+	}).(pulumi.BoolOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy struct {
+	// A human readable name, primarily used for display purposes.
+	Display string `pulumi:"display"`
+	// PasswordPolicy priority
+	Priority int `pulumi:"priority"`
+	// User Token URI
+	Ref string `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArgs struct {
+	// A human readable name, primarily used for display purposes.
+	Display pulumi.StringInput `pulumi:"display"`
+	// PasswordPolicy priority
+	Priority pulumi.IntInput `pulumi:"priority"`
+	// User Token URI
+	Ref pulumi.StringInput `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput {
+	return o
+}
+
+// A human readable name, primarily used for display purposes.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput) Display() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy) string {
+		return v.Display
+	}).(pulumi.StringOutput)
+}
+
+// PasswordPolicy priority
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput) Priority() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy) int {
+		return v.Priority
+	}).(pulumi.IntOutput)
+}
+
+// User Token URI
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput) Ref() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy) string {
+		return v.Ref
+	}).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser struct {
+	// Factor Identifier ID
+	FactorIdentifiers []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier `pulumi:"factorIdentifiers"`
+	// Authentication Factor Method
+	FactorMethod string `pulumi:"factorMethod"`
+	// Authentication Factor Type
+	FactorType string `pulumi:"factorType"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs struct {
+	// Factor Identifier ID
+	FactorIdentifiers GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayInput `pulumi:"factorIdentifiers"`
+	// Authentication Factor Method
+	FactorMethod pulumi.StringInput `pulumi:"factorMethod"`
+	// Authentication Factor Type
+	FactorType pulumi.StringInput `pulumi:"factorType"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput {
+	return o
+}
+
+// Factor Identifier ID
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput) FactorIdentifiers() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser) []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier {
+		return v.FactorIdentifiers
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput)
+}
+
+// Authentication Factor Method
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput) FactorMethod() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser) string {
+		return v.FactorMethod
+	}).(pulumi.StringOutput)
+}
+
+// Authentication Factor Type
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput) FactorType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser) string {
+		return v.FactorType
+	}).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier struct {
+	// A human readable name, primarily used for display purposes.
+	Display string `pulumi:"display"`
+	// User Token URI
+	Ref string `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArgs struct {
+	// A human readable name, primarily used for display purposes.
+	Display pulumi.StringInput `pulumi:"display"`
+	// User Token URI
+	Ref pulumi.StringInput `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput {
+	return o
+}
+
+// A human readable name, primarily used for display purposes.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput) Display() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier) string {
+		return v.Display
+	}).(pulumi.StringOutput)
+}
+
+// User Token URI
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput) Ref() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier) string {
+		return v.Ref
+	}).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser struct {
+	// General information about the POSIX account such as their real name and phone number
+	Gecos string `pulumi:"gecos"`
+	// Primary Group identifier of the POSIX user
+	GidNumber int `pulumi:"gidNumber"`
+	// The absolute path to the home directory of the POSIX account
+	HomeDirectory string `pulumi:"homeDirectory"`
+	// The path to the login shell of the POSIX account
+	LoginShell string `pulumi:"loginShell"`
+	// Integer uniquely identifying a user in a POSIX administrative domain
+	UidNumber int `pulumi:"uidNumber"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs struct {
+	// General information about the POSIX account such as their real name and phone number
+	Gecos pulumi.StringInput `pulumi:"gecos"`
+	// Primary Group identifier of the POSIX user
+	GidNumber pulumi.IntInput `pulumi:"gidNumber"`
+	// The absolute path to the home directory of the POSIX account
+	HomeDirectory pulumi.StringInput `pulumi:"homeDirectory"`
+	// The path to the login shell of the POSIX account
+	LoginShell pulumi.StringInput `pulumi:"loginShell"`
+	// Integer uniquely identifying a user in a POSIX administrative domain
+	UidNumber pulumi.IntInput `pulumi:"uidNumber"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput {
+	return o
+}
+
+// General information about the POSIX account such as their real name and phone number
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput) Gecos() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser) string { return v.Gecos }).(pulumi.StringOutput)
+}
+
+// Primary Group identifier of the POSIX user
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput) GidNumber() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser) int {
+		return v.GidNumber
+	}).(pulumi.IntOutput)
+}
+
+// The absolute path to the home directory of the POSIX account
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput) HomeDirectory() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser) string {
+		return v.HomeDirectory
+	}).(pulumi.StringOutput)
+}
+
+// The path to the login shell of the POSIX account
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput) LoginShell() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser) string {
+		return v.LoginShell
+	}).(pulumi.StringOutput)
+}
+
+// Integer uniquely identifying a user in a POSIX administrative domain
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput) UidNumber() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser) int {
+		return v.UidNumber
+	}).(pulumi.IntOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser struct {
+	// The schema used to mnage security question and answers provided by a user for account recovery and/or MFA. While setting up security questions, a user can also provide a hint for the answer.
+	SecQuestions []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion `pulumi:"secQuestions"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs struct {
+	// The schema used to mnage security question and answers provided by a user for account recovery and/or MFA. While setting up security questions, a user can also provide a hint for the answer.
+	SecQuestions GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayInput `pulumi:"secQuestions"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput {
+	return o
+}
+
+// The schema used to mnage security question and answers provided by a user for account recovery and/or MFA. While setting up security questions, a user can also provide a hint for the answer.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput) SecQuestions() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser) []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion {
+		return v.SecQuestions
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion struct {
+	// The answer provided by a user for a security question.
+	Answer string `pulumi:"answer"`
+	// The hint for an answer that's given by user when setting up a security question.
+	HintText string `pulumi:"hintText"`
+	// User Token URI
+	Ref string `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs struct {
+	// The answer provided by a user for a security question.
+	Answer pulumi.StringInput `pulumi:"answer"`
+	// The hint for an answer that's given by user when setting up a security question.
+	HintText pulumi.StringInput `pulumi:"hintText"`
+	// User Token URI
+	Ref pulumi.StringInput `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput {
+	return o
+}
+
+// The answer provided by a user for a security question.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput) Answer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion) string {
+		return v.Answer
+	}).(pulumi.StringOutput)
+}
+
+// The hint for an answer that's given by user when setting up a security question.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput) HintText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion) string {
+		return v.HintText
+	}).(pulumi.StringOutput)
+}
+
+// User Token URI
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput) Ref() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion) string {
+		return v.Ref
+	}).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser struct {
+	// If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+	AllowSelfChange bool `pulumi:"allowSelfChange"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs struct {
+	// If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+	AllowSelfChange pulumi.BoolInput `pulumi:"allowSelfChange"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput {
+	return o
+}
+
+// If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput) AllowSelfChange() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser) bool {
+		return v.AllowSelfChange
+	}).(pulumi.BoolOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser struct {
+	// A boolean value that indicates whether the consent is granted.
+	ConsentGranted bool `pulumi:"consentGranted"`
+	// Self registration profile used when user is self registered.
+	SelfRegistrationProfiles []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile `pulumi:"selfRegistrationProfiles"`
+	// User token returned if userFlowControlledByExternalClient is true
+	UserToken string `pulumi:"userToken"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs struct {
+	// A boolean value that indicates whether the consent is granted.
+	ConsentGranted pulumi.BoolInput `pulumi:"consentGranted"`
+	// Self registration profile used when user is self registered.
+	SelfRegistrationProfiles GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayInput `pulumi:"selfRegistrationProfiles"`
+	// User token returned if userFlowControlledByExternalClient is true
+	UserToken pulumi.StringInput `pulumi:"userToken"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput {
+	return o
+}
+
+// A boolean value that indicates whether the consent is granted.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput) ConsentGranted() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser) bool {
+		return v.ConsentGranted
+	}).(pulumi.BoolOutput)
+}
+
+// Self registration profile used when user is self registered.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput) SelfRegistrationProfiles() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser) []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile {
+		return v.SelfRegistrationProfiles
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput)
+}
+
+// User token returned if userFlowControlledByExternalClient is true
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput) UserToken() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser) string {
+		return v.UserToken
+	}).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile struct {
+	// A human readable name, primarily used for display purposes.
+	Display string `pulumi:"display"`
+	// User Token URI
+	Ref string `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArgs struct {
+	// A human readable name, primarily used for display purposes.
+	Display pulumi.StringInput `pulumi:"display"`
+	// User Token URI
+	Ref pulumi.StringInput `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput {
+	return o
+}
+
+// A human readable name, primarily used for display purposes.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput) Display() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile) string {
+		return v.Display
+	}).(pulumi.StringOutput)
+}
+
+// User Token URI
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput) Ref() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile) string {
+		return v.Ref
+	}).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUser struct {
+	// SFF auth keys clob
+	SffAuthKeys string `pulumi:"sffAuthKeys"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs struct {
+	// SFF auth keys clob
+	SffAuthKeys pulumi.StringInput `pulumi:"sffAuthKeys"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput {
+	return o
+}
+
+// SFF auth keys clob
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput) SffAuthKeys() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUser) string {
+		return v.SffAuthKeys
+	}).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUser {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUser)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser struct {
+	// Description:
+	SocialAccounts []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount `pulumi:"socialAccounts"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs struct {
+	// Description:
+	SocialAccounts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayInput `pulumi:"socialAccounts"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput {
+	return o
+}
+
+// Description:
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput) SocialAccounts() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser) []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount {
+		return v.SocialAccounts
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount struct {
+	// A human readable name, primarily used for display purposes.
+	Display string `pulumi:"display"`
+	// User Token URI
+	Ref string `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgs struct {
+	// A human readable name, primarily used for display purposes.
+	Display pulumi.StringInput `pulumi:"display"`
+	// User Token URI
+	Ref pulumi.StringInput `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput {
+	return o
+}
+
+// A human readable name, primarily used for display purposes.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput) Display() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount) string {
+		return v.Display
+	}).(pulumi.StringOutput)
+}
+
+// User Token URI
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput) Ref() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount) string {
+		return v.Ref
+	}).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser struct {
+	// Description:
+	TermsOfUseConsents []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent `pulumi:"termsOfUseConsents"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs struct {
+	// Description:
+	TermsOfUseConsents GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayInput `pulumi:"termsOfUseConsents"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput {
+	return o
+}
+
+// Description:
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput) TermsOfUseConsents() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser) []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent {
+		return v.TermsOfUseConsents
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent struct {
+	// User Token URI
+	Ref string `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArgs struct {
+	// User Token URI
+	Ref pulumi.StringInput `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput {
+	return o
+}
+
+// User Token URI
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput) Ref() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent) string {
+		return v.Ref
+	}).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser struct {
+	// A list of API keys corresponding to user.
+	ApiKeys []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey `pulumi:"apiKeys"`
+	// A list of Auth tokens corresponding to user.
+	AuthTokens []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken `pulumi:"authTokens"`
+	// A list of customer secret keys corresponding to user.
+	CustomerSecretKeys []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey `pulumi:"customerSecretKeys"`
+	// A list of database credentials corresponding to user.
+	DbCredentials []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential `pulumi:"dbCredentials"`
+	// A list of OAuth2 client credentials corresponding to a user.
+	OAuth2clientCredentials []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential `pulumi:"oAuth2clientCredentials"`
+	// A list of SMTP credentials corresponding to user.
+	SmtpCredentials []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential `pulumi:"smtpCredentials"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs struct {
+	// A list of API keys corresponding to user.
+	ApiKeys GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayInput `pulumi:"apiKeys"`
+	// A list of Auth tokens corresponding to user.
+	AuthTokens GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayInput `pulumi:"authTokens"`
+	// A list of customer secret keys corresponding to user.
+	CustomerSecretKeys GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayInput `pulumi:"customerSecretKeys"`
+	// A list of database credentials corresponding to user.
+	DbCredentials GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArrayInput `pulumi:"dbCredentials"`
+	// A list of OAuth2 client credentials corresponding to a user.
+	OAuth2clientCredentials GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArrayInput `pulumi:"oAuth2clientCredentials"`
+	// A list of SMTP credentials corresponding to user.
+	SmtpCredentials GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArrayInput `pulumi:"smtpCredentials"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput {
+	return o
+}
+
+// A list of API keys corresponding to user.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput) ApiKeys() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser) []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey {
+		return v.ApiKeys
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput)
+}
+
+// A list of Auth tokens corresponding to user.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput) AuthTokens() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser) []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken {
+		return v.AuthTokens
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput)
+}
+
+// A list of customer secret keys corresponding to user.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput) CustomerSecretKeys() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser) []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey {
+		return v.CustomerSecretKeys
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayOutput)
+}
+
+// A list of database credentials corresponding to user.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput) DbCredentials() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArrayOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser) []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential {
+		return v.DbCredentials
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArrayOutput)
+}
+
+// A list of OAuth2 client credentials corresponding to a user.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput) OAuth2clientCredentials() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArrayOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser) []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential {
+		return v.OAuth2clientCredentials
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArrayOutput)
+}
+
+// A list of SMTP credentials corresponding to user.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput) SmtpCredentials() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArrayOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser) []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential {
+		return v.SmtpCredentials
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey struct {
+	// The user's API key value.
+	Key string `pulumi:"key"`
+	// The OCID of the user's support account.
+	Ocid string `pulumi:"ocid"`
+	// User Token URI
+	Ref string `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArgs struct {
+	// The user's API key value.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The OCID of the user's support account.
+	Ocid pulumi.StringInput `pulumi:"ocid"`
+	// User Token URI
+	Ref pulumi.StringInput `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput {
+	return o
+}
+
+// The user's API key value.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the user's support account.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput) Ocid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey) string {
+		return v.Ocid
+	}).(pulumi.StringOutput)
+}
+
+// User Token URI
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput) Ref() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey) string {
+		return v.Ref
+	}).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken struct {
+	// The OCID of the user's support account.
+	Ocid string `pulumi:"ocid"`
+	// User Token URI
+	Ref string `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArgs and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArgs{...}
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArgs struct {
+	// The OCID of the user's support account.
+	Ocid pulumi.StringInput `pulumi:"ocid"`
+	// User Token URI
+	Ref pulumi.StringInput `pulumi:"ref"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArgs) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput)
+}
+
+// GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayInput` via:
+//
+//	GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArray{ GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArgs{...} }
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput
+	ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutputWithContext(context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArray []GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenInput
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput {
+	return i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArray) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput {
+	return o
+}
+
+// The OCID of the user's support account.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput) Ocid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken) string {
+		return v.Ocid
+	}).(pulumi.StringOutput)
+}
+
+// User Token URI
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput) Ref() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken) string {
+		return v.Ref
+	}).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput() GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken {
+		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken)[vs[1].(int)]
+	}).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput)
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey struct {
 	// The OCID of the user's support account.
 	Ocid string `pulumi:"ocid"`
@@ -9215,6 +14059,82 @@ func (o GetUsersUserCapabilityArrayOutput) Index(i pulumi.IntInput) GetUsersUser
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserRoleInput)(nil)).Elem(), GetDomainsUsersUserRoleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserRoleArrayInput)(nil)).Elem(), GetDomainsUsersUserRoleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserTagInput)(nil)).Elem(), GetDomainsUsersUserTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserTagArrayInput)(nil)).Elem(), GetDomainsUsersUserTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialInput)(nil)).Elem(), GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArgs{})
@@ -9349,6 +14269,82 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUsersUserArrayInput)(nil)).Elem(), GetUsersUserArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUsersUserCapabilityInput)(nil)).Elem(), GetUsersUserCapabilityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUsersUserCapabilityArrayInput)(nil)).Elem(), GetUsersUserCapabilityArray{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserRoleOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserRoleArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserTagOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserTagArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput{})
 	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyOutput{})
 	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayOutput{})
 	pulumi.RegisterOutputType(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialOutput{})

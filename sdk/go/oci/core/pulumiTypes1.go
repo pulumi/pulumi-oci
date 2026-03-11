@@ -16,6 +16,8 @@ var _ = internal.GetEnvOrDefault
 type GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail struct {
 	// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
 	Ipv6address string `pulumi:"ipv6address"`
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+	Ipv6id string `pulumi:"ipv6id"`
 	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
 	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
 }
@@ -34,6 +36,8 @@ type GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addr
 type GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs struct {
 	// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
 	Ipv6address pulumi.StringInput `pulumi:"ipv6address"`
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+	Ipv6id pulumi.StringInput `pulumi:"ipv6id"`
 	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
 	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
 }
@@ -93,6 +97,13 @@ func (o GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6a
 func (o GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6address() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
 		return v.Ipv6address
+	}).(pulumi.StringOutput)
+}
+
+// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+func (o GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6id
 	}).(pulumi.StringOutput)
 }
 
@@ -2222,6 +2233,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCre
 	NsgIds []string `pulumi:"nsgIds"`
 	// A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
 	PrivateIp string `pulumi:"privateIp"`
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	PrivateIpId string `pulumi:"privateIpId"`
 	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -2264,6 +2277,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCre
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
 	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	PrivateIpId pulumi.StringInput `pulumi:"privateIpId"`
 	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
 	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -2395,6 +2410,13 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail
 	}).(pulumi.StringOutput)
 }
 
+// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) PrivateIpId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) string {
+		return v.PrivateIpId
+	}).(pulumi.StringOutput)
+}
+
 // [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
 func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailOutput) SecurityAttributes() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail) map[string]string {
@@ -2446,6 +2468,8 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail
 type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail struct {
 	// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
 	Ipv6address string `pulumi:"ipv6address"`
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+	Ipv6id string `pulumi:"ipv6id"`
 	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
 	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
 }
@@ -2464,6 +2488,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCre
 type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs struct {
 	// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
 	Ipv6address pulumi.StringInput `pulumi:"ipv6address"`
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+	Ipv6id pulumi.StringInput `pulumi:"ipv6id"`
 	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
 	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
 }
@@ -2523,6 +2549,13 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail
 func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6address() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
 		return v.Ipv6address
+	}).(pulumi.StringOutput)
+}
+
+// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6id
 	}).(pulumi.StringOutput)
 }
 
@@ -5756,6 +5789,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDet
 	NsgIds []string `pulumi:"nsgIds"`
 	// A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
 	PrivateIp string `pulumi:"privateIp"`
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	PrivateIpId string `pulumi:"privateIpId"`
 	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -5798,6 +5833,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDet
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
 	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	PrivateIpId pulumi.StringInput `pulumi:"privateIpId"`
 	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
 	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -5929,6 +5966,13 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunch
 	}).(pulumi.StringOutput)
 }
 
+// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) PrivateIpId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) string {
+		return v.PrivateIpId
+	}).(pulumi.StringOutput)
+}
+
 // [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
 func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) SecurityAttributes() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) map[string]string {
@@ -5980,6 +6024,8 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunch
 type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail struct {
 	// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
 	Ipv6address string `pulumi:"ipv6address"`
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+	Ipv6id string `pulumi:"ipv6id"`
 	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
 	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
 }
@@ -5998,6 +6044,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDet
 type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs struct {
 	// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
 	Ipv6address pulumi.StringInput `pulumi:"ipv6address"`
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+	Ipv6id pulumi.StringInput `pulumi:"ipv6id"`
 	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
 	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
 }
@@ -6057,6 +6105,13 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunch
 func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6address() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
 		return v.Ipv6address
+	}).(pulumi.StringOutput)
+}
+
+// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6id
 	}).(pulumi.StringOutput)
 }
 
@@ -7622,6 +7677,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondary
 	NsgIds []string `pulumi:"nsgIds"`
 	// A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
 	PrivateIp string `pulumi:"privateIp"`
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	PrivateIpId string `pulumi:"privateIpId"`
 	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -7664,6 +7721,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondary
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
 	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	PrivateIpId pulumi.StringInput `pulumi:"privateIpId"`
 	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
 	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -7795,6 +7854,13 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecond
 	}).(pulumi.StringOutput)
 }
 
+// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailOutput) PrivateIpId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetail) string {
+		return v.PrivateIpId
+	}).(pulumi.StringOutput)
+}
+
 // [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
 func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailOutput) SecurityAttributes() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetail) map[string]string {
@@ -7846,6 +7912,8 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecond
 type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail struct {
 	// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
 	Ipv6address string `pulumi:"ipv6address"`
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+	Ipv6id string `pulumi:"ipv6id"`
 	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
 	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
 }
@@ -7864,6 +7932,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondary
 type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs struct {
 	// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
 	Ipv6address pulumi.StringInput `pulumi:"ipv6address"`
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+	Ipv6id pulumi.StringInput `pulumi:"ipv6id"`
 	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
 	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
 }
@@ -7923,6 +7993,13 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecond
 func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6address() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
 		return v.Ipv6address
+	}).(pulumi.StringOutput)
+}
+
+// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6id
 	}).(pulumi.StringOutput)
 }
 
@@ -8095,6 +8172,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCr
 	NsgIds []string `pulumi:"nsgIds"`
 	// A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
 	PrivateIp string `pulumi:"privateIp"`
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	PrivateIpId string `pulumi:"privateIpId"`
 	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -8137,6 +8216,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCr
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
 	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	PrivateIpId pulumi.StringInput `pulumi:"privateIpId"`
 	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
 	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -8268,6 +8349,13 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVni
 	}).(pulumi.StringOutput)
 }
 
+// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailOutput) PrivateIpId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetail) string {
+		return v.PrivateIpId
+	}).(pulumi.StringOutput)
+}
+
 // [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
 func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailOutput) SecurityAttributes() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetail) map[string]string {
@@ -8319,6 +8407,8 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVni
 type GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail struct {
 	// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
 	Ipv6address string `pulumi:"ipv6address"`
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+	Ipv6id string `pulumi:"ipv6id"`
 	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
 	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
 }
@@ -8337,6 +8427,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCr
 type GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs struct {
 	// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
 	Ipv6address pulumi.StringInput `pulumi:"ipv6address"`
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+	Ipv6id pulumi.StringInput `pulumi:"ipv6id"`
 	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
 	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
 }
@@ -8396,6 +8488,13 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVni
 func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6address() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
 		return v.Ipv6address
+	}).(pulumi.StringOutput)
+}
+
+// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6id
 	}).(pulumi.StringOutput)
 }
 
@@ -8735,7 +8834,8 @@ type GetInstanceCreateVnicDetail struct {
 	Ipv6addressIpv6subnetCidrPairDetails []GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
 	NsgIds                               []string                                                         `pulumi:"nsgIds"`
 	// The private IP address of instance VNIC. To set the private IP address, use the `privateIp` argument in create_vnic_details.
-	PrivateIp string `pulumi:"privateIp"`
+	PrivateIp   string `pulumi:"privateIp"`
+	PrivateIpId string `pulumi:"privateIpId"`
 	// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 	SecurityAttributes  map[string]string `pulumi:"securityAttributes"`
 	SkipSourceDestCheck bool              `pulumi:"skipSourceDestCheck"`
@@ -8770,7 +8870,8 @@ type GetInstanceCreateVnicDetailArgs struct {
 	Ipv6addressIpv6subnetCidrPairDetails GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
 	NsgIds                               pulumi.StringArrayInput                                                  `pulumi:"nsgIds"`
 	// The private IP address of instance VNIC. To set the private IP address, use the `privateIp` argument in create_vnic_details.
-	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
+	PrivateIp   pulumi.StringInput `pulumi:"privateIp"`
+	PrivateIpId pulumi.StringInput `pulumi:"privateIpId"`
 	// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 	SecurityAttributes  pulumi.StringMapInput `pulumi:"securityAttributes"`
 	SkipSourceDestCheck pulumi.BoolInput      `pulumi:"skipSourceDestCheck"`
@@ -8877,6 +8978,10 @@ func (o GetInstanceCreateVnicDetailOutput) PrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceCreateVnicDetail) string { return v.PrivateIp }).(pulumi.StringOutput)
 }
 
+func (o GetInstanceCreateVnicDetailOutput) PrivateIpId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceCreateVnicDetail) string { return v.PrivateIpId }).(pulumi.StringOutput)
+}
+
 // Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 func (o GetInstanceCreateVnicDetailOutput) SecurityAttributes() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetInstanceCreateVnicDetail) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
@@ -8920,6 +9025,7 @@ func (o GetInstanceCreateVnicDetailArrayOutput) Index(i pulumi.IntInput) GetInst
 
 type GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail struct {
 	Ipv6address    string `pulumi:"ipv6address"`
+	Ipv6id         string `pulumi:"ipv6id"`
 	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
 }
 
@@ -8936,6 +9042,7 @@ type GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput interfa
 
 type GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs struct {
 	Ipv6address    pulumi.StringInput `pulumi:"ipv6address"`
+	Ipv6id         pulumi.StringInput `pulumi:"ipv6id"`
 	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
 }
 
@@ -8992,6 +9099,10 @@ func (o GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) To
 
 func (o GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6address() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string { return v.Ipv6address }).(pulumi.StringOutput)
+}
+
+func (o GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string { return v.Ipv6id }).(pulumi.StringOutput)
 }
 
 func (o GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6subnetCidr() pulumi.StringOutput {
@@ -15830,6 +15941,7 @@ type GetInstancesInstanceCreateVnicDetail struct {
 	Ipv6addressIpv6subnetCidrPairDetails []GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
 	NsgIds                               []string                                                                  `pulumi:"nsgIds"`
 	PrivateIp                            string                                                                    `pulumi:"privateIp"`
+	PrivateIpId                          string                                                                    `pulumi:"privateIpId"`
 	// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 	SecurityAttributes  map[string]string `pulumi:"securityAttributes"`
 	SkipSourceDestCheck bool              `pulumi:"skipSourceDestCheck"`
@@ -15863,6 +15975,7 @@ type GetInstancesInstanceCreateVnicDetailArgs struct {
 	Ipv6addressIpv6subnetCidrPairDetails GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
 	NsgIds                               pulumi.StringArrayInput                                                           `pulumi:"nsgIds"`
 	PrivateIp                            pulumi.StringInput                                                                `pulumi:"privateIp"`
+	PrivateIpId                          pulumi.StringInput                                                                `pulumi:"privateIpId"`
 	// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 	SecurityAttributes  pulumi.StringMapInput `pulumi:"securityAttributes"`
 	SkipSourceDestCheck pulumi.BoolInput      `pulumi:"skipSourceDestCheck"`
@@ -15967,6 +16080,10 @@ func (o GetInstancesInstanceCreateVnicDetailOutput) PrivateIp() pulumi.StringOut
 	return o.ApplyT(func(v GetInstancesInstanceCreateVnicDetail) string { return v.PrivateIp }).(pulumi.StringOutput)
 }
 
+func (o GetInstancesInstanceCreateVnicDetailOutput) PrivateIpId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstanceCreateVnicDetail) string { return v.PrivateIpId }).(pulumi.StringOutput)
+}
+
 // Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 func (o GetInstancesInstanceCreateVnicDetailOutput) SecurityAttributes() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetInstancesInstanceCreateVnicDetail) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
@@ -16010,6 +16127,7 @@ func (o GetInstancesInstanceCreateVnicDetailArrayOutput) Index(i pulumi.IntInput
 
 type GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail struct {
 	Ipv6address    string `pulumi:"ipv6address"`
+	Ipv6id         string `pulumi:"ipv6id"`
 	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
 }
 
@@ -16026,6 +16144,7 @@ type GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInpu
 
 type GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs struct {
 	Ipv6address    pulumi.StringInput `pulumi:"ipv6address"`
+	Ipv6id         pulumi.StringInput `pulumi:"ipv6id"`
 	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
 }
 
@@ -16083,6 +16202,12 @@ func (o GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailO
 func (o GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6address() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
 		return v.Ipv6address
+	}).(pulumi.StringOutput)
+}
+
+func (o GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6id
 	}).(pulumi.StringOutput)
 }
 
@@ -37994,6 +38119,7 @@ type GetVnicAttachmentsVnicAttachmentCreateVnicDetail struct {
 	Ipv6addressIpv6subnetCidrPairDetails []GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
 	NsgIds                               []string                                                                              `pulumi:"nsgIds"`
 	PrivateIp                            string                                                                                `pulumi:"privateIp"`
+	PrivateIpId                          string                                                                                `pulumi:"privateIpId"`
 	RouteTableId                         string                                                                                `pulumi:"routeTableId"`
 	SecurityAttributes                   map[string]string                                                                     `pulumi:"securityAttributes"`
 	SkipSourceDestCheck                  bool                                                                                  `pulumi:"skipSourceDestCheck"`
@@ -38027,6 +38153,7 @@ type GetVnicAttachmentsVnicAttachmentCreateVnicDetailArgs struct {
 	Ipv6addressIpv6subnetCidrPairDetails GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
 	NsgIds                               pulumi.StringArrayInput                                                                       `pulumi:"nsgIds"`
 	PrivateIp                            pulumi.StringInput                                                                            `pulumi:"privateIp"`
+	PrivateIpId                          pulumi.StringInput                                                                            `pulumi:"privateIpId"`
 	RouteTableId                         pulumi.StringInput                                                                            `pulumi:"routeTableId"`
 	SecurityAttributes                   pulumi.StringMapInput                                                                         `pulumi:"securityAttributes"`
 	SkipSourceDestCheck                  pulumi.BoolInput                                                                              `pulumi:"skipSourceDestCheck"`
@@ -38131,6 +38258,10 @@ func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) PrivateIp() pulu
 	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetail) string { return v.PrivateIp }).(pulumi.StringOutput)
 }
 
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) PrivateIpId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetail) string { return v.PrivateIpId }).(pulumi.StringOutput)
+}
+
 func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) RouteTableId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetail) string { return v.RouteTableId }).(pulumi.StringOutput)
 }
@@ -38180,8 +38311,9 @@ func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput) Index(i pul
 }
 
 type GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail struct {
-	Ipv6Address    string `pulumi:"ipv6Address"`
-	Ipv6SubnetCidr string `pulumi:"ipv6SubnetCidr"`
+	Ipv6address    string `pulumi:"ipv6address"`
+	Ipv6id         string `pulumi:"ipv6id"`
+	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
 }
 
 // GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput is an input type that accepts GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs and GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput values.
@@ -38196,8 +38328,9 @@ type GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPa
 }
 
 type GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs struct {
-	Ipv6Address    pulumi.StringInput `pulumi:"ipv6Address"`
-	Ipv6SubnetCidr pulumi.StringInput `pulumi:"ipv6SubnetCidr"`
+	Ipv6address    pulumi.StringInput `pulumi:"ipv6address"`
+	Ipv6id         pulumi.StringInput `pulumi:"ipv6id"`
+	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
 }
 
 func (GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs) ElementType() reflect.Type {
@@ -38251,15 +38384,21 @@ func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCid
 	return o
 }
 
-func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6Address() pulumi.StringOutput {
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6address() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
-		return v.Ipv6Address
+		return v.Ipv6address
 	}).(pulumi.StringOutput)
 }
 
-func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6SubnetCidr() pulumi.StringOutput {
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
-		return v.Ipv6SubnetCidr
+		return v.Ipv6id
+	}).(pulumi.StringOutput)
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6subnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6subnetCidr
 	}).(pulumi.StringOutput)
 }
 

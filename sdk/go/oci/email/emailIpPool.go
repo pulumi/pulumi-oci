@@ -41,6 +41,7 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				LastIpDrainPeriodInHours: pulumi.Any(emailIpPoolLastIpDrainPeriodInHours),
 //			})
 //			if err != nil {
 //				return err
@@ -69,6 +70,8 @@ type EmailIpPool struct {
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+	LastIpDrainPeriodInHours pulumi.IntOutput `pulumi:"lastIpDrainPeriodInHours"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
@@ -135,6 +138,8 @@ type emailIpPoolState struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+	LastIpDrainPeriodInHours *int `pulumi:"lastIpDrainPeriodInHours"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
@@ -166,6 +171,8 @@ type EmailIpPoolState struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+	LastIpDrainPeriodInHours pulumi.IntPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
 	LifecycleDetails pulumi.StringPtrInput
 	// Locks associated with this resource.
@@ -201,6 +208,8 @@ type emailIpPoolArgs struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+	LastIpDrainPeriodInHours *int `pulumi:"lastIpDrainPeriodInHours"`
 	// The name of the IpPool. The name must be unique within a region.  The name is case sensitive and supported characters include alphanumeric, hyphens ("-") and underscore ("_") characters.  Example: green_pool-1
 	Name *string `pulumi:"name"`
 	// A list of outbound public IPs for assignment to the IpPool. These IPs must be in the AVAILABLE state to be eligible for assignment.
@@ -220,6 +229,8 @@ type EmailIpPoolArgs struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+	LastIpDrainPeriodInHours pulumi.IntPtrInput
 	// The name of the IpPool. The name must be unique within a region.  The name is case sensitive and supported characters include alphanumeric, hyphens ("-") and underscore ("_") characters.  Example: green_pool-1
 	Name pulumi.StringPtrInput
 	// A list of outbound public IPs for assignment to the IpPool. These IPs must be in the AVAILABLE state to be eligible for assignment.
@@ -334,6 +345,11 @@ func (o EmailIpPoolOutput) Description() pulumi.StringOutput {
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o EmailIpPoolOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *EmailIpPool) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+func (o EmailIpPoolOutput) LastIpDrainPeriodInHours() pulumi.IntOutput {
+	return o.ApplyT(func(v *EmailIpPool) pulumi.IntOutput { return v.LastIpDrainPeriodInHours }).(pulumi.IntOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.

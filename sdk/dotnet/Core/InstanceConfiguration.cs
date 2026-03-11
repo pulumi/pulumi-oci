@@ -146,11 +146,13 @@ namespace Pulumi.Oci.Core
     ///                         new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs
     ///                         {
     ///                             Ipv6address = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address,
+    ///                             Ipv6id = testIpv6.Id,
     ///                             Ipv6subnetCidr = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
     ///                         },
     ///                     },
     ///                     NsgIds = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsNsgIds,
     ///                     PrivateIp = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsPrivateIp,
+    ///                     PrivateIpId = testPrivateIp.Id,
     ///                     SecurityAttributes = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsSecurityAttributes,
     ///                     SkipSourceDestCheck = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsSkipSourceDestCheck,
     ///                     SubnetCidr = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsSubnetCidr,
@@ -348,12 +350,14 @@ namespace Pulumi.Oci.Core
     ///                             {
     ///                                 new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs
     ///                                 {
-    ///                                     Ipv6address = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address,
-    ///                                     Ipv6subnetCidr = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
+    ///                                     Ipv6address = instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address,
+    ///                                     Ipv6id = testIpv6.Id,
+    ///                                     Ipv6subnetCidr = instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
     ///                                 },
     ///                             },
     ///                             NsgIds = instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsNsgIds,
     ///                             PrivateIp = instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsPrivateIp,
+    ///                             PrivateIpId = testPrivateIp.Id,
     ///                             SecurityAttributes = instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsSecurityAttributes,
     ///                             SkipSourceDestCheck = instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsSkipSourceDestCheck,
     ///                             SubnetCidr = instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsSubnetCidr,
@@ -472,12 +476,14 @@ namespace Pulumi.Oci.Core
     ///                                 {
     ///                                     new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs
     ///                                     {
-    ///                                         Ipv6address = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address,
-    ///                                         Ipv6subnetCidr = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
+    ///                                         Ipv6address = instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address,
+    ///                                         Ipv6id = testIpv6.Id,
+    ///                                         Ipv6subnetCidr = instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
     ///                                     },
     ///                                 },
     ///                                 NsgIds = instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsNsgIds,
     ///                                 PrivateIp = instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsPrivateIp,
+    ///                                 PrivateIpId = testPrivateIp.Id,
     ///                                 SecurityAttributes = instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsSecurityAttributes,
     ///                                 SkipSourceDestCheck = instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck,
     ///                                 SubnetCidr = instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsSubnetCidr,
@@ -507,8 +513,18 @@ namespace Pulumi.Oci.Core
     ///                             { "Department", "Finance" },
     ///                         },
     ///                         HostnameLabel = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsHostnameLabel,
+    ///                         Ipv6addressIpv6subnetCidrPairDetails = new[]
+    ///                         {
+    ///                             new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs
+    ///                             {
+    ///                                 Ipv6address = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address,
+    ///                                 Ipv6id = testIpv6.Id,
+    ///                                 Ipv6subnetCidr = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
+    ///                             },
+    ///                         },
     ///                         NsgIds = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsNsgIds,
     ///                         PrivateIp = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsPrivateIp,
+    ///                         PrivateIpId = testPrivateIp.Id,
     ///                         SecurityAttributes = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsSecurityAttributes,
     ///                         SkipSourceDestCheck = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck,
     ///                         SubnetCidr = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsSubnetCidr,

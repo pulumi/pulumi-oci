@@ -73,6 +73,7 @@ __all__ = [
     'GetDesktopsDesktopCollectionItemDesktopConnectionResult',
     'GetDesktopsDesktopCollectionItemDesktopConnectionLastActionResult',
     'GetDesktopsDesktopCollectionItemDesktopConnectionNextActionResult',
+    'GetDesktopsDesktopCollectionItemImageResult',
     'GetDesktopsFilterResult',
 ]
 
@@ -2830,6 +2831,7 @@ class GetDesktopsDesktopCollectionItemResult(dict):
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 images: Sequence['outputs.GetDesktopsDesktopCollectionItemImageResult'],
                  pool_id: _builtins.str,
                  state: _builtins.str,
                  time_created: _builtins.str,
@@ -2850,6 +2852,7 @@ class GetDesktopsDesktopCollectionItemResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "images", images)
         pulumi.set(__self__, "pool_id", pool_id)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
@@ -2894,6 +2897,11 @@ class GetDesktopsDesktopCollectionItemResult(dict):
         A filter to return only results with the given OCID.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def images(self) -> Sequence['outputs.GetDesktopsDesktopCollectionItemImageResult']:
+        return pulumi.get(self, "images")
 
     @_builtins.property
     @pulumi.getter(name="poolId")
@@ -3068,6 +3076,32 @@ class GetDesktopsDesktopCollectionItemDesktopConnectionNextActionResult(dict):
         The time of an action performed on a desktop.
         """
         return pulumi.get(self, "time_applied")
+
+
+@pulumi.output_type
+class GetDesktopsDesktopCollectionItemImageResult(dict):
+    def __init__(__self__, *,
+                 image_id: _builtins.str,
+                 image_name: _builtins.str,
+                 operating_system: _builtins.str):
+        pulumi.set(__self__, "image_id", image_id)
+        pulumi.set(__self__, "image_name", image_name)
+        pulumi.set(__self__, "operating_system", operating_system)
+
+    @_builtins.property
+    @pulumi.getter(name="imageId")
+    def image_id(self) -> _builtins.str:
+        return pulumi.get(self, "image_id")
+
+    @_builtins.property
+    @pulumi.getter(name="imageName")
+    def image_name(self) -> _builtins.str:
+        return pulumi.get(self, "image_name")
+
+    @_builtins.property
+    @pulumi.getter(name="operatingSystem")
+    def operating_system(self) -> _builtins.str:
+        return pulumi.get(self, "operating_system")
 
 
 @pulumi.output_type

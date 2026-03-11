@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Email.inputs.EmailIpPoolLockArgs;
 import com.pulumi.oci.Email.inputs.EmailIpPoolOutboundIpsResponseArgs;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -77,6 +78,21 @@ public final class EmailIpPoolState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+     * 
+     */
+    @Import(name="lastIpDrainPeriodInHours")
+    private @Nullable Output<Integer> lastIpDrainPeriodInHours;
+
+    /**
+     * @return (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+     * 
+     */
+    public Optional<Output<Integer>> lastIpDrainPeriodInHours() {
+        return Optional.ofNullable(this.lastIpDrainPeriodInHours);
     }
 
     /**
@@ -219,6 +235,7 @@ public final class EmailIpPoolState extends com.pulumi.resources.ResourceArgs {
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.freeformTags = $.freeformTags;
+        this.lastIpDrainPeriodInHours = $.lastIpDrainPeriodInHours;
         this.lifecycleDetails = $.lifecycleDetails;
         this.locks = $.locks;
         this.name = $.name;
@@ -330,6 +347,27 @@ public final class EmailIpPoolState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param lastIpDrainPeriodInHours (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lastIpDrainPeriodInHours(@Nullable Output<Integer> lastIpDrainPeriodInHours) {
+            $.lastIpDrainPeriodInHours = lastIpDrainPeriodInHours;
+            return this;
+        }
+
+        /**
+         * @param lastIpDrainPeriodInHours (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lastIpDrainPeriodInHours(Integer lastIpDrainPeriodInHours) {
+            return lastIpDrainPeriodInHours(Output.of(lastIpDrainPeriodInHours));
         }
 
         /**

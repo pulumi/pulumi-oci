@@ -65,6 +65,11 @@ public final class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreat
      */
     private String privateIp;
     /**
+     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+     * 
+     */
+    private String privateIpId;
+    /**
      * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
      * 
      */
@@ -157,6 +162,13 @@ public final class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreat
         return this.privateIp;
     }
     /**
+     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+     * 
+     */
+    public String privateIpId() {
+        return this.privateIpId;
+    }
+    /**
      * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
      * 
      */
@@ -204,6 +216,7 @@ public final class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreat
         private List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
         private List<String> nsgIds;
         private String privateIp;
+        private String privateIpId;
         private Map<String,String> securityAttributes;
         private Boolean skipSourceDestCheck;
         private String subnetCidr;
@@ -221,6 +234,7 @@ public final class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreat
     	      this.ipv6addressIpv6subnetCidrPairDetails = defaults.ipv6addressIpv6subnetCidrPairDetails;
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateIp = defaults.privateIp;
+    	      this.privateIpId = defaults.privateIpId;
     	      this.securityAttributes = defaults.securityAttributes;
     	      this.skipSourceDestCheck = defaults.skipSourceDestCheck;
     	      this.subnetCidr = defaults.subnetCidr;
@@ -314,6 +328,14 @@ public final class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreat
             return this;
         }
         @CustomType.Setter
+        public Builder privateIpId(String privateIpId) {
+            if (privateIpId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail", "privateIpId");
+            }
+            this.privateIpId = privateIpId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder securityAttributes(Map<String,String> securityAttributes) {
             if (securityAttributes == null) {
               throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail", "securityAttributes");
@@ -357,6 +379,7 @@ public final class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreat
             _resultValue.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             _resultValue.nsgIds = nsgIds;
             _resultValue.privateIp = privateIp;
+            _resultValue.privateIpId = privateIpId;
             _resultValue.securityAttributes = securityAttributes;
             _resultValue.skipSourceDestCheck = skipSourceDestCheck;
             _resultValue.subnetCidr = subnetCidr;

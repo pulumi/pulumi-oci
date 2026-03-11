@@ -100,6 +100,11 @@ export type DifStack = import("./difStack").DifStack;
 export const DifStack: typeof import("./difStack").DifStack = null as any;
 utilities.lazyLoad(exports, ["DifStack"], () => require("./difStack"));
 
+export { GdpGdpPipelineArgs, GdpGdpPipelineState } from "./gdpGdpPipeline";
+export type GdpGdpPipeline = import("./gdpGdpPipeline").GdpGdpPipeline;
+export const GdpGdpPipeline: typeof import("./gdpGdpPipeline").GdpGdpPipeline = null as any;
+utilities.lazyLoad(exports, ["GdpGdpPipeline"], () => require("./gdpGdpPipeline"));
+
 export { GetAiDataPlatformAiDataPlatformArgs, GetAiDataPlatformAiDataPlatformResult, GetAiDataPlatformAiDataPlatformOutputArgs } from "./getAiDataPlatformAiDataPlatform";
 export const getAiDataPlatformAiDataPlatform: typeof import("./getAiDataPlatformAiDataPlatform").getAiDataPlatformAiDataPlatform = null as any;
 export const getAiDataPlatformAiDataPlatformOutput: typeof import("./getAiDataPlatformAiDataPlatform").getAiDataPlatformAiDataPlatformOutput = null as any;
@@ -329,6 +334,16 @@ export { GetDifStacksArgs, GetDifStacksResult, GetDifStacksOutputArgs } from "./
 export const getDifStacks: typeof import("./getDifStacks").getDifStacks = null as any;
 export const getDifStacksOutput: typeof import("./getDifStacks").getDifStacksOutput = null as any;
 utilities.lazyLoad(exports, ["getDifStacks","getDifStacksOutput"], () => require("./getDifStacks"));
+
+export { GetGdpGdpPipelineArgs, GetGdpGdpPipelineResult, GetGdpGdpPipelineOutputArgs } from "./getGdpGdpPipeline";
+export const getGdpGdpPipeline: typeof import("./getGdpGdpPipeline").getGdpGdpPipeline = null as any;
+export const getGdpGdpPipelineOutput: typeof import("./getGdpGdpPipeline").getGdpGdpPipelineOutput = null as any;
+utilities.lazyLoad(exports, ["getGdpGdpPipeline","getGdpGdpPipelineOutput"], () => require("./getGdpGdpPipeline"));
+
+export { GetGdpGdpPipelinesArgs, GetGdpGdpPipelinesResult, GetGdpGdpPipelinesOutputArgs } from "./getGdpGdpPipelines";
+export const getGdpGdpPipelines: typeof import("./getGdpGdpPipelines").getGdpGdpPipelines = null as any;
+export const getGdpGdpPipelinesOutput: typeof import("./getGdpGdpPipelines").getGdpGdpPipelinesOutput = null as any;
+utilities.lazyLoad(exports, ["getGdpGdpPipelines","getGdpGdpPipelinesOutput"], () => require("./getGdpGdpPipelines"));
 
 export { GetIotDigitalTwinAdapterArgs, GetIotDigitalTwinAdapterResult, GetIotDigitalTwinAdapterOutputArgs } from "./getIotDigitalTwinAdapter";
 export const getIotDigitalTwinAdapter: typeof import("./getIotDigitalTwinAdapter").getIotDigitalTwinAdapter = null as any;
@@ -773,6 +788,8 @@ const _module = {
                 return new DbmulticloudOracleDbGcpKeyRing(name, <any>undefined, { urn })
             case "oci:oci/difStack:DifStack":
                 return new DifStack(name, <any>undefined, { urn })
+            case "oci:oci/gdpGdpPipeline:GdpGdpPipeline":
+                return new GdpGdpPipeline(name, <any>undefined, { urn })
             case "oci:oci/iotDigitalTwinAdapter:IotDigitalTwinAdapter":
                 return new IotDigitalTwinAdapter(name, <any>undefined, { urn })
             case "oci:oci/iotDigitalTwinInstance:IotDigitalTwinInstance":
@@ -833,6 +850,7 @@ pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureVault
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbGcpIdentityConnector", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbGcpKeyRing", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/difStack", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/gdpGdpPipeline", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/iotDigitalTwinAdapter", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/iotDigitalTwinInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/iotDigitalTwinInstanceInvokeRawCommand", _module)

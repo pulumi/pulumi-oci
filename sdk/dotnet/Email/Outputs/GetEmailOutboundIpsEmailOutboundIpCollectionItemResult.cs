@@ -29,6 +29,10 @@ namespace Pulumi.Oci.Email.Outputs
         /// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
         /// </summary>
         public readonly string State;
+        /// <summary>
+        /// The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
+        /// </summary>
+        public readonly string TimeUnassigned;
 
         [OutputConstructor]
         private GetEmailOutboundIpsEmailOutboundIpCollectionItemResult(
@@ -38,12 +42,15 @@ namespace Pulumi.Oci.Email.Outputs
 
             string outboundIp,
 
-            string state)
+            string state,
+
+            string timeUnassigned)
         {
             AssignmentState = assignmentState;
             LifecycleDetails = lifecycleDetails;
             OutboundIp = outboundIp;
             State = state;
+            TimeUnassigned = timeUnassigned;
         }
     }
 }

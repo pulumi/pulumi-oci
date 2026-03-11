@@ -14,15 +14,19 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult
     {
         public readonly string Ipv6address;
+        public readonly string Ipv6id;
         public readonly string Ipv6subnetCidr;
 
         [OutputConstructor]
         private GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult(
             string ipv6address,
 
+            string ipv6id,
+
             string ipv6subnetCidr)
         {
             Ipv6address = ipv6address;
+            Ipv6id = ipv6id;
             Ipv6subnetCidr = ipv6subnetCidr;
         }
     }

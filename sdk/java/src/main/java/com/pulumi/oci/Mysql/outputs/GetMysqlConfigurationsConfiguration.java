@@ -48,7 +48,11 @@ public final class GetMysqlConfigurationsConfiguration {
     /**
      * @return DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
      * 
+     * @deprecated
+     * The &#39;init_variables&#39; field has been deprecated. Please use &#39;options&#39; instead.
+     * 
      */
+    @Deprecated /* The 'init_variables' field has been deprecated. Please use 'options' instead. */
     private List<GetMysqlConfigurationsConfigurationInitVariable> initVariables;
     /**
      * @return The MySQL options defined in the Configuration.
@@ -93,7 +97,11 @@ public final class GetMysqlConfigurationsConfiguration {
     /**
      * @return DEPRECATED -- please use the `options` field instead. User-defined service variables.
      * 
+     * @deprecated
+     * The &#39;variables&#39; field has been deprecated. Please use &#39;options&#39; instead.
+     * 
      */
+    @Deprecated /* The 'variables' field has been deprecated. Please use 'options' instead. */
     private List<GetMysqlConfigurationsConfigurationVariable> variables;
 
     private GetMysqlConfigurationsConfiguration() {}
@@ -142,7 +150,11 @@ public final class GetMysqlConfigurationsConfiguration {
     /**
      * @return DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
      * 
+     * @deprecated
+     * The &#39;init_variables&#39; field has been deprecated. Please use &#39;options&#39; instead.
+     * 
      */
+    @Deprecated /* The 'init_variables' field has been deprecated. Please use 'options' instead. */
     public List<GetMysqlConfigurationsConfigurationInitVariable> initVariables() {
         return this.initVariables;
     }
@@ -205,7 +217,11 @@ public final class GetMysqlConfigurationsConfiguration {
     /**
      * @return DEPRECATED -- please use the `options` field instead. User-defined service variables.
      * 
+     * @deprecated
+     * The &#39;variables&#39; field has been deprecated. Please use &#39;options&#39; instead.
+     * 
      */
+    @Deprecated /* The 'variables' field has been deprecated. Please use 'options' instead. */
     public List<GetMysqlConfigurationsConfigurationVariable> variables() {
         return this.variables;
     }

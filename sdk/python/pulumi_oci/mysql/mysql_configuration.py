@@ -56,11 +56,17 @@ class MysqlConfigurationArgs:
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if init_variables is not None:
+            warnings.warn("""The 'init_variables' field has been deprecated. Please use 'options' instead.""", DeprecationWarning)
+            pulumi.log.warn("""init_variables is deprecated: The 'init_variables' field has been deprecated. Please use 'options' instead.""")
+        if init_variables is not None:
             pulumi.set(__self__, "init_variables", init_variables)
         if options is not None:
             pulumi.set(__self__, "options", options)
         if parent_configuration_id is not None:
             pulumi.set(__self__, "parent_configuration_id", parent_configuration_id)
+        if variables is not None:
+            warnings.warn("""The 'variables' field has been deprecated. Please use 'options' instead.""", DeprecationWarning)
+            pulumi.log.warn("""variables is deprecated: The 'variables' field has been deprecated. Please use 'options' instead.""")
         if variables is not None:
             pulumi.set(__self__, "variables", variables)
 
@@ -138,6 +144,7 @@ class MysqlConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="initVariables")
+    @_utilities.deprecated("""The 'init_variables' field has been deprecated. Please use 'options' instead.""")
     def init_variables(self) -> Optional[pulumi.Input['MysqlConfigurationInitVariablesArgs']]:
         """
         DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
@@ -174,6 +181,7 @@ class MysqlConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter
+    @_utilities.deprecated("""The 'variables' field has been deprecated. Please use 'options' instead.""")
     def variables(self) -> Optional[pulumi.Input['MysqlConfigurationVariablesArgs']]:
         """
         DEPRECATED -- please use the `options` field instead. User-defined service variables.
@@ -233,6 +241,9 @@ class _MysqlConfigurationState:
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if init_variables is not None:
+            warnings.warn("""The 'init_variables' field has been deprecated. Please use 'options' instead.""", DeprecationWarning)
+            pulumi.log.warn("""init_variables is deprecated: The 'init_variables' field has been deprecated. Please use 'options' instead.""")
+        if init_variables is not None:
             pulumi.set(__self__, "init_variables", init_variables)
         if options is not None:
             pulumi.set(__self__, "options", options)
@@ -250,6 +261,9 @@ class _MysqlConfigurationState:
             pulumi.set(__self__, "time_updated", time_updated)
         if type is not None:
             pulumi.set(__self__, "type", type)
+        if variables is not None:
+            warnings.warn("""The 'variables' field has been deprecated. Please use 'options' instead.""", DeprecationWarning)
+            pulumi.log.warn("""variables is deprecated: The 'variables' field has been deprecated. Please use 'options' instead.""")
         if variables is not None:
             pulumi.set(__self__, "variables", variables)
 
@@ -315,6 +329,7 @@ class _MysqlConfigurationState:
 
     @_builtins.property
     @pulumi.getter(name="initVariables")
+    @_utilities.deprecated("""The 'init_variables' field has been deprecated. Please use 'options' instead.""")
     def init_variables(self) -> Optional[pulumi.Input['MysqlConfigurationInitVariablesArgs']]:
         """
         DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
@@ -423,6 +438,7 @@ class _MysqlConfigurationState:
 
     @_builtins.property
     @pulumi.getter
+    @_utilities.deprecated("""The 'variables' field has been deprecated. Please use 'options' instead.""")
     def variables(self) -> Optional[pulumi.Input['MysqlConfigurationVariablesArgs']]:
         """
         DEPRECATED -- please use the `options` field instead. User-defined service variables.
@@ -962,6 +978,7 @@ class MysqlConfiguration(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="initVariables")
+    @_utilities.deprecated("""The 'init_variables' field has been deprecated. Please use 'options' instead.""")
     def init_variables(self) -> pulumi.Output['outputs.MysqlConfigurationInitVariables']:
         """
         DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
@@ -1034,6 +1051,7 @@ class MysqlConfiguration(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
+    @_utilities.deprecated("""The 'variables' field has been deprecated. Please use 'options' instead.""")
     def variables(self) -> pulumi.Output['outputs.MysqlConfigurationVariables']:
         """
         DEPRECATED -- please use the `options` field instead. User-defined service variables.

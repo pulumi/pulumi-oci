@@ -128,11 +128,13 @@ import (
 //							Ipv6addressIpv6subnetCidrPairDetails: core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArray{
 //								&core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs{
 //									Ipv6address:    pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address),
+//									Ipv6id:         pulumi.Any(testIpv6.Id),
 //									Ipv6subnetCidr: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr),
 //								},
 //							},
 //							NsgIds:              pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsNsgIds),
 //							PrivateIp:           pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsPrivateIp),
+//							PrivateIpId:         pulumi.Any(testPrivateIp.Id),
 //							SecurityAttributes:  pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsSecurityAttributes),
 //							SkipSourceDestCheck: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsSkipSourceDestCheck),
 //							SubnetCidr:          pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsSubnetCidr),
@@ -297,12 +299,14 @@ import (
 //									HostnameLabel: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsHostnameLabel),
 //									Ipv6addressIpv6subnetCidrPairDetails: core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArray{
 //										&core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs{
-//											Ipv6address:    pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address),
-//											Ipv6subnetCidr: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr),
+//											Ipv6address:    pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address),
+//											Ipv6id:         pulumi.Any(testIpv6.Id),
+//											Ipv6subnetCidr: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr),
 //										},
 //									},
 //									NsgIds:              pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsNsgIds),
 //									PrivateIp:           pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsPrivateIp),
+//									PrivateIpId:         pulumi.Any(testPrivateIp.Id),
 //									SecurityAttributes:  pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsSecurityAttributes),
 //									SkipSourceDestCheck: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsSkipSourceDestCheck),
 //									SubnetCidr:          pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsSubnetCidr),
@@ -402,12 +406,14 @@ import (
 //										HostnameLabel: pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsHostnameLabel),
 //										Ipv6addressIpv6subnetCidrPairDetails: core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArray{
 //											&core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs{
-//												Ipv6address:    pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address),
-//												Ipv6subnetCidr: pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr),
+//												Ipv6address:    pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address),
+//												Ipv6id:         pulumi.Any(testIpv6.Id),
+//												Ipv6subnetCidr: pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr),
 //											},
 //										},
 //										NsgIds:              pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsNsgIds),
 //										PrivateIp:           pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsPrivateIp),
+//										PrivateIpId:         pulumi.Any(testPrivateIp.Id),
 //										SecurityAttributes:  pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsSecurityAttributes),
 //										SkipSourceDestCheck: pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck),
 //										SubnetCidr:          pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsSubnetCidr),
@@ -431,9 +437,17 @@ import (
 //								FreeformTags: pulumi.StringMap{
 //									"Department": pulumi.String("Finance"),
 //								},
-//								HostnameLabel:       pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsHostnameLabel),
+//								HostnameLabel: pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsHostnameLabel),
+//								Ipv6addressIpv6subnetCidrPairDetails: core.InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArray{
+//									&core.InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs{
+//										Ipv6address:    pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address),
+//										Ipv6id:         pulumi.Any(testIpv6.Id),
+//										Ipv6subnetCidr: pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr),
+//									},
+//								},
 //								NsgIds:              pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsNsgIds),
 //								PrivateIp:           pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsPrivateIp),
+//								PrivateIpId:         pulumi.Any(testPrivateIp.Id),
 //								SecurityAttributes:  pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsSecurityAttributes),
 //								SkipSourceDestCheck: pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck),
 //								SubnetCidr:          pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsSubnetCidr),

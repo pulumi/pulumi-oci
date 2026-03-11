@@ -7329,6 +7329,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
             suggest = "nsg_ids"
         elif key == "privateIp":
             suggest = "private_ip"
+        elif key == "privateIpId":
+            suggest = "private_ip_id"
         elif key == "securityAttributes":
             suggest = "security_attributes"
         elif key == "skipSourceDestCheck":
@@ -7360,6 +7362,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']] = None,
                  nsg_ids: Optional[Sequence[_builtins.str]] = None,
                  private_ip: Optional[_builtins.str] = None,
+                 private_ip_id: Optional[_builtins.str] = None,
                  security_attributes: Optional[Mapping[str, _builtins.str]] = None,
                  skip_source_dest_check: Optional[_builtins.bool] = None,
                  subnet_cidr: Optional[_builtins.str] = None,
@@ -7372,9 +7375,10 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
         :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Sequence['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        :param Sequence['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[_builtins.str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param _builtins.str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param _builtins.str private_ip_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param _builtins.bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param _builtins.str subnet_cidr: One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -7400,6 +7404,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
+        if private_ip_id is not None:
+            pulumi.set(__self__, "private_ip_id", private_ip_id)
         if security_attributes is not None:
             pulumi.set(__self__, "security_attributes", security_attributes)
         if skip_source_dest_check is not None:
@@ -7469,7 +7475,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
     def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']]:
         """
-        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
@@ -7488,6 +7494,14 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
         A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
         return pulumi.get(self, "private_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="privateIpId")
+    def private_ip_id(self) -> Optional[_builtins.str]:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "private_ip_id")
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
@@ -7543,13 +7557,17 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addr
 
     def __init__(__self__, *,
                  ipv6address: Optional[_builtins.str] = None,
+                 ipv6id: Optional[_builtins.str] = None,
                  ipv6subnet_cidr: Optional[_builtins.str] = None):
         """
         :param _builtins.str ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        :param _builtins.str ipv6id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
         :param _builtins.str ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
         """
         if ipv6address is not None:
             pulumi.set(__self__, "ipv6address", ipv6address)
+        if ipv6id is not None:
+            pulumi.set(__self__, "ipv6id", ipv6id)
         if ipv6subnet_cidr is not None:
             pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
@@ -7560,6 +7578,14 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addr
         Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
         """
         return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6id(self) -> Optional[_builtins.str]:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+        """
+        return pulumi.get(self, "ipv6id")
 
     @_builtins.property
     @pulumi.getter(name="ipv6subnetCidr")
@@ -9716,6 +9742,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails(d
             suggest = "nsg_ids"
         elif key == "privateIp":
             suggest = "private_ip"
+        elif key == "privateIpId":
+            suggest = "private_ip_id"
         elif key == "securityAttributes":
             suggest = "security_attributes"
         elif key == "skipSourceDestCheck":
@@ -9747,6 +9775,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails(d
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']] = None,
                  nsg_ids: Optional[Sequence[_builtins.str]] = None,
                  private_ip: Optional[_builtins.str] = None,
+                 private_ip_id: Optional[_builtins.str] = None,
                  security_attributes: Optional[Mapping[str, _builtins.str]] = None,
                  skip_source_dest_check: Optional[_builtins.bool] = None,
                  subnet_cidr: Optional[_builtins.str] = None,
@@ -9759,8 +9788,10 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails(d
         :param _builtins.str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, _builtins.str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param Sequence['InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[_builtins.str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param _builtins.str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param _builtins.str private_ip_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param _builtins.bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param _builtins.str subnet_cidr: One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -9786,6 +9817,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails(d
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
+        if private_ip_id is not None:
+            pulumi.set(__self__, "private_ip_id", private_ip_id)
         if security_attributes is not None:
             pulumi.set(__self__, "security_attributes", security_attributes)
         if skip_source_dest_check is not None:
@@ -9854,6 +9887,9 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails(d
     @_builtins.property
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
     def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']]:
+        """
+        A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
     @_builtins.property
@@ -9871,6 +9907,14 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails(d
         A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
         return pulumi.get(self, "private_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="privateIpId")
+    def private_ip_id(self) -> Optional[_builtins.str]:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "private_ip_id")
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
@@ -9926,20 +9970,42 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIp
 
     def __init__(__self__, *,
                  ipv6address: Optional[_builtins.str] = None,
+                 ipv6id: Optional[_builtins.str] = None,
                  ipv6subnet_cidr: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        :param _builtins.str ipv6id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+        :param _builtins.str ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
         if ipv6address is not None:
             pulumi.set(__self__, "ipv6address", ipv6address)
+        if ipv6id is not None:
+            pulumi.set(__self__, "ipv6id", ipv6id)
         if ipv6subnet_cidr is not None:
             pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @_builtins.property
     @pulumi.getter
     def ipv6address(self) -> Optional[_builtins.str]:
+        """
+        Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        """
         return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6id(self) -> Optional[_builtins.str]:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+        """
+        return pulumi.get(self, "ipv6id")
 
     @_builtins.property
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> Optional[_builtins.str]:
+        """
+        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
         return pulumi.get(self, "ipv6subnet_cidr")
 
 
@@ -10852,6 +10918,8 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(d
             suggest = "nsg_ids"
         elif key == "privateIp":
             suggest = "private_ip"
+        elif key == "privateIpId":
+            suggest = "private_ip_id"
         elif key == "securityAttributes":
             suggest = "security_attributes"
         elif key == "skipSourceDestCheck":
@@ -10883,6 +10951,7 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(d
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']] = None,
                  nsg_ids: Optional[Sequence[_builtins.str]] = None,
                  private_ip: Optional[_builtins.str] = None,
+                 private_ip_id: Optional[_builtins.str] = None,
                  security_attributes: Optional[Mapping[str, _builtins.str]] = None,
                  skip_source_dest_check: Optional[_builtins.bool] = None,
                  subnet_cidr: Optional[_builtins.str] = None,
@@ -10895,9 +10964,11 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(d
         :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param Sequence['InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[_builtins.str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param _builtins.str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Mapping[str, _builtins.str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        :param _builtins.str private_ip_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param _builtins.bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param _builtins.str subnet_cidr: One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param _builtins.str subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -10922,6 +10993,8 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(d
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
+        if private_ip_id is not None:
+            pulumi.set(__self__, "private_ip_id", private_ip_id)
         if security_attributes is not None:
             pulumi.set(__self__, "security_attributes", security_attributes)
         if skip_source_dest_check is not None:
@@ -10990,6 +11063,9 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(d
     @_builtins.property
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
     def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']]:
+        """
+        A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
     @_builtins.property
@@ -11009,10 +11085,18 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(d
         return pulumi.get(self, "private_ip")
 
     @_builtins.property
+    @pulumi.getter(name="privateIpId")
+    def private_ip_id(self) -> Optional[_builtins.str]:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "private_ip_id")
+
+    @_builtins.property
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Optional[Mapping[str, _builtins.str]]:
         """
-        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         """
         return pulumi.get(self, "security_attributes")
 
@@ -11062,20 +11146,42 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIp
 
     def __init__(__self__, *,
                  ipv6address: Optional[_builtins.str] = None,
+                 ipv6id: Optional[_builtins.str] = None,
                  ipv6subnet_cidr: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        :param _builtins.str ipv6id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+        :param _builtins.str ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
         if ipv6address is not None:
             pulumi.set(__self__, "ipv6address", ipv6address)
+        if ipv6id is not None:
+            pulumi.set(__self__, "ipv6id", ipv6id)
         if ipv6subnet_cidr is not None:
             pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @_builtins.property
     @pulumi.getter
     def ipv6address(self) -> Optional[_builtins.str]:
+        """
+        Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        """
         return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6id(self) -> Optional[_builtins.str]:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+        """
+        return pulumi.get(self, "ipv6id")
 
     @_builtins.property
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> Optional[_builtins.str]:
+        """
+        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
         return pulumi.get(self, "ipv6subnet_cidr")
 
 
@@ -11168,6 +11274,8 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails(dict):
             suggest = "nsg_ids"
         elif key == "privateIp":
             suggest = "private_ip"
+        elif key == "privateIpId":
+            suggest = "private_ip_id"
         elif key == "securityAttributes":
             suggest = "security_attributes"
         elif key == "skipSourceDestCheck":
@@ -11199,6 +11307,7 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails(dict):
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']] = None,
                  nsg_ids: Optional[Sequence[_builtins.str]] = None,
                  private_ip: Optional[_builtins.str] = None,
+                 private_ip_id: Optional[_builtins.str] = None,
                  security_attributes: Optional[Mapping[str, _builtins.str]] = None,
                  skip_source_dest_check: Optional[_builtins.bool] = None,
                  subnet_cidr: Optional[_builtins.str] = None,
@@ -11211,9 +11320,11 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails(dict):
         :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param Sequence['InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[_builtins.str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param _builtins.str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Mapping[str, _builtins.str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        :param _builtins.str private_ip_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param _builtins.bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param _builtins.str subnet_cidr: One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param _builtins.str subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -11238,6 +11349,8 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails(dict):
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
+        if private_ip_id is not None:
+            pulumi.set(__self__, "private_ip_id", private_ip_id)
         if security_attributes is not None:
             pulumi.set(__self__, "security_attributes", security_attributes)
         if skip_source_dest_check is not None:
@@ -11306,6 +11419,9 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails(dict):
     @_builtins.property
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
     def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']]:
+        """
+        A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
     @_builtins.property
@@ -11325,10 +11441,18 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails(dict):
         return pulumi.get(self, "private_ip")
 
     @_builtins.property
+    @pulumi.getter(name="privateIpId")
+    def private_ip_id(self) -> Optional[_builtins.str]:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "private_ip_id")
+
+    @_builtins.property
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Optional[Mapping[str, _builtins.str]]:
         """
-        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         """
         return pulumi.get(self, "security_attributes")
 
@@ -11378,20 +11502,42 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addr
 
     def __init__(__self__, *,
                  ipv6address: Optional[_builtins.str] = None,
+                 ipv6id: Optional[_builtins.str] = None,
                  ipv6subnet_cidr: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        :param _builtins.str ipv6id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+        :param _builtins.str ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
         if ipv6address is not None:
             pulumi.set(__self__, "ipv6address", ipv6address)
+        if ipv6id is not None:
+            pulumi.set(__self__, "ipv6id", ipv6id)
         if ipv6subnet_cidr is not None:
             pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @_builtins.property
     @pulumi.getter
     def ipv6address(self) -> Optional[_builtins.str]:
+        """
+        Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        """
         return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6id(self) -> Optional[_builtins.str]:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+        """
+        return pulumi.get(self, "ipv6id")
 
     @_builtins.property
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> Optional[_builtins.str]:
+        """
+        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+        """
         return pulumi.get(self, "ipv6subnet_cidr")
 
 
@@ -11420,6 +11566,8 @@ class InstanceCreateVnicDetails(dict):
             suggest = "nsg_ids"
         elif key == "privateIp":
             suggest = "private_ip"
+        elif key == "privateIpId":
+            suggest = "private_ip_id"
         elif key == "securityAttributes":
             suggest = "security_attributes"
         elif key == "skipSourceDestCheck":
@@ -11453,6 +11601,7 @@ class InstanceCreateVnicDetails(dict):
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[Sequence['outputs.InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']] = None,
                  nsg_ids: Optional[Sequence[_builtins.str]] = None,
                  private_ip: Optional[_builtins.str] = None,
+                 private_ip_id: Optional[_builtins.str] = None,
                  security_attributes: Optional[Mapping[str, _builtins.str]] = None,
                  skip_source_dest_check: Optional[_builtins.bool] = None,
                  subnet_cidr: Optional[_builtins.str] = None,
@@ -11483,7 +11632,7 @@ class InstanceCreateVnicDetails(dict):
                Example: `bminstance1`
                
                If you specify a `vlanId`, the `hostnameLabel` cannot be specified. VNICs on a VLAN can not be assigned a hostname. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-        :param Sequence['InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        :param Sequence['InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC is assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address within that range to use.
         :param Sequence[_builtins.str] nsg_ids: (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
                
                If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
@@ -11491,8 +11640,11 @@ class InstanceCreateVnicDetails(dict):
                
                If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
                
+               If you specify a 'privateIpId', the 'privateIp' cannot be specified.
+               
                Example: `10.0.3.3`
-        :param Mapping[str, _builtins.str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+        :param _builtins.str private_ip_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC.
+        :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         :param _builtins.bool skip_source_dest_check: (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
                
                If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
@@ -11526,6 +11678,8 @@ class InstanceCreateVnicDetails(dict):
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
+        if private_ip_id is not None:
+            pulumi.set(__self__, "private_ip_id", private_ip_id)
         if security_attributes is not None:
             pulumi.set(__self__, "security_attributes", security_attributes)
         if skip_source_dest_check is not None:
@@ -11614,7 +11768,7 @@ class InstanceCreateVnicDetails(dict):
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
     def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[Sequence['outputs.InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']]:
         """
-        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        A list of IPv6 prefix ranges from which the VNIC is assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address within that range to use.
         """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
@@ -11636,15 +11790,25 @@ class InstanceCreateVnicDetails(dict):
 
         If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
 
+        If you specify a 'privateIpId', the 'privateIp' cannot be specified.
+
         Example: `10.0.3.3`
         """
         return pulumi.get(self, "private_ip")
 
     @_builtins.property
+    @pulumi.getter(name="privateIpId")
+    def private_ip_id(self) -> Optional[_builtins.str]:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC.
+        """
+        return pulumi.get(self, "private_ip_id")
+
+    @_builtins.property
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Optional[Mapping[str, _builtins.str]]:
         """
-        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         """
         return pulumi.get(self, "security_attributes")
 
@@ -11710,20 +11874,46 @@ class InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail(dict):
 
     def __init__(__self__, *,
                  ipv6address: Optional[_builtins.str] = None,
+                 ipv6id: Optional[_builtins.str] = None,
                  ipv6subnet_cidr: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str ipv6address: An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix. If an IPv6 address is not provided:
+               * Oracle will automatically assign an IPv6 address from the subnet's IPv6 prefix if and only if there is only one IPv6 prefix on the subnet.
+               * Oracle will automatically assign an IPv6 address from the subnet's IPv6 Oracle GUA prefix if it exists on the subnet.
+        :param _builtins.str ipv6id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+        :param _builtins.str ipv6subnet_cidr: The IPv6 prefix allocated to the subnet.
+        """
         if ipv6address is not None:
             pulumi.set(__self__, "ipv6address", ipv6address)
+        if ipv6id is not None:
+            pulumi.set(__self__, "ipv6id", ipv6id)
         if ipv6subnet_cidr is not None:
             pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @_builtins.property
     @pulumi.getter
     def ipv6address(self) -> Optional[_builtins.str]:
+        """
+        An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix. If an IPv6 address is not provided:
+        * Oracle will automatically assign an IPv6 address from the subnet's IPv6 prefix if and only if there is only one IPv6 prefix on the subnet.
+        * Oracle will automatically assign an IPv6 address from the subnet's IPv6 Oracle GUA prefix if it exists on the subnet.
+        """
         return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6id(self) -> Optional[_builtins.str]:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+        """
+        return pulumi.get(self, "ipv6id")
 
     @_builtins.property
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> Optional[_builtins.str]:
+        """
+        The IPv6 prefix allocated to the subnet.
+        """
         return pulumi.get(self, "ipv6subnet_cidr")
 
 
@@ -15950,6 +16140,8 @@ class VnicAttachmentCreateVnicDetails(dict):
             suggest = "nsg_ids"
         elif key == "privateIp":
             suggest = "private_ip"
+        elif key == "privateIpId":
+            suggest = "private_ip_id"
         elif key == "routeTableId":
             suggest = "route_table_id"
         elif key == "securityAttributes":
@@ -15985,6 +16177,7 @@ class VnicAttachmentCreateVnicDetails(dict):
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[Sequence['outputs.VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']] = None,
                  nsg_ids: Optional[Sequence[_builtins.str]] = None,
                  private_ip: Optional[_builtins.str] = None,
+                 private_ip_id: Optional[_builtins.str] = None,
                  route_table_id: Optional[_builtins.str] = None,
                  security_attributes: Optional[Mapping[str, _builtins.str]] = None,
                  skip_source_dest_check: Optional[_builtins.bool] = None,
@@ -16017,7 +16210,7 @@ class VnicAttachmentCreateVnicDetails(dict):
                Example: `bminstance1`
                
                If you specify a `vlanId`, the `hostnameLabel` cannot be specified. VNICs on a VLAN can not be assigned a hostname. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-        :param Sequence['VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        :param Sequence['VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC is assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address within that range to use.
         :param Sequence[_builtins.str] nsg_ids: (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
                
                If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
@@ -16025,8 +16218,11 @@ class VnicAttachmentCreateVnicDetails(dict):
                
                If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
                
+               If you specify a 'privateIpId', the 'privateIp' cannot be specified.
+               
                Example: `10.0.3.3`
-        :param Mapping[str, _builtins.str] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+        :param _builtins.str private_ip_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC.
+        :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         :param _builtins.bool skip_source_dest_check: (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
                
                If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
@@ -16060,6 +16256,8 @@ class VnicAttachmentCreateVnicDetails(dict):
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
+        if private_ip_id is not None:
+            pulumi.set(__self__, "private_ip_id", private_ip_id)
         if route_table_id is not None:
             pulumi.set(__self__, "route_table_id", route_table_id)
         if security_attributes is not None:
@@ -16151,7 +16349,7 @@ class VnicAttachmentCreateVnicDetails(dict):
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
     def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[Sequence['outputs.VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']]:
         """
-        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+        A list of IPv6 prefix ranges from which the VNIC is assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address within that range to use.
         """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
@@ -16173,9 +16371,19 @@ class VnicAttachmentCreateVnicDetails(dict):
 
         If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
 
+        If you specify a 'privateIpId', the 'privateIp' cannot be specified.
+
         Example: `10.0.3.3`
         """
         return pulumi.get(self, "private_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="privateIpId")
+    def private_ip_id(self) -> Optional[_builtins.str]:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC.
+        """
+        return pulumi.get(self, "private_ip_id")
 
     @_builtins.property
     @pulumi.getter(name="routeTableId")
@@ -16186,7 +16394,7 @@ class VnicAttachmentCreateVnicDetails(dict):
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Optional[Mapping[str, _builtins.str]]:
         """
-        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         """
         return pulumi.get(self, "security_attributes")
 
@@ -16236,10 +16444,8 @@ class VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "ipv6Address":
-            suggest = "ipv6_address"
-        elif key == "ipv6SubnetCidr":
-            suggest = "ipv6_subnet_cidr"
+        if key == "ipv6subnetCidr":
+            suggest = "ipv6subnet_cidr"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail. Access the value via the '{suggest}' property getter instead.")
@@ -16253,22 +16459,48 @@ class VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 ipv6_address: Optional[_builtins.str] = None,
-                 ipv6_subnet_cidr: Optional[_builtins.str] = None):
-        if ipv6_address is not None:
-            pulumi.set(__self__, "ipv6_address", ipv6_address)
-        if ipv6_subnet_cidr is not None:
-            pulumi.set(__self__, "ipv6_subnet_cidr", ipv6_subnet_cidr)
+                 ipv6address: Optional[_builtins.str] = None,
+                 ipv6id: Optional[_builtins.str] = None,
+                 ipv6subnet_cidr: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str ipv6address: An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix. If an IPv6 address is not provided:
+               * Oracle will automatically assign an IPv6 address from the subnet's IPv6 prefix if and only if there is only one IPv6 prefix on the subnet.
+               * Oracle will automatically assign an IPv6 address from the subnet's IPv6 Oracle GUA prefix if it exists on the subnet.
+        :param _builtins.str ipv6id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+        :param _builtins.str ipv6subnet_cidr: The IPv6 prefix allocated to the subnet.
+        """
+        if ipv6address is not None:
+            pulumi.set(__self__, "ipv6address", ipv6address)
+        if ipv6id is not None:
+            pulumi.set(__self__, "ipv6id", ipv6id)
+        if ipv6subnet_cidr is not None:
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @_builtins.property
-    @pulumi.getter(name="ipv6Address")
-    def ipv6_address(self) -> Optional[_builtins.str]:
-        return pulumi.get(self, "ipv6_address")
+    @pulumi.getter
+    def ipv6address(self) -> Optional[_builtins.str]:
+        """
+        An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix. If an IPv6 address is not provided:
+        * Oracle will automatically assign an IPv6 address from the subnet's IPv6 prefix if and only if there is only one IPv6 prefix on the subnet.
+        * Oracle will automatically assign an IPv6 address from the subnet's IPv6 Oracle GUA prefix if it exists on the subnet.
+        """
+        return pulumi.get(self, "ipv6address")
 
     @_builtins.property
-    @pulumi.getter(name="ipv6SubnetCidr")
-    def ipv6_subnet_cidr(self) -> Optional[_builtins.str]:
-        return pulumi.get(self, "ipv6_subnet_cidr")
+    @pulumi.getter
+    def ipv6id(self) -> Optional[_builtins.str]:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+        """
+        return pulumi.get(self, "ipv6id")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> Optional[_builtins.str]:
+        """
+        The IPv6 prefix allocated to the subnet.
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
 
 
 @pulumi.output_type
@@ -31687,6 +31919,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailResult(d
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[_builtins.str],
                  private_ip: _builtins.str,
+                 private_ip_id: _builtins.str,
                  security_attributes: Mapping[str, _builtins.str],
                  skip_source_dest_check: _builtins.bool,
                  subnet_cidr: _builtins.str,
@@ -31702,6 +31935,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailResult(d
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[_builtins.str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param _builtins.str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param _builtins.str private_ip_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param _builtins.bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param _builtins.str subnet_cidr: One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -31717,6 +31951,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailResult(d
         pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "private_ip_id", private_ip_id)
         pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         pulumi.set(__self__, "subnet_cidr", subnet_cidr)
@@ -31803,6 +32038,14 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailResult(d
         return pulumi.get(self, "private_ip")
 
     @_builtins.property
+    @pulumi.getter(name="privateIpId")
+    def private_ip_id(self) -> _builtins.str:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "private_ip_id")
+
+    @_builtins.property
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Mapping[str, _builtins.str]:
         """
@@ -31839,12 +32082,15 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailResult(d
 class GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult(dict):
     def __init__(__self__, *,
                  ipv6address: _builtins.str,
+                 ipv6id: _builtins.str,
                  ipv6subnet_cidr: _builtins.str):
         """
         :param _builtins.str ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        :param _builtins.str ipv6id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
         :param _builtins.str ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
         """
         pulumi.set(__self__, "ipv6address", ipv6address)
+        pulumi.set(__self__, "ipv6id", ipv6id)
         pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @_builtins.property
@@ -31854,6 +32100,14 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addr
         Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
         """
         return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6id(self) -> _builtins.str:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+        """
+        return pulumi.get(self, "ipv6id")
 
     @_builtins.property
     @pulumi.getter(name="ipv6subnetCidr")
@@ -33331,6 +33585,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailRe
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[_builtins.str],
                  private_ip: _builtins.str,
+                 private_ip_id: _builtins.str,
                  security_attributes: Mapping[str, _builtins.str],
                  skip_source_dest_check: _builtins.bool,
                  subnet_cidr: _builtins.str,
@@ -33346,6 +33601,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailRe
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[_builtins.str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param _builtins.str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param _builtins.str private_ip_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param _builtins.bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param _builtins.str subnet_cidr: One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -33361,6 +33617,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailRe
         pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "private_ip_id", private_ip_id)
         pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         pulumi.set(__self__, "subnet_cidr", subnet_cidr)
@@ -33447,6 +33704,14 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailRe
         return pulumi.get(self, "private_ip")
 
     @_builtins.property
+    @pulumi.getter(name="privateIpId")
+    def private_ip_id(self) -> _builtins.str:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "private_ip_id")
+
+    @_builtins.property
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Mapping[str, _builtins.str]:
         """
@@ -33483,12 +33748,15 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailRe
 class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult(dict):
     def __init__(__self__, *,
                  ipv6address: _builtins.str,
+                 ipv6id: _builtins.str,
                  ipv6subnet_cidr: _builtins.str):
         """
         :param _builtins.str ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        :param _builtins.str ipv6id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
         :param _builtins.str ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
         """
         pulumi.set(__self__, "ipv6address", ipv6address)
+        pulumi.set(__self__, "ipv6id", ipv6id)
         pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @_builtins.property
@@ -33498,6 +33766,14 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIp
         Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
         """
         return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6id(self) -> _builtins.str:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+        """
+        return pulumi.get(self, "ipv6id")
 
     @_builtins.property
     @pulumi.getter(name="ipv6subnetCidr")
@@ -34127,6 +34403,7 @@ class GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailR
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[_builtins.str],
                  private_ip: _builtins.str,
+                 private_ip_id: _builtins.str,
                  security_attributes: Mapping[str, _builtins.str],
                  skip_source_dest_check: _builtins.bool,
                  subnet_cidr: _builtins.str,
@@ -34142,6 +34419,7 @@ class GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailR
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[_builtins.str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param _builtins.str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param _builtins.str private_ip_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param _builtins.bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param _builtins.str subnet_cidr: One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -34157,6 +34435,7 @@ class GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailR
         pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "private_ip_id", private_ip_id)
         pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         pulumi.set(__self__, "subnet_cidr", subnet_cidr)
@@ -34243,6 +34522,14 @@ class GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailR
         return pulumi.get(self, "private_ip")
 
     @_builtins.property
+    @pulumi.getter(name="privateIpId")
+    def private_ip_id(self) -> _builtins.str:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "private_ip_id")
+
+    @_builtins.property
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Mapping[str, _builtins.str]:
         """
@@ -34279,12 +34566,15 @@ class GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailR
 class GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult(dict):
     def __init__(__self__, *,
                  ipv6address: _builtins.str,
+                 ipv6id: _builtins.str,
                  ipv6subnet_cidr: _builtins.str):
         """
         :param _builtins.str ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        :param _builtins.str ipv6id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
         :param _builtins.str ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
         """
         pulumi.set(__self__, "ipv6address", ipv6address)
+        pulumi.set(__self__, "ipv6id", ipv6id)
         pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @_builtins.property
@@ -34294,6 +34584,14 @@ class GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailI
         Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
         """
         return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6id(self) -> _builtins.str:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+        """
+        return pulumi.get(self, "ipv6id")
 
     @_builtins.property
     @pulumi.getter(name="ipv6subnetCidr")
@@ -34357,6 +34655,7 @@ class GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailResult(
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[_builtins.str],
                  private_ip: _builtins.str,
+                 private_ip_id: _builtins.str,
                  security_attributes: Mapping[str, _builtins.str],
                  skip_source_dest_check: _builtins.bool,
                  subnet_cidr: _builtins.str,
@@ -34372,6 +34671,7 @@ class GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailResult(
         :param Sequence['GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[_builtins.str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param _builtins.str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param _builtins.str private_ip_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param _builtins.bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param _builtins.str subnet_cidr: One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -34387,6 +34687,7 @@ class GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailResult(
         pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "private_ip_id", private_ip_id)
         pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         pulumi.set(__self__, "subnet_cidr", subnet_cidr)
@@ -34473,6 +34774,14 @@ class GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailResult(
         return pulumi.get(self, "private_ip")
 
     @_builtins.property
+    @pulumi.getter(name="privateIpId")
+    def private_ip_id(self) -> _builtins.str:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "private_ip_id")
+
+    @_builtins.property
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Mapping[str, _builtins.str]:
         """
@@ -34509,12 +34818,15 @@ class GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailResult(
 class GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult(dict):
     def __init__(__self__, *,
                  ipv6address: _builtins.str,
+                 ipv6id: _builtins.str,
                  ipv6subnet_cidr: _builtins.str):
         """
         :param _builtins.str ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        :param _builtins.str ipv6id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
         :param _builtins.str ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
         """
         pulumi.set(__self__, "ipv6address", ipv6address)
+        pulumi.set(__self__, "ipv6id", ipv6id)
         pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @_builtins.property
@@ -34524,6 +34836,14 @@ class GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6add
         Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
         """
         return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6id(self) -> _builtins.str:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+        """
+        return pulumi.get(self, "ipv6id")
 
     @_builtins.property
     @pulumi.getter(name="ipv6subnetCidr")
@@ -35584,6 +35904,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCr
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[_builtins.str],
                  private_ip: _builtins.str,
+                 private_ip_id: _builtins.str,
                  security_attributes: Mapping[str, _builtins.str],
                  skip_source_dest_check: _builtins.bool,
                  subnet_cidr: _builtins.str,
@@ -35599,6 +35920,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCr
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[_builtins.str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param _builtins.str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param _builtins.str private_ip_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param _builtins.bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param _builtins.str subnet_cidr: One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -35614,6 +35936,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCr
         pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "private_ip_id", private_ip_id)
         pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         pulumi.set(__self__, "subnet_cidr", subnet_cidr)
@@ -35700,6 +36023,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCr
         return pulumi.get(self, "private_ip")
 
     @_builtins.property
+    @pulumi.getter(name="privateIpId")
+    def private_ip_id(self) -> _builtins.str:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "private_ip_id")
+
+    @_builtins.property
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Mapping[str, _builtins.str]:
         """
@@ -35736,12 +36067,15 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCr
 class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult(dict):
     def __init__(__self__, *,
                  ipv6address: _builtins.str,
+                 ipv6id: _builtins.str,
                  ipv6subnet_cidr: _builtins.str):
         """
         :param _builtins.str ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        :param _builtins.str ipv6id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
         :param _builtins.str ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
         """
         pulumi.set(__self__, "ipv6address", ipv6address)
+        pulumi.set(__self__, "ipv6id", ipv6id)
         pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @_builtins.property
@@ -35751,6 +36085,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCr
         Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
         """
         return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6id(self) -> _builtins.str:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+        """
+        return pulumi.get(self, "ipv6id")
 
     @_builtins.property
     @pulumi.getter(name="ipv6subnetCidr")
@@ -37228,6 +37570,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[_builtins.str],
                  private_ip: _builtins.str,
+                 private_ip_id: _builtins.str,
                  security_attributes: Mapping[str, _builtins.str],
                  skip_source_dest_check: _builtins.bool,
                  subnet_cidr: _builtins.str,
@@ -37243,6 +37586,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[_builtins.str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param _builtins.str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param _builtins.str private_ip_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param _builtins.bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param _builtins.str subnet_cidr: One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -37258,6 +37602,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "private_ip_id", private_ip_id)
         pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         pulumi.set(__self__, "subnet_cidr", subnet_cidr)
@@ -37344,6 +37689,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         return pulumi.get(self, "private_ip")
 
     @_builtins.property
+    @pulumi.getter(name="privateIpId")
+    def private_ip_id(self) -> _builtins.str:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "private_ip_id")
+
+    @_builtins.property
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Mapping[str, _builtins.str]:
         """
@@ -37380,12 +37733,15 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
 class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult(dict):
     def __init__(__self__, *,
                  ipv6address: _builtins.str,
+                 ipv6id: _builtins.str,
                  ipv6subnet_cidr: _builtins.str):
         """
         :param _builtins.str ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        :param _builtins.str ipv6id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
         :param _builtins.str ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
         """
         pulumi.set(__self__, "ipv6address", ipv6address)
+        pulumi.set(__self__, "ipv6id", ipv6id)
         pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @_builtins.property
@@ -37395,6 +37751,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
         """
         return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6id(self) -> _builtins.str:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+        """
+        return pulumi.get(self, "ipv6id")
 
     @_builtins.property
     @pulumi.getter(name="ipv6subnetCidr")
@@ -38024,6 +38388,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondar
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[_builtins.str],
                  private_ip: _builtins.str,
+                 private_ip_id: _builtins.str,
                  security_attributes: Mapping[str, _builtins.str],
                  skip_source_dest_check: _builtins.bool,
                  subnet_cidr: _builtins.str,
@@ -38039,6 +38404,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondar
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[_builtins.str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param _builtins.str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param _builtins.str private_ip_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param _builtins.bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param _builtins.str subnet_cidr: One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -38054,6 +38420,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondar
         pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "private_ip_id", private_ip_id)
         pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         pulumi.set(__self__, "subnet_cidr", subnet_cidr)
@@ -38140,6 +38507,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondar
         return pulumi.get(self, "private_ip")
 
     @_builtins.property
+    @pulumi.getter(name="privateIpId")
+    def private_ip_id(self) -> _builtins.str:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "private_ip_id")
+
+    @_builtins.property
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Mapping[str, _builtins.str]:
         """
@@ -38176,12 +38551,15 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondar
 class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult(dict):
     def __init__(__self__, *,
                  ipv6address: _builtins.str,
+                 ipv6id: _builtins.str,
                  ipv6subnet_cidr: _builtins.str):
         """
         :param _builtins.str ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        :param _builtins.str ipv6id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
         :param _builtins.str ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
         """
         pulumi.set(__self__, "ipv6address", ipv6address)
+        pulumi.set(__self__, "ipv6id", ipv6id)
         pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @_builtins.property
@@ -38191,6 +38569,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondar
         Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
         """
         return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6id(self) -> _builtins.str:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+        """
+        return pulumi.get(self, "ipv6id")
 
     @_builtins.property
     @pulumi.getter(name="ipv6subnetCidr")
@@ -38254,6 +38640,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicC
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[_builtins.str],
                  private_ip: _builtins.str,
+                 private_ip_id: _builtins.str,
                  security_attributes: Mapping[str, _builtins.str],
                  skip_source_dest_check: _builtins.bool,
                  subnet_cidr: _builtins.str,
@@ -38269,6 +38656,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicC
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[_builtins.str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param _builtins.str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param _builtins.str private_ip_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param _builtins.bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param _builtins.str subnet_cidr: One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -38284,6 +38672,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicC
         pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "private_ip_id", private_ip_id)
         pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         pulumi.set(__self__, "subnet_cidr", subnet_cidr)
@@ -38370,6 +38759,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicC
         return pulumi.get(self, "private_ip")
 
     @_builtins.property
+    @pulumi.getter(name="privateIpId")
+    def private_ip_id(self) -> _builtins.str:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "private_ip_id")
+
+    @_builtins.property
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Mapping[str, _builtins.str]:
         """
@@ -38406,12 +38803,15 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicC
 class GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult(dict):
     def __init__(__self__, *,
                  ipv6address: _builtins.str,
+                 ipv6id: _builtins.str,
                  ipv6subnet_cidr: _builtins.str):
         """
         :param _builtins.str ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+        :param _builtins.str ipv6id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
         :param _builtins.str ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
         """
         pulumi.set(__self__, "ipv6address", ipv6address)
+        pulumi.set(__self__, "ipv6id", ipv6id)
         pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @_builtins.property
@@ -38421,6 +38821,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicC
         Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
         """
         return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6id(self) -> _builtins.str:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+        """
+        return pulumi.get(self, "ipv6id")
 
     @_builtins.property
     @pulumi.getter(name="ipv6subnetCidr")
@@ -38595,6 +39003,7 @@ class GetInstanceCreateVnicDetailResult(dict):
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[_builtins.str],
                  private_ip: _builtins.str,
+                 private_ip_id: _builtins.str,
                  security_attributes: Mapping[str, _builtins.str],
                  skip_source_dest_check: _builtins.bool,
                  subnet_cidr: _builtins.str,
@@ -38618,6 +39027,7 @@ class GetInstanceCreateVnicDetailResult(dict):
         pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "private_ip_id", private_ip_id)
         pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         pulumi.set(__self__, "subnet_cidr", subnet_cidr)
@@ -38690,6 +39100,11 @@ class GetInstanceCreateVnicDetailResult(dict):
         return pulumi.get(self, "private_ip")
 
     @_builtins.property
+    @pulumi.getter(name="privateIpId")
+    def private_ip_id(self) -> _builtins.str:
+        return pulumi.get(self, "private_ip_id")
+
+    @_builtins.property
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Mapping[str, _builtins.str]:
         """
@@ -38722,14 +39137,21 @@ class GetInstanceCreateVnicDetailResult(dict):
 class GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult(dict):
     def __init__(__self__, *,
                  ipv6address: _builtins.str,
+                 ipv6id: _builtins.str,
                  ipv6subnet_cidr: _builtins.str):
         pulumi.set(__self__, "ipv6address", ipv6address)
+        pulumi.set(__self__, "ipv6id", ipv6id)
         pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @_builtins.property
     @pulumi.getter
     def ipv6address(self) -> _builtins.str:
         return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6id(self) -> _builtins.str:
+        return pulumi.get(self, "ipv6id")
 
     @_builtins.property
     @pulumi.getter(name="ipv6subnetCidr")
@@ -41954,6 +42376,7 @@ class GetInstancesInstanceCreateVnicDetailResult(dict):
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[_builtins.str],
                  private_ip: _builtins.str,
+                 private_ip_id: _builtins.str,
                  security_attributes: Mapping[str, _builtins.str],
                  skip_source_dest_check: _builtins.bool,
                  subnet_cidr: _builtins.str,
@@ -41975,6 +42398,7 @@ class GetInstancesInstanceCreateVnicDetailResult(dict):
         pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "private_ip_id", private_ip_id)
         pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         pulumi.set(__self__, "subnet_cidr", subnet_cidr)
@@ -42041,6 +42465,11 @@ class GetInstancesInstanceCreateVnicDetailResult(dict):
         return pulumi.get(self, "private_ip")
 
     @_builtins.property
+    @pulumi.getter(name="privateIpId")
+    def private_ip_id(self) -> _builtins.str:
+        return pulumi.get(self, "private_ip_id")
+
+    @_builtins.property
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> Mapping[str, _builtins.str]:
         """
@@ -42073,14 +42502,21 @@ class GetInstancesInstanceCreateVnicDetailResult(dict):
 class GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult(dict):
     def __init__(__self__, *,
                  ipv6address: _builtins.str,
+                 ipv6id: _builtins.str,
                  ipv6subnet_cidr: _builtins.str):
         pulumi.set(__self__, "ipv6address", ipv6address)
+        pulumi.set(__self__, "ipv6id", ipv6id)
         pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @_builtins.property
     @pulumi.getter
     def ipv6address(self) -> _builtins.str:
         return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6id(self) -> _builtins.str:
+        return pulumi.get(self, "ipv6id")
 
     @_builtins.property
     @pulumi.getter(name="ipv6subnetCidr")
@@ -52000,6 +52436,7 @@ class GetVnicAttachmentsVnicAttachmentCreateVnicDetailResult(dict):
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[_builtins.str],
                  private_ip: _builtins.str,
+                 private_ip_id: _builtins.str,
                  route_table_id: _builtins.str,
                  security_attributes: Mapping[str, _builtins.str],
                  skip_source_dest_check: _builtins.bool,
@@ -52021,6 +52458,7 @@ class GetVnicAttachmentsVnicAttachmentCreateVnicDetailResult(dict):
         pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "private_ip_id", private_ip_id)
         pulumi.set(__self__, "route_table_id", route_table_id)
         pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
@@ -52082,6 +52520,11 @@ class GetVnicAttachmentsVnicAttachmentCreateVnicDetailResult(dict):
         return pulumi.get(self, "private_ip")
 
     @_builtins.property
+    @pulumi.getter(name="privateIpId")
+    def private_ip_id(self) -> _builtins.str:
+        return pulumi.get(self, "private_ip_id")
+
+    @_builtins.property
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> _builtins.str:
         return pulumi.get(self, "route_table_id")
@@ -52121,20 +52564,27 @@ class GetVnicAttachmentsVnicAttachmentCreateVnicDetailResult(dict):
 @pulumi.output_type
 class GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult(dict):
     def __init__(__self__, *,
-                 ipv6_address: _builtins.str,
-                 ipv6_subnet_cidr: _builtins.str):
-        pulumi.set(__self__, "ipv6_address", ipv6_address)
-        pulumi.set(__self__, "ipv6_subnet_cidr", ipv6_subnet_cidr)
+                 ipv6address: _builtins.str,
+                 ipv6id: _builtins.str,
+                 ipv6subnet_cidr: _builtins.str):
+        pulumi.set(__self__, "ipv6address", ipv6address)
+        pulumi.set(__self__, "ipv6id", ipv6id)
+        pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @_builtins.property
-    @pulumi.getter(name="ipv6Address")
-    def ipv6_address(self) -> _builtins.str:
-        return pulumi.get(self, "ipv6_address")
+    @pulumi.getter
+    def ipv6address(self) -> _builtins.str:
+        return pulumi.get(self, "ipv6address")
 
     @_builtins.property
-    @pulumi.getter(name="ipv6SubnetCidr")
-    def ipv6_subnet_cidr(self) -> _builtins.str:
-        return pulumi.get(self, "ipv6_subnet_cidr")
+    @pulumi.getter
+    def ipv6id(self) -> _builtins.str:
+        return pulumi.get(self, "ipv6id")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> _builtins.str:
+        return pulumi.get(self, "ipv6subnet_cidr")
 
 
 @pulumi.output_type

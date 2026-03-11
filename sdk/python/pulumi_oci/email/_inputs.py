@@ -276,6 +276,10 @@ class EmailIpPoolOutboundIpsResponseArgsDict(TypedDict):
     """
     The current state of the IpPool.
     """
+    time_unassigned: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
+    """
 
 @pulumi.input_type
 class EmailIpPoolOutboundIpsResponseArgs:
@@ -283,12 +287,14 @@ class EmailIpPoolOutboundIpsResponseArgs:
                  assignment_state: Optional[pulumi.Input[_builtins.str]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  outbound_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 state: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_unassigned: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] assignment_state: The assignment state of the public IP address.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
         :param pulumi.Input[_builtins.str] outbound_ip: The public IP address assigned to the tenancy.
         :param pulumi.Input[_builtins.str] state: The current state of the IpPool.
+        :param pulumi.Input[_builtins.str] time_unassigned: The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
         """
         if assignment_state is not None:
             pulumi.set(__self__, "assignment_state", assignment_state)
@@ -298,6 +304,8 @@ class EmailIpPoolOutboundIpsResponseArgs:
             pulumi.set(__self__, "outbound_ip", outbound_ip)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if time_unassigned is not None:
+            pulumi.set(__self__, "time_unassigned", time_unassigned)
 
     @_builtins.property
     @pulumi.getter(name="assignmentState")
@@ -346,6 +354,18 @@ class EmailIpPoolOutboundIpsResponseArgs:
     @state.setter
     def state(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "state", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeUnassigned")
+    def time_unassigned(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_unassigned")
+
+    @time_unassigned.setter
+    def time_unassigned(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_unassigned", value)
 
 
 class EmailReturnPathLockArgsDict(TypedDict):

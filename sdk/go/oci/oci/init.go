@@ -59,6 +59,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DbmulticloudOracleDbGcpKeyRing{}
 	case "oci:oci/difStack:DifStack":
 		r = &DifStack{}
+	case "oci:oci/gdpGdpPipeline:GdpGdpPipeline":
+		r = &GdpGdpPipeline{}
 	case "oci:oci/iotDigitalTwinAdapter:IotDigitalTwinAdapter":
 		r = &IotDigitalTwinAdapter{}
 	case "oci:oci/iotDigitalTwinInstance:IotDigitalTwinInstance":
@@ -201,6 +203,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"oci/difStack",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/gdpGdpPipeline",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

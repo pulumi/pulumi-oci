@@ -130,6 +130,16 @@ export type DomainsGroup = import("./domainsGroup").DomainsGroup;
 export const DomainsGroup: typeof import("./domainsGroup").DomainsGroup = null as any;
 utilities.lazyLoad(exports, ["DomainsGroup"], () => require("./domainsGroup"));
 
+export { DomainsIdentityProofingProviderArgs, DomainsIdentityProofingProviderState } from "./domainsIdentityProofingProvider";
+export type DomainsIdentityProofingProvider = import("./domainsIdentityProofingProvider").DomainsIdentityProofingProvider;
+export const DomainsIdentityProofingProvider: typeof import("./domainsIdentityProofingProvider").DomainsIdentityProofingProvider = null as any;
+utilities.lazyLoad(exports, ["DomainsIdentityProofingProvider"], () => require("./domainsIdentityProofingProvider"));
+
+export { DomainsIdentityProofingProviderTemplateArgs, DomainsIdentityProofingProviderTemplateState } from "./domainsIdentityProofingProviderTemplate";
+export type DomainsIdentityProofingProviderTemplate = import("./domainsIdentityProofingProviderTemplate").DomainsIdentityProofingProviderTemplate;
+export const DomainsIdentityProofingProviderTemplate: typeof import("./domainsIdentityProofingProviderTemplate").DomainsIdentityProofingProviderTemplate = null as any;
+utilities.lazyLoad(exports, ["DomainsIdentityProofingProviderTemplate"], () => require("./domainsIdentityProofingProviderTemplate"));
+
 export { DomainsIdentityPropagationTrustArgs, DomainsIdentityPropagationTrustState } from "./domainsIdentityPropagationTrust";
 export type DomainsIdentityPropagationTrust = import("./domainsIdentityPropagationTrust").DomainsIdentityPropagationTrust;
 export const DomainsIdentityPropagationTrust: typeof import("./domainsIdentityPropagationTrust").DomainsIdentityPropagationTrust = null as any;
@@ -534,6 +544,26 @@ export { GetDomainsGroupsArgs, GetDomainsGroupsResult, GetDomainsGroupsOutputArg
 export const getDomainsGroups: typeof import("./getDomainsGroups").getDomainsGroups = null as any;
 export const getDomainsGroupsOutput: typeof import("./getDomainsGroups").getDomainsGroupsOutput = null as any;
 utilities.lazyLoad(exports, ["getDomainsGroups","getDomainsGroupsOutput"], () => require("./getDomainsGroups"));
+
+export { GetDomainsIdentityProofingProviderArgs, GetDomainsIdentityProofingProviderResult, GetDomainsIdentityProofingProviderOutputArgs } from "./getDomainsIdentityProofingProvider";
+export const getDomainsIdentityProofingProvider: typeof import("./getDomainsIdentityProofingProvider").getDomainsIdentityProofingProvider = null as any;
+export const getDomainsIdentityProofingProviderOutput: typeof import("./getDomainsIdentityProofingProvider").getDomainsIdentityProofingProviderOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsIdentityProofingProvider","getDomainsIdentityProofingProviderOutput"], () => require("./getDomainsIdentityProofingProvider"));
+
+export { GetDomainsIdentityProofingProviderTemplateArgs, GetDomainsIdentityProofingProviderTemplateResult, GetDomainsIdentityProofingProviderTemplateOutputArgs } from "./getDomainsIdentityProofingProviderTemplate";
+export const getDomainsIdentityProofingProviderTemplate: typeof import("./getDomainsIdentityProofingProviderTemplate").getDomainsIdentityProofingProviderTemplate = null as any;
+export const getDomainsIdentityProofingProviderTemplateOutput: typeof import("./getDomainsIdentityProofingProviderTemplate").getDomainsIdentityProofingProviderTemplateOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsIdentityProofingProviderTemplate","getDomainsIdentityProofingProviderTemplateOutput"], () => require("./getDomainsIdentityProofingProviderTemplate"));
+
+export { GetDomainsIdentityProofingProviderTemplatesArgs, GetDomainsIdentityProofingProviderTemplatesResult, GetDomainsIdentityProofingProviderTemplatesOutputArgs } from "./getDomainsIdentityProofingProviderTemplates";
+export const getDomainsIdentityProofingProviderTemplates: typeof import("./getDomainsIdentityProofingProviderTemplates").getDomainsIdentityProofingProviderTemplates = null as any;
+export const getDomainsIdentityProofingProviderTemplatesOutput: typeof import("./getDomainsIdentityProofingProviderTemplates").getDomainsIdentityProofingProviderTemplatesOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsIdentityProofingProviderTemplates","getDomainsIdentityProofingProviderTemplatesOutput"], () => require("./getDomainsIdentityProofingProviderTemplates"));
+
+export { GetDomainsIdentityProofingProvidersArgs, GetDomainsIdentityProofingProvidersResult, GetDomainsIdentityProofingProvidersOutputArgs } from "./getDomainsIdentityProofingProviders";
+export const getDomainsIdentityProofingProviders: typeof import("./getDomainsIdentityProofingProviders").getDomainsIdentityProofingProviders = null as any;
+export const getDomainsIdentityProofingProvidersOutput: typeof import("./getDomainsIdentityProofingProviders").getDomainsIdentityProofingProvidersOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsIdentityProofingProviders","getDomainsIdentityProofingProvidersOutput"], () => require("./getDomainsIdentityProofingProviders"));
 
 export { GetDomainsIdentityPropagationTrustArgs, GetDomainsIdentityPropagationTrustResult, GetDomainsIdentityPropagationTrustOutputArgs } from "./getDomainsIdentityPropagationTrust";
 export const getDomainsIdentityPropagationTrust: typeof import("./getDomainsIdentityPropagationTrust").getDomainsIdentityPropagationTrust = null as any;
@@ -1170,6 +1200,10 @@ const _module = {
                 return new DomainsGrant(name, <any>undefined, { urn })
             case "oci:Identity/domainsGroup:DomainsGroup":
                 return new DomainsGroup(name, <any>undefined, { urn })
+            case "oci:Identity/domainsIdentityProofingProvider:DomainsIdentityProofingProvider":
+                return new DomainsIdentityProofingProvider(name, <any>undefined, { urn })
+            case "oci:Identity/domainsIdentityProofingProviderTemplate:DomainsIdentityProofingProviderTemplate":
+                return new DomainsIdentityProofingProviderTemplate(name, <any>undefined, { urn })
             case "oci:Identity/domainsIdentityPropagationTrust:DomainsIdentityPropagationTrust":
                 return new DomainsIdentityPropagationTrust(name, <any>undefined, { urn })
             case "oci:Identity/domainsIdentityProvider:DomainsIdentityProvider":
@@ -1288,6 +1322,8 @@ pulumi.runtime.registerResourceModule("oci", "Identity/domainsCustomerSecretKey"
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsDynamicResourceGroup", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsGrant", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsGroup", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsIdentityProofingProvider", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsIdentityProofingProviderTemplate", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsIdentityPropagationTrust", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsIdentityProvider", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsIdentitySetting", _module)

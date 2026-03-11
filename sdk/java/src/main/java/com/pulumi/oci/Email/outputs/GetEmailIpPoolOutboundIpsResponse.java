@@ -30,6 +30,11 @@ public final class GetEmailIpPoolOutboundIpsResponse {
      * 
      */
     private String state;
+    /**
+     * @return The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, &#34;YYYY-MM-ddThh:mmZ&#34;. Example: `2021-02-12T22:47:12.613Z`
+     * 
+     */
+    private String timeUnassigned;
 
     private GetEmailIpPoolOutboundIpsResponse() {}
     /**
@@ -60,6 +65,13 @@ public final class GetEmailIpPoolOutboundIpsResponse {
     public String state() {
         return this.state;
     }
+    /**
+     * @return The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, &#34;YYYY-MM-ddThh:mmZ&#34;. Example: `2021-02-12T22:47:12.613Z`
+     * 
+     */
+    public String timeUnassigned() {
+        return this.timeUnassigned;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -74,6 +86,7 @@ public final class GetEmailIpPoolOutboundIpsResponse {
         private String lifecycleDetails;
         private String outboundIp;
         private String state;
+        private String timeUnassigned;
         public Builder() {}
         public Builder(GetEmailIpPoolOutboundIpsResponse defaults) {
     	      Objects.requireNonNull(defaults);
@@ -81,6 +94,7 @@ public final class GetEmailIpPoolOutboundIpsResponse {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.outboundIp = defaults.outboundIp;
     	      this.state = defaults.state;
+    	      this.timeUnassigned = defaults.timeUnassigned;
         }
 
         @CustomType.Setter
@@ -115,12 +129,21 @@ public final class GetEmailIpPoolOutboundIpsResponse {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
+        public Builder timeUnassigned(String timeUnassigned) {
+            if (timeUnassigned == null) {
+              throw new MissingRequiredPropertyException("GetEmailIpPoolOutboundIpsResponse", "timeUnassigned");
+            }
+            this.timeUnassigned = timeUnassigned;
+            return this;
+        }
         public GetEmailIpPoolOutboundIpsResponse build() {
             final var _resultValue = new GetEmailIpPoolOutboundIpsResponse();
             _resultValue.assignmentState = assignmentState;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.outboundIp = outboundIp;
             _resultValue.state = state;
+            _resultValue.timeUnassigned = timeUnassigned;
             return _resultValue;
         }
     }

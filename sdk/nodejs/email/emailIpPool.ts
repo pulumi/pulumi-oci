@@ -28,6 +28,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     lastIpDrainPeriodInHours: emailIpPoolLastIpDrainPeriodInHours,
  * });
  * ```
  *
@@ -84,6 +85,10 @@ export class EmailIpPool extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
+     * (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+     */
+    declare public readonly lastIpDrainPeriodInHours: pulumi.Output<number>;
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
@@ -138,6 +143,7 @@ export class EmailIpPool extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["description"] = state?.description;
             resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lastIpDrainPeriodInHours"] = state?.lastIpDrainPeriodInHours;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["locks"] = state?.locks;
             resourceInputs["name"] = state?.name;
@@ -159,6 +165,7 @@ export class EmailIpPool extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["description"] = args?.description;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["lastIpDrainPeriodInHours"] = args?.lastIpDrainPeriodInHours;
             resourceInputs["name"] = args?.name;
             resourceInputs["outboundIps"] = args?.outboundIps;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -194,6 +201,10 @@ export interface EmailIpPoolState {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+     */
+    lastIpDrainPeriodInHours?: pulumi.Input<number>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
      */
@@ -253,6 +264,10 @@ export interface EmailIpPoolArgs {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+     */
+    lastIpDrainPeriodInHours?: pulumi.Input<number>;
     /**
      * The name of the IpPool. The name must be unique within a region.  The name is case sensitive and supported characters include alphanumeric, hyphens ("-") and underscore ("_") characters.  Example: green_pool-1
      */

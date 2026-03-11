@@ -12,6 +12,7 @@ import com.pulumi.oci.Email.inputs.EmailIpPoolState;
 import com.pulumi.oci.Email.outputs.EmailIpPoolLock;
 import com.pulumi.oci.Email.outputs.EmailIpPoolOutboundIpsResponse;
 import com.pulumi.oci.Utilities;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -53,6 +54,7 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(emailIpPoolDescription)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .lastIpDrainPeriodInHours(emailIpPoolLastIpDrainPeriodInHours)
  *             .build());
  * 
  *     }
@@ -126,6 +128,20 @@ public class EmailIpPool extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+     * 
+     */
+    @Export(name="lastIpDrainPeriodInHours", refs={Integer.class}, tree="[0]")
+    private Output<Integer> lastIpDrainPeriodInHours;
+
+    /**
+     * @return (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+     * 
+     */
+    public Output<Integer> lastIpDrainPeriodInHours() {
+        return this.lastIpDrainPeriodInHours;
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in &#39;DRAINING&#39; state.

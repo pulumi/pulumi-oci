@@ -72,6 +72,8 @@ type LookupMysqlConfigurationResult struct {
 	// The OCID of the Configuration.
 	Id string `pulumi:"id"`
 	// DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+	//
+	// Deprecated: The 'init_variables' field has been deprecated. Please use 'options' instead.
 	InitVariables []GetMysqlConfigurationInitVariable `pulumi:"initVariables"`
 	// The MySQL options defined in the Configuration.
 	Options []GetMysqlConfigurationOption `pulumi:"options"`
@@ -90,6 +92,8 @@ type LookupMysqlConfigurationResult struct {
 	// The Configuration type, DEFAULT or CUSTOM.
 	Type string `pulumi:"type"`
 	// DEPRECATED -- please use the `options` field instead. User-defined service variables.
+	//
+	// Deprecated: The 'variables' field has been deprecated. Please use 'options' instead.
 	Variables []GetMysqlConfigurationVariable `pulumi:"variables"`
 }
 
@@ -162,6 +166,8 @@ func (o LookupMysqlConfigurationResultOutput) Id() pulumi.StringOutput {
 }
 
 // DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+//
+// Deprecated: The 'init_variables' field has been deprecated. Please use 'options' instead.
 func (o LookupMysqlConfigurationResultOutput) InitVariables() GetMysqlConfigurationInitVariableArrayOutput {
 	return o.ApplyT(func(v LookupMysqlConfigurationResult) []GetMysqlConfigurationInitVariable { return v.InitVariables }).(GetMysqlConfigurationInitVariableArrayOutput)
 }
@@ -207,6 +213,8 @@ func (o LookupMysqlConfigurationResultOutput) Type() pulumi.StringOutput {
 }
 
 // DEPRECATED -- please use the `options` field instead. User-defined service variables.
+//
+// Deprecated: The 'variables' field has been deprecated. Please use 'options' instead.
 func (o LookupMysqlConfigurationResultOutput) Variables() GetMysqlConfigurationVariableArrayOutput {
 	return o.ApplyT(func(v LookupMysqlConfigurationResult) []GetMysqlConfigurationVariable { return v.Variables }).(GetMysqlConfigurationVariableArrayOutput)
 }

@@ -269,7 +269,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    declare public readonly members: pulumi.Output<outputs.Identity.DomainsGroupMember[]>;
+    declare public readonly members: pulumi.Output<outputs.Identity.DomainsGroupMember[] | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *

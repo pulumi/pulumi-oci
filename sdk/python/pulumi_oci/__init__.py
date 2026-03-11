@@ -4975,6 +4975,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Identity/domainsIdentityProofingProvider",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsIdentityProofingProvider:DomainsIdentityProofingProvider": "DomainsIdentityProofingProvider"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsIdentityProofingProviderTemplate",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsIdentityProofingProviderTemplate:DomainsIdentityProofingProviderTemplate": "DomainsIdentityProofingProviderTemplate"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Identity/domainsIdentityPropagationTrust",
   "fqn": "pulumi_oci.identity",
   "classes": {
@@ -7707,6 +7723,14 @@ _utilities.register(
   "fqn": "pulumi_oci.oci",
   "classes": {
    "oci:oci/difStack:DifStack": "DifStack"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/gdpGdpPipeline",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/gdpGdpPipeline:GdpGdpPipeline": "GdpGdpPipeline"
   }
  },
  {

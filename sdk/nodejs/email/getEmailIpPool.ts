@@ -65,6 +65,10 @@ export interface GetEmailIpPoolResult {
      */
     readonly id: string;
     /**
+     * Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+     */
+    readonly lastIpDrainPeriodInHours: number;
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
      */
     readonly lifecycleDetails: string;

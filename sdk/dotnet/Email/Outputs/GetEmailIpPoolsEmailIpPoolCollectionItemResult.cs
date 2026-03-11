@@ -34,6 +34,10 @@ namespace Pulumi.Oci.Email.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+        /// </summary>
+        public readonly int LastIpDrainPeriodInHours;
+        /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -79,6 +83,8 @@ namespace Pulumi.Oci.Email.Outputs
 
             string id,
 
+            int lastIpDrainPeriodInHours,
+
             string lifecycleDetails,
 
             ImmutableArray<Outputs.GetEmailIpPoolsEmailIpPoolCollectionItemLockResult> locks,
@@ -102,6 +108,7 @@ namespace Pulumi.Oci.Email.Outputs
             Description = description;
             FreeformTags = freeformTags;
             Id = id;
+            LastIpDrainPeriodInHours = lastIpDrainPeriodInHours;
             LifecycleDetails = lifecycleDetails;
             Locks = locks;
             Name = name;

@@ -239,6 +239,8 @@ class EmailIpPoolOutboundIpsResponse(dict):
             suggest = "lifecycle_details"
         elif key == "outboundIp":
             suggest = "outbound_ip"
+        elif key == "timeUnassigned":
+            suggest = "time_unassigned"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in EmailIpPoolOutboundIpsResponse. Access the value via the '{suggest}' property getter instead.")
@@ -255,12 +257,14 @@ class EmailIpPoolOutboundIpsResponse(dict):
                  assignment_state: Optional[_builtins.str] = None,
                  lifecycle_details: Optional[_builtins.str] = None,
                  outbound_ip: Optional[_builtins.str] = None,
-                 state: Optional[_builtins.str] = None):
+                 state: Optional[_builtins.str] = None,
+                 time_unassigned: Optional[_builtins.str] = None):
         """
         :param _builtins.str assignment_state: The assignment state of the public IP address.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
         :param _builtins.str outbound_ip: The public IP address assigned to the tenancy.
         :param _builtins.str state: The current state of the IpPool.
+        :param _builtins.str time_unassigned: The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
         """
         if assignment_state is not None:
             pulumi.set(__self__, "assignment_state", assignment_state)
@@ -270,6 +274,8 @@ class EmailIpPoolOutboundIpsResponse(dict):
             pulumi.set(__self__, "outbound_ip", outbound_ip)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if time_unassigned is not None:
+            pulumi.set(__self__, "time_unassigned", time_unassigned)
 
     @_builtins.property
     @pulumi.getter(name="assignmentState")
@@ -302,6 +308,14 @@ class EmailIpPoolOutboundIpsResponse(dict):
         The current state of the IpPool.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUnassigned")
+    def time_unassigned(self) -> Optional[_builtins.str]:
+        """
+        The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_unassigned")
 
 
 @pulumi.output_type
@@ -1124,17 +1138,20 @@ class GetEmailIpPoolOutboundIpsResponseResult(dict):
                  assignment_state: _builtins.str,
                  lifecycle_details: _builtins.str,
                  outbound_ip: _builtins.str,
-                 state: _builtins.str):
+                 state: _builtins.str,
+                 time_unassigned: _builtins.str):
         """
         :param _builtins.str assignment_state: The assignment state of the public IP address.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
         :param _builtins.str outbound_ip: The public IP address assigned to the tenancy.
         :param _builtins.str state: The current state of the IpPool.
+        :param _builtins.str time_unassigned: The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
         """
         pulumi.set(__self__, "assignment_state", assignment_state)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "outbound_ip", outbound_ip)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_unassigned", time_unassigned)
 
     @_builtins.property
     @pulumi.getter(name="assignmentState")
@@ -1168,6 +1185,14 @@ class GetEmailIpPoolOutboundIpsResponseResult(dict):
         """
         return pulumi.get(self, "state")
 
+    @_builtins.property
+    @pulumi.getter(name="timeUnassigned")
+    def time_unassigned(self) -> _builtins.str:
+        """
+        The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_unassigned")
+
 
 @pulumi.output_type
 class GetEmailIpPoolsEmailIpPoolCollectionResult(dict):
@@ -1189,6 +1214,7 @@ class GetEmailIpPoolsEmailIpPoolCollectionItemResult(dict):
                  description: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 last_ip_drain_period_in_hours: _builtins.int,
                  lifecycle_details: _builtins.str,
                  locks: Sequence['outputs.GetEmailIpPoolsEmailIpPoolCollectionItemLockResult'],
                  name: _builtins.str,
@@ -1204,6 +1230,7 @@ class GetEmailIpPoolsEmailIpPoolCollectionItemResult(dict):
         :param _builtins.str description: The description of the IpPool. Avoid entering confidential information.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: A filter to only return resources that match the given id exactly.
+        :param _builtins.int last_ip_drain_period_in_hours: Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
         :param Sequence['GetEmailIpPoolsEmailIpPoolCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param _builtins.str name: A filter to only return resources that match the given name exactly.
@@ -1218,6 +1245,7 @@ class GetEmailIpPoolsEmailIpPoolCollectionItemResult(dict):
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "last_ip_drain_period_in_hours", last_ip_drain_period_in_hours)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "name", name)
@@ -1267,6 +1295,14 @@ class GetEmailIpPoolsEmailIpPoolCollectionItemResult(dict):
         A filter to only return resources that match the given id exactly.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lastIpDrainPeriodInHours")
+    def last_ip_drain_period_in_hours(self) -> _builtins.int:
+        """
+        Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+        """
+        return pulumi.get(self, "last_ip_drain_period_in_hours")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
@@ -1406,17 +1442,20 @@ class GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseResult(dict):
                  assignment_state: _builtins.str,
                  lifecycle_details: _builtins.str,
                  outbound_ip: _builtins.str,
-                 state: _builtins.str):
+                 state: _builtins.str,
+                 time_unassigned: _builtins.str):
         """
         :param _builtins.str assignment_state: The assignment state of the public IP address.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
         :param _builtins.str outbound_ip: The public IP address assigned to the tenancy.
         :param _builtins.str state: Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+        :param _builtins.str time_unassigned: The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
         """
         pulumi.set(__self__, "assignment_state", assignment_state)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "outbound_ip", outbound_ip)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_unassigned", time_unassigned)
 
     @_builtins.property
     @pulumi.getter(name="assignmentState")
@@ -1449,6 +1488,14 @@ class GetEmailIpPoolsEmailIpPoolCollectionItemOutboundIpsResponseResult(dict):
         Filter returned list by specified lifecycle state. This parameter is case-insensitive.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUnassigned")
+    def time_unassigned(self) -> _builtins.str:
+        """
+        The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_unassigned")
 
 
 @pulumi.output_type
@@ -1508,17 +1555,20 @@ class GetEmailOutboundIpsEmailOutboundIpCollectionItemResult(dict):
                  assignment_state: _builtins.str,
                  lifecycle_details: _builtins.str,
                  outbound_ip: _builtins.str,
-                 state: _builtins.str):
+                 state: _builtins.str,
+                 time_unassigned: _builtins.str):
         """
         :param _builtins.str assignment_state: Filter returned list by specified assignment state.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
         :param _builtins.str outbound_ip: The outbound IP address assigned to the tenancy.
         :param _builtins.str state: Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+        :param _builtins.str time_unassigned: The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
         """
         pulumi.set(__self__, "assignment_state", assignment_state)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "outbound_ip", outbound_ip)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_unassigned", time_unassigned)
 
     @_builtins.property
     @pulumi.getter(name="assignmentState")
@@ -1551,6 +1601,14 @@ class GetEmailOutboundIpsEmailOutboundIpCollectionItemResult(dict):
         Filter returned list by specified lifecycle state. This parameter is case-insensitive.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUnassigned")
+    def time_unassigned(self) -> _builtins.str:
+        """
+        The time IP was removed from IP Pool. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ". Example: `2021-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_unassigned")
 
 
 @pulumi.output_type

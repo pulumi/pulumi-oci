@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Ipv6address;
         /// <summary>
+        /// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
+        /// </summary>
+        public readonly string Ipv6id;
+        /// <summary>
         /// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
         /// </summary>
         public readonly string Ipv6subnetCidr;
@@ -26,9 +30,12 @@ namespace Pulumi.Oci.Core.Outputs
         private GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult(
             string ipv6address,
 
+            string ipv6id,
+
             string ipv6subnetCidr)
         {
             Ipv6address = ipv6address;
+            Ipv6id = ipv6id;
             Ipv6subnetCidr = ipv6subnetCidr;
         }
     }

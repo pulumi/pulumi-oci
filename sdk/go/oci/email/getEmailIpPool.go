@@ -69,6 +69,8 @@ type LookupEmailIpPoolResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The unique [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IpPool resource that is immutable on creation.
 	Id string `pulumi:"id"`
+	// Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+	LastIpDrainPeriodInHours int `pulumi:"lastIpDrainPeriodInHours"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
@@ -149,6 +151,11 @@ func (o LookupEmailIpPoolResultOutput) FreeformTags() pulumi.StringMapOutput {
 // The unique [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IpPool resource that is immutable on creation.
 func (o LookupEmailIpPoolResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEmailIpPoolResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+func (o LookupEmailIpPoolResultOutput) LastIpDrainPeriodInHours() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupEmailIpPoolResult) int { return v.LastIpDrainPeriodInHours }).(pulumi.IntOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'DRAINING' state.

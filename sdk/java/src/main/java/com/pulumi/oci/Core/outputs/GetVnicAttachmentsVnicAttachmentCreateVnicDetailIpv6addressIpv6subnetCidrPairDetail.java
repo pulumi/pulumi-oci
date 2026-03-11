@@ -10,15 +10,19 @@ import java.util.Objects;
 
 @CustomType
 public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail {
-    private String ipv6Address;
-    private String ipv6SubnetCidr;
+    private String ipv6address;
+    private String ipv6id;
+    private String ipv6subnetCidr;
 
     private GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail() {}
-    public String ipv6Address() {
-        return this.ipv6Address;
+    public String ipv6address() {
+        return this.ipv6address;
     }
-    public String ipv6SubnetCidr() {
-        return this.ipv6SubnetCidr;
+    public String ipv6id() {
+        return this.ipv6id;
+    }
+    public String ipv6subnetCidr() {
+        return this.ipv6subnetCidr;
     }
 
     public static Builder builder() {
@@ -30,35 +34,46 @@ public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIp
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ipv6Address;
-        private String ipv6SubnetCidr;
+        private String ipv6address;
+        private String ipv6id;
+        private String ipv6subnetCidr;
         public Builder() {}
         public Builder(GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.ipv6Address = defaults.ipv6Address;
-    	      this.ipv6SubnetCidr = defaults.ipv6SubnetCidr;
+    	      this.ipv6address = defaults.ipv6address;
+    	      this.ipv6id = defaults.ipv6id;
+    	      this.ipv6subnetCidr = defaults.ipv6subnetCidr;
         }
 
         @CustomType.Setter
-        public Builder ipv6Address(String ipv6Address) {
-            if (ipv6Address == null) {
-              throw new MissingRequiredPropertyException("GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail", "ipv6Address");
+        public Builder ipv6address(String ipv6address) {
+            if (ipv6address == null) {
+              throw new MissingRequiredPropertyException("GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail", "ipv6address");
             }
-            this.ipv6Address = ipv6Address;
+            this.ipv6address = ipv6address;
             return this;
         }
         @CustomType.Setter
-        public Builder ipv6SubnetCidr(String ipv6SubnetCidr) {
-            if (ipv6SubnetCidr == null) {
-              throw new MissingRequiredPropertyException("GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail", "ipv6SubnetCidr");
+        public Builder ipv6id(String ipv6id) {
+            if (ipv6id == null) {
+              throw new MissingRequiredPropertyException("GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail", "ipv6id");
             }
-            this.ipv6SubnetCidr = ipv6SubnetCidr;
+            this.ipv6id = ipv6id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ipv6subnetCidr(String ipv6subnetCidr) {
+            if (ipv6subnetCidr == null) {
+              throw new MissingRequiredPropertyException("GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail", "ipv6subnetCidr");
+            }
+            this.ipv6subnetCidr = ipv6subnetCidr;
             return this;
         }
         public GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail build() {
             final var _resultValue = new GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail();
-            _resultValue.ipv6Address = ipv6Address;
-            _resultValue.ipv6SubnetCidr = ipv6SubnetCidr;
+            _resultValue.ipv6address = ipv6address;
+            _resultValue.ipv6id = ipv6id;
+            _resultValue.ipv6subnetCidr = ipv6subnetCidr;
             return _resultValue;
         }
     }

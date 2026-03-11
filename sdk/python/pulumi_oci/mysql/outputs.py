@@ -11320,6 +11320,7 @@ class GetMysqlConfigurationsConfigurationResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="initVariables")
+    @_utilities.deprecated("""The 'init_variables' field has been deprecated. Please use 'options' instead.""")
     def init_variables(self) -> Sequence['outputs.GetMysqlConfigurationsConfigurationInitVariableResult']:
         """
         DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
@@ -11392,6 +11393,7 @@ class GetMysqlConfigurationsConfigurationResult(dict):
 
     @_builtins.property
     @pulumi.getter
+    @_utilities.deprecated("""The 'variables' field has been deprecated. Please use 'options' instead.""")
     def variables(self) -> Sequence['outputs.GetMysqlConfigurationsConfigurationVariableResult']:
         """
         DEPRECATED -- please use the `options` field instead. User-defined service variables.

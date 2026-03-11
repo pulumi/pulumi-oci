@@ -50,6 +50,10 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
      * 
      */
     private @Nullable String hostnameLabel;
+    /**
+     * @return A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+     * 
+     */
     private @Nullable List<InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
     /**
      * @return A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -61,6 +65,11 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
      * 
      */
     private @Nullable String privateIp;
+    /**
+     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+     * 
+     */
+    private @Nullable String privateIpId;
     /**
      * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
      * 
@@ -132,6 +141,10 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
     public Optional<String> hostnameLabel() {
         return Optional.ofNullable(this.hostnameLabel);
     }
+    /**
+     * @return A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+     * 
+     */
     public List<InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails() {
         return this.ipv6addressIpv6subnetCidrPairDetails == null ? List.of() : this.ipv6addressIpv6subnetCidrPairDetails;
     }
@@ -148,6 +161,13 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
      */
     public Optional<String> privateIp() {
         return Optional.ofNullable(this.privateIp);
+    }
+    /**
+     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+     * 
+     */
+    public Optional<String> privateIpId() {
+        return Optional.ofNullable(this.privateIpId);
     }
     /**
      * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
@@ -197,6 +217,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
         private @Nullable List<InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
         private @Nullable List<String> nsgIds;
         private @Nullable String privateIp;
+        private @Nullable String privateIpId;
         private @Nullable Map<String,String> securityAttributes;
         private @Nullable Boolean skipSourceDestCheck;
         private @Nullable String subnetCidr;
@@ -214,6 +235,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
     	      this.ipv6addressIpv6subnetCidrPairDetails = defaults.ipv6addressIpv6subnetCidrPairDetails;
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateIp = defaults.privateIp;
+    	      this.privateIpId = defaults.privateIpId;
     	      this.securityAttributes = defaults.securityAttributes;
     	      this.skipSourceDestCheck = defaults.skipSourceDestCheck;
     	      this.subnetCidr = defaults.subnetCidr;
@@ -287,6 +309,12 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
             return this;
         }
         @CustomType.Setter
+        public Builder privateIpId(@Nullable String privateIpId) {
+
+            this.privateIpId = privateIpId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder securityAttributes(@Nullable Map<String,String> securityAttributes) {
 
             this.securityAttributes = securityAttributes;
@@ -322,6 +350,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
             _resultValue.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             _resultValue.nsgIds = nsgIds;
             _resultValue.privateIp = privateIp;
+            _resultValue.privateIpId = privateIpId;
             _resultValue.securityAttributes = securityAttributes;
             _resultValue.skipSourceDestCheck = skipSourceDestCheck;
             _resultValue.subnetCidr = subnetCidr;

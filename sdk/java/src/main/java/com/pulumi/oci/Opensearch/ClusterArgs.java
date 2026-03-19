@@ -355,6 +355,96 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The number of ML nodes configured for the cluster.
+     * 
+     */
+    @Import(name="mlNodeCount")
+    private @Nullable Output<Integer> mlNodeCount;
+
+    /**
+     * @return (Updatable) The number of ML nodes configured for the cluster.
+     * 
+     */
+    public Optional<Output<Integer>> mlNodeCount() {
+        return Optional.ofNullable(this.mlNodeCount);
+    }
+
+    /**
+     * (Updatable) The amount of memory in GB, for the cluster&#39;s ML nodes.
+     * 
+     */
+    @Import(name="mlNodeHostMemoryGb")
+    private @Nullable Output<Integer> mlNodeHostMemoryGb;
+
+    /**
+     * @return (Updatable) The amount of memory in GB, for the cluster&#39;s ML nodes.
+     * 
+     */
+    public Optional<Output<Integer>> mlNodeHostMemoryGb() {
+        return Optional.ofNullable(this.mlNodeHostMemoryGb);
+    }
+
+    /**
+     * (Updatable) The number of OCPUs configured for the cluster&#39;s ML nodes.
+     * 
+     */
+    @Import(name="mlNodeHostOcpuCount")
+    private @Nullable Output<Integer> mlNodeHostOcpuCount;
+
+    /**
+     * @return (Updatable) The number of OCPUs configured for the cluster&#39;s ML nodes.
+     * 
+     */
+    public Optional<Output<Integer>> mlNodeHostOcpuCount() {
+        return Optional.ofNullable(this.mlNodeHostOcpuCount);
+    }
+
+    /**
+     * (Updatable) The node shape for the cluster&#39;s ML nodes.
+     * 
+     */
+    @Import(name="mlNodeHostShape")
+    private @Nullable Output<String> mlNodeHostShape;
+
+    /**
+     * @return (Updatable) The node shape for the cluster&#39;s ML nodes.
+     * 
+     */
+    public Optional<Output<String>> mlNodeHostShape() {
+        return Optional.ofNullable(this.mlNodeHostShape);
+    }
+
+    /**
+     * The instance type for the cluster&#39;s ML nodes.
+     * 
+     */
+    @Import(name="mlNodeHostType")
+    private @Nullable Output<String> mlNodeHostType;
+
+    /**
+     * @return The instance type for the cluster&#39;s ML nodes.
+     * 
+     */
+    public Optional<Output<String>> mlNodeHostType() {
+        return Optional.ofNullable(this.mlNodeHostType);
+    }
+
+    /**
+     * (Updatable) The amount of storage in GB, to configure per node for the cluster&#39;s ML nodes.
+     * 
+     */
+    @Import(name="mlNodeStorageGb")
+    private @Nullable Output<Integer> mlNodeStorageGb;
+
+    /**
+     * @return (Updatable) The amount of storage in GB, to configure per node for the cluster&#39;s ML nodes.
+     * 
+     */
+    public Optional<Output<Integer>> mlNodeStorageGb() {
+        return Optional.ofNullable(this.mlNodeStorageGb);
+    }
+
+    /**
      * The OCID of the NSG where the private endpoint vnic will be attached.
      * 
      */
@@ -760,6 +850,12 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         this.masterNodeHostOcpuCount = $.masterNodeHostOcpuCount;
         this.masterNodeHostShape = $.masterNodeHostShape;
         this.masterNodeHostType = $.masterNodeHostType;
+        this.mlNodeCount = $.mlNodeCount;
+        this.mlNodeHostMemoryGb = $.mlNodeHostMemoryGb;
+        this.mlNodeHostOcpuCount = $.mlNodeHostOcpuCount;
+        this.mlNodeHostShape = $.mlNodeHostShape;
+        this.mlNodeHostType = $.mlNodeHostType;
+        this.mlNodeStorageGb = $.mlNodeStorageGb;
         this.nsgId = $.nsgId;
         this.opendashboardNodeCount = $.opendashboardNodeCount;
         this.opendashboardNodeHostMemoryGb = $.opendashboardNodeHostMemoryGb;
@@ -1275,6 +1371,132 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder masterNodeHostType(String masterNodeHostType) {
             return masterNodeHostType(Output.of(masterNodeHostType));
+        }
+
+        /**
+         * @param mlNodeCount (Updatable) The number of ML nodes configured for the cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mlNodeCount(@Nullable Output<Integer> mlNodeCount) {
+            $.mlNodeCount = mlNodeCount;
+            return this;
+        }
+
+        /**
+         * @param mlNodeCount (Updatable) The number of ML nodes configured for the cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mlNodeCount(Integer mlNodeCount) {
+            return mlNodeCount(Output.of(mlNodeCount));
+        }
+
+        /**
+         * @param mlNodeHostMemoryGb (Updatable) The amount of memory in GB, for the cluster&#39;s ML nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mlNodeHostMemoryGb(@Nullable Output<Integer> mlNodeHostMemoryGb) {
+            $.mlNodeHostMemoryGb = mlNodeHostMemoryGb;
+            return this;
+        }
+
+        /**
+         * @param mlNodeHostMemoryGb (Updatable) The amount of memory in GB, for the cluster&#39;s ML nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mlNodeHostMemoryGb(Integer mlNodeHostMemoryGb) {
+            return mlNodeHostMemoryGb(Output.of(mlNodeHostMemoryGb));
+        }
+
+        /**
+         * @param mlNodeHostOcpuCount (Updatable) The number of OCPUs configured for the cluster&#39;s ML nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mlNodeHostOcpuCount(@Nullable Output<Integer> mlNodeHostOcpuCount) {
+            $.mlNodeHostOcpuCount = mlNodeHostOcpuCount;
+            return this;
+        }
+
+        /**
+         * @param mlNodeHostOcpuCount (Updatable) The number of OCPUs configured for the cluster&#39;s ML nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mlNodeHostOcpuCount(Integer mlNodeHostOcpuCount) {
+            return mlNodeHostOcpuCount(Output.of(mlNodeHostOcpuCount));
+        }
+
+        /**
+         * @param mlNodeHostShape (Updatable) The node shape for the cluster&#39;s ML nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mlNodeHostShape(@Nullable Output<String> mlNodeHostShape) {
+            $.mlNodeHostShape = mlNodeHostShape;
+            return this;
+        }
+
+        /**
+         * @param mlNodeHostShape (Updatable) The node shape for the cluster&#39;s ML nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mlNodeHostShape(String mlNodeHostShape) {
+            return mlNodeHostShape(Output.of(mlNodeHostShape));
+        }
+
+        /**
+         * @param mlNodeHostType The instance type for the cluster&#39;s ML nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mlNodeHostType(@Nullable Output<String> mlNodeHostType) {
+            $.mlNodeHostType = mlNodeHostType;
+            return this;
+        }
+
+        /**
+         * @param mlNodeHostType The instance type for the cluster&#39;s ML nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mlNodeHostType(String mlNodeHostType) {
+            return mlNodeHostType(Output.of(mlNodeHostType));
+        }
+
+        /**
+         * @param mlNodeStorageGb (Updatable) The amount of storage in GB, to configure per node for the cluster&#39;s ML nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mlNodeStorageGb(@Nullable Output<Integer> mlNodeStorageGb) {
+            $.mlNodeStorageGb = mlNodeStorageGb;
+            return this;
+        }
+
+        /**
+         * @param mlNodeStorageGb (Updatable) The amount of storage in GB, to configure per node for the cluster&#39;s ML nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mlNodeStorageGb(Integer mlNodeStorageGb) {
+            return mlNodeStorageGb(Output.of(mlNodeStorageGb));
         }
 
         /**

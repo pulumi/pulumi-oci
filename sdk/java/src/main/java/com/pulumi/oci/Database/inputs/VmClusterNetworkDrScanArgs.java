@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class VmClusterNetworkDrScanArgs extends com.pulumi.resources.ResourceArgs {
@@ -61,12 +63,28 @@ public final class VmClusterNetworkDrScanArgs extends com.pulumi.resources.Resou
         return this.scanListenerPortTcp;
     }
 
+    /**
+     * (Updatable) The DR SCAN TCPIP SSL port. Default is 2484.
+     * 
+     */
+    @Import(name="scanListenerPortTcpSsl")
+    private @Nullable Output<Integer> scanListenerPortTcpSsl;
+
+    /**
+     * @return (Updatable) The DR SCAN TCPIP SSL port. Default is 2484.
+     * 
+     */
+    public Optional<Output<Integer>> scanListenerPortTcpSsl() {
+        return Optional.ofNullable(this.scanListenerPortTcpSsl);
+    }
+
     private VmClusterNetworkDrScanArgs() {}
 
     private VmClusterNetworkDrScanArgs(VmClusterNetworkDrScanArgs $) {
         this.hostname = $.hostname;
         this.ips = $.ips;
         this.scanListenerPortTcp = $.scanListenerPortTcp;
+        this.scanListenerPortTcpSsl = $.scanListenerPortTcpSsl;
     }
 
     public static Builder builder() {
@@ -158,6 +176,27 @@ public final class VmClusterNetworkDrScanArgs extends com.pulumi.resources.Resou
          */
         public Builder scanListenerPortTcp(Integer scanListenerPortTcp) {
             return scanListenerPortTcp(Output.of(scanListenerPortTcp));
+        }
+
+        /**
+         * @param scanListenerPortTcpSsl (Updatable) The DR SCAN TCPIP SSL port. Default is 2484.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scanListenerPortTcpSsl(@Nullable Output<Integer> scanListenerPortTcpSsl) {
+            $.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
+            return this;
+        }
+
+        /**
+         * @param scanListenerPortTcpSsl (Updatable) The DR SCAN TCPIP SSL port. Default is 2484.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scanListenerPortTcpSsl(Integer scanListenerPortTcpSsl) {
+            return scanListenerPortTcpSsl(Output.of(scanListenerPortTcpSsl));
         }
 
         public VmClusterNetworkDrScanArgs build() {

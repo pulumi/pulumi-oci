@@ -88,6 +88,18 @@ type Cluster struct {
 	MasterNodeHostShape pulumi.StringOutput `pulumi:"masterNodeHostShape"`
 	// The instance type for the cluster's master nodes.
 	MasterNodeHostType pulumi.StringOutput `pulumi:"masterNodeHostType"`
+	// (Updatable) The number of ML nodes configured for the cluster.
+	MlNodeCount pulumi.IntOutput `pulumi:"mlNodeCount"`
+	// (Updatable) The amount of memory in GB, for the cluster's ML nodes.
+	MlNodeHostMemoryGb pulumi.IntOutput `pulumi:"mlNodeHostMemoryGb"`
+	// (Updatable) The number of OCPUs configured for the cluster's ML nodes.
+	MlNodeHostOcpuCount pulumi.IntOutput `pulumi:"mlNodeHostOcpuCount"`
+	// (Updatable) The node shape for the cluster's ML nodes.
+	MlNodeHostShape pulumi.StringOutput `pulumi:"mlNodeHostShape"`
+	// The instance type for the cluster's ML nodes.
+	MlNodeHostType pulumi.StringOutput `pulumi:"mlNodeHostType"`
+	// (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
+	MlNodeStorageGb pulumi.IntOutput `pulumi:"mlNodeStorageGb"`
 	// The OCID of the NSG where the private endpoint vnic will be attached.
 	NsgId pulumi.StringOutput `pulumi:"nsgId"`
 	// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
@@ -311,6 +323,18 @@ type clusterState struct {
 	MasterNodeHostShape *string `pulumi:"masterNodeHostShape"`
 	// The instance type for the cluster's master nodes.
 	MasterNodeHostType *string `pulumi:"masterNodeHostType"`
+	// (Updatable) The number of ML nodes configured for the cluster.
+	MlNodeCount *int `pulumi:"mlNodeCount"`
+	// (Updatable) The amount of memory in GB, for the cluster's ML nodes.
+	MlNodeHostMemoryGb *int `pulumi:"mlNodeHostMemoryGb"`
+	// (Updatable) The number of OCPUs configured for the cluster's ML nodes.
+	MlNodeHostOcpuCount *int `pulumi:"mlNodeHostOcpuCount"`
+	// (Updatable) The node shape for the cluster's ML nodes.
+	MlNodeHostShape *string `pulumi:"mlNodeHostShape"`
+	// The instance type for the cluster's ML nodes.
+	MlNodeHostType *string `pulumi:"mlNodeHostType"`
+	// (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
+	MlNodeStorageGb *int `pulumi:"mlNodeStorageGb"`
 	// The OCID of the NSG where the private endpoint vnic will be attached.
 	NsgId *string `pulumi:"nsgId"`
 	// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
@@ -437,6 +461,18 @@ type ClusterState struct {
 	MasterNodeHostShape pulumi.StringPtrInput
 	// The instance type for the cluster's master nodes.
 	MasterNodeHostType pulumi.StringPtrInput
+	// (Updatable) The number of ML nodes configured for the cluster.
+	MlNodeCount pulumi.IntPtrInput
+	// (Updatable) The amount of memory in GB, for the cluster's ML nodes.
+	MlNodeHostMemoryGb pulumi.IntPtrInput
+	// (Updatable) The number of OCPUs configured for the cluster's ML nodes.
+	MlNodeHostOcpuCount pulumi.IntPtrInput
+	// (Updatable) The node shape for the cluster's ML nodes.
+	MlNodeHostShape pulumi.StringPtrInput
+	// The instance type for the cluster's ML nodes.
+	MlNodeHostType pulumi.StringPtrInput
+	// (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
+	MlNodeStorageGb pulumi.IntPtrInput
 	// The OCID of the NSG where the private endpoint vnic will be attached.
 	NsgId pulumi.StringPtrInput
 	// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
@@ -561,6 +597,18 @@ type clusterArgs struct {
 	MasterNodeHostShape *string `pulumi:"masterNodeHostShape"`
 	// The instance type for the cluster's master nodes.
 	MasterNodeHostType string `pulumi:"masterNodeHostType"`
+	// (Updatable) The number of ML nodes configured for the cluster.
+	MlNodeCount *int `pulumi:"mlNodeCount"`
+	// (Updatable) The amount of memory in GB, for the cluster's ML nodes.
+	MlNodeHostMemoryGb *int `pulumi:"mlNodeHostMemoryGb"`
+	// (Updatable) The number of OCPUs configured for the cluster's ML nodes.
+	MlNodeHostOcpuCount *int `pulumi:"mlNodeHostOcpuCount"`
+	// (Updatable) The node shape for the cluster's ML nodes.
+	MlNodeHostShape *string `pulumi:"mlNodeHostShape"`
+	// The instance type for the cluster's ML nodes.
+	MlNodeHostType *string `pulumi:"mlNodeHostType"`
+	// (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
+	MlNodeStorageGb *int `pulumi:"mlNodeStorageGb"`
 	// The OCID of the NSG where the private endpoint vnic will be attached.
 	NsgId *string `pulumi:"nsgId"`
 	// (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
@@ -662,6 +710,18 @@ type ClusterArgs struct {
 	MasterNodeHostShape pulumi.StringPtrInput
 	// The instance type for the cluster's master nodes.
 	MasterNodeHostType pulumi.StringInput
+	// (Updatable) The number of ML nodes configured for the cluster.
+	MlNodeCount pulumi.IntPtrInput
+	// (Updatable) The amount of memory in GB, for the cluster's ML nodes.
+	MlNodeHostMemoryGb pulumi.IntPtrInput
+	// (Updatable) The number of OCPUs configured for the cluster's ML nodes.
+	MlNodeHostOcpuCount pulumi.IntPtrInput
+	// (Updatable) The node shape for the cluster's ML nodes.
+	MlNodeHostShape pulumi.StringPtrInput
+	// The instance type for the cluster's ML nodes.
+	MlNodeHostType pulumi.StringPtrInput
+	// (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
+	MlNodeStorageGb pulumi.IntPtrInput
 	// The OCID of the NSG where the private endpoint vnic will be attached.
 	NsgId pulumi.StringPtrInput
 	// (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
@@ -927,6 +987,36 @@ func (o ClusterOutput) MasterNodeHostShape() pulumi.StringOutput {
 // The instance type for the cluster's master nodes.
 func (o ClusterOutput) MasterNodeHostType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.MasterNodeHostType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The number of ML nodes configured for the cluster.
+func (o ClusterOutput) MlNodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.MlNodeCount }).(pulumi.IntOutput)
+}
+
+// (Updatable) The amount of memory in GB, for the cluster's ML nodes.
+func (o ClusterOutput) MlNodeHostMemoryGb() pulumi.IntOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.MlNodeHostMemoryGb }).(pulumi.IntOutput)
+}
+
+// (Updatable) The number of OCPUs configured for the cluster's ML nodes.
+func (o ClusterOutput) MlNodeHostOcpuCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.MlNodeHostOcpuCount }).(pulumi.IntOutput)
+}
+
+// (Updatable) The node shape for the cluster's ML nodes.
+func (o ClusterOutput) MlNodeHostShape() pulumi.StringOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.MlNodeHostShape }).(pulumi.StringOutput)
+}
+
+// The instance type for the cluster's ML nodes.
+func (o ClusterOutput) MlNodeHostType() pulumi.StringOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.MlNodeHostType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
+func (o ClusterOutput) MlNodeStorageGb() pulumi.IntOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.MlNodeStorageGb }).(pulumi.IntOutput)
 }
 
 // The OCID of the NSG where the private endpoint vnic will be attached.

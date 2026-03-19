@@ -27,6 +27,11 @@ public final class GetVmClusterRecommendedNetworkDrScan {
      * 
      */
     private Integer scanListenerPortTcp;
+    /**
+     * @return The SCAN TCPIP SSL port. Default is 2484.
+     * 
+     */
+    private Integer scanListenerPortTcpSsl;
 
     private GetVmClusterRecommendedNetworkDrScan() {}
     /**
@@ -50,6 +55,13 @@ public final class GetVmClusterRecommendedNetworkDrScan {
     public Integer scanListenerPortTcp() {
         return this.scanListenerPortTcp;
     }
+    /**
+     * @return The SCAN TCPIP SSL port. Default is 2484.
+     * 
+     */
+    public Integer scanListenerPortTcpSsl() {
+        return this.scanListenerPortTcpSsl;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -63,12 +75,14 @@ public final class GetVmClusterRecommendedNetworkDrScan {
         private String hostname;
         private List<String> ips;
         private Integer scanListenerPortTcp;
+        private Integer scanListenerPortTcpSsl;
         public Builder() {}
         public Builder(GetVmClusterRecommendedNetworkDrScan defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.hostname = defaults.hostname;
     	      this.ips = defaults.ips;
     	      this.scanListenerPortTcp = defaults.scanListenerPortTcp;
+    	      this.scanListenerPortTcpSsl = defaults.scanListenerPortTcpSsl;
         }
 
         @CustomType.Setter
@@ -98,11 +112,20 @@ public final class GetVmClusterRecommendedNetworkDrScan {
             this.scanListenerPortTcp = scanListenerPortTcp;
             return this;
         }
+        @CustomType.Setter
+        public Builder scanListenerPortTcpSsl(Integer scanListenerPortTcpSsl) {
+            if (scanListenerPortTcpSsl == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkDrScan", "scanListenerPortTcpSsl");
+            }
+            this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
+            return this;
+        }
         public GetVmClusterRecommendedNetworkDrScan build() {
             final var _resultValue = new GetVmClusterRecommendedNetworkDrScan();
             _resultValue.hostname = hostname;
             _resultValue.ips = ips;
             _resultValue.scanListenerPortTcp = scanListenerPortTcp;
+            _resultValue.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
             return _resultValue;
         }
     }

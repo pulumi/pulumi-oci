@@ -100,10 +100,20 @@ export type DifStack = import("./difStack").DifStack;
 export const DifStack: typeof import("./difStack").DifStack = null as any;
 utilities.lazyLoad(exports, ["DifStack"], () => require("./difStack"));
 
-export { GdpGdpPipelineArgs, GdpGdpPipelineState } from "./gdpGdpPipeline";
-export type GdpGdpPipeline = import("./gdpGdpPipeline").GdpGdpPipeline;
-export const GdpGdpPipeline: typeof import("./gdpGdpPipeline").GdpGdpPipeline = null as any;
-utilities.lazyLoad(exports, ["GdpGdpPipeline"], () => require("./gdpGdpPipeline"));
+export { DistributedDatabaseDistributedAutonomousDatabaseArgs, DistributedDatabaseDistributedAutonomousDatabaseState } from "./distributedDatabaseDistributedAutonomousDatabase";
+export type DistributedDatabaseDistributedAutonomousDatabase = import("./distributedDatabaseDistributedAutonomousDatabase").DistributedDatabaseDistributedAutonomousDatabase;
+export const DistributedDatabaseDistributedAutonomousDatabase: typeof import("./distributedDatabaseDistributedAutonomousDatabase").DistributedDatabaseDistributedAutonomousDatabase = null as any;
+utilities.lazyLoad(exports, ["DistributedDatabaseDistributedAutonomousDatabase"], () => require("./distributedDatabaseDistributedAutonomousDatabase"));
+
+export { DistributedDatabaseDistributedDatabaseArgs, DistributedDatabaseDistributedDatabaseState } from "./distributedDatabaseDistributedDatabase";
+export type DistributedDatabaseDistributedDatabase = import("./distributedDatabaseDistributedDatabase").DistributedDatabaseDistributedDatabase;
+export const DistributedDatabaseDistributedDatabase: typeof import("./distributedDatabaseDistributedDatabase").DistributedDatabaseDistributedDatabase = null as any;
+utilities.lazyLoad(exports, ["DistributedDatabaseDistributedDatabase"], () => require("./distributedDatabaseDistributedDatabase"));
+
+export { DistributedDatabaseDistributedDatabasePrivateEndpointArgs, DistributedDatabaseDistributedDatabasePrivateEndpointState } from "./distributedDatabaseDistributedDatabasePrivateEndpoint";
+export type DistributedDatabaseDistributedDatabasePrivateEndpoint = import("./distributedDatabaseDistributedDatabasePrivateEndpoint").DistributedDatabaseDistributedDatabasePrivateEndpoint;
+export const DistributedDatabaseDistributedDatabasePrivateEndpoint: typeof import("./distributedDatabaseDistributedDatabasePrivateEndpoint").DistributedDatabaseDistributedDatabasePrivateEndpoint = null as any;
+utilities.lazyLoad(exports, ["DistributedDatabaseDistributedDatabasePrivateEndpoint"], () => require("./distributedDatabaseDistributedDatabasePrivateEndpoint"));
 
 export { GetAiDataPlatformAiDataPlatformArgs, GetAiDataPlatformAiDataPlatformResult, GetAiDataPlatformAiDataPlatformOutputArgs } from "./getAiDataPlatformAiDataPlatform";
 export const getAiDataPlatformAiDataPlatform: typeof import("./getAiDataPlatformAiDataPlatform").getAiDataPlatformAiDataPlatform = null as any;
@@ -335,15 +345,35 @@ export const getDifStacks: typeof import("./getDifStacks").getDifStacks = null a
 export const getDifStacksOutput: typeof import("./getDifStacks").getDifStacksOutput = null as any;
 utilities.lazyLoad(exports, ["getDifStacks","getDifStacksOutput"], () => require("./getDifStacks"));
 
-export { GetGdpGdpPipelineArgs, GetGdpGdpPipelineResult, GetGdpGdpPipelineOutputArgs } from "./getGdpGdpPipeline";
-export const getGdpGdpPipeline: typeof import("./getGdpGdpPipeline").getGdpGdpPipeline = null as any;
-export const getGdpGdpPipelineOutput: typeof import("./getGdpGdpPipeline").getGdpGdpPipelineOutput = null as any;
-utilities.lazyLoad(exports, ["getGdpGdpPipeline","getGdpGdpPipelineOutput"], () => require("./getGdpGdpPipeline"));
+export { GetDistributedDatabaseDistributedAutonomousDatabaseArgs, GetDistributedDatabaseDistributedAutonomousDatabaseResult, GetDistributedDatabaseDistributedAutonomousDatabaseOutputArgs } from "./getDistributedDatabaseDistributedAutonomousDatabase";
+export const getDistributedDatabaseDistributedAutonomousDatabase: typeof import("./getDistributedDatabaseDistributedAutonomousDatabase").getDistributedDatabaseDistributedAutonomousDatabase = null as any;
+export const getDistributedDatabaseDistributedAutonomousDatabaseOutput: typeof import("./getDistributedDatabaseDistributedAutonomousDatabase").getDistributedDatabaseDistributedAutonomousDatabaseOutput = null as any;
+utilities.lazyLoad(exports, ["getDistributedDatabaseDistributedAutonomousDatabase","getDistributedDatabaseDistributedAutonomousDatabaseOutput"], () => require("./getDistributedDatabaseDistributedAutonomousDatabase"));
 
-export { GetGdpGdpPipelinesArgs, GetGdpGdpPipelinesResult, GetGdpGdpPipelinesOutputArgs } from "./getGdpGdpPipelines";
-export const getGdpGdpPipelines: typeof import("./getGdpGdpPipelines").getGdpGdpPipelines = null as any;
-export const getGdpGdpPipelinesOutput: typeof import("./getGdpGdpPipelines").getGdpGdpPipelinesOutput = null as any;
-utilities.lazyLoad(exports, ["getGdpGdpPipelines","getGdpGdpPipelinesOutput"], () => require("./getGdpGdpPipelines"));
+export { GetDistributedDatabaseDistributedAutonomousDatabasesArgs, GetDistributedDatabaseDistributedAutonomousDatabasesResult, GetDistributedDatabaseDistributedAutonomousDatabasesOutputArgs } from "./getDistributedDatabaseDistributedAutonomousDatabases";
+export const getDistributedDatabaseDistributedAutonomousDatabases: typeof import("./getDistributedDatabaseDistributedAutonomousDatabases").getDistributedDatabaseDistributedAutonomousDatabases = null as any;
+export const getDistributedDatabaseDistributedAutonomousDatabasesOutput: typeof import("./getDistributedDatabaseDistributedAutonomousDatabases").getDistributedDatabaseDistributedAutonomousDatabasesOutput = null as any;
+utilities.lazyLoad(exports, ["getDistributedDatabaseDistributedAutonomousDatabases","getDistributedDatabaseDistributedAutonomousDatabasesOutput"], () => require("./getDistributedDatabaseDistributedAutonomousDatabases"));
+
+export { GetDistributedDatabaseDistributedDatabaseArgs, GetDistributedDatabaseDistributedDatabaseResult, GetDistributedDatabaseDistributedDatabaseOutputArgs } from "./getDistributedDatabaseDistributedDatabase";
+export const getDistributedDatabaseDistributedDatabase: typeof import("./getDistributedDatabaseDistributedDatabase").getDistributedDatabaseDistributedDatabase = null as any;
+export const getDistributedDatabaseDistributedDatabaseOutput: typeof import("./getDistributedDatabaseDistributedDatabase").getDistributedDatabaseDistributedDatabaseOutput = null as any;
+utilities.lazyLoad(exports, ["getDistributedDatabaseDistributedDatabase","getDistributedDatabaseDistributedDatabaseOutput"], () => require("./getDistributedDatabaseDistributedDatabase"));
+
+export { GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs, GetDistributedDatabaseDistributedDatabasePrivateEndpointResult, GetDistributedDatabaseDistributedDatabasePrivateEndpointOutputArgs } from "./getDistributedDatabaseDistributedDatabasePrivateEndpoint";
+export const getDistributedDatabaseDistributedDatabasePrivateEndpoint: typeof import("./getDistributedDatabaseDistributedDatabasePrivateEndpoint").getDistributedDatabaseDistributedDatabasePrivateEndpoint = null as any;
+export const getDistributedDatabaseDistributedDatabasePrivateEndpointOutput: typeof import("./getDistributedDatabaseDistributedDatabasePrivateEndpoint").getDistributedDatabaseDistributedDatabasePrivateEndpointOutput = null as any;
+utilities.lazyLoad(exports, ["getDistributedDatabaseDistributedDatabasePrivateEndpoint","getDistributedDatabaseDistributedDatabasePrivateEndpointOutput"], () => require("./getDistributedDatabaseDistributedDatabasePrivateEndpoint"));
+
+export { GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs, GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult, GetDistributedDatabaseDistributedDatabasePrivateEndpointsOutputArgs } from "./getDistributedDatabaseDistributedDatabasePrivateEndpoints";
+export const getDistributedDatabaseDistributedDatabasePrivateEndpoints: typeof import("./getDistributedDatabaseDistributedDatabasePrivateEndpoints").getDistributedDatabaseDistributedDatabasePrivateEndpoints = null as any;
+export const getDistributedDatabaseDistributedDatabasePrivateEndpointsOutput: typeof import("./getDistributedDatabaseDistributedDatabasePrivateEndpoints").getDistributedDatabaseDistributedDatabasePrivateEndpointsOutput = null as any;
+utilities.lazyLoad(exports, ["getDistributedDatabaseDistributedDatabasePrivateEndpoints","getDistributedDatabaseDistributedDatabasePrivateEndpointsOutput"], () => require("./getDistributedDatabaseDistributedDatabasePrivateEndpoints"));
+
+export { GetDistributedDatabaseDistributedDatabasesArgs, GetDistributedDatabaseDistributedDatabasesResult, GetDistributedDatabaseDistributedDatabasesOutputArgs } from "./getDistributedDatabaseDistributedDatabases";
+export const getDistributedDatabaseDistributedDatabases: typeof import("./getDistributedDatabaseDistributedDatabases").getDistributedDatabaseDistributedDatabases = null as any;
+export const getDistributedDatabaseDistributedDatabasesOutput: typeof import("./getDistributedDatabaseDistributedDatabases").getDistributedDatabaseDistributedDatabasesOutput = null as any;
+utilities.lazyLoad(exports, ["getDistributedDatabaseDistributedDatabases","getDistributedDatabaseDistributedDatabasesOutput"], () => require("./getDistributedDatabaseDistributedDatabases"));
 
 export { GetIotDigitalTwinAdapterArgs, GetIotDigitalTwinAdapterResult, GetIotDigitalTwinAdapterOutputArgs } from "./getIotDigitalTwinAdapter";
 export const getIotDigitalTwinAdapter: typeof import("./getIotDigitalTwinAdapter").getIotDigitalTwinAdapter = null as any;
@@ -788,8 +818,12 @@ const _module = {
                 return new DbmulticloudOracleDbGcpKeyRing(name, <any>undefined, { urn })
             case "oci:oci/difStack:DifStack":
                 return new DifStack(name, <any>undefined, { urn })
-            case "oci:oci/gdpGdpPipeline:GdpGdpPipeline":
-                return new GdpGdpPipeline(name, <any>undefined, { urn })
+            case "oci:oci/distributedDatabaseDistributedAutonomousDatabase:DistributedDatabaseDistributedAutonomousDatabase":
+                return new DistributedDatabaseDistributedAutonomousDatabase(name, <any>undefined, { urn })
+            case "oci:oci/distributedDatabaseDistributedDatabase:DistributedDatabaseDistributedDatabase":
+                return new DistributedDatabaseDistributedDatabase(name, <any>undefined, { urn })
+            case "oci:oci/distributedDatabaseDistributedDatabasePrivateEndpoint:DistributedDatabaseDistributedDatabasePrivateEndpoint":
+                return new DistributedDatabaseDistributedDatabasePrivateEndpoint(name, <any>undefined, { urn })
             case "oci:oci/iotDigitalTwinAdapter:IotDigitalTwinAdapter":
                 return new IotDigitalTwinAdapter(name, <any>undefined, { urn })
             case "oci:oci/iotDigitalTwinInstance:IotDigitalTwinInstance":
@@ -850,7 +884,9 @@ pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureVault
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbGcpIdentityConnector", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbGcpKeyRing", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/difStack", _module)
-pulumi.runtime.registerResourceModule("oci", "oci/gdpGdpPipeline", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/distributedDatabaseDistributedAutonomousDatabase", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/distributedDatabaseDistributedDatabase", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/distributedDatabaseDistributedDatabasePrivateEndpoint", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/iotDigitalTwinAdapter", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/iotDigitalTwinInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/iotDigitalTwinInstanceInvokeRawCommand", _module)

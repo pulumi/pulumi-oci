@@ -20,6 +20,7 @@ export function getVmClusterRecommendedNetwork(args: GetVmClusterRecommendedNetw
         "displayName": args.displayName,
         "dns": args.dns,
         "drScanListenerPortTcp": args.drScanListenerPortTcp,
+        "drScanListenerPortTcpSsl": args.drScanListenerPortTcpSsl,
         "exadataInfrastructureId": args.exadataInfrastructureId,
         "freeformTags": args.freeformTags,
         "networks": args.networks,
@@ -57,6 +58,10 @@ export interface GetVmClusterRecommendedNetworkArgs {
      * The DR SCAN TCPIP port. Default is 1521.
      */
     drScanListenerPortTcp?: number;
+    /**
+     * The DR SCAN TCPIP SSL port. Default is 2484.
+     */
+    drScanListenerPortTcpSsl?: number;
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -105,6 +110,7 @@ export interface GetVmClusterRecommendedNetworkResult {
      */
     readonly dns: string[];
     readonly drScanListenerPortTcp?: number;
+    readonly drScanListenerPortTcpSsl?: number;
     /**
      * The SCAN details for DR network
      */
@@ -154,6 +160,7 @@ export function getVmClusterRecommendedNetworkOutput(args: GetVmClusterRecommend
         "displayName": args.displayName,
         "dns": args.dns,
         "drScanListenerPortTcp": args.drScanListenerPortTcp,
+        "drScanListenerPortTcpSsl": args.drScanListenerPortTcpSsl,
         "exadataInfrastructureId": args.exadataInfrastructureId,
         "freeformTags": args.freeformTags,
         "networks": args.networks,
@@ -191,6 +198,10 @@ export interface GetVmClusterRecommendedNetworkOutputArgs {
      * The DR SCAN TCPIP port. Default is 1521.
      */
     drScanListenerPortTcp?: pulumi.Input<number>;
+    /**
+     * The DR SCAN TCPIP SSL port. Default is 2484.
+     */
+    drScanListenerPortTcpSsl?: pulumi.Input<number>;
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

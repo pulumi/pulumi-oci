@@ -46756,6 +46756,8 @@ type GetVmClusterNetworkDrScan struct {
 	Ips []string `pulumi:"ips"`
 	// The SCAN TCPIP port. Default is 1521.
 	ScanListenerPortTcp int `pulumi:"scanListenerPortTcp"`
+	// The SCAN TCPIP SSL port. Default is 2484.
+	ScanListenerPortTcpSsl int `pulumi:"scanListenerPortTcpSsl"`
 }
 
 // GetVmClusterNetworkDrScanInput is an input type that accepts GetVmClusterNetworkDrScanArgs and GetVmClusterNetworkDrScanOutput values.
@@ -46776,6 +46778,8 @@ type GetVmClusterNetworkDrScanArgs struct {
 	Ips pulumi.StringArrayInput `pulumi:"ips"`
 	// The SCAN TCPIP port. Default is 1521.
 	ScanListenerPortTcp pulumi.IntInput `pulumi:"scanListenerPortTcp"`
+	// The SCAN TCPIP SSL port. Default is 2484.
+	ScanListenerPortTcpSsl pulumi.IntInput `pulumi:"scanListenerPortTcpSsl"`
 }
 
 func (GetVmClusterNetworkDrScanArgs) ElementType() reflect.Type {
@@ -46842,6 +46846,11 @@ func (o GetVmClusterNetworkDrScanOutput) Ips() pulumi.StringArrayOutput {
 // The SCAN TCPIP port. Default is 1521.
 func (o GetVmClusterNetworkDrScanOutput) ScanListenerPortTcp() pulumi.IntOutput {
 	return o.ApplyT(func(v GetVmClusterNetworkDrScan) int { return v.ScanListenerPortTcp }).(pulumi.IntOutput)
+}
+
+// The SCAN TCPIP SSL port. Default is 2484.
+func (o GetVmClusterNetworkDrScanOutput) ScanListenerPortTcpSsl() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkDrScan) int { return v.ScanListenerPortTcpSsl }).(pulumi.IntOutput)
 }
 
 type GetVmClusterNetworkDrScanArrayOutput struct{ *pulumi.OutputState }
@@ -47644,6 +47653,8 @@ type GetVmClusterNetworksVmClusterNetworkDrScan struct {
 	Ips []string `pulumi:"ips"`
 	// The SCAN TCPIP port. Default is 1521.
 	ScanListenerPortTcp int `pulumi:"scanListenerPortTcp"`
+	// The SCAN TCPIP SSL port. Default is 2484.
+	ScanListenerPortTcpSsl int `pulumi:"scanListenerPortTcpSsl"`
 }
 
 // GetVmClusterNetworksVmClusterNetworkDrScanInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkDrScanArgs and GetVmClusterNetworksVmClusterNetworkDrScanOutput values.
@@ -47664,6 +47675,8 @@ type GetVmClusterNetworksVmClusterNetworkDrScanArgs struct {
 	Ips pulumi.StringArrayInput `pulumi:"ips"`
 	// The SCAN TCPIP port. Default is 1521.
 	ScanListenerPortTcp pulumi.IntInput `pulumi:"scanListenerPortTcp"`
+	// The SCAN TCPIP SSL port. Default is 2484.
+	ScanListenerPortTcpSsl pulumi.IntInput `pulumi:"scanListenerPortTcpSsl"`
 }
 
 func (GetVmClusterNetworksVmClusterNetworkDrScanArgs) ElementType() reflect.Type {
@@ -47730,6 +47743,11 @@ func (o GetVmClusterNetworksVmClusterNetworkDrScanOutput) Ips() pulumi.StringArr
 // The SCAN TCPIP port. Default is 1521.
 func (o GetVmClusterNetworksVmClusterNetworkDrScanOutput) ScanListenerPortTcp() pulumi.IntOutput {
 	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkDrScan) int { return v.ScanListenerPortTcp }).(pulumi.IntOutput)
+}
+
+// The SCAN TCPIP SSL port. Default is 2484.
+func (o GetVmClusterNetworksVmClusterNetworkDrScanOutput) ScanListenerPortTcpSsl() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkDrScan) int { return v.ScanListenerPortTcpSsl }).(pulumi.IntOutput)
 }
 
 type GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput struct{ *pulumi.OutputState }
@@ -48701,6 +48719,8 @@ type GetVmClusterRecommendedNetworkDrScan struct {
 	Ips []string `pulumi:"ips"`
 	// The SCAN TCPIP port. Default is 1521.
 	ScanListenerPortTcp int `pulumi:"scanListenerPortTcp"`
+	// The SCAN TCPIP SSL port. Default is 2484.
+	ScanListenerPortTcpSsl int `pulumi:"scanListenerPortTcpSsl"`
 }
 
 // GetVmClusterRecommendedNetworkDrScanInput is an input type that accepts GetVmClusterRecommendedNetworkDrScanArgs and GetVmClusterRecommendedNetworkDrScanOutput values.
@@ -48721,6 +48741,8 @@ type GetVmClusterRecommendedNetworkDrScanArgs struct {
 	Ips pulumi.StringArrayInput `pulumi:"ips"`
 	// The SCAN TCPIP port. Default is 1521.
 	ScanListenerPortTcp pulumi.IntInput `pulumi:"scanListenerPortTcp"`
+	// The SCAN TCPIP SSL port. Default is 2484.
+	ScanListenerPortTcpSsl pulumi.IntInput `pulumi:"scanListenerPortTcpSsl"`
 }
 
 func (GetVmClusterRecommendedNetworkDrScanArgs) ElementType() reflect.Type {
@@ -48787,6 +48809,11 @@ func (o GetVmClusterRecommendedNetworkDrScanOutput) Ips() pulumi.StringArrayOutp
 // The SCAN TCPIP port. Default is 1521.
 func (o GetVmClusterRecommendedNetworkDrScanOutput) ScanListenerPortTcp() pulumi.IntOutput {
 	return o.ApplyT(func(v GetVmClusterRecommendedNetworkDrScan) int { return v.ScanListenerPortTcp }).(pulumi.IntOutput)
+}
+
+// The SCAN TCPIP SSL port. Default is 2484.
+func (o GetVmClusterRecommendedNetworkDrScanOutput) ScanListenerPortTcpSsl() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkDrScan) int { return v.ScanListenerPortTcpSsl }).(pulumi.IntOutput)
 }
 
 type GetVmClusterRecommendedNetworkDrScanArrayOutput struct{ *pulumi.OutputState }

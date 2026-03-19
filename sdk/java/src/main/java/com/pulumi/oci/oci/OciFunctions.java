@@ -101,10 +101,18 @@ import com.pulumi.oci.oci.inputs.GetDifStackArgs;
 import com.pulumi.oci.oci.inputs.GetDifStackPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDifStacksArgs;
 import com.pulumi.oci.oci.inputs.GetDifStacksPlainArgs;
-import com.pulumi.oci.oci.inputs.GetGdpGdpPipelineArgs;
-import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinePlainArgs;
-import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesArgs;
-import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabaseArgs;
+import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabasePlainArgs;
+import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabasesArgs;
+import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabasesPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabaseArgs;
+import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePlainArgs;
+import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs;
+import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs;
+import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasesArgs;
+import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasesPlainArgs;
 import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdapterArgs;
 import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdapterPlainArgs;
 import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdaptersArgs;
@@ -275,8 +283,12 @@ import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbGcpKeyRingsResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbGcpKeysResult;
 import com.pulumi.oci.oci.outputs.GetDifStackResult;
 import com.pulumi.oci.oci.outputs.GetDifStacksResult;
-import com.pulumi.oci.oci.outputs.GetGdpGdpPipelineResult;
-import com.pulumi.oci.oci.outputs.GetGdpGdpPipelinesResult;
+import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedAutonomousDatabaseResult;
+import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedAutonomousDatabasesResult;
+import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointResult;
+import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult;
+import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedDatabaseResult;
+import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedDatabasesResult;
 import com.pulumi.oci.oci.outputs.GetIotDigitalTwinAdapterResult;
 import com.pulumi.oci.oci.outputs.GetIotDigitalTwinAdaptersResult;
 import com.pulumi.oci.oci.outputs.GetIotDigitalTwinInstanceContentResult;
@@ -11465,9 +11477,164 @@ public final class OciFunctions {
         return Deployment.getInstance().invokeAsync("oci:oci/getDifStacks:getDifStacks", TypeShape.of(GetDifStacksResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific Gdp Pipeline resource in Oracle Cloud Infrastructure Gdp service.
+     * This data source provides details about a specific Distributed Autonomous Database resource in Oracle Cloud Infrastructure Distributed Database service.
      * 
-     * Retrieves a pipeline by identifier.
+     * Gets the details of the Globally distributed autonomous database identified by given id.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetDistributedDatabaseDistributedAutonomousDatabaseResult> getDistributedDatabaseDistributedAutonomousDatabase(GetDistributedDatabaseDistributedAutonomousDatabaseArgs args) {
+        return getDistributedDatabaseDistributedAutonomousDatabase(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Distributed Autonomous Database resource in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * Gets the details of the Globally distributed autonomous database identified by given id.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetDistributedDatabaseDistributedAutonomousDatabaseResult> getDistributedDatabaseDistributedAutonomousDatabasePlain(GetDistributedDatabaseDistributedAutonomousDatabasePlainArgs args) {
+        return getDistributedDatabaseDistributedAutonomousDatabasePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Distributed Autonomous Database resource in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * Gets the details of the Globally distributed autonomous database identified by given id.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetDistributedDatabaseDistributedAutonomousDatabaseResult> getDistributedDatabaseDistributedAutonomousDatabase(GetDistributedDatabaseDistributedAutonomousDatabaseArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedAutonomousDatabase:getDistributedDatabaseDistributedAutonomousDatabase", TypeShape.of(GetDistributedDatabaseDistributedAutonomousDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Distributed Autonomous Database resource in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * Gets the details of the Globally distributed autonomous database identified by given id.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetDistributedDatabaseDistributedAutonomousDatabaseResult> getDistributedDatabaseDistributedAutonomousDatabase(GetDistributedDatabaseDistributedAutonomousDatabaseArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedAutonomousDatabase:getDistributedDatabaseDistributedAutonomousDatabase", TypeShape.of(GetDistributedDatabaseDistributedAutonomousDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Distributed Autonomous Database resource in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * Gets the details of the Globally distributed autonomous database identified by given id.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetDistributedDatabaseDistributedAutonomousDatabaseResult> getDistributedDatabaseDistributedAutonomousDatabasePlain(GetDistributedDatabaseDistributedAutonomousDatabasePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDistributedDatabaseDistributedAutonomousDatabase:getDistributedDatabaseDistributedAutonomousDatabase", TypeShape.of(GetDistributedDatabaseDistributedAutonomousDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Distributed Autonomous Databases in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * List of Globally distributed autonomous databases.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetDistributedDatabaseDistributedAutonomousDatabasesResult> getDistributedDatabaseDistributedAutonomousDatabases(GetDistributedDatabaseDistributedAutonomousDatabasesArgs args) {
+        return getDistributedDatabaseDistributedAutonomousDatabases(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Distributed Autonomous Databases in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * List of Globally distributed autonomous databases.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetDistributedDatabaseDistributedAutonomousDatabasesResult> getDistributedDatabaseDistributedAutonomousDatabasesPlain(GetDistributedDatabaseDistributedAutonomousDatabasesPlainArgs args) {
+        return getDistributedDatabaseDistributedAutonomousDatabasesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Distributed Autonomous Databases in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * List of Globally distributed autonomous databases.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetDistributedDatabaseDistributedAutonomousDatabasesResult> getDistributedDatabaseDistributedAutonomousDatabases(GetDistributedDatabaseDistributedAutonomousDatabasesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedAutonomousDatabases:getDistributedDatabaseDistributedAutonomousDatabases", TypeShape.of(GetDistributedDatabaseDistributedAutonomousDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Distributed Autonomous Databases in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * List of Globally distributed autonomous databases.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetDistributedDatabaseDistributedAutonomousDatabasesResult> getDistributedDatabaseDistributedAutonomousDatabases(GetDistributedDatabaseDistributedAutonomousDatabasesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedAutonomousDatabases:getDistributedDatabaseDistributedAutonomousDatabases", TypeShape.of(GetDistributedDatabaseDistributedAutonomousDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Distributed Autonomous Databases in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * List of Globally distributed autonomous databases.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetDistributedDatabaseDistributedAutonomousDatabasesResult> getDistributedDatabaseDistributedAutonomousDatabasesPlain(GetDistributedDatabaseDistributedAutonomousDatabasesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDistributedDatabaseDistributedAutonomousDatabases:getDistributedDatabaseDistributedAutonomousDatabases", TypeShape.of(GetDistributedDatabaseDistributedAutonomousDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Distributed Database resource in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * Gets the details of the Globally distributed database identified by given id.
+     * 
+     */
+    public static Output<GetDistributedDatabaseDistributedDatabaseResult> getDistributedDatabaseDistributedDatabase(GetDistributedDatabaseDistributedDatabaseArgs args) {
+        return getDistributedDatabaseDistributedDatabase(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Distributed Database resource in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * Gets the details of the Globally distributed database identified by given id.
+     * 
+     */
+    public static CompletableFuture<GetDistributedDatabaseDistributedDatabaseResult> getDistributedDatabaseDistributedDatabasePlain(GetDistributedDatabaseDistributedDatabasePlainArgs args) {
+        return getDistributedDatabaseDistributedDatabasePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Distributed Database resource in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * Gets the details of the Globally distributed database identified by given id.
+     * 
+     */
+    public static Output<GetDistributedDatabaseDistributedDatabaseResult> getDistributedDatabaseDistributedDatabase(GetDistributedDatabaseDistributedDatabaseArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedDatabase:getDistributedDatabaseDistributedDatabase", TypeShape.of(GetDistributedDatabaseDistributedDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Distributed Database resource in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * Gets the details of the Globally distributed database identified by given id.
+     * 
+     */
+    public static Output<GetDistributedDatabaseDistributedDatabaseResult> getDistributedDatabaseDistributedDatabase(GetDistributedDatabaseDistributedDatabaseArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedDatabase:getDistributedDatabaseDistributedDatabase", TypeShape.of(GetDistributedDatabaseDistributedDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Distributed Database resource in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * Gets the details of the Globally distributed database identified by given id.
+     * 
+     */
+    public static CompletableFuture<GetDistributedDatabaseDistributedDatabaseResult> getDistributedDatabaseDistributedDatabasePlain(GetDistributedDatabaseDistributedDatabasePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDistributedDatabaseDistributedDatabase:getDistributedDatabaseDistributedDatabase", TypeShape.of(GetDistributedDatabaseDistributedDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Distributed Database Private Endpoint resource in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * Get the DistributedDatabasePrivateEndpoint resource.
      * 
      * ## Example Usage
      * 
@@ -11479,7 +11646,7 @@ public final class OciFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelineArgs;
+     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -11493,9 +11660,8 @@ public final class OciFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testGdpPipeline = OciFunctions.getGdpGdpPipeline(GetGdpGdpPipelineArgs.builder()
-     *             .gdpPipelineId(testGdpPipelineOciGdpGdpPipeline.id())
-     *             .env(gdpEnv)
+     *         final var testDistributedDatabasePrivateEndpoint = OciFunctions.getDistributedDatabaseDistributedDatabasePrivateEndpoint(GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs.builder()
+     *             .distributedDatabasePrivateEndpointId(testDistributedDatabasePrivateEndpointOciDistributedDatabaseDistributedDatabasePrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -11504,13 +11670,13 @@ public final class OciFunctions {
      * </pre>
      * 
      */
-    public static Output<GetGdpGdpPipelineResult> getGdpGdpPipeline(GetGdpGdpPipelineArgs args) {
-        return getGdpGdpPipeline(args, InvokeOptions.Empty);
+    public static Output<GetDistributedDatabaseDistributedDatabasePrivateEndpointResult> getDistributedDatabaseDistributedDatabasePrivateEndpoint(GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs args) {
+        return getDistributedDatabaseDistributedDatabasePrivateEndpoint(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides details about a specific Gdp Pipeline resource in Oracle Cloud Infrastructure Gdp service.
+     * This data source provides details about a specific Distributed Database Private Endpoint resource in Oracle Cloud Infrastructure Distributed Database service.
      * 
-     * Retrieves a pipeline by identifier.
+     * Get the DistributedDatabasePrivateEndpoint resource.
      * 
      * ## Example Usage
      * 
@@ -11522,7 +11688,7 @@ public final class OciFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelineArgs;
+     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -11536,9 +11702,8 @@ public final class OciFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testGdpPipeline = OciFunctions.getGdpGdpPipeline(GetGdpGdpPipelineArgs.builder()
-     *             .gdpPipelineId(testGdpPipelineOciGdpGdpPipeline.id())
-     *             .env(gdpEnv)
+     *         final var testDistributedDatabasePrivateEndpoint = OciFunctions.getDistributedDatabaseDistributedDatabasePrivateEndpoint(GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs.builder()
+     *             .distributedDatabasePrivateEndpointId(testDistributedDatabasePrivateEndpointOciDistributedDatabaseDistributedDatabasePrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -11547,13 +11712,13 @@ public final class OciFunctions {
      * </pre>
      * 
      */
-    public static CompletableFuture<GetGdpGdpPipelineResult> getGdpGdpPipelinePlain(GetGdpGdpPipelinePlainArgs args) {
-        return getGdpGdpPipelinePlain(args, InvokeOptions.Empty);
+    public static CompletableFuture<GetDistributedDatabaseDistributedDatabasePrivateEndpointResult> getDistributedDatabaseDistributedDatabasePrivateEndpointPlain(GetDistributedDatabaseDistributedDatabasePrivateEndpointPlainArgs args) {
+        return getDistributedDatabaseDistributedDatabasePrivateEndpointPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides details about a specific Gdp Pipeline resource in Oracle Cloud Infrastructure Gdp service.
+     * This data source provides details about a specific Distributed Database Private Endpoint resource in Oracle Cloud Infrastructure Distributed Database service.
      * 
-     * Retrieves a pipeline by identifier.
+     * Get the DistributedDatabasePrivateEndpoint resource.
      * 
      * ## Example Usage
      * 
@@ -11565,7 +11730,7 @@ public final class OciFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelineArgs;
+     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -11579,9 +11744,8 @@ public final class OciFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testGdpPipeline = OciFunctions.getGdpGdpPipeline(GetGdpGdpPipelineArgs.builder()
-     *             .gdpPipelineId(testGdpPipelineOciGdpGdpPipeline.id())
-     *             .env(gdpEnv)
+     *         final var testDistributedDatabasePrivateEndpoint = OciFunctions.getDistributedDatabaseDistributedDatabasePrivateEndpoint(GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs.builder()
+     *             .distributedDatabasePrivateEndpointId(testDistributedDatabasePrivateEndpointOciDistributedDatabaseDistributedDatabasePrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -11590,13 +11754,13 @@ public final class OciFunctions {
      * </pre>
      * 
      */
-    public static Output<GetGdpGdpPipelineResult> getGdpGdpPipeline(GetGdpGdpPipelineArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getGdpGdpPipeline:getGdpGdpPipeline", TypeShape.of(GetGdpGdpPipelineResult.class), args, Utilities.withVersion(options));
+    public static Output<GetDistributedDatabaseDistributedDatabasePrivateEndpointResult> getDistributedDatabaseDistributedDatabasePrivateEndpoint(GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedDatabasePrivateEndpoint:getDistributedDatabaseDistributedDatabasePrivateEndpoint", TypeShape.of(GetDistributedDatabaseDistributedDatabasePrivateEndpointResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific Gdp Pipeline resource in Oracle Cloud Infrastructure Gdp service.
+     * This data source provides details about a specific Distributed Database Private Endpoint resource in Oracle Cloud Infrastructure Distributed Database service.
      * 
-     * Retrieves a pipeline by identifier.
+     * Get the DistributedDatabasePrivateEndpoint resource.
      * 
      * ## Example Usage
      * 
@@ -11608,7 +11772,7 @@ public final class OciFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelineArgs;
+     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -11622,9 +11786,8 @@ public final class OciFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testGdpPipeline = OciFunctions.getGdpGdpPipeline(GetGdpGdpPipelineArgs.builder()
-     *             .gdpPipelineId(testGdpPipelineOciGdpGdpPipeline.id())
-     *             .env(gdpEnv)
+     *         final var testDistributedDatabasePrivateEndpoint = OciFunctions.getDistributedDatabaseDistributedDatabasePrivateEndpoint(GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs.builder()
+     *             .distributedDatabasePrivateEndpointId(testDistributedDatabasePrivateEndpointOciDistributedDatabaseDistributedDatabasePrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -11633,13 +11796,13 @@ public final class OciFunctions {
      * </pre>
      * 
      */
-    public static Output<GetGdpGdpPipelineResult> getGdpGdpPipeline(GetGdpGdpPipelineArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getGdpGdpPipeline:getGdpGdpPipeline", TypeShape.of(GetGdpGdpPipelineResult.class), args, Utilities.withVersion(options));
+    public static Output<GetDistributedDatabaseDistributedDatabasePrivateEndpointResult> getDistributedDatabaseDistributedDatabasePrivateEndpoint(GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedDatabasePrivateEndpoint:getDistributedDatabaseDistributedDatabasePrivateEndpoint", TypeShape.of(GetDistributedDatabaseDistributedDatabasePrivateEndpointResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific Gdp Pipeline resource in Oracle Cloud Infrastructure Gdp service.
+     * This data source provides details about a specific Distributed Database Private Endpoint resource in Oracle Cloud Infrastructure Distributed Database service.
      * 
-     * Retrieves a pipeline by identifier.
+     * Get the DistributedDatabasePrivateEndpoint resource.
      * 
      * ## Example Usage
      * 
@@ -11651,7 +11814,7 @@ public final class OciFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelineArgs;
+     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -11665,9 +11828,8 @@ public final class OciFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testGdpPipeline = OciFunctions.getGdpGdpPipeline(GetGdpGdpPipelineArgs.builder()
-     *             .gdpPipelineId(testGdpPipelineOciGdpGdpPipeline.id())
-     *             .env(gdpEnv)
+     *         final var testDistributedDatabasePrivateEndpoint = OciFunctions.getDistributedDatabaseDistributedDatabasePrivateEndpoint(GetDistributedDatabaseDistributedDatabasePrivateEndpointArgs.builder()
+     *             .distributedDatabasePrivateEndpointId(testDistributedDatabasePrivateEndpointOciDistributedDatabaseDistributedDatabasePrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -11676,13 +11838,13 @@ public final class OciFunctions {
      * </pre>
      * 
      */
-    public static CompletableFuture<GetGdpGdpPipelineResult> getGdpGdpPipelinePlain(GetGdpGdpPipelinePlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getGdpGdpPipeline:getGdpGdpPipeline", TypeShape.of(GetGdpGdpPipelineResult.class), args, Utilities.withVersion(options));
+    public static CompletableFuture<GetDistributedDatabaseDistributedDatabasePrivateEndpointResult> getDistributedDatabaseDistributedDatabasePrivateEndpointPlain(GetDistributedDatabaseDistributedDatabasePrivateEndpointPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDistributedDatabaseDistributedDatabasePrivateEndpoint:getDistributedDatabaseDistributedDatabasePrivateEndpoint", TypeShape.of(GetDistributedDatabaseDistributedDatabasePrivateEndpointResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Gdp Pipelines in Oracle Cloud Infrastructure Gdp service.
+     * This data source provides the list of Distributed Database Private Endpoints in Oracle Cloud Infrastructure Distributed Database service.
      * 
-     * Returns a list of pipelines.
+     * List of DistributedDatabasePrivateEndpoints.
      * 
      * ## Example Usage
      * 
@@ -11694,7 +11856,7 @@ public final class OciFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesArgs;
+     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -11708,10 +11870,10 @@ public final class OciFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testGdpPipelines = OciFunctions.getGdpGdpPipelines(GetGdpGdpPipelinesArgs.builder()
+     *         final var testDistributedDatabasePrivateEndpoints = OciFunctions.getDistributedDatabaseDistributedDatabasePrivateEndpoints(GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .displayName(gdpPipelineDisplayName)
-     *             .env(gdpEnv)
+     *             .displayName(distributedDatabasePrivateEndpointDisplayName)
+     *             .state(distributedDatabasePrivateEndpointState)
      *             .build());
      * 
      *     }
@@ -11720,13 +11882,13 @@ public final class OciFunctions {
      * </pre>
      * 
      */
-    public static Output<GetGdpGdpPipelinesResult> getGdpGdpPipelines() {
-        return getGdpGdpPipelines(GetGdpGdpPipelinesArgs.Empty, InvokeOptions.Empty);
+    public static Output<GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult> getDistributedDatabaseDistributedDatabasePrivateEndpoints(GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs args) {
+        return getDistributedDatabaseDistributedDatabasePrivateEndpoints(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Gdp Pipelines in Oracle Cloud Infrastructure Gdp service.
+     * This data source provides the list of Distributed Database Private Endpoints in Oracle Cloud Infrastructure Distributed Database service.
      * 
-     * Returns a list of pipelines.
+     * List of DistributedDatabasePrivateEndpoints.
      * 
      * ## Example Usage
      * 
@@ -11738,7 +11900,7 @@ public final class OciFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesArgs;
+     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -11752,10 +11914,10 @@ public final class OciFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testGdpPipelines = OciFunctions.getGdpGdpPipelines(GetGdpGdpPipelinesArgs.builder()
+     *         final var testDistributedDatabasePrivateEndpoints = OciFunctions.getDistributedDatabaseDistributedDatabasePrivateEndpoints(GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .displayName(gdpPipelineDisplayName)
-     *             .env(gdpEnv)
+     *             .displayName(distributedDatabasePrivateEndpointDisplayName)
+     *             .state(distributedDatabasePrivateEndpointState)
      *             .build());
      * 
      *     }
@@ -11764,13 +11926,13 @@ public final class OciFunctions {
      * </pre>
      * 
      */
-    public static CompletableFuture<GetGdpGdpPipelinesResult> getGdpGdpPipelinesPlain() {
-        return getGdpGdpPipelinesPlain(GetGdpGdpPipelinesPlainArgs.Empty, InvokeOptions.Empty);
+    public static CompletableFuture<GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult> getDistributedDatabaseDistributedDatabasePrivateEndpointsPlain(GetDistributedDatabaseDistributedDatabasePrivateEndpointsPlainArgs args) {
+        return getDistributedDatabaseDistributedDatabasePrivateEndpointsPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Gdp Pipelines in Oracle Cloud Infrastructure Gdp service.
+     * This data source provides the list of Distributed Database Private Endpoints in Oracle Cloud Infrastructure Distributed Database service.
      * 
-     * Returns a list of pipelines.
+     * List of DistributedDatabasePrivateEndpoints.
      * 
      * ## Example Usage
      * 
@@ -11782,7 +11944,7 @@ public final class OciFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesArgs;
+     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -11796,10 +11958,10 @@ public final class OciFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testGdpPipelines = OciFunctions.getGdpGdpPipelines(GetGdpGdpPipelinesArgs.builder()
+     *         final var testDistributedDatabasePrivateEndpoints = OciFunctions.getDistributedDatabaseDistributedDatabasePrivateEndpoints(GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .displayName(gdpPipelineDisplayName)
-     *             .env(gdpEnv)
+     *             .displayName(distributedDatabasePrivateEndpointDisplayName)
+     *             .state(distributedDatabasePrivateEndpointState)
      *             .build());
      * 
      *     }
@@ -11808,13 +11970,13 @@ public final class OciFunctions {
      * </pre>
      * 
      */
-    public static Output<GetGdpGdpPipelinesResult> getGdpGdpPipelines(GetGdpGdpPipelinesArgs args) {
-        return getGdpGdpPipelines(args, InvokeOptions.Empty);
+    public static Output<GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult> getDistributedDatabaseDistributedDatabasePrivateEndpoints(GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedDatabasePrivateEndpoints:getDistributedDatabaseDistributedDatabasePrivateEndpoints", TypeShape.of(GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Gdp Pipelines in Oracle Cloud Infrastructure Gdp service.
+     * This data source provides the list of Distributed Database Private Endpoints in Oracle Cloud Infrastructure Distributed Database service.
      * 
-     * Returns a list of pipelines.
+     * List of DistributedDatabasePrivateEndpoints.
      * 
      * ## Example Usage
      * 
@@ -11826,7 +11988,7 @@ public final class OciFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesArgs;
+     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -11840,10 +12002,10 @@ public final class OciFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testGdpPipelines = OciFunctions.getGdpGdpPipelines(GetGdpGdpPipelinesArgs.builder()
+     *         final var testDistributedDatabasePrivateEndpoints = OciFunctions.getDistributedDatabaseDistributedDatabasePrivateEndpoints(GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .displayName(gdpPipelineDisplayName)
-     *             .env(gdpEnv)
+     *             .displayName(distributedDatabasePrivateEndpointDisplayName)
+     *             .state(distributedDatabasePrivateEndpointState)
      *             .build());
      * 
      *     }
@@ -11852,13 +12014,13 @@ public final class OciFunctions {
      * </pre>
      * 
      */
-    public static CompletableFuture<GetGdpGdpPipelinesResult> getGdpGdpPipelinesPlain(GetGdpGdpPipelinesPlainArgs args) {
-        return getGdpGdpPipelinesPlain(args, InvokeOptions.Empty);
+    public static Output<GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult> getDistributedDatabaseDistributedDatabasePrivateEndpoints(GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedDatabasePrivateEndpoints:getDistributedDatabaseDistributedDatabasePrivateEndpoints", TypeShape.of(GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Gdp Pipelines in Oracle Cloud Infrastructure Gdp service.
+     * This data source provides the list of Distributed Database Private Endpoints in Oracle Cloud Infrastructure Distributed Database service.
      * 
-     * Returns a list of pipelines.
+     * List of DistributedDatabasePrivateEndpoints.
      * 
      * ## Example Usage
      * 
@@ -11870,7 +12032,7 @@ public final class OciFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesArgs;
+     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -11884,10 +12046,10 @@ public final class OciFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var testGdpPipelines = OciFunctions.getGdpGdpPipelines(GetGdpGdpPipelinesArgs.builder()
+     *         final var testDistributedDatabasePrivateEndpoints = OciFunctions.getDistributedDatabaseDistributedDatabasePrivateEndpoints(GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .displayName(gdpPipelineDisplayName)
-     *             .env(gdpEnv)
+     *             .displayName(distributedDatabasePrivateEndpointDisplayName)
+     *             .state(distributedDatabasePrivateEndpointState)
      *             .build());
      * 
      *     }
@@ -11896,96 +12058,53 @@ public final class OciFunctions {
      * </pre>
      * 
      */
-    public static Output<GetGdpGdpPipelinesResult> getGdpGdpPipelines(GetGdpGdpPipelinesArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getGdpGdpPipelines:getGdpGdpPipelines", TypeShape.of(GetGdpGdpPipelinesResult.class), args, Utilities.withVersion(options));
+    public static CompletableFuture<GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult> getDistributedDatabaseDistributedDatabasePrivateEndpointsPlain(GetDistributedDatabaseDistributedDatabasePrivateEndpointsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDistributedDatabaseDistributedDatabasePrivateEndpoints:getDistributedDatabaseDistributedDatabasePrivateEndpoints", TypeShape.of(GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Gdp Pipelines in Oracle Cloud Infrastructure Gdp service.
+     * This data source provides the list of Distributed Databases in Oracle Cloud Infrastructure Distributed Database service.
      * 
-     * Returns a list of pipelines.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testGdpPipelines = OciFunctions.getGdpGdpPipelines(GetGdpGdpPipelinesArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(gdpPipelineDisplayName)
-     *             .env(gdpEnv)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
+     * List of Globally distributed databases.
      * 
      */
-    public static Output<GetGdpGdpPipelinesResult> getGdpGdpPipelines(GetGdpGdpPipelinesArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("oci:oci/getGdpGdpPipelines:getGdpGdpPipelines", TypeShape.of(GetGdpGdpPipelinesResult.class), args, Utilities.withVersion(options));
+    public static Output<GetDistributedDatabaseDistributedDatabasesResult> getDistributedDatabaseDistributedDatabases(GetDistributedDatabaseDistributedDatabasesArgs args) {
+        return getDistributedDatabaseDistributedDatabases(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Gdp Pipelines in Oracle Cloud Infrastructure Gdp service.
+     * This data source provides the list of Distributed Databases in Oracle Cloud Infrastructure Distributed Database service.
      * 
-     * Returns a list of pipelines.
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.oci.OciFunctions;
-     * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testGdpPipelines = OciFunctions.getGdpGdpPipelines(GetGdpGdpPipelinesArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .displayName(gdpPipelineDisplayName)
-     *             .env(gdpEnv)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
+     * List of Globally distributed databases.
      * 
      */
-    public static CompletableFuture<GetGdpGdpPipelinesResult> getGdpGdpPipelinesPlain(GetGdpGdpPipelinesPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("oci:oci/getGdpGdpPipelines:getGdpGdpPipelines", TypeShape.of(GetGdpGdpPipelinesResult.class), args, Utilities.withVersion(options));
+    public static CompletableFuture<GetDistributedDatabaseDistributedDatabasesResult> getDistributedDatabaseDistributedDatabasesPlain(GetDistributedDatabaseDistributedDatabasesPlainArgs args) {
+        return getDistributedDatabaseDistributedDatabasesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Distributed Databases in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * List of Globally distributed databases.
+     * 
+     */
+    public static Output<GetDistributedDatabaseDistributedDatabasesResult> getDistributedDatabaseDistributedDatabases(GetDistributedDatabaseDistributedDatabasesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedDatabases:getDistributedDatabaseDistributedDatabases", TypeShape.of(GetDistributedDatabaseDistributedDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Distributed Databases in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * List of Globally distributed databases.
+     * 
+     */
+    public static Output<GetDistributedDatabaseDistributedDatabasesResult> getDistributedDatabaseDistributedDatabases(GetDistributedDatabaseDistributedDatabasesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedDatabases:getDistributedDatabaseDistributedDatabases", TypeShape.of(GetDistributedDatabaseDistributedDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Distributed Databases in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * List of Globally distributed databases.
+     * 
+     */
+    public static CompletableFuture<GetDistributedDatabaseDistributedDatabasesResult> getDistributedDatabaseDistributedDatabasesPlain(GetDistributedDatabaseDistributedDatabasesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDistributedDatabaseDistributedDatabases:getDistributedDatabaseDistributedDatabases", TypeShape.of(GetDistributedDatabaseDistributedDatabasesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Digital Twin Adapter resource in Oracle Cloud Infrastructure Iot service.

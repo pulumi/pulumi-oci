@@ -51,6 +51,12 @@ class ClusterArgs:
                  maintenance_details: Optional[pulumi.Input['ClusterMaintenanceDetailsArgs']] = None,
                  master_node_host_bare_metal_shape: Optional[pulumi.Input[_builtins.str]] = None,
                  master_node_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
+                 ml_node_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 ml_node_host_memory_gb: Optional[pulumi.Input[_builtins.int]] = None,
+                 ml_node_host_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 ml_node_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
+                 ml_node_host_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 ml_node_storage_gb: Optional[pulumi.Input[_builtins.int]] = None,
                  nsg_id: Optional[pulumi.Input[_builtins.str]] = None,
                  opendashboard_node_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
                  outbound_cluster_config: Optional[pulumi.Input['ClusterOutboundClusterConfigArgs']] = None,
@@ -101,6 +107,12 @@ class ClusterArgs:
         :param pulumi.Input['ClusterMaintenanceDetailsArgs'] maintenance_details: (Updatable) Details for creation of maintenance details
         :param pulumi.Input[_builtins.str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
         :param pulumi.Input[_builtins.str] master_node_host_shape: (Updatable) The node shape for the cluster's master nodes.
+        :param pulumi.Input[_builtins.int] ml_node_count: (Updatable) The number of ML nodes configured for the cluster.
+        :param pulumi.Input[_builtins.int] ml_node_host_memory_gb: (Updatable) The amount of memory in GB, for the cluster's ML nodes.
+        :param pulumi.Input[_builtins.int] ml_node_host_ocpu_count: (Updatable) The number of OCPUs configured for the cluster's ML nodes.
+        :param pulumi.Input[_builtins.str] ml_node_host_shape: (Updatable) The node shape for the cluster's ML nodes.
+        :param pulumi.Input[_builtins.str] ml_node_host_type: The instance type for the cluster's ML nodes.
+        :param pulumi.Input[_builtins.int] ml_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
         :param pulumi.Input[_builtins.str] nsg_id: The OCID of the NSG where the private endpoint vnic will be attached.
         :param pulumi.Input[_builtins.str] opendashboard_node_host_shape: (Updatable) The node shape for the cluster's OpenSearch Dashboard nodes.
         :param pulumi.Input['ClusterOutboundClusterConfigArgs'] outbound_cluster_config: (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
@@ -164,6 +176,18 @@ class ClusterArgs:
             pulumi.set(__self__, "master_node_host_bare_metal_shape", master_node_host_bare_metal_shape)
         if master_node_host_shape is not None:
             pulumi.set(__self__, "master_node_host_shape", master_node_host_shape)
+        if ml_node_count is not None:
+            pulumi.set(__self__, "ml_node_count", ml_node_count)
+        if ml_node_host_memory_gb is not None:
+            pulumi.set(__self__, "ml_node_host_memory_gb", ml_node_host_memory_gb)
+        if ml_node_host_ocpu_count is not None:
+            pulumi.set(__self__, "ml_node_host_ocpu_count", ml_node_host_ocpu_count)
+        if ml_node_host_shape is not None:
+            pulumi.set(__self__, "ml_node_host_shape", ml_node_host_shape)
+        if ml_node_host_type is not None:
+            pulumi.set(__self__, "ml_node_host_type", ml_node_host_type)
+        if ml_node_storage_gb is not None:
+            pulumi.set(__self__, "ml_node_storage_gb", ml_node_storage_gb)
         if nsg_id is not None:
             pulumi.set(__self__, "nsg_id", nsg_id)
         if opendashboard_node_host_shape is not None:
@@ -560,6 +584,78 @@ class ClusterArgs:
         pulumi.set(self, "master_node_host_shape", value)
 
     @_builtins.property
+    @pulumi.getter(name="mlNodeCount")
+    def ml_node_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The number of ML nodes configured for the cluster.
+        """
+        return pulumi.get(self, "ml_node_count")
+
+    @ml_node_count.setter
+    def ml_node_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "ml_node_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeHostMemoryGb")
+    def ml_node_host_memory_gb(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The amount of memory in GB, for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_host_memory_gb")
+
+    @ml_node_host_memory_gb.setter
+    def ml_node_host_memory_gb(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "ml_node_host_memory_gb", value)
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeHostOcpuCount")
+    def ml_node_host_ocpu_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The number of OCPUs configured for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_host_ocpu_count")
+
+    @ml_node_host_ocpu_count.setter
+    def ml_node_host_ocpu_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "ml_node_host_ocpu_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeHostShape")
+    def ml_node_host_shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The node shape for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_host_shape")
+
+    @ml_node_host_shape.setter
+    def ml_node_host_shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ml_node_host_shape", value)
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeHostType")
+    def ml_node_host_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The instance type for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_host_type")
+
+    @ml_node_host_type.setter
+    def ml_node_host_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ml_node_host_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeStorageGb")
+    def ml_node_storage_gb(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_storage_gb")
+
+    @ml_node_storage_gb.setter
+    def ml_node_storage_gb(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "ml_node_storage_gb", value)
+
+    @_builtins.property
     @pulumi.getter(name="nsgId")
     def nsg_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -796,6 +892,12 @@ class _ClusterState:
                  master_node_host_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
                  master_node_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
                  master_node_host_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 ml_node_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 ml_node_host_memory_gb: Optional[pulumi.Input[_builtins.int]] = None,
+                 ml_node_host_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 ml_node_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
+                 ml_node_host_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 ml_node_storage_gb: Optional[pulumi.Input[_builtins.int]] = None,
                  nsg_id: Optional[pulumi.Input[_builtins.str]] = None,
                  opendashboard_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
                  opendashboard_node_count: Optional[pulumi.Input[_builtins.int]] = None,
@@ -859,6 +961,12 @@ class _ClusterState:
         :param pulumi.Input[_builtins.int] master_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluser's master nodes.
         :param pulumi.Input[_builtins.str] master_node_host_shape: (Updatable) The node shape for the cluster's master nodes.
         :param pulumi.Input[_builtins.str] master_node_host_type: The instance type for the cluster's master nodes.
+        :param pulumi.Input[_builtins.int] ml_node_count: (Updatable) The number of ML nodes configured for the cluster.
+        :param pulumi.Input[_builtins.int] ml_node_host_memory_gb: (Updatable) The amount of memory in GB, for the cluster's ML nodes.
+        :param pulumi.Input[_builtins.int] ml_node_host_ocpu_count: (Updatable) The number of OCPUs configured for the cluster's ML nodes.
+        :param pulumi.Input[_builtins.str] ml_node_host_shape: (Updatable) The node shape for the cluster's ML nodes.
+        :param pulumi.Input[_builtins.str] ml_node_host_type: The instance type for the cluster's ML nodes.
+        :param pulumi.Input[_builtins.int] ml_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
         :param pulumi.Input[_builtins.str] nsg_id: The OCID of the NSG where the private endpoint vnic will be attached.
         :param pulumi.Input[_builtins.str] opendashboard_fqdn: The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
         :param pulumi.Input[_builtins.int] opendashboard_node_count: (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
@@ -949,6 +1057,18 @@ class _ClusterState:
             pulumi.set(__self__, "master_node_host_shape", master_node_host_shape)
         if master_node_host_type is not None:
             pulumi.set(__self__, "master_node_host_type", master_node_host_type)
+        if ml_node_count is not None:
+            pulumi.set(__self__, "ml_node_count", ml_node_count)
+        if ml_node_host_memory_gb is not None:
+            pulumi.set(__self__, "ml_node_host_memory_gb", ml_node_host_memory_gb)
+        if ml_node_host_ocpu_count is not None:
+            pulumi.set(__self__, "ml_node_host_ocpu_count", ml_node_host_ocpu_count)
+        if ml_node_host_shape is not None:
+            pulumi.set(__self__, "ml_node_host_shape", ml_node_host_shape)
+        if ml_node_host_type is not None:
+            pulumi.set(__self__, "ml_node_host_type", ml_node_host_type)
+        if ml_node_storage_gb is not None:
+            pulumi.set(__self__, "ml_node_storage_gb", ml_node_storage_gb)
         if nsg_id is not None:
             pulumi.set(__self__, "nsg_id", nsg_id)
         if opendashboard_fqdn is not None:
@@ -1319,6 +1439,78 @@ class _ClusterState:
     @master_node_host_type.setter
     def master_node_host_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "master_node_host_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeCount")
+    def ml_node_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The number of ML nodes configured for the cluster.
+        """
+        return pulumi.get(self, "ml_node_count")
+
+    @ml_node_count.setter
+    def ml_node_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "ml_node_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeHostMemoryGb")
+    def ml_node_host_memory_gb(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The amount of memory in GB, for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_host_memory_gb")
+
+    @ml_node_host_memory_gb.setter
+    def ml_node_host_memory_gb(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "ml_node_host_memory_gb", value)
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeHostOcpuCount")
+    def ml_node_host_ocpu_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The number of OCPUs configured for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_host_ocpu_count")
+
+    @ml_node_host_ocpu_count.setter
+    def ml_node_host_ocpu_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "ml_node_host_ocpu_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeHostShape")
+    def ml_node_host_shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The node shape for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_host_shape")
+
+    @ml_node_host_shape.setter
+    def ml_node_host_shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ml_node_host_shape", value)
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeHostType")
+    def ml_node_host_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The instance type for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_host_type")
+
+    @ml_node_host_type.setter
+    def ml_node_host_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ml_node_host_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeStorageGb")
+    def ml_node_storage_gb(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_storage_gb")
+
+    @ml_node_storage_gb.setter
+    def ml_node_storage_gb(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "ml_node_storage_gb", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgId")
@@ -1773,6 +1965,12 @@ class Cluster(pulumi.CustomResource):
                  master_node_host_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
                  master_node_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
                  master_node_host_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 ml_node_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 ml_node_host_memory_gb: Optional[pulumi.Input[_builtins.int]] = None,
+                 ml_node_host_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 ml_node_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
+                 ml_node_host_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 ml_node_storage_gb: Optional[pulumi.Input[_builtins.int]] = None,
                  nsg_id: Optional[pulumi.Input[_builtins.str]] = None,
                  opendashboard_node_count: Optional[pulumi.Input[_builtins.int]] = None,
                  opendashboard_node_host_memory_gb: Optional[pulumi.Input[_builtins.int]] = None,
@@ -1849,6 +2047,12 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] master_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluser's master nodes.
         :param pulumi.Input[_builtins.str] master_node_host_shape: (Updatable) The node shape for the cluster's master nodes.
         :param pulumi.Input[_builtins.str] master_node_host_type: The instance type for the cluster's master nodes.
+        :param pulumi.Input[_builtins.int] ml_node_count: (Updatable) The number of ML nodes configured for the cluster.
+        :param pulumi.Input[_builtins.int] ml_node_host_memory_gb: (Updatable) The amount of memory in GB, for the cluster's ML nodes.
+        :param pulumi.Input[_builtins.int] ml_node_host_ocpu_count: (Updatable) The number of OCPUs configured for the cluster's ML nodes.
+        :param pulumi.Input[_builtins.str] ml_node_host_shape: (Updatable) The node shape for the cluster's ML nodes.
+        :param pulumi.Input[_builtins.str] ml_node_host_type: The instance type for the cluster's ML nodes.
+        :param pulumi.Input[_builtins.int] ml_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
         :param pulumi.Input[_builtins.str] nsg_id: The OCID of the NSG where the private endpoint vnic will be attached.
         :param pulumi.Input[_builtins.int] opendashboard_node_count: (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
         :param pulumi.Input[_builtins.int] opendashboard_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
@@ -1948,6 +2152,12 @@ class Cluster(pulumi.CustomResource):
                  master_node_host_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
                  master_node_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
                  master_node_host_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 ml_node_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 ml_node_host_memory_gb: Optional[pulumi.Input[_builtins.int]] = None,
+                 ml_node_host_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 ml_node_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
+                 ml_node_host_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 ml_node_storage_gb: Optional[pulumi.Input[_builtins.int]] = None,
                  nsg_id: Optional[pulumi.Input[_builtins.str]] = None,
                  opendashboard_node_count: Optional[pulumi.Input[_builtins.int]] = None,
                  opendashboard_node_host_memory_gb: Optional[pulumi.Input[_builtins.int]] = None,
@@ -2026,6 +2236,12 @@ class Cluster(pulumi.CustomResource):
             if master_node_host_type is None and not opts.urn:
                 raise TypeError("Missing required property 'master_node_host_type'")
             __props__.__dict__["master_node_host_type"] = master_node_host_type
+            __props__.__dict__["ml_node_count"] = ml_node_count
+            __props__.__dict__["ml_node_host_memory_gb"] = ml_node_host_memory_gb
+            __props__.__dict__["ml_node_host_ocpu_count"] = ml_node_host_ocpu_count
+            __props__.__dict__["ml_node_host_shape"] = ml_node_host_shape
+            __props__.__dict__["ml_node_host_type"] = ml_node_host_type
+            __props__.__dict__["ml_node_storage_gb"] = ml_node_storage_gb
             __props__.__dict__["nsg_id"] = nsg_id
             if opendashboard_node_count is None and not opts.urn:
                 raise TypeError("Missing required property 'opendashboard_node_count'")
@@ -2117,6 +2333,12 @@ class Cluster(pulumi.CustomResource):
             master_node_host_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
             master_node_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
             master_node_host_type: Optional[pulumi.Input[_builtins.str]] = None,
+            ml_node_count: Optional[pulumi.Input[_builtins.int]] = None,
+            ml_node_host_memory_gb: Optional[pulumi.Input[_builtins.int]] = None,
+            ml_node_host_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
+            ml_node_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
+            ml_node_host_type: Optional[pulumi.Input[_builtins.str]] = None,
+            ml_node_storage_gb: Optional[pulumi.Input[_builtins.int]] = None,
             nsg_id: Optional[pulumi.Input[_builtins.str]] = None,
             opendashboard_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
             opendashboard_node_count: Optional[pulumi.Input[_builtins.int]] = None,
@@ -2184,6 +2406,12 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] master_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluser's master nodes.
         :param pulumi.Input[_builtins.str] master_node_host_shape: (Updatable) The node shape for the cluster's master nodes.
         :param pulumi.Input[_builtins.str] master_node_host_type: The instance type for the cluster's master nodes.
+        :param pulumi.Input[_builtins.int] ml_node_count: (Updatable) The number of ML nodes configured for the cluster.
+        :param pulumi.Input[_builtins.int] ml_node_host_memory_gb: (Updatable) The amount of memory in GB, for the cluster's ML nodes.
+        :param pulumi.Input[_builtins.int] ml_node_host_ocpu_count: (Updatable) The number of OCPUs configured for the cluster's ML nodes.
+        :param pulumi.Input[_builtins.str] ml_node_host_shape: (Updatable) The node shape for the cluster's ML nodes.
+        :param pulumi.Input[_builtins.str] ml_node_host_type: The instance type for the cluster's ML nodes.
+        :param pulumi.Input[_builtins.int] ml_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
         :param pulumi.Input[_builtins.str] nsg_id: The OCID of the NSG where the private endpoint vnic will be attached.
         :param pulumi.Input[_builtins.str] opendashboard_fqdn: The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
         :param pulumi.Input[_builtins.int] opendashboard_node_count: (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
@@ -2253,6 +2481,12 @@ class Cluster(pulumi.CustomResource):
         __props__.__dict__["master_node_host_ocpu_count"] = master_node_host_ocpu_count
         __props__.__dict__["master_node_host_shape"] = master_node_host_shape
         __props__.__dict__["master_node_host_type"] = master_node_host_type
+        __props__.__dict__["ml_node_count"] = ml_node_count
+        __props__.__dict__["ml_node_host_memory_gb"] = ml_node_host_memory_gb
+        __props__.__dict__["ml_node_host_ocpu_count"] = ml_node_host_ocpu_count
+        __props__.__dict__["ml_node_host_shape"] = ml_node_host_shape
+        __props__.__dict__["ml_node_host_type"] = ml_node_host_type
+        __props__.__dict__["ml_node_storage_gb"] = ml_node_storage_gb
         __props__.__dict__["nsg_id"] = nsg_id
         __props__.__dict__["opendashboard_fqdn"] = opendashboard_fqdn
         __props__.__dict__["opendashboard_node_count"] = opendashboard_node_count
@@ -2489,6 +2723,54 @@ class Cluster(pulumi.CustomResource):
         The instance type for the cluster's master nodes.
         """
         return pulumi.get(self, "master_node_host_type")
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeCount")
+    def ml_node_count(self) -> pulumi.Output[_builtins.int]:
+        """
+        (Updatable) The number of ML nodes configured for the cluster.
+        """
+        return pulumi.get(self, "ml_node_count")
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeHostMemoryGb")
+    def ml_node_host_memory_gb(self) -> pulumi.Output[_builtins.int]:
+        """
+        (Updatable) The amount of memory in GB, for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_host_memory_gb")
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeHostOcpuCount")
+    def ml_node_host_ocpu_count(self) -> pulumi.Output[_builtins.int]:
+        """
+        (Updatable) The number of OCPUs configured for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_host_ocpu_count")
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeHostShape")
+    def ml_node_host_shape(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The node shape for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_host_shape")
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeHostType")
+    def ml_node_host_type(self) -> pulumi.Output[_builtins.str]:
+        """
+        The instance type for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_host_type")
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeStorageGb")
+    def ml_node_storage_gb(self) -> pulumi.Output[_builtins.int]:
+        """
+        (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_storage_gb")
 
     @_builtins.property
     @pulumi.getter(name="nsgId")

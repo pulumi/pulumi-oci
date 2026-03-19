@@ -188,6 +188,42 @@ namespace Pulumi.Oci.Opensearch
         public Output<string> MasterNodeHostType { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The number of ML nodes configured for the cluster.
+        /// </summary>
+        [Output("mlNodeCount")]
+        public Output<int> MlNodeCount { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The amount of memory in GB, for the cluster's ML nodes.
+        /// </summary>
+        [Output("mlNodeHostMemoryGb")]
+        public Output<int> MlNodeHostMemoryGb { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The number of OCPUs configured for the cluster's ML nodes.
+        /// </summary>
+        [Output("mlNodeHostOcpuCount")]
+        public Output<int> MlNodeHostOcpuCount { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The node shape for the cluster's ML nodes.
+        /// </summary>
+        [Output("mlNodeHostShape")]
+        public Output<string> MlNodeHostShape { get; private set; } = null!;
+
+        /// <summary>
+        /// The instance type for the cluster's ML nodes.
+        /// </summary>
+        [Output("mlNodeHostType")]
+        public Output<string> MlNodeHostType { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
+        /// </summary>
+        [Output("mlNodeStorageGb")]
+        public Output<int> MlNodeStorageGb { get; private set; } = null!;
+
+        /// <summary>
         /// The OCID of the NSG where the private endpoint vnic will be attached.
         /// </summary>
         [Output("nsgId")]
@@ -603,6 +639,42 @@ namespace Pulumi.Oci.Opensearch
         public Input<string> MasterNodeHostType { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) The number of ML nodes configured for the cluster.
+        /// </summary>
+        [Input("mlNodeCount")]
+        public Input<int>? MlNodeCount { get; set; }
+
+        /// <summary>
+        /// (Updatable) The amount of memory in GB, for the cluster's ML nodes.
+        /// </summary>
+        [Input("mlNodeHostMemoryGb")]
+        public Input<int>? MlNodeHostMemoryGb { get; set; }
+
+        /// <summary>
+        /// (Updatable) The number of OCPUs configured for the cluster's ML nodes.
+        /// </summary>
+        [Input("mlNodeHostOcpuCount")]
+        public Input<int>? MlNodeHostOcpuCount { get; set; }
+
+        /// <summary>
+        /// (Updatable) The node shape for the cluster's ML nodes.
+        /// </summary>
+        [Input("mlNodeHostShape")]
+        public Input<string>? MlNodeHostShape { get; set; }
+
+        /// <summary>
+        /// The instance type for the cluster's ML nodes.
+        /// </summary>
+        [Input("mlNodeHostType")]
+        public Input<string>? MlNodeHostType { get; set; }
+
+        /// <summary>
+        /// (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
+        /// </summary>
+        [Input("mlNodeStorageGb")]
+        public Input<int>? MlNodeStorageGb { get; set; }
+
+        /// <summary>
         /// The OCID of the NSG where the private endpoint vnic will be attached.
         /// </summary>
         [Input("nsgId")]
@@ -975,6 +1047,42 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Input("masterNodeHostType")]
         public Input<string>? MasterNodeHostType { get; set; }
+
+        /// <summary>
+        /// (Updatable) The number of ML nodes configured for the cluster.
+        /// </summary>
+        [Input("mlNodeCount")]
+        public Input<int>? MlNodeCount { get; set; }
+
+        /// <summary>
+        /// (Updatable) The amount of memory in GB, for the cluster's ML nodes.
+        /// </summary>
+        [Input("mlNodeHostMemoryGb")]
+        public Input<int>? MlNodeHostMemoryGb { get; set; }
+
+        /// <summary>
+        /// (Updatable) The number of OCPUs configured for the cluster's ML nodes.
+        /// </summary>
+        [Input("mlNodeHostOcpuCount")]
+        public Input<int>? MlNodeHostOcpuCount { get; set; }
+
+        /// <summary>
+        /// (Updatable) The node shape for the cluster's ML nodes.
+        /// </summary>
+        [Input("mlNodeHostShape")]
+        public Input<string>? MlNodeHostShape { get; set; }
+
+        /// <summary>
+        /// The instance type for the cluster's ML nodes.
+        /// </summary>
+        [Input("mlNodeHostType")]
+        public Input<string>? MlNodeHostType { get; set; }
+
+        /// <summary>
+        /// (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
+        /// </summary>
+        [Input("mlNodeStorageGb")]
+        public Input<int>? MlNodeStorageGb { get; set; }
 
         /// <summary>
         /// The OCID of the NSG where the private endpoint vnic will be attached.

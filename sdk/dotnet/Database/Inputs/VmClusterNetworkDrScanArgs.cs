@@ -36,6 +36,12 @@ namespace Pulumi.Oci.Database.Inputs
         [Input("scanListenerPortTcp", required: true)]
         public Input<int> ScanListenerPortTcp { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) The DR SCAN TCPIP SSL port. Default is 2484.
+        /// </summary>
+        [Input("scanListenerPortTcpSsl")]
+        public Input<int>? ScanListenerPortTcpSsl { get; set; }
+
         public VmClusterNetworkDrScanArgs()
         {
         }

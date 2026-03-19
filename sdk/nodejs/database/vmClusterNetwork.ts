@@ -53,6 +53,7 @@ import * as utilities from "../utilities";
  *         hostname: vmClusterNetworkDrScansHostname,
  *         ips: vmClusterNetworkDrScansIps,
  *         scanListenerPortTcp: vmClusterNetworkDrScansScanListenerPortTcp,
+ *         scanListenerPortTcpSsl: vmClusterNetworkDrScansScanListenerPortTcpSsl,
  *     }],
  *     freeformTags: {
  *         Department: "Finance",

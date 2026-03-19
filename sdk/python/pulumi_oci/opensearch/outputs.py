@@ -1385,6 +1385,12 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
                  master_node_host_ocpu_count: _builtins.int,
                  master_node_host_shape: _builtins.str,
                  master_node_host_type: _builtins.str,
+                 ml_node_count: _builtins.int,
+                 ml_node_host_memory_gb: _builtins.int,
+                 ml_node_host_ocpu_count: _builtins.int,
+                 ml_node_host_shape: _builtins.str,
+                 ml_node_host_type: _builtins.str,
+                 ml_node_storage_gb: _builtins.int,
                  nsg_id: _builtins.str,
                  opendashboard_fqdn: _builtins.str,
                  opendashboard_node_count: _builtins.int,
@@ -1446,6 +1452,12 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         :param _builtins.int master_node_host_ocpu_count: The number of OCPUs configured for cluster's master nodes.
         :param _builtins.str master_node_host_shape: The node shape for the cluster's master nodes.
         :param _builtins.str master_node_host_type: The instance type for the cluster's master nodes.
+        :param _builtins.int ml_node_count: The number of ML nodes configured for the cluster.
+        :param _builtins.int ml_node_host_memory_gb: The amount of memory in GB, for the cluster's ML nodes.
+        :param _builtins.int ml_node_host_ocpu_count: The number of OCPUs configured for the cluster's ML nodes.
+        :param _builtins.str ml_node_host_shape: The node shape for the cluster's ML nodes.
+        :param _builtins.str ml_node_host_type: The instance type for the cluster's ML nodes.
+        :param _builtins.int ml_node_storage_gb: The amount of storage in GB, to configure per node for the cluster's ML nodes.
         :param _builtins.str nsg_id: The OCID of the NSG where the private endpoint vnic will be attached.
         :param _builtins.str opendashboard_fqdn: The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
         :param _builtins.int opendashboard_node_count: The number of OpenSearch Dashboard nodes configured for the cluster.
@@ -1506,6 +1518,12 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         pulumi.set(__self__, "master_node_host_ocpu_count", master_node_host_ocpu_count)
         pulumi.set(__self__, "master_node_host_shape", master_node_host_shape)
         pulumi.set(__self__, "master_node_host_type", master_node_host_type)
+        pulumi.set(__self__, "ml_node_count", ml_node_count)
+        pulumi.set(__self__, "ml_node_host_memory_gb", ml_node_host_memory_gb)
+        pulumi.set(__self__, "ml_node_host_ocpu_count", ml_node_host_ocpu_count)
+        pulumi.set(__self__, "ml_node_host_shape", ml_node_host_shape)
+        pulumi.set(__self__, "ml_node_host_type", ml_node_host_type)
+        pulumi.set(__self__, "ml_node_storage_gb", ml_node_storage_gb)
         pulumi.set(__self__, "nsg_id", nsg_id)
         pulumi.set(__self__, "opendashboard_fqdn", opendashboard_fqdn)
         pulumi.set(__self__, "opendashboard_node_count", opendashboard_node_count)
@@ -1746,6 +1764,54 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         The instance type for the cluster's master nodes.
         """
         return pulumi.get(self, "master_node_host_type")
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeCount")
+    def ml_node_count(self) -> _builtins.int:
+        """
+        The number of ML nodes configured for the cluster.
+        """
+        return pulumi.get(self, "ml_node_count")
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeHostMemoryGb")
+    def ml_node_host_memory_gb(self) -> _builtins.int:
+        """
+        The amount of memory in GB, for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_host_memory_gb")
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeHostOcpuCount")
+    def ml_node_host_ocpu_count(self) -> _builtins.int:
+        """
+        The number of OCPUs configured for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_host_ocpu_count")
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeHostShape")
+    def ml_node_host_shape(self) -> _builtins.str:
+        """
+        The node shape for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_host_shape")
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeHostType")
+    def ml_node_host_type(self) -> _builtins.str:
+        """
+        The instance type for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_host_type")
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeStorageGb")
+    def ml_node_storage_gb(self) -> _builtins.int:
+        """
+        The amount of storage in GB, to configure per node for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_storage_gb")
 
     @_builtins.property
     @pulumi.getter(name="nsgId")

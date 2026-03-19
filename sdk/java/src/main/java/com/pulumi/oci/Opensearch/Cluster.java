@@ -402,6 +402,90 @@ public class Cluster extends com.pulumi.resources.CustomResource {
         return this.masterNodeHostType;
     }
     /**
+     * (Updatable) The number of ML nodes configured for the cluster.
+     * 
+     */
+    @Export(name="mlNodeCount", refs={Integer.class}, tree="[0]")
+    private Output<Integer> mlNodeCount;
+
+    /**
+     * @return (Updatable) The number of ML nodes configured for the cluster.
+     * 
+     */
+    public Output<Integer> mlNodeCount() {
+        return this.mlNodeCount;
+    }
+    /**
+     * (Updatable) The amount of memory in GB, for the cluster&#39;s ML nodes.
+     * 
+     */
+    @Export(name="mlNodeHostMemoryGb", refs={Integer.class}, tree="[0]")
+    private Output<Integer> mlNodeHostMemoryGb;
+
+    /**
+     * @return (Updatable) The amount of memory in GB, for the cluster&#39;s ML nodes.
+     * 
+     */
+    public Output<Integer> mlNodeHostMemoryGb() {
+        return this.mlNodeHostMemoryGb;
+    }
+    /**
+     * (Updatable) The number of OCPUs configured for the cluster&#39;s ML nodes.
+     * 
+     */
+    @Export(name="mlNodeHostOcpuCount", refs={Integer.class}, tree="[0]")
+    private Output<Integer> mlNodeHostOcpuCount;
+
+    /**
+     * @return (Updatable) The number of OCPUs configured for the cluster&#39;s ML nodes.
+     * 
+     */
+    public Output<Integer> mlNodeHostOcpuCount() {
+        return this.mlNodeHostOcpuCount;
+    }
+    /**
+     * (Updatable) The node shape for the cluster&#39;s ML nodes.
+     * 
+     */
+    @Export(name="mlNodeHostShape", refs={String.class}, tree="[0]")
+    private Output<String> mlNodeHostShape;
+
+    /**
+     * @return (Updatable) The node shape for the cluster&#39;s ML nodes.
+     * 
+     */
+    public Output<String> mlNodeHostShape() {
+        return this.mlNodeHostShape;
+    }
+    /**
+     * The instance type for the cluster&#39;s ML nodes.
+     * 
+     */
+    @Export(name="mlNodeHostType", refs={String.class}, tree="[0]")
+    private Output<String> mlNodeHostType;
+
+    /**
+     * @return The instance type for the cluster&#39;s ML nodes.
+     * 
+     */
+    public Output<String> mlNodeHostType() {
+        return this.mlNodeHostType;
+    }
+    /**
+     * (Updatable) The amount of storage in GB, to configure per node for the cluster&#39;s ML nodes.
+     * 
+     */
+    @Export(name="mlNodeStorageGb", refs={Integer.class}, tree="[0]")
+    private Output<Integer> mlNodeStorageGb;
+
+    /**
+     * @return (Updatable) The amount of storage in GB, to configure per node for the cluster&#39;s ML nodes.
+     * 
+     */
+    public Output<Integer> mlNodeStorageGb() {
+        return this.mlNodeStorageGb;
+    }
+    /**
      * The OCID of the NSG where the private endpoint vnic will be attached.
      * 
      */

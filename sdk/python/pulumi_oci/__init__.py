@@ -7727,10 +7727,26 @@ _utilities.register(
  },
  {
   "pkg": "oci",
-  "mod": "oci/gdpGdpPipeline",
+  "mod": "oci/distributedDatabaseDistributedAutonomousDatabase",
   "fqn": "pulumi_oci.oci",
   "classes": {
-   "oci:oci/gdpGdpPipeline:GdpGdpPipeline": "GdpGdpPipeline"
+   "oci:oci/distributedDatabaseDistributedAutonomousDatabase:DistributedDatabaseDistributedAutonomousDatabase": "DistributedDatabaseDistributedAutonomousDatabase"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/distributedDatabaseDistributedDatabase",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/distributedDatabaseDistributedDatabase:DistributedDatabaseDistributedDatabase": "DistributedDatabaseDistributedDatabase"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/distributedDatabaseDistributedDatabasePrivateEndpoint",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/distributedDatabaseDistributedDatabasePrivateEndpoint:DistributedDatabaseDistributedDatabasePrivateEndpoint": "DistributedDatabaseDistributedDatabasePrivateEndpoint"
   }
  },
  {

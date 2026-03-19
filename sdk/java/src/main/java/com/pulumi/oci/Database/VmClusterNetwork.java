@@ -88,6 +88,7 @@ import javax.annotation.Nullable;
  *                 .hostname(vmClusterNetworkDrScansHostname)
  *                 .ips(vmClusterNetworkDrScansIps)
  *                 .scanListenerPortTcp(vmClusterNetworkDrScansScanListenerPortTcp)
+ *                 .scanListenerPortTcpSsl(vmClusterNetworkDrScansScanListenerPortTcpSsl)
  *                 .build())
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .ntps(vmClusterNetworkNtp)

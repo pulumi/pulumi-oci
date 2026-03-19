@@ -553,6 +553,7 @@ class VmClusterNetwork(pulumi.CustomResource):
                 "hostname": vm_cluster_network_dr_scans_hostname,
                 "ips": vm_cluster_network_dr_scans_ips,
                 "scan_listener_port_tcp": vm_cluster_network_dr_scans_scan_listener_port_tcp,
+                "scan_listener_port_tcp_ssl": vm_cluster_network_dr_scans_scan_listener_port_tcp_ssl,
             }],
             freeform_tags={
                 "Department": "Finance",
@@ -637,6 +638,7 @@ class VmClusterNetwork(pulumi.CustomResource):
                 "hostname": vm_cluster_network_dr_scans_hostname,
                 "ips": vm_cluster_network_dr_scans_ips,
                 "scan_listener_port_tcp": vm_cluster_network_dr_scans_scan_listener_port_tcp,
+                "scan_listener_port_tcp_ssl": vm_cluster_network_dr_scans_scan_listener_port_tcp_ssl,
             }],
             freeform_tags={
                 "Department": "Finance",

@@ -70,9 +70,10 @@ import (
 //				Dns:         pulumi.Any(vmClusterNetworkDns),
 //				DrScans: database.VmClusterNetworkDrScanArray{
 //					&database.VmClusterNetworkDrScanArgs{
-//						Hostname:            pulumi.Any(vmClusterNetworkDrScansHostname),
-//						Ips:                 pulumi.Any(vmClusterNetworkDrScansIps),
-//						ScanListenerPortTcp: pulumi.Any(vmClusterNetworkDrScansScanListenerPortTcp),
+//						Hostname:               pulumi.Any(vmClusterNetworkDrScansHostname),
+//						Ips:                    pulumi.Any(vmClusterNetworkDrScansIps),
+//						ScanListenerPortTcp:    pulumi.Any(vmClusterNetworkDrScansScanListenerPortTcp),
+//						ScanListenerPortTcpSsl: pulumi.Any(vmClusterNetworkDrScansScanListenerPortTcpSsl),
 //					},
 //				},
 //				FreeformTags: pulumi.StringMap{

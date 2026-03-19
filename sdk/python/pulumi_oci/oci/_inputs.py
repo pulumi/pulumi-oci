@@ -111,8 +111,82 @@ __all__ = [
     'DifStackServiceDetailAdditionalDetailAssignedConnectionArgsDict',
     'DifStackServiceDetailAdditionalDetailEndpointDetailArgs',
     'DifStackServiceDetailAdditionalDetailEndpointDetailArgsDict',
-    'GdpGdpPipelineBucketDetailArgs',
-    'GdpGdpPipelineBucketDetailArgsDict',
+    'DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgs',
+    'DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgsDict',
+    'DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailMetadataArgs',
+    'DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailMetadataArgsDict',
+    'DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailArgs',
+    'DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailArgsDict',
+    'DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailMetadataArgs',
+    'DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailMetadataArgsDict',
+    'DistributedDatabaseDistributedAutonomousDatabaseConnectionStringArgs',
+    'DistributedDatabaseDistributedAutonomousDatabaseConnectionStringArgsDict',
+    'DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgs',
+    'DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgsDict',
+    'DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigBackupDestinationDetailArgs',
+    'DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigBackupDestinationDetailArgsDict',
+    'DistributedDatabaseDistributedAutonomousDatabaseGsmDetailArgs',
+    'DistributedDatabaseDistributedAutonomousDatabaseGsmDetailArgsDict',
+    'DistributedDatabaseDistributedAutonomousDatabaseGsmDetailGsmImageDetailArgs',
+    'DistributedDatabaseDistributedAutonomousDatabaseGsmDetailGsmImageDetailArgsDict',
+    'DistributedDatabaseDistributedAutonomousDatabaseGsmDetailMetadataArgs',
+    'DistributedDatabaseDistributedAutonomousDatabaseGsmDetailMetadataArgsDict',
+    'DistributedDatabaseDistributedAutonomousDatabaseLatestGsmImageArgs',
+    'DistributedDatabaseDistributedAutonomousDatabaseLatestGsmImageArgsDict',
+    'DistributedDatabaseDistributedAutonomousDatabaseMetadataArgs',
+    'DistributedDatabaseDistributedAutonomousDatabaseMetadataArgsDict',
+    'DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgs',
+    'DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgsDict',
+    'DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs',
+    'DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgsDict',
+    'DistributedDatabaseDistributedAutonomousDatabaseShardDetailMetadataArgs',
+    'DistributedDatabaseDistributedAutonomousDatabaseShardDetailMetadataArgsDict',
+    'DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailArgs',
+    'DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailArgsDict',
+    'DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailMetadataArgs',
+    'DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailMetadataArgsDict',
+    'DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgs',
+    'DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgsDict',
+    'DistributedDatabaseDistributedDatabaseCatalogDetailArgs',
+    'DistributedDatabaseDistributedDatabaseCatalogDetailArgsDict',
+    'DistributedDatabaseDistributedDatabaseCatalogDetailMetadataArgs',
+    'DistributedDatabaseDistributedDatabaseCatalogDetailMetadataArgsDict',
+    'DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailArgs',
+    'DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailArgsDict',
+    'DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadataArgs',
+    'DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadataArgsDict',
+    'DistributedDatabaseDistributedDatabaseConnectionStringArgs',
+    'DistributedDatabaseDistributedDatabaseConnectionStringArgsDict',
+    'DistributedDatabaseDistributedDatabaseDbBackupConfigArgs',
+    'DistributedDatabaseDistributedDatabaseDbBackupConfigArgsDict',
+    'DistributedDatabaseDistributedDatabaseDbBackupConfigBackupDestinationDetailArgs',
+    'DistributedDatabaseDistributedDatabaseDbBackupConfigBackupDestinationDetailArgsDict',
+    'DistributedDatabaseDistributedDatabaseGsmDetailArgs',
+    'DistributedDatabaseDistributedDatabaseGsmDetailArgsDict',
+    'DistributedDatabaseDistributedDatabaseGsmDetailGsmImageDetailArgs',
+    'DistributedDatabaseDistributedDatabaseGsmDetailGsmImageDetailArgsDict',
+    'DistributedDatabaseDistributedDatabaseGsmDetailMetadataArgs',
+    'DistributedDatabaseDistributedDatabaseGsmDetailMetadataArgsDict',
+    'DistributedDatabaseDistributedDatabaseLatestGsmImageDetailArgs',
+    'DistributedDatabaseDistributedDatabaseLatestGsmImageDetailArgsDict',
+    'DistributedDatabaseDistributedDatabaseMetadataArgs',
+    'DistributedDatabaseDistributedDatabaseMetadataArgsDict',
+    'DistributedDatabaseDistributedDatabasePatchOperationArgs',
+    'DistributedDatabaseDistributedDatabasePatchOperationArgsDict',
+    'DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabaseArgs',
+    'DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabaseArgsDict',
+    'DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabaseArgs',
+    'DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabaseArgsDict',
+    'DistributedDatabaseDistributedDatabaseShardDetailArgs',
+    'DistributedDatabaseDistributedDatabaseShardDetailArgsDict',
+    'DistributedDatabaseDistributedDatabaseShardDetailMetadataArgs',
+    'DistributedDatabaseDistributedDatabaseShardDetailMetadataArgsDict',
+    'DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgs',
+    'DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgsDict',
+    'DistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadataArgs',
+    'DistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadataArgsDict',
+    'DistributedDatabaseDistributedDatabaseValidateNetworkDetailsArgs',
+    'DistributedDatabaseDistributedDatabaseValidateNetworkDetailsArgsDict',
     'IotDigitalTwinAdapterInboundEnvelopeArgs',
     'IotDigitalTwinAdapterInboundEnvelopeArgsDict',
     'IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs',
@@ -187,8 +261,12 @@ __all__ = [
     'GetDbmulticloudOracleDbGcpKeysFilterArgsDict',
     'GetDifStacksFilterArgs',
     'GetDifStacksFilterArgsDict',
-    'GetGdpGdpPipelinesFilterArgs',
-    'GetGdpGdpPipelinesFilterArgsDict',
+    'GetDistributedDatabaseDistributedAutonomousDatabasesFilterArgs',
+    'GetDistributedDatabaseDistributedAutonomousDatabasesFilterArgsDict',
+    'GetDistributedDatabaseDistributedDatabasePrivateEndpointsFilterArgs',
+    'GetDistributedDatabaseDistributedDatabasePrivateEndpointsFilterArgsDict',
+    'GetDistributedDatabaseDistributedDatabasesFilterArgs',
+    'GetDistributedDatabaseDistributedDatabasesFilterArgsDict',
     'GetIotDigitalTwinAdaptersFilterArgs',
     'GetIotDigitalTwinAdaptersFilterArgsDict',
     'GetIotDigitalTwinInstancesFilterArgs',
@@ -4538,89 +4616,4408 @@ class DifStackServiceDetailAdditionalDetailEndpointDetailArgs:
         pulumi.set(self, "endpoint_name", value)
 
 
-class GdpGdpPipelineBucketDetailArgsDict(TypedDict):
-    bucket_type: pulumi.Input[_builtins.str]
+class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgsDict(TypedDict):
+    admin_password: pulumi.Input[_builtins.str]
     """
-    Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
+    Admin password for catalog database.
     """
-    id: pulumi.Input[_builtins.str]
+    cloud_autonomous_vm_cluster_id: pulumi.Input[_builtins.str]
     """
-    OCID of the bucket.
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous VM Cluster.
     """
-    name: pulumi.Input[_builtins.str]
+    compute_count: pulumi.Input[_builtins.float]
     """
-    Name of the bucket.
+    The compute count for the catalog database. It has to be in multiples of 2.
     """
-    namespace: pulumi.Input[_builtins.str]
+    data_storage_size_in_gbs: pulumi.Input[_builtins.float]
     """
-    Namespace of the bucket.
+    The data disk group size to be allocated in GBs for the catalog database.
+    """
+    is_auto_scaling_enabled: pulumi.Input[_builtins.bool]
+    """
+    Determines the auto-scaling mode for the catalog database.
+    """
+    source: pulumi.Input[_builtins.str]
+    """
+    The source of Globally distributed autonomous database type: Use ADB_D for the Globally distributed autonomous database with autonomous dedicated cloudautonomousvmclusters.
+    """
+    container_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    the identifier of the container database for underlying supporting resource.
+    """
+    kms_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+    """
+    kms_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+    """
+    metadatas: NotRequired[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailMetadataArgsDict']]]]
+    """
+    Additional metadata related to Globally distributed autonomous database resources.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the shard.
+    """
+    peer_cloud_autonomous_vm_cluster_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers on catalog of distributed autonomous database please use peerDetails.
+    """
+    peer_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailArgsDict']]]]
+    """
+    The details required for creation of the peer for the autonomous dedicated infrastructure based catalog.
+    """
+    shard_group: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the shardGroup for the shard.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
+    """
+    supporting_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    the identifier of the underlying supporting resource.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
+    """
+    vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
     """
 
 @pulumi.input_type
-class GdpGdpPipelineBucketDetailArgs:
+class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArgs:
     def __init__(__self__, *,
-                 bucket_type: pulumi.Input[_builtins.str],
-                 id: pulumi.Input[_builtins.str],
-                 name: pulumi.Input[_builtins.str],
-                 namespace: pulumi.Input[_builtins.str]):
+                 admin_password: pulumi.Input[_builtins.str],
+                 cloud_autonomous_vm_cluster_id: pulumi.Input[_builtins.str],
+                 compute_count: pulumi.Input[_builtins.float],
+                 data_storage_size_in_gbs: pulumi.Input[_builtins.float],
+                 is_auto_scaling_enabled: pulumi.Input[_builtins.bool],
+                 source: pulumi.Input[_builtins.str],
+                 container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailMetadataArgs']]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 peer_cloud_autonomous_vm_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 peer_details: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailArgs']]]] = None,
+                 shard_group: Optional[pulumi.Input[_builtins.str]] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 supporting_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
+                 vault_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] bucket_type: Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
-        :param pulumi.Input[_builtins.str] id: OCID of the bucket.
-        :param pulumi.Input[_builtins.str] name: Name of the bucket.
-        :param pulumi.Input[_builtins.str] namespace: Namespace of the bucket.
+        :param pulumi.Input[_builtins.str] admin_password: Admin password for catalog database.
+        :param pulumi.Input[_builtins.str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous VM Cluster.
+        :param pulumi.Input[_builtins.float] compute_count: The compute count for the catalog database. It has to be in multiples of 2.
+        :param pulumi.Input[_builtins.float] data_storage_size_in_gbs: The data disk group size to be allocated in GBs for the catalog database.
+        :param pulumi.Input[_builtins.bool] is_auto_scaling_enabled: Determines the auto-scaling mode for the catalog database.
+        :param pulumi.Input[_builtins.str] source: The source of Globally distributed autonomous database type: Use ADB_D for the Globally distributed autonomous database with autonomous dedicated cloudautonomousvmclusters.
+        :param pulumi.Input[_builtins.str] container_database_id: the identifier of the container database for underlying supporting resource.
+        :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+        :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailMetadataArgs']]] metadatas: Additional metadata related to Globally distributed autonomous database resources.
+        :param pulumi.Input[_builtins.str] name: Name of the shard.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] peer_cloud_autonomous_vm_cluster_ids: This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers on catalog of distributed autonomous database please use peerDetails.
+        :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailArgs']]] peer_details: The details required for creation of the peer for the autonomous dedicated infrastructure based catalog.
+        :param pulumi.Input[_builtins.str] shard_group: The name of the shardGroup for the shard.
+        :param pulumi.Input[_builtins.str] status: Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
+        :param pulumi.Input[_builtins.str] supporting_resource_id: the identifier of the underlying supporting resource.
+        :param pulumi.Input[_builtins.str] time_created: The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
+        :param pulumi.Input[_builtins.str] time_updated: The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
+        :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
         """
-        pulumi.set(__self__, "bucket_type", bucket_type)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "admin_password", admin_password)
+        pulumi.set(__self__, "cloud_autonomous_vm_cluster_id", cloud_autonomous_vm_cluster_id)
+        pulumi.set(__self__, "compute_count", compute_count)
+        pulumi.set(__self__, "data_storage_size_in_gbs", data_storage_size_in_gbs)
+        pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
+        pulumi.set(__self__, "source", source)
+        if container_database_id is not None:
+            pulumi.set(__self__, "container_database_id", container_database_id)
+        if kms_key_id is not None:
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if kms_key_version_id is not None:
+            pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if peer_cloud_autonomous_vm_cluster_ids is not None:
+            pulumi.set(__self__, "peer_cloud_autonomous_vm_cluster_ids", peer_cloud_autonomous_vm_cluster_ids)
+        if peer_details is not None:
+            pulumi.set(__self__, "peer_details", peer_details)
+        if shard_group is not None:
+            pulumi.set(__self__, "shard_group", shard_group)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if supporting_resource_id is not None:
+            pulumi.set(__self__, "supporting_resource_id", supporting_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if vault_id is not None:
+            pulumi.set(__self__, "vault_id", vault_id)
 
     @_builtins.property
-    @pulumi.getter(name="bucketType")
-    def bucket_type(self) -> pulumi.Input[_builtins.str]:
+    @pulumi.getter(name="adminPassword")
+    def admin_password(self) -> pulumi.Input[_builtins.str]:
         """
-        Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
+        Admin password for catalog database.
         """
-        return pulumi.get(self, "bucket_type")
+        return pulumi.get(self, "admin_password")
 
-    @bucket_type.setter
-    def bucket_type(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "bucket_type", value)
+    @admin_password.setter
+    def admin_password(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "admin_password", value)
+
+    @_builtins.property
+    @pulumi.getter(name="cloudAutonomousVmClusterId")
+    def cloud_autonomous_vm_cluster_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "cloud_autonomous_vm_cluster_id")
+
+    @cloud_autonomous_vm_cluster_id.setter
+    def cloud_autonomous_vm_cluster_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "cloud_autonomous_vm_cluster_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> pulumi.Input[_builtins.float]:
+        """
+        The compute count for the catalog database. It has to be in multiples of 2.
+        """
+        return pulumi.get(self, "compute_count")
+
+    @compute_count.setter
+    def compute_count(self, value: pulumi.Input[_builtins.float]):
+        pulumi.set(self, "compute_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dataStorageSizeInGbs")
+    def data_storage_size_in_gbs(self) -> pulumi.Input[_builtins.float]:
+        """
+        The data disk group size to be allocated in GBs for the catalog database.
+        """
+        return pulumi.get(self, "data_storage_size_in_gbs")
+
+    @data_storage_size_in_gbs.setter
+    def data_storage_size_in_gbs(self, value: pulumi.Input[_builtins.float]):
+        pulumi.set(self, "data_storage_size_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isAutoScalingEnabled")
+    def is_auto_scaling_enabled(self) -> pulumi.Input[_builtins.bool]:
+        """
+        Determines the auto-scaling mode for the catalog database.
+        """
+        return pulumi.get(self, "is_auto_scaling_enabled")
+
+    @is_auto_scaling_enabled.setter
+    def is_auto_scaling_enabled(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "is_auto_scaling_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> pulumi.Input[_builtins.str]:
+    def source(self) -> pulumi.Input[_builtins.str]:
         """
-        OCID of the bucket.
+        The source of Globally distributed autonomous database type: Use ADB_D for the Globally distributed autonomous database with autonomous dedicated cloudautonomousvmclusters.
         """
-        return pulumi.get(self, "id")
+        return pulumi.get(self, "source")
 
-    @id.setter
-    def id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "id", value)
+    @source.setter
+    def source(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "source", value)
+
+    @_builtins.property
+    @pulumi.getter(name="containerDatabaseId")
+    def container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        the identifier of the container database for underlying supporting resource.
+        """
+        return pulumi.get(self, "container_database_id")
+
+    @container_database_id.setter
+    def container_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "container_database_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @kms_key_id.setter
+    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "kms_key_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="kmsKeyVersionId")
+    def kms_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+        """
+        return pulumi.get(self, "kms_key_version_id")
+
+    @kms_key_version_id.setter
+    def kms_key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "kms_key_version_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[_builtins.str]:
+    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailMetadataArgs']]]]:
         """
-        Name of the bucket.
+        Additional metadata related to Globally distributed autonomous database resources.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @metadatas.setter
+    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailMetadataArgs']]]]):
+        pulumi.set(self, "metadatas", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Name of the shard.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[_builtins.str]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="peerCloudAutonomousVmClusterIds")
+    def peer_cloud_autonomous_vm_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers on catalog of distributed autonomous database please use peerDetails.
+        """
+        return pulumi.get(self, "peer_cloud_autonomous_vm_cluster_ids")
+
+    @peer_cloud_autonomous_vm_cluster_ids.setter
+    def peer_cloud_autonomous_vm_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "peer_cloud_autonomous_vm_cluster_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="peerDetails")
+    def peer_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailArgs']]]]:
+        """
+        The details required for creation of the peer for the autonomous dedicated infrastructure based catalog.
+        """
+        return pulumi.get(self, "peer_details")
+
+    @peer_details.setter
+    def peer_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailArgs']]]]):
+        pulumi.set(self, "peer_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shardGroup")
+    def shard_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The name of the shardGroup for the shard.
+        """
+        return pulumi.get(self, "shard_group")
+
+    @shard_group.setter
+    def shard_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "shard_group", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="supportingResourceId")
+    def supporting_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        the identifier of the underlying supporting resource.
+        """
+        return pulumi.get(self, "supporting_resource_id")
+
+    @supporting_resource_id.setter
+    def supporting_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "supporting_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_updated")
+
+    @time_updated.setter
+    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_updated", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+        """
+        return pulumi.get(self, "vault_id")
+
+    @vault_id.setter
+    def vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vault_id", value)
+
+
+class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailMetadataArgsDict(TypedDict):
+    map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    The map containing key-value pair of additional metadata.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailMetadataArgs:
+    def __init__(__self__, *,
+                 map: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] map: The map containing key-value pair of additional metadata.
+        """
+        if map is not None:
+            pulumi.set(__self__, "map", map)
+
+    @_builtins.property
+    @pulumi.getter
+    def map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        The map containing key-value pair of additional metadata.
+        """
+        return pulumi.get(self, "map")
+
+    @map.setter
+    def map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "map", value)
+
+
+class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailArgsDict(TypedDict):
+    cloud_autonomous_vm_cluster_id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous VM Cluster for the peer catalog.
+    """
+    container_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    the identifier of the container database for underlying supporting resource.
+    """
+    fast_start_fail_over_lag_limit_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The lag time preference based on data loss tolerance in seconds.
+    """
+    is_automatic_failover_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+    """
+    metadatas: NotRequired[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailMetadataArgsDict']]]]
+    """
+    Additional metadata related to Globally distributed autonomous database resources.
+    """
+    protection_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protectionMode for the catalog peer.
+    """
+    shard_group: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the shardGroup for the shard.
+    """
+    standby_maintenance_buffer_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before schedlued maintenance of the primary database.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
+    """
+    supporting_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    the identifier of the underlying supporting resource.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailArgs:
+    def __init__(__self__, *,
+                 cloud_autonomous_vm_cluster_id: pulumi.Input[_builtins.str],
+                 container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
+                 is_automatic_failover_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailMetadataArgs']]]] = None,
+                 protection_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 shard_group: Optional[pulumi.Input[_builtins.str]] = None,
+                 standby_maintenance_buffer_in_days: Optional[pulumi.Input[_builtins.int]] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 supporting_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous VM Cluster for the peer catalog.
+        :param pulumi.Input[_builtins.str] container_database_id: the identifier of the container database for underlying supporting resource.
+        :param pulumi.Input[_builtins.int] fast_start_fail_over_lag_limit_in_seconds: The lag time preference based on data loss tolerance in seconds.
+        :param pulumi.Input[_builtins.bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailMetadataArgs']]] metadatas: Additional metadata related to Globally distributed autonomous database resources.
+        :param pulumi.Input[_builtins.str] protection_mode: The protectionMode for the catalog peer.
+        :param pulumi.Input[_builtins.str] shard_group: The name of the shardGroup for the shard.
+        :param pulumi.Input[_builtins.int] standby_maintenance_buffer_in_days: The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before schedlued maintenance of the primary database.
+        :param pulumi.Input[_builtins.str] status: Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
+        :param pulumi.Input[_builtins.str] supporting_resource_id: the identifier of the underlying supporting resource.
+        :param pulumi.Input[_builtins.str] time_created: The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
+        :param pulumi.Input[_builtins.str] time_updated: The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
+        """
+        pulumi.set(__self__, "cloud_autonomous_vm_cluster_id", cloud_autonomous_vm_cluster_id)
+        if container_database_id is not None:
+            pulumi.set(__self__, "container_database_id", container_database_id)
+        if fast_start_fail_over_lag_limit_in_seconds is not None:
+            pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
+        if is_automatic_failover_enabled is not None:
+            pulumi.set(__self__, "is_automatic_failover_enabled", is_automatic_failover_enabled)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
+        if protection_mode is not None:
+            pulumi.set(__self__, "protection_mode", protection_mode)
+        if shard_group is not None:
+            pulumi.set(__self__, "shard_group", shard_group)
+        if standby_maintenance_buffer_in_days is not None:
+            pulumi.set(__self__, "standby_maintenance_buffer_in_days", standby_maintenance_buffer_in_days)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if supporting_resource_id is not None:
+            pulumi.set(__self__, "supporting_resource_id", supporting_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="cloudAutonomousVmClusterId")
+    def cloud_autonomous_vm_cluster_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous VM Cluster for the peer catalog.
+        """
+        return pulumi.get(self, "cloud_autonomous_vm_cluster_id")
+
+    @cloud_autonomous_vm_cluster_id.setter
+    def cloud_autonomous_vm_cluster_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "cloud_autonomous_vm_cluster_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="containerDatabaseId")
+    def container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        the identifier of the container database for underlying supporting resource.
+        """
+        return pulumi.get(self, "container_database_id")
+
+    @container_database_id.setter
+    def container_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "container_database_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The lag time preference based on data loss tolerance in seconds.
+        """
+        return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
+
+    @fast_start_fail_over_lag_limit_in_seconds.setter
+    def fast_start_fail_over_lag_limit_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "fast_start_fail_over_lag_limit_in_seconds", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isAutomaticFailoverEnabled")
+    def is_automatic_failover_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        """
+        return pulumi.get(self, "is_automatic_failover_enabled")
+
+    @is_automatic_failover_enabled.setter
+    def is_automatic_failover_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_automatic_failover_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailMetadataArgs']]]]:
+        """
+        Additional metadata related to Globally distributed autonomous database resources.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @metadatas.setter
+    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailMetadataArgs']]]]):
+        pulumi.set(self, "metadatas", value)
+
+    @_builtins.property
+    @pulumi.getter(name="protectionMode")
+    def protection_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The protectionMode for the catalog peer.
+        """
+        return pulumi.get(self, "protection_mode")
+
+    @protection_mode.setter
+    def protection_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "protection_mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shardGroup")
+    def shard_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The name of the shardGroup for the shard.
+        """
+        return pulumi.get(self, "shard_group")
+
+    @shard_group.setter
+    def shard_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "shard_group", value)
+
+    @_builtins.property
+    @pulumi.getter(name="standbyMaintenanceBufferInDays")
+    def standby_maintenance_buffer_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before schedlued maintenance of the primary database.
+        """
+        return pulumi.get(self, "standby_maintenance_buffer_in_days")
+
+    @standby_maintenance_buffer_in_days.setter
+    def standby_maintenance_buffer_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "standby_maintenance_buffer_in_days", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="supportingResourceId")
+    def supporting_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        the identifier of the underlying supporting resource.
+        """
+        return pulumi.get(self, "supporting_resource_id")
+
+    @supporting_resource_id.setter
+    def supporting_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "supporting_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_updated")
+
+    @time_updated.setter
+    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_updated", value)
+
+
+class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailMetadataArgsDict(TypedDict):
+    map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    The map containing key-value pair of additional metadata.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailMetadataArgs:
+    def __init__(__self__, *,
+                 map: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] map: The map containing key-value pair of additional metadata.
+        """
+        if map is not None:
+            pulumi.set(__self__, "map", map)
+
+    @_builtins.property
+    @pulumi.getter
+    def map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        The map containing key-value pair of additional metadata.
+        """
+        return pulumi.get(self, "map")
+
+    @map.setter
+    def map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "map", value)
+
+
+class DistributedDatabaseDistributedAutonomousDatabaseConnectionStringArgsDict(TypedDict):
+    all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Collection of connection strings.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedAutonomousDatabaseConnectionStringArgs:
+    def __init__(__self__, *,
+                 all_connection_strings: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] all_connection_strings: Collection of connection strings.
+        """
+        if all_connection_strings is not None:
+            pulumi.set(__self__, "all_connection_strings", all_connection_strings)
+
+    @_builtins.property
+    @pulumi.getter(name="allConnectionStrings")
+    def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Collection of connection strings.
+        """
+        return pulumi.get(self, "all_connection_strings")
+
+    @all_connection_strings.setter
+    def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "all_connection_strings", value)
+
+
+class DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgsDict(TypedDict):
+    backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigBackupDestinationDetailArgsDict']]]]
+    """
+    Backup destination details.
+    """
+    recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigArgs:
+    def __init__(__self__, *,
+                 backup_destination_details: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigBackupDestinationDetailArgs']]]] = None,
+                 recovery_window_in_days: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigBackupDestinationDetailArgs']]] backup_destination_details: Backup destination details.
+        :param pulumi.Input[_builtins.int] recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+        """
+        if backup_destination_details is not None:
+            pulumi.set(__self__, "backup_destination_details", backup_destination_details)
+        if recovery_window_in_days is not None:
+            pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+
+    @_builtins.property
+    @pulumi.getter(name="backupDestinationDetails")
+    def backup_destination_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigBackupDestinationDetailArgs']]]]:
+        """
+        Backup destination details.
+        """
+        return pulumi.get(self, "backup_destination_details")
+
+    @backup_destination_details.setter
+    def backup_destination_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigBackupDestinationDetailArgs']]]]):
+        pulumi.set(self, "backup_destination_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="recoveryWindowInDays")
+    def recovery_window_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+        """
+        return pulumi.get(self, "recovery_window_in_days")
+
+    @recovery_window_in_days.setter
+    def recovery_window_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "recovery_window_in_days", value)
+
+
+class DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigBackupDestinationDetailArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the database backup destination.
+    """
+    dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+    """
+    internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Proxy URL to connect to object store.
+    """
+    is_remote: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the backup destination is cross-region or local region.
+    """
+    remote_region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the remote region where the remote automatic incremental backups will be stored. For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+    """
+    vpc_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+    """
+    vpc_user: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigBackupDestinationDetailArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 dbrs_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 id: Optional[pulumi.Input[_builtins.str]] = None,
+                 internet_proxy: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_remote: Optional[pulumi.Input[_builtins.bool]] = None,
+                 remote_region: Optional[pulumi.Input[_builtins.str]] = None,
+                 vpc_password: Optional[pulumi.Input[_builtins.str]] = None,
+                 vpc_user: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: Type of the database backup destination.
+        :param pulumi.Input[_builtins.str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+        :param pulumi.Input[_builtins.str] internet_proxy: Proxy URL to connect to object store.
+        :param pulumi.Input[_builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local region.
+        :param pulumi.Input[_builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored. For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        :param pulumi.Input[_builtins.str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        :param pulumi.Input[_builtins.str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
+        pulumi.set(__self__, "type", type)
+        if dbrs_policy_id is not None:
+            pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if internet_proxy is not None:
+            pulumi.set(__self__, "internet_proxy", internet_proxy)
+        if is_remote is not None:
+            pulumi.set(__self__, "is_remote", is_remote)
+        if remote_region is not None:
+            pulumi.set(__self__, "remote_region", remote_region)
+        if vpc_password is not None:
+            pulumi.set(__self__, "vpc_password", vpc_password)
+        if vpc_user is not None:
+            pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Type of the database backup destination.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dbrsPolicyId")
+    def dbrs_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        """
+        return pulumi.get(self, "dbrs_policy_id")
+
+    @dbrs_policy_id.setter
+    def dbrs_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "dbrs_policy_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="internetProxy")
+    def internet_proxy(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Proxy URL to connect to object store.
+        """
+        return pulumi.get(self, "internet_proxy")
+
+    @internet_proxy.setter
+    def internet_proxy(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "internet_proxy", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isRemote")
+    def is_remote(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates whether the backup destination is cross-region or local region.
+        """
+        return pulumi.get(self, "is_remote")
+
+    @is_remote.setter
+    def is_remote(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_remote", value)
+
+    @_builtins.property
+    @pulumi.getter(name="remoteRegion")
+    def remote_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The name of the remote region where the remote automatic incremental backups will be stored. For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "remote_region")
+
+    @remote_region.setter
+    def remote_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "remote_region", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vpcPassword")
+    def vpc_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        """
+        return pulumi.get(self, "vpc_password")
+
+    @vpc_password.setter
+    def vpc_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vpc_password", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vpcUser")
+    def vpc_user(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
+        return pulumi.get(self, "vpc_user")
+
+    @vpc_user.setter
+    def vpc_user(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vpc_user", value)
+
+
+class DistributedDatabaseDistributedAutonomousDatabaseGsmDetailArgsDict(TypedDict):
+    compute_count: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The compute count for the shard database. It has to be in multiples of 2.
+    """
+    data_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The data disk group size to be allocated in GBs for the shard database.
+    """
+    gsm_image_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseGsmDetailGsmImageDetailArgsDict']]]]
+    """
+    The Global service manager image details.
+    """
+    metadatas: NotRequired[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseGsmDetailMetadataArgsDict']]]]
+    """
+    Additional metadata related to Globally distributed autonomous database resources.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the shard.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
+    """
+    supporting_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    the identifier of the underlying supporting resource.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
+    """
+    time_ssl_certificate_expires: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the ssl certificate associated with Global service manager expires. An RFC3339 formatted datetime string
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedAutonomousDatabaseGsmDetailArgs:
+    def __init__(__self__, *,
+                 compute_count: Optional[pulumi.Input[_builtins.float]] = None,
+                 data_storage_size_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
+                 gsm_image_details: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseGsmDetailGsmImageDetailArgs']]]] = None,
+                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseGsmDetailMetadataArgs']]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 supporting_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_ssl_certificate_expires: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.float] compute_count: The compute count for the shard database. It has to be in multiples of 2.
+        :param pulumi.Input[_builtins.float] data_storage_size_in_gbs: The data disk group size to be allocated in GBs for the shard database.
+        :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseGsmDetailGsmImageDetailArgs']]] gsm_image_details: The Global service manager image details.
+        :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseGsmDetailMetadataArgs']]] metadatas: Additional metadata related to Globally distributed autonomous database resources.
+        :param pulumi.Input[_builtins.str] name: Name of the shard.
+        :param pulumi.Input[_builtins.str] status: Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
+        :param pulumi.Input[_builtins.str] supporting_resource_id: the identifier of the underlying supporting resource.
+        :param pulumi.Input[_builtins.str] time_created: The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
+        :param pulumi.Input[_builtins.str] time_ssl_certificate_expires: The time the ssl certificate associated with Global service manager expires. An RFC3339 formatted datetime string
+        :param pulumi.Input[_builtins.str] time_updated: The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
+        """
+        if compute_count is not None:
+            pulumi.set(__self__, "compute_count", compute_count)
+        if data_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "data_storage_size_in_gbs", data_storage_size_in_gbs)
+        if gsm_image_details is not None:
+            pulumi.set(__self__, "gsm_image_details", gsm_image_details)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if supporting_resource_id is not None:
+            pulumi.set(__self__, "supporting_resource_id", supporting_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_ssl_certificate_expires is not None:
+            pulumi.set(__self__, "time_ssl_certificate_expires", time_ssl_certificate_expires)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        The compute count for the shard database. It has to be in multiples of 2.
+        """
+        return pulumi.get(self, "compute_count")
+
+    @compute_count.setter
+    def compute_count(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "compute_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dataStorageSizeInGbs")
+    def data_storage_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        The data disk group size to be allocated in GBs for the shard database.
+        """
+        return pulumi.get(self, "data_storage_size_in_gbs")
+
+    @data_storage_size_in_gbs.setter
+    def data_storage_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "data_storage_size_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="gsmImageDetails")
+    def gsm_image_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseGsmDetailGsmImageDetailArgs']]]]:
+        """
+        The Global service manager image details.
+        """
+        return pulumi.get(self, "gsm_image_details")
+
+    @gsm_image_details.setter
+    def gsm_image_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseGsmDetailGsmImageDetailArgs']]]]):
+        pulumi.set(self, "gsm_image_details", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseGsmDetailMetadataArgs']]]]:
+        """
+        Additional metadata related to Globally distributed autonomous database resources.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @metadatas.setter
+    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseGsmDetailMetadataArgs']]]]):
+        pulumi.set(self, "metadatas", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Name of the shard.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> pulumi.Input[_builtins.str]:
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Namespace of the bucket.
+        Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
         """
-        return pulumi.get(self, "namespace")
+        return pulumi.get(self, "status")
 
-    @namespace.setter
-    def namespace(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "namespace", value)
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="supportingResourceId")
+    def supporting_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        the identifier of the underlying supporting resource.
+        """
+        return pulumi.get(self, "supporting_resource_id")
+
+    @supporting_resource_id.setter
+    def supporting_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "supporting_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeSslCertificateExpires")
+    def time_ssl_certificate_expires(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time the ssl certificate associated with Global service manager expires. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_ssl_certificate_expires")
+
+    @time_ssl_certificate_expires.setter
+    def time_ssl_certificate_expires(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_ssl_certificate_expires", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_updated")
+
+    @time_updated.setter
+    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_updated", value)
+
+
+class DistributedDatabaseDistributedAutonomousDatabaseGsmDetailGsmImageDetailArgsDict(TypedDict):
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
+    """
+    version_number: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The version number associated with the image identified by id.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedAutonomousDatabaseGsmDetailGsmImageDetailArgs:
+    def __init__(__self__, *,
+                 id: Optional[pulumi.Input[_builtins.str]] = None,
+                 version_number: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
+        :param pulumi.Input[_builtins.int] version_number: The version number associated with the image identified by id.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if version_number is not None:
+            pulumi.set(__self__, "version_number", version_number)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="versionNumber")
+    def version_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The version number associated with the image identified by id.
+        """
+        return pulumi.get(self, "version_number")
+
+    @version_number.setter
+    def version_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "version_number", value)
+
+
+class DistributedDatabaseDistributedAutonomousDatabaseGsmDetailMetadataArgsDict(TypedDict):
+    map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    The map containing key-value pair of additional metadata.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedAutonomousDatabaseGsmDetailMetadataArgs:
+    def __init__(__self__, *,
+                 map: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] map: The map containing key-value pair of additional metadata.
+        """
+        if map is not None:
+            pulumi.set(__self__, "map", map)
+
+    @_builtins.property
+    @pulumi.getter
+    def map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        The map containing key-value pair of additional metadata.
+        """
+        return pulumi.get(self, "map")
+
+    @map.setter
+    def map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "map", value)
+
+
+class DistributedDatabaseDistributedAutonomousDatabaseLatestGsmImageArgsDict(TypedDict):
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
+    """
+    version_number: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The version number associated with the image identified by id.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedAutonomousDatabaseLatestGsmImageArgs:
+    def __init__(__self__, *,
+                 id: Optional[pulumi.Input[_builtins.str]] = None,
+                 version_number: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
+        :param pulumi.Input[_builtins.int] version_number: The version number associated with the image identified by id.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if version_number is not None:
+            pulumi.set(__self__, "version_number", version_number)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="versionNumber")
+    def version_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The version number associated with the image identified by id.
+        """
+        return pulumi.get(self, "version_number")
+
+    @version_number.setter
+    def version_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "version_number", value)
+
+
+class DistributedDatabaseDistributedAutonomousDatabaseMetadataArgsDict(TypedDict):
+    map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    The map containing key-value pair of additional metadata.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedAutonomousDatabaseMetadataArgs:
+    def __init__(__self__, *,
+                 map: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] map: The map containing key-value pair of additional metadata.
+        """
+        if map is not None:
+            pulumi.set(__self__, "map", map)
+
+    @_builtins.property
+    @pulumi.getter
+    def map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        The map containing key-value pair of additional metadata.
+        """
+        return pulumi.get(self, "map")
+
+    @map.setter
+    def map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "map", value)
+
+
+class DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgsDict(TypedDict):
+    operation: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+    """
+    selection: pulumi.Input[_builtins.str]
+    """
+    (Updatable)
+    """
+    value: pulumi.Input[_builtins.str]
+    """
+    (Updatable)
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedAutonomousDatabasePatchOperationArgs:
+    def __init__(__self__, *,
+                 operation: pulumi.Input[_builtins.str],
+                 selection: pulumi.Input[_builtins.str],
+                 value: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] operation: (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+        :param pulumi.Input[_builtins.str] selection: (Updatable)
+        :param pulumi.Input[_builtins.str] value: (Updatable)
+        """
+        pulumi.set(__self__, "operation", operation)
+        pulumi.set(__self__, "selection", selection)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def operation(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+        """
+        return pulumi.get(self, "operation")
+
+    @operation.setter
+    def operation(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "operation", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def selection(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "selection")
+
+    @selection.setter
+    def selection(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "selection", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "value", value)
+
+
+class DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgsDict(TypedDict):
+    admin_password: pulumi.Input[_builtins.str]
+    """
+    Admin password for shard database.
+    """
+    cloud_autonomous_vm_cluster_id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+    """
+    compute_count: pulumi.Input[_builtins.float]
+    """
+    The compute count for the shard database. It has to be in multiples of 2.
+    """
+    data_storage_size_in_gbs: pulumi.Input[_builtins.float]
+    """
+    The data disk group size to be allocated in GBs for the shard database.
+    """
+    is_auto_scaling_enabled: pulumi.Input[_builtins.bool]
+    """
+    Determines the auto-scaling mode for the shard database.
+    """
+    source: pulumi.Input[_builtins.str]
+    """
+    The source of Globally distributed autonomous database type: Use ADB_D for the Globally distributed autonomous database with autonomous dedicated cloudautonomousvmclusters.
+    """
+    container_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    the identifier of the container database for underlying supporting resource.
+    """
+    kms_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+    """
+    kms_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+    """
+    metadatas: NotRequired[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailMetadataArgsDict']]]]
+    """
+    Additional metadata related to Globally distributed autonomous database resources.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the shard.
+    """
+    peer_cloud_autonomous_vm_cluster_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers on new shards of distributed autonomous database please use peerDetails.
+    """
+    peer_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailArgsDict']]]]
+    """
+    The details required for creation of the peer for the autonomous dedicated infrastructure based shard.
+    """
+    shard_group: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the shardGroup for the shard.
+    """
+    shard_space: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The shard space name for the shard database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards. For User defined sharding, every shard must have a unique shard space name. For system defined sharding, shard space name is not required.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
+    """
+    supporting_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    the identifier of the underlying supporting resource.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
+    """
+    vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs:
+    def __init__(__self__, *,
+                 admin_password: pulumi.Input[_builtins.str],
+                 cloud_autonomous_vm_cluster_id: pulumi.Input[_builtins.str],
+                 compute_count: pulumi.Input[_builtins.float],
+                 data_storage_size_in_gbs: pulumi.Input[_builtins.float],
+                 is_auto_scaling_enabled: pulumi.Input[_builtins.bool],
+                 source: pulumi.Input[_builtins.str],
+                 container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailMetadataArgs']]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 peer_cloud_autonomous_vm_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 peer_details: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailArgs']]]] = None,
+                 shard_group: Optional[pulumi.Input[_builtins.str]] = None,
+                 shard_space: Optional[pulumi.Input[_builtins.str]] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 supporting_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
+                 vault_id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] admin_password: Admin password for shard database.
+        :param pulumi.Input[_builtins.str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+        :param pulumi.Input[_builtins.float] compute_count: The compute count for the shard database. It has to be in multiples of 2.
+        :param pulumi.Input[_builtins.float] data_storage_size_in_gbs: The data disk group size to be allocated in GBs for the shard database.
+        :param pulumi.Input[_builtins.bool] is_auto_scaling_enabled: Determines the auto-scaling mode for the shard database.
+        :param pulumi.Input[_builtins.str] source: The source of Globally distributed autonomous database type: Use ADB_D for the Globally distributed autonomous database with autonomous dedicated cloudautonomousvmclusters.
+        :param pulumi.Input[_builtins.str] container_database_id: the identifier of the container database for underlying supporting resource.
+        :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+        :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailMetadataArgs']]] metadatas: Additional metadata related to Globally distributed autonomous database resources.
+        :param pulumi.Input[_builtins.str] name: Name of the shard.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] peer_cloud_autonomous_vm_cluster_ids: This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers on new shards of distributed autonomous database please use peerDetails.
+        :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailArgs']]] peer_details: The details required for creation of the peer for the autonomous dedicated infrastructure based shard.
+        :param pulumi.Input[_builtins.str] shard_group: The name of the shardGroup for the shard.
+        :param pulumi.Input[_builtins.str] shard_space: The shard space name for the shard database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards. For User defined sharding, every shard must have a unique shard space name. For system defined sharding, shard space name is not required.
+        :param pulumi.Input[_builtins.str] status: Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
+        :param pulumi.Input[_builtins.str] supporting_resource_id: the identifier of the underlying supporting resource.
+        :param pulumi.Input[_builtins.str] time_created: The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
+        :param pulumi.Input[_builtins.str] time_updated: The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
+        :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+        """
+        pulumi.set(__self__, "admin_password", admin_password)
+        pulumi.set(__self__, "cloud_autonomous_vm_cluster_id", cloud_autonomous_vm_cluster_id)
+        pulumi.set(__self__, "compute_count", compute_count)
+        pulumi.set(__self__, "data_storage_size_in_gbs", data_storage_size_in_gbs)
+        pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
+        pulumi.set(__self__, "source", source)
+        if container_database_id is not None:
+            pulumi.set(__self__, "container_database_id", container_database_id)
+        if kms_key_id is not None:
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if kms_key_version_id is not None:
+            pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if peer_cloud_autonomous_vm_cluster_ids is not None:
+            pulumi.set(__self__, "peer_cloud_autonomous_vm_cluster_ids", peer_cloud_autonomous_vm_cluster_ids)
+        if peer_details is not None:
+            pulumi.set(__self__, "peer_details", peer_details)
+        if shard_group is not None:
+            pulumi.set(__self__, "shard_group", shard_group)
+        if shard_space is not None:
+            pulumi.set(__self__, "shard_space", shard_space)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if supporting_resource_id is not None:
+            pulumi.set(__self__, "supporting_resource_id", supporting_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if vault_id is not None:
+            pulumi.set(__self__, "vault_id", vault_id)
+
+    @_builtins.property
+    @pulumi.getter(name="adminPassword")
+    def admin_password(self) -> pulumi.Input[_builtins.str]:
+        """
+        Admin password for shard database.
+        """
+        return pulumi.get(self, "admin_password")
+
+    @admin_password.setter
+    def admin_password(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "admin_password", value)
+
+    @_builtins.property
+    @pulumi.getter(name="cloudAutonomousVmClusterId")
+    def cloud_autonomous_vm_cluster_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+        """
+        return pulumi.get(self, "cloud_autonomous_vm_cluster_id")
+
+    @cloud_autonomous_vm_cluster_id.setter
+    def cloud_autonomous_vm_cluster_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "cloud_autonomous_vm_cluster_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> pulumi.Input[_builtins.float]:
+        """
+        The compute count for the shard database. It has to be in multiples of 2.
+        """
+        return pulumi.get(self, "compute_count")
+
+    @compute_count.setter
+    def compute_count(self, value: pulumi.Input[_builtins.float]):
+        pulumi.set(self, "compute_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dataStorageSizeInGbs")
+    def data_storage_size_in_gbs(self) -> pulumi.Input[_builtins.float]:
+        """
+        The data disk group size to be allocated in GBs for the shard database.
+        """
+        return pulumi.get(self, "data_storage_size_in_gbs")
+
+    @data_storage_size_in_gbs.setter
+    def data_storage_size_in_gbs(self, value: pulumi.Input[_builtins.float]):
+        pulumi.set(self, "data_storage_size_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isAutoScalingEnabled")
+    def is_auto_scaling_enabled(self) -> pulumi.Input[_builtins.bool]:
+        """
+        Determines the auto-scaling mode for the shard database.
+        """
+        return pulumi.get(self, "is_auto_scaling_enabled")
+
+    @is_auto_scaling_enabled.setter
+    def is_auto_scaling_enabled(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "is_auto_scaling_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> pulumi.Input[_builtins.str]:
+        """
+        The source of Globally distributed autonomous database type: Use ADB_D for the Globally distributed autonomous database with autonomous dedicated cloudautonomousvmclusters.
+        """
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "source", value)
+
+    @_builtins.property
+    @pulumi.getter(name="containerDatabaseId")
+    def container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        the identifier of the container database for underlying supporting resource.
+        """
+        return pulumi.get(self, "container_database_id")
+
+    @container_database_id.setter
+    def container_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "container_database_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @kms_key_id.setter
+    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "kms_key_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="kmsKeyVersionId")
+    def kms_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+        """
+        return pulumi.get(self, "kms_key_version_id")
+
+    @kms_key_version_id.setter
+    def kms_key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "kms_key_version_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailMetadataArgs']]]]:
+        """
+        Additional metadata related to Globally distributed autonomous database resources.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @metadatas.setter
+    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailMetadataArgs']]]]):
+        pulumi.set(self, "metadatas", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Name of the shard.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="peerCloudAutonomousVmClusterIds")
+    def peer_cloud_autonomous_vm_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers on new shards of distributed autonomous database please use peerDetails.
+        """
+        return pulumi.get(self, "peer_cloud_autonomous_vm_cluster_ids")
+
+    @peer_cloud_autonomous_vm_cluster_ids.setter
+    def peer_cloud_autonomous_vm_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "peer_cloud_autonomous_vm_cluster_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="peerDetails")
+    def peer_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailArgs']]]]:
+        """
+        The details required for creation of the peer for the autonomous dedicated infrastructure based shard.
+        """
+        return pulumi.get(self, "peer_details")
+
+    @peer_details.setter
+    def peer_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailArgs']]]]):
+        pulumi.set(self, "peer_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shardGroup")
+    def shard_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The name of the shardGroup for the shard.
+        """
+        return pulumi.get(self, "shard_group")
+
+    @shard_group.setter
+    def shard_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "shard_group", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shardSpace")
+    def shard_space(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The shard space name for the shard database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards. For User defined sharding, every shard must have a unique shard space name. For system defined sharding, shard space name is not required.
+        """
+        return pulumi.get(self, "shard_space")
+
+    @shard_space.setter
+    def shard_space(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "shard_space", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="supportingResourceId")
+    def supporting_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        the identifier of the underlying supporting resource.
+        """
+        return pulumi.get(self, "supporting_resource_id")
+
+    @supporting_resource_id.setter
+    def supporting_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "supporting_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_updated")
+
+    @time_updated.setter
+    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_updated", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+        """
+        return pulumi.get(self, "vault_id")
+
+    @vault_id.setter
+    def vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vault_id", value)
+
+
+class DistributedDatabaseDistributedAutonomousDatabaseShardDetailMetadataArgsDict(TypedDict):
+    map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    The map containing key-value pair of additional metadata.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedAutonomousDatabaseShardDetailMetadataArgs:
+    def __init__(__self__, *,
+                 map: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] map: The map containing key-value pair of additional metadata.
+        """
+        if map is not None:
+            pulumi.set(__self__, "map", map)
+
+    @_builtins.property
+    @pulumi.getter
+    def map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        The map containing key-value pair of additional metadata.
+        """
+        return pulumi.get(self, "map")
+
+    @map.setter
+    def map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "map", value)
+
+
+class DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailArgsDict(TypedDict):
+    cloud_autonomous_vm_cluster_id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous VM Cluster for the peer shard.
+    """
+    container_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    the identifier of the container database for underlying supporting resource.
+    """
+    fast_start_fail_over_lag_limit_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The lag time preference based on data loss tolerance in seconds.
+    """
+    is_automatic_failover_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+    """
+    metadatas: NotRequired[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailMetadataArgsDict']]]]
+    """
+    Additional metadata related to Globally distributed autonomous database resources.
+    """
+    protection_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protectionMode for the shard peer.
+    """
+    shard_group: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the shardGroup for the shard.
+    """
+    standby_maintenance_buffer_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before schedlued maintenance of the primary database.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
+    """
+    supporting_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    the identifier of the underlying supporting resource.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailArgs:
+    def __init__(__self__, *,
+                 cloud_autonomous_vm_cluster_id: pulumi.Input[_builtins.str],
+                 container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
+                 is_automatic_failover_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailMetadataArgs']]]] = None,
+                 protection_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 shard_group: Optional[pulumi.Input[_builtins.str]] = None,
+                 standby_maintenance_buffer_in_days: Optional[pulumi.Input[_builtins.int]] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 supporting_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous VM Cluster for the peer shard.
+        :param pulumi.Input[_builtins.str] container_database_id: the identifier of the container database for underlying supporting resource.
+        :param pulumi.Input[_builtins.int] fast_start_fail_over_lag_limit_in_seconds: The lag time preference based on data loss tolerance in seconds.
+        :param pulumi.Input[_builtins.bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailMetadataArgs']]] metadatas: Additional metadata related to Globally distributed autonomous database resources.
+        :param pulumi.Input[_builtins.str] protection_mode: The protectionMode for the shard peer.
+        :param pulumi.Input[_builtins.str] shard_group: The name of the shardGroup for the shard.
+        :param pulumi.Input[_builtins.int] standby_maintenance_buffer_in_days: The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before schedlued maintenance of the primary database.
+        :param pulumi.Input[_builtins.str] status: Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
+        :param pulumi.Input[_builtins.str] supporting_resource_id: the identifier of the underlying supporting resource.
+        :param pulumi.Input[_builtins.str] time_created: The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
+        :param pulumi.Input[_builtins.str] time_updated: The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
+        """
+        pulumi.set(__self__, "cloud_autonomous_vm_cluster_id", cloud_autonomous_vm_cluster_id)
+        if container_database_id is not None:
+            pulumi.set(__self__, "container_database_id", container_database_id)
+        if fast_start_fail_over_lag_limit_in_seconds is not None:
+            pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
+        if is_automatic_failover_enabled is not None:
+            pulumi.set(__self__, "is_automatic_failover_enabled", is_automatic_failover_enabled)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
+        if protection_mode is not None:
+            pulumi.set(__self__, "protection_mode", protection_mode)
+        if shard_group is not None:
+            pulumi.set(__self__, "shard_group", shard_group)
+        if standby_maintenance_buffer_in_days is not None:
+            pulumi.set(__self__, "standby_maintenance_buffer_in_days", standby_maintenance_buffer_in_days)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if supporting_resource_id is not None:
+            pulumi.set(__self__, "supporting_resource_id", supporting_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="cloudAutonomousVmClusterId")
+    def cloud_autonomous_vm_cluster_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous VM Cluster for the peer shard.
+        """
+        return pulumi.get(self, "cloud_autonomous_vm_cluster_id")
+
+    @cloud_autonomous_vm_cluster_id.setter
+    def cloud_autonomous_vm_cluster_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "cloud_autonomous_vm_cluster_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="containerDatabaseId")
+    def container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        the identifier of the container database for underlying supporting resource.
+        """
+        return pulumi.get(self, "container_database_id")
+
+    @container_database_id.setter
+    def container_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "container_database_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The lag time preference based on data loss tolerance in seconds.
+        """
+        return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
+
+    @fast_start_fail_over_lag_limit_in_seconds.setter
+    def fast_start_fail_over_lag_limit_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "fast_start_fail_over_lag_limit_in_seconds", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isAutomaticFailoverEnabled")
+    def is_automatic_failover_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        """
+        return pulumi.get(self, "is_automatic_failover_enabled")
+
+    @is_automatic_failover_enabled.setter
+    def is_automatic_failover_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_automatic_failover_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailMetadataArgs']]]]:
+        """
+        Additional metadata related to Globally distributed autonomous database resources.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @metadatas.setter
+    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailMetadataArgs']]]]):
+        pulumi.set(self, "metadatas", value)
+
+    @_builtins.property
+    @pulumi.getter(name="protectionMode")
+    def protection_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The protectionMode for the shard peer.
+        """
+        return pulumi.get(self, "protection_mode")
+
+    @protection_mode.setter
+    def protection_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "protection_mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shardGroup")
+    def shard_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The name of the shardGroup for the shard.
+        """
+        return pulumi.get(self, "shard_group")
+
+    @shard_group.setter
+    def shard_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "shard_group", value)
+
+    @_builtins.property
+    @pulumi.getter(name="standbyMaintenanceBufferInDays")
+    def standby_maintenance_buffer_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before schedlued maintenance of the primary database.
+        """
+        return pulumi.get(self, "standby_maintenance_buffer_in_days")
+
+    @standby_maintenance_buffer_in_days.setter
+    def standby_maintenance_buffer_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "standby_maintenance_buffer_in_days", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="supportingResourceId")
+    def supporting_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        the identifier of the underlying supporting resource.
+        """
+        return pulumi.get(self, "supporting_resource_id")
+
+    @supporting_resource_id.setter
+    def supporting_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "supporting_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_updated")
+
+    @time_updated.setter
+    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_updated", value)
+
+
+class DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailMetadataArgsDict(TypedDict):
+    map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    The map containing key-value pair of additional metadata.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailMetadataArgs:
+    def __init__(__self__, *,
+                 map: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] map: The map containing key-value pair of additional metadata.
+        """
+        if map is not None:
+            pulumi.set(__self__, "map", map)
+
+    @_builtins.property
+    @pulumi.getter
+    def map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        The map containing key-value pair of additional metadata.
+        """
+        return pulumi.get(self, "map")
+
+    @map.setter
+    def map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "map", value)
+
+
+class DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgsDict(TypedDict):
+    is_surrogate: NotRequired[pulumi.Input[_builtins.bool]]
+    resource_name: NotRequired[pulumi.Input[_builtins.str]]
+    shard_group: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the shardGroup for the shard.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetailsArgs:
+    def __init__(__self__, *,
+                 is_surrogate: Optional[pulumi.Input[_builtins.bool]] = None,
+                 resource_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 shard_group: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] shard_group: The name of the shardGroup for the shard.
+        """
+        if is_surrogate is not None:
+            pulumi.set(__self__, "is_surrogate", is_surrogate)
+        if resource_name is not None:
+            pulumi.set(__self__, "resource_name", resource_name)
+        if shard_group is not None:
+            pulumi.set(__self__, "shard_group", shard_group)
+
+    @_builtins.property
+    @pulumi.getter(name="isSurrogate")
+    def is_surrogate(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        return pulumi.get(self, "is_surrogate")
+
+    @is_surrogate.setter
+    def is_surrogate(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_surrogate", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceName")
+    def resource_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "resource_name")
+
+    @resource_name.setter
+    def resource_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "resource_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shardGroup")
+    def shard_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The name of the shardGroup for the shard.
+        """
+        return pulumi.get(self, "shard_group")
+
+    @shard_group.setter
+    def shard_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "shard_group", value)
+
+
+class DistributedDatabaseDistributedDatabaseCatalogDetailArgsDict(TypedDict):
+    admin_password: pulumi.Input[_builtins.str]
+    """
+    The admin password for the cataog associated with Globally distributed database.
+    """
+    source: pulumi.Input[_builtins.str]
+    """
+    The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+    """
+    vm_cluster_id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+    """
+    container_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    the identifier of the container database for underlying supporting resource.
+    """
+    db_home_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+    """
+    kms_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+    """
+    kms_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+    """
+    metadatas: NotRequired[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailMetadataArgsDict']]]]
+    """
+    Additional metadata related to Globally distributed database resources.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the shard.
+    """
+    peer_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailArgsDict']]]]
+    """
+    The details required for creation of the peer for the ExadbXs infrastructure based catalog.
+    """
+    peer_vm_cluster_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    This field is deprecated. This should not be used while creation of new distributed database. To set the peers on catalog of distributed database please use peerDetails.
+    """
+    shard_group: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the shardGroup for the shard.
+    """
+    shard_space: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The shard space name for the Globally distributed database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Status of EXADB_XS based shard.
+    """
+    supporting_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    the identifier of the underlying supporting resource.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the Globally distributed database was created. An RFC3339 formatted datetime string
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
+    """
+    vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseCatalogDetailArgs:
+    def __init__(__self__, *,
+                 admin_password: pulumi.Input[_builtins.str],
+                 source: pulumi.Input[_builtins.str],
+                 vm_cluster_id: pulumi.Input[_builtins.str],
+                 container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 db_home_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailMetadataArgs']]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 peer_details: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailArgs']]]] = None,
+                 peer_vm_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 shard_group: Optional[pulumi.Input[_builtins.str]] = None,
+                 shard_space: Optional[pulumi.Input[_builtins.str]] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 supporting_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
+                 vault_id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] admin_password: The admin password for the cataog associated with Globally distributed database.
+        :param pulumi.Input[_builtins.str] source: The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+        :param pulumi.Input[_builtins.str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+        :param pulumi.Input[_builtins.str] container_database_id: the identifier of the container database for underlying supporting resource.
+        :param pulumi.Input[_builtins.str] db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+        :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+        :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailMetadataArgs']]] metadatas: Additional metadata related to Globally distributed database resources.
+        :param pulumi.Input[_builtins.str] name: Name of the shard.
+        :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailArgs']]] peer_details: The details required for creation of the peer for the ExadbXs infrastructure based catalog.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] peer_vm_cluster_ids: This field is deprecated. This should not be used while creation of new distributed database. To set the peers on catalog of distributed database please use peerDetails.
+        :param pulumi.Input[_builtins.str] shard_group: The name of the shardGroup for the shard.
+        :param pulumi.Input[_builtins.str] shard_space: The shard space name for the Globally distributed database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards.
+        :param pulumi.Input[_builtins.str] status: Status of EXADB_XS based shard.
+        :param pulumi.Input[_builtins.str] supporting_resource_id: the identifier of the underlying supporting resource.
+        :param pulumi.Input[_builtins.str] time_created: The time the Globally distributed database was created. An RFC3339 formatted datetime string
+        :param pulumi.Input[_builtins.str] time_updated: The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
+        :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+        """
+        pulumi.set(__self__, "admin_password", admin_password)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+        if container_database_id is not None:
+            pulumi.set(__self__, "container_database_id", container_database_id)
+        if db_home_id is not None:
+            pulumi.set(__self__, "db_home_id", db_home_id)
+        if kms_key_id is not None:
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if kms_key_version_id is not None:
+            pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if peer_details is not None:
+            pulumi.set(__self__, "peer_details", peer_details)
+        if peer_vm_cluster_ids is not None:
+            pulumi.set(__self__, "peer_vm_cluster_ids", peer_vm_cluster_ids)
+        if shard_group is not None:
+            pulumi.set(__self__, "shard_group", shard_group)
+        if shard_space is not None:
+            pulumi.set(__self__, "shard_space", shard_space)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if supporting_resource_id is not None:
+            pulumi.set(__self__, "supporting_resource_id", supporting_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if vault_id is not None:
+            pulumi.set(__self__, "vault_id", vault_id)
+
+    @_builtins.property
+    @pulumi.getter(name="adminPassword")
+    def admin_password(self) -> pulumi.Input[_builtins.str]:
+        """
+        The admin password for the cataog associated with Globally distributed database.
+        """
+        return pulumi.get(self, "admin_password")
+
+    @admin_password.setter
+    def admin_password(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "admin_password", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> pulumi.Input[_builtins.str]:
+        """
+        The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+        """
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "source", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+    @vm_cluster_id.setter
+    def vm_cluster_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "vm_cluster_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="containerDatabaseId")
+    def container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        the identifier of the container database for underlying supporting resource.
+        """
+        return pulumi.get(self, "container_database_id")
+
+    @container_database_id.setter
+    def container_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "container_database_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dbHomeId")
+    def db_home_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+        """
+        return pulumi.get(self, "db_home_id")
+
+    @db_home_id.setter
+    def db_home_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "db_home_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @kms_key_id.setter
+    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "kms_key_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="kmsKeyVersionId")
+    def kms_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+        """
+        return pulumi.get(self, "kms_key_version_id")
+
+    @kms_key_version_id.setter
+    def kms_key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "kms_key_version_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailMetadataArgs']]]]:
+        """
+        Additional metadata related to Globally distributed database resources.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @metadatas.setter
+    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailMetadataArgs']]]]):
+        pulumi.set(self, "metadatas", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Name of the shard.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="peerDetails")
+    def peer_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailArgs']]]]:
+        """
+        The details required for creation of the peer for the ExadbXs infrastructure based catalog.
+        """
+        return pulumi.get(self, "peer_details")
+
+    @peer_details.setter
+    def peer_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailArgs']]]]):
+        pulumi.set(self, "peer_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="peerVmClusterIds")
+    def peer_vm_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        This field is deprecated. This should not be used while creation of new distributed database. To set the peers on catalog of distributed database please use peerDetails.
+        """
+        return pulumi.get(self, "peer_vm_cluster_ids")
+
+    @peer_vm_cluster_ids.setter
+    def peer_vm_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "peer_vm_cluster_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shardGroup")
+    def shard_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The name of the shardGroup for the shard.
+        """
+        return pulumi.get(self, "shard_group")
+
+    @shard_group.setter
+    def shard_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "shard_group", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shardSpace")
+    def shard_space(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The shard space name for the Globally distributed database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards.
+        """
+        return pulumi.get(self, "shard_space")
+
+    @shard_space.setter
+    def shard_space(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "shard_space", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Status of EXADB_XS based shard.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="supportingResourceId")
+    def supporting_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        the identifier of the underlying supporting resource.
+        """
+        return pulumi.get(self, "supporting_resource_id")
+
+    @supporting_resource_id.setter
+    def supporting_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "supporting_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time the Globally distributed database was created. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_updated")
+
+    @time_updated.setter
+    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_updated", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+        """
+        return pulumi.get(self, "vault_id")
+
+    @vault_id.setter
+    def vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vault_id", value)
+
+
+class DistributedDatabaseDistributedDatabaseCatalogDetailMetadataArgsDict(TypedDict):
+    map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    The map containing key-value pair of additional metadata.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseCatalogDetailMetadataArgs:
+    def __init__(__self__, *,
+                 map: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] map: The map containing key-value pair of additional metadata.
+        """
+        if map is not None:
+            pulumi.set(__self__, "map", map)
+
+    @_builtins.property
+    @pulumi.getter
+    def map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        The map containing key-value pair of additional metadata.
+        """
+        return pulumi.get(self, "map")
+
+    @map.setter
+    def map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "map", value)
+
+
+class DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailArgsDict(TypedDict):
+    vm_cluster_id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the catalog peer.
+    """
+    container_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    the identifier of the container database for underlying supporting resource.
+    """
+    metadatas: NotRequired[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadataArgsDict']]]]
+    """
+    Additional metadata related to Globally distributed database resources.
+    """
+    protection_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protectionMode for the catalog peer.
+    """
+    shard_group: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the shardGroup for the shard.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Status of EXADB_XS based shard.
+    """
+    supporting_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    the identifier of the underlying supporting resource.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the Globally distributed database was created. An RFC3339 formatted datetime string
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
+    """
+    transport_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The redo transport type to use for this Data Guard association.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailArgs:
+    def __init__(__self__, *,
+                 vm_cluster_id: pulumi.Input[_builtins.str],
+                 container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadataArgs']]]] = None,
+                 protection_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 shard_group: Optional[pulumi.Input[_builtins.str]] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 supporting_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
+                 transport_type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the catalog peer.
+        :param pulumi.Input[_builtins.str] container_database_id: the identifier of the container database for underlying supporting resource.
+        :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadataArgs']]] metadatas: Additional metadata related to Globally distributed database resources.
+        :param pulumi.Input[_builtins.str] protection_mode: The protectionMode for the catalog peer.
+        :param pulumi.Input[_builtins.str] shard_group: The name of the shardGroup for the shard.
+        :param pulumi.Input[_builtins.str] status: Status of EXADB_XS based shard.
+        :param pulumi.Input[_builtins.str] supporting_resource_id: the identifier of the underlying supporting resource.
+        :param pulumi.Input[_builtins.str] time_created: The time the Globally distributed database was created. An RFC3339 formatted datetime string
+        :param pulumi.Input[_builtins.str] time_updated: The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
+        :param pulumi.Input[_builtins.str] transport_type: The redo transport type to use for this Data Guard association.
+        """
+        pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+        if container_database_id is not None:
+            pulumi.set(__self__, "container_database_id", container_database_id)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
+        if protection_mode is not None:
+            pulumi.set(__self__, "protection_mode", protection_mode)
+        if shard_group is not None:
+            pulumi.set(__self__, "shard_group", shard_group)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if supporting_resource_id is not None:
+            pulumi.set(__self__, "supporting_resource_id", supporting_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if transport_type is not None:
+            pulumi.set(__self__, "transport_type", transport_type)
+
+    @_builtins.property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the catalog peer.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+    @vm_cluster_id.setter
+    def vm_cluster_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "vm_cluster_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="containerDatabaseId")
+    def container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        the identifier of the container database for underlying supporting resource.
+        """
+        return pulumi.get(self, "container_database_id")
+
+    @container_database_id.setter
+    def container_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "container_database_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadataArgs']]]]:
+        """
+        Additional metadata related to Globally distributed database resources.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @metadatas.setter
+    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadataArgs']]]]):
+        pulumi.set(self, "metadatas", value)
+
+    @_builtins.property
+    @pulumi.getter(name="protectionMode")
+    def protection_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The protectionMode for the catalog peer.
+        """
+        return pulumi.get(self, "protection_mode")
+
+    @protection_mode.setter
+    def protection_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "protection_mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shardGroup")
+    def shard_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The name of the shardGroup for the shard.
+        """
+        return pulumi.get(self, "shard_group")
+
+    @shard_group.setter
+    def shard_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "shard_group", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Status of EXADB_XS based shard.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="supportingResourceId")
+    def supporting_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        the identifier of the underlying supporting resource.
+        """
+        return pulumi.get(self, "supporting_resource_id")
+
+    @supporting_resource_id.setter
+    def supporting_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "supporting_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time the Globally distributed database was created. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_updated")
+
+    @time_updated.setter
+    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_updated", value)
+
+    @_builtins.property
+    @pulumi.getter(name="transportType")
+    def transport_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The redo transport type to use for this Data Guard association.
+        """
+        return pulumi.get(self, "transport_type")
+
+    @transport_type.setter
+    def transport_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "transport_type", value)
+
+
+class DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadataArgsDict(TypedDict):
+    map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    The map containing key-value pair of additional metadata.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadataArgs:
+    def __init__(__self__, *,
+                 map: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] map: The map containing key-value pair of additional metadata.
+        """
+        if map is not None:
+            pulumi.set(__self__, "map", map)
+
+    @_builtins.property
+    @pulumi.getter
+    def map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        The map containing key-value pair of additional metadata.
+        """
+        return pulumi.get(self, "map")
+
+    @map.setter
+    def map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "map", value)
+
+
+class DistributedDatabaseDistributedDatabaseConnectionStringArgsDict(TypedDict):
+    all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Collection of connection strings.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseConnectionStringArgs:
+    def __init__(__self__, *,
+                 all_connection_strings: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] all_connection_strings: Collection of connection strings.
+        """
+        if all_connection_strings is not None:
+            pulumi.set(__self__, "all_connection_strings", all_connection_strings)
+
+    @_builtins.property
+    @pulumi.getter(name="allConnectionStrings")
+    def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Collection of connection strings.
+        """
+        return pulumi.get(self, "all_connection_strings")
+
+    @all_connection_strings.setter
+    def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "all_connection_strings", value)
+
+
+class DistributedDatabaseDistributedDatabaseDbBackupConfigArgsDict(TypedDict):
+    auto_backup_window: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive). Example: `SLOT_TWO`
+    """
+    auto_full_backup_day: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+    """
+    auto_full_backup_window: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive). Example: `SLOT_TWO`
+    """
+    backup_deletion_policy: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+    """
+    backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseDbBackupConfigBackupDestinationDetailArgsDict']]]]
+    """
+    Backup destination details.
+    """
+    can_run_immediate_full_backup: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+    """
+    is_auto_backup_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+    """
+    is_remote_backup_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If set to true, configures automatic incremental backups in the local region (the region of the DB system) and the remote region with a default frequency of 1 hour. If you previously used RMAN or dbcli to configure backups, using the Console or the API for manged backups creates a new backup configuration for your database. The new configuration replaces the configuration created with RMAN or dbcli. This means that you can no longer rely on your previously configured unmanaged backups to work.
+    """
+    recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+    """
+    remote_region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the remote region where the remote automatic incremental backups will be stored. For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseDbBackupConfigArgs:
+    def __init__(__self__, *,
+                 auto_backup_window: Optional[pulumi.Input[_builtins.str]] = None,
+                 auto_full_backup_day: Optional[pulumi.Input[_builtins.str]] = None,
+                 auto_full_backup_window: Optional[pulumi.Input[_builtins.str]] = None,
+                 backup_deletion_policy: Optional[pulumi.Input[_builtins.str]] = None,
+                 backup_destination_details: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseDbBackupConfigBackupDestinationDetailArgs']]]] = None,
+                 can_run_immediate_full_backup: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_auto_backup_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_remote_backup_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 recovery_window_in_days: Optional[pulumi.Input[_builtins.int]] = None,
+                 remote_region: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] auto_backup_window: Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive). Example: `SLOT_TWO`
+        :param pulumi.Input[_builtins.str] auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        :param pulumi.Input[_builtins.str] auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive). Example: `SLOT_TWO`
+        :param pulumi.Input[_builtins.str] backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseDbBackupConfigBackupDestinationDetailArgs']]] backup_destination_details: Backup destination details.
+        :param pulumi.Input[_builtins.bool] can_run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+        :param pulumi.Input[_builtins.bool] is_auto_backup_enabled: If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+        :param pulumi.Input[_builtins.bool] is_remote_backup_enabled: If set to true, configures automatic incremental backups in the local region (the region of the DB system) and the remote region with a default frequency of 1 hour. If you previously used RMAN or dbcli to configure backups, using the Console or the API for manged backups creates a new backup configuration for your database. The new configuration replaces the configuration created with RMAN or dbcli. This means that you can no longer rely on your previously configured unmanaged backups to work.
+        :param pulumi.Input[_builtins.int] recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+        :param pulumi.Input[_builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored. For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        """
+        if auto_backup_window is not None:
+            pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        if auto_full_backup_day is not None:
+            pulumi.set(__self__, "auto_full_backup_day", auto_full_backup_day)
+        if auto_full_backup_window is not None:
+            pulumi.set(__self__, "auto_full_backup_window", auto_full_backup_window)
+        if backup_deletion_policy is not None:
+            pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
+        if backup_destination_details is not None:
+            pulumi.set(__self__, "backup_destination_details", backup_destination_details)
+        if can_run_immediate_full_backup is not None:
+            pulumi.set(__self__, "can_run_immediate_full_backup", can_run_immediate_full_backup)
+        if is_auto_backup_enabled is not None:
+            pulumi.set(__self__, "is_auto_backup_enabled", is_auto_backup_enabled)
+        if is_remote_backup_enabled is not None:
+            pulumi.set(__self__, "is_remote_backup_enabled", is_remote_backup_enabled)
+        if recovery_window_in_days is not None:
+            pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+        if remote_region is not None:
+            pulumi.set(__self__, "remote_region", remote_region)
+
+    @_builtins.property
+    @pulumi.getter(name="autoBackupWindow")
+    def auto_backup_window(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive). Example: `SLOT_TWO`
+        """
+        return pulumi.get(self, "auto_backup_window")
+
+    @auto_backup_window.setter
+    def auto_backup_window(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "auto_backup_window", value)
+
+    @_builtins.property
+    @pulumi.getter(name="autoFullBackupDay")
+    def auto_full_backup_day(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        """
+        return pulumi.get(self, "auto_full_backup_day")
+
+    @auto_full_backup_day.setter
+    def auto_full_backup_day(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "auto_full_backup_day", value)
+
+    @_builtins.property
+    @pulumi.getter(name="autoFullBackupWindow")
+    def auto_full_backup_window(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive). Example: `SLOT_TWO`
+        """
+        return pulumi.get(self, "auto_full_backup_window")
+
+    @auto_full_backup_window.setter
+    def auto_full_backup_window(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "auto_full_backup_window", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupDeletionPolicy")
+    def backup_deletion_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        """
+        return pulumi.get(self, "backup_deletion_policy")
+
+    @backup_deletion_policy.setter
+    def backup_deletion_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "backup_deletion_policy", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupDestinationDetails")
+    def backup_destination_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseDbBackupConfigBackupDestinationDetailArgs']]]]:
+        """
+        Backup destination details.
+        """
+        return pulumi.get(self, "backup_destination_details")
+
+    @backup_destination_details.setter
+    def backup_destination_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseDbBackupConfigBackupDestinationDetailArgs']]]]):
+        pulumi.set(self, "backup_destination_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="canRunImmediateFullBackup")
+    def can_run_immediate_full_backup(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+        """
+        return pulumi.get(self, "can_run_immediate_full_backup")
+
+    @can_run_immediate_full_backup.setter
+    def can_run_immediate_full_backup(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "can_run_immediate_full_backup", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isAutoBackupEnabled")
+    def is_auto_backup_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+        """
+        return pulumi.get(self, "is_auto_backup_enabled")
+
+    @is_auto_backup_enabled.setter
+    def is_auto_backup_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_auto_backup_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isRemoteBackupEnabled")
+    def is_remote_backup_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        If set to true, configures automatic incremental backups in the local region (the region of the DB system) and the remote region with a default frequency of 1 hour. If you previously used RMAN or dbcli to configure backups, using the Console or the API for manged backups creates a new backup configuration for your database. The new configuration replaces the configuration created with RMAN or dbcli. This means that you can no longer rely on your previously configured unmanaged backups to work.
+        """
+        return pulumi.get(self, "is_remote_backup_enabled")
+
+    @is_remote_backup_enabled.setter
+    def is_remote_backup_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_remote_backup_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="recoveryWindowInDays")
+    def recovery_window_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+        """
+        return pulumi.get(self, "recovery_window_in_days")
+
+    @recovery_window_in_days.setter
+    def recovery_window_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "recovery_window_in_days", value)
+
+    @_builtins.property
+    @pulumi.getter(name="remoteRegion")
+    def remote_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The name of the remote region where the remote automatic incremental backups will be stored. For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "remote_region")
+
+    @remote_region.setter
+    def remote_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "remote_region", value)
+
+
+class DistributedDatabaseDistributedDatabaseDbBackupConfigBackupDestinationDetailArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the database backup destination.
+    """
+    dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+    """
+    internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Proxy URL to connect to object store.
+    """
+    is_remote: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the backup destination is cross-region or local region.
+    """
+    is_zero_data_loss_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+    """
+    remote_region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the remote region where the remote automatic incremental backups will be stored. For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+    """
+    vpc_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+    """
+    vpc_user: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseDbBackupConfigBackupDestinationDetailArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 dbrs_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 id: Optional[pulumi.Input[_builtins.str]] = None,
+                 internet_proxy: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_remote: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_zero_data_loss_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 remote_region: Optional[pulumi.Input[_builtins.str]] = None,
+                 vpc_password: Optional[pulumi.Input[_builtins.str]] = None,
+                 vpc_user: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: Type of the database backup destination.
+        :param pulumi.Input[_builtins.str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+        :param pulumi.Input[_builtins.str] internet_proxy: Proxy URL to connect to object store.
+        :param pulumi.Input[_builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local region.
+        :param pulumi.Input[_builtins.bool] is_zero_data_loss_enabled: Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+        :param pulumi.Input[_builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored. For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        :param pulumi.Input[_builtins.str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        :param pulumi.Input[_builtins.str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
+        pulumi.set(__self__, "type", type)
+        if dbrs_policy_id is not None:
+            pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if internet_proxy is not None:
+            pulumi.set(__self__, "internet_proxy", internet_proxy)
+        if is_remote is not None:
+            pulumi.set(__self__, "is_remote", is_remote)
+        if is_zero_data_loss_enabled is not None:
+            pulumi.set(__self__, "is_zero_data_loss_enabled", is_zero_data_loss_enabled)
+        if remote_region is not None:
+            pulumi.set(__self__, "remote_region", remote_region)
+        if vpc_password is not None:
+            pulumi.set(__self__, "vpc_password", vpc_password)
+        if vpc_user is not None:
+            pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Type of the database backup destination.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dbrsPolicyId")
+    def dbrs_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        """
+        return pulumi.get(self, "dbrs_policy_id")
+
+    @dbrs_policy_id.setter
+    def dbrs_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "dbrs_policy_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="internetProxy")
+    def internet_proxy(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Proxy URL to connect to object store.
+        """
+        return pulumi.get(self, "internet_proxy")
+
+    @internet_proxy.setter
+    def internet_proxy(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "internet_proxy", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isRemote")
+    def is_remote(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates whether the backup destination is cross-region or local region.
+        """
+        return pulumi.get(self, "is_remote")
+
+    @is_remote.setter
+    def is_remote(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_remote", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isZeroDataLossEnabled")
+    def is_zero_data_loss_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+        """
+        return pulumi.get(self, "is_zero_data_loss_enabled")
+
+    @is_zero_data_loss_enabled.setter
+    def is_zero_data_loss_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_zero_data_loss_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="remoteRegion")
+    def remote_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The name of the remote region where the remote automatic incremental backups will be stored. For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "remote_region")
+
+    @remote_region.setter
+    def remote_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "remote_region", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vpcPassword")
+    def vpc_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        """
+        return pulumi.get(self, "vpc_password")
+
+    @vpc_password.setter
+    def vpc_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vpc_password", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vpcUser")
+    def vpc_user(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
+        return pulumi.get(self, "vpc_user")
+
+    @vpc_user.setter
+    def vpc_user(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vpc_user", value)
+
+
+class DistributedDatabaseDistributedDatabaseGsmDetailArgsDict(TypedDict):
+    compute_count: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The compute count for the Global service manager instance.
+    """
+    data_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The data disk group size to be allocated in GBs for the Global service manager instance.
+    """
+    gsm_image_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseGsmDetailGsmImageDetailArgsDict']]]]
+    """
+    The Global service manager image details
+    """
+    metadatas: NotRequired[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseGsmDetailMetadataArgsDict']]]]
+    """
+    Additional metadata related to Globally distributed database resources.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the shard.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Status of EXADB_XS based shard.
+    """
+    supporting_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    the identifier of the underlying supporting resource.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the Globally distributed database was created. An RFC3339 formatted datetime string
+    """
+    time_ssl_certificate_expires: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the ssl certificate associated with Global service manager expires. An RFC3339 formatted datetime string
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseGsmDetailArgs:
+    def __init__(__self__, *,
+                 compute_count: Optional[pulumi.Input[_builtins.float]] = None,
+                 data_storage_size_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
+                 gsm_image_details: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseGsmDetailGsmImageDetailArgs']]]] = None,
+                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseGsmDetailMetadataArgs']]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 supporting_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_ssl_certificate_expires: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.float] compute_count: The compute count for the Global service manager instance.
+        :param pulumi.Input[_builtins.float] data_storage_size_in_gbs: The data disk group size to be allocated in GBs for the Global service manager instance.
+        :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseGsmDetailGsmImageDetailArgs']]] gsm_image_details: The Global service manager image details
+        :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseGsmDetailMetadataArgs']]] metadatas: Additional metadata related to Globally distributed database resources.
+        :param pulumi.Input[_builtins.str] name: Name of the shard.
+        :param pulumi.Input[_builtins.str] status: Status of EXADB_XS based shard.
+        :param pulumi.Input[_builtins.str] supporting_resource_id: the identifier of the underlying supporting resource.
+        :param pulumi.Input[_builtins.str] time_created: The time the Globally distributed database was created. An RFC3339 formatted datetime string
+        :param pulumi.Input[_builtins.str] time_ssl_certificate_expires: The time the ssl certificate associated with Global service manager expires. An RFC3339 formatted datetime string
+        :param pulumi.Input[_builtins.str] time_updated: The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
+        """
+        if compute_count is not None:
+            pulumi.set(__self__, "compute_count", compute_count)
+        if data_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "data_storage_size_in_gbs", data_storage_size_in_gbs)
+        if gsm_image_details is not None:
+            pulumi.set(__self__, "gsm_image_details", gsm_image_details)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if supporting_resource_id is not None:
+            pulumi.set(__self__, "supporting_resource_id", supporting_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_ssl_certificate_expires is not None:
+            pulumi.set(__self__, "time_ssl_certificate_expires", time_ssl_certificate_expires)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        The compute count for the Global service manager instance.
+        """
+        return pulumi.get(self, "compute_count")
+
+    @compute_count.setter
+    def compute_count(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "compute_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dataStorageSizeInGbs")
+    def data_storage_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        The data disk group size to be allocated in GBs for the Global service manager instance.
+        """
+        return pulumi.get(self, "data_storage_size_in_gbs")
+
+    @data_storage_size_in_gbs.setter
+    def data_storage_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "data_storage_size_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="gsmImageDetails")
+    def gsm_image_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseGsmDetailGsmImageDetailArgs']]]]:
+        """
+        The Global service manager image details
+        """
+        return pulumi.get(self, "gsm_image_details")
+
+    @gsm_image_details.setter
+    def gsm_image_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseGsmDetailGsmImageDetailArgs']]]]):
+        pulumi.set(self, "gsm_image_details", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseGsmDetailMetadataArgs']]]]:
+        """
+        Additional metadata related to Globally distributed database resources.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @metadatas.setter
+    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseGsmDetailMetadataArgs']]]]):
+        pulumi.set(self, "metadatas", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Name of the shard.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Status of EXADB_XS based shard.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="supportingResourceId")
+    def supporting_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        the identifier of the underlying supporting resource.
+        """
+        return pulumi.get(self, "supporting_resource_id")
+
+    @supporting_resource_id.setter
+    def supporting_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "supporting_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time the Globally distributed database was created. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeSslCertificateExpires")
+    def time_ssl_certificate_expires(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time the ssl certificate associated with Global service manager expires. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_ssl_certificate_expires")
+
+    @time_ssl_certificate_expires.setter
+    def time_ssl_certificate_expires(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_ssl_certificate_expires", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_updated")
+
+    @time_updated.setter
+    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_updated", value)
+
+
+class DistributedDatabaseDistributedDatabaseGsmDetailGsmImageDetailArgsDict(TypedDict):
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
+    """
+    version_number: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The version number associated with the image identified by id.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseGsmDetailGsmImageDetailArgs:
+    def __init__(__self__, *,
+                 id: Optional[pulumi.Input[_builtins.str]] = None,
+                 version_number: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
+        :param pulumi.Input[_builtins.int] version_number: The version number associated with the image identified by id.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if version_number is not None:
+            pulumi.set(__self__, "version_number", version_number)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="versionNumber")
+    def version_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The version number associated with the image identified by id.
+        """
+        return pulumi.get(self, "version_number")
+
+    @version_number.setter
+    def version_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "version_number", value)
+
+
+class DistributedDatabaseDistributedDatabaseGsmDetailMetadataArgsDict(TypedDict):
+    map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    The map containing key-value pair of additional metadata.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseGsmDetailMetadataArgs:
+    def __init__(__self__, *,
+                 map: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] map: The map containing key-value pair of additional metadata.
+        """
+        if map is not None:
+            pulumi.set(__self__, "map", map)
+
+    @_builtins.property
+    @pulumi.getter
+    def map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        The map containing key-value pair of additional metadata.
+        """
+        return pulumi.get(self, "map")
+
+    @map.setter
+    def map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "map", value)
+
+
+class DistributedDatabaseDistributedDatabaseLatestGsmImageDetailArgsDict(TypedDict):
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
+    """
+    version_number: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The version number associated with the image identified by id.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseLatestGsmImageDetailArgs:
+    def __init__(__self__, *,
+                 id: Optional[pulumi.Input[_builtins.str]] = None,
+                 version_number: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
+        :param pulumi.Input[_builtins.int] version_number: The version number associated with the image identified by id.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if version_number is not None:
+            pulumi.set(__self__, "version_number", version_number)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="versionNumber")
+    def version_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The version number associated with the image identified by id.
+        """
+        return pulumi.get(self, "version_number")
+
+    @version_number.setter
+    def version_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "version_number", value)
+
+
+class DistributedDatabaseDistributedDatabaseMetadataArgsDict(TypedDict):
+    map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    The map containing key-value pair of additional metadata.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseMetadataArgs:
+    def __init__(__self__, *,
+                 map: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] map: The map containing key-value pair of additional metadata.
+        """
+        if map is not None:
+            pulumi.set(__self__, "map", map)
+
+    @_builtins.property
+    @pulumi.getter
+    def map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        The map containing key-value pair of additional metadata.
+        """
+        return pulumi.get(self, "map")
+
+    @map.setter
+    def map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "map", value)
+
+
+class DistributedDatabaseDistributedDatabasePatchOperationArgsDict(TypedDict):
+    operation: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+    """
+    selection: pulumi.Input[_builtins.str]
+    """
+    (Updatable)
+    """
+    value: pulumi.Input[_builtins.str]
+    """
+    (Updatable)
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabasePatchOperationArgs:
+    def __init__(__self__, *,
+                 operation: pulumi.Input[_builtins.str],
+                 selection: pulumi.Input[_builtins.str],
+                 value: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] operation: (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+        :param pulumi.Input[_builtins.str] selection: (Updatable)
+        :param pulumi.Input[_builtins.str] value: (Updatable)
+        """
+        pulumi.set(__self__, "operation", operation)
+        pulumi.set(__self__, "selection", selection)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def operation(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+        """
+        return pulumi.get(self, "operation")
+
+    @operation.setter
+    def operation(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "operation", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def selection(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "selection")
+
+    @selection.setter
+    def selection(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "selection", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "value", value)
+
+
+class DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabaseArgsDict(TypedDict):
+    db_deployment_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The dbDeploymentType associated with the distributed database.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The identifier of the Private Endpoint.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabaseArgs:
+    def __init__(__self__, *,
+                 db_deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] db_deployment_type: The dbDeploymentType associated with the distributed database.
+        :param pulumi.Input[_builtins.str] id: The identifier of the Private Endpoint.
+        """
+        if db_deployment_type is not None:
+            pulumi.set(__self__, "db_deployment_type", db_deployment_type)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="dbDeploymentType")
+    def db_deployment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The dbDeploymentType associated with the distributed database.
+        """
+        return pulumi.get(self, "db_deployment_type")
+
+    @db_deployment_type.setter
+    def db_deployment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "db_deployment_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The identifier of the Private Endpoint.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+
+class DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabaseArgsDict(TypedDict):
+    db_deployment_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The dbDeploymentType associated with the distributed database.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The identifier of the Private Endpoint.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabaseArgs:
+    def __init__(__self__, *,
+                 db_deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] db_deployment_type: The dbDeploymentType associated with the distributed database.
+        :param pulumi.Input[_builtins.str] id: The identifier of the Private Endpoint.
+        """
+        if db_deployment_type is not None:
+            pulumi.set(__self__, "db_deployment_type", db_deployment_type)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="dbDeploymentType")
+    def db_deployment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The dbDeploymentType associated with the distributed database.
+        """
+        return pulumi.get(self, "db_deployment_type")
+
+    @db_deployment_type.setter
+    def db_deployment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "db_deployment_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The identifier of the Private Endpoint.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+
+class DistributedDatabaseDistributedDatabaseShardDetailArgsDict(TypedDict):
+    admin_password: pulumi.Input[_builtins.str]
+    """
+    The admin password for the shard associated with Globally distributed database.
+    """
+    source: pulumi.Input[_builtins.str]
+    """
+    The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+    """
+    vm_cluster_id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+    """
+    container_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    the identifier of the container database for underlying supporting resource.
+    """
+    db_home_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+    """
+    kms_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+    """
+    kms_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+    """
+    metadatas: NotRequired[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailMetadataArgsDict']]]]
+    """
+    Additional metadata related to Globally distributed database resources.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the shard.
+    """
+    peer_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgsDict']]]]
+    """
+    The details required for creation of the peer for the ExadbXs infrastructure based shard.
+    """
+    peer_vm_cluster_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    This field is deprecated. This should not be used while creation of new distributed database. To set the peers on new shards of distributed database please use peerDetails.
+    """
+    shard_group: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the shardGroup for the shard.
+    """
+    shard_space: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The shard space name for the Globally distributed database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Status of EXADB_XS based shard.
+    """
+    supporting_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    the identifier of the underlying supporting resource.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the Globally distributed database was created. An RFC3339 formatted datetime string
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
+    """
+    vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseShardDetailArgs:
+    def __init__(__self__, *,
+                 admin_password: pulumi.Input[_builtins.str],
+                 source: pulumi.Input[_builtins.str],
+                 vm_cluster_id: pulumi.Input[_builtins.str],
+                 container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 db_home_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailMetadataArgs']]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 peer_details: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgs']]]] = None,
+                 peer_vm_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 shard_group: Optional[pulumi.Input[_builtins.str]] = None,
+                 shard_space: Optional[pulumi.Input[_builtins.str]] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 supporting_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
+                 vault_id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] admin_password: The admin password for the shard associated with Globally distributed database.
+        :param pulumi.Input[_builtins.str] source: The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+        :param pulumi.Input[_builtins.str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+        :param pulumi.Input[_builtins.str] container_database_id: the identifier of the container database for underlying supporting resource.
+        :param pulumi.Input[_builtins.str] db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+        :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+        :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailMetadataArgs']]] metadatas: Additional metadata related to Globally distributed database resources.
+        :param pulumi.Input[_builtins.str] name: Name of the shard.
+        :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgs']]] peer_details: The details required for creation of the peer for the ExadbXs infrastructure based shard.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] peer_vm_cluster_ids: This field is deprecated. This should not be used while creation of new distributed database. To set the peers on new shards of distributed database please use peerDetails.
+        :param pulumi.Input[_builtins.str] shard_group: The name of the shardGroup for the shard.
+        :param pulumi.Input[_builtins.str] shard_space: The shard space name for the Globally distributed database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards.
+        :param pulumi.Input[_builtins.str] status: Status of EXADB_XS based shard.
+        :param pulumi.Input[_builtins.str] supporting_resource_id: the identifier of the underlying supporting resource.
+        :param pulumi.Input[_builtins.str] time_created: The time the Globally distributed database was created. An RFC3339 formatted datetime string
+        :param pulumi.Input[_builtins.str] time_updated: The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
+        :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+        """
+        pulumi.set(__self__, "admin_password", admin_password)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+        if container_database_id is not None:
+            pulumi.set(__self__, "container_database_id", container_database_id)
+        if db_home_id is not None:
+            pulumi.set(__self__, "db_home_id", db_home_id)
+        if kms_key_id is not None:
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if kms_key_version_id is not None:
+            pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if peer_details is not None:
+            pulumi.set(__self__, "peer_details", peer_details)
+        if peer_vm_cluster_ids is not None:
+            pulumi.set(__self__, "peer_vm_cluster_ids", peer_vm_cluster_ids)
+        if shard_group is not None:
+            pulumi.set(__self__, "shard_group", shard_group)
+        if shard_space is not None:
+            pulumi.set(__self__, "shard_space", shard_space)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if supporting_resource_id is not None:
+            pulumi.set(__self__, "supporting_resource_id", supporting_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if vault_id is not None:
+            pulumi.set(__self__, "vault_id", vault_id)
+
+    @_builtins.property
+    @pulumi.getter(name="adminPassword")
+    def admin_password(self) -> pulumi.Input[_builtins.str]:
+        """
+        The admin password for the shard associated with Globally distributed database.
+        """
+        return pulumi.get(self, "admin_password")
+
+    @admin_password.setter
+    def admin_password(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "admin_password", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> pulumi.Input[_builtins.str]:
+        """
+        The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+        """
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "source", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+    @vm_cluster_id.setter
+    def vm_cluster_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "vm_cluster_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="containerDatabaseId")
+    def container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        the identifier of the container database for underlying supporting resource.
+        """
+        return pulumi.get(self, "container_database_id")
+
+    @container_database_id.setter
+    def container_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "container_database_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dbHomeId")
+    def db_home_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+        """
+        return pulumi.get(self, "db_home_id")
+
+    @db_home_id.setter
+    def db_home_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "db_home_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @kms_key_id.setter
+    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "kms_key_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="kmsKeyVersionId")
+    def kms_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+        """
+        return pulumi.get(self, "kms_key_version_id")
+
+    @kms_key_version_id.setter
+    def kms_key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "kms_key_version_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailMetadataArgs']]]]:
+        """
+        Additional metadata related to Globally distributed database resources.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @metadatas.setter
+    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailMetadataArgs']]]]):
+        pulumi.set(self, "metadatas", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Name of the shard.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="peerDetails")
+    def peer_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgs']]]]:
+        """
+        The details required for creation of the peer for the ExadbXs infrastructure based shard.
+        """
+        return pulumi.get(self, "peer_details")
+
+    @peer_details.setter
+    def peer_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgs']]]]):
+        pulumi.set(self, "peer_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="peerVmClusterIds")
+    def peer_vm_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        This field is deprecated. This should not be used while creation of new distributed database. To set the peers on new shards of distributed database please use peerDetails.
+        """
+        return pulumi.get(self, "peer_vm_cluster_ids")
+
+    @peer_vm_cluster_ids.setter
+    def peer_vm_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "peer_vm_cluster_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shardGroup")
+    def shard_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The name of the shardGroup for the shard.
+        """
+        return pulumi.get(self, "shard_group")
+
+    @shard_group.setter
+    def shard_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "shard_group", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shardSpace")
+    def shard_space(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The shard space name for the Globally distributed database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards.
+        """
+        return pulumi.get(self, "shard_space")
+
+    @shard_space.setter
+    def shard_space(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "shard_space", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Status of EXADB_XS based shard.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="supportingResourceId")
+    def supporting_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        the identifier of the underlying supporting resource.
+        """
+        return pulumi.get(self, "supporting_resource_id")
+
+    @supporting_resource_id.setter
+    def supporting_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "supporting_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time the Globally distributed database was created. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_updated")
+
+    @time_updated.setter
+    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_updated", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+        """
+        return pulumi.get(self, "vault_id")
+
+    @vault_id.setter
+    def vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vault_id", value)
+
+
+class DistributedDatabaseDistributedDatabaseShardDetailMetadataArgsDict(TypedDict):
+    map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    The map containing key-value pair of additional metadata.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseShardDetailMetadataArgs:
+    def __init__(__self__, *,
+                 map: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] map: The map containing key-value pair of additional metadata.
+        """
+        if map is not None:
+            pulumi.set(__self__, "map", map)
+
+    @_builtins.property
+    @pulumi.getter
+    def map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        The map containing key-value pair of additional metadata.
+        """
+        return pulumi.get(self, "map")
+
+    @map.setter
+    def map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "map", value)
+
+
+class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgsDict(TypedDict):
+    vm_cluster_id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the shard peer.
+    """
+    container_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    the identifier of the container database for underlying supporting resource.
+    """
+    metadatas: NotRequired[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadataArgsDict']]]]
+    """
+    Additional metadata related to Globally distributed database resources.
+    """
+    protection_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protectionMode for the shard peer.
+    """
+    shard_group: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the shardGroup for the shard.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Status of EXADB_XS based shard.
+    """
+    supporting_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    the identifier of the underlying supporting resource.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the Globally distributed database was created. An RFC3339 formatted datetime string
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
+    """
+    transport_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The redo transport type to use for this Data Guard association.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailArgs:
+    def __init__(__self__, *,
+                 vm_cluster_id: pulumi.Input[_builtins.str],
+                 container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadataArgs']]]] = None,
+                 protection_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 shard_group: Optional[pulumi.Input[_builtins.str]] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 supporting_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
+                 transport_type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the shard peer.
+        :param pulumi.Input[_builtins.str] container_database_id: the identifier of the container database for underlying supporting resource.
+        :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadataArgs']]] metadatas: Additional metadata related to Globally distributed database resources.
+        :param pulumi.Input[_builtins.str] protection_mode: The protectionMode for the shard peer.
+        :param pulumi.Input[_builtins.str] shard_group: The name of the shardGroup for the shard.
+        :param pulumi.Input[_builtins.str] status: Status of EXADB_XS based shard.
+        :param pulumi.Input[_builtins.str] supporting_resource_id: the identifier of the underlying supporting resource.
+        :param pulumi.Input[_builtins.str] time_created: The time the Globally distributed database was created. An RFC3339 formatted datetime string
+        :param pulumi.Input[_builtins.str] time_updated: The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
+        :param pulumi.Input[_builtins.str] transport_type: The redo transport type to use for this Data Guard association.
+        """
+        pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+        if container_database_id is not None:
+            pulumi.set(__self__, "container_database_id", container_database_id)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
+        if protection_mode is not None:
+            pulumi.set(__self__, "protection_mode", protection_mode)
+        if shard_group is not None:
+            pulumi.set(__self__, "shard_group", shard_group)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if supporting_resource_id is not None:
+            pulumi.set(__self__, "supporting_resource_id", supporting_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if transport_type is not None:
+            pulumi.set(__self__, "transport_type", transport_type)
+
+    @_builtins.property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the shard peer.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+    @vm_cluster_id.setter
+    def vm_cluster_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "vm_cluster_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="containerDatabaseId")
+    def container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        the identifier of the container database for underlying supporting resource.
+        """
+        return pulumi.get(self, "container_database_id")
+
+    @container_database_id.setter
+    def container_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "container_database_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadataArgs']]]]:
+        """
+        Additional metadata related to Globally distributed database resources.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @metadatas.setter
+    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadataArgs']]]]):
+        pulumi.set(self, "metadatas", value)
+
+    @_builtins.property
+    @pulumi.getter(name="protectionMode")
+    def protection_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The protectionMode for the shard peer.
+        """
+        return pulumi.get(self, "protection_mode")
+
+    @protection_mode.setter
+    def protection_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "protection_mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shardGroup")
+    def shard_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The name of the shardGroup for the shard.
+        """
+        return pulumi.get(self, "shard_group")
+
+    @shard_group.setter
+    def shard_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "shard_group", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Status of EXADB_XS based shard.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="supportingResourceId")
+    def supporting_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        the identifier of the underlying supporting resource.
+        """
+        return pulumi.get(self, "supporting_resource_id")
+
+    @supporting_resource_id.setter
+    def supporting_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "supporting_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time the Globally distributed database was created. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_updated")
+
+    @time_updated.setter
+    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_updated", value)
+
+    @_builtins.property
+    @pulumi.getter(name="transportType")
+    def transport_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The redo transport type to use for this Data Guard association.
+        """
+        return pulumi.get(self, "transport_type")
+
+    @transport_type.setter
+    def transport_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "transport_type", value)
+
+
+class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadataArgsDict(TypedDict):
+    map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    The map containing key-value pair of additional metadata.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadataArgs:
+    def __init__(__self__, *,
+                 map: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] map: The map containing key-value pair of additional metadata.
+        """
+        if map is not None:
+            pulumi.set(__self__, "map", map)
+
+    @_builtins.property
+    @pulumi.getter
+    def map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        The map containing key-value pair of additional metadata.
+        """
+        return pulumi.get(self, "map")
+
+    @map.setter
+    def map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "map", value)
+
+
+class DistributedDatabaseDistributedDatabaseValidateNetworkDetailsArgsDict(TypedDict):
+    is_surrogate: NotRequired[pulumi.Input[_builtins.bool]]
+    resource_name: NotRequired[pulumi.Input[_builtins.str]]
+    shard_group: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the shardGroup for the shard.
+    """
+
+@pulumi.input_type
+class DistributedDatabaseDistributedDatabaseValidateNetworkDetailsArgs:
+    def __init__(__self__, *,
+                 is_surrogate: Optional[pulumi.Input[_builtins.bool]] = None,
+                 resource_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 shard_group: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] shard_group: The name of the shardGroup for the shard.
+        """
+        if is_surrogate is not None:
+            pulumi.set(__self__, "is_surrogate", is_surrogate)
+        if resource_name is not None:
+            pulumi.set(__self__, "resource_name", resource_name)
+        if shard_group is not None:
+            pulumi.set(__self__, "shard_group", shard_group)
+
+    @_builtins.property
+    @pulumi.getter(name="isSurrogate")
+    def is_surrogate(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        return pulumi.get(self, "is_surrogate")
+
+    @is_surrogate.setter
+    def is_surrogate(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_surrogate", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceName")
+    def resource_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "resource_name")
+
+    @resource_name.setter
+    def resource_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "resource_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shardGroup")
+    def shard_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The name of the shardGroup for the shard.
+        """
+        return pulumi.get(self, "shard_group")
+
+    @shard_group.setter
+    def shard_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "shard_group", value)
 
 
 class IotDigitalTwinAdapterInboundEnvelopeArgsDict(TypedDict):
@@ -6548,22 +10945,22 @@ class GetDifStacksFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-class GetGdpGdpPipelinesFilterArgsDict(TypedDict):
+class GetDistributedDatabaseDistributedAutonomousDatabasesFilterArgsDict(TypedDict):
     name: _builtins.str
     """
-    Name of the bucket.
+    Name of the shard.
     """
     values: Sequence[_builtins.str]
     regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
-class GetGdpGdpPipelinesFilterArgs:
+class GetDistributedDatabaseDistributedAutonomousDatabasesFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
                  regex: Optional[_builtins.bool] = None):
         """
-        :param _builtins.str name: Name of the bucket.
+        :param _builtins.str name: Name of the shard.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -6574,7 +10971,104 @@ class GetGdpGdpPipelinesFilterArgs:
     @pulumi.getter
     def name(self) -> _builtins.str:
         """
-        Name of the bucket.
+        Name of the shard.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetDistributedDatabaseDistributedDatabasePrivateEndpointsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetDistributedDatabaseDistributedDatabasePrivateEndpointsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetDistributedDatabaseDistributedDatabasesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the shard.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetDistributedDatabaseDistributedDatabasesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Name of the shard.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the shard.
         """
         return pulumi.get(self, "name")
 

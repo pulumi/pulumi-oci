@@ -25,6 +25,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// (Updatable) The Disaster recovery SCAN TCPIP port. Default is 1521.
         /// </summary>
         public readonly int ScanListenerPortTcp;
+        /// <summary>
+        /// (Updatable) The DR SCAN TCPIP SSL port. Default is 2484.
+        /// </summary>
+        public readonly int? ScanListenerPortTcpSsl;
 
         [OutputConstructor]
         private VmClusterNetworkDrScan(
@@ -32,11 +36,14 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<string> ips,
 
-            int scanListenerPortTcp)
+            int scanListenerPortTcp,
+
+            int? scanListenerPortTcpSsl)
         {
             Hostname = hostname;
             Ips = ips;
             ScanListenerPortTcp = scanListenerPortTcp;
+            ScanListenerPortTcpSsl = scanListenerPortTcpSsl;
         }
     }
 }

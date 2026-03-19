@@ -154,6 +154,30 @@ export interface GetOpensearchClusterResult {
      */
     readonly masterNodeHostType: string;
     /**
+     * The number of ML nodes configured for the cluster.
+     */
+    readonly mlNodeCount: number;
+    /**
+     * The amount of memory in GB, for the cluster's ML nodes.
+     */
+    readonly mlNodeHostMemoryGb: number;
+    /**
+     * The number of OCPUs configured for the cluster's ML nodes.
+     */
+    readonly mlNodeHostOcpuCount: number;
+    /**
+     * The node shape for the cluster's ML nodes.
+     */
+    readonly mlNodeHostShape: string;
+    /**
+     * The instance type for the cluster's ML nodes.
+     */
+    readonly mlNodeHostType: string;
+    /**
+     * The amount of storage in GB, to configure per node for the cluster's ML nodes.
+     */
+    readonly mlNodeStorageGb: number;
+    /**
      * The OCID of the NSG where the private endpoint vnic will be attached.
      */
     readonly nsgId: string;

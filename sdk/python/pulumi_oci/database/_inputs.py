@@ -25402,21 +25402,29 @@ class VmClusterNetworkDrScanArgsDict(TypedDict):
     """
     (Updatable) The Disaster recovery SCAN TCPIP port. Default is 1521.
     """
+    scan_listener_port_tcp_ssl: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The DR SCAN TCPIP SSL port. Default is 2484.
+    """
 
 @pulumi.input_type
 class VmClusterNetworkDrScanArgs:
     def __init__(__self__, *,
                  hostname: pulumi.Input[_builtins.str],
                  ips: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 scan_listener_port_tcp: pulumi.Input[_builtins.int]):
+                 scan_listener_port_tcp: pulumi.Input[_builtins.int],
+                 scan_listener_port_tcp_ssl: Optional[pulumi.Input[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] hostname: (Updatable) The Disaster recovery SCAN hostname.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ips: (Updatable) The list of Disaster recovery SCAN IP addresses. Three addresses should be provided.
         :param pulumi.Input[_builtins.int] scan_listener_port_tcp: (Updatable) The Disaster recovery SCAN TCPIP port. Default is 1521.
+        :param pulumi.Input[_builtins.int] scan_listener_port_tcp_ssl: (Updatable) The DR SCAN TCPIP SSL port. Default is 2484.
         """
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "ips", ips)
         pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
+        if scan_listener_port_tcp_ssl is not None:
+            pulumi.set(__self__, "scan_listener_port_tcp_ssl", scan_listener_port_tcp_ssl)
 
     @_builtins.property
     @pulumi.getter
@@ -25453,6 +25461,18 @@ class VmClusterNetworkDrScanArgs:
     @scan_listener_port_tcp.setter
     def scan_listener_port_tcp(self, value: pulumi.Input[_builtins.int]):
         pulumi.set(self, "scan_listener_port_tcp", value)
+
+    @_builtins.property
+    @pulumi.getter(name="scanListenerPortTcpSsl")
+    def scan_listener_port_tcp_ssl(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The DR SCAN TCPIP SSL port. Default is 2484.
+        """
+        return pulumi.get(self, "scan_listener_port_tcp_ssl")
+
+    @scan_listener_port_tcp_ssl.setter
+    def scan_listener_port_tcp_ssl(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "scan_listener_port_tcp_ssl", value)
 
 
 class VmClusterNetworkScanArgsDict(TypedDict):

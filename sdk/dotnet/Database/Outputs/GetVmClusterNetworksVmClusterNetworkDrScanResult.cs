@@ -25,6 +25,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// The SCAN TCPIP port. Default is 1521.
         /// </summary>
         public readonly int ScanListenerPortTcp;
+        /// <summary>
+        /// The SCAN TCPIP SSL port. Default is 2484.
+        /// </summary>
+        public readonly int ScanListenerPortTcpSsl;
 
         [OutputConstructor]
         private GetVmClusterNetworksVmClusterNetworkDrScanResult(
@@ -32,11 +36,14 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<string> ips,
 
-            int scanListenerPortTcp)
+            int scanListenerPortTcp,
+
+            int scanListenerPortTcpSsl)
         {
             Hostname = hostname;
             Ips = ips;
             ScanListenerPortTcp = scanListenerPortTcp;
+            ScanListenerPortTcpSsl = scanListenerPortTcpSsl;
         }
     }
 }

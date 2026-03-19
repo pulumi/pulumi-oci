@@ -38,6 +38,8 @@ type GetVmClusterRecommendedNetworkArgs struct {
 	Dns []string `pulumi:"dns"`
 	// The DR SCAN TCPIP port. Default is 1521.
 	DrScanListenerPortTcp *int `pulumi:"drScanListenerPortTcp"`
+	// The DR SCAN TCPIP SSL port. Default is 2484.
+	DrScanListenerPortTcpSsl *int `pulumi:"drScanListenerPortTcpSsl"`
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -62,8 +64,9 @@ type GetVmClusterRecommendedNetworkResult struct {
 	// The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// The list of DNS server IP addresses. Maximum of 3 allowed.
-	Dns                   []string `pulumi:"dns"`
-	DrScanListenerPortTcp *int     `pulumi:"drScanListenerPortTcp"`
+	Dns                      []string `pulumi:"dns"`
+	DrScanListenerPortTcp    *int     `pulumi:"drScanListenerPortTcp"`
+	DrScanListenerPortTcpSsl *int     `pulumi:"drScanListenerPortTcpSsl"`
 	// The SCAN details for DR network
 	DrScans                 []GetVmClusterRecommendedNetworkDrScan `pulumi:"drScans"`
 	ExadataInfrastructureId string                                 `pulumi:"exadataInfrastructureId"`
@@ -107,6 +110,8 @@ type GetVmClusterRecommendedNetworkOutputArgs struct {
 	Dns pulumi.StringArrayInput `pulumi:"dns"`
 	// The DR SCAN TCPIP port. Default is 1521.
 	DrScanListenerPortTcp pulumi.IntPtrInput `pulumi:"drScanListenerPortTcp"`
+	// The DR SCAN TCPIP SSL port. Default is 2484.
+	DrScanListenerPortTcpSsl pulumi.IntPtrInput `pulumi:"drScanListenerPortTcpSsl"`
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExadataInfrastructureId pulumi.StringInput `pulumi:"exadataInfrastructureId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -166,6 +171,10 @@ func (o GetVmClusterRecommendedNetworkResultOutput) Dns() pulumi.StringArrayOutp
 
 func (o GetVmClusterRecommendedNetworkResultOutput) DrScanListenerPortTcp() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetVmClusterRecommendedNetworkResult) *int { return v.DrScanListenerPortTcp }).(pulumi.IntPtrOutput)
+}
+
+func (o GetVmClusterRecommendedNetworkResultOutput) DrScanListenerPortTcpSsl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkResult) *int { return v.DrScanListenerPortTcpSsl }).(pulumi.IntPtrOutput)
 }
 
 // The SCAN details for DR network

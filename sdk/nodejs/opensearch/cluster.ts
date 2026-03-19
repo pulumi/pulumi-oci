@@ -160,6 +160,30 @@ export class Cluster extends pulumi.CustomResource {
      */
     declare public readonly masterNodeHostType: pulumi.Output<string>;
     /**
+     * (Updatable) The number of ML nodes configured for the cluster.
+     */
+    declare public readonly mlNodeCount: pulumi.Output<number>;
+    /**
+     * (Updatable) The amount of memory in GB, for the cluster's ML nodes.
+     */
+    declare public readonly mlNodeHostMemoryGb: pulumi.Output<number>;
+    /**
+     * (Updatable) The number of OCPUs configured for the cluster's ML nodes.
+     */
+    declare public readonly mlNodeHostOcpuCount: pulumi.Output<number>;
+    /**
+     * (Updatable) The node shape for the cluster's ML nodes.
+     */
+    declare public readonly mlNodeHostShape: pulumi.Output<string>;
+    /**
+     * The instance type for the cluster's ML nodes.
+     */
+    declare public readonly mlNodeHostType: pulumi.Output<string>;
+    /**
+     * (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
+     */
+    declare public readonly mlNodeStorageGb: pulumi.Output<number>;
+    /**
      * The OCID of the NSG where the private endpoint vnic will be attached.
      */
     declare public readonly nsgId: pulumi.Output<string>;
@@ -342,6 +366,12 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["masterNodeHostOcpuCount"] = state?.masterNodeHostOcpuCount;
             resourceInputs["masterNodeHostShape"] = state?.masterNodeHostShape;
             resourceInputs["masterNodeHostType"] = state?.masterNodeHostType;
+            resourceInputs["mlNodeCount"] = state?.mlNodeCount;
+            resourceInputs["mlNodeHostMemoryGb"] = state?.mlNodeHostMemoryGb;
+            resourceInputs["mlNodeHostOcpuCount"] = state?.mlNodeHostOcpuCount;
+            resourceInputs["mlNodeHostShape"] = state?.mlNodeHostShape;
+            resourceInputs["mlNodeHostType"] = state?.mlNodeHostType;
+            resourceInputs["mlNodeStorageGb"] = state?.mlNodeStorageGb;
             resourceInputs["nsgId"] = state?.nsgId;
             resourceInputs["opendashboardFqdn"] = state?.opendashboardFqdn;
             resourceInputs["opendashboardNodeCount"] = state?.opendashboardNodeCount;
@@ -458,6 +488,12 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["masterNodeHostOcpuCount"] = args?.masterNodeHostOcpuCount;
             resourceInputs["masterNodeHostShape"] = args?.masterNodeHostShape;
             resourceInputs["masterNodeHostType"] = args?.masterNodeHostType;
+            resourceInputs["mlNodeCount"] = args?.mlNodeCount;
+            resourceInputs["mlNodeHostMemoryGb"] = args?.mlNodeHostMemoryGb;
+            resourceInputs["mlNodeHostOcpuCount"] = args?.mlNodeHostOcpuCount;
+            resourceInputs["mlNodeHostShape"] = args?.mlNodeHostShape;
+            resourceInputs["mlNodeHostType"] = args?.mlNodeHostType;
+            resourceInputs["mlNodeStorageGb"] = args?.mlNodeStorageGb;
             resourceInputs["nsgId"] = args?.nsgId;
             resourceInputs["opendashboardNodeCount"] = args?.opendashboardNodeCount;
             resourceInputs["opendashboardNodeHostMemoryGb"] = args?.opendashboardNodeHostMemoryGb;
@@ -608,6 +644,30 @@ export interface ClusterState {
      * The instance type for the cluster's master nodes.
      */
     masterNodeHostType?: pulumi.Input<string>;
+    /**
+     * (Updatable) The number of ML nodes configured for the cluster.
+     */
+    mlNodeCount?: pulumi.Input<number>;
+    /**
+     * (Updatable) The amount of memory in GB, for the cluster's ML nodes.
+     */
+    mlNodeHostMemoryGb?: pulumi.Input<number>;
+    /**
+     * (Updatable) The number of OCPUs configured for the cluster's ML nodes.
+     */
+    mlNodeHostOcpuCount?: pulumi.Input<number>;
+    /**
+     * (Updatable) The node shape for the cluster's ML nodes.
+     */
+    mlNodeHostShape?: pulumi.Input<string>;
+    /**
+     * The instance type for the cluster's ML nodes.
+     */
+    mlNodeHostType?: pulumi.Input<string>;
+    /**
+     * (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
+     */
+    mlNodeStorageGb?: pulumi.Input<number>;
     /**
      * The OCID of the NSG where the private endpoint vnic will be attached.
      */
@@ -846,6 +906,30 @@ export interface ClusterArgs {
      * The instance type for the cluster's master nodes.
      */
     masterNodeHostType: pulumi.Input<string>;
+    /**
+     * (Updatable) The number of ML nodes configured for the cluster.
+     */
+    mlNodeCount?: pulumi.Input<number>;
+    /**
+     * (Updatable) The amount of memory in GB, for the cluster's ML nodes.
+     */
+    mlNodeHostMemoryGb?: pulumi.Input<number>;
+    /**
+     * (Updatable) The number of OCPUs configured for the cluster's ML nodes.
+     */
+    mlNodeHostOcpuCount?: pulumi.Input<number>;
+    /**
+     * (Updatable) The node shape for the cluster's ML nodes.
+     */
+    mlNodeHostShape?: pulumi.Input<string>;
+    /**
+     * The instance type for the cluster's ML nodes.
+     */
+    mlNodeHostType?: pulumi.Input<string>;
+    /**
+     * (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
+     */
+    mlNodeStorageGb?: pulumi.Input<number>;
     /**
      * The OCID of the NSG where the private endpoint vnic will be attached.
      */

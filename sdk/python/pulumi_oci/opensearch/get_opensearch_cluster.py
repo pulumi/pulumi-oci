@@ -27,7 +27,7 @@ class GetOpensearchClusterResult:
     """
     A collection of values returned by getOpensearchCluster.
     """
-    def __init__(__self__, availability_domains=None, certificate_configs=None, compartment_id=None, configure_outbound_cluster_trigger=None, data_node_count=None, data_node_host_bare_metal_shape=None, data_node_host_memory_gb=None, data_node_host_ocpu_count=None, data_node_host_shape=None, data_node_host_type=None, data_node_storage_gb=None, defined_tags=None, display_name=None, fqdn=None, freeform_tags=None, id=None, inbound_cluster_ids=None, lifecycle_details=None, load_balancer_configs=None, maintenance_details=None, master_node_count=None, master_node_host_bare_metal_shape=None, master_node_host_memory_gb=None, master_node_host_ocpu_count=None, master_node_host_shape=None, master_node_host_type=None, nsg_id=None, opendashboard_fqdn=None, opendashboard_node_count=None, opendashboard_node_host_memory_gb=None, opendashboard_node_host_ocpu_count=None, opendashboard_node_host_shape=None, opendashboard_private_ip=None, opensearch_cluster_id=None, opensearch_fqdn=None, opensearch_private_ip=None, outbound_cluster_configs=None, reverse_connection_endpoint_customer_ips=None, reverse_connection_endpoints=None, search_node_count=None, search_node_host_memory_gb=None, search_node_host_ocpu_count=None, search_node_host_shape=None, search_node_host_type=None, search_node_storage_gb=None, security_attributes=None, security_master_user_name=None, security_master_user_password_hash=None, security_mode=None, security_saml_configs=None, software_version=None, state=None, subnet_compartment_id=None, subnet_id=None, system_tags=None, time_created=None, time_deleted=None, time_updated=None, total_storage_gb=None, upgrade_major_version_trigger=None, vcn_compartment_id=None, vcn_id=None):
+    def __init__(__self__, availability_domains=None, certificate_configs=None, compartment_id=None, configure_outbound_cluster_trigger=None, data_node_count=None, data_node_host_bare_metal_shape=None, data_node_host_memory_gb=None, data_node_host_ocpu_count=None, data_node_host_shape=None, data_node_host_type=None, data_node_storage_gb=None, defined_tags=None, display_name=None, fqdn=None, freeform_tags=None, id=None, inbound_cluster_ids=None, lifecycle_details=None, load_balancer_configs=None, maintenance_details=None, master_node_count=None, master_node_host_bare_metal_shape=None, master_node_host_memory_gb=None, master_node_host_ocpu_count=None, master_node_host_shape=None, master_node_host_type=None, ml_node_count=None, ml_node_host_memory_gb=None, ml_node_host_ocpu_count=None, ml_node_host_shape=None, ml_node_host_type=None, ml_node_storage_gb=None, nsg_id=None, opendashboard_fqdn=None, opendashboard_node_count=None, opendashboard_node_host_memory_gb=None, opendashboard_node_host_ocpu_count=None, opendashboard_node_host_shape=None, opendashboard_private_ip=None, opensearch_cluster_id=None, opensearch_fqdn=None, opensearch_private_ip=None, outbound_cluster_configs=None, reverse_connection_endpoint_customer_ips=None, reverse_connection_endpoints=None, search_node_count=None, search_node_host_memory_gb=None, search_node_host_ocpu_count=None, search_node_host_shape=None, search_node_host_type=None, search_node_storage_gb=None, security_attributes=None, security_master_user_name=None, security_master_user_password_hash=None, security_mode=None, security_saml_configs=None, software_version=None, state=None, subnet_compartment_id=None, subnet_id=None, system_tags=None, time_created=None, time_deleted=None, time_updated=None, total_storage_gb=None, upgrade_major_version_trigger=None, vcn_compartment_id=None, vcn_id=None):
         if availability_domains and not isinstance(availability_domains, list):
             raise TypeError("Expected argument 'availability_domains' to be a list")
         pulumi.set(__self__, "availability_domains", availability_domains)
@@ -106,6 +106,24 @@ class GetOpensearchClusterResult:
         if master_node_host_type and not isinstance(master_node_host_type, str):
             raise TypeError("Expected argument 'master_node_host_type' to be a str")
         pulumi.set(__self__, "master_node_host_type", master_node_host_type)
+        if ml_node_count and not isinstance(ml_node_count, int):
+            raise TypeError("Expected argument 'ml_node_count' to be a int")
+        pulumi.set(__self__, "ml_node_count", ml_node_count)
+        if ml_node_host_memory_gb and not isinstance(ml_node_host_memory_gb, int):
+            raise TypeError("Expected argument 'ml_node_host_memory_gb' to be a int")
+        pulumi.set(__self__, "ml_node_host_memory_gb", ml_node_host_memory_gb)
+        if ml_node_host_ocpu_count and not isinstance(ml_node_host_ocpu_count, int):
+            raise TypeError("Expected argument 'ml_node_host_ocpu_count' to be a int")
+        pulumi.set(__self__, "ml_node_host_ocpu_count", ml_node_host_ocpu_count)
+        if ml_node_host_shape and not isinstance(ml_node_host_shape, str):
+            raise TypeError("Expected argument 'ml_node_host_shape' to be a str")
+        pulumi.set(__self__, "ml_node_host_shape", ml_node_host_shape)
+        if ml_node_host_type and not isinstance(ml_node_host_type, str):
+            raise TypeError("Expected argument 'ml_node_host_type' to be a str")
+        pulumi.set(__self__, "ml_node_host_type", ml_node_host_type)
+        if ml_node_storage_gb and not isinstance(ml_node_storage_gb, int):
+            raise TypeError("Expected argument 'ml_node_storage_gb' to be a int")
+        pulumi.set(__self__, "ml_node_storage_gb", ml_node_storage_gb)
         if nsg_id and not isinstance(nsg_id, str):
             raise TypeError("Expected argument 'nsg_id' to be a str")
         pulumi.set(__self__, "nsg_id", nsg_id)
@@ -421,6 +439,54 @@ class GetOpensearchClusterResult:
         return pulumi.get(self, "master_node_host_type")
 
     @_builtins.property
+    @pulumi.getter(name="mlNodeCount")
+    def ml_node_count(self) -> _builtins.int:
+        """
+        The number of ML nodes configured for the cluster.
+        """
+        return pulumi.get(self, "ml_node_count")
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeHostMemoryGb")
+    def ml_node_host_memory_gb(self) -> _builtins.int:
+        """
+        The amount of memory in GB, for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_host_memory_gb")
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeHostOcpuCount")
+    def ml_node_host_ocpu_count(self) -> _builtins.int:
+        """
+        The number of OCPUs configured for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_host_ocpu_count")
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeHostShape")
+    def ml_node_host_shape(self) -> _builtins.str:
+        """
+        The node shape for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_host_shape")
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeHostType")
+    def ml_node_host_type(self) -> _builtins.str:
+        """
+        The instance type for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_host_type")
+
+    @_builtins.property
+    @pulumi.getter(name="mlNodeStorageGb")
+    def ml_node_storage_gb(self) -> _builtins.int:
+        """
+        The amount of storage in GB, to configure per node for the cluster's ML nodes.
+        """
+        return pulumi.get(self, "ml_node_storage_gb")
+
+    @_builtins.property
     @pulumi.getter(name="nsgId")
     def nsg_id(self) -> _builtins.str:
         """
@@ -732,6 +798,12 @@ class AwaitableGetOpensearchClusterResult(GetOpensearchClusterResult):
             master_node_host_ocpu_count=self.master_node_host_ocpu_count,
             master_node_host_shape=self.master_node_host_shape,
             master_node_host_type=self.master_node_host_type,
+            ml_node_count=self.ml_node_count,
+            ml_node_host_memory_gb=self.ml_node_host_memory_gb,
+            ml_node_host_ocpu_count=self.ml_node_host_ocpu_count,
+            ml_node_host_shape=self.ml_node_host_shape,
+            ml_node_host_type=self.ml_node_host_type,
+            ml_node_storage_gb=self.ml_node_storage_gb,
             nsg_id=self.nsg_id,
             opendashboard_fqdn=self.opendashboard_fqdn,
             opendashboard_node_count=self.opendashboard_node_count,
@@ -830,6 +902,12 @@ def get_opensearch_cluster(opensearch_cluster_id: Optional[_builtins.str] = None
         master_node_host_ocpu_count=pulumi.get(__ret__, 'master_node_host_ocpu_count'),
         master_node_host_shape=pulumi.get(__ret__, 'master_node_host_shape'),
         master_node_host_type=pulumi.get(__ret__, 'master_node_host_type'),
+        ml_node_count=pulumi.get(__ret__, 'ml_node_count'),
+        ml_node_host_memory_gb=pulumi.get(__ret__, 'ml_node_host_memory_gb'),
+        ml_node_host_ocpu_count=pulumi.get(__ret__, 'ml_node_host_ocpu_count'),
+        ml_node_host_shape=pulumi.get(__ret__, 'ml_node_host_shape'),
+        ml_node_host_type=pulumi.get(__ret__, 'ml_node_host_type'),
+        ml_node_storage_gb=pulumi.get(__ret__, 'ml_node_storage_gb'),
         nsg_id=pulumi.get(__ret__, 'nsg_id'),
         opendashboard_fqdn=pulumi.get(__ret__, 'opendashboard_fqdn'),
         opendashboard_node_count=pulumi.get(__ret__, 'opendashboard_node_count'),
@@ -925,6 +1003,12 @@ def get_opensearch_cluster_output(opensearch_cluster_id: Optional[pulumi.Input[_
         master_node_host_ocpu_count=pulumi.get(__response__, 'master_node_host_ocpu_count'),
         master_node_host_shape=pulumi.get(__response__, 'master_node_host_shape'),
         master_node_host_type=pulumi.get(__response__, 'master_node_host_type'),
+        ml_node_count=pulumi.get(__response__, 'ml_node_count'),
+        ml_node_host_memory_gb=pulumi.get(__response__, 'ml_node_host_memory_gb'),
+        ml_node_host_ocpu_count=pulumi.get(__response__, 'ml_node_host_ocpu_count'),
+        ml_node_host_shape=pulumi.get(__response__, 'ml_node_host_shape'),
+        ml_node_host_type=pulumi.get(__response__, 'ml_node_host_type'),
+        ml_node_storage_gb=pulumi.get(__response__, 'ml_node_storage_gb'),
         nsg_id=pulumi.get(__response__, 'nsg_id'),
         opendashboard_fqdn=pulumi.get(__response__, 'opendashboard_fqdn'),
         opendashboard_node_count=pulumi.get(__response__, 'opendashboard_node_count'),

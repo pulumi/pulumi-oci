@@ -34854,6 +34854,10 @@ export namespace Database {
          * (Updatable) The Disaster recovery SCAN TCPIP port. Default is 1521.
          */
         scanListenerPortTcp: pulumi.Input<number>;
+        /**
+         * (Updatable) The DR SCAN TCPIP SSL port. Default is 2484.
+         */
+        scanListenerPortTcpSsl?: pulumi.Input<number>;
     }
 
     export interface VmClusterNetworkScan {
@@ -100217,23 +100221,930 @@ export namespace oci {
         endpointName?: pulumi.Input<string>;
     }
 
-    export interface GdpGdpPipelineBucketDetail {
+    export interface DistributedDatabaseDistributedAutonomousDatabaseCatalogDetail {
         /**
-         * Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
+         * Admin password for catalog database.
          */
-        bucketType: pulumi.Input<string>;
+        adminPassword: pulumi.Input<string>;
         /**
-         * OCID of the bucket.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous VM Cluster.
          */
-        id: pulumi.Input<string>;
+        cloudAutonomousVmClusterId: pulumi.Input<string>;
         /**
-         * Name of the bucket.
+         * The compute count for the catalog database. It has to be in multiples of 2.
          */
-        name: pulumi.Input<string>;
+        computeCount: pulumi.Input<number>;
         /**
-         * Namespace of the bucket.
+         * the identifier of the container database for underlying supporting resource.
          */
-        namespace: pulumi.Input<string>;
+        containerDatabaseId?: pulumi.Input<string>;
+        /**
+         * The data disk group size to be allocated in GBs for the catalog database.
+         */
+        dataStorageSizeInGbs: pulumi.Input<number>;
+        /**
+         * Determines the auto-scaling mode for the catalog database.
+         */
+        isAutoScalingEnabled: pulumi.Input<boolean>;
+        /**
+         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string>;
+        /**
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailMetadata>[]>;
+        /**
+         * Name of the shard.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers on catalog of distributed autonomous database please use peerDetails.
+         */
+        peerCloudAutonomousVmClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The details required for creation of the peer for the autonomous dedicated infrastructure based catalog.
+         */
+        peerDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetail>[]>;
+        /**
+         * The name of the shardGroup for the shard.
+         */
+        shardGroup?: pulumi.Input<string>;
+        /**
+         * The source of Globally distributed autonomous database type: Use ADB_D for the Globally distributed autonomous database with autonomous dedicated cloudautonomousvmclusters.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string>;
+        /**
+         * The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
+         */
+        timeUpdated?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous VM Cluster for the peer catalog.
+         */
+        cloudAutonomousVmClusterId: pulumi.Input<string>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string>;
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number>;
+        /**
+         * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+         */
+        isAutomaticFailoverEnabled?: pulumi.Input<boolean>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailMetadata>[]>;
+        /**
+         * The protectionMode for the catalog peer.
+         */
+        protectionMode?: pulumi.Input<string>;
+        /**
+         * The name of the shardGroup for the shard.
+         */
+        shardGroup?: pulumi.Input<string>;
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before schedlued maintenance of the primary database.
+         */
+        standbyMaintenanceBufferInDays?: pulumi.Input<number>;
+        /**
+         * Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string>;
+        /**
+         * The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
+         */
+        timeUpdated?: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetailMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseConnectionString {
+        /**
+         * Collection of connection strings.
+         */
+        allConnectionStrings?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfig {
+        /**
+         * Backup destination details.
+         */
+        backupDestinationDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigBackupDestinationDetail>[]>;
+        /**
+         * Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+         */
+        recoveryWindowInDays?: pulumi.Input<number>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseDbBackupConfigBackupDestinationDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+         */
+        dbrsPolicyId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * Proxy URL to connect to object store.
+         */
+        internetProxy?: pulumi.Input<string>;
+        /**
+         * Indicates whether the backup destination is cross-region or local region.
+         */
+        isRemote?: pulumi.Input<boolean>;
+        /**
+         * The name of the remote region where the remote automatic incremental backups will be stored. For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         */
+        remoteRegion?: pulumi.Input<string>;
+        /**
+         * Type of the database backup destination.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+         */
+        vpcPassword?: pulumi.Input<string>;
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+         */
+        vpcUser?: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseGsmDetail {
+        /**
+         * The compute count for the shard database. It has to be in multiples of 2.
+         */
+        computeCount?: pulumi.Input<number>;
+        /**
+         * The data disk group size to be allocated in GBs for the shard database.
+         */
+        dataStorageSizeInGbs?: pulumi.Input<number>;
+        /**
+         * The Global service manager image details.
+         */
+        gsmImageDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseGsmDetailGsmImageDetail>[]>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseGsmDetailMetadata>[]>;
+        /**
+         * Name of the shard.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string>;
+        /**
+         * The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The time the ssl certificate associated with Global service manager expires. An RFC3339 formatted datetime string
+         */
+        timeSslCertificateExpires?: pulumi.Input<string>;
+        /**
+         * The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
+         */
+        timeUpdated?: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseGsmDetailGsmImageDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * The version number associated with the image identified by id.
+         */
+        versionNumber?: pulumi.Input<number>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseGsmDetailMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseLatestGsmImage {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * The version number associated with the image identified by id.
+         */
+        versionNumber?: pulumi.Input<number>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabasePatchOperation {
+        /**
+         * (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+         */
+        operation: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        selection: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseShardDetail {
+        /**
+         * Admin password for shard database.
+         */
+        adminPassword: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         */
+        cloudAutonomousVmClusterId: pulumi.Input<string>;
+        /**
+         * The compute count for the shard database. It has to be in multiples of 2.
+         */
+        computeCount: pulumi.Input<number>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string>;
+        /**
+         * The data disk group size to be allocated in GBs for the shard database.
+         */
+        dataStorageSizeInGbs: pulumi.Input<number>;
+        /**
+         * Determines the auto-scaling mode for the shard database.
+         */
+        isAutoScalingEnabled: pulumi.Input<boolean>;
+        /**
+         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string>;
+        /**
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseShardDetailMetadata>[]>;
+        /**
+         * Name of the shard.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers on new shards of distributed autonomous database please use peerDetails.
+         */
+        peerCloudAutonomousVmClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The details required for creation of the peer for the autonomous dedicated infrastructure based shard.
+         */
+        peerDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetail>[]>;
+        /**
+         * The name of the shardGroup for the shard.
+         */
+        shardGroup?: pulumi.Input<string>;
+        /**
+         * The shard space name for the shard database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards. For User defined sharding, every shard must have a unique shard space name. For system defined sharding, shard space name is not required.
+         */
+        shardSpace?: pulumi.Input<string>;
+        /**
+         * The source of Globally distributed autonomous database type: Use ADB_D for the Globally distributed autonomous database with autonomous dedicated cloudautonomousvmclusters.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string>;
+        /**
+         * The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
+         */
+        timeUpdated?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseShardDetailMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous VM Cluster for the peer shard.
+         */
+        cloudAutonomousVmClusterId: pulumi.Input<string>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string>;
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         */
+        fastStartFailOverLagLimitInSeconds?: pulumi.Input<number>;
+        /**
+         * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+         */
+        isAutomaticFailoverEnabled?: pulumi.Input<boolean>;
+        /**
+         * Additional metadata related to Globally distributed autonomous database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailMetadata>[]>;
+        /**
+         * The protectionMode for the shard peer.
+         */
+        protectionMode?: pulumi.Input<string>;
+        /**
+         * The name of the shardGroup for the shard.
+         */
+        shardGroup?: pulumi.Input<string>;
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before schedlued maintenance of the primary database.
+         */
+        standbyMaintenanceBufferInDays?: pulumi.Input<number>;
+        /**
+         * Status of shard with dedicated infrastructure for the Globally distributed autonomous database.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string>;
+        /**
+         * The time the Globally distributed autonomous database was created. An RFC3339 formatted datetime string
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The time the Globally distributed autonomous database was last updated. An RFC3339 formatted datetime string
+         */
+        timeUpdated?: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseShardDetailPeerDetailMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetails {
+        isSurrogate?: pulumi.Input<boolean>;
+        resourceName?: pulumi.Input<string>;
+        /**
+         * The name of the shardGroup for the shard.
+         */
+        shardGroup?: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCatalogDetail {
+        /**
+         * The admin password for the cataog associated with Globally distributed database.
+         */
+        adminPassword: pulumi.Input<string>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         */
+        dbHomeId?: pulumi.Input<string>;
+        /**
+         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string>;
+        /**
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetailMetadata>[]>;
+        /**
+         * Name of the shard.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * The details required for creation of the peer for the ExadbXs infrastructure based catalog.
+         */
+        peerDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetail>[]>;
+        /**
+         * This field is deprecated. This should not be used while creation of new distributed database. To set the peers on catalog of distributed database please use peerDetails.
+         */
+        peerVmClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The name of the shardGroup for the shard.
+         */
+        shardGroup?: pulumi.Input<string>;
+        /**
+         * The shard space name for the Globally distributed database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards.
+         */
+        shardSpace?: pulumi.Input<string>;
+        /**
+         * The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * Status of EXADB_XS based shard.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string>;
+        /**
+         * The time the Globally distributed database was created. An RFC3339 formatted datetime string
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
+         */
+        timeUpdated?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+         */
+        vmClusterId: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCatalogDetailMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetail {
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadata>[]>;
+        /**
+         * The protectionMode for the catalog peer.
+         */
+        protectionMode?: pulumi.Input<string>;
+        /**
+         * The name of the shardGroup for the shard.
+         */
+        shardGroup?: pulumi.Input<string>;
+        /**
+         * Status of EXADB_XS based shard.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string>;
+        /**
+         * The time the Globally distributed database was created. An RFC3339 formatted datetime string
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
+         */
+        timeUpdated?: pulumi.Input<string>;
+        /**
+         * The redo transport type to use for this Data Guard association.
+         */
+        transportType?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the catalog peer.
+         */
+        vmClusterId: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseConnectionString {
+        /**
+         * Collection of connection strings.
+         */
+        allConnectionStrings?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseDbBackupConfig {
+        /**
+         * Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive). Example: `SLOT_TWO`
+         */
+        autoBackupWindow?: pulumi.Input<string>;
+        /**
+         * Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+         */
+        autoFullBackupDay?: pulumi.Input<string>;
+        /**
+         * Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive). Example: `SLOT_TWO`
+         */
+        autoFullBackupWindow?: pulumi.Input<string>;
+        /**
+         * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+         */
+        backupDeletionPolicy?: pulumi.Input<string>;
+        /**
+         * Backup destination details.
+         */
+        backupDestinationDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseDbBackupConfigBackupDestinationDetail>[]>;
+        /**
+         * If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+         */
+        canRunImmediateFullBackup?: pulumi.Input<boolean>;
+        /**
+         * If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+         */
+        isAutoBackupEnabled?: pulumi.Input<boolean>;
+        /**
+         * If set to true, configures automatic incremental backups in the local region (the region of the DB system) and the remote region with a default frequency of 1 hour. If you previously used RMAN or dbcli to configure backups, using the Console or the API for manged backups creates a new backup configuration for your database. The new configuration replaces the configuration created with RMAN or dbcli. This means that you can no longer rely on your previously configured unmanaged backups to work.
+         */
+        isRemoteBackupEnabled?: pulumi.Input<boolean>;
+        /**
+         * Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+         */
+        recoveryWindowInDays?: pulumi.Input<number>;
+        /**
+         * The name of the remote region where the remote automatic incremental backups will be stored. For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         */
+        remoteRegion?: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseDbBackupConfigBackupDestinationDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+         */
+        dbrsPolicyId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * Proxy URL to connect to object store.
+         */
+        internetProxy?: pulumi.Input<string>;
+        /**
+         * Indicates whether the backup destination is cross-region or local region.
+         */
+        isRemote?: pulumi.Input<boolean>;
+        /**
+         * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+         */
+        isZeroDataLossEnabled?: pulumi.Input<boolean>;
+        /**
+         * The name of the remote region where the remote automatic incremental backups will be stored. For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         */
+        remoteRegion?: pulumi.Input<string>;
+        /**
+         * Type of the database backup destination.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+         */
+        vpcPassword?: pulumi.Input<string>;
+        /**
+         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+         */
+        vpcUser?: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseGsmDetail {
+        /**
+         * The compute count for the Global service manager instance.
+         */
+        computeCount?: pulumi.Input<number>;
+        /**
+         * The data disk group size to be allocated in GBs for the Global service manager instance.
+         */
+        dataStorageSizeInGbs?: pulumi.Input<number>;
+        /**
+         * The Global service manager image details
+         */
+        gsmImageDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseGsmDetailGsmImageDetail>[]>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseGsmDetailMetadata>[]>;
+        /**
+         * Name of the shard.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * Status of EXADB_XS based shard.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string>;
+        /**
+         * The time the Globally distributed database was created. An RFC3339 formatted datetime string
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The time the ssl certificate associated with Global service manager expires. An RFC3339 formatted datetime string
+         */
+        timeSslCertificateExpires?: pulumi.Input<string>;
+        /**
+         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
+         */
+        timeUpdated?: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseGsmDetailGsmImageDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * The version number associated with the image identified by id.
+         */
+        versionNumber?: pulumi.Input<number>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseGsmDetailMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseLatestGsmImageDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Global service manager software image.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * The version number associated with the image identified by id.
+         */
+        versionNumber?: pulumi.Input<number>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabasePatchOperation {
+        /**
+         * (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+         */
+        operation: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        selection: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabase {
+        /**
+         * The dbDeploymentType associated with the distributed database.
+         */
+        dbDeploymentType?: pulumi.Input<string>;
+        /**
+         * The identifier of the Private Endpoint.
+         */
+        id?: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabase {
+        /**
+         * The dbDeploymentType associated with the distributed database.
+         */
+        dbDeploymentType?: pulumi.Input<string>;
+        /**
+         * The identifier of the Private Endpoint.
+         */
+        id?: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseShardDetail {
+        /**
+         * The admin password for the shard associated with Globally distributed database.
+         */
+        adminPassword: pulumi.Input<string>;
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         */
+        dbHomeId?: pulumi.Input<string>;
+        /**
+         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         */
+        kmsKeyId?: pulumi.Input<string>;
+        /**
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         */
+        kmsKeyVersionId?: pulumi.Input<string>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseShardDetailMetadata>[]>;
+        /**
+         * Name of the shard.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * The details required for creation of the peer for the ExadbXs infrastructure based shard.
+         */
+        peerDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseShardDetailPeerDetail>[]>;
+        /**
+         * This field is deprecated. This should not be used while creation of new distributed database. To set the peers on new shards of distributed database please use peerDetails.
+         */
+        peerVmClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The name of the shardGroup for the shard.
+         */
+        shardGroup?: pulumi.Input<string>;
+        /**
+         * The shard space name for the Globally distributed database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards.
+         */
+        shardSpace?: pulumi.Input<string>;
+        /**
+         * The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * Status of EXADB_XS based shard.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string>;
+        /**
+         * The time the Globally distributed database was created. An RFC3339 formatted datetime string
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
+         */
+        timeUpdated?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `kmsKeyId` are required for Customer Managed Keys.
+         */
+        vaultId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
+         */
+        vmClusterId: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseShardDetailMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseShardDetailPeerDetail {
+        /**
+         * the identifier of the container database for underlying supporting resource.
+         */
+        containerDatabaseId?: pulumi.Input<string>;
+        /**
+         * Additional metadata related to Globally distributed database resources.
+         */
+        metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadata>[]>;
+        /**
+         * The protectionMode for the shard peer.
+         */
+        protectionMode?: pulumi.Input<string>;
+        /**
+         * The name of the shardGroup for the shard.
+         */
+        shardGroup?: pulumi.Input<string>;
+        /**
+         * Status of EXADB_XS based shard.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * the identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string>;
+        /**
+         * The time the Globally distributed database was created. An RFC3339 formatted datetime string
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
+         */
+        timeUpdated?: pulumi.Input<string>;
+        /**
+         * The redo transport type to use for this Data Guard association.
+         */
+        transportType?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster for the shard peer.
+         */
+        vmClusterId: pulumi.Input<string>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadata {
+        /**
+         * The map containing key-value pair of additional metadata.
+         */
+        map?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface DistributedDatabaseDistributedDatabaseValidateNetworkDetails {
+        isSurrogate?: pulumi.Input<boolean>;
+        resourceName?: pulumi.Input<string>;
+        /**
+         * The name of the shardGroup for the shard.
+         */
+        shardGroup?: pulumi.Input<string>;
     }
 
     export interface GetAiDataPlatformAiDataPlatformsFilter {
@@ -100560,18 +101471,48 @@ export namespace oci {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetGdpGdpPipelinesFilter {
+    export interface GetDistributedDatabaseDistributedAutonomousDatabasesFilter {
         /**
-         * Name of the bucket.
+         * Name of the shard.
          */
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetGdpGdpPipelinesFilterArgs {
+    export interface GetDistributedDatabaseDistributedAutonomousDatabasesFilterArgs {
         /**
-         * Name of the bucket.
+         * Name of the shard.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDistributedDatabaseDistributedDatabasePrivateEndpointsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDistributedDatabaseDistributedDatabasePrivateEndpointsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDistributedDatabaseDistributedDatabasesFilter {
+        /**
+         * Name of the shard.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDistributedDatabaseDistributedDatabasesFilterArgs {
+        /**
+         * Name of the shard.
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;

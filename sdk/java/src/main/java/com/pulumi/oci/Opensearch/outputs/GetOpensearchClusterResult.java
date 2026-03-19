@@ -146,6 +146,36 @@ public final class GetOpensearchClusterResult {
      */
     private String masterNodeHostType;
     /**
+     * @return The number of ML nodes configured for the cluster.
+     * 
+     */
+    private Integer mlNodeCount;
+    /**
+     * @return The amount of memory in GB, for the cluster&#39;s ML nodes.
+     * 
+     */
+    private Integer mlNodeHostMemoryGb;
+    /**
+     * @return The number of OCPUs configured for the cluster&#39;s ML nodes.
+     * 
+     */
+    private Integer mlNodeHostOcpuCount;
+    /**
+     * @return The node shape for the cluster&#39;s ML nodes.
+     * 
+     */
+    private String mlNodeHostShape;
+    /**
+     * @return The instance type for the cluster&#39;s ML nodes.
+     * 
+     */
+    private String mlNodeHostType;
+    /**
+     * @return The amount of storage in GB, to configure per node for the cluster&#39;s ML nodes.
+     * 
+     */
+    private Integer mlNodeStorageGb;
+    /**
      * @return The OCID of the NSG where the private endpoint vnic will be attached.
      * 
      */
@@ -494,6 +524,48 @@ public final class GetOpensearchClusterResult {
         return this.masterNodeHostType;
     }
     /**
+     * @return The number of ML nodes configured for the cluster.
+     * 
+     */
+    public Integer mlNodeCount() {
+        return this.mlNodeCount;
+    }
+    /**
+     * @return The amount of memory in GB, for the cluster&#39;s ML nodes.
+     * 
+     */
+    public Integer mlNodeHostMemoryGb() {
+        return this.mlNodeHostMemoryGb;
+    }
+    /**
+     * @return The number of OCPUs configured for the cluster&#39;s ML nodes.
+     * 
+     */
+    public Integer mlNodeHostOcpuCount() {
+        return this.mlNodeHostOcpuCount;
+    }
+    /**
+     * @return The node shape for the cluster&#39;s ML nodes.
+     * 
+     */
+    public String mlNodeHostShape() {
+        return this.mlNodeHostShape;
+    }
+    /**
+     * @return The instance type for the cluster&#39;s ML nodes.
+     * 
+     */
+    public String mlNodeHostType() {
+        return this.mlNodeHostType;
+    }
+    /**
+     * @return The amount of storage in GB, to configure per node for the cluster&#39;s ML nodes.
+     * 
+     */
+    public Integer mlNodeStorageGb() {
+        return this.mlNodeStorageGb;
+    }
+    /**
      * @return The OCID of the NSG where the private endpoint vnic will be attached.
      * 
      */
@@ -769,6 +841,12 @@ public final class GetOpensearchClusterResult {
         private Integer masterNodeHostOcpuCount;
         private String masterNodeHostShape;
         private String masterNodeHostType;
+        private Integer mlNodeCount;
+        private Integer mlNodeHostMemoryGb;
+        private Integer mlNodeHostOcpuCount;
+        private String mlNodeHostShape;
+        private String mlNodeHostType;
+        private Integer mlNodeStorageGb;
         private String nsgId;
         private String opendashboardFqdn;
         private Integer opendashboardNodeCount;
@@ -834,6 +912,12 @@ public final class GetOpensearchClusterResult {
     	      this.masterNodeHostOcpuCount = defaults.masterNodeHostOcpuCount;
     	      this.masterNodeHostShape = defaults.masterNodeHostShape;
     	      this.masterNodeHostType = defaults.masterNodeHostType;
+    	      this.mlNodeCount = defaults.mlNodeCount;
+    	      this.mlNodeHostMemoryGb = defaults.mlNodeHostMemoryGb;
+    	      this.mlNodeHostOcpuCount = defaults.mlNodeHostOcpuCount;
+    	      this.mlNodeHostShape = defaults.mlNodeHostShape;
+    	      this.mlNodeHostType = defaults.mlNodeHostType;
+    	      this.mlNodeStorageGb = defaults.mlNodeStorageGb;
     	      this.nsgId = defaults.nsgId;
     	      this.opendashboardFqdn = defaults.opendashboardFqdn;
     	      this.opendashboardNodeCount = defaults.opendashboardNodeCount;
@@ -1093,6 +1177,54 @@ public final class GetOpensearchClusterResult {
               throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "masterNodeHostType");
             }
             this.masterNodeHostType = masterNodeHostType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder mlNodeCount(Integer mlNodeCount) {
+            if (mlNodeCount == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "mlNodeCount");
+            }
+            this.mlNodeCount = mlNodeCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder mlNodeHostMemoryGb(Integer mlNodeHostMemoryGb) {
+            if (mlNodeHostMemoryGb == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "mlNodeHostMemoryGb");
+            }
+            this.mlNodeHostMemoryGb = mlNodeHostMemoryGb;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder mlNodeHostOcpuCount(Integer mlNodeHostOcpuCount) {
+            if (mlNodeHostOcpuCount == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "mlNodeHostOcpuCount");
+            }
+            this.mlNodeHostOcpuCount = mlNodeHostOcpuCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder mlNodeHostShape(String mlNodeHostShape) {
+            if (mlNodeHostShape == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "mlNodeHostShape");
+            }
+            this.mlNodeHostShape = mlNodeHostShape;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder mlNodeHostType(String mlNodeHostType) {
+            if (mlNodeHostType == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "mlNodeHostType");
+            }
+            this.mlNodeHostType = mlNodeHostType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder mlNodeStorageGb(Integer mlNodeStorageGb) {
+            if (mlNodeStorageGb == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "mlNodeStorageGb");
+            }
+            this.mlNodeStorageGb = mlNodeStorageGb;
             return this;
         }
         @CustomType.Setter
@@ -1423,6 +1555,12 @@ public final class GetOpensearchClusterResult {
             _resultValue.masterNodeHostOcpuCount = masterNodeHostOcpuCount;
             _resultValue.masterNodeHostShape = masterNodeHostShape;
             _resultValue.masterNodeHostType = masterNodeHostType;
+            _resultValue.mlNodeCount = mlNodeCount;
+            _resultValue.mlNodeHostMemoryGb = mlNodeHostMemoryGb;
+            _resultValue.mlNodeHostOcpuCount = mlNodeHostOcpuCount;
+            _resultValue.mlNodeHostShape = mlNodeHostShape;
+            _resultValue.mlNodeHostType = mlNodeHostType;
+            _resultValue.mlNodeStorageGb = mlNodeStorageGb;
             _resultValue.nsgId = nsgId;
             _resultValue.opendashboardFqdn = opendashboardFqdn;
             _resultValue.opendashboardNodeCount = opendashboardNodeCount;

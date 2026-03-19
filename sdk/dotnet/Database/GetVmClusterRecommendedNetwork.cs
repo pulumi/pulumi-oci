@@ -94,6 +94,12 @@ namespace Pulumi.Oci.Database
         public int? DrScanListenerPortTcp { get; set; }
 
         /// <summary>
+        /// The DR SCAN TCPIP SSL port. Default is 2484.
+        /// </summary>
+        [Input("drScanListenerPortTcpSsl")]
+        public int? DrScanListenerPortTcpSsl { get; set; }
+
+        /// <summary>
         /// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("exadataInfrastructureId", required: true)]
@@ -210,6 +216,12 @@ namespace Pulumi.Oci.Database
         public Input<int>? DrScanListenerPortTcp { get; set; }
 
         /// <summary>
+        /// The DR SCAN TCPIP SSL port. Default is 2484.
+        /// </summary>
+        [Input("drScanListenerPortTcpSsl")]
+        public Input<int>? DrScanListenerPortTcpSsl { get; set; }
+
+        /// <summary>
         /// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("exadataInfrastructureId", required: true)]
@@ -291,6 +303,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableArray<string> Dns;
         public readonly int? DrScanListenerPortTcp;
+        public readonly int? DrScanListenerPortTcpSsl;
         /// <summary>
         /// The SCAN details for DR network
         /// </summary>
@@ -340,6 +353,8 @@ namespace Pulumi.Oci.Database
 
             int? drScanListenerPortTcp,
 
+            int? drScanListenerPortTcpSsl,
+
             ImmutableArray<Outputs.GetVmClusterRecommendedNetworkDrScanResult> drScans,
 
             string exadataInfrastructureId,
@@ -366,6 +381,7 @@ namespace Pulumi.Oci.Database
             DisplayName = displayName;
             Dns = dns;
             DrScanListenerPortTcp = drScanListenerPortTcp;
+            DrScanListenerPortTcpSsl = drScanListenerPortTcpSsl;
             DrScans = drScans;
             ExadataInfrastructureId = exadataInfrastructureId;
             FreeformTags = freeformTags;

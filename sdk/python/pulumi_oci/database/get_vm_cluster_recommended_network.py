@@ -28,7 +28,7 @@ class GetVmClusterRecommendedNetworkResult:
     """
     A collection of values returned by getVmClusterRecommendedNetwork.
     """
-    def __init__(__self__, compartment_id=None, db_servers=None, defined_tags=None, display_name=None, dns=None, dr_scan_listener_port_tcp=None, dr_scans=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, networks=None, ntps=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, scans=None, vm_networks=None):
+    def __init__(__self__, compartment_id=None, db_servers=None, defined_tags=None, display_name=None, dns=None, dr_scan_listener_port_tcp=None, dr_scan_listener_port_tcp_ssl=None, dr_scans=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, networks=None, ntps=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, scans=None, vm_networks=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -47,6 +47,9 @@ class GetVmClusterRecommendedNetworkResult:
         if dr_scan_listener_port_tcp and not isinstance(dr_scan_listener_port_tcp, int):
             raise TypeError("Expected argument 'dr_scan_listener_port_tcp' to be a int")
         pulumi.set(__self__, "dr_scan_listener_port_tcp", dr_scan_listener_port_tcp)
+        if dr_scan_listener_port_tcp_ssl and not isinstance(dr_scan_listener_port_tcp_ssl, int):
+            raise TypeError("Expected argument 'dr_scan_listener_port_tcp_ssl' to be a int")
+        pulumi.set(__self__, "dr_scan_listener_port_tcp_ssl", dr_scan_listener_port_tcp_ssl)
         if dr_scans and not isinstance(dr_scans, list):
             raise TypeError("Expected argument 'dr_scans' to be a list")
         pulumi.set(__self__, "dr_scans", dr_scans)
@@ -119,6 +122,11 @@ class GetVmClusterRecommendedNetworkResult:
     @pulumi.getter(name="drScanListenerPortTcp")
     def dr_scan_listener_port_tcp(self) -> Optional[_builtins.int]:
         return pulumi.get(self, "dr_scan_listener_port_tcp")
+
+    @_builtins.property
+    @pulumi.getter(name="drScanListenerPortTcpSsl")
+    def dr_scan_listener_port_tcp_ssl(self) -> Optional[_builtins.int]:
+        return pulumi.get(self, "dr_scan_listener_port_tcp_ssl")
 
     @_builtins.property
     @pulumi.getter(name="drScans")
@@ -207,6 +215,7 @@ class AwaitableGetVmClusterRecommendedNetworkResult(GetVmClusterRecommendedNetwo
             display_name=self.display_name,
             dns=self.dns,
             dr_scan_listener_port_tcp=self.dr_scan_listener_port_tcp,
+            dr_scan_listener_port_tcp_ssl=self.dr_scan_listener_port_tcp_ssl,
             dr_scans=self.dr_scans,
             exadata_infrastructure_id=self.exadata_infrastructure_id,
             freeform_tags=self.freeform_tags,
@@ -225,6 +234,7 @@ def get_vm_cluster_recommended_network(compartment_id: Optional[_builtins.str] =
                                        display_name: Optional[_builtins.str] = None,
                                        dns: Optional[Sequence[_builtins.str]] = None,
                                        dr_scan_listener_port_tcp: Optional[_builtins.int] = None,
+                                       dr_scan_listener_port_tcp_ssl: Optional[_builtins.int] = None,
                                        exadata_infrastructure_id: Optional[_builtins.str] = None,
                                        freeform_tags: Optional[Mapping[str, _builtins.str]] = None,
                                        networks: Optional[Sequence[Union['GetVmClusterRecommendedNetworkNetworkArgs', 'GetVmClusterRecommendedNetworkNetworkArgsDict']]] = None,
@@ -244,6 +254,7 @@ def get_vm_cluster_recommended_network(compartment_id: Optional[_builtins.str] =
     :param _builtins.str display_name: The user-friendly name for the VM cluster network. The name does not need to be unique.
     :param Sequence[_builtins.str] dns: The list of DNS server IP addresses. Maximum of 3 allowed.
     :param _builtins.int dr_scan_listener_port_tcp: The DR SCAN TCPIP port. Default is 1521.
+    :param _builtins.int dr_scan_listener_port_tcp_ssl: The DR SCAN TCPIP SSL port. Default is 2484.
     :param _builtins.str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
     :param Sequence[Union['GetVmClusterRecommendedNetworkNetworkArgs', 'GetVmClusterRecommendedNetworkNetworkArgsDict']] networks: List of parameters for generation of the client and backup networks.
@@ -258,6 +269,7 @@ def get_vm_cluster_recommended_network(compartment_id: Optional[_builtins.str] =
     __args__['displayName'] = display_name
     __args__['dns'] = dns
     __args__['drScanListenerPortTcp'] = dr_scan_listener_port_tcp
+    __args__['drScanListenerPortTcpSsl'] = dr_scan_listener_port_tcp_ssl
     __args__['exadataInfrastructureId'] = exadata_infrastructure_id
     __args__['freeformTags'] = freeform_tags
     __args__['networks'] = networks
@@ -274,6 +286,7 @@ def get_vm_cluster_recommended_network(compartment_id: Optional[_builtins.str] =
         display_name=pulumi.get(__ret__, 'display_name'),
         dns=pulumi.get(__ret__, 'dns'),
         dr_scan_listener_port_tcp=pulumi.get(__ret__, 'dr_scan_listener_port_tcp'),
+        dr_scan_listener_port_tcp_ssl=pulumi.get(__ret__, 'dr_scan_listener_port_tcp_ssl'),
         dr_scans=pulumi.get(__ret__, 'dr_scans'),
         exadata_infrastructure_id=pulumi.get(__ret__, 'exadata_infrastructure_id'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
@@ -290,6 +303,7 @@ def get_vm_cluster_recommended_network_output(compartment_id: Optional[pulumi.In
                                               display_name: Optional[pulumi.Input[_builtins.str]] = None,
                                               dns: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
                                               dr_scan_listener_port_tcp: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+                                              dr_scan_listener_port_tcp_ssl: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
                                               exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
                                               freeform_tags: Optional[pulumi.Input[Optional[Mapping[str, _builtins.str]]]] = None,
                                               networks: Optional[pulumi.Input[Sequence[Union['GetVmClusterRecommendedNetworkNetworkArgs', 'GetVmClusterRecommendedNetworkNetworkArgsDict']]]] = None,
@@ -309,6 +323,7 @@ def get_vm_cluster_recommended_network_output(compartment_id: Optional[pulumi.In
     :param _builtins.str display_name: The user-friendly name for the VM cluster network. The name does not need to be unique.
     :param Sequence[_builtins.str] dns: The list of DNS server IP addresses. Maximum of 3 allowed.
     :param _builtins.int dr_scan_listener_port_tcp: The DR SCAN TCPIP port. Default is 1521.
+    :param _builtins.int dr_scan_listener_port_tcp_ssl: The DR SCAN TCPIP SSL port. Default is 2484.
     :param _builtins.str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
     :param Sequence[Union['GetVmClusterRecommendedNetworkNetworkArgs', 'GetVmClusterRecommendedNetworkNetworkArgsDict']] networks: List of parameters for generation of the client and backup networks.
@@ -323,6 +338,7 @@ def get_vm_cluster_recommended_network_output(compartment_id: Optional[pulumi.In
     __args__['displayName'] = display_name
     __args__['dns'] = dns
     __args__['drScanListenerPortTcp'] = dr_scan_listener_port_tcp
+    __args__['drScanListenerPortTcpSsl'] = dr_scan_listener_port_tcp_ssl
     __args__['exadataInfrastructureId'] = exadata_infrastructure_id
     __args__['freeformTags'] = freeform_tags
     __args__['networks'] = networks
@@ -338,6 +354,7 @@ def get_vm_cluster_recommended_network_output(compartment_id: Optional[pulumi.In
         display_name=pulumi.get(__response__, 'display_name'),
         dns=pulumi.get(__response__, 'dns'),
         dr_scan_listener_port_tcp=pulumi.get(__response__, 'dr_scan_listener_port_tcp'),
+        dr_scan_listener_port_tcp_ssl=pulumi.get(__response__, 'dr_scan_listener_port_tcp_ssl'),
         dr_scans=pulumi.get(__response__, 'dr_scans'),
         exadata_infrastructure_id=pulumi.get(__response__, 'exadata_infrastructure_id'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),

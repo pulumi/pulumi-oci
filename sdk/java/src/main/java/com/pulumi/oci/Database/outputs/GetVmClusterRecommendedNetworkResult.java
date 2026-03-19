@@ -41,6 +41,7 @@ public final class GetVmClusterRecommendedNetworkResult {
      */
     private List<String> dns;
     private @Nullable Integer drScanListenerPortTcp;
+    private @Nullable Integer drScanListenerPortTcpSsl;
     /**
      * @return The SCAN details for DR network
      * 
@@ -118,6 +119,9 @@ public final class GetVmClusterRecommendedNetworkResult {
     }
     public Optional<Integer> drScanListenerPortTcp() {
         return Optional.ofNullable(this.drScanListenerPortTcp);
+    }
+    public Optional<Integer> drScanListenerPortTcpSsl() {
+        return Optional.ofNullable(this.drScanListenerPortTcpSsl);
     }
     /**
      * @return The SCAN details for DR network
@@ -197,6 +201,7 @@ public final class GetVmClusterRecommendedNetworkResult {
         private String displayName;
         private List<String> dns;
         private @Nullable Integer drScanListenerPortTcp;
+        private @Nullable Integer drScanListenerPortTcpSsl;
         private List<GetVmClusterRecommendedNetworkDrScan> drScans;
         private String exadataInfrastructureId;
         private Map<String,String> freeformTags;
@@ -216,6 +221,7 @@ public final class GetVmClusterRecommendedNetworkResult {
     	      this.displayName = defaults.displayName;
     	      this.dns = defaults.dns;
     	      this.drScanListenerPortTcp = defaults.drScanListenerPortTcp;
+    	      this.drScanListenerPortTcpSsl = defaults.drScanListenerPortTcpSsl;
     	      this.drScans = defaults.drScans;
     	      this.exadataInfrastructureId = defaults.exadataInfrastructureId;
     	      this.freeformTags = defaults.freeformTags;
@@ -276,6 +282,12 @@ public final class GetVmClusterRecommendedNetworkResult {
         public Builder drScanListenerPortTcp(@Nullable Integer drScanListenerPortTcp) {
 
             this.drScanListenerPortTcp = drScanListenerPortTcp;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder drScanListenerPortTcpSsl(@Nullable Integer drScanListenerPortTcpSsl) {
+
+            this.drScanListenerPortTcpSsl = drScanListenerPortTcpSsl;
             return this;
         }
         @CustomType.Setter
@@ -377,6 +389,7 @@ public final class GetVmClusterRecommendedNetworkResult {
             _resultValue.displayName = displayName;
             _resultValue.dns = dns;
             _resultValue.drScanListenerPortTcp = drScanListenerPortTcp;
+            _resultValue.drScanListenerPortTcpSsl = drScanListenerPortTcpSsl;
             _resultValue.drScans = drScans;
             _resultValue.exadataInfrastructureId = exadataInfrastructureId;
             _resultValue.freeformTags = freeformTags;

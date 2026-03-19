@@ -111,6 +111,21 @@ public final class GetVmClusterRecommendedNetworkArgs extends com.pulumi.resourc
     }
 
     /**
+     * The DR SCAN TCPIP SSL port. Default is 2484.
+     * 
+     */
+    @Import(name="drScanListenerPortTcpSsl")
+    private @Nullable Output<Integer> drScanListenerPortTcpSsl;
+
+    /**
+     * @return The DR SCAN TCPIP SSL port. Default is 2484.
+     * 
+     */
+    public Optional<Output<Integer>> drScanListenerPortTcpSsl() {
+        return Optional.ofNullable(this.drScanListenerPortTcpSsl);
+    }
+
+    /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -209,6 +224,7 @@ public final class GetVmClusterRecommendedNetworkArgs extends com.pulumi.resourc
         this.displayName = $.displayName;
         this.dns = $.dns;
         this.drScanListenerPortTcp = $.drScanListenerPortTcp;
+        this.drScanListenerPortTcpSsl = $.drScanListenerPortTcpSsl;
         this.exadataInfrastructureId = $.exadataInfrastructureId;
         this.freeformTags = $.freeformTags;
         this.networks = $.networks;
@@ -379,6 +395,27 @@ public final class GetVmClusterRecommendedNetworkArgs extends com.pulumi.resourc
          */
         public Builder drScanListenerPortTcp(Integer drScanListenerPortTcp) {
             return drScanListenerPortTcp(Output.of(drScanListenerPortTcp));
+        }
+
+        /**
+         * @param drScanListenerPortTcpSsl The DR SCAN TCPIP SSL port. Default is 2484.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder drScanListenerPortTcpSsl(@Nullable Output<Integer> drScanListenerPortTcpSsl) {
+            $.drScanListenerPortTcpSsl = drScanListenerPortTcpSsl;
+            return this;
+        }
+
+        /**
+         * @param drScanListenerPortTcpSsl The DR SCAN TCPIP SSL port. Default is 2484.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder drScanListenerPortTcpSsl(Integer drScanListenerPortTcpSsl) {
+            return drScanListenerPortTcpSsl(Output.of(drScanListenerPortTcpSsl));
         }
 
         /**

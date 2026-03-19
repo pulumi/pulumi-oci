@@ -76,6 +76,7 @@ namespace Pulumi.Oci.Database
     ///                 Hostname = vmClusterNetworkDrScansHostname,
     ///                 Ips = vmClusterNetworkDrScansIps,
     ///                 ScanListenerPortTcp = vmClusterNetworkDrScansScanListenerPortTcp,
+    ///                 ScanListenerPortTcpSsl = vmClusterNetworkDrScansScanListenerPortTcpSsl,
     ///             },
     ///         },
     ///         FreeformTags = 

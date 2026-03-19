@@ -270,6 +270,30 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         public readonly string MasterNodeHostType;
         /// <summary>
+        /// The number of ML nodes configured for the cluster.
+        /// </summary>
+        public readonly int MlNodeCount;
+        /// <summary>
+        /// The amount of memory in GB, for the cluster's ML nodes.
+        /// </summary>
+        public readonly int MlNodeHostMemoryGb;
+        /// <summary>
+        /// The number of OCPUs configured for the cluster's ML nodes.
+        /// </summary>
+        public readonly int MlNodeHostOcpuCount;
+        /// <summary>
+        /// The node shape for the cluster's ML nodes.
+        /// </summary>
+        public readonly string MlNodeHostShape;
+        /// <summary>
+        /// The instance type for the cluster's ML nodes.
+        /// </summary>
+        public readonly string MlNodeHostType;
+        /// <summary>
+        /// The amount of storage in GB, to configure per node for the cluster's ML nodes.
+        /// </summary>
+        public readonly int MlNodeStorageGb;
+        /// <summary>
         /// The OCID of the NSG where the private endpoint vnic will be attached.
         /// </summary>
         public readonly string NsgId;
@@ -459,6 +483,18 @@ namespace Pulumi.Oci.Opensearch
 
             string masterNodeHostType,
 
+            int mlNodeCount,
+
+            int mlNodeHostMemoryGb,
+
+            int mlNodeHostOcpuCount,
+
+            string mlNodeHostShape,
+
+            string mlNodeHostType,
+
+            int mlNodeStorageGb,
+
             string nsgId,
 
             string opendashboardFqdn,
@@ -557,6 +593,12 @@ namespace Pulumi.Oci.Opensearch
             MasterNodeHostOcpuCount = masterNodeHostOcpuCount;
             MasterNodeHostShape = masterNodeHostShape;
             MasterNodeHostType = masterNodeHostType;
+            MlNodeCount = mlNodeCount;
+            MlNodeHostMemoryGb = mlNodeHostMemoryGb;
+            MlNodeHostOcpuCount = mlNodeHostOcpuCount;
+            MlNodeHostShape = mlNodeHostShape;
+            MlNodeHostType = mlNodeHostType;
+            MlNodeStorageGb = mlNodeStorageGb;
             NsgId = nsgId;
             OpendashboardFqdn = opendashboardFqdn;
             OpendashboardNodeCount = opendashboardNodeCount;

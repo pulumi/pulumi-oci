@@ -15798,6 +15798,7 @@ class VcnByoipv6cidrDetail(dict):
                  ipv6cidr_block: _builtins.str):
         """
         :param _builtins.str byoipv6range_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
+               * **DRIFT DETECTION:** When detecting drift, the range ID value is unknown and will display as `(known after apply)`. This can be safely ignored, as drift resolution will proceed without issues.
         :param _builtins.str ipv6cidr_block: An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
         """
         pulumi.set(__self__, "byoipv6range_id", byoipv6range_id)
@@ -15808,6 +15809,7 @@ class VcnByoipv6cidrDetail(dict):
     def byoipv6range_id(self) -> _builtins.str:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
+        * **DRIFT DETECTION:** When detecting drift, the range ID value is unknown and will display as `(known after apply)`. This can be safely ignored, as drift resolution will proceed without issues.
         """
         return pulumi.get(self, "byoipv6range_id")
 

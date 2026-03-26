@@ -169,7 +169,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
      * * The CIDR blocks must be valid.
      * * They must not overlap with each other or with the on-premises network CIDR block.
-     * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidr_blocks. Note: cidrBlocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidrBlock to be added must be placed at the end of the list. Once you migrate to using `cidrBlocks` from `cidrBlock`, you will not be able to switch back.
+     * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidrBlocks. Note: cidrBlocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidrBlock to be added must be placed at the end of the list. Once you migrate to using `cidrBlocks` from `cidrBlock`, you will not be able to switch back.
      *   **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
      * 
      */
@@ -180,7 +180,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * @return (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
      * * The CIDR blocks must be valid.
      * * They must not overlap with each other or with the on-premises network CIDR block.
-     * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidr_blocks. Note: cidrBlocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidrBlock to be added must be placed at the end of the list. Once you migrate to using `cidrBlocks` from `cidrBlock`, you will not be able to switch back.
+     * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidrBlocks. Note: cidrBlocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidrBlock to be added must be placed at the end of the list. Once you migrate to using `cidrBlocks` from `cidrBlock`, you will not be able to switch back.
      *   **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
      * 
      */
@@ -329,7 +329,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * * Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
      * * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
      * 
-     * **Important:** Do *not* specify a value for `ipv6cidrBlock`. Use this parameter instead.
+     * **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
      * 
      */
     @Export(name="ipv6privateCidrBlocks", refs={List.class,String.class}, tree="[0,1]")
@@ -341,7 +341,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * * Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
      * * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
      * 
-     * **Important:** Do *not* specify a value for `ipv6cidrBlock`. Use this parameter instead.
+     * **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
      * 
      */
     public Output<List<String>> ipv6privateCidrBlocks() {

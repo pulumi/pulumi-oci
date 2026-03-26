@@ -16,6 +16,7 @@ public final class VcnByoipv6cidrDetailArgs extends com.pulumi.resources.Resourc
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
+     * * **DRIFT DETECTION:** When detecting drift, the range ID value is unknown and will display as `(known after apply)`. This can be safely ignored, as drift resolution will proceed without issues.
      * 
      */
     @Import(name="byoipv6rangeId", required=true)
@@ -23,6 +24,7 @@ public final class VcnByoipv6cidrDetailArgs extends com.pulumi.resources.Resourc
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
+     * * **DRIFT DETECTION:** When detecting drift, the range ID value is unknown and will display as `(known after apply)`. This can be safely ignored, as drift resolution will proceed without issues.
      * 
      */
     public Output<String> byoipv6rangeId() {
@@ -71,6 +73,7 @@ public final class VcnByoipv6cidrDetailArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param byoipv6rangeId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
+         * * **DRIFT DETECTION:** When detecting drift, the range ID value is unknown and will display as `(known after apply)`. This can be safely ignored, as drift resolution will proceed without issues.
          * 
          * @return builder
          * 
@@ -82,6 +85,7 @@ public final class VcnByoipv6cidrDetailArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param byoipv6rangeId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
+         * * **DRIFT DETECTION:** When detecting drift, the range ID value is unknown and will display as `(known after apply)`. This can be safely ignored, as drift resolution will proceed without issues.
          * 
          * @return builder
          * 

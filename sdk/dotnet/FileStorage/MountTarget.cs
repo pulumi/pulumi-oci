@@ -163,9 +163,11 @@ namespace Pulumi.Oci.FileStorage
         /// <summary>
         /// The hostname for the mount target's IP address, used for DNS resolution. The value is the hostname portion of the private IP address's fully qualified domain name (FQDN). For example, `files-1` in the FQDN `files-1.subnet123.vcn1.oraclevcn.com`. Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
         /// 
-        /// Note:
+        /// If the IP address is IPv4, this attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `hostnameLabel` value.
         /// 
-        /// This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `hostnameLabel` value. For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+        /// If the IP address is IPv6, it is stored in the [Ipv6] (https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6) resource To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's IPv6 address (`mountTargetIpv6Ids`). Then, you can use [UpdateIpv6](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6) to update the `hostnameLabel` value.
+        /// 
+        /// For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
         /// 
         /// Example: `files-1`
         /// </summary>
@@ -215,6 +217,12 @@ namespace Pulumi.Oci.FileStorage
         public Output<ImmutableArray<Outputs.MountTargetLock>> Locks { get; private set; } = null!;
 
         /// <summary>
+        /// The OCIDs of the IPv6 addresses associated with this mount target.
+        /// </summary>
+        [Output("mountTargetIpv6ids")]
+        public Output<ImmutableArray<string>> MountTargetIpv6ids { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         /// </summary>
         [Output("nsgIds")]
@@ -257,7 +265,7 @@ namespace Pulumi.Oci.FileStorage
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target. 
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -273,7 +281,7 @@ namespace Pulumi.Oci.FileStorage
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
+        /// The date and time the mount target current billing cycle will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeBillingCycleEnd")]
         public Output<string> TimeBillingCycleEnd { get; private set; } = null!;
@@ -375,9 +383,11 @@ namespace Pulumi.Oci.FileStorage
         /// <summary>
         /// The hostname for the mount target's IP address, used for DNS resolution. The value is the hostname portion of the private IP address's fully qualified domain name (FQDN). For example, `files-1` in the FQDN `files-1.subnet123.vcn1.oraclevcn.com`. Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
         /// 
-        /// Note:
+        /// If the IP address is IPv4, this attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `hostnameLabel` value.
         /// 
-        /// This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `hostnameLabel` value. For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+        /// If the IP address is IPv6, it is stored in the [Ipv6] (https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6) resource To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's IPv6 address (`mountTargetIpv6Ids`). Then, you can use [UpdateIpv6](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6) to update the `hostnameLabel` value.
+        /// 
+        /// For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
         /// 
         /// Example: `files-1`
         /// </summary>
@@ -457,7 +467,7 @@ namespace Pulumi.Oci.FileStorage
         }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target. 
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -525,9 +535,11 @@ namespace Pulumi.Oci.FileStorage
         /// <summary>
         /// The hostname for the mount target's IP address, used for DNS resolution. The value is the hostname portion of the private IP address's fully qualified domain name (FQDN). For example, `files-1` in the FQDN `files-1.subnet123.vcn1.oraclevcn.com`. Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
         /// 
-        /// Note:
+        /// If the IP address is IPv4, this attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `hostnameLabel` value.
         /// 
-        /// This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `hostnameLabel` value. For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+        /// If the IP address is IPv6, it is stored in the [Ipv6] (https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6) resource To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's IPv6 address (`mountTargetIpv6Ids`). Then, you can use [UpdateIpv6](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6) to update the `hostnameLabel` value.
+        /// 
+        /// For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
         /// 
         /// Example: `files-1`
         /// </summary>
@@ -580,6 +592,18 @@ namespace Pulumi.Oci.FileStorage
         {
             get => _locks ?? (_locks = new InputList<Inputs.MountTargetLockGetArgs>());
             set => _locks = value;
+        }
+
+        [Input("mountTargetIpv6ids")]
+        private InputList<string>? _mountTargetIpv6ids;
+
+        /// <summary>
+        /// The OCIDs of the IPv6 addresses associated with this mount target.
+        /// </summary>
+        public InputList<string> MountTargetIpv6ids
+        {
+            get => _mountTargetIpv6ids ?? (_mountTargetIpv6ids = new InputList<string>());
+            set => _mountTargetIpv6ids = value;
         }
 
         [Input("nsgIds")]
@@ -643,7 +667,7 @@ namespace Pulumi.Oci.FileStorage
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target. 
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -665,7 +689,7 @@ namespace Pulumi.Oci.FileStorage
         }
 
         /// <summary>
-        /// The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
+        /// The date and time the mount target current billing cycle will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Input("timeBillingCycleEnd")]
         public Input<string>? TimeBillingCycleEnd { get; set; }

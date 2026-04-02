@@ -122,9 +122,9 @@ export class NetworkLoadBalancer extends pulumi.CustomResource {
      */
     declare public readonly nlbIpVersion: pulumi.Output<string>;
     /**
-     * An array of reserved Ips.
+     * An array of reserved Ips. NLB supports reserved public ip, reserved private IP and reserved IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a maximum of 1 allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB does not support changing an IP’s lifecycle state between ephemeral and reserved if the IP is already assigned to the NLB. While this type of lifecycle state change is supported by VCN IPs even when the IP is assigned to a resource, such changes will not be recognized or reflected by NLB.
      */
-    declare public readonly reservedIps: pulumi.Output<outputs.NetworkLoadBalancer.NetworkLoadBalancerReservedIp[]>;
+    declare public readonly reservedIps: pulumi.Output<outputs.NetworkLoadBalancer.NetworkLoadBalancerReservedIp[] | undefined>;
     /**
      * (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
      */
@@ -306,7 +306,7 @@ export interface NetworkLoadBalancerState {
      */
     nlbIpVersion?: pulumi.Input<string>;
     /**
-     * An array of reserved Ips.
+     * An array of reserved Ips. NLB supports reserved public ip, reserved private IP and reserved IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a maximum of 1 allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB does not support changing an IP’s lifecycle state between ephemeral and reserved if the IP is already assigned to the NLB. While this type of lifecycle state change is supported by VCN IPs even when the IP is assigned to a resource, such changes will not be recognized or reflected by NLB.
      */
     reservedIps?: pulumi.Input<pulumi.Input<inputs.NetworkLoadBalancer.NetworkLoadBalancerReservedIp>[]>;
     /**
@@ -411,7 +411,7 @@ export interface NetworkLoadBalancerArgs {
      */
     nlbIpVersion?: pulumi.Input<string>;
     /**
-     * An array of reserved Ips.
+     * An array of reserved Ips. NLB supports reserved public ip, reserved private IP and reserved IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a maximum of 1 allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB does not support changing an IP’s lifecycle state between ephemeral and reserved if the IP is already assigned to the NLB. While this type of lifecycle state change is supported by VCN IPs even when the IP is assigned to a resource, such changes will not be recognized or reflected by NLB.
      */
     reservedIps?: pulumi.Input<pulumi.Input<inputs.NetworkLoadBalancer.NetworkLoadBalancerReservedIp>[]>;
     /**

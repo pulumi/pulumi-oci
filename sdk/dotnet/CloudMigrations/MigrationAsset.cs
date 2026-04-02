@@ -47,6 +47,12 @@ namespace Pulumi.Oci.CloudMigrations
         public Output<ImmutableArray<string>> DependedOnBies { get; private set; } = null!;
 
         /// <summary>
+        /// Mapping of source disk id to destination disk details
+        /// </summary>
+        [Output("destinationDisks")]
+        public Output<ImmutableDictionary<string, string>> DestinationDisks { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
@@ -90,6 +96,12 @@ namespace Pulumi.Oci.CloudMigrations
         /// </summary>
         [Output("replicationCompartmentId")]
         public Output<string> ReplicationCompartmentId { get; private set; } = null!;
+
+        /// <summary>
+        /// Replication location detail where the snapshots reside
+        /// </summary>
+        [Output("replicationLocationDetail")]
+        public Output<Outputs.MigrationAssetReplicationLocationDetail> ReplicationLocationDetail { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Replication schedule identifier
@@ -234,6 +246,12 @@ namespace Pulumi.Oci.CloudMigrations
         public Input<string> ReplicationCompartmentId { get; set; } = null!;
 
         /// <summary>
+        /// Replication location detail where the snapshots reside
+        /// </summary>
+        [Input("replicationLocationDetail")]
+        public Input<Inputs.MigrationAssetReplicationLocationDetailArgs>? ReplicationLocationDetail { get; set; }
+
+        /// <summary>
         /// (Updatable) Replication schedule identifier
         /// </summary>
         [Input("replicationScheduleId")]
@@ -279,6 +297,18 @@ namespace Pulumi.Oci.CloudMigrations
         {
             get => _dependedOnBies ?? (_dependedOnBies = new InputList<string>());
             set => _dependedOnBies = value;
+        }
+
+        [Input("destinationDisks")]
+        private InputMap<string>? _destinationDisks;
+
+        /// <summary>
+        /// Mapping of source disk id to destination disk details
+        /// </summary>
+        public InputMap<string> DestinationDisks
+        {
+            get => _destinationDisks ?? (_destinationDisks = new InputMap<string>());
+            set => _destinationDisks = value;
         }
 
         /// <summary>
@@ -336,6 +366,12 @@ namespace Pulumi.Oci.CloudMigrations
         /// </summary>
         [Input("replicationCompartmentId")]
         public Input<string>? ReplicationCompartmentId { get; set; }
+
+        /// <summary>
+        /// Replication location detail where the snapshots reside
+        /// </summary>
+        [Input("replicationLocationDetail")]
+        public Input<Inputs.MigrationAssetReplicationLocationDetailGetArgs>? ReplicationLocationDetail { get; set; }
 
         /// <summary>
         /// (Updatable) Replication schedule identifier

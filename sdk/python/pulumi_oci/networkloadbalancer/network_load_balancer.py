@@ -70,7 +70,7 @@ class NetworkLoadBalancerArgs:
                
                Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         :param pulumi.Input[_builtins.str] nlb_ip_version: (Updatable) IP version associated with the NLB.
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerReservedIpArgs']]] reserved_ips: An array of reserved Ips.
+        :param pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerReservedIpArgs']]] reserved_ips: An array of reserved Ips. NLB supports reserved public ip, reserved private IP and reserved IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a maximum of 1 allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB does not support changing an IP’s lifecycle state between ephemeral and reserved if the IP is already assigned to the NLB. While this type of lifecycle state change is supported by VCN IPs even when the IP is assigned to a resource, such changes will not be recognized or reflected by NLB.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] subnet_ipv6cidr: IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
                
@@ -273,7 +273,7 @@ class NetworkLoadBalancerArgs:
     @pulumi.getter(name="reservedIps")
     def reserved_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerReservedIpArgs']]]]:
         """
-        An array of reserved Ips.
+        An array of reserved Ips. NLB supports reserved public ip, reserved private IP and reserved IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a maximum of 1 allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB does not support changing an IP’s lifecycle state between ephemeral and reserved if the IP is already assigned to the NLB. While this type of lifecycle state change is supported by VCN IPs even when the IP is assigned to a resource, such changes will not be recognized or reflected by NLB.
         """
         return pulumi.get(self, "reserved_ips")
 
@@ -369,7 +369,7 @@ class _NetworkLoadBalancerState:
                
                Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         :param pulumi.Input[_builtins.str] nlb_ip_version: (Updatable) IP version associated with the NLB.
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerReservedIpArgs']]] reserved_ips: An array of reserved Ips.
+        :param pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerReservedIpArgs']]] reserved_ips: An array of reserved Ips. NLB supports reserved public ip, reserved private IP and reserved IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a maximum of 1 allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB does not support changing an IP’s lifecycle state between ephemeral and reserved if the IP is already assigned to the NLB. While this type of lifecycle state change is supported by VCN IPs even when the IP is assigned to a resource, such changes will not be recognized or reflected by NLB.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] state: The current state of the network load balancer.
         :param pulumi.Input[_builtins.str] subnet_id: The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -604,7 +604,7 @@ class _NetworkLoadBalancerState:
     @pulumi.getter(name="reservedIps")
     def reserved_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerReservedIpArgs']]]]:
         """
-        An array of reserved Ips.
+        An array of reserved Ips. NLB supports reserved public ip, reserved private IP and reserved IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a maximum of 1 allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB does not support changing an IP’s lifecycle state between ephemeral and reserved if the IP is already assigned to the NLB. While this type of lifecycle state change is supported by VCN IPs even when the IP is assigned to a resource, such changes will not be recognized or reflected by NLB.
         """
         return pulumi.get(self, "reserved_ips")
 
@@ -772,7 +772,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                
                Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         :param pulumi.Input[_builtins.str] nlb_ip_version: (Updatable) IP version associated with the NLB.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancerReservedIpArgs', 'NetworkLoadBalancerReservedIpArgsDict']]]] reserved_ips: An array of reserved Ips.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancerReservedIpArgs', 'NetworkLoadBalancerReservedIpArgsDict']]]] reserved_ips: An array of reserved Ips. NLB supports reserved public ip, reserved private IP and reserved IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a maximum of 1 allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB does not support changing an IP’s lifecycle state between ephemeral and reserved if the IP is already assigned to the NLB. While this type of lifecycle state change is supported by VCN IPs even when the IP is assigned to a resource, such changes will not be recognized or reflected by NLB.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] subnet_id: The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] subnet_ipv6cidr: IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
@@ -940,7 +940,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                
                Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         :param pulumi.Input[_builtins.str] nlb_ip_version: (Updatable) IP version associated with the NLB.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancerReservedIpArgs', 'NetworkLoadBalancerReservedIpArgsDict']]]] reserved_ips: An array of reserved Ips.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkLoadBalancerReservedIpArgs', 'NetworkLoadBalancerReservedIpArgsDict']]]] reserved_ips: An array of reserved Ips. NLB supports reserved public ip, reserved private IP and reserved IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a maximum of 1 allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB does not support changing an IP’s lifecycle state between ephemeral and reserved if the IP is already assigned to the NLB. While this type of lifecycle state change is supported by VCN IPs even when the IP is assigned to a resource, such changes will not be recognized or reflected by NLB.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] state: The current state of the network load balancer.
         :param pulumi.Input[_builtins.str] subnet_id: The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -1105,9 +1105,9 @@ class NetworkLoadBalancer(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="reservedIps")
-    def reserved_ips(self) -> pulumi.Output[Sequence['outputs.NetworkLoadBalancerReservedIp']]:
+    def reserved_ips(self) -> pulumi.Output[Optional[Sequence['outputs.NetworkLoadBalancerReservedIp']]]:
         """
-        An array of reserved Ips.
+        An array of reserved Ips. NLB supports reserved public ip, reserved private IP and reserved IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a maximum of 1 allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB does not support changing an IP’s lifecycle state between ephemeral and reserved if the IP is already assigned to the NLB. While this type of lifecycle state change is supported by VCN IPs even when the IP is assigned to a resource, such changes will not be recognized or reflected by NLB.
         """
         return pulumi.get(self, "reserved_ips")
 

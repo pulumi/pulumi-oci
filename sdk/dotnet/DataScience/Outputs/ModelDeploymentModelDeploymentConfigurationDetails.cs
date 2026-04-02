@@ -21,11 +21,17 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
         /// </summary>
         public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails? EnvironmentConfigurationDetails;
+        /// <summary>
+        /// The infrastructure configuration details.
+        /// </summary>
         public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails? InfrastructureConfigurationDetails;
         /// <summary>
         /// (Updatable) The model configuration details.
         /// </summary>
         public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails? ModelConfigurationDetails;
+        /// <summary>
+        /// (Updatable) The model group configuration details.
+        /// </summary>
         public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetails? ModelGroupConfigurationDetails;
 
         [OutputConstructor]

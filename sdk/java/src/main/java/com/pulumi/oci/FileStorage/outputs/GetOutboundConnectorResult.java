@@ -93,6 +93,16 @@ public final class GetOutboundConnectorResult {
      * 
      */
     private String timeCreated;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault .
+     * 
+     */
+    private String trustedCertificateSecretId;
+    /**
+     * @return Version of the trusted certificate secret in the Vault to use.
+     * 
+     */
+    private Integer trustedCertificateSecretVersion;
 
     private GetOutboundConnectorResult() {}
     /**
@@ -206,6 +216,20 @@ public final class GetOutboundConnectorResult {
     public String timeCreated() {
         return this.timeCreated;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault .
+     * 
+     */
+    public String trustedCertificateSecretId() {
+        return this.trustedCertificateSecretId;
+    }
+    /**
+     * @return Version of the trusted certificate secret in the Vault to use.
+     * 
+     */
+    public Integer trustedCertificateSecretVersion() {
+        return this.trustedCertificateSecretVersion;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -233,6 +257,8 @@ public final class GetOutboundConnectorResult {
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
+        private String trustedCertificateSecretId;
+        private Integer trustedCertificateSecretVersion;
         public Builder() {}
         public Builder(GetOutboundConnectorResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -253,6 +279,8 @@ public final class GetOutboundConnectorResult {
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.trustedCertificateSecretId = defaults.trustedCertificateSecretId;
+    	      this.trustedCertificateSecretVersion = defaults.trustedCertificateSecretVersion;
         }
 
         @CustomType.Setter
@@ -397,6 +425,22 @@ public final class GetOutboundConnectorResult {
             this.timeCreated = timeCreated;
             return this;
         }
+        @CustomType.Setter
+        public Builder trustedCertificateSecretId(String trustedCertificateSecretId) {
+            if (trustedCertificateSecretId == null) {
+              throw new MissingRequiredPropertyException("GetOutboundConnectorResult", "trustedCertificateSecretId");
+            }
+            this.trustedCertificateSecretId = trustedCertificateSecretId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder trustedCertificateSecretVersion(Integer trustedCertificateSecretVersion) {
+            if (trustedCertificateSecretVersion == null) {
+              throw new MissingRequiredPropertyException("GetOutboundConnectorResult", "trustedCertificateSecretVersion");
+            }
+            this.trustedCertificateSecretVersion = trustedCertificateSecretVersion;
+            return this;
+        }
         public GetOutboundConnectorResult build() {
             final var _resultValue = new GetOutboundConnectorResult();
             _resultValue.availabilityDomain = availabilityDomain;
@@ -416,6 +460,8 @@ public final class GetOutboundConnectorResult {
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.trustedCertificateSecretId = trustedCertificateSecretId;
+            _resultValue.trustedCertificateSecretVersion = trustedCertificateSecretVersion;
             return _resultValue;
         }
     }

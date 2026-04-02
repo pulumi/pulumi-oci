@@ -15,7 +15,7 @@ import java.util.Objects;
 @CustomType
 public final class GetBackendSetsBackendSetCollectionItem {
     /**
-     * @return If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+     * @return If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
      * 
      */
     private Boolean areOperationallyActiveBackendsPreferred;
@@ -25,7 +25,7 @@ public final class GetBackendSetsBackendSetCollectionItem {
      */
     private List<GetBackendSetsBackendSetCollectionItemBackend> backends;
     /**
-     * @return The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-management.htm).
+     * @return The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
      * 
      */
     private List<GetBackendSetsBackendSetCollectionItemHealthChecker> healthCheckers;
@@ -46,7 +46,7 @@ public final class GetBackendSetsBackendSetCollectionItem {
      */
     private Boolean isInstantFailoverEnabled;
     /**
-     * @return If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+     * @return This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.  If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
      * 
      */
     private Boolean isInstantFailoverTcpResetEnabled;
@@ -73,7 +73,7 @@ public final class GetBackendSetsBackendSetCollectionItem {
 
     private GetBackendSetsBackendSetCollectionItem() {}
     /**
-     * @return If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+     * @return If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
      * 
      */
     public Boolean areOperationallyActiveBackendsPreferred() {
@@ -87,7 +87,7 @@ public final class GetBackendSetsBackendSetCollectionItem {
         return this.backends;
     }
     /**
-     * @return The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-management.htm).
+     * @return The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
      * 
      */
     public List<GetBackendSetsBackendSetCollectionItemHealthChecker> healthCheckers() {
@@ -118,7 +118,7 @@ public final class GetBackendSetsBackendSetCollectionItem {
         return this.isInstantFailoverEnabled;
     }
     /**
-     * @return If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+     * @return This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.  If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
      * 
      */
     public Boolean isInstantFailoverTcpResetEnabled() {

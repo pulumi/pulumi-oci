@@ -48,6 +48,18 @@ namespace Pulumi.Oci.CloudMigrations.Inputs
             set => _dependsOns = value;
         }
 
+        [Input("destinationDisks")]
+        private InputMap<string>? _destinationDisks;
+
+        /// <summary>
+        /// Mapping of source disk id to destination disk details
+        /// </summary>
+        public InputMap<string> DestinationDisks
+        {
+            get => _destinationDisks ?? (_destinationDisks = new InputMap<string>());
+            set => _destinationDisks = value;
+        }
+
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
@@ -95,6 +107,12 @@ namespace Pulumi.Oci.CloudMigrations.Inputs
         /// </summary>
         [Input("replicationCompartmentId")]
         public Input<string>? ReplicationCompartmentId { get; set; }
+
+        /// <summary>
+        /// Replication location detail where the snapshots reside
+        /// </summary>
+        [Input("replicationLocationDetail")]
+        public Input<Inputs.TargetAssetMigrationAssetReplicationLocationDetailArgs>? ReplicationLocationDetail { get; set; }
 
         /// <summary>
         /// Replication schedule identifier

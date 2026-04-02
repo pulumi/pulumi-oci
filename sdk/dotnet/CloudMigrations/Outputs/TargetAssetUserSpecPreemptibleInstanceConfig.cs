@@ -16,10 +16,10 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// <summary>
         /// (Updatable) The action to run when the preemptible instance is interrupted for eviction.
         /// </summary>
-        public readonly Outputs.TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction PreemptionAction;
+        public readonly Outputs.TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction? PreemptionAction;
 
         [OutputConstructor]
-        private TargetAssetUserSpecPreemptibleInstanceConfig(Outputs.TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction preemptionAction)
+        private TargetAssetUserSpecPreemptibleInstanceConfig(Outputs.TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction? preemptionAction)
         {
             PreemptionAction = preemptionAction;
         }

@@ -151,7 +151,15 @@ namespace Pulumi.Oci.CloudMigrations
         /// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// Configuration for a Migration Project.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMigrationMigrationConfigResult> MigrationConfigs;
         public readonly string MigrationId;
+        /// <summary>
+        /// Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+        /// </summary>
+        public readonly string MigrationType;
         /// <summary>
         /// Replication schedule identifier
         /// </summary>
@@ -189,7 +197,11 @@ namespace Pulumi.Oci.CloudMigrations
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetMigrationMigrationConfigResult> migrationConfigs,
+
             string migrationId,
+
+            string migrationType,
 
             string replicationScheduleId,
 
@@ -208,7 +220,9 @@ namespace Pulumi.Oci.CloudMigrations
             Id = id;
             IsCompleted = isCompleted;
             LifecycleDetails = lifecycleDetails;
+            MigrationConfigs = migrationConfigs;
             MigrationId = migrationId;
+            MigrationType = migrationType;
             ReplicationScheduleId = replicationScheduleId;
             State = state;
             SystemTags = systemTags;

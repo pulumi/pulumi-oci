@@ -144,7 +144,7 @@ class GetNetworkLoadBalancerResult:
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        OCID of the reserved public IP address created with the virtual cloud network.
+        Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
         """
         return pulumi.get(self, "id")
 

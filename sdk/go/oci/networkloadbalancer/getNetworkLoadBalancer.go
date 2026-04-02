@@ -68,7 +68,7 @@ type LookupNetworkLoadBalancerResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// OCID of the reserved public IP address created with the virtual cloud network.
+	// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 	Id string `pulumi:"id"`
 	// An array of IP addresses.
 	IpAddresses []GetNetworkLoadBalancerIpAddress `pulumi:"ipAddresses"`
@@ -163,7 +163,7 @@ func (o LookupNetworkLoadBalancerResultOutput) FreeformTags() pulumi.StringMapOu
 	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// OCID of the reserved public IP address created with the virtual cloud network.
+// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 func (o LookupNetworkLoadBalancerResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) string { return v.Id }).(pulumi.StringOutput)
 }

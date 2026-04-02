@@ -18,7 +18,7 @@ type BackendSetBackend struct {
 	IpAddress *string `pulumi:"ipAddress"`
 	// (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
 	IsBackup *bool `pulumi:"isBackup"`
-	// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+	// (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
 	IsDrain *bool `pulumi:"isDrain"`
 	// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline *bool `pulumi:"isOffline"`
@@ -48,7 +48,7 @@ type BackendSetBackendArgs struct {
 	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
 	IsBackup pulumi.BoolPtrInput `pulumi:"isBackup"`
-	// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+	// (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
 	IsDrain pulumi.BoolPtrInput `pulumi:"isDrain"`
 	// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline pulumi.BoolPtrInput `pulumi:"isOffline"`
@@ -123,7 +123,7 @@ func (o BackendSetBackendOutput) IsBackup() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v BackendSetBackend) *bool { return v.IsBackup }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+// (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
 func (o BackendSetBackendOutput) IsDrain() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v BackendSetBackend) *bool { return v.IsDrain }).(pulumi.BoolPtrOutput)
 }
@@ -838,7 +838,7 @@ func (o NetworkLoadBalancerIpAddressArrayOutput) Index(i pulumi.IntInput) Networ
 }
 
 type NetworkLoadBalancerIpAddressReservedIp struct {
-	// OCID of the reserved public IP address created with the virtual cloud network.
+	// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 	Id *string `pulumi:"id"`
 }
 
@@ -854,7 +854,7 @@ type NetworkLoadBalancerIpAddressReservedIpInput interface {
 }
 
 type NetworkLoadBalancerIpAddressReservedIpArgs struct {
-	// OCID of the reserved public IP address created with the virtual cloud network.
+	// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
@@ -909,7 +909,7 @@ func (o NetworkLoadBalancerIpAddressReservedIpOutput) ToNetworkLoadBalancerIpAdd
 	return o
 }
 
-// OCID of the reserved public IP address created with the virtual cloud network.
+// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 func (o NetworkLoadBalancerIpAddressReservedIpOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkLoadBalancerIpAddressReservedIp) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -935,15 +935,15 @@ func (o NetworkLoadBalancerIpAddressReservedIpArrayOutput) Index(i pulumi.IntInp
 }
 
 type NetworkLoadBalancerReservedIp struct {
-	// OCID of the reserved public IP address created with the virtual cloud network.
+	// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 	//
-	// Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+	// Reserved IPs are IPs which are already registered using VCN API.
 	//
-	// Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+	// For public Network load balancers, customer can create a reserved Public IP and/or reserved private IP and/or reserved IPv6 and pass the OCID's in the reservedIps array field to attach the IP addresses to the network load balancer during create For private Network load balancers, customer can create a reserved Private IP and/or reserved IPv6 and pass the OCID's in the  reservedIps array field to attach the IP addresses to the network load balancer during create
 	//
-	// Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+	// Reserved IPs will not be deleted when the Network Load balancer is deleted. They will be detached from the Network Load balancer.
 	//
-	// Example: "ocid1.publicip.oc1.phx.unique_ID"
+	// Public IP Example: "ocid1.publicip.oc1.phx.unique_ID" Private IP Example: "ocid1.privateip.oc1.phx.unique_ID" IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID"
 	Id *string `pulumi:"id"`
 }
 
@@ -959,15 +959,15 @@ type NetworkLoadBalancerReservedIpInput interface {
 }
 
 type NetworkLoadBalancerReservedIpArgs struct {
-	// OCID of the reserved public IP address created with the virtual cloud network.
+	// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 	//
-	// Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+	// Reserved IPs are IPs which are already registered using VCN API.
 	//
-	// Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+	// For public Network load balancers, customer can create a reserved Public IP and/or reserved private IP and/or reserved IPv6 and pass the OCID's in the reservedIps array field to attach the IP addresses to the network load balancer during create For private Network load balancers, customer can create a reserved Private IP and/or reserved IPv6 and pass the OCID's in the  reservedIps array field to attach the IP addresses to the network load balancer during create
 	//
-	// Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+	// Reserved IPs will not be deleted when the Network Load balancer is deleted. They will be detached from the Network Load balancer.
 	//
-	// Example: "ocid1.publicip.oc1.phx.unique_ID"
+	// Public IP Example: "ocid1.publicip.oc1.phx.unique_ID" Private IP Example: "ocid1.privateip.oc1.phx.unique_ID" IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID"
 	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
@@ -1022,15 +1022,15 @@ func (o NetworkLoadBalancerReservedIpOutput) ToNetworkLoadBalancerReservedIpOutp
 	return o
 }
 
-// OCID of the reserved public IP address created with the virtual cloud network.
+// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 //
-// Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+// Reserved IPs are IPs which are already registered using VCN API.
 //
-// Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+// For public Network load balancers, customer can create a reserved Public IP and/or reserved private IP and/or reserved IPv6 and pass the OCID's in the reservedIps array field to attach the IP addresses to the network load balancer during create For private Network load balancers, customer can create a reserved Private IP and/or reserved IPv6 and pass the OCID's in the  reservedIps array field to attach the IP addresses to the network load balancer during create
 //
-// Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+// Reserved IPs will not be deleted when the Network Load balancer is deleted. They will be detached from the Network Load balancer.
 //
-// Example: "ocid1.publicip.oc1.phx.unique_ID"
+// Public IP Example: "ocid1.publicip.oc1.phx.unique_ID" Private IP Example: "ocid1.privateip.oc1.phx.unique_ID" IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID"
 func (o NetworkLoadBalancerReservedIpOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkLoadBalancerReservedIp) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -1060,7 +1060,7 @@ type NetworkLoadBalancersBackendSetsUnifiedBackend struct {
 	IpAddress *string `pulumi:"ipAddress"`
 	// (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
 	IsBackup *bool `pulumi:"isBackup"`
-	// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+	// (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
 	IsDrain *bool `pulumi:"isDrain"`
 	// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline *bool `pulumi:"isOffline"`
@@ -1090,7 +1090,7 @@ type NetworkLoadBalancersBackendSetsUnifiedBackendArgs struct {
 	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
 	IsBackup pulumi.BoolPtrInput `pulumi:"isBackup"`
-	// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+	// (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
 	IsDrain pulumi.BoolPtrInput `pulumi:"isDrain"`
 	// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline pulumi.BoolPtrInput `pulumi:"isOffline"`
@@ -1165,7 +1165,7 @@ func (o NetworkLoadBalancersBackendSetsUnifiedBackendOutput) IsBackup() pulumi.B
 	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedBackend) *bool { return v.IsBackup }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+// (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
 func (o NetworkLoadBalancersBackendSetsUnifiedBackendOutput) IsDrain() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedBackend) *bool { return v.IsDrain }).(pulumi.BoolPtrOutput)
 }
@@ -1868,7 +1868,7 @@ type GetBackendSetBackend struct {
 	IpAddress string `pulumi:"ipAddress"`
 	// Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
 	IsBackup bool `pulumi:"isBackup"`
-	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+	// Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
 	IsDrain bool `pulumi:"isDrain"`
 	// Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline bool `pulumi:"isOffline"`
@@ -1898,7 +1898,7 @@ type GetBackendSetBackendArgs struct {
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
 	// Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
 	IsBackup pulumi.BoolInput `pulumi:"isBackup"`
-	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+	// Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
 	IsDrain pulumi.BoolInput `pulumi:"isDrain"`
 	// Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline pulumi.BoolInput `pulumi:"isOffline"`
@@ -1973,7 +1973,7 @@ func (o GetBackendSetBackendOutput) IsBackup() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetBackendSetBackend) bool { return v.IsBackup }).(pulumi.BoolOutput)
 }
 
-// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+// Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
 func (o GetBackendSetBackendOutput) IsDrain() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetBackendSetBackend) bool { return v.IsDrain }).(pulumi.BoolOutput)
 }
@@ -2438,11 +2438,11 @@ func (o GetBackendSetsBackendSetCollectionArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetBackendSetsBackendSetCollectionItem struct {
-	// If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+	// If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
 	AreOperationallyActiveBackendsPreferred bool `pulumi:"areOperationallyActiveBackendsPreferred"`
 	// An array of backends.
 	Backends []GetBackendSetsBackendSetCollectionItemBackend `pulumi:"backends"`
-	// The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-management.htm).
+	// The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
 	HealthCheckers []GetBackendSetsBackendSetCollectionItemHealthChecker `pulumi:"healthCheckers"`
 	Id             string                                                `pulumi:"id"`
 	// IP version associated with the backend set.
@@ -2451,7 +2451,7 @@ type GetBackendSetsBackendSetCollectionItem struct {
 	IsFailOpen bool `pulumi:"isFailOpen"`
 	// If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
 	IsInstantFailoverEnabled bool `pulumi:"isInstantFailoverEnabled"`
-	// If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+	// This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.  If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
 	IsInstantFailoverTcpResetEnabled bool `pulumi:"isInstantFailoverTcpResetEnabled"`
 	// If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
 	IsPreserveSource bool `pulumi:"isPreserveSource"`
@@ -2475,11 +2475,11 @@ type GetBackendSetsBackendSetCollectionItemInput interface {
 }
 
 type GetBackendSetsBackendSetCollectionItemArgs struct {
-	// If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+	// If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
 	AreOperationallyActiveBackendsPreferred pulumi.BoolInput `pulumi:"areOperationallyActiveBackendsPreferred"`
 	// An array of backends.
 	Backends GetBackendSetsBackendSetCollectionItemBackendArrayInput `pulumi:"backends"`
-	// The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-management.htm).
+	// The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
 	HealthCheckers GetBackendSetsBackendSetCollectionItemHealthCheckerArrayInput `pulumi:"healthCheckers"`
 	Id             pulumi.StringInput                                            `pulumi:"id"`
 	// IP version associated with the backend set.
@@ -2488,7 +2488,7 @@ type GetBackendSetsBackendSetCollectionItemArgs struct {
 	IsFailOpen pulumi.BoolInput `pulumi:"isFailOpen"`
 	// If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
 	IsInstantFailoverEnabled pulumi.BoolInput `pulumi:"isInstantFailoverEnabled"`
-	// If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+	// This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.  If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
 	IsInstantFailoverTcpResetEnabled pulumi.BoolInput `pulumi:"isInstantFailoverTcpResetEnabled"`
 	// If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
 	IsPreserveSource pulumi.BoolInput `pulumi:"isPreserveSource"`
@@ -2551,7 +2551,7 @@ func (o GetBackendSetsBackendSetCollectionItemOutput) ToGetBackendSetsBackendSet
 	return o
 }
 
-// If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+// If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
 func (o GetBackendSetsBackendSetCollectionItemOutput) AreOperationallyActiveBackendsPreferred() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) bool { return v.AreOperationallyActiveBackendsPreferred }).(pulumi.BoolOutput)
 }
@@ -2563,7 +2563,7 @@ func (o GetBackendSetsBackendSetCollectionItemOutput) Backends() GetBackendSetsB
 	}).(GetBackendSetsBackendSetCollectionItemBackendArrayOutput)
 }
 
-// The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-management.htm).
+// The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
 func (o GetBackendSetsBackendSetCollectionItemOutput) HealthCheckers() GetBackendSetsBackendSetCollectionItemHealthCheckerArrayOutput {
 	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) []GetBackendSetsBackendSetCollectionItemHealthChecker {
 		return v.HealthCheckers
@@ -2589,7 +2589,7 @@ func (o GetBackendSetsBackendSetCollectionItemOutput) IsInstantFailoverEnabled()
 	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) bool { return v.IsInstantFailoverEnabled }).(pulumi.BoolOutput)
 }
 
-// If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+// This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.  If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
 func (o GetBackendSetsBackendSetCollectionItemOutput) IsInstantFailoverTcpResetEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) bool { return v.IsInstantFailoverTcpResetEnabled }).(pulumi.BoolOutput)
 }
@@ -2639,7 +2639,7 @@ type GetBackendSetsBackendSetCollectionItemBackend struct {
 	IpAddress string `pulumi:"ipAddress"`
 	// Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
 	IsBackup bool `pulumi:"isBackup"`
-	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+	// Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
 	IsDrain bool `pulumi:"isDrain"`
 	// Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline bool `pulumi:"isOffline"`
@@ -2669,7 +2669,7 @@ type GetBackendSetsBackendSetCollectionItemBackendArgs struct {
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
 	// Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
 	IsBackup pulumi.BoolInput `pulumi:"isBackup"`
-	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+	// Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
 	IsDrain pulumi.BoolInput `pulumi:"isDrain"`
 	// Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline pulumi.BoolInput `pulumi:"isOffline"`
@@ -2744,7 +2744,7 @@ func (o GetBackendSetsBackendSetCollectionItemBackendOutput) IsBackup() pulumi.B
 	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) bool { return v.IsBackup }).(pulumi.BoolOutput)
 }
 
-// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+// Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
 func (o GetBackendSetsBackendSetCollectionItemBackendOutput) IsDrain() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) bool { return v.IsDrain }).(pulumi.BoolOutput)
 }
@@ -3327,7 +3327,7 @@ type GetBackendsBackendCollectionItem struct {
 	IpAddress string `pulumi:"ipAddress"`
 	// Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
 	IsBackup bool `pulumi:"isBackup"`
-	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+	// Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
 	IsDrain bool `pulumi:"isDrain"`
 	// Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline bool `pulumi:"isOffline"`
@@ -3362,7 +3362,7 @@ type GetBackendsBackendCollectionItemArgs struct {
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
 	// Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
 	IsBackup pulumi.BoolInput `pulumi:"isBackup"`
-	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+	// Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
 	IsDrain pulumi.BoolInput `pulumi:"isDrain"`
 	// Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline pulumi.BoolInput `pulumi:"isOffline"`
@@ -3448,7 +3448,7 @@ func (o GetBackendsBackendCollectionItemOutput) IsBackup() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetBackendsBackendCollectionItem) bool { return v.IsBackup }).(pulumi.BoolOutput)
 }
 
-// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+// Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
 func (o GetBackendsBackendCollectionItemOutput) IsDrain() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetBackendsBackendCollectionItem) bool { return v.IsDrain }).(pulumi.BoolOutput)
 }
@@ -4126,7 +4126,7 @@ func (o GetNetworkLoadBalancerIpAddressArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetNetworkLoadBalancerIpAddressReservedIp struct {
-	// OCID of the reserved public IP address created with the virtual cloud network.
+	// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 	Id string `pulumi:"id"`
 }
 
@@ -4142,7 +4142,7 @@ type GetNetworkLoadBalancerIpAddressReservedIpInput interface {
 }
 
 type GetNetworkLoadBalancerIpAddressReservedIpArgs struct {
-	// OCID of the reserved public IP address created with the virtual cloud network.
+	// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 	Id pulumi.StringInput `pulumi:"id"`
 }
 
@@ -4197,7 +4197,7 @@ func (o GetNetworkLoadBalancerIpAddressReservedIpOutput) ToGetNetworkLoadBalance
 	return o
 }
 
-// OCID of the reserved public IP address created with the virtual cloud network.
+// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 func (o GetNetworkLoadBalancerIpAddressReservedIpOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkLoadBalancerIpAddressReservedIp) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -4223,7 +4223,7 @@ func (o GetNetworkLoadBalancerIpAddressReservedIpArrayOutput) Index(i pulumi.Int
 }
 
 type GetNetworkLoadBalancerReservedIp struct {
-	// OCID of the reserved public IP address created with the virtual cloud network.
+	// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 	Id string `pulumi:"id"`
 }
 
@@ -4239,7 +4239,7 @@ type GetNetworkLoadBalancerReservedIpInput interface {
 }
 
 type GetNetworkLoadBalancerReservedIpArgs struct {
-	// OCID of the reserved public IP address created with the virtual cloud network.
+	// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 	Id pulumi.StringInput `pulumi:"id"`
 }
 
@@ -4294,7 +4294,7 @@ func (o GetNetworkLoadBalancerReservedIpOutput) ToGetNetworkLoadBalancerReserved
 	return o
 }
 
-// OCID of the reserved public IP address created with the virtual cloud network.
+// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 func (o GetNetworkLoadBalancerReservedIpOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkLoadBalancerReservedIp) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -4535,7 +4535,7 @@ type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem struct {
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// OCID of the reserved public IP address created with the virtual cloud network.
+	// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 	Id string `pulumi:"id"`
 	// An array of IP addresses.
 	IpAddresses []GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress `pulumi:"ipAddresses"`
@@ -4588,7 +4588,7 @@ type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// OCID of the reserved public IP address created with the virtual cloud network.
+	// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 	Id pulumi.StringInput `pulumi:"id"`
 	// An array of IP addresses.
 	IpAddresses GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArrayInput `pulumi:"ipAddresses"`
@@ -4702,7 +4702,7 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) Freeform
 	}).(pulumi.StringMapOutput)
 }
 
-// OCID of the reserved public IP address created with the virtual cloud network.
+// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -4941,7 +4941,7 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArrayOu
 }
 
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp struct {
-	// OCID of the reserved public IP address created with the virtual cloud network.
+	// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 	Id string `pulumi:"id"`
 }
 
@@ -4957,7 +4957,7 @@ type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp
 }
 
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArgs struct {
-	// OCID of the reserved public IP address created with the virtual cloud network.
+	// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 	Id pulumi.StringInput `pulumi:"id"`
 }
 
@@ -5012,7 +5012,7 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReserve
 	return o
 }
 
-// OCID of the reserved public IP address created with the virtual cloud network.
+// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp) string {
 		return v.Id
@@ -5040,7 +5040,7 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReserve
 }
 
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp struct {
-	// OCID of the reserved public IP address created with the virtual cloud network.
+	// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 	Id string `pulumi:"id"`
 }
 
@@ -5056,7 +5056,7 @@ type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpInput int
 }
 
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArgs struct {
-	// OCID of the reserved public IP address created with the virtual cloud network.
+	// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 	Id pulumi.StringInput `pulumi:"id"`
 }
 
@@ -5111,7 +5111,7 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpOutput
 	return o
 }
 
-// OCID of the reserved public IP address created with the virtual cloud network.
+// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp) string { return v.Id }).(pulumi.StringOutput)
 }

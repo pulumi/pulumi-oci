@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NetworkLoadBalancerIpAddressReservedIp {
     /**
-     * @return OCID of the reserved public IP address created with the virtual cloud network.
+     * @return Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
      * 
      */
     private @Nullable String id;
 
     private NetworkLoadBalancerIpAddressReservedIp() {}
     /**
-     * @return OCID of the reserved public IP address created with the virtual cloud network.
+     * @return Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
      * 
      */
     public Optional<String> id() {

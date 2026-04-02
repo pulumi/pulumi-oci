@@ -80,6 +80,11 @@ public final class GetMountTargetsMountTarget {
      */
     private List<GetMountTargetsMountTargetLock> locks;
     /**
+     * @return The OCIDs of the IPv6 addresses associated with this mount target.
+     * 
+     */
+    private List<String> mountTargetIpv6ids;
+    /**
      * @return A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * 
      */
@@ -125,7 +130,7 @@ public final class GetMountTargetsMountTarget {
      */
     private Map<String,String> systemTags;
     /**
-     * @return The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
+     * @return The date and time the mount target current billing cycle will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     private String timeBillingCycleEnd;
@@ -230,6 +235,13 @@ public final class GetMountTargetsMountTarget {
         return this.locks;
     }
     /**
+     * @return The OCIDs of the IPv6 addresses associated with this mount target.
+     * 
+     */
+    public List<String> mountTargetIpv6ids() {
+        return this.mountTargetIpv6ids;
+    }
+    /**
      * @return A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * 
      */
@@ -293,7 +305,7 @@ public final class GetMountTargetsMountTarget {
         return this.systemTags;
     }
     /**
-     * @return The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
+     * @return The date and time the mount target current billing cycle will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public String timeBillingCycleEnd() {
@@ -331,6 +343,7 @@ public final class GetMountTargetsMountTarget {
         private List<GetMountTargetsMountTargetLdapIdmap> ldapIdmaps;
         private String lifecycleDetails;
         private List<GetMountTargetsMountTargetLock> locks;
+        private List<String> mountTargetIpv6ids;
         private List<String> nsgIds;
         private String observedThroughput;
         private List<String> privateIpIds;
@@ -360,6 +373,7 @@ public final class GetMountTargetsMountTarget {
     	      this.ldapIdmaps = defaults.ldapIdmaps;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.locks = defaults.locks;
+    	      this.mountTargetIpv6ids = defaults.mountTargetIpv6ids;
     	      this.nsgIds = defaults.nsgIds;
     	      this.observedThroughput = defaults.observedThroughput;
     	      this.privateIpIds = defaults.privateIpIds;
@@ -503,6 +517,17 @@ public final class GetMountTargetsMountTarget {
             return locks(List.of(locks));
         }
         @CustomType.Setter
+        public Builder mountTargetIpv6ids(List<String> mountTargetIpv6ids) {
+            if (mountTargetIpv6ids == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "mountTargetIpv6ids");
+            }
+            this.mountTargetIpv6ids = mountTargetIpv6ids;
+            return this;
+        }
+        public Builder mountTargetIpv6ids(String... mountTargetIpv6ids) {
+            return mountTargetIpv6ids(List.of(mountTargetIpv6ids));
+        }
+        @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
             if (nsgIds == null) {
               throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "nsgIds");
@@ -613,6 +638,7 @@ public final class GetMountTargetsMountTarget {
             _resultValue.ldapIdmaps = ldapIdmaps;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.locks = locks;
+            _resultValue.mountTargetIpv6ids = mountTargetIpv6ids;
             _resultValue.nsgIds = nsgIds;
             _resultValue.observedThroughput = observedThroughput;
             _resultValue.privateIpIds = privateIpIds;

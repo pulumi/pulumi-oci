@@ -16,30 +16,30 @@ public final class NetworkLoadBalancerReservedIpArgs extends com.pulumi.resource
     public static final NetworkLoadBalancerReservedIpArgs Empty = new NetworkLoadBalancerReservedIpArgs();
 
     /**
-     * OCID of the reserved public IP address created with the virtual cloud network.
+     * Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
      * 
-     * Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+     * Reserved IPs are IPs which are already registered using VCN API.
      * 
-     * Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+     * For public Network load balancers, customer can create a reserved Public IP and/or reserved private IP and/or reserved IPv6 and pass the OCID&#39;s in the reservedIps array field to attach the IP addresses to the network load balancer during create For private Network load balancers, customer can create a reserved Private IP and/or reserved IPv6 and pass the OCID&#39;s in the  reservedIps array field to attach the IP addresses to the network load balancer during create
      * 
-     * Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+     * Reserved IPs will not be deleted when the Network Load balancer is deleted. They will be detached from the Network Load balancer.
      * 
-     * Example: &#34;ocid1.publicip.oc1.phx.unique_ID&#34;
+     * Public IP Example: &#34;ocid1.publicip.oc1.phx.unique_ID&#34; Private IP Example: &#34;ocid1.privateip.oc1.phx.unique_ID&#34; IPV6 example: &#34;ocid1.ipv6.oc1.phx.unique_ID&#34;
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return OCID of the reserved public IP address created with the virtual cloud network.
+     * @return Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
      * 
-     * Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+     * Reserved IPs are IPs which are already registered using VCN API.
      * 
-     * Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+     * For public Network load balancers, customer can create a reserved Public IP and/or reserved private IP and/or reserved IPv6 and pass the OCID&#39;s in the reservedIps array field to attach the IP addresses to the network load balancer during create For private Network load balancers, customer can create a reserved Private IP and/or reserved IPv6 and pass the OCID&#39;s in the  reservedIps array field to attach the IP addresses to the network load balancer during create
      * 
-     * Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+     * Reserved IPs will not be deleted when the Network Load balancer is deleted. They will be detached from the Network Load balancer.
      * 
-     * Example: &#34;ocid1.publicip.oc1.phx.unique_ID&#34;
+     * Public IP Example: &#34;ocid1.publicip.oc1.phx.unique_ID&#34; Private IP Example: &#34;ocid1.privateip.oc1.phx.unique_ID&#34; IPV6 example: &#34;ocid1.ipv6.oc1.phx.unique_ID&#34;
      * 
      */
     public Optional<Output<String>> id() {
@@ -71,15 +71,15 @@ public final class NetworkLoadBalancerReservedIpArgs extends com.pulumi.resource
         }
 
         /**
-         * @param id OCID of the reserved public IP address created with the virtual cloud network.
+         * @param id Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
          * 
-         * Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+         * Reserved IPs are IPs which are already registered using VCN API.
          * 
-         * Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+         * For public Network load balancers, customer can create a reserved Public IP and/or reserved private IP and/or reserved IPv6 and pass the OCID&#39;s in the reservedIps array field to attach the IP addresses to the network load balancer during create For private Network load balancers, customer can create a reserved Private IP and/or reserved IPv6 and pass the OCID&#39;s in the  reservedIps array field to attach the IP addresses to the network load balancer during create
          * 
-         * Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+         * Reserved IPs will not be deleted when the Network Load balancer is deleted. They will be detached from the Network Load balancer.
          * 
-         * Example: &#34;ocid1.publicip.oc1.phx.unique_ID&#34;
+         * Public IP Example: &#34;ocid1.publicip.oc1.phx.unique_ID&#34; Private IP Example: &#34;ocid1.privateip.oc1.phx.unique_ID&#34; IPV6 example: &#34;ocid1.ipv6.oc1.phx.unique_ID&#34;
          * 
          * @return builder
          * 
@@ -90,15 +90,15 @@ public final class NetworkLoadBalancerReservedIpArgs extends com.pulumi.resource
         }
 
         /**
-         * @param id OCID of the reserved public IP address created with the virtual cloud network.
+         * @param id Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
          * 
-         * Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+         * Reserved IPs are IPs which are already registered using VCN API.
          * 
-         * Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+         * For public Network load balancers, customer can create a reserved Public IP and/or reserved private IP and/or reserved IPv6 and pass the OCID&#39;s in the reservedIps array field to attach the IP addresses to the network load balancer during create For private Network load balancers, customer can create a reserved Private IP and/or reserved IPv6 and pass the OCID&#39;s in the  reservedIps array field to attach the IP addresses to the network load balancer during create
          * 
-         * Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+         * Reserved IPs will not be deleted when the Network Load balancer is deleted. They will be detached from the Network Load balancer.
          * 
-         * Example: &#34;ocid1.publicip.oc1.phx.unique_ID&#34;
+         * Public IP Example: &#34;ocid1.publicip.oc1.phx.unique_ID&#34; Private IP Example: &#34;ocid1.privateip.oc1.phx.unique_ID&#34; IPV6 example: &#34;ocid1.ipv6.oc1.phx.unique_ID&#34;
          * 
          * @return builder
          * 

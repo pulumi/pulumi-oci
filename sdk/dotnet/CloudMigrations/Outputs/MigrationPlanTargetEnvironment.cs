@@ -18,6 +18,10 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// </summary>
         public readonly string? AvailabilityDomain;
         /// <summary>
+        /// (Updatable) Inventory asset id of the olvm cluster
+        /// </summary>
+        public readonly string? ClusterAssetId;
+        /// <summary>
         /// (Updatable) OCID of the dedicated VM configuration host.
         /// </summary>
         public readonly string? DedicatedVmHost;
@@ -30,13 +34,17 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// </summary>
         public readonly string? MsLicense;
         /// <summary>
+        /// (Updatable) OLVM OS type to inventory asset id of the template
+        /// </summary>
+        public readonly ImmutableDictionary<string, string>? OlvmTemplates;
+        /// <summary>
         /// (Updatable) Preferred VM shape type provided by the customer.
         /// </summary>
         public readonly string? PreferredShapeType;
         /// <summary>
         /// (Updatable) OCID of the VM configuration subnet.
         /// </summary>
-        public readonly string Subnet;
+        public readonly string? Subnet;
         /// <summary>
         /// (Updatable) Target compartment identifier
         /// </summary>
@@ -47,16 +55,22 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         public readonly string TargetEnvironmentType;
         /// <summary>
         /// (Updatable) OCID of the VM configuration VCN.
+        /// </summary>
+        public readonly string? Vcn;
+        /// <summary>
+        /// (Updatable) Inventory asset Id of the vnic profile
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        public readonly string Vcn;
+        public readonly string? VnicProfileAssetId;
 
         [OutputConstructor]
         private MigrationPlanTargetEnvironment(
             string? availabilityDomain,
+
+            string? clusterAssetId,
 
             string? dedicatedVmHost,
 
@@ -64,25 +78,32 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
 
             string? msLicense,
 
+            ImmutableDictionary<string, string>? olvmTemplates,
+
             string? preferredShapeType,
 
-            string subnet,
+            string? subnet,
 
             string? targetCompartmentId,
 
             string targetEnvironmentType,
 
-            string vcn)
+            string? vcn,
+
+            string? vnicProfileAssetId)
         {
             AvailabilityDomain = availabilityDomain;
+            ClusterAssetId = clusterAssetId;
             DedicatedVmHost = dedicatedVmHost;
             FaultDomain = faultDomain;
             MsLicense = msLicense;
+            OlvmTemplates = olvmTemplates;
             PreferredShapeType = preferredShapeType;
             Subnet = subnet;
             TargetCompartmentId = targetCompartmentId;
             TargetEnvironmentType = targetEnvironmentType;
             Vcn = vcn;
+            VnicProfileAssetId = vnicProfileAssetId;
         }
     }
 }

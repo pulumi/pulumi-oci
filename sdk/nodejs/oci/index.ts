@@ -600,6 +600,26 @@ export const getResourceAnalyticsTenancyAttachments: typeof import("./getResourc
 export const getResourceAnalyticsTenancyAttachmentsOutput: typeof import("./getResourceAnalyticsTenancyAttachments").getResourceAnalyticsTenancyAttachmentsOutput = null as any;
 utilities.lazyLoad(exports, ["getResourceAnalyticsTenancyAttachments","getResourceAnalyticsTenancyAttachmentsOutput"], () => require("./getResourceAnalyticsTenancyAttachments"));
 
+export { GetSelfPartnerSubscriptionsArgs, GetSelfPartnerSubscriptionsResult, GetSelfPartnerSubscriptionsOutputArgs } from "./getSelfPartnerSubscriptions";
+export const getSelfPartnerSubscriptions: typeof import("./getSelfPartnerSubscriptions").getSelfPartnerSubscriptions = null as any;
+export const getSelfPartnerSubscriptionsOutput: typeof import("./getSelfPartnerSubscriptions").getSelfPartnerSubscriptionsOutput = null as any;
+utilities.lazyLoad(exports, ["getSelfPartnerSubscriptions","getSelfPartnerSubscriptionsOutput"], () => require("./getSelfPartnerSubscriptions"));
+
+export { GetSelfSubscriptionArgs, GetSelfSubscriptionResult, GetSelfSubscriptionOutputArgs } from "./getSelfSubscription";
+export const getSelfSubscription: typeof import("./getSelfSubscription").getSelfSubscription = null as any;
+export const getSelfSubscriptionOutput: typeof import("./getSelfSubscription").getSelfSubscriptionOutput = null as any;
+utilities.lazyLoad(exports, ["getSelfSubscription","getSelfSubscriptionOutput"], () => require("./getSelfSubscription"));
+
+export { GetSelfSubscriptionTokenArgs, GetSelfSubscriptionTokenResult, GetSelfSubscriptionTokenOutputArgs } from "./getSelfSubscriptionToken";
+export const getSelfSubscriptionToken: typeof import("./getSelfSubscriptionToken").getSelfSubscriptionToken = null as any;
+export const getSelfSubscriptionTokenOutput: typeof import("./getSelfSubscriptionToken").getSelfSubscriptionTokenOutput = null as any;
+utilities.lazyLoad(exports, ["getSelfSubscriptionToken","getSelfSubscriptionTokenOutput"], () => require("./getSelfSubscriptionToken"));
+
+export { GetSelfSubscriptionsArgs, GetSelfSubscriptionsResult, GetSelfSubscriptionsOutputArgs } from "./getSelfSubscriptions";
+export const getSelfSubscriptions: typeof import("./getSelfSubscriptions").getSelfSubscriptions = null as any;
+export const getSelfSubscriptionsOutput: typeof import("./getSelfSubscriptions").getSelfSubscriptionsOutput = null as any;
+utilities.lazyLoad(exports, ["getSelfSubscriptions","getSelfSubscriptionsOutput"], () => require("./getSelfSubscriptions"));
+
 export { GetWlmsManagedInstanceArgs, GetWlmsManagedInstanceResult, GetWlmsManagedInstanceOutputArgs } from "./getWlmsManagedInstance";
 export const getWlmsManagedInstance: typeof import("./getWlmsManagedInstance").getWlmsManagedInstance = null as any;
 export const getWlmsManagedInstanceOutput: typeof import("./getWlmsManagedInstance").getWlmsManagedInstanceOutput = null as any;
@@ -775,6 +795,11 @@ export type ResourceAnalyticsTenancyAttachment = import("./resourceAnalyticsTena
 export const ResourceAnalyticsTenancyAttachment: typeof import("./resourceAnalyticsTenancyAttachment").ResourceAnalyticsTenancyAttachment = null as any;
 utilities.lazyLoad(exports, ["ResourceAnalyticsTenancyAttachment"], () => require("./resourceAnalyticsTenancyAttachment"));
 
+export { SelfSubscriptionArgs, SelfSubscriptionState } from "./selfSubscription";
+export type SelfSubscription = import("./selfSubscription").SelfSubscription;
+export const SelfSubscription: typeof import("./selfSubscription").SelfSubscription = null as any;
+utilities.lazyLoad(exports, ["SelfSubscription"], () => require("./selfSubscription"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -860,6 +885,8 @@ const _module = {
                 return new ResourceAnalyticsResourceAnalyticsInstanceOacManagement(name, <any>undefined, { urn })
             case "oci:oci/resourceAnalyticsTenancyAttachment:ResourceAnalyticsTenancyAttachment":
                 return new ResourceAnalyticsTenancyAttachment(name, <any>undefined, { urn })
+            case "oci:oci/selfSubscription:SelfSubscription":
+                return new SelfSubscription(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -905,3 +932,4 @@ pulumi.runtime.registerResourceModule("oci", "oci/resourceAnalyticsMonitoredRegi
 pulumi.runtime.registerResourceModule("oci", "oci/resourceAnalyticsResourceAnalyticsInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/resourceAnalyticsResourceAnalyticsInstanceOacManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/resourceAnalyticsTenancyAttachment", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/selfSubscription", _module)

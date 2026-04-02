@@ -16,7 +16,11 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'MigrationAssetReplicationLocationDetail',
+    'MigrationMigrationConfig',
     'MigrationPlanMigrationPlanStat',
+    'MigrationPlanMigrationPlanStatCostToMigrate',
+    'MigrationPlanMigrationPlanStatCurrentMonthlyCost',
     'MigrationPlanMigrationPlanStatTotalEstimatedCost',
     'MigrationPlanMigrationPlanStatTotalEstimatedCostCompute',
     'MigrationPlanMigrationPlanStatTotalEstimatedCostOsImage',
@@ -31,6 +35,7 @@ __all__ = [
     'TargetAssetEstimatedCostStorage',
     'TargetAssetEstimatedCostStorageVolume',
     'TargetAssetMigrationAsset',
+    'TargetAssetMigrationAssetReplicationLocationDetail',
     'TargetAssetRecommendedSpec',
     'TargetAssetRecommendedSpecAgentConfig',
     'TargetAssetRecommendedSpecAgentConfigPluginsConfig',
@@ -58,14 +63,19 @@ __all__ = [
     'TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction',
     'TargetAssetUserSpecShapeConfig',
     'TargetAssetUserSpecSourceDetails',
+    'GetMigrationAssetReplicationLocationDetailResult',
     'GetMigrationAssetsFilterResult',
     'GetMigrationAssetsMigrationAssetCollectionResult',
     'GetMigrationAssetsMigrationAssetCollectionItemResult',
+    'GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailResult',
+    'GetMigrationMigrationConfigResult',
     'GetMigrationPlanAvailableShapeItemResult',
     'GetMigrationPlanAvailableShapesAvailableShapesCollectionResult',
     'GetMigrationPlanAvailableShapesAvailableShapesCollectionItemResult',
     'GetMigrationPlanAvailableShapesFilterResult',
     'GetMigrationPlanMigrationPlanStatResult',
+    'GetMigrationPlanMigrationPlanStatCostToMigrateResult',
+    'GetMigrationPlanMigrationPlanStatCurrentMonthlyCostResult',
     'GetMigrationPlanMigrationPlanStatTotalEstimatedCostResult',
     'GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeResult',
     'GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageResult',
@@ -77,6 +87,8 @@ __all__ = [
     'GetMigrationPlansMigrationPlanCollectionResult',
     'GetMigrationPlansMigrationPlanCollectionItemResult',
     'GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatResult',
+    'GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateResult',
+    'GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostResult',
     'GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostResult',
     'GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeResult',
     'GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageResult',
@@ -87,6 +99,7 @@ __all__ = [
     'GetMigrationsFilterResult',
     'GetMigrationsMigrationCollectionResult',
     'GetMigrationsMigrationCollectionItemResult',
+    'GetMigrationsMigrationCollectionItemMigrationConfigResult',
     'GetReplicationSchedulesFilterResult',
     'GetReplicationSchedulesReplicationScheduleCollectionResult',
     'GetReplicationSchedulesReplicationScheduleCollectionItemResult',
@@ -97,6 +110,7 @@ __all__ = [
     'GetTargetAssetEstimatedCostStorageResult',
     'GetTargetAssetEstimatedCostStorageVolumeResult',
     'GetTargetAssetMigrationAssetResult',
+    'GetTargetAssetMigrationAssetReplicationLocationDetailResult',
     'GetTargetAssetRecommendedSpecResult',
     'GetTargetAssetRecommendedSpecAgentConfigResult',
     'GetTargetAssetRecommendedSpecAgentConfigPluginsConfigResult',
@@ -134,6 +148,7 @@ __all__ = [
     'GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageResult',
     'GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeResult',
     'GetTargetAssetsTargetAssetCollectionItemMigrationAssetResult',
+    'GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailResult',
     'GetTargetAssetsTargetAssetCollectionItemRecommendedSpecResult',
     'GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigResult',
     'GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigResult',
@@ -164,11 +179,99 @@ __all__ = [
 ]
 
 @pulumi.output_type
+class MigrationAssetReplicationLocationDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "replicationLocationType":
+            suggest = "replication_location_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MigrationAssetReplicationLocationDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MigrationAssetReplicationLocationDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MigrationAssetReplicationLocationDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 metadata: Optional[Mapping[str, _builtins.str]] = None,
+                 replication_location_type: Optional[_builtins.str] = None):
+        """
+        :param Mapping[str, _builtins.str] metadata: Properties for each of the replication location types
+        :param _builtins.str replication_location_type: The type of replication location
+        """
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if replication_location_type is not None:
+            pulumi.set(__self__, "replication_location_type", replication_location_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        Properties for each of the replication location types
+        """
+        return pulumi.get(self, "metadata")
+
+    @_builtins.property
+    @pulumi.getter(name="replicationLocationType")
+    def replication_location_type(self) -> Optional[_builtins.str]:
+        """
+        The type of replication location
+        """
+        return pulumi.get(self, "replication_location_type")
+
+
+@pulumi.output_type
+class MigrationMigrationConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MigrationMigrationConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MigrationMigrationConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MigrationMigrationConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 subnet_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str subnet_id: (Updatable) The OCID of the subnet to use for replication
+        """
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The OCID of the subnet to use for replication
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
 class MigrationPlanMigrationPlanStat(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "timeUpdated":
+        if key == "costToMigrates":
+            suggest = "cost_to_migrates"
+        elif key == "currentMonthlyCosts":
+            suggest = "current_monthly_costs"
+        elif key == "timeUpdated":
             suggest = "time_updated"
         elif key == "totalEstimatedCosts":
             suggest = "total_estimated_costs"
@@ -187,20 +290,44 @@ class MigrationPlanMigrationPlanStat(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 cost_to_migrates: Optional[Sequence['outputs.MigrationPlanMigrationPlanStatCostToMigrate']] = None,
+                 current_monthly_costs: Optional[Sequence['outputs.MigrationPlanMigrationPlanStatCurrentMonthlyCost']] = None,
                  time_updated: Optional[_builtins.str] = None,
                  total_estimated_costs: Optional[Sequence['outputs.MigrationPlanMigrationPlanStatTotalEstimatedCost']] = None,
                  vm_count: Optional[_builtins.int] = None):
         """
+        :param Sequence['MigrationPlanMigrationPlanStatCostToMigrateArgs'] cost_to_migrates: Summary of costs to migrate.
+        :param Sequence['MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs'] current_monthly_costs: Current monthly compute and storage costs.
         :param _builtins.str time_updated: The time when the migration plan was updated. An RFC3339 formatted datetime string.
         :param Sequence['MigrationPlanMigrationPlanStatTotalEstimatedCostArgs'] total_estimated_costs: Cost estimation description
         :param _builtins.int vm_count: The total count of VMs in migration
         """
+        if cost_to_migrates is not None:
+            pulumi.set(__self__, "cost_to_migrates", cost_to_migrates)
+        if current_monthly_costs is not None:
+            pulumi.set(__self__, "current_monthly_costs", current_monthly_costs)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
         if total_estimated_costs is not None:
             pulumi.set(__self__, "total_estimated_costs", total_estimated_costs)
         if vm_count is not None:
             pulumi.set(__self__, "vm_count", vm_count)
+
+    @_builtins.property
+    @pulumi.getter(name="costToMigrates")
+    def cost_to_migrates(self) -> Optional[Sequence['outputs.MigrationPlanMigrationPlanStatCostToMigrate']]:
+        """
+        Summary of costs to migrate.
+        """
+        return pulumi.get(self, "cost_to_migrates")
+
+    @_builtins.property
+    @pulumi.getter(name="currentMonthlyCosts")
+    def current_monthly_costs(self) -> Optional[Sequence['outputs.MigrationPlanMigrationPlanStatCurrentMonthlyCost']]:
+        """
+        Current monthly compute and storage costs.
+        """
+        return pulumi.get(self, "current_monthly_costs")
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
@@ -225,6 +352,162 @@ class MigrationPlanMigrationPlanStat(dict):
         The total count of VMs in migration
         """
         return pulumi.get(self, "vm_count")
+
+
+@pulumi.output_type
+class MigrationPlanMigrationPlanStatCostToMigrate(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "assetCount":
+            suggest = "asset_count"
+        elif key == "currencyCode":
+            suggest = "currency_code"
+        elif key == "ociDataTransferCosts":
+            suggest = "oci_data_transfer_costs"
+        elif key == "sourceDataTransferCosts":
+            suggest = "source_data_transfer_costs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MigrationPlanMigrationPlanStatCostToMigrate. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MigrationPlanMigrationPlanStatCostToMigrate.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MigrationPlanMigrationPlanStatCostToMigrate.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 asset_count: Optional[_builtins.int] = None,
+                 currency_code: Optional[_builtins.str] = None,
+                 oci_data_transfer_costs: Optional[_builtins.float] = None,
+                 source_data_transfer_costs: Optional[_builtins.float] = None):
+        """
+        :param _builtins.int asset_count: Number of assets used in this calculation.
+        :param _builtins.str currency_code: Currency code in the ISO format.
+        :param _builtins.float oci_data_transfer_costs: Data transfer costs from OCI.
+        :param _builtins.float source_data_transfer_costs: Data transfer costs from source cloud provider.
+        """
+        if asset_count is not None:
+            pulumi.set(__self__, "asset_count", asset_count)
+        if currency_code is not None:
+            pulumi.set(__self__, "currency_code", currency_code)
+        if oci_data_transfer_costs is not None:
+            pulumi.set(__self__, "oci_data_transfer_costs", oci_data_transfer_costs)
+        if source_data_transfer_costs is not None:
+            pulumi.set(__self__, "source_data_transfer_costs", source_data_transfer_costs)
+
+    @_builtins.property
+    @pulumi.getter(name="assetCount")
+    def asset_count(self) -> Optional[_builtins.int]:
+        """
+        Number of assets used in this calculation.
+        """
+        return pulumi.get(self, "asset_count")
+
+    @_builtins.property
+    @pulumi.getter(name="currencyCode")
+    def currency_code(self) -> Optional[_builtins.str]:
+        """
+        Currency code in the ISO format.
+        """
+        return pulumi.get(self, "currency_code")
+
+    @_builtins.property
+    @pulumi.getter(name="ociDataTransferCosts")
+    def oci_data_transfer_costs(self) -> Optional[_builtins.float]:
+        """
+        Data transfer costs from OCI.
+        """
+        return pulumi.get(self, "oci_data_transfer_costs")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceDataTransferCosts")
+    def source_data_transfer_costs(self) -> Optional[_builtins.float]:
+        """
+        Data transfer costs from source cloud provider.
+        """
+        return pulumi.get(self, "source_data_transfer_costs")
+
+
+@pulumi.output_type
+class MigrationPlanMigrationPlanStatCurrentMonthlyCost(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "assetCount":
+            suggest = "asset_count"
+        elif key == "computeAmount":
+            suggest = "compute_amount"
+        elif key == "currencyCode":
+            suggest = "currency_code"
+        elif key == "storageAmount":
+            suggest = "storage_amount"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MigrationPlanMigrationPlanStatCurrentMonthlyCost. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MigrationPlanMigrationPlanStatCurrentMonthlyCost.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MigrationPlanMigrationPlanStatCurrentMonthlyCost.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 asset_count: Optional[_builtins.int] = None,
+                 compute_amount: Optional[_builtins.float] = None,
+                 currency_code: Optional[_builtins.str] = None,
+                 storage_amount: Optional[_builtins.float] = None):
+        """
+        :param _builtins.int asset_count: Number of assets used in this calculation.
+        :param _builtins.float compute_amount: Current monthly compute costs.
+        :param _builtins.str currency_code: Currency code in the ISO format.
+        :param _builtins.float storage_amount: Current monthly storage costs.
+        """
+        if asset_count is not None:
+            pulumi.set(__self__, "asset_count", asset_count)
+        if compute_amount is not None:
+            pulumi.set(__self__, "compute_amount", compute_amount)
+        if currency_code is not None:
+            pulumi.set(__self__, "currency_code", currency_code)
+        if storage_amount is not None:
+            pulumi.set(__self__, "storage_amount", storage_amount)
+
+    @_builtins.property
+    @pulumi.getter(name="assetCount")
+    def asset_count(self) -> Optional[_builtins.int]:
+        """
+        Number of assets used in this calculation.
+        """
+        return pulumi.get(self, "asset_count")
+
+    @_builtins.property
+    @pulumi.getter(name="computeAmount")
+    def compute_amount(self) -> Optional[_builtins.float]:
+        """
+        Current monthly compute costs.
+        """
+        return pulumi.get(self, "compute_amount")
+
+    @_builtins.property
+    @pulumi.getter(name="currencyCode")
+    def currency_code(self) -> Optional[_builtins.str]:
+        """
+        Currency code in the ISO format.
+        """
+        return pulumi.get(self, "currency_code")
+
+    @_builtins.property
+    @pulumi.getter(name="storageAmount")
+    def storage_amount(self) -> Optional[_builtins.float]:
+        """
+        Current monthly storage costs.
+        """
+        return pulumi.get(self, "storage_amount")
 
 
 @pulumi.output_type
@@ -818,16 +1101,22 @@ class MigrationPlanTargetEnvironment(dict):
             suggest = "target_environment_type"
         elif key == "availabilityDomain":
             suggest = "availability_domain"
+        elif key == "clusterAssetId":
+            suggest = "cluster_asset_id"
         elif key == "dedicatedVmHost":
             suggest = "dedicated_vm_host"
         elif key == "faultDomain":
             suggest = "fault_domain"
         elif key == "msLicense":
             suggest = "ms_license"
+        elif key == "olvmTemplates":
+            suggest = "olvm_templates"
         elif key == "preferredShapeType":
             suggest = "preferred_shape_type"
         elif key == "targetCompartmentId":
             suggest = "target_compartment_id"
+        elif key == "vnicProfileAssetId":
+            suggest = "vnic_profile_asset_id"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in MigrationPlanTargetEnvironment. Access the value via the '{suggest}' property getter instead.")
@@ -841,53 +1130,59 @@ class MigrationPlanTargetEnvironment(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 subnet: _builtins.str,
                  target_environment_type: _builtins.str,
-                 vcn: _builtins.str,
                  availability_domain: Optional[_builtins.str] = None,
+                 cluster_asset_id: Optional[_builtins.str] = None,
                  dedicated_vm_host: Optional[_builtins.str] = None,
                  fault_domain: Optional[_builtins.str] = None,
                  ms_license: Optional[_builtins.str] = None,
+                 olvm_templates: Optional[Mapping[str, _builtins.str]] = None,
                  preferred_shape_type: Optional[_builtins.str] = None,
-                 target_compartment_id: Optional[_builtins.str] = None):
+                 subnet: Optional[_builtins.str] = None,
+                 target_compartment_id: Optional[_builtins.str] = None,
+                 vcn: Optional[_builtins.str] = None,
+                 vnic_profile_asset_id: Optional[_builtins.str] = None):
         """
-        :param _builtins.str subnet: (Updatable) OCID of the VM configuration subnet.
         :param _builtins.str target_environment_type: (Updatable) The type of target environment.
+        :param _builtins.str availability_domain: (Updatable) Availability Domain of the VM configuration.
+        :param _builtins.str cluster_asset_id: (Updatable) Inventory asset id of the olvm cluster
+        :param _builtins.str dedicated_vm_host: (Updatable) OCID of the dedicated VM configuration host.
+        :param _builtins.str fault_domain: (Updatable) Fault domain of the VM configuration.
+        :param _builtins.str ms_license: (Updatable) Microsoft license for the VM configuration.
+        :param Mapping[str, _builtins.str] olvm_templates: (Updatable) OLVM OS type to inventory asset id of the template
+        :param _builtins.str preferred_shape_type: (Updatable) Preferred VM shape type provided by the customer.
+        :param _builtins.str subnet: (Updatable) OCID of the VM configuration subnet.
+        :param _builtins.str target_compartment_id: (Updatable) Target compartment identifier
         :param _builtins.str vcn: (Updatable) OCID of the VM configuration VCN.
+        :param _builtins.str vnic_profile_asset_id: (Updatable) Inventory asset Id of the vnic profile
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param _builtins.str availability_domain: (Updatable) Availability Domain of the VM configuration.
-        :param _builtins.str dedicated_vm_host: (Updatable) OCID of the dedicated VM configuration host.
-        :param _builtins.str fault_domain: (Updatable) Fault domain of the VM configuration.
-        :param _builtins.str ms_license: (Updatable) Microsoft license for the VM configuration.
-        :param _builtins.str preferred_shape_type: (Updatable) Preferred VM shape type provided by the customer.
-        :param _builtins.str target_compartment_id: (Updatable) Target compartment identifier
         """
-        pulumi.set(__self__, "subnet", subnet)
         pulumi.set(__self__, "target_environment_type", target_environment_type)
-        pulumi.set(__self__, "vcn", vcn)
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
+        if cluster_asset_id is not None:
+            pulumi.set(__self__, "cluster_asset_id", cluster_asset_id)
         if dedicated_vm_host is not None:
             pulumi.set(__self__, "dedicated_vm_host", dedicated_vm_host)
         if fault_domain is not None:
             pulumi.set(__self__, "fault_domain", fault_domain)
         if ms_license is not None:
             pulumi.set(__self__, "ms_license", ms_license)
+        if olvm_templates is not None:
+            pulumi.set(__self__, "olvm_templates", olvm_templates)
         if preferred_shape_type is not None:
             pulumi.set(__self__, "preferred_shape_type", preferred_shape_type)
+        if subnet is not None:
+            pulumi.set(__self__, "subnet", subnet)
         if target_compartment_id is not None:
             pulumi.set(__self__, "target_compartment_id", target_compartment_id)
-
-    @_builtins.property
-    @pulumi.getter
-    def subnet(self) -> _builtins.str:
-        """
-        (Updatable) OCID of the VM configuration subnet.
-        """
-        return pulumi.get(self, "subnet")
+        if vcn is not None:
+            pulumi.set(__self__, "vcn", vcn)
+        if vnic_profile_asset_id is not None:
+            pulumi.set(__self__, "vnic_profile_asset_id", vnic_profile_asset_id)
 
     @_builtins.property
     @pulumi.getter(name="targetEnvironmentType")
@@ -898,24 +1193,20 @@ class MigrationPlanTargetEnvironment(dict):
         return pulumi.get(self, "target_environment_type")
 
     @_builtins.property
-    @pulumi.getter
-    def vcn(self) -> _builtins.str:
-        """
-        (Updatable) OCID of the VM configuration VCN.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        return pulumi.get(self, "vcn")
-
-    @_builtins.property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[_builtins.str]:
         """
         (Updatable) Availability Domain of the VM configuration.
         """
         return pulumi.get(self, "availability_domain")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterAssetId")
+    def cluster_asset_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Inventory asset id of the olvm cluster
+        """
+        return pulumi.get(self, "cluster_asset_id")
 
     @_builtins.property
     @pulumi.getter(name="dedicatedVmHost")
@@ -942,6 +1233,14 @@ class MigrationPlanTargetEnvironment(dict):
         return pulumi.get(self, "ms_license")
 
     @_builtins.property
+    @pulumi.getter(name="olvmTemplates")
+    def olvm_templates(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) OLVM OS type to inventory asset id of the template
+        """
+        return pulumi.get(self, "olvm_templates")
+
+    @_builtins.property
     @pulumi.getter(name="preferredShapeType")
     def preferred_shape_type(self) -> Optional[_builtins.str]:
         """
@@ -950,12 +1249,40 @@ class MigrationPlanTargetEnvironment(dict):
         return pulumi.get(self, "preferred_shape_type")
 
     @_builtins.property
+    @pulumi.getter
+    def subnet(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) OCID of the VM configuration subnet.
+        """
+        return pulumi.get(self, "subnet")
+
+    @_builtins.property
     @pulumi.getter(name="targetCompartmentId")
     def target_compartment_id(self) -> Optional[_builtins.str]:
         """
         (Updatable) Target compartment identifier
         """
         return pulumi.get(self, "target_compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def vcn(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) OCID of the VM configuration VCN.
+        """
+        return pulumi.get(self, "vcn")
+
+    @_builtins.property
+    @pulumi.getter(name="vnicProfileAssetId")
+    def vnic_profile_asset_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Inventory asset Id of the vnic profile
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "vnic_profile_asset_id")
 
 
 @pulumi.output_type
@@ -1494,6 +1821,8 @@ class TargetAssetMigrationAsset(dict):
             suggest = "depended_on_bies"
         elif key == "dependsOns":
             suggest = "depends_ons"
+        elif key == "destinationDisks":
+            suggest = "destination_disks"
         elif key == "displayName":
             suggest = "display_name"
         elif key == "lifecycleDetails":
@@ -1504,6 +1833,8 @@ class TargetAssetMigrationAsset(dict):
             suggest = "parent_snapshot"
         elif key == "replicationCompartmentId":
             suggest = "replication_compartment_id"
+        elif key == "replicationLocationDetail":
+            suggest = "replication_location_detail"
         elif key == "replicationScheduleId":
             suggest = "replication_schedule_id"
         elif key == "snapShotBucketName":
@@ -1535,6 +1866,7 @@ class TargetAssetMigrationAsset(dict):
                  compartment_id: Optional[_builtins.str] = None,
                  depended_on_bies: Optional[Sequence[_builtins.str]] = None,
                  depends_ons: Optional[Sequence[_builtins.str]] = None,
+                 destination_disks: Optional[Mapping[str, _builtins.str]] = None,
                  display_name: Optional[_builtins.str] = None,
                  id: Optional[_builtins.str] = None,
                  lifecycle_details: Optional[_builtins.str] = None,
@@ -1542,6 +1874,7 @@ class TargetAssetMigrationAsset(dict):
                  notifications: Optional[Sequence[_builtins.str]] = None,
                  parent_snapshot: Optional[_builtins.str] = None,
                  replication_compartment_id: Optional[_builtins.str] = None,
+                 replication_location_detail: Optional['outputs.TargetAssetMigrationAssetReplicationLocationDetail'] = None,
                  replication_schedule_id: Optional[_builtins.str] = None,
                  snap_shot_bucket_name: Optional[_builtins.str] = None,
                  snapshots: Optional[Mapping[str, _builtins.str]] = None,
@@ -1557,6 +1890,7 @@ class TargetAssetMigrationAsset(dict):
         :param _builtins.str compartment_id: The OCID of the compartment.
         :param Sequence[_builtins.str] depended_on_bies: List of migration assets that depend on the asset.
         :param Sequence[_builtins.str] depends_ons: List of migration assets that depends on the asset.
+        :param Mapping[str, _builtins.str] destination_disks: Mapping of source disk id to destination disk details
         :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param _builtins.str id: Asset ID generated by mirgration service. It is used in the mirgration service pipeline.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
@@ -1564,6 +1898,7 @@ class TargetAssetMigrationAsset(dict):
         :param Sequence[_builtins.str] notifications: List of notifications
         :param _builtins.str parent_snapshot: The parent snapshot of the migration asset to be used by the replication task.
         :param _builtins.str replication_compartment_id: Replication compartment identifier
+        :param 'TargetAssetMigrationAssetReplicationLocationDetailArgs' replication_location_detail: Replication location detail where the snapshots reside
         :param _builtins.str replication_schedule_id: Replication schedule identifier
         :param _builtins.str snap_shot_bucket_name: Name of snapshot bucket
         :param Mapping[str, _builtins.str] snapshots: Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
@@ -1583,6 +1918,8 @@ class TargetAssetMigrationAsset(dict):
             pulumi.set(__self__, "depended_on_bies", depended_on_bies)
         if depends_ons is not None:
             pulumi.set(__self__, "depends_ons", depends_ons)
+        if destination_disks is not None:
+            pulumi.set(__self__, "destination_disks", destination_disks)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if id is not None:
@@ -1597,6 +1934,8 @@ class TargetAssetMigrationAsset(dict):
             pulumi.set(__self__, "parent_snapshot", parent_snapshot)
         if replication_compartment_id is not None:
             pulumi.set(__self__, "replication_compartment_id", replication_compartment_id)
+        if replication_location_detail is not None:
+            pulumi.set(__self__, "replication_location_detail", replication_location_detail)
         if replication_schedule_id is not None:
             pulumi.set(__self__, "replication_schedule_id", replication_schedule_id)
         if snap_shot_bucket_name is not None:
@@ -1649,6 +1988,14 @@ class TargetAssetMigrationAsset(dict):
         List of migration assets that depends on the asset.
         """
         return pulumi.get(self, "depends_ons")
+
+    @_builtins.property
+    @pulumi.getter(name="destinationDisks")
+    def destination_disks(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        Mapping of source disk id to destination disk details
+        """
+        return pulumi.get(self, "destination_disks")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -1705,6 +2052,14 @@ class TargetAssetMigrationAsset(dict):
         Replication compartment identifier
         """
         return pulumi.get(self, "replication_compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="replicationLocationDetail")
+    def replication_location_detail(self) -> Optional['outputs.TargetAssetMigrationAssetReplicationLocationDetail']:
+        """
+        Replication location detail where the snapshots reside
+        """
+        return pulumi.get(self, "replication_location_detail")
 
     @_builtins.property
     @pulumi.getter(name="replicationScheduleId")
@@ -1785,6 +2140,54 @@ class TargetAssetMigrationAsset(dict):
         (Updatable) The type of target asset.
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class TargetAssetMigrationAssetReplicationLocationDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "replicationLocationType":
+            suggest = "replication_location_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TargetAssetMigrationAssetReplicationLocationDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TargetAssetMigrationAssetReplicationLocationDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TargetAssetMigrationAssetReplicationLocationDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 metadata: Optional[Mapping[str, _builtins.str]] = None,
+                 replication_location_type: Optional[_builtins.str] = None):
+        """
+        :param Mapping[str, _builtins.str] metadata: Properties for each of the replication location types
+        :param _builtins.str replication_location_type: The type of replication location
+        """
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if replication_location_type is not None:
+            pulumi.set(__self__, "replication_location_type", replication_location_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        Properties for each of the replication location types
+        """
+        return pulumi.get(self, "metadata")
+
+    @_builtins.property
+    @pulumi.getter(name="replicationLocationType")
+    def replication_location_type(self) -> Optional[_builtins.str]:
+        """
+        The type of replication location
+        """
+        return pulumi.get(self, "replication_location_type")
 
 
 @pulumi.output_type
@@ -3957,20 +4360,22 @@ class TargetAssetUserSpecAgentConfigPluginsConfig(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 desired_state: _builtins.str,
-                 name: _builtins.str):
+                 desired_state: Optional[_builtins.str] = None,
+                 name: Optional[_builtins.str] = None):
         """
         :param _builtins.str desired_state: (Updatable) Whether the plugin should be enabled or disabled.
                
                To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         :param _builtins.str name: (Updatable) The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
-        pulumi.set(__self__, "desired_state", desired_state)
-        pulumi.set(__self__, "name", name)
+        if desired_state is not None:
+            pulumi.set(__self__, "desired_state", desired_state)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @_builtins.property
     @pulumi.getter(name="desiredState")
-    def desired_state(self) -> _builtins.str:
+    def desired_state(self) -> Optional[_builtins.str]:
         """
         (Updatable) Whether the plugin should be enabled or disabled.
 
@@ -3980,7 +4385,7 @@ class TargetAssetUserSpecAgentConfigPluginsConfig(dict):
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> _builtins.str:
+    def name(self) -> Optional[_builtins.str]:
         """
         (Updatable) The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
@@ -4283,15 +4688,16 @@ class TargetAssetUserSpecPreemptibleInstanceConfig(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 preemption_action: 'outputs.TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction'):
+                 preemption_action: Optional['outputs.TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction'] = None):
         """
         :param 'TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs' preemption_action: (Updatable) The action to run when the preemptible instance is interrupted for eviction.
         """
-        pulumi.set(__self__, "preemption_action", preemption_action)
+        if preemption_action is not None:
+            pulumi.set(__self__, "preemption_action", preemption_action)
 
     @_builtins.property
     @pulumi.getter(name="preemptionAction")
-    def preemption_action(self) -> 'outputs.TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction':
+    def preemption_action(self) -> Optional['outputs.TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction']:
         """
         (Updatable) The action to run when the preemptible instance is interrupted for eviction.
         """
@@ -4535,6 +4941,35 @@ class TargetAssetUserSpecSourceDetails(dict):
 
 
 @pulumi.output_type
+class GetMigrationAssetReplicationLocationDetailResult(dict):
+    def __init__(__self__, *,
+                 metadata: Mapping[str, _builtins.str],
+                 replication_location_type: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] metadata: Properties for each of the replication location types
+        :param _builtins.str replication_location_type: The type of replication location
+        """
+        pulumi.set(__self__, "metadata", metadata)
+        pulumi.set(__self__, "replication_location_type", replication_location_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> Mapping[str, _builtins.str]:
+        """
+        Properties for each of the replication location types
+        """
+        return pulumi.get(self, "metadata")
+
+    @_builtins.property
+    @pulumi.getter(name="replicationLocationType")
+    def replication_location_type(self) -> _builtins.str:
+        """
+        The type of replication location
+        """
+        return pulumi.get(self, "replication_location_type")
+
+
+@pulumi.output_type
 class GetMigrationAssetsFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -4579,6 +5014,7 @@ class GetMigrationAssetsMigrationAssetCollectionItemResult(dict):
                  availability_domain: _builtins.str,
                  compartment_id: _builtins.str,
                  depended_on_bies: Sequence[_builtins.str],
+                 destination_disks: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
                  id: _builtins.str,
                  inventory_asset_id: _builtins.str,
@@ -4588,6 +5024,7 @@ class GetMigrationAssetsMigrationAssetCollectionItemResult(dict):
                  notifications: Sequence[_builtins.str],
                  parent_snapshot: _builtins.str,
                  replication_compartment_id: _builtins.str,
+                 replication_location_details: Sequence['outputs.GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailResult'],
                  replication_schedule_id: _builtins.str,
                  snap_shot_bucket_name: _builtins.str,
                  snapshots: Mapping[str, _builtins.str],
@@ -4601,6 +5038,7 @@ class GetMigrationAssetsMigrationAssetCollectionItemResult(dict):
         :param _builtins.str availability_domain: Availability domain
         :param _builtins.str compartment_id: Compartment Identifier
         :param Sequence[_builtins.str] depended_on_bies: List of migration assets that depend on the asset.
+        :param Mapping[str, _builtins.str] destination_disks: Mapping of source disk id to destination disk details
         :param _builtins.str display_name: A filter to return only resources that match the entire given display name.
         :param _builtins.str id: Asset ID generated by mirgration service. It is used in the mirgration service pipeline.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
@@ -4608,6 +5046,7 @@ class GetMigrationAssetsMigrationAssetCollectionItemResult(dict):
         :param Sequence[_builtins.str] notifications: List of notifications
         :param _builtins.str parent_snapshot: The parent snapshot of the migration asset to be used by the replication task.
         :param _builtins.str replication_compartment_id: Replication compartment identifier
+        :param Sequence['GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArgs'] replication_location_details: Replication location detail where the snapshots reside
         :param _builtins.str replication_schedule_id: Replication schedule identifier
         :param _builtins.str snap_shot_bucket_name: Name of snapshot bucket
         :param Mapping[str, _builtins.str] snapshots: Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
@@ -4621,6 +5060,7 @@ class GetMigrationAssetsMigrationAssetCollectionItemResult(dict):
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "depended_on_bies", depended_on_bies)
+        pulumi.set(__self__, "destination_disks", destination_disks)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "inventory_asset_id", inventory_asset_id)
@@ -4630,6 +5070,7 @@ class GetMigrationAssetsMigrationAssetCollectionItemResult(dict):
         pulumi.set(__self__, "notifications", notifications)
         pulumi.set(__self__, "parent_snapshot", parent_snapshot)
         pulumi.set(__self__, "replication_compartment_id", replication_compartment_id)
+        pulumi.set(__self__, "replication_location_details", replication_location_details)
         pulumi.set(__self__, "replication_schedule_id", replication_schedule_id)
         pulumi.set(__self__, "snap_shot_bucket_name", snap_shot_bucket_name)
         pulumi.set(__self__, "snapshots", snapshots)
@@ -4663,6 +5104,14 @@ class GetMigrationAssetsMigrationAssetCollectionItemResult(dict):
         List of migration assets that depend on the asset.
         """
         return pulumi.get(self, "depended_on_bies")
+
+    @_builtins.property
+    @pulumi.getter(name="destinationDisks")
+    def destination_disks(self) -> Mapping[str, _builtins.str]:
+        """
+        Mapping of source disk id to destination disk details
+        """
+        return pulumi.get(self, "destination_disks")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -4729,6 +5178,14 @@ class GetMigrationAssetsMigrationAssetCollectionItemResult(dict):
         Replication compartment identifier
         """
         return pulumi.get(self, "replication_compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="replicationLocationDetails")
+    def replication_location_details(self) -> Sequence['outputs.GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailResult']:
+        """
+        Replication location detail where the snapshots reside
+        """
+        return pulumi.get(self, "replication_location_details")
 
     @_builtins.property
     @pulumi.getter(name="replicationScheduleId")
@@ -4801,6 +5258,53 @@ class GetMigrationAssetsMigrationAssetCollectionItemResult(dict):
         The type of asset referenced for inventory.
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailResult(dict):
+    def __init__(__self__, *,
+                 metadata: Mapping[str, _builtins.str],
+                 replication_location_type: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] metadata: Properties for each of the replication location types
+        :param _builtins.str replication_location_type: The type of replication location
+        """
+        pulumi.set(__self__, "metadata", metadata)
+        pulumi.set(__self__, "replication_location_type", replication_location_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> Mapping[str, _builtins.str]:
+        """
+        Properties for each of the replication location types
+        """
+        return pulumi.get(self, "metadata")
+
+    @_builtins.property
+    @pulumi.getter(name="replicationLocationType")
+    def replication_location_type(self) -> _builtins.str:
+        """
+        The type of replication location
+        """
+        return pulumi.get(self, "replication_location_type")
+
+
+@pulumi.output_type
+class GetMigrationMigrationConfigResult(dict):
+    def __init__(__self__, *,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.str subnet_id: The OCID of the subnet to use for replication
+        """
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The OCID of the subnet to use for replication
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -5239,17 +5743,39 @@ class GetMigrationPlanAvailableShapesFilterResult(dict):
 @pulumi.output_type
 class GetMigrationPlanMigrationPlanStatResult(dict):
     def __init__(__self__, *,
+                 cost_to_migrates: Sequence['outputs.GetMigrationPlanMigrationPlanStatCostToMigrateResult'],
+                 current_monthly_costs: Sequence['outputs.GetMigrationPlanMigrationPlanStatCurrentMonthlyCostResult'],
                  time_updated: _builtins.str,
                  total_estimated_costs: Sequence['outputs.GetMigrationPlanMigrationPlanStatTotalEstimatedCostResult'],
                  vm_count: _builtins.int):
         """
+        :param Sequence['GetMigrationPlanMigrationPlanStatCostToMigrateArgs'] cost_to_migrates: Summary of costs to migrate.
+        :param Sequence['GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArgs'] current_monthly_costs: Current monthly compute and storage costs.
         :param _builtins.str time_updated: The time when the migration plan was updated. An RFC3339 formatted datetime string.
         :param Sequence['GetMigrationPlanMigrationPlanStatTotalEstimatedCostArgs'] total_estimated_costs: Cost estimation description
         :param _builtins.int vm_count: The total count of VMs in migration
         """
+        pulumi.set(__self__, "cost_to_migrates", cost_to_migrates)
+        pulumi.set(__self__, "current_monthly_costs", current_monthly_costs)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "total_estimated_costs", total_estimated_costs)
         pulumi.set(__self__, "vm_count", vm_count)
+
+    @_builtins.property
+    @pulumi.getter(name="costToMigrates")
+    def cost_to_migrates(self) -> Sequence['outputs.GetMigrationPlanMigrationPlanStatCostToMigrateResult']:
+        """
+        Summary of costs to migrate.
+        """
+        return pulumi.get(self, "cost_to_migrates")
+
+    @_builtins.property
+    @pulumi.getter(name="currentMonthlyCosts")
+    def current_monthly_costs(self) -> Sequence['outputs.GetMigrationPlanMigrationPlanStatCurrentMonthlyCostResult']:
+        """
+        Current monthly compute and storage costs.
+        """
+        return pulumi.get(self, "current_monthly_costs")
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
@@ -5274,6 +5800,108 @@ class GetMigrationPlanMigrationPlanStatResult(dict):
         The total count of VMs in migration
         """
         return pulumi.get(self, "vm_count")
+
+
+@pulumi.output_type
+class GetMigrationPlanMigrationPlanStatCostToMigrateResult(dict):
+    def __init__(__self__, *,
+                 asset_count: _builtins.int,
+                 currency_code: _builtins.str,
+                 oci_data_transfer_costs: _builtins.float,
+                 source_data_transfer_costs: _builtins.float):
+        """
+        :param _builtins.int asset_count: Number of assets used in this calculation.
+        :param _builtins.str currency_code: Currency code in the ISO format.
+        :param _builtins.float oci_data_transfer_costs: Data transfer costs from OCI.
+        :param _builtins.float source_data_transfer_costs: Data transfer costs from source cloud provider.
+        """
+        pulumi.set(__self__, "asset_count", asset_count)
+        pulumi.set(__self__, "currency_code", currency_code)
+        pulumi.set(__self__, "oci_data_transfer_costs", oci_data_transfer_costs)
+        pulumi.set(__self__, "source_data_transfer_costs", source_data_transfer_costs)
+
+    @_builtins.property
+    @pulumi.getter(name="assetCount")
+    def asset_count(self) -> _builtins.int:
+        """
+        Number of assets used in this calculation.
+        """
+        return pulumi.get(self, "asset_count")
+
+    @_builtins.property
+    @pulumi.getter(name="currencyCode")
+    def currency_code(self) -> _builtins.str:
+        """
+        Currency code in the ISO format.
+        """
+        return pulumi.get(self, "currency_code")
+
+    @_builtins.property
+    @pulumi.getter(name="ociDataTransferCosts")
+    def oci_data_transfer_costs(self) -> _builtins.float:
+        """
+        Data transfer costs from OCI.
+        """
+        return pulumi.get(self, "oci_data_transfer_costs")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceDataTransferCosts")
+    def source_data_transfer_costs(self) -> _builtins.float:
+        """
+        Data transfer costs from source cloud provider.
+        """
+        return pulumi.get(self, "source_data_transfer_costs")
+
+
+@pulumi.output_type
+class GetMigrationPlanMigrationPlanStatCurrentMonthlyCostResult(dict):
+    def __init__(__self__, *,
+                 asset_count: _builtins.int,
+                 compute_amount: _builtins.float,
+                 currency_code: _builtins.str,
+                 storage_amount: _builtins.float):
+        """
+        :param _builtins.int asset_count: Number of assets used in this calculation.
+        :param _builtins.float compute_amount: Current monthly compute costs.
+        :param _builtins.str currency_code: Currency code in the ISO format.
+        :param _builtins.float storage_amount: Current monthly storage costs.
+        """
+        pulumi.set(__self__, "asset_count", asset_count)
+        pulumi.set(__self__, "compute_amount", compute_amount)
+        pulumi.set(__self__, "currency_code", currency_code)
+        pulumi.set(__self__, "storage_amount", storage_amount)
+
+    @_builtins.property
+    @pulumi.getter(name="assetCount")
+    def asset_count(self) -> _builtins.int:
+        """
+        Number of assets used in this calculation.
+        """
+        return pulumi.get(self, "asset_count")
+
+    @_builtins.property
+    @pulumi.getter(name="computeAmount")
+    def compute_amount(self) -> _builtins.float:
+        """
+        Current monthly compute costs.
+        """
+        return pulumi.get(self, "compute_amount")
+
+    @_builtins.property
+    @pulumi.getter(name="currencyCode")
+    def currency_code(self) -> _builtins.str:
+        """
+        Currency code in the ISO format.
+        """
+        return pulumi.get(self, "currency_code")
+
+    @_builtins.property
+    @pulumi.getter(name="storageAmount")
+    def storage_amount(self) -> _builtins.float:
+        """
+        Current monthly storage costs.
+        """
+        return pulumi.get(self, "storage_amount")
 
 
 @pulumi.output_type
@@ -5685,34 +6313,43 @@ class GetMigrationPlanStrategyResult(dict):
 class GetMigrationPlanTargetEnvironmentResult(dict):
     def __init__(__self__, *,
                  availability_domain: _builtins.str,
+                 cluster_asset_id: _builtins.str,
                  dedicated_vm_host: _builtins.str,
                  fault_domain: _builtins.str,
                  ms_license: _builtins.str,
+                 olvm_templates: Mapping[str, _builtins.str],
                  preferred_shape_type: _builtins.str,
                  subnet: _builtins.str,
                  target_compartment_id: _builtins.str,
                  target_environment_type: _builtins.str,
-                 vcn: _builtins.str):
+                 vcn: _builtins.str,
+                 vnic_profile_asset_id: _builtins.str):
         """
         :param _builtins.str availability_domain: Availability Domain of the VM configuration.
+        :param _builtins.str cluster_asset_id: Inventory asset id of the olvm cluster
         :param _builtins.str dedicated_vm_host: OCID of the dedicated VM configuration host.
         :param _builtins.str fault_domain: Fault domain of the VM configuration.
         :param _builtins.str ms_license: Microsoft license for the VM configuration.
+        :param Mapping[str, _builtins.str] olvm_templates: OLVM OS type to inventory asset id of the template
         :param _builtins.str preferred_shape_type: Preferred VM shape type provided by the customer.
         :param _builtins.str subnet: OCID of the VM configuration subnet.
         :param _builtins.str target_compartment_id: Target compartment identifier
         :param _builtins.str target_environment_type: The type of target environment.
         :param _builtins.str vcn: OCID of the VM configuration VCN.
+        :param _builtins.str vnic_profile_asset_id: Inventory asset Id of the vnic profile
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "cluster_asset_id", cluster_asset_id)
         pulumi.set(__self__, "dedicated_vm_host", dedicated_vm_host)
         pulumi.set(__self__, "fault_domain", fault_domain)
         pulumi.set(__self__, "ms_license", ms_license)
+        pulumi.set(__self__, "olvm_templates", olvm_templates)
         pulumi.set(__self__, "preferred_shape_type", preferred_shape_type)
         pulumi.set(__self__, "subnet", subnet)
         pulumi.set(__self__, "target_compartment_id", target_compartment_id)
         pulumi.set(__self__, "target_environment_type", target_environment_type)
         pulumi.set(__self__, "vcn", vcn)
+        pulumi.set(__self__, "vnic_profile_asset_id", vnic_profile_asset_id)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -5721,6 +6358,14 @@ class GetMigrationPlanTargetEnvironmentResult(dict):
         Availability Domain of the VM configuration.
         """
         return pulumi.get(self, "availability_domain")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterAssetId")
+    def cluster_asset_id(self) -> _builtins.str:
+        """
+        Inventory asset id of the olvm cluster
+        """
+        return pulumi.get(self, "cluster_asset_id")
 
     @_builtins.property
     @pulumi.getter(name="dedicatedVmHost")
@@ -5745,6 +6390,14 @@ class GetMigrationPlanTargetEnvironmentResult(dict):
         Microsoft license for the VM configuration.
         """
         return pulumi.get(self, "ms_license")
+
+    @_builtins.property
+    @pulumi.getter(name="olvmTemplates")
+    def olvm_templates(self) -> Mapping[str, _builtins.str]:
+        """
+        OLVM OS type to inventory asset id of the template
+        """
+        return pulumi.get(self, "olvm_templates")
 
     @_builtins.property
     @pulumi.getter(name="preferredShapeType")
@@ -5785,6 +6438,14 @@ class GetMigrationPlanTargetEnvironmentResult(dict):
         OCID of the VM configuration VCN.
         """
         return pulumi.get(self, "vcn")
+
+    @_builtins.property
+    @pulumi.getter(name="vnicProfileAssetId")
+    def vnic_profile_asset_id(self) -> _builtins.str:
+        """
+        Inventory asset Id of the vnic profile
+        """
+        return pulumi.get(self, "vnic_profile_asset_id")
 
 
 @pulumi.output_type
@@ -6023,17 +6684,39 @@ class GetMigrationPlansMigrationPlanCollectionItemResult(dict):
 @pulumi.output_type
 class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatResult(dict):
     def __init__(__self__, *,
+                 cost_to_migrates: Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateResult'],
+                 current_monthly_costs: Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostResult'],
                  time_updated: _builtins.str,
                  total_estimated_costs: Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostResult'],
                  vm_count: _builtins.int):
         """
+        :param Sequence['GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArgs'] cost_to_migrates: Summary of costs to migrate.
+        :param Sequence['GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArgs'] current_monthly_costs: Current monthly compute and storage costs.
         :param _builtins.str time_updated: The time when the migration plan was updated. An RFC3339 formatted datetime string.
         :param Sequence['GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostArgs'] total_estimated_costs: Cost estimation description
         :param _builtins.int vm_count: The total count of VMs in migration
         """
+        pulumi.set(__self__, "cost_to_migrates", cost_to_migrates)
+        pulumi.set(__self__, "current_monthly_costs", current_monthly_costs)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "total_estimated_costs", total_estimated_costs)
         pulumi.set(__self__, "vm_count", vm_count)
+
+    @_builtins.property
+    @pulumi.getter(name="costToMigrates")
+    def cost_to_migrates(self) -> Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateResult']:
+        """
+        Summary of costs to migrate.
+        """
+        return pulumi.get(self, "cost_to_migrates")
+
+    @_builtins.property
+    @pulumi.getter(name="currentMonthlyCosts")
+    def current_monthly_costs(self) -> Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostResult']:
+        """
+        Current monthly compute and storage costs.
+        """
+        return pulumi.get(self, "current_monthly_costs")
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
@@ -6058,6 +6741,108 @@ class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatResult(dict):
         The total count of VMs in migration
         """
         return pulumi.get(self, "vm_count")
+
+
+@pulumi.output_type
+class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateResult(dict):
+    def __init__(__self__, *,
+                 asset_count: _builtins.int,
+                 currency_code: _builtins.str,
+                 oci_data_transfer_costs: _builtins.float,
+                 source_data_transfer_costs: _builtins.float):
+        """
+        :param _builtins.int asset_count: Number of assets used in this calculation.
+        :param _builtins.str currency_code: Currency code in the ISO format.
+        :param _builtins.float oci_data_transfer_costs: Data transfer costs from OCI.
+        :param _builtins.float source_data_transfer_costs: Data transfer costs from source cloud provider.
+        """
+        pulumi.set(__self__, "asset_count", asset_count)
+        pulumi.set(__self__, "currency_code", currency_code)
+        pulumi.set(__self__, "oci_data_transfer_costs", oci_data_transfer_costs)
+        pulumi.set(__self__, "source_data_transfer_costs", source_data_transfer_costs)
+
+    @_builtins.property
+    @pulumi.getter(name="assetCount")
+    def asset_count(self) -> _builtins.int:
+        """
+        Number of assets used in this calculation.
+        """
+        return pulumi.get(self, "asset_count")
+
+    @_builtins.property
+    @pulumi.getter(name="currencyCode")
+    def currency_code(self) -> _builtins.str:
+        """
+        Currency code in the ISO format.
+        """
+        return pulumi.get(self, "currency_code")
+
+    @_builtins.property
+    @pulumi.getter(name="ociDataTransferCosts")
+    def oci_data_transfer_costs(self) -> _builtins.float:
+        """
+        Data transfer costs from OCI.
+        """
+        return pulumi.get(self, "oci_data_transfer_costs")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceDataTransferCosts")
+    def source_data_transfer_costs(self) -> _builtins.float:
+        """
+        Data transfer costs from source cloud provider.
+        """
+        return pulumi.get(self, "source_data_transfer_costs")
+
+
+@pulumi.output_type
+class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostResult(dict):
+    def __init__(__self__, *,
+                 asset_count: _builtins.int,
+                 compute_amount: _builtins.float,
+                 currency_code: _builtins.str,
+                 storage_amount: _builtins.float):
+        """
+        :param _builtins.int asset_count: Number of assets used in this calculation.
+        :param _builtins.float compute_amount: Current monthly compute costs.
+        :param _builtins.str currency_code: Currency code in the ISO format.
+        :param _builtins.float storage_amount: Current monthly storage costs.
+        """
+        pulumi.set(__self__, "asset_count", asset_count)
+        pulumi.set(__self__, "compute_amount", compute_amount)
+        pulumi.set(__self__, "currency_code", currency_code)
+        pulumi.set(__self__, "storage_amount", storage_amount)
+
+    @_builtins.property
+    @pulumi.getter(name="assetCount")
+    def asset_count(self) -> _builtins.int:
+        """
+        Number of assets used in this calculation.
+        """
+        return pulumi.get(self, "asset_count")
+
+    @_builtins.property
+    @pulumi.getter(name="computeAmount")
+    def compute_amount(self) -> _builtins.float:
+        """
+        Current monthly compute costs.
+        """
+        return pulumi.get(self, "compute_amount")
+
+    @_builtins.property
+    @pulumi.getter(name="currencyCode")
+    def currency_code(self) -> _builtins.str:
+        """
+        Currency code in the ISO format.
+        """
+        return pulumi.get(self, "currency_code")
+
+    @_builtins.property
+    @pulumi.getter(name="storageAmount")
+    def storage_amount(self) -> _builtins.float:
+        """
+        Current monthly storage costs.
+        """
+        return pulumi.get(self, "storage_amount")
 
 
 @pulumi.output_type
@@ -6469,34 +7254,43 @@ class GetMigrationPlansMigrationPlanCollectionItemStrategyResult(dict):
 class GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentResult(dict):
     def __init__(__self__, *,
                  availability_domain: _builtins.str,
+                 cluster_asset_id: _builtins.str,
                  dedicated_vm_host: _builtins.str,
                  fault_domain: _builtins.str,
                  ms_license: _builtins.str,
+                 olvm_templates: Mapping[str, _builtins.str],
                  preferred_shape_type: _builtins.str,
                  subnet: _builtins.str,
                  target_compartment_id: _builtins.str,
                  target_environment_type: _builtins.str,
-                 vcn: _builtins.str):
+                 vcn: _builtins.str,
+                 vnic_profile_asset_id: _builtins.str):
         """
         :param _builtins.str availability_domain: Availability Domain of the VM configuration.
+        :param _builtins.str cluster_asset_id: Inventory asset id of the olvm cluster
         :param _builtins.str dedicated_vm_host: OCID of the dedicated VM configuration host.
         :param _builtins.str fault_domain: Fault domain of the VM configuration.
         :param _builtins.str ms_license: Microsoft license for the VM configuration.
+        :param Mapping[str, _builtins.str] olvm_templates: OLVM OS type to inventory asset id of the template
         :param _builtins.str preferred_shape_type: Preferred VM shape type provided by the customer.
         :param _builtins.str subnet: OCID of the VM configuration subnet.
         :param _builtins.str target_compartment_id: Target compartment identifier
         :param _builtins.str target_environment_type: The type of target environment.
         :param _builtins.str vcn: OCID of the VM configuration VCN.
+        :param _builtins.str vnic_profile_asset_id: Inventory asset Id of the vnic profile
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "cluster_asset_id", cluster_asset_id)
         pulumi.set(__self__, "dedicated_vm_host", dedicated_vm_host)
         pulumi.set(__self__, "fault_domain", fault_domain)
         pulumi.set(__self__, "ms_license", ms_license)
+        pulumi.set(__self__, "olvm_templates", olvm_templates)
         pulumi.set(__self__, "preferred_shape_type", preferred_shape_type)
         pulumi.set(__self__, "subnet", subnet)
         pulumi.set(__self__, "target_compartment_id", target_compartment_id)
         pulumi.set(__self__, "target_environment_type", target_environment_type)
         pulumi.set(__self__, "vcn", vcn)
+        pulumi.set(__self__, "vnic_profile_asset_id", vnic_profile_asset_id)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -6505,6 +7299,14 @@ class GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentResult(dict):
         Availability Domain of the VM configuration.
         """
         return pulumi.get(self, "availability_domain")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterAssetId")
+    def cluster_asset_id(self) -> _builtins.str:
+        """
+        Inventory asset id of the olvm cluster
+        """
+        return pulumi.get(self, "cluster_asset_id")
 
     @_builtins.property
     @pulumi.getter(name="dedicatedVmHost")
@@ -6529,6 +7331,14 @@ class GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentResult(dict):
         Microsoft license for the VM configuration.
         """
         return pulumi.get(self, "ms_license")
+
+    @_builtins.property
+    @pulumi.getter(name="olvmTemplates")
+    def olvm_templates(self) -> Mapping[str, _builtins.str]:
+        """
+        OLVM OS type to inventory asset id of the template
+        """
+        return pulumi.get(self, "olvm_templates")
 
     @_builtins.property
     @pulumi.getter(name="preferredShapeType")
@@ -6569,6 +7379,14 @@ class GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentResult(dict):
         OCID of the VM configuration VCN.
         """
         return pulumi.get(self, "vcn")
+
+    @_builtins.property
+    @pulumi.getter(name="vnicProfileAssetId")
+    def vnic_profile_asset_id(self) -> _builtins.str:
+        """
+        Inventory asset Id of the vnic profile
+        """
+        return pulumi.get(self, "vnic_profile_asset_id")
 
 
 @pulumi.output_type
@@ -6620,6 +7438,8 @@ class GetMigrationsMigrationCollectionItemResult(dict):
                  id: _builtins.str,
                  is_completed: _builtins.bool,
                  lifecycle_details: _builtins.str,
+                 migration_configs: Sequence['outputs.GetMigrationsMigrationCollectionItemMigrationConfigResult'],
+                 migration_type: _builtins.str,
                  replication_schedule_id: _builtins.str,
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
@@ -6633,6 +7453,8 @@ class GetMigrationsMigrationCollectionItemResult(dict):
         :param _builtins.str id: Unique identifier that is immutable on creation
         :param _builtins.bool is_completed: Indicates whether migration is marked as completed.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
+        :param Sequence['GetMigrationsMigrationCollectionItemMigrationConfigArgs'] migration_configs: Configuration for a Migration Project.
+        :param _builtins.str migration_type: Type of migration project (OCI/OLVM). This determines the target environment for the migration.
         :param _builtins.str replication_schedule_id: Replication schedule identifier
         :param _builtins.str state: A filter to return only resources where the resource's lifecycle state matches the given lifecycle state.
         :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -6646,6 +7468,8 @@ class GetMigrationsMigrationCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_completed", is_completed)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "migration_configs", migration_configs)
+        pulumi.set(__self__, "migration_type", migration_type)
         pulumi.set(__self__, "replication_schedule_id", replication_schedule_id)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -6709,6 +7533,22 @@ class GetMigrationsMigrationCollectionItemResult(dict):
         return pulumi.get(self, "lifecycle_details")
 
     @_builtins.property
+    @pulumi.getter(name="migrationConfigs")
+    def migration_configs(self) -> Sequence['outputs.GetMigrationsMigrationCollectionItemMigrationConfigResult']:
+        """
+        Configuration for a Migration Project.
+        """
+        return pulumi.get(self, "migration_configs")
+
+    @_builtins.property
+    @pulumi.getter(name="migrationType")
+    def migration_type(self) -> _builtins.str:
+        """
+        Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+        """
+        return pulumi.get(self, "migration_type")
+
+    @_builtins.property
     @pulumi.getter(name="replicationScheduleId")
     def replication_schedule_id(self) -> _builtins.str:
         """
@@ -6747,6 +7587,24 @@ class GetMigrationsMigrationCollectionItemResult(dict):
         The time when the migration project was updated. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetMigrationsMigrationCollectionItemMigrationConfigResult(dict):
+    def __init__(__self__, *,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.str subnet_id: The OCID of the subnet to use for replication
+        """
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The OCID of the subnet to use for replication
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -7295,6 +8153,7 @@ class GetTargetAssetMigrationAssetResult(dict):
                  compartment_id: _builtins.str,
                  depended_on_bies: Sequence[_builtins.str],
                  depends_ons: Sequence[_builtins.str],
+                 destination_disks: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
                  id: _builtins.str,
                  lifecycle_details: _builtins.str,
@@ -7302,6 +8161,7 @@ class GetTargetAssetMigrationAssetResult(dict):
                  notifications: Sequence[_builtins.str],
                  parent_snapshot: _builtins.str,
                  replication_compartment_id: _builtins.str,
+                 replication_location_details: Sequence['outputs.GetTargetAssetMigrationAssetReplicationLocationDetailResult'],
                  replication_schedule_id: _builtins.str,
                  snap_shot_bucket_name: _builtins.str,
                  snapshots: Mapping[str, _builtins.str],
@@ -7317,6 +8177,7 @@ class GetTargetAssetMigrationAssetResult(dict):
         :param _builtins.str compartment_id: The OCID of the compartment.
         :param Sequence[_builtins.str] depended_on_bies: List of migration assets that depend on the asset.
         :param Sequence[_builtins.str] depends_ons: List of migration assets that depends on the asset.
+        :param Mapping[str, _builtins.str] destination_disks: Mapping of source disk id to destination disk details
         :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param _builtins.str id: Asset ID generated by mirgration service. It is used in the mirgration service pipeline.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
@@ -7324,6 +8185,7 @@ class GetTargetAssetMigrationAssetResult(dict):
         :param Sequence[_builtins.str] notifications: List of notifications
         :param _builtins.str parent_snapshot: The parent snapshot of the migration asset to be used by the replication task.
         :param _builtins.str replication_compartment_id: Replication compartment identifier
+        :param Sequence['GetTargetAssetMigrationAssetReplicationLocationDetailArgs'] replication_location_details: Replication location detail where the snapshots reside
         :param _builtins.str replication_schedule_id: Replication schedule identifier
         :param _builtins.str snap_shot_bucket_name: Name of snapshot bucket
         :param Mapping[str, _builtins.str] snapshots: Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
@@ -7339,6 +8201,7 @@ class GetTargetAssetMigrationAssetResult(dict):
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "depended_on_bies", depended_on_bies)
         pulumi.set(__self__, "depends_ons", depends_ons)
+        pulumi.set(__self__, "destination_disks", destination_disks)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -7346,6 +8209,7 @@ class GetTargetAssetMigrationAssetResult(dict):
         pulumi.set(__self__, "notifications", notifications)
         pulumi.set(__self__, "parent_snapshot", parent_snapshot)
         pulumi.set(__self__, "replication_compartment_id", replication_compartment_id)
+        pulumi.set(__self__, "replication_location_details", replication_location_details)
         pulumi.set(__self__, "replication_schedule_id", replication_schedule_id)
         pulumi.set(__self__, "snap_shot_bucket_name", snap_shot_bucket_name)
         pulumi.set(__self__, "snapshots", snapshots)
@@ -7388,6 +8252,14 @@ class GetTargetAssetMigrationAssetResult(dict):
         List of migration assets that depends on the asset.
         """
         return pulumi.get(self, "depends_ons")
+
+    @_builtins.property
+    @pulumi.getter(name="destinationDisks")
+    def destination_disks(self) -> Mapping[str, _builtins.str]:
+        """
+        Mapping of source disk id to destination disk details
+        """
+        return pulumi.get(self, "destination_disks")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -7444,6 +8316,14 @@ class GetTargetAssetMigrationAssetResult(dict):
         Replication compartment identifier
         """
         return pulumi.get(self, "replication_compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="replicationLocationDetails")
+    def replication_location_details(self) -> Sequence['outputs.GetTargetAssetMigrationAssetReplicationLocationDetailResult']:
+        """
+        Replication location detail where the snapshots reside
+        """
+        return pulumi.get(self, "replication_location_details")
 
     @_builtins.property
     @pulumi.getter(name="replicationScheduleId")
@@ -7524,6 +8404,35 @@ class GetTargetAssetMigrationAssetResult(dict):
         The type of action to run when the instance is interrupted for eviction.
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetTargetAssetMigrationAssetReplicationLocationDetailResult(dict):
+    def __init__(__self__, *,
+                 metadata: Mapping[str, _builtins.str],
+                 replication_location_type: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] metadata: Properties for each of the replication location types
+        :param _builtins.str replication_location_type: The type of replication location
+        """
+        pulumi.set(__self__, "metadata", metadata)
+        pulumi.set(__self__, "replication_location_type", replication_location_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> Mapping[str, _builtins.str]:
+        """
+        Properties for each of the replication location types
+        """
+        return pulumi.get(self, "metadata")
+
+    @_builtins.property
+    @pulumi.getter(name="replicationLocationType")
+    def replication_location_type(self) -> _builtins.str:
+        """
+        The type of replication location
+        """
+        return pulumi.get(self, "replication_location_type")
 
 
 @pulumi.output_type
@@ -9949,6 +10858,7 @@ class GetTargetAssetsTargetAssetCollectionItemMigrationAssetResult(dict):
                  compartment_id: _builtins.str,
                  depended_on_bies: Sequence[_builtins.str],
                  depends_ons: Sequence[_builtins.str],
+                 destination_disks: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
                  id: _builtins.str,
                  lifecycle_details: _builtins.str,
@@ -9956,6 +10866,7 @@ class GetTargetAssetsTargetAssetCollectionItemMigrationAssetResult(dict):
                  notifications: Sequence[_builtins.str],
                  parent_snapshot: _builtins.str,
                  replication_compartment_id: _builtins.str,
+                 replication_location_details: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailResult'],
                  replication_schedule_id: _builtins.str,
                  snap_shot_bucket_name: _builtins.str,
                  snapshots: Mapping[str, _builtins.str],
@@ -9971,6 +10882,7 @@ class GetTargetAssetsTargetAssetCollectionItemMigrationAssetResult(dict):
         :param _builtins.str compartment_id: The OCID of the compartment.
         :param Sequence[_builtins.str] depended_on_bies: List of migration assets that depend on the asset.
         :param Sequence[_builtins.str] depends_ons: List of migration assets that depends on the asset.
+        :param Mapping[str, _builtins.str] destination_disks: Mapping of source disk id to destination disk details
         :param _builtins.str display_name: A filter to return only resources that match the entire given display name.
         :param _builtins.str id: Asset ID generated by mirgration service. It is used in the mirgration service pipeline.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
@@ -9978,6 +10890,7 @@ class GetTargetAssetsTargetAssetCollectionItemMigrationAssetResult(dict):
         :param Sequence[_builtins.str] notifications: List of notifications
         :param _builtins.str parent_snapshot: The parent snapshot of the migration asset to be used by the replication task.
         :param _builtins.str replication_compartment_id: Replication compartment identifier
+        :param Sequence['GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArgs'] replication_location_details: Replication location detail where the snapshots reside
         :param _builtins.str replication_schedule_id: Replication schedule identifier
         :param _builtins.str snap_shot_bucket_name: Name of snapshot bucket
         :param Mapping[str, _builtins.str] snapshots: Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
@@ -9993,6 +10906,7 @@ class GetTargetAssetsTargetAssetCollectionItemMigrationAssetResult(dict):
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "depended_on_bies", depended_on_bies)
         pulumi.set(__self__, "depends_ons", depends_ons)
+        pulumi.set(__self__, "destination_disks", destination_disks)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -10000,6 +10914,7 @@ class GetTargetAssetsTargetAssetCollectionItemMigrationAssetResult(dict):
         pulumi.set(__self__, "notifications", notifications)
         pulumi.set(__self__, "parent_snapshot", parent_snapshot)
         pulumi.set(__self__, "replication_compartment_id", replication_compartment_id)
+        pulumi.set(__self__, "replication_location_details", replication_location_details)
         pulumi.set(__self__, "replication_schedule_id", replication_schedule_id)
         pulumi.set(__self__, "snap_shot_bucket_name", snap_shot_bucket_name)
         pulumi.set(__self__, "snapshots", snapshots)
@@ -10042,6 +10957,14 @@ class GetTargetAssetsTargetAssetCollectionItemMigrationAssetResult(dict):
         List of migration assets that depends on the asset.
         """
         return pulumi.get(self, "depends_ons")
+
+    @_builtins.property
+    @pulumi.getter(name="destinationDisks")
+    def destination_disks(self) -> Mapping[str, _builtins.str]:
+        """
+        Mapping of source disk id to destination disk details
+        """
+        return pulumi.get(self, "destination_disks")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -10098,6 +11021,14 @@ class GetTargetAssetsTargetAssetCollectionItemMigrationAssetResult(dict):
         Replication compartment identifier
         """
         return pulumi.get(self, "replication_compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="replicationLocationDetails")
+    def replication_location_details(self) -> Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailResult']:
+        """
+        Replication location detail where the snapshots reside
+        """
+        return pulumi.get(self, "replication_location_details")
 
     @_builtins.property
     @pulumi.getter(name="replicationScheduleId")
@@ -10178,6 +11109,35 @@ class GetTargetAssetsTargetAssetCollectionItemMigrationAssetResult(dict):
         The type of action to run when the instance is interrupted for eviction.
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailResult(dict):
+    def __init__(__self__, *,
+                 metadata: Mapping[str, _builtins.str],
+                 replication_location_type: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] metadata: Properties for each of the replication location types
+        :param _builtins.str replication_location_type: The type of replication location
+        """
+        pulumi.set(__self__, "metadata", metadata)
+        pulumi.set(__self__, "replication_location_type", replication_location_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> Mapping[str, _builtins.str]:
+        """
+        Properties for each of the replication location types
+        """
+        return pulumi.get(self, "metadata")
+
+    @_builtins.property
+    @pulumi.getter(name="replicationLocationType")
+    def replication_location_type(self) -> _builtins.str:
+        """
+        The type of replication location
+        """
+        return pulumi.get(self, "replication_location_type")
 
 
 @pulumi.output_type

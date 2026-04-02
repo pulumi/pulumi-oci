@@ -50,9 +50,17 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsArgs extend
         return Optional.ofNullable(this.environmentConfigurationDetails);
     }
 
+    /**
+     * The infrastructure configuration details.
+     * 
+     */
     @Import(name="infrastructureConfigurationDetails")
     private @Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgs> infrastructureConfigurationDetails;
 
+    /**
+     * @return The infrastructure configuration details.
+     * 
+     */
     public Optional<Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgs>> infrastructureConfigurationDetails() {
         return Optional.ofNullable(this.infrastructureConfigurationDetails);
     }
@@ -72,9 +80,17 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsArgs extend
         return Optional.ofNullable(this.modelConfigurationDetails);
     }
 
+    /**
+     * (Updatable) The model group configuration details.
+     * 
+     */
     @Import(name="modelGroupConfigurationDetails")
     private @Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetailsArgs> modelGroupConfigurationDetails;
 
+    /**
+     * @return (Updatable) The model group configuration details.
+     * 
+     */
     public Optional<Output<ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetailsArgs>> modelGroupConfigurationDetails() {
         return Optional.ofNullable(this.modelGroupConfigurationDetails);
     }
@@ -149,11 +165,23 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsArgs extend
             return environmentConfigurationDetails(Output.of(environmentConfigurationDetails));
         }
 
+        /**
+         * @param infrastructureConfigurationDetails The infrastructure configuration details.
+         * 
+         * @return builder
+         * 
+         */
         public Builder infrastructureConfigurationDetails(@Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgs> infrastructureConfigurationDetails) {
             $.infrastructureConfigurationDetails = infrastructureConfigurationDetails;
             return this;
         }
 
+        /**
+         * @param infrastructureConfigurationDetails The infrastructure configuration details.
+         * 
+         * @return builder
+         * 
+         */
         public Builder infrastructureConfigurationDetails(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgs infrastructureConfigurationDetails) {
             return infrastructureConfigurationDetails(Output.of(infrastructureConfigurationDetails));
         }
@@ -179,11 +207,23 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsArgs extend
             return modelConfigurationDetails(Output.of(modelConfigurationDetails));
         }
 
+        /**
+         * @param modelGroupConfigurationDetails (Updatable) The model group configuration details.
+         * 
+         * @return builder
+         * 
+         */
         public Builder modelGroupConfigurationDetails(@Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetailsArgs> modelGroupConfigurationDetails) {
             $.modelGroupConfigurationDetails = modelGroupConfigurationDetails;
             return this;
         }
 
+        /**
+         * @param modelGroupConfigurationDetails (Updatable) The model group configuration details.
+         * 
+         * @return builder
+         * 
+         */
         public Builder modelGroupConfigurationDetails(ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetailsArgs modelGroupConfigurationDetails) {
             return modelGroupConfigurationDetails(Output.of(modelGroupConfigurationDetails));
         }

@@ -65,6 +65,10 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMountTargetsMountTargetLockResult> Locks;
         /// <summary>
+        /// The OCIDs of the IPv6 addresses associated with this mount target.
+        /// </summary>
+        public readonly ImmutableArray<string> MountTargetIpv6ids;
+        /// <summary>
         /// A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
@@ -101,7 +105,7 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
-        /// The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
+        /// The date and time the mount target current billing cycle will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeBillingCycleEnd;
         /// <summary>
@@ -141,6 +145,8 @@ namespace Pulumi.Oci.FileStorage.Outputs
 
             ImmutableArray<Outputs.GetMountTargetsMountTargetLockResult> locks,
 
+            ImmutableArray<string> mountTargetIpv6ids,
+
             ImmutableArray<string> nsgIds,
 
             string observedThroughput,
@@ -178,6 +184,7 @@ namespace Pulumi.Oci.FileStorage.Outputs
             LdapIdmaps = ldapIdmaps;
             LifecycleDetails = lifecycleDetails;
             Locks = locks;
+            MountTargetIpv6ids = mountTargetIpv6ids;
             NsgIds = nsgIds;
             ObservedThroughput = observedThroughput;
             PrivateIpIds = privateIpIds;

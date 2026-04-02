@@ -6,10 +6,13 @@ package com.pulumi.oci.CloudMigrations;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.CloudMigrations.inputs.TargetAssetRecommendedSpecArgs;
+import com.pulumi.oci.CloudMigrations.inputs.TargetAssetTestSpecArgs;
 import com.pulumi.oci.CloudMigrations.inputs.TargetAssetUserSpecArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -83,15 +86,45 @@ public final class TargetAssetArgs extends com.pulumi.resources.ResourceArgs {
      * (Updatable) Preferred VM shape type that you provide.
      * 
      */
-    @Import(name="preferredShapeType", required=true)
-    private Output<String> preferredShapeType;
+    @Import(name="preferredShapeType")
+    private @Nullable Output<String> preferredShapeType;
 
     /**
      * @return (Updatable) Preferred VM shape type that you provide.
      * 
      */
-    public Output<String> preferredShapeType() {
-        return this.preferredShapeType;
+    public Optional<Output<String>> preferredShapeType() {
+        return Optional.ofNullable(this.preferredShapeType);
+    }
+
+    /**
+     * Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+     * 
+     */
+    @Import(name="recommendedSpecs")
+    private @Nullable Output<List<TargetAssetRecommendedSpecArgs>> recommendedSpecs;
+
+    /**
+     * @return Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+     * 
+     */
+    public Optional<Output<List<TargetAssetRecommendedSpecArgs>>> recommendedSpecs() {
+        return Optional.ofNullable(this.recommendedSpecs);
+    }
+
+    /**
+     * Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+     * 
+     */
+    @Import(name="testSpecs")
+    private @Nullable Output<List<TargetAssetTestSpecArgs>> testSpecs;
+
+    /**
+     * @return Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+     * 
+     */
+    public Optional<Output<List<TargetAssetTestSpecArgs>>> testSpecs() {
+        return Optional.ofNullable(this.testSpecs);
     }
 
     /**
@@ -113,15 +146,15 @@ public final class TargetAssetArgs extends com.pulumi.resources.ResourceArgs {
      * (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      * 
      */
-    @Import(name="userSpec", required=true)
-    private Output<TargetAssetUserSpecArgs> userSpec;
+    @Import(name="userSpec")
+    private @Nullable Output<TargetAssetUserSpecArgs> userSpec;
 
     /**
      * @return (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      * 
      */
-    public Output<TargetAssetUserSpecArgs> userSpec() {
-        return this.userSpec;
+    public Optional<Output<TargetAssetUserSpecArgs>> userSpec() {
+        return Optional.ofNullable(this.userSpec);
     }
 
     private TargetAssetArgs() {}
@@ -132,6 +165,8 @@ public final class TargetAssetArgs extends com.pulumi.resources.ResourceArgs {
         this.migrationPlanId = $.migrationPlanId;
         this.msLicense = $.msLicense;
         this.preferredShapeType = $.preferredShapeType;
+        this.recommendedSpecs = $.recommendedSpecs;
+        this.testSpecs = $.testSpecs;
         this.type = $.type;
         this.userSpec = $.userSpec;
     }
@@ -244,7 +279,7 @@ public final class TargetAssetArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder preferredShapeType(Output<String> preferredShapeType) {
+        public Builder preferredShapeType(@Nullable Output<String> preferredShapeType) {
             $.preferredShapeType = preferredShapeType;
             return this;
         }
@@ -257,6 +292,68 @@ public final class TargetAssetArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder preferredShapeType(String preferredShapeType) {
             return preferredShapeType(Output.of(preferredShapeType));
+        }
+
+        /**
+         * @param recommendedSpecs Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recommendedSpecs(@Nullable Output<List<TargetAssetRecommendedSpecArgs>> recommendedSpecs) {
+            $.recommendedSpecs = recommendedSpecs;
+            return this;
+        }
+
+        /**
+         * @param recommendedSpecs Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recommendedSpecs(List<TargetAssetRecommendedSpecArgs> recommendedSpecs) {
+            return recommendedSpecs(Output.of(recommendedSpecs));
+        }
+
+        /**
+         * @param recommendedSpecs Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recommendedSpecs(TargetAssetRecommendedSpecArgs... recommendedSpecs) {
+            return recommendedSpecs(List.of(recommendedSpecs));
+        }
+
+        /**
+         * @param testSpecs Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder testSpecs(@Nullable Output<List<TargetAssetTestSpecArgs>> testSpecs) {
+            $.testSpecs = testSpecs;
+            return this;
+        }
+
+        /**
+         * @param testSpecs Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder testSpecs(List<TargetAssetTestSpecArgs> testSpecs) {
+            return testSpecs(Output.of(testSpecs));
+        }
+
+        /**
+         * @param testSpecs Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder testSpecs(TargetAssetTestSpecArgs... testSpecs) {
+            return testSpecs(List.of(testSpecs));
         }
 
         /**
@@ -286,7 +383,7 @@ public final class TargetAssetArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder userSpec(Output<TargetAssetUserSpecArgs> userSpec) {
+        public Builder userSpec(@Nullable Output<TargetAssetUserSpecArgs> userSpec) {
             $.userSpec = userSpec;
             return this;
         }
@@ -308,14 +405,8 @@ public final class TargetAssetArgs extends com.pulumi.resources.ResourceArgs {
             if ($.migrationPlanId == null) {
                 throw new MissingRequiredPropertyException("TargetAssetArgs", "migrationPlanId");
             }
-            if ($.preferredShapeType == null) {
-                throw new MissingRequiredPropertyException("TargetAssetArgs", "preferredShapeType");
-            }
             if ($.type == null) {
                 throw new MissingRequiredPropertyException("TargetAssetArgs", "type");
-            }
-            if ($.userSpec == null) {
-                throw new MissingRequiredPropertyException("TargetAssetArgs", "userSpec");
             }
             return $;
         }

@@ -76,7 +76,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     public partial class BackendSet : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+        /// (Updatable) If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
         /// </summary>
         [Output("areOperationallyActiveBackendsPreferred")]
         public Output<bool> AreOperationallyActiveBackendsPreferred { get; private set; } = null!;
@@ -112,7 +112,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Output<bool> IsInstantFailoverEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+        /// (Updatable) This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.  If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
         /// </summary>
         [Output("isInstantFailoverTcpResetEnabled")]
         public Output<bool> IsInstantFailoverTcpResetEnabled { get; private set; } = null!;
@@ -196,7 +196,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     public sealed class BackendSetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+        /// (Updatable) If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
         /// </summary>
         [Input("areOperationallyActiveBackendsPreferred")]
         public Input<bool>? AreOperationallyActiveBackendsPreferred { get; set; }
@@ -226,7 +226,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Input<bool>? IsInstantFailoverEnabled { get; set; }
 
         /// <summary>
-        /// (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+        /// (Updatable) This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.  If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
         /// </summary>
         [Input("isInstantFailoverTcpResetEnabled")]
         public Input<bool>? IsInstantFailoverTcpResetEnabled { get; set; }
@@ -272,7 +272,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     public sealed class BackendSetState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+        /// (Updatable) If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
         /// </summary>
         [Input("areOperationallyActiveBackendsPreferred")]
         public Input<bool>? AreOperationallyActiveBackendsPreferred { get; set; }
@@ -314,7 +314,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Input<bool>? IsInstantFailoverEnabled { get; set; }
 
         /// <summary>
-        /// (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+        /// (Updatable) This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.  If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
         /// </summary>
         [Input("isInstantFailoverTcpResetEnabled")]
         public Input<bool>? IsInstantFailoverTcpResetEnabled { get; set; }

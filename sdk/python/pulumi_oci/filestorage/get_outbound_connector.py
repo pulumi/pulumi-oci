@@ -27,7 +27,7 @@ class GetOutboundConnectorResult:
     """
     A collection of values returned by getOutboundConnector.
     """
-    def __init__(__self__, availability_domain=None, bind_distinguished_name=None, compartment_id=None, connector_type=None, defined_tags=None, display_name=None, endpoints=None, freeform_tags=None, id=None, is_lock_override=None, locks=None, outbound_connector_id=None, password_secret_id=None, password_secret_version=None, state=None, system_tags=None, time_created=None):
+    def __init__(__self__, availability_domain=None, bind_distinguished_name=None, compartment_id=None, connector_type=None, defined_tags=None, display_name=None, endpoints=None, freeform_tags=None, id=None, is_lock_override=None, locks=None, outbound_connector_id=None, password_secret_id=None, password_secret_version=None, state=None, system_tags=None, time_created=None, trusted_certificate_secret_id=None, trusted_certificate_secret_version=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -79,6 +79,12 @@ class GetOutboundConnectorResult:
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if trusted_certificate_secret_id and not isinstance(trusted_certificate_secret_id, str):
+            raise TypeError("Expected argument 'trusted_certificate_secret_id' to be a str")
+        pulumi.set(__self__, "trusted_certificate_secret_id", trusted_certificate_secret_id)
+        if trusted_certificate_secret_version and not isinstance(trusted_certificate_secret_version, int):
+            raise TypeError("Expected argument 'trusted_certificate_secret_version' to be a int")
+        pulumi.set(__self__, "trusted_certificate_secret_version", trusted_certificate_secret_version)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -210,6 +216,22 @@ class GetOutboundConnectorResult:
         """
         return pulumi.get(self, "time_created")
 
+    @_builtins.property
+    @pulumi.getter(name="trustedCertificateSecretId")
+    def trusted_certificate_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault .
+        """
+        return pulumi.get(self, "trusted_certificate_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="trustedCertificateSecretVersion")
+    def trusted_certificate_secret_version(self) -> _builtins.int:
+        """
+        Version of the trusted certificate secret in the Vault to use.
+        """
+        return pulumi.get(self, "trusted_certificate_secret_version")
+
 
 class AwaitableGetOutboundConnectorResult(GetOutboundConnectorResult):
     # pylint: disable=using-constant-test
@@ -233,7 +255,9 @@ class AwaitableGetOutboundConnectorResult(GetOutboundConnectorResult):
             password_secret_version=self.password_secret_version,
             state=self.state,
             system_tags=self.system_tags,
-            time_created=self.time_created)
+            time_created=self.time_created,
+            trusted_certificate_secret_id=self.trusted_certificate_secret_id,
+            trusted_certificate_secret_version=self.trusted_certificate_secret_version)
 
 
 def get_outbound_connector(outbound_connector_id: Optional[_builtins.str] = None,
@@ -277,7 +301,9 @@ def get_outbound_connector(outbound_connector_id: Optional[_builtins.str] = None
         password_secret_version=pulumi.get(__ret__, 'password_secret_version'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
-        time_created=pulumi.get(__ret__, 'time_created'))
+        time_created=pulumi.get(__ret__, 'time_created'),
+        trusted_certificate_secret_id=pulumi.get(__ret__, 'trusted_certificate_secret_id'),
+        trusted_certificate_secret_version=pulumi.get(__ret__, 'trusted_certificate_secret_version'))
 def get_outbound_connector_output(outbound_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOutboundConnectorResult]:
     """
@@ -318,4 +344,6 @@ def get_outbound_connector_output(outbound_connector_id: Optional[pulumi.Input[_
         password_secret_version=pulumi.get(__response__, 'password_secret_version'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
-        time_created=pulumi.get(__response__, 'time_created')))
+        time_created=pulumi.get(__response__, 'time_created'),
+        trusted_certificate_secret_id=pulumi.get(__response__, 'trusted_certificate_secret_id'),
+        trusted_certificate_secret_version=pulumi.get(__response__, 'trusted_certificate_secret_version')))

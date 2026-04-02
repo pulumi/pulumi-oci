@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -29,6 +30,21 @@ public final class MigrationPlanTargetEnvironmentArgs extends com.pulumi.resourc
      */
     public Optional<Output<String>> availabilityDomain() {
         return Optional.ofNullable(this.availabilityDomain);
+    }
+
+    /**
+     * (Updatable) Inventory asset id of the olvm cluster
+     * 
+     */
+    @Import(name="clusterAssetId")
+    private @Nullable Output<String> clusterAssetId;
+
+    /**
+     * @return (Updatable) Inventory asset id of the olvm cluster
+     * 
+     */
+    public Optional<Output<String>> clusterAssetId() {
+        return Optional.ofNullable(this.clusterAssetId);
     }
 
     /**
@@ -77,6 +93,21 @@ public final class MigrationPlanTargetEnvironmentArgs extends com.pulumi.resourc
     }
 
     /**
+     * (Updatable) OLVM OS type to inventory asset id of the template
+     * 
+     */
+    @Import(name="olvmTemplates")
+    private @Nullable Output<Map<String,String>> olvmTemplates;
+
+    /**
+     * @return (Updatable) OLVM OS type to inventory asset id of the template
+     * 
+     */
+    public Optional<Output<Map<String,String>>> olvmTemplates() {
+        return Optional.ofNullable(this.olvmTemplates);
+    }
+
+    /**
      * (Updatable) Preferred VM shape type provided by the customer.
      * 
      */
@@ -95,15 +126,15 @@ public final class MigrationPlanTargetEnvironmentArgs extends com.pulumi.resourc
      * (Updatable) OCID of the VM configuration subnet.
      * 
      */
-    @Import(name="subnet", required=true)
-    private Output<String> subnet;
+    @Import(name="subnet")
+    private @Nullable Output<String> subnet;
 
     /**
      * @return (Updatable) OCID of the VM configuration subnet.
      * 
      */
-    public Output<String> subnet() {
-        return this.subnet;
+    public Optional<Output<String>> subnet() {
+        return Optional.ofNullable(this.subnet);
     }
 
     /**
@@ -139,36 +170,54 @@ public final class MigrationPlanTargetEnvironmentArgs extends com.pulumi.resourc
     /**
      * (Updatable) OCID of the VM configuration VCN.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
-    @Import(name="vcn", required=true)
-    private Output<String> vcn;
+    @Import(name="vcn")
+    private @Nullable Output<String> vcn;
 
     /**
      * @return (Updatable) OCID of the VM configuration VCN.
      * 
+     */
+    public Optional<Output<String>> vcn() {
+        return Optional.ofNullable(this.vcn);
+    }
+
+    /**
+     * (Updatable) Inventory asset Id of the vnic profile
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> vcn() {
-        return this.vcn;
+    @Import(name="vnicProfileAssetId")
+    private @Nullable Output<String> vnicProfileAssetId;
+
+    /**
+     * @return (Updatable) Inventory asset Id of the vnic profile
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> vnicProfileAssetId() {
+        return Optional.ofNullable(this.vnicProfileAssetId);
     }
 
     private MigrationPlanTargetEnvironmentArgs() {}
 
     private MigrationPlanTargetEnvironmentArgs(MigrationPlanTargetEnvironmentArgs $) {
         this.availabilityDomain = $.availabilityDomain;
+        this.clusterAssetId = $.clusterAssetId;
         this.dedicatedVmHost = $.dedicatedVmHost;
         this.faultDomain = $.faultDomain;
         this.msLicense = $.msLicense;
+        this.olvmTemplates = $.olvmTemplates;
         this.preferredShapeType = $.preferredShapeType;
         this.subnet = $.subnet;
         this.targetCompartmentId = $.targetCompartmentId;
         this.targetEnvironmentType = $.targetEnvironmentType;
         this.vcn = $.vcn;
+        this.vnicProfileAssetId = $.vnicProfileAssetId;
     }
 
     public static Builder builder() {
@@ -208,6 +257,27 @@ public final class MigrationPlanTargetEnvironmentArgs extends com.pulumi.resourc
          */
         public Builder availabilityDomain(String availabilityDomain) {
             return availabilityDomain(Output.of(availabilityDomain));
+        }
+
+        /**
+         * @param clusterAssetId (Updatable) Inventory asset id of the olvm cluster
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterAssetId(@Nullable Output<String> clusterAssetId) {
+            $.clusterAssetId = clusterAssetId;
+            return this;
+        }
+
+        /**
+         * @param clusterAssetId (Updatable) Inventory asset id of the olvm cluster
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterAssetId(String clusterAssetId) {
+            return clusterAssetId(Output.of(clusterAssetId));
         }
 
         /**
@@ -274,6 +344,27 @@ public final class MigrationPlanTargetEnvironmentArgs extends com.pulumi.resourc
         }
 
         /**
+         * @param olvmTemplates (Updatable) OLVM OS type to inventory asset id of the template
+         * 
+         * @return builder
+         * 
+         */
+        public Builder olvmTemplates(@Nullable Output<Map<String,String>> olvmTemplates) {
+            $.olvmTemplates = olvmTemplates;
+            return this;
+        }
+
+        /**
+         * @param olvmTemplates (Updatable) OLVM OS type to inventory asset id of the template
+         * 
+         * @return builder
+         * 
+         */
+        public Builder olvmTemplates(Map<String,String> olvmTemplates) {
+            return olvmTemplates(Output.of(olvmTemplates));
+        }
+
+        /**
          * @param preferredShapeType (Updatable) Preferred VM shape type provided by the customer.
          * 
          * @return builder
@@ -300,7 +391,7 @@ public final class MigrationPlanTargetEnvironmentArgs extends com.pulumi.resourc
          * @return builder
          * 
          */
-        public Builder subnet(Output<String> subnet) {
+        public Builder subnet(@Nullable Output<String> subnet) {
             $.subnet = subnet;
             return this;
         }
@@ -360,22 +451,16 @@ public final class MigrationPlanTargetEnvironmentArgs extends com.pulumi.resourc
         /**
          * @param vcn (Updatable) OCID of the VM configuration VCN.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
-        public Builder vcn(Output<String> vcn) {
+        public Builder vcn(@Nullable Output<String> vcn) {
             $.vcn = vcn;
             return this;
         }
 
         /**
          * @param vcn (Updatable) OCID of the VM configuration VCN.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -384,15 +469,36 @@ public final class MigrationPlanTargetEnvironmentArgs extends com.pulumi.resourc
             return vcn(Output.of(vcn));
         }
 
+        /**
+         * @param vnicProfileAssetId (Updatable) Inventory asset Id of the vnic profile
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vnicProfileAssetId(@Nullable Output<String> vnicProfileAssetId) {
+            $.vnicProfileAssetId = vnicProfileAssetId;
+            return this;
+        }
+
+        /**
+         * @param vnicProfileAssetId (Updatable) Inventory asset Id of the vnic profile
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vnicProfileAssetId(String vnicProfileAssetId) {
+            return vnicProfileAssetId(Output.of(vnicProfileAssetId));
+        }
+
         public MigrationPlanTargetEnvironmentArgs build() {
-            if ($.subnet == null) {
-                throw new MissingRequiredPropertyException("MigrationPlanTargetEnvironmentArgs", "subnet");
-            }
             if ($.targetEnvironmentType == null) {
                 throw new MissingRequiredPropertyException("MigrationPlanTargetEnvironmentArgs", "targetEnvironmentType");
-            }
-            if ($.vcn == null) {
-                throw new MissingRequiredPropertyException("MigrationPlanTargetEnvironmentArgs", "vcn");
             }
             return $;
         }

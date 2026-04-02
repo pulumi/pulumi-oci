@@ -13,6 +13,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['MigrationArgs', 'Migration']
 
@@ -24,6 +26,8 @@ class MigrationArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_completed: Optional[pulumi.Input[_builtins.bool]] = None,
+                 migration_config: Optional[pulumi.Input['MigrationMigrationConfigArgs']] = None,
+                 migration_type: Optional[pulumi.Input[_builtins.str]] = None,
                  replication_schedule_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Migration resource.
@@ -33,6 +37,8 @@ class MigrationArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_completed: (Updatable) Indicates whether migration is marked as complete.
+        :param pulumi.Input['MigrationMigrationConfigArgs'] migration_config: (Updatable) Configuration for a Migration Project.
+        :param pulumi.Input[_builtins.str] migration_type: (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
         :param pulumi.Input[_builtins.str] replication_schedule_id: (Updatable) Replication schedule identifier
                
                
@@ -47,6 +53,10 @@ class MigrationArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_completed is not None:
             pulumi.set(__self__, "is_completed", is_completed)
+        if migration_config is not None:
+            pulumi.set(__self__, "migration_config", migration_config)
+        if migration_type is not None:
+            pulumi.set(__self__, "migration_type", migration_type)
         if replication_schedule_id is not None:
             pulumi.set(__self__, "replication_schedule_id", replication_schedule_id)
 
@@ -111,6 +121,30 @@ class MigrationArgs:
         pulumi.set(self, "is_completed", value)
 
     @_builtins.property
+    @pulumi.getter(name="migrationConfig")
+    def migration_config(self) -> Optional[pulumi.Input['MigrationMigrationConfigArgs']]:
+        """
+        (Updatable) Configuration for a Migration Project.
+        """
+        return pulumi.get(self, "migration_config")
+
+    @migration_config.setter
+    def migration_config(self, value: Optional[pulumi.Input['MigrationMigrationConfigArgs']]):
+        pulumi.set(self, "migration_config", value)
+
+    @_builtins.property
+    @pulumi.getter(name="migrationType")
+    def migration_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+        """
+        return pulumi.get(self, "migration_type")
+
+    @migration_type.setter
+    def migration_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "migration_type", value)
+
+    @_builtins.property
     @pulumi.getter(name="replicationScheduleId")
     def replication_schedule_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -136,6 +170,8 @@ class _MigrationState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_completed: Optional[pulumi.Input[_builtins.bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
+                 migration_config: Optional[pulumi.Input['MigrationMigrationConfigArgs']] = None,
+                 migration_type: Optional[pulumi.Input[_builtins.str]] = None,
                  replication_schedule_id: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -150,6 +186,8 @@ class _MigrationState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_completed: (Updatable) Indicates whether migration is marked as complete.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
+        :param pulumi.Input['MigrationMigrationConfigArgs'] migration_config: (Updatable) Configuration for a Migration Project.
+        :param pulumi.Input[_builtins.str] migration_type: (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
         :param pulumi.Input[_builtins.str] replication_schedule_id: (Updatable) Replication schedule identifier
                
                
@@ -172,6 +210,10 @@ class _MigrationState:
             pulumi.set(__self__, "is_completed", is_completed)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if migration_config is not None:
+            pulumi.set(__self__, "migration_config", migration_config)
+        if migration_type is not None:
+            pulumi.set(__self__, "migration_type", migration_type)
         if replication_schedule_id is not None:
             pulumi.set(__self__, "replication_schedule_id", replication_schedule_id)
         if state is not None:
@@ -256,6 +298,30 @@ class _MigrationState:
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
+    @pulumi.getter(name="migrationConfig")
+    def migration_config(self) -> Optional[pulumi.Input['MigrationMigrationConfigArgs']]:
+        """
+        (Updatable) Configuration for a Migration Project.
+        """
+        return pulumi.get(self, "migration_config")
+
+    @migration_config.setter
+    def migration_config(self, value: Optional[pulumi.Input['MigrationMigrationConfigArgs']]):
+        pulumi.set(self, "migration_config", value)
+
+    @_builtins.property
+    @pulumi.getter(name="migrationType")
+    def migration_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+        """
+        return pulumi.get(self, "migration_type")
+
+    @migration_type.setter
+    def migration_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "migration_type", value)
+
+    @_builtins.property
     @pulumi.getter(name="replicationScheduleId")
     def replication_schedule_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -331,6 +397,8 @@ class Migration(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_completed: Optional[pulumi.Input[_builtins.bool]] = None,
+                 migration_config: Optional[pulumi.Input[Union['MigrationMigrationConfigArgs', 'MigrationMigrationConfigArgsDict']]] = None,
+                 migration_type: Optional[pulumi.Input[_builtins.str]] = None,
                  replication_schedule_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
@@ -357,6 +425,10 @@ class Migration(pulumi.CustomResource):
                 "bar-key": "value",
             },
             is_completed=migration_is_completed,
+            migration_config={
+                "subnet_id": test_subnet["id"],
+            },
+            migration_type=migration_migration_type,
             replication_schedule_id=test_replication_schedule["id"])
         ```
 
@@ -376,6 +448,8 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Migration identifier
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_completed: (Updatable) Indicates whether migration is marked as complete.
+        :param pulumi.Input[Union['MigrationMigrationConfigArgs', 'MigrationMigrationConfigArgsDict']] migration_config: (Updatable) Configuration for a Migration Project.
+        :param pulumi.Input[_builtins.str] migration_type: (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
         :param pulumi.Input[_builtins.str] replication_schedule_id: (Updatable) Replication schedule identifier
                
                
@@ -412,6 +486,10 @@ class Migration(pulumi.CustomResource):
                 "bar-key": "value",
             },
             is_completed=migration_is_completed,
+            migration_config={
+                "subnet_id": test_subnet["id"],
+            },
+            migration_type=migration_migration_type,
             replication_schedule_id=test_replication_schedule["id"])
         ```
 
@@ -444,6 +522,8 @@ class Migration(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_completed: Optional[pulumi.Input[_builtins.bool]] = None,
+                 migration_config: Optional[pulumi.Input[Union['MigrationMigrationConfigArgs', 'MigrationMigrationConfigArgsDict']]] = None,
+                 migration_type: Optional[pulumi.Input[_builtins.str]] = None,
                  replication_schedule_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -463,6 +543,8 @@ class Migration(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_completed"] = is_completed
+            __props__.__dict__["migration_config"] = migration_config
+            __props__.__dict__["migration_type"] = migration_type
             __props__.__dict__["replication_schedule_id"] = replication_schedule_id
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
@@ -485,6 +567,8 @@ class Migration(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_completed: Optional[pulumi.Input[_builtins.bool]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
+            migration_config: Optional[pulumi.Input[Union['MigrationMigrationConfigArgs', 'MigrationMigrationConfigArgsDict']]] = None,
+            migration_type: Optional[pulumi.Input[_builtins.str]] = None,
             replication_schedule_id: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -503,6 +587,8 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_completed: (Updatable) Indicates whether migration is marked as complete.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
+        :param pulumi.Input[Union['MigrationMigrationConfigArgs', 'MigrationMigrationConfigArgsDict']] migration_config: (Updatable) Configuration for a Migration Project.
+        :param pulumi.Input[_builtins.str] migration_type: (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
         :param pulumi.Input[_builtins.str] replication_schedule_id: (Updatable) Replication schedule identifier
                
                
@@ -523,6 +609,8 @@ class Migration(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_completed"] = is_completed
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["migration_config"] = migration_config
+        __props__.__dict__["migration_type"] = migration_type
         __props__.__dict__["replication_schedule_id"] = replication_schedule_id
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
@@ -577,6 +665,22 @@ class Migration(pulumi.CustomResource):
         A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="migrationConfig")
+    def migration_config(self) -> pulumi.Output['outputs.MigrationMigrationConfig']:
+        """
+        (Updatable) Configuration for a Migration Project.
+        """
+        return pulumi.get(self, "migration_config")
+
+    @_builtins.property
+    @pulumi.getter(name="migrationType")
+    def migration_type(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+        """
+        return pulumi.get(self, "migration_type")
 
     @_builtins.property
     @pulumi.getter(name="replicationScheduleId")

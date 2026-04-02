@@ -101,6 +101,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ResourceAnalyticsResourceAnalyticsInstanceOacManagement{}
 	case "oci:oci/resourceAnalyticsTenancyAttachment:ResourceAnalyticsTenancyAttachment":
 		r = &ResourceAnalyticsTenancyAttachment{}
+	case "oci:oci/selfSubscription:SelfSubscription":
+		r = &SelfSubscription{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -312,6 +314,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"oci/resourceAnalyticsTenancyAttachment",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/selfSubscription",
 		&module{version},
 	)
 }

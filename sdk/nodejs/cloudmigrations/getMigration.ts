@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -69,7 +71,15 @@ export interface GetMigrationResult {
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      */
     readonly lifecycleDetails: string;
+    /**
+     * Configuration for a Migration Project.
+     */
+    readonly migrationConfigs: outputs.CloudMigrations.GetMigrationMigrationConfig[];
     readonly migrationId: string;
+    /**
+     * Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+     */
+    readonly migrationType: string;
     /**
      * Replication schedule identifier
      */

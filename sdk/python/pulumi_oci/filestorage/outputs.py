@@ -109,7 +109,7 @@ class ExportExportOption(dict):
                  is_anonymous_access_allowed: Optional[_builtins.bool] = None,
                  require_privileged_source_port: Optional[_builtins.bool] = None):
         """
-        :param _builtins.str source: (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
+        :param _builtins.str source: (Updatable) Clients these options should apply to. Must be a either single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
                
                **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
         :param _builtins.str access: (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
@@ -140,7 +140,7 @@ class ExportExportOption(dict):
     @pulumi.getter
     def source(self) -> _builtins.str:
         """
-        (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
+        (Updatable) Clients these options should apply to. Must be a either single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
 
         **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
         """
@@ -1432,7 +1432,7 @@ class GetExportsExportExportOptionResult(dict):
         :param _builtins.str identity_squash: Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
         :param _builtins.bool is_anonymous_access_allowed: Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
         :param _builtins.bool require_privileged_source_port: If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
-        :param _builtins.str source: Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
+        :param _builtins.str source: Clients these options should apply to. Must be a either single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
         """
         pulumi.set(__self__, "access", access)
         pulumi.set(__self__, "allowed_auths", allowed_auths)
@@ -1503,7 +1503,7 @@ class GetExportsExportExportOptionResult(dict):
     @pulumi.getter
     def source(self) -> _builtins.str:
         """
-        Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
+        Clients these options should apply to. Must be a either single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
         """
         return pulumi.get(self, "source")
 
@@ -2672,6 +2672,7 @@ class GetMountTargetsMountTargetResult(dict):
                  ldap_idmaps: Sequence['outputs.GetMountTargetsMountTargetLdapIdmapResult'],
                  lifecycle_details: _builtins.str,
                  locks: Sequence['outputs.GetMountTargetsMountTargetLockResult'],
+                 mount_target_ipv6ids: Sequence[_builtins.str],
                  nsg_ids: Sequence[_builtins.str],
                  observed_throughput: _builtins.str,
                  private_ip_ids: Sequence[_builtins.str],
@@ -2696,6 +2697,7 @@ class GetMountTargetsMountTargetResult(dict):
         :param Sequence['GetMountTargetsMountTargetLdapIdmapArgs'] ldap_idmaps: Mount target details about the LDAP ID mapping configuration.
         :param _builtins.str lifecycle_details: Additional information about the current 'lifecycleState'.
         :param Sequence['GetMountTargetsMountTargetLockArgs'] locks: Locks associated with this resource.
+        :param Sequence[_builtins.str] mount_target_ipv6ids: The OCIDs of the IPv6 addresses associated with this mount target.
         :param Sequence[_builtins.str] nsg_ids: A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         :param _builtins.str observed_throughput: Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
         :param Sequence[_builtins.str] private_ip_ids: The OCIDs of the private IP addresses associated with this mount target.
@@ -2705,7 +2707,7 @@ class GetMountTargetsMountTargetResult(dict):
         :param _builtins.str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
         :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
-        :param _builtins.str time_billing_cycle_end: The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_billing_cycle_end: The date and time the mount target current billing cycle will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
         :param _builtins.str time_created: The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -2723,6 +2725,7 @@ class GetMountTargetsMountTargetResult(dict):
         pulumi.set(__self__, "ldap_idmaps", ldap_idmaps)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "locks", locks)
+        pulumi.set(__self__, "mount_target_ipv6ids", mount_target_ipv6ids)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "observed_throughput", observed_throughput)
         pulumi.set(__self__, "private_ip_ids", private_ip_ids)
@@ -2847,6 +2850,14 @@ class GetMountTargetsMountTargetResult(dict):
         return pulumi.get(self, "locks")
 
     @_builtins.property
+    @pulumi.getter(name="mountTargetIpv6ids")
+    def mount_target_ipv6ids(self) -> Sequence[_builtins.str]:
+        """
+        The OCIDs of the IPv6 addresses associated with this mount target.
+        """
+        return pulumi.get(self, "mount_target_ipv6ids")
+
+    @_builtins.property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[_builtins.str]:
         """
@@ -2922,7 +2933,7 @@ class GetMountTargetsMountTargetResult(dict):
     @pulumi.getter(name="timeBillingCycleEnd")
     def time_billing_cycle_end(self) -> _builtins.str:
         """
-        The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
+        The date and time the mount target current billing cycle will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_billing_cycle_end")
 
@@ -3268,7 +3279,9 @@ class GetOutboundConnectorsOutboundConnectorResult(dict):
                  password_secret_version: _builtins.int,
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
-                 time_created: _builtins.str):
+                 time_created: _builtins.str,
+                 trusted_certificate_secret_id: _builtins.str,
+                 trusted_certificate_secret_version: _builtins.int):
         """
         :param _builtins.str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         :param _builtins.str bind_distinguished_name: The LDAP Distinguished Name of the account.
@@ -3285,6 +3298,8 @@ class GetOutboundConnectorsOutboundConnectorResult(dict):
         :param _builtins.str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
         :param _builtins.str time_created: The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str trusted_certificate_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault .
+        :param _builtins.int trusted_certificate_secret_version: Version of the trusted certificate secret in the Vault to use.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "bind_distinguished_name", bind_distinguished_name)
@@ -3302,6 +3317,8 @@ class GetOutboundConnectorsOutboundConnectorResult(dict):
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "trusted_certificate_secret_id", trusted_certificate_secret_id)
+        pulumi.set(__self__, "trusted_certificate_secret_version", trusted_certificate_secret_version)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -3427,6 +3444,22 @@ class GetOutboundConnectorsOutboundConnectorResult(dict):
         The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="trustedCertificateSecretId")
+    def trusted_certificate_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault .
+        """
+        return pulumi.get(self, "trusted_certificate_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="trustedCertificateSecretVersion")
+    def trusted_certificate_secret_version(self) -> _builtins.int:
+        """
+        Version of the trusted certificate secret in the Vault to use.
+        """
+        return pulumi.get(self, "trusted_certificate_secret_version")
 
 
 @pulumi.output_type

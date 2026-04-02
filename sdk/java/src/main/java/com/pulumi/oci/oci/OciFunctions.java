@@ -203,6 +203,14 @@ import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentArgs;
 import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentPlainArgs;
 import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentsArgs;
 import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetSelfPartnerSubscriptionsArgs;
+import com.pulumi.oci.oci.inputs.GetSelfPartnerSubscriptionsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetSelfSubscriptionArgs;
+import com.pulumi.oci.oci.inputs.GetSelfSubscriptionPlainArgs;
+import com.pulumi.oci.oci.inputs.GetSelfSubscriptionTokenArgs;
+import com.pulumi.oci.oci.inputs.GetSelfSubscriptionTokenPlainArgs;
+import com.pulumi.oci.oci.inputs.GetSelfSubscriptionsArgs;
+import com.pulumi.oci.oci.inputs.GetSelfSubscriptionsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceArgs;
 import com.pulumi.oci.oci.inputs.GetWlmsManagedInstancePlainArgs;
 import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceScanResultsArgs;
@@ -334,6 +342,10 @@ import com.pulumi.oci.oci.outputs.GetResourceAnalyticsResourceAnalyticsInstanceR
 import com.pulumi.oci.oci.outputs.GetResourceAnalyticsResourceAnalyticsInstancesResult;
 import com.pulumi.oci.oci.outputs.GetResourceAnalyticsTenancyAttachmentResult;
 import com.pulumi.oci.oci.outputs.GetResourceAnalyticsTenancyAttachmentsResult;
+import com.pulumi.oci.oci.outputs.GetSelfPartnerSubscriptionsResult;
+import com.pulumi.oci.oci.outputs.GetSelfSubscriptionResult;
+import com.pulumi.oci.oci.outputs.GetSelfSubscriptionTokenResult;
+import com.pulumi.oci.oci.outputs.GetSelfSubscriptionsResult;
 import com.pulumi.oci.oci.outputs.GetWlmsManagedInstanceResult;
 import com.pulumi.oci.oci.outputs.GetWlmsManagedInstanceScanResultsResult;
 import com.pulumi.oci.oci.outputs.GetWlmsManagedInstanceServerInstalledPatchesResult;
@@ -22383,6 +22395,963 @@ public final class OciFunctions {
      */
     public static CompletableFuture<GetResourceAnalyticsTenancyAttachmentsResult> getResourceAnalyticsTenancyAttachmentsPlain(GetResourceAnalyticsTenancyAttachmentsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:oci/getResourceAnalyticsTenancyAttachments:getResourceAnalyticsTenancyAttachments", TypeShape.of(GetResourceAnalyticsTenancyAttachmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Partner Subscriptions in Oracle Cloud Infrastructure Self service.
+     * 
+     * Gets information about a Subscription.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfPartnerSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPartnerSubscriptions = OciFunctions.getSelfPartnerSubscriptions(GetSelfPartnerSubscriptionsArgs.builder()
+     *             .listingId(testListing.id())
+     *             .displayName(partnerSubscriptionDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSelfPartnerSubscriptionsResult> getSelfPartnerSubscriptions(GetSelfPartnerSubscriptionsArgs args) {
+        return getSelfPartnerSubscriptions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Partner Subscriptions in Oracle Cloud Infrastructure Self service.
+     * 
+     * Gets information about a Subscription.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfPartnerSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPartnerSubscriptions = OciFunctions.getSelfPartnerSubscriptions(GetSelfPartnerSubscriptionsArgs.builder()
+     *             .listingId(testListing.id())
+     *             .displayName(partnerSubscriptionDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSelfPartnerSubscriptionsResult> getSelfPartnerSubscriptionsPlain(GetSelfPartnerSubscriptionsPlainArgs args) {
+        return getSelfPartnerSubscriptionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Partner Subscriptions in Oracle Cloud Infrastructure Self service.
+     * 
+     * Gets information about a Subscription.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfPartnerSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPartnerSubscriptions = OciFunctions.getSelfPartnerSubscriptions(GetSelfPartnerSubscriptionsArgs.builder()
+     *             .listingId(testListing.id())
+     *             .displayName(partnerSubscriptionDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSelfPartnerSubscriptionsResult> getSelfPartnerSubscriptions(GetSelfPartnerSubscriptionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getSelfPartnerSubscriptions:getSelfPartnerSubscriptions", TypeShape.of(GetSelfPartnerSubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Partner Subscriptions in Oracle Cloud Infrastructure Self service.
+     * 
+     * Gets information about a Subscription.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfPartnerSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPartnerSubscriptions = OciFunctions.getSelfPartnerSubscriptions(GetSelfPartnerSubscriptionsArgs.builder()
+     *             .listingId(testListing.id())
+     *             .displayName(partnerSubscriptionDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSelfPartnerSubscriptionsResult> getSelfPartnerSubscriptions(GetSelfPartnerSubscriptionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getSelfPartnerSubscriptions:getSelfPartnerSubscriptions", TypeShape.of(GetSelfPartnerSubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Partner Subscriptions in Oracle Cloud Infrastructure Self service.
+     * 
+     * Gets information about a Subscription.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfPartnerSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPartnerSubscriptions = OciFunctions.getSelfPartnerSubscriptions(GetSelfPartnerSubscriptionsArgs.builder()
+     *             .listingId(testListing.id())
+     *             .displayName(partnerSubscriptionDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSelfPartnerSubscriptionsResult> getSelfPartnerSubscriptionsPlain(GetSelfPartnerSubscriptionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getSelfPartnerSubscriptions:getSelfPartnerSubscriptions", TypeShape.of(GetSelfPartnerSubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subscription resource in Oracle Cloud Infrastructure Self service.
+     * 
+     * Gets information about a Subscription.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscription = OciFunctions.getSelfSubscription(GetSelfSubscriptionArgs.builder()
+     *             .subscriptionId(testSubscriptionOciSelfSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSelfSubscriptionResult> getSelfSubscription(GetSelfSubscriptionArgs args) {
+        return getSelfSubscription(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Subscription resource in Oracle Cloud Infrastructure Self service.
+     * 
+     * Gets information about a Subscription.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscription = OciFunctions.getSelfSubscription(GetSelfSubscriptionArgs.builder()
+     *             .subscriptionId(testSubscriptionOciSelfSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSelfSubscriptionResult> getSelfSubscriptionPlain(GetSelfSubscriptionPlainArgs args) {
+        return getSelfSubscriptionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Subscription resource in Oracle Cloud Infrastructure Self service.
+     * 
+     * Gets information about a Subscription.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscription = OciFunctions.getSelfSubscription(GetSelfSubscriptionArgs.builder()
+     *             .subscriptionId(testSubscriptionOciSelfSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSelfSubscriptionResult> getSelfSubscription(GetSelfSubscriptionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getSelfSubscription:getSelfSubscription", TypeShape.of(GetSelfSubscriptionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subscription resource in Oracle Cloud Infrastructure Self service.
+     * 
+     * Gets information about a Subscription.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscription = OciFunctions.getSelfSubscription(GetSelfSubscriptionArgs.builder()
+     *             .subscriptionId(testSubscriptionOciSelfSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSelfSubscriptionResult> getSelfSubscription(GetSelfSubscriptionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getSelfSubscription:getSelfSubscription", TypeShape.of(GetSelfSubscriptionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subscription resource in Oracle Cloud Infrastructure Self service.
+     * 
+     * Gets information about a Subscription.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscription = OciFunctions.getSelfSubscription(GetSelfSubscriptionArgs.builder()
+     *             .subscriptionId(testSubscriptionOciSelfSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSelfSubscriptionResult> getSelfSubscriptionPlain(GetSelfSubscriptionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getSelfSubscription:getSelfSubscription", TypeShape.of(GetSelfSubscriptionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subscription Token resource in Oracle Cloud Infrastructure Self service.
+     * 
+     * Gets a token of Subscriptions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionTokenArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionToken = OciFunctions.getSelfSubscriptionToken(GetSelfSubscriptionTokenArgs.builder()
+     *             .subscriptionId(testSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSelfSubscriptionTokenResult> getSelfSubscriptionToken(GetSelfSubscriptionTokenArgs args) {
+        return getSelfSubscriptionToken(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Subscription Token resource in Oracle Cloud Infrastructure Self service.
+     * 
+     * Gets a token of Subscriptions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionTokenArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionToken = OciFunctions.getSelfSubscriptionToken(GetSelfSubscriptionTokenArgs.builder()
+     *             .subscriptionId(testSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSelfSubscriptionTokenResult> getSelfSubscriptionTokenPlain(GetSelfSubscriptionTokenPlainArgs args) {
+        return getSelfSubscriptionTokenPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Subscription Token resource in Oracle Cloud Infrastructure Self service.
+     * 
+     * Gets a token of Subscriptions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionTokenArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionToken = OciFunctions.getSelfSubscriptionToken(GetSelfSubscriptionTokenArgs.builder()
+     *             .subscriptionId(testSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSelfSubscriptionTokenResult> getSelfSubscriptionToken(GetSelfSubscriptionTokenArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getSelfSubscriptionToken:getSelfSubscriptionToken", TypeShape.of(GetSelfSubscriptionTokenResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subscription Token resource in Oracle Cloud Infrastructure Self service.
+     * 
+     * Gets a token of Subscriptions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionTokenArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionToken = OciFunctions.getSelfSubscriptionToken(GetSelfSubscriptionTokenArgs.builder()
+     *             .subscriptionId(testSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSelfSubscriptionTokenResult> getSelfSubscriptionToken(GetSelfSubscriptionTokenArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getSelfSubscriptionToken:getSelfSubscriptionToken", TypeShape.of(GetSelfSubscriptionTokenResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subscription Token resource in Oracle Cloud Infrastructure Self service.
+     * 
+     * Gets a token of Subscriptions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionTokenArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionToken = OciFunctions.getSelfSubscriptionToken(GetSelfSubscriptionTokenArgs.builder()
+     *             .subscriptionId(testSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSelfSubscriptionTokenResult> getSelfSubscriptionTokenPlain(GetSelfSubscriptionTokenPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getSelfSubscriptionToken:getSelfSubscriptionToken", TypeShape.of(GetSelfSubscriptionTokenResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Self service.
+     * 
+     * Lists the subscriptions which have been created in the specified compartment.
+     * You can filter results by specifying query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptions = OciFunctions.getSelfSubscriptions(GetSelfSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(subscriptionDisplayName)
+     *             .id(subscriptionId)
+     *             .lifecycleDetails(subscriptionLifecycleDetails)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSelfSubscriptionsResult> getSelfSubscriptions() {
+        return getSelfSubscriptions(GetSelfSubscriptionsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Self service.
+     * 
+     * Lists the subscriptions which have been created in the specified compartment.
+     * You can filter results by specifying query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptions = OciFunctions.getSelfSubscriptions(GetSelfSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(subscriptionDisplayName)
+     *             .id(subscriptionId)
+     *             .lifecycleDetails(subscriptionLifecycleDetails)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSelfSubscriptionsResult> getSelfSubscriptionsPlain() {
+        return getSelfSubscriptionsPlain(GetSelfSubscriptionsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Self service.
+     * 
+     * Lists the subscriptions which have been created in the specified compartment.
+     * You can filter results by specifying query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptions = OciFunctions.getSelfSubscriptions(GetSelfSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(subscriptionDisplayName)
+     *             .id(subscriptionId)
+     *             .lifecycleDetails(subscriptionLifecycleDetails)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSelfSubscriptionsResult> getSelfSubscriptions(GetSelfSubscriptionsArgs args) {
+        return getSelfSubscriptions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Self service.
+     * 
+     * Lists the subscriptions which have been created in the specified compartment.
+     * You can filter results by specifying query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptions = OciFunctions.getSelfSubscriptions(GetSelfSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(subscriptionDisplayName)
+     *             .id(subscriptionId)
+     *             .lifecycleDetails(subscriptionLifecycleDetails)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSelfSubscriptionsResult> getSelfSubscriptionsPlain(GetSelfSubscriptionsPlainArgs args) {
+        return getSelfSubscriptionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Self service.
+     * 
+     * Lists the subscriptions which have been created in the specified compartment.
+     * You can filter results by specifying query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptions = OciFunctions.getSelfSubscriptions(GetSelfSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(subscriptionDisplayName)
+     *             .id(subscriptionId)
+     *             .lifecycleDetails(subscriptionLifecycleDetails)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSelfSubscriptionsResult> getSelfSubscriptions(GetSelfSubscriptionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getSelfSubscriptions:getSelfSubscriptions", TypeShape.of(GetSelfSubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Self service.
+     * 
+     * Lists the subscriptions which have been created in the specified compartment.
+     * You can filter results by specifying query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptions = OciFunctions.getSelfSubscriptions(GetSelfSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(subscriptionDisplayName)
+     *             .id(subscriptionId)
+     *             .lifecycleDetails(subscriptionLifecycleDetails)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSelfSubscriptionsResult> getSelfSubscriptions(GetSelfSubscriptionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getSelfSubscriptions:getSelfSubscriptions", TypeShape.of(GetSelfSubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Self service.
+     * 
+     * Lists the subscriptions which have been created in the specified compartment.
+     * You can filter results by specifying query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetSelfSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptions = OciFunctions.getSelfSubscriptions(GetSelfSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(subscriptionDisplayName)
+     *             .id(subscriptionId)
+     *             .lifecycleDetails(subscriptionLifecycleDetails)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSelfSubscriptionsResult> getSelfSubscriptionsPlain(GetSelfSubscriptionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getSelfSubscriptions:getSelfSubscriptions", TypeShape.of(GetSelfSubscriptionsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Managed Instance resource in Oracle Cloud Infrastructure Wlms service.

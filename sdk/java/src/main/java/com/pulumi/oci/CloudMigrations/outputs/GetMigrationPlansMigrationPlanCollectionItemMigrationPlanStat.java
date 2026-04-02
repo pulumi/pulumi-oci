@@ -5,6 +5,8 @@ package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.CloudMigrations.outputs.GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrate;
+import com.pulumi.oci.CloudMigrations.outputs.GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCost;
 import com.pulumi.oci.CloudMigrations.outputs.GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCost;
 import java.lang.Integer;
 import java.lang.String;
@@ -13,6 +15,16 @@ import java.util.Objects;
 
 @CustomType
 public final class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat {
+    /**
+     * @return Summary of costs to migrate.
+     * 
+     */
+    private List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrate> costToMigrates;
+    /**
+     * @return Current monthly compute and storage costs.
+     * 
+     */
+    private List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCost> currentMonthlyCosts;
     /**
      * @return The time when the migration plan was updated. An RFC3339 formatted datetime string.
      * 
@@ -30,6 +42,20 @@ public final class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat
     private Integer vmCount;
 
     private GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat() {}
+    /**
+     * @return Summary of costs to migrate.
+     * 
+     */
+    public List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrate> costToMigrates() {
+        return this.costToMigrates;
+    }
+    /**
+     * @return Current monthly compute and storage costs.
+     * 
+     */
+    public List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCost> currentMonthlyCosts() {
+        return this.currentMonthlyCosts;
+    }
     /**
      * @return The time when the migration plan was updated. An RFC3339 formatted datetime string.
      * 
@@ -61,17 +87,43 @@ public final class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrate> costToMigrates;
+        private List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCost> currentMonthlyCosts;
         private String timeUpdated;
         private List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCost> totalEstimatedCosts;
         private Integer vmCount;
         public Builder() {}
         public Builder(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.costToMigrates = defaults.costToMigrates;
+    	      this.currentMonthlyCosts = defaults.currentMonthlyCosts;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.totalEstimatedCosts = defaults.totalEstimatedCosts;
     	      this.vmCount = defaults.vmCount;
         }
 
+        @CustomType.Setter
+        public Builder costToMigrates(List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrate> costToMigrates) {
+            if (costToMigrates == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat", "costToMigrates");
+            }
+            this.costToMigrates = costToMigrates;
+            return this;
+        }
+        public Builder costToMigrates(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrate... costToMigrates) {
+            return costToMigrates(List.of(costToMigrates));
+        }
+        @CustomType.Setter
+        public Builder currentMonthlyCosts(List<GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCost> currentMonthlyCosts) {
+            if (currentMonthlyCosts == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat", "currentMonthlyCosts");
+            }
+            this.currentMonthlyCosts = currentMonthlyCosts;
+            return this;
+        }
+        public Builder currentMonthlyCosts(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCost... currentMonthlyCosts) {
+            return currentMonthlyCosts(List.of(currentMonthlyCosts));
+        }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             if (timeUpdated == null) {
@@ -101,6 +153,8 @@ public final class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat
         }
         public GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat build() {
             final var _resultValue = new GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat();
+            _resultValue.costToMigrates = costToMigrates;
+            _resultValue.currentMonthlyCosts = currentMonthlyCosts;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.totalEstimatedCosts = totalEstimatedCosts;
             _resultValue.vmCount = vmCount;

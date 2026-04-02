@@ -11,9 +11,17 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetails {
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group you want to deploy.
+     * 
+     */
     private @Nullable String modelGroupId;
 
     private ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetails() {}
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group you want to deploy.
+     * 
+     */
     public Optional<String> modelGroupId() {
         return Optional.ofNullable(this.modelGroupId);
     }

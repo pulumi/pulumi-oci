@@ -13,7 +13,304 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type MigrationAssetReplicationLocationDetail struct {
+	// Properties for each of the replication location types
+	Metadata map[string]string `pulumi:"metadata"`
+	// The type of replication location
+	ReplicationLocationType *string `pulumi:"replicationLocationType"`
+}
+
+// MigrationAssetReplicationLocationDetailInput is an input type that accepts MigrationAssetReplicationLocationDetailArgs and MigrationAssetReplicationLocationDetailOutput values.
+// You can construct a concrete instance of `MigrationAssetReplicationLocationDetailInput` via:
+//
+//	MigrationAssetReplicationLocationDetailArgs{...}
+type MigrationAssetReplicationLocationDetailInput interface {
+	pulumi.Input
+
+	ToMigrationAssetReplicationLocationDetailOutput() MigrationAssetReplicationLocationDetailOutput
+	ToMigrationAssetReplicationLocationDetailOutputWithContext(context.Context) MigrationAssetReplicationLocationDetailOutput
+}
+
+type MigrationAssetReplicationLocationDetailArgs struct {
+	// Properties for each of the replication location types
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
+	// The type of replication location
+	ReplicationLocationType pulumi.StringPtrInput `pulumi:"replicationLocationType"`
+}
+
+func (MigrationAssetReplicationLocationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationAssetReplicationLocationDetail)(nil)).Elem()
+}
+
+func (i MigrationAssetReplicationLocationDetailArgs) ToMigrationAssetReplicationLocationDetailOutput() MigrationAssetReplicationLocationDetailOutput {
+	return i.ToMigrationAssetReplicationLocationDetailOutputWithContext(context.Background())
+}
+
+func (i MigrationAssetReplicationLocationDetailArgs) ToMigrationAssetReplicationLocationDetailOutputWithContext(ctx context.Context) MigrationAssetReplicationLocationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationAssetReplicationLocationDetailOutput)
+}
+
+func (i MigrationAssetReplicationLocationDetailArgs) ToMigrationAssetReplicationLocationDetailPtrOutput() MigrationAssetReplicationLocationDetailPtrOutput {
+	return i.ToMigrationAssetReplicationLocationDetailPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationAssetReplicationLocationDetailArgs) ToMigrationAssetReplicationLocationDetailPtrOutputWithContext(ctx context.Context) MigrationAssetReplicationLocationDetailPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationAssetReplicationLocationDetailOutput).ToMigrationAssetReplicationLocationDetailPtrOutputWithContext(ctx)
+}
+
+// MigrationAssetReplicationLocationDetailPtrInput is an input type that accepts MigrationAssetReplicationLocationDetailArgs, MigrationAssetReplicationLocationDetailPtr and MigrationAssetReplicationLocationDetailPtrOutput values.
+// You can construct a concrete instance of `MigrationAssetReplicationLocationDetailPtrInput` via:
+//
+//	        MigrationAssetReplicationLocationDetailArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationAssetReplicationLocationDetailPtrInput interface {
+	pulumi.Input
+
+	ToMigrationAssetReplicationLocationDetailPtrOutput() MigrationAssetReplicationLocationDetailPtrOutput
+	ToMigrationAssetReplicationLocationDetailPtrOutputWithContext(context.Context) MigrationAssetReplicationLocationDetailPtrOutput
+}
+
+type migrationAssetReplicationLocationDetailPtrType MigrationAssetReplicationLocationDetailArgs
+
+func MigrationAssetReplicationLocationDetailPtr(v *MigrationAssetReplicationLocationDetailArgs) MigrationAssetReplicationLocationDetailPtrInput {
+	return (*migrationAssetReplicationLocationDetailPtrType)(v)
+}
+
+func (*migrationAssetReplicationLocationDetailPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationAssetReplicationLocationDetail)(nil)).Elem()
+}
+
+func (i *migrationAssetReplicationLocationDetailPtrType) ToMigrationAssetReplicationLocationDetailPtrOutput() MigrationAssetReplicationLocationDetailPtrOutput {
+	return i.ToMigrationAssetReplicationLocationDetailPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationAssetReplicationLocationDetailPtrType) ToMigrationAssetReplicationLocationDetailPtrOutputWithContext(ctx context.Context) MigrationAssetReplicationLocationDetailPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationAssetReplicationLocationDetailPtrOutput)
+}
+
+type MigrationAssetReplicationLocationDetailOutput struct{ *pulumi.OutputState }
+
+func (MigrationAssetReplicationLocationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationAssetReplicationLocationDetail)(nil)).Elem()
+}
+
+func (o MigrationAssetReplicationLocationDetailOutput) ToMigrationAssetReplicationLocationDetailOutput() MigrationAssetReplicationLocationDetailOutput {
+	return o
+}
+
+func (o MigrationAssetReplicationLocationDetailOutput) ToMigrationAssetReplicationLocationDetailOutputWithContext(ctx context.Context) MigrationAssetReplicationLocationDetailOutput {
+	return o
+}
+
+func (o MigrationAssetReplicationLocationDetailOutput) ToMigrationAssetReplicationLocationDetailPtrOutput() MigrationAssetReplicationLocationDetailPtrOutput {
+	return o.ToMigrationAssetReplicationLocationDetailPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationAssetReplicationLocationDetailOutput) ToMigrationAssetReplicationLocationDetailPtrOutputWithContext(ctx context.Context) MigrationAssetReplicationLocationDetailPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationAssetReplicationLocationDetail) *MigrationAssetReplicationLocationDetail {
+		return &v
+	}).(MigrationAssetReplicationLocationDetailPtrOutput)
+}
+
+// Properties for each of the replication location types
+func (o MigrationAssetReplicationLocationDetailOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v MigrationAssetReplicationLocationDetail) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
+}
+
+// The type of replication location
+func (o MigrationAssetReplicationLocationDetailOutput) ReplicationLocationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationAssetReplicationLocationDetail) *string { return v.ReplicationLocationType }).(pulumi.StringPtrOutput)
+}
+
+type MigrationAssetReplicationLocationDetailPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationAssetReplicationLocationDetailPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationAssetReplicationLocationDetail)(nil)).Elem()
+}
+
+func (o MigrationAssetReplicationLocationDetailPtrOutput) ToMigrationAssetReplicationLocationDetailPtrOutput() MigrationAssetReplicationLocationDetailPtrOutput {
+	return o
+}
+
+func (o MigrationAssetReplicationLocationDetailPtrOutput) ToMigrationAssetReplicationLocationDetailPtrOutputWithContext(ctx context.Context) MigrationAssetReplicationLocationDetailPtrOutput {
+	return o
+}
+
+func (o MigrationAssetReplicationLocationDetailPtrOutput) Elem() MigrationAssetReplicationLocationDetailOutput {
+	return o.ApplyT(func(v *MigrationAssetReplicationLocationDetail) MigrationAssetReplicationLocationDetail {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationAssetReplicationLocationDetail
+		return ret
+	}).(MigrationAssetReplicationLocationDetailOutput)
+}
+
+// Properties for each of the replication location types
+func (o MigrationAssetReplicationLocationDetailPtrOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MigrationAssetReplicationLocationDetail) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.Metadata
+	}).(pulumi.StringMapOutput)
+}
+
+// The type of replication location
+func (o MigrationAssetReplicationLocationDetailPtrOutput) ReplicationLocationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationAssetReplicationLocationDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ReplicationLocationType
+	}).(pulumi.StringPtrOutput)
+}
+
+type MigrationMigrationConfig struct {
+	// (Updatable) The OCID of the subnet to use for replication
+	SubnetId *string `pulumi:"subnetId"`
+}
+
+// MigrationMigrationConfigInput is an input type that accepts MigrationMigrationConfigArgs and MigrationMigrationConfigOutput values.
+// You can construct a concrete instance of `MigrationMigrationConfigInput` via:
+//
+//	MigrationMigrationConfigArgs{...}
+type MigrationMigrationConfigInput interface {
+	pulumi.Input
+
+	ToMigrationMigrationConfigOutput() MigrationMigrationConfigOutput
+	ToMigrationMigrationConfigOutputWithContext(context.Context) MigrationMigrationConfigOutput
+}
+
+type MigrationMigrationConfigArgs struct {
+	// (Updatable) The OCID of the subnet to use for replication
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+}
+
+func (MigrationMigrationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationMigrationConfig)(nil)).Elem()
+}
+
+func (i MigrationMigrationConfigArgs) ToMigrationMigrationConfigOutput() MigrationMigrationConfigOutput {
+	return i.ToMigrationMigrationConfigOutputWithContext(context.Background())
+}
+
+func (i MigrationMigrationConfigArgs) ToMigrationMigrationConfigOutputWithContext(ctx context.Context) MigrationMigrationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationMigrationConfigOutput)
+}
+
+func (i MigrationMigrationConfigArgs) ToMigrationMigrationConfigPtrOutput() MigrationMigrationConfigPtrOutput {
+	return i.ToMigrationMigrationConfigPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationMigrationConfigArgs) ToMigrationMigrationConfigPtrOutputWithContext(ctx context.Context) MigrationMigrationConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationMigrationConfigOutput).ToMigrationMigrationConfigPtrOutputWithContext(ctx)
+}
+
+// MigrationMigrationConfigPtrInput is an input type that accepts MigrationMigrationConfigArgs, MigrationMigrationConfigPtr and MigrationMigrationConfigPtrOutput values.
+// You can construct a concrete instance of `MigrationMigrationConfigPtrInput` via:
+//
+//	        MigrationMigrationConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationMigrationConfigPtrInput interface {
+	pulumi.Input
+
+	ToMigrationMigrationConfigPtrOutput() MigrationMigrationConfigPtrOutput
+	ToMigrationMigrationConfigPtrOutputWithContext(context.Context) MigrationMigrationConfigPtrOutput
+}
+
+type migrationMigrationConfigPtrType MigrationMigrationConfigArgs
+
+func MigrationMigrationConfigPtr(v *MigrationMigrationConfigArgs) MigrationMigrationConfigPtrInput {
+	return (*migrationMigrationConfigPtrType)(v)
+}
+
+func (*migrationMigrationConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationMigrationConfig)(nil)).Elem()
+}
+
+func (i *migrationMigrationConfigPtrType) ToMigrationMigrationConfigPtrOutput() MigrationMigrationConfigPtrOutput {
+	return i.ToMigrationMigrationConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationMigrationConfigPtrType) ToMigrationMigrationConfigPtrOutputWithContext(ctx context.Context) MigrationMigrationConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationMigrationConfigPtrOutput)
+}
+
+type MigrationMigrationConfigOutput struct{ *pulumi.OutputState }
+
+func (MigrationMigrationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationMigrationConfig)(nil)).Elem()
+}
+
+func (o MigrationMigrationConfigOutput) ToMigrationMigrationConfigOutput() MigrationMigrationConfigOutput {
+	return o
+}
+
+func (o MigrationMigrationConfigOutput) ToMigrationMigrationConfigOutputWithContext(ctx context.Context) MigrationMigrationConfigOutput {
+	return o
+}
+
+func (o MigrationMigrationConfigOutput) ToMigrationMigrationConfigPtrOutput() MigrationMigrationConfigPtrOutput {
+	return o.ToMigrationMigrationConfigPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationMigrationConfigOutput) ToMigrationMigrationConfigPtrOutputWithContext(ctx context.Context) MigrationMigrationConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationMigrationConfig) *MigrationMigrationConfig {
+		return &v
+	}).(MigrationMigrationConfigPtrOutput)
+}
+
+// (Updatable) The OCID of the subnet to use for replication
+func (o MigrationMigrationConfigOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationMigrationConfig) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+type MigrationMigrationConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationMigrationConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationMigrationConfig)(nil)).Elem()
+}
+
+func (o MigrationMigrationConfigPtrOutput) ToMigrationMigrationConfigPtrOutput() MigrationMigrationConfigPtrOutput {
+	return o
+}
+
+func (o MigrationMigrationConfigPtrOutput) ToMigrationMigrationConfigPtrOutputWithContext(ctx context.Context) MigrationMigrationConfigPtrOutput {
+	return o
+}
+
+func (o MigrationMigrationConfigPtrOutput) Elem() MigrationMigrationConfigOutput {
+	return o.ApplyT(func(v *MigrationMigrationConfig) MigrationMigrationConfig {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationMigrationConfig
+		return ret
+	}).(MigrationMigrationConfigOutput)
+}
+
+// (Updatable) The OCID of the subnet to use for replication
+func (o MigrationMigrationConfigPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationMigrationConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
 type MigrationPlanMigrationPlanStat struct {
+	// Summary of costs to migrate.
+	CostToMigrates []MigrationPlanMigrationPlanStatCostToMigrate `pulumi:"costToMigrates"`
+	// Current monthly compute and storage costs.
+	CurrentMonthlyCosts []MigrationPlanMigrationPlanStatCurrentMonthlyCost `pulumi:"currentMonthlyCosts"`
 	// The time when the migration plan was updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Cost estimation description
@@ -34,6 +331,10 @@ type MigrationPlanMigrationPlanStatInput interface {
 }
 
 type MigrationPlanMigrationPlanStatArgs struct {
+	// Summary of costs to migrate.
+	CostToMigrates MigrationPlanMigrationPlanStatCostToMigrateArrayInput `pulumi:"costToMigrates"`
+	// Current monthly compute and storage costs.
+	CurrentMonthlyCosts MigrationPlanMigrationPlanStatCurrentMonthlyCostArrayInput `pulumi:"currentMonthlyCosts"`
 	// The time when the migration plan was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// Cost estimation description
@@ -93,6 +394,20 @@ func (o MigrationPlanMigrationPlanStatOutput) ToMigrationPlanMigrationPlanStatOu
 	return o
 }
 
+// Summary of costs to migrate.
+func (o MigrationPlanMigrationPlanStatOutput) CostToMigrates() MigrationPlanMigrationPlanStatCostToMigrateArrayOutput {
+	return o.ApplyT(func(v MigrationPlanMigrationPlanStat) []MigrationPlanMigrationPlanStatCostToMigrate {
+		return v.CostToMigrates
+	}).(MigrationPlanMigrationPlanStatCostToMigrateArrayOutput)
+}
+
+// Current monthly compute and storage costs.
+func (o MigrationPlanMigrationPlanStatOutput) CurrentMonthlyCosts() MigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput {
+	return o.ApplyT(func(v MigrationPlanMigrationPlanStat) []MigrationPlanMigrationPlanStatCurrentMonthlyCost {
+		return v.CurrentMonthlyCosts
+	}).(MigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput)
+}
+
 // The time when the migration plan was updated. An RFC3339 formatted datetime string.
 func (o MigrationPlanMigrationPlanStatOutput) TimeUpdated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MigrationPlanMigrationPlanStat) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
@@ -128,6 +443,254 @@ func (o MigrationPlanMigrationPlanStatArrayOutput) Index(i pulumi.IntInput) Migr
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MigrationPlanMigrationPlanStat {
 		return vs[0].([]MigrationPlanMigrationPlanStat)[vs[1].(int)]
 	}).(MigrationPlanMigrationPlanStatOutput)
+}
+
+type MigrationPlanMigrationPlanStatCostToMigrate struct {
+	// Number of assets used in this calculation.
+	AssetCount *int `pulumi:"assetCount"`
+	// Currency code in the ISO format.
+	CurrencyCode *string `pulumi:"currencyCode"`
+	// Data transfer costs from OCI.
+	OciDataTransferCosts *float64 `pulumi:"ociDataTransferCosts"`
+	// Data transfer costs from source cloud provider.
+	SourceDataTransferCosts *float64 `pulumi:"sourceDataTransferCosts"`
+}
+
+// MigrationPlanMigrationPlanStatCostToMigrateInput is an input type that accepts MigrationPlanMigrationPlanStatCostToMigrateArgs and MigrationPlanMigrationPlanStatCostToMigrateOutput values.
+// You can construct a concrete instance of `MigrationPlanMigrationPlanStatCostToMigrateInput` via:
+//
+//	MigrationPlanMigrationPlanStatCostToMigrateArgs{...}
+type MigrationPlanMigrationPlanStatCostToMigrateInput interface {
+	pulumi.Input
+
+	ToMigrationPlanMigrationPlanStatCostToMigrateOutput() MigrationPlanMigrationPlanStatCostToMigrateOutput
+	ToMigrationPlanMigrationPlanStatCostToMigrateOutputWithContext(context.Context) MigrationPlanMigrationPlanStatCostToMigrateOutput
+}
+
+type MigrationPlanMigrationPlanStatCostToMigrateArgs struct {
+	// Number of assets used in this calculation.
+	AssetCount pulumi.IntPtrInput `pulumi:"assetCount"`
+	// Currency code in the ISO format.
+	CurrencyCode pulumi.StringPtrInput `pulumi:"currencyCode"`
+	// Data transfer costs from OCI.
+	OciDataTransferCosts pulumi.Float64PtrInput `pulumi:"ociDataTransferCosts"`
+	// Data transfer costs from source cloud provider.
+	SourceDataTransferCosts pulumi.Float64PtrInput `pulumi:"sourceDataTransferCosts"`
+}
+
+func (MigrationPlanMigrationPlanStatCostToMigrateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationPlanMigrationPlanStatCostToMigrate)(nil)).Elem()
+}
+
+func (i MigrationPlanMigrationPlanStatCostToMigrateArgs) ToMigrationPlanMigrationPlanStatCostToMigrateOutput() MigrationPlanMigrationPlanStatCostToMigrateOutput {
+	return i.ToMigrationPlanMigrationPlanStatCostToMigrateOutputWithContext(context.Background())
+}
+
+func (i MigrationPlanMigrationPlanStatCostToMigrateArgs) ToMigrationPlanMigrationPlanStatCostToMigrateOutputWithContext(ctx context.Context) MigrationPlanMigrationPlanStatCostToMigrateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanMigrationPlanStatCostToMigrateOutput)
+}
+
+// MigrationPlanMigrationPlanStatCostToMigrateArrayInput is an input type that accepts MigrationPlanMigrationPlanStatCostToMigrateArray and MigrationPlanMigrationPlanStatCostToMigrateArrayOutput values.
+// You can construct a concrete instance of `MigrationPlanMigrationPlanStatCostToMigrateArrayInput` via:
+//
+//	MigrationPlanMigrationPlanStatCostToMigrateArray{ MigrationPlanMigrationPlanStatCostToMigrateArgs{...} }
+type MigrationPlanMigrationPlanStatCostToMigrateArrayInput interface {
+	pulumi.Input
+
+	ToMigrationPlanMigrationPlanStatCostToMigrateArrayOutput() MigrationPlanMigrationPlanStatCostToMigrateArrayOutput
+	ToMigrationPlanMigrationPlanStatCostToMigrateArrayOutputWithContext(context.Context) MigrationPlanMigrationPlanStatCostToMigrateArrayOutput
+}
+
+type MigrationPlanMigrationPlanStatCostToMigrateArray []MigrationPlanMigrationPlanStatCostToMigrateInput
+
+func (MigrationPlanMigrationPlanStatCostToMigrateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MigrationPlanMigrationPlanStatCostToMigrate)(nil)).Elem()
+}
+
+func (i MigrationPlanMigrationPlanStatCostToMigrateArray) ToMigrationPlanMigrationPlanStatCostToMigrateArrayOutput() MigrationPlanMigrationPlanStatCostToMigrateArrayOutput {
+	return i.ToMigrationPlanMigrationPlanStatCostToMigrateArrayOutputWithContext(context.Background())
+}
+
+func (i MigrationPlanMigrationPlanStatCostToMigrateArray) ToMigrationPlanMigrationPlanStatCostToMigrateArrayOutputWithContext(ctx context.Context) MigrationPlanMigrationPlanStatCostToMigrateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanMigrationPlanStatCostToMigrateArrayOutput)
+}
+
+type MigrationPlanMigrationPlanStatCostToMigrateOutput struct{ *pulumi.OutputState }
+
+func (MigrationPlanMigrationPlanStatCostToMigrateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationPlanMigrationPlanStatCostToMigrate)(nil)).Elem()
+}
+
+func (o MigrationPlanMigrationPlanStatCostToMigrateOutput) ToMigrationPlanMigrationPlanStatCostToMigrateOutput() MigrationPlanMigrationPlanStatCostToMigrateOutput {
+	return o
+}
+
+func (o MigrationPlanMigrationPlanStatCostToMigrateOutput) ToMigrationPlanMigrationPlanStatCostToMigrateOutputWithContext(ctx context.Context) MigrationPlanMigrationPlanStatCostToMigrateOutput {
+	return o
+}
+
+// Number of assets used in this calculation.
+func (o MigrationPlanMigrationPlanStatCostToMigrateOutput) AssetCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MigrationPlanMigrationPlanStatCostToMigrate) *int { return v.AssetCount }).(pulumi.IntPtrOutput)
+}
+
+// Currency code in the ISO format.
+func (o MigrationPlanMigrationPlanStatCostToMigrateOutput) CurrencyCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationPlanMigrationPlanStatCostToMigrate) *string { return v.CurrencyCode }).(pulumi.StringPtrOutput)
+}
+
+// Data transfer costs from OCI.
+func (o MigrationPlanMigrationPlanStatCostToMigrateOutput) OciDataTransferCosts() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v MigrationPlanMigrationPlanStatCostToMigrate) *float64 { return v.OciDataTransferCosts }).(pulumi.Float64PtrOutput)
+}
+
+// Data transfer costs from source cloud provider.
+func (o MigrationPlanMigrationPlanStatCostToMigrateOutput) SourceDataTransferCosts() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v MigrationPlanMigrationPlanStatCostToMigrate) *float64 { return v.SourceDataTransferCosts }).(pulumi.Float64PtrOutput)
+}
+
+type MigrationPlanMigrationPlanStatCostToMigrateArrayOutput struct{ *pulumi.OutputState }
+
+func (MigrationPlanMigrationPlanStatCostToMigrateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MigrationPlanMigrationPlanStatCostToMigrate)(nil)).Elem()
+}
+
+func (o MigrationPlanMigrationPlanStatCostToMigrateArrayOutput) ToMigrationPlanMigrationPlanStatCostToMigrateArrayOutput() MigrationPlanMigrationPlanStatCostToMigrateArrayOutput {
+	return o
+}
+
+func (o MigrationPlanMigrationPlanStatCostToMigrateArrayOutput) ToMigrationPlanMigrationPlanStatCostToMigrateArrayOutputWithContext(ctx context.Context) MigrationPlanMigrationPlanStatCostToMigrateArrayOutput {
+	return o
+}
+
+func (o MigrationPlanMigrationPlanStatCostToMigrateArrayOutput) Index(i pulumi.IntInput) MigrationPlanMigrationPlanStatCostToMigrateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MigrationPlanMigrationPlanStatCostToMigrate {
+		return vs[0].([]MigrationPlanMigrationPlanStatCostToMigrate)[vs[1].(int)]
+	}).(MigrationPlanMigrationPlanStatCostToMigrateOutput)
+}
+
+type MigrationPlanMigrationPlanStatCurrentMonthlyCost struct {
+	// Number of assets used in this calculation.
+	AssetCount *int `pulumi:"assetCount"`
+	// Current monthly compute costs.
+	ComputeAmount *float64 `pulumi:"computeAmount"`
+	// Currency code in the ISO format.
+	CurrencyCode *string `pulumi:"currencyCode"`
+	// Current monthly storage costs.
+	StorageAmount *float64 `pulumi:"storageAmount"`
+}
+
+// MigrationPlanMigrationPlanStatCurrentMonthlyCostInput is an input type that accepts MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs and MigrationPlanMigrationPlanStatCurrentMonthlyCostOutput values.
+// You can construct a concrete instance of `MigrationPlanMigrationPlanStatCurrentMonthlyCostInput` via:
+//
+//	MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs{...}
+type MigrationPlanMigrationPlanStatCurrentMonthlyCostInput interface {
+	pulumi.Input
+
+	ToMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput() MigrationPlanMigrationPlanStatCurrentMonthlyCostOutput
+	ToMigrationPlanMigrationPlanStatCurrentMonthlyCostOutputWithContext(context.Context) MigrationPlanMigrationPlanStatCurrentMonthlyCostOutput
+}
+
+type MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs struct {
+	// Number of assets used in this calculation.
+	AssetCount pulumi.IntPtrInput `pulumi:"assetCount"`
+	// Current monthly compute costs.
+	ComputeAmount pulumi.Float64PtrInput `pulumi:"computeAmount"`
+	// Currency code in the ISO format.
+	CurrencyCode pulumi.StringPtrInput `pulumi:"currencyCode"`
+	// Current monthly storage costs.
+	StorageAmount pulumi.Float64PtrInput `pulumi:"storageAmount"`
+}
+
+func (MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationPlanMigrationPlanStatCurrentMonthlyCost)(nil)).Elem()
+}
+
+func (i MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs) ToMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput() MigrationPlanMigrationPlanStatCurrentMonthlyCostOutput {
+	return i.ToMigrationPlanMigrationPlanStatCurrentMonthlyCostOutputWithContext(context.Background())
+}
+
+func (i MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs) ToMigrationPlanMigrationPlanStatCurrentMonthlyCostOutputWithContext(ctx context.Context) MigrationPlanMigrationPlanStatCurrentMonthlyCostOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanMigrationPlanStatCurrentMonthlyCostOutput)
+}
+
+// MigrationPlanMigrationPlanStatCurrentMonthlyCostArrayInput is an input type that accepts MigrationPlanMigrationPlanStatCurrentMonthlyCostArray and MigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput values.
+// You can construct a concrete instance of `MigrationPlanMigrationPlanStatCurrentMonthlyCostArrayInput` via:
+//
+//	MigrationPlanMigrationPlanStatCurrentMonthlyCostArray{ MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs{...} }
+type MigrationPlanMigrationPlanStatCurrentMonthlyCostArrayInput interface {
+	pulumi.Input
+
+	ToMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput() MigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput
+	ToMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutputWithContext(context.Context) MigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput
+}
+
+type MigrationPlanMigrationPlanStatCurrentMonthlyCostArray []MigrationPlanMigrationPlanStatCurrentMonthlyCostInput
+
+func (MigrationPlanMigrationPlanStatCurrentMonthlyCostArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MigrationPlanMigrationPlanStatCurrentMonthlyCost)(nil)).Elem()
+}
+
+func (i MigrationPlanMigrationPlanStatCurrentMonthlyCostArray) ToMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput() MigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput {
+	return i.ToMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutputWithContext(context.Background())
+}
+
+func (i MigrationPlanMigrationPlanStatCurrentMonthlyCostArray) ToMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutputWithContext(ctx context.Context) MigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput)
+}
+
+type MigrationPlanMigrationPlanStatCurrentMonthlyCostOutput struct{ *pulumi.OutputState }
+
+func (MigrationPlanMigrationPlanStatCurrentMonthlyCostOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationPlanMigrationPlanStatCurrentMonthlyCost)(nil)).Elem()
+}
+
+func (o MigrationPlanMigrationPlanStatCurrentMonthlyCostOutput) ToMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput() MigrationPlanMigrationPlanStatCurrentMonthlyCostOutput {
+	return o
+}
+
+func (o MigrationPlanMigrationPlanStatCurrentMonthlyCostOutput) ToMigrationPlanMigrationPlanStatCurrentMonthlyCostOutputWithContext(ctx context.Context) MigrationPlanMigrationPlanStatCurrentMonthlyCostOutput {
+	return o
+}
+
+// Number of assets used in this calculation.
+func (o MigrationPlanMigrationPlanStatCurrentMonthlyCostOutput) AssetCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MigrationPlanMigrationPlanStatCurrentMonthlyCost) *int { return v.AssetCount }).(pulumi.IntPtrOutput)
+}
+
+// Current monthly compute costs.
+func (o MigrationPlanMigrationPlanStatCurrentMonthlyCostOutput) ComputeAmount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v MigrationPlanMigrationPlanStatCurrentMonthlyCost) *float64 { return v.ComputeAmount }).(pulumi.Float64PtrOutput)
+}
+
+// Currency code in the ISO format.
+func (o MigrationPlanMigrationPlanStatCurrentMonthlyCostOutput) CurrencyCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationPlanMigrationPlanStatCurrentMonthlyCost) *string { return v.CurrencyCode }).(pulumi.StringPtrOutput)
+}
+
+// Current monthly storage costs.
+func (o MigrationPlanMigrationPlanStatCurrentMonthlyCostOutput) StorageAmount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v MigrationPlanMigrationPlanStatCurrentMonthlyCost) *float64 { return v.StorageAmount }).(pulumi.Float64PtrOutput)
+}
+
+type MigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput struct{ *pulumi.OutputState }
+
+func (MigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MigrationPlanMigrationPlanStatCurrentMonthlyCost)(nil)).Elem()
+}
+
+func (o MigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput) ToMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput() MigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput {
+	return o
+}
+
+func (o MigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput) ToMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutputWithContext(ctx context.Context) MigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput {
+	return o
+}
+
+func (o MigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput) Index(i pulumi.IntInput) MigrationPlanMigrationPlanStatCurrentMonthlyCostOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MigrationPlanMigrationPlanStatCurrentMonthlyCost {
+		return vs[0].([]MigrationPlanMigrationPlanStatCurrentMonthlyCost)[vs[1].(int)]
+	}).(MigrationPlanMigrationPlanStatCurrentMonthlyCostOutput)
 }
 
 type MigrationPlanMigrationPlanStatTotalEstimatedCost struct {
@@ -984,25 +1547,31 @@ func (o MigrationPlanStrategyArrayOutput) Index(i pulumi.IntInput) MigrationPlan
 type MigrationPlanTargetEnvironment struct {
 	// (Updatable) Availability Domain of the VM configuration.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
+	// (Updatable) Inventory asset id of the olvm cluster
+	ClusterAssetId *string `pulumi:"clusterAssetId"`
 	// (Updatable) OCID of the dedicated VM configuration host.
 	DedicatedVmHost *string `pulumi:"dedicatedVmHost"`
 	// (Updatable) Fault domain of the VM configuration.
 	FaultDomain *string `pulumi:"faultDomain"`
 	// (Updatable) Microsoft license for the VM configuration.
 	MsLicense *string `pulumi:"msLicense"`
+	// (Updatable) OLVM OS type to inventory asset id of the template
+	OlvmTemplates map[string]string `pulumi:"olvmTemplates"`
 	// (Updatable) Preferred VM shape type provided by the customer.
 	PreferredShapeType *string `pulumi:"preferredShapeType"`
 	// (Updatable) OCID of the VM configuration subnet.
-	Subnet string `pulumi:"subnet"`
+	Subnet *string `pulumi:"subnet"`
 	// (Updatable) Target compartment identifier
 	TargetCompartmentId *string `pulumi:"targetCompartmentId"`
 	// (Updatable) The type of target environment.
 	TargetEnvironmentType string `pulumi:"targetEnvironmentType"`
 	// (Updatable) OCID of the VM configuration VCN.
+	Vcn *string `pulumi:"vcn"`
+	// (Updatable) Inventory asset Id of the vnic profile
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Vcn string `pulumi:"vcn"`
+	VnicProfileAssetId *string `pulumi:"vnicProfileAssetId"`
 }
 
 // MigrationPlanTargetEnvironmentInput is an input type that accepts MigrationPlanTargetEnvironmentArgs and MigrationPlanTargetEnvironmentOutput values.
@@ -1019,25 +1588,31 @@ type MigrationPlanTargetEnvironmentInput interface {
 type MigrationPlanTargetEnvironmentArgs struct {
 	// (Updatable) Availability Domain of the VM configuration.
 	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
+	// (Updatable) Inventory asset id of the olvm cluster
+	ClusterAssetId pulumi.StringPtrInput `pulumi:"clusterAssetId"`
 	// (Updatable) OCID of the dedicated VM configuration host.
 	DedicatedVmHost pulumi.StringPtrInput `pulumi:"dedicatedVmHost"`
 	// (Updatable) Fault domain of the VM configuration.
 	FaultDomain pulumi.StringPtrInput `pulumi:"faultDomain"`
 	// (Updatable) Microsoft license for the VM configuration.
 	MsLicense pulumi.StringPtrInput `pulumi:"msLicense"`
+	// (Updatable) OLVM OS type to inventory asset id of the template
+	OlvmTemplates pulumi.StringMapInput `pulumi:"olvmTemplates"`
 	// (Updatable) Preferred VM shape type provided by the customer.
 	PreferredShapeType pulumi.StringPtrInput `pulumi:"preferredShapeType"`
 	// (Updatable) OCID of the VM configuration subnet.
-	Subnet pulumi.StringInput `pulumi:"subnet"`
+	Subnet pulumi.StringPtrInput `pulumi:"subnet"`
 	// (Updatable) Target compartment identifier
 	TargetCompartmentId pulumi.StringPtrInput `pulumi:"targetCompartmentId"`
 	// (Updatable) The type of target environment.
 	TargetEnvironmentType pulumi.StringInput `pulumi:"targetEnvironmentType"`
 	// (Updatable) OCID of the VM configuration VCN.
+	Vcn pulumi.StringPtrInput `pulumi:"vcn"`
+	// (Updatable) Inventory asset Id of the vnic profile
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Vcn pulumi.StringInput `pulumi:"vcn"`
+	VnicProfileAssetId pulumi.StringPtrInput `pulumi:"vnicProfileAssetId"`
 }
 
 func (MigrationPlanTargetEnvironmentArgs) ElementType() reflect.Type {
@@ -1096,6 +1671,11 @@ func (o MigrationPlanTargetEnvironmentOutput) AvailabilityDomain() pulumi.String
 	return o.ApplyT(func(v MigrationPlanTargetEnvironment) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Inventory asset id of the olvm cluster
+func (o MigrationPlanTargetEnvironmentOutput) ClusterAssetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationPlanTargetEnvironment) *string { return v.ClusterAssetId }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) OCID of the dedicated VM configuration host.
 func (o MigrationPlanTargetEnvironmentOutput) DedicatedVmHost() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MigrationPlanTargetEnvironment) *string { return v.DedicatedVmHost }).(pulumi.StringPtrOutput)
@@ -1111,14 +1691,19 @@ func (o MigrationPlanTargetEnvironmentOutput) MsLicense() pulumi.StringPtrOutput
 	return o.ApplyT(func(v MigrationPlanTargetEnvironment) *string { return v.MsLicense }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) OLVM OS type to inventory asset id of the template
+func (o MigrationPlanTargetEnvironmentOutput) OlvmTemplates() pulumi.StringMapOutput {
+	return o.ApplyT(func(v MigrationPlanTargetEnvironment) map[string]string { return v.OlvmTemplates }).(pulumi.StringMapOutput)
+}
+
 // (Updatable) Preferred VM shape type provided by the customer.
 func (o MigrationPlanTargetEnvironmentOutput) PreferredShapeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MigrationPlanTargetEnvironment) *string { return v.PreferredShapeType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) OCID of the VM configuration subnet.
-func (o MigrationPlanTargetEnvironmentOutput) Subnet() pulumi.StringOutput {
-	return o.ApplyT(func(v MigrationPlanTargetEnvironment) string { return v.Subnet }).(pulumi.StringOutput)
+func (o MigrationPlanTargetEnvironmentOutput) Subnet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationPlanTargetEnvironment) *string { return v.Subnet }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Target compartment identifier
@@ -1132,11 +1717,16 @@ func (o MigrationPlanTargetEnvironmentOutput) TargetEnvironmentType() pulumi.Str
 }
 
 // (Updatable) OCID of the VM configuration VCN.
+func (o MigrationPlanTargetEnvironmentOutput) Vcn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationPlanTargetEnvironment) *string { return v.Vcn }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Inventory asset Id of the vnic profile
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o MigrationPlanTargetEnvironmentOutput) Vcn() pulumi.StringOutput {
-	return o.ApplyT(func(v MigrationPlanTargetEnvironment) string { return v.Vcn }).(pulumi.StringOutput)
+func (o MigrationPlanTargetEnvironmentOutput) VnicProfileAssetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationPlanTargetEnvironment) *string { return v.VnicProfileAssetId }).(pulumi.StringPtrOutput)
 }
 
 type MigrationPlanTargetEnvironmentArrayOutput struct{ *pulumi.OutputState }
@@ -1966,6 +2556,8 @@ type TargetAssetMigrationAsset struct {
 	DependedOnBies []string `pulumi:"dependedOnBies"`
 	// List of migration assets that depends on the asset.
 	DependsOns []string `pulumi:"dependsOns"`
+	// Mapping of source disk id to destination disk details
+	DestinationDisks map[string]string `pulumi:"destinationDisks"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// Asset ID generated by mirgration service. It is used in the mirgration service pipeline.
@@ -1980,6 +2572,8 @@ type TargetAssetMigrationAsset struct {
 	ParentSnapshot *string `pulumi:"parentSnapshot"`
 	// Replication compartment identifier
 	ReplicationCompartmentId *string `pulumi:"replicationCompartmentId"`
+	// Replication location detail where the snapshots reside
+	ReplicationLocationDetail *TargetAssetMigrationAssetReplicationLocationDetail `pulumi:"replicationLocationDetail"`
 	// Replication schedule identifier
 	ReplicationScheduleId *string `pulumi:"replicationScheduleId"`
 	// Name of snapshot bucket
@@ -2022,6 +2616,8 @@ type TargetAssetMigrationAssetArgs struct {
 	DependedOnBies pulumi.StringArrayInput `pulumi:"dependedOnBies"`
 	// List of migration assets that depends on the asset.
 	DependsOns pulumi.StringArrayInput `pulumi:"dependsOns"`
+	// Mapping of source disk id to destination disk details
+	DestinationDisks pulumi.StringMapInput `pulumi:"destinationDisks"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Asset ID generated by mirgration service. It is used in the mirgration service pipeline.
@@ -2036,6 +2632,8 @@ type TargetAssetMigrationAssetArgs struct {
 	ParentSnapshot pulumi.StringPtrInput `pulumi:"parentSnapshot"`
 	// Replication compartment identifier
 	ReplicationCompartmentId pulumi.StringPtrInput `pulumi:"replicationCompartmentId"`
+	// Replication location detail where the snapshots reside
+	ReplicationLocationDetail TargetAssetMigrationAssetReplicationLocationDetailPtrInput `pulumi:"replicationLocationDetail"`
 	// Replication schedule identifier
 	ReplicationScheduleId pulumi.StringPtrInput `pulumi:"replicationScheduleId"`
 	// Name of snapshot bucket
@@ -2129,6 +2727,11 @@ func (o TargetAssetMigrationAssetOutput) DependsOns() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v TargetAssetMigrationAsset) []string { return v.DependsOns }).(pulumi.StringArrayOutput)
 }
 
+// Mapping of source disk id to destination disk details
+func (o TargetAssetMigrationAssetOutput) DestinationDisks() pulumi.StringMapOutput {
+	return o.ApplyT(func(v TargetAssetMigrationAsset) map[string]string { return v.DestinationDisks }).(pulumi.StringMapOutput)
+}
+
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 func (o TargetAssetMigrationAssetOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetAssetMigrationAsset) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
@@ -2162,6 +2765,13 @@ func (o TargetAssetMigrationAssetOutput) ParentSnapshot() pulumi.StringPtrOutput
 // Replication compartment identifier
 func (o TargetAssetMigrationAssetOutput) ReplicationCompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetAssetMigrationAsset) *string { return v.ReplicationCompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// Replication location detail where the snapshots reside
+func (o TargetAssetMigrationAssetOutput) ReplicationLocationDetail() TargetAssetMigrationAssetReplicationLocationDetailPtrOutput {
+	return o.ApplyT(func(v TargetAssetMigrationAsset) *TargetAssetMigrationAssetReplicationLocationDetail {
+		return v.ReplicationLocationDetail
+	}).(TargetAssetMigrationAssetReplicationLocationDetailPtrOutput)
 }
 
 // Replication schedule identifier
@@ -2232,6 +2842,162 @@ func (o TargetAssetMigrationAssetArrayOutput) Index(i pulumi.IntInput) TargetAss
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetAssetMigrationAsset {
 		return vs[0].([]TargetAssetMigrationAsset)[vs[1].(int)]
 	}).(TargetAssetMigrationAssetOutput)
+}
+
+type TargetAssetMigrationAssetReplicationLocationDetail struct {
+	// Properties for each of the replication location types
+	Metadata map[string]string `pulumi:"metadata"`
+	// The type of replication location
+	ReplicationLocationType *string `pulumi:"replicationLocationType"`
+}
+
+// TargetAssetMigrationAssetReplicationLocationDetailInput is an input type that accepts TargetAssetMigrationAssetReplicationLocationDetailArgs and TargetAssetMigrationAssetReplicationLocationDetailOutput values.
+// You can construct a concrete instance of `TargetAssetMigrationAssetReplicationLocationDetailInput` via:
+//
+//	TargetAssetMigrationAssetReplicationLocationDetailArgs{...}
+type TargetAssetMigrationAssetReplicationLocationDetailInput interface {
+	pulumi.Input
+
+	ToTargetAssetMigrationAssetReplicationLocationDetailOutput() TargetAssetMigrationAssetReplicationLocationDetailOutput
+	ToTargetAssetMigrationAssetReplicationLocationDetailOutputWithContext(context.Context) TargetAssetMigrationAssetReplicationLocationDetailOutput
+}
+
+type TargetAssetMigrationAssetReplicationLocationDetailArgs struct {
+	// Properties for each of the replication location types
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
+	// The type of replication location
+	ReplicationLocationType pulumi.StringPtrInput `pulumi:"replicationLocationType"`
+}
+
+func (TargetAssetMigrationAssetReplicationLocationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetAssetMigrationAssetReplicationLocationDetail)(nil)).Elem()
+}
+
+func (i TargetAssetMigrationAssetReplicationLocationDetailArgs) ToTargetAssetMigrationAssetReplicationLocationDetailOutput() TargetAssetMigrationAssetReplicationLocationDetailOutput {
+	return i.ToTargetAssetMigrationAssetReplicationLocationDetailOutputWithContext(context.Background())
+}
+
+func (i TargetAssetMigrationAssetReplicationLocationDetailArgs) ToTargetAssetMigrationAssetReplicationLocationDetailOutputWithContext(ctx context.Context) TargetAssetMigrationAssetReplicationLocationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetMigrationAssetReplicationLocationDetailOutput)
+}
+
+func (i TargetAssetMigrationAssetReplicationLocationDetailArgs) ToTargetAssetMigrationAssetReplicationLocationDetailPtrOutput() TargetAssetMigrationAssetReplicationLocationDetailPtrOutput {
+	return i.ToTargetAssetMigrationAssetReplicationLocationDetailPtrOutputWithContext(context.Background())
+}
+
+func (i TargetAssetMigrationAssetReplicationLocationDetailArgs) ToTargetAssetMigrationAssetReplicationLocationDetailPtrOutputWithContext(ctx context.Context) TargetAssetMigrationAssetReplicationLocationDetailPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetMigrationAssetReplicationLocationDetailOutput).ToTargetAssetMigrationAssetReplicationLocationDetailPtrOutputWithContext(ctx)
+}
+
+// TargetAssetMigrationAssetReplicationLocationDetailPtrInput is an input type that accepts TargetAssetMigrationAssetReplicationLocationDetailArgs, TargetAssetMigrationAssetReplicationLocationDetailPtr and TargetAssetMigrationAssetReplicationLocationDetailPtrOutput values.
+// You can construct a concrete instance of `TargetAssetMigrationAssetReplicationLocationDetailPtrInput` via:
+//
+//	        TargetAssetMigrationAssetReplicationLocationDetailArgs{...}
+//
+//	or:
+//
+//	        nil
+type TargetAssetMigrationAssetReplicationLocationDetailPtrInput interface {
+	pulumi.Input
+
+	ToTargetAssetMigrationAssetReplicationLocationDetailPtrOutput() TargetAssetMigrationAssetReplicationLocationDetailPtrOutput
+	ToTargetAssetMigrationAssetReplicationLocationDetailPtrOutputWithContext(context.Context) TargetAssetMigrationAssetReplicationLocationDetailPtrOutput
+}
+
+type targetAssetMigrationAssetReplicationLocationDetailPtrType TargetAssetMigrationAssetReplicationLocationDetailArgs
+
+func TargetAssetMigrationAssetReplicationLocationDetailPtr(v *TargetAssetMigrationAssetReplicationLocationDetailArgs) TargetAssetMigrationAssetReplicationLocationDetailPtrInput {
+	return (*targetAssetMigrationAssetReplicationLocationDetailPtrType)(v)
+}
+
+func (*targetAssetMigrationAssetReplicationLocationDetailPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TargetAssetMigrationAssetReplicationLocationDetail)(nil)).Elem()
+}
+
+func (i *targetAssetMigrationAssetReplicationLocationDetailPtrType) ToTargetAssetMigrationAssetReplicationLocationDetailPtrOutput() TargetAssetMigrationAssetReplicationLocationDetailPtrOutput {
+	return i.ToTargetAssetMigrationAssetReplicationLocationDetailPtrOutputWithContext(context.Background())
+}
+
+func (i *targetAssetMigrationAssetReplicationLocationDetailPtrType) ToTargetAssetMigrationAssetReplicationLocationDetailPtrOutputWithContext(ctx context.Context) TargetAssetMigrationAssetReplicationLocationDetailPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetMigrationAssetReplicationLocationDetailPtrOutput)
+}
+
+type TargetAssetMigrationAssetReplicationLocationDetailOutput struct{ *pulumi.OutputState }
+
+func (TargetAssetMigrationAssetReplicationLocationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetAssetMigrationAssetReplicationLocationDetail)(nil)).Elem()
+}
+
+func (o TargetAssetMigrationAssetReplicationLocationDetailOutput) ToTargetAssetMigrationAssetReplicationLocationDetailOutput() TargetAssetMigrationAssetReplicationLocationDetailOutput {
+	return o
+}
+
+func (o TargetAssetMigrationAssetReplicationLocationDetailOutput) ToTargetAssetMigrationAssetReplicationLocationDetailOutputWithContext(ctx context.Context) TargetAssetMigrationAssetReplicationLocationDetailOutput {
+	return o
+}
+
+func (o TargetAssetMigrationAssetReplicationLocationDetailOutput) ToTargetAssetMigrationAssetReplicationLocationDetailPtrOutput() TargetAssetMigrationAssetReplicationLocationDetailPtrOutput {
+	return o.ToTargetAssetMigrationAssetReplicationLocationDetailPtrOutputWithContext(context.Background())
+}
+
+func (o TargetAssetMigrationAssetReplicationLocationDetailOutput) ToTargetAssetMigrationAssetReplicationLocationDetailPtrOutputWithContext(ctx context.Context) TargetAssetMigrationAssetReplicationLocationDetailPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TargetAssetMigrationAssetReplicationLocationDetail) *TargetAssetMigrationAssetReplicationLocationDetail {
+		return &v
+	}).(TargetAssetMigrationAssetReplicationLocationDetailPtrOutput)
+}
+
+// Properties for each of the replication location types
+func (o TargetAssetMigrationAssetReplicationLocationDetailOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v TargetAssetMigrationAssetReplicationLocationDetail) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
+}
+
+// The type of replication location
+func (o TargetAssetMigrationAssetReplicationLocationDetailOutput) ReplicationLocationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetAssetMigrationAssetReplicationLocationDetail) *string { return v.ReplicationLocationType }).(pulumi.StringPtrOutput)
+}
+
+type TargetAssetMigrationAssetReplicationLocationDetailPtrOutput struct{ *pulumi.OutputState }
+
+func (TargetAssetMigrationAssetReplicationLocationDetailPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TargetAssetMigrationAssetReplicationLocationDetail)(nil)).Elem()
+}
+
+func (o TargetAssetMigrationAssetReplicationLocationDetailPtrOutput) ToTargetAssetMigrationAssetReplicationLocationDetailPtrOutput() TargetAssetMigrationAssetReplicationLocationDetailPtrOutput {
+	return o
+}
+
+func (o TargetAssetMigrationAssetReplicationLocationDetailPtrOutput) ToTargetAssetMigrationAssetReplicationLocationDetailPtrOutputWithContext(ctx context.Context) TargetAssetMigrationAssetReplicationLocationDetailPtrOutput {
+	return o
+}
+
+func (o TargetAssetMigrationAssetReplicationLocationDetailPtrOutput) Elem() TargetAssetMigrationAssetReplicationLocationDetailOutput {
+	return o.ApplyT(func(v *TargetAssetMigrationAssetReplicationLocationDetail) TargetAssetMigrationAssetReplicationLocationDetail {
+		if v != nil {
+			return *v
+		}
+		var ret TargetAssetMigrationAssetReplicationLocationDetail
+		return ret
+	}).(TargetAssetMigrationAssetReplicationLocationDetailOutput)
+}
+
+// Properties for each of the replication location types
+func (o TargetAssetMigrationAssetReplicationLocationDetailPtrOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *TargetAssetMigrationAssetReplicationLocationDetail) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.Metadata
+	}).(pulumi.StringMapOutput)
+}
+
+// The type of replication location
+func (o TargetAssetMigrationAssetReplicationLocationDetailPtrOutput) ReplicationLocationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetAssetMigrationAssetReplicationLocationDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ReplicationLocationType
+	}).(pulumi.StringPtrOutput)
 }
 
 type TargetAssetRecommendedSpec struct {
@@ -5516,9 +6282,9 @@ type TargetAssetUserSpecAgentConfigPluginsConfig struct {
 	// (Updatable) Whether the plugin should be enabled or disabled.
 	//
 	// To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
-	DesiredState string `pulumi:"desiredState"`
+	DesiredState *string `pulumi:"desiredState"`
 	// (Updatable) The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // TargetAssetUserSpecAgentConfigPluginsConfigInput is an input type that accepts TargetAssetUserSpecAgentConfigPluginsConfigArgs and TargetAssetUserSpecAgentConfigPluginsConfigOutput values.
@@ -5536,9 +6302,9 @@ type TargetAssetUserSpecAgentConfigPluginsConfigArgs struct {
 	// (Updatable) Whether the plugin should be enabled or disabled.
 	//
 	// To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
-	DesiredState pulumi.StringInput `pulumi:"desiredState"`
+	DesiredState pulumi.StringPtrInput `pulumi:"desiredState"`
 	// (Updatable) The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (TargetAssetUserSpecAgentConfigPluginsConfigArgs) ElementType() reflect.Type {
@@ -5595,13 +6361,13 @@ func (o TargetAssetUserSpecAgentConfigPluginsConfigOutput) ToTargetAssetUserSpec
 // (Updatable) Whether the plugin should be enabled or disabled.
 //
 // To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
-func (o TargetAssetUserSpecAgentConfigPluginsConfigOutput) DesiredState() pulumi.StringOutput {
-	return o.ApplyT(func(v TargetAssetUserSpecAgentConfigPluginsConfig) string { return v.DesiredState }).(pulumi.StringOutput)
+func (o TargetAssetUserSpecAgentConfigPluginsConfigOutput) DesiredState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetAssetUserSpecAgentConfigPluginsConfig) *string { return v.DesiredState }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-func (o TargetAssetUserSpecAgentConfigPluginsConfigOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v TargetAssetUserSpecAgentConfigPluginsConfig) string { return v.Name }).(pulumi.StringOutput)
+func (o TargetAssetUserSpecAgentConfigPluginsConfigOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetAssetUserSpecAgentConfigPluginsConfig) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type TargetAssetUserSpecAgentConfigPluginsConfigArrayOutput struct{ *pulumi.OutputState }
@@ -6218,7 +6984,7 @@ func (o TargetAssetUserSpecInstanceOptionsPtrOutput) AreLegacyImdsEndpointsDisab
 
 type TargetAssetUserSpecPreemptibleInstanceConfig struct {
 	// (Updatable) The action to run when the preemptible instance is interrupted for eviction.
-	PreemptionAction TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction `pulumi:"preemptionAction"`
+	PreemptionAction *TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction `pulumi:"preemptionAction"`
 }
 
 // TargetAssetUserSpecPreemptibleInstanceConfigInput is an input type that accepts TargetAssetUserSpecPreemptibleInstanceConfigArgs and TargetAssetUserSpecPreemptibleInstanceConfigOutput values.
@@ -6234,7 +7000,7 @@ type TargetAssetUserSpecPreemptibleInstanceConfigInput interface {
 
 type TargetAssetUserSpecPreemptibleInstanceConfigArgs struct {
 	// (Updatable) The action to run when the preemptible instance is interrupted for eviction.
-	PreemptionAction TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionInput `pulumi:"preemptionAction"`
+	PreemptionAction TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionPtrInput `pulumi:"preemptionAction"`
 }
 
 func (TargetAssetUserSpecPreemptibleInstanceConfigArgs) ElementType() reflect.Type {
@@ -6315,10 +7081,10 @@ func (o TargetAssetUserSpecPreemptibleInstanceConfigOutput) ToTargetAssetUserSpe
 }
 
 // (Updatable) The action to run when the preemptible instance is interrupted for eviction.
-func (o TargetAssetUserSpecPreemptibleInstanceConfigOutput) PreemptionAction() TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionOutput {
-	return o.ApplyT(func(v TargetAssetUserSpecPreemptibleInstanceConfig) TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction {
+func (o TargetAssetUserSpecPreemptibleInstanceConfigOutput) PreemptionAction() TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionPtrOutput {
+	return o.ApplyT(func(v TargetAssetUserSpecPreemptibleInstanceConfig) *TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction {
 		return v.PreemptionAction
-	}).(TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionOutput)
+	}).(TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionPtrOutput)
 }
 
 type TargetAssetUserSpecPreemptibleInstanceConfigPtrOutput struct{ *pulumi.OutputState }
@@ -6351,7 +7117,7 @@ func (o TargetAssetUserSpecPreemptibleInstanceConfigPtrOutput) PreemptionAction(
 		if v == nil {
 			return nil
 		}
-		return &v.PreemptionAction
+		return v.PreemptionAction
 	}).(TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionPtrOutput)
 }
 
@@ -6960,6 +7726,112 @@ func (o TargetAssetUserSpecSourceDetailsPtrOutput) SourceType() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
+type GetMigrationAssetReplicationLocationDetail struct {
+	// Properties for each of the replication location types
+	Metadata map[string]string `pulumi:"metadata"`
+	// The type of replication location
+	ReplicationLocationType string `pulumi:"replicationLocationType"`
+}
+
+// GetMigrationAssetReplicationLocationDetailInput is an input type that accepts GetMigrationAssetReplicationLocationDetailArgs and GetMigrationAssetReplicationLocationDetailOutput values.
+// You can construct a concrete instance of `GetMigrationAssetReplicationLocationDetailInput` via:
+//
+//	GetMigrationAssetReplicationLocationDetailArgs{...}
+type GetMigrationAssetReplicationLocationDetailInput interface {
+	pulumi.Input
+
+	ToGetMigrationAssetReplicationLocationDetailOutput() GetMigrationAssetReplicationLocationDetailOutput
+	ToGetMigrationAssetReplicationLocationDetailOutputWithContext(context.Context) GetMigrationAssetReplicationLocationDetailOutput
+}
+
+type GetMigrationAssetReplicationLocationDetailArgs struct {
+	// Properties for each of the replication location types
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
+	// The type of replication location
+	ReplicationLocationType pulumi.StringInput `pulumi:"replicationLocationType"`
+}
+
+func (GetMigrationAssetReplicationLocationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationAssetReplicationLocationDetail)(nil)).Elem()
+}
+
+func (i GetMigrationAssetReplicationLocationDetailArgs) ToGetMigrationAssetReplicationLocationDetailOutput() GetMigrationAssetReplicationLocationDetailOutput {
+	return i.ToGetMigrationAssetReplicationLocationDetailOutputWithContext(context.Background())
+}
+
+func (i GetMigrationAssetReplicationLocationDetailArgs) ToGetMigrationAssetReplicationLocationDetailOutputWithContext(ctx context.Context) GetMigrationAssetReplicationLocationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationAssetReplicationLocationDetailOutput)
+}
+
+// GetMigrationAssetReplicationLocationDetailArrayInput is an input type that accepts GetMigrationAssetReplicationLocationDetailArray and GetMigrationAssetReplicationLocationDetailArrayOutput values.
+// You can construct a concrete instance of `GetMigrationAssetReplicationLocationDetailArrayInput` via:
+//
+//	GetMigrationAssetReplicationLocationDetailArray{ GetMigrationAssetReplicationLocationDetailArgs{...} }
+type GetMigrationAssetReplicationLocationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationAssetReplicationLocationDetailArrayOutput() GetMigrationAssetReplicationLocationDetailArrayOutput
+	ToGetMigrationAssetReplicationLocationDetailArrayOutputWithContext(context.Context) GetMigrationAssetReplicationLocationDetailArrayOutput
+}
+
+type GetMigrationAssetReplicationLocationDetailArray []GetMigrationAssetReplicationLocationDetailInput
+
+func (GetMigrationAssetReplicationLocationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationAssetReplicationLocationDetail)(nil)).Elem()
+}
+
+func (i GetMigrationAssetReplicationLocationDetailArray) ToGetMigrationAssetReplicationLocationDetailArrayOutput() GetMigrationAssetReplicationLocationDetailArrayOutput {
+	return i.ToGetMigrationAssetReplicationLocationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationAssetReplicationLocationDetailArray) ToGetMigrationAssetReplicationLocationDetailArrayOutputWithContext(ctx context.Context) GetMigrationAssetReplicationLocationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationAssetReplicationLocationDetailArrayOutput)
+}
+
+type GetMigrationAssetReplicationLocationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationAssetReplicationLocationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationAssetReplicationLocationDetail)(nil)).Elem()
+}
+
+func (o GetMigrationAssetReplicationLocationDetailOutput) ToGetMigrationAssetReplicationLocationDetailOutput() GetMigrationAssetReplicationLocationDetailOutput {
+	return o
+}
+
+func (o GetMigrationAssetReplicationLocationDetailOutput) ToGetMigrationAssetReplicationLocationDetailOutputWithContext(ctx context.Context) GetMigrationAssetReplicationLocationDetailOutput {
+	return o
+}
+
+// Properties for each of the replication location types
+func (o GetMigrationAssetReplicationLocationDetailOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMigrationAssetReplicationLocationDetail) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
+}
+
+// The type of replication location
+func (o GetMigrationAssetReplicationLocationDetailOutput) ReplicationLocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationAssetReplicationLocationDetail) string { return v.ReplicationLocationType }).(pulumi.StringOutput)
+}
+
+type GetMigrationAssetReplicationLocationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationAssetReplicationLocationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationAssetReplicationLocationDetail)(nil)).Elem()
+}
+
+func (o GetMigrationAssetReplicationLocationDetailArrayOutput) ToGetMigrationAssetReplicationLocationDetailArrayOutput() GetMigrationAssetReplicationLocationDetailArrayOutput {
+	return o
+}
+
+func (o GetMigrationAssetReplicationLocationDetailArrayOutput) ToGetMigrationAssetReplicationLocationDetailArrayOutputWithContext(ctx context.Context) GetMigrationAssetReplicationLocationDetailArrayOutput {
+	return o
+}
+
+func (o GetMigrationAssetReplicationLocationDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationAssetReplicationLocationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationAssetReplicationLocationDetail {
+		return vs[0].([]GetMigrationAssetReplicationLocationDetail)[vs[1].(int)]
+	}).(GetMigrationAssetReplicationLocationDetailOutput)
+}
+
 type GetMigrationAssetsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -7169,6 +8041,8 @@ type GetMigrationAssetsMigrationAssetCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// List of migration assets that depend on the asset.
 	DependedOnBies []string `pulumi:"dependedOnBies"`
+	// Mapping of source disk id to destination disk details
+	DestinationDisks map[string]string `pulumi:"destinationDisks"`
 	// A filter to return only resources that match the entire given display name.
 	DisplayName string `pulumi:"displayName"`
 	// Asset ID generated by mirgration service. It is used in the mirgration service pipeline.
@@ -7185,6 +8059,8 @@ type GetMigrationAssetsMigrationAssetCollectionItem struct {
 	ParentSnapshot string `pulumi:"parentSnapshot"`
 	// Replication compartment identifier
 	ReplicationCompartmentId string `pulumi:"replicationCompartmentId"`
+	// Replication location detail where the snapshots reside
+	ReplicationLocationDetails []GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetail `pulumi:"replicationLocationDetails"`
 	// Replication schedule identifier
 	ReplicationScheduleId string `pulumi:"replicationScheduleId"`
 	// Name of snapshot bucket
@@ -7223,6 +8099,8 @@ type GetMigrationAssetsMigrationAssetCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// List of migration assets that depend on the asset.
 	DependedOnBies pulumi.StringArrayInput `pulumi:"dependedOnBies"`
+	// Mapping of source disk id to destination disk details
+	DestinationDisks pulumi.StringMapInput `pulumi:"destinationDisks"`
 	// A filter to return only resources that match the entire given display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Asset ID generated by mirgration service. It is used in the mirgration service pipeline.
@@ -7239,6 +8117,8 @@ type GetMigrationAssetsMigrationAssetCollectionItemArgs struct {
 	ParentSnapshot pulumi.StringInput `pulumi:"parentSnapshot"`
 	// Replication compartment identifier
 	ReplicationCompartmentId pulumi.StringInput `pulumi:"replicationCompartmentId"`
+	// Replication location detail where the snapshots reside
+	ReplicationLocationDetails GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayInput `pulumi:"replicationLocationDetails"`
 	// Replication schedule identifier
 	ReplicationScheduleId pulumi.StringInput `pulumi:"replicationScheduleId"`
 	// Name of snapshot bucket
@@ -7325,6 +8205,11 @@ func (o GetMigrationAssetsMigrationAssetCollectionItemOutput) DependedOnBies() p
 	return o.ApplyT(func(v GetMigrationAssetsMigrationAssetCollectionItem) []string { return v.DependedOnBies }).(pulumi.StringArrayOutput)
 }
 
+// Mapping of source disk id to destination disk details
+func (o GetMigrationAssetsMigrationAssetCollectionItemOutput) DestinationDisks() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMigrationAssetsMigrationAssetCollectionItem) map[string]string { return v.DestinationDisks }).(pulumi.StringMapOutput)
+}
+
 // A filter to return only resources that match the entire given display name.
 func (o GetMigrationAssetsMigrationAssetCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationAssetsMigrationAssetCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -7366,6 +8251,13 @@ func (o GetMigrationAssetsMigrationAssetCollectionItemOutput) ParentSnapshot() p
 // Replication compartment identifier
 func (o GetMigrationAssetsMigrationAssetCollectionItemOutput) ReplicationCompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationAssetsMigrationAssetCollectionItem) string { return v.ReplicationCompartmentId }).(pulumi.StringOutput)
+}
+
+// Replication location detail where the snapshots reside
+func (o GetMigrationAssetsMigrationAssetCollectionItemOutput) ReplicationLocationDetails() GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayOutput {
+	return o.ApplyT(func(v GetMigrationAssetsMigrationAssetCollectionItem) []GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetail {
+		return v.ReplicationLocationDetails
+	}).(GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayOutput)
 }
 
 // Replication schedule identifier
@@ -7431,6 +8323,213 @@ func (o GetMigrationAssetsMigrationAssetCollectionItemArrayOutput) Index(i pulum
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationAssetsMigrationAssetCollectionItem {
 		return vs[0].([]GetMigrationAssetsMigrationAssetCollectionItem)[vs[1].(int)]
 	}).(GetMigrationAssetsMigrationAssetCollectionItemOutput)
+}
+
+type GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetail struct {
+	// Properties for each of the replication location types
+	Metadata map[string]string `pulumi:"metadata"`
+	// The type of replication location
+	ReplicationLocationType string `pulumi:"replicationLocationType"`
+}
+
+// GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailInput is an input type that accepts GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArgs and GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailOutput values.
+// You can construct a concrete instance of `GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailInput` via:
+//
+//	GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArgs{...}
+type GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailInput interface {
+	pulumi.Input
+
+	ToGetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailOutput() GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailOutput
+	ToGetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailOutputWithContext(context.Context) GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailOutput
+}
+
+type GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArgs struct {
+	// Properties for each of the replication location types
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
+	// The type of replication location
+	ReplicationLocationType pulumi.StringInput `pulumi:"replicationLocationType"`
+}
+
+func (GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetail)(nil)).Elem()
+}
+
+func (i GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArgs) ToGetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailOutput() GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailOutput {
+	return i.ToGetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailOutputWithContext(context.Background())
+}
+
+func (i GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArgs) ToGetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailOutputWithContext(ctx context.Context) GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailOutput)
+}
+
+// GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayInput is an input type that accepts GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArray and GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayOutput values.
+// You can construct a concrete instance of `GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayInput` via:
+//
+//	GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArray{ GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArgs{...} }
+type GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayOutput() GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayOutput
+	ToGetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayOutputWithContext(context.Context) GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayOutput
+}
+
+type GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArray []GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailInput
+
+func (GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetail)(nil)).Elem()
+}
+
+func (i GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArray) ToGetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayOutput() GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayOutput {
+	return i.ToGetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArray) ToGetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayOutputWithContext(ctx context.Context) GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayOutput)
+}
+
+type GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetail)(nil)).Elem()
+}
+
+func (o GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailOutput) ToGetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailOutput() GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailOutput {
+	return o
+}
+
+func (o GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailOutput) ToGetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailOutputWithContext(ctx context.Context) GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailOutput {
+	return o
+}
+
+// Properties for each of the replication location types
+func (o GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetail) map[string]string {
+		return v.Metadata
+	}).(pulumi.StringMapOutput)
+}
+
+// The type of replication location
+func (o GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailOutput) ReplicationLocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetail) string {
+		return v.ReplicationLocationType
+	}).(pulumi.StringOutput)
+}
+
+type GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetail)(nil)).Elem()
+}
+
+func (o GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayOutput) ToGetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayOutput() GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayOutput {
+	return o
+}
+
+func (o GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayOutput) ToGetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayOutputWithContext(ctx context.Context) GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayOutput {
+	return o
+}
+
+func (o GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetail {
+		return vs[0].([]GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetail)[vs[1].(int)]
+	}).(GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailOutput)
+}
+
+type GetMigrationMigrationConfig struct {
+	// The OCID of the subnet to use for replication
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetMigrationMigrationConfigInput is an input type that accepts GetMigrationMigrationConfigArgs and GetMigrationMigrationConfigOutput values.
+// You can construct a concrete instance of `GetMigrationMigrationConfigInput` via:
+//
+//	GetMigrationMigrationConfigArgs{...}
+type GetMigrationMigrationConfigInput interface {
+	pulumi.Input
+
+	ToGetMigrationMigrationConfigOutput() GetMigrationMigrationConfigOutput
+	ToGetMigrationMigrationConfigOutputWithContext(context.Context) GetMigrationMigrationConfigOutput
+}
+
+type GetMigrationMigrationConfigArgs struct {
+	// The OCID of the subnet to use for replication
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetMigrationMigrationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationMigrationConfig)(nil)).Elem()
+}
+
+func (i GetMigrationMigrationConfigArgs) ToGetMigrationMigrationConfigOutput() GetMigrationMigrationConfigOutput {
+	return i.ToGetMigrationMigrationConfigOutputWithContext(context.Background())
+}
+
+func (i GetMigrationMigrationConfigArgs) ToGetMigrationMigrationConfigOutputWithContext(ctx context.Context) GetMigrationMigrationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationMigrationConfigOutput)
+}
+
+// GetMigrationMigrationConfigArrayInput is an input type that accepts GetMigrationMigrationConfigArray and GetMigrationMigrationConfigArrayOutput values.
+// You can construct a concrete instance of `GetMigrationMigrationConfigArrayInput` via:
+//
+//	GetMigrationMigrationConfigArray{ GetMigrationMigrationConfigArgs{...} }
+type GetMigrationMigrationConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationMigrationConfigArrayOutput() GetMigrationMigrationConfigArrayOutput
+	ToGetMigrationMigrationConfigArrayOutputWithContext(context.Context) GetMigrationMigrationConfigArrayOutput
+}
+
+type GetMigrationMigrationConfigArray []GetMigrationMigrationConfigInput
+
+func (GetMigrationMigrationConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationMigrationConfig)(nil)).Elem()
+}
+
+func (i GetMigrationMigrationConfigArray) ToGetMigrationMigrationConfigArrayOutput() GetMigrationMigrationConfigArrayOutput {
+	return i.ToGetMigrationMigrationConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationMigrationConfigArray) ToGetMigrationMigrationConfigArrayOutputWithContext(ctx context.Context) GetMigrationMigrationConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationMigrationConfigArrayOutput)
+}
+
+type GetMigrationMigrationConfigOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationMigrationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationMigrationConfig)(nil)).Elem()
+}
+
+func (o GetMigrationMigrationConfigOutput) ToGetMigrationMigrationConfigOutput() GetMigrationMigrationConfigOutput {
+	return o
+}
+
+func (o GetMigrationMigrationConfigOutput) ToGetMigrationMigrationConfigOutputWithContext(ctx context.Context) GetMigrationMigrationConfigOutput {
+	return o
+}
+
+// The OCID of the subnet to use for replication
+func (o GetMigrationMigrationConfigOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationMigrationConfig) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetMigrationMigrationConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationMigrationConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationMigrationConfig)(nil)).Elem()
+}
+
+func (o GetMigrationMigrationConfigArrayOutput) ToGetMigrationMigrationConfigArrayOutput() GetMigrationMigrationConfigArrayOutput {
+	return o
+}
+
+func (o GetMigrationMigrationConfigArrayOutput) ToGetMigrationMigrationConfigArrayOutputWithContext(ctx context.Context) GetMigrationMigrationConfigArrayOutput {
+	return o
+}
+
+func (o GetMigrationMigrationConfigArrayOutput) Index(i pulumi.IntInput) GetMigrationMigrationConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationMigrationConfig {
+		return vs[0].([]GetMigrationMigrationConfig)[vs[1].(int)]
+	}).(GetMigrationMigrationConfigOutput)
 }
 
 type GetMigrationPlanAvailableShapeItem struct {
@@ -8139,6 +9238,10 @@ func (o GetMigrationPlanAvailableShapesFilterArrayOutput) Index(i pulumi.IntInpu
 }
 
 type GetMigrationPlanMigrationPlanStat struct {
+	// Summary of costs to migrate.
+	CostToMigrates []GetMigrationPlanMigrationPlanStatCostToMigrate `pulumi:"costToMigrates"`
+	// Current monthly compute and storage costs.
+	CurrentMonthlyCosts []GetMigrationPlanMigrationPlanStatCurrentMonthlyCost `pulumi:"currentMonthlyCosts"`
 	// The time when the migration plan was updated. An RFC3339 formatted datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// Cost estimation description
@@ -8159,6 +9262,10 @@ type GetMigrationPlanMigrationPlanStatInput interface {
 }
 
 type GetMigrationPlanMigrationPlanStatArgs struct {
+	// Summary of costs to migrate.
+	CostToMigrates GetMigrationPlanMigrationPlanStatCostToMigrateArrayInput `pulumi:"costToMigrates"`
+	// Current monthly compute and storage costs.
+	CurrentMonthlyCosts GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayInput `pulumi:"currentMonthlyCosts"`
 	// The time when the migration plan was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// Cost estimation description
@@ -8218,6 +9325,20 @@ func (o GetMigrationPlanMigrationPlanStatOutput) ToGetMigrationPlanMigrationPlan
 	return o
 }
 
+// Summary of costs to migrate.
+func (o GetMigrationPlanMigrationPlanStatOutput) CostToMigrates() GetMigrationPlanMigrationPlanStatCostToMigrateArrayOutput {
+	return o.ApplyT(func(v GetMigrationPlanMigrationPlanStat) []GetMigrationPlanMigrationPlanStatCostToMigrate {
+		return v.CostToMigrates
+	}).(GetMigrationPlanMigrationPlanStatCostToMigrateArrayOutput)
+}
+
+// Current monthly compute and storage costs.
+func (o GetMigrationPlanMigrationPlanStatOutput) CurrentMonthlyCosts() GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput {
+	return o.ApplyT(func(v GetMigrationPlanMigrationPlanStat) []GetMigrationPlanMigrationPlanStatCurrentMonthlyCost {
+		return v.CurrentMonthlyCosts
+	}).(GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput)
+}
+
 // The time when the migration plan was updated. An RFC3339 formatted datetime string.
 func (o GetMigrationPlanMigrationPlanStatOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationPlanMigrationPlanStat) string { return v.TimeUpdated }).(pulumi.StringOutput)
@@ -8253,6 +9374,254 @@ func (o GetMigrationPlanMigrationPlanStatArrayOutput) Index(i pulumi.IntInput) G
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationPlanMigrationPlanStat {
 		return vs[0].([]GetMigrationPlanMigrationPlanStat)[vs[1].(int)]
 	}).(GetMigrationPlanMigrationPlanStatOutput)
+}
+
+type GetMigrationPlanMigrationPlanStatCostToMigrate struct {
+	// Number of assets used in this calculation.
+	AssetCount int `pulumi:"assetCount"`
+	// Currency code in the ISO format.
+	CurrencyCode string `pulumi:"currencyCode"`
+	// Data transfer costs from OCI.
+	OciDataTransferCosts float64 `pulumi:"ociDataTransferCosts"`
+	// Data transfer costs from source cloud provider.
+	SourceDataTransferCosts float64 `pulumi:"sourceDataTransferCosts"`
+}
+
+// GetMigrationPlanMigrationPlanStatCostToMigrateInput is an input type that accepts GetMigrationPlanMigrationPlanStatCostToMigrateArgs and GetMigrationPlanMigrationPlanStatCostToMigrateOutput values.
+// You can construct a concrete instance of `GetMigrationPlanMigrationPlanStatCostToMigrateInput` via:
+//
+//	GetMigrationPlanMigrationPlanStatCostToMigrateArgs{...}
+type GetMigrationPlanMigrationPlanStatCostToMigrateInput interface {
+	pulumi.Input
+
+	ToGetMigrationPlanMigrationPlanStatCostToMigrateOutput() GetMigrationPlanMigrationPlanStatCostToMigrateOutput
+	ToGetMigrationPlanMigrationPlanStatCostToMigrateOutputWithContext(context.Context) GetMigrationPlanMigrationPlanStatCostToMigrateOutput
+}
+
+type GetMigrationPlanMigrationPlanStatCostToMigrateArgs struct {
+	// Number of assets used in this calculation.
+	AssetCount pulumi.IntInput `pulumi:"assetCount"`
+	// Currency code in the ISO format.
+	CurrencyCode pulumi.StringInput `pulumi:"currencyCode"`
+	// Data transfer costs from OCI.
+	OciDataTransferCosts pulumi.Float64Input `pulumi:"ociDataTransferCosts"`
+	// Data transfer costs from source cloud provider.
+	SourceDataTransferCosts pulumi.Float64Input `pulumi:"sourceDataTransferCosts"`
+}
+
+func (GetMigrationPlanMigrationPlanStatCostToMigrateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationPlanMigrationPlanStatCostToMigrate)(nil)).Elem()
+}
+
+func (i GetMigrationPlanMigrationPlanStatCostToMigrateArgs) ToGetMigrationPlanMigrationPlanStatCostToMigrateOutput() GetMigrationPlanMigrationPlanStatCostToMigrateOutput {
+	return i.ToGetMigrationPlanMigrationPlanStatCostToMigrateOutputWithContext(context.Background())
+}
+
+func (i GetMigrationPlanMigrationPlanStatCostToMigrateArgs) ToGetMigrationPlanMigrationPlanStatCostToMigrateOutputWithContext(ctx context.Context) GetMigrationPlanMigrationPlanStatCostToMigrateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanMigrationPlanStatCostToMigrateOutput)
+}
+
+// GetMigrationPlanMigrationPlanStatCostToMigrateArrayInput is an input type that accepts GetMigrationPlanMigrationPlanStatCostToMigrateArray and GetMigrationPlanMigrationPlanStatCostToMigrateArrayOutput values.
+// You can construct a concrete instance of `GetMigrationPlanMigrationPlanStatCostToMigrateArrayInput` via:
+//
+//	GetMigrationPlanMigrationPlanStatCostToMigrateArray{ GetMigrationPlanMigrationPlanStatCostToMigrateArgs{...} }
+type GetMigrationPlanMigrationPlanStatCostToMigrateArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationPlanMigrationPlanStatCostToMigrateArrayOutput() GetMigrationPlanMigrationPlanStatCostToMigrateArrayOutput
+	ToGetMigrationPlanMigrationPlanStatCostToMigrateArrayOutputWithContext(context.Context) GetMigrationPlanMigrationPlanStatCostToMigrateArrayOutput
+}
+
+type GetMigrationPlanMigrationPlanStatCostToMigrateArray []GetMigrationPlanMigrationPlanStatCostToMigrateInput
+
+func (GetMigrationPlanMigrationPlanStatCostToMigrateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationPlanMigrationPlanStatCostToMigrate)(nil)).Elem()
+}
+
+func (i GetMigrationPlanMigrationPlanStatCostToMigrateArray) ToGetMigrationPlanMigrationPlanStatCostToMigrateArrayOutput() GetMigrationPlanMigrationPlanStatCostToMigrateArrayOutput {
+	return i.ToGetMigrationPlanMigrationPlanStatCostToMigrateArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationPlanMigrationPlanStatCostToMigrateArray) ToGetMigrationPlanMigrationPlanStatCostToMigrateArrayOutputWithContext(ctx context.Context) GetMigrationPlanMigrationPlanStatCostToMigrateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanMigrationPlanStatCostToMigrateArrayOutput)
+}
+
+type GetMigrationPlanMigrationPlanStatCostToMigrateOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationPlanMigrationPlanStatCostToMigrateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationPlanMigrationPlanStatCostToMigrate)(nil)).Elem()
+}
+
+func (o GetMigrationPlanMigrationPlanStatCostToMigrateOutput) ToGetMigrationPlanMigrationPlanStatCostToMigrateOutput() GetMigrationPlanMigrationPlanStatCostToMigrateOutput {
+	return o
+}
+
+func (o GetMigrationPlanMigrationPlanStatCostToMigrateOutput) ToGetMigrationPlanMigrationPlanStatCostToMigrateOutputWithContext(ctx context.Context) GetMigrationPlanMigrationPlanStatCostToMigrateOutput {
+	return o
+}
+
+// Number of assets used in this calculation.
+func (o GetMigrationPlanMigrationPlanStatCostToMigrateOutput) AssetCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationPlanMigrationPlanStatCostToMigrate) int { return v.AssetCount }).(pulumi.IntOutput)
+}
+
+// Currency code in the ISO format.
+func (o GetMigrationPlanMigrationPlanStatCostToMigrateOutput) CurrencyCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationPlanMigrationPlanStatCostToMigrate) string { return v.CurrencyCode }).(pulumi.StringOutput)
+}
+
+// Data transfer costs from OCI.
+func (o GetMigrationPlanMigrationPlanStatCostToMigrateOutput) OciDataTransferCosts() pulumi.Float64Output {
+	return o.ApplyT(func(v GetMigrationPlanMigrationPlanStatCostToMigrate) float64 { return v.OciDataTransferCosts }).(pulumi.Float64Output)
+}
+
+// Data transfer costs from source cloud provider.
+func (o GetMigrationPlanMigrationPlanStatCostToMigrateOutput) SourceDataTransferCosts() pulumi.Float64Output {
+	return o.ApplyT(func(v GetMigrationPlanMigrationPlanStatCostToMigrate) float64 { return v.SourceDataTransferCosts }).(pulumi.Float64Output)
+}
+
+type GetMigrationPlanMigrationPlanStatCostToMigrateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationPlanMigrationPlanStatCostToMigrateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationPlanMigrationPlanStatCostToMigrate)(nil)).Elem()
+}
+
+func (o GetMigrationPlanMigrationPlanStatCostToMigrateArrayOutput) ToGetMigrationPlanMigrationPlanStatCostToMigrateArrayOutput() GetMigrationPlanMigrationPlanStatCostToMigrateArrayOutput {
+	return o
+}
+
+func (o GetMigrationPlanMigrationPlanStatCostToMigrateArrayOutput) ToGetMigrationPlanMigrationPlanStatCostToMigrateArrayOutputWithContext(ctx context.Context) GetMigrationPlanMigrationPlanStatCostToMigrateArrayOutput {
+	return o
+}
+
+func (o GetMigrationPlanMigrationPlanStatCostToMigrateArrayOutput) Index(i pulumi.IntInput) GetMigrationPlanMigrationPlanStatCostToMigrateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationPlanMigrationPlanStatCostToMigrate {
+		return vs[0].([]GetMigrationPlanMigrationPlanStatCostToMigrate)[vs[1].(int)]
+	}).(GetMigrationPlanMigrationPlanStatCostToMigrateOutput)
+}
+
+type GetMigrationPlanMigrationPlanStatCurrentMonthlyCost struct {
+	// Number of assets used in this calculation.
+	AssetCount int `pulumi:"assetCount"`
+	// Current monthly compute costs.
+	ComputeAmount float64 `pulumi:"computeAmount"`
+	// Currency code in the ISO format.
+	CurrencyCode string `pulumi:"currencyCode"`
+	// Current monthly storage costs.
+	StorageAmount float64 `pulumi:"storageAmount"`
+}
+
+// GetMigrationPlanMigrationPlanStatCurrentMonthlyCostInput is an input type that accepts GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArgs and GetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput values.
+// You can construct a concrete instance of `GetMigrationPlanMigrationPlanStatCurrentMonthlyCostInput` via:
+//
+//	GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArgs{...}
+type GetMigrationPlanMigrationPlanStatCurrentMonthlyCostInput interface {
+	pulumi.Input
+
+	ToGetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput() GetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput
+	ToGetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutputWithContext(context.Context) GetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput
+}
+
+type GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArgs struct {
+	// Number of assets used in this calculation.
+	AssetCount pulumi.IntInput `pulumi:"assetCount"`
+	// Current monthly compute costs.
+	ComputeAmount pulumi.Float64Input `pulumi:"computeAmount"`
+	// Currency code in the ISO format.
+	CurrencyCode pulumi.StringInput `pulumi:"currencyCode"`
+	// Current monthly storage costs.
+	StorageAmount pulumi.Float64Input `pulumi:"storageAmount"`
+}
+
+func (GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationPlanMigrationPlanStatCurrentMonthlyCost)(nil)).Elem()
+}
+
+func (i GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArgs) ToGetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput() GetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput {
+	return i.ToGetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutputWithContext(context.Background())
+}
+
+func (i GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArgs) ToGetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutputWithContext(ctx context.Context) GetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput)
+}
+
+// GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayInput is an input type that accepts GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArray and GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput values.
+// You can construct a concrete instance of `GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayInput` via:
+//
+//	GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArray{ GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArgs{...} }
+type GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput() GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput
+	ToGetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutputWithContext(context.Context) GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput
+}
+
+type GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArray []GetMigrationPlanMigrationPlanStatCurrentMonthlyCostInput
+
+func (GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationPlanMigrationPlanStatCurrentMonthlyCost)(nil)).Elem()
+}
+
+func (i GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArray) ToGetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput() GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput {
+	return i.ToGetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArray) ToGetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutputWithContext(ctx context.Context) GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput)
+}
+
+type GetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationPlanMigrationPlanStatCurrentMonthlyCost)(nil)).Elem()
+}
+
+func (o GetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput) ToGetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput() GetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput {
+	return o
+}
+
+func (o GetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput) ToGetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutputWithContext(ctx context.Context) GetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput {
+	return o
+}
+
+// Number of assets used in this calculation.
+func (o GetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput) AssetCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationPlanMigrationPlanStatCurrentMonthlyCost) int { return v.AssetCount }).(pulumi.IntOutput)
+}
+
+// Current monthly compute costs.
+func (o GetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput) ComputeAmount() pulumi.Float64Output {
+	return o.ApplyT(func(v GetMigrationPlanMigrationPlanStatCurrentMonthlyCost) float64 { return v.ComputeAmount }).(pulumi.Float64Output)
+}
+
+// Currency code in the ISO format.
+func (o GetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput) CurrencyCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationPlanMigrationPlanStatCurrentMonthlyCost) string { return v.CurrencyCode }).(pulumi.StringOutput)
+}
+
+// Current monthly storage costs.
+func (o GetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput) StorageAmount() pulumi.Float64Output {
+	return o.ApplyT(func(v GetMigrationPlanMigrationPlanStatCurrentMonthlyCost) float64 { return v.StorageAmount }).(pulumi.Float64Output)
+}
+
+type GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationPlanMigrationPlanStatCurrentMonthlyCost)(nil)).Elem()
+}
+
+func (o GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput) ToGetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput() GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput {
+	return o
+}
+
+func (o GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput) ToGetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutputWithContext(ctx context.Context) GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput {
+	return o
+}
+
+func (o GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput) Index(i pulumi.IntInput) GetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationPlanMigrationPlanStatCurrentMonthlyCost {
+		return vs[0].([]GetMigrationPlanMigrationPlanStatCurrentMonthlyCost)[vs[1].(int)]
+	}).(GetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput)
 }
 
 type GetMigrationPlanMigrationPlanStatTotalEstimatedCost struct {
@@ -9109,12 +10478,16 @@ func (o GetMigrationPlanStrategyArrayOutput) Index(i pulumi.IntInput) GetMigrati
 type GetMigrationPlanTargetEnvironment struct {
 	// Availability Domain of the VM configuration.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// Inventory asset id of the olvm cluster
+	ClusterAssetId string `pulumi:"clusterAssetId"`
 	// OCID of the dedicated VM configuration host.
 	DedicatedVmHost string `pulumi:"dedicatedVmHost"`
 	// Fault domain of the VM configuration.
 	FaultDomain string `pulumi:"faultDomain"`
 	// Microsoft license for the VM configuration.
 	MsLicense string `pulumi:"msLicense"`
+	// OLVM OS type to inventory asset id of the template
+	OlvmTemplates map[string]string `pulumi:"olvmTemplates"`
 	// Preferred VM shape type provided by the customer.
 	PreferredShapeType string `pulumi:"preferredShapeType"`
 	// OCID of the VM configuration subnet.
@@ -9125,6 +10498,8 @@ type GetMigrationPlanTargetEnvironment struct {
 	TargetEnvironmentType string `pulumi:"targetEnvironmentType"`
 	// OCID of the VM configuration VCN.
 	Vcn string `pulumi:"vcn"`
+	// Inventory asset Id of the vnic profile
+	VnicProfileAssetId string `pulumi:"vnicProfileAssetId"`
 }
 
 // GetMigrationPlanTargetEnvironmentInput is an input type that accepts GetMigrationPlanTargetEnvironmentArgs and GetMigrationPlanTargetEnvironmentOutput values.
@@ -9141,12 +10516,16 @@ type GetMigrationPlanTargetEnvironmentInput interface {
 type GetMigrationPlanTargetEnvironmentArgs struct {
 	// Availability Domain of the VM configuration.
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// Inventory asset id of the olvm cluster
+	ClusterAssetId pulumi.StringInput `pulumi:"clusterAssetId"`
 	// OCID of the dedicated VM configuration host.
 	DedicatedVmHost pulumi.StringInput `pulumi:"dedicatedVmHost"`
 	// Fault domain of the VM configuration.
 	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
 	// Microsoft license for the VM configuration.
 	MsLicense pulumi.StringInput `pulumi:"msLicense"`
+	// OLVM OS type to inventory asset id of the template
+	OlvmTemplates pulumi.StringMapInput `pulumi:"olvmTemplates"`
 	// Preferred VM shape type provided by the customer.
 	PreferredShapeType pulumi.StringInput `pulumi:"preferredShapeType"`
 	// OCID of the VM configuration subnet.
@@ -9157,6 +10536,8 @@ type GetMigrationPlanTargetEnvironmentArgs struct {
 	TargetEnvironmentType pulumi.StringInput `pulumi:"targetEnvironmentType"`
 	// OCID of the VM configuration VCN.
 	Vcn pulumi.StringInput `pulumi:"vcn"`
+	// Inventory asset Id of the vnic profile
+	VnicProfileAssetId pulumi.StringInput `pulumi:"vnicProfileAssetId"`
 }
 
 func (GetMigrationPlanTargetEnvironmentArgs) ElementType() reflect.Type {
@@ -9215,6 +10596,11 @@ func (o GetMigrationPlanTargetEnvironmentOutput) AvailabilityDomain() pulumi.Str
 	return o.ApplyT(func(v GetMigrationPlanTargetEnvironment) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
+// Inventory asset id of the olvm cluster
+func (o GetMigrationPlanTargetEnvironmentOutput) ClusterAssetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationPlanTargetEnvironment) string { return v.ClusterAssetId }).(pulumi.StringOutput)
+}
+
 // OCID of the dedicated VM configuration host.
 func (o GetMigrationPlanTargetEnvironmentOutput) DedicatedVmHost() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationPlanTargetEnvironment) string { return v.DedicatedVmHost }).(pulumi.StringOutput)
@@ -9228,6 +10614,11 @@ func (o GetMigrationPlanTargetEnvironmentOutput) FaultDomain() pulumi.StringOutp
 // Microsoft license for the VM configuration.
 func (o GetMigrationPlanTargetEnvironmentOutput) MsLicense() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationPlanTargetEnvironment) string { return v.MsLicense }).(pulumi.StringOutput)
+}
+
+// OLVM OS type to inventory asset id of the template
+func (o GetMigrationPlanTargetEnvironmentOutput) OlvmTemplates() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMigrationPlanTargetEnvironment) map[string]string { return v.OlvmTemplates }).(pulumi.StringMapOutput)
 }
 
 // Preferred VM shape type provided by the customer.
@@ -9253,6 +10644,11 @@ func (o GetMigrationPlanTargetEnvironmentOutput) TargetEnvironmentType() pulumi.
 // OCID of the VM configuration VCN.
 func (o GetMigrationPlanTargetEnvironmentOutput) Vcn() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationPlanTargetEnvironment) string { return v.Vcn }).(pulumi.StringOutput)
+}
+
+// Inventory asset Id of the vnic profile
+func (o GetMigrationPlanTargetEnvironmentOutput) VnicProfileAssetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationPlanTargetEnvironment) string { return v.VnicProfileAssetId }).(pulumi.StringOutput)
 }
 
 type GetMigrationPlanTargetEnvironmentArrayOutput struct{ *pulumi.OutputState }
@@ -9725,6 +11121,10 @@ func (o GetMigrationPlansMigrationPlanCollectionItemArrayOutput) Index(i pulumi.
 }
 
 type GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat struct {
+	// Summary of costs to migrate.
+	CostToMigrates []GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrate `pulumi:"costToMigrates"`
+	// Current monthly compute and storage costs.
+	CurrentMonthlyCosts []GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCost `pulumi:"currentMonthlyCosts"`
 	// The time when the migration plan was updated. An RFC3339 formatted datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// Cost estimation description
@@ -9745,6 +11145,10 @@ type GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatInput interfac
 }
 
 type GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatArgs struct {
+	// Summary of costs to migrate.
+	CostToMigrates GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayInput `pulumi:"costToMigrates"`
+	// Current monthly compute and storage costs.
+	CurrentMonthlyCosts GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayInput `pulumi:"currentMonthlyCosts"`
 	// The time when the migration plan was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// Cost estimation description
@@ -9804,6 +11208,20 @@ func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatOutput) ToG
 	return o
 }
 
+// Summary of costs to migrate.
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatOutput) CostToMigrates() GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayOutput {
+	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat) []GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrate {
+		return v.CostToMigrates
+	}).(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayOutput)
+}
+
+// Current monthly compute and storage costs.
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatOutput) CurrentMonthlyCosts() GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayOutput {
+	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat) []GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCost {
+		return v.CurrentMonthlyCosts
+	}).(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayOutput)
+}
+
 // The time when the migration plan was updated. An RFC3339 formatted datetime string.
 func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat) string { return v.TimeUpdated }).(pulumi.StringOutput)
@@ -9839,6 +11257,270 @@ func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatArrayOutput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat {
 		return vs[0].([]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat)[vs[1].(int)]
 	}).(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatOutput)
+}
+
+type GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrate struct {
+	// Number of assets used in this calculation.
+	AssetCount int `pulumi:"assetCount"`
+	// Currency code in the ISO format.
+	CurrencyCode string `pulumi:"currencyCode"`
+	// Data transfer costs from OCI.
+	OciDataTransferCosts float64 `pulumi:"ociDataTransferCosts"`
+	// Data transfer costs from source cloud provider.
+	SourceDataTransferCosts float64 `pulumi:"sourceDataTransferCosts"`
+}
+
+// GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateInput is an input type that accepts GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArgs and GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutput values.
+// You can construct a concrete instance of `GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateInput` via:
+//
+//	GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArgs{...}
+type GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateInput interface {
+	pulumi.Input
+
+	ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutput() GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutput
+	ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutputWithContext(context.Context) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutput
+}
+
+type GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArgs struct {
+	// Number of assets used in this calculation.
+	AssetCount pulumi.IntInput `pulumi:"assetCount"`
+	// Currency code in the ISO format.
+	CurrencyCode pulumi.StringInput `pulumi:"currencyCode"`
+	// Data transfer costs from OCI.
+	OciDataTransferCosts pulumi.Float64Input `pulumi:"ociDataTransferCosts"`
+	// Data transfer costs from source cloud provider.
+	SourceDataTransferCosts pulumi.Float64Input `pulumi:"sourceDataTransferCosts"`
+}
+
+func (GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrate)(nil)).Elem()
+}
+
+func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArgs) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutput() GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutput {
+	return i.ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutputWithContext(context.Background())
+}
+
+func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArgs) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutput)
+}
+
+// GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayInput is an input type that accepts GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArray and GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayOutput values.
+// You can construct a concrete instance of `GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayInput` via:
+//
+//	GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArray{ GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArgs{...} }
+type GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayOutput() GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayOutput
+	ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayOutputWithContext(context.Context) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayOutput
+}
+
+type GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArray []GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateInput
+
+func (GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrate)(nil)).Elem()
+}
+
+func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArray) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayOutput() GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayOutput {
+	return i.ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArray) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayOutput)
+}
+
+type GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrate)(nil)).Elem()
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutput) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutput() GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutput {
+	return o
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutput) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutput {
+	return o
+}
+
+// Number of assets used in this calculation.
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutput) AssetCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrate) int {
+		return v.AssetCount
+	}).(pulumi.IntOutput)
+}
+
+// Currency code in the ISO format.
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutput) CurrencyCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrate) string {
+		return v.CurrencyCode
+	}).(pulumi.StringOutput)
+}
+
+// Data transfer costs from OCI.
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutput) OciDataTransferCosts() pulumi.Float64Output {
+	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrate) float64 {
+		return v.OciDataTransferCosts
+	}).(pulumi.Float64Output)
+}
+
+// Data transfer costs from source cloud provider.
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutput) SourceDataTransferCosts() pulumi.Float64Output {
+	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrate) float64 {
+		return v.SourceDataTransferCosts
+	}).(pulumi.Float64Output)
+}
+
+type GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrate)(nil)).Elem()
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayOutput) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayOutput() GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayOutput {
+	return o
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayOutput) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayOutput {
+	return o
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayOutput) Index(i pulumi.IntInput) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrate {
+		return vs[0].([]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrate)[vs[1].(int)]
+	}).(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutput)
+}
+
+type GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCost struct {
+	// Number of assets used in this calculation.
+	AssetCount int `pulumi:"assetCount"`
+	// Current monthly compute costs.
+	ComputeAmount float64 `pulumi:"computeAmount"`
+	// Currency code in the ISO format.
+	CurrencyCode string `pulumi:"currencyCode"`
+	// Current monthly storage costs.
+	StorageAmount float64 `pulumi:"storageAmount"`
+}
+
+// GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostInput is an input type that accepts GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArgs and GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutput values.
+// You can construct a concrete instance of `GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostInput` via:
+//
+//	GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArgs{...}
+type GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostInput interface {
+	pulumi.Input
+
+	ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutput() GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutput
+	ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutputWithContext(context.Context) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutput
+}
+
+type GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArgs struct {
+	// Number of assets used in this calculation.
+	AssetCount pulumi.IntInput `pulumi:"assetCount"`
+	// Current monthly compute costs.
+	ComputeAmount pulumi.Float64Input `pulumi:"computeAmount"`
+	// Currency code in the ISO format.
+	CurrencyCode pulumi.StringInput `pulumi:"currencyCode"`
+	// Current monthly storage costs.
+	StorageAmount pulumi.Float64Input `pulumi:"storageAmount"`
+}
+
+func (GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCost)(nil)).Elem()
+}
+
+func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArgs) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutput() GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutput {
+	return i.ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutputWithContext(context.Background())
+}
+
+func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArgs) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutput)
+}
+
+// GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayInput is an input type that accepts GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArray and GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayOutput values.
+// You can construct a concrete instance of `GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayInput` via:
+//
+//	GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArray{ GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArgs{...} }
+type GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayOutput() GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayOutput
+	ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayOutputWithContext(context.Context) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayOutput
+}
+
+type GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArray []GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostInput
+
+func (GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCost)(nil)).Elem()
+}
+
+func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArray) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayOutput() GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayOutput {
+	return i.ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArray) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayOutput)
+}
+
+type GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCost)(nil)).Elem()
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutput) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutput() GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutput {
+	return o
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutput) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutput {
+	return o
+}
+
+// Number of assets used in this calculation.
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutput) AssetCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCost) int {
+		return v.AssetCount
+	}).(pulumi.IntOutput)
+}
+
+// Current monthly compute costs.
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutput) ComputeAmount() pulumi.Float64Output {
+	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCost) float64 {
+		return v.ComputeAmount
+	}).(pulumi.Float64Output)
+}
+
+// Currency code in the ISO format.
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutput) CurrencyCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCost) string {
+		return v.CurrencyCode
+	}).(pulumi.StringOutput)
+}
+
+// Current monthly storage costs.
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutput) StorageAmount() pulumi.Float64Output {
+	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCost) float64 {
+		return v.StorageAmount
+	}).(pulumi.Float64Output)
+}
+
+type GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCost)(nil)).Elem()
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayOutput) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayOutput() GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayOutput {
+	return o
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayOutput) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayOutput {
+	return o
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayOutput) Index(i pulumi.IntInput) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCost {
+		return vs[0].([]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCost)[vs[1].(int)]
+	}).(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutput)
 }
 
 type GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCost struct {
@@ -10723,12 +12405,16 @@ func (o GetMigrationPlansMigrationPlanCollectionItemStrategyArrayOutput) Index(i
 type GetMigrationPlansMigrationPlanCollectionItemTargetEnvironment struct {
 	// Availability Domain of the VM configuration.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// Inventory asset id of the olvm cluster
+	ClusterAssetId string `pulumi:"clusterAssetId"`
 	// OCID of the dedicated VM configuration host.
 	DedicatedVmHost string `pulumi:"dedicatedVmHost"`
 	// Fault domain of the VM configuration.
 	FaultDomain string `pulumi:"faultDomain"`
 	// Microsoft license for the VM configuration.
 	MsLicense string `pulumi:"msLicense"`
+	// OLVM OS type to inventory asset id of the template
+	OlvmTemplates map[string]string `pulumi:"olvmTemplates"`
 	// Preferred VM shape type provided by the customer.
 	PreferredShapeType string `pulumi:"preferredShapeType"`
 	// OCID of the VM configuration subnet.
@@ -10739,6 +12425,8 @@ type GetMigrationPlansMigrationPlanCollectionItemTargetEnvironment struct {
 	TargetEnvironmentType string `pulumi:"targetEnvironmentType"`
 	// OCID of the VM configuration VCN.
 	Vcn string `pulumi:"vcn"`
+	// Inventory asset Id of the vnic profile
+	VnicProfileAssetId string `pulumi:"vnicProfileAssetId"`
 }
 
 // GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentInput is an input type that accepts GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentArgs and GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentOutput values.
@@ -10755,12 +12443,16 @@ type GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentInput interfac
 type GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentArgs struct {
 	// Availability Domain of the VM configuration.
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// Inventory asset id of the olvm cluster
+	ClusterAssetId pulumi.StringInput `pulumi:"clusterAssetId"`
 	// OCID of the dedicated VM configuration host.
 	DedicatedVmHost pulumi.StringInput `pulumi:"dedicatedVmHost"`
 	// Fault domain of the VM configuration.
 	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
 	// Microsoft license for the VM configuration.
 	MsLicense pulumi.StringInput `pulumi:"msLicense"`
+	// OLVM OS type to inventory asset id of the template
+	OlvmTemplates pulumi.StringMapInput `pulumi:"olvmTemplates"`
 	// Preferred VM shape type provided by the customer.
 	PreferredShapeType pulumi.StringInput `pulumi:"preferredShapeType"`
 	// OCID of the VM configuration subnet.
@@ -10771,6 +12463,8 @@ type GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentArgs struct {
 	TargetEnvironmentType pulumi.StringInput `pulumi:"targetEnvironmentType"`
 	// OCID of the VM configuration VCN.
 	Vcn pulumi.StringInput `pulumi:"vcn"`
+	// Inventory asset Id of the vnic profile
+	VnicProfileAssetId pulumi.StringInput `pulumi:"vnicProfileAssetId"`
 }
 
 func (GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentArgs) ElementType() reflect.Type {
@@ -10831,6 +12525,11 @@ func (o GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentOutput) Ava
 	}).(pulumi.StringOutput)
 }
 
+// Inventory asset id of the olvm cluster
+func (o GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentOutput) ClusterAssetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItemTargetEnvironment) string { return v.ClusterAssetId }).(pulumi.StringOutput)
+}
+
 // OCID of the dedicated VM configuration host.
 func (o GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentOutput) DedicatedVmHost() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItemTargetEnvironment) string { return v.DedicatedVmHost }).(pulumi.StringOutput)
@@ -10844,6 +12543,13 @@ func (o GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentOutput) Fau
 // Microsoft license for the VM configuration.
 func (o GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentOutput) MsLicense() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItemTargetEnvironment) string { return v.MsLicense }).(pulumi.StringOutput)
+}
+
+// OLVM OS type to inventory asset id of the template
+func (o GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentOutput) OlvmTemplates() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItemTargetEnvironment) map[string]string {
+		return v.OlvmTemplates
+	}).(pulumi.StringMapOutput)
 }
 
 // Preferred VM shape type provided by the customer.
@@ -10875,6 +12581,13 @@ func (o GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentOutput) Tar
 // OCID of the VM configuration VCN.
 func (o GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentOutput) Vcn() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItemTargetEnvironment) string { return v.Vcn }).(pulumi.StringOutput)
+}
+
+// Inventory asset Id of the vnic profile
+func (o GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentOutput) VnicProfileAssetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItemTargetEnvironment) string {
+		return v.VnicProfileAssetId
+	}).(pulumi.StringOutput)
 }
 
 type GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentArrayOutput struct{ *pulumi.OutputState }
@@ -11112,6 +12825,10 @@ type GetMigrationsMigrationCollectionItem struct {
 	IsCompleted bool `pulumi:"isCompleted"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Configuration for a Migration Project.
+	MigrationConfigs []GetMigrationsMigrationCollectionItemMigrationConfig `pulumi:"migrationConfigs"`
+	// Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+	MigrationType string `pulumi:"migrationType"`
 	// Replication schedule identifier
 	ReplicationScheduleId string `pulumi:"replicationScheduleId"`
 	// A filter to return only resources where the resource's lifecycle state matches the given lifecycle state.
@@ -11150,6 +12867,10 @@ type GetMigrationsMigrationCollectionItemArgs struct {
 	IsCompleted pulumi.BoolInput `pulumi:"isCompleted"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Configuration for a Migration Project.
+	MigrationConfigs GetMigrationsMigrationCollectionItemMigrationConfigArrayInput `pulumi:"migrationConfigs"`
+	// Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+	MigrationType pulumi.StringInput `pulumi:"migrationType"`
 	// Replication schedule identifier
 	ReplicationScheduleId pulumi.StringInput `pulumi:"replicationScheduleId"`
 	// A filter to return only resources where the resource's lifecycle state matches the given lifecycle state.
@@ -11248,6 +12969,18 @@ func (o GetMigrationsMigrationCollectionItemOutput) LifecycleDetails() pulumi.St
 	return o.ApplyT(func(v GetMigrationsMigrationCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Configuration for a Migration Project.
+func (o GetMigrationsMigrationCollectionItemOutput) MigrationConfigs() GetMigrationsMigrationCollectionItemMigrationConfigArrayOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItem) []GetMigrationsMigrationCollectionItemMigrationConfig {
+		return v.MigrationConfigs
+	}).(GetMigrationsMigrationCollectionItemMigrationConfigArrayOutput)
+}
+
+// Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+func (o GetMigrationsMigrationCollectionItemOutput) MigrationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItem) string { return v.MigrationType }).(pulumi.StringOutput)
+}
+
 // Replication schedule identifier
 func (o GetMigrationsMigrationCollectionItemOutput) ReplicationScheduleId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationsMigrationCollectionItem) string { return v.ReplicationScheduleId }).(pulumi.StringOutput)
@@ -11291,6 +13024,103 @@ func (o GetMigrationsMigrationCollectionItemArrayOutput) Index(i pulumi.IntInput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsMigrationCollectionItem {
 		return vs[0].([]GetMigrationsMigrationCollectionItem)[vs[1].(int)]
 	}).(GetMigrationsMigrationCollectionItemOutput)
+}
+
+type GetMigrationsMigrationCollectionItemMigrationConfig struct {
+	// The OCID of the subnet to use for replication
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetMigrationsMigrationCollectionItemMigrationConfigInput is an input type that accepts GetMigrationsMigrationCollectionItemMigrationConfigArgs and GetMigrationsMigrationCollectionItemMigrationConfigOutput values.
+// You can construct a concrete instance of `GetMigrationsMigrationCollectionItemMigrationConfigInput` via:
+//
+//	GetMigrationsMigrationCollectionItemMigrationConfigArgs{...}
+type GetMigrationsMigrationCollectionItemMigrationConfigInput interface {
+	pulumi.Input
+
+	ToGetMigrationsMigrationCollectionItemMigrationConfigOutput() GetMigrationsMigrationCollectionItemMigrationConfigOutput
+	ToGetMigrationsMigrationCollectionItemMigrationConfigOutputWithContext(context.Context) GetMigrationsMigrationCollectionItemMigrationConfigOutput
+}
+
+type GetMigrationsMigrationCollectionItemMigrationConfigArgs struct {
+	// The OCID of the subnet to use for replication
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetMigrationsMigrationCollectionItemMigrationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsMigrationCollectionItemMigrationConfig)(nil)).Elem()
+}
+
+func (i GetMigrationsMigrationCollectionItemMigrationConfigArgs) ToGetMigrationsMigrationCollectionItemMigrationConfigOutput() GetMigrationsMigrationCollectionItemMigrationConfigOutput {
+	return i.ToGetMigrationsMigrationCollectionItemMigrationConfigOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsMigrationCollectionItemMigrationConfigArgs) ToGetMigrationsMigrationCollectionItemMigrationConfigOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemMigrationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemMigrationConfigOutput)
+}
+
+// GetMigrationsMigrationCollectionItemMigrationConfigArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemMigrationConfigArray and GetMigrationsMigrationCollectionItemMigrationConfigArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsMigrationCollectionItemMigrationConfigArrayInput` via:
+//
+//	GetMigrationsMigrationCollectionItemMigrationConfigArray{ GetMigrationsMigrationCollectionItemMigrationConfigArgs{...} }
+type GetMigrationsMigrationCollectionItemMigrationConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsMigrationCollectionItemMigrationConfigArrayOutput() GetMigrationsMigrationCollectionItemMigrationConfigArrayOutput
+	ToGetMigrationsMigrationCollectionItemMigrationConfigArrayOutputWithContext(context.Context) GetMigrationsMigrationCollectionItemMigrationConfigArrayOutput
+}
+
+type GetMigrationsMigrationCollectionItemMigrationConfigArray []GetMigrationsMigrationCollectionItemMigrationConfigInput
+
+func (GetMigrationsMigrationCollectionItemMigrationConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsMigrationCollectionItemMigrationConfig)(nil)).Elem()
+}
+
+func (i GetMigrationsMigrationCollectionItemMigrationConfigArray) ToGetMigrationsMigrationCollectionItemMigrationConfigArrayOutput() GetMigrationsMigrationCollectionItemMigrationConfigArrayOutput {
+	return i.ToGetMigrationsMigrationCollectionItemMigrationConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsMigrationCollectionItemMigrationConfigArray) ToGetMigrationsMigrationCollectionItemMigrationConfigArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemMigrationConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemMigrationConfigArrayOutput)
+}
+
+type GetMigrationsMigrationCollectionItemMigrationConfigOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsMigrationCollectionItemMigrationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsMigrationCollectionItemMigrationConfig)(nil)).Elem()
+}
+
+func (o GetMigrationsMigrationCollectionItemMigrationConfigOutput) ToGetMigrationsMigrationCollectionItemMigrationConfigOutput() GetMigrationsMigrationCollectionItemMigrationConfigOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemMigrationConfigOutput) ToGetMigrationsMigrationCollectionItemMigrationConfigOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemMigrationConfigOutput {
+	return o
+}
+
+// The OCID of the subnet to use for replication
+func (o GetMigrationsMigrationCollectionItemMigrationConfigOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemMigrationConfig) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetMigrationsMigrationCollectionItemMigrationConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsMigrationCollectionItemMigrationConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsMigrationCollectionItemMigrationConfig)(nil)).Elem()
+}
+
+func (o GetMigrationsMigrationCollectionItemMigrationConfigArrayOutput) ToGetMigrationsMigrationCollectionItemMigrationConfigArrayOutput() GetMigrationsMigrationCollectionItemMigrationConfigArrayOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemMigrationConfigArrayOutput) ToGetMigrationsMigrationCollectionItemMigrationConfigArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemMigrationConfigArrayOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemMigrationConfigArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemMigrationConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsMigrationCollectionItemMigrationConfig {
+		return vs[0].([]GetMigrationsMigrationCollectionItemMigrationConfig)[vs[1].(int)]
+	}).(GetMigrationsMigrationCollectionItemMigrationConfigOutput)
 }
 
 type GetReplicationSchedulesFilter struct {
@@ -12497,6 +14327,8 @@ type GetTargetAssetMigrationAsset struct {
 	DependedOnBies []string `pulumi:"dependedOnBies"`
 	// List of migration assets that depends on the asset.
 	DependsOns []string `pulumi:"dependsOns"`
+	// Mapping of source disk id to destination disk details
+	DestinationDisks map[string]string `pulumi:"destinationDisks"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Asset ID generated by mirgration service. It is used in the mirgration service pipeline.
@@ -12511,6 +14343,8 @@ type GetTargetAssetMigrationAsset struct {
 	ParentSnapshot string `pulumi:"parentSnapshot"`
 	// Replication compartment identifier
 	ReplicationCompartmentId string `pulumi:"replicationCompartmentId"`
+	// Replication location detail where the snapshots reside
+	ReplicationLocationDetails []GetTargetAssetMigrationAssetReplicationLocationDetail `pulumi:"replicationLocationDetails"`
 	// Replication schedule identifier
 	ReplicationScheduleId string `pulumi:"replicationScheduleId"`
 	// Name of snapshot bucket
@@ -12553,6 +14387,8 @@ type GetTargetAssetMigrationAssetArgs struct {
 	DependedOnBies pulumi.StringArrayInput `pulumi:"dependedOnBies"`
 	// List of migration assets that depends on the asset.
 	DependsOns pulumi.StringArrayInput `pulumi:"dependsOns"`
+	// Mapping of source disk id to destination disk details
+	DestinationDisks pulumi.StringMapInput `pulumi:"destinationDisks"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Asset ID generated by mirgration service. It is used in the mirgration service pipeline.
@@ -12567,6 +14403,8 @@ type GetTargetAssetMigrationAssetArgs struct {
 	ParentSnapshot pulumi.StringInput `pulumi:"parentSnapshot"`
 	// Replication compartment identifier
 	ReplicationCompartmentId pulumi.StringInput `pulumi:"replicationCompartmentId"`
+	// Replication location detail where the snapshots reside
+	ReplicationLocationDetails GetTargetAssetMigrationAssetReplicationLocationDetailArrayInput `pulumi:"replicationLocationDetails"`
 	// Replication schedule identifier
 	ReplicationScheduleId pulumi.StringInput `pulumi:"replicationScheduleId"`
 	// Name of snapshot bucket
@@ -12660,6 +14498,11 @@ func (o GetTargetAssetMigrationAssetOutput) DependsOns() pulumi.StringArrayOutpu
 	return o.ApplyT(func(v GetTargetAssetMigrationAsset) []string { return v.DependsOns }).(pulumi.StringArrayOutput)
 }
 
+// Mapping of source disk id to destination disk details
+func (o GetTargetAssetMigrationAssetOutput) DestinationDisks() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetMigrationAsset) map[string]string { return v.DestinationDisks }).(pulumi.StringMapOutput)
+}
+
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 func (o GetTargetAssetMigrationAssetOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTargetAssetMigrationAsset) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -12693,6 +14536,13 @@ func (o GetTargetAssetMigrationAssetOutput) ParentSnapshot() pulumi.StringOutput
 // Replication compartment identifier
 func (o GetTargetAssetMigrationAssetOutput) ReplicationCompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTargetAssetMigrationAsset) string { return v.ReplicationCompartmentId }).(pulumi.StringOutput)
+}
+
+// Replication location detail where the snapshots reside
+func (o GetTargetAssetMigrationAssetOutput) ReplicationLocationDetails() GetTargetAssetMigrationAssetReplicationLocationDetailArrayOutput {
+	return o.ApplyT(func(v GetTargetAssetMigrationAsset) []GetTargetAssetMigrationAssetReplicationLocationDetail {
+		return v.ReplicationLocationDetails
+	}).(GetTargetAssetMigrationAssetReplicationLocationDetailArrayOutput)
 }
 
 // Replication schedule identifier
@@ -12763,6 +14613,112 @@ func (o GetTargetAssetMigrationAssetArrayOutput) Index(i pulumi.IntInput) GetTar
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAssetMigrationAsset {
 		return vs[0].([]GetTargetAssetMigrationAsset)[vs[1].(int)]
 	}).(GetTargetAssetMigrationAssetOutput)
+}
+
+type GetTargetAssetMigrationAssetReplicationLocationDetail struct {
+	// Properties for each of the replication location types
+	Metadata map[string]string `pulumi:"metadata"`
+	// The type of replication location
+	ReplicationLocationType string `pulumi:"replicationLocationType"`
+}
+
+// GetTargetAssetMigrationAssetReplicationLocationDetailInput is an input type that accepts GetTargetAssetMigrationAssetReplicationLocationDetailArgs and GetTargetAssetMigrationAssetReplicationLocationDetailOutput values.
+// You can construct a concrete instance of `GetTargetAssetMigrationAssetReplicationLocationDetailInput` via:
+//
+//	GetTargetAssetMigrationAssetReplicationLocationDetailArgs{...}
+type GetTargetAssetMigrationAssetReplicationLocationDetailInput interface {
+	pulumi.Input
+
+	ToGetTargetAssetMigrationAssetReplicationLocationDetailOutput() GetTargetAssetMigrationAssetReplicationLocationDetailOutput
+	ToGetTargetAssetMigrationAssetReplicationLocationDetailOutputWithContext(context.Context) GetTargetAssetMigrationAssetReplicationLocationDetailOutput
+}
+
+type GetTargetAssetMigrationAssetReplicationLocationDetailArgs struct {
+	// Properties for each of the replication location types
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
+	// The type of replication location
+	ReplicationLocationType pulumi.StringInput `pulumi:"replicationLocationType"`
+}
+
+func (GetTargetAssetMigrationAssetReplicationLocationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetAssetMigrationAssetReplicationLocationDetail)(nil)).Elem()
+}
+
+func (i GetTargetAssetMigrationAssetReplicationLocationDetailArgs) ToGetTargetAssetMigrationAssetReplicationLocationDetailOutput() GetTargetAssetMigrationAssetReplicationLocationDetailOutput {
+	return i.ToGetTargetAssetMigrationAssetReplicationLocationDetailOutputWithContext(context.Background())
+}
+
+func (i GetTargetAssetMigrationAssetReplicationLocationDetailArgs) ToGetTargetAssetMigrationAssetReplicationLocationDetailOutputWithContext(ctx context.Context) GetTargetAssetMigrationAssetReplicationLocationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetMigrationAssetReplicationLocationDetailOutput)
+}
+
+// GetTargetAssetMigrationAssetReplicationLocationDetailArrayInput is an input type that accepts GetTargetAssetMigrationAssetReplicationLocationDetailArray and GetTargetAssetMigrationAssetReplicationLocationDetailArrayOutput values.
+// You can construct a concrete instance of `GetTargetAssetMigrationAssetReplicationLocationDetailArrayInput` via:
+//
+//	GetTargetAssetMigrationAssetReplicationLocationDetailArray{ GetTargetAssetMigrationAssetReplicationLocationDetailArgs{...} }
+type GetTargetAssetMigrationAssetReplicationLocationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetAssetMigrationAssetReplicationLocationDetailArrayOutput() GetTargetAssetMigrationAssetReplicationLocationDetailArrayOutput
+	ToGetTargetAssetMigrationAssetReplicationLocationDetailArrayOutputWithContext(context.Context) GetTargetAssetMigrationAssetReplicationLocationDetailArrayOutput
+}
+
+type GetTargetAssetMigrationAssetReplicationLocationDetailArray []GetTargetAssetMigrationAssetReplicationLocationDetailInput
+
+func (GetTargetAssetMigrationAssetReplicationLocationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetAssetMigrationAssetReplicationLocationDetail)(nil)).Elem()
+}
+
+func (i GetTargetAssetMigrationAssetReplicationLocationDetailArray) ToGetTargetAssetMigrationAssetReplicationLocationDetailArrayOutput() GetTargetAssetMigrationAssetReplicationLocationDetailArrayOutput {
+	return i.ToGetTargetAssetMigrationAssetReplicationLocationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetAssetMigrationAssetReplicationLocationDetailArray) ToGetTargetAssetMigrationAssetReplicationLocationDetailArrayOutputWithContext(ctx context.Context) GetTargetAssetMigrationAssetReplicationLocationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetMigrationAssetReplicationLocationDetailArrayOutput)
+}
+
+type GetTargetAssetMigrationAssetReplicationLocationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetTargetAssetMigrationAssetReplicationLocationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetAssetMigrationAssetReplicationLocationDetail)(nil)).Elem()
+}
+
+func (o GetTargetAssetMigrationAssetReplicationLocationDetailOutput) ToGetTargetAssetMigrationAssetReplicationLocationDetailOutput() GetTargetAssetMigrationAssetReplicationLocationDetailOutput {
+	return o
+}
+
+func (o GetTargetAssetMigrationAssetReplicationLocationDetailOutput) ToGetTargetAssetMigrationAssetReplicationLocationDetailOutputWithContext(ctx context.Context) GetTargetAssetMigrationAssetReplicationLocationDetailOutput {
+	return o
+}
+
+// Properties for each of the replication location types
+func (o GetTargetAssetMigrationAssetReplicationLocationDetailOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetMigrationAssetReplicationLocationDetail) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
+}
+
+// The type of replication location
+func (o GetTargetAssetMigrationAssetReplicationLocationDetailOutput) ReplicationLocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetAssetMigrationAssetReplicationLocationDetail) string { return v.ReplicationLocationType }).(pulumi.StringOutput)
+}
+
+type GetTargetAssetMigrationAssetReplicationLocationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetAssetMigrationAssetReplicationLocationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetAssetMigrationAssetReplicationLocationDetail)(nil)).Elem()
+}
+
+func (o GetTargetAssetMigrationAssetReplicationLocationDetailArrayOutput) ToGetTargetAssetMigrationAssetReplicationLocationDetailArrayOutput() GetTargetAssetMigrationAssetReplicationLocationDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetAssetMigrationAssetReplicationLocationDetailArrayOutput) ToGetTargetAssetMigrationAssetReplicationLocationDetailArrayOutputWithContext(ctx context.Context) GetTargetAssetMigrationAssetReplicationLocationDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetAssetMigrationAssetReplicationLocationDetailArrayOutput) Index(i pulumi.IntInput) GetTargetAssetMigrationAssetReplicationLocationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAssetMigrationAssetReplicationLocationDetail {
+		return vs[0].([]GetTargetAssetMigrationAssetReplicationLocationDetail)[vs[1].(int)]
+	}).(GetTargetAssetMigrationAssetReplicationLocationDetailOutput)
 }
 
 type GetTargetAssetRecommendedSpec struct {
@@ -17795,6 +19751,8 @@ type GetTargetAssetsTargetAssetCollectionItemMigrationAsset struct {
 	DependedOnBies []string `pulumi:"dependedOnBies"`
 	// List of migration assets that depends on the asset.
 	DependsOns []string `pulumi:"dependsOns"`
+	// Mapping of source disk id to destination disk details
+	DestinationDisks map[string]string `pulumi:"destinationDisks"`
 	// A filter to return only resources that match the entire given display name.
 	DisplayName string `pulumi:"displayName"`
 	// Asset ID generated by mirgration service. It is used in the mirgration service pipeline.
@@ -17809,6 +19767,8 @@ type GetTargetAssetsTargetAssetCollectionItemMigrationAsset struct {
 	ParentSnapshot string `pulumi:"parentSnapshot"`
 	// Replication compartment identifier
 	ReplicationCompartmentId string `pulumi:"replicationCompartmentId"`
+	// Replication location detail where the snapshots reside
+	ReplicationLocationDetails []GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetail `pulumi:"replicationLocationDetails"`
 	// Replication schedule identifier
 	ReplicationScheduleId string `pulumi:"replicationScheduleId"`
 	// Name of snapshot bucket
@@ -17851,6 +19811,8 @@ type GetTargetAssetsTargetAssetCollectionItemMigrationAssetArgs struct {
 	DependedOnBies pulumi.StringArrayInput `pulumi:"dependedOnBies"`
 	// List of migration assets that depends on the asset.
 	DependsOns pulumi.StringArrayInput `pulumi:"dependsOns"`
+	// Mapping of source disk id to destination disk details
+	DestinationDisks pulumi.StringMapInput `pulumi:"destinationDisks"`
 	// A filter to return only resources that match the entire given display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Asset ID generated by mirgration service. It is used in the mirgration service pipeline.
@@ -17865,6 +19827,8 @@ type GetTargetAssetsTargetAssetCollectionItemMigrationAssetArgs struct {
 	ParentSnapshot pulumi.StringInput `pulumi:"parentSnapshot"`
 	// Replication compartment identifier
 	ReplicationCompartmentId pulumi.StringInput `pulumi:"replicationCompartmentId"`
+	// Replication location detail where the snapshots reside
+	ReplicationLocationDetails GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayInput `pulumi:"replicationLocationDetails"`
 	// Replication schedule identifier
 	ReplicationScheduleId pulumi.StringInput `pulumi:"replicationScheduleId"`
 	// Name of snapshot bucket
@@ -17958,6 +19922,13 @@ func (o GetTargetAssetsTargetAssetCollectionItemMigrationAssetOutput) DependsOns
 	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemMigrationAsset) []string { return v.DependsOns }).(pulumi.StringArrayOutput)
 }
 
+// Mapping of source disk id to destination disk details
+func (o GetTargetAssetsTargetAssetCollectionItemMigrationAssetOutput) DestinationDisks() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemMigrationAsset) map[string]string {
+		return v.DestinationDisks
+	}).(pulumi.StringMapOutput)
+}
+
 // A filter to return only resources that match the entire given display name.
 func (o GetTargetAssetsTargetAssetCollectionItemMigrationAssetOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemMigrationAsset) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -17993,6 +19964,13 @@ func (o GetTargetAssetsTargetAssetCollectionItemMigrationAssetOutput) Replicatio
 	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemMigrationAsset) string {
 		return v.ReplicationCompartmentId
 	}).(pulumi.StringOutput)
+}
+
+// Replication location detail where the snapshots reside
+func (o GetTargetAssetsTargetAssetCollectionItemMigrationAssetOutput) ReplicationLocationDetails() GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayOutput {
+	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemMigrationAsset) []GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetail {
+		return v.ReplicationLocationDetails
+	}).(GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayOutput)
 }
 
 // Replication schedule identifier
@@ -18065,6 +20043,116 @@ func (o GetTargetAssetsTargetAssetCollectionItemMigrationAssetArrayOutput) Index
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAssetsTargetAssetCollectionItemMigrationAsset {
 		return vs[0].([]GetTargetAssetsTargetAssetCollectionItemMigrationAsset)[vs[1].(int)]
 	}).(GetTargetAssetsTargetAssetCollectionItemMigrationAssetOutput)
+}
+
+type GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetail struct {
+	// Properties for each of the replication location types
+	Metadata map[string]string `pulumi:"metadata"`
+	// The type of replication location
+	ReplicationLocationType string `pulumi:"replicationLocationType"`
+}
+
+// GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArgs and GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailOutput values.
+// You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailInput` via:
+//
+//	GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArgs{...}
+type GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailInput interface {
+	pulumi.Input
+
+	ToGetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailOutput() GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailOutput
+	ToGetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailOutputWithContext(context.Context) GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailOutput
+}
+
+type GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArgs struct {
+	// Properties for each of the replication location types
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
+	// The type of replication location
+	ReplicationLocationType pulumi.StringInput `pulumi:"replicationLocationType"`
+}
+
+func (GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetail)(nil)).Elem()
+}
+
+func (i GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArgs) ToGetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailOutput() GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailOutput {
+	return i.ToGetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailOutputWithContext(context.Background())
+}
+
+func (i GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArgs) ToGetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailOutput)
+}
+
+// GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArray and GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayOutput values.
+// You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayInput` via:
+//
+//	GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArray{ GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArgs{...} }
+type GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayOutput() GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayOutput
+	ToGetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayOutputWithContext(context.Context) GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayOutput
+}
+
+type GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArray []GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailInput
+
+func (GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetail)(nil)).Elem()
+}
+
+func (i GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArray) ToGetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayOutput() GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayOutput {
+	return i.ToGetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArray) ToGetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayOutput)
+}
+
+type GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetail)(nil)).Elem()
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailOutput) ToGetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailOutput() GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailOutput {
+	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailOutput) ToGetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailOutput {
+	return o
+}
+
+// Properties for each of the replication location types
+func (o GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetail) map[string]string {
+		return v.Metadata
+	}).(pulumi.StringMapOutput)
+}
+
+// The type of replication location
+func (o GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailOutput) ReplicationLocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetail) string {
+		return v.ReplicationLocationType
+	}).(pulumi.StringOutput)
+}
+
+type GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetail)(nil)).Elem()
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayOutput() GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayOutput {
+	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetail {
+		return vs[0].([]GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetail)[vs[1].(int)]
+	}).(GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailOutput)
 }
 
 type GetTargetAssetsTargetAssetCollectionItemRecommendedSpec struct {
@@ -21895,8 +23983,16 @@ func (o GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailArrayOutput)
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationAssetReplicationLocationDetailInput)(nil)).Elem(), MigrationAssetReplicationLocationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationAssetReplicationLocationDetailPtrInput)(nil)).Elem(), MigrationAssetReplicationLocationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationMigrationConfigInput)(nil)).Elem(), MigrationMigrationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationMigrationConfigPtrInput)(nil)).Elem(), MigrationMigrationConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MigrationPlanMigrationPlanStatInput)(nil)).Elem(), MigrationPlanMigrationPlanStatArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MigrationPlanMigrationPlanStatArrayInput)(nil)).Elem(), MigrationPlanMigrationPlanStatArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationPlanMigrationPlanStatCostToMigrateInput)(nil)).Elem(), MigrationPlanMigrationPlanStatCostToMigrateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationPlanMigrationPlanStatCostToMigrateArrayInput)(nil)).Elem(), MigrationPlanMigrationPlanStatCostToMigrateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationPlanMigrationPlanStatCurrentMonthlyCostInput)(nil)).Elem(), MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationPlanMigrationPlanStatCurrentMonthlyCostArrayInput)(nil)).Elem(), MigrationPlanMigrationPlanStatCurrentMonthlyCostArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MigrationPlanMigrationPlanStatTotalEstimatedCostInput)(nil)).Elem(), MigrationPlanMigrationPlanStatTotalEstimatedCostArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MigrationPlanMigrationPlanStatTotalEstimatedCostArrayInput)(nil)).Elem(), MigrationPlanMigrationPlanStatTotalEstimatedCostArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MigrationPlanMigrationPlanStatTotalEstimatedCostComputeInput)(nil)).Elem(), MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArgs{})
@@ -21925,6 +24021,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetAssetEstimatedCostStorageVolumeArrayInput)(nil)).Elem(), TargetAssetEstimatedCostStorageVolumeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetAssetMigrationAssetInput)(nil)).Elem(), TargetAssetMigrationAssetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetAssetMigrationAssetArrayInput)(nil)).Elem(), TargetAssetMigrationAssetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetAssetMigrationAssetReplicationLocationDetailInput)(nil)).Elem(), TargetAssetMigrationAssetReplicationLocationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetAssetMigrationAssetReplicationLocationDetailPtrInput)(nil)).Elem(), TargetAssetMigrationAssetReplicationLocationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetAssetRecommendedSpecInput)(nil)).Elem(), TargetAssetRecommendedSpecArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetAssetRecommendedSpecArrayInput)(nil)).Elem(), TargetAssetRecommendedSpecArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetAssetRecommendedSpecAgentConfigInput)(nil)).Elem(), TargetAssetRecommendedSpecAgentConfigArgs{})
@@ -21979,12 +24077,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetAssetUserSpecShapeConfigPtrInput)(nil)).Elem(), TargetAssetUserSpecShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetAssetUserSpecSourceDetailsInput)(nil)).Elem(), TargetAssetUserSpecSourceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetAssetUserSpecSourceDetailsPtrInput)(nil)).Elem(), TargetAssetUserSpecSourceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationAssetReplicationLocationDetailInput)(nil)).Elem(), GetMigrationAssetReplicationLocationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationAssetReplicationLocationDetailArrayInput)(nil)).Elem(), GetMigrationAssetReplicationLocationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationAssetsFilterInput)(nil)).Elem(), GetMigrationAssetsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationAssetsFilterArrayInput)(nil)).Elem(), GetMigrationAssetsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationAssetsMigrationAssetCollectionInput)(nil)).Elem(), GetMigrationAssetsMigrationAssetCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationAssetsMigrationAssetCollectionArrayInput)(nil)).Elem(), GetMigrationAssetsMigrationAssetCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationAssetsMigrationAssetCollectionItemInput)(nil)).Elem(), GetMigrationAssetsMigrationAssetCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationAssetsMigrationAssetCollectionItemArrayInput)(nil)).Elem(), GetMigrationAssetsMigrationAssetCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailInput)(nil)).Elem(), GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayInput)(nil)).Elem(), GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationMigrationConfigInput)(nil)).Elem(), GetMigrationMigrationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationMigrationConfigArrayInput)(nil)).Elem(), GetMigrationMigrationConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationPlanAvailableShapeItemInput)(nil)).Elem(), GetMigrationPlanAvailableShapeItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationPlanAvailableShapeItemArrayInput)(nil)).Elem(), GetMigrationPlanAvailableShapeItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationPlanAvailableShapesAvailableShapesCollectionInput)(nil)).Elem(), GetMigrationPlanAvailableShapesAvailableShapesCollectionArgs{})
@@ -21995,6 +24099,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationPlanAvailableShapesFilterArrayInput)(nil)).Elem(), GetMigrationPlanAvailableShapesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationPlanMigrationPlanStatInput)(nil)).Elem(), GetMigrationPlanMigrationPlanStatArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationPlanMigrationPlanStatArrayInput)(nil)).Elem(), GetMigrationPlanMigrationPlanStatArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationPlanMigrationPlanStatCostToMigrateInput)(nil)).Elem(), GetMigrationPlanMigrationPlanStatCostToMigrateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationPlanMigrationPlanStatCostToMigrateArrayInput)(nil)).Elem(), GetMigrationPlanMigrationPlanStatCostToMigrateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationPlanMigrationPlanStatCurrentMonthlyCostInput)(nil)).Elem(), GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayInput)(nil)).Elem(), GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationPlanMigrationPlanStatTotalEstimatedCostInput)(nil)).Elem(), GetMigrationPlanMigrationPlanStatTotalEstimatedCostArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationPlanMigrationPlanStatTotalEstimatedCostArrayInput)(nil)).Elem(), GetMigrationPlanMigrationPlanStatTotalEstimatedCostArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeInput)(nil)).Elem(), GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeArgs{})
@@ -22017,6 +24125,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationPlansMigrationPlanCollectionItemArrayInput)(nil)).Elem(), GetMigrationPlansMigrationPlanCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatInput)(nil)).Elem(), GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatArrayInput)(nil)).Elem(), GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateInput)(nil)).Elem(), GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayInput)(nil)).Elem(), GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostInput)(nil)).Elem(), GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayInput)(nil)).Elem(), GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostInput)(nil)).Elem(), GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostArrayInput)(nil)).Elem(), GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeInput)(nil)).Elem(), GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeArgs{})
@@ -22037,6 +24149,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionArrayInput)(nil)).Elem(), GetMigrationsMigrationCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemArrayInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemMigrationConfigInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemMigrationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemMigrationConfigArrayInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemMigrationConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationSchedulesFilterInput)(nil)).Elem(), GetReplicationSchedulesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationSchedulesFilterArrayInput)(nil)).Elem(), GetReplicationSchedulesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationSchedulesReplicationScheduleCollectionInput)(nil)).Elem(), GetReplicationSchedulesReplicationScheduleCollectionArgs{})
@@ -22057,6 +24171,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAssetEstimatedCostStorageVolumeArrayInput)(nil)).Elem(), GetTargetAssetEstimatedCostStorageVolumeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAssetMigrationAssetInput)(nil)).Elem(), GetTargetAssetMigrationAssetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAssetMigrationAssetArrayInput)(nil)).Elem(), GetTargetAssetMigrationAssetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAssetMigrationAssetReplicationLocationDetailInput)(nil)).Elem(), GetTargetAssetMigrationAssetReplicationLocationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAssetMigrationAssetReplicationLocationDetailArrayInput)(nil)).Elem(), GetTargetAssetMigrationAssetReplicationLocationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAssetRecommendedSpecInput)(nil)).Elem(), GetTargetAssetRecommendedSpecArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAssetRecommendedSpecArrayInput)(nil)).Elem(), GetTargetAssetRecommendedSpecArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAssetRecommendedSpecAgentConfigInput)(nil)).Elem(), GetTargetAssetRecommendedSpecAgentConfigArgs{})
@@ -22131,6 +24247,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeArrayInput)(nil)).Elem(), GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAssetsTargetAssetCollectionItemMigrationAssetInput)(nil)).Elem(), GetTargetAssetsTargetAssetCollectionItemMigrationAssetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAssetsTargetAssetCollectionItemMigrationAssetArrayInput)(nil)).Elem(), GetTargetAssetsTargetAssetCollectionItemMigrationAssetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailInput)(nil)).Elem(), GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayInput)(nil)).Elem(), GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInput)(nil)).Elem(), GetTargetAssetsTargetAssetCollectionItemRecommendedSpecArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAssetsTargetAssetCollectionItemRecommendedSpecArrayInput)(nil)).Elem(), GetTargetAssetsTargetAssetCollectionItemRecommendedSpecArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigInput)(nil)).Elem(), GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigArgs{})
@@ -22185,8 +24303,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigArrayInput)(nil)).Elem(), GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailInput)(nil)).Elem(), GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailArrayInput)(nil)).Elem(), GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailArray{})
+	pulumi.RegisterOutputType(MigrationAssetReplicationLocationDetailOutput{})
+	pulumi.RegisterOutputType(MigrationAssetReplicationLocationDetailPtrOutput{})
+	pulumi.RegisterOutputType(MigrationMigrationConfigOutput{})
+	pulumi.RegisterOutputType(MigrationMigrationConfigPtrOutput{})
 	pulumi.RegisterOutputType(MigrationPlanMigrationPlanStatOutput{})
 	pulumi.RegisterOutputType(MigrationPlanMigrationPlanStatArrayOutput{})
+	pulumi.RegisterOutputType(MigrationPlanMigrationPlanStatCostToMigrateOutput{})
+	pulumi.RegisterOutputType(MigrationPlanMigrationPlanStatCostToMigrateArrayOutput{})
+	pulumi.RegisterOutputType(MigrationPlanMigrationPlanStatCurrentMonthlyCostOutput{})
+	pulumi.RegisterOutputType(MigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput{})
 	pulumi.RegisterOutputType(MigrationPlanMigrationPlanStatTotalEstimatedCostOutput{})
 	pulumi.RegisterOutputType(MigrationPlanMigrationPlanStatTotalEstimatedCostArrayOutput{})
 	pulumi.RegisterOutputType(MigrationPlanMigrationPlanStatTotalEstimatedCostComputeOutput{})
@@ -22215,6 +24341,8 @@ func init() {
 	pulumi.RegisterOutputType(TargetAssetEstimatedCostStorageVolumeArrayOutput{})
 	pulumi.RegisterOutputType(TargetAssetMigrationAssetOutput{})
 	pulumi.RegisterOutputType(TargetAssetMigrationAssetArrayOutput{})
+	pulumi.RegisterOutputType(TargetAssetMigrationAssetReplicationLocationDetailOutput{})
+	pulumi.RegisterOutputType(TargetAssetMigrationAssetReplicationLocationDetailPtrOutput{})
 	pulumi.RegisterOutputType(TargetAssetRecommendedSpecOutput{})
 	pulumi.RegisterOutputType(TargetAssetRecommendedSpecArrayOutput{})
 	pulumi.RegisterOutputType(TargetAssetRecommendedSpecAgentConfigOutput{})
@@ -22269,12 +24397,18 @@ func init() {
 	pulumi.RegisterOutputType(TargetAssetUserSpecShapeConfigPtrOutput{})
 	pulumi.RegisterOutputType(TargetAssetUserSpecSourceDetailsOutput{})
 	pulumi.RegisterOutputType(TargetAssetUserSpecSourceDetailsPtrOutput{})
+	pulumi.RegisterOutputType(GetMigrationAssetReplicationLocationDetailOutput{})
+	pulumi.RegisterOutputType(GetMigrationAssetReplicationLocationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationAssetsFilterOutput{})
 	pulumi.RegisterOutputType(GetMigrationAssetsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationAssetsMigrationAssetCollectionOutput{})
 	pulumi.RegisterOutputType(GetMigrationAssetsMigrationAssetCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationAssetsMigrationAssetCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetMigrationAssetsMigrationAssetCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailOutput{})
+	pulumi.RegisterOutputType(GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationMigrationConfigOutput{})
+	pulumi.RegisterOutputType(GetMigrationMigrationConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationPlanAvailableShapeItemOutput{})
 	pulumi.RegisterOutputType(GetMigrationPlanAvailableShapeItemArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationPlanAvailableShapesAvailableShapesCollectionOutput{})
@@ -22285,6 +24419,10 @@ func init() {
 	pulumi.RegisterOutputType(GetMigrationPlanAvailableShapesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationPlanMigrationPlanStatOutput{})
 	pulumi.RegisterOutputType(GetMigrationPlanMigrationPlanStatArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationPlanMigrationPlanStatCostToMigrateOutput{})
+	pulumi.RegisterOutputType(GetMigrationPlanMigrationPlanStatCostToMigrateArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationPlanMigrationPlanStatCurrentMonthlyCostOutput{})
+	pulumi.RegisterOutputType(GetMigrationPlanMigrationPlanStatCurrentMonthlyCostArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationPlanMigrationPlanStatTotalEstimatedCostOutput{})
 	pulumi.RegisterOutputType(GetMigrationPlanMigrationPlanStatTotalEstimatedCostArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeOutput{})
@@ -22307,6 +24445,10 @@ func init() {
 	pulumi.RegisterOutputType(GetMigrationPlansMigrationPlanCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatOutput{})
 	pulumi.RegisterOutputType(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateOutput{})
+	pulumi.RegisterOutputType(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCostToMigrateArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostOutput{})
+	pulumi.RegisterOutputType(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatCurrentMonthlyCostArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOutput{})
 	pulumi.RegisterOutputType(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeOutput{})
@@ -22327,6 +24469,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemMigrationConfigOutput{})
+	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemMigrationConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicationSchedulesFilterOutput{})
 	pulumi.RegisterOutputType(GetReplicationSchedulesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicationSchedulesReplicationScheduleCollectionOutput{})
@@ -22347,6 +24491,8 @@ func init() {
 	pulumi.RegisterOutputType(GetTargetAssetEstimatedCostStorageVolumeArrayOutput{})
 	pulumi.RegisterOutputType(GetTargetAssetMigrationAssetOutput{})
 	pulumi.RegisterOutputType(GetTargetAssetMigrationAssetArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetAssetMigrationAssetReplicationLocationDetailOutput{})
+	pulumi.RegisterOutputType(GetTargetAssetMigrationAssetReplicationLocationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetTargetAssetRecommendedSpecOutput{})
 	pulumi.RegisterOutputType(GetTargetAssetRecommendedSpecArrayOutput{})
 	pulumi.RegisterOutputType(GetTargetAssetRecommendedSpecAgentConfigOutput{})
@@ -22421,6 +24567,8 @@ func init() {
 	pulumi.RegisterOutputType(GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeArrayOutput{})
 	pulumi.RegisterOutputType(GetTargetAssetsTargetAssetCollectionItemMigrationAssetOutput{})
 	pulumi.RegisterOutputType(GetTargetAssetsTargetAssetCollectionItemMigrationAssetArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailOutput{})
+	pulumi.RegisterOutputType(GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetTargetAssetsTargetAssetCollectionItemRecommendedSpecOutput{})
 	pulumi.RegisterOutputType(GetTargetAssetsTargetAssetCollectionItemRecommendedSpecArrayOutput{})
 	pulumi.RegisterOutputType(GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigOutput{})

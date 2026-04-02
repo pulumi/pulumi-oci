@@ -13,7 +13,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Inputs
     public sealed class NetworkLoadBalancerIpAddressReservedIpGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// OCID of the reserved public IP address created with the virtual cloud network.
+        /// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }

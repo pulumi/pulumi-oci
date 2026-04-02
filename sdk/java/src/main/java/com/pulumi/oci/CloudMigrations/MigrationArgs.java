@@ -6,6 +6,7 @@ package com.pulumi.oci.CloudMigrations;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.CloudMigrations.inputs.MigrationMigrationConfigArgs;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Map;
@@ -94,6 +95,36 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Configuration for a Migration Project.
+     * 
+     */
+    @Import(name="migrationConfig")
+    private @Nullable Output<MigrationMigrationConfigArgs> migrationConfig;
+
+    /**
+     * @return (Updatable) Configuration for a Migration Project.
+     * 
+     */
+    public Optional<Output<MigrationMigrationConfigArgs>> migrationConfig() {
+        return Optional.ofNullable(this.migrationConfig);
+    }
+
+    /**
+     * (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+     * 
+     */
+    @Import(name="migrationType")
+    private @Nullable Output<String> migrationType;
+
+    /**
+     * @return (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+     * 
+     */
+    public Optional<Output<String>> migrationType() {
+        return Optional.ofNullable(this.migrationType);
+    }
+
+    /**
      * (Updatable) Replication schedule identifier
      * 
      * ** IMPORTANT **
@@ -122,6 +153,8 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.isCompleted = $.isCompleted;
+        this.migrationConfig = $.migrationConfig;
+        this.migrationType = $.migrationType;
         this.replicationScheduleId = $.replicationScheduleId;
     }
 
@@ -246,6 +279,48 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder isCompleted(Boolean isCompleted) {
             return isCompleted(Output.of(isCompleted));
+        }
+
+        /**
+         * @param migrationConfig (Updatable) Configuration for a Migration Project.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder migrationConfig(@Nullable Output<MigrationMigrationConfigArgs> migrationConfig) {
+            $.migrationConfig = migrationConfig;
+            return this;
+        }
+
+        /**
+         * @param migrationConfig (Updatable) Configuration for a Migration Project.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder migrationConfig(MigrationMigrationConfigArgs migrationConfig) {
+            return migrationConfig(Output.of(migrationConfig));
+        }
+
+        /**
+         * @param migrationType (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder migrationType(@Nullable Output<String> migrationType) {
+            $.migrationType = migrationType;
+            return this;
+        }
+
+        /**
+         * @param migrationType (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder migrationType(String migrationType) {
+            return migrationType(Output.of(migrationType));
         }
 
         /**

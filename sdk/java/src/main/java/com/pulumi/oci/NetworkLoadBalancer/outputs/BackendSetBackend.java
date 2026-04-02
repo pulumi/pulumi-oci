@@ -25,7 +25,7 @@ public final class BackendSetBackend {
      */
     private @Nullable Boolean isBackup;
     /**
-     * @return (Updatable) Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no incoming traffic.  Example: `false`
+     * @return (Updatable) Whether the network load balancer should drain this server.  Servers marked &#34;isDrain&#34; stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
      * 
      */
     private @Nullable Boolean isDrain;
@@ -71,7 +71,7 @@ public final class BackendSetBackend {
         return Optional.ofNullable(this.isBackup);
     }
     /**
-     * @return (Updatable) Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no incoming traffic.  Example: `false`
+     * @return (Updatable) Whether the network load balancer should drain this server.  Servers marked &#34;isDrain&#34; stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
      * 
      */
     public Optional<Boolean> isDrain() {

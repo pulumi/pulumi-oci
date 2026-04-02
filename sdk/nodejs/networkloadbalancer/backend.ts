@@ -81,7 +81,7 @@ export class Backend extends pulumi.CustomResource {
      */
     declare public readonly isBackup: pulumi.Output<boolean>;
     /**
-     * (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+     * (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `false`
      */
     declare public readonly isDrain: pulumi.Output<boolean>;
     /**
@@ -180,7 +180,7 @@ export interface BackendState {
      */
     isBackup?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+     * (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `false`
      */
     isDrain?: pulumi.Input<boolean>;
     /**
@@ -230,7 +230,7 @@ export interface BackendArgs {
      */
     isBackup?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+     * (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `false`
      */
     isDrain?: pulumi.Input<boolean>;
     /**

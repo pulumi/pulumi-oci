@@ -136,6 +136,10 @@ namespace Pulumi.Oci.CloudMigrations
         /// </summary>
         public readonly ImmutableArray<string> DependedOnBies;
         /// <summary>
+        /// Mapping of source disk id to destination disk details
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> DestinationDisks;
+        /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         public readonly string DisplayName;
@@ -166,6 +170,10 @@ namespace Pulumi.Oci.CloudMigrations
         /// Replication compartment identifier
         /// </summary>
         public readonly string ReplicationCompartmentId;
+        /// <summary>
+        /// Replication location detail where the snapshots reside
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMigrationAssetReplicationLocationDetailResult> ReplicationLocationDetails;
         /// <summary>
         /// Replication schedule identifier
         /// </summary>
@@ -211,6 +219,8 @@ namespace Pulumi.Oci.CloudMigrations
 
             ImmutableArray<string> dependedOnBies,
 
+            ImmutableDictionary<string, string> destinationDisks,
+
             string displayName,
 
             string id,
@@ -230,6 +240,8 @@ namespace Pulumi.Oci.CloudMigrations
             string parentSnapshot,
 
             string replicationCompartmentId,
+
+            ImmutableArray<Outputs.GetMigrationAssetReplicationLocationDetailResult> replicationLocationDetails,
 
             string replicationScheduleId,
 
@@ -252,6 +264,7 @@ namespace Pulumi.Oci.CloudMigrations
             AvailabilityDomain = availabilityDomain;
             CompartmentId = compartmentId;
             DependedOnBies = dependedOnBies;
+            DestinationDisks = destinationDisks;
             DisplayName = displayName;
             Id = id;
             InventoryAssetId = inventoryAssetId;
@@ -262,6 +275,7 @@ namespace Pulumi.Oci.CloudMigrations
             Notifications = notifications;
             ParentSnapshot = parentSnapshot;
             ReplicationCompartmentId = replicationCompartmentId;
+            ReplicationLocationDetails = replicationLocationDetails;
             ReplicationScheduleId = replicationScheduleId;
             SnapShotBucketName = snapShotBucketName;
             Snapshots = snapshots;

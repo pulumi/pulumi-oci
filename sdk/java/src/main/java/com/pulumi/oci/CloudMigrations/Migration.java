@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.CloudMigrations.MigrationArgs;
 import com.pulumi.oci.CloudMigrations.inputs.MigrationState;
+import com.pulumi.oci.CloudMigrations.outputs.MigrationMigrationConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
@@ -34,6 +35,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.CloudMigrations.Migration;
  * import com.pulumi.oci.CloudMigrations.MigrationArgs;
+ * import com.pulumi.oci.CloudMigrations.inputs.MigrationMigrationConfigArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -53,6 +55,10 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .isCompleted(migrationIsCompleted)
+ *             .migrationConfig(MigrationMigrationConfigArgs.builder()
+ *                 .subnetId(testSubnet.id())
+ *                 .build())
+ *             .migrationType(migrationMigrationType)
  *             .replicationScheduleId(testReplicationSchedule.id())
  *             .build());
  * 
@@ -155,6 +161,34 @@ public class Migration extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * (Updatable) Configuration for a Migration Project.
+     * 
+     */
+    @Export(name="migrationConfig", refs={MigrationMigrationConfig.class}, tree="[0]")
+    private Output<MigrationMigrationConfig> migrationConfig;
+
+    /**
+     * @return (Updatable) Configuration for a Migration Project.
+     * 
+     */
+    public Output<MigrationMigrationConfig> migrationConfig() {
+        return this.migrationConfig;
+    }
+    /**
+     * (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+     * 
+     */
+    @Export(name="migrationType", refs={String.class}, tree="[0]")
+    private Output<String> migrationType;
+
+    /**
+     * @return (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+     * 
+     */
+    public Output<String> migrationType() {
+        return this.migrationType;
     }
     /**
      * (Updatable) Replication schedule identifier

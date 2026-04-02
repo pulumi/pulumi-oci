@@ -19,6 +19,12 @@ namespace Pulumi.Oci.CloudMigrations.Inputs
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
+        /// (Updatable) Inventory asset id of the olvm cluster
+        /// </summary>
+        [Input("clusterAssetId")]
+        public Input<string>? ClusterAssetId { get; set; }
+
+        /// <summary>
         /// (Updatable) OCID of the dedicated VM configuration host.
         /// </summary>
         [Input("dedicatedVmHost")]
@@ -36,6 +42,18 @@ namespace Pulumi.Oci.CloudMigrations.Inputs
         [Input("msLicense")]
         public Input<string>? MsLicense { get; set; }
 
+        [Input("olvmTemplates")]
+        private InputMap<string>? _olvmTemplates;
+
+        /// <summary>
+        /// (Updatable) OLVM OS type to inventory asset id of the template
+        /// </summary>
+        public InputMap<string> OlvmTemplates
+        {
+            get => _olvmTemplates ?? (_olvmTemplates = new InputMap<string>());
+            set => _olvmTemplates = value;
+        }
+
         /// <summary>
         /// (Updatable) Preferred VM shape type provided by the customer.
         /// </summary>
@@ -45,8 +63,8 @@ namespace Pulumi.Oci.CloudMigrations.Inputs
         /// <summary>
         /// (Updatable) OCID of the VM configuration subnet.
         /// </summary>
-        [Input("subnet", required: true)]
-        public Input<string> Subnet { get; set; } = null!;
+        [Input("subnet")]
+        public Input<string>? Subnet { get; set; }
 
         /// <summary>
         /// (Updatable) Target compartment identifier
@@ -62,13 +80,19 @@ namespace Pulumi.Oci.CloudMigrations.Inputs
 
         /// <summary>
         /// (Updatable) OCID of the VM configuration VCN.
+        /// </summary>
+        [Input("vcn")]
+        public Input<string>? Vcn { get; set; }
+
+        /// <summary>
+        /// (Updatable) Inventory asset Id of the vnic profile
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("vcn", required: true)]
-        public Input<string> Vcn { get; set; } = null!;
+        [Input("vnicProfileAssetId")]
+        public Input<string>? VnicProfileAssetId { get; set; }
 
         public MigrationPlanTargetEnvironmentGetArgs()
         {

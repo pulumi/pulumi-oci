@@ -468,7 +468,7 @@ class ContainerRepository(pulumi.CustomResource):
         ContainerRepositories can be imported using the `id`, e.g.
 
         ```sh
-        $ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository "container/repositories/{repositoryId}"
+        $ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository "{repositoryId}"
         ```
 
 
@@ -524,7 +524,7 @@ class ContainerRepository(pulumi.CustomResource):
         ContainerRepositories can be imported using the `id`, e.g.
 
         ```sh
-        $ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository "container/repositories/{repositoryId}"
+        $ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository "{repositoryId}"
         ```
 
 

@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetMigrationResult',
@@ -26,7 +27,7 @@ class GetMigrationResult:
     """
     A collection of values returned by getMigration.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_completed=None, lifecycle_details=None, migration_id=None, replication_schedule_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_completed=None, lifecycle_details=None, migration_configs=None, migration_id=None, migration_type=None, replication_schedule_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -48,9 +49,15 @@ class GetMigrationResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if migration_configs and not isinstance(migration_configs, list):
+            raise TypeError("Expected argument 'migration_configs' to be a list")
+        pulumi.set(__self__, "migration_configs", migration_configs)
         if migration_id and not isinstance(migration_id, str):
             raise TypeError("Expected argument 'migration_id' to be a str")
         pulumi.set(__self__, "migration_id", migration_id)
+        if migration_type and not isinstance(migration_type, str):
+            raise TypeError("Expected argument 'migration_type' to be a str")
+        pulumi.set(__self__, "migration_type", migration_type)
         if replication_schedule_id and not isinstance(replication_schedule_id, str):
             raise TypeError("Expected argument 'replication_schedule_id' to be a str")
         pulumi.set(__self__, "replication_schedule_id", replication_schedule_id)
@@ -124,9 +131,25 @@ class GetMigrationResult:
         return pulumi.get(self, "lifecycle_details")
 
     @_builtins.property
+    @pulumi.getter(name="migrationConfigs")
+    def migration_configs(self) -> Sequence['outputs.GetMigrationMigrationConfigResult']:
+        """
+        Configuration for a Migration Project.
+        """
+        return pulumi.get(self, "migration_configs")
+
+    @_builtins.property
     @pulumi.getter(name="migrationId")
     def migration_id(self) -> _builtins.str:
         return pulumi.get(self, "migration_id")
+
+    @_builtins.property
+    @pulumi.getter(name="migrationType")
+    def migration_type(self) -> _builtins.str:
+        """
+        Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+        """
+        return pulumi.get(self, "migration_type")
 
     @_builtins.property
     @pulumi.getter(name="replicationScheduleId")
@@ -182,7 +205,9 @@ class AwaitableGetMigrationResult(GetMigrationResult):
             id=self.id,
             is_completed=self.is_completed,
             lifecycle_details=self.lifecycle_details,
+            migration_configs=self.migration_configs,
             migration_id=self.migration_id,
+            migration_type=self.migration_type,
             replication_schedule_id=self.replication_schedule_id,
             state=self.state,
             system_tags=self.system_tags,
@@ -222,7 +247,9 @@ def get_migration(migration_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         is_completed=pulumi.get(__ret__, 'is_completed'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        migration_configs=pulumi.get(__ret__, 'migration_configs'),
         migration_id=pulumi.get(__ret__, 'migration_id'),
+        migration_type=pulumi.get(__ret__, 'migration_type'),
         replication_schedule_id=pulumi.get(__ret__, 'replication_schedule_id'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
@@ -259,7 +286,9 @@ def get_migration_output(migration_id: Optional[pulumi.Input[_builtins.str]] = N
         id=pulumi.get(__response__, 'id'),
         is_completed=pulumi.get(__response__, 'is_completed'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        migration_configs=pulumi.get(__response__, 'migration_configs'),
         migration_id=pulumi.get(__response__, 'migration_id'),
+        migration_type=pulumi.get(__response__, 'migration_type'),
         replication_schedule_id=pulumi.get(__response__, 'replication_schedule_id'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),

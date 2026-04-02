@@ -18,6 +18,9 @@ namespace Pulumi.Oci.DataScience.Inputs
         [Input("bandwidthMbps")]
         public Input<int>? BandwidthMbps { get; set; }
 
+        /// <summary>
+        /// The type of the model deployment infrastructure.
+        /// </summary>
         [Input("infrastructureType", required: true)]
         public Input<string> InfrastructureType { get; set; } = null!;
 

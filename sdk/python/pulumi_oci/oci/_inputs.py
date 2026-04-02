@@ -213,6 +213,20 @@ __all__ = [
     'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgsDict',
     'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs',
     'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgsDict',
+    'SelfSubscriptionAdditionalDetailArgs',
+    'SelfSubscriptionAdditionalDetailArgsDict',
+    'SelfSubscriptionSubscriptionDetailsArgs',
+    'SelfSubscriptionSubscriptionDetailsArgsDict',
+    'SelfSubscriptionSubscriptionDetailsBillingDetailsArgs',
+    'SelfSubscriptionSubscriptionDetailsBillingDetailsArgsDict',
+    'SelfSubscriptionSubscriptionDetailsBillingDetailsMeterArgs',
+    'SelfSubscriptionSubscriptionDetailsBillingDetailsMeterArgsDict',
+    'SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadataArgs',
+    'SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadataArgsDict',
+    'SelfSubscriptionSubscriptionDetailsPricingPlanArgs',
+    'SelfSubscriptionSubscriptionDetailsPricingPlanArgsDict',
+    'SelfSubscriptionSubscriptionDetailsPricingPlanRateArgs',
+    'SelfSubscriptionSubscriptionDetailsPricingPlanRateArgsDict',
     'GetAiDataPlatformAiDataPlatformsFilterArgs',
     'GetAiDataPlatformAiDataPlatformsFilterArgsDict',
     'GetApiPlatformApiPlatformInstancesFilterArgs',
@@ -315,6 +329,10 @@ __all__ = [
     'GetResourceAnalyticsResourceAnalyticsInstancesFilterArgsDict',
     'GetResourceAnalyticsTenancyAttachmentsFilterArgs',
     'GetResourceAnalyticsTenancyAttachmentsFilterArgsDict',
+    'GetSelfPartnerSubscriptionsFilterArgs',
+    'GetSelfPartnerSubscriptionsFilterArgsDict',
+    'GetSelfSubscriptionsFilterArgs',
+    'GetSelfSubscriptionsFilterArgsDict',
     'GetWlmsManagedInstanceScanResultsFilterArgs',
     'GetWlmsManagedInstanceScanResultsFilterArgsDict',
     'GetWlmsManagedInstanceServerInstalledPatchesFilterArgs',
@@ -9837,6 +9855,570 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNe
         pulumi.set(self, "subnet_id", value)
 
 
+class SelfSubscriptionAdditionalDetailArgsDict(TypedDict):
+    key: pulumi.Input[_builtins.str]
+    """
+    Additional attribute for extendedMetadata.
+    """
+    value: pulumi.Input[_builtins.str]
+    """
+    It contains the value of above key.
+    """
+
+@pulumi.input_type
+class SelfSubscriptionAdditionalDetailArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[_builtins.str],
+                 value: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] key: Additional attribute for extendedMetadata.
+        :param pulumi.Input[_builtins.str] value: It contains the value of above key.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[_builtins.str]:
+        """
+        Additional attribute for extendedMetadata.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[_builtins.str]:
+        """
+        It contains the value of above key.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "value", value)
+
+
+class SelfSubscriptionSubscriptionDetailsArgsDict(TypedDict):
+    billing_details: pulumi.Input['SelfSubscriptionSubscriptionDetailsBillingDetailsArgsDict']
+    """
+    Sku details for billing subscription.
+    """
+    partner_registration_url: pulumi.Input[_builtins.str]
+    """
+    The activation link given by the partner.
+    """
+    pricing_plan: pulumi.Input['SelfSubscriptionSubscriptionDetailsPricingPlanArgsDict']
+    """
+    A pricing plan details provided by the Publisher.
+    """
+    amount: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Tha amount for the currency type.
+    """
+    currency: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The currency supported, in the format specified by ISO-4217
+    """
+    is_auto_renew: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether subscription should be auto-renewed at the end of cycle.
+    """
+
+@pulumi.input_type
+class SelfSubscriptionSubscriptionDetailsArgs:
+    def __init__(__self__, *,
+                 billing_details: pulumi.Input['SelfSubscriptionSubscriptionDetailsBillingDetailsArgs'],
+                 partner_registration_url: pulumi.Input[_builtins.str],
+                 pricing_plan: pulumi.Input['SelfSubscriptionSubscriptionDetailsPricingPlanArgs'],
+                 amount: Optional[pulumi.Input[_builtins.float]] = None,
+                 currency: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_auto_renew: Optional[pulumi.Input[_builtins.bool]] = None):
+        """
+        :param pulumi.Input['SelfSubscriptionSubscriptionDetailsBillingDetailsArgs'] billing_details: Sku details for billing subscription.
+        :param pulumi.Input[_builtins.str] partner_registration_url: The activation link given by the partner.
+        :param pulumi.Input['SelfSubscriptionSubscriptionDetailsPricingPlanArgs'] pricing_plan: A pricing plan details provided by the Publisher.
+        :param pulumi.Input[_builtins.float] amount: Tha amount for the currency type.
+        :param pulumi.Input[_builtins.str] currency: The currency supported, in the format specified by ISO-4217
+        :param pulumi.Input[_builtins.bool] is_auto_renew: Whether subscription should be auto-renewed at the end of cycle.
+        """
+        pulumi.set(__self__, "billing_details", billing_details)
+        pulumi.set(__self__, "partner_registration_url", partner_registration_url)
+        pulumi.set(__self__, "pricing_plan", pricing_plan)
+        if amount is not None:
+            pulumi.set(__self__, "amount", amount)
+        if currency is not None:
+            pulumi.set(__self__, "currency", currency)
+        if is_auto_renew is not None:
+            pulumi.set(__self__, "is_auto_renew", is_auto_renew)
+
+    @_builtins.property
+    @pulumi.getter(name="billingDetails")
+    def billing_details(self) -> pulumi.Input['SelfSubscriptionSubscriptionDetailsBillingDetailsArgs']:
+        """
+        Sku details for billing subscription.
+        """
+        return pulumi.get(self, "billing_details")
+
+    @billing_details.setter
+    def billing_details(self, value: pulumi.Input['SelfSubscriptionSubscriptionDetailsBillingDetailsArgs']):
+        pulumi.set(self, "billing_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="partnerRegistrationUrl")
+    def partner_registration_url(self) -> pulumi.Input[_builtins.str]:
+        """
+        The activation link given by the partner.
+        """
+        return pulumi.get(self, "partner_registration_url")
+
+    @partner_registration_url.setter
+    def partner_registration_url(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "partner_registration_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pricingPlan")
+    def pricing_plan(self) -> pulumi.Input['SelfSubscriptionSubscriptionDetailsPricingPlanArgs']:
+        """
+        A pricing plan details provided by the Publisher.
+        """
+        return pulumi.get(self, "pricing_plan")
+
+    @pricing_plan.setter
+    def pricing_plan(self, value: pulumi.Input['SelfSubscriptionSubscriptionDetailsPricingPlanArgs']):
+        pulumi.set(self, "pricing_plan", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def amount(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        Tha amount for the currency type.
+        """
+        return pulumi.get(self, "amount")
+
+    @amount.setter
+    def amount(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "amount", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def currency(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The currency supported, in the format specified by ISO-4217
+        """
+        return pulumi.get(self, "currency")
+
+    @currency.setter
+    def currency(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "currency", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isAutoRenew")
+    def is_auto_renew(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Whether subscription should be auto-renewed at the end of cycle.
+        """
+        return pulumi.get(self, "is_auto_renew")
+
+    @is_auto_renew.setter
+    def is_auto_renew(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_auto_renew", value)
+
+
+class SelfSubscriptionSubscriptionDetailsBillingDetailsArgsDict(TypedDict):
+    meters: pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsBillingDetailsMeterArgsDict']]]
+    """
+    The meters associated with sku.
+    """
+    metric_type: pulumi.Input[_builtins.str]
+    """
+    The part's metric.
+    """
+    rate_allocation: pulumi.Input[_builtins.float]
+    """
+    Tha rate of this sku meter.
+    """
+    sku: pulumi.Input[_builtins.str]
+    """
+    Sku for service.
+    """
+    has_gov_sku: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether this sku is assign to gov product.
+    """
+
+@pulumi.input_type
+class SelfSubscriptionSubscriptionDetailsBillingDetailsArgs:
+    def __init__(__self__, *,
+                 meters: pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsBillingDetailsMeterArgs']]],
+                 metric_type: pulumi.Input[_builtins.str],
+                 rate_allocation: pulumi.Input[_builtins.float],
+                 sku: pulumi.Input[_builtins.str],
+                 has_gov_sku: Optional[pulumi.Input[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsBillingDetailsMeterArgs']]] meters: The meters associated with sku.
+        :param pulumi.Input[_builtins.str] metric_type: The part's metric.
+        :param pulumi.Input[_builtins.float] rate_allocation: Tha rate of this sku meter.
+        :param pulumi.Input[_builtins.str] sku: Sku for service.
+        :param pulumi.Input[_builtins.bool] has_gov_sku: Whether this sku is assign to gov product.
+        """
+        pulumi.set(__self__, "meters", meters)
+        pulumi.set(__self__, "metric_type", metric_type)
+        pulumi.set(__self__, "rate_allocation", rate_allocation)
+        pulumi.set(__self__, "sku", sku)
+        if has_gov_sku is not None:
+            pulumi.set(__self__, "has_gov_sku", has_gov_sku)
+
+    @_builtins.property
+    @pulumi.getter
+    def meters(self) -> pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsBillingDetailsMeterArgs']]]:
+        """
+        The meters associated with sku.
+        """
+        return pulumi.get(self, "meters")
+
+    @meters.setter
+    def meters(self, value: pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsBillingDetailsMeterArgs']]]):
+        pulumi.set(self, "meters", value)
+
+    @_builtins.property
+    @pulumi.getter(name="metricType")
+    def metric_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        The part's metric.
+        """
+        return pulumi.get(self, "metric_type")
+
+    @metric_type.setter
+    def metric_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "metric_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="rateAllocation")
+    def rate_allocation(self) -> pulumi.Input[_builtins.float]:
+        """
+        Tha rate of this sku meter.
+        """
+        return pulumi.get(self, "rate_allocation")
+
+    @rate_allocation.setter
+    def rate_allocation(self, value: pulumi.Input[_builtins.float]):
+        pulumi.set(self, "rate_allocation", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def sku(self) -> pulumi.Input[_builtins.str]:
+        """
+        Sku for service.
+        """
+        return pulumi.get(self, "sku")
+
+    @sku.setter
+    def sku(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "sku", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hasGovSku")
+    def has_gov_sku(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Whether this sku is assign to gov product.
+        """
+        return pulumi.get(self, "has_gov_sku")
+
+    @has_gov_sku.setter
+    def has_gov_sku(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "has_gov_sku", value)
+
+
+class SelfSubscriptionSubscriptionDetailsBillingDetailsMeterArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    Name of meter.
+    """
+    rate_allocation: pulumi.Input[_builtins.float]
+    """
+    Tha rate of this sku meter.
+    """
+    extended_metadatas: NotRequired[pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadataArgsDict']]]]
+    """
+    Additional data give by sku.
+    """
+
+@pulumi.input_type
+class SelfSubscriptionSubscriptionDetailsBillingDetailsMeterArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[_builtins.str],
+                 rate_allocation: pulumi.Input[_builtins.float],
+                 extended_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadataArgs']]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: Name of meter.
+        :param pulumi.Input[_builtins.float] rate_allocation: Tha rate of this sku meter.
+        :param pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadataArgs']]] extended_metadatas: Additional data give by sku.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "rate_allocation", rate_allocation)
+        if extended_metadatas is not None:
+            pulumi.set(__self__, "extended_metadatas", extended_metadatas)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        Name of meter.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="rateAllocation")
+    def rate_allocation(self) -> pulumi.Input[_builtins.float]:
+        """
+        Tha rate of this sku meter.
+        """
+        return pulumi.get(self, "rate_allocation")
+
+    @rate_allocation.setter
+    def rate_allocation(self, value: pulumi.Input[_builtins.float]):
+        pulumi.set(self, "rate_allocation", value)
+
+    @_builtins.property
+    @pulumi.getter(name="extendedMetadatas")
+    def extended_metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadataArgs']]]]:
+        """
+        Additional data give by sku.
+        """
+        return pulumi.get(self, "extended_metadatas")
+
+    @extended_metadatas.setter
+    def extended_metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadataArgs']]]]):
+        pulumi.set(self, "extended_metadatas", value)
+
+
+class SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadataArgsDict(TypedDict):
+    key: pulumi.Input[_builtins.str]
+    """
+    Additional attribute for extendedMetadata.
+    """
+    value: pulumi.Input[_builtins.str]
+    """
+    It contains the value of above key.
+    """
+
+@pulumi.input_type
+class SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadataArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[_builtins.str],
+                 value: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] key: Additional attribute for extendedMetadata.
+        :param pulumi.Input[_builtins.str] value: It contains the value of above key.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[_builtins.str]:
+        """
+        Additional attribute for extendedMetadata.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[_builtins.str]:
+        """
+        It contains the value of above key.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "value", value)
+
+
+class SelfSubscriptionSubscriptionDetailsPricingPlanArgsDict(TypedDict):
+    billing_frequency: pulumi.Input[_builtins.str]
+    """
+    Specifies the interval at which billing occurs for the subscription plan.
+    """
+    plan_name: pulumi.Input[_builtins.str]
+    """
+    The name of the subscription plan used to identify the plan.
+    """
+    plan_type: pulumi.Input[_builtins.str]
+    """
+    The type of the subscription plan.
+    """
+    rates: pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsPricingPlanRateArgsDict']]]
+    """
+    The pricing details of the subscription plan in various supported currencies.
+    """
+    plan_description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A detailed explanation of the subscription plan.
+    """
+    plan_duration: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Specifies the interval at which billing occurs for the subscription plan.
+    """
+
+@pulumi.input_type
+class SelfSubscriptionSubscriptionDetailsPricingPlanArgs:
+    def __init__(__self__, *,
+                 billing_frequency: pulumi.Input[_builtins.str],
+                 plan_name: pulumi.Input[_builtins.str],
+                 plan_type: pulumi.Input[_builtins.str],
+                 rates: pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsPricingPlanRateArgs']]],
+                 plan_description: Optional[pulumi.Input[_builtins.str]] = None,
+                 plan_duration: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] billing_frequency: Specifies the interval at which billing occurs for the subscription plan.
+        :param pulumi.Input[_builtins.str] plan_name: The name of the subscription plan used to identify the plan.
+        :param pulumi.Input[_builtins.str] plan_type: The type of the subscription plan.
+        :param pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsPricingPlanRateArgs']]] rates: The pricing details of the subscription plan in various supported currencies.
+        :param pulumi.Input[_builtins.str] plan_description: A detailed explanation of the subscription plan.
+        :param pulumi.Input[_builtins.str] plan_duration: Specifies the interval at which billing occurs for the subscription plan.
+        """
+        pulumi.set(__self__, "billing_frequency", billing_frequency)
+        pulumi.set(__self__, "plan_name", plan_name)
+        pulumi.set(__self__, "plan_type", plan_type)
+        pulumi.set(__self__, "rates", rates)
+        if plan_description is not None:
+            pulumi.set(__self__, "plan_description", plan_description)
+        if plan_duration is not None:
+            pulumi.set(__self__, "plan_duration", plan_duration)
+
+    @_builtins.property
+    @pulumi.getter(name="billingFrequency")
+    def billing_frequency(self) -> pulumi.Input[_builtins.str]:
+        """
+        Specifies the interval at which billing occurs for the subscription plan.
+        """
+        return pulumi.get(self, "billing_frequency")
+
+    @billing_frequency.setter
+    def billing_frequency(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "billing_frequency", value)
+
+    @_builtins.property
+    @pulumi.getter(name="planName")
+    def plan_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        The name of the subscription plan used to identify the plan.
+        """
+        return pulumi.get(self, "plan_name")
+
+    @plan_name.setter
+    def plan_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "plan_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="planType")
+    def plan_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        The type of the subscription plan.
+        """
+        return pulumi.get(self, "plan_type")
+
+    @plan_type.setter
+    def plan_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "plan_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rates(self) -> pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsPricingPlanRateArgs']]]:
+        """
+        The pricing details of the subscription plan in various supported currencies.
+        """
+        return pulumi.get(self, "rates")
+
+    @rates.setter
+    def rates(self, value: pulumi.Input[Sequence[pulumi.Input['SelfSubscriptionSubscriptionDetailsPricingPlanRateArgs']]]):
+        pulumi.set(self, "rates", value)
+
+    @_builtins.property
+    @pulumi.getter(name="planDescription")
+    def plan_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A detailed explanation of the subscription plan.
+        """
+        return pulumi.get(self, "plan_description")
+
+    @plan_description.setter
+    def plan_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "plan_description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="planDuration")
+    def plan_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Specifies the interval at which billing occurs for the subscription plan.
+        """
+        return pulumi.get(self, "plan_duration")
+
+    @plan_duration.setter
+    def plan_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "plan_duration", value)
+
+
+class SelfSubscriptionSubscriptionDetailsPricingPlanRateArgsDict(TypedDict):
+    currency: pulumi.Input[_builtins.str]
+    """
+    The currency supported, in the format specified by ISO-4217
+    """
+    rate: pulumi.Input[_builtins.float]
+    """
+    The amount charged for the plan in the specified currency.
+    """
+
+@pulumi.input_type
+class SelfSubscriptionSubscriptionDetailsPricingPlanRateArgs:
+    def __init__(__self__, *,
+                 currency: pulumi.Input[_builtins.str],
+                 rate: pulumi.Input[_builtins.float]):
+        """
+        :param pulumi.Input[_builtins.str] currency: The currency supported, in the format specified by ISO-4217
+        :param pulumi.Input[_builtins.float] rate: The amount charged for the plan in the specified currency.
+        """
+        pulumi.set(__self__, "currency", currency)
+        pulumi.set(__self__, "rate", rate)
+
+    @_builtins.property
+    @pulumi.getter
+    def currency(self) -> pulumi.Input[_builtins.str]:
+        """
+        The currency supported, in the format specified by ISO-4217
+        """
+        return pulumi.get(self, "currency")
+
+    @currency.setter
+    def currency(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "currency", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rate(self) -> pulumi.Input[_builtins.float]:
+        """
+        The amount charged for the plan in the specified currency.
+        """
+        return pulumi.get(self, "rate")
+
+    @rate.setter
+    def rate(self, value: pulumi.Input[_builtins.float]):
+        pulumi.set(self, "rate", value)
+
+
 class GetAiDataPlatformAiDataPlatformsFilterArgsDict(TypedDict):
     name: _builtins.str
     values: Sequence[_builtins.str]
@@ -12144,6 +12726,103 @@ class GetResourceAnalyticsTenancyAttachmentsFilterArgs:
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetSelfPartnerSubscriptionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetSelfPartnerSubscriptionsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetSelfSubscriptionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of meter.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetSelfSubscriptionsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Name of meter.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of meter.
+        """
         return pulumi.get(self, "name")
 
     @name.setter

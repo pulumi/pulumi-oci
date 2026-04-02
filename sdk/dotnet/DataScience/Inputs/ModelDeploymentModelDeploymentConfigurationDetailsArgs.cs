@@ -24,6 +24,9 @@ namespace Pulumi.Oci.DataScience.Inputs
         [Input("environmentConfigurationDetails")]
         public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs>? EnvironmentConfigurationDetails { get; set; }
 
+        /// <summary>
+        /// The infrastructure configuration details.
+        /// </summary>
         [Input("infrastructureConfigurationDetails")]
         public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgs>? InfrastructureConfigurationDetails { get; set; }
 
@@ -33,6 +36,9 @@ namespace Pulumi.Oci.DataScience.Inputs
         [Input("modelConfigurationDetails")]
         public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs>? ModelConfigurationDetails { get; set; }
 
+        /// <summary>
+        /// (Updatable) The model group configuration details.
+        /// </summary>
         [Input("modelGroupConfigurationDetails")]
         public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetailsArgs>? ModelGroupConfigurationDetails { get; set; }
 

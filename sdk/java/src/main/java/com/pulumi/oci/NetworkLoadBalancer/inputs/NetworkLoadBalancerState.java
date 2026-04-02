@@ -254,14 +254,14 @@ public final class NetworkLoadBalancerState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * An array of reserved Ips.
+     * An array of reserved Ips. NLB supports reserved public ip, reserved private IP and reserved IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a maximum of 1 allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB does not support changing an IP’s lifecycle state between ephemeral and reserved if the IP is already assigned to the NLB. While this type of lifecycle state change is supported by VCN IPs even when the IP is assigned to a resource, such changes will not be recognized or reflected by NLB.
      * 
      */
     @Import(name="reservedIps")
     private @Nullable Output<List<NetworkLoadBalancerReservedIpArgs>> reservedIps;
 
     /**
-     * @return An array of reserved Ips.
+     * @return An array of reserved Ips. NLB supports reserved public ip, reserved private IP and reserved IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a maximum of 1 allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB does not support changing an IP’s lifecycle state between ephemeral and reserved if the IP is already assigned to the NLB. While this type of lifecycle state change is supported by VCN IPs even when the IP is assigned to a resource, such changes will not be recognized or reflected by NLB.
      * 
      */
     public Optional<Output<List<NetworkLoadBalancerReservedIpArgs>>> reservedIps() {
@@ -763,7 +763,7 @@ public final class NetworkLoadBalancerState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param reservedIps An array of reserved Ips.
+         * @param reservedIps An array of reserved Ips. NLB supports reserved public ip, reserved private IP and reserved IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a maximum of 1 allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB does not support changing an IP’s lifecycle state between ephemeral and reserved if the IP is already assigned to the NLB. While this type of lifecycle state change is supported by VCN IPs even when the IP is assigned to a resource, such changes will not be recognized or reflected by NLB.
          * 
          * @return builder
          * 
@@ -774,7 +774,7 @@ public final class NetworkLoadBalancerState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param reservedIps An array of reserved Ips.
+         * @param reservedIps An array of reserved Ips. NLB supports reserved public ip, reserved private IP and reserved IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a maximum of 1 allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB does not support changing an IP’s lifecycle state between ephemeral and reserved if the IP is already assigned to the NLB. While this type of lifecycle state change is supported by VCN IPs even when the IP is assigned to a resource, such changes will not be recognized or reflected by NLB.
          * 
          * @return builder
          * 
@@ -784,7 +784,7 @@ public final class NetworkLoadBalancerState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param reservedIps An array of reserved Ips.
+         * @param reservedIps An array of reserved Ips. NLB supports reserved public ip, reserved private IP and reserved IPv6. Customer can pass 3 reserved IP ocids, with all items unique, and a maximum of 1 allowed for each entity type: public-ip, private-ip and IPv6 Note that NLB does not support changing an IP’s lifecycle state between ephemeral and reserved if the IP is already assigned to the NLB. While this type of lifecycle state change is supported by VCN IPs even when the IP is assigned to a resource, such changes will not be recognized or reflected by NLB.
          * 
          * @return builder
          * 

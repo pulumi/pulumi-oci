@@ -37,7 +37,7 @@ class BackendArgs:
         :param pulumi.Input[_builtins.int] port: The communication port for the backend server.  Example: `8080`
         :param pulumi.Input[_builtins.str] ip_address: The IP address of the backend server. Example: `10.0.0.3`
         :param pulumi.Input[_builtins.bool] is_backup: (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-        :param pulumi.Input[_builtins.bool] is_drain: (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        :param pulumi.Input[_builtins.bool] is_drain: (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `false`
         :param pulumi.Input[_builtins.bool] is_offline: (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param pulumi.Input[_builtins.str] name: Optional unique name identifying the backend within the backend set. If not specified, then one will be generated. Example: `webServer1`
         :param pulumi.Input[_builtins.str] target_id: The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
@@ -129,7 +129,7 @@ class BackendArgs:
     @pulumi.getter(name="isDrain")
     def is_drain(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `false`
         """
         return pulumi.get(self, "is_drain")
 
@@ -209,7 +209,7 @@ class _BackendState:
         :param pulumi.Input[_builtins.str] backend_set_name: The name of the backend set to which to add the backend server.  Example: `example_backend_set`
         :param pulumi.Input[_builtins.str] ip_address: The IP address of the backend server. Example: `10.0.0.3`
         :param pulumi.Input[_builtins.bool] is_backup: (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-        :param pulumi.Input[_builtins.bool] is_drain: (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        :param pulumi.Input[_builtins.bool] is_drain: (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `false`
         :param pulumi.Input[_builtins.bool] is_offline: (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param pulumi.Input[_builtins.str] name: Optional unique name identifying the backend within the backend set. If not specified, then one will be generated. Example: `webServer1`
         :param pulumi.Input[_builtins.str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -282,7 +282,7 @@ class _BackendState:
     @pulumi.getter(name="isDrain")
     def is_drain(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `false`
         """
         return pulumi.get(self, "is_drain")
 
@@ -425,7 +425,7 @@ class Backend(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] backend_set_name: The name of the backend set to which to add the backend server.  Example: `example_backend_set`
         :param pulumi.Input[_builtins.str] ip_address: The IP address of the backend server. Example: `10.0.0.3`
         :param pulumi.Input[_builtins.bool] is_backup: (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-        :param pulumi.Input[_builtins.bool] is_drain: (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        :param pulumi.Input[_builtins.bool] is_drain: (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `false`
         :param pulumi.Input[_builtins.bool] is_offline: (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param pulumi.Input[_builtins.str] name: Optional unique name identifying the backend within the backend set. If not specified, then one will be generated. Example: `webServer1`
         :param pulumi.Input[_builtins.str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -559,7 +559,7 @@ class Backend(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] backend_set_name: The name of the backend set to which to add the backend server.  Example: `example_backend_set`
         :param pulumi.Input[_builtins.str] ip_address: The IP address of the backend server. Example: `10.0.0.3`
         :param pulumi.Input[_builtins.bool] is_backup: (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-        :param pulumi.Input[_builtins.bool] is_drain: (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        :param pulumi.Input[_builtins.bool] is_drain: (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `false`
         :param pulumi.Input[_builtins.bool] is_offline: (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param pulumi.Input[_builtins.str] name: Optional unique name identifying the backend within the backend set. If not specified, then one will be generated. Example: `webServer1`
         :param pulumi.Input[_builtins.str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -615,7 +615,7 @@ class Backend(pulumi.CustomResource):
     @pulumi.getter(name="isDrain")
     def is_drain(self) -> pulumi.Output[_builtins.bool]:
         """
-        (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `false`
         """
         return pulumi.get(self, "is_drain")
 

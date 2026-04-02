@@ -25,7 +25,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Inputs
         public Input<bool>? IsBackup { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `False`
+        /// (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `False`
         /// </summary>
         [Input("isDrain")]
         public Input<bool>? IsDrain { get; set; }

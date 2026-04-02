@@ -5,9 +5,10 @@ package com.pulumi.oci.CloudMigrations.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.inputs.TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class TargetAssetUserSpecPreemptibleInstanceConfigArgs extends com.pulumi.resources.ResourceArgs {
@@ -18,15 +19,15 @@ public final class TargetAssetUserSpecPreemptibleInstanceConfigArgs extends com.
      * (Updatable) The action to run when the preemptible instance is interrupted for eviction.
      * 
      */
-    @Import(name="preemptionAction", required=true)
-    private Output<TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs> preemptionAction;
+    @Import(name="preemptionAction")
+    private @Nullable Output<TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs> preemptionAction;
 
     /**
      * @return (Updatable) The action to run when the preemptible instance is interrupted for eviction.
      * 
      */
-    public Output<TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs> preemptionAction() {
-        return this.preemptionAction;
+    public Optional<Output<TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs>> preemptionAction() {
+        return Optional.ofNullable(this.preemptionAction);
     }
 
     private TargetAssetUserSpecPreemptibleInstanceConfigArgs() {}
@@ -59,7 +60,7 @@ public final class TargetAssetUserSpecPreemptibleInstanceConfigArgs extends com.
          * @return builder
          * 
          */
-        public Builder preemptionAction(Output<TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs> preemptionAction) {
+        public Builder preemptionAction(@Nullable Output<TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs> preemptionAction) {
             $.preemptionAction = preemptionAction;
             return this;
         }
@@ -75,9 +76,6 @@ public final class TargetAssetUserSpecPreemptibleInstanceConfigArgs extends com.
         }
 
         public TargetAssetUserSpecPreemptibleInstanceConfigArgs build() {
-            if ($.preemptionAction == null) {
-                throw new MissingRequiredPropertyException("TargetAssetUserSpecPreemptibleInstanceConfigArgs", "preemptionAction");
-            }
             return $;
         }
     }

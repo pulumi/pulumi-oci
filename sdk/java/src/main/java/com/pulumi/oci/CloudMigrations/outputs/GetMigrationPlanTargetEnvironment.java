@@ -6,6 +6,7 @@ package com.pulumi.oci.CloudMigrations.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -15,6 +16,11 @@ public final class GetMigrationPlanTargetEnvironment {
      * 
      */
     private String availabilityDomain;
+    /**
+     * @return Inventory asset id of the olvm cluster
+     * 
+     */
+    private String clusterAssetId;
     /**
      * @return OCID of the dedicated VM configuration host.
      * 
@@ -30,6 +36,11 @@ public final class GetMigrationPlanTargetEnvironment {
      * 
      */
     private String msLicense;
+    /**
+     * @return OLVM OS type to inventory asset id of the template
+     * 
+     */
+    private Map<String,String> olvmTemplates;
     /**
      * @return Preferred VM shape type provided by the customer.
      * 
@@ -55,6 +66,11 @@ public final class GetMigrationPlanTargetEnvironment {
      * 
      */
     private String vcn;
+    /**
+     * @return Inventory asset Id of the vnic profile
+     * 
+     */
+    private String vnicProfileAssetId;
 
     private GetMigrationPlanTargetEnvironment() {}
     /**
@@ -63,6 +79,13 @@ public final class GetMigrationPlanTargetEnvironment {
      */
     public String availabilityDomain() {
         return this.availabilityDomain;
+    }
+    /**
+     * @return Inventory asset id of the olvm cluster
+     * 
+     */
+    public String clusterAssetId() {
+        return this.clusterAssetId;
     }
     /**
      * @return OCID of the dedicated VM configuration host.
@@ -84,6 +107,13 @@ public final class GetMigrationPlanTargetEnvironment {
      */
     public String msLicense() {
         return this.msLicense;
+    }
+    /**
+     * @return OLVM OS type to inventory asset id of the template
+     * 
+     */
+    public Map<String,String> olvmTemplates() {
+        return this.olvmTemplates;
     }
     /**
      * @return Preferred VM shape type provided by the customer.
@@ -120,6 +150,13 @@ public final class GetMigrationPlanTargetEnvironment {
     public String vcn() {
         return this.vcn;
     }
+    /**
+     * @return Inventory asset Id of the vnic profile
+     * 
+     */
+    public String vnicProfileAssetId() {
+        return this.vnicProfileAssetId;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -131,26 +168,32 @@ public final class GetMigrationPlanTargetEnvironment {
     @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
+        private String clusterAssetId;
         private String dedicatedVmHost;
         private String faultDomain;
         private String msLicense;
+        private Map<String,String> olvmTemplates;
         private String preferredShapeType;
         private String subnet;
         private String targetCompartmentId;
         private String targetEnvironmentType;
         private String vcn;
+        private String vnicProfileAssetId;
         public Builder() {}
         public Builder(GetMigrationPlanTargetEnvironment defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
+    	      this.clusterAssetId = defaults.clusterAssetId;
     	      this.dedicatedVmHost = defaults.dedicatedVmHost;
     	      this.faultDomain = defaults.faultDomain;
     	      this.msLicense = defaults.msLicense;
+    	      this.olvmTemplates = defaults.olvmTemplates;
     	      this.preferredShapeType = defaults.preferredShapeType;
     	      this.subnet = defaults.subnet;
     	      this.targetCompartmentId = defaults.targetCompartmentId;
     	      this.targetEnvironmentType = defaults.targetEnvironmentType;
     	      this.vcn = defaults.vcn;
+    	      this.vnicProfileAssetId = defaults.vnicProfileAssetId;
         }
 
         @CustomType.Setter
@@ -159,6 +202,14 @@ public final class GetMigrationPlanTargetEnvironment {
               throw new MissingRequiredPropertyException("GetMigrationPlanTargetEnvironment", "availabilityDomain");
             }
             this.availabilityDomain = availabilityDomain;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterAssetId(String clusterAssetId) {
+            if (clusterAssetId == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanTargetEnvironment", "clusterAssetId");
+            }
+            this.clusterAssetId = clusterAssetId;
             return this;
         }
         @CustomType.Setter
@@ -183,6 +234,14 @@ public final class GetMigrationPlanTargetEnvironment {
               throw new MissingRequiredPropertyException("GetMigrationPlanTargetEnvironment", "msLicense");
             }
             this.msLicense = msLicense;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder olvmTemplates(Map<String,String> olvmTemplates) {
+            if (olvmTemplates == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanTargetEnvironment", "olvmTemplates");
+            }
+            this.olvmTemplates = olvmTemplates;
             return this;
         }
         @CustomType.Setter
@@ -225,17 +284,28 @@ public final class GetMigrationPlanTargetEnvironment {
             this.vcn = vcn;
             return this;
         }
+        @CustomType.Setter
+        public Builder vnicProfileAssetId(String vnicProfileAssetId) {
+            if (vnicProfileAssetId == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanTargetEnvironment", "vnicProfileAssetId");
+            }
+            this.vnicProfileAssetId = vnicProfileAssetId;
+            return this;
+        }
         public GetMigrationPlanTargetEnvironment build() {
             final var _resultValue = new GetMigrationPlanTargetEnvironment();
             _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.clusterAssetId = clusterAssetId;
             _resultValue.dedicatedVmHost = dedicatedVmHost;
             _resultValue.faultDomain = faultDomain;
             _resultValue.msLicense = msLicense;
+            _resultValue.olvmTemplates = olvmTemplates;
             _resultValue.preferredShapeType = preferredShapeType;
             _resultValue.subnet = subnet;
             _resultValue.targetCompartmentId = targetCompartmentId;
             _resultValue.targetEnvironmentType = targetEnvironmentType;
             _resultValue.vcn = vcn;
+            _resultValue.vnicProfileAssetId = vnicProfileAssetId;
             return _resultValue;
         }
     }

@@ -62,7 +62,7 @@ class BackendSetBackendArgsDict(TypedDict):
     """
     is_drain: NotRequired[pulumi.Input[_builtins.bool]]
     """
-    (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+    (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
     """
     is_offline: NotRequired[pulumi.Input[_builtins.bool]]
     """
@@ -96,7 +96,7 @@ class BackendSetBackendArgs:
         :param pulumi.Input[_builtins.int] port: (Updatable) The communication port for the backend server.  Example: `8080`
         :param pulumi.Input[_builtins.str] ip_address: (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
         :param pulumi.Input[_builtins.bool] is_backup: (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-        :param pulumi.Input[_builtins.bool] is_drain: (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        :param pulumi.Input[_builtins.bool] is_drain: (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
         :param pulumi.Input[_builtins.bool] is_offline: (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param pulumi.Input[_builtins.str] name: (Updatable) A read-only field showing the IP address/OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
         :param pulumi.Input[_builtins.str] target_id: (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
@@ -158,7 +158,7 @@ class BackendSetBackendArgs:
     @pulumi.getter(name="isDrain")
     def is_drain(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
         """
         return pulumi.get(self, "is_drain")
 
@@ -643,7 +643,7 @@ class NetworkLoadBalancerIpAddressArgs:
 class NetworkLoadBalancerIpAddressReservedIpArgsDict(TypedDict):
     id: NotRequired[pulumi.Input[_builtins.str]]
     """
-    OCID of the reserved public IP address created with the virtual cloud network.
+    Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
     """
 
 @pulumi.input_type
@@ -651,7 +651,7 @@ class NetworkLoadBalancerIpAddressReservedIpArgs:
     def __init__(__self__, *,
                  id: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] id: OCID of the reserved public IP address created with the virtual cloud network.
+        :param pulumi.Input[_builtins.str] id: Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
         """
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -660,7 +660,7 @@ class NetworkLoadBalancerIpAddressReservedIpArgs:
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        OCID of the reserved public IP address created with the virtual cloud network.
+        Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
         """
         return pulumi.get(self, "id")
 
@@ -672,15 +672,15 @@ class NetworkLoadBalancerIpAddressReservedIpArgs:
 class NetworkLoadBalancerReservedIpArgsDict(TypedDict):
     id: NotRequired[pulumi.Input[_builtins.str]]
     """
-    OCID of the reserved public IP address created with the virtual cloud network.
+    Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 
-    Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+    Reserved IPs are IPs which are already registered using VCN API.
 
-    Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+    For public Network load balancers, customer can create a reserved Public IP and/or reserved private IP and/or reserved IPv6 and pass the OCID's in the reservedIps array field to attach the IP addresses to the network load balancer during create For private Network load balancers, customer can create a reserved Private IP and/or reserved IPv6 and pass the OCID's in the  reservedIps array field to attach the IP addresses to the network load balancer during create
 
-    Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+    Reserved IPs will not be deleted when the Network Load balancer is deleted. They will be detached from the Network Load balancer.
 
-    Example: "ocid1.publicip.oc1.phx.unique_ID"
+    Public IP Example: "ocid1.publicip.oc1.phx.unique_ID" Private IP Example: "ocid1.privateip.oc1.phx.unique_ID" IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID"
     """
 
 @pulumi.input_type
@@ -688,15 +688,15 @@ class NetworkLoadBalancerReservedIpArgs:
     def __init__(__self__, *,
                  id: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] id: OCID of the reserved public IP address created with the virtual cloud network.
+        :param pulumi.Input[_builtins.str] id: Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
                
-               Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+               Reserved IPs are IPs which are already registered using VCN API.
                
-               Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+               For public Network load balancers, customer can create a reserved Public IP and/or reserved private IP and/or reserved IPv6 and pass the OCID's in the reservedIps array field to attach the IP addresses to the network load balancer during create For private Network load balancers, customer can create a reserved Private IP and/or reserved IPv6 and pass the OCID's in the  reservedIps array field to attach the IP addresses to the network load balancer during create
                
-               Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+               Reserved IPs will not be deleted when the Network Load balancer is deleted. They will be detached from the Network Load balancer.
                
-               Example: "ocid1.publicip.oc1.phx.unique_ID"
+               Public IP Example: "ocid1.publicip.oc1.phx.unique_ID" Private IP Example: "ocid1.privateip.oc1.phx.unique_ID" IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID"
         """
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -705,15 +705,15 @@ class NetworkLoadBalancerReservedIpArgs:
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        OCID of the reserved public IP address created with the virtual cloud network.
+        Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 
-        Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+        Reserved IPs are IPs which are already registered using VCN API.
 
-        Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+        For public Network load balancers, customer can create a reserved Public IP and/or reserved private IP and/or reserved IPv6 and pass the OCID's in the reservedIps array field to attach the IP addresses to the network load balancer during create For private Network load balancers, customer can create a reserved Private IP and/or reserved IPv6 and pass the OCID's in the  reservedIps array field to attach the IP addresses to the network load balancer during create
 
-        Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+        Reserved IPs will not be deleted when the Network Load balancer is deleted. They will be detached from the Network Load balancer.
 
-        Example: "ocid1.publicip.oc1.phx.unique_ID"
+        Public IP Example: "ocid1.publicip.oc1.phx.unique_ID" Private IP Example: "ocid1.privateip.oc1.phx.unique_ID" IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID"
         """
         return pulumi.get(self, "id")
 
@@ -737,7 +737,7 @@ class NetworkLoadBalancersBackendSetsUnifiedBackendArgsDict(TypedDict):
     """
     is_drain: NotRequired[pulumi.Input[_builtins.bool]]
     """
-    (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+    (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
     """
     is_offline: NotRequired[pulumi.Input[_builtins.bool]]
     """
@@ -771,7 +771,7 @@ class NetworkLoadBalancersBackendSetsUnifiedBackendArgs:
         :param pulumi.Input[_builtins.int] port: (Updatable) The communication port for the backend server.  Example: `8080`
         :param pulumi.Input[_builtins.str] ip_address: (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
         :param pulumi.Input[_builtins.bool] is_backup: (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-        :param pulumi.Input[_builtins.bool] is_drain: (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        :param pulumi.Input[_builtins.bool] is_drain: (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
         :param pulumi.Input[_builtins.bool] is_offline: (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param pulumi.Input[_builtins.str] name: (Updatable) A read-only field showing the IP address/OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
         :param pulumi.Input[_builtins.str] target_id: (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
@@ -833,7 +833,7 @@ class NetworkLoadBalancersBackendSetsUnifiedBackendArgs:
     @pulumi.getter(name="isDrain")
     def is_drain(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
         """
         return pulumi.get(self, "is_drain")
 

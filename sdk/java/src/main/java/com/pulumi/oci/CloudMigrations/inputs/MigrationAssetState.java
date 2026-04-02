@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudMigrations.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.CloudMigrations.inputs.MigrationAssetReplicationLocationDetailArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -60,6 +61,21 @@ public final class MigrationAssetState extends com.pulumi.resources.ResourceArgs
      */
     public Optional<Output<List<String>>> dependedOnBies() {
         return Optional.ofNullable(this.dependedOnBies);
+    }
+
+    /**
+     * Mapping of source disk id to destination disk details
+     * 
+     */
+    @Import(name="destinationDisks")
+    private @Nullable Output<Map<String,String>> destinationDisks;
+
+    /**
+     * @return Mapping of source disk id to destination disk details
+     * 
+     */
+    public Optional<Output<Map<String,String>>> destinationDisks() {
+        return Optional.ofNullable(this.destinationDisks);
     }
 
     /**
@@ -172,6 +188,21 @@ public final class MigrationAssetState extends com.pulumi.resources.ResourceArgs
      */
     public Optional<Output<String>> replicationCompartmentId() {
         return Optional.ofNullable(this.replicationCompartmentId);
+    }
+
+    /**
+     * Replication location detail where the snapshots reside
+     * 
+     */
+    @Import(name="replicationLocationDetail")
+    private @Nullable Output<MigrationAssetReplicationLocationDetailArgs> replicationLocationDetail;
+
+    /**
+     * @return Replication location detail where the snapshots reside
+     * 
+     */
+    public Optional<Output<MigrationAssetReplicationLocationDetailArgs>> replicationLocationDetail() {
+        return Optional.ofNullable(this.replicationLocationDetail);
     }
 
     /**
@@ -321,6 +352,7 @@ public final class MigrationAssetState extends com.pulumi.resources.ResourceArgs
         this.availabilityDomain = $.availabilityDomain;
         this.compartmentId = $.compartmentId;
         this.dependedOnBies = $.dependedOnBies;
+        this.destinationDisks = $.destinationDisks;
         this.displayName = $.displayName;
         this.inventoryAssetId = $.inventoryAssetId;
         this.lifecycleDetails = $.lifecycleDetails;
@@ -329,6 +361,7 @@ public final class MigrationAssetState extends com.pulumi.resources.ResourceArgs
         this.notifications = $.notifications;
         this.parentSnapshot = $.parentSnapshot;
         this.replicationCompartmentId = $.replicationCompartmentId;
+        this.replicationLocationDetail = $.replicationLocationDetail;
         this.replicationScheduleId = $.replicationScheduleId;
         this.snapShotBucketName = $.snapShotBucketName;
         this.snapshots = $.snapshots;
@@ -429,6 +462,27 @@ public final class MigrationAssetState extends com.pulumi.resources.ResourceArgs
          */
         public Builder dependedOnBies(String... dependedOnBies) {
             return dependedOnBies(List.of(dependedOnBies));
+        }
+
+        /**
+         * @param destinationDisks Mapping of source disk id to destination disk details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder destinationDisks(@Nullable Output<Map<String,String>> destinationDisks) {
+            $.destinationDisks = destinationDisks;
+            return this;
+        }
+
+        /**
+         * @param destinationDisks Mapping of source disk id to destination disk details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder destinationDisks(Map<String,String> destinationDisks) {
+            return destinationDisks(Output.of(destinationDisks));
         }
 
         /**
@@ -599,6 +653,27 @@ public final class MigrationAssetState extends com.pulumi.resources.ResourceArgs
          */
         public Builder replicationCompartmentId(String replicationCompartmentId) {
             return replicationCompartmentId(Output.of(replicationCompartmentId));
+        }
+
+        /**
+         * @param replicationLocationDetail Replication location detail where the snapshots reside
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicationLocationDetail(@Nullable Output<MigrationAssetReplicationLocationDetailArgs> replicationLocationDetail) {
+            $.replicationLocationDetail = replicationLocationDetail;
+            return this;
+        }
+
+        /**
+         * @param replicationLocationDetail Replication location detail where the snapshots reside
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicationLocationDetail(MigrationAssetReplicationLocationDetailArgs replicationLocationDetail) {
+            return replicationLocationDetail(Output.of(replicationLocationDetail));
         }
 
         /**

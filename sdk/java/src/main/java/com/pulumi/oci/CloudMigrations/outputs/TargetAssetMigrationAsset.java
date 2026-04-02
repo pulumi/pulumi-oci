@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.CloudMigrations.outputs.TargetAssetMigrationAssetReplicationLocationDetail;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -33,6 +34,11 @@ public final class TargetAssetMigrationAsset {
      * 
      */
     private @Nullable List<String> dependsOns;
+    /**
+     * @return Mapping of source disk id to destination disk details
+     * 
+     */
+    private @Nullable Map<String,String> destinationDisks;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -68,6 +74,11 @@ public final class TargetAssetMigrationAsset {
      * 
      */
     private @Nullable String replicationCompartmentId;
+    /**
+     * @return Replication location detail where the snapshots reside
+     * 
+     */
+    private @Nullable TargetAssetMigrationAssetReplicationLocationDetail replicationLocationDetail;
     /**
      * @return Replication schedule identifier
      * 
@@ -149,6 +160,13 @@ public final class TargetAssetMigrationAsset {
         return this.dependsOns == null ? List.of() : this.dependsOns;
     }
     /**
+     * @return Mapping of source disk id to destination disk details
+     * 
+     */
+    public Map<String,String> destinationDisks() {
+        return this.destinationDisks == null ? Map.of() : this.destinationDisks;
+    }
+    /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
@@ -196,6 +214,13 @@ public final class TargetAssetMigrationAsset {
      */
     public Optional<String> replicationCompartmentId() {
         return Optional.ofNullable(this.replicationCompartmentId);
+    }
+    /**
+     * @return Replication location detail where the snapshots reside
+     * 
+     */
+    public Optional<TargetAssetMigrationAssetReplicationLocationDetail> replicationLocationDetail() {
+        return Optional.ofNullable(this.replicationLocationDetail);
     }
     /**
      * @return Replication schedule identifier
@@ -281,6 +306,7 @@ public final class TargetAssetMigrationAsset {
         private @Nullable String compartmentId;
         private @Nullable List<String> dependedOnBies;
         private @Nullable List<String> dependsOns;
+        private @Nullable Map<String,String> destinationDisks;
         private @Nullable String displayName;
         private @Nullable String id;
         private @Nullable String lifecycleDetails;
@@ -288,6 +314,7 @@ public final class TargetAssetMigrationAsset {
         private @Nullable List<String> notifications;
         private @Nullable String parentSnapshot;
         private @Nullable String replicationCompartmentId;
+        private @Nullable TargetAssetMigrationAssetReplicationLocationDetail replicationLocationDetail;
         private @Nullable String replicationScheduleId;
         private @Nullable String snapShotBucketName;
         private @Nullable Map<String,String> snapshots;
@@ -305,6 +332,7 @@ public final class TargetAssetMigrationAsset {
     	      this.compartmentId = defaults.compartmentId;
     	      this.dependedOnBies = defaults.dependedOnBies;
     	      this.dependsOns = defaults.dependsOns;
+    	      this.destinationDisks = defaults.destinationDisks;
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -312,6 +340,7 @@ public final class TargetAssetMigrationAsset {
     	      this.notifications = defaults.notifications;
     	      this.parentSnapshot = defaults.parentSnapshot;
     	      this.replicationCompartmentId = defaults.replicationCompartmentId;
+    	      this.replicationLocationDetail = defaults.replicationLocationDetail;
     	      this.replicationScheduleId = defaults.replicationScheduleId;
     	      this.snapShotBucketName = defaults.snapShotBucketName;
     	      this.snapshots = defaults.snapshots;
@@ -353,6 +382,12 @@ public final class TargetAssetMigrationAsset {
         }
         public Builder dependsOns(String... dependsOns) {
             return dependsOns(List.of(dependsOns));
+        }
+        @CustomType.Setter
+        public Builder destinationDisks(@Nullable Map<String,String> destinationDisks) {
+
+            this.destinationDisks = destinationDisks;
+            return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
@@ -397,6 +432,12 @@ public final class TargetAssetMigrationAsset {
         public Builder replicationCompartmentId(@Nullable String replicationCompartmentId) {
 
             this.replicationCompartmentId = replicationCompartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder replicationLocationDetail(@Nullable TargetAssetMigrationAssetReplicationLocationDetail replicationLocationDetail) {
+
+            this.replicationLocationDetail = replicationLocationDetail;
             return this;
         }
         @CustomType.Setter
@@ -465,6 +506,7 @@ public final class TargetAssetMigrationAsset {
             _resultValue.compartmentId = compartmentId;
             _resultValue.dependedOnBies = dependedOnBies;
             _resultValue.dependsOns = dependsOns;
+            _resultValue.destinationDisks = destinationDisks;
             _resultValue.displayName = displayName;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
@@ -472,6 +514,7 @@ public final class TargetAssetMigrationAsset {
             _resultValue.notifications = notifications;
             _resultValue.parentSnapshot = parentSnapshot;
             _resultValue.replicationCompartmentId = replicationCompartmentId;
+            _resultValue.replicationLocationDetail = replicationLocationDetail;
             _resultValue.replicationScheduleId = replicationScheduleId;
             _resultValue.snapShotBucketName = snapShotBucketName;
             _resultValue.snapshots = snapshots;

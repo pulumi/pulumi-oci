@@ -65,8 +65,10 @@ import javax.annotation.Nullable;
  *         var testTargetAsset = new TargetAsset("testTargetAsset", TargetAssetArgs.builder()
  *             .isExcludedFromExecution(targetAssetIsExcludedFromExecution)
  *             .migrationPlanId(testMigrationPlan.id())
- *             .preferredShapeType(targetAssetPreferredShapeType)
  *             .type(targetAssetType)
+ *             .blockVolumesPerformance(targetAssetBlockVolumesPerformance)
+ *             .msLicense(targetAssetMsLicense)
+ *             .preferredShapeType(targetAssetPreferredShapeType)
  *             .userSpec(TargetAssetUserSpecArgs.builder()
  *                 .agentConfig(TargetAssetUserSpecAgentConfigArgs.builder()
  *                     .areAllPluginsDisabled(targetAssetUserSpecAgentConfigAreAllPluginsDisabled)
@@ -125,8 +127,6 @@ import javax.annotation.Nullable;
  *                     .kmsKeyId(testKey.id())
  *                     .build())
  *                 .build())
- *             .blockVolumesPerformance(targetAssetBlockVolumesPerformance)
- *             .msLicense(targetAssetMsLicense)
  *             .build());
  * 
  *     }

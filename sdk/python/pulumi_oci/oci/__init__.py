@@ -125,6 +125,10 @@ from .get_resource_analytics_resource_analytics_instance import *
 from .get_resource_analytics_resource_analytics_instances import *
 from .get_resource_analytics_tenancy_attachment import *
 from .get_resource_analytics_tenancy_attachments import *
+from .get_self_partner_subscriptions import *
+from .get_self_subscription import *
+from .get_self_subscription_token import *
+from .get_self_subscriptions import *
 from .get_wlms_managed_instance import *
 from .get_wlms_managed_instance_scan_results import *
 from .get_wlms_managed_instance_server import *
@@ -160,5 +164,6 @@ from .resource_analytics_monitored_region import *
 from .resource_analytics_resource_analytics_instance import *
 from .resource_analytics_resource_analytics_instance_oac_management import *
 from .resource_analytics_tenancy_attachment import *
+from .self_subscription import *
 from ._inputs import *
 from . import outputs

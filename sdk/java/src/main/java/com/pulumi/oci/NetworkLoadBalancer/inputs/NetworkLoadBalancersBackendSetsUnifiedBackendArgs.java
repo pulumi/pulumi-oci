@@ -49,14 +49,14 @@ public final class NetworkLoadBalancersBackendSetsUnifiedBackendArgs extends com
     }
 
     /**
-     * (Updatable) Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no incoming traffic.  Example: `false`
+     * (Updatable) Whether the network load balancer should drain this server.  Servers marked &#34;isDrain&#34; stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
      * 
      */
     @Import(name="isDrain")
     private @Nullable Output<Boolean> isDrain;
 
     /**
-     * @return (Updatable) Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no incoming traffic.  Example: `false`
+     * @return (Updatable) Whether the network load balancer should drain this server.  Servers marked &#34;isDrain&#34; stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
      * 
      */
     public Optional<Output<Boolean>> isDrain() {
@@ -212,7 +212,7 @@ public final class NetworkLoadBalancersBackendSetsUnifiedBackendArgs extends com
         }
 
         /**
-         * @param isDrain (Updatable) Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no incoming traffic.  Example: `false`
+         * @param isDrain (Updatable) Whether the network load balancer should drain this server.  Servers marked &#34;isDrain&#34; stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
          * 
          * @return builder
          * 
@@ -223,7 +223,7 @@ public final class NetworkLoadBalancersBackendSetsUnifiedBackendArgs extends com
         }
 
         /**
-         * @param isDrain (Updatable) Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no incoming traffic.  Example: `false`
+         * @param isDrain (Updatable) Whether the network load balancer should drain this server.  Servers marked &#34;isDrain&#34; stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
          * 
          * @return builder
          * 

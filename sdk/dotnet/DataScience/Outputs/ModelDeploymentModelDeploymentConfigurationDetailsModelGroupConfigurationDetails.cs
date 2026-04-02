@@ -13,6 +13,9 @@ namespace Pulumi.Oci.DataScience.Outputs
     [OutputType]
     public sealed class ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetails
     {
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group you want to deploy.
+        /// </summary>
         public readonly string? ModelGroupId;
 
         [OutputConstructor]

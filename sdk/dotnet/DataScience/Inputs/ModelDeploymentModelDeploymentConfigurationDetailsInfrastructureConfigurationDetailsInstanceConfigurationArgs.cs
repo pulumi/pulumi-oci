@@ -25,6 +25,12 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs>? ModelDeploymentInstanceShapeConfigDetails { get; set; }
 
         /// <summary>
+        /// Network Access type of model deployment.
+        /// </summary>
+        [Input("networkAccessType")]
+        public Input<string>? NetworkAccessType { get; set; }
+
+        /// <summary>
         /// The OCID of a Data Science private endpoint.
         /// </summary>
         [Input("privateEndpointId")]

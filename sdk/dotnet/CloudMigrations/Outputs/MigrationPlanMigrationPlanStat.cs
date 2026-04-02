@@ -14,6 +14,14 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
     public sealed class MigrationPlanMigrationPlanStat
     {
         /// <summary>
+        /// Summary of costs to migrate.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.MigrationPlanMigrationPlanStatCostToMigrate> CostToMigrates;
+        /// <summary>
+        /// Current monthly compute and storage costs.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.MigrationPlanMigrationPlanStatCurrentMonthlyCost> CurrentMonthlyCosts;
+        /// <summary>
         /// The time when the migration plan was updated. An RFC3339 formatted datetime string.
         /// </summary>
         public readonly string? TimeUpdated;
@@ -28,12 +36,18 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
 
         [OutputConstructor]
         private MigrationPlanMigrationPlanStat(
+            ImmutableArray<Outputs.MigrationPlanMigrationPlanStatCostToMigrate> costToMigrates,
+
+            ImmutableArray<Outputs.MigrationPlanMigrationPlanStatCurrentMonthlyCost> currentMonthlyCosts,
+
             string? timeUpdated,
 
             ImmutableArray<Outputs.MigrationPlanMigrationPlanStatTotalEstimatedCost> totalEstimatedCosts,
 
             int? vmCount)
         {
+            CostToMigrates = costToMigrates;
+            CurrentMonthlyCosts = currentMonthlyCosts;
             TimeUpdated = timeUpdated;
             TotalEstimatedCosts = totalEstimatedCosts;
             VmCount = vmCount;

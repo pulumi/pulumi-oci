@@ -6,6 +6,7 @@ package com.pulumi.oci.CloudMigrations;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.CloudMigrations.inputs.MigrationAssetReplicationLocationDetailArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -100,6 +101,21 @@ public final class MigrationAssetArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * Replication location detail where the snapshots reside
+     * 
+     */
+    @Import(name="replicationLocationDetail")
+    private @Nullable Output<MigrationAssetReplicationLocationDetailArgs> replicationLocationDetail;
+
+    /**
+     * @return Replication location detail where the snapshots reside
+     * 
+     */
+    public Optional<Output<MigrationAssetReplicationLocationDetailArgs>> replicationLocationDetail() {
+        return Optional.ofNullable(this.replicationLocationDetail);
+    }
+
+    /**
      * (Updatable) Replication schedule identifier
      * 
      */
@@ -144,6 +160,7 @@ public final class MigrationAssetArgs extends com.pulumi.resources.ResourceArgs 
         this.migrationAssetDependsOns = $.migrationAssetDependsOns;
         this.migrationId = $.migrationId;
         this.replicationCompartmentId = $.replicationCompartmentId;
+        this.replicationLocationDetail = $.replicationLocationDetail;
         this.replicationScheduleId = $.replicationScheduleId;
         this.snapShotBucketName = $.snapShotBucketName;
     }
@@ -282,6 +299,27 @@ public final class MigrationAssetArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder replicationCompartmentId(String replicationCompartmentId) {
             return replicationCompartmentId(Output.of(replicationCompartmentId));
+        }
+
+        /**
+         * @param replicationLocationDetail Replication location detail where the snapshots reside
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicationLocationDetail(@Nullable Output<MigrationAssetReplicationLocationDetailArgs> replicationLocationDetail) {
+            $.replicationLocationDetail = replicationLocationDetail;
+            return this;
+        }
+
+        /**
+         * @param replicationLocationDetail Replication location detail where the snapshots reside
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicationLocationDetail(MigrationAssetReplicationLocationDetailArgs replicationLocationDetail) {
+            return replicationLocationDetail(Output.of(replicationLocationDetail));
         }
 
         /**

@@ -62,7 +62,7 @@ export interface GetNetworkLoadBalancerResult {
      */
     readonly freeformTags: {[key: string]: string};
     /**
-     * OCID of the reserved public IP address created with the virtual cloud network.
+     * Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
      */
     readonly id: string;
     /**

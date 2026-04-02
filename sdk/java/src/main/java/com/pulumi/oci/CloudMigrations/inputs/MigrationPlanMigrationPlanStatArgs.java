@@ -5,6 +5,8 @@ package com.pulumi.oci.CloudMigrations.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.CloudMigrations.inputs.MigrationPlanMigrationPlanStatCostToMigrateArgs;
+import com.pulumi.oci.CloudMigrations.inputs.MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs;
 import com.pulumi.oci.CloudMigrations.inputs.MigrationPlanMigrationPlanStatTotalEstimatedCostArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -17,6 +19,36 @@ import javax.annotation.Nullable;
 public final class MigrationPlanMigrationPlanStatArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final MigrationPlanMigrationPlanStatArgs Empty = new MigrationPlanMigrationPlanStatArgs();
+
+    /**
+     * Summary of costs to migrate.
+     * 
+     */
+    @Import(name="costToMigrates")
+    private @Nullable Output<List<MigrationPlanMigrationPlanStatCostToMigrateArgs>> costToMigrates;
+
+    /**
+     * @return Summary of costs to migrate.
+     * 
+     */
+    public Optional<Output<List<MigrationPlanMigrationPlanStatCostToMigrateArgs>>> costToMigrates() {
+        return Optional.ofNullable(this.costToMigrates);
+    }
+
+    /**
+     * Current monthly compute and storage costs.
+     * 
+     */
+    @Import(name="currentMonthlyCosts")
+    private @Nullable Output<List<MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs>> currentMonthlyCosts;
+
+    /**
+     * @return Current monthly compute and storage costs.
+     * 
+     */
+    public Optional<Output<List<MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs>>> currentMonthlyCosts() {
+        return Optional.ofNullable(this.currentMonthlyCosts);
+    }
 
     /**
      * The time when the migration plan was updated. An RFC3339 formatted datetime string.
@@ -66,6 +98,8 @@ public final class MigrationPlanMigrationPlanStatArgs extends com.pulumi.resourc
     private MigrationPlanMigrationPlanStatArgs() {}
 
     private MigrationPlanMigrationPlanStatArgs(MigrationPlanMigrationPlanStatArgs $) {
+        this.costToMigrates = $.costToMigrates;
+        this.currentMonthlyCosts = $.currentMonthlyCosts;
         this.timeUpdated = $.timeUpdated;
         this.totalEstimatedCosts = $.totalEstimatedCosts;
         this.vmCount = $.vmCount;
@@ -87,6 +121,68 @@ public final class MigrationPlanMigrationPlanStatArgs extends com.pulumi.resourc
 
         public Builder(MigrationPlanMigrationPlanStatArgs defaults) {
             $ = new MigrationPlanMigrationPlanStatArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param costToMigrates Summary of costs to migrate.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder costToMigrates(@Nullable Output<List<MigrationPlanMigrationPlanStatCostToMigrateArgs>> costToMigrates) {
+            $.costToMigrates = costToMigrates;
+            return this;
+        }
+
+        /**
+         * @param costToMigrates Summary of costs to migrate.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder costToMigrates(List<MigrationPlanMigrationPlanStatCostToMigrateArgs> costToMigrates) {
+            return costToMigrates(Output.of(costToMigrates));
+        }
+
+        /**
+         * @param costToMigrates Summary of costs to migrate.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder costToMigrates(MigrationPlanMigrationPlanStatCostToMigrateArgs... costToMigrates) {
+            return costToMigrates(List.of(costToMigrates));
+        }
+
+        /**
+         * @param currentMonthlyCosts Current monthly compute and storage costs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder currentMonthlyCosts(@Nullable Output<List<MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs>> currentMonthlyCosts) {
+            $.currentMonthlyCosts = currentMonthlyCosts;
+            return this;
+        }
+
+        /**
+         * @param currentMonthlyCosts Current monthly compute and storage costs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder currentMonthlyCosts(List<MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs> currentMonthlyCosts) {
+            return currentMonthlyCosts(Output.of(currentMonthlyCosts));
+        }
+
+        /**
+         * @param currentMonthlyCosts Current monthly compute and storage costs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder currentMonthlyCosts(MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs... currentMonthlyCosts) {
+            return currentMonthlyCosts(List.of(currentMonthlyCosts));
         }
 
         /**

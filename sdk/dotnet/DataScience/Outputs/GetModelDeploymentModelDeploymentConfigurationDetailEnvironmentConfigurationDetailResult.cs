@@ -46,6 +46,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly string ImageDigest;
         /// <summary>
+        /// OCID of the container image signature
+        /// </summary>
+        public readonly string ImageSignatureId;
+        /// <summary>
         /// The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         /// </summary>
         public readonly int ServerPort;
@@ -68,6 +72,8 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             string imageDigest,
 
+            string imageSignatureId,
+
             int serverPort)
         {
             Cmds = cmds;
@@ -78,6 +84,7 @@ namespace Pulumi.Oci.DataScience.Outputs
             HealthCheckPort = healthCheckPort;
             Image = image;
             ImageDigest = imageDigest;
+            ImageSignatureId = imageSignatureId;
             ServerPort = serverPort;
         }
     }

@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -61,6 +63,10 @@ export class MigrationAsset extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly dependedOnBies: pulumi.Output<string[]>;
     /**
+     * Mapping of source disk id to destination disk details
+     */
+    declare public /*out*/ readonly destinationDisks: pulumi.Output<{[key: string]: string}>;
+    /**
      * (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     declare public readonly displayName: pulumi.Output<string>;
@@ -89,6 +95,10 @@ export class MigrationAsset extends pulumi.CustomResource {
      * Replication compartment identifier
      */
     declare public readonly replicationCompartmentId: pulumi.Output<string>;
+    /**
+     * Replication location detail where the snapshots reside
+     */
+    declare public readonly replicationLocationDetail: pulumi.Output<outputs.CloudMigrations.MigrationAssetReplicationLocationDetail>;
     /**
      * (Updatable) Replication schedule identifier
      */
@@ -146,6 +156,7 @@ export class MigrationAsset extends pulumi.CustomResource {
             resourceInputs["availabilityDomain"] = state?.availabilityDomain;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["dependedOnBies"] = state?.dependedOnBies;
+            resourceInputs["destinationDisks"] = state?.destinationDisks;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["inventoryAssetId"] = state?.inventoryAssetId;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
@@ -154,6 +165,7 @@ export class MigrationAsset extends pulumi.CustomResource {
             resourceInputs["notifications"] = state?.notifications;
             resourceInputs["parentSnapshot"] = state?.parentSnapshot;
             resourceInputs["replicationCompartmentId"] = state?.replicationCompartmentId;
+            resourceInputs["replicationLocationDetail"] = state?.replicationLocationDetail;
             resourceInputs["replicationScheduleId"] = state?.replicationScheduleId;
             resourceInputs["snapShotBucketName"] = state?.snapShotBucketName;
             resourceInputs["snapshots"] = state?.snapshots;
@@ -186,10 +198,12 @@ export class MigrationAsset extends pulumi.CustomResource {
             resourceInputs["migrationAssetDependsOns"] = args?.migrationAssetDependsOns;
             resourceInputs["migrationId"] = args?.migrationId;
             resourceInputs["replicationCompartmentId"] = args?.replicationCompartmentId;
+            resourceInputs["replicationLocationDetail"] = args?.replicationLocationDetail;
             resourceInputs["replicationScheduleId"] = args?.replicationScheduleId;
             resourceInputs["snapShotBucketName"] = args?.snapShotBucketName;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["dependedOnBies"] = undefined /*out*/;
+            resourceInputs["destinationDisks"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["notifications"] = undefined /*out*/;
             resourceInputs["parentSnapshot"] = undefined /*out*/;
@@ -223,6 +237,10 @@ export interface MigrationAssetState {
      */
     dependedOnBies?: pulumi.Input<pulumi.Input<string>[]>;
     /**
+     * Mapping of source disk id to destination disk details
+     */
+    destinationDisks?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
      * (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
@@ -251,6 +269,10 @@ export interface MigrationAssetState {
      * Replication compartment identifier
      */
     replicationCompartmentId?: pulumi.Input<string>;
+    /**
+     * Replication location detail where the snapshots reside
+     */
+    replicationLocationDetail?: pulumi.Input<inputs.CloudMigrations.MigrationAssetReplicationLocationDetail>;
     /**
      * (Updatable) Replication schedule identifier
      */
@@ -318,6 +340,10 @@ export interface MigrationAssetArgs {
      * Replication compartment identifier
      */
     replicationCompartmentId: pulumi.Input<string>;
+    /**
+     * Replication location detail where the snapshots reside
+     */
+    replicationLocationDetail?: pulumi.Input<inputs.CloudMigrations.MigrationAssetReplicationLocationDetail>;
     /**
      * (Updatable) Replication schedule identifier
      */

@@ -72,7 +72,11 @@ type LookupMigrationResult struct {
 	IsCompleted bool `pulumi:"isCompleted"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	MigrationId      string `pulumi:"migrationId"`
+	// Configuration for a Migration Project.
+	MigrationConfigs []GetMigrationMigrationConfig `pulumi:"migrationConfigs"`
+	MigrationId      string                        `pulumi:"migrationId"`
+	// Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+	MigrationType string `pulumi:"migrationType"`
 	// Replication schedule identifier
 	ReplicationScheduleId string `pulumi:"replicationScheduleId"`
 	// The current state of migration.
@@ -154,8 +158,18 @@ func (o LookupMigrationResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMigrationResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Configuration for a Migration Project.
+func (o LookupMigrationResultOutput) MigrationConfigs() GetMigrationMigrationConfigArrayOutput {
+	return o.ApplyT(func(v LookupMigrationResult) []GetMigrationMigrationConfig { return v.MigrationConfigs }).(GetMigrationMigrationConfigArrayOutput)
+}
+
 func (o LookupMigrationResultOutput) MigrationId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMigrationResult) string { return v.MigrationId }).(pulumi.StringOutput)
+}
+
+// Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+func (o LookupMigrationResultOutput) MigrationType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMigrationResult) string { return v.MigrationType }).(pulumi.StringOutput)
 }
 
 // Replication schedule identifier

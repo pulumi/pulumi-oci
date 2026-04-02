@@ -73,7 +73,7 @@ import javax.annotation.Nullable;
  * ContainerRepositories can be imported using the `id`, e.g.
  * 
  * ```sh
- * $ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository &#34;container/repositories/{repositoryId}&#34;
+ * $ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository &#34;{repositoryId}&#34;
  * ```
  * 
  */

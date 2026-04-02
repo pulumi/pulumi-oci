@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -54,6 +56,10 @@ export interface GetMigrationAssetResult {
      */
     readonly dependedOnBies: string[];
     /**
+     * Mapping of source disk id to destination disk details
+     */
+    readonly destinationDisks: {[key: string]: string};
+    /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     readonly displayName: string;
@@ -84,6 +90,10 @@ export interface GetMigrationAssetResult {
      * Replication compartment identifier
      */
     readonly replicationCompartmentId: string;
+    /**
+     * Replication location detail where the snapshots reside
+     */
+    readonly replicationLocationDetails: outputs.CloudMigrations.GetMigrationAssetReplicationLocationDetail[];
     /**
      * Replication schedule identifier
      */

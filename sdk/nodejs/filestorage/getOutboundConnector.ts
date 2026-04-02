@@ -105,6 +105,14 @@ export interface GetOutboundConnectorResult {
      * The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
     readonly timeCreated: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault .
+     */
+    readonly trustedCertificateSecretId: string;
+    /**
+     * Version of the trusted certificate secret in the Vault to use.
+     */
+    readonly trustedCertificateSecretVersion: number;
 }
 /**
  * This data source provides details about a specific Outbound Connector resource in Oracle Cloud Infrastructure File Storage service.

@@ -17,6 +17,9 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// The minimum network bandwidth for the model deployment.
         /// </summary>
         public readonly int? BandwidthMbps;
+        /// <summary>
+        /// The type of the model deployment infrastructure.
+        /// </summary>
         public readonly string InfrastructureType;
         /// <summary>
         /// The model deployment instance configuration.

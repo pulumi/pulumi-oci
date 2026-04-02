@@ -181,18 +181,12 @@ public final class OutboundConnectorState extends com.pulumi.resources.ResourceA
     /**
      * Version of the password secret in the Vault to use.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="passwordSecretVersion")
     private @Nullable Output<Integer> passwordSecretVersion;
 
     /**
      * @return Version of the password secret in the Vault to use.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> passwordSecretVersion() {
@@ -244,6 +238,42 @@ public final class OutboundConnectorState extends com.pulumi.resources.ResourceA
         return Optional.ofNullable(this.timeCreated);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
+     * 
+     */
+    @Import(name="trustedCertificateSecretId")
+    private @Nullable Output<String> trustedCertificateSecretId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
+     * 
+     */
+    public Optional<Output<String>> trustedCertificateSecretId() {
+        return Optional.ofNullable(this.trustedCertificateSecretId);
+    }
+
+    /**
+     * Version of the trusted certificate secret in the Vault to use.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="trustedCertificateSecretVersion")
+    private @Nullable Output<Integer> trustedCertificateSecretVersion;
+
+    /**
+     * @return Version of the trusted certificate secret in the Vault to use.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Integer>> trustedCertificateSecretVersion() {
+        return Optional.ofNullable(this.trustedCertificateSecretVersion);
+    }
+
     private OutboundConnectorState() {}
 
     private OutboundConnectorState(OutboundConnectorState $) {
@@ -262,6 +292,8 @@ public final class OutboundConnectorState extends com.pulumi.resources.ResourceA
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
+        this.trustedCertificateSecretId = $.trustedCertificateSecretId;
+        this.trustedCertificateSecretVersion = $.trustedCertificateSecretVersion;
     }
 
     public static Builder builder() {
@@ -524,9 +556,6 @@ public final class OutboundConnectorState extends com.pulumi.resources.ResourceA
         /**
          * @param passwordSecretVersion Version of the password secret in the Vault to use.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -537,9 +566,6 @@ public final class OutboundConnectorState extends com.pulumi.resources.ResourceA
 
         /**
          * @param passwordSecretVersion Version of the password secret in the Vault to use.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -609,6 +635,54 @@ public final class OutboundConnectorState extends com.pulumi.resources.ResourceA
          */
         public Builder timeCreated(String timeCreated) {
             return timeCreated(Output.of(timeCreated));
+        }
+
+        /**
+         * @param trustedCertificateSecretId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder trustedCertificateSecretId(@Nullable Output<String> trustedCertificateSecretId) {
+            $.trustedCertificateSecretId = trustedCertificateSecretId;
+            return this;
+        }
+
+        /**
+         * @param trustedCertificateSecretId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder trustedCertificateSecretId(String trustedCertificateSecretId) {
+            return trustedCertificateSecretId(Output.of(trustedCertificateSecretId));
+        }
+
+        /**
+         * @param trustedCertificateSecretVersion Version of the trusted certificate secret in the Vault to use.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder trustedCertificateSecretVersion(@Nullable Output<Integer> trustedCertificateSecretVersion) {
+            $.trustedCertificateSecretVersion = trustedCertificateSecretVersion;
+            return this;
+        }
+
+        /**
+         * @param trustedCertificateSecretVersion Version of the trusted certificate secret in the Vault to use.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder trustedCertificateSecretVersion(Integer trustedCertificateSecretVersion) {
+            return trustedCertificateSecretVersion(Output.of(trustedCertificateSecretVersion));
         }
 
         public OutboundConnectorState build() {

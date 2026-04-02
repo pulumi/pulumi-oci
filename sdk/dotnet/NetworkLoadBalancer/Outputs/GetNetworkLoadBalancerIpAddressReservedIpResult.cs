@@ -14,7 +14,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
     public sealed class GetNetworkLoadBalancerIpAddressReservedIpResult
     {
         /// <summary>
-        /// OCID of the reserved public IP address created with the virtual cloud network.
+        /// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
         /// </summary>
         public readonly string Id;
 

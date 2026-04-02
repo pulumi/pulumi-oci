@@ -74,6 +74,14 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault .
+        /// </summary>
+        public readonly string TrustedCertificateSecretId;
+        /// <summary>
+        /// Version of the trusted certificate secret in the Vault to use.
+        /// </summary>
+        public readonly int TrustedCertificateSecretVersion;
 
         [OutputConstructor]
         private GetOutboundConnectorsOutboundConnectorResult(
@@ -107,7 +115,11 @@ namespace Pulumi.Oci.FileStorage.Outputs
 
             ImmutableDictionary<string, string> systemTags,
 
-            string timeCreated)
+            string timeCreated,
+
+            string trustedCertificateSecretId,
+
+            int trustedCertificateSecretVersion)
         {
             AvailabilityDomain = availabilityDomain;
             BindDistinguishedName = bindDistinguishedName;
@@ -125,6 +137,8 @@ namespace Pulumi.Oci.FileStorage.Outputs
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
+            TrustedCertificateSecretId = trustedCertificateSecretId;
+            TrustedCertificateSecretVersion = trustedCertificateSecretVersion;
         }
     }
 }

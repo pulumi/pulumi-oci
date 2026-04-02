@@ -4,9 +4,10 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.outputs.TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class TargetAssetUserSpecPreemptibleInstanceConfig {
@@ -14,15 +15,15 @@ public final class TargetAssetUserSpecPreemptibleInstanceConfig {
      * @return (Updatable) The action to run when the preemptible instance is interrupted for eviction.
      * 
      */
-    private TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction preemptionAction;
+    private @Nullable TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction preemptionAction;
 
     private TargetAssetUserSpecPreemptibleInstanceConfig() {}
     /**
      * @return (Updatable) The action to run when the preemptible instance is interrupted for eviction.
      * 
      */
-    public TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction preemptionAction() {
-        return this.preemptionAction;
+    public Optional<TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction> preemptionAction() {
+        return Optional.ofNullable(this.preemptionAction);
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class TargetAssetUserSpecPreemptibleInstanceConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction preemptionAction;
+        private @Nullable TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction preemptionAction;
         public Builder() {}
         public Builder(TargetAssetUserSpecPreemptibleInstanceConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,10 +43,8 @@ public final class TargetAssetUserSpecPreemptibleInstanceConfig {
         }
 
         @CustomType.Setter
-        public Builder preemptionAction(TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction preemptionAction) {
-            if (preemptionAction == null) {
-              throw new MissingRequiredPropertyException("TargetAssetUserSpecPreemptibleInstanceConfig", "preemptionAction");
-            }
+        public Builder preemptionAction(@Nullable TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction preemptionAction) {
+
             this.preemptionAction = preemptionAction;
             return this;
         }

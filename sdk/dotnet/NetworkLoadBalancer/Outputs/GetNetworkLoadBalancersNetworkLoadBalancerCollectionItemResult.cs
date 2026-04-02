@@ -32,7 +32,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// OCID of the reserved public IP address created with the virtual cloud network.
+        /// Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
         /// </summary>
         public readonly string Id;
         /// <summary>

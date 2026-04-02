@@ -74,7 +74,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Output<bool> IsBackup { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `False`
+        /// (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `False`
         /// </summary>
         [Output("isDrain")]
         public Output<bool> IsDrain { get; private set; } = null!;
@@ -184,7 +184,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Input<bool>? IsBackup { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `False`
+        /// (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `False`
         /// </summary>
         [Input("isDrain")]
         public Input<bool>? IsDrain { get; set; }
@@ -256,7 +256,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Input<bool>? IsBackup { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `False`
+        /// (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `False`
         /// </summary>
         [Input("isDrain")]
         public Input<bool>? IsDrain { get; set; }

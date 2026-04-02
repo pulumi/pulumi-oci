@@ -18,6 +18,10 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
+        /// Inventory asset id of the olvm cluster
+        /// </summary>
+        public readonly string ClusterAssetId;
+        /// <summary>
         /// OCID of the dedicated VM configuration host.
         /// </summary>
         public readonly string DedicatedVmHost;
@@ -29,6 +33,10 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// Microsoft license for the VM configuration.
         /// </summary>
         public readonly string MsLicense;
+        /// <summary>
+        /// OLVM OS type to inventory asset id of the template
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> OlvmTemplates;
         /// <summary>
         /// Preferred VM shape type provided by the customer.
         /// </summary>
@@ -49,16 +57,24 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// OCID of the VM configuration VCN.
         /// </summary>
         public readonly string Vcn;
+        /// <summary>
+        /// Inventory asset Id of the vnic profile
+        /// </summary>
+        public readonly string VnicProfileAssetId;
 
         [OutputConstructor]
         private GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentResult(
             string availabilityDomain,
+
+            string clusterAssetId,
 
             string dedicatedVmHost,
 
             string faultDomain,
 
             string msLicense,
+
+            ImmutableDictionary<string, string> olvmTemplates,
 
             string preferredShapeType,
 
@@ -68,17 +84,22 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
 
             string targetEnvironmentType,
 
-            string vcn)
+            string vcn,
+
+            string vnicProfileAssetId)
         {
             AvailabilityDomain = availabilityDomain;
+            ClusterAssetId = clusterAssetId;
             DedicatedVmHost = dedicatedVmHost;
             FaultDomain = faultDomain;
             MsLicense = msLicense;
+            OlvmTemplates = olvmTemplates;
             PreferredShapeType = preferredShapeType;
             Subnet = subnet;
             TargetCompartmentId = targetCompartmentId;
             TargetEnvironmentType = targetEnvironmentType;
             Vcn = vcn;
+            VnicProfileAssetId = vnicProfileAssetId;
         }
     }
 }

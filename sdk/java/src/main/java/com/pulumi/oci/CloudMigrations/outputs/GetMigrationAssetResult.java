@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.CloudMigrations.outputs.GetMigrationAssetReplicationLocationDetail;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -27,6 +28,11 @@ public final class GetMigrationAssetResult {
      * 
      */
     private List<String> dependedOnBies;
+    /**
+     * @return Mapping of source disk id to destination disk details
+     * 
+     */
+    private Map<String,String> destinationDisks;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -65,6 +71,11 @@ public final class GetMigrationAssetResult {
      * 
      */
     private String replicationCompartmentId;
+    /**
+     * @return Replication location detail where the snapshots reside
+     * 
+     */
+    private List<GetMigrationAssetReplicationLocationDetail> replicationLocationDetails;
     /**
      * @return Replication schedule identifier
      * 
@@ -134,6 +145,13 @@ public final class GetMigrationAssetResult {
         return this.dependedOnBies;
     }
     /**
+     * @return Mapping of source disk id to destination disk details
+     * 
+     */
+    public Map<String,String> destinationDisks() {
+        return this.destinationDisks;
+    }
+    /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
@@ -190,6 +208,13 @@ public final class GetMigrationAssetResult {
      */
     public String replicationCompartmentId() {
         return this.replicationCompartmentId;
+    }
+    /**
+     * @return Replication location detail where the snapshots reside
+     * 
+     */
+    public List<GetMigrationAssetReplicationLocationDetail> replicationLocationDetails() {
+        return this.replicationLocationDetails;
     }
     /**
      * @return Replication schedule identifier
@@ -267,6 +292,7 @@ public final class GetMigrationAssetResult {
         private String availabilityDomain;
         private String compartmentId;
         private List<String> dependedOnBies;
+        private Map<String,String> destinationDisks;
         private String displayName;
         private String id;
         private String inventoryAssetId;
@@ -277,6 +303,7 @@ public final class GetMigrationAssetResult {
         private List<String> notifications;
         private String parentSnapshot;
         private String replicationCompartmentId;
+        private List<GetMigrationAssetReplicationLocationDetail> replicationLocationDetails;
         private String replicationScheduleId;
         private String snapShotBucketName;
         private Map<String,String> snapshots;
@@ -292,6 +319,7 @@ public final class GetMigrationAssetResult {
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.compartmentId = defaults.compartmentId;
     	      this.dependedOnBies = defaults.dependedOnBies;
+    	      this.destinationDisks = defaults.destinationDisks;
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
     	      this.inventoryAssetId = defaults.inventoryAssetId;
@@ -302,6 +330,7 @@ public final class GetMigrationAssetResult {
     	      this.notifications = defaults.notifications;
     	      this.parentSnapshot = defaults.parentSnapshot;
     	      this.replicationCompartmentId = defaults.replicationCompartmentId;
+    	      this.replicationLocationDetails = defaults.replicationLocationDetails;
     	      this.replicationScheduleId = defaults.replicationScheduleId;
     	      this.snapShotBucketName = defaults.snapShotBucketName;
     	      this.snapshots = defaults.snapshots;
@@ -339,6 +368,14 @@ public final class GetMigrationAssetResult {
         }
         public Builder dependedOnBies(String... dependedOnBies) {
             return dependedOnBies(List.of(dependedOnBies));
+        }
+        @CustomType.Setter
+        public Builder destinationDisks(Map<String,String> destinationDisks) {
+            if (destinationDisks == null) {
+              throw new MissingRequiredPropertyException("GetMigrationAssetResult", "destinationDisks");
+            }
+            this.destinationDisks = destinationDisks;
+            return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
@@ -427,6 +464,17 @@ public final class GetMigrationAssetResult {
             return this;
         }
         @CustomType.Setter
+        public Builder replicationLocationDetails(List<GetMigrationAssetReplicationLocationDetail> replicationLocationDetails) {
+            if (replicationLocationDetails == null) {
+              throw new MissingRequiredPropertyException("GetMigrationAssetResult", "replicationLocationDetails");
+            }
+            this.replicationLocationDetails = replicationLocationDetails;
+            return this;
+        }
+        public Builder replicationLocationDetails(GetMigrationAssetReplicationLocationDetail... replicationLocationDetails) {
+            return replicationLocationDetails(List.of(replicationLocationDetails));
+        }
+        @CustomType.Setter
         public Builder replicationScheduleId(String replicationScheduleId) {
             if (replicationScheduleId == null) {
               throw new MissingRequiredPropertyException("GetMigrationAssetResult", "replicationScheduleId");
@@ -503,6 +551,7 @@ public final class GetMigrationAssetResult {
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.compartmentId = compartmentId;
             _resultValue.dependedOnBies = dependedOnBies;
+            _resultValue.destinationDisks = destinationDisks;
             _resultValue.displayName = displayName;
             _resultValue.id = id;
             _resultValue.inventoryAssetId = inventoryAssetId;
@@ -513,6 +562,7 @@ public final class GetMigrationAssetResult {
             _resultValue.notifications = notifications;
             _resultValue.parentSnapshot = parentSnapshot;
             _resultValue.replicationCompartmentId = replicationCompartmentId;
+            _resultValue.replicationLocationDetails = replicationLocationDetails;
             _resultValue.replicationScheduleId = replicationScheduleId;
             _resultValue.snapShotBucketName = snapShotBucketName;
             _resultValue.snapshots = snapshots;

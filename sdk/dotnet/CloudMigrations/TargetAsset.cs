@@ -31,8 +31,10 @@ namespace Pulumi.Oci.CloudMigrations
     ///     {
     ///         IsExcludedFromExecution = targetAssetIsExcludedFromExecution,
     ///         MigrationPlanId = testMigrationPlan.Id,
-    ///         PreferredShapeType = targetAssetPreferredShapeType,
     ///         Type = targetAssetType,
+    ///         BlockVolumesPerformance = targetAssetBlockVolumesPerformance,
+    ///         MsLicense = targetAssetMsLicense,
+    ///         PreferredShapeType = targetAssetPreferredShapeType,
     ///         UserSpec = new Oci.CloudMigrations.Inputs.TargetAssetUserSpecArgs
     ///         {
     ///             AgentConfig = new Oci.CloudMigrations.Inputs.TargetAssetUserSpecAgentConfigArgs
@@ -115,8 +117,6 @@ namespace Pulumi.Oci.CloudMigrations
     ///                 KmsKeyId = testKey.Id,
     ///             },
     ///         },
-    ///         BlockVolumesPerformance = targetAssetBlockVolumesPerformance,
-    ///         MsLicense = targetAssetMsLicense,
     ///     });
     /// 
     /// });
@@ -326,8 +326,32 @@ namespace Pulumi.Oci.CloudMigrations
         /// <summary>
         /// (Updatable) Preferred VM shape type that you provide.
         /// </summary>
-        [Input("preferredShapeType", required: true)]
-        public Input<string> PreferredShapeType { get; set; } = null!;
+        [Input("preferredShapeType")]
+        public Input<string>? PreferredShapeType { get; set; }
+
+        [Input("recommendedSpecs")]
+        private InputList<Inputs.TargetAssetRecommendedSpecArgs>? _recommendedSpecs;
+
+        /// <summary>
+        /// Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+        /// </summary>
+        public InputList<Inputs.TargetAssetRecommendedSpecArgs> RecommendedSpecs
+        {
+            get => _recommendedSpecs ?? (_recommendedSpecs = new InputList<Inputs.TargetAssetRecommendedSpecArgs>());
+            set => _recommendedSpecs = value;
+        }
+
+        [Input("testSpecs")]
+        private InputList<Inputs.TargetAssetTestSpecArgs>? _testSpecs;
+
+        /// <summary>
+        /// Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+        /// </summary>
+        public InputList<Inputs.TargetAssetTestSpecArgs> TestSpecs
+        {
+            get => _testSpecs ?? (_testSpecs = new InputList<Inputs.TargetAssetTestSpecArgs>());
+            set => _testSpecs = value;
+        }
 
         /// <summary>
         /// (Updatable) The type of target asset.
@@ -338,8 +362,8 @@ namespace Pulumi.Oci.CloudMigrations
         /// <summary>
         /// (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
         /// </summary>
-        [Input("userSpec", required: true)]
-        public Input<Inputs.TargetAssetUserSpecArgs> UserSpec { get; set; } = null!;
+        [Input("userSpec")]
+        public Input<Inputs.TargetAssetUserSpecArgs>? UserSpec { get; set; }
 
         public TargetAssetArgs()
         {

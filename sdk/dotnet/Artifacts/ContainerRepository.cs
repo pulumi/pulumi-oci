@@ -56,7 +56,7 @@ namespace Pulumi.Oci.Artifacts
     /// ContainerRepositories can be imported using the `Id`, e.g.
     /// 
     /// ```sh
-    /// $ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository "container/repositories/{repositoryId}"
+    /// $ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository "{repositoryId}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Artifacts/containerRepository:ContainerRepository")]

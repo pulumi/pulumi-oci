@@ -26,6 +26,10 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// </summary>
         public readonly ImmutableArray<string> DependedOnBies;
         /// <summary>
+        /// Mapping of source disk id to destination disk details
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> DestinationDisks;
+        /// <summary>
         /// A filter to return only resources that match the entire given display name.
         /// </summary>
         public readonly string DisplayName;
@@ -55,6 +59,10 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// Replication compartment identifier
         /// </summary>
         public readonly string ReplicationCompartmentId;
+        /// <summary>
+        /// Replication location detail where the snapshots reside
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailResult> ReplicationLocationDetails;
         /// <summary>
         /// Replication schedule identifier
         /// </summary>
@@ -100,6 +108,8 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
 
             ImmutableArray<string> dependedOnBies,
 
+            ImmutableDictionary<string, string> destinationDisks,
+
             string displayName,
 
             string id,
@@ -117,6 +127,8 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
             string parentSnapshot,
 
             string replicationCompartmentId,
+
+            ImmutableArray<Outputs.GetMigrationAssetsMigrationAssetCollectionItemReplicationLocationDetailResult> replicationLocationDetails,
 
             string replicationScheduleId,
 
@@ -139,6 +151,7 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
             AvailabilityDomain = availabilityDomain;
             CompartmentId = compartmentId;
             DependedOnBies = dependedOnBies;
+            DestinationDisks = destinationDisks;
             DisplayName = displayName;
             Id = id;
             InventoryAssetId = inventoryAssetId;
@@ -148,6 +161,7 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
             Notifications = notifications;
             ParentSnapshot = parentSnapshot;
             ReplicationCompartmentId = replicationCompartmentId;
+            ReplicationLocationDetails = replicationLocationDetails;
             ReplicationScheduleId = replicationScheduleId;
             SnapShotBucketName = snapShotBucketName;
             Snapshots = snapshots;

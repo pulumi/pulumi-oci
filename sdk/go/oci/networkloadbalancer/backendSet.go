@@ -82,7 +82,7 @@ import (
 type BackendSet struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+	// (Updatable) If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
 	AreOperationallyActiveBackendsPreferred pulumi.BoolOutput `pulumi:"areOperationallyActiveBackendsPreferred"`
 	// (Updatable) An array of backends to be associated with the backend set.
 	Backends BackendSetBackendArrayOutput `pulumi:"backends"`
@@ -94,7 +94,7 @@ type BackendSet struct {
 	IsFailOpen pulumi.BoolOutput `pulumi:"isFailOpen"`
 	// (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
 	IsInstantFailoverEnabled pulumi.BoolOutput `pulumi:"isInstantFailoverEnabled"`
-	// (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+	// (Updatable) This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.  If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
 	IsInstantFailoverTcpResetEnabled pulumi.BoolOutput `pulumi:"isInstantFailoverTcpResetEnabled"`
 	// (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
 	IsPreserveSource pulumi.BoolOutput `pulumi:"isPreserveSource"`
@@ -152,7 +152,7 @@ func GetBackendSet(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering BackendSet resources.
 type backendSetState struct {
-	// (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+	// (Updatable) If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
 	AreOperationallyActiveBackendsPreferred *bool `pulumi:"areOperationallyActiveBackendsPreferred"`
 	// (Updatable) An array of backends to be associated with the backend set.
 	Backends []BackendSetBackend `pulumi:"backends"`
@@ -164,7 +164,7 @@ type backendSetState struct {
 	IsFailOpen *bool `pulumi:"isFailOpen"`
 	// (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
 	IsInstantFailoverEnabled *bool `pulumi:"isInstantFailoverEnabled"`
-	// (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+	// (Updatable) This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.  If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
 	IsInstantFailoverTcpResetEnabled *bool `pulumi:"isInstantFailoverTcpResetEnabled"`
 	// (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
 	IsPreserveSource *bool `pulumi:"isPreserveSource"`
@@ -184,7 +184,7 @@ type backendSetState struct {
 }
 
 type BackendSetState struct {
-	// (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+	// (Updatable) If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
 	AreOperationallyActiveBackendsPreferred pulumi.BoolPtrInput
 	// (Updatable) An array of backends to be associated with the backend set.
 	Backends BackendSetBackendArrayInput
@@ -196,7 +196,7 @@ type BackendSetState struct {
 	IsFailOpen pulumi.BoolPtrInput
 	// (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
 	IsInstantFailoverEnabled pulumi.BoolPtrInput
-	// (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+	// (Updatable) This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.  If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
 	IsInstantFailoverTcpResetEnabled pulumi.BoolPtrInput
 	// (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
 	IsPreserveSource pulumi.BoolPtrInput
@@ -220,7 +220,7 @@ func (BackendSetState) ElementType() reflect.Type {
 }
 
 type backendSetArgs struct {
-	// (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+	// (Updatable) If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
 	AreOperationallyActiveBackendsPreferred *bool `pulumi:"areOperationallyActiveBackendsPreferred"`
 	// (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
 	HealthChecker BackendSetHealthChecker `pulumi:"healthChecker"`
@@ -230,7 +230,7 @@ type backendSetArgs struct {
 	IsFailOpen *bool `pulumi:"isFailOpen"`
 	// (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
 	IsInstantFailoverEnabled *bool `pulumi:"isInstantFailoverEnabled"`
-	// (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+	// (Updatable) This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.  If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
 	IsInstantFailoverTcpResetEnabled *bool `pulumi:"isInstantFailoverTcpResetEnabled"`
 	// (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
 	IsPreserveSource *bool `pulumi:"isPreserveSource"`
@@ -251,7 +251,7 @@ type backendSetArgs struct {
 
 // The set of arguments for constructing a BackendSet resource.
 type BackendSetArgs struct {
-	// (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+	// (Updatable) If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
 	AreOperationallyActiveBackendsPreferred pulumi.BoolPtrInput
 	// (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
 	HealthChecker BackendSetHealthCheckerInput
@@ -261,7 +261,7 @@ type BackendSetArgs struct {
 	IsFailOpen pulumi.BoolPtrInput
 	// (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
 	IsInstantFailoverEnabled pulumi.BoolPtrInput
-	// (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+	// (Updatable) This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.  If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
 	IsInstantFailoverTcpResetEnabled pulumi.BoolPtrInput
 	// (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
 	IsPreserveSource pulumi.BoolPtrInput
@@ -367,7 +367,7 @@ func (o BackendSetOutput) ToBackendSetOutputWithContext(ctx context.Context) Bac
 	return o
 }
 
-// (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+// (Updatable) If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
 func (o BackendSetOutput) AreOperationallyActiveBackendsPreferred() pulumi.BoolOutput {
 	return o.ApplyT(func(v *BackendSet) pulumi.BoolOutput { return v.AreOperationallyActiveBackendsPreferred }).(pulumi.BoolOutput)
 }
@@ -397,7 +397,7 @@ func (o BackendSetOutput) IsInstantFailoverEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *BackendSet) pulumi.BoolOutput { return v.IsInstantFailoverEnabled }).(pulumi.BoolOutput)
 }
 
-// (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+// (Updatable) This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.  If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
 func (o BackendSetOutput) IsInstantFailoverTcpResetEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *BackendSet) pulumi.BoolOutput { return v.IsInstantFailoverTcpResetEnabled }).(pulumi.BoolOutput)
 }

@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetail;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -32,6 +33,11 @@ public final class GetTargetAssetsTargetAssetCollectionItemMigrationAsset {
      * 
      */
     private List<String> dependsOns;
+    /**
+     * @return Mapping of source disk id to destination disk details
+     * 
+     */
+    private Map<String,String> destinationDisks;
     /**
      * @return A filter to return only resources that match the entire given display name.
      * 
@@ -67,6 +73,11 @@ public final class GetTargetAssetsTargetAssetCollectionItemMigrationAsset {
      * 
      */
     private String replicationCompartmentId;
+    /**
+     * @return Replication location detail where the snapshots reside
+     * 
+     */
+    private List<GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetail> replicationLocationDetails;
     /**
      * @return Replication schedule identifier
      * 
@@ -148,6 +159,13 @@ public final class GetTargetAssetsTargetAssetCollectionItemMigrationAsset {
         return this.dependsOns;
     }
     /**
+     * @return Mapping of source disk id to destination disk details
+     * 
+     */
+    public Map<String,String> destinationDisks() {
+        return this.destinationDisks;
+    }
+    /**
      * @return A filter to return only resources that match the entire given display name.
      * 
      */
@@ -195,6 +213,13 @@ public final class GetTargetAssetsTargetAssetCollectionItemMigrationAsset {
      */
     public String replicationCompartmentId() {
         return this.replicationCompartmentId;
+    }
+    /**
+     * @return Replication location detail where the snapshots reside
+     * 
+     */
+    public List<GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetail> replicationLocationDetails() {
+        return this.replicationLocationDetails;
     }
     /**
      * @return Replication schedule identifier
@@ -280,6 +305,7 @@ public final class GetTargetAssetsTargetAssetCollectionItemMigrationAsset {
         private String compartmentId;
         private List<String> dependedOnBies;
         private List<String> dependsOns;
+        private Map<String,String> destinationDisks;
         private String displayName;
         private String id;
         private String lifecycleDetails;
@@ -287,6 +313,7 @@ public final class GetTargetAssetsTargetAssetCollectionItemMigrationAsset {
         private List<String> notifications;
         private String parentSnapshot;
         private String replicationCompartmentId;
+        private List<GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetail> replicationLocationDetails;
         private String replicationScheduleId;
         private String snapShotBucketName;
         private Map<String,String> snapshots;
@@ -304,6 +331,7 @@ public final class GetTargetAssetsTargetAssetCollectionItemMigrationAsset {
     	      this.compartmentId = defaults.compartmentId;
     	      this.dependedOnBies = defaults.dependedOnBies;
     	      this.dependsOns = defaults.dependsOns;
+    	      this.destinationDisks = defaults.destinationDisks;
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -311,6 +339,7 @@ public final class GetTargetAssetsTargetAssetCollectionItemMigrationAsset {
     	      this.notifications = defaults.notifications;
     	      this.parentSnapshot = defaults.parentSnapshot;
     	      this.replicationCompartmentId = defaults.replicationCompartmentId;
+    	      this.replicationLocationDetails = defaults.replicationLocationDetails;
     	      this.replicationScheduleId = defaults.replicationScheduleId;
     	      this.snapShotBucketName = defaults.snapShotBucketName;
     	      this.snapshots = defaults.snapshots;
@@ -360,6 +389,14 @@ public final class GetTargetAssetsTargetAssetCollectionItemMigrationAsset {
         }
         public Builder dependsOns(String... dependsOns) {
             return dependsOns(List.of(dependsOns));
+        }
+        @CustomType.Setter
+        public Builder destinationDisks(Map<String,String> destinationDisks) {
+            if (destinationDisks == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemMigrationAsset", "destinationDisks");
+            }
+            this.destinationDisks = destinationDisks;
+            return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
@@ -419,6 +456,17 @@ public final class GetTargetAssetsTargetAssetCollectionItemMigrationAsset {
             }
             this.replicationCompartmentId = replicationCompartmentId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder replicationLocationDetails(List<GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetail> replicationLocationDetails) {
+            if (replicationLocationDetails == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetsTargetAssetCollectionItemMigrationAsset", "replicationLocationDetails");
+            }
+            this.replicationLocationDetails = replicationLocationDetails;
+            return this;
+        }
+        public Builder replicationLocationDetails(GetTargetAssetsTargetAssetCollectionItemMigrationAssetReplicationLocationDetail... replicationLocationDetails) {
+            return replicationLocationDetails(List.of(replicationLocationDetails));
         }
         @CustomType.Setter
         public Builder replicationScheduleId(String replicationScheduleId) {
@@ -506,6 +554,7 @@ public final class GetTargetAssetsTargetAssetCollectionItemMigrationAsset {
             _resultValue.compartmentId = compartmentId;
             _resultValue.dependedOnBies = dependedOnBies;
             _resultValue.dependsOns = dependsOns;
+            _resultValue.destinationDisks = destinationDisks;
             _resultValue.displayName = displayName;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
@@ -513,6 +562,7 @@ public final class GetTargetAssetsTargetAssetCollectionItemMigrationAsset {
             _resultValue.notifications = notifications;
             _resultValue.parentSnapshot = parentSnapshot;
             _resultValue.replicationCompartmentId = replicationCompartmentId;
+            _resultValue.replicationLocationDetails = replicationLocationDetails;
             _resultValue.replicationScheduleId = replicationScheduleId;
             _resultValue.snapShotBucketName = snapShotBucketName;
             _resultValue.snapshots = snapshots;

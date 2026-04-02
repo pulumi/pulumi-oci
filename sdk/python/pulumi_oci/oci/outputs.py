@@ -115,6 +115,13 @@ __all__ = [
     'ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword',
     'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails',
     'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails',
+    'SelfSubscriptionAdditionalDetail',
+    'SelfSubscriptionSubscriptionDetails',
+    'SelfSubscriptionSubscriptionDetailsBillingDetails',
+    'SelfSubscriptionSubscriptionDetailsBillingDetailsMeter',
+    'SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadata',
+    'SelfSubscriptionSubscriptionDetailsPricingPlan',
+    'SelfSubscriptionSubscriptionDetailsPricingPlanRate',
     'GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionResult',
     'GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemResult',
     'GetAiDataPlatformAiDataPlatformsFilterResult',
@@ -480,6 +487,26 @@ __all__ = [
     'GetResourceAnalyticsTenancyAttachmentsFilterResult',
     'GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionResult',
     'GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemResult',
+    'GetSelfPartnerSubscriptionsFilterResult',
+    'GetSelfPartnerSubscriptionsListingSubscriptionsCollectionResult',
+    'GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemResult',
+    'GetSelfSubscriptionAdditionalDetailResult',
+    'GetSelfSubscriptionSubscriptionDetailResult',
+    'GetSelfSubscriptionSubscriptionDetailBillingDetailResult',
+    'GetSelfSubscriptionSubscriptionDetailBillingDetailMeterResult',
+    'GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataResult',
+    'GetSelfSubscriptionSubscriptionDetailPricingPlanResult',
+    'GetSelfSubscriptionSubscriptionDetailPricingPlanRateResult',
+    'GetSelfSubscriptionsFilterResult',
+    'GetSelfSubscriptionsSubscriptionCollectionResult',
+    'GetSelfSubscriptionsSubscriptionCollectionItemResult',
+    'GetSelfSubscriptionsSubscriptionCollectionItemAdditionalDetailResult',
+    'GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailResult',
+    'GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailResult',
+    'GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailMeterResult',
+    'GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailMeterExtendedMetadataResult',
+    'GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanResult',
+    'GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanRateResult',
     'GetWlmsManagedInstanceConfigurationResult',
     'GetWlmsManagedInstanceScanResultsFilterResult',
     'GetWlmsManagedInstanceScanResultsScanResultCollectionResult',
@@ -8219,6 +8246,436 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNe
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class SelfSubscriptionAdditionalDetail(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Additional attribute for extendedMetadata.
+        :param _builtins.str value: It contains the value of above key.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Additional attribute for extendedMetadata.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        It contains the value of above key.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class SelfSubscriptionSubscriptionDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "billingDetails":
+            suggest = "billing_details"
+        elif key == "partnerRegistrationUrl":
+            suggest = "partner_registration_url"
+        elif key == "pricingPlan":
+            suggest = "pricing_plan"
+        elif key == "isAutoRenew":
+            suggest = "is_auto_renew"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SelfSubscriptionSubscriptionDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SelfSubscriptionSubscriptionDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SelfSubscriptionSubscriptionDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 billing_details: 'outputs.SelfSubscriptionSubscriptionDetailsBillingDetails',
+                 partner_registration_url: _builtins.str,
+                 pricing_plan: 'outputs.SelfSubscriptionSubscriptionDetailsPricingPlan',
+                 amount: Optional[_builtins.float] = None,
+                 currency: Optional[_builtins.str] = None,
+                 is_auto_renew: Optional[_builtins.bool] = None):
+        """
+        :param 'SelfSubscriptionSubscriptionDetailsBillingDetailsArgs' billing_details: Sku details for billing subscription.
+        :param _builtins.str partner_registration_url: The activation link given by the partner.
+        :param 'SelfSubscriptionSubscriptionDetailsPricingPlanArgs' pricing_plan: A pricing plan details provided by the Publisher.
+        :param _builtins.float amount: Tha amount for the currency type.
+        :param _builtins.str currency: The currency supported, in the format specified by ISO-4217
+        :param _builtins.bool is_auto_renew: Whether subscription should be auto-renewed at the end of cycle.
+        """
+        pulumi.set(__self__, "billing_details", billing_details)
+        pulumi.set(__self__, "partner_registration_url", partner_registration_url)
+        pulumi.set(__self__, "pricing_plan", pricing_plan)
+        if amount is not None:
+            pulumi.set(__self__, "amount", amount)
+        if currency is not None:
+            pulumi.set(__self__, "currency", currency)
+        if is_auto_renew is not None:
+            pulumi.set(__self__, "is_auto_renew", is_auto_renew)
+
+    @_builtins.property
+    @pulumi.getter(name="billingDetails")
+    def billing_details(self) -> 'outputs.SelfSubscriptionSubscriptionDetailsBillingDetails':
+        """
+        Sku details for billing subscription.
+        """
+        return pulumi.get(self, "billing_details")
+
+    @_builtins.property
+    @pulumi.getter(name="partnerRegistrationUrl")
+    def partner_registration_url(self) -> _builtins.str:
+        """
+        The activation link given by the partner.
+        """
+        return pulumi.get(self, "partner_registration_url")
+
+    @_builtins.property
+    @pulumi.getter(name="pricingPlan")
+    def pricing_plan(self) -> 'outputs.SelfSubscriptionSubscriptionDetailsPricingPlan':
+        """
+        A pricing plan details provided by the Publisher.
+        """
+        return pulumi.get(self, "pricing_plan")
+
+    @_builtins.property
+    @pulumi.getter
+    def amount(self) -> Optional[_builtins.float]:
+        """
+        Tha amount for the currency type.
+        """
+        return pulumi.get(self, "amount")
+
+    @_builtins.property
+    @pulumi.getter
+    def currency(self) -> Optional[_builtins.str]:
+        """
+        The currency supported, in the format specified by ISO-4217
+        """
+        return pulumi.get(self, "currency")
+
+    @_builtins.property
+    @pulumi.getter(name="isAutoRenew")
+    def is_auto_renew(self) -> Optional[_builtins.bool]:
+        """
+        Whether subscription should be auto-renewed at the end of cycle.
+        """
+        return pulumi.get(self, "is_auto_renew")
+
+
+@pulumi.output_type
+class SelfSubscriptionSubscriptionDetailsBillingDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "metricType":
+            suggest = "metric_type"
+        elif key == "rateAllocation":
+            suggest = "rate_allocation"
+        elif key == "hasGovSku":
+            suggest = "has_gov_sku"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SelfSubscriptionSubscriptionDetailsBillingDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SelfSubscriptionSubscriptionDetailsBillingDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SelfSubscriptionSubscriptionDetailsBillingDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 meters: Sequence['outputs.SelfSubscriptionSubscriptionDetailsBillingDetailsMeter'],
+                 metric_type: _builtins.str,
+                 rate_allocation: _builtins.float,
+                 sku: _builtins.str,
+                 has_gov_sku: Optional[_builtins.bool] = None):
+        """
+        :param Sequence['SelfSubscriptionSubscriptionDetailsBillingDetailsMeterArgs'] meters: The meters associated with sku.
+        :param _builtins.str metric_type: The part's metric.
+        :param _builtins.float rate_allocation: Tha rate of this sku meter.
+        :param _builtins.str sku: Sku for service.
+        :param _builtins.bool has_gov_sku: Whether this sku is assign to gov product.
+        """
+        pulumi.set(__self__, "meters", meters)
+        pulumi.set(__self__, "metric_type", metric_type)
+        pulumi.set(__self__, "rate_allocation", rate_allocation)
+        pulumi.set(__self__, "sku", sku)
+        if has_gov_sku is not None:
+            pulumi.set(__self__, "has_gov_sku", has_gov_sku)
+
+    @_builtins.property
+    @pulumi.getter
+    def meters(self) -> Sequence['outputs.SelfSubscriptionSubscriptionDetailsBillingDetailsMeter']:
+        """
+        The meters associated with sku.
+        """
+        return pulumi.get(self, "meters")
+
+    @_builtins.property
+    @pulumi.getter(name="metricType")
+    def metric_type(self) -> _builtins.str:
+        """
+        The part's metric.
+        """
+        return pulumi.get(self, "metric_type")
+
+    @_builtins.property
+    @pulumi.getter(name="rateAllocation")
+    def rate_allocation(self) -> _builtins.float:
+        """
+        Tha rate of this sku meter.
+        """
+        return pulumi.get(self, "rate_allocation")
+
+    @_builtins.property
+    @pulumi.getter
+    def sku(self) -> _builtins.str:
+        """
+        Sku for service.
+        """
+        return pulumi.get(self, "sku")
+
+    @_builtins.property
+    @pulumi.getter(name="hasGovSku")
+    def has_gov_sku(self) -> Optional[_builtins.bool]:
+        """
+        Whether this sku is assign to gov product.
+        """
+        return pulumi.get(self, "has_gov_sku")
+
+
+@pulumi.output_type
+class SelfSubscriptionSubscriptionDetailsBillingDetailsMeter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rateAllocation":
+            suggest = "rate_allocation"
+        elif key == "extendedMetadatas":
+            suggest = "extended_metadatas"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SelfSubscriptionSubscriptionDetailsBillingDetailsMeter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SelfSubscriptionSubscriptionDetailsBillingDetailsMeter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SelfSubscriptionSubscriptionDetailsBillingDetailsMeter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 rate_allocation: _builtins.float,
+                 extended_metadatas: Optional[Sequence['outputs.SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadata']] = None):
+        """
+        :param _builtins.str name: Name of meter.
+        :param _builtins.float rate_allocation: Tha rate of this sku meter.
+        :param Sequence['SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadataArgs'] extended_metadatas: Additional data give by sku.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "rate_allocation", rate_allocation)
+        if extended_metadatas is not None:
+            pulumi.set(__self__, "extended_metadatas", extended_metadatas)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of meter.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="rateAllocation")
+    def rate_allocation(self) -> _builtins.float:
+        """
+        Tha rate of this sku meter.
+        """
+        return pulumi.get(self, "rate_allocation")
+
+    @_builtins.property
+    @pulumi.getter(name="extendedMetadatas")
+    def extended_metadatas(self) -> Optional[Sequence['outputs.SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadata']]:
+        """
+        Additional data give by sku.
+        """
+        return pulumi.get(self, "extended_metadatas")
+
+
+@pulumi.output_type
+class SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadata(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Additional attribute for extendedMetadata.
+        :param _builtins.str value: It contains the value of above key.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Additional attribute for extendedMetadata.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        It contains the value of above key.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class SelfSubscriptionSubscriptionDetailsPricingPlan(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "billingFrequency":
+            suggest = "billing_frequency"
+        elif key == "planName":
+            suggest = "plan_name"
+        elif key == "planType":
+            suggest = "plan_type"
+        elif key == "planDescription":
+            suggest = "plan_description"
+        elif key == "planDuration":
+            suggest = "plan_duration"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SelfSubscriptionSubscriptionDetailsPricingPlan. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SelfSubscriptionSubscriptionDetailsPricingPlan.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SelfSubscriptionSubscriptionDetailsPricingPlan.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 billing_frequency: _builtins.str,
+                 plan_name: _builtins.str,
+                 plan_type: _builtins.str,
+                 rates: Sequence['outputs.SelfSubscriptionSubscriptionDetailsPricingPlanRate'],
+                 plan_description: Optional[_builtins.str] = None,
+                 plan_duration: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str billing_frequency: Specifies the interval at which billing occurs for the subscription plan.
+        :param _builtins.str plan_name: The name of the subscription plan used to identify the plan.
+        :param _builtins.str plan_type: The type of the subscription plan.
+        :param Sequence['SelfSubscriptionSubscriptionDetailsPricingPlanRateArgs'] rates: The pricing details of the subscription plan in various supported currencies.
+        :param _builtins.str plan_description: A detailed explanation of the subscription plan.
+        :param _builtins.str plan_duration: Specifies the interval at which billing occurs for the subscription plan.
+        """
+        pulumi.set(__self__, "billing_frequency", billing_frequency)
+        pulumi.set(__self__, "plan_name", plan_name)
+        pulumi.set(__self__, "plan_type", plan_type)
+        pulumi.set(__self__, "rates", rates)
+        if plan_description is not None:
+            pulumi.set(__self__, "plan_description", plan_description)
+        if plan_duration is not None:
+            pulumi.set(__self__, "plan_duration", plan_duration)
+
+    @_builtins.property
+    @pulumi.getter(name="billingFrequency")
+    def billing_frequency(self) -> _builtins.str:
+        """
+        Specifies the interval at which billing occurs for the subscription plan.
+        """
+        return pulumi.get(self, "billing_frequency")
+
+    @_builtins.property
+    @pulumi.getter(name="planName")
+    def plan_name(self) -> _builtins.str:
+        """
+        The name of the subscription plan used to identify the plan.
+        """
+        return pulumi.get(self, "plan_name")
+
+    @_builtins.property
+    @pulumi.getter(name="planType")
+    def plan_type(self) -> _builtins.str:
+        """
+        The type of the subscription plan.
+        """
+        return pulumi.get(self, "plan_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def rates(self) -> Sequence['outputs.SelfSubscriptionSubscriptionDetailsPricingPlanRate']:
+        """
+        The pricing details of the subscription plan in various supported currencies.
+        """
+        return pulumi.get(self, "rates")
+
+    @_builtins.property
+    @pulumi.getter(name="planDescription")
+    def plan_description(self) -> Optional[_builtins.str]:
+        """
+        A detailed explanation of the subscription plan.
+        """
+        return pulumi.get(self, "plan_description")
+
+    @_builtins.property
+    @pulumi.getter(name="planDuration")
+    def plan_duration(self) -> Optional[_builtins.str]:
+        """
+        Specifies the interval at which billing occurs for the subscription plan.
+        """
+        return pulumi.get(self, "plan_duration")
+
+
+@pulumi.output_type
+class SelfSubscriptionSubscriptionDetailsPricingPlanRate(dict):
+    def __init__(__self__, *,
+                 currency: _builtins.str,
+                 rate: _builtins.float):
+        """
+        :param _builtins.str currency: The currency supported, in the format specified by ISO-4217
+        :param _builtins.float rate: The amount charged for the plan in the specified currency.
+        """
+        pulumi.set(__self__, "currency", currency)
+        pulumi.set(__self__, "rate", rate)
+
+    @_builtins.property
+    @pulumi.getter
+    def currency(self) -> _builtins.str:
+        """
+        The currency supported, in the format specified by ISO-4217
+        """
+        return pulumi.get(self, "currency")
+
+    @_builtins.property
+    @pulumi.getter
+    def rate(self) -> _builtins.float:
+        """
+        The amount charged for the plan in the specified currency.
+        """
+        return pulumi.get(self, "rate")
 
 
 @pulumi.output_type
@@ -30395,6 +30852,1099 @@ class GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemResul
         The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetSelfPartnerSubscriptionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSelfPartnerSubscriptionsListingSubscriptionsCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemResult']):
+        """
+        :param Sequence['GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemArgs'] items: List of subscriptions for particular listing.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemResult']:
+        """
+        List of subscriptions for particular listing.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSelfPartnerSubscriptionsListingSubscriptionsCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 lifecycle_details: _builtins.str,
+                 product_id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_ended: _builtins.str,
+                 time_started: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return only resources that match the given name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str lifecycle_details: A message that describes the current state of the Subscription in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param _builtins.str product_id: The unique identifier of marketplace listing in Oracle Cloud Infrastructure.
+        :param _builtins.str state: The current state of the Subscription.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_ended: The date and time the Subscription was ended, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_started: The date and time the Subscription was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "product_id", product_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_ended", time_ended)
+        pulumi.set(__self__, "time_started", time_started)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message that describes the current state of the Subscription in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="productId")
+    def product_id(self) -> _builtins.str:
+        """
+        The unique identifier of marketplace listing in Oracle Cloud Infrastructure.
+        """
+        return pulumi.get(self, "product_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current state of the Subscription.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeEnded")
+    def time_ended(self) -> _builtins.str:
+        """
+        The date and time the Subscription was ended, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_ended")
+
+    @_builtins.property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> _builtins.str:
+        """
+        The date and time the Subscription was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
+class GetSelfSubscriptionAdditionalDetailResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Additional attribute for extendedMetadata.
+        :param _builtins.str value: It contains the value of above key.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Additional attribute for extendedMetadata.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        It contains the value of above key.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetSelfSubscriptionSubscriptionDetailResult(dict):
+    def __init__(__self__, *,
+                 amount: _builtins.float,
+                 billing_details: Sequence['outputs.GetSelfSubscriptionSubscriptionDetailBillingDetailResult'],
+                 currency: _builtins.str,
+                 is_auto_renew: _builtins.bool,
+                 partner_registration_url: _builtins.str,
+                 pricing_plans: Sequence['outputs.GetSelfSubscriptionSubscriptionDetailPricingPlanResult']):
+        """
+        :param _builtins.float amount: Tha amount for the currency type.
+        :param Sequence['GetSelfSubscriptionSubscriptionDetailBillingDetailArgs'] billing_details: Sku details for billing subscription.
+        :param _builtins.str currency: The currency supported, in the format specified by ISO-4217
+        :param _builtins.bool is_auto_renew: Whether subscription should be auto-renewed at the end of cycle.
+        :param _builtins.str partner_registration_url: The activation link given by the partner.
+        :param Sequence['GetSelfSubscriptionSubscriptionDetailPricingPlanArgs'] pricing_plans: A pricing plan details provided by the Publisher.
+        """
+        pulumi.set(__self__, "amount", amount)
+        pulumi.set(__self__, "billing_details", billing_details)
+        pulumi.set(__self__, "currency", currency)
+        pulumi.set(__self__, "is_auto_renew", is_auto_renew)
+        pulumi.set(__self__, "partner_registration_url", partner_registration_url)
+        pulumi.set(__self__, "pricing_plans", pricing_plans)
+
+    @_builtins.property
+    @pulumi.getter
+    def amount(self) -> _builtins.float:
+        """
+        Tha amount for the currency type.
+        """
+        return pulumi.get(self, "amount")
+
+    @_builtins.property
+    @pulumi.getter(name="billingDetails")
+    def billing_details(self) -> Sequence['outputs.GetSelfSubscriptionSubscriptionDetailBillingDetailResult']:
+        """
+        Sku details for billing subscription.
+        """
+        return pulumi.get(self, "billing_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def currency(self) -> _builtins.str:
+        """
+        The currency supported, in the format specified by ISO-4217
+        """
+        return pulumi.get(self, "currency")
+
+    @_builtins.property
+    @pulumi.getter(name="isAutoRenew")
+    def is_auto_renew(self) -> _builtins.bool:
+        """
+        Whether subscription should be auto-renewed at the end of cycle.
+        """
+        return pulumi.get(self, "is_auto_renew")
+
+    @_builtins.property
+    @pulumi.getter(name="partnerRegistrationUrl")
+    def partner_registration_url(self) -> _builtins.str:
+        """
+        The activation link given by the partner.
+        """
+        return pulumi.get(self, "partner_registration_url")
+
+    @_builtins.property
+    @pulumi.getter(name="pricingPlans")
+    def pricing_plans(self) -> Sequence['outputs.GetSelfSubscriptionSubscriptionDetailPricingPlanResult']:
+        """
+        A pricing plan details provided by the Publisher.
+        """
+        return pulumi.get(self, "pricing_plans")
+
+
+@pulumi.output_type
+class GetSelfSubscriptionSubscriptionDetailBillingDetailResult(dict):
+    def __init__(__self__, *,
+                 has_gov_sku: _builtins.bool,
+                 meters: Sequence['outputs.GetSelfSubscriptionSubscriptionDetailBillingDetailMeterResult'],
+                 metric_type: _builtins.str,
+                 rate_allocation: _builtins.float,
+                 sku: _builtins.str):
+        """
+        :param _builtins.bool has_gov_sku: Whether this sku is assign to gov product.
+        :param Sequence['GetSelfSubscriptionSubscriptionDetailBillingDetailMeterArgs'] meters: The meters associated with sku.
+        :param _builtins.str metric_type: The part's metric.
+        :param _builtins.float rate_allocation: Tha rate of this sku meter.
+        :param _builtins.str sku: Sku for service.
+        """
+        pulumi.set(__self__, "has_gov_sku", has_gov_sku)
+        pulumi.set(__self__, "meters", meters)
+        pulumi.set(__self__, "metric_type", metric_type)
+        pulumi.set(__self__, "rate_allocation", rate_allocation)
+        pulumi.set(__self__, "sku", sku)
+
+    @_builtins.property
+    @pulumi.getter(name="hasGovSku")
+    def has_gov_sku(self) -> _builtins.bool:
+        """
+        Whether this sku is assign to gov product.
+        """
+        return pulumi.get(self, "has_gov_sku")
+
+    @_builtins.property
+    @pulumi.getter
+    def meters(self) -> Sequence['outputs.GetSelfSubscriptionSubscriptionDetailBillingDetailMeterResult']:
+        """
+        The meters associated with sku.
+        """
+        return pulumi.get(self, "meters")
+
+    @_builtins.property
+    @pulumi.getter(name="metricType")
+    def metric_type(self) -> _builtins.str:
+        """
+        The part's metric.
+        """
+        return pulumi.get(self, "metric_type")
+
+    @_builtins.property
+    @pulumi.getter(name="rateAllocation")
+    def rate_allocation(self) -> _builtins.float:
+        """
+        Tha rate of this sku meter.
+        """
+        return pulumi.get(self, "rate_allocation")
+
+    @_builtins.property
+    @pulumi.getter
+    def sku(self) -> _builtins.str:
+        """
+        Sku for service.
+        """
+        return pulumi.get(self, "sku")
+
+
+@pulumi.output_type
+class GetSelfSubscriptionSubscriptionDetailBillingDetailMeterResult(dict):
+    def __init__(__self__, *,
+                 extended_metadatas: Sequence['outputs.GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataResult'],
+                 name: _builtins.str,
+                 rate_allocation: _builtins.float):
+        """
+        :param Sequence['GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataArgs'] extended_metadatas: Additional data give by sku.
+        :param _builtins.str name: Name of meter.
+        :param _builtins.float rate_allocation: Tha rate of this sku meter.
+        """
+        pulumi.set(__self__, "extended_metadatas", extended_metadatas)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "rate_allocation", rate_allocation)
+
+    @_builtins.property
+    @pulumi.getter(name="extendedMetadatas")
+    def extended_metadatas(self) -> Sequence['outputs.GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataResult']:
+        """
+        Additional data give by sku.
+        """
+        return pulumi.get(self, "extended_metadatas")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of meter.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="rateAllocation")
+    def rate_allocation(self) -> _builtins.float:
+        """
+        Tha rate of this sku meter.
+        """
+        return pulumi.get(self, "rate_allocation")
+
+
+@pulumi.output_type
+class GetSelfSubscriptionSubscriptionDetailBillingDetailMeterExtendedMetadataResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Additional attribute for extendedMetadata.
+        :param _builtins.str value: It contains the value of above key.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Additional attribute for extendedMetadata.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        It contains the value of above key.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetSelfSubscriptionSubscriptionDetailPricingPlanResult(dict):
+    def __init__(__self__, *,
+                 billing_frequency: _builtins.str,
+                 plan_description: _builtins.str,
+                 plan_duration: _builtins.str,
+                 plan_name: _builtins.str,
+                 plan_type: _builtins.str,
+                 rates: Sequence['outputs.GetSelfSubscriptionSubscriptionDetailPricingPlanRateResult']):
+        """
+        :param _builtins.str billing_frequency: Specifies the interval at which billing occurs for the subscription plan.
+        :param _builtins.str plan_description: A detailed explanation of the subscription plan.
+        :param _builtins.str plan_duration: Specifies the interval at which billing occurs for the subscription plan.
+        :param _builtins.str plan_name: The name of the subscription plan used to identify the plan.
+        :param _builtins.str plan_type: The type of the subscription plan.
+        :param Sequence['GetSelfSubscriptionSubscriptionDetailPricingPlanRateArgs'] rates: The pricing details of the subscription plan in various supported currencies.
+        """
+        pulumi.set(__self__, "billing_frequency", billing_frequency)
+        pulumi.set(__self__, "plan_description", plan_description)
+        pulumi.set(__self__, "plan_duration", plan_duration)
+        pulumi.set(__self__, "plan_name", plan_name)
+        pulumi.set(__self__, "plan_type", plan_type)
+        pulumi.set(__self__, "rates", rates)
+
+    @_builtins.property
+    @pulumi.getter(name="billingFrequency")
+    def billing_frequency(self) -> _builtins.str:
+        """
+        Specifies the interval at which billing occurs for the subscription plan.
+        """
+        return pulumi.get(self, "billing_frequency")
+
+    @_builtins.property
+    @pulumi.getter(name="planDescription")
+    def plan_description(self) -> _builtins.str:
+        """
+        A detailed explanation of the subscription plan.
+        """
+        return pulumi.get(self, "plan_description")
+
+    @_builtins.property
+    @pulumi.getter(name="planDuration")
+    def plan_duration(self) -> _builtins.str:
+        """
+        Specifies the interval at which billing occurs for the subscription plan.
+        """
+        return pulumi.get(self, "plan_duration")
+
+    @_builtins.property
+    @pulumi.getter(name="planName")
+    def plan_name(self) -> _builtins.str:
+        """
+        The name of the subscription plan used to identify the plan.
+        """
+        return pulumi.get(self, "plan_name")
+
+    @_builtins.property
+    @pulumi.getter(name="planType")
+    def plan_type(self) -> _builtins.str:
+        """
+        The type of the subscription plan.
+        """
+        return pulumi.get(self, "plan_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def rates(self) -> Sequence['outputs.GetSelfSubscriptionSubscriptionDetailPricingPlanRateResult']:
+        """
+        The pricing details of the subscription plan in various supported currencies.
+        """
+        return pulumi.get(self, "rates")
+
+
+@pulumi.output_type
+class GetSelfSubscriptionSubscriptionDetailPricingPlanRateResult(dict):
+    def __init__(__self__, *,
+                 currency: _builtins.str,
+                 rate: _builtins.float):
+        """
+        :param _builtins.str currency: The currency supported, in the format specified by ISO-4217
+        :param _builtins.float rate: The amount charged for the plan in the specified currency.
+        """
+        pulumi.set(__self__, "currency", currency)
+        pulumi.set(__self__, "rate", rate)
+
+    @_builtins.property
+    @pulumi.getter
+    def currency(self) -> _builtins.str:
+        """
+        The currency supported, in the format specified by ISO-4217
+        """
+        return pulumi.get(self, "currency")
+
+    @_builtins.property
+    @pulumi.getter
+    def rate(self) -> _builtins.float:
+        """
+        The amount charged for the plan in the specified currency.
+        """
+        return pulumi.get(self, "rate")
+
+
+@pulumi.output_type
+class GetSelfSubscriptionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Name of meter.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of meter.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSelfSubscriptionsSubscriptionCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSelfSubscriptionsSubscriptionCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSelfSubscriptionsSubscriptionCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSelfSubscriptionsSubscriptionCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 additional_details: Sequence['outputs.GetSelfSubscriptionsSubscriptionCollectionItemAdditionalDetailResult'],
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 product_id: _builtins.str,
+                 realm: _builtins.str,
+                 region: _builtins.str,
+                 seller_id: _builtins.str,
+                 source_type: _builtins.str,
+                 state: _builtins.str,
+                 subscription_details: Sequence['outputs.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailResult'],
+                 system_tags: Mapping[str, _builtins.str],
+                 tenant_id: _builtins.str,
+                 time_created: _builtins.str,
+                 time_ended: _builtins.str,
+                 time_started: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param Sequence['GetSelfSubscriptionsSubscriptionCollectionItemAdditionalDetailArgs'] additional_details: Additional details that are specific for this subscription such as activation details.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return only resources that match the given name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Subscription.
+        :param _builtins.str lifecycle_details: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param _builtins.str product_id: The unique OCID of the product, effectively functioning as the listing ID.
+        :param _builtins.str realm: The realm from where customer is buying the subscription.
+        :param _builtins.str region: The region from where customer is buying the subscription.
+        :param _builtins.str seller_id: The OCID that identifies the seller within the platform.
+        :param _builtins.str source_type: The type of seller in SELF Service.
+        :param _builtins.str state: The current lifecycle state of the Subscription.
+        :param Sequence['GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailArgs'] subscription_details: The details of a subscription
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str tenant_id: The unique identifier for the tenant where the subscription was purchased.
+        :param _builtins.str time_created: The date and time the Subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_ended: The date and time the Subscription was ended, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_started: The date and time the Subscription was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time the Subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "additional_details", additional_details)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "product_id", product_id)
+        pulumi.set(__self__, "realm", realm)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "seller_id", seller_id)
+        pulumi.set(__self__, "source_type", source_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subscription_details", subscription_details)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "tenant_id", tenant_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_ended", time_ended)
+        pulumi.set(__self__, "time_started", time_started)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Sequence['outputs.GetSelfSubscriptionsSubscriptionCollectionItemAdditionalDetailResult']:
+        """
+        Additional details that are specific for this subscription such as activation details.
+        """
+        return pulumi.get(self, "additional_details")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Subscription.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="productId")
+    def product_id(self) -> _builtins.str:
+        """
+        The unique OCID of the product, effectively functioning as the listing ID.
+        """
+        return pulumi.get(self, "product_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def realm(self) -> _builtins.str:
+        """
+        The realm from where customer is buying the subscription.
+        """
+        return pulumi.get(self, "realm")
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> _builtins.str:
+        """
+        The region from where customer is buying the subscription.
+        """
+        return pulumi.get(self, "region")
+
+    @_builtins.property
+    @pulumi.getter(name="sellerId")
+    def seller_id(self) -> _builtins.str:
+        """
+        The OCID that identifies the seller within the platform.
+        """
+        return pulumi.get(self, "seller_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> _builtins.str:
+        """
+        The type of seller in SELF Service.
+        """
+        return pulumi.get(self, "source_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current lifecycle state of the Subscription.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="subscriptionDetails")
+    def subscription_details(self) -> Sequence['outputs.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailResult']:
+        """
+        The details of a subscription
+        """
+        return pulumi.get(self, "subscription_details")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> _builtins.str:
+        """
+        The unique identifier for the tenant where the subscription was purchased.
+        """
+        return pulumi.get(self, "tenant_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the Subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeEnded")
+    def time_ended(self) -> _builtins.str:
+        """
+        The date and time the Subscription was ended, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_ended")
+
+    @_builtins.property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> _builtins.str:
+        """
+        The date and time the Subscription was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_started")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the Subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetSelfSubscriptionsSubscriptionCollectionItemAdditionalDetailResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Additional attribute for extendedMetadata.
+        :param _builtins.str value: It contains the value of above key.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Additional attribute for extendedMetadata.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        It contains the value of above key.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailResult(dict):
+    def __init__(__self__, *,
+                 amount: _builtins.float,
+                 billing_details: Sequence['outputs.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailResult'],
+                 currency: _builtins.str,
+                 is_auto_renew: _builtins.bool,
+                 partner_registration_url: _builtins.str,
+                 pricing_plans: Sequence['outputs.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanResult']):
+        """
+        :param _builtins.float amount: Tha amount for the currency type.
+        :param Sequence['GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailArgs'] billing_details: Sku details for billing subscription.
+        :param _builtins.str currency: The currency supported, in the format specified by ISO-4217
+        :param _builtins.bool is_auto_renew: Whether subscription should be auto-renewed at the end of cycle.
+        :param _builtins.str partner_registration_url: The activation link given by the partner.
+        :param Sequence['GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanArgs'] pricing_plans: A pricing plan details provided by the Publisher.
+        """
+        pulumi.set(__self__, "amount", amount)
+        pulumi.set(__self__, "billing_details", billing_details)
+        pulumi.set(__self__, "currency", currency)
+        pulumi.set(__self__, "is_auto_renew", is_auto_renew)
+        pulumi.set(__self__, "partner_registration_url", partner_registration_url)
+        pulumi.set(__self__, "pricing_plans", pricing_plans)
+
+    @_builtins.property
+    @pulumi.getter
+    def amount(self) -> _builtins.float:
+        """
+        Tha amount for the currency type.
+        """
+        return pulumi.get(self, "amount")
+
+    @_builtins.property
+    @pulumi.getter(name="billingDetails")
+    def billing_details(self) -> Sequence['outputs.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailResult']:
+        """
+        Sku details for billing subscription.
+        """
+        return pulumi.get(self, "billing_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def currency(self) -> _builtins.str:
+        """
+        The currency supported, in the format specified by ISO-4217
+        """
+        return pulumi.get(self, "currency")
+
+    @_builtins.property
+    @pulumi.getter(name="isAutoRenew")
+    def is_auto_renew(self) -> _builtins.bool:
+        """
+        Whether subscription should be auto-renewed at the end of cycle.
+        """
+        return pulumi.get(self, "is_auto_renew")
+
+    @_builtins.property
+    @pulumi.getter(name="partnerRegistrationUrl")
+    def partner_registration_url(self) -> _builtins.str:
+        """
+        The activation link given by the partner.
+        """
+        return pulumi.get(self, "partner_registration_url")
+
+    @_builtins.property
+    @pulumi.getter(name="pricingPlans")
+    def pricing_plans(self) -> Sequence['outputs.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanResult']:
+        """
+        A pricing plan details provided by the Publisher.
+        """
+        return pulumi.get(self, "pricing_plans")
+
+
+@pulumi.output_type
+class GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailResult(dict):
+    def __init__(__self__, *,
+                 has_gov_sku: _builtins.bool,
+                 meters: Sequence['outputs.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailMeterResult'],
+                 metric_type: _builtins.str,
+                 rate_allocation: _builtins.float,
+                 sku: _builtins.str):
+        """
+        :param _builtins.bool has_gov_sku: Whether this sku is assign to gov product.
+        :param Sequence['GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailMeterArgs'] meters: The meters associated with sku.
+        :param _builtins.str metric_type: The part's metric.
+        :param _builtins.float rate_allocation: Tha rate of this sku meter.
+        :param _builtins.str sku: Sku for service.
+        """
+        pulumi.set(__self__, "has_gov_sku", has_gov_sku)
+        pulumi.set(__self__, "meters", meters)
+        pulumi.set(__self__, "metric_type", metric_type)
+        pulumi.set(__self__, "rate_allocation", rate_allocation)
+        pulumi.set(__self__, "sku", sku)
+
+    @_builtins.property
+    @pulumi.getter(name="hasGovSku")
+    def has_gov_sku(self) -> _builtins.bool:
+        """
+        Whether this sku is assign to gov product.
+        """
+        return pulumi.get(self, "has_gov_sku")
+
+    @_builtins.property
+    @pulumi.getter
+    def meters(self) -> Sequence['outputs.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailMeterResult']:
+        """
+        The meters associated with sku.
+        """
+        return pulumi.get(self, "meters")
+
+    @_builtins.property
+    @pulumi.getter(name="metricType")
+    def metric_type(self) -> _builtins.str:
+        """
+        The part's metric.
+        """
+        return pulumi.get(self, "metric_type")
+
+    @_builtins.property
+    @pulumi.getter(name="rateAllocation")
+    def rate_allocation(self) -> _builtins.float:
+        """
+        Tha rate of this sku meter.
+        """
+        return pulumi.get(self, "rate_allocation")
+
+    @_builtins.property
+    @pulumi.getter
+    def sku(self) -> _builtins.str:
+        """
+        Sku for service.
+        """
+        return pulumi.get(self, "sku")
+
+
+@pulumi.output_type
+class GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailMeterResult(dict):
+    def __init__(__self__, *,
+                 extended_metadatas: Sequence['outputs.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailMeterExtendedMetadataResult'],
+                 name: _builtins.str,
+                 rate_allocation: _builtins.float):
+        """
+        :param Sequence['GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailMeterExtendedMetadataArgs'] extended_metadatas: Additional data give by sku.
+        :param _builtins.str name: Name of meter.
+        :param _builtins.float rate_allocation: Tha rate of this sku meter.
+        """
+        pulumi.set(__self__, "extended_metadatas", extended_metadatas)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "rate_allocation", rate_allocation)
+
+    @_builtins.property
+    @pulumi.getter(name="extendedMetadatas")
+    def extended_metadatas(self) -> Sequence['outputs.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailMeterExtendedMetadataResult']:
+        """
+        Additional data give by sku.
+        """
+        return pulumi.get(self, "extended_metadatas")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of meter.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="rateAllocation")
+    def rate_allocation(self) -> _builtins.float:
+        """
+        Tha rate of this sku meter.
+        """
+        return pulumi.get(self, "rate_allocation")
+
+
+@pulumi.output_type
+class GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailBillingDetailMeterExtendedMetadataResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Additional attribute for extendedMetadata.
+        :param _builtins.str value: It contains the value of above key.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Additional attribute for extendedMetadata.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        It contains the value of above key.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanResult(dict):
+    def __init__(__self__, *,
+                 billing_frequency: _builtins.str,
+                 plan_description: _builtins.str,
+                 plan_duration: _builtins.str,
+                 plan_name: _builtins.str,
+                 plan_type: _builtins.str,
+                 rates: Sequence['outputs.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanRateResult']):
+        """
+        :param _builtins.str billing_frequency: Specifies the interval at which billing occurs for the subscription plan.
+        :param _builtins.str plan_description: A detailed explanation of the subscription plan.
+        :param _builtins.str plan_duration: Specifies the interval at which billing occurs for the subscription plan.
+        :param _builtins.str plan_name: The name of the subscription plan used to identify the plan.
+        :param _builtins.str plan_type: The type of the subscription plan.
+        :param Sequence['GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanRateArgs'] rates: The pricing details of the subscription plan in various supported currencies.
+        """
+        pulumi.set(__self__, "billing_frequency", billing_frequency)
+        pulumi.set(__self__, "plan_description", plan_description)
+        pulumi.set(__self__, "plan_duration", plan_duration)
+        pulumi.set(__self__, "plan_name", plan_name)
+        pulumi.set(__self__, "plan_type", plan_type)
+        pulumi.set(__self__, "rates", rates)
+
+    @_builtins.property
+    @pulumi.getter(name="billingFrequency")
+    def billing_frequency(self) -> _builtins.str:
+        """
+        Specifies the interval at which billing occurs for the subscription plan.
+        """
+        return pulumi.get(self, "billing_frequency")
+
+    @_builtins.property
+    @pulumi.getter(name="planDescription")
+    def plan_description(self) -> _builtins.str:
+        """
+        A detailed explanation of the subscription plan.
+        """
+        return pulumi.get(self, "plan_description")
+
+    @_builtins.property
+    @pulumi.getter(name="planDuration")
+    def plan_duration(self) -> _builtins.str:
+        """
+        Specifies the interval at which billing occurs for the subscription plan.
+        """
+        return pulumi.get(self, "plan_duration")
+
+    @_builtins.property
+    @pulumi.getter(name="planName")
+    def plan_name(self) -> _builtins.str:
+        """
+        The name of the subscription plan used to identify the plan.
+        """
+        return pulumi.get(self, "plan_name")
+
+    @_builtins.property
+    @pulumi.getter(name="planType")
+    def plan_type(self) -> _builtins.str:
+        """
+        The type of the subscription plan.
+        """
+        return pulumi.get(self, "plan_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def rates(self) -> Sequence['outputs.GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanRateResult']:
+        """
+        The pricing details of the subscription plan in various supported currencies.
+        """
+        return pulumi.get(self, "rates")
+
+
+@pulumi.output_type
+class GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanRateResult(dict):
+    def __init__(__self__, *,
+                 currency: _builtins.str,
+                 rate: _builtins.float):
+        """
+        :param _builtins.str currency: The currency supported, in the format specified by ISO-4217
+        :param _builtins.float rate: The amount charged for the plan in the specified currency.
+        """
+        pulumi.set(__self__, "currency", currency)
+        pulumi.set(__self__, "rate", rate)
+
+    @_builtins.property
+    @pulumi.getter
+    def currency(self) -> _builtins.str:
+        """
+        The currency supported, in the format specified by ISO-4217
+        """
+        return pulumi.get(self, "currency")
+
+    @_builtins.property
+    @pulumi.getter
+    def rate(self) -> _builtins.float:
+        """
+        The amount charged for the plan in the specified currency.
+        """
+        return pulumi.get(self, "rate")
 
 
 @pulumi.output_type

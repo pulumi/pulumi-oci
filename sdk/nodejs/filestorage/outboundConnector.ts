@@ -63,6 +63,8 @@ import * as utilities from "../utilities";
  *     }],
  *     passwordSecretId: testSecret.id,
  *     passwordSecretVersion: outboundConnectorPasswordSecretVersion,
+ *     trustedCertificateSecretId: testSecret.id,
+ *     trustedCertificateSecretVersion: outboundConnectorTrustedCertificateSecretVersion,
  * });
  * ```
  *
@@ -145,10 +147,6 @@ export class OutboundConnector extends pulumi.CustomResource {
     declare public readonly passwordSecretId: pulumi.Output<string>;
     /**
      * Version of the password secret in the Vault to use.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     declare public readonly passwordSecretVersion: pulumi.Output<number>;
     /**
@@ -163,6 +161,18 @@ export class OutboundConnector extends pulumi.CustomResource {
      * The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
+     */
+    declare public readonly trustedCertificateSecretId: pulumi.Output<string>;
+    /**
+     * Version of the trusted certificate secret in the Vault to use.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    declare public readonly trustedCertificateSecretVersion: pulumi.Output<number>;
 
     /**
      * Create a OutboundConnector resource with the given unique name, arguments, and options.
@@ -192,6 +202,8 @@ export class OutboundConnector extends pulumi.CustomResource {
             resourceInputs["state"] = state?.state;
             resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["trustedCertificateSecretId"] = state?.trustedCertificateSecretId;
+            resourceInputs["trustedCertificateSecretVersion"] = state?.trustedCertificateSecretVersion;
         } else {
             const args = argsOrState as OutboundConnectorArgs | undefined;
             if (args?.availabilityDomain === undefined && !opts.urn) {
@@ -221,6 +233,8 @@ export class OutboundConnector extends pulumi.CustomResource {
             resourceInputs["locks"] = args?.locks;
             resourceInputs["passwordSecretId"] = args?.passwordSecretId;
             resourceInputs["passwordSecretVersion"] = args?.passwordSecretVersion;
+            resourceInputs["trustedCertificateSecretId"] = args?.trustedCertificateSecretId;
+            resourceInputs["trustedCertificateSecretVersion"] = args?.trustedCertificateSecretVersion;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -277,10 +291,6 @@ export interface OutboundConnectorState {
     passwordSecretId?: pulumi.Input<string>;
     /**
      * Version of the password secret in the Vault to use.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     passwordSecretVersion?: pulumi.Input<number>;
     /**
@@ -295,6 +305,18 @@ export interface OutboundConnectorState {
      * The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
     timeCreated?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
+     */
+    trustedCertificateSecretId?: pulumi.Input<string>;
+    /**
+     * Version of the trusted certificate secret in the Vault to use.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    trustedCertificateSecretVersion?: pulumi.Input<number>;
 }
 
 /**
@@ -344,10 +366,18 @@ export interface OutboundConnectorArgs {
     passwordSecretId?: pulumi.Input<string>;
     /**
      * Version of the password secret in the Vault to use.
+     */
+    passwordSecretVersion?: pulumi.Input<number>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
+     */
+    trustedCertificateSecretId?: pulumi.Input<string>;
+    /**
+     * Version of the trusted certificate secret in the Vault to use.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    passwordSecretVersion?: pulumi.Input<number>;
+    trustedCertificateSecretVersion?: pulumi.Input<number>;
 }

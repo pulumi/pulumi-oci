@@ -119,14 +119,14 @@ public class Backend extends com.pulumi.resources.CustomResource {
         return this.isBackup;
     }
     /**
-     * (Updatable) Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no incoming traffic.  Example: `false`
+     * (Updatable) Whether the network load balancer should drain this server.  Servers marked &#34;isDrain&#34; stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `false`
      * 
      */
     @Export(name="isDrain", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDrain;
 
     /**
-     * @return (Updatable) Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no incoming traffic.  Example: `false`
+     * @return (Updatable) Whether the network load balancer should drain this server.  Servers marked &#34;isDrain&#34; stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `false`
      * 
      */
     public Output<Boolean> isDrain() {

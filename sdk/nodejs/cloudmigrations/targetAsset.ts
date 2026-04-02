@@ -23,8 +23,10 @@ import * as utilities from "../utilities";
  * const testTargetAsset = new oci.cloudmigrations.TargetAsset("test_target_asset", {
  *     isExcludedFromExecution: targetAssetIsExcludedFromExecution,
  *     migrationPlanId: testMigrationPlan.id,
- *     preferredShapeType: targetAssetPreferredShapeType,
  *     type: targetAssetType,
+ *     blockVolumesPerformance: targetAssetBlockVolumesPerformance,
+ *     msLicense: targetAssetMsLicense,
+ *     preferredShapeType: targetAssetPreferredShapeType,
  *     userSpec: {
  *         agentConfig: {
  *             areAllPluginsDisabled: targetAssetUserSpecAgentConfigAreAllPluginsDisabled,
@@ -91,8 +93,6 @@ import * as utilities from "../utilities";
  *             kmsKeyId: testKey.id,
  *         },
  *     },
- *     blockVolumesPerformance: targetAssetBlockVolumesPerformance,
- *     msLicense: targetAssetMsLicense,
  * });
  * ```
  *
@@ -183,7 +183,7 @@ export class TargetAsset extends pulumi.CustomResource {
     /**
      * Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      */
-    declare public /*out*/ readonly recommendedSpecs: pulumi.Output<outputs.CloudMigrations.TargetAssetRecommendedSpec[]>;
+    declare public readonly recommendedSpecs: pulumi.Output<outputs.CloudMigrations.TargetAssetRecommendedSpec[]>;
     /**
      * The current state of the target asset.
      */
@@ -191,7 +191,7 @@ export class TargetAsset extends pulumi.CustomResource {
     /**
      * Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      */
-    declare public /*out*/ readonly testSpecs: pulumi.Output<outputs.CloudMigrations.TargetAssetTestSpec[]>;
+    declare public readonly testSpecs: pulumi.Output<outputs.CloudMigrations.TargetAssetTestSpec[]>;
     /**
      * The time when the assessment was done. An RFC3339 formatted datetime string.
      */
@@ -254,20 +254,16 @@ export class TargetAsset extends pulumi.CustomResource {
             if (args?.migrationPlanId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'migrationPlanId'");
             }
-            if (args?.preferredShapeType === undefined && !opts.urn) {
-                throw new Error("Missing required property 'preferredShapeType'");
-            }
             if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
-            }
-            if (args?.userSpec === undefined && !opts.urn) {
-                throw new Error("Missing required property 'userSpec'");
             }
             resourceInputs["blockVolumesPerformance"] = args?.blockVolumesPerformance;
             resourceInputs["isExcludedFromExecution"] = args?.isExcludedFromExecution;
             resourceInputs["migrationPlanId"] = args?.migrationPlanId;
             resourceInputs["msLicense"] = args?.msLicense;
             resourceInputs["preferredShapeType"] = args?.preferredShapeType;
+            resourceInputs["recommendedSpecs"] = args?.recommendedSpecs;
+            resourceInputs["testSpecs"] = args?.testSpecs;
             resourceInputs["type"] = args?.type;
             resourceInputs["userSpec"] = args?.userSpec;
             resourceInputs["compartmentId"] = undefined /*out*/;
@@ -277,9 +273,7 @@ export class TargetAsset extends pulumi.CustomResource {
             resourceInputs["estimatedCosts"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["migrationAssets"] = undefined /*out*/;
-            resourceInputs["recommendedSpecs"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
-            resourceInputs["testSpecs"] = undefined /*out*/;
             resourceInputs["timeAssessed"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
@@ -398,7 +392,15 @@ export interface TargetAssetArgs {
     /**
      * (Updatable) Preferred VM shape type that you provide.
      */
-    preferredShapeType: pulumi.Input<string>;
+    preferredShapeType?: pulumi.Input<string>;
+    /**
+     * Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+     */
+    recommendedSpecs?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetRecommendedSpec>[]>;
+    /**
+     * Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+     */
+    testSpecs?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetTestSpec>[]>;
     /**
      * (Updatable) The type of target asset.
      */
@@ -406,5 +408,5 @@ export interface TargetAssetArgs {
     /**
      * (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      */
-    userSpec: pulumi.Input<inputs.CloudMigrations.TargetAssetUserSpec>;
+    userSpec?: pulumi.Input<inputs.CloudMigrations.TargetAssetUserSpec>;
 }

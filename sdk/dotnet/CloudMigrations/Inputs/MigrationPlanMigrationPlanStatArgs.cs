@@ -12,6 +12,30 @@ namespace Pulumi.Oci.CloudMigrations.Inputs
 
     public sealed class MigrationPlanMigrationPlanStatArgs : global::Pulumi.ResourceArgs
     {
+        [Input("costToMigrates")]
+        private InputList<Inputs.MigrationPlanMigrationPlanStatCostToMigrateArgs>? _costToMigrates;
+
+        /// <summary>
+        /// Summary of costs to migrate.
+        /// </summary>
+        public InputList<Inputs.MigrationPlanMigrationPlanStatCostToMigrateArgs> CostToMigrates
+        {
+            get => _costToMigrates ?? (_costToMigrates = new InputList<Inputs.MigrationPlanMigrationPlanStatCostToMigrateArgs>());
+            set => _costToMigrates = value;
+        }
+
+        [Input("currentMonthlyCosts")]
+        private InputList<Inputs.MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs>? _currentMonthlyCosts;
+
+        /// <summary>
+        /// Current monthly compute and storage costs.
+        /// </summary>
+        public InputList<Inputs.MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs> CurrentMonthlyCosts
+        {
+            get => _currentMonthlyCosts ?? (_currentMonthlyCosts = new InputList<Inputs.MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs>());
+            set => _currentMonthlyCosts = value;
+        }
+
         /// <summary>
         /// The time when the migration plan was updated. An RFC3339 formatted datetime string.
         /// </summary>

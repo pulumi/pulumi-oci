@@ -38,7 +38,7 @@ public final class GetNetworkLoadBalancerResult {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return OCID of the reserved public IP address created with the virtual cloud network.
+     * @return Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
      * 
      */
     private String id;
@@ -147,7 +147,7 @@ public final class GetNetworkLoadBalancerResult {
         return this.freeformTags;
     }
     /**
-     * @return OCID of the reserved public IP address created with the virtual cloud network.
+     * @return Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
      * 
      */
     public String id() {

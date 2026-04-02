@@ -20,6 +20,10 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
      * 
      */
     private @Nullable Integer bandwidthMbps;
+    /**
+     * @return The type of the model deployment infrastructure.
+     * 
+     */
     private String infrastructureType;
     /**
      * @return The model deployment instance configuration.
@@ -45,6 +49,10 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
     public Optional<Integer> bandwidthMbps() {
         return Optional.ofNullable(this.bandwidthMbps);
     }
+    /**
+     * @return The type of the model deployment infrastructure.
+     * 
+     */
     public String infrastructureType() {
         return this.infrastructureType;
     }

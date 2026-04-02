@@ -12,6 +12,9 @@ namespace Pulumi.Oci.DataScience.Inputs
 
     public sealed class ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetailsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group you want to deploy.
+        /// </summary>
         [Input("modelGroupId")]
         public Input<string>? ModelGroupId { get; set; }
 

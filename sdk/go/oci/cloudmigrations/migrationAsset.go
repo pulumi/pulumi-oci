@@ -35,6 +35,8 @@ type MigrationAsset struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// List of migration assets that depend on the asset.
 	DependedOnBies pulumi.StringArrayOutput `pulumi:"dependedOnBies"`
+	// Mapping of source disk id to destination disk details
+	DestinationDisks pulumi.StringMapOutput `pulumi:"destinationDisks"`
 	// (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// OCID of an asset for an inventory.
@@ -50,6 +52,8 @@ type MigrationAsset struct {
 	ParentSnapshot pulumi.StringOutput `pulumi:"parentSnapshot"`
 	// Replication compartment identifier
 	ReplicationCompartmentId pulumi.StringOutput `pulumi:"replicationCompartmentId"`
+	// Replication location detail where the snapshots reside
+	ReplicationLocationDetail MigrationAssetReplicationLocationDetailOutput `pulumi:"replicationLocationDetail"`
 	// (Updatable) Replication schedule identifier
 	ReplicationScheduleId pulumi.StringOutput `pulumi:"replicationScheduleId"`
 	// Name of snapshot bucket
@@ -124,6 +128,8 @@ type migrationAssetState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// List of migration assets that depend on the asset.
 	DependedOnBies []string `pulumi:"dependedOnBies"`
+	// Mapping of source disk id to destination disk details
+	DestinationDisks map[string]string `pulumi:"destinationDisks"`
 	// (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// OCID of an asset for an inventory.
@@ -139,6 +145,8 @@ type migrationAssetState struct {
 	ParentSnapshot *string `pulumi:"parentSnapshot"`
 	// Replication compartment identifier
 	ReplicationCompartmentId *string `pulumi:"replicationCompartmentId"`
+	// Replication location detail where the snapshots reside
+	ReplicationLocationDetail *MigrationAssetReplicationLocationDetail `pulumi:"replicationLocationDetail"`
 	// (Updatable) Replication schedule identifier
 	ReplicationScheduleId *string `pulumi:"replicationScheduleId"`
 	// Name of snapshot bucket
@@ -169,6 +177,8 @@ type MigrationAssetState struct {
 	CompartmentId pulumi.StringPtrInput
 	// List of migration assets that depend on the asset.
 	DependedOnBies pulumi.StringArrayInput
+	// Mapping of source disk id to destination disk details
+	DestinationDisks pulumi.StringMapInput
 	// (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// OCID of an asset for an inventory.
@@ -184,6 +194,8 @@ type MigrationAssetState struct {
 	ParentSnapshot pulumi.StringPtrInput
 	// Replication compartment identifier
 	ReplicationCompartmentId pulumi.StringPtrInput
+	// Replication location detail where the snapshots reside
+	ReplicationLocationDetail MigrationAssetReplicationLocationDetailPtrInput
 	// (Updatable) Replication schedule identifier
 	ReplicationScheduleId pulumi.StringPtrInput
 	// Name of snapshot bucket
@@ -223,6 +235,8 @@ type migrationAssetArgs struct {
 	MigrationId string `pulumi:"migrationId"`
 	// Replication compartment identifier
 	ReplicationCompartmentId string `pulumi:"replicationCompartmentId"`
+	// Replication location detail where the snapshots reside
+	ReplicationLocationDetail *MigrationAssetReplicationLocationDetail `pulumi:"replicationLocationDetail"`
 	// (Updatable) Replication schedule identifier
 	ReplicationScheduleId *string `pulumi:"replicationScheduleId"`
 	// Name of snapshot bucket
@@ -245,6 +259,8 @@ type MigrationAssetArgs struct {
 	MigrationId pulumi.StringInput
 	// Replication compartment identifier
 	ReplicationCompartmentId pulumi.StringInput
+	// Replication location detail where the snapshots reside
+	ReplicationLocationDetail MigrationAssetReplicationLocationDetailPtrInput
 	// (Updatable) Replication schedule identifier
 	ReplicationScheduleId pulumi.StringPtrInput
 	// Name of snapshot bucket
@@ -356,6 +372,11 @@ func (o MigrationAssetOutput) DependedOnBies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *MigrationAsset) pulumi.StringArrayOutput { return v.DependedOnBies }).(pulumi.StringArrayOutput)
 }
 
+// Mapping of source disk id to destination disk details
+func (o MigrationAssetOutput) DestinationDisks() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MigrationAsset) pulumi.StringMapOutput { return v.DestinationDisks }).(pulumi.StringMapOutput)
+}
+
 // (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 func (o MigrationAssetOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *MigrationAsset) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
@@ -393,6 +414,13 @@ func (o MigrationAssetOutput) ParentSnapshot() pulumi.StringOutput {
 // Replication compartment identifier
 func (o MigrationAssetOutput) ReplicationCompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MigrationAsset) pulumi.StringOutput { return v.ReplicationCompartmentId }).(pulumi.StringOutput)
+}
+
+// Replication location detail where the snapshots reside
+func (o MigrationAssetOutput) ReplicationLocationDetail() MigrationAssetReplicationLocationDetailOutput {
+	return o.ApplyT(func(v *MigrationAsset) MigrationAssetReplicationLocationDetailOutput {
+		return v.ReplicationLocationDetail
+	}).(MigrationAssetReplicationLocationDetailOutput)
 }
 
 // (Updatable) Replication schedule identifier

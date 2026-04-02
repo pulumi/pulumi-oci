@@ -85,6 +85,12 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<string>? ImageDigest { get; set; }
 
         /// <summary>
+        /// (Updatable) OCID of the container image signature
+        /// </summary>
+        [Input("imageSignatureId")]
+        public Input<string>? ImageSignatureId { get; set; }
+
+        /// <summary>
         /// (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         /// </summary>
         [Input("serverPort")]

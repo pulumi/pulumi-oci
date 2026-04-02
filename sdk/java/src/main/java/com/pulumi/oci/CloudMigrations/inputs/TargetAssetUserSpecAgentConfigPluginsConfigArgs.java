@@ -5,9 +5,10 @@ package com.pulumi.oci.CloudMigrations.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class TargetAssetUserSpecAgentConfigPluginsConfigArgs extends com.pulumi.resources.ResourceArgs {
@@ -20,8 +21,8 @@ public final class TargetAssetUserSpecAgentConfigPluginsConfigArgs extends com.p
      * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
      * 
      */
-    @Import(name="desiredState", required=true)
-    private Output<String> desiredState;
+    @Import(name="desiredState")
+    private @Nullable Output<String> desiredState;
 
     /**
      * @return (Updatable) Whether the plugin should be enabled or disabled.
@@ -29,23 +30,23 @@ public final class TargetAssetUserSpecAgentConfigPluginsConfigArgs extends com.p
      * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
      * 
      */
-    public Output<String> desiredState() {
-        return this.desiredState;
+    public Optional<Output<String>> desiredState() {
+        return Optional.ofNullable(this.desiredState);
     }
 
     /**
      * (Updatable) The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
      * 
      */
-    @Import(name="name", required=true)
-    private Output<String> name;
+    @Import(name="name")
+    private @Nullable Output<String> name;
 
     /**
      * @return (Updatable) The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
      * 
      */
-    public Output<String> name() {
-        return this.name;
+    public Optional<Output<String>> name() {
+        return Optional.ofNullable(this.name);
     }
 
     private TargetAssetUserSpecAgentConfigPluginsConfigArgs() {}
@@ -81,7 +82,7 @@ public final class TargetAssetUserSpecAgentConfigPluginsConfigArgs extends com.p
          * @return builder
          * 
          */
-        public Builder desiredState(Output<String> desiredState) {
+        public Builder desiredState(@Nullable Output<String> desiredState) {
             $.desiredState = desiredState;
             return this;
         }
@@ -104,7 +105,7 @@ public final class TargetAssetUserSpecAgentConfigPluginsConfigArgs extends com.p
          * @return builder
          * 
          */
-        public Builder name(Output<String> name) {
+        public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
@@ -120,12 +121,6 @@ public final class TargetAssetUserSpecAgentConfigPluginsConfigArgs extends com.p
         }
 
         public TargetAssetUserSpecAgentConfigPluginsConfigArgs build() {
-            if ($.desiredState == null) {
-                throw new MissingRequiredPropertyException("TargetAssetUserSpecAgentConfigPluginsConfigArgs", "desiredState");
-            }
-            if ($.name == null) {
-                throw new MissingRequiredPropertyException("TargetAssetUserSpecAgentConfigPluginsConfigArgs", "name");
-            }
             return $;
         }
     }

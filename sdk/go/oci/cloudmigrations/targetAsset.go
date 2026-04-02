@@ -36,8 +36,10 @@ import (
 //			_, err := cloudmigrations.NewTargetAsset(ctx, "test_target_asset", &cloudmigrations.TargetAssetArgs{
 //				IsExcludedFromExecution: pulumi.Any(targetAssetIsExcludedFromExecution),
 //				MigrationPlanId:         pulumi.Any(testMigrationPlan.Id),
-//				PreferredShapeType:      pulumi.Any(targetAssetPreferredShapeType),
 //				Type:                    pulumi.Any(targetAssetType),
+//				BlockVolumesPerformance: pulumi.Any(targetAssetBlockVolumesPerformance),
+//				MsLicense:               pulumi.Any(targetAssetMsLicense),
+//				PreferredShapeType:      pulumi.Any(targetAssetPreferredShapeType),
 //				UserSpec: &cloudmigrations.TargetAssetUserSpecArgs{
 //					AgentConfig: &cloudmigrations.TargetAssetUserSpecAgentConfigArgs{
 //						AreAllPluginsDisabled: pulumi.Any(targetAssetUserSpecAgentConfigAreAllPluginsDisabled),
@@ -106,8 +108,6 @@ import (
 //						KmsKeyId:            pulumi.Any(testKey.Id),
 //					},
 //				},
-//				BlockVolumesPerformance: pulumi.Any(targetAssetBlockVolumesPerformance),
-//				MsLicense:               pulumi.Any(targetAssetMsLicense),
 //			})
 //			if err != nil {
 //				return err
@@ -183,14 +183,8 @@ func NewTargetAsset(ctx *pulumi.Context,
 	if args.MigrationPlanId == nil {
 		return nil, errors.New("invalid value for required argument 'MigrationPlanId'")
 	}
-	if args.PreferredShapeType == nil {
-		return nil, errors.New("invalid value for required argument 'PreferredShapeType'")
-	}
 	if args.Type == nil {
 		return nil, errors.New("invalid value for required argument 'Type'")
-	}
-	if args.UserSpec == nil {
-		return nil, errors.New("invalid value for required argument 'UserSpec'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource TargetAsset
@@ -314,11 +308,15 @@ type targetAssetArgs struct {
 	// (Updatable) Microsoft license for the VM configuration.
 	MsLicense *string `pulumi:"msLicense"`
 	// (Updatable) Preferred VM shape type that you provide.
-	PreferredShapeType string `pulumi:"preferredShapeType"`
+	PreferredShapeType *string `pulumi:"preferredShapeType"`
+	// Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+	RecommendedSpecs []TargetAssetRecommendedSpec `pulumi:"recommendedSpecs"`
+	// Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+	TestSpecs []TargetAssetTestSpec `pulumi:"testSpecs"`
 	// (Updatable) The type of target asset.
 	Type string `pulumi:"type"`
 	// (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-	UserSpec TargetAssetUserSpec `pulumi:"userSpec"`
+	UserSpec *TargetAssetUserSpec `pulumi:"userSpec"`
 }
 
 // The set of arguments for constructing a TargetAsset resource.
@@ -332,11 +330,15 @@ type TargetAssetArgs struct {
 	// (Updatable) Microsoft license for the VM configuration.
 	MsLicense pulumi.StringPtrInput
 	// (Updatable) Preferred VM shape type that you provide.
-	PreferredShapeType pulumi.StringInput
+	PreferredShapeType pulumi.StringPtrInput
+	// Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+	RecommendedSpecs TargetAssetRecommendedSpecArrayInput
+	// Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+	TestSpecs TargetAssetTestSpecArrayInput
 	// (Updatable) The type of target asset.
 	Type pulumi.StringInput
 	// (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-	UserSpec TargetAssetUserSpecInput
+	UserSpec TargetAssetUserSpecPtrInput
 }
 
 func (TargetAssetArgs) ElementType() reflect.Type {

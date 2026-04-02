@@ -32,7 +32,9 @@ class OutboundConnectorArgs:
                  is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['OutboundConnectorLockArgs']]]] = None,
                  password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_version: Optional[pulumi.Input[_builtins.int]] = None):
+                 password_secret_version: Optional[pulumi.Input[_builtins.int]] = None,
+                 trusted_certificate_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 trusted_certificate_secret_version: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a OutboundConnector resource.
 
@@ -47,6 +49,8 @@ class OutboundConnectorArgs:
         :param pulumi.Input[Sequence[pulumi.Input['OutboundConnectorLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
         :param pulumi.Input[_builtins.int] password_secret_version: Version of the password secret in the Vault to use.
+        :param pulumi.Input[_builtins.str] trusted_certificate_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
+        :param pulumi.Input[_builtins.int] trusted_certificate_secret_version: Version of the trusted certificate secret in the Vault to use.
                
                
                ** IMPORTANT **
@@ -71,6 +75,10 @@ class OutboundConnectorArgs:
             pulumi.set(__self__, "password_secret_id", password_secret_id)
         if password_secret_version is not None:
             pulumi.set(__self__, "password_secret_version", password_secret_version)
+        if trusted_certificate_secret_id is not None:
+            pulumi.set(__self__, "trusted_certificate_secret_id", trusted_certificate_secret_id)
+        if trusted_certificate_secret_version is not None:
+            pulumi.set(__self__, "trusted_certificate_secret_version", trusted_certificate_secret_version)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -206,16 +214,40 @@ class OutboundConnectorArgs:
     def password_secret_version(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         Version of the password secret in the Vault to use.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "password_secret_version")
 
     @password_secret_version.setter
     def password_secret_version(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "password_secret_version", value)
+
+    @_builtins.property
+    @pulumi.getter(name="trustedCertificateSecretId")
+    def trusted_certificate_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
+        """
+        return pulumi.get(self, "trusted_certificate_secret_id")
+
+    @trusted_certificate_secret_id.setter
+    def trusted_certificate_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "trusted_certificate_secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="trustedCertificateSecretVersion")
+    def trusted_certificate_secret_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Version of the trusted certificate secret in the Vault to use.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "trusted_certificate_secret_version")
+
+    @trusted_certificate_secret_version.setter
+    def trusted_certificate_secret_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "trusted_certificate_secret_version", value)
 
 
 @pulumi.input_type
@@ -235,7 +267,9 @@ class _OutboundConnectorState:
                  password_secret_version: Optional[pulumi.Input[_builtins.int]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
+                 trusted_certificate_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 trusted_certificate_secret_version: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering OutboundConnector resources.
 
@@ -250,13 +284,15 @@ class _OutboundConnectorState:
         :param pulumi.Input[Sequence[pulumi.Input['OutboundConnectorLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
         :param pulumi.Input[_builtins.int] password_secret_version: Version of the password secret in the Vault to use.
+        :param pulumi.Input[_builtins.str] state: The current state of this outbound connector.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+        :param pulumi.Input[_builtins.str] time_created: The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.str] trusted_certificate_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
+        :param pulumi.Input[_builtins.int] trusted_certificate_secret_version: Version of the trusted certificate secret in the Vault to use.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] state: The current state of this outbound connector.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
-        :param pulumi.Input[_builtins.str] time_created: The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -288,6 +324,10 @@ class _OutboundConnectorState:
             pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if trusted_certificate_secret_id is not None:
+            pulumi.set(__self__, "trusted_certificate_secret_id", trusted_certificate_secret_id)
+        if trusted_certificate_secret_version is not None:
+            pulumi.set(__self__, "trusted_certificate_secret_version", trusted_certificate_secret_version)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -423,10 +463,6 @@ class _OutboundConnectorState:
     def password_secret_version(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         Version of the password secret in the Vault to use.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "password_secret_version")
 
@@ -470,6 +506,34 @@ class _OutboundConnectorState:
     def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
+    @_builtins.property
+    @pulumi.getter(name="trustedCertificateSecretId")
+    def trusted_certificate_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
+        """
+        return pulumi.get(self, "trusted_certificate_secret_id")
+
+    @trusted_certificate_secret_id.setter
+    def trusted_certificate_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "trusted_certificate_secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="trustedCertificateSecretVersion")
+    def trusted_certificate_secret_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Version of the trusted certificate secret in the Vault to use.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "trusted_certificate_secret_version")
+
+    @trusted_certificate_secret_version.setter
+    def trusted_certificate_secret_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "trusted_certificate_secret_version", value)
+
 
 @pulumi.type_token("oci:FileStorage/outboundConnector:OutboundConnector")
 class OutboundConnector(pulumi.CustomResource):
@@ -489,6 +553,8 @@ class OutboundConnector(pulumi.CustomResource):
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict']]]]] = None,
                  password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
                  password_secret_version: Optional[pulumi.Input[_builtins.int]] = None,
+                 trusted_certificate_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 trusted_certificate_secret_version: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
         This resource provides the Outbound Connector resource in Oracle Cloud Infrastructure File Storage service.
@@ -546,7 +612,9 @@ class OutboundConnector(pulumi.CustomResource):
                 "time_created": outbound_connector_locks_time_created,
             }],
             password_secret_id=test_secret["id"],
-            password_secret_version=outbound_connector_password_secret_version)
+            password_secret_version=outbound_connector_password_secret_version,
+            trusted_certificate_secret_id=test_secret["id"],
+            trusted_certificate_secret_version=outbound_connector_trusted_certificate_secret_version)
         ```
 
         ## Import
@@ -571,6 +639,8 @@ class OutboundConnector(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
         :param pulumi.Input[_builtins.int] password_secret_version: Version of the password secret in the Vault to use.
+        :param pulumi.Input[_builtins.str] trusted_certificate_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
+        :param pulumi.Input[_builtins.int] trusted_certificate_secret_version: Version of the trusted certificate secret in the Vault to use.
                
                
                ** IMPORTANT **
@@ -638,7 +708,9 @@ class OutboundConnector(pulumi.CustomResource):
                 "time_created": outbound_connector_locks_time_created,
             }],
             password_secret_id=test_secret["id"],
-            password_secret_version=outbound_connector_password_secret_version)
+            password_secret_version=outbound_connector_password_secret_version,
+            trusted_certificate_secret_id=test_secret["id"],
+            trusted_certificate_secret_version=outbound_connector_trusted_certificate_secret_version)
         ```
 
         ## Import
@@ -677,6 +749,8 @@ class OutboundConnector(pulumi.CustomResource):
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict']]]]] = None,
                  password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
                  password_secret_version: Optional[pulumi.Input[_builtins.int]] = None,
+                 trusted_certificate_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 trusted_certificate_secret_version: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -708,6 +782,8 @@ class OutboundConnector(pulumi.CustomResource):
             __props__.__dict__["locks"] = locks
             __props__.__dict__["password_secret_id"] = password_secret_id
             __props__.__dict__["password_secret_version"] = password_secret_version
+            __props__.__dict__["trusted_certificate_secret_id"] = trusted_certificate_secret_id
+            __props__.__dict__["trusted_certificate_secret_version"] = trusted_certificate_secret_version
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
@@ -735,7 +811,9 @@ class OutboundConnector(pulumi.CustomResource):
             password_secret_version: Optional[pulumi.Input[_builtins.int]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'OutboundConnector':
+            time_created: Optional[pulumi.Input[_builtins.str]] = None,
+            trusted_certificate_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+            trusted_certificate_secret_version: Optional[pulumi.Input[_builtins.int]] = None) -> 'OutboundConnector':
         """
         Get an existing OutboundConnector resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -754,13 +832,15 @@ class OutboundConnector(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
         :param pulumi.Input[_builtins.int] password_secret_version: Version of the password secret in the Vault to use.
+        :param pulumi.Input[_builtins.str] state: The current state of this outbound connector.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
+        :param pulumi.Input[_builtins.str] time_created: The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.str] trusted_certificate_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
+        :param pulumi.Input[_builtins.int] trusted_certificate_secret_version: Version of the trusted certificate secret in the Vault to use.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] state: The current state of this outbound connector.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
-        :param pulumi.Input[_builtins.str] time_created: The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -781,6 +861,8 @@ class OutboundConnector(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["trusted_certificate_secret_id"] = trusted_certificate_secret_id
+        __props__.__dict__["trusted_certificate_secret_version"] = trusted_certificate_secret_version
         return OutboundConnector(resource_name, opts=opts, __props__=__props__)
 
     @_builtins.property
@@ -873,10 +955,6 @@ class OutboundConnector(pulumi.CustomResource):
     def password_secret_version(self) -> pulumi.Output[_builtins.int]:
         """
         Version of the password secret in the Vault to use.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "password_secret_version")
 
@@ -903,4 +981,24 @@ class OutboundConnector(pulumi.CustomResource):
         The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="trustedCertificateSecretId")
+    def trusted_certificate_secret_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
+        """
+        return pulumi.get(self, "trusted_certificate_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="trustedCertificateSecretVersion")
+    def trusted_certificate_secret_version(self) -> pulumi.Output[_builtins.int]:
+        """
+        Version of the trusted certificate secret in the Vault to use.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "trusted_certificate_secret_version")
 

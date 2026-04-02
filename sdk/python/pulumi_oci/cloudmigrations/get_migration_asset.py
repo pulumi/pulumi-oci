@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetMigrationAssetResult',
@@ -26,7 +27,7 @@ class GetMigrationAssetResult:
     """
     A collection of values returned by getMigrationAsset.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, depended_on_bies=None, display_name=None, id=None, inventory_asset_id=None, lifecycle_details=None, migration_asset_depends_ons=None, migration_asset_id=None, migration_id=None, notifications=None, parent_snapshot=None, replication_compartment_id=None, replication_schedule_id=None, snap_shot_bucket_name=None, snapshots=None, source_asset_id=None, state=None, tenancy_id=None, time_created=None, time_updated=None, type=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, depended_on_bies=None, destination_disks=None, display_name=None, id=None, inventory_asset_id=None, lifecycle_details=None, migration_asset_depends_ons=None, migration_asset_id=None, migration_id=None, notifications=None, parent_snapshot=None, replication_compartment_id=None, replication_location_details=None, replication_schedule_id=None, snap_shot_bucket_name=None, snapshots=None, source_asset_id=None, state=None, tenancy_id=None, time_created=None, time_updated=None, type=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -36,6 +37,9 @@ class GetMigrationAssetResult:
         if depended_on_bies and not isinstance(depended_on_bies, list):
             raise TypeError("Expected argument 'depended_on_bies' to be a list")
         pulumi.set(__self__, "depended_on_bies", depended_on_bies)
+        if destination_disks and not isinstance(destination_disks, dict):
+            raise TypeError("Expected argument 'destination_disks' to be a dict")
+        pulumi.set(__self__, "destination_disks", destination_disks)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -66,6 +70,9 @@ class GetMigrationAssetResult:
         if replication_compartment_id and not isinstance(replication_compartment_id, str):
             raise TypeError("Expected argument 'replication_compartment_id' to be a str")
         pulumi.set(__self__, "replication_compartment_id", replication_compartment_id)
+        if replication_location_details and not isinstance(replication_location_details, list):
+            raise TypeError("Expected argument 'replication_location_details' to be a list")
+        pulumi.set(__self__, "replication_location_details", replication_location_details)
         if replication_schedule_id and not isinstance(replication_schedule_id, str):
             raise TypeError("Expected argument 'replication_schedule_id' to be a str")
         pulumi.set(__self__, "replication_schedule_id", replication_schedule_id)
@@ -117,6 +124,14 @@ class GetMigrationAssetResult:
         List of migration assets that depend on the asset.
         """
         return pulumi.get(self, "depended_on_bies")
+
+    @_builtins.property
+    @pulumi.getter(name="destinationDisks")
+    def destination_disks(self) -> Mapping[str, _builtins.str]:
+        """
+        Mapping of source disk id to destination disk details
+        """
+        return pulumi.get(self, "destination_disks")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -188,6 +203,14 @@ class GetMigrationAssetResult:
         Replication compartment identifier
         """
         return pulumi.get(self, "replication_compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="replicationLocationDetails")
+    def replication_location_details(self) -> Sequence['outputs.GetMigrationAssetReplicationLocationDetailResult']:
+        """
+        Replication location detail where the snapshots reside
+        """
+        return pulumi.get(self, "replication_location_details")
 
     @_builtins.property
     @pulumi.getter(name="replicationScheduleId")
@@ -271,6 +294,7 @@ class AwaitableGetMigrationAssetResult(GetMigrationAssetResult):
             availability_domain=self.availability_domain,
             compartment_id=self.compartment_id,
             depended_on_bies=self.depended_on_bies,
+            destination_disks=self.destination_disks,
             display_name=self.display_name,
             id=self.id,
             inventory_asset_id=self.inventory_asset_id,
@@ -281,6 +305,7 @@ class AwaitableGetMigrationAssetResult(GetMigrationAssetResult):
             notifications=self.notifications,
             parent_snapshot=self.parent_snapshot,
             replication_compartment_id=self.replication_compartment_id,
+            replication_location_details=self.replication_location_details,
             replication_schedule_id=self.replication_schedule_id,
             snap_shot_bucket_name=self.snap_shot_bucket_name,
             snapshots=self.snapshots,
@@ -320,6 +345,7 @@ def get_migration_asset(migration_asset_id: Optional[_builtins.str] = None,
         availability_domain=pulumi.get(__ret__, 'availability_domain'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         depended_on_bies=pulumi.get(__ret__, 'depended_on_bies'),
+        destination_disks=pulumi.get(__ret__, 'destination_disks'),
         display_name=pulumi.get(__ret__, 'display_name'),
         id=pulumi.get(__ret__, 'id'),
         inventory_asset_id=pulumi.get(__ret__, 'inventory_asset_id'),
@@ -330,6 +356,7 @@ def get_migration_asset(migration_asset_id: Optional[_builtins.str] = None,
         notifications=pulumi.get(__ret__, 'notifications'),
         parent_snapshot=pulumi.get(__ret__, 'parent_snapshot'),
         replication_compartment_id=pulumi.get(__ret__, 'replication_compartment_id'),
+        replication_location_details=pulumi.get(__ret__, 'replication_location_details'),
         replication_schedule_id=pulumi.get(__ret__, 'replication_schedule_id'),
         snap_shot_bucket_name=pulumi.get(__ret__, 'snap_shot_bucket_name'),
         snapshots=pulumi.get(__ret__, 'snapshots'),
@@ -366,6 +393,7 @@ def get_migration_asset_output(migration_asset_id: Optional[pulumi.Input[_builti
         availability_domain=pulumi.get(__response__, 'availability_domain'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         depended_on_bies=pulumi.get(__response__, 'depended_on_bies'),
+        destination_disks=pulumi.get(__response__, 'destination_disks'),
         display_name=pulumi.get(__response__, 'display_name'),
         id=pulumi.get(__response__, 'id'),
         inventory_asset_id=pulumi.get(__response__, 'inventory_asset_id'),
@@ -376,6 +404,7 @@ def get_migration_asset_output(migration_asset_id: Optional[pulumi.Input[_builti
         notifications=pulumi.get(__response__, 'notifications'),
         parent_snapshot=pulumi.get(__response__, 'parent_snapshot'),
         replication_compartment_id=pulumi.get(__response__, 'replication_compartment_id'),
+        replication_location_details=pulumi.get(__response__, 'replication_location_details'),
         replication_schedule_id=pulumi.get(__response__, 'replication_schedule_id'),
         snap_shot_bucket_name=pulumi.get(__response__, 'snap_shot_bucket_name'),
         snapshots=pulumi.get(__response__, 'snapshots'),

@@ -42,6 +42,14 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// Configuration for a Migration Project.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMigrationsMigrationCollectionItemMigrationConfigResult> MigrationConfigs;
+        /// <summary>
+        /// Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+        /// </summary>
+        public readonly string MigrationType;
+        /// <summary>
         /// Replication schedule identifier
         /// </summary>
         public readonly string ReplicationScheduleId;
@@ -78,6 +86,10 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetMigrationsMigrationCollectionItemMigrationConfigResult> migrationConfigs,
+
+            string migrationType,
+
             string replicationScheduleId,
 
             string state,
@@ -95,6 +107,8 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
             Id = id;
             IsCompleted = isCompleted;
             LifecycleDetails = lifecycleDetails;
+            MigrationConfigs = migrationConfigs;
+            MigrationType = migrationType;
             ReplicationScheduleId = replicationScheduleId;
             State = state;
             SystemTags = systemTags;

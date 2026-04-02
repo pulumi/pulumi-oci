@@ -42,7 +42,11 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"bar-key": pulumi.String("value"),
 //				},
-//				IsCompleted:           pulumi.Any(migrationIsCompleted),
+//				IsCompleted: pulumi.Any(migrationIsCompleted),
+//				MigrationConfig: &cloudmigrations.MigrationMigrationConfigArgs{
+//					SubnetId: pulumi.Any(testSubnet.Id),
+//				},
+//				MigrationType:         pulumi.Any(migrationMigrationType),
 //				ReplicationScheduleId: pulumi.Any(testReplicationSchedule.Id),
 //			})
 //			if err != nil {
@@ -76,6 +80,10 @@ type Migration struct {
 	IsCompleted pulumi.BoolOutput `pulumi:"isCompleted"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// (Updatable) Configuration for a Migration Project.
+	MigrationConfig MigrationMigrationConfigOutput `pulumi:"migrationConfig"`
+	// (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+	MigrationType pulumi.StringOutput `pulumi:"migrationType"`
 	// (Updatable) Replication schedule identifier
 	//
 	// ** IMPORTANT **
@@ -139,6 +147,10 @@ type migrationState struct {
 	IsCompleted *bool `pulumi:"isCompleted"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// (Updatable) Configuration for a Migration Project.
+	MigrationConfig *MigrationMigrationConfig `pulumi:"migrationConfig"`
+	// (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+	MigrationType *string `pulumi:"migrationType"`
 	// (Updatable) Replication schedule identifier
 	//
 	// ** IMPORTANT **
@@ -167,6 +179,10 @@ type MigrationState struct {
 	IsCompleted pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
+	// (Updatable) Configuration for a Migration Project.
+	MigrationConfig MigrationMigrationConfigPtrInput
+	// (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+	MigrationType pulumi.StringPtrInput
 	// (Updatable) Replication schedule identifier
 	//
 	// ** IMPORTANT **
@@ -197,6 +213,10 @@ type migrationArgs struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Indicates whether migration is marked as complete.
 	IsCompleted *bool `pulumi:"isCompleted"`
+	// (Updatable) Configuration for a Migration Project.
+	MigrationConfig *MigrationMigrationConfig `pulumi:"migrationConfig"`
+	// (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+	MigrationType *string `pulumi:"migrationType"`
 	// (Updatable) Replication schedule identifier
 	//
 	// ** IMPORTANT **
@@ -216,6 +236,10 @@ type MigrationArgs struct {
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) Indicates whether migration is marked as complete.
 	IsCompleted pulumi.BoolPtrInput
+	// (Updatable) Configuration for a Migration Project.
+	MigrationConfig MigrationMigrationConfigPtrInput
+	// (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+	MigrationType pulumi.StringPtrInput
 	// (Updatable) Replication schedule identifier
 	//
 	// ** IMPORTANT **
@@ -338,6 +362,16 @@ func (o MigrationOutput) IsCompleted() pulumi.BoolOutput {
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
 func (o MigrationOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// (Updatable) Configuration for a Migration Project.
+func (o MigrationOutput) MigrationConfig() MigrationMigrationConfigOutput {
+	return o.ApplyT(func(v *Migration) MigrationMigrationConfigOutput { return v.MigrationConfig }).(MigrationMigrationConfigOutput)
+}
+
+// (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+func (o MigrationOutput) MigrationType() pulumi.StringOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.MigrationType }).(pulumi.StringOutput)
 }
 
 // (Updatable) Replication schedule identifier

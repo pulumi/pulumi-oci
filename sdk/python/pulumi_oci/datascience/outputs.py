@@ -4718,7 +4718,9 @@ class ModelDeploymentModelDeploymentConfigurationDetails(dict):
         """
         :param _builtins.str deployment_type: (Updatable) The type of the model deployment.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs' environment_configuration_details: (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
+        :param 'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgs' infrastructure_configuration_details: The infrastructure configuration details.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs' model_configuration_details: (Updatable) The model configuration details.
+        :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetailsArgs' model_group_configuration_details: (Updatable) The model group configuration details.
         """
         pulumi.set(__self__, "deployment_type", deployment_type)
         if environment_configuration_details is not None:
@@ -4749,6 +4751,9 @@ class ModelDeploymentModelDeploymentConfigurationDetails(dict):
     @_builtins.property
     @pulumi.getter(name="infrastructureConfigurationDetails")
     def infrastructure_configuration_details(self) -> Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails']:
+        """
+        The infrastructure configuration details.
+        """
         return pulumi.get(self, "infrastructure_configuration_details")
 
     @_builtins.property
@@ -4762,6 +4767,9 @@ class ModelDeploymentModelDeploymentConfigurationDetails(dict):
     @_builtins.property
     @pulumi.getter(name="modelGroupConfigurationDetails")
     def model_group_configuration_details(self) -> Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetails']:
+        """
+        (Updatable) The model group configuration details.
+        """
         return pulumi.get(self, "model_group_configuration_details")
 
 
@@ -4780,6 +4788,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
             suggest = "health_check_port"
         elif key == "imageDigest":
             suggest = "image_digest"
+        elif key == "imageSignatureId":
+            suggest = "image_signature_id"
         elif key == "serverPort":
             suggest = "server_port"
 
@@ -4803,6 +4813,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
                  health_check_port: Optional[_builtins.int] = None,
                  image: Optional[_builtins.str] = None,
                  image_digest: Optional[_builtins.str] = None,
+                 image_signature_id: Optional[_builtins.str] = None,
                  server_port: Optional[_builtins.int] = None):
         """
         :param _builtins.str environment_configuration_type: (Updatable) The environment configuration type
@@ -4813,6 +4824,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
         :param _builtins.int health_check_port: (Updatable) The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         :param _builtins.str image: (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. The container image is optional while using service managed open source foundation model. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
         :param _builtins.str image_digest: (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param _builtins.str image_signature_id: (Updatable) OCID of the container image signature
         :param _builtins.int server_port: (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         """
         pulumi.set(__self__, "environment_configuration_type", environment_configuration_type)
@@ -4830,6 +4842,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
             pulumi.set(__self__, "image", image)
         if image_digest is not None:
             pulumi.set(__self__, "image_digest", image_digest)
+        if image_signature_id is not None:
+            pulumi.set(__self__, "image_signature_id", image_signature_id)
         if server_port is not None:
             pulumi.set(__self__, "server_port", server_port)
 
@@ -4898,6 +4912,14 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
         return pulumi.get(self, "image_digest")
 
     @_builtins.property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
+
+    @_builtins.property
     @pulumi.getter(name="serverPort")
     def server_port(self) -> Optional[_builtins.int]:
         """
@@ -4940,6 +4962,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
                  maximum_bandwidth_mbps: Optional[_builtins.int] = None,
                  scaling_policy: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicy'] = None):
         """
+        :param _builtins.str infrastructure_type: The type of the model deployment infrastructure.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs' instance_configuration: The model deployment instance configuration.
         :param _builtins.int bandwidth_mbps: The minimum network bandwidth for the model deployment.
         :param _builtins.int maximum_bandwidth_mbps: The maximum network bandwidth for the model deployment.
@@ -4957,6 +4980,9 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
     @_builtins.property
     @pulumi.getter(name="infrastructureType")
     def infrastructure_type(self) -> _builtins.str:
+        """
+        The type of the model deployment infrastructure.
+        """
         return pulumi.get(self, "infrastructure_type")
 
     @_builtins.property
@@ -5001,6 +5027,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
             suggest = "instance_shape_name"
         elif key == "modelDeploymentInstanceShapeConfigDetails":
             suggest = "model_deployment_instance_shape_config_details"
+        elif key == "networkAccessType":
+            suggest = "network_access_type"
         elif key == "privateEndpointId":
             suggest = "private_endpoint_id"
         elif key == "subnetId":
@@ -5020,17 +5048,21 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
     def __init__(__self__, *,
                  instance_shape_name: _builtins.str,
                  model_deployment_instance_shape_config_details: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails'] = None,
+                 network_access_type: Optional[_builtins.str] = None,
                  private_endpoint_id: Optional[_builtins.str] = None,
                  subnet_id: Optional[_builtins.str] = None):
         """
         :param _builtins.str instance_shape_name: The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs' model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
+        :param _builtins.str network_access_type: Network Access type of model deployment.
         :param _builtins.str private_endpoint_id: The OCID of a Data Science private endpoint.
         :param _builtins.str subnet_id: A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
         """
         pulumi.set(__self__, "instance_shape_name", instance_shape_name)
         if model_deployment_instance_shape_config_details is not None:
             pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
+        if network_access_type is not None:
+            pulumi.set(__self__, "network_access_type", network_access_type)
         if private_endpoint_id is not None:
             pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         if subnet_id is not None:
@@ -5051,6 +5083,14 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
         Details for the model-deployment instance shape configuration.
         """
         return pulumi.get(self, "model_deployment_instance_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkAccessType")
+    def network_access_type(self) -> Optional[_builtins.str]:
+        """
+        Network Access type of model deployment.
+        """
+        return pulumi.get(self, "network_access_type")
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointId")
@@ -5659,6 +5699,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
             suggest = "instance_shape_name"
         elif key == "modelDeploymentInstanceShapeConfigDetails":
             suggest = "model_deployment_instance_shape_config_details"
+        elif key == "networkAccessType":
+            suggest = "network_access_type"
         elif key == "privateEndpointId":
             suggest = "private_endpoint_id"
         elif key == "subnetId":
@@ -5678,11 +5720,13 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     def __init__(__self__, *,
                  instance_shape_name: Optional[_builtins.str] = None,
                  model_deployment_instance_shape_config_details: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails'] = None,
+                 network_access_type: Optional[_builtins.str] = None,
                  private_endpoint_id: Optional[_builtins.str] = None,
                  subnet_id: Optional[_builtins.str] = None):
         """
         :param _builtins.str instance_shape_name: (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs' model_deployment_instance_shape_config_details: (Updatable) Details for the model-deployment instance shape configuration.
+        :param _builtins.str network_access_type: (Updatable) Network Access type of model deployment.
         :param _builtins.str private_endpoint_id: (Updatable) The OCID of a Data Science private endpoint.
         :param _builtins.str subnet_id: (Updatable) A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
         """
@@ -5690,6 +5734,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
             pulumi.set(__self__, "instance_shape_name", instance_shape_name)
         if model_deployment_instance_shape_config_details is not None:
             pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
+        if network_access_type is not None:
+            pulumi.set(__self__, "network_access_type", network_access_type)
         if private_endpoint_id is not None:
             pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         if subnet_id is not None:
@@ -5710,6 +5756,14 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         (Updatable) Details for the model-deployment instance shape configuration.
         """
         return pulumi.get(self, "model_deployment_instance_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkAccessType")
+    def network_access_type(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Network Access type of model deployment.
+        """
+        return pulumi.get(self, "network_access_type")
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointId")
@@ -6286,12 +6340,18 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationD
 
     def __init__(__self__, *,
                  model_group_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str model_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group you want to deploy.
+        """
         if model_group_id is not None:
             pulumi.set(__self__, "model_group_id", model_group_id)
 
     @_builtins.property
     @pulumi.getter(name="modelGroupId")
     def model_group_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group you want to deploy.
+        """
         return pulumi.get(self, "model_group_id")
 
 
@@ -20252,6 +20312,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurati
                  health_check_port: _builtins.int,
                  image: _builtins.str,
                  image_digest: _builtins.str,
+                 image_signature_id: _builtins.str,
                  server_port: _builtins.int):
         """
         :param Sequence[_builtins.str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
@@ -20262,6 +20323,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurati
         :param _builtins.int health_check_port: The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         :param _builtins.str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. The container image is optional while using service managed open source foundation model. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
         :param _builtins.str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param _builtins.str image_signature_id: OCID of the container image signature
         :param _builtins.int server_port: The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         """
         pulumi.set(__self__, "cmds", cmds)
@@ -20272,6 +20334,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurati
         pulumi.set(__self__, "health_check_port", health_check_port)
         pulumi.set(__self__, "image", image)
         pulumi.set(__self__, "image_digest", image_digest)
+        pulumi.set(__self__, "image_signature_id", image_signature_id)
         pulumi.set(__self__, "server_port", server_port)
 
     @_builtins.property
@@ -20337,6 +20400,14 @@ class GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurati
         The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
         """
         return pulumi.get(self, "image_digest")
+
+    @_builtins.property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> _builtins.str:
+        """
+        OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
 
     @_builtins.property
     @pulumi.getter(name="serverPort")
@@ -20414,16 +20485,19 @@ class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigur
     def __init__(__self__, *,
                  instance_shape_name: _builtins.str,
                  model_deployment_instance_shape_config_details: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult'],
+                 network_access_type: _builtins.str,
                  private_endpoint_id: _builtins.str,
                  subnet_id: _builtins.str):
         """
         :param _builtins.str instance_shape_name: The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs'] model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
+        :param _builtins.str network_access_type: Network Access type of model deployment.
         :param _builtins.str private_endpoint_id: The OCID of a Data Science private endpoint.
         :param _builtins.str subnet_id: A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
         """
         pulumi.set(__self__, "instance_shape_name", instance_shape_name)
         pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
+        pulumi.set(__self__, "network_access_type", network_access_type)
         pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         pulumi.set(__self__, "subnet_id", subnet_id)
 
@@ -20442,6 +20516,14 @@ class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigur
         Details for the model-deployment instance shape configuration.
         """
         return pulumi.get(self, "model_deployment_instance_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkAccessType")
+    def network_access_type(self) -> _builtins.str:
+        """
+        Network Access type of model deployment.
+        """
+        return pulumi.get(self, "network_access_type")
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointId")
@@ -20866,16 +20948,19 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
     def __init__(__self__, *,
                  instance_shape_name: _builtins.str,
                  model_deployment_instance_shape_config_details: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult'],
+                 network_access_type: _builtins.str,
                  private_endpoint_id: _builtins.str,
                  subnet_id: _builtins.str):
         """
         :param _builtins.str instance_shape_name: The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs'] model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
+        :param _builtins.str network_access_type: Network Access type of model deployment.
         :param _builtins.str private_endpoint_id: The OCID of a Data Science private endpoint.
         :param _builtins.str subnet_id: A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
         """
         pulumi.set(__self__, "instance_shape_name", instance_shape_name)
         pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
+        pulumi.set(__self__, "network_access_type", network_access_type)
         pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         pulumi.set(__self__, "subnet_id", subnet_id)
 
@@ -20894,6 +20979,14 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
         Details for the model-deployment instance shape configuration.
         """
         return pulumi.get(self, "model_deployment_instance_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkAccessType")
+    def network_access_type(self) -> _builtins.str:
+        """
+        Network Access type of model deployment.
+        """
+        return pulumi.get(self, "network_access_type")
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointId")
@@ -21881,6 +21974,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnviro
                  health_check_port: _builtins.int,
                  image: _builtins.str,
                  image_digest: _builtins.str,
+                 image_signature_id: _builtins.str,
                  server_port: _builtins.int):
         """
         :param Sequence[_builtins.str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
@@ -21891,6 +21985,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnviro
         :param _builtins.int health_check_port: The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         :param _builtins.str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. The container image is optional while using service managed open source foundation model. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
         :param _builtins.str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param _builtins.str image_signature_id: OCID of the container image signature
         :param _builtins.int server_port: The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         """
         pulumi.set(__self__, "cmds", cmds)
@@ -21901,6 +21996,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnviro
         pulumi.set(__self__, "health_check_port", health_check_port)
         pulumi.set(__self__, "image", image)
         pulumi.set(__self__, "image_digest", image_digest)
+        pulumi.set(__self__, "image_signature_id", image_signature_id)
         pulumi.set(__self__, "server_port", server_port)
 
     @_builtins.property
@@ -21966,6 +22062,14 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnviro
         The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
         """
         return pulumi.get(self, "image_digest")
+
+    @_builtins.property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> _builtins.str:
+        """
+        OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
 
     @_builtins.property
     @pulumi.getter(name="serverPort")
@@ -22043,16 +22147,19 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfras
     def __init__(__self__, *,
                  instance_shape_name: _builtins.str,
                  model_deployment_instance_shape_config_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult'],
+                 network_access_type: _builtins.str,
                  private_endpoint_id: _builtins.str,
                  subnet_id: _builtins.str):
         """
         :param _builtins.str instance_shape_name: The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs'] model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
+        :param _builtins.str network_access_type: Network Access type of model deployment.
         :param _builtins.str private_endpoint_id: The OCID of a Data Science private endpoint.
         :param _builtins.str subnet_id: A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
         """
         pulumi.set(__self__, "instance_shape_name", instance_shape_name)
         pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
+        pulumi.set(__self__, "network_access_type", network_access_type)
         pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         pulumi.set(__self__, "subnet_id", subnet_id)
 
@@ -22071,6 +22178,14 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfras
         Details for the model-deployment instance shape configuration.
         """
         return pulumi.get(self, "model_deployment_instance_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkAccessType")
+    def network_access_type(self) -> _builtins.str:
+        """
+        Network Access type of model deployment.
+        """
+        return pulumi.get(self, "network_access_type")
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointId")
@@ -22495,16 +22610,19 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
     def __init__(__self__, *,
                  instance_shape_name: _builtins.str,
                  model_deployment_instance_shape_config_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult'],
+                 network_access_type: _builtins.str,
                  private_endpoint_id: _builtins.str,
                  subnet_id: _builtins.str):
         """
         :param _builtins.str instance_shape_name: The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs'] model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
+        :param _builtins.str network_access_type: Network Access type of model deployment.
         :param _builtins.str private_endpoint_id: The OCID of a Data Science private endpoint.
         :param _builtins.str subnet_id: A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
         """
         pulumi.set(__self__, "instance_shape_name", instance_shape_name)
         pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
+        pulumi.set(__self__, "network_access_type", network_access_type)
         pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         pulumi.set(__self__, "subnet_id", subnet_id)
 
@@ -22523,6 +22641,14 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
         Details for the model-deployment instance shape configuration.
         """
         return pulumi.get(self, "model_deployment_instance_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkAccessType")
+    def network_access_type(self) -> _builtins.str:
+        """
+        Network Access type of model deployment.
+        """
+        return pulumi.get(self, "network_access_type")
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointId")

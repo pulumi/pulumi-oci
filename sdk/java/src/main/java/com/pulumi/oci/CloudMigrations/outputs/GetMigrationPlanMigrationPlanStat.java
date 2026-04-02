@@ -5,6 +5,8 @@ package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.CloudMigrations.outputs.GetMigrationPlanMigrationPlanStatCostToMigrate;
+import com.pulumi.oci.CloudMigrations.outputs.GetMigrationPlanMigrationPlanStatCurrentMonthlyCost;
 import com.pulumi.oci.CloudMigrations.outputs.GetMigrationPlanMigrationPlanStatTotalEstimatedCost;
 import java.lang.Integer;
 import java.lang.String;
@@ -13,6 +15,16 @@ import java.util.Objects;
 
 @CustomType
 public final class GetMigrationPlanMigrationPlanStat {
+    /**
+     * @return Summary of costs to migrate.
+     * 
+     */
+    private List<GetMigrationPlanMigrationPlanStatCostToMigrate> costToMigrates;
+    /**
+     * @return Current monthly compute and storage costs.
+     * 
+     */
+    private List<GetMigrationPlanMigrationPlanStatCurrentMonthlyCost> currentMonthlyCosts;
     /**
      * @return The time when the migration plan was updated. An RFC3339 formatted datetime string.
      * 
@@ -30,6 +42,20 @@ public final class GetMigrationPlanMigrationPlanStat {
     private Integer vmCount;
 
     private GetMigrationPlanMigrationPlanStat() {}
+    /**
+     * @return Summary of costs to migrate.
+     * 
+     */
+    public List<GetMigrationPlanMigrationPlanStatCostToMigrate> costToMigrates() {
+        return this.costToMigrates;
+    }
+    /**
+     * @return Current monthly compute and storage costs.
+     * 
+     */
+    public List<GetMigrationPlanMigrationPlanStatCurrentMonthlyCost> currentMonthlyCosts() {
+        return this.currentMonthlyCosts;
+    }
     /**
      * @return The time when the migration plan was updated. An RFC3339 formatted datetime string.
      * 
@@ -61,17 +87,43 @@ public final class GetMigrationPlanMigrationPlanStat {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetMigrationPlanMigrationPlanStatCostToMigrate> costToMigrates;
+        private List<GetMigrationPlanMigrationPlanStatCurrentMonthlyCost> currentMonthlyCosts;
         private String timeUpdated;
         private List<GetMigrationPlanMigrationPlanStatTotalEstimatedCost> totalEstimatedCosts;
         private Integer vmCount;
         public Builder() {}
         public Builder(GetMigrationPlanMigrationPlanStat defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.costToMigrates = defaults.costToMigrates;
+    	      this.currentMonthlyCosts = defaults.currentMonthlyCosts;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.totalEstimatedCosts = defaults.totalEstimatedCosts;
     	      this.vmCount = defaults.vmCount;
         }
 
+        @CustomType.Setter
+        public Builder costToMigrates(List<GetMigrationPlanMigrationPlanStatCostToMigrate> costToMigrates) {
+            if (costToMigrates == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanMigrationPlanStat", "costToMigrates");
+            }
+            this.costToMigrates = costToMigrates;
+            return this;
+        }
+        public Builder costToMigrates(GetMigrationPlanMigrationPlanStatCostToMigrate... costToMigrates) {
+            return costToMigrates(List.of(costToMigrates));
+        }
+        @CustomType.Setter
+        public Builder currentMonthlyCosts(List<GetMigrationPlanMigrationPlanStatCurrentMonthlyCost> currentMonthlyCosts) {
+            if (currentMonthlyCosts == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanMigrationPlanStat", "currentMonthlyCosts");
+            }
+            this.currentMonthlyCosts = currentMonthlyCosts;
+            return this;
+        }
+        public Builder currentMonthlyCosts(GetMigrationPlanMigrationPlanStatCurrentMonthlyCost... currentMonthlyCosts) {
+            return currentMonthlyCosts(List.of(currentMonthlyCosts));
+        }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             if (timeUpdated == null) {
@@ -101,6 +153,8 @@ public final class GetMigrationPlanMigrationPlanStat {
         }
         public GetMigrationPlanMigrationPlanStat build() {
             final var _resultValue = new GetMigrationPlanMigrationPlanStat();
+            _resultValue.costToMigrates = costToMigrates;
+            _resultValue.currentMonthlyCosts = currentMonthlyCosts;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.totalEstimatedCosts = totalEstimatedCosts;
             _resultValue.vmCount = vmCount;

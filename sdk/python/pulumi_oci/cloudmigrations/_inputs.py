@@ -15,8 +15,16 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'MigrationAssetReplicationLocationDetailArgs',
+    'MigrationAssetReplicationLocationDetailArgsDict',
+    'MigrationMigrationConfigArgs',
+    'MigrationMigrationConfigArgsDict',
     'MigrationPlanMigrationPlanStatArgs',
     'MigrationPlanMigrationPlanStatArgsDict',
+    'MigrationPlanMigrationPlanStatCostToMigrateArgs',
+    'MigrationPlanMigrationPlanStatCostToMigrateArgsDict',
+    'MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs',
+    'MigrationPlanMigrationPlanStatCurrentMonthlyCostArgsDict',
     'MigrationPlanMigrationPlanStatTotalEstimatedCostArgs',
     'MigrationPlanMigrationPlanStatTotalEstimatedCostArgsDict',
     'MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArgs',
@@ -45,6 +53,8 @@ __all__ = [
     'TargetAssetEstimatedCostStorageVolumeArgsDict',
     'TargetAssetMigrationAssetArgs',
     'TargetAssetMigrationAssetArgsDict',
+    'TargetAssetMigrationAssetReplicationLocationDetailArgs',
+    'TargetAssetMigrationAssetReplicationLocationDetailArgsDict',
     'TargetAssetRecommendedSpecArgs',
     'TargetAssetRecommendedSpecArgsDict',
     'TargetAssetRecommendedSpecAgentConfigArgs',
@@ -113,7 +123,93 @@ __all__ = [
     'GetTargetAssetsFilterArgsDict',
 ]
 
+class MigrationAssetReplicationLocationDetailArgsDict(TypedDict):
+    metadata: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Properties for each of the replication location types
+    """
+    replication_location_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of replication location
+    """
+
+@pulumi.input_type
+class MigrationAssetReplicationLocationDetailArgs:
+    def __init__(__self__, *,
+                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 replication_location_type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: Properties for each of the replication location types
+        :param pulumi.Input[_builtins.str] replication_location_type: The type of replication location
+        """
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if replication_location_type is not None:
+            pulumi.set(__self__, "replication_location_type", replication_location_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Properties for each of the replication location types
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "metadata", value)
+
+    @_builtins.property
+    @pulumi.getter(name="replicationLocationType")
+    def replication_location_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The type of replication location
+        """
+        return pulumi.get(self, "replication_location_type")
+
+    @replication_location_type.setter
+    def replication_location_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "replication_location_type", value)
+
+
+class MigrationMigrationConfigArgsDict(TypedDict):
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the subnet to use for replication
+    """
+
+@pulumi.input_type
+class MigrationMigrationConfigArgs:
+    def __init__(__self__, *,
+                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The OCID of the subnet to use for replication
+        """
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The OCID of the subnet to use for replication
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subnet_id", value)
+
+
 class MigrationPlanMigrationPlanStatArgsDict(TypedDict):
+    cost_to_migrates: NotRequired[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatCostToMigrateArgsDict']]]]
+    """
+    Summary of costs to migrate.
+    """
+    current_monthly_costs: NotRequired[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatCurrentMonthlyCostArgsDict']]]]
+    """
+    Current monthly compute and storage costs.
+    """
     time_updated: NotRequired[pulumi.Input[_builtins.str]]
     """
     The time when the migration plan was updated. An RFC3339 formatted datetime string.
@@ -130,20 +226,52 @@ class MigrationPlanMigrationPlanStatArgsDict(TypedDict):
 @pulumi.input_type
 class MigrationPlanMigrationPlanStatArgs:
     def __init__(__self__, *,
+                 cost_to_migrates: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatCostToMigrateArgs']]]] = None,
+                 current_monthly_costs: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs']]]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None,
                  total_estimated_costs: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostArgs']]]] = None,
                  vm_count: Optional[pulumi.Input[_builtins.int]] = None):
         """
+        :param pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatCostToMigrateArgs']]] cost_to_migrates: Summary of costs to migrate.
+        :param pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs']]] current_monthly_costs: Current monthly compute and storage costs.
         :param pulumi.Input[_builtins.str] time_updated: The time when the migration plan was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostArgs']]] total_estimated_costs: Cost estimation description
         :param pulumi.Input[_builtins.int] vm_count: The total count of VMs in migration
         """
+        if cost_to_migrates is not None:
+            pulumi.set(__self__, "cost_to_migrates", cost_to_migrates)
+        if current_monthly_costs is not None:
+            pulumi.set(__self__, "current_monthly_costs", current_monthly_costs)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
         if total_estimated_costs is not None:
             pulumi.set(__self__, "total_estimated_costs", total_estimated_costs)
         if vm_count is not None:
             pulumi.set(__self__, "vm_count", vm_count)
+
+    @_builtins.property
+    @pulumi.getter(name="costToMigrates")
+    def cost_to_migrates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatCostToMigrateArgs']]]]:
+        """
+        Summary of costs to migrate.
+        """
+        return pulumi.get(self, "cost_to_migrates")
+
+    @cost_to_migrates.setter
+    def cost_to_migrates(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatCostToMigrateArgs']]]]):
+        pulumi.set(self, "cost_to_migrates", value)
+
+    @_builtins.property
+    @pulumi.getter(name="currentMonthlyCosts")
+    def current_monthly_costs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs']]]]:
+        """
+        Current monthly compute and storage costs.
+        """
+        return pulumi.get(self, "current_monthly_costs")
+
+    @current_monthly_costs.setter
+    def current_monthly_costs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs']]]]):
+        pulumi.set(self, "current_monthly_costs", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
@@ -180,6 +308,184 @@ class MigrationPlanMigrationPlanStatArgs:
     @vm_count.setter
     def vm_count(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "vm_count", value)
+
+
+class MigrationPlanMigrationPlanStatCostToMigrateArgsDict(TypedDict):
+    asset_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of assets used in this calculation.
+    """
+    currency_code: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Currency code in the ISO format.
+    """
+    oci_data_transfer_costs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Data transfer costs from OCI.
+    """
+    source_data_transfer_costs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Data transfer costs from source cloud provider.
+    """
+
+@pulumi.input_type
+class MigrationPlanMigrationPlanStatCostToMigrateArgs:
+    def __init__(__self__, *,
+                 asset_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 currency_code: Optional[pulumi.Input[_builtins.str]] = None,
+                 oci_data_transfer_costs: Optional[pulumi.Input[_builtins.float]] = None,
+                 source_data_transfer_costs: Optional[pulumi.Input[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.int] asset_count: Number of assets used in this calculation.
+        :param pulumi.Input[_builtins.str] currency_code: Currency code in the ISO format.
+        :param pulumi.Input[_builtins.float] oci_data_transfer_costs: Data transfer costs from OCI.
+        :param pulumi.Input[_builtins.float] source_data_transfer_costs: Data transfer costs from source cloud provider.
+        """
+        if asset_count is not None:
+            pulumi.set(__self__, "asset_count", asset_count)
+        if currency_code is not None:
+            pulumi.set(__self__, "currency_code", currency_code)
+        if oci_data_transfer_costs is not None:
+            pulumi.set(__self__, "oci_data_transfer_costs", oci_data_transfer_costs)
+        if source_data_transfer_costs is not None:
+            pulumi.set(__self__, "source_data_transfer_costs", source_data_transfer_costs)
+
+    @_builtins.property
+    @pulumi.getter(name="assetCount")
+    def asset_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Number of assets used in this calculation.
+        """
+        return pulumi.get(self, "asset_count")
+
+    @asset_count.setter
+    def asset_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "asset_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="currencyCode")
+    def currency_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Currency code in the ISO format.
+        """
+        return pulumi.get(self, "currency_code")
+
+    @currency_code.setter
+    def currency_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "currency_code", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ociDataTransferCosts")
+    def oci_data_transfer_costs(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        Data transfer costs from OCI.
+        """
+        return pulumi.get(self, "oci_data_transfer_costs")
+
+    @oci_data_transfer_costs.setter
+    def oci_data_transfer_costs(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "oci_data_transfer_costs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceDataTransferCosts")
+    def source_data_transfer_costs(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        Data transfer costs from source cloud provider.
+        """
+        return pulumi.get(self, "source_data_transfer_costs")
+
+    @source_data_transfer_costs.setter
+    def source_data_transfer_costs(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "source_data_transfer_costs", value)
+
+
+class MigrationPlanMigrationPlanStatCurrentMonthlyCostArgsDict(TypedDict):
+    asset_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of assets used in this calculation.
+    """
+    compute_amount: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Current monthly compute costs.
+    """
+    currency_code: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Currency code in the ISO format.
+    """
+    storage_amount: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Current monthly storage costs.
+    """
+
+@pulumi.input_type
+class MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs:
+    def __init__(__self__, *,
+                 asset_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 compute_amount: Optional[pulumi.Input[_builtins.float]] = None,
+                 currency_code: Optional[pulumi.Input[_builtins.str]] = None,
+                 storage_amount: Optional[pulumi.Input[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.int] asset_count: Number of assets used in this calculation.
+        :param pulumi.Input[_builtins.float] compute_amount: Current monthly compute costs.
+        :param pulumi.Input[_builtins.str] currency_code: Currency code in the ISO format.
+        :param pulumi.Input[_builtins.float] storage_amount: Current monthly storage costs.
+        """
+        if asset_count is not None:
+            pulumi.set(__self__, "asset_count", asset_count)
+        if compute_amount is not None:
+            pulumi.set(__self__, "compute_amount", compute_amount)
+        if currency_code is not None:
+            pulumi.set(__self__, "currency_code", currency_code)
+        if storage_amount is not None:
+            pulumi.set(__self__, "storage_amount", storage_amount)
+
+    @_builtins.property
+    @pulumi.getter(name="assetCount")
+    def asset_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Number of assets used in this calculation.
+        """
+        return pulumi.get(self, "asset_count")
+
+    @asset_count.setter
+    def asset_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "asset_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computeAmount")
+    def compute_amount(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        Current monthly compute costs.
+        """
+        return pulumi.get(self, "compute_amount")
+
+    @compute_amount.setter
+    def compute_amount(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "compute_amount", value)
+
+    @_builtins.property
+    @pulumi.getter(name="currencyCode")
+    def currency_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Currency code in the ISO format.
+        """
+        return pulumi.get(self, "currency_code")
+
+    @currency_code.setter
+    def currency_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "currency_code", value)
+
+    @_builtins.property
+    @pulumi.getter(name="storageAmount")
+    def storage_amount(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        Current monthly storage costs.
+        """
+        return pulumi.get(self, "storage_amount")
+
+    @storage_amount.setter
+    def storage_amount(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "storage_amount", value)
 
 
 class MigrationPlanMigrationPlanStatTotalEstimatedCostArgsDict(TypedDict):
@@ -895,25 +1201,17 @@ class MigrationPlanStrategyArgs:
 
 
 class MigrationPlanTargetEnvironmentArgsDict(TypedDict):
-    subnet: pulumi.Input[_builtins.str]
-    """
-    (Updatable) OCID of the VM configuration subnet.
-    """
     target_environment_type: pulumi.Input[_builtins.str]
     """
     (Updatable) The type of target environment.
     """
-    vcn: pulumi.Input[_builtins.str]
-    """
-    (Updatable) OCID of the VM configuration VCN.
-
-
-    ** IMPORTANT **
-    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-    """
     availability_domain: NotRequired[pulumi.Input[_builtins.str]]
     """
     (Updatable) Availability Domain of the VM configuration.
+    """
+    cluster_asset_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Inventory asset id of the olvm cluster
     """
     dedicated_vm_host: NotRequired[pulumi.Input[_builtins.str]]
     """
@@ -927,69 +1225,91 @@ class MigrationPlanTargetEnvironmentArgsDict(TypedDict):
     """
     (Updatable) Microsoft license for the VM configuration.
     """
+    olvm_templates: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) OLVM OS type to inventory asset id of the template
+    """
     preferred_shape_type: NotRequired[pulumi.Input[_builtins.str]]
     """
     (Updatable) Preferred VM shape type provided by the customer.
+    """
+    subnet: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID of the VM configuration subnet.
     """
     target_compartment_id: NotRequired[pulumi.Input[_builtins.str]]
     """
     (Updatable) Target compartment identifier
     """
+    vcn: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID of the VM configuration VCN.
+    """
+    vnic_profile_asset_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Inventory asset Id of the vnic profile
+
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class MigrationPlanTargetEnvironmentArgs:
     def __init__(__self__, *,
-                 subnet: pulumi.Input[_builtins.str],
                  target_environment_type: pulumi.Input[_builtins.str],
-                 vcn: pulumi.Input[_builtins.str],
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_asset_id: Optional[pulumi.Input[_builtins.str]] = None,
                  dedicated_vm_host: Optional[pulumi.Input[_builtins.str]] = None,
                  fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  ms_license: Optional[pulumi.Input[_builtins.str]] = None,
+                 olvm_templates: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  preferred_shape_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_compartment_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 subnet: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 vcn: Optional[pulumi.Input[_builtins.str]] = None,
+                 vnic_profile_asset_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] subnet: (Updatable) OCID of the VM configuration subnet.
         :param pulumi.Input[_builtins.str] target_environment_type: (Updatable) The type of target environment.
+        :param pulumi.Input[_builtins.str] availability_domain: (Updatable) Availability Domain of the VM configuration.
+        :param pulumi.Input[_builtins.str] cluster_asset_id: (Updatable) Inventory asset id of the olvm cluster
+        :param pulumi.Input[_builtins.str] dedicated_vm_host: (Updatable) OCID of the dedicated VM configuration host.
+        :param pulumi.Input[_builtins.str] fault_domain: (Updatable) Fault domain of the VM configuration.
+        :param pulumi.Input[_builtins.str] ms_license: (Updatable) Microsoft license for the VM configuration.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] olvm_templates: (Updatable) OLVM OS type to inventory asset id of the template
+        :param pulumi.Input[_builtins.str] preferred_shape_type: (Updatable) Preferred VM shape type provided by the customer.
+        :param pulumi.Input[_builtins.str] subnet: (Updatable) OCID of the VM configuration subnet.
+        :param pulumi.Input[_builtins.str] target_compartment_id: (Updatable) Target compartment identifier
         :param pulumi.Input[_builtins.str] vcn: (Updatable) OCID of the VM configuration VCN.
+        :param pulumi.Input[_builtins.str] vnic_profile_asset_id: (Updatable) Inventory asset Id of the vnic profile
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] availability_domain: (Updatable) Availability Domain of the VM configuration.
-        :param pulumi.Input[_builtins.str] dedicated_vm_host: (Updatable) OCID of the dedicated VM configuration host.
-        :param pulumi.Input[_builtins.str] fault_domain: (Updatable) Fault domain of the VM configuration.
-        :param pulumi.Input[_builtins.str] ms_license: (Updatable) Microsoft license for the VM configuration.
-        :param pulumi.Input[_builtins.str] preferred_shape_type: (Updatable) Preferred VM shape type provided by the customer.
-        :param pulumi.Input[_builtins.str] target_compartment_id: (Updatable) Target compartment identifier
         """
-        pulumi.set(__self__, "subnet", subnet)
         pulumi.set(__self__, "target_environment_type", target_environment_type)
-        pulumi.set(__self__, "vcn", vcn)
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
+        if cluster_asset_id is not None:
+            pulumi.set(__self__, "cluster_asset_id", cluster_asset_id)
         if dedicated_vm_host is not None:
             pulumi.set(__self__, "dedicated_vm_host", dedicated_vm_host)
         if fault_domain is not None:
             pulumi.set(__self__, "fault_domain", fault_domain)
         if ms_license is not None:
             pulumi.set(__self__, "ms_license", ms_license)
+        if olvm_templates is not None:
+            pulumi.set(__self__, "olvm_templates", olvm_templates)
         if preferred_shape_type is not None:
             pulumi.set(__self__, "preferred_shape_type", preferred_shape_type)
+        if subnet is not None:
+            pulumi.set(__self__, "subnet", subnet)
         if target_compartment_id is not None:
             pulumi.set(__self__, "target_compartment_id", target_compartment_id)
-
-    @_builtins.property
-    @pulumi.getter
-    def subnet(self) -> pulumi.Input[_builtins.str]:
-        """
-        (Updatable) OCID of the VM configuration subnet.
-        """
-        return pulumi.get(self, "subnet")
-
-    @subnet.setter
-    def subnet(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "subnet", value)
+        if vcn is not None:
+            pulumi.set(__self__, "vcn", vcn)
+        if vnic_profile_asset_id is not None:
+            pulumi.set(__self__, "vnic_profile_asset_id", vnic_profile_asset_id)
 
     @_builtins.property
     @pulumi.getter(name="targetEnvironmentType")
@@ -1004,22 +1324,6 @@ class MigrationPlanTargetEnvironmentArgs:
         pulumi.set(self, "target_environment_type", value)
 
     @_builtins.property
-    @pulumi.getter
-    def vcn(self) -> pulumi.Input[_builtins.str]:
-        """
-        (Updatable) OCID of the VM configuration VCN.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        return pulumi.get(self, "vcn")
-
-    @vcn.setter
-    def vcn(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "vcn", value)
-
-    @_builtins.property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -1030,6 +1334,18 @@ class MigrationPlanTargetEnvironmentArgs:
     @availability_domain.setter
     def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterAssetId")
+    def cluster_asset_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Inventory asset id of the olvm cluster
+        """
+        return pulumi.get(self, "cluster_asset_id")
+
+    @cluster_asset_id.setter
+    def cluster_asset_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "cluster_asset_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dedicatedVmHost")
@@ -1068,6 +1384,18 @@ class MigrationPlanTargetEnvironmentArgs:
         pulumi.set(self, "ms_license", value)
 
     @_builtins.property
+    @pulumi.getter(name="olvmTemplates")
+    def olvm_templates(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) OLVM OS type to inventory asset id of the template
+        """
+        return pulumi.get(self, "olvm_templates")
+
+    @olvm_templates.setter
+    def olvm_templates(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "olvm_templates", value)
+
+    @_builtins.property
     @pulumi.getter(name="preferredShapeType")
     def preferred_shape_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -1080,6 +1408,18 @@ class MigrationPlanTargetEnvironmentArgs:
         pulumi.set(self, "preferred_shape_type", value)
 
     @_builtins.property
+    @pulumi.getter
+    def subnet(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) OCID of the VM configuration subnet.
+        """
+        return pulumi.get(self, "subnet")
+
+    @subnet.setter
+    def subnet(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subnet", value)
+
+    @_builtins.property
     @pulumi.getter(name="targetCompartmentId")
     def target_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -1090,6 +1430,34 @@ class MigrationPlanTargetEnvironmentArgs:
     @target_compartment_id.setter
     def target_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "target_compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def vcn(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) OCID of the VM configuration VCN.
+        """
+        return pulumi.get(self, "vcn")
+
+    @vcn.setter
+    def vcn(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vcn", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vnicProfileAssetId")
+    def vnic_profile_asset_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Inventory asset Id of the vnic profile
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "vnic_profile_asset_id")
+
+    @vnic_profile_asset_id.setter
+    def vnic_profile_asset_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vnic_profile_asset_id", value)
 
 
 class TargetAssetCompatibilityMessageArgsDict(TypedDict):
@@ -1763,6 +2131,10 @@ class TargetAssetMigrationAssetArgsDict(TypedDict):
     """
     List of migration assets that depends on the asset.
     """
+    destination_disks: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Mapping of source disk id to destination disk details
+    """
     display_name: NotRequired[pulumi.Input[_builtins.str]]
     """
     A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -1790,6 +2162,10 @@ class TargetAssetMigrationAssetArgsDict(TypedDict):
     replication_compartment_id: NotRequired[pulumi.Input[_builtins.str]]
     """
     Replication compartment identifier
+    """
+    replication_location_detail: NotRequired[pulumi.Input['TargetAssetMigrationAssetReplicationLocationDetailArgsDict']]
+    """
+    Replication location detail where the snapshots reside
     """
     replication_schedule_id: NotRequired[pulumi.Input[_builtins.str]]
     """
@@ -1839,6 +2215,7 @@ class TargetAssetMigrationAssetArgs:
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  depended_on_bies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  depends_ons: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 destination_disks: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  id: Optional[pulumi.Input[_builtins.str]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1846,6 +2223,7 @@ class TargetAssetMigrationAssetArgs:
                  notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  parent_snapshot: Optional[pulumi.Input[_builtins.str]] = None,
                  replication_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 replication_location_detail: Optional[pulumi.Input['TargetAssetMigrationAssetReplicationLocationDetailArgs']] = None,
                  replication_schedule_id: Optional[pulumi.Input[_builtins.str]] = None,
                  snap_shot_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
                  snapshots: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1861,6 +2239,7 @@ class TargetAssetMigrationAssetArgs:
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] depended_on_bies: List of migration assets that depend on the asset.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] depends_ons: List of migration assets that depends on the asset.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] destination_disks: Mapping of source disk id to destination disk details
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] id: Asset ID generated by mirgration service. It is used in the mirgration service pipeline.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
@@ -1868,6 +2247,7 @@ class TargetAssetMigrationAssetArgs:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] notifications: List of notifications
         :param pulumi.Input[_builtins.str] parent_snapshot: The parent snapshot of the migration asset to be used by the replication task.
         :param pulumi.Input[_builtins.str] replication_compartment_id: Replication compartment identifier
+        :param pulumi.Input['TargetAssetMigrationAssetReplicationLocationDetailArgs'] replication_location_detail: Replication location detail where the snapshots reside
         :param pulumi.Input[_builtins.str] replication_schedule_id: Replication schedule identifier
         :param pulumi.Input[_builtins.str] snap_shot_bucket_name: Name of snapshot bucket
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] snapshots: Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
@@ -1887,6 +2267,8 @@ class TargetAssetMigrationAssetArgs:
             pulumi.set(__self__, "depended_on_bies", depended_on_bies)
         if depends_ons is not None:
             pulumi.set(__self__, "depends_ons", depends_ons)
+        if destination_disks is not None:
+            pulumi.set(__self__, "destination_disks", destination_disks)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if id is not None:
@@ -1901,6 +2283,8 @@ class TargetAssetMigrationAssetArgs:
             pulumi.set(__self__, "parent_snapshot", parent_snapshot)
         if replication_compartment_id is not None:
             pulumi.set(__self__, "replication_compartment_id", replication_compartment_id)
+        if replication_location_detail is not None:
+            pulumi.set(__self__, "replication_location_detail", replication_location_detail)
         if replication_schedule_id is not None:
             pulumi.set(__self__, "replication_schedule_id", replication_schedule_id)
         if snap_shot_bucket_name is not None:
@@ -1969,6 +2353,18 @@ class TargetAssetMigrationAssetArgs:
     @depends_ons.setter
     def depends_ons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "depends_ons", value)
+
+    @_builtins.property
+    @pulumi.getter(name="destinationDisks")
+    def destination_disks(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Mapping of source disk id to destination disk details
+        """
+        return pulumi.get(self, "destination_disks")
+
+    @destination_disks.setter
+    def destination_disks(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "destination_disks", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -2053,6 +2449,18 @@ class TargetAssetMigrationAssetArgs:
     @replication_compartment_id.setter
     def replication_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "replication_compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="replicationLocationDetail")
+    def replication_location_detail(self) -> Optional[pulumi.Input['TargetAssetMigrationAssetReplicationLocationDetailArgs']]:
+        """
+        Replication location detail where the snapshots reside
+        """
+        return pulumi.get(self, "replication_location_detail")
+
+    @replication_location_detail.setter
+    def replication_location_detail(self, value: Optional[pulumi.Input['TargetAssetMigrationAssetReplicationLocationDetailArgs']]):
+        pulumi.set(self, "replication_location_detail", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationScheduleId")
@@ -2173,6 +2581,55 @@ class TargetAssetMigrationAssetArgs:
     @type.setter
     def type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "type", value)
+
+
+class TargetAssetMigrationAssetReplicationLocationDetailArgsDict(TypedDict):
+    metadata: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Properties for each of the replication location types
+    """
+    replication_location_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of replication location
+    """
+
+@pulumi.input_type
+class TargetAssetMigrationAssetReplicationLocationDetailArgs:
+    def __init__(__self__, *,
+                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 replication_location_type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: Properties for each of the replication location types
+        :param pulumi.Input[_builtins.str] replication_location_type: The type of replication location
+        """
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if replication_location_type is not None:
+            pulumi.set(__self__, "replication_location_type", replication_location_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Properties for each of the replication location types
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "metadata", value)
+
+    @_builtins.property
+    @pulumi.getter(name="replicationLocationType")
+    def replication_location_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The type of replication location
+        """
+        return pulumi.get(self, "replication_location_type")
+
+    @replication_location_type.setter
+    def replication_location_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "replication_location_type", value)
 
 
 class TargetAssetRecommendedSpecArgsDict(TypedDict):
@@ -4830,13 +5287,13 @@ class TargetAssetUserSpecAgentConfigArgs:
 
 
 class TargetAssetUserSpecAgentConfigPluginsConfigArgsDict(TypedDict):
-    desired_state: pulumi.Input[_builtins.str]
+    desired_state: NotRequired[pulumi.Input[_builtins.str]]
     """
     (Updatable) Whether the plugin should be enabled or disabled.
 
     To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
     """
-    name: pulumi.Input[_builtins.str]
+    name: NotRequired[pulumi.Input[_builtins.str]]
     """
     (Updatable) The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
     """
@@ -4844,20 +5301,22 @@ class TargetAssetUserSpecAgentConfigPluginsConfigArgsDict(TypedDict):
 @pulumi.input_type
 class TargetAssetUserSpecAgentConfigPluginsConfigArgs:
     def __init__(__self__, *,
-                 desired_state: pulumi.Input[_builtins.str],
-                 name: pulumi.Input[_builtins.str]):
+                 desired_state: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] desired_state: (Updatable) Whether the plugin should be enabled or disabled.
                
                To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         :param pulumi.Input[_builtins.str] name: (Updatable) The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
-        pulumi.set(__self__, "desired_state", desired_state)
-        pulumi.set(__self__, "name", name)
+        if desired_state is not None:
+            pulumi.set(__self__, "desired_state", desired_state)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @_builtins.property
     @pulumi.getter(name="desiredState")
-    def desired_state(self) -> pulumi.Input[_builtins.str]:
+    def desired_state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) Whether the plugin should be enabled or disabled.
 
@@ -4866,19 +5325,19 @@ class TargetAssetUserSpecAgentConfigPluginsConfigArgs:
         return pulumi.get(self, "desired_state")
 
     @desired_state.setter
-    def desired_state(self, value: pulumi.Input[_builtins.str]):
+    def desired_state(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "desired_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[_builtins.str]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         (Updatable) The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[_builtins.str]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
@@ -5237,7 +5696,7 @@ class TargetAssetUserSpecInstanceOptionsArgs:
 
 
 class TargetAssetUserSpecPreemptibleInstanceConfigArgsDict(TypedDict):
-    preemption_action: pulumi.Input['TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgsDict']
+    preemption_action: NotRequired[pulumi.Input['TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgsDict']]
     """
     (Updatable) The action to run when the preemptible instance is interrupted for eviction.
     """
@@ -5245,22 +5704,23 @@ class TargetAssetUserSpecPreemptibleInstanceConfigArgsDict(TypedDict):
 @pulumi.input_type
 class TargetAssetUserSpecPreemptibleInstanceConfigArgs:
     def __init__(__self__, *,
-                 preemption_action: pulumi.Input['TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs']):
+                 preemption_action: Optional[pulumi.Input['TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs']] = None):
         """
         :param pulumi.Input['TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs'] preemption_action: (Updatable) The action to run when the preemptible instance is interrupted for eviction.
         """
-        pulumi.set(__self__, "preemption_action", preemption_action)
+        if preemption_action is not None:
+            pulumi.set(__self__, "preemption_action", preemption_action)
 
     @_builtins.property
     @pulumi.getter(name="preemptionAction")
-    def preemption_action(self) -> pulumi.Input['TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs']:
+    def preemption_action(self) -> Optional[pulumi.Input['TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs']]:
         """
         (Updatable) The action to run when the preemptible instance is interrupted for eviction.
         """
         return pulumi.get(self, "preemption_action")
 
     @preemption_action.setter
-    def preemption_action(self, value: pulumi.Input['TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs']):
+    def preemption_action(self, value: Optional[pulumi.Input['TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs']]):
         pulumi.set(self, "preemption_action", value)
 
 

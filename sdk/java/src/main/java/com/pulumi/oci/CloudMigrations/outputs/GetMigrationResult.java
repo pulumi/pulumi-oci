@@ -5,8 +5,10 @@ package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.CloudMigrations.outputs.GetMigrationMigrationConfig;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -47,7 +49,17 @@ public final class GetMigrationResult {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Configuration for a Migration Project.
+     * 
+     */
+    private List<GetMigrationMigrationConfig> migrationConfigs;
     private String migrationId;
+    /**
+     * @return Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+     * 
+     */
+    private String migrationType;
     /**
      * @return Replication schedule identifier
      * 
@@ -124,8 +136,22 @@ public final class GetMigrationResult {
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    /**
+     * @return Configuration for a Migration Project.
+     * 
+     */
+    public List<GetMigrationMigrationConfig> migrationConfigs() {
+        return this.migrationConfigs;
+    }
     public String migrationId() {
         return this.migrationId;
+    }
+    /**
+     * @return Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+     * 
+     */
+    public String migrationType() {
+        return this.migrationType;
     }
     /**
      * @return Replication schedule identifier
@@ -179,7 +205,9 @@ public final class GetMigrationResult {
         private String id;
         private Boolean isCompleted;
         private String lifecycleDetails;
+        private List<GetMigrationMigrationConfig> migrationConfigs;
         private String migrationId;
+        private String migrationType;
         private String replicationScheduleId;
         private String state;
         private Map<String,String> systemTags;
@@ -195,7 +223,9 @@ public final class GetMigrationResult {
     	      this.id = defaults.id;
     	      this.isCompleted = defaults.isCompleted;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.migrationConfigs = defaults.migrationConfigs;
     	      this.migrationId = defaults.migrationId;
+    	      this.migrationType = defaults.migrationType;
     	      this.replicationScheduleId = defaults.replicationScheduleId;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -260,11 +290,30 @@ public final class GetMigrationResult {
             return this;
         }
         @CustomType.Setter
+        public Builder migrationConfigs(List<GetMigrationMigrationConfig> migrationConfigs) {
+            if (migrationConfigs == null) {
+              throw new MissingRequiredPropertyException("GetMigrationResult", "migrationConfigs");
+            }
+            this.migrationConfigs = migrationConfigs;
+            return this;
+        }
+        public Builder migrationConfigs(GetMigrationMigrationConfig... migrationConfigs) {
+            return migrationConfigs(List.of(migrationConfigs));
+        }
+        @CustomType.Setter
         public Builder migrationId(String migrationId) {
             if (migrationId == null) {
               throw new MissingRequiredPropertyException("GetMigrationResult", "migrationId");
             }
             this.migrationId = migrationId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder migrationType(String migrationType) {
+            if (migrationType == null) {
+              throw new MissingRequiredPropertyException("GetMigrationResult", "migrationType");
+            }
+            this.migrationType = migrationType;
             return this;
         }
         @CustomType.Setter
@@ -316,7 +365,9 @@ public final class GetMigrationResult {
             _resultValue.id = id;
             _resultValue.isCompleted = isCompleted;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.migrationConfigs = migrationConfigs;
             _resultValue.migrationId = migrationId;
+            _resultValue.migrationType = migrationType;
             _resultValue.replicationScheduleId = replicationScheduleId;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

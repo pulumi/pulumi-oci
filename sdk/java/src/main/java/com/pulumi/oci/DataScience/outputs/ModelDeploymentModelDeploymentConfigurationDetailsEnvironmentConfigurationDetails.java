@@ -56,6 +56,11 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
      */
     private @Nullable String imageDigest;
     /**
+     * @return (Updatable) OCID of the container image signature
+     * 
+     */
+    private @Nullable String imageSignatureId;
+    /**
      * @return (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
      * 
      */
@@ -119,6 +124,13 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
         return Optional.ofNullable(this.imageDigest);
     }
     /**
+     * @return (Updatable) OCID of the container image signature
+     * 
+     */
+    public Optional<String> imageSignatureId() {
+        return Optional.ofNullable(this.imageSignatureId);
+    }
+    /**
      * @return (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
      * 
      */
@@ -143,6 +155,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
         private @Nullable Integer healthCheckPort;
         private @Nullable String image;
         private @Nullable String imageDigest;
+        private @Nullable String imageSignatureId;
         private @Nullable Integer serverPort;
         public Builder() {}
         public Builder(ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails defaults) {
@@ -155,6 +168,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
     	      this.healthCheckPort = defaults.healthCheckPort;
     	      this.image = defaults.image;
     	      this.imageDigest = defaults.imageDigest;
+    	      this.imageSignatureId = defaults.imageSignatureId;
     	      this.serverPort = defaults.serverPort;
         }
 
@@ -215,6 +229,12 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
             return this;
         }
         @CustomType.Setter
+        public Builder imageSignatureId(@Nullable String imageSignatureId) {
+
+            this.imageSignatureId = imageSignatureId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder serverPort(@Nullable Integer serverPort) {
 
             this.serverPort = serverPort;
@@ -230,6 +250,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
             _resultValue.healthCheckPort = healthCheckPort;
             _resultValue.image = image;
             _resultValue.imageDigest = imageDigest;
+            _resultValue.imageSignatureId = imageSignatureId;
             _resultValue.serverPort = serverPort;
             return _resultValue;
         }

@@ -54,6 +54,11 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
      */
     private String imageDigest;
     /**
+     * @return OCID of the container image signature
+     * 
+     */
+    private String imageSignatureId;
+    /**
      * @return The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
      * 
      */
@@ -117,6 +122,13 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
         return this.imageDigest;
     }
     /**
+     * @return OCID of the container image signature
+     * 
+     */
+    public String imageSignatureId() {
+        return this.imageSignatureId;
+    }
+    /**
      * @return The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
      * 
      */
@@ -141,6 +153,7 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
         private Integer healthCheckPort;
         private String image;
         private String imageDigest;
+        private String imageSignatureId;
         private Integer serverPort;
         public Builder() {}
         public Builder(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail defaults) {
@@ -153,6 +166,7 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
     	      this.healthCheckPort = defaults.healthCheckPort;
     	      this.image = defaults.image;
     	      this.imageDigest = defaults.imageDigest;
+    	      this.imageSignatureId = defaults.imageSignatureId;
     	      this.serverPort = defaults.serverPort;
         }
 
@@ -227,6 +241,14 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
             return this;
         }
         @CustomType.Setter
+        public Builder imageSignatureId(String imageSignatureId) {
+            if (imageSignatureId == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail", "imageSignatureId");
+            }
+            this.imageSignatureId = imageSignatureId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder serverPort(Integer serverPort) {
             if (serverPort == null) {
               throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail", "serverPort");
@@ -244,6 +266,7 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
             _resultValue.healthCheckPort = healthCheckPort;
             _resultValue.image = image;
             _resultValue.imageDigest = imageDigest;
+            _resultValue.imageSignatureId = imageSignatureId;
             _resultValue.serverPort = serverPort;
             return _resultValue;
         }

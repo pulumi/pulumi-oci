@@ -23,6 +23,11 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
      */
     private List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail> modelDeploymentInstanceShapeConfigDetails;
     /**
+     * @return Network Access type of model deployment.
+     * 
+     */
+    private String networkAccessType;
+    /**
      * @return The OCID of a Data Science private endpoint.
      * 
      */
@@ -47,6 +52,13 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
      */
     public List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail> modelDeploymentInstanceShapeConfigDetails() {
         return this.modelDeploymentInstanceShapeConfigDetails;
+    }
+    /**
+     * @return Network Access type of model deployment.
+     * 
+     */
+    public String networkAccessType() {
+        return this.networkAccessType;
     }
     /**
      * @return The OCID of a Data Science private endpoint.
@@ -74,6 +86,7 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
     public static final class Builder {
         private String instanceShapeName;
         private List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail> modelDeploymentInstanceShapeConfigDetails;
+        private String networkAccessType;
         private String privateEndpointId;
         private String subnetId;
         public Builder() {}
@@ -81,6 +94,7 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
     	      Objects.requireNonNull(defaults);
     	      this.instanceShapeName = defaults.instanceShapeName;
     	      this.modelDeploymentInstanceShapeConfigDetails = defaults.modelDeploymentInstanceShapeConfigDetails;
+    	      this.networkAccessType = defaults.networkAccessType;
     	      this.privateEndpointId = defaults.privateEndpointId;
     	      this.subnetId = defaults.subnetId;
         }
@@ -105,6 +119,14 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
             return modelDeploymentInstanceShapeConfigDetails(List.of(modelDeploymentInstanceShapeConfigDetails));
         }
         @CustomType.Setter
+        public Builder networkAccessType(String networkAccessType) {
+            if (networkAccessType == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration", "networkAccessType");
+            }
+            this.networkAccessType = networkAccessType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder privateEndpointId(String privateEndpointId) {
             if (privateEndpointId == null) {
               throw new MissingRequiredPropertyException("GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration", "privateEndpointId");
@@ -124,6 +146,7 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
             final var _resultValue = new GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration();
             _resultValue.instanceShapeName = instanceShapeName;
             _resultValue.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
+            _resultValue.networkAccessType = networkAccessType;
             _resultValue.privateEndpointId = privateEndpointId;
             _resultValue.subnetId = subnetId;
             return _resultValue;

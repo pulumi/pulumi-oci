@@ -15,9 +15,17 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelGroupC
 
     public static final ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetailsArgs Empty = new ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetailsArgs();
 
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group you want to deploy.
+     * 
+     */
     @Import(name="modelGroupId")
     private @Nullable Output<String> modelGroupId;
 
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group you want to deploy.
+     * 
+     */
     public Optional<Output<String>> modelGroupId() {
         return Optional.ofNullable(this.modelGroupId);
     }
@@ -46,11 +54,23 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelGroupC
             $ = new ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetailsArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param modelGroupId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group you want to deploy.
+         * 
+         * @return builder
+         * 
+         */
         public Builder modelGroupId(@Nullable Output<String> modelGroupId) {
             $.modelGroupId = modelGroupId;
             return this;
         }
 
+        /**
+         * @param modelGroupId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group you want to deploy.
+         * 
+         * @return builder
+         * 
+         */
         public Builder modelGroupId(String modelGroupId) {
             return modelGroupId(Output.of(modelGroupId));
         }

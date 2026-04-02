@@ -81,6 +81,8 @@ namespace Pulumi.Oci.FileStorage
     ///         },
     ///         PasswordSecretId = testSecret.Id,
     ///         PasswordSecretVersion = outboundConnectorPasswordSecretVersion,
+    ///         TrustedCertificateSecretId = testSecret.Id,
+    ///         TrustedCertificateSecretVersion = outboundConnectorTrustedCertificateSecretVersion,
     ///     });
     /// 
     /// });
@@ -162,10 +164,6 @@ namespace Pulumi.Oci.FileStorage
 
         /// <summary>
         /// Version of the password secret in the Vault to use.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("passwordSecretVersion")]
         public Output<int> PasswordSecretVersion { get; private set; } = null!;
@@ -187,6 +185,22 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
+        /// </summary>
+        [Output("trustedCertificateSecretId")]
+        public Output<string> TrustedCertificateSecretId { get; private set; } = null!;
+
+        /// <summary>
+        /// Version of the trusted certificate secret in the Vault to use.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("trustedCertificateSecretVersion")]
+        public Output<int> TrustedCertificateSecretVersion { get; private set; } = null!;
 
 
         /// <summary>
@@ -323,13 +337,25 @@ namespace Pulumi.Oci.FileStorage
 
         /// <summary>
         /// Version of the password secret in the Vault to use.
+        /// </summary>
+        [Input("passwordSecretVersion")]
+        public Input<int>? PasswordSecretVersion { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
+        /// </summary>
+        [Input("trustedCertificateSecretId")]
+        public Input<string>? TrustedCertificateSecretId { get; set; }
+
+        /// <summary>
+        /// Version of the trusted certificate secret in the Vault to use.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("passwordSecretVersion")]
-        public Input<int>? PasswordSecretVersion { get; set; }
+        [Input("trustedCertificateSecretVersion")]
+        public Input<int>? TrustedCertificateSecretVersion { get; set; }
 
         public OutboundConnectorArgs()
         {
@@ -428,10 +454,6 @@ namespace Pulumi.Oci.FileStorage
 
         /// <summary>
         /// Version of the password secret in the Vault to use.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("passwordSecretVersion")]
         public Input<int>? PasswordSecretVersion { get; set; }
@@ -459,6 +481,22 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
+        /// </summary>
+        [Input("trustedCertificateSecretId")]
+        public Input<string>? TrustedCertificateSecretId { get; set; }
+
+        /// <summary>
+        /// Version of the trusted certificate secret in the Vault to use.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("trustedCertificateSecretVersion")]
+        public Input<int>? TrustedCertificateSecretVersion { get; set; }
 
         public OutboundConnectorState()
         {

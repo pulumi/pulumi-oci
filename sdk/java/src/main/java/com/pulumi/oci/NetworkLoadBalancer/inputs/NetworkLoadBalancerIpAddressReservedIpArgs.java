@@ -16,14 +16,14 @@ public final class NetworkLoadBalancerIpAddressReservedIpArgs extends com.pulumi
     public static final NetworkLoadBalancerIpAddressReservedIpArgs Empty = new NetworkLoadBalancerIpAddressReservedIpArgs();
 
     /**
-     * OCID of the reserved public IP address created with the virtual cloud network.
+     * Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return OCID of the reserved public IP address created with the virtual cloud network.
+     * @return Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
      * 
      */
     public Optional<Output<String>> id() {
@@ -55,7 +55,7 @@ public final class NetworkLoadBalancerIpAddressReservedIpArgs extends com.pulumi
         }
 
         /**
-         * @param id OCID of the reserved public IP address created with the virtual cloud network.
+         * @param id Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class NetworkLoadBalancerIpAddressReservedIpArgs extends com.pulumi
         }
 
         /**
-         * @param id OCID of the reserved public IP address created with the virtual cloud network.
+         * @param id Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
          * 
          * @return builder
          * 

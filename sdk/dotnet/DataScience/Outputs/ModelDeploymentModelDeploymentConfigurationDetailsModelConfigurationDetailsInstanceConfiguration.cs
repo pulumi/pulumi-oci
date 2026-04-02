@@ -22,6 +22,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails? ModelDeploymentInstanceShapeConfigDetails;
         /// <summary>
+        /// (Updatable) Network Access type of model deployment.
+        /// </summary>
+        public readonly string? NetworkAccessType;
+        /// <summary>
         /// (Updatable) The OCID of a Data Science private endpoint.
         /// </summary>
         public readonly string? PrivateEndpointId;
@@ -36,12 +40,15 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             Outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails? modelDeploymentInstanceShapeConfigDetails,
 
+            string? networkAccessType,
+
             string? privateEndpointId,
 
             string? subnetId)
         {
             InstanceShapeName = instanceShapeName;
             ModelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
+            NetworkAccessType = networkAccessType;
             PrivateEndpointId = privateEndpointId;
             SubnetId = subnetId;
         }

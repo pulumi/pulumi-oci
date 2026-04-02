@@ -40,6 +40,11 @@ namespace Pulumi.Oci.CloudMigrations
     ///             { "bar-key", "value" },
     ///         },
     ///         IsCompleted = migrationIsCompleted,
+    ///         MigrationConfig = new Oci.CloudMigrations.Inputs.MigrationMigrationConfigArgs
+    ///         {
+    ///             SubnetId = testSubnet.Id,
+    ///         },
+    ///         MigrationType = migrationMigrationType,
     ///         ReplicationScheduleId = testReplicationSchedule.Id,
     ///     });
     /// 
@@ -92,6 +97,18 @@ namespace Pulumi.Oci.CloudMigrations
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Configuration for a Migration Project.
+        /// </summary>
+        [Output("migrationConfig")]
+        public Output<Outputs.MigrationMigrationConfig> MigrationConfig { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+        /// </summary>
+        [Output("migrationType")]
+        public Output<string> MigrationType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Replication schedule identifier
@@ -216,6 +233,18 @@ namespace Pulumi.Oci.CloudMigrations
         public Input<bool>? IsCompleted { get; set; }
 
         /// <summary>
+        /// (Updatable) Configuration for a Migration Project.
+        /// </summary>
+        [Input("migrationConfig")]
+        public Input<Inputs.MigrationMigrationConfigArgs>? MigrationConfig { get; set; }
+
+        /// <summary>
+        /// (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+        /// </summary>
+        [Input("migrationType")]
+        public Input<string>? MigrationType { get; set; }
+
+        /// <summary>
         /// (Updatable) Replication schedule identifier
         /// 
         /// 
@@ -280,6 +309,18 @@ namespace Pulumi.Oci.CloudMigrations
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) Configuration for a Migration Project.
+        /// </summary>
+        [Input("migrationConfig")]
+        public Input<Inputs.MigrationMigrationConfigGetArgs>? MigrationConfig { get; set; }
+
+        /// <summary>
+        /// (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+        /// </summary>
+        [Input("migrationType")]
+        public Input<string>? MigrationType { get; set; }
 
         /// <summary>
         /// (Updatable) Replication schedule identifier

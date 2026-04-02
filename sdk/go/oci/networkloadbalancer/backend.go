@@ -70,7 +70,7 @@ type Backend struct {
 	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
 	// (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
 	IsBackup pulumi.BoolOutput `pulumi:"isBackup"`
-	// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+	// (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `false`
 	IsDrain pulumi.BoolOutput `pulumi:"isDrain"`
 	// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline pulumi.BoolOutput `pulumi:"isOffline"`
@@ -134,7 +134,7 @@ type backendState struct {
 	IpAddress *string `pulumi:"ipAddress"`
 	// (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
 	IsBackup *bool `pulumi:"isBackup"`
-	// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+	// (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `false`
 	IsDrain *bool `pulumi:"isDrain"`
 	// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline *bool `pulumi:"isOffline"`
@@ -160,7 +160,7 @@ type BackendState struct {
 	IpAddress pulumi.StringPtrInput
 	// (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
 	IsBackup pulumi.BoolPtrInput
-	// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+	// (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `false`
 	IsDrain pulumi.BoolPtrInput
 	// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline pulumi.BoolPtrInput
@@ -190,7 +190,7 @@ type backendArgs struct {
 	IpAddress *string `pulumi:"ipAddress"`
 	// (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
 	IsBackup *bool `pulumi:"isBackup"`
-	// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+	// (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `false`
 	IsDrain *bool `pulumi:"isDrain"`
 	// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline *bool `pulumi:"isOffline"`
@@ -217,7 +217,7 @@ type BackendArgs struct {
 	IpAddress pulumi.StringPtrInput
 	// (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
 	IsBackup pulumi.BoolPtrInput
-	// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+	// (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `false`
 	IsDrain pulumi.BoolPtrInput
 	// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline pulumi.BoolPtrInput
@@ -338,7 +338,7 @@ func (o BackendOutput) IsBackup() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Backend) pulumi.BoolOutput { return v.IsBackup }).(pulumi.BoolOutput)
 }
 
-// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+// (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `false`
 func (o BackendOutput) IsDrain() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Backend) pulumi.BoolOutput { return v.IsDrain }).(pulumi.BoolOutput)
 }

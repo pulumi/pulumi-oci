@@ -10336,7 +10336,33 @@ export namespace CloudMigrations {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface MigrationAssetReplicationLocationDetail {
+        /**
+         * Properties for each of the replication location types
+         */
+        metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * The type of replication location
+         */
+        replicationLocationType?: pulumi.Input<string>;
+    }
+
+    export interface MigrationMigrationConfig {
+        /**
+         * (Updatable) The OCID of the subnet to use for replication
+         */
+        subnetId?: pulumi.Input<string>;
+    }
+
     export interface MigrationPlanMigrationPlanStat {
+        /**
+         * Summary of costs to migrate.
+         */
+        costToMigrates?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.MigrationPlanMigrationPlanStatCostToMigrate>[]>;
+        /**
+         * Current monthly compute and storage costs.
+         */
+        currentMonthlyCosts?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.MigrationPlanMigrationPlanStatCurrentMonthlyCost>[]>;
         /**
          * The time when the migration plan was updated. An RFC3339 formatted datetime string.
          */
@@ -10349,6 +10375,44 @@ export namespace CloudMigrations {
          * The total count of VMs in migration
          */
         vmCount?: pulumi.Input<number>;
+    }
+
+    export interface MigrationPlanMigrationPlanStatCostToMigrate {
+        /**
+         * Number of assets used in this calculation.
+         */
+        assetCount?: pulumi.Input<number>;
+        /**
+         * Currency code in the ISO format.
+         */
+        currencyCode?: pulumi.Input<string>;
+        /**
+         * Data transfer costs from OCI.
+         */
+        ociDataTransferCosts?: pulumi.Input<number>;
+        /**
+         * Data transfer costs from source cloud provider.
+         */
+        sourceDataTransferCosts?: pulumi.Input<number>;
+    }
+
+    export interface MigrationPlanMigrationPlanStatCurrentMonthlyCost {
+        /**
+         * Number of assets used in this calculation.
+         */
+        assetCount?: pulumi.Input<number>;
+        /**
+         * Current monthly compute costs.
+         */
+        computeAmount?: pulumi.Input<number>;
+        /**
+         * Currency code in the ISO format.
+         */
+        currencyCode?: pulumi.Input<string>;
+        /**
+         * Current monthly storage costs.
+         */
+        storageAmount?: pulumi.Input<number>;
     }
 
     export interface MigrationPlanMigrationPlanStatTotalEstimatedCost {
@@ -10507,6 +10571,10 @@ export namespace CloudMigrations {
          */
         availabilityDomain?: pulumi.Input<string>;
         /**
+         * (Updatable) Inventory asset id of the olvm cluster
+         */
+        clusterAssetId?: pulumi.Input<string>;
+        /**
          * (Updatable) OCID of the dedicated VM configuration host.
          */
         dedicatedVmHost?: pulumi.Input<string>;
@@ -10519,13 +10587,17 @@ export namespace CloudMigrations {
          */
         msLicense?: pulumi.Input<string>;
         /**
+         * (Updatable) OLVM OS type to inventory asset id of the template
+         */
+        olvmTemplates?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
          * (Updatable) Preferred VM shape type provided by the customer.
          */
         preferredShapeType?: pulumi.Input<string>;
         /**
          * (Updatable) OCID of the VM configuration subnet.
          */
-        subnet: pulumi.Input<string>;
+        subnet?: pulumi.Input<string>;
         /**
          * (Updatable) Target compartment identifier
          */
@@ -10536,12 +10608,16 @@ export namespace CloudMigrations {
         targetEnvironmentType: pulumi.Input<string>;
         /**
          * (Updatable) OCID of the VM configuration VCN.
+         */
+        vcn?: pulumi.Input<string>;
+        /**
+         * (Updatable) Inventory asset Id of the vnic profile
          *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
-        vcn: pulumi.Input<string>;
+        vnicProfileAssetId?: pulumi.Input<string>;
     }
 
     export interface TargetAssetCompatibilityMessage {
@@ -10700,6 +10776,10 @@ export namespace CloudMigrations {
          */
         dependsOns?: pulumi.Input<pulumi.Input<string>[]>;
         /**
+         * Mapping of source disk id to destination disk details
+         */
+        destinationDisks?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
          * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
@@ -10727,6 +10807,10 @@ export namespace CloudMigrations {
          * Replication compartment identifier
          */
         replicationCompartmentId?: pulumi.Input<string>;
+        /**
+         * Replication location detail where the snapshots reside
+         */
+        replicationLocationDetail?: pulumi.Input<inputs.CloudMigrations.TargetAssetMigrationAssetReplicationLocationDetail>;
         /**
          * Replication schedule identifier
          */
@@ -10767,6 +10851,17 @@ export namespace CloudMigrations {
          * (Updatable) The type of target asset.
          */
         type?: pulumi.Input<string>;
+    }
+
+    export interface TargetAssetMigrationAssetReplicationLocationDetail {
+        /**
+         * Properties for each of the replication location types
+         */
+        metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * The type of replication location
+         */
+        replicationLocationType?: pulumi.Input<string>;
     }
 
     export interface TargetAssetRecommendedSpec {
@@ -11345,11 +11440,11 @@ export namespace CloudMigrations {
          *
          * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
          */
-        desiredState: pulumi.Input<string>;
+        desiredState?: pulumi.Input<string>;
         /**
          * (Updatable) The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
          */
-        name: pulumi.Input<string>;
+        name?: pulumi.Input<string>;
     }
 
     export interface TargetAssetUserSpecCreateVnicDetails {
@@ -11442,7 +11537,7 @@ export namespace CloudMigrations {
         /**
          * (Updatable) The action to run when the preemptible instance is interrupted for eviction.
          */
-        preemptionAction: pulumi.Input<inputs.CloudMigrations.TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction>;
+        preemptionAction?: pulumi.Input<inputs.CloudMigrations.TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction>;
     }
 
     export interface TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction {
@@ -26470,11 +26565,17 @@ export namespace DataScience {
          * (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
          */
         environmentConfigurationDetails?: pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails>;
+        /**
+         * The infrastructure configuration details.
+         */
         infrastructureConfigurationDetails?: pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails>;
         /**
          * (Updatable) The model configuration details.
          */
         modelConfigurationDetails?: pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails>;
+        /**
+         * (Updatable) The model group configuration details.
+         */
         modelGroupConfigurationDetails?: pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetails>;
     }
 
@@ -26512,6 +26613,10 @@ export namespace DataScience {
          */
         imageDigest?: pulumi.Input<string>;
         /**
+         * (Updatable) OCID of the container image signature
+         */
+        imageSignatureId?: pulumi.Input<string>;
+        /**
          * (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
          */
         serverPort?: pulumi.Input<number>;
@@ -26522,6 +26627,9 @@ export namespace DataScience {
          * The minimum network bandwidth for the model deployment.
          */
         bandwidthMbps?: pulumi.Input<number>;
+        /**
+         * The type of the model deployment infrastructure.
+         */
         infrastructureType: pulumi.Input<string>;
         /**
          * The model deployment instance configuration.
@@ -26546,6 +26654,10 @@ export namespace DataScience {
          * Details for the model-deployment instance shape configuration.
          */
         modelDeploymentInstanceShapeConfigDetails?: pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails>;
+        /**
+         * Network Access type of model deployment.
+         */
+        networkAccessType?: pulumi.Input<string>;
         /**
          * The OCID of a Data Science private endpoint.
          */
@@ -26715,6 +26827,10 @@ export namespace DataScience {
          */
         modelDeploymentInstanceShapeConfigDetails?: pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails>;
         /**
+         * (Updatable) Network Access type of model deployment.
+         */
+        networkAccessType?: pulumi.Input<string>;
+        /**
          * (Updatable) The OCID of a Data Science private endpoint.
          */
         privateEndpointId?: pulumi.Input<string>;
@@ -26875,6 +26991,9 @@ export namespace DataScience {
     }
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetails {
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group you want to deploy.
+         */
         modelGroupId?: pulumi.Input<string>;
     }
 
@@ -31080,6 +31199,10 @@ export namespace Database {
          * Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
          */
         isRetentionLockEnabled?: pulumi.Input<boolean>;
+        /**
+         * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+         */
+        isZeroDataLossEnabled?: pulumi.Input<boolean>;
         /**
          * The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
          */
@@ -44896,7 +45019,7 @@ export namespace FileStorage {
          */
         requirePrivilegedSourcePort?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
+         * (Updatable) Clients these options should apply to. Must be a either single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
          *
          * **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
          */
@@ -88233,7 +88356,7 @@ export namespace NetworkLoadBalancer {
          */
         isBackup?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+         * (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
          */
         isDrain?: pulumi.Input<boolean>;
         /**
@@ -88445,22 +88568,22 @@ export namespace NetworkLoadBalancer {
 
     export interface NetworkLoadBalancerIpAddressReservedIp {
         /**
-         * OCID of the reserved public IP address created with the virtual cloud network.
+         * Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
          */
         id?: pulumi.Input<string>;
     }
 
     export interface NetworkLoadBalancerReservedIp {
         /**
-         * OCID of the reserved public IP address created with the virtual cloud network.
+         * Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
          *
-         * Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+         * Reserved IPs are IPs which are already registered using VCN API.
          *
-         * Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+         * For public Network load balancers, customer can create a reserved Public IP and/or reserved private IP and/or reserved IPv6 and pass the OCID's in the reservedIps array field to attach the IP addresses to the network load balancer during create For private Network load balancers, customer can create a reserved Private IP and/or reserved IPv6 and pass the OCID's in the  reservedIps array field to attach the IP addresses to the network load balancer during create
          *
-         * Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+         * Reserved IPs will not be deleted when the Network Load balancer is deleted. They will be detached from the Network Load balancer.
          *
-         * Example: "ocid1.publicip.oc1.phx.unique_ID"
+         * Public IP Example: "ocid1.publicip.oc1.phx.unique_ID" Private IP Example: "ocid1.privateip.oc1.phx.unique_ID" IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID"
          */
         id?: pulumi.Input<string>;
     }
@@ -88475,7 +88598,7 @@ export namespace NetworkLoadBalancer {
          */
         isBackup?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+         * (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
          */
         isDrain?: pulumi.Input<boolean>;
         /**
@@ -101820,6 +101943,36 @@ export namespace oci {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetSelfPartnerSubscriptionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSelfPartnerSubscriptionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSelfSubscriptionsFilter {
+        /**
+         * Name of meter.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSelfSubscriptionsFilterArgs {
+        /**
+         * Name of meter.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetWlmsManagedInstanceScanResultsFilter {
         name: string;
         regex?: boolean;
@@ -102136,5 +102289,130 @@ export namespace oci {
     export interface ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails {
         nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
         subnetId?: pulumi.Input<string>;
+    }
+
+    export interface SelfSubscriptionAdditionalDetail {
+        /**
+         * Additional attribute for extendedMetadata.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * It contains the value of above key.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface SelfSubscriptionSubscriptionDetails {
+        /**
+         * Tha amount for the currency type.
+         */
+        amount?: pulumi.Input<number>;
+        /**
+         * Sku details for billing subscription.
+         */
+        billingDetails: pulumi.Input<inputs.oci.SelfSubscriptionSubscriptionDetailsBillingDetails>;
+        /**
+         * The currency supported, in the format specified by ISO-4217
+         */
+        currency?: pulumi.Input<string>;
+        /**
+         * Whether subscription should be auto-renewed at the end of cycle.
+         */
+        isAutoRenew?: pulumi.Input<boolean>;
+        /**
+         * The activation link given by the partner.
+         */
+        partnerRegistrationUrl: pulumi.Input<string>;
+        /**
+         * A pricing plan details provided by the Publisher.
+         */
+        pricingPlan: pulumi.Input<inputs.oci.SelfSubscriptionSubscriptionDetailsPricingPlan>;
+    }
+
+    export interface SelfSubscriptionSubscriptionDetailsBillingDetails {
+        /**
+         * Whether this sku is assign to gov product.
+         */
+        hasGovSku?: pulumi.Input<boolean>;
+        /**
+         * The meters associated with sku.
+         */
+        meters: pulumi.Input<pulumi.Input<inputs.oci.SelfSubscriptionSubscriptionDetailsBillingDetailsMeter>[]>;
+        /**
+         * The part's metric.
+         */
+        metricType: pulumi.Input<string>;
+        /**
+         * Tha rate of this sku meter.
+         */
+        rateAllocation: pulumi.Input<number>;
+        /**
+         * Sku for service.
+         */
+        sku: pulumi.Input<string>;
+    }
+
+    export interface SelfSubscriptionSubscriptionDetailsBillingDetailsMeter {
+        /**
+         * Additional data give by sku.
+         */
+        extendedMetadatas?: pulumi.Input<pulumi.Input<inputs.oci.SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadata>[]>;
+        /**
+         * Name of meter.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * Tha rate of this sku meter.
+         */
+        rateAllocation: pulumi.Input<number>;
+    }
+
+    export interface SelfSubscriptionSubscriptionDetailsBillingDetailsMeterExtendedMetadata {
+        /**
+         * Additional attribute for extendedMetadata.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * It contains the value of above key.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface SelfSubscriptionSubscriptionDetailsPricingPlan {
+        /**
+         * Specifies the interval at which billing occurs for the subscription plan.
+         */
+        billingFrequency: pulumi.Input<string>;
+        /**
+         * A detailed explanation of the subscription plan.
+         */
+        planDescription?: pulumi.Input<string>;
+        /**
+         * Specifies the interval at which billing occurs for the subscription plan.
+         */
+        planDuration?: pulumi.Input<string>;
+        /**
+         * The name of the subscription plan used to identify the plan.
+         */
+        planName: pulumi.Input<string>;
+        /**
+         * The type of the subscription plan.
+         */
+        planType: pulumi.Input<string>;
+        /**
+         * The pricing details of the subscription plan in various supported currencies.
+         */
+        rates: pulumi.Input<pulumi.Input<inputs.oci.SelfSubscriptionSubscriptionDetailsPricingPlanRate>[]>;
+    }
+
+    export interface SelfSubscriptionSubscriptionDetailsPricingPlanRate {
+        /**
+         * The currency supported, in the format specified by ISO-4217
+         */
+        currency: pulumi.Input<string>;
+        /**
+         * The amount charged for the plan in the specified currency.
+         */
+        rate: pulumi.Input<number>;
     }
 }

@@ -34,9 +34,17 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
         return Optional.ofNullable(this.bandwidthMbps);
     }
 
+    /**
+     * The type of the model deployment infrastructure.
+     * 
+     */
     @Import(name="infrastructureType", required=true)
     private Output<String> infrastructureType;
 
+    /**
+     * @return The type of the model deployment infrastructure.
+     * 
+     */
     public Output<String> infrastructureType() {
         return this.infrastructureType;
     }
@@ -135,11 +143,23 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
             return bandwidthMbps(Output.of(bandwidthMbps));
         }
 
+        /**
+         * @param infrastructureType The type of the model deployment infrastructure.
+         * 
+         * @return builder
+         * 
+         */
         public Builder infrastructureType(Output<String> infrastructureType) {
             $.infrastructureType = infrastructureType;
             return this;
         }
 
+        /**
+         * @param infrastructureType The type of the model deployment infrastructure.
+         * 
+         * @return builder
+         * 
+         */
         public Builder infrastructureType(String infrastructureType) {
             return infrastructureType(Output.of(infrastructureType));
         }

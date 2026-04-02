@@ -48,6 +48,21 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
     }
 
     /**
+     * Network Access type of model deployment.
+     * 
+     */
+    @Import(name="networkAccessType")
+    private @Nullable Output<String> networkAccessType;
+
+    /**
+     * @return Network Access type of model deployment.
+     * 
+     */
+    public Optional<Output<String>> networkAccessType() {
+        return Optional.ofNullable(this.networkAccessType);
+    }
+
+    /**
      * The OCID of a Data Science private endpoint.
      * 
      */
@@ -82,6 +97,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
     private ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs $) {
         this.instanceShapeName = $.instanceShapeName;
         this.modelDeploymentInstanceShapeConfigDetails = $.modelDeploymentInstanceShapeConfigDetails;
+        this.networkAccessType = $.networkAccessType;
         this.privateEndpointId = $.privateEndpointId;
         this.subnetId = $.subnetId;
     }
@@ -144,6 +160,27 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
          */
         public Builder modelDeploymentInstanceShapeConfigDetails(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs modelDeploymentInstanceShapeConfigDetails) {
             return modelDeploymentInstanceShapeConfigDetails(Output.of(modelDeploymentInstanceShapeConfigDetails));
+        }
+
+        /**
+         * @param networkAccessType Network Access type of model deployment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkAccessType(@Nullable Output<String> networkAccessType) {
+            $.networkAccessType = networkAccessType;
+            return this;
+        }
+
+        /**
+         * @param networkAccessType Network Access type of model deployment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkAccessType(String networkAccessType) {
+            return networkAccessType(Output.of(networkAccessType));
         }
 
         /**

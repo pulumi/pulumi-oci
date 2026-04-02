@@ -26,12 +26,20 @@ public final class ModelDeploymentModelDeploymentConfigurationDetails {
      * 
      */
     private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails environmentConfigurationDetails;
+    /**
+     * @return The infrastructure configuration details.
+     * 
+     */
     private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails infrastructureConfigurationDetails;
     /**
      * @return (Updatable) The model configuration details.
      * 
      */
     private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails modelConfigurationDetails;
+    /**
+     * @return (Updatable) The model group configuration details.
+     * 
+     */
     private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetails modelGroupConfigurationDetails;
 
     private ModelDeploymentModelDeploymentConfigurationDetails() {}
@@ -49,6 +57,10 @@ public final class ModelDeploymentModelDeploymentConfigurationDetails {
     public Optional<ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails> environmentConfigurationDetails() {
         return Optional.ofNullable(this.environmentConfigurationDetails);
     }
+    /**
+     * @return The infrastructure configuration details.
+     * 
+     */
     public Optional<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails> infrastructureConfigurationDetails() {
         return Optional.ofNullable(this.infrastructureConfigurationDetails);
     }
@@ -59,6 +71,10 @@ public final class ModelDeploymentModelDeploymentConfigurationDetails {
     public Optional<ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails> modelConfigurationDetails() {
         return Optional.ofNullable(this.modelConfigurationDetails);
     }
+    /**
+     * @return (Updatable) The model group configuration details.
+     * 
+     */
     public Optional<ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetails> modelGroupConfigurationDetails() {
         return Optional.ofNullable(this.modelGroupConfigurationDetails);
     }

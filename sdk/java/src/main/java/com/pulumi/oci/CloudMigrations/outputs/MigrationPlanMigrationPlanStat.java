@@ -4,6 +4,8 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.CloudMigrations.outputs.MigrationPlanMigrationPlanStatCostToMigrate;
+import com.pulumi.oci.CloudMigrations.outputs.MigrationPlanMigrationPlanStatCurrentMonthlyCost;
 import com.pulumi.oci.CloudMigrations.outputs.MigrationPlanMigrationPlanStatTotalEstimatedCost;
 import java.lang.Integer;
 import java.lang.String;
@@ -14,6 +16,16 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class MigrationPlanMigrationPlanStat {
+    /**
+     * @return Summary of costs to migrate.
+     * 
+     */
+    private @Nullable List<MigrationPlanMigrationPlanStatCostToMigrate> costToMigrates;
+    /**
+     * @return Current monthly compute and storage costs.
+     * 
+     */
+    private @Nullable List<MigrationPlanMigrationPlanStatCurrentMonthlyCost> currentMonthlyCosts;
     /**
      * @return The time when the migration plan was updated. An RFC3339 formatted datetime string.
      * 
@@ -31,6 +43,20 @@ public final class MigrationPlanMigrationPlanStat {
     private @Nullable Integer vmCount;
 
     private MigrationPlanMigrationPlanStat() {}
+    /**
+     * @return Summary of costs to migrate.
+     * 
+     */
+    public List<MigrationPlanMigrationPlanStatCostToMigrate> costToMigrates() {
+        return this.costToMigrates == null ? List.of() : this.costToMigrates;
+    }
+    /**
+     * @return Current monthly compute and storage costs.
+     * 
+     */
+    public List<MigrationPlanMigrationPlanStatCurrentMonthlyCost> currentMonthlyCosts() {
+        return this.currentMonthlyCosts == null ? List.of() : this.currentMonthlyCosts;
+    }
     /**
      * @return The time when the migration plan was updated. An RFC3339 formatted datetime string.
      * 
@@ -62,17 +88,39 @@ public final class MigrationPlanMigrationPlanStat {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable List<MigrationPlanMigrationPlanStatCostToMigrate> costToMigrates;
+        private @Nullable List<MigrationPlanMigrationPlanStatCurrentMonthlyCost> currentMonthlyCosts;
         private @Nullable String timeUpdated;
         private @Nullable List<MigrationPlanMigrationPlanStatTotalEstimatedCost> totalEstimatedCosts;
         private @Nullable Integer vmCount;
         public Builder() {}
         public Builder(MigrationPlanMigrationPlanStat defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.costToMigrates = defaults.costToMigrates;
+    	      this.currentMonthlyCosts = defaults.currentMonthlyCosts;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.totalEstimatedCosts = defaults.totalEstimatedCosts;
     	      this.vmCount = defaults.vmCount;
         }
 
+        @CustomType.Setter
+        public Builder costToMigrates(@Nullable List<MigrationPlanMigrationPlanStatCostToMigrate> costToMigrates) {
+
+            this.costToMigrates = costToMigrates;
+            return this;
+        }
+        public Builder costToMigrates(MigrationPlanMigrationPlanStatCostToMigrate... costToMigrates) {
+            return costToMigrates(List.of(costToMigrates));
+        }
+        @CustomType.Setter
+        public Builder currentMonthlyCosts(@Nullable List<MigrationPlanMigrationPlanStatCurrentMonthlyCost> currentMonthlyCosts) {
+
+            this.currentMonthlyCosts = currentMonthlyCosts;
+            return this;
+        }
+        public Builder currentMonthlyCosts(MigrationPlanMigrationPlanStatCurrentMonthlyCost... currentMonthlyCosts) {
+            return currentMonthlyCosts(List.of(currentMonthlyCosts));
+        }
         @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
 
@@ -96,6 +144,8 @@ public final class MigrationPlanMigrationPlanStat {
         }
         public MigrationPlanMigrationPlanStat build() {
             final var _resultValue = new MigrationPlanMigrationPlanStat();
+            _resultValue.costToMigrates = costToMigrates;
+            _resultValue.currentMonthlyCosts = currentMonthlyCosts;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.totalEstimatedCosts = totalEstimatedCosts;
             _resultValue.vmCount = vmCount;

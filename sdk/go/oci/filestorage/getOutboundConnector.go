@@ -90,6 +90,10 @@ type LookupOutboundConnectorResult struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault .
+	TrustedCertificateSecretId string `pulumi:"trustedCertificateSecretId"`
+	// Version of the trusted certificate secret in the Vault to use.
+	TrustedCertificateSecretVersion int `pulumi:"trustedCertificateSecretVersion"`
 }
 
 func LookupOutboundConnectorOutput(ctx *pulumi.Context, args LookupOutboundConnectorOutputArgs, opts ...pulumi.InvokeOption) LookupOutboundConnectorResultOutput {
@@ -207,6 +211,16 @@ func (o LookupOutboundConnectorResultOutput) SystemTags() pulumi.StringMapOutput
 // The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o LookupOutboundConnectorResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupOutboundConnectorResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault .
+func (o LookupOutboundConnectorResultOutput) TrustedCertificateSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupOutboundConnectorResult) string { return v.TrustedCertificateSecretId }).(pulumi.StringOutput)
+}
+
+// Version of the trusted certificate secret in the Vault to use.
+func (o LookupOutboundConnectorResultOutput) TrustedCertificateSecretVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupOutboundConnectorResult) int { return v.TrustedCertificateSecretVersion }).(pulumi.IntOutput)
 }
 
 func init() {

@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.CloudMigrations.MigrationAssetArgs;
 import com.pulumi.oci.CloudMigrations.inputs.MigrationAssetState;
+import com.pulumi.oci.CloudMigrations.outputs.MigrationAssetReplicationLocationDetail;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
@@ -75,6 +76,20 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      */
     public Output<List<String>> dependedOnBies() {
         return this.dependedOnBies;
+    }
+    /**
+     * Mapping of source disk id to destination disk details
+     * 
+     */
+    @Export(name="destinationDisks", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> destinationDisks;
+
+    /**
+     * @return Mapping of source disk id to destination disk details
+     * 
+     */
+    public Output<Map<String,String>> destinationDisks() {
+        return this.destinationDisks;
     }
     /**
      * (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -179,6 +194,20 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      */
     public Output<String> replicationCompartmentId() {
         return this.replicationCompartmentId;
+    }
+    /**
+     * Replication location detail where the snapshots reside
+     * 
+     */
+    @Export(name="replicationLocationDetail", refs={MigrationAssetReplicationLocationDetail.class}, tree="[0]")
+    private Output<MigrationAssetReplicationLocationDetail> replicationLocationDetail;
+
+    /**
+     * @return Replication location detail where the snapshots reside
+     * 
+     */
+    public Output<MigrationAssetReplicationLocationDetail> replicationLocationDetail() {
+        return this.replicationLocationDetail;
     }
     /**
      * (Updatable) Replication schedule identifier

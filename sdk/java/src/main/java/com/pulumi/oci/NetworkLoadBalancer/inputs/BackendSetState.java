@@ -20,14 +20,14 @@ public final class BackendSetState extends com.pulumi.resources.ResourceArgs {
     public static final BackendSetState Empty = new BackendSetState();
 
     /**
-     * (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+     * (Updatable) If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
      * 
      */
     @Import(name="areOperationallyActiveBackendsPreferred")
     private @Nullable Output<Boolean> areOperationallyActiveBackendsPreferred;
 
     /**
-     * @return (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+     * @return (Updatable) If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
      * 
      */
     public Optional<Output<Boolean>> areOperationallyActiveBackendsPreferred() {
@@ -110,14 +110,14 @@ public final class BackendSetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+     * (Updatable) This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.  If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
      * 
      */
     @Import(name="isInstantFailoverTcpResetEnabled")
     private @Nullable Output<Boolean> isInstantFailoverTcpResetEnabled;
 
     /**
-     * @return (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+     * @return (Updatable) This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.  If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
      * 
      */
     public Optional<Output<Boolean>> isInstantFailoverTcpResetEnabled() {
@@ -233,7 +233,7 @@ public final class BackendSetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param areOperationallyActiveBackendsPreferred (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+         * @param areOperationallyActiveBackendsPreferred (Updatable) If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
          * 
          * @return builder
          * 
@@ -244,7 +244,7 @@ public final class BackendSetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param areOperationallyActiveBackendsPreferred (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+         * @param areOperationallyActiveBackendsPreferred (Updatable) If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
          * 
          * @return builder
          * 
@@ -369,7 +369,7 @@ public final class BackendSetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isInstantFailoverTcpResetEnabled (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+         * @param isInstantFailoverTcpResetEnabled (Updatable) This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.  If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
          * 
          * @return builder
          * 
@@ -380,7 +380,7 @@ public final class BackendSetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isInstantFailoverTcpResetEnabled (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+         * @param isInstantFailoverTcpResetEnabled (Updatable) This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.  If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
          * 
          * @return builder
          * 

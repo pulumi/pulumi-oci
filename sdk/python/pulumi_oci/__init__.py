@@ -7892,6 +7892,14 @@ _utilities.register(
   "classes": {
    "oci:oci/resourceAnalyticsTenancyAttachment:ResourceAnalyticsTenancyAttachment": "ResourceAnalyticsTenancyAttachment"
   }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/selfSubscription",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/selfSubscription:SelfSubscription": "SelfSubscription"
+  }
  }
 ]
 """,

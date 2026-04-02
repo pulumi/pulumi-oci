@@ -92,6 +92,8 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .passwordSecretId(testSecret.id())
  *             .passwordSecretVersion(outboundConnectorPasswordSecretVersion)
+ *             .trustedCertificateSecretId(testSecret.id())
+ *             .trustedCertificateSecretVersion(outboundConnectorTrustedCertificateSecretVersion)
  *             .build());
  * 
  *     }
@@ -259,18 +261,12 @@ public class OutboundConnector extends com.pulumi.resources.CustomResource {
     /**
      * Version of the password secret in the Vault to use.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="passwordSecretVersion", refs={Integer.class}, tree="[0]")
     private Output<Integer> passwordSecretVersion;
 
     /**
      * @return Version of the password secret in the Vault to use.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Integer> passwordSecretVersion() {
@@ -317,6 +313,40 @@ public class OutboundConnector extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
+     * 
+     */
+    @Export(name="trustedCertificateSecretId", refs={String.class}, tree="[0]")
+    private Output<String> trustedCertificateSecretId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
+     * 
+     */
+    public Output<String> trustedCertificateSecretId() {
+        return this.trustedCertificateSecretId;
+    }
+    /**
+     * Version of the trusted certificate secret in the Vault to use.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="trustedCertificateSecretVersion", refs={Integer.class}, tree="[0]")
+    private Output<Integer> trustedCertificateSecretVersion;
+
+    /**
+     * @return Version of the trusted certificate secret in the Vault to use.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Integer> trustedCertificateSecretVersion() {
+        return this.trustedCertificateSecretVersion;
     }
 
     /**

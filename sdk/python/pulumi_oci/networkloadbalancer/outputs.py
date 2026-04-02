@@ -96,7 +96,7 @@ class BackendSetBackend(dict):
         :param _builtins.int port: (Updatable) The communication port for the backend server.  Example: `8080`
         :param _builtins.str ip_address: (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
         :param _builtins.bool is_backup: (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-        :param _builtins.bool is_drain: (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        :param _builtins.bool is_drain: (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
         :param _builtins.bool is_offline: (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param _builtins.str name: (Updatable) A read-only field showing the IP address/OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
         :param _builtins.str target_id: (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
@@ -146,7 +146,7 @@ class BackendSetBackend(dict):
     @pulumi.getter(name="isDrain")
     def is_drain(self) -> Optional[_builtins.bool]:
         """
-        (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
         """
         return pulumi.get(self, "is_drain")
 
@@ -522,7 +522,7 @@ class NetworkLoadBalancerIpAddressReservedIp(dict):
     def __init__(__self__, *,
                  id: Optional[_builtins.str] = None):
         """
-        :param _builtins.str id: OCID of the reserved public IP address created with the virtual cloud network.
+        :param _builtins.str id: Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
         """
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -531,7 +531,7 @@ class NetworkLoadBalancerIpAddressReservedIp(dict):
     @pulumi.getter
     def id(self) -> Optional[_builtins.str]:
         """
-        OCID of the reserved public IP address created with the virtual cloud network.
+        Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
         """
         return pulumi.get(self, "id")
 
@@ -541,15 +541,15 @@ class NetworkLoadBalancerReservedIp(dict):
     def __init__(__self__, *,
                  id: Optional[_builtins.str] = None):
         """
-        :param _builtins.str id: OCID of the reserved public IP address created with the virtual cloud network.
+        :param _builtins.str id: Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
                
-               Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+               Reserved IPs are IPs which are already registered using VCN API.
                
-               Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+               For public Network load balancers, customer can create a reserved Public IP and/or reserved private IP and/or reserved IPv6 and pass the OCID's in the reservedIps array field to attach the IP addresses to the network load balancer during create For private Network load balancers, customer can create a reserved Private IP and/or reserved IPv6 and pass the OCID's in the  reservedIps array field to attach the IP addresses to the network load balancer during create
                
-               Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+               Reserved IPs will not be deleted when the Network Load balancer is deleted. They will be detached from the Network Load balancer.
                
-               Example: "ocid1.publicip.oc1.phx.unique_ID"
+               Public IP Example: "ocid1.publicip.oc1.phx.unique_ID" Private IP Example: "ocid1.privateip.oc1.phx.unique_ID" IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID"
         """
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -558,15 +558,15 @@ class NetworkLoadBalancerReservedIp(dict):
     @pulumi.getter
     def id(self) -> Optional[_builtins.str]:
         """
-        OCID of the reserved public IP address created with the virtual cloud network.
+        Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
 
-        Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+        Reserved IPs are IPs which are already registered using VCN API.
 
-        Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+        For public Network load balancers, customer can create a reserved Public IP and/or reserved private IP and/or reserved IPv6 and pass the OCID's in the reservedIps array field to attach the IP addresses to the network load balancer during create For private Network load balancers, customer can create a reserved Private IP and/or reserved IPv6 and pass the OCID's in the  reservedIps array field to attach the IP addresses to the network load balancer during create
 
-        Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+        Reserved IPs will not be deleted when the Network Load balancer is deleted. They will be detached from the Network Load balancer.
 
-        Example: "ocid1.publicip.oc1.phx.unique_ID"
+        Public IP Example: "ocid1.publicip.oc1.phx.unique_ID" Private IP Example: "ocid1.privateip.oc1.phx.unique_ID" IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID"
         """
         return pulumi.get(self, "id")
 
@@ -611,7 +611,7 @@ class NetworkLoadBalancersBackendSetsUnifiedBackend(dict):
         :param _builtins.int port: (Updatable) The communication port for the backend server.  Example: `8080`
         :param _builtins.str ip_address: (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
         :param _builtins.bool is_backup: (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-        :param _builtins.bool is_drain: (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        :param _builtins.bool is_drain: (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
         :param _builtins.bool is_offline: (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param _builtins.str name: (Updatable) A read-only field showing the IP address/OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
         :param _builtins.str target_id: (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
@@ -661,7 +661,7 @@ class NetworkLoadBalancersBackendSetsUnifiedBackend(dict):
     @pulumi.getter(name="isDrain")
     def is_drain(self) -> Optional[_builtins.bool]:
         """
-        (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
         """
         return pulumi.get(self, "is_drain")
 
@@ -997,7 +997,7 @@ class GetBackendSetBackendResult(dict):
         """
         :param _builtins.str ip_address: The IP address of the backend server. Example: `10.0.0.3`
         :param _builtins.bool is_backup: Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-        :param _builtins.bool is_drain: Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        :param _builtins.bool is_drain: Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
         :param _builtins.bool is_offline: Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param _builtins.str name: A user-friendly name for the backend set that must be unique and cannot be changed.
         :param _builtins.int port: The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
@@ -1033,7 +1033,7 @@ class GetBackendSetBackendResult(dict):
     @pulumi.getter(name="isDrain")
     def is_drain(self) -> _builtins.bool:
         """
-        Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
         """
         return pulumi.get(self, "is_drain")
 
@@ -1296,13 +1296,13 @@ class GetBackendSetsBackendSetCollectionItemResult(dict):
                  network_load_balancer_id: _builtins.str,
                  policy: _builtins.str):
         """
-        :param _builtins.bool are_operationally_active_backends_preferred: If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+        :param _builtins.bool are_operationally_active_backends_preferred: If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
         :param Sequence['GetBackendSetsBackendSetCollectionItemBackendArgs'] backends: An array of backends.
-        :param Sequence['GetBackendSetsBackendSetCollectionItemHealthCheckerArgs'] health_checkers: The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-management.htm).
+        :param Sequence['GetBackendSetsBackendSetCollectionItemHealthCheckerArgs'] health_checkers: The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
         :param _builtins.str ip_version: IP version associated with the backend set.
         :param _builtins.bool is_fail_open: If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
         :param _builtins.bool is_instant_failover_enabled: If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
-        :param _builtins.bool is_instant_failover_tcp_reset_enabled: If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+        :param _builtins.bool is_instant_failover_tcp_reset_enabled: This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.  If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
         :param _builtins.bool is_preserve_source: If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
         :param _builtins.str name: A user-friendly name for the backend set that must be unique and cannot be changed.
         :param _builtins.str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -1325,7 +1325,7 @@ class GetBackendSetsBackendSetCollectionItemResult(dict):
     @pulumi.getter(name="areOperationallyActiveBackendsPreferred")
     def are_operationally_active_backends_preferred(self) -> _builtins.bool:
         """
-        If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+        If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
         """
         return pulumi.get(self, "are_operationally_active_backends_preferred")
 
@@ -1341,7 +1341,7 @@ class GetBackendSetsBackendSetCollectionItemResult(dict):
     @pulumi.getter(name="healthCheckers")
     def health_checkers(self) -> Sequence['outputs.GetBackendSetsBackendSetCollectionItemHealthCheckerResult']:
         """
-        The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-management.htm).
+        The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
         """
         return pulumi.get(self, "health_checkers")
 
@@ -1378,7 +1378,7 @@ class GetBackendSetsBackendSetCollectionItemResult(dict):
     @pulumi.getter(name="isInstantFailoverTcpResetEnabled")
     def is_instant_failover_tcp_reset_enabled(self) -> _builtins.bool:
         """
-        If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
+        This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.  If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
         """
         return pulumi.get(self, "is_instant_failover_tcp_reset_enabled")
 
@@ -1429,7 +1429,7 @@ class GetBackendSetsBackendSetCollectionItemBackendResult(dict):
         """
         :param _builtins.str ip_address: The IP address of the backend server. Example: `10.0.0.3`
         :param _builtins.bool is_backup: Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-        :param _builtins.bool is_drain: Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        :param _builtins.bool is_drain: Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
         :param _builtins.bool is_offline: Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param _builtins.str name: A user-friendly name for the backend set that must be unique and cannot be changed.
         :param _builtins.int port: The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
@@ -1465,7 +1465,7 @@ class GetBackendSetsBackendSetCollectionItemBackendResult(dict):
     @pulumi.getter(name="isDrain")
     def is_drain(self) -> _builtins.bool:
         """
-        Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
         """
         return pulumi.get(self, "is_drain")
 
@@ -1763,7 +1763,7 @@ class GetBackendsBackendCollectionItemResult(dict):
         :param _builtins.str backend_set_name: The name of the backend set associated with the backend servers.  Example: `example_backend_set`
         :param _builtins.str ip_address: The IP address of the backend server. Example: `10.0.0.3`
         :param _builtins.bool is_backup: Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-        :param _builtins.bool is_drain: Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        :param _builtins.bool is_drain: Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
         :param _builtins.bool is_offline: Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param _builtins.str name: A read-only field showing the IP address/IP OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
         :param _builtins.str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -1816,7 +1816,7 @@ class GetBackendsBackendCollectionItemResult(dict):
     @pulumi.getter(name="isDrain")
     def is_drain(self) -> _builtins.bool:
         """
-        Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.  Example: `false`
         """
         return pulumi.get(self, "is_drain")
 
@@ -2127,7 +2127,7 @@ class GetNetworkLoadBalancerIpAddressReservedIpResult(dict):
     def __init__(__self__, *,
                  id: _builtins.str):
         """
-        :param _builtins.str id: OCID of the reserved public IP address created with the virtual cloud network.
+        :param _builtins.str id: Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
         """
         pulumi.set(__self__, "id", id)
 
@@ -2135,7 +2135,7 @@ class GetNetworkLoadBalancerIpAddressReservedIpResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        OCID of the reserved public IP address created with the virtual cloud network.
+        Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
         """
         return pulumi.get(self, "id")
 
@@ -2145,7 +2145,7 @@ class GetNetworkLoadBalancerReservedIpResult(dict):
     def __init__(__self__, *,
                  id: _builtins.str):
         """
-        :param _builtins.str id: OCID of the reserved public IP address created with the virtual cloud network.
+        :param _builtins.str id: Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
         """
         pulumi.set(__self__, "id", id)
 
@@ -2153,7 +2153,7 @@ class GetNetworkLoadBalancerReservedIpResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        OCID of the reserved public IP address created with the virtual cloud network.
+        Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
         """
         return pulumi.get(self, "id")
 
@@ -2233,7 +2233,7 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemResult(dict):
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param _builtins.str id: OCID of the reserved public IP address created with the virtual cloud network.
+        :param _builtins.str id: Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
         :param Sequence['GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArgs'] ip_addresses: An array of IP addresses.
         :param _builtins.bool is_preserve_source_destination: When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC. Packets are sent to the backend set without any changes to the source and destination IP.
         :param _builtins.bool is_private: Whether the network load balancer has a virtual cloud network-local (private) IP address.
@@ -2316,7 +2316,7 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        OCID of the reserved public IP address created with the virtual cloud network.
+        Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
         """
         return pulumi.get(self, "id")
 
@@ -2490,7 +2490,7 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedI
     def __init__(__self__, *,
                  id: _builtins.str):
         """
-        :param _builtins.str id: OCID of the reserved public IP address created with the virtual cloud network.
+        :param _builtins.str id: Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
         """
         pulumi.set(__self__, "id", id)
 
@@ -2498,7 +2498,7 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedI
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        OCID of the reserved public IP address created with the virtual cloud network.
+        Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
         """
         return pulumi.get(self, "id")
 
@@ -2508,7 +2508,7 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpResult(d
     def __init__(__self__, *,
                  id: _builtins.str):
         """
-        :param _builtins.str id: OCID of the reserved public IP address created with the virtual cloud network.
+        :param _builtins.str id: Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
         """
         pulumi.set(__self__, "id", id)
 
@@ -2516,7 +2516,7 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpResult(d
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        OCID of the reserved public IP address created with the virtual cloud network.
+        Ocid of the Reserved IP (Public IP, Private IP or IPv6) created with VCN.
         """
         return pulumi.get(self, "id")
 

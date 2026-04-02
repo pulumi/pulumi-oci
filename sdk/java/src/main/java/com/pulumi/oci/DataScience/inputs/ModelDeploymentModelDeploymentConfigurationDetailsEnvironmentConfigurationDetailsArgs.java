@@ -140,6 +140,21 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
     }
 
     /**
+     * (Updatable) OCID of the container image signature
+     * 
+     */
+    @Import(name="imageSignatureId")
+    private @Nullable Output<String> imageSignatureId;
+
+    /**
+     * @return (Updatable) OCID of the container image signature
+     * 
+     */
+    public Optional<Output<String>> imageSignatureId() {
+        return Optional.ofNullable(this.imageSignatureId);
+    }
+
+    /**
      * (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
      * 
      */
@@ -165,6 +180,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
         this.healthCheckPort = $.healthCheckPort;
         this.image = $.image;
         this.imageDigest = $.imageDigest;
+        this.imageSignatureId = $.imageSignatureId;
         this.serverPort = $.serverPort;
     }
 
@@ -372,6 +388,27 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
          */
         public Builder imageDigest(String imageDigest) {
             return imageDigest(Output.of(imageDigest));
+        }
+
+        /**
+         * @param imageSignatureId (Updatable) OCID of the container image signature
+         * 
+         * @return builder
+         * 
+         */
+        public Builder imageSignatureId(@Nullable Output<String> imageSignatureId) {
+            $.imageSignatureId = imageSignatureId;
+            return this;
+        }
+
+        /**
+         * @param imageSignatureId (Updatable) OCID of the container image signature
+         * 
+         * @return builder
+         * 
+         */
+        public Builder imageSignatureId(String imageSignatureId) {
+            return imageSignatureId(Output.of(imageSignatureId));
         }
 
         /**

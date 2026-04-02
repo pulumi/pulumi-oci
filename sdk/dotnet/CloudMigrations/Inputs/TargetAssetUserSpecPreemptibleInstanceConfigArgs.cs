@@ -15,8 +15,8 @@ namespace Pulumi.Oci.CloudMigrations.Inputs
         /// <summary>
         /// (Updatable) The action to run when the preemptible instance is interrupted for eviction.
         /// </summary>
-        [Input("preemptionAction", required: true)]
-        public Input<Inputs.TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs> PreemptionAction { get; set; } = null!;
+        [Input("preemptionAction")]
+        public Input<Inputs.TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs>? PreemptionAction { get; set; }
 
         public TargetAssetUserSpecPreemptibleInstanceConfigArgs()
         {

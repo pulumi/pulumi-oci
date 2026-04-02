@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,6 +30,10 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     isCompleted: migrationIsCompleted,
+ *     migrationConfig: {
+ *         subnetId: testSubnet.id,
+ *     },
+ *     migrationType: migrationMigrationType,
  *     replicationScheduleId: testReplicationSchedule.id,
  * });
  * ```
@@ -93,6 +99,14 @@ export class Migration extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
+     * (Updatable) Configuration for a Migration Project.
+     */
+    declare public readonly migrationConfig: pulumi.Output<outputs.CloudMigrations.MigrationMigrationConfig>;
+    /**
+     * (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+     */
+    declare public readonly migrationType: pulumi.Output<string>;
+    /**
      * (Updatable) Replication schedule identifier
      *
      *
@@ -136,6 +150,8 @@ export class Migration extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["isCompleted"] = state?.isCompleted;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["migrationConfig"] = state?.migrationConfig;
+            resourceInputs["migrationType"] = state?.migrationType;
             resourceInputs["replicationScheduleId"] = state?.replicationScheduleId;
             resourceInputs["state"] = state?.state;
             resourceInputs["systemTags"] = state?.systemTags;
@@ -154,6 +170,8 @@ export class Migration extends pulumi.CustomResource {
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["isCompleted"] = args?.isCompleted;
+            resourceInputs["migrationConfig"] = args?.migrationConfig;
+            resourceInputs["migrationType"] = args?.migrationType;
             resourceInputs["replicationScheduleId"] = args?.replicationScheduleId;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -194,6 +212,14 @@ export interface MigrationState {
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * (Updatable) Configuration for a Migration Project.
+     */
+    migrationConfig?: pulumi.Input<inputs.CloudMigrations.MigrationMigrationConfig>;
+    /**
+     * (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+     */
+    migrationType?: pulumi.Input<string>;
     /**
      * (Updatable) Replication schedule identifier
      *
@@ -244,6 +270,14 @@ export interface MigrationArgs {
      * (Updatable) Indicates whether migration is marked as complete.
      */
     isCompleted?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Configuration for a Migration Project.
+     */
+    migrationConfig?: pulumi.Input<inputs.CloudMigrations.MigrationMigrationConfig>;
+    /**
+     * (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+     */
+    migrationType?: pulumi.Input<string>;
     /**
      * (Updatable) Replication schedule identifier
      *

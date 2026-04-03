@@ -115,6 +115,11 @@ export type DistributedDatabaseDistributedDatabasePrivateEndpoint = import("./di
 export const DistributedDatabaseDistributedDatabasePrivateEndpoint: typeof import("./distributedDatabaseDistributedDatabasePrivateEndpoint").DistributedDatabaseDistributedDatabasePrivateEndpoint = null as any;
 utilities.lazyLoad(exports, ["DistributedDatabaseDistributedDatabasePrivateEndpoint"], () => require("./distributedDatabaseDistributedDatabasePrivateEndpoint"));
 
+export { GdpGdpPipelineArgs, GdpGdpPipelineState } from "./gdpGdpPipeline";
+export type GdpGdpPipeline = import("./gdpGdpPipeline").GdpGdpPipeline;
+export const GdpGdpPipeline: typeof import("./gdpGdpPipeline").GdpGdpPipeline = null as any;
+utilities.lazyLoad(exports, ["GdpGdpPipeline"], () => require("./gdpGdpPipeline"));
+
 export { GetAiDataPlatformAiDataPlatformArgs, GetAiDataPlatformAiDataPlatformResult, GetAiDataPlatformAiDataPlatformOutputArgs } from "./getAiDataPlatformAiDataPlatform";
 export const getAiDataPlatformAiDataPlatform: typeof import("./getAiDataPlatformAiDataPlatform").getAiDataPlatformAiDataPlatform = null as any;
 export const getAiDataPlatformAiDataPlatformOutput: typeof import("./getAiDataPlatformAiDataPlatform").getAiDataPlatformAiDataPlatformOutput = null as any;
@@ -374,6 +379,16 @@ export { GetDistributedDatabaseDistributedDatabasesArgs, GetDistributedDatabaseD
 export const getDistributedDatabaseDistributedDatabases: typeof import("./getDistributedDatabaseDistributedDatabases").getDistributedDatabaseDistributedDatabases = null as any;
 export const getDistributedDatabaseDistributedDatabasesOutput: typeof import("./getDistributedDatabaseDistributedDatabases").getDistributedDatabaseDistributedDatabasesOutput = null as any;
 utilities.lazyLoad(exports, ["getDistributedDatabaseDistributedDatabases","getDistributedDatabaseDistributedDatabasesOutput"], () => require("./getDistributedDatabaseDistributedDatabases"));
+
+export { GetGdpGdpPipelineArgs, GetGdpGdpPipelineResult, GetGdpGdpPipelineOutputArgs } from "./getGdpGdpPipeline";
+export const getGdpGdpPipeline: typeof import("./getGdpGdpPipeline").getGdpGdpPipeline = null as any;
+export const getGdpGdpPipelineOutput: typeof import("./getGdpGdpPipeline").getGdpGdpPipelineOutput = null as any;
+utilities.lazyLoad(exports, ["getGdpGdpPipeline","getGdpGdpPipelineOutput"], () => require("./getGdpGdpPipeline"));
+
+export { GetGdpGdpPipelinesArgs, GetGdpGdpPipelinesResult, GetGdpGdpPipelinesOutputArgs } from "./getGdpGdpPipelines";
+export const getGdpGdpPipelines: typeof import("./getGdpGdpPipelines").getGdpGdpPipelines = null as any;
+export const getGdpGdpPipelinesOutput: typeof import("./getGdpGdpPipelines").getGdpGdpPipelinesOutput = null as any;
+utilities.lazyLoad(exports, ["getGdpGdpPipelines","getGdpGdpPipelinesOutput"], () => require("./getGdpGdpPipelines"));
 
 export { GetIotDigitalTwinAdapterArgs, GetIotDigitalTwinAdapterResult, GetIotDigitalTwinAdapterOutputArgs } from "./getIotDigitalTwinAdapter";
 export const getIotDigitalTwinAdapter: typeof import("./getIotDigitalTwinAdapter").getIotDigitalTwinAdapter = null as any;
@@ -849,6 +864,8 @@ const _module = {
                 return new DistributedDatabaseDistributedDatabase(name, <any>undefined, { urn })
             case "oci:oci/distributedDatabaseDistributedDatabasePrivateEndpoint:DistributedDatabaseDistributedDatabasePrivateEndpoint":
                 return new DistributedDatabaseDistributedDatabasePrivateEndpoint(name, <any>undefined, { urn })
+            case "oci:oci/gdpGdpPipeline:GdpGdpPipeline":
+                return new GdpGdpPipeline(name, <any>undefined, { urn })
             case "oci:oci/iotDigitalTwinAdapter:IotDigitalTwinAdapter":
                 return new IotDigitalTwinAdapter(name, <any>undefined, { urn })
             case "oci:oci/iotDigitalTwinInstance:IotDigitalTwinInstance":
@@ -914,6 +931,7 @@ pulumi.runtime.registerResourceModule("oci", "oci/difStack", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/distributedDatabaseDistributedAutonomousDatabase", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/distributedDatabaseDistributedDatabase", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/distributedDatabaseDistributedDatabasePrivateEndpoint", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/gdpGdpPipeline", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/iotDigitalTwinAdapter", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/iotDigitalTwinInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/iotDigitalTwinInstanceInvokeRawCommand", _module)

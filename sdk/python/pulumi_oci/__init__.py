@@ -7751,6 +7751,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "oci/gdpGdpPipeline",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/gdpGdpPipeline:GdpGdpPipeline": "GdpGdpPipeline"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "oci/iotDigitalTwinAdapter",
   "fqn": "pulumi_oci.oci",
   "classes": {

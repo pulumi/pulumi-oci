@@ -101271,6 +101271,25 @@ export namespace oci {
         shardGroup?: pulumi.Input<string>;
     }
 
+    export interface GdpGdpPipelineBucketDetail {
+        /**
+         * Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
+         */
+        bucketType: pulumi.Input<string>;
+        /**
+         * OCID of the bucket.
+         */
+        id: pulumi.Input<string>;
+        /**
+         * Name of the bucket.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * Namespace of the bucket.
+         */
+        namespace: pulumi.Input<string>;
+    }
+
     export interface GetAiDataPlatformAiDataPlatformsFilter {
         name: string;
         regex?: boolean;
@@ -101637,6 +101656,24 @@ export namespace oci {
     export interface GetDistributedDatabaseDistributedDatabasesFilterArgs {
         /**
          * Name of the shard.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetGdpGdpPipelinesFilter {
+        /**
+         * Name of the bucket.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetGdpGdpPipelinesFilterArgs {
+        /**
+         * Name of the bucket.
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;

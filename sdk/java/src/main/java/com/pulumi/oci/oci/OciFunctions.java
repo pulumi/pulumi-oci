@@ -113,6 +113,10 @@ import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivat
 import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasesArgs;
 import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasesPlainArgs;
+import com.pulumi.oci.oci.inputs.GetGdpGdpPipelineArgs;
+import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinePlainArgs;
+import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesArgs;
+import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesPlainArgs;
 import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdapterArgs;
 import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdapterPlainArgs;
 import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdaptersArgs;
@@ -297,6 +301,8 @@ import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedDatabasePriva
 import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult;
 import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedDatabaseResult;
 import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedDatabasesResult;
+import com.pulumi.oci.oci.outputs.GetGdpGdpPipelineResult;
+import com.pulumi.oci.oci.outputs.GetGdpGdpPipelinesResult;
 import com.pulumi.oci.oci.outputs.GetIotDigitalTwinAdapterResult;
 import com.pulumi.oci.oci.outputs.GetIotDigitalTwinAdaptersResult;
 import com.pulumi.oci.oci.outputs.GetIotDigitalTwinInstanceContentResult;
@@ -12117,6 +12123,529 @@ public final class OciFunctions {
      */
     public static CompletableFuture<GetDistributedDatabaseDistributedDatabasesResult> getDistributedDatabaseDistributedDatabasesPlain(GetDistributedDatabaseDistributedDatabasesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:oci/getDistributedDatabaseDistributedDatabases:getDistributedDatabaseDistributedDatabases", TypeShape.of(GetDistributedDatabaseDistributedDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Gdp Pipeline resource in Oracle Cloud Infrastructure Gdp service.
+     * 
+     * Retrieves a pipeline by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGdpPipeline = OciFunctions.getGdpGdpPipeline(GetGdpGdpPipelineArgs.builder()
+     *             .gdpPipelineId(testGdpPipelineOciGdpGdpPipeline.id())
+     *             .env(gdpEnv)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetGdpGdpPipelineResult> getGdpGdpPipeline(GetGdpGdpPipelineArgs args) {
+        return getGdpGdpPipeline(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Gdp Pipeline resource in Oracle Cloud Infrastructure Gdp service.
+     * 
+     * Retrieves a pipeline by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGdpPipeline = OciFunctions.getGdpGdpPipeline(GetGdpGdpPipelineArgs.builder()
+     *             .gdpPipelineId(testGdpPipelineOciGdpGdpPipeline.id())
+     *             .env(gdpEnv)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetGdpGdpPipelineResult> getGdpGdpPipelinePlain(GetGdpGdpPipelinePlainArgs args) {
+        return getGdpGdpPipelinePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Gdp Pipeline resource in Oracle Cloud Infrastructure Gdp service.
+     * 
+     * Retrieves a pipeline by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGdpPipeline = OciFunctions.getGdpGdpPipeline(GetGdpGdpPipelineArgs.builder()
+     *             .gdpPipelineId(testGdpPipelineOciGdpGdpPipeline.id())
+     *             .env(gdpEnv)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetGdpGdpPipelineResult> getGdpGdpPipeline(GetGdpGdpPipelineArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getGdpGdpPipeline:getGdpGdpPipeline", TypeShape.of(GetGdpGdpPipelineResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Gdp Pipeline resource in Oracle Cloud Infrastructure Gdp service.
+     * 
+     * Retrieves a pipeline by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGdpPipeline = OciFunctions.getGdpGdpPipeline(GetGdpGdpPipelineArgs.builder()
+     *             .gdpPipelineId(testGdpPipelineOciGdpGdpPipeline.id())
+     *             .env(gdpEnv)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetGdpGdpPipelineResult> getGdpGdpPipeline(GetGdpGdpPipelineArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getGdpGdpPipeline:getGdpGdpPipeline", TypeShape.of(GetGdpGdpPipelineResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Gdp Pipeline resource in Oracle Cloud Infrastructure Gdp service.
+     * 
+     * Retrieves a pipeline by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGdpPipeline = OciFunctions.getGdpGdpPipeline(GetGdpGdpPipelineArgs.builder()
+     *             .gdpPipelineId(testGdpPipelineOciGdpGdpPipeline.id())
+     *             .env(gdpEnv)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetGdpGdpPipelineResult> getGdpGdpPipelinePlain(GetGdpGdpPipelinePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getGdpGdpPipeline:getGdpGdpPipeline", TypeShape.of(GetGdpGdpPipelineResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Gdp Pipelines in Oracle Cloud Infrastructure Gdp service.
+     * 
+     * Returns a list of pipelines.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGdpPipelines = OciFunctions.getGdpGdpPipelines(GetGdpGdpPipelinesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(gdpPipelineDisplayName)
+     *             .env(gdpEnv)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetGdpGdpPipelinesResult> getGdpGdpPipelines() {
+        return getGdpGdpPipelines(GetGdpGdpPipelinesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Gdp Pipelines in Oracle Cloud Infrastructure Gdp service.
+     * 
+     * Returns a list of pipelines.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGdpPipelines = OciFunctions.getGdpGdpPipelines(GetGdpGdpPipelinesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(gdpPipelineDisplayName)
+     *             .env(gdpEnv)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetGdpGdpPipelinesResult> getGdpGdpPipelinesPlain() {
+        return getGdpGdpPipelinesPlain(GetGdpGdpPipelinesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Gdp Pipelines in Oracle Cloud Infrastructure Gdp service.
+     * 
+     * Returns a list of pipelines.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGdpPipelines = OciFunctions.getGdpGdpPipelines(GetGdpGdpPipelinesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(gdpPipelineDisplayName)
+     *             .env(gdpEnv)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetGdpGdpPipelinesResult> getGdpGdpPipelines(GetGdpGdpPipelinesArgs args) {
+        return getGdpGdpPipelines(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Gdp Pipelines in Oracle Cloud Infrastructure Gdp service.
+     * 
+     * Returns a list of pipelines.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGdpPipelines = OciFunctions.getGdpGdpPipelines(GetGdpGdpPipelinesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(gdpPipelineDisplayName)
+     *             .env(gdpEnv)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetGdpGdpPipelinesResult> getGdpGdpPipelinesPlain(GetGdpGdpPipelinesPlainArgs args) {
+        return getGdpGdpPipelinesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Gdp Pipelines in Oracle Cloud Infrastructure Gdp service.
+     * 
+     * Returns a list of pipelines.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGdpPipelines = OciFunctions.getGdpGdpPipelines(GetGdpGdpPipelinesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(gdpPipelineDisplayName)
+     *             .env(gdpEnv)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetGdpGdpPipelinesResult> getGdpGdpPipelines(GetGdpGdpPipelinesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getGdpGdpPipelines:getGdpGdpPipelines", TypeShape.of(GetGdpGdpPipelinesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Gdp Pipelines in Oracle Cloud Infrastructure Gdp service.
+     * 
+     * Returns a list of pipelines.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGdpPipelines = OciFunctions.getGdpGdpPipelines(GetGdpGdpPipelinesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(gdpPipelineDisplayName)
+     *             .env(gdpEnv)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetGdpGdpPipelinesResult> getGdpGdpPipelines(GetGdpGdpPipelinesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getGdpGdpPipelines:getGdpGdpPipelines", TypeShape.of(GetGdpGdpPipelinesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Gdp Pipelines in Oracle Cloud Infrastructure Gdp service.
+     * 
+     * Returns a list of pipelines.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetGdpGdpPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGdpPipelines = OciFunctions.getGdpGdpPipelines(GetGdpGdpPipelinesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(gdpPipelineDisplayName)
+     *             .env(gdpEnv)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetGdpGdpPipelinesResult> getGdpGdpPipelinesPlain(GetGdpGdpPipelinesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getGdpGdpPipelines:getGdpGdpPipelines", TypeShape.of(GetGdpGdpPipelinesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Digital Twin Adapter resource in Oracle Cloud Infrastructure Iot service.

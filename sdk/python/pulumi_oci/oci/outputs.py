@@ -102,6 +102,7 @@ __all__ = [
     'DistributedDatabaseDistributedDatabaseShardDetailPeerDetail',
     'DistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadata',
     'DistributedDatabaseDistributedDatabaseValidateNetworkDetails',
+    'GdpGdpPipelineBucketDetail',
     'IotDigitalTwinAdapterInboundEnvelope',
     'IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping',
     'IotDigitalTwinAdapterInboundEnvelopeReferencePayload',
@@ -379,6 +380,11 @@ __all__ = [
     'GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemShardDetailPeerDetailMetadataResult',
     'GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemValidateNetworkDetailResult',
     'GetDistributedDatabaseDistributedDatabasesFilterResult',
+    'GetGdpGdpPipelineBucketDetailResult',
+    'GetGdpGdpPipelinesFilterResult',
+    'GetGdpGdpPipelinesGdpPipelineCollectionResult',
+    'GetGdpGdpPipelinesGdpPipelineCollectionItemResult',
+    'GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailResult',
     'GetIotDigitalTwinAdapterInboundEnvelopeResult',
     'GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingResult',
     'GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadResult',
@@ -7517,6 +7523,74 @@ class DistributedDatabaseDistributedDatabaseValidateNetworkDetails(dict):
         The name of the shardGroup for the shard.
         """
         return pulumi.get(self, "shard_group")
+
+
+@pulumi.output_type
+class GdpGdpPipelineBucketDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "bucketType":
+            suggest = "bucket_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GdpGdpPipelineBucketDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GdpGdpPipelineBucketDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GdpGdpPipelineBucketDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bucket_type: _builtins.str,
+                 id: _builtins.str,
+                 name: _builtins.str,
+                 namespace: _builtins.str):
+        """
+        :param _builtins.str bucket_type: Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
+        :param _builtins.str id: OCID of the bucket.
+        :param _builtins.str name: Name of the bucket.
+        :param _builtins.str namespace: Namespace of the bucket.
+        """
+        pulumi.set(__self__, "bucket_type", bucket_type)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "namespace", namespace)
+
+    @_builtins.property
+    @pulumi.getter(name="bucketType")
+    def bucket_type(self) -> _builtins.str:
+        """
+        Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
+        """
+        return pulumi.get(self, "bucket_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        OCID of the bucket.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the bucket.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        Namespace of the bucket.
+        """
+        return pulumi.get(self, "namespace")
 
 
 @pulumi.output_type
@@ -25031,6 +25105,424 @@ class GetDistributedDatabaseDistributedDatabasesFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetGdpGdpPipelineBucketDetailResult(dict):
+    def __init__(__self__, *,
+                 bucket_type: _builtins.str,
+                 id: _builtins.str,
+                 name: _builtins.str,
+                 namespace: _builtins.str):
+        """
+        :param _builtins.str bucket_type: Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
+        :param _builtins.str id: The OCID of the pipeline.
+        :param _builtins.str name: Name of the bucket.
+        :param _builtins.str namespace: Namespace of the bucket.
+        """
+        pulumi.set(__self__, "bucket_type", bucket_type)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "namespace", namespace)
+
+    @_builtins.property
+    @pulumi.getter(name="bucketType")
+    def bucket_type(self) -> _builtins.str:
+        """
+        Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
+        """
+        return pulumi.get(self, "bucket_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the pipeline.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the bucket.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        Namespace of the bucket.
+        """
+        return pulumi.get(self, "namespace")
+
+
+@pulumi.output_type
+class GetGdpGdpPipelinesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Name of the bucket.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the bucket.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetGdpGdpPipelinesGdpPipelineCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetGdpGdpPipelinesGdpPipelineCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetGdpGdpPipelinesGdpPipelineCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetGdpGdpPipelinesGdpPipelineCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 approval_key_vault_id: _builtins.str,
+                 authorization_details: _builtins.str,
+                 bucket_details: Sequence['outputs.GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailResult'],
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 env: _builtins.str,
+                 file_types: Sequence[_builtins.str],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 is_approval_needed: _builtins.bool,
+                 is_chunking_enabled: _builtins.bool,
+                 is_file_override_in_destination_enabled: _builtins.bool,
+                 is_scanning_enabled: _builtins.bool,
+                 lifecycle_details: _builtins.str,
+                 peered_gdp_pipeline_id: _builtins.str,
+                 peering_region: _builtins.str,
+                 pipeline_type: _builtins.str,
+                 service_log_group_id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str approval_key_vault_id: The KMS vault OCID used for cryptographic approvals of transfers.
+        :param _builtins.str authorization_details: Authorization information about the pipeline being configured.
+        :param Sequence['GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailArgs'] bucket_details: Configuration information about the buckets used for this pipeline.
+        :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param _builtins.str description: Short field input by customer for a description of the data pipeline use-case.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.str env: The environment where the pipeline resides. Valid values are COMMERCIAL or USGOV. Defaults to COMMERCIAL.
+        :param Sequence[_builtins.str] file_types: List of file types allowed to be transferred in the pipeline according to the authorization details (e.g. .pdf, .xml, .doc).
+        :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param _builtins.str id: The OCID of the pipeline.
+        :param _builtins.bool is_approval_needed: Determines whether file transfers need to go through an approval workflow.
+        :param _builtins.bool is_chunking_enabled: Determines whether file must be chunked during the transfer. This is only a property of SENDER pipelines.
+        :param _builtins.bool is_file_override_in_destination_enabled: Enable file override feature in destination bucket. If 2 files with same name exist in destination bucket, original file will be overwritten.
+        :param _builtins.bool is_scanning_enabled: Determines whether GDP Scanning should be enabled for the pipeline.
+        :param _builtins.str lifecycle_details: Additional details about the current state of the pipeline.
+        :param _builtins.str peered_gdp_pipeline_id: OCID of the peered pipeline. This null for SENDER pipeline.
+        :param _builtins.str peering_region: Public region name where the peered pipeline exists.
+        :param _builtins.str pipeline_type: Type of pipeline. Can be SENDER or RECEIVER.
+        :param _builtins.str service_log_group_id: the OCID of the service log group.
+        :param _builtins.str state: The current state of the pipeline.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The time the the pipeline was created. An RFC3339 formatted datetime string.
+        :param _builtins.str time_updated: The time the pipeline was updated. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "approval_key_vault_id", approval_key_vault_id)
+        pulumi.set(__self__, "authorization_details", authorization_details)
+        pulumi.set(__self__, "bucket_details", bucket_details)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "env", env)
+        pulumi.set(__self__, "file_types", file_types)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_approval_needed", is_approval_needed)
+        pulumi.set(__self__, "is_chunking_enabled", is_chunking_enabled)
+        pulumi.set(__self__, "is_file_override_in_destination_enabled", is_file_override_in_destination_enabled)
+        pulumi.set(__self__, "is_scanning_enabled", is_scanning_enabled)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "peered_gdp_pipeline_id", peered_gdp_pipeline_id)
+        pulumi.set(__self__, "peering_region", peering_region)
+        pulumi.set(__self__, "pipeline_type", pipeline_type)
+        pulumi.set(__self__, "service_log_group_id", service_log_group_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="approvalKeyVaultId")
+    def approval_key_vault_id(self) -> _builtins.str:
+        """
+        The KMS vault OCID used for cryptographic approvals of transfers.
+        """
+        return pulumi.get(self, "approval_key_vault_id")
+
+    @_builtins.property
+    @pulumi.getter(name="authorizationDetails")
+    def authorization_details(self) -> _builtins.str:
+        """
+        Authorization information about the pipeline being configured.
+        """
+        return pulumi.get(self, "authorization_details")
+
+    @_builtins.property
+    @pulumi.getter(name="bucketDetails")
+    def bucket_details(self) -> Sequence['outputs.GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailResult']:
+        """
+        Configuration information about the buckets used for this pipeline.
+        """
+        return pulumi.get(self, "bucket_details")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Short field input by customer for a description of the data pipeline use-case.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def env(self) -> _builtins.str:
+        """
+        The environment where the pipeline resides. Valid values are COMMERCIAL or USGOV. Defaults to COMMERCIAL.
+        """
+        return pulumi.get(self, "env")
+
+    @_builtins.property
+    @pulumi.getter(name="fileTypes")
+    def file_types(self) -> Sequence[_builtins.str]:
+        """
+        List of file types allowed to be transferred in the pipeline according to the authorization details (e.g. .pdf, .xml, .doc).
+        """
+        return pulumi.get(self, "file_types")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the pipeline.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isApprovalNeeded")
+    def is_approval_needed(self) -> _builtins.bool:
+        """
+        Determines whether file transfers need to go through an approval workflow.
+        """
+        return pulumi.get(self, "is_approval_needed")
+
+    @_builtins.property
+    @pulumi.getter(name="isChunkingEnabled")
+    def is_chunking_enabled(self) -> _builtins.bool:
+        """
+        Determines whether file must be chunked during the transfer. This is only a property of SENDER pipelines.
+        """
+        return pulumi.get(self, "is_chunking_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isFileOverrideInDestinationEnabled")
+    def is_file_override_in_destination_enabled(self) -> _builtins.bool:
+        """
+        Enable file override feature in destination bucket. If 2 files with same name exist in destination bucket, original file will be overwritten.
+        """
+        return pulumi.get(self, "is_file_override_in_destination_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isScanningEnabled")
+    def is_scanning_enabled(self) -> _builtins.bool:
+        """
+        Determines whether GDP Scanning should be enabled for the pipeline.
+        """
+        return pulumi.get(self, "is_scanning_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        Additional details about the current state of the pipeline.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="peeredGdpPipelineId")
+    def peered_gdp_pipeline_id(self) -> _builtins.str:
+        """
+        OCID of the peered pipeline. This null for SENDER pipeline.
+        """
+        return pulumi.get(self, "peered_gdp_pipeline_id")
+
+    @_builtins.property
+    @pulumi.getter(name="peeringRegion")
+    def peering_region(self) -> _builtins.str:
+        """
+        Public region name where the peered pipeline exists.
+        """
+        return pulumi.get(self, "peering_region")
+
+    @_builtins.property
+    @pulumi.getter(name="pipelineType")
+    def pipeline_type(self) -> _builtins.str:
+        """
+        Type of pipeline. Can be SENDER or RECEIVER.
+        """
+        return pulumi.get(self, "pipeline_type")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceLogGroupId")
+    def service_log_group_id(self) -> _builtins.str:
+        """
+        the OCID of the service log group.
+        """
+        return pulumi.get(self, "service_log_group_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current state of the pipeline.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the the pipeline was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The time the pipeline was updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetGdpGdpPipelinesGdpPipelineCollectionItemBucketDetailResult(dict):
+    def __init__(__self__, *,
+                 bucket_type: _builtins.str,
+                 id: _builtins.str,
+                 name: _builtins.str,
+                 namespace: _builtins.str):
+        """
+        :param _builtins.str bucket_type: Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
+        :param _builtins.str id: The OCID of the pipeline.
+        :param _builtins.str name: Name of the bucket.
+        :param _builtins.str namespace: Namespace of the bucket.
+        """
+        pulumi.set(__self__, "bucket_type", bucket_type)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "namespace", namespace)
+
+    @_builtins.property
+    @pulumi.getter(name="bucketType")
+    def bucket_type(self) -> _builtins.str:
+        """
+        Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
+        """
+        return pulumi.get(self, "bucket_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the pipeline.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the bucket.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        Namespace of the bucket.
+        """
+        return pulumi.get(self, "namespace")
 
 
 @pulumi.output_type

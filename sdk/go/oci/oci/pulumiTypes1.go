@@ -13,6 +13,686 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetWlmsManagedInstanceScanResultsScanResultCollectionItem struct {
+	// The name of the check performed.
+	ServerCheckName string `pulumi:"serverCheckName"`
+	// The result of the server check.
+	ServerCheckResult string `pulumi:"serverCheckResult"`
+	// The identifier of the the server check result.
+	ServerCheckResultId string `pulumi:"serverCheckResultId"`
+	// The status of the server check which is OK, FAILURE, or WARNING.
+	ServerCheckStatus string `pulumi:"serverCheckStatus"`
+	// The name of the server.
+	ServerName string `pulumi:"serverName"`
+	// The date when the WebLogic server health check is performed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
+	TimeOfServerCheck string `pulumi:"timeOfServerCheck"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.
+	WlsDomainId string `pulumi:"wlsDomainId"`
+}
+
+// GetWlmsManagedInstanceScanResultsScanResultCollectionItemInput is an input type that accepts GetWlmsManagedInstanceScanResultsScanResultCollectionItemArgs and GetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput values.
+// You can construct a concrete instance of `GetWlmsManagedInstanceScanResultsScanResultCollectionItemInput` via:
+//
+//	GetWlmsManagedInstanceScanResultsScanResultCollectionItemArgs{...}
+type GetWlmsManagedInstanceScanResultsScanResultCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput() GetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput
+	ToGetWlmsManagedInstanceScanResultsScanResultCollectionItemOutputWithContext(context.Context) GetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput
+}
+
+type GetWlmsManagedInstanceScanResultsScanResultCollectionItemArgs struct {
+	// The name of the check performed.
+	ServerCheckName pulumi.StringInput `pulumi:"serverCheckName"`
+	// The result of the server check.
+	ServerCheckResult pulumi.StringInput `pulumi:"serverCheckResult"`
+	// The identifier of the the server check result.
+	ServerCheckResultId pulumi.StringInput `pulumi:"serverCheckResultId"`
+	// The status of the server check which is OK, FAILURE, or WARNING.
+	ServerCheckStatus pulumi.StringInput `pulumi:"serverCheckStatus"`
+	// The name of the server.
+	ServerName pulumi.StringInput `pulumi:"serverName"`
+	// The date when the WebLogic server health check is performed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
+	TimeOfServerCheck pulumi.StringInput `pulumi:"timeOfServerCheck"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.
+	WlsDomainId pulumi.StringInput `pulumi:"wlsDomainId"`
+}
+
+func (GetWlmsManagedInstanceScanResultsScanResultCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWlmsManagedInstanceScanResultsScanResultCollectionItem)(nil)).Elem()
+}
+
+func (i GetWlmsManagedInstanceScanResultsScanResultCollectionItemArgs) ToGetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput() GetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput {
+	return i.ToGetWlmsManagedInstanceScanResultsScanResultCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetWlmsManagedInstanceScanResultsScanResultCollectionItemArgs) ToGetWlmsManagedInstanceScanResultsScanResultCollectionItemOutputWithContext(ctx context.Context) GetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput)
+}
+
+// GetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayInput is an input type that accepts GetWlmsManagedInstanceScanResultsScanResultCollectionItemArray and GetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayInput` via:
+//
+//	GetWlmsManagedInstanceScanResultsScanResultCollectionItemArray{ GetWlmsManagedInstanceScanResultsScanResultCollectionItemArgs{...} }
+type GetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayOutput() GetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayOutput
+	ToGetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayOutputWithContext(context.Context) GetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayOutput
+}
+
+type GetWlmsManagedInstanceScanResultsScanResultCollectionItemArray []GetWlmsManagedInstanceScanResultsScanResultCollectionItemInput
+
+func (GetWlmsManagedInstanceScanResultsScanResultCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWlmsManagedInstanceScanResultsScanResultCollectionItem)(nil)).Elem()
+}
+
+func (i GetWlmsManagedInstanceScanResultsScanResultCollectionItemArray) ToGetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayOutput() GetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayOutput {
+	return i.ToGetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetWlmsManagedInstanceScanResultsScanResultCollectionItemArray) ToGetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayOutputWithContext(ctx context.Context) GetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayOutput)
+}
+
+type GetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWlmsManagedInstanceScanResultsScanResultCollectionItem)(nil)).Elem()
+}
+
+func (o GetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput) ToGetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput() GetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput {
+	return o
+}
+
+func (o GetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput) ToGetWlmsManagedInstanceScanResultsScanResultCollectionItemOutputWithContext(ctx context.Context) GetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput {
+	return o
+}
+
+// The name of the check performed.
+func (o GetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput) ServerCheckName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWlmsManagedInstanceScanResultsScanResultCollectionItem) string { return v.ServerCheckName }).(pulumi.StringOutput)
+}
+
+// The result of the server check.
+func (o GetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput) ServerCheckResult() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWlmsManagedInstanceScanResultsScanResultCollectionItem) string { return v.ServerCheckResult }).(pulumi.StringOutput)
+}
+
+// The identifier of the the server check result.
+func (o GetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput) ServerCheckResultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWlmsManagedInstanceScanResultsScanResultCollectionItem) string { return v.ServerCheckResultId }).(pulumi.StringOutput)
+}
+
+// The status of the server check which is OK, FAILURE, or WARNING.
+func (o GetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput) ServerCheckStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWlmsManagedInstanceScanResultsScanResultCollectionItem) string { return v.ServerCheckStatus }).(pulumi.StringOutput)
+}
+
+// The name of the server.
+func (o GetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput) ServerName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWlmsManagedInstanceScanResultsScanResultCollectionItem) string { return v.ServerName }).(pulumi.StringOutput)
+}
+
+// The date when the WebLogic server health check is performed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput) TimeOfServerCheck() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWlmsManagedInstanceScanResultsScanResultCollectionItem) string { return v.TimeOfServerCheck }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.
+func (o GetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput) WlsDomainId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWlmsManagedInstanceScanResultsScanResultCollectionItem) string { return v.WlsDomainId }).(pulumi.StringOutput)
+}
+
+type GetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWlmsManagedInstanceScanResultsScanResultCollectionItem)(nil)).Elem()
+}
+
+func (o GetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayOutput) ToGetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayOutput() GetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayOutput) ToGetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayOutputWithContext(ctx context.Context) GetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayOutput) Index(i pulumi.IntInput) GetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWlmsManagedInstanceScanResultsScanResultCollectionItem {
+		return vs[0].([]GetWlmsManagedInstanceScanResultsScanResultCollectionItem)[vs[1].(int)]
+	}).(GetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput)
+}
+
+type GetWlmsManagedInstanceServerInstalledPatchesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetWlmsManagedInstanceServerInstalledPatchesFilterInput is an input type that accepts GetWlmsManagedInstanceServerInstalledPatchesFilterArgs and GetWlmsManagedInstanceServerInstalledPatchesFilterOutput values.
+// You can construct a concrete instance of `GetWlmsManagedInstanceServerInstalledPatchesFilterInput` via:
+//
+//	GetWlmsManagedInstanceServerInstalledPatchesFilterArgs{...}
+type GetWlmsManagedInstanceServerInstalledPatchesFilterInput interface {
+	pulumi.Input
+
+	ToGetWlmsManagedInstanceServerInstalledPatchesFilterOutput() GetWlmsManagedInstanceServerInstalledPatchesFilterOutput
+	ToGetWlmsManagedInstanceServerInstalledPatchesFilterOutputWithContext(context.Context) GetWlmsManagedInstanceServerInstalledPatchesFilterOutput
+}
+
+type GetWlmsManagedInstanceServerInstalledPatchesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetWlmsManagedInstanceServerInstalledPatchesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWlmsManagedInstanceServerInstalledPatchesFilter)(nil)).Elem()
+}
+
+func (i GetWlmsManagedInstanceServerInstalledPatchesFilterArgs) ToGetWlmsManagedInstanceServerInstalledPatchesFilterOutput() GetWlmsManagedInstanceServerInstalledPatchesFilterOutput {
+	return i.ToGetWlmsManagedInstanceServerInstalledPatchesFilterOutputWithContext(context.Background())
+}
+
+func (i GetWlmsManagedInstanceServerInstalledPatchesFilterArgs) ToGetWlmsManagedInstanceServerInstalledPatchesFilterOutputWithContext(ctx context.Context) GetWlmsManagedInstanceServerInstalledPatchesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWlmsManagedInstanceServerInstalledPatchesFilterOutput)
+}
+
+// GetWlmsManagedInstanceServerInstalledPatchesFilterArrayInput is an input type that accepts GetWlmsManagedInstanceServerInstalledPatchesFilterArray and GetWlmsManagedInstanceServerInstalledPatchesFilterArrayOutput values.
+// You can construct a concrete instance of `GetWlmsManagedInstanceServerInstalledPatchesFilterArrayInput` via:
+//
+//	GetWlmsManagedInstanceServerInstalledPatchesFilterArray{ GetWlmsManagedInstanceServerInstalledPatchesFilterArgs{...} }
+type GetWlmsManagedInstanceServerInstalledPatchesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetWlmsManagedInstanceServerInstalledPatchesFilterArrayOutput() GetWlmsManagedInstanceServerInstalledPatchesFilterArrayOutput
+	ToGetWlmsManagedInstanceServerInstalledPatchesFilterArrayOutputWithContext(context.Context) GetWlmsManagedInstanceServerInstalledPatchesFilterArrayOutput
+}
+
+type GetWlmsManagedInstanceServerInstalledPatchesFilterArray []GetWlmsManagedInstanceServerInstalledPatchesFilterInput
+
+func (GetWlmsManagedInstanceServerInstalledPatchesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWlmsManagedInstanceServerInstalledPatchesFilter)(nil)).Elem()
+}
+
+func (i GetWlmsManagedInstanceServerInstalledPatchesFilterArray) ToGetWlmsManagedInstanceServerInstalledPatchesFilterArrayOutput() GetWlmsManagedInstanceServerInstalledPatchesFilterArrayOutput {
+	return i.ToGetWlmsManagedInstanceServerInstalledPatchesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetWlmsManagedInstanceServerInstalledPatchesFilterArray) ToGetWlmsManagedInstanceServerInstalledPatchesFilterArrayOutputWithContext(ctx context.Context) GetWlmsManagedInstanceServerInstalledPatchesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWlmsManagedInstanceServerInstalledPatchesFilterArrayOutput)
+}
+
+type GetWlmsManagedInstanceServerInstalledPatchesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetWlmsManagedInstanceServerInstalledPatchesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWlmsManagedInstanceServerInstalledPatchesFilter)(nil)).Elem()
+}
+
+func (o GetWlmsManagedInstanceServerInstalledPatchesFilterOutput) ToGetWlmsManagedInstanceServerInstalledPatchesFilterOutput() GetWlmsManagedInstanceServerInstalledPatchesFilterOutput {
+	return o
+}
+
+func (o GetWlmsManagedInstanceServerInstalledPatchesFilterOutput) ToGetWlmsManagedInstanceServerInstalledPatchesFilterOutputWithContext(ctx context.Context) GetWlmsManagedInstanceServerInstalledPatchesFilterOutput {
+	return o
+}
+
+func (o GetWlmsManagedInstanceServerInstalledPatchesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWlmsManagedInstanceServerInstalledPatchesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetWlmsManagedInstanceServerInstalledPatchesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWlmsManagedInstanceServerInstalledPatchesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetWlmsManagedInstanceServerInstalledPatchesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWlmsManagedInstanceServerInstalledPatchesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetWlmsManagedInstanceServerInstalledPatchesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWlmsManagedInstanceServerInstalledPatchesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWlmsManagedInstanceServerInstalledPatchesFilter)(nil)).Elem()
+}
+
+func (o GetWlmsManagedInstanceServerInstalledPatchesFilterArrayOutput) ToGetWlmsManagedInstanceServerInstalledPatchesFilterArrayOutput() GetWlmsManagedInstanceServerInstalledPatchesFilterArrayOutput {
+	return o
+}
+
+func (o GetWlmsManagedInstanceServerInstalledPatchesFilterArrayOutput) ToGetWlmsManagedInstanceServerInstalledPatchesFilterArrayOutputWithContext(ctx context.Context) GetWlmsManagedInstanceServerInstalledPatchesFilterArrayOutput {
+	return o
+}
+
+func (o GetWlmsManagedInstanceServerInstalledPatchesFilterArrayOutput) Index(i pulumi.IntInput) GetWlmsManagedInstanceServerInstalledPatchesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWlmsManagedInstanceServerInstalledPatchesFilter {
+		return vs[0].([]GetWlmsManagedInstanceServerInstalledPatchesFilter)[vs[1].(int)]
+	}).(GetWlmsManagedInstanceServerInstalledPatchesFilterOutput)
+}
+
+type GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollection struct {
+	// List of installed patches per server
+	Items []GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItem `pulumi:"items"`
+}
+
+// GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionInput is an input type that accepts GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArgs and GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionOutput values.
+// You can construct a concrete instance of `GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionInput` via:
+//
+//	GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArgs{...}
+type GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionInput interface {
+	pulumi.Input
+
+	ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionOutput() GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionOutput
+	ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionOutputWithContext(context.Context) GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionOutput
+}
+
+type GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArgs struct {
+	// List of installed patches per server
+	Items GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollection)(nil)).Elem()
+}
+
+func (i GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArgs) ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionOutput() GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionOutput {
+	return i.ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionOutputWithContext(context.Background())
+}
+
+func (i GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArgs) ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionOutputWithContext(ctx context.Context) GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionOutput)
+}
+
+// GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayInput is an input type that accepts GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArray and GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayOutput values.
+// You can construct a concrete instance of `GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayInput` via:
+//
+//	GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArray{ GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArgs{...} }
+type GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayOutput() GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayOutput
+	ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayOutputWithContext(context.Context) GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayOutput
+}
+
+type GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArray []GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionInput
+
+func (GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollection)(nil)).Elem()
+}
+
+func (i GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArray) ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayOutput() GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayOutput {
+	return i.ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArray) ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayOutputWithContext(ctx context.Context) GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayOutput)
+}
+
+type GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollection)(nil)).Elem()
+}
+
+func (o GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionOutput) ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionOutput() GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionOutput {
+	return o
+}
+
+func (o GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionOutput) ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionOutputWithContext(ctx context.Context) GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionOutput {
+	return o
+}
+
+// List of installed patches per server
+func (o GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionOutput) Items() GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollection) []GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItem {
+		return v.Items
+	}).(GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayOutput)
+}
+
+type GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollection)(nil)).Elem()
+}
+
+func (o GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayOutput) ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayOutput() GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayOutput {
+	return o
+}
+
+func (o GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayOutput) ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayOutputWithContext(ctx context.Context) GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayOutput {
+	return o
+}
+
+func (o GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayOutput) Index(i pulumi.IntInput) GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollection {
+		return vs[0].([]GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollection)[vs[1].(int)]
+	}).(GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionOutput)
+}
+
+type GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItem struct {
+	// The description of the WebLogic patch.
+	Description string `pulumi:"description"`
+	// The name of the WebLogic patch.
+	DisplayName string `pulumi:"displayName"`
+	// The ID of the WebLogic patch.
+	Id string `pulumi:"id"`
+}
+
+// GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemInput is an input type that accepts GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArgs and GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutput values.
+// You can construct a concrete instance of `GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemInput` via:
+//
+//	GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArgs{...}
+type GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutput() GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutput
+	ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutputWithContext(context.Context) GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutput
+}
+
+type GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArgs struct {
+	// The description of the WebLogic patch.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The name of the WebLogic patch.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The ID of the WebLogic patch.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItem)(nil)).Elem()
+}
+
+func (i GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArgs) ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutput() GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutput {
+	return i.ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArgs) ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutputWithContext(ctx context.Context) GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutput)
+}
+
+// GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayInput is an input type that accepts GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArray and GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayInput` via:
+//
+//	GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArray{ GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArgs{...} }
+type GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayOutput() GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayOutput
+	ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayOutputWithContext(context.Context) GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayOutput
+}
+
+type GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArray []GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemInput
+
+func (GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItem)(nil)).Elem()
+}
+
+func (i GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArray) ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayOutput() GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayOutput {
+	return i.ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArray) ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayOutputWithContext(ctx context.Context) GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayOutput)
+}
+
+type GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItem)(nil)).Elem()
+}
+
+func (o GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutput) ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutput() GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutput {
+	return o
+}
+
+func (o GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutput) ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutputWithContext(ctx context.Context) GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutput {
+	return o
+}
+
+// The description of the WebLogic patch.
+func (o GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// The name of the WebLogic patch.
+func (o GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The ID of the WebLogic patch.
+func (o GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItem)(nil)).Elem()
+}
+
+func (o GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayOutput) ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayOutput() GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayOutput) ToGetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayOutputWithContext(ctx context.Context) GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayOutput) Index(i pulumi.IntInput) GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItem {
+		return vs[0].([]GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItem)[vs[1].(int)]
+	}).(GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutput)
+}
+
+type GetWlmsManagedInstanceServersFilter struct {
+	// The name of the resource.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetWlmsManagedInstanceServersFilterInput is an input type that accepts GetWlmsManagedInstanceServersFilterArgs and GetWlmsManagedInstanceServersFilterOutput values.
+// You can construct a concrete instance of `GetWlmsManagedInstanceServersFilterInput` via:
+//
+//	GetWlmsManagedInstanceServersFilterArgs{...}
+type GetWlmsManagedInstanceServersFilterInput interface {
+	pulumi.Input
+
+	ToGetWlmsManagedInstanceServersFilterOutput() GetWlmsManagedInstanceServersFilterOutput
+	ToGetWlmsManagedInstanceServersFilterOutputWithContext(context.Context) GetWlmsManagedInstanceServersFilterOutput
+}
+
+type GetWlmsManagedInstanceServersFilterArgs struct {
+	// The name of the resource.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetWlmsManagedInstanceServersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWlmsManagedInstanceServersFilter)(nil)).Elem()
+}
+
+func (i GetWlmsManagedInstanceServersFilterArgs) ToGetWlmsManagedInstanceServersFilterOutput() GetWlmsManagedInstanceServersFilterOutput {
+	return i.ToGetWlmsManagedInstanceServersFilterOutputWithContext(context.Background())
+}
+
+func (i GetWlmsManagedInstanceServersFilterArgs) ToGetWlmsManagedInstanceServersFilterOutputWithContext(ctx context.Context) GetWlmsManagedInstanceServersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWlmsManagedInstanceServersFilterOutput)
+}
+
+// GetWlmsManagedInstanceServersFilterArrayInput is an input type that accepts GetWlmsManagedInstanceServersFilterArray and GetWlmsManagedInstanceServersFilterArrayOutput values.
+// You can construct a concrete instance of `GetWlmsManagedInstanceServersFilterArrayInput` via:
+//
+//	GetWlmsManagedInstanceServersFilterArray{ GetWlmsManagedInstanceServersFilterArgs{...} }
+type GetWlmsManagedInstanceServersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetWlmsManagedInstanceServersFilterArrayOutput() GetWlmsManagedInstanceServersFilterArrayOutput
+	ToGetWlmsManagedInstanceServersFilterArrayOutputWithContext(context.Context) GetWlmsManagedInstanceServersFilterArrayOutput
+}
+
+type GetWlmsManagedInstanceServersFilterArray []GetWlmsManagedInstanceServersFilterInput
+
+func (GetWlmsManagedInstanceServersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWlmsManagedInstanceServersFilter)(nil)).Elem()
+}
+
+func (i GetWlmsManagedInstanceServersFilterArray) ToGetWlmsManagedInstanceServersFilterArrayOutput() GetWlmsManagedInstanceServersFilterArrayOutput {
+	return i.ToGetWlmsManagedInstanceServersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetWlmsManagedInstanceServersFilterArray) ToGetWlmsManagedInstanceServersFilterArrayOutputWithContext(ctx context.Context) GetWlmsManagedInstanceServersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWlmsManagedInstanceServersFilterArrayOutput)
+}
+
+type GetWlmsManagedInstanceServersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetWlmsManagedInstanceServersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWlmsManagedInstanceServersFilter)(nil)).Elem()
+}
+
+func (o GetWlmsManagedInstanceServersFilterOutput) ToGetWlmsManagedInstanceServersFilterOutput() GetWlmsManagedInstanceServersFilterOutput {
+	return o
+}
+
+func (o GetWlmsManagedInstanceServersFilterOutput) ToGetWlmsManagedInstanceServersFilterOutputWithContext(ctx context.Context) GetWlmsManagedInstanceServersFilterOutput {
+	return o
+}
+
+// The name of the resource.
+func (o GetWlmsManagedInstanceServersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWlmsManagedInstanceServersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetWlmsManagedInstanceServersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWlmsManagedInstanceServersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetWlmsManagedInstanceServersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWlmsManagedInstanceServersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetWlmsManagedInstanceServersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWlmsManagedInstanceServersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWlmsManagedInstanceServersFilter)(nil)).Elem()
+}
+
+func (o GetWlmsManagedInstanceServersFilterArrayOutput) ToGetWlmsManagedInstanceServersFilterArrayOutput() GetWlmsManagedInstanceServersFilterArrayOutput {
+	return o
+}
+
+func (o GetWlmsManagedInstanceServersFilterArrayOutput) ToGetWlmsManagedInstanceServersFilterArrayOutputWithContext(ctx context.Context) GetWlmsManagedInstanceServersFilterArrayOutput {
+	return o
+}
+
+func (o GetWlmsManagedInstanceServersFilterArrayOutput) Index(i pulumi.IntInput) GetWlmsManagedInstanceServersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWlmsManagedInstanceServersFilter {
+		return vs[0].([]GetWlmsManagedInstanceServersFilter)[vs[1].(int)]
+	}).(GetWlmsManagedInstanceServersFilterOutput)
+}
+
+type GetWlmsManagedInstanceServersServerCollection struct {
+	Items []GetWlmsManagedInstanceServersServerCollectionItem `pulumi:"items"`
+}
+
+// GetWlmsManagedInstanceServersServerCollectionInput is an input type that accepts GetWlmsManagedInstanceServersServerCollectionArgs and GetWlmsManagedInstanceServersServerCollectionOutput values.
+// You can construct a concrete instance of `GetWlmsManagedInstanceServersServerCollectionInput` via:
+//
+//	GetWlmsManagedInstanceServersServerCollectionArgs{...}
+type GetWlmsManagedInstanceServersServerCollectionInput interface {
+	pulumi.Input
+
+	ToGetWlmsManagedInstanceServersServerCollectionOutput() GetWlmsManagedInstanceServersServerCollectionOutput
+	ToGetWlmsManagedInstanceServersServerCollectionOutputWithContext(context.Context) GetWlmsManagedInstanceServersServerCollectionOutput
+}
+
+type GetWlmsManagedInstanceServersServerCollectionArgs struct {
+	Items GetWlmsManagedInstanceServersServerCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetWlmsManagedInstanceServersServerCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWlmsManagedInstanceServersServerCollection)(nil)).Elem()
+}
+
+func (i GetWlmsManagedInstanceServersServerCollectionArgs) ToGetWlmsManagedInstanceServersServerCollectionOutput() GetWlmsManagedInstanceServersServerCollectionOutput {
+	return i.ToGetWlmsManagedInstanceServersServerCollectionOutputWithContext(context.Background())
+}
+
+func (i GetWlmsManagedInstanceServersServerCollectionArgs) ToGetWlmsManagedInstanceServersServerCollectionOutputWithContext(ctx context.Context) GetWlmsManagedInstanceServersServerCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWlmsManagedInstanceServersServerCollectionOutput)
+}
+
+// GetWlmsManagedInstanceServersServerCollectionArrayInput is an input type that accepts GetWlmsManagedInstanceServersServerCollectionArray and GetWlmsManagedInstanceServersServerCollectionArrayOutput values.
+// You can construct a concrete instance of `GetWlmsManagedInstanceServersServerCollectionArrayInput` via:
+//
+//	GetWlmsManagedInstanceServersServerCollectionArray{ GetWlmsManagedInstanceServersServerCollectionArgs{...} }
+type GetWlmsManagedInstanceServersServerCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetWlmsManagedInstanceServersServerCollectionArrayOutput() GetWlmsManagedInstanceServersServerCollectionArrayOutput
+	ToGetWlmsManagedInstanceServersServerCollectionArrayOutputWithContext(context.Context) GetWlmsManagedInstanceServersServerCollectionArrayOutput
+}
+
+type GetWlmsManagedInstanceServersServerCollectionArray []GetWlmsManagedInstanceServersServerCollectionInput
+
+func (GetWlmsManagedInstanceServersServerCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWlmsManagedInstanceServersServerCollection)(nil)).Elem()
+}
+
+func (i GetWlmsManagedInstanceServersServerCollectionArray) ToGetWlmsManagedInstanceServersServerCollectionArrayOutput() GetWlmsManagedInstanceServersServerCollectionArrayOutput {
+	return i.ToGetWlmsManagedInstanceServersServerCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetWlmsManagedInstanceServersServerCollectionArray) ToGetWlmsManagedInstanceServersServerCollectionArrayOutputWithContext(ctx context.Context) GetWlmsManagedInstanceServersServerCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWlmsManagedInstanceServersServerCollectionArrayOutput)
+}
+
+type GetWlmsManagedInstanceServersServerCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetWlmsManagedInstanceServersServerCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWlmsManagedInstanceServersServerCollection)(nil)).Elem()
+}
+
+func (o GetWlmsManagedInstanceServersServerCollectionOutput) ToGetWlmsManagedInstanceServersServerCollectionOutput() GetWlmsManagedInstanceServersServerCollectionOutput {
+	return o
+}
+
+func (o GetWlmsManagedInstanceServersServerCollectionOutput) ToGetWlmsManagedInstanceServersServerCollectionOutputWithContext(ctx context.Context) GetWlmsManagedInstanceServersServerCollectionOutput {
+	return o
+}
+
+func (o GetWlmsManagedInstanceServersServerCollectionOutput) Items() GetWlmsManagedInstanceServersServerCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetWlmsManagedInstanceServersServerCollection) []GetWlmsManagedInstanceServersServerCollectionItem {
+		return v.Items
+	}).(GetWlmsManagedInstanceServersServerCollectionItemArrayOutput)
+}
+
+type GetWlmsManagedInstanceServersServerCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWlmsManagedInstanceServersServerCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWlmsManagedInstanceServersServerCollection)(nil)).Elem()
+}
+
+func (o GetWlmsManagedInstanceServersServerCollectionArrayOutput) ToGetWlmsManagedInstanceServersServerCollectionArrayOutput() GetWlmsManagedInstanceServersServerCollectionArrayOutput {
+	return o
+}
+
+func (o GetWlmsManagedInstanceServersServerCollectionArrayOutput) ToGetWlmsManagedInstanceServersServerCollectionArrayOutputWithContext(ctx context.Context) GetWlmsManagedInstanceServersServerCollectionArrayOutput {
+	return o
+}
+
+func (o GetWlmsManagedInstanceServersServerCollectionArrayOutput) Index(i pulumi.IntInput) GetWlmsManagedInstanceServersServerCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWlmsManagedInstanceServersServerCollection {
+		return vs[0].([]GetWlmsManagedInstanceServersServerCollection)[vs[1].(int)]
+	}).(GetWlmsManagedInstanceServersServerCollectionOutput)
+}
+
 type GetWlmsManagedInstanceServersServerCollectionItem struct {
 	// The name of the server.
 	HostName string `pulumi:"hostName"`
@@ -3969,6 +4649,18 @@ func (o GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArrayOutput) Index(
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsManagedInstanceScanResultsScanResultCollectionItemInput)(nil)).Elem(), GetWlmsManagedInstanceScanResultsScanResultCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayInput)(nil)).Elem(), GetWlmsManagedInstanceScanResultsScanResultCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsManagedInstanceServerInstalledPatchesFilterInput)(nil)).Elem(), GetWlmsManagedInstanceServerInstalledPatchesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsManagedInstanceServerInstalledPatchesFilterArrayInput)(nil)).Elem(), GetWlmsManagedInstanceServerInstalledPatchesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionInput)(nil)).Elem(), GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayInput)(nil)).Elem(), GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemInput)(nil)).Elem(), GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayInput)(nil)).Elem(), GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsManagedInstanceServersFilterInput)(nil)).Elem(), GetWlmsManagedInstanceServersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsManagedInstanceServersFilterArrayInput)(nil)).Elem(), GetWlmsManagedInstanceServersFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsManagedInstanceServersServerCollectionInput)(nil)).Elem(), GetWlmsManagedInstanceServersServerCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsManagedInstanceServersServerCollectionArrayInput)(nil)).Elem(), GetWlmsManagedInstanceServersServerCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsManagedInstanceServersServerCollectionItemInput)(nil)).Elem(), GetWlmsManagedInstanceServersServerCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsManagedInstanceServersServerCollectionItemArrayInput)(nil)).Elem(), GetWlmsManagedInstanceServersServerCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsManagedInstancesFilterInput)(nil)).Elem(), GetWlmsManagedInstancesFilterArgs{})
@@ -4029,6 +4721,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsWlsDomainsWlsDomainCollectionItemArrayInput)(nil)).Elem(), GetWlmsWlsDomainsWlsDomainCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationInput)(nil)).Elem(), GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArrayInput)(nil)).Elem(), GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArray{})
+	pulumi.RegisterOutputType(GetWlmsManagedInstanceScanResultsScanResultCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetWlmsManagedInstanceScanResultsScanResultCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetWlmsManagedInstanceServerInstalledPatchesFilterOutput{})
+	pulumi.RegisterOutputType(GetWlmsManagedInstanceServerInstalledPatchesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionOutput{})
+	pulumi.RegisterOutputType(GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetWlmsManagedInstanceServerInstalledPatchesInstalledPatchCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetWlmsManagedInstanceServersFilterOutput{})
+	pulumi.RegisterOutputType(GetWlmsManagedInstanceServersFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetWlmsManagedInstanceServersServerCollectionOutput{})
+	pulumi.RegisterOutputType(GetWlmsManagedInstanceServersServerCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetWlmsManagedInstanceServersServerCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetWlmsManagedInstanceServersServerCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetWlmsManagedInstancesFilterOutput{})

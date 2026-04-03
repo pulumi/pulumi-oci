@@ -187,6 +187,8 @@ __all__ = [
     'DistributedDatabaseDistributedDatabaseShardDetailPeerDetailMetadataArgsDict',
     'DistributedDatabaseDistributedDatabaseValidateNetworkDetailsArgs',
     'DistributedDatabaseDistributedDatabaseValidateNetworkDetailsArgsDict',
+    'GdpGdpPipelineBucketDetailArgs',
+    'GdpGdpPipelineBucketDetailArgsDict',
     'IotDigitalTwinAdapterInboundEnvelopeArgs',
     'IotDigitalTwinAdapterInboundEnvelopeArgsDict',
     'IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs',
@@ -281,6 +283,8 @@ __all__ = [
     'GetDistributedDatabaseDistributedDatabasePrivateEndpointsFilterArgsDict',
     'GetDistributedDatabaseDistributedDatabasesFilterArgs',
     'GetDistributedDatabaseDistributedDatabasesFilterArgsDict',
+    'GetGdpGdpPipelinesFilterArgs',
+    'GetGdpGdpPipelinesFilterArgsDict',
     'GetIotDigitalTwinAdaptersFilterArgs',
     'GetIotDigitalTwinAdaptersFilterArgsDict',
     'GetIotDigitalTwinInstancesFilterArgs',
@@ -9038,6 +9042,91 @@ class DistributedDatabaseDistributedDatabaseValidateNetworkDetailsArgs:
         pulumi.set(self, "shard_group", value)
 
 
+class GdpGdpPipelineBucketDetailArgsDict(TypedDict):
+    bucket_type: pulumi.Input[_builtins.str]
+    """
+    Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
+    """
+    id: pulumi.Input[_builtins.str]
+    """
+    OCID of the bucket.
+    """
+    name: pulumi.Input[_builtins.str]
+    """
+    Name of the bucket.
+    """
+    namespace: pulumi.Input[_builtins.str]
+    """
+    Namespace of the bucket.
+    """
+
+@pulumi.input_type
+class GdpGdpPipelineBucketDetailArgs:
+    def __init__(__self__, *,
+                 bucket_type: pulumi.Input[_builtins.str],
+                 id: pulumi.Input[_builtins.str],
+                 name: pulumi.Input[_builtins.str],
+                 namespace: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] bucket_type: Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
+        :param pulumi.Input[_builtins.str] id: OCID of the bucket.
+        :param pulumi.Input[_builtins.str] name: Name of the bucket.
+        :param pulumi.Input[_builtins.str] namespace: Namespace of the bucket.
+        """
+        pulumi.set(__self__, "bucket_type", bucket_type)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "namespace", namespace)
+
+    @_builtins.property
+    @pulumi.getter(name="bucketType")
+    def bucket_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Type of bucket. SENDER pipelines can be SOURCE, TRANSFER, REJECT, or FAILED. RECEIVER pipelines have a DESTINATION bucket.
+        """
+        return pulumi.get(self, "bucket_type")
+
+    @bucket_type.setter
+    def bucket_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "bucket_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[_builtins.str]:
+        """
+        OCID of the bucket.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        Name of the bucket.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> pulumi.Input[_builtins.str]:
+        """
+        Namespace of the bucket.
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "namespace", value)
+
+
 class IotDigitalTwinAdapterInboundEnvelopeArgsDict(TypedDict):
     reference_endpoint: pulumi.Input[_builtins.str]
     """
@@ -11651,6 +11740,59 @@ class GetDistributedDatabaseDistributedDatabasesFilterArgs:
     def name(self) -> _builtins.str:
         """
         Name of the shard.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetGdpGdpPipelinesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the bucket.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetGdpGdpPipelinesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Name of the bucket.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the bucket.
         """
         return pulumi.get(self, "name")
 

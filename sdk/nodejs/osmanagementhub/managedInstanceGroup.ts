@@ -84,7 +84,7 @@ export class ManagedInstanceGroup extends pulumi.CustomResource {
      */
     declare public readonly archType: pulumi.Output<string>;
     /**
-     * (Updatable) Updatable settings for the Autonomous Linux service.
+     * (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
      */
     declare public readonly autonomousSettings: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupAutonomousSettings>;
     /**
@@ -255,7 +255,7 @@ export interface ManagedInstanceGroupState {
      */
     archType?: pulumi.Input<string>;
     /**
-     * (Updatable) Updatable settings for the Autonomous Linux service.
+     * (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
      */
     autonomousSettings?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupAutonomousSettings>;
     /**
@@ -349,7 +349,7 @@ export interface ManagedInstanceGroupArgs {
      */
     archType: pulumi.Input<string>;
     /**
-     * (Updatable) Updatable settings for the Autonomous Linux service.
+     * (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
      */
     autonomousSettings?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupAutonomousSettings>;
     /**

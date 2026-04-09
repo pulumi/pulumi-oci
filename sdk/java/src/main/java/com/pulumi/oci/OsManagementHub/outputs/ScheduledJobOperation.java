@@ -5,8 +5,11 @@ package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.OsManagementHub.outputs.ScheduledJobOperationInstallSnapDetails;
 import com.pulumi.oci.OsManagementHub.outputs.ScheduledJobOperationManageModuleStreamsDetails;
+import com.pulumi.oci.OsManagementHub.outputs.ScheduledJobOperationRemoveSnapDetails;
 import com.pulumi.oci.OsManagementHub.outputs.ScheduledJobOperationSwitchModuleStreamsDetails;
+import com.pulumi.oci.OsManagementHub.outputs.ScheduledJobOperationSwitchSnapChannelDetails;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -16,6 +19,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ScheduledJobOperation {
+    /**
+     * @return (Updatable) Provides the information used to install a snap.
+     * 
+     */
+    private @Nullable ScheduledJobOperationInstallSnapDetails installSnapDetails;
     /**
      * @return (Updatable) The set of changes to make to the state of the modules, streams, and profiles on the managed target.
      * 
@@ -37,6 +45,11 @@ public final class ScheduledJobOperation {
      */
     private @Nullable Integer rebootTimeoutInMins;
     /**
+     * @return (Updatable) Provides the information used to remove a snap.
+     * 
+     */
+    private @Nullable ScheduledJobOperationRemoveSnapDetails removeSnapDetails;
+    /**
      * @return (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
      * 
      */
@@ -47,12 +60,24 @@ public final class ScheduledJobOperation {
      */
     private @Nullable ScheduledJobOperationSwitchModuleStreamsDetails switchModuleStreamsDetails;
     /**
+     * @return (Updatable) Provides the information used to switch a snap channel.
+     * 
+     */
+    private @Nullable ScheduledJobOperationSwitchSnapChannelDetails switchSnapChannelDetails;
+    /**
      * @return (Updatable) Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: &#39;6981d463-cd91-4a26-b7c4-ea4ded9183ed&#39;.
      * 
      */
     private @Nullable List<String> windowsUpdateNames;
 
     private ScheduledJobOperation() {}
+    /**
+     * @return (Updatable) Provides the information used to install a snap.
+     * 
+     */
+    public Optional<ScheduledJobOperationInstallSnapDetails> installSnapDetails() {
+        return Optional.ofNullable(this.installSnapDetails);
+    }
     /**
      * @return (Updatable) The set of changes to make to the state of the modules, streams, and profiles on the managed target.
      * 
@@ -82,6 +107,13 @@ public final class ScheduledJobOperation {
         return Optional.ofNullable(this.rebootTimeoutInMins);
     }
     /**
+     * @return (Updatable) Provides the information used to remove a snap.
+     * 
+     */
+    public Optional<ScheduledJobOperationRemoveSnapDetails> removeSnapDetails() {
+        return Optional.ofNullable(this.removeSnapDetails);
+    }
+    /**
      * @return (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
      * 
      */
@@ -94,6 +126,13 @@ public final class ScheduledJobOperation {
      */
     public Optional<ScheduledJobOperationSwitchModuleStreamsDetails> switchModuleStreamsDetails() {
         return Optional.ofNullable(this.switchModuleStreamsDetails);
+    }
+    /**
+     * @return (Updatable) Provides the information used to switch a snap channel.
+     * 
+     */
+    public Optional<ScheduledJobOperationSwitchSnapChannelDetails> switchSnapChannelDetails() {
+        return Optional.ofNullable(this.switchSnapChannelDetails);
     }
     /**
      * @return (Updatable) Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: &#39;6981d463-cd91-4a26-b7c4-ea4ded9183ed&#39;.
@@ -112,25 +151,37 @@ public final class ScheduledJobOperation {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable ScheduledJobOperationInstallSnapDetails installSnapDetails;
         private @Nullable ScheduledJobOperationManageModuleStreamsDetails manageModuleStreamsDetails;
         private String operationType;
         private @Nullable List<String> packageNames;
         private @Nullable Integer rebootTimeoutInMins;
+        private @Nullable ScheduledJobOperationRemoveSnapDetails removeSnapDetails;
         private @Nullable List<String> softwareSourceIds;
         private @Nullable ScheduledJobOperationSwitchModuleStreamsDetails switchModuleStreamsDetails;
+        private @Nullable ScheduledJobOperationSwitchSnapChannelDetails switchSnapChannelDetails;
         private @Nullable List<String> windowsUpdateNames;
         public Builder() {}
         public Builder(ScheduledJobOperation defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.installSnapDetails = defaults.installSnapDetails;
     	      this.manageModuleStreamsDetails = defaults.manageModuleStreamsDetails;
     	      this.operationType = defaults.operationType;
     	      this.packageNames = defaults.packageNames;
     	      this.rebootTimeoutInMins = defaults.rebootTimeoutInMins;
+    	      this.removeSnapDetails = defaults.removeSnapDetails;
     	      this.softwareSourceIds = defaults.softwareSourceIds;
     	      this.switchModuleStreamsDetails = defaults.switchModuleStreamsDetails;
+    	      this.switchSnapChannelDetails = defaults.switchSnapChannelDetails;
     	      this.windowsUpdateNames = defaults.windowsUpdateNames;
         }
 
+        @CustomType.Setter
+        public Builder installSnapDetails(@Nullable ScheduledJobOperationInstallSnapDetails installSnapDetails) {
+
+            this.installSnapDetails = installSnapDetails;
+            return this;
+        }
         @CustomType.Setter
         public Builder manageModuleStreamsDetails(@Nullable ScheduledJobOperationManageModuleStreamsDetails manageModuleStreamsDetails) {
 
@@ -161,6 +212,12 @@ public final class ScheduledJobOperation {
             return this;
         }
         @CustomType.Setter
+        public Builder removeSnapDetails(@Nullable ScheduledJobOperationRemoveSnapDetails removeSnapDetails) {
+
+            this.removeSnapDetails = removeSnapDetails;
+            return this;
+        }
+        @CustomType.Setter
         public Builder softwareSourceIds(@Nullable List<String> softwareSourceIds) {
 
             this.softwareSourceIds = softwareSourceIds;
@@ -176,6 +233,12 @@ public final class ScheduledJobOperation {
             return this;
         }
         @CustomType.Setter
+        public Builder switchSnapChannelDetails(@Nullable ScheduledJobOperationSwitchSnapChannelDetails switchSnapChannelDetails) {
+
+            this.switchSnapChannelDetails = switchSnapChannelDetails;
+            return this;
+        }
+        @CustomType.Setter
         public Builder windowsUpdateNames(@Nullable List<String> windowsUpdateNames) {
 
             this.windowsUpdateNames = windowsUpdateNames;
@@ -186,12 +249,15 @@ public final class ScheduledJobOperation {
         }
         public ScheduledJobOperation build() {
             final var _resultValue = new ScheduledJobOperation();
+            _resultValue.installSnapDetails = installSnapDetails;
             _resultValue.manageModuleStreamsDetails = manageModuleStreamsDetails;
             _resultValue.operationType = operationType;
             _resultValue.packageNames = packageNames;
             _resultValue.rebootTimeoutInMins = rebootTimeoutInMins;
+            _resultValue.removeSnapDetails = removeSnapDetails;
             _resultValue.softwareSourceIds = softwareSourceIds;
             _resultValue.switchModuleStreamsDetails = switchModuleStreamsDetails;
+            _resultValue.switchSnapChannelDetails = switchSnapChannelDetails;
             _resultValue.windowsUpdateNames = windowsUpdateNames;
             return _resultValue;
         }

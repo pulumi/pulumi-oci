@@ -26,7 +26,14 @@ class AssetArgs:
                  external_asset_key: pulumi.Input[_builtins.str],
                  inventory_id: pulumi.Input[_builtins.str],
                  source_key: pulumi.Input[_builtins.str],
+                 asset_class_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 asset_class_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 asset_details: Optional[pulumi.Input[_builtins.str]] = None,
                  asset_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attached_ebs_volumes_cost: Optional[pulumi.Input['AssetAttachedEbsVolumesCostArgs']] = None,
+                 aws_ebs: Optional[pulumi.Input['AssetAwsEbsArgs']] = None,
+                 aws_ec2: Optional[pulumi.Input['AssetAwsEc2Args']] = None,
+                 aws_ec2cost: Optional[pulumi.Input['AssetAwsEc2costArgs']] = None,
                  compute: Optional[pulumi.Input['AssetComputeArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -42,7 +49,14 @@ class AssetArgs:
         :param pulumi.Input[_builtins.str] external_asset_key: The key of the asset from the external environment.
         :param pulumi.Input[_builtins.str] inventory_id: Inventory ID to which an asset belongs.
         :param pulumi.Input[_builtins.str] source_key: The source key to which the asset belongs.
+        :param pulumi.Input[_builtins.str] asset_class_name: (Updatable) The class name of the asset.
+        :param pulumi.Input[_builtins.str] asset_class_version: (Updatable) The version of the asset class.
+        :param pulumi.Input[_builtins.str] asset_details: (Updatable) The details of the asset.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] asset_source_ids: (Updatable) List of asset source OCID.
+        :param pulumi.Input['AssetAttachedEbsVolumesCostArgs'] attached_ebs_volumes_cost: (Updatable) Cost information for monthly maintenance.
+        :param pulumi.Input['AssetAwsEbsArgs'] aws_ebs: (Updatable) AWS EBS volume related properties.
+        :param pulumi.Input['AssetAwsEc2Args'] aws_ec2: (Updatable) AWS virtual machine related properties.
+        :param pulumi.Input['AssetAwsEc2costArgs'] aws_ec2cost: (Updatable) Cost information for monthly maintenance.
         :param pulumi.Input['AssetComputeArgs'] compute: (Updatable) Compute related properties.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Asset display name.
@@ -56,8 +70,22 @@ class AssetArgs:
         pulumi.set(__self__, "external_asset_key", external_asset_key)
         pulumi.set(__self__, "inventory_id", inventory_id)
         pulumi.set(__self__, "source_key", source_key)
+        if asset_class_name is not None:
+            pulumi.set(__self__, "asset_class_name", asset_class_name)
+        if asset_class_version is not None:
+            pulumi.set(__self__, "asset_class_version", asset_class_version)
+        if asset_details is not None:
+            pulumi.set(__self__, "asset_details", asset_details)
         if asset_source_ids is not None:
             pulumi.set(__self__, "asset_source_ids", asset_source_ids)
+        if attached_ebs_volumes_cost is not None:
+            pulumi.set(__self__, "attached_ebs_volumes_cost", attached_ebs_volumes_cost)
+        if aws_ebs is not None:
+            pulumi.set(__self__, "aws_ebs", aws_ebs)
+        if aws_ec2 is not None:
+            pulumi.set(__self__, "aws_ec2", aws_ec2)
+        if aws_ec2cost is not None:
+            pulumi.set(__self__, "aws_ec2cost", aws_ec2cost)
         if compute is not None:
             pulumi.set(__self__, "compute", compute)
         if defined_tags is not None:
@@ -134,6 +162,42 @@ class AssetArgs:
         pulumi.set(self, "source_key", value)
 
     @_builtins.property
+    @pulumi.getter(name="assetClassName")
+    def asset_class_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The class name of the asset.
+        """
+        return pulumi.get(self, "asset_class_name")
+
+    @asset_class_name.setter
+    def asset_class_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "asset_class_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="assetClassVersion")
+    def asset_class_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The version of the asset class.
+        """
+        return pulumi.get(self, "asset_class_version")
+
+    @asset_class_version.setter
+    def asset_class_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "asset_class_version", value)
+
+    @_builtins.property
+    @pulumi.getter(name="assetDetails")
+    def asset_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The details of the asset.
+        """
+        return pulumi.get(self, "asset_details")
+
+    @asset_details.setter
+    def asset_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "asset_details", value)
+
+    @_builtins.property
     @pulumi.getter(name="assetSourceIds")
     def asset_source_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
@@ -144,6 +208,54 @@ class AssetArgs:
     @asset_source_ids.setter
     def asset_source_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "asset_source_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="attachedEbsVolumesCost")
+    def attached_ebs_volumes_cost(self) -> Optional[pulumi.Input['AssetAttachedEbsVolumesCostArgs']]:
+        """
+        (Updatable) Cost information for monthly maintenance.
+        """
+        return pulumi.get(self, "attached_ebs_volumes_cost")
+
+    @attached_ebs_volumes_cost.setter
+    def attached_ebs_volumes_cost(self, value: Optional[pulumi.Input['AssetAttachedEbsVolumesCostArgs']]):
+        pulumi.set(self, "attached_ebs_volumes_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="awsEbs")
+    def aws_ebs(self) -> Optional[pulumi.Input['AssetAwsEbsArgs']]:
+        """
+        (Updatable) AWS EBS volume related properties.
+        """
+        return pulumi.get(self, "aws_ebs")
+
+    @aws_ebs.setter
+    def aws_ebs(self, value: Optional[pulumi.Input['AssetAwsEbsArgs']]):
+        pulumi.set(self, "aws_ebs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="awsEc2")
+    def aws_ec2(self) -> Optional[pulumi.Input['AssetAwsEc2Args']]:
+        """
+        (Updatable) AWS virtual machine related properties.
+        """
+        return pulumi.get(self, "aws_ec2")
+
+    @aws_ec2.setter
+    def aws_ec2(self, value: Optional[pulumi.Input['AssetAwsEc2Args']]):
+        pulumi.set(self, "aws_ec2", value)
+
+    @_builtins.property
+    @pulumi.getter(name="awsEc2cost")
+    def aws_ec2cost(self) -> Optional[pulumi.Input['AssetAwsEc2costArgs']]:
+        """
+        (Updatable) Cost information for monthly maintenance.
+        """
+        return pulumi.get(self, "aws_ec2cost")
+
+    @aws_ec2cost.setter
+    def aws_ec2cost(self, value: Optional[pulumi.Input['AssetAwsEc2costArgs']]):
+        pulumi.set(self, "aws_ec2cost", value)
 
     @_builtins.property
     @pulumi.getter
@@ -233,12 +345,20 @@ class AssetArgs:
 @pulumi.input_type
 class _AssetState:
     def __init__(__self__, *,
+                 asset_class_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 asset_class_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 asset_details: Optional[pulumi.Input[_builtins.str]] = None,
                  asset_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  asset_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 attached_ebs_volumes_cost: Optional[pulumi.Input['AssetAttachedEbsVolumesCostArgs']] = None,
+                 aws_ebs: Optional[pulumi.Input['AssetAwsEbsArgs']] = None,
+                 aws_ec2: Optional[pulumi.Input['AssetAwsEc2Args']] = None,
+                 aws_ec2cost: Optional[pulumi.Input['AssetAwsEc2costArgs']] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute: Optional[pulumi.Input['AssetComputeArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 environment_type: Optional[pulumi.Input[_builtins.str]] = None,
                  external_asset_key: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  inventory_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -253,12 +373,20 @@ class _AssetState:
         """
         Input properties used for looking up and filtering Asset resources.
 
+        :param pulumi.Input[_builtins.str] asset_class_name: (Updatable) The class name of the asset.
+        :param pulumi.Input[_builtins.str] asset_class_version: (Updatable) The version of the asset class.
+        :param pulumi.Input[_builtins.str] asset_details: (Updatable) The details of the asset.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] asset_source_ids: (Updatable) List of asset source OCID.
         :param pulumi.Input[_builtins.str] asset_type: (Updatable) The type of asset.
+        :param pulumi.Input['AssetAttachedEbsVolumesCostArgs'] attached_ebs_volumes_cost: (Updatable) Cost information for monthly maintenance.
+        :param pulumi.Input['AssetAwsEbsArgs'] aws_ebs: (Updatable) AWS EBS volume related properties.
+        :param pulumi.Input['AssetAwsEc2Args'] aws_ec2: (Updatable) AWS virtual machine related properties.
+        :param pulumi.Input['AssetAwsEc2costArgs'] aws_ec2cost: (Updatable) Cost information for monthly maintenance.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that the asset belongs to.
         :param pulumi.Input['AssetComputeArgs'] compute: (Updatable) Compute related properties.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Asset display name.
+        :param pulumi.Input[_builtins.str] environment_type: Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
         :param pulumi.Input[_builtins.str] external_asset_key: The key of the asset from the external environment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] inventory_id: Inventory ID to which an asset belongs.
@@ -271,10 +399,24 @@ class _AssetState:
         :param pulumi.Input['AssetVmwareVcenterArgs'] vmware_vcenter: (Updatable) VMware vCenter related properties.
         :param pulumi.Input['AssetVmwareVmArgs'] vmware_vm: (Updatable) VMware virtual machine related properties.
         """
+        if asset_class_name is not None:
+            pulumi.set(__self__, "asset_class_name", asset_class_name)
+        if asset_class_version is not None:
+            pulumi.set(__self__, "asset_class_version", asset_class_version)
+        if asset_details is not None:
+            pulumi.set(__self__, "asset_details", asset_details)
         if asset_source_ids is not None:
             pulumi.set(__self__, "asset_source_ids", asset_source_ids)
         if asset_type is not None:
             pulumi.set(__self__, "asset_type", asset_type)
+        if attached_ebs_volumes_cost is not None:
+            pulumi.set(__self__, "attached_ebs_volumes_cost", attached_ebs_volumes_cost)
+        if aws_ebs is not None:
+            pulumi.set(__self__, "aws_ebs", aws_ebs)
+        if aws_ec2 is not None:
+            pulumi.set(__self__, "aws_ec2", aws_ec2)
+        if aws_ec2cost is not None:
+            pulumi.set(__self__, "aws_ec2cost", aws_ec2cost)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if compute is not None:
@@ -283,6 +425,8 @@ class _AssetState:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if environment_type is not None:
+            pulumi.set(__self__, "environment_type", environment_type)
         if external_asset_key is not None:
             pulumi.set(__self__, "external_asset_key", external_asset_key)
         if freeform_tags is not None:
@@ -307,6 +451,42 @@ class _AssetState:
             pulumi.set(__self__, "vmware_vm", vmware_vm)
 
     @_builtins.property
+    @pulumi.getter(name="assetClassName")
+    def asset_class_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The class name of the asset.
+        """
+        return pulumi.get(self, "asset_class_name")
+
+    @asset_class_name.setter
+    def asset_class_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "asset_class_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="assetClassVersion")
+    def asset_class_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The version of the asset class.
+        """
+        return pulumi.get(self, "asset_class_version")
+
+    @asset_class_version.setter
+    def asset_class_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "asset_class_version", value)
+
+    @_builtins.property
+    @pulumi.getter(name="assetDetails")
+    def asset_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The details of the asset.
+        """
+        return pulumi.get(self, "asset_details")
+
+    @asset_details.setter
+    def asset_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "asset_details", value)
+
+    @_builtins.property
     @pulumi.getter(name="assetSourceIds")
     def asset_source_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
@@ -329,6 +509,54 @@ class _AssetState:
     @asset_type.setter
     def asset_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "asset_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="attachedEbsVolumesCost")
+    def attached_ebs_volumes_cost(self) -> Optional[pulumi.Input['AssetAttachedEbsVolumesCostArgs']]:
+        """
+        (Updatable) Cost information for monthly maintenance.
+        """
+        return pulumi.get(self, "attached_ebs_volumes_cost")
+
+    @attached_ebs_volumes_cost.setter
+    def attached_ebs_volumes_cost(self, value: Optional[pulumi.Input['AssetAttachedEbsVolumesCostArgs']]):
+        pulumi.set(self, "attached_ebs_volumes_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="awsEbs")
+    def aws_ebs(self) -> Optional[pulumi.Input['AssetAwsEbsArgs']]:
+        """
+        (Updatable) AWS EBS volume related properties.
+        """
+        return pulumi.get(self, "aws_ebs")
+
+    @aws_ebs.setter
+    def aws_ebs(self, value: Optional[pulumi.Input['AssetAwsEbsArgs']]):
+        pulumi.set(self, "aws_ebs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="awsEc2")
+    def aws_ec2(self) -> Optional[pulumi.Input['AssetAwsEc2Args']]:
+        """
+        (Updatable) AWS virtual machine related properties.
+        """
+        return pulumi.get(self, "aws_ec2")
+
+    @aws_ec2.setter
+    def aws_ec2(self, value: Optional[pulumi.Input['AssetAwsEc2Args']]):
+        pulumi.set(self, "aws_ec2", value)
+
+    @_builtins.property
+    @pulumi.getter(name="awsEc2cost")
+    def aws_ec2cost(self) -> Optional[pulumi.Input['AssetAwsEc2costArgs']]:
+        """
+        (Updatable) Cost information for monthly maintenance.
+        """
+        return pulumi.get(self, "aws_ec2cost")
+
+    @aws_ec2cost.setter
+    def aws_ec2cost(self, value: Optional[pulumi.Input['AssetAwsEc2costArgs']]):
+        pulumi.set(self, "aws_ec2cost", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -377,6 +605,18 @@ class _AssetState:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="environmentType")
+    def environment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+        """
+        return pulumi.get(self, "environment_type")
+
+    @environment_type.setter
+    def environment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "environment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="externalAssetKey")
@@ -517,8 +757,15 @@ class Asset(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 asset_class_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 asset_class_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 asset_details: Optional[pulumi.Input[_builtins.str]] = None,
                  asset_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  asset_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 attached_ebs_volumes_cost: Optional[pulumi.Input[Union['AssetAttachedEbsVolumesCostArgs', 'AssetAttachedEbsVolumesCostArgsDict']]] = None,
+                 aws_ebs: Optional[pulumi.Input[Union['AssetAwsEbsArgs', 'AssetAwsEbsArgsDict']]] = None,
+                 aws_ec2: Optional[pulumi.Input[Union['AssetAwsEc2Args', 'AssetAwsEc2ArgsDict']]] = None,
+                 aws_ec2cost: Optional[pulumi.Input[Union['AssetAwsEc2costArgs', 'AssetAwsEc2costArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute: Optional[pulumi.Input[Union['AssetComputeArgs', 'AssetComputeArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -551,7 +798,136 @@ class Asset(pulumi.CustomResource):
             external_asset_key=asset_external_asset_key,
             inventory_id=test_inventory["id"],
             source_key=asset_source_key,
+            asset_class_name=asset_asset_class_name,
+            asset_class_version=asset_asset_class_version,
+            asset_details=asset_asset_details,
             asset_source_ids=asset_asset_source_ids,
+            attached_ebs_volumes_cost={
+                "amount": asset_attached_ebs_volumes_cost_amount,
+                "currency_code": asset_attached_ebs_volumes_cost_currency_code,
+            },
+            aws_ebs={
+                "attachments": [{
+                    "device": asset_aws_ebs_attachments_device,
+                    "instance_key": asset_aws_ebs_attachments_instance_key,
+                    "is_delete_on_termination": asset_aws_ebs_attachments_is_delete_on_termination,
+                    "status": asset_aws_ebs_attachments_status,
+                    "volume_key": asset_aws_ebs_attachments_volume_key,
+                }],
+                "availability_zone": asset_aws_ebs_availability_zone,
+                "iops": asset_aws_ebs_iops,
+                "is_encrypted": asset_aws_ebs_is_encrypted,
+                "is_multi_attach_enabled": asset_aws_ebs_is_multi_attach_enabled,
+                "size_in_gi_bs": asset_aws_ebs_size_in_gi_bs,
+                "status": asset_aws_ebs_status,
+                "tags": [{
+                    "key": asset_aws_ebs_tags_key,
+                    "value": asset_aws_ebs_tags_value,
+                }],
+                "throughput": asset_aws_ebs_throughput,
+                "volume_key": asset_aws_ebs_volume_key,
+                "volume_type": asset_aws_ebs_volume_type,
+            },
+            aws_ec2={
+                "architecture": asset_aws_ec2_architecture,
+                "are_elastic_inference_accelerators_present": asset_aws_ec2_are_elastic_inference_accelerators_present,
+                "boot_mode": asset_aws_ec2_boot_mode,
+                "capacity_reservation_key": asset_aws_ec2_capacity_reservation_key,
+                "image_key": asset_aws_ec2_image_key,
+                "instance_key": asset_aws_ec2_instance_key,
+                "instance_lifecycle": asset_aws_ec2_instance_lifecycle,
+                "instance_type": asset_aws_ec2_instance_type,
+                "ip_address": asset_aws_ec2_ip_address,
+                "ipv6address": asset_aws_ec2_ipv6address,
+                "is_enclave_options": asset_aws_ec2_is_enclave_options,
+                "is_hibernation_options": asset_aws_ec2_is_hibernation_options,
+                "is_source_dest_check": asset_aws_ec2_is_source_dest_check,
+                "is_spot_instance": asset_aws_ec2_is_spot_instance,
+                "kernel_key": asset_aws_ec2_kernel_key,
+                "licenses": asset_aws_ec2_licenses,
+                "maintenance_options": asset_aws_ec2_maintenance_options,
+                "monitoring": asset_aws_ec2_monitoring,
+                "network_interfaces": [{
+                    "association": {
+                        "carrier_ip": asset_aws_ec2_network_interfaces_association_carrier_ip,
+                        "customer_owned_ip": asset_aws_ec2_network_interfaces_association_customer_owned_ip,
+                        "ip_owner_key": asset_aws_ec2_network_interfaces_association_ip_owner_key,
+                        "public_dns_name": asset_aws_ec2_network_interfaces_association_public_dns_name,
+                        "public_ip": asset_aws_ec2_network_interfaces_association_public_ip,
+                    },
+                    "attachment": {
+                        "attachment_key": asset_aws_ec2_network_interfaces_attachment_attachment_key,
+                        "device_index": asset_aws_ec2_network_interfaces_attachment_device_index,
+                        "is_delete_on_termination": asset_aws_ec2_network_interfaces_attachment_is_delete_on_termination,
+                        "network_card_index": asset_aws_ec2_network_interfaces_attachment_network_card_index,
+                        "status": asset_aws_ec2_network_interfaces_attachment_status,
+                        "time_attach": asset_aws_ec2_network_interfaces_attachment_time_attach,
+                    },
+                    "description": asset_aws_ec2_network_interfaces_description,
+                    "interface_type": asset_aws_ec2_network_interfaces_interface_type,
+                    "ipv4prefixes": asset_aws_ec2_network_interfaces_ipv4prefixes,
+                    "ipv6addresses": asset_aws_ec2_network_interfaces_ipv6addresses,
+                    "ipv6prefixes": asset_aws_ec2_network_interfaces_ipv6prefixes,
+                    "is_source_dest_check": asset_aws_ec2_network_interfaces_is_source_dest_check,
+                    "mac_address": asset_aws_ec2_network_interfaces_mac_address,
+                    "network_interface_key": asset_aws_ec2_network_interfaces_network_interface_key,
+                    "owner_key": asset_aws_ec2_network_interfaces_owner_key,
+                    "private_ip_addresses": [{
+                        "association": {
+                            "carrier_ip": asset_aws_ec2_network_interfaces_private_ip_addresses_association_carrier_ip,
+                            "customer_owned_ip": asset_aws_ec2_network_interfaces_private_ip_addresses_association_customer_owned_ip,
+                            "ip_owner_key": asset_aws_ec2_network_interfaces_private_ip_addresses_association_ip_owner_key,
+                            "public_dns_name": asset_aws_ec2_network_interfaces_private_ip_addresses_association_public_dns_name,
+                            "public_ip": asset_aws_ec2_network_interfaces_private_ip_addresses_association_public_ip,
+                        },
+                        "is_primary": asset_aws_ec2_network_interfaces_private_ip_addresses_is_primary,
+                        "private_dns_name": asset_aws_ec2_network_interfaces_private_ip_addresses_private_dns_name,
+                        "private_ip_address": asset_aws_ec2_network_interfaces_private_ip_addresses_private_ip_address,
+                    }],
+                    "security_groups": [{
+                        "group_key": asset_aws_ec2_network_interfaces_security_groups_group_key,
+                        "group_name": test_group["name"],
+                    }],
+                    "status": asset_aws_ec2_network_interfaces_status,
+                    "subnet_key": asset_aws_ec2_network_interfaces_subnet_key,
+                }],
+                "placement": {
+                    "affinity": asset_aws_ec2_placement_affinity,
+                    "availability_zone": asset_aws_ec2_placement_availability_zone,
+                    "group_name": test_group["name"],
+                    "host_key": asset_aws_ec2_placement_host_key,
+                    "host_resource_group_arn": asset_aws_ec2_placement_host_resource_group_arn,
+                    "partition_number": asset_aws_ec2_placement_partition_number,
+                    "spread_domain": asset_aws_ec2_placement_spread_domain,
+                    "tenancy": asset_aws_ec2_placement_tenancy,
+                },
+                "private_dns_name": asset_aws_ec2_private_dns_name,
+                "private_ip_address": asset_aws_ec2_private_ip_address,
+                "root_device_name": asset_aws_ec2_root_device_name,
+                "root_device_type": asset_aws_ec2_root_device_type,
+                "security_groups": [{
+                    "group_key": asset_aws_ec2_security_groups_group_key,
+                    "group_name": test_group["name"],
+                }],
+                "sriov_net_support": asset_aws_ec2_sriov_net_support,
+                "state": {
+                    "code": asset_aws_ec2_state_code,
+                    "name": asset_aws_ec2_state_name,
+                },
+                "subnet_key": asset_aws_ec2_subnet_key,
+                "tags": [{
+                    "key": asset_aws_ec2_tags_key,
+                    "value": asset_aws_ec2_tags_value,
+                }],
+                "time_launch": asset_aws_ec2_time_launch,
+                "tpm_support": asset_aws_ec2_tpm_support,
+                "virtualization_type": asset_aws_ec2_virtualization_type,
+                "vpc_key": asset_aws_ec2_vpc_key,
+            },
+            aws_ec2cost={
+                "amount": asset_aws_ec2cost_amount,
+                "currency_code": asset_aws_ec2cost_currency_code,
+            },
             compute={
                 "connected_networks": asset_compute_connected_networks,
                 "cores_count": asset_compute_cores_count,
@@ -559,6 +935,7 @@ class Asset(pulumi.CustomResource):
                 "description": asset_compute_description,
                 "disks": [{
                     "boot_order": asset_compute_disks_boot_order,
+                    "is_cbt_enabled": asset_compute_disks_is_cbt_enabled,
                     "location": asset_compute_disks_location,
                     "name": asset_compute_disks_name,
                     "persistent_mode": asset_compute_disks_persistent_mode,
@@ -619,6 +996,7 @@ class Asset(pulumi.CustomResource):
                 "Operations.CostCenter": "42",
             },
             display_name=asset_display_name,
+            environment_type=asset_environment_type,
             freeform_tags={
                 "Department": "Finance",
             },
@@ -661,8 +1039,15 @@ class Asset(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] asset_class_name: (Updatable) The class name of the asset.
+        :param pulumi.Input[_builtins.str] asset_class_version: (Updatable) The version of the asset class.
+        :param pulumi.Input[_builtins.str] asset_details: (Updatable) The details of the asset.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] asset_source_ids: (Updatable) List of asset source OCID.
         :param pulumi.Input[_builtins.str] asset_type: (Updatable) The type of asset.
+        :param pulumi.Input[Union['AssetAttachedEbsVolumesCostArgs', 'AssetAttachedEbsVolumesCostArgsDict']] attached_ebs_volumes_cost: (Updatable) Cost information for monthly maintenance.
+        :param pulumi.Input[Union['AssetAwsEbsArgs', 'AssetAwsEbsArgsDict']] aws_ebs: (Updatable) AWS EBS volume related properties.
+        :param pulumi.Input[Union['AssetAwsEc2Args', 'AssetAwsEc2ArgsDict']] aws_ec2: (Updatable) AWS virtual machine related properties.
+        :param pulumi.Input[Union['AssetAwsEc2costArgs', 'AssetAwsEc2costArgsDict']] aws_ec2cost: (Updatable) Cost information for monthly maintenance.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that the asset belongs to.
         :param pulumi.Input[Union['AssetComputeArgs', 'AssetComputeArgsDict']] compute: (Updatable) Compute related properties.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -701,7 +1086,136 @@ class Asset(pulumi.CustomResource):
             external_asset_key=asset_external_asset_key,
             inventory_id=test_inventory["id"],
             source_key=asset_source_key,
+            asset_class_name=asset_asset_class_name,
+            asset_class_version=asset_asset_class_version,
+            asset_details=asset_asset_details,
             asset_source_ids=asset_asset_source_ids,
+            attached_ebs_volumes_cost={
+                "amount": asset_attached_ebs_volumes_cost_amount,
+                "currency_code": asset_attached_ebs_volumes_cost_currency_code,
+            },
+            aws_ebs={
+                "attachments": [{
+                    "device": asset_aws_ebs_attachments_device,
+                    "instance_key": asset_aws_ebs_attachments_instance_key,
+                    "is_delete_on_termination": asset_aws_ebs_attachments_is_delete_on_termination,
+                    "status": asset_aws_ebs_attachments_status,
+                    "volume_key": asset_aws_ebs_attachments_volume_key,
+                }],
+                "availability_zone": asset_aws_ebs_availability_zone,
+                "iops": asset_aws_ebs_iops,
+                "is_encrypted": asset_aws_ebs_is_encrypted,
+                "is_multi_attach_enabled": asset_aws_ebs_is_multi_attach_enabled,
+                "size_in_gi_bs": asset_aws_ebs_size_in_gi_bs,
+                "status": asset_aws_ebs_status,
+                "tags": [{
+                    "key": asset_aws_ebs_tags_key,
+                    "value": asset_aws_ebs_tags_value,
+                }],
+                "throughput": asset_aws_ebs_throughput,
+                "volume_key": asset_aws_ebs_volume_key,
+                "volume_type": asset_aws_ebs_volume_type,
+            },
+            aws_ec2={
+                "architecture": asset_aws_ec2_architecture,
+                "are_elastic_inference_accelerators_present": asset_aws_ec2_are_elastic_inference_accelerators_present,
+                "boot_mode": asset_aws_ec2_boot_mode,
+                "capacity_reservation_key": asset_aws_ec2_capacity_reservation_key,
+                "image_key": asset_aws_ec2_image_key,
+                "instance_key": asset_aws_ec2_instance_key,
+                "instance_lifecycle": asset_aws_ec2_instance_lifecycle,
+                "instance_type": asset_aws_ec2_instance_type,
+                "ip_address": asset_aws_ec2_ip_address,
+                "ipv6address": asset_aws_ec2_ipv6address,
+                "is_enclave_options": asset_aws_ec2_is_enclave_options,
+                "is_hibernation_options": asset_aws_ec2_is_hibernation_options,
+                "is_source_dest_check": asset_aws_ec2_is_source_dest_check,
+                "is_spot_instance": asset_aws_ec2_is_spot_instance,
+                "kernel_key": asset_aws_ec2_kernel_key,
+                "licenses": asset_aws_ec2_licenses,
+                "maintenance_options": asset_aws_ec2_maintenance_options,
+                "monitoring": asset_aws_ec2_monitoring,
+                "network_interfaces": [{
+                    "association": {
+                        "carrier_ip": asset_aws_ec2_network_interfaces_association_carrier_ip,
+                        "customer_owned_ip": asset_aws_ec2_network_interfaces_association_customer_owned_ip,
+                        "ip_owner_key": asset_aws_ec2_network_interfaces_association_ip_owner_key,
+                        "public_dns_name": asset_aws_ec2_network_interfaces_association_public_dns_name,
+                        "public_ip": asset_aws_ec2_network_interfaces_association_public_ip,
+                    },
+                    "attachment": {
+                        "attachment_key": asset_aws_ec2_network_interfaces_attachment_attachment_key,
+                        "device_index": asset_aws_ec2_network_interfaces_attachment_device_index,
+                        "is_delete_on_termination": asset_aws_ec2_network_interfaces_attachment_is_delete_on_termination,
+                        "network_card_index": asset_aws_ec2_network_interfaces_attachment_network_card_index,
+                        "status": asset_aws_ec2_network_interfaces_attachment_status,
+                        "time_attach": asset_aws_ec2_network_interfaces_attachment_time_attach,
+                    },
+                    "description": asset_aws_ec2_network_interfaces_description,
+                    "interface_type": asset_aws_ec2_network_interfaces_interface_type,
+                    "ipv4prefixes": asset_aws_ec2_network_interfaces_ipv4prefixes,
+                    "ipv6addresses": asset_aws_ec2_network_interfaces_ipv6addresses,
+                    "ipv6prefixes": asset_aws_ec2_network_interfaces_ipv6prefixes,
+                    "is_source_dest_check": asset_aws_ec2_network_interfaces_is_source_dest_check,
+                    "mac_address": asset_aws_ec2_network_interfaces_mac_address,
+                    "network_interface_key": asset_aws_ec2_network_interfaces_network_interface_key,
+                    "owner_key": asset_aws_ec2_network_interfaces_owner_key,
+                    "private_ip_addresses": [{
+                        "association": {
+                            "carrier_ip": asset_aws_ec2_network_interfaces_private_ip_addresses_association_carrier_ip,
+                            "customer_owned_ip": asset_aws_ec2_network_interfaces_private_ip_addresses_association_customer_owned_ip,
+                            "ip_owner_key": asset_aws_ec2_network_interfaces_private_ip_addresses_association_ip_owner_key,
+                            "public_dns_name": asset_aws_ec2_network_interfaces_private_ip_addresses_association_public_dns_name,
+                            "public_ip": asset_aws_ec2_network_interfaces_private_ip_addresses_association_public_ip,
+                        },
+                        "is_primary": asset_aws_ec2_network_interfaces_private_ip_addresses_is_primary,
+                        "private_dns_name": asset_aws_ec2_network_interfaces_private_ip_addresses_private_dns_name,
+                        "private_ip_address": asset_aws_ec2_network_interfaces_private_ip_addresses_private_ip_address,
+                    }],
+                    "security_groups": [{
+                        "group_key": asset_aws_ec2_network_interfaces_security_groups_group_key,
+                        "group_name": test_group["name"],
+                    }],
+                    "status": asset_aws_ec2_network_interfaces_status,
+                    "subnet_key": asset_aws_ec2_network_interfaces_subnet_key,
+                }],
+                "placement": {
+                    "affinity": asset_aws_ec2_placement_affinity,
+                    "availability_zone": asset_aws_ec2_placement_availability_zone,
+                    "group_name": test_group["name"],
+                    "host_key": asset_aws_ec2_placement_host_key,
+                    "host_resource_group_arn": asset_aws_ec2_placement_host_resource_group_arn,
+                    "partition_number": asset_aws_ec2_placement_partition_number,
+                    "spread_domain": asset_aws_ec2_placement_spread_domain,
+                    "tenancy": asset_aws_ec2_placement_tenancy,
+                },
+                "private_dns_name": asset_aws_ec2_private_dns_name,
+                "private_ip_address": asset_aws_ec2_private_ip_address,
+                "root_device_name": asset_aws_ec2_root_device_name,
+                "root_device_type": asset_aws_ec2_root_device_type,
+                "security_groups": [{
+                    "group_key": asset_aws_ec2_security_groups_group_key,
+                    "group_name": test_group["name"],
+                }],
+                "sriov_net_support": asset_aws_ec2_sriov_net_support,
+                "state": {
+                    "code": asset_aws_ec2_state_code,
+                    "name": asset_aws_ec2_state_name,
+                },
+                "subnet_key": asset_aws_ec2_subnet_key,
+                "tags": [{
+                    "key": asset_aws_ec2_tags_key,
+                    "value": asset_aws_ec2_tags_value,
+                }],
+                "time_launch": asset_aws_ec2_time_launch,
+                "tpm_support": asset_aws_ec2_tpm_support,
+                "virtualization_type": asset_aws_ec2_virtualization_type,
+                "vpc_key": asset_aws_ec2_vpc_key,
+            },
+            aws_ec2cost={
+                "amount": asset_aws_ec2cost_amount,
+                "currency_code": asset_aws_ec2cost_currency_code,
+            },
             compute={
                 "connected_networks": asset_compute_connected_networks,
                 "cores_count": asset_compute_cores_count,
@@ -709,6 +1223,7 @@ class Asset(pulumi.CustomResource):
                 "description": asset_compute_description,
                 "disks": [{
                     "boot_order": asset_compute_disks_boot_order,
+                    "is_cbt_enabled": asset_compute_disks_is_cbt_enabled,
                     "location": asset_compute_disks_location,
                     "name": asset_compute_disks_name,
                     "persistent_mode": asset_compute_disks_persistent_mode,
@@ -769,6 +1284,7 @@ class Asset(pulumi.CustomResource):
                 "Operations.CostCenter": "42",
             },
             display_name=asset_display_name,
+            environment_type=asset_environment_type,
             freeform_tags={
                 "Department": "Finance",
             },
@@ -824,8 +1340,15 @@ class Asset(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 asset_class_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 asset_class_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 asset_details: Optional[pulumi.Input[_builtins.str]] = None,
                  asset_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  asset_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 attached_ebs_volumes_cost: Optional[pulumi.Input[Union['AssetAttachedEbsVolumesCostArgs', 'AssetAttachedEbsVolumesCostArgsDict']]] = None,
+                 aws_ebs: Optional[pulumi.Input[Union['AssetAwsEbsArgs', 'AssetAwsEbsArgsDict']]] = None,
+                 aws_ec2: Optional[pulumi.Input[Union['AssetAwsEc2Args', 'AssetAwsEc2ArgsDict']]] = None,
+                 aws_ec2cost: Optional[pulumi.Input[Union['AssetAwsEc2costArgs', 'AssetAwsEc2costArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute: Optional[pulumi.Input[Union['AssetComputeArgs', 'AssetComputeArgsDict']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -846,10 +1369,17 @@ class Asset(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = AssetArgs.__new__(AssetArgs)
 
+            __props__.__dict__["asset_class_name"] = asset_class_name
+            __props__.__dict__["asset_class_version"] = asset_class_version
+            __props__.__dict__["asset_details"] = asset_details
             __props__.__dict__["asset_source_ids"] = asset_source_ids
             if asset_type is None and not opts.urn:
                 raise TypeError("Missing required property 'asset_type'")
             __props__.__dict__["asset_type"] = asset_type
+            __props__.__dict__["attached_ebs_volumes_cost"] = attached_ebs_volumes_cost
+            __props__.__dict__["aws_ebs"] = aws_ebs
+            __props__.__dict__["aws_ec2"] = aws_ec2
+            __props__.__dict__["aws_ec2cost"] = aws_ec2cost
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -869,6 +1399,7 @@ class Asset(pulumi.CustomResource):
             __props__.__dict__["vm"] = vm
             __props__.__dict__["vmware_vcenter"] = vmware_vcenter
             __props__.__dict__["vmware_vm"] = vmware_vm
+            __props__.__dict__["environment_type"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
@@ -883,12 +1414,20 @@ class Asset(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            asset_class_name: Optional[pulumi.Input[_builtins.str]] = None,
+            asset_class_version: Optional[pulumi.Input[_builtins.str]] = None,
+            asset_details: Optional[pulumi.Input[_builtins.str]] = None,
             asset_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             asset_type: Optional[pulumi.Input[_builtins.str]] = None,
+            attached_ebs_volumes_cost: Optional[pulumi.Input[Union['AssetAttachedEbsVolumesCostArgs', 'AssetAttachedEbsVolumesCostArgsDict']]] = None,
+            aws_ebs: Optional[pulumi.Input[Union['AssetAwsEbsArgs', 'AssetAwsEbsArgsDict']]] = None,
+            aws_ec2: Optional[pulumi.Input[Union['AssetAwsEc2Args', 'AssetAwsEc2ArgsDict']]] = None,
+            aws_ec2cost: Optional[pulumi.Input[Union['AssetAwsEc2costArgs', 'AssetAwsEc2costArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             compute: Optional[pulumi.Input[Union['AssetComputeArgs', 'AssetComputeArgsDict']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
+            environment_type: Optional[pulumi.Input[_builtins.str]] = None,
             external_asset_key: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             inventory_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -907,12 +1446,20 @@ class Asset(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] asset_class_name: (Updatable) The class name of the asset.
+        :param pulumi.Input[_builtins.str] asset_class_version: (Updatable) The version of the asset class.
+        :param pulumi.Input[_builtins.str] asset_details: (Updatable) The details of the asset.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] asset_source_ids: (Updatable) List of asset source OCID.
         :param pulumi.Input[_builtins.str] asset_type: (Updatable) The type of asset.
+        :param pulumi.Input[Union['AssetAttachedEbsVolumesCostArgs', 'AssetAttachedEbsVolumesCostArgsDict']] attached_ebs_volumes_cost: (Updatable) Cost information for monthly maintenance.
+        :param pulumi.Input[Union['AssetAwsEbsArgs', 'AssetAwsEbsArgsDict']] aws_ebs: (Updatable) AWS EBS volume related properties.
+        :param pulumi.Input[Union['AssetAwsEc2Args', 'AssetAwsEc2ArgsDict']] aws_ec2: (Updatable) AWS virtual machine related properties.
+        :param pulumi.Input[Union['AssetAwsEc2costArgs', 'AssetAwsEc2costArgsDict']] aws_ec2cost: (Updatable) Cost information for monthly maintenance.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that the asset belongs to.
         :param pulumi.Input[Union['AssetComputeArgs', 'AssetComputeArgsDict']] compute: (Updatable) Compute related properties.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Asset display name.
+        :param pulumi.Input[_builtins.str] environment_type: Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
         :param pulumi.Input[_builtins.str] external_asset_key: The key of the asset from the external environment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] inventory_id: Inventory ID to which an asset belongs.
@@ -929,12 +1476,20 @@ class Asset(pulumi.CustomResource):
 
         __props__ = _AssetState.__new__(_AssetState)
 
+        __props__.__dict__["asset_class_name"] = asset_class_name
+        __props__.__dict__["asset_class_version"] = asset_class_version
+        __props__.__dict__["asset_details"] = asset_details
         __props__.__dict__["asset_source_ids"] = asset_source_ids
         __props__.__dict__["asset_type"] = asset_type
+        __props__.__dict__["attached_ebs_volumes_cost"] = attached_ebs_volumes_cost
+        __props__.__dict__["aws_ebs"] = aws_ebs
+        __props__.__dict__["aws_ec2"] = aws_ec2
+        __props__.__dict__["aws_ec2cost"] = aws_ec2cost
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["compute"] = compute
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["environment_type"] = environment_type
         __props__.__dict__["external_asset_key"] = external_asset_key
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["inventory_id"] = inventory_id
@@ -947,6 +1502,30 @@ class Asset(pulumi.CustomResource):
         __props__.__dict__["vmware_vcenter"] = vmware_vcenter
         __props__.__dict__["vmware_vm"] = vmware_vm
         return Asset(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter(name="assetClassName")
+    def asset_class_name(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The class name of the asset.
+        """
+        return pulumi.get(self, "asset_class_name")
+
+    @_builtins.property
+    @pulumi.getter(name="assetClassVersion")
+    def asset_class_version(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The version of the asset class.
+        """
+        return pulumi.get(self, "asset_class_version")
+
+    @_builtins.property
+    @pulumi.getter(name="assetDetails")
+    def asset_details(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The details of the asset.
+        """
+        return pulumi.get(self, "asset_details")
 
     @_builtins.property
     @pulumi.getter(name="assetSourceIds")
@@ -963,6 +1542,38 @@ class Asset(pulumi.CustomResource):
         (Updatable) The type of asset.
         """
         return pulumi.get(self, "asset_type")
+
+    @_builtins.property
+    @pulumi.getter(name="attachedEbsVolumesCost")
+    def attached_ebs_volumes_cost(self) -> pulumi.Output['outputs.AssetAttachedEbsVolumesCost']:
+        """
+        (Updatable) Cost information for monthly maintenance.
+        """
+        return pulumi.get(self, "attached_ebs_volumes_cost")
+
+    @_builtins.property
+    @pulumi.getter(name="awsEbs")
+    def aws_ebs(self) -> pulumi.Output['outputs.AssetAwsEbs']:
+        """
+        (Updatable) AWS EBS volume related properties.
+        """
+        return pulumi.get(self, "aws_ebs")
+
+    @_builtins.property
+    @pulumi.getter(name="awsEc2")
+    def aws_ec2(self) -> pulumi.Output['outputs.AssetAwsEc2']:
+        """
+        (Updatable) AWS virtual machine related properties.
+        """
+        return pulumi.get(self, "aws_ec2")
+
+    @_builtins.property
+    @pulumi.getter(name="awsEc2cost")
+    def aws_ec2cost(self) -> pulumi.Output['outputs.AssetAwsEc2cost']:
+        """
+        (Updatable) Cost information for monthly maintenance.
+        """
+        return pulumi.get(self, "aws_ec2cost")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -995,6 +1606,14 @@ class Asset(pulumi.CustomResource):
         (Updatable) Asset display name.
         """
         return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="environmentType")
+    def environment_type(self) -> pulumi.Output[_builtins.str]:
+        """
+        Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+        """
+        return pulumi.get(self, "environment_type")
 
     @_builtins.property
     @pulumi.getter(name="externalAssetKey")

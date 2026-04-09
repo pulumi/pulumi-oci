@@ -60,6 +60,10 @@ export interface GetScheduledJobResult {
      */
     readonly displayName: string;
     /**
+     * The dynamic set [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on. A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+     */
+    readonly dynamicSetIds: string[];
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     readonly freeformTags: {[key: string]: string};
@@ -80,7 +84,7 @@ export interface GetScheduledJobResult {
      */
     readonly isSubcompartmentIncluded: boolean;
     /**
-     * The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+     * The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds, and dynamicSetIds.
      */
     readonly lifecycleStageIds: string[];
     /**
@@ -112,7 +116,7 @@ export interface GetScheduledJobResult {
      */
     readonly operations: outputs.OsManagementHub.GetScheduledJobOperation[];
     /**
-     * The frequency schedule for a recurring scheduled job.
+     * The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported. In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
      */
     readonly recurringRule: string;
     /**

@@ -50,6 +50,7 @@ namespace Pulumi.Oci.ContainerEngine
     ///             },
     ///         },
     ///         KubernetesVersion = nodePoolKubernetesVersion,
+    ///         NetworkLaunchType = nodePoolNetworkLaunchType,
     ///         NodeConfigDetails = new Oci.ContainerEngine.Inputs.NodePoolNodeConfigDetailsArgs
     ///         {
     ///             PlacementConfigs = new[]
@@ -71,6 +72,14 @@ namespace Pulumi.Oci.ContainerEngine
     ///                 },
     ///             },
     ///             Size = nodePoolNodeConfigDetailsSize,
+    ///             DefinedTags = 
+    ///             {
+    ///                 { "Operations.CostCenter", "42" },
+    ///             },
+    ///             FreeformTags = 
+    ///             {
+    ///                 { "Department", "Finance" },
+    ///             },
     ///             IsPvEncryptionInTransitEnabled = nodePoolNodeConfigDetailsIsPvEncryptionInTransitEnabled,
     ///             KmsKeyId = testKey.Id,
     ///             NodePoolPodNetworkOptionDetails = new Oci.ContainerEngine.Inputs.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs
@@ -79,14 +88,6 @@ namespace Pulumi.Oci.ContainerEngine
     ///                 MaxPodsPerNode = nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsMaxPodsPerNode,
     ///                 PodNsgIds = nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPodNsgIds,
     ///                 PodSubnetIds = nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPodSubnetIds,
-    ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
     ///             },
     ///             NsgIds = nodePoolNodeConfigDetailsNsgIds,
     ///         },
@@ -117,6 +118,41 @@ namespace Pulumi.Oci.ContainerEngine
     ///             BootVolumeSizeInGbs = nodePoolNodeSourceDetailsBootVolumeSizeInGbs,
     ///         },
     ///         QuantityPerSubnet = nodePoolQuantityPerSubnet,
+    ///         SecondaryVnics = new[]
+    ///         {
+    ///             new Oci.ContainerEngine.Inputs.NodePoolSecondaryVnicArgs
+    ///             {
+    ///                 CreateVnicDetails = new Oci.ContainerEngine.Inputs.NodePoolSecondaryVnicCreateVnicDetailsArgs
+    ///                 {
+    ///                     SubnetId = testSubnet.Id,
+    ///                     ApplicationResources = nodePoolSecondaryVnicsCreateVnicDetailsApplicationResources,
+    ///                     AssignIpv6ip = nodePoolSecondaryVnicsCreateVnicDetailsAssignIpv6ip,
+    ///                     AssignPublicIp = nodePoolSecondaryVnicsCreateVnicDetailsAssignPublicIp,
+    ///                     DefinedTags = 
+    ///                     {
+    ///                         { "Operations.CostCenter", "42" },
+    ///                     },
+    ///                     DisplayName = nodePoolSecondaryVnicsCreateVnicDetailsDisplayName,
+    ///                     FreeformTags = 
+    ///                     {
+    ///                         { "Department", "Finance" },
+    ///                     },
+    ///                     IpCount = nodePoolSecondaryVnicsCreateVnicDetailsIpCount,
+    ///                     Ipv6addressIpv6subnetCidrPairDetails = new[]
+    ///                     {
+    ///                         new Oci.ContainerEngine.Inputs.NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs
+    ///                         {
+    ///                             Ipv6address = nodePoolSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address,
+    ///                             Ipv6subnetCidr = nodePoolSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
+    ///                         },
+    ///                     },
+    ///                     NsgIds = nodePoolSecondaryVnicsCreateVnicDetailsNsgIds,
+    ///                     SkipSourceDestCheck = nodePoolSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck,
+    ///                 },
+    ///                 DisplayName = nodePoolSecondaryVnicsDisplayName,
+    ///                 NicIndex = nodePoolSecondaryVnicsNicIndex,
+    ///             },
+    ///         },
     ///         SshPublicKey = nodePoolSshPublicKey,
     ///         SubnetIds = nodePoolSubnetIds,
     ///     });
@@ -182,6 +218,12 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+        /// </summary>
+        [Output("networkLaunchType")]
+        public Output<string> NetworkLaunchType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
@@ -256,13 +298,19 @@ namespace Pulumi.Oci.ContainerEngine
         public Output<int> QuantityPerSubnet { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) A list of secondary vnics to attach to nodes
+        /// </summary>
+        [Output("secondaryVnics")]
+        public Output<ImmutableArray<Outputs.NodePoolSecondaryVnic>> SecondaryVnics { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The SSH public key on each node in the node pool on launch.
         /// </summary>
         [Output("sshPublicKey")]
         public Output<string> SshPublicKey { get; private set; } = null!;
 
         /// <summary>
-        /// The state of the nodepool.
+        /// The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -384,6 +432,12 @@ namespace Pulumi.Oci.ContainerEngine
         public Input<string>? Name { get; set; }
 
         /// <summary>
+        /// (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+        /// </summary>
+        [Input("networkLaunchType")]
+        public Input<string>? NetworkLaunchType { get; set; }
+
+        /// <summary>
         /// (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
         /// </summary>
         [Input("nodeConfigDetails")]
@@ -448,6 +502,18 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         [Input("quantityPerSubnet")]
         public Input<int>? QuantityPerSubnet { get; set; }
+
+        [Input("secondaryVnics")]
+        private InputList<Inputs.NodePoolSecondaryVnicArgs>? _secondaryVnics;
+
+        /// <summary>
+        /// (Updatable) A list of secondary vnics to attach to nodes
+        /// </summary>
+        public InputList<Inputs.NodePoolSecondaryVnicArgs> SecondaryVnics
+        {
+            get => _secondaryVnics ?? (_secondaryVnics = new InputList<Inputs.NodePoolSecondaryVnicArgs>());
+            set => _secondaryVnics = value;
+        }
 
         /// <summary>
         /// (Updatable) The SSH public key on each node in the node pool on launch.
@@ -546,6 +612,12 @@ namespace Pulumi.Oci.ContainerEngine
         public Input<string>? Name { get; set; }
 
         /// <summary>
+        /// (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+        /// </summary>
+        [Input("networkLaunchType")]
+        public Input<string>? NetworkLaunchType { get; set; }
+
+        /// <summary>
         /// (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
         /// </summary>
         [Input("nodeConfigDetails")]
@@ -635,6 +707,18 @@ namespace Pulumi.Oci.ContainerEngine
         [Input("quantityPerSubnet")]
         public Input<int>? QuantityPerSubnet { get; set; }
 
+        [Input("secondaryVnics")]
+        private InputList<Inputs.NodePoolSecondaryVnicGetArgs>? _secondaryVnics;
+
+        /// <summary>
+        /// (Updatable) A list of secondary vnics to attach to nodes
+        /// </summary>
+        public InputList<Inputs.NodePoolSecondaryVnicGetArgs> SecondaryVnics
+        {
+            get => _secondaryVnics ?? (_secondaryVnics = new InputList<Inputs.NodePoolSecondaryVnicGetArgs>());
+            set => _secondaryVnics = value;
+        }
+
         /// <summary>
         /// (Updatable) The SSH public key on each node in the node pool on launch.
         /// </summary>
@@ -642,7 +726,7 @@ namespace Pulumi.Oci.ContainerEngine
         public Input<string>? SshPublicKey { get; set; }
 
         /// <summary>
-        /// The state of the nodepool.
+        /// The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

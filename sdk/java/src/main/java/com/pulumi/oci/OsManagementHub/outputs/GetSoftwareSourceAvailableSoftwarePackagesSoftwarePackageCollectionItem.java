@@ -39,6 +39,11 @@ public final class GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageColl
      */
     private Boolean isLatest;
     /**
+     * @return The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * 
+     */
+    private String lastModifiedDate;
+    /**
      * @return Unique identifier for the package. Note that this is not an OCID.
      * 
      */
@@ -101,6 +106,13 @@ public final class GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageColl
         return this.isLatest;
     }
     /**
+     * @return The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * 
+     */
+    public String lastModifiedDate() {
+        return this.lastModifiedDate;
+    }
+    /**
      * @return Unique identifier for the package. Note that this is not an OCID.
      * 
      */
@@ -150,6 +162,7 @@ public final class GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageColl
         private String checksumType;
         private String displayName;
         private Boolean isLatest;
+        private String lastModifiedDate;
         private String name;
         private List<String> osFamilies;
         private List<GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource> softwareSources;
@@ -163,6 +176,7 @@ public final class GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageColl
     	      this.checksumType = defaults.checksumType;
     	      this.displayName = defaults.displayName;
     	      this.isLatest = defaults.isLatest;
+    	      this.lastModifiedDate = defaults.lastModifiedDate;
     	      this.name = defaults.name;
     	      this.osFamilies = defaults.osFamilies;
     	      this.softwareSources = defaults.softwareSources;
@@ -208,6 +222,14 @@ public final class GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageColl
               throw new MissingRequiredPropertyException("GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItem", "isLatest");
             }
             this.isLatest = isLatest;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lastModifiedDate(String lastModifiedDate) {
+            if (lastModifiedDate == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItem", "lastModifiedDate");
+            }
+            this.lastModifiedDate = lastModifiedDate;
             return this;
         }
         @CustomType.Setter
@@ -263,6 +285,7 @@ public final class GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageColl
             _resultValue.checksumType = checksumType;
             _resultValue.displayName = displayName;
             _resultValue.isLatest = isLatest;
+            _resultValue.lastModifiedDate = lastModifiedDate;
             _resultValue.name = name;
             _resultValue.osFamilies = osFamilies;
             _resultValue.softwareSources = softwareSources;

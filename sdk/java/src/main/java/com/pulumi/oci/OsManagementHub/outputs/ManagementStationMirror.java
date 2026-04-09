@@ -27,7 +27,7 @@ public final class ManagementStationMirror {
      * @return (Updatable) Default mirror listening port for http.
      * 
      */
-    private String port;
+    private @Nullable String port;
     /**
      * @return (Updatable) Path to the SSL cerfificate.
      * 
@@ -58,8 +58,8 @@ public final class ManagementStationMirror {
      * @return (Updatable) Default mirror listening port for http.
      * 
      */
-    public String port() {
-        return this.port;
+    public Optional<String> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return (Updatable) Path to the SSL cerfificate.
@@ -87,7 +87,7 @@ public final class ManagementStationMirror {
     public static final class Builder {
         private String directory;
         private @Nullable Boolean isSslverifyEnabled;
-        private String port;
+        private @Nullable String port;
         private @Nullable String sslcert;
         private String sslport;
         public Builder() {}
@@ -115,10 +115,8 @@ public final class ManagementStationMirror {
             return this;
         }
         @CustomType.Setter
-        public Builder port(String port) {
-            if (port == null) {
-              throw new MissingRequiredPropertyException("ManagementStationMirror", "port");
-            }
+        public Builder port(@Nullable String port) {
+
             this.port = port;
             return this;
         }

@@ -29,7 +29,6 @@ class SoftwareSourceManifestArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] content: (Updatable) Provides the manifest content used to update the package list of the software source.
         """
         pulumi.set(__self__, "software_source_id", software_source_id)
         if content is not None:
@@ -54,9 +53,6 @@ class SoftwareSourceManifestArgs:
     @_builtins.property
     @pulumi.getter
     def content(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        (Updatable) Provides the manifest content used to update the package list of the software source.
-        """
         return pulumi.get(self, "content")
 
     @content.setter
@@ -72,7 +68,6 @@ class _SoftwareSourceManifestState:
         """
         Input properties used for looking up and filtering SoftwareSourceManifest resources.
 
-        :param pulumi.Input[_builtins.str] content: (Updatable) Provides the manifest content used to update the package list of the software source.
         :param pulumi.Input[_builtins.str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
                
                
@@ -87,9 +82,6 @@ class _SoftwareSourceManifestState:
     @_builtins.property
     @pulumi.getter
     def content(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        (Updatable) Provides the manifest content used to update the package list of the software source.
-        """
         return pulumi.get(self, "content")
 
     @content.setter
@@ -124,7 +116,7 @@ class SoftwareSourceManifest(pulumi.CustomResource):
                  __props__=None):
         """
         This resource provides the Software Source Manifest resource in Oracle Cloud Infrastructure Os Management Hub service.
-        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/SoftwareSourceManifest
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/osmh/latest/Manifest
 
         Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
 
@@ -137,8 +129,8 @@ class SoftwareSourceManifest(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_software_source_manifest = oci.osmanagementhub.SoftwareSourceManifest("test_software_source_manifest",
-            software_source_id=test_software_source["id"],
-            content=content)
+            update_software_source_manifest_details=software_source_manifest_update_software_source_manifest_details,
+            software_source_id=test_software_source["id"])
         ```
 
         ## Import
@@ -146,13 +138,12 @@ class SoftwareSourceManifest(pulumi.CustomResource):
         SoftwareSourceManifests can be imported using the `id`, e.g.
 
         ```sh
-        $ pulumi import oci:OsManagementHub/softwareSourceManifest:SoftwareSourceManifest test_software_source_manifest "id"
+        $ pulumi import oci:OsManagementHub/softwareSourceManifest:SoftwareSourceManifest test_software_source_manifest "softwareSources/{softwareSourceId}/manifest"
         ```
 
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] content: (Updatable) Provides the manifest content used to update the package list of the software source.
         :param pulumi.Input[_builtins.str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
                
                
@@ -167,7 +158,7 @@ class SoftwareSourceManifest(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         This resource provides the Software Source Manifest resource in Oracle Cloud Infrastructure Os Management Hub service.
-        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/SoftwareSourceManifest
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/osmh/latest/Manifest
 
         Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
 
@@ -180,8 +171,8 @@ class SoftwareSourceManifest(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_software_source_manifest = oci.osmanagementhub.SoftwareSourceManifest("test_software_source_manifest",
-            software_source_id=test_software_source["id"],
-            content=content)
+            update_software_source_manifest_details=software_source_manifest_update_software_source_manifest_details,
+            software_source_id=test_software_source["id"])
         ```
 
         ## Import
@@ -189,7 +180,7 @@ class SoftwareSourceManifest(pulumi.CustomResource):
         SoftwareSourceManifests can be imported using the `id`, e.g.
 
         ```sh
-        $ pulumi import oci:OsManagementHub/softwareSourceManifest:SoftwareSourceManifest test_software_source_manifest "id"
+        $ pulumi import oci:OsManagementHub/softwareSourceManifest:SoftwareSourceManifest test_software_source_manifest "softwareSources/{softwareSourceId}/manifest"
         ```
 
 
@@ -242,7 +233,6 @@ class SoftwareSourceManifest(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] content: (Updatable) Provides the manifest content used to update the package list of the software source.
         :param pulumi.Input[_builtins.str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
                
                
@@ -260,9 +250,6 @@ class SoftwareSourceManifest(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter
     def content(self) -> pulumi.Output[Optional[_builtins.str]]:
-        """
-        (Updatable) Provides the manifest content used to update the package list of the software source.
-        """
         return pulumi.get(self, "content")
 
     @_builtins.property

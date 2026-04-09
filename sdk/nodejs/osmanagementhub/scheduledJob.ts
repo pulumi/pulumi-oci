@@ -24,6 +24,13 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     operations: [{
  *         operationType: scheduledJobOperationsOperationType,
+ *         installSnapDetails: {
+ *             name: scheduledJobOperationsInstallSnapDetailsName,
+ *             channel: scheduledJobOperationsInstallSnapDetailsChannel,
+ *             isSigned: scheduledJobOperationsInstallSnapDetailsIsSigned,
+ *             mode: scheduledJobOperationsInstallSnapDetailsMode,
+ *             revision: scheduledJobOperationsInstallSnapDetailsRevision,
+ *         },
  *         manageModuleStreamsDetails: {
  *             disables: [{
  *                 moduleName: scheduledJobOperationsManageModuleStreamsDetailsDisableModuleName,
@@ -50,11 +57,19 @@ import * as utilities from "../utilities";
  *         },
  *         packageNames: scheduledJobOperationsPackageNames,
  *         rebootTimeoutInMins: scheduledJobOperationsRebootTimeoutInMins,
+ *         removeSnapDetails: {
+ *             name: scheduledJobOperationsRemoveSnapDetailsName,
+ *             revision: scheduledJobOperationsRemoveSnapDetailsRevision,
+ *         },
  *         softwareSourceIds: scheduledJobOperationsSoftwareSourceIds,
  *         switchModuleStreamsDetails: {
  *             moduleName: scheduledJobOperationsSwitchModuleStreamsDetailsModuleName,
  *             streamName: testStream.name,
  *             softwareSourceId: testSoftwareSource.id,
+ *         },
+ *         switchSnapChannelDetails: {
+ *             name: scheduledJobOperationsSwitchSnapChannelDetailsName,
+ *             channel: scheduledJobOperationsSwitchSnapChannelDetailsChannel,
  *         },
  *         windowsUpdateNames: scheduledJobOperationsWindowsUpdateNames,
  *     }],
@@ -65,6 +80,7 @@ import * as utilities from "../utilities";
  *     },
  *     description: scheduledJobDescription,
  *     displayName: scheduledJobDisplayName,
+ *     dynamicSetIds: scheduledJobDynamicSetIds,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
@@ -134,6 +150,10 @@ export class ScheduledJob extends pulumi.CustomResource {
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
+     * The dynamic set [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on. A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, lifecycleStageIds, managedCompartmentIds.
+     */
+    declare public readonly dynamicSetIds: pulumi.Output<string[]>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
@@ -150,7 +170,7 @@ export class ScheduledJob extends pulumi.CustomResource {
      */
     declare public readonly isSubcompartmentIncluded: pulumi.Output<boolean>;
     /**
-     * The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,  or managedInstanceGroupIds, or managedCompartmentIds.
+     * The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,  or managedInstanceGroupIds, or managedCompartmentIds, or dynamicSetIds.
      */
     declare public readonly lifecycleStageIds: pulumi.Output<string[]>;
     /**
@@ -158,15 +178,15 @@ export class ScheduledJob extends pulumi.CustomResource {
      */
     declare public readonly locations: pulumi.Output<string[]>;
     /**
-     * The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set  isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must  supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds.
+     * The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set  isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must  supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds, or dynamicSetIds.
      */
     declare public readonly managedCompartmentIds: pulumi.Output<string[]>;
     /**
-     * The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds, or managedCompartmentIds, or lifecycleStageIds.
+     * The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
      */
     declare public readonly managedInstanceGroupIds: pulumi.Output<string[]>;
     /**
-     * The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or  managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds.
+     * The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or  managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
      */
     declare public readonly managedInstanceIds: pulumi.Output<string[]>;
     /**
@@ -182,7 +202,7 @@ export class ScheduledJob extends pulumi.CustomResource {
      */
     declare public readonly operations: pulumi.Output<outputs.OsManagementHub.ScheduledJobOperation[]>;
     /**
-     * (Updatable) The frequency schedule for a recurring scheduled job.
+     * (Updatable) The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Note: Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported. In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
      */
     declare public readonly recurringRule: pulumi.Output<string>;
     /**
@@ -247,6 +267,7 @@ export class ScheduledJob extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["description"] = state?.description;
             resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["dynamicSetIds"] = state?.dynamicSetIds;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["isManagedByAutonomousLinux"] = state?.isManagedByAutonomousLinux;
             resourceInputs["isRestricted"] = state?.isRestricted;
@@ -286,6 +307,7 @@ export class ScheduledJob extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["description"] = args?.description;
             resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["dynamicSetIds"] = args?.dynamicSetIds;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["isManagedByAutonomousLinux"] = args?.isManagedByAutonomousLinux;
             resourceInputs["isSubcompartmentIncluded"] = args?.isSubcompartmentIncluded;
@@ -334,6 +356,10 @@ export interface ScheduledJobState {
      */
     displayName?: pulumi.Input<string>;
     /**
+     * The dynamic set [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on. A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, lifecycleStageIds, managedCompartmentIds.
+     */
+    dynamicSetIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -350,7 +376,7 @@ export interface ScheduledJobState {
      */
     isSubcompartmentIncluded?: pulumi.Input<boolean>;
     /**
-     * The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,  or managedInstanceGroupIds, or managedCompartmentIds.
+     * The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,  or managedInstanceGroupIds, or managedCompartmentIds, or dynamicSetIds.
      */
     lifecycleStageIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -358,15 +384,15 @@ export interface ScheduledJobState {
      */
     locations?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set  isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must  supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds.
+     * The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set  isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must  supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds, or dynamicSetIds.
      */
     managedCompartmentIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds, or managedCompartmentIds, or lifecycleStageIds.
+     * The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
      */
     managedInstanceGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or  managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds.
+     * The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or  managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
      */
     managedInstanceIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -382,7 +408,7 @@ export interface ScheduledJobState {
      */
     operations?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ScheduledJobOperation>[]>;
     /**
-     * (Updatable) The frequency schedule for a recurring scheduled job.
+     * (Updatable) The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Note: Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported. In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
      */
     recurringRule?: pulumi.Input<string>;
     /**
@@ -452,6 +478,10 @@ export interface ScheduledJobArgs {
      */
     displayName?: pulumi.Input<string>;
     /**
+     * The dynamic set [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on. A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, lifecycleStageIds, managedCompartmentIds.
+     */
+    dynamicSetIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -464,7 +494,7 @@ export interface ScheduledJobArgs {
      */
     isSubcompartmentIncluded?: pulumi.Input<boolean>;
     /**
-     * The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,  or managedInstanceGroupIds, or managedCompartmentIds.
+     * The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,  or managedInstanceGroupIds, or managedCompartmentIds, or dynamicSetIds.
      */
     lifecycleStageIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -472,15 +502,15 @@ export interface ScheduledJobArgs {
      */
     locations?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set  isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must  supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds.
+     * The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set  isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must  supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds, or dynamicSetIds.
      */
     managedCompartmentIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds, or managedCompartmentIds, or lifecycleStageIds.
+     * The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
      */
     managedInstanceGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or  managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds.
+     * The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or  managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
      */
     managedInstanceIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -496,7 +526,7 @@ export interface ScheduledJobArgs {
      */
     operations: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ScheduledJobOperation>[]>;
     /**
-     * (Updatable) The frequency schedule for a recurring scheduled job.
+     * (Updatable) The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Note: Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported. In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
      */
     recurringRule?: pulumi.Input<string>;
     /**

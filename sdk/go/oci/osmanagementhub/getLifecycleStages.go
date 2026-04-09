@@ -14,41 +14,6 @@ import (
 // This data source provides the list of Lifecycle Stages in Oracle Cloud Infrastructure Os Management Hub service.
 //
 // Lists lifecycle stages that match the specified compartment or lifecycle stage [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/osmanagementhub"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := osmanagementhub.GetLifecycleStages(ctx, &osmanagementhub.GetLifecycleStagesArgs{
-//				ArchType:            pulumi.StringRef(lifecycleStageArchType),
-//				CompartmentId:       pulumi.StringRef(compartmentId),
-//				DisplayNames:        lifecycleStageDisplayName,
-//				DisplayNameContains: pulumi.StringRef(lifecycleStageDisplayNameContains),
-//				LifecycleStageId:    pulumi.StringRef(testLifecycleStage.Id),
-//				Locations:           lifecycleStageLocation,
-//				LocationNotEqualTos: lifecycleStageLocationNotEqualTo,
-//				OsFamily:            pulumi.StringRef(lifecycleStageOsFamily),
-//				SoftwareSourceId:    pulumi.StringRef(lifecycleStageSoftwareSourceId),
-//				State:               pulumi.StringRef(lifecycleStageState),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func GetLifecycleStages(ctx *pulumi.Context, args *GetLifecycleStagesArgs, opts ...pulumi.InvokeOption) (*GetLifecycleStagesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLifecycleStagesResult

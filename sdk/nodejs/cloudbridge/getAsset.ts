@@ -43,6 +43,18 @@ export interface GetAssetArgs {
  * A collection of values returned by getAsset.
  */
 export interface GetAssetResult {
+    /**
+     * The class name of the asset.
+     */
+    readonly assetClassName: string;
+    /**
+     * The version of the asset class.
+     */
+    readonly assetClassVersion: string;
+    /**
+     * The details of the asset.
+     */
+    readonly assetDetails: string;
     readonly assetId: string;
     /**
      * List of asset source OCID.
@@ -52,6 +64,10 @@ export interface GetAssetResult {
      * The type of asset.
      */
     readonly assetType: string;
+    readonly attachedEbsVolumesCosts: outputs.CloudBridge.GetAssetAttachedEbsVolumesCost[];
+    readonly awsEbs: outputs.CloudBridge.GetAssetAwsEb[];
+    readonly awsEc2costs: outputs.CloudBridge.GetAssetAwsEc2cost[];
+    readonly awsEc2s: outputs.CloudBridge.GetAssetAwsEc2[];
     /**
      * The OCID of the compartment to which an asset belongs to.
      */
@@ -68,6 +84,10 @@ export interface GetAssetResult {
      * Asset display name.
      */
     readonly displayName: string;
+    /**
+     * Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     */
+    readonly environmentType: string;
     /**
      * The key of the asset from the external environment.
      */

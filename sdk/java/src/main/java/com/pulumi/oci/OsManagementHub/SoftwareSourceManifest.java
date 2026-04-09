@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 
 /**
  * This resource provides the Software Source Manifest resource in Oracle Cloud Infrastructure Os Management Hub service.
- * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/SoftwareSourceManifest
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/osmh/latest/Manifest
  * 
  * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
  * 
@@ -47,8 +47,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testSoftwareSourceManifest = new SoftwareSourceManifest("testSoftwareSourceManifest", SoftwareSourceManifestArgs.builder()
+ *             .updateSoftwareSourceManifestDetails(softwareSourceManifestUpdateSoftwareSourceManifestDetails)
  *             .softwareSourceId(testSoftwareSource.id())
- *             .content(content)
  *             .build());
  * 
  *     }
@@ -61,23 +61,15 @@ import javax.annotation.Nullable;
  * SoftwareSourceManifests can be imported using the `id`, e.g.
  * 
  * ```sh
- * $ pulumi import oci:OsManagementHub/softwareSourceManifest:SoftwareSourceManifest test_software_source_manifest &#34;id&#34;
+ * $ pulumi import oci:OsManagementHub/softwareSourceManifest:SoftwareSourceManifest test_software_source_manifest &#34;softwareSources/{softwareSourceId}/manifest&#34;
  * ```
  * 
  */
 @ResourceType(type="oci:OsManagementHub/softwareSourceManifest:SoftwareSourceManifest")
 public class SoftwareSourceManifest extends com.pulumi.resources.CustomResource {
-    /**
-     * (Updatable) Provides the manifest content used to update the package list of the software source.
-     * 
-     */
     @Export(name="content", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> content;
 
-    /**
-     * @return (Updatable) Provides the manifest content used to update the package list of the software source.
-     * 
-     */
     public Output<Optional<String>> content() {
         return Codegen.optional(this.content);
     }

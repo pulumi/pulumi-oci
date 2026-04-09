@@ -41,7 +41,13 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<string> Architecture { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Updatable settings for the Autonomous Linux service.
+        /// Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+        /// </summary>
+        [Output("areSourcesManaged")]
+        public Output<bool> AreSourcesManaged { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
         /// </summary>
         [Output("autonomousSettings")]
         public Output<Outputs.ManagedInstanceAutonomousSettings> AutonomousSettings { get; private set; } = null!;
@@ -255,6 +261,12 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<string> TimeLastCheckin { get; private set; } = null!;
 
         /// <summary>
+        /// The date and time the instance's software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        /// </summary>
+        [Output("timeLastSoftwareRefresh")]
+        public Output<string> TimeLastSoftwareRefresh { get; private set; } = null!;
+
+        /// <summary>
         /// The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         /// </summary>
         [Output("timeUpdated")]
@@ -319,7 +331,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class ManagedInstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Updatable settings for the Autonomous Linux service.
+        /// (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
         /// </summary>
         [Input("autonomousSettings")]
         public Input<Inputs.ManagedInstanceAutonomousSettingsArgs>? AutonomousSettings { get; set; }
@@ -379,7 +391,13 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? Architecture { get; set; }
 
         /// <summary>
-        /// (Updatable) Updatable settings for the Autonomous Linux service.
+        /// Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+        /// </summary>
+        [Input("areSourcesManaged")]
+        public Input<bool>? AreSourcesManaged { get; set; }
+
+        /// <summary>
+        /// (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
         /// </summary>
         [Input("autonomousSettings")]
         public Input<Inputs.ManagedInstanceAutonomousSettingsGetArgs>? AutonomousSettings { get; set; }
@@ -615,6 +633,12 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         [Input("timeLastCheckin")]
         public Input<string>? TimeLastCheckin { get; set; }
+
+        /// <summary>
+        /// The date and time the instance's software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        /// </summary>
+        [Input("timeLastSoftwareRefresh")]
+        public Input<string>? TimeLastSoftwareRefresh { get; set; }
 
         /// <summary>
         /// The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).

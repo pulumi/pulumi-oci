@@ -35,14 +35,14 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) Updatable settings for the Autonomous Linux service.
+     * (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
      * 
      */
     @Import(name="autonomousSettings")
     private @Nullable Output<ManagedInstanceGroupAutonomousSettingsArgs> autonomousSettings;
 
     /**
-     * @return (Updatable) Updatable settings for the Autonomous Linux service.
+     * @return (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
      * 
      */
     public Optional<Output<ManagedInstanceGroupAutonomousSettingsArgs>> autonomousSettings() {
@@ -278,7 +278,7 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param autonomousSettings (Updatable) Updatable settings for the Autonomous Linux service.
+         * @param autonomousSettings (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param autonomousSettings (Updatable) Updatable settings for the Autonomous Linux service.
+         * @param autonomousSettings (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
          * 
          * @return builder
          * 

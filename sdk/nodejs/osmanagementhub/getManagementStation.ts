@@ -44,6 +44,10 @@ export interface GetManagementStationArgs {
  */
 export interface GetManagementStationResult {
     /**
+     * The architecture type.
+     */
+    readonly archType: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
      */
     readonly compartmentId: string;
@@ -120,6 +124,10 @@ export interface GetManagementStationResult {
      * Mirror information used for the management station configuration.
      */
     readonly mirrors: outputs.OsManagementHub.GetManagementStationMirror[];
+    /**
+     * The operating system family.
+     */
+    readonly osFamily: string;
     /**
      * A decimal number representing the progress of the current mirror sync.
      */

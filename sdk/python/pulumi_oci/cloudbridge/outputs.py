@@ -17,6 +17,22 @@ from . import outputs
 
 __all__ = [
     'AgentPluginList',
+    'AssetAttachedEbsVolumesCost',
+    'AssetAwsEbs',
+    'AssetAwsEbsAttachment',
+    'AssetAwsEbsTag',
+    'AssetAwsEc2',
+    'AssetAwsEc2NetworkInterface',
+    'AssetAwsEc2NetworkInterfaceAssociation',
+    'AssetAwsEc2NetworkInterfaceAttachment',
+    'AssetAwsEc2NetworkInterfacePrivateIpAddress',
+    'AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation',
+    'AssetAwsEc2NetworkInterfaceSecurityGroup',
+    'AssetAwsEc2Placement',
+    'AssetAwsEc2SecurityGroup',
+    'AssetAwsEc2State',
+    'AssetAwsEc2Tag',
+    'AssetAwsEc2cost',
     'AssetCompute',
     'AssetComputeDisk',
     'AssetComputeGpuDevice',
@@ -42,6 +58,22 @@ __all__ = [
     'GetApplianceImagesApplianceImageCollectionResult',
     'GetApplianceImagesApplianceImageCollectionItemResult',
     'GetApplianceImagesFilterResult',
+    'GetAssetAttachedEbsVolumesCostResult',
+    'GetAssetAwsEbResult',
+    'GetAssetAwsEbAttachmentResult',
+    'GetAssetAwsEbTagResult',
+    'GetAssetAwsEc2Result',
+    'GetAssetAwsEc2NetworkInterfaceResult',
+    'GetAssetAwsEc2NetworkInterfaceAssociationResult',
+    'GetAssetAwsEc2NetworkInterfaceAttachmentResult',
+    'GetAssetAwsEc2NetworkInterfacePrivateIpAddressResult',
+    'GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationResult',
+    'GetAssetAwsEc2NetworkInterfaceSecurityGroupResult',
+    'GetAssetAwsEc2PlacementResult',
+    'GetAssetAwsEc2SecurityGroupResult',
+    'GetAssetAwsEc2StateResult',
+    'GetAssetAwsEc2TagResult',
+    'GetAssetAwsEc2costResult',
     'GetAssetComputeResult',
     'GetAssetComputeDiskResult',
     'GetAssetComputeGpuDeviceResult',
@@ -62,6 +94,22 @@ __all__ = [
     'GetAssetVmwareVmCustomerTagResult',
     'GetAssetsAssetCollectionResult',
     'GetAssetsAssetCollectionItemResult',
+    'GetAssetsAssetCollectionItemAttachedEbsVolumesCostResult',
+    'GetAssetsAssetCollectionItemAwsEbResult',
+    'GetAssetsAssetCollectionItemAwsEbAttachmentResult',
+    'GetAssetsAssetCollectionItemAwsEbTagResult',
+    'GetAssetsAssetCollectionItemAwsEc2Result',
+    'GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceResult',
+    'GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationResult',
+    'GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentResult',
+    'GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressResult',
+    'GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationResult',
+    'GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupResult',
+    'GetAssetsAssetCollectionItemAwsEc2PlacementResult',
+    'GetAssetsAssetCollectionItemAwsEc2SecurityGroupResult',
+    'GetAssetsAssetCollectionItemAwsEc2StateResult',
+    'GetAssetsAssetCollectionItemAwsEc2TagResult',
+    'GetAssetsAssetCollectionItemAwsEc2costResult',
     'GetAssetsAssetCollectionItemComputeResult',
     'GetAssetsAssetCollectionItemComputeDiskResult',
     'GetAssetsAssetCollectionItemComputeGpuDeviceResult',
@@ -83,6 +131,9 @@ __all__ = [
     'GetInventoriesFilterResult',
     'GetInventoriesInventoryCollectionResult',
     'GetInventoriesInventoryCollectionItemResult',
+    'GetSupportedCloudRegionsFilterResult',
+    'GetSupportedCloudRegionsSupportedCloudRegionCollectionResult',
+    'GetSupportedCloudRegionsSupportedCloudRegionCollectionItemResult',
 ]
 
 @pulumi.output_type
@@ -227,6 +278,1731 @@ class AgentPluginList(dict):
         The time when the Agent was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class AssetAttachedEbsVolumesCost(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "currencyCode":
+            suggest = "currency_code"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AssetAttachedEbsVolumesCost. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AssetAttachedEbsVolumesCost.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AssetAttachedEbsVolumesCost.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 amount: Optional[_builtins.float] = None,
+                 currency_code: Optional[_builtins.str] = None):
+        """
+        :param _builtins.float amount: (Updatable) Monthly costs for maintenance of this asset.
+        :param _builtins.str currency_code: (Updatable) Currency code
+        """
+        if amount is not None:
+            pulumi.set(__self__, "amount", amount)
+        if currency_code is not None:
+            pulumi.set(__self__, "currency_code", currency_code)
+
+    @_builtins.property
+    @pulumi.getter
+    def amount(self) -> Optional[_builtins.float]:
+        """
+        (Updatable) Monthly costs for maintenance of this asset.
+        """
+        return pulumi.get(self, "amount")
+
+    @_builtins.property
+    @pulumi.getter(name="currencyCode")
+    def currency_code(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Currency code
+        """
+        return pulumi.get(self, "currency_code")
+
+
+@pulumi.output_type
+class AssetAwsEbs(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "availabilityZone":
+            suggest = "availability_zone"
+        elif key == "isEncrypted":
+            suggest = "is_encrypted"
+        elif key == "isMultiAttachEnabled":
+            suggest = "is_multi_attach_enabled"
+        elif key == "sizeInGiBs":
+            suggest = "size_in_gi_bs"
+        elif key == "volumeKey":
+            suggest = "volume_key"
+        elif key == "volumeType":
+            suggest = "volume_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AssetAwsEbs. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AssetAwsEbs.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AssetAwsEbs.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 attachments: Optional[Sequence['outputs.AssetAwsEbsAttachment']] = None,
+                 availability_zone: Optional[_builtins.str] = None,
+                 iops: Optional[_builtins.int] = None,
+                 is_encrypted: Optional[_builtins.bool] = None,
+                 is_multi_attach_enabled: Optional[_builtins.bool] = None,
+                 size_in_gi_bs: Optional[_builtins.int] = None,
+                 status: Optional[_builtins.str] = None,
+                 tags: Optional[Sequence['outputs.AssetAwsEbsTag']] = None,
+                 throughput: Optional[_builtins.int] = None,
+                 volume_key: Optional[_builtins.str] = None,
+                 volume_type: Optional[_builtins.str] = None):
+        """
+        :param Sequence['AssetAwsEbsAttachmentArgs'] attachments: (Updatable) Information about the volume attachments.
+        :param _builtins.str availability_zone: (Updatable) The Availability Zone for the volume.
+        :param _builtins.int iops: (Updatable) The number of I/O operations per second.
+        :param _builtins.bool is_encrypted: (Updatable) Indicates whether the volume is encrypted.
+        :param _builtins.bool is_multi_attach_enabled: (Updatable) Indicates whether Amazon EBS Multi-Attach is enabled.
+        :param _builtins.int size_in_gi_bs: (Updatable) The size of the volume, in GiBs.
+        :param _builtins.str status: (Updatable) The volume state.
+        :param Sequence['AssetAwsEbsTagArgs'] tags: (Updatable) Any tags assigned to the volume.
+        :param _builtins.int throughput: (Updatable) The throughput that the volume supports, in MiB/s.
+        :param _builtins.str volume_key: (Updatable) The ID of the volume.
+        :param _builtins.str volume_type: (Updatable) The volume type.
+        """
+        if attachments is not None:
+            pulumi.set(__self__, "attachments", attachments)
+        if availability_zone is not None:
+            pulumi.set(__self__, "availability_zone", availability_zone)
+        if iops is not None:
+            pulumi.set(__self__, "iops", iops)
+        if is_encrypted is not None:
+            pulumi.set(__self__, "is_encrypted", is_encrypted)
+        if is_multi_attach_enabled is not None:
+            pulumi.set(__self__, "is_multi_attach_enabled", is_multi_attach_enabled)
+        if size_in_gi_bs is not None:
+            pulumi.set(__self__, "size_in_gi_bs", size_in_gi_bs)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+        if throughput is not None:
+            pulumi.set(__self__, "throughput", throughput)
+        if volume_key is not None:
+            pulumi.set(__self__, "volume_key", volume_key)
+        if volume_type is not None:
+            pulumi.set(__self__, "volume_type", volume_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def attachments(self) -> Optional[Sequence['outputs.AssetAwsEbsAttachment']]:
+        """
+        (Updatable) Information about the volume attachments.
+        """
+        return pulumi.get(self, "attachments")
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityZone")
+    def availability_zone(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The Availability Zone for the volume.
+        """
+        return pulumi.get(self, "availability_zone")
+
+    @_builtins.property
+    @pulumi.getter
+    def iops(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) The number of I/O operations per second.
+        """
+        return pulumi.get(self, "iops")
+
+    @_builtins.property
+    @pulumi.getter(name="isEncrypted")
+    def is_encrypted(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Indicates whether the volume is encrypted.
+        """
+        return pulumi.get(self, "is_encrypted")
+
+    @_builtins.property
+    @pulumi.getter(name="isMultiAttachEnabled")
+    def is_multi_attach_enabled(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Indicates whether Amazon EBS Multi-Attach is enabled.
+        """
+        return pulumi.get(self, "is_multi_attach_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="sizeInGiBs")
+    def size_in_gi_bs(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) The size of the volume, in GiBs.
+        """
+        return pulumi.get(self, "size_in_gi_bs")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The volume state.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> Optional[Sequence['outputs.AssetAwsEbsTag']]:
+        """
+        (Updatable) Any tags assigned to the volume.
+        """
+        return pulumi.get(self, "tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def throughput(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) The throughput that the volume supports, in MiB/s.
+        """
+        return pulumi.get(self, "throughput")
+
+    @_builtins.property
+    @pulumi.getter(name="volumeKey")
+    def volume_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The ID of the volume.
+        """
+        return pulumi.get(self, "volume_key")
+
+    @_builtins.property
+    @pulumi.getter(name="volumeType")
+    def volume_type(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The volume type.
+        """
+        return pulumi.get(self, "volume_type")
+
+
+@pulumi.output_type
+class AssetAwsEbsAttachment(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "instanceKey":
+            suggest = "instance_key"
+        elif key == "isDeleteOnTermination":
+            suggest = "is_delete_on_termination"
+        elif key == "volumeKey":
+            suggest = "volume_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AssetAwsEbsAttachment. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AssetAwsEbsAttachment.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AssetAwsEbsAttachment.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 device: Optional[_builtins.str] = None,
+                 instance_key: Optional[_builtins.str] = None,
+                 is_delete_on_termination: Optional[_builtins.bool] = None,
+                 status: Optional[_builtins.str] = None,
+                 volume_key: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str device: (Updatable) The device name.
+        :param _builtins.str instance_key: (Updatable) The ID of the instance.
+        :param _builtins.bool is_delete_on_termination: (Updatable) Indicates whether the EBS volume is deleted on instance termination.
+        :param _builtins.str status: (Updatable) The attachment state of the volume.
+        :param _builtins.str volume_key: (Updatable) The ID of the volume.
+        """
+        if device is not None:
+            pulumi.set(__self__, "device", device)
+        if instance_key is not None:
+            pulumi.set(__self__, "instance_key", instance_key)
+        if is_delete_on_termination is not None:
+            pulumi.set(__self__, "is_delete_on_termination", is_delete_on_termination)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if volume_key is not None:
+            pulumi.set(__self__, "volume_key", volume_key)
+
+    @_builtins.property
+    @pulumi.getter
+    def device(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The device name.
+        """
+        return pulumi.get(self, "device")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceKey")
+    def instance_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The ID of the instance.
+        """
+        return pulumi.get(self, "instance_key")
+
+    @_builtins.property
+    @pulumi.getter(name="isDeleteOnTermination")
+    def is_delete_on_termination(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Indicates whether the EBS volume is deleted on instance termination.
+        """
+        return pulumi.get(self, "is_delete_on_termination")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The attachment state of the volume.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="volumeKey")
+    def volume_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The ID of the volume.
+        """
+        return pulumi.get(self, "volume_key")
+
+
+@pulumi.output_type
+class AssetAwsEbsTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str key: (Updatable) The key of the tag.
+        :param _builtins.str value: (Updatable) The value of the tag.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The key of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The value of the tag.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class AssetAwsEc2(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "areElasticInferenceAcceleratorsPresent":
+            suggest = "are_elastic_inference_accelerators_present"
+        elif key == "bootMode":
+            suggest = "boot_mode"
+        elif key == "capacityReservationKey":
+            suggest = "capacity_reservation_key"
+        elif key == "imageKey":
+            suggest = "image_key"
+        elif key == "instanceKey":
+            suggest = "instance_key"
+        elif key == "instanceLifecycle":
+            suggest = "instance_lifecycle"
+        elif key == "instanceType":
+            suggest = "instance_type"
+        elif key == "ipAddress":
+            suggest = "ip_address"
+        elif key == "isEnclaveOptions":
+            suggest = "is_enclave_options"
+        elif key == "isHibernationOptions":
+            suggest = "is_hibernation_options"
+        elif key == "isSourceDestCheck":
+            suggest = "is_source_dest_check"
+        elif key == "isSpotInstance":
+            suggest = "is_spot_instance"
+        elif key == "kernelKey":
+            suggest = "kernel_key"
+        elif key == "maintenanceOptions":
+            suggest = "maintenance_options"
+        elif key == "networkInterfaces":
+            suggest = "network_interfaces"
+        elif key == "privateDnsName":
+            suggest = "private_dns_name"
+        elif key == "privateIpAddress":
+            suggest = "private_ip_address"
+        elif key == "rootDeviceName":
+            suggest = "root_device_name"
+        elif key == "rootDeviceType":
+            suggest = "root_device_type"
+        elif key == "securityGroups":
+            suggest = "security_groups"
+        elif key == "sriovNetSupport":
+            suggest = "sriov_net_support"
+        elif key == "subnetKey":
+            suggest = "subnet_key"
+        elif key == "timeLaunch":
+            suggest = "time_launch"
+        elif key == "tpmSupport":
+            suggest = "tpm_support"
+        elif key == "virtualizationType":
+            suggest = "virtualization_type"
+        elif key == "vpcKey":
+            suggest = "vpc_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AssetAwsEc2. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AssetAwsEc2.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AssetAwsEc2.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 architecture: Optional[_builtins.str] = None,
+                 are_elastic_inference_accelerators_present: Optional[_builtins.bool] = None,
+                 boot_mode: Optional[_builtins.str] = None,
+                 capacity_reservation_key: Optional[_builtins.str] = None,
+                 image_key: Optional[_builtins.str] = None,
+                 instance_key: Optional[_builtins.str] = None,
+                 instance_lifecycle: Optional[_builtins.str] = None,
+                 instance_type: Optional[_builtins.str] = None,
+                 ip_address: Optional[_builtins.str] = None,
+                 ipv6address: Optional[_builtins.str] = None,
+                 is_enclave_options: Optional[_builtins.bool] = None,
+                 is_hibernation_options: Optional[_builtins.bool] = None,
+                 is_source_dest_check: Optional[_builtins.bool] = None,
+                 is_spot_instance: Optional[_builtins.bool] = None,
+                 kernel_key: Optional[_builtins.str] = None,
+                 licenses: Optional[Sequence[_builtins.str]] = None,
+                 maintenance_options: Optional[_builtins.str] = None,
+                 monitoring: Optional[_builtins.str] = None,
+                 network_interfaces: Optional[Sequence['outputs.AssetAwsEc2NetworkInterface']] = None,
+                 placement: Optional['outputs.AssetAwsEc2Placement'] = None,
+                 private_dns_name: Optional[_builtins.str] = None,
+                 private_ip_address: Optional[_builtins.str] = None,
+                 root_device_name: Optional[_builtins.str] = None,
+                 root_device_type: Optional[_builtins.str] = None,
+                 security_groups: Optional[Sequence['outputs.AssetAwsEc2SecurityGroup']] = None,
+                 sriov_net_support: Optional[_builtins.str] = None,
+                 state: Optional['outputs.AssetAwsEc2State'] = None,
+                 subnet_key: Optional[_builtins.str] = None,
+                 tags: Optional[Sequence['outputs.AssetAwsEc2Tag']] = None,
+                 time_launch: Optional[_builtins.str] = None,
+                 tpm_support: Optional[_builtins.str] = None,
+                 virtualization_type: Optional[_builtins.str] = None,
+                 vpc_key: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str architecture: (Updatable) The architecture of the image.
+        :param _builtins.bool are_elastic_inference_accelerators_present: (Updatable) Indicates if the elastic inference accelerators attached to an instance
+        :param _builtins.str boot_mode: (Updatable) The boot mode of the instance.
+        :param _builtins.str capacity_reservation_key: (Updatable) The ID of the Capacity Reservation.
+        :param _builtins.str image_key: (Updatable) The ID of the AMI used to launch the instance.
+        :param _builtins.str instance_key: (Updatable) The ID of the instance.
+        :param _builtins.str instance_lifecycle: (Updatable) Indicates whether this is a Spot Instance or a Scheduled Instance.
+        :param _builtins.str instance_type: (Updatable) The instance type.
+        :param _builtins.str ip_address: (Updatable) The public IPv4 address, or the Carrier IP address assigned to the instance.
+        :param _builtins.str ipv6address: (Updatable) The IPv6 address assigned to the instance.
+        :param _builtins.bool is_enclave_options: (Updatable) Indicates whether the instance is enabled for AWS Nitro Enclaves.
+        :param _builtins.bool is_hibernation_options: (Updatable) Indicates whether the instance is enabled for hibernation.
+        :param _builtins.bool is_source_dest_check: (Updatable) Indicates whether source/destination checking is enabled.
+        :param _builtins.bool is_spot_instance: (Updatable) If the request is a Spot Instance request, this value will be true.
+        :param _builtins.str kernel_key: (Updatable) The kernel associated with this instance, if applicable.
+        :param Sequence[_builtins.str] licenses: (Updatable) The license configurations for the instance.
+        :param _builtins.str maintenance_options: (Updatable) Provides information on the recovery and maintenance options of your instance.
+        :param _builtins.str monitoring: (Updatable) The monitoring for the instance.
+        :param Sequence['AssetAwsEc2NetworkInterfaceArgs'] network_interfaces: (Updatable) The network interfaces for the instance.
+        :param 'AssetAwsEc2PlacementArgs' placement: (Updatable) Describes the placement of an instance.
+        :param _builtins.str private_dns_name: (Updatable) (IPv4 only) The private DNS hostname name assigned to the instance.
+        :param _builtins.str private_ip_address: (Updatable) The private IPv4 address assigned to the instance.
+        :param _builtins.str root_device_name: (Updatable) The device name of the root device volume.
+        :param _builtins.str root_device_type: (Updatable) The root device type used by the AMI. The AMI can use an EBS volume or an instance store volume.
+        :param Sequence['AssetAwsEc2SecurityGroupArgs'] security_groups: (Updatable) The security groups for the instance.
+        :param _builtins.str sriov_net_support: (Updatable) Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
+        :param 'AssetAwsEc2StateArgs' state: (Updatable) Describes the current state of an instance.
+        :param _builtins.str subnet_key: (Updatable) EC2-VPC The ID of the subnet in which the instance is running.
+        :param Sequence['AssetAwsEc2TagArgs'] tags: (Updatable) Any tags assigned to the instance.
+        :param _builtins.str time_launch: (Updatable) The time the instance was launched.
+        :param _builtins.str tpm_support: (Updatable) If the instance is configured for NitroTPM support, the value is v2.0.
+        :param _builtins.str virtualization_type: (Updatable) The virtualization type of the instance.
+        :param _builtins.str vpc_key: (Updatable) EC2-VPC The ID of the VPC in which the instance is running.
+        """
+        if architecture is not None:
+            pulumi.set(__self__, "architecture", architecture)
+        if are_elastic_inference_accelerators_present is not None:
+            pulumi.set(__self__, "are_elastic_inference_accelerators_present", are_elastic_inference_accelerators_present)
+        if boot_mode is not None:
+            pulumi.set(__self__, "boot_mode", boot_mode)
+        if capacity_reservation_key is not None:
+            pulumi.set(__self__, "capacity_reservation_key", capacity_reservation_key)
+        if image_key is not None:
+            pulumi.set(__self__, "image_key", image_key)
+        if instance_key is not None:
+            pulumi.set(__self__, "instance_key", instance_key)
+        if instance_lifecycle is not None:
+            pulumi.set(__self__, "instance_lifecycle", instance_lifecycle)
+        if instance_type is not None:
+            pulumi.set(__self__, "instance_type", instance_type)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if ipv6address is not None:
+            pulumi.set(__self__, "ipv6address", ipv6address)
+        if is_enclave_options is not None:
+            pulumi.set(__self__, "is_enclave_options", is_enclave_options)
+        if is_hibernation_options is not None:
+            pulumi.set(__self__, "is_hibernation_options", is_hibernation_options)
+        if is_source_dest_check is not None:
+            pulumi.set(__self__, "is_source_dest_check", is_source_dest_check)
+        if is_spot_instance is not None:
+            pulumi.set(__self__, "is_spot_instance", is_spot_instance)
+        if kernel_key is not None:
+            pulumi.set(__self__, "kernel_key", kernel_key)
+        if licenses is not None:
+            pulumi.set(__self__, "licenses", licenses)
+        if maintenance_options is not None:
+            pulumi.set(__self__, "maintenance_options", maintenance_options)
+        if monitoring is not None:
+            pulumi.set(__self__, "monitoring", monitoring)
+        if network_interfaces is not None:
+            pulumi.set(__self__, "network_interfaces", network_interfaces)
+        if placement is not None:
+            pulumi.set(__self__, "placement", placement)
+        if private_dns_name is not None:
+            pulumi.set(__self__, "private_dns_name", private_dns_name)
+        if private_ip_address is not None:
+            pulumi.set(__self__, "private_ip_address", private_ip_address)
+        if root_device_name is not None:
+            pulumi.set(__self__, "root_device_name", root_device_name)
+        if root_device_type is not None:
+            pulumi.set(__self__, "root_device_type", root_device_type)
+        if security_groups is not None:
+            pulumi.set(__self__, "security_groups", security_groups)
+        if sriov_net_support is not None:
+            pulumi.set(__self__, "sriov_net_support", sriov_net_support)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if subnet_key is not None:
+            pulumi.set(__self__, "subnet_key", subnet_key)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+        if time_launch is not None:
+            pulumi.set(__self__, "time_launch", time_launch)
+        if tpm_support is not None:
+            pulumi.set(__self__, "tpm_support", tpm_support)
+        if virtualization_type is not None:
+            pulumi.set(__self__, "virtualization_type", virtualization_type)
+        if vpc_key is not None:
+            pulumi.set(__self__, "vpc_key", vpc_key)
+
+    @_builtins.property
+    @pulumi.getter
+    def architecture(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The architecture of the image.
+        """
+        return pulumi.get(self, "architecture")
+
+    @_builtins.property
+    @pulumi.getter(name="areElasticInferenceAcceleratorsPresent")
+    def are_elastic_inference_accelerators_present(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Indicates if the elastic inference accelerators attached to an instance
+        """
+        return pulumi.get(self, "are_elastic_inference_accelerators_present")
+
+    @_builtins.property
+    @pulumi.getter(name="bootMode")
+    def boot_mode(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The boot mode of the instance.
+        """
+        return pulumi.get(self, "boot_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationKey")
+    def capacity_reservation_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The ID of the Capacity Reservation.
+        """
+        return pulumi.get(self, "capacity_reservation_key")
+
+    @_builtins.property
+    @pulumi.getter(name="imageKey")
+    def image_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The ID of the AMI used to launch the instance.
+        """
+        return pulumi.get(self, "image_key")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceKey")
+    def instance_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The ID of the instance.
+        """
+        return pulumi.get(self, "instance_key")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceLifecycle")
+    def instance_lifecycle(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Indicates whether this is a Spot Instance or a Scheduled Instance.
+        """
+        return pulumi.get(self, "instance_lifecycle")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceType")
+    def instance_type(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The instance type.
+        """
+        return pulumi.get(self, "instance_type")
+
+    @_builtins.property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The public IPv4 address, or the Carrier IP address assigned to the instance.
+        """
+        return pulumi.get(self, "ip_address")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6address(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The IPv6 address assigned to the instance.
+        """
+        return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter(name="isEnclaveOptions")
+    def is_enclave_options(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Indicates whether the instance is enabled for AWS Nitro Enclaves.
+        """
+        return pulumi.get(self, "is_enclave_options")
+
+    @_builtins.property
+    @pulumi.getter(name="isHibernationOptions")
+    def is_hibernation_options(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Indicates whether the instance is enabled for hibernation.
+        """
+        return pulumi.get(self, "is_hibernation_options")
+
+    @_builtins.property
+    @pulumi.getter(name="isSourceDestCheck")
+    def is_source_dest_check(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Indicates whether source/destination checking is enabled.
+        """
+        return pulumi.get(self, "is_source_dest_check")
+
+    @_builtins.property
+    @pulumi.getter(name="isSpotInstance")
+    def is_spot_instance(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) If the request is a Spot Instance request, this value will be true.
+        """
+        return pulumi.get(self, "is_spot_instance")
+
+    @_builtins.property
+    @pulumi.getter(name="kernelKey")
+    def kernel_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The kernel associated with this instance, if applicable.
+        """
+        return pulumi.get(self, "kernel_key")
+
+    @_builtins.property
+    @pulumi.getter
+    def licenses(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) The license configurations for the instance.
+        """
+        return pulumi.get(self, "licenses")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceOptions")
+    def maintenance_options(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Provides information on the recovery and maintenance options of your instance.
+        """
+        return pulumi.get(self, "maintenance_options")
+
+    @_builtins.property
+    @pulumi.getter
+    def monitoring(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The monitoring for the instance.
+        """
+        return pulumi.get(self, "monitoring")
+
+    @_builtins.property
+    @pulumi.getter(name="networkInterfaces")
+    def network_interfaces(self) -> Optional[Sequence['outputs.AssetAwsEc2NetworkInterface']]:
+        """
+        (Updatable) The network interfaces for the instance.
+        """
+        return pulumi.get(self, "network_interfaces")
+
+    @_builtins.property
+    @pulumi.getter
+    def placement(self) -> Optional['outputs.AssetAwsEc2Placement']:
+        """
+        (Updatable) Describes the placement of an instance.
+        """
+        return pulumi.get(self, "placement")
+
+    @_builtins.property
+    @pulumi.getter(name="privateDnsName")
+    def private_dns_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) (IPv4 only) The private DNS hostname name assigned to the instance.
+        """
+        return pulumi.get(self, "private_dns_name")
+
+    @_builtins.property
+    @pulumi.getter(name="privateIpAddress")
+    def private_ip_address(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The private IPv4 address assigned to the instance.
+        """
+        return pulumi.get(self, "private_ip_address")
+
+    @_builtins.property
+    @pulumi.getter(name="rootDeviceName")
+    def root_device_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The device name of the root device volume.
+        """
+        return pulumi.get(self, "root_device_name")
+
+    @_builtins.property
+    @pulumi.getter(name="rootDeviceType")
+    def root_device_type(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The root device type used by the AMI. The AMI can use an EBS volume or an instance store volume.
+        """
+        return pulumi.get(self, "root_device_type")
+
+    @_builtins.property
+    @pulumi.getter(name="securityGroups")
+    def security_groups(self) -> Optional[Sequence['outputs.AssetAwsEc2SecurityGroup']]:
+        """
+        (Updatable) The security groups for the instance.
+        """
+        return pulumi.get(self, "security_groups")
+
+    @_builtins.property
+    @pulumi.getter(name="sriovNetSupport")
+    def sriov_net_support(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
+        """
+        return pulumi.get(self, "sriov_net_support")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional['outputs.AssetAwsEc2State']:
+        """
+        (Updatable) Describes the current state of an instance.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetKey")
+    def subnet_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) EC2-VPC The ID of the subnet in which the instance is running.
+        """
+        return pulumi.get(self, "subnet_key")
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> Optional[Sequence['outputs.AssetAwsEc2Tag']]:
+        """
+        (Updatable) Any tags assigned to the instance.
+        """
+        return pulumi.get(self, "tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLaunch")
+    def time_launch(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The time the instance was launched.
+        """
+        return pulumi.get(self, "time_launch")
+
+    @_builtins.property
+    @pulumi.getter(name="tpmSupport")
+    def tpm_support(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) If the instance is configured for NitroTPM support, the value is v2.0.
+        """
+        return pulumi.get(self, "tpm_support")
+
+    @_builtins.property
+    @pulumi.getter(name="virtualizationType")
+    def virtualization_type(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The virtualization type of the instance.
+        """
+        return pulumi.get(self, "virtualization_type")
+
+    @_builtins.property
+    @pulumi.getter(name="vpcKey")
+    def vpc_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) EC2-VPC The ID of the VPC in which the instance is running.
+        """
+        return pulumi.get(self, "vpc_key")
+
+
+@pulumi.output_type
+class AssetAwsEc2NetworkInterface(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "interfaceType":
+            suggest = "interface_type"
+        elif key == "isSourceDestCheck":
+            suggest = "is_source_dest_check"
+        elif key == "macAddress":
+            suggest = "mac_address"
+        elif key == "networkInterfaceKey":
+            suggest = "network_interface_key"
+        elif key == "ownerKey":
+            suggest = "owner_key"
+        elif key == "privateIpAddresses":
+            suggest = "private_ip_addresses"
+        elif key == "securityGroups":
+            suggest = "security_groups"
+        elif key == "subnetKey":
+            suggest = "subnet_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AssetAwsEc2NetworkInterface. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AssetAwsEc2NetworkInterface.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AssetAwsEc2NetworkInterface.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 association: Optional['outputs.AssetAwsEc2NetworkInterfaceAssociation'] = None,
+                 attachment: Optional['outputs.AssetAwsEc2NetworkInterfaceAttachment'] = None,
+                 description: Optional[_builtins.str] = None,
+                 interface_type: Optional[_builtins.str] = None,
+                 ipv4prefixes: Optional[Sequence[_builtins.str]] = None,
+                 ipv6addresses: Optional[Sequence[_builtins.str]] = None,
+                 ipv6prefixes: Optional[Sequence[_builtins.str]] = None,
+                 is_source_dest_check: Optional[_builtins.bool] = None,
+                 mac_address: Optional[_builtins.str] = None,
+                 network_interface_key: Optional[_builtins.str] = None,
+                 owner_key: Optional[_builtins.str] = None,
+                 private_ip_addresses: Optional[Sequence['outputs.AssetAwsEc2NetworkInterfacePrivateIpAddress']] = None,
+                 security_groups: Optional[Sequence['outputs.AssetAwsEc2NetworkInterfaceSecurityGroup']] = None,
+                 status: Optional[_builtins.str] = None,
+                 subnet_key: Optional[_builtins.str] = None):
+        """
+        :param 'AssetAwsEc2NetworkInterfaceAssociationArgs' association: (Updatable) Describes association information for an Elastic IP address (IPv4).
+        :param 'AssetAwsEc2NetworkInterfaceAttachmentArgs' attachment: (Updatable) Describes a network interface attachment.
+        :param _builtins.str description: (Updatable) The description.
+        :param _builtins.str interface_type: (Updatable) The type of network interface.
+        :param Sequence[_builtins.str] ipv4prefixes: (Updatable) The IPv4 delegated prefixes that are assigned to the network interface.
+        :param Sequence[_builtins.str] ipv6addresses: (Updatable) The IPv6 addresses associated with the network interface.
+        :param Sequence[_builtins.str] ipv6prefixes: (Updatable) The IPv6 delegated prefixes that are assigned to the network interface.
+        :param _builtins.bool is_source_dest_check: (Updatable) Indicates whether source/destination checking is enabled.
+        :param _builtins.str mac_address: (Updatable) The MAC address.
+        :param _builtins.str network_interface_key: (Updatable) The ID of the network interface.
+        :param _builtins.str owner_key: (Updatable) The ID of the AWS account that created the network interface.
+        :param Sequence['AssetAwsEc2NetworkInterfacePrivateIpAddressArgs'] private_ip_addresses: (Updatable) The private IPv4 addresses associated with the network interface.
+        :param Sequence['AssetAwsEc2NetworkInterfaceSecurityGroupArgs'] security_groups: (Updatable) The security groups.
+        :param _builtins.str status: (Updatable) The status of the network interface.
+        :param _builtins.str subnet_key: (Updatable) The ID of the subnet.
+        """
+        if association is not None:
+            pulumi.set(__self__, "association", association)
+        if attachment is not None:
+            pulumi.set(__self__, "attachment", attachment)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if interface_type is not None:
+            pulumi.set(__self__, "interface_type", interface_type)
+        if ipv4prefixes is not None:
+            pulumi.set(__self__, "ipv4prefixes", ipv4prefixes)
+        if ipv6addresses is not None:
+            pulumi.set(__self__, "ipv6addresses", ipv6addresses)
+        if ipv6prefixes is not None:
+            pulumi.set(__self__, "ipv6prefixes", ipv6prefixes)
+        if is_source_dest_check is not None:
+            pulumi.set(__self__, "is_source_dest_check", is_source_dest_check)
+        if mac_address is not None:
+            pulumi.set(__self__, "mac_address", mac_address)
+        if network_interface_key is not None:
+            pulumi.set(__self__, "network_interface_key", network_interface_key)
+        if owner_key is not None:
+            pulumi.set(__self__, "owner_key", owner_key)
+        if private_ip_addresses is not None:
+            pulumi.set(__self__, "private_ip_addresses", private_ip_addresses)
+        if security_groups is not None:
+            pulumi.set(__self__, "security_groups", security_groups)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if subnet_key is not None:
+            pulumi.set(__self__, "subnet_key", subnet_key)
+
+    @_builtins.property
+    @pulumi.getter
+    def association(self) -> Optional['outputs.AssetAwsEc2NetworkInterfaceAssociation']:
+        """
+        (Updatable) Describes association information for an Elastic IP address (IPv4).
+        """
+        return pulumi.get(self, "association")
+
+    @_builtins.property
+    @pulumi.getter
+    def attachment(self) -> Optional['outputs.AssetAwsEc2NetworkInterfaceAttachment']:
+        """
+        (Updatable) Describes a network interface attachment.
+        """
+        return pulumi.get(self, "attachment")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The description.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="interfaceType")
+    def interface_type(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The type of network interface.
+        """
+        return pulumi.get(self, "interface_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv4prefixes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) The IPv4 delegated prefixes that are assigned to the network interface.
+        """
+        return pulumi.get(self, "ipv4prefixes")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6addresses(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) The IPv6 addresses associated with the network interface.
+        """
+        return pulumi.get(self, "ipv6addresses")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6prefixes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) The IPv6 delegated prefixes that are assigned to the network interface.
+        """
+        return pulumi.get(self, "ipv6prefixes")
+
+    @_builtins.property
+    @pulumi.getter(name="isSourceDestCheck")
+    def is_source_dest_check(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Indicates whether source/destination checking is enabled.
+        """
+        return pulumi.get(self, "is_source_dest_check")
+
+    @_builtins.property
+    @pulumi.getter(name="macAddress")
+    def mac_address(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The MAC address.
+        """
+        return pulumi.get(self, "mac_address")
+
+    @_builtins.property
+    @pulumi.getter(name="networkInterfaceKey")
+    def network_interface_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The ID of the network interface.
+        """
+        return pulumi.get(self, "network_interface_key")
+
+    @_builtins.property
+    @pulumi.getter(name="ownerKey")
+    def owner_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The ID of the AWS account that created the network interface.
+        """
+        return pulumi.get(self, "owner_key")
+
+    @_builtins.property
+    @pulumi.getter(name="privateIpAddresses")
+    def private_ip_addresses(self) -> Optional[Sequence['outputs.AssetAwsEc2NetworkInterfacePrivateIpAddress']]:
+        """
+        (Updatable) The private IPv4 addresses associated with the network interface.
+        """
+        return pulumi.get(self, "private_ip_addresses")
+
+    @_builtins.property
+    @pulumi.getter(name="securityGroups")
+    def security_groups(self) -> Optional[Sequence['outputs.AssetAwsEc2NetworkInterfaceSecurityGroup']]:
+        """
+        (Updatable) The security groups.
+        """
+        return pulumi.get(self, "security_groups")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The status of the network interface.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetKey")
+    def subnet_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The ID of the subnet.
+        """
+        return pulumi.get(self, "subnet_key")
+
+
+@pulumi.output_type
+class AssetAwsEc2NetworkInterfaceAssociation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "carrierIp":
+            suggest = "carrier_ip"
+        elif key == "customerOwnedIp":
+            suggest = "customer_owned_ip"
+        elif key == "ipOwnerKey":
+            suggest = "ip_owner_key"
+        elif key == "publicDnsName":
+            suggest = "public_dns_name"
+        elif key == "publicIp":
+            suggest = "public_ip"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AssetAwsEc2NetworkInterfaceAssociation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AssetAwsEc2NetworkInterfaceAssociation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AssetAwsEc2NetworkInterfaceAssociation.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 carrier_ip: Optional[_builtins.str] = None,
+                 customer_owned_ip: Optional[_builtins.str] = None,
+                 ip_owner_key: Optional[_builtins.str] = None,
+                 public_dns_name: Optional[_builtins.str] = None,
+                 public_ip: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str carrier_ip: (Updatable) The carrier IP address associated with the network interface.
+        :param _builtins.str customer_owned_ip: (Updatable) The customer-owned IP address associated with the network interface.
+        :param _builtins.str ip_owner_key: (Updatable) The ID of the owner of the Elastic IP address.
+        :param _builtins.str public_dns_name: (Updatable) The public DNS name.
+        :param _builtins.str public_ip: (Updatable) The public IP address or Elastic IP address bound to the network interface.
+        """
+        if carrier_ip is not None:
+            pulumi.set(__self__, "carrier_ip", carrier_ip)
+        if customer_owned_ip is not None:
+            pulumi.set(__self__, "customer_owned_ip", customer_owned_ip)
+        if ip_owner_key is not None:
+            pulumi.set(__self__, "ip_owner_key", ip_owner_key)
+        if public_dns_name is not None:
+            pulumi.set(__self__, "public_dns_name", public_dns_name)
+        if public_ip is not None:
+            pulumi.set(__self__, "public_ip", public_ip)
+
+    @_builtins.property
+    @pulumi.getter(name="carrierIp")
+    def carrier_ip(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The carrier IP address associated with the network interface.
+        """
+        return pulumi.get(self, "carrier_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="customerOwnedIp")
+    def customer_owned_ip(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The customer-owned IP address associated with the network interface.
+        """
+        return pulumi.get(self, "customer_owned_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="ipOwnerKey")
+    def ip_owner_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The ID of the owner of the Elastic IP address.
+        """
+        return pulumi.get(self, "ip_owner_key")
+
+    @_builtins.property
+    @pulumi.getter(name="publicDnsName")
+    def public_dns_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The public DNS name.
+        """
+        return pulumi.get(self, "public_dns_name")
+
+    @_builtins.property
+    @pulumi.getter(name="publicIp")
+    def public_ip(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The public IP address or Elastic IP address bound to the network interface.
+        """
+        return pulumi.get(self, "public_ip")
+
+
+@pulumi.output_type
+class AssetAwsEc2NetworkInterfaceAttachment(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "attachmentKey":
+            suggest = "attachment_key"
+        elif key == "deviceIndex":
+            suggest = "device_index"
+        elif key == "isDeleteOnTermination":
+            suggest = "is_delete_on_termination"
+        elif key == "networkCardIndex":
+            suggest = "network_card_index"
+        elif key == "timeAttach":
+            suggest = "time_attach"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AssetAwsEc2NetworkInterfaceAttachment. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AssetAwsEc2NetworkInterfaceAttachment.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AssetAwsEc2NetworkInterfaceAttachment.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 attachment_key: Optional[_builtins.str] = None,
+                 device_index: Optional[_builtins.int] = None,
+                 is_delete_on_termination: Optional[_builtins.bool] = None,
+                 network_card_index: Optional[_builtins.int] = None,
+                 status: Optional[_builtins.str] = None,
+                 time_attach: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str attachment_key: (Updatable) The ID of the network interface attachment.
+        :param _builtins.int device_index: (Updatable) The index of the device on the instance for the network interface attachment.
+        :param _builtins.bool is_delete_on_termination: (Updatable) Indicates whether the network interface is deleted when the instance is terminated.
+        :param _builtins.int network_card_index: (Updatable) The index of the network card.
+        :param _builtins.str status: (Updatable) The attachment state.
+        :param _builtins.str time_attach: (Updatable) The timestamp when the attachment initiated.
+        """
+        if attachment_key is not None:
+            pulumi.set(__self__, "attachment_key", attachment_key)
+        if device_index is not None:
+            pulumi.set(__self__, "device_index", device_index)
+        if is_delete_on_termination is not None:
+            pulumi.set(__self__, "is_delete_on_termination", is_delete_on_termination)
+        if network_card_index is not None:
+            pulumi.set(__self__, "network_card_index", network_card_index)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_attach is not None:
+            pulumi.set(__self__, "time_attach", time_attach)
+
+    @_builtins.property
+    @pulumi.getter(name="attachmentKey")
+    def attachment_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The ID of the network interface attachment.
+        """
+        return pulumi.get(self, "attachment_key")
+
+    @_builtins.property
+    @pulumi.getter(name="deviceIndex")
+    def device_index(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) The index of the device on the instance for the network interface attachment.
+        """
+        return pulumi.get(self, "device_index")
+
+    @_builtins.property
+    @pulumi.getter(name="isDeleteOnTermination")
+    def is_delete_on_termination(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Indicates whether the network interface is deleted when the instance is terminated.
+        """
+        return pulumi.get(self, "is_delete_on_termination")
+
+    @_builtins.property
+    @pulumi.getter(name="networkCardIndex")
+    def network_card_index(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) The index of the network card.
+        """
+        return pulumi.get(self, "network_card_index")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The attachment state.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="timeAttach")
+    def time_attach(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The timestamp when the attachment initiated.
+        """
+        return pulumi.get(self, "time_attach")
+
+
+@pulumi.output_type
+class AssetAwsEc2NetworkInterfacePrivateIpAddress(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isPrimary":
+            suggest = "is_primary"
+        elif key == "privateDnsName":
+            suggest = "private_dns_name"
+        elif key == "privateIpAddress":
+            suggest = "private_ip_address"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AssetAwsEc2NetworkInterfacePrivateIpAddress. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AssetAwsEc2NetworkInterfacePrivateIpAddress.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AssetAwsEc2NetworkInterfacePrivateIpAddress.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 association: Optional['outputs.AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation'] = None,
+                 is_primary: Optional[_builtins.bool] = None,
+                 private_dns_name: Optional[_builtins.str] = None,
+                 private_ip_address: Optional[_builtins.str] = None):
+        """
+        :param 'AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs' association: (Updatable) Describes association information for an Elastic IP address (IPv4).
+        :param _builtins.bool is_primary: (Updatable) Indicates whether this IPv4 address is the primary private IP address of the network interface.
+        :param _builtins.str private_dns_name: (Updatable) The private IPv4 DNS name.
+        :param _builtins.str private_ip_address: (Updatable) The private IPv4 address of the network interface.
+        """
+        if association is not None:
+            pulumi.set(__self__, "association", association)
+        if is_primary is not None:
+            pulumi.set(__self__, "is_primary", is_primary)
+        if private_dns_name is not None:
+            pulumi.set(__self__, "private_dns_name", private_dns_name)
+        if private_ip_address is not None:
+            pulumi.set(__self__, "private_ip_address", private_ip_address)
+
+    @_builtins.property
+    @pulumi.getter
+    def association(self) -> Optional['outputs.AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation']:
+        """
+        (Updatable) Describes association information for an Elastic IP address (IPv4).
+        """
+        return pulumi.get(self, "association")
+
+    @_builtins.property
+    @pulumi.getter(name="isPrimary")
+    def is_primary(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Indicates whether this IPv4 address is the primary private IP address of the network interface.
+        """
+        return pulumi.get(self, "is_primary")
+
+    @_builtins.property
+    @pulumi.getter(name="privateDnsName")
+    def private_dns_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The private IPv4 DNS name.
+        """
+        return pulumi.get(self, "private_dns_name")
+
+    @_builtins.property
+    @pulumi.getter(name="privateIpAddress")
+    def private_ip_address(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The private IPv4 address of the network interface.
+        """
+        return pulumi.get(self, "private_ip_address")
+
+
+@pulumi.output_type
+class AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "carrierIp":
+            suggest = "carrier_ip"
+        elif key == "customerOwnedIp":
+            suggest = "customer_owned_ip"
+        elif key == "ipOwnerKey":
+            suggest = "ip_owner_key"
+        elif key == "publicDnsName":
+            suggest = "public_dns_name"
+        elif key == "publicIp":
+            suggest = "public_ip"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 carrier_ip: Optional[_builtins.str] = None,
+                 customer_owned_ip: Optional[_builtins.str] = None,
+                 ip_owner_key: Optional[_builtins.str] = None,
+                 public_dns_name: Optional[_builtins.str] = None,
+                 public_ip: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str carrier_ip: (Updatable) The carrier IP address associated with the network interface.
+        :param _builtins.str customer_owned_ip: (Updatable) The customer-owned IP address associated with the network interface.
+        :param _builtins.str ip_owner_key: (Updatable) The ID of the owner of the Elastic IP address.
+        :param _builtins.str public_dns_name: (Updatable) The public DNS name.
+        :param _builtins.str public_ip: (Updatable) The public IP address or Elastic IP address bound to the network interface.
+        """
+        if carrier_ip is not None:
+            pulumi.set(__self__, "carrier_ip", carrier_ip)
+        if customer_owned_ip is not None:
+            pulumi.set(__self__, "customer_owned_ip", customer_owned_ip)
+        if ip_owner_key is not None:
+            pulumi.set(__self__, "ip_owner_key", ip_owner_key)
+        if public_dns_name is not None:
+            pulumi.set(__self__, "public_dns_name", public_dns_name)
+        if public_ip is not None:
+            pulumi.set(__self__, "public_ip", public_ip)
+
+    @_builtins.property
+    @pulumi.getter(name="carrierIp")
+    def carrier_ip(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The carrier IP address associated with the network interface.
+        """
+        return pulumi.get(self, "carrier_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="customerOwnedIp")
+    def customer_owned_ip(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The customer-owned IP address associated with the network interface.
+        """
+        return pulumi.get(self, "customer_owned_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="ipOwnerKey")
+    def ip_owner_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The ID of the owner of the Elastic IP address.
+        """
+        return pulumi.get(self, "ip_owner_key")
+
+    @_builtins.property
+    @pulumi.getter(name="publicDnsName")
+    def public_dns_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The public DNS name.
+        """
+        return pulumi.get(self, "public_dns_name")
+
+    @_builtins.property
+    @pulumi.getter(name="publicIp")
+    def public_ip(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The public IP address or Elastic IP address bound to the network interface.
+        """
+        return pulumi.get(self, "public_ip")
+
+
+@pulumi.output_type
+class AssetAwsEc2NetworkInterfaceSecurityGroup(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "groupKey":
+            suggest = "group_key"
+        elif key == "groupName":
+            suggest = "group_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AssetAwsEc2NetworkInterfaceSecurityGroup. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AssetAwsEc2NetworkInterfaceSecurityGroup.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AssetAwsEc2NetworkInterfaceSecurityGroup.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 group_key: Optional[_builtins.str] = None,
+                 group_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str group_key: (Updatable) The ID of the security group.
+        :param _builtins.str group_name: (Updatable) The name of the security group.
+        """
+        if group_key is not None:
+            pulumi.set(__self__, "group_key", group_key)
+        if group_name is not None:
+            pulumi.set(__self__, "group_name", group_name)
+
+    @_builtins.property
+    @pulumi.getter(name="groupKey")
+    def group_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The ID of the security group.
+        """
+        return pulumi.get(self, "group_key")
+
+    @_builtins.property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The name of the security group.
+        """
+        return pulumi.get(self, "group_name")
+
+
+@pulumi.output_type
+class AssetAwsEc2Placement(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "availabilityZone":
+            suggest = "availability_zone"
+        elif key == "groupName":
+            suggest = "group_name"
+        elif key == "hostKey":
+            suggest = "host_key"
+        elif key == "hostResourceGroupArn":
+            suggest = "host_resource_group_arn"
+        elif key == "partitionNumber":
+            suggest = "partition_number"
+        elif key == "spreadDomain":
+            suggest = "spread_domain"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AssetAwsEc2Placement. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AssetAwsEc2Placement.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AssetAwsEc2Placement.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 affinity: Optional[_builtins.str] = None,
+                 availability_zone: Optional[_builtins.str] = None,
+                 group_name: Optional[_builtins.str] = None,
+                 host_key: Optional[_builtins.str] = None,
+                 host_resource_group_arn: Optional[_builtins.str] = None,
+                 partition_number: Optional[_builtins.int] = None,
+                 spread_domain: Optional[_builtins.str] = None,
+                 tenancy: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str affinity: (Updatable) The affinity setting for the instance on the Dedicated Host.
+        :param _builtins.str availability_zone: (Updatable) The Availability Zone of the instance.
+        :param _builtins.str group_name: (Updatable) The name of the placement group the instance is in.
+        :param _builtins.str host_key: (Updatable) The ID of the Dedicated Host on which the instance resides.
+        :param _builtins.str host_resource_group_arn: (Updatable) The ARN of the host resource group in which to launch the instances.
+        :param _builtins.int partition_number: (Updatable) The number of the partition that the instance is in.
+        :param _builtins.str spread_domain: (Updatable) Reserved for future use.
+        :param _builtins.str tenancy: (Updatable) The tenancy of the instance (if the instance is running in a VPC).
+        """
+        if affinity is not None:
+            pulumi.set(__self__, "affinity", affinity)
+        if availability_zone is not None:
+            pulumi.set(__self__, "availability_zone", availability_zone)
+        if group_name is not None:
+            pulumi.set(__self__, "group_name", group_name)
+        if host_key is not None:
+            pulumi.set(__self__, "host_key", host_key)
+        if host_resource_group_arn is not None:
+            pulumi.set(__self__, "host_resource_group_arn", host_resource_group_arn)
+        if partition_number is not None:
+            pulumi.set(__self__, "partition_number", partition_number)
+        if spread_domain is not None:
+            pulumi.set(__self__, "spread_domain", spread_domain)
+        if tenancy is not None:
+            pulumi.set(__self__, "tenancy", tenancy)
+
+    @_builtins.property
+    @pulumi.getter
+    def affinity(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The affinity setting for the instance on the Dedicated Host.
+        """
+        return pulumi.get(self, "affinity")
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityZone")
+    def availability_zone(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The Availability Zone of the instance.
+        """
+        return pulumi.get(self, "availability_zone")
+
+    @_builtins.property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The name of the placement group the instance is in.
+        """
+        return pulumi.get(self, "group_name")
+
+    @_builtins.property
+    @pulumi.getter(name="hostKey")
+    def host_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The ID of the Dedicated Host on which the instance resides.
+        """
+        return pulumi.get(self, "host_key")
+
+    @_builtins.property
+    @pulumi.getter(name="hostResourceGroupArn")
+    def host_resource_group_arn(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The ARN of the host resource group in which to launch the instances.
+        """
+        return pulumi.get(self, "host_resource_group_arn")
+
+    @_builtins.property
+    @pulumi.getter(name="partitionNumber")
+    def partition_number(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) The number of the partition that the instance is in.
+        """
+        return pulumi.get(self, "partition_number")
+
+    @_builtins.property
+    @pulumi.getter(name="spreadDomain")
+    def spread_domain(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Reserved for future use.
+        """
+        return pulumi.get(self, "spread_domain")
+
+    @_builtins.property
+    @pulumi.getter
+    def tenancy(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The tenancy of the instance (if the instance is running in a VPC).
+        """
+        return pulumi.get(self, "tenancy")
+
+
+@pulumi.output_type
+class AssetAwsEc2SecurityGroup(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "groupKey":
+            suggest = "group_key"
+        elif key == "groupName":
+            suggest = "group_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AssetAwsEc2SecurityGroup. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AssetAwsEc2SecurityGroup.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AssetAwsEc2SecurityGroup.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 group_key: Optional[_builtins.str] = None,
+                 group_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str group_key: (Updatable) The ID of the security group.
+        :param _builtins.str group_name: (Updatable) The name of the security group.
+        """
+        if group_key is not None:
+            pulumi.set(__self__, "group_key", group_key)
+        if group_name is not None:
+            pulumi.set(__self__, "group_name", group_name)
+
+    @_builtins.property
+    @pulumi.getter(name="groupKey")
+    def group_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The ID of the security group.
+        """
+        return pulumi.get(self, "group_key")
+
+    @_builtins.property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The name of the security group.
+        """
+        return pulumi.get(self, "group_name")
+
+
+@pulumi.output_type
+class AssetAwsEc2State(dict):
+    def __init__(__self__, *,
+                 code: Optional[_builtins.int] = None,
+                 name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.int code: (Updatable) The state of the instance as a 16-bit unsigned integer.
+        :param _builtins.str name: (Updatable) The current state of the instance.
+        """
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def code(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) The state of the instance as a 16-bit unsigned integer.
+        """
+        return pulumi.get(self, "code")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The current state of the instance.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class AssetAwsEc2Tag(dict):
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str key: (Updatable) The key of the tag.
+        :param _builtins.str value: (Updatable) The value of the tag.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The key of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The value of the tag.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class AssetAwsEc2cost(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "currencyCode":
+            suggest = "currency_code"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AssetAwsEc2cost. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AssetAwsEc2cost.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AssetAwsEc2cost.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 amount: Optional[_builtins.float] = None,
+                 currency_code: Optional[_builtins.str] = None):
+        """
+        :param _builtins.float amount: (Updatable) Monthly costs for maintenance of this asset.
+        :param _builtins.str currency_code: (Updatable) Currency code
+        """
+        if amount is not None:
+            pulumi.set(__self__, "amount", amount)
+        if currency_code is not None:
+            pulumi.set(__self__, "currency_code", currency_code)
+
+    @_builtins.property
+    @pulumi.getter
+    def amount(self) -> Optional[_builtins.float]:
+        """
+        (Updatable) Monthly costs for maintenance of this asset.
+        """
+        return pulumi.get(self, "amount")
+
+    @_builtins.property
+    @pulumi.getter(name="currencyCode")
+    def currency_code(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Currency code
+        """
+        return pulumi.get(self, "currency_code")
 
 
 @pulumi.output_type
@@ -654,6 +2430,8 @@ class AssetComputeDisk(dict):
         suggest = None
         if key == "bootOrder":
             suggest = "boot_order"
+        elif key == "isCbtEnabled":
+            suggest = "is_cbt_enabled"
         elif key == "persistentMode":
             suggest = "persistent_mode"
         elif key == "sizeInMbs":
@@ -674,6 +2452,7 @@ class AssetComputeDisk(dict):
 
     def __init__(__self__, *,
                  boot_order: Optional[_builtins.int] = None,
+                 is_cbt_enabled: Optional[_builtins.bool] = None,
                  location: Optional[_builtins.str] = None,
                  name: Optional[_builtins.str] = None,
                  persistent_mode: Optional[_builtins.str] = None,
@@ -682,6 +2461,7 @@ class AssetComputeDisk(dict):
                  uuid_lun: Optional[_builtins.str] = None):
         """
         :param _builtins.int boot_order: (Updatable) Order of boot volumes.
+        :param _builtins.bool is_cbt_enabled: (Updatable) Indicates that CBT (change disk tracking) is enabled for this virtual disk.
         :param _builtins.str location: (Updatable) Location of the boot/data volume.
         :param _builtins.str name: (Updatable) Disk name.
         :param _builtins.str persistent_mode: (Updatable) The disk persistent mode.
@@ -691,6 +2471,8 @@ class AssetComputeDisk(dict):
         """
         if boot_order is not None:
             pulumi.set(__self__, "boot_order", boot_order)
+        if is_cbt_enabled is not None:
+            pulumi.set(__self__, "is_cbt_enabled", is_cbt_enabled)
         if location is not None:
             pulumi.set(__self__, "location", location)
         if name is not None:
@@ -711,6 +2493,14 @@ class AssetComputeDisk(dict):
         (Updatable) Order of boot volumes.
         """
         return pulumi.get(self, "boot_order")
+
+    @_builtins.property
+    @pulumi.getter(name="isCbtEnabled")
+    def is_cbt_enabled(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Indicates that CBT (change disk tracking) is enabled for this virtual disk.
+        """
+        return pulumi.get(self, "is_cbt_enabled")
 
     @_builtins.property
     @pulumi.getter
@@ -1146,7 +2936,7 @@ class AssetSourceDiscoveryCredentials(dict):
                  secret_id: _builtins.str,
                  type: _builtins.str):
         """
-        :param _builtins.str secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+        :param _builtins.str secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<User>", "password": "example-password" }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ "accessKeyId": "<AccessKey>", "secretAccessKey": "<AccessKeyValue>" }`.
         :param _builtins.str type: (Updatable) Authentication type
         """
         pulumi.set(__self__, "secret_id", secret_id)
@@ -1156,7 +2946,7 @@ class AssetSourceDiscoveryCredentials(dict):
     @pulumi.getter(name="secretId")
     def secret_id(self) -> _builtins.str:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<User>", "password": "example-password" }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ "accessKeyId": "<AccessKey>", "secretAccessKey": "<AccessKeyValue>" }`.
         """
         return pulumi.get(self, "secret_id")
 
@@ -1192,7 +2982,7 @@ class AssetSourceReplicationCredentials(dict):
                  secret_id: _builtins.str,
                  type: _builtins.str):
         """
-        :param _builtins.str secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+        :param _builtins.str secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<User>", "password": "example-password" }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ "accessKeyId": "<AccessKey>", "secretAccessKey": "<AccessKeyValue>" }`.
         :param _builtins.str type: (Updatable) Authentication type
         """
         pulumi.set(__self__, "secret_id", secret_id)
@@ -1202,7 +2992,7 @@ class AssetSourceReplicationCredentials(dict):
     @pulumi.getter(name="secretId")
     def secret_id(self) -> _builtins.str:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<User>", "password": "example-password" }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ "accessKeyId": "<AccessKey>", "secretAccessKey": "<AccessKeyValue>" }`.
         """
         return pulumi.get(self, "secret_id")
 
@@ -2628,6 +4418,850 @@ class GetApplianceImagesFilterResult(dict):
 
 
 @pulumi.output_type
+class GetAssetAttachedEbsVolumesCostResult(dict):
+    def __init__(__self__, *,
+                 amount: _builtins.float,
+                 currency_code: _builtins.str):
+        pulumi.set(__self__, "amount", amount)
+        pulumi.set(__self__, "currency_code", currency_code)
+
+    @_builtins.property
+    @pulumi.getter
+    def amount(self) -> _builtins.float:
+        return pulumi.get(self, "amount")
+
+    @_builtins.property
+    @pulumi.getter(name="currencyCode")
+    def currency_code(self) -> _builtins.str:
+        return pulumi.get(self, "currency_code")
+
+
+@pulumi.output_type
+class GetAssetAwsEbResult(dict):
+    def __init__(__self__, *,
+                 attachments: Sequence['outputs.GetAssetAwsEbAttachmentResult'],
+                 availability_zone: _builtins.str,
+                 iops: _builtins.int,
+                 is_encrypted: _builtins.bool,
+                 is_multi_attach_enabled: _builtins.bool,
+                 size_in_gi_bs: _builtins.int,
+                 status: _builtins.str,
+                 tags: Sequence['outputs.GetAssetAwsEbTagResult'],
+                 throughput: _builtins.int,
+                 volume_key: _builtins.str,
+                 volume_type: _builtins.str):
+        pulumi.set(__self__, "attachments", attachments)
+        pulumi.set(__self__, "availability_zone", availability_zone)
+        pulumi.set(__self__, "iops", iops)
+        pulumi.set(__self__, "is_encrypted", is_encrypted)
+        pulumi.set(__self__, "is_multi_attach_enabled", is_multi_attach_enabled)
+        pulumi.set(__self__, "size_in_gi_bs", size_in_gi_bs)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "tags", tags)
+        pulumi.set(__self__, "throughput", throughput)
+        pulumi.set(__self__, "volume_key", volume_key)
+        pulumi.set(__self__, "volume_type", volume_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def attachments(self) -> Sequence['outputs.GetAssetAwsEbAttachmentResult']:
+        return pulumi.get(self, "attachments")
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityZone")
+    def availability_zone(self) -> _builtins.str:
+        return pulumi.get(self, "availability_zone")
+
+    @_builtins.property
+    @pulumi.getter
+    def iops(self) -> _builtins.int:
+        return pulumi.get(self, "iops")
+
+    @_builtins.property
+    @pulumi.getter(name="isEncrypted")
+    def is_encrypted(self) -> _builtins.bool:
+        return pulumi.get(self, "is_encrypted")
+
+    @_builtins.property
+    @pulumi.getter(name="isMultiAttachEnabled")
+    def is_multi_attach_enabled(self) -> _builtins.bool:
+        return pulumi.get(self, "is_multi_attach_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="sizeInGiBs")
+    def size_in_gi_bs(self) -> _builtins.int:
+        return pulumi.get(self, "size_in_gi_bs")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> Sequence['outputs.GetAssetAwsEbTagResult']:
+        return pulumi.get(self, "tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def throughput(self) -> _builtins.int:
+        return pulumi.get(self, "throughput")
+
+    @_builtins.property
+    @pulumi.getter(name="volumeKey")
+    def volume_key(self) -> _builtins.str:
+        return pulumi.get(self, "volume_key")
+
+    @_builtins.property
+    @pulumi.getter(name="volumeType")
+    def volume_type(self) -> _builtins.str:
+        return pulumi.get(self, "volume_type")
+
+
+@pulumi.output_type
+class GetAssetAwsEbAttachmentResult(dict):
+    def __init__(__self__, *,
+                 device: _builtins.str,
+                 instance_key: _builtins.str,
+                 is_delete_on_termination: _builtins.bool,
+                 status: _builtins.str,
+                 volume_key: _builtins.str):
+        pulumi.set(__self__, "device", device)
+        pulumi.set(__self__, "instance_key", instance_key)
+        pulumi.set(__self__, "is_delete_on_termination", is_delete_on_termination)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "volume_key", volume_key)
+
+    @_builtins.property
+    @pulumi.getter
+    def device(self) -> _builtins.str:
+        return pulumi.get(self, "device")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceKey")
+    def instance_key(self) -> _builtins.str:
+        return pulumi.get(self, "instance_key")
+
+    @_builtins.property
+    @pulumi.getter(name="isDeleteOnTermination")
+    def is_delete_on_termination(self) -> _builtins.bool:
+        return pulumi.get(self, "is_delete_on_termination")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="volumeKey")
+    def volume_key(self) -> _builtins.str:
+        return pulumi.get(self, "volume_key")
+
+
+@pulumi.output_type
+class GetAssetAwsEbTagResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAssetAwsEc2Result(dict):
+    def __init__(__self__, *,
+                 architecture: _builtins.str,
+                 are_elastic_inference_accelerators_present: _builtins.bool,
+                 boot_mode: _builtins.str,
+                 capacity_reservation_key: _builtins.str,
+                 image_key: _builtins.str,
+                 instance_key: _builtins.str,
+                 instance_lifecycle: _builtins.str,
+                 instance_type: _builtins.str,
+                 ip_address: _builtins.str,
+                 ipv6address: _builtins.str,
+                 is_enclave_options: _builtins.bool,
+                 is_hibernation_options: _builtins.bool,
+                 is_source_dest_check: _builtins.bool,
+                 is_spot_instance: _builtins.bool,
+                 kernel_key: _builtins.str,
+                 licenses: Sequence[_builtins.str],
+                 maintenance_options: _builtins.str,
+                 monitoring: _builtins.str,
+                 network_interfaces: Sequence['outputs.GetAssetAwsEc2NetworkInterfaceResult'],
+                 placements: Sequence['outputs.GetAssetAwsEc2PlacementResult'],
+                 private_dns_name: _builtins.str,
+                 private_ip_address: _builtins.str,
+                 root_device_name: _builtins.str,
+                 root_device_type: _builtins.str,
+                 security_groups: Sequence['outputs.GetAssetAwsEc2SecurityGroupResult'],
+                 sriov_net_support: _builtins.str,
+                 states: Sequence['outputs.GetAssetAwsEc2StateResult'],
+                 subnet_key: _builtins.str,
+                 tags: Sequence['outputs.GetAssetAwsEc2TagResult'],
+                 time_launch: _builtins.str,
+                 tpm_support: _builtins.str,
+                 virtualization_type: _builtins.str,
+                 vpc_key: _builtins.str):
+        """
+        :param Sequence['GetAssetAwsEc2StateArgs'] states: The current state of the asset.
+        """
+        pulumi.set(__self__, "architecture", architecture)
+        pulumi.set(__self__, "are_elastic_inference_accelerators_present", are_elastic_inference_accelerators_present)
+        pulumi.set(__self__, "boot_mode", boot_mode)
+        pulumi.set(__self__, "capacity_reservation_key", capacity_reservation_key)
+        pulumi.set(__self__, "image_key", image_key)
+        pulumi.set(__self__, "instance_key", instance_key)
+        pulumi.set(__self__, "instance_lifecycle", instance_lifecycle)
+        pulumi.set(__self__, "instance_type", instance_type)
+        pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "ipv6address", ipv6address)
+        pulumi.set(__self__, "is_enclave_options", is_enclave_options)
+        pulumi.set(__self__, "is_hibernation_options", is_hibernation_options)
+        pulumi.set(__self__, "is_source_dest_check", is_source_dest_check)
+        pulumi.set(__self__, "is_spot_instance", is_spot_instance)
+        pulumi.set(__self__, "kernel_key", kernel_key)
+        pulumi.set(__self__, "licenses", licenses)
+        pulumi.set(__self__, "maintenance_options", maintenance_options)
+        pulumi.set(__self__, "monitoring", monitoring)
+        pulumi.set(__self__, "network_interfaces", network_interfaces)
+        pulumi.set(__self__, "placements", placements)
+        pulumi.set(__self__, "private_dns_name", private_dns_name)
+        pulumi.set(__self__, "private_ip_address", private_ip_address)
+        pulumi.set(__self__, "root_device_name", root_device_name)
+        pulumi.set(__self__, "root_device_type", root_device_type)
+        pulumi.set(__self__, "security_groups", security_groups)
+        pulumi.set(__self__, "sriov_net_support", sriov_net_support)
+        pulumi.set(__self__, "states", states)
+        pulumi.set(__self__, "subnet_key", subnet_key)
+        pulumi.set(__self__, "tags", tags)
+        pulumi.set(__self__, "time_launch", time_launch)
+        pulumi.set(__self__, "tpm_support", tpm_support)
+        pulumi.set(__self__, "virtualization_type", virtualization_type)
+        pulumi.set(__self__, "vpc_key", vpc_key)
+
+    @_builtins.property
+    @pulumi.getter
+    def architecture(self) -> _builtins.str:
+        return pulumi.get(self, "architecture")
+
+    @_builtins.property
+    @pulumi.getter(name="areElasticInferenceAcceleratorsPresent")
+    def are_elastic_inference_accelerators_present(self) -> _builtins.bool:
+        return pulumi.get(self, "are_elastic_inference_accelerators_present")
+
+    @_builtins.property
+    @pulumi.getter(name="bootMode")
+    def boot_mode(self) -> _builtins.str:
+        return pulumi.get(self, "boot_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationKey")
+    def capacity_reservation_key(self) -> _builtins.str:
+        return pulumi.get(self, "capacity_reservation_key")
+
+    @_builtins.property
+    @pulumi.getter(name="imageKey")
+    def image_key(self) -> _builtins.str:
+        return pulumi.get(self, "image_key")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceKey")
+    def instance_key(self) -> _builtins.str:
+        return pulumi.get(self, "instance_key")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceLifecycle")
+    def instance_lifecycle(self) -> _builtins.str:
+        return pulumi.get(self, "instance_lifecycle")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceType")
+    def instance_type(self) -> _builtins.str:
+        return pulumi.get(self, "instance_type")
+
+    @_builtins.property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> _builtins.str:
+        return pulumi.get(self, "ip_address")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6address(self) -> _builtins.str:
+        return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter(name="isEnclaveOptions")
+    def is_enclave_options(self) -> _builtins.bool:
+        return pulumi.get(self, "is_enclave_options")
+
+    @_builtins.property
+    @pulumi.getter(name="isHibernationOptions")
+    def is_hibernation_options(self) -> _builtins.bool:
+        return pulumi.get(self, "is_hibernation_options")
+
+    @_builtins.property
+    @pulumi.getter(name="isSourceDestCheck")
+    def is_source_dest_check(self) -> _builtins.bool:
+        return pulumi.get(self, "is_source_dest_check")
+
+    @_builtins.property
+    @pulumi.getter(name="isSpotInstance")
+    def is_spot_instance(self) -> _builtins.bool:
+        return pulumi.get(self, "is_spot_instance")
+
+    @_builtins.property
+    @pulumi.getter(name="kernelKey")
+    def kernel_key(self) -> _builtins.str:
+        return pulumi.get(self, "kernel_key")
+
+    @_builtins.property
+    @pulumi.getter
+    def licenses(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "licenses")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceOptions")
+    def maintenance_options(self) -> _builtins.str:
+        return pulumi.get(self, "maintenance_options")
+
+    @_builtins.property
+    @pulumi.getter
+    def monitoring(self) -> _builtins.str:
+        return pulumi.get(self, "monitoring")
+
+    @_builtins.property
+    @pulumi.getter(name="networkInterfaces")
+    def network_interfaces(self) -> Sequence['outputs.GetAssetAwsEc2NetworkInterfaceResult']:
+        return pulumi.get(self, "network_interfaces")
+
+    @_builtins.property
+    @pulumi.getter
+    def placements(self) -> Sequence['outputs.GetAssetAwsEc2PlacementResult']:
+        return pulumi.get(self, "placements")
+
+    @_builtins.property
+    @pulumi.getter(name="privateDnsName")
+    def private_dns_name(self) -> _builtins.str:
+        return pulumi.get(self, "private_dns_name")
+
+    @_builtins.property
+    @pulumi.getter(name="privateIpAddress")
+    def private_ip_address(self) -> _builtins.str:
+        return pulumi.get(self, "private_ip_address")
+
+    @_builtins.property
+    @pulumi.getter(name="rootDeviceName")
+    def root_device_name(self) -> _builtins.str:
+        return pulumi.get(self, "root_device_name")
+
+    @_builtins.property
+    @pulumi.getter(name="rootDeviceType")
+    def root_device_type(self) -> _builtins.str:
+        return pulumi.get(self, "root_device_type")
+
+    @_builtins.property
+    @pulumi.getter(name="securityGroups")
+    def security_groups(self) -> Sequence['outputs.GetAssetAwsEc2SecurityGroupResult']:
+        return pulumi.get(self, "security_groups")
+
+    @_builtins.property
+    @pulumi.getter(name="sriovNetSupport")
+    def sriov_net_support(self) -> _builtins.str:
+        return pulumi.get(self, "sriov_net_support")
+
+    @_builtins.property
+    @pulumi.getter
+    def states(self) -> Sequence['outputs.GetAssetAwsEc2StateResult']:
+        """
+        The current state of the asset.
+        """
+        return pulumi.get(self, "states")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetKey")
+    def subnet_key(self) -> _builtins.str:
+        return pulumi.get(self, "subnet_key")
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> Sequence['outputs.GetAssetAwsEc2TagResult']:
+        return pulumi.get(self, "tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLaunch")
+    def time_launch(self) -> _builtins.str:
+        return pulumi.get(self, "time_launch")
+
+    @_builtins.property
+    @pulumi.getter(name="tpmSupport")
+    def tpm_support(self) -> _builtins.str:
+        return pulumi.get(self, "tpm_support")
+
+    @_builtins.property
+    @pulumi.getter(name="virtualizationType")
+    def virtualization_type(self) -> _builtins.str:
+        return pulumi.get(self, "virtualization_type")
+
+    @_builtins.property
+    @pulumi.getter(name="vpcKey")
+    def vpc_key(self) -> _builtins.str:
+        return pulumi.get(self, "vpc_key")
+
+
+@pulumi.output_type
+class GetAssetAwsEc2NetworkInterfaceResult(dict):
+    def __init__(__self__, *,
+                 associations: Sequence['outputs.GetAssetAwsEc2NetworkInterfaceAssociationResult'],
+                 attachments: Sequence['outputs.GetAssetAwsEc2NetworkInterfaceAttachmentResult'],
+                 description: _builtins.str,
+                 interface_type: _builtins.str,
+                 ipv4prefixes: Sequence[_builtins.str],
+                 ipv6addresses: Sequence[_builtins.str],
+                 ipv6prefixes: Sequence[_builtins.str],
+                 is_source_dest_check: _builtins.bool,
+                 mac_address: _builtins.str,
+                 network_interface_key: _builtins.str,
+                 owner_key: _builtins.str,
+                 private_ip_addresses: Sequence['outputs.GetAssetAwsEc2NetworkInterfacePrivateIpAddressResult'],
+                 security_groups: Sequence['outputs.GetAssetAwsEc2NetworkInterfaceSecurityGroupResult'],
+                 status: _builtins.str,
+                 subnet_key: _builtins.str):
+        """
+        :param _builtins.str description: The tag description.
+        :param _builtins.str mac_address: Mac address of the VM.
+        """
+        pulumi.set(__self__, "associations", associations)
+        pulumi.set(__self__, "attachments", attachments)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "interface_type", interface_type)
+        pulumi.set(__self__, "ipv4prefixes", ipv4prefixes)
+        pulumi.set(__self__, "ipv6addresses", ipv6addresses)
+        pulumi.set(__self__, "ipv6prefixes", ipv6prefixes)
+        pulumi.set(__self__, "is_source_dest_check", is_source_dest_check)
+        pulumi.set(__self__, "mac_address", mac_address)
+        pulumi.set(__self__, "network_interface_key", network_interface_key)
+        pulumi.set(__self__, "owner_key", owner_key)
+        pulumi.set(__self__, "private_ip_addresses", private_ip_addresses)
+        pulumi.set(__self__, "security_groups", security_groups)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "subnet_key", subnet_key)
+
+    @_builtins.property
+    @pulumi.getter
+    def associations(self) -> Sequence['outputs.GetAssetAwsEc2NetworkInterfaceAssociationResult']:
+        return pulumi.get(self, "associations")
+
+    @_builtins.property
+    @pulumi.getter
+    def attachments(self) -> Sequence['outputs.GetAssetAwsEc2NetworkInterfaceAttachmentResult']:
+        return pulumi.get(self, "attachments")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The tag description.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="interfaceType")
+    def interface_type(self) -> _builtins.str:
+        return pulumi.get(self, "interface_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv4prefixes(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "ipv4prefixes")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6addresses(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "ipv6addresses")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6prefixes(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "ipv6prefixes")
+
+    @_builtins.property
+    @pulumi.getter(name="isSourceDestCheck")
+    def is_source_dest_check(self) -> _builtins.bool:
+        return pulumi.get(self, "is_source_dest_check")
+
+    @_builtins.property
+    @pulumi.getter(name="macAddress")
+    def mac_address(self) -> _builtins.str:
+        """
+        Mac address of the VM.
+        """
+        return pulumi.get(self, "mac_address")
+
+    @_builtins.property
+    @pulumi.getter(name="networkInterfaceKey")
+    def network_interface_key(self) -> _builtins.str:
+        return pulumi.get(self, "network_interface_key")
+
+    @_builtins.property
+    @pulumi.getter(name="ownerKey")
+    def owner_key(self) -> _builtins.str:
+        return pulumi.get(self, "owner_key")
+
+    @_builtins.property
+    @pulumi.getter(name="privateIpAddresses")
+    def private_ip_addresses(self) -> Sequence['outputs.GetAssetAwsEc2NetworkInterfacePrivateIpAddressResult']:
+        return pulumi.get(self, "private_ip_addresses")
+
+    @_builtins.property
+    @pulumi.getter(name="securityGroups")
+    def security_groups(self) -> Sequence['outputs.GetAssetAwsEc2NetworkInterfaceSecurityGroupResult']:
+        return pulumi.get(self, "security_groups")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetKey")
+    def subnet_key(self) -> _builtins.str:
+        return pulumi.get(self, "subnet_key")
+
+
+@pulumi.output_type
+class GetAssetAwsEc2NetworkInterfaceAssociationResult(dict):
+    def __init__(__self__, *,
+                 carrier_ip: _builtins.str,
+                 customer_owned_ip: _builtins.str,
+                 ip_owner_key: _builtins.str,
+                 public_dns_name: _builtins.str,
+                 public_ip: _builtins.str):
+        pulumi.set(__self__, "carrier_ip", carrier_ip)
+        pulumi.set(__self__, "customer_owned_ip", customer_owned_ip)
+        pulumi.set(__self__, "ip_owner_key", ip_owner_key)
+        pulumi.set(__self__, "public_dns_name", public_dns_name)
+        pulumi.set(__self__, "public_ip", public_ip)
+
+    @_builtins.property
+    @pulumi.getter(name="carrierIp")
+    def carrier_ip(self) -> _builtins.str:
+        return pulumi.get(self, "carrier_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="customerOwnedIp")
+    def customer_owned_ip(self) -> _builtins.str:
+        return pulumi.get(self, "customer_owned_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="ipOwnerKey")
+    def ip_owner_key(self) -> _builtins.str:
+        return pulumi.get(self, "ip_owner_key")
+
+    @_builtins.property
+    @pulumi.getter(name="publicDnsName")
+    def public_dns_name(self) -> _builtins.str:
+        return pulumi.get(self, "public_dns_name")
+
+    @_builtins.property
+    @pulumi.getter(name="publicIp")
+    def public_ip(self) -> _builtins.str:
+        return pulumi.get(self, "public_ip")
+
+
+@pulumi.output_type
+class GetAssetAwsEc2NetworkInterfaceAttachmentResult(dict):
+    def __init__(__self__, *,
+                 attachment_key: _builtins.str,
+                 device_index: _builtins.int,
+                 is_delete_on_termination: _builtins.bool,
+                 network_card_index: _builtins.int,
+                 status: _builtins.str,
+                 time_attach: _builtins.str):
+        pulumi.set(__self__, "attachment_key", attachment_key)
+        pulumi.set(__self__, "device_index", device_index)
+        pulumi.set(__self__, "is_delete_on_termination", is_delete_on_termination)
+        pulumi.set(__self__, "network_card_index", network_card_index)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_attach", time_attach)
+
+    @_builtins.property
+    @pulumi.getter(name="attachmentKey")
+    def attachment_key(self) -> _builtins.str:
+        return pulumi.get(self, "attachment_key")
+
+    @_builtins.property
+    @pulumi.getter(name="deviceIndex")
+    def device_index(self) -> _builtins.int:
+        return pulumi.get(self, "device_index")
+
+    @_builtins.property
+    @pulumi.getter(name="isDeleteOnTermination")
+    def is_delete_on_termination(self) -> _builtins.bool:
+        return pulumi.get(self, "is_delete_on_termination")
+
+    @_builtins.property
+    @pulumi.getter(name="networkCardIndex")
+    def network_card_index(self) -> _builtins.int:
+        return pulumi.get(self, "network_card_index")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="timeAttach")
+    def time_attach(self) -> _builtins.str:
+        return pulumi.get(self, "time_attach")
+
+
+@pulumi.output_type
+class GetAssetAwsEc2NetworkInterfacePrivateIpAddressResult(dict):
+    def __init__(__self__, *,
+                 associations: Sequence['outputs.GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationResult'],
+                 is_primary: _builtins.bool,
+                 private_dns_name: _builtins.str,
+                 private_ip_address: _builtins.str):
+        pulumi.set(__self__, "associations", associations)
+        pulumi.set(__self__, "is_primary", is_primary)
+        pulumi.set(__self__, "private_dns_name", private_dns_name)
+        pulumi.set(__self__, "private_ip_address", private_ip_address)
+
+    @_builtins.property
+    @pulumi.getter
+    def associations(self) -> Sequence['outputs.GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationResult']:
+        return pulumi.get(self, "associations")
+
+    @_builtins.property
+    @pulumi.getter(name="isPrimary")
+    def is_primary(self) -> _builtins.bool:
+        return pulumi.get(self, "is_primary")
+
+    @_builtins.property
+    @pulumi.getter(name="privateDnsName")
+    def private_dns_name(self) -> _builtins.str:
+        return pulumi.get(self, "private_dns_name")
+
+    @_builtins.property
+    @pulumi.getter(name="privateIpAddress")
+    def private_ip_address(self) -> _builtins.str:
+        return pulumi.get(self, "private_ip_address")
+
+
+@pulumi.output_type
+class GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationResult(dict):
+    def __init__(__self__, *,
+                 carrier_ip: _builtins.str,
+                 customer_owned_ip: _builtins.str,
+                 ip_owner_key: _builtins.str,
+                 public_dns_name: _builtins.str,
+                 public_ip: _builtins.str):
+        pulumi.set(__self__, "carrier_ip", carrier_ip)
+        pulumi.set(__self__, "customer_owned_ip", customer_owned_ip)
+        pulumi.set(__self__, "ip_owner_key", ip_owner_key)
+        pulumi.set(__self__, "public_dns_name", public_dns_name)
+        pulumi.set(__self__, "public_ip", public_ip)
+
+    @_builtins.property
+    @pulumi.getter(name="carrierIp")
+    def carrier_ip(self) -> _builtins.str:
+        return pulumi.get(self, "carrier_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="customerOwnedIp")
+    def customer_owned_ip(self) -> _builtins.str:
+        return pulumi.get(self, "customer_owned_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="ipOwnerKey")
+    def ip_owner_key(self) -> _builtins.str:
+        return pulumi.get(self, "ip_owner_key")
+
+    @_builtins.property
+    @pulumi.getter(name="publicDnsName")
+    def public_dns_name(self) -> _builtins.str:
+        return pulumi.get(self, "public_dns_name")
+
+    @_builtins.property
+    @pulumi.getter(name="publicIp")
+    def public_ip(self) -> _builtins.str:
+        return pulumi.get(self, "public_ip")
+
+
+@pulumi.output_type
+class GetAssetAwsEc2NetworkInterfaceSecurityGroupResult(dict):
+    def __init__(__self__, *,
+                 group_key: _builtins.str,
+                 group_name: _builtins.str):
+        pulumi.set(__self__, "group_key", group_key)
+        pulumi.set(__self__, "group_name", group_name)
+
+    @_builtins.property
+    @pulumi.getter(name="groupKey")
+    def group_key(self) -> _builtins.str:
+        return pulumi.get(self, "group_key")
+
+    @_builtins.property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> _builtins.str:
+        return pulumi.get(self, "group_name")
+
+
+@pulumi.output_type
+class GetAssetAwsEc2PlacementResult(dict):
+    def __init__(__self__, *,
+                 affinity: _builtins.str,
+                 availability_zone: _builtins.str,
+                 group_name: _builtins.str,
+                 host_key: _builtins.str,
+                 host_resource_group_arn: _builtins.str,
+                 partition_number: _builtins.int,
+                 spread_domain: _builtins.str,
+                 tenancy: _builtins.str):
+        pulumi.set(__self__, "affinity", affinity)
+        pulumi.set(__self__, "availability_zone", availability_zone)
+        pulumi.set(__self__, "group_name", group_name)
+        pulumi.set(__self__, "host_key", host_key)
+        pulumi.set(__self__, "host_resource_group_arn", host_resource_group_arn)
+        pulumi.set(__self__, "partition_number", partition_number)
+        pulumi.set(__self__, "spread_domain", spread_domain)
+        pulumi.set(__self__, "tenancy", tenancy)
+
+    @_builtins.property
+    @pulumi.getter
+    def affinity(self) -> _builtins.str:
+        return pulumi.get(self, "affinity")
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityZone")
+    def availability_zone(self) -> _builtins.str:
+        return pulumi.get(self, "availability_zone")
+
+    @_builtins.property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> _builtins.str:
+        return pulumi.get(self, "group_name")
+
+    @_builtins.property
+    @pulumi.getter(name="hostKey")
+    def host_key(self) -> _builtins.str:
+        return pulumi.get(self, "host_key")
+
+    @_builtins.property
+    @pulumi.getter(name="hostResourceGroupArn")
+    def host_resource_group_arn(self) -> _builtins.str:
+        return pulumi.get(self, "host_resource_group_arn")
+
+    @_builtins.property
+    @pulumi.getter(name="partitionNumber")
+    def partition_number(self) -> _builtins.int:
+        return pulumi.get(self, "partition_number")
+
+    @_builtins.property
+    @pulumi.getter(name="spreadDomain")
+    def spread_domain(self) -> _builtins.str:
+        return pulumi.get(self, "spread_domain")
+
+    @_builtins.property
+    @pulumi.getter
+    def tenancy(self) -> _builtins.str:
+        return pulumi.get(self, "tenancy")
+
+
+@pulumi.output_type
+class GetAssetAwsEc2SecurityGroupResult(dict):
+    def __init__(__self__, *,
+                 group_key: _builtins.str,
+                 group_name: _builtins.str):
+        pulumi.set(__self__, "group_key", group_key)
+        pulumi.set(__self__, "group_name", group_name)
+
+    @_builtins.property
+    @pulumi.getter(name="groupKey")
+    def group_key(self) -> _builtins.str:
+        return pulumi.get(self, "group_key")
+
+    @_builtins.property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> _builtins.str:
+        return pulumi.get(self, "group_name")
+
+
+@pulumi.output_type
+class GetAssetAwsEc2StateResult(dict):
+    def __init__(__self__, *,
+                 code: _builtins.int,
+                 name: _builtins.str):
+        """
+        :param _builtins.str name: The tag name.
+        """
+        pulumi.set(__self__, "code", code)
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def code(self) -> _builtins.int:
+        return pulumi.get(self, "code")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The tag name.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetAssetAwsEc2TagResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAssetAwsEc2costResult(dict):
+    def __init__(__self__, *,
+                 amount: _builtins.float,
+                 currency_code: _builtins.str):
+        pulumi.set(__self__, "amount", amount)
+        pulumi.set(__self__, "currency_code", currency_code)
+
+    @_builtins.property
+    @pulumi.getter
+    def amount(self) -> _builtins.float:
+        return pulumi.get(self, "amount")
+
+    @_builtins.property
+    @pulumi.getter(name="currencyCode")
+    def currency_code(self) -> _builtins.str:
+        return pulumi.get(self, "currency_code")
+
+
+@pulumi.output_type
 class GetAssetComputeResult(dict):
     def __init__(__self__, *,
                  connected_networks: _builtins.int,
@@ -2957,6 +5591,7 @@ class GetAssetComputeResult(dict):
 class GetAssetComputeDiskResult(dict):
     def __init__(__self__, *,
                  boot_order: _builtins.int,
+                 is_cbt_enabled: _builtins.bool,
                  location: _builtins.str,
                  name: _builtins.str,
                  persistent_mode: _builtins.str,
@@ -2973,6 +5608,7 @@ class GetAssetComputeDiskResult(dict):
         :param _builtins.str uuid_lun: Disk UUID LUN for the virtual disk, if available.
         """
         pulumi.set(__self__, "boot_order", boot_order)
+        pulumi.set(__self__, "is_cbt_enabled", is_cbt_enabled)
         pulumi.set(__self__, "location", location)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "persistent_mode", persistent_mode)
@@ -2987,6 +5623,11 @@ class GetAssetComputeDiskResult(dict):
         Order of boot volumes.
         """
         return pulumi.get(self, "boot_order")
+
+    @_builtins.property
+    @pulumi.getter(name="isCbtEnabled")
+    def is_cbt_enabled(self) -> _builtins.bool:
+        return pulumi.get(self, "is_cbt_enabled")
 
     @_builtins.property
     @pulumi.getter
@@ -3357,16 +5998,21 @@ class GetAssetSourcesAssetSourceCollectionItemResult(dict):
                  are_historical_metrics_collected: _builtins.bool,
                  are_realtime_metrics_collected: _builtins.bool,
                  assets_compartment_id: _builtins.str,
+                 aws_account_key: _builtins.str,
+                 aws_region: _builtins.str,
                  compartment_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
                  discovery_credentials: Sequence['outputs.GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialResult'],
                  discovery_schedule_id: _builtins.str,
                  display_name: _builtins.str,
                  environment_id: _builtins.str,
+                 environment_type: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  inventory_id: _builtins.str,
+                 is_cost_information_collected: _builtins.bool,
                  lifecycle_details: _builtins.str,
+                 olvm_endpoint: _builtins.str,
                  replication_credentials: Sequence['outputs.GetAssetSourcesAssetSourceCollectionItemReplicationCredentialResult'],
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
@@ -3384,10 +6030,12 @@ class GetAssetSourcesAssetSourceCollectionItemResult(dict):
         :param _builtins.str discovery_schedule_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an attached discovery schedule.
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
         :param _builtins.str environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the environment.
+        :param _builtins.str environment_type: Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
         :param Mapping[str, _builtins.str] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         :param _builtins.str inventory_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
         :param _builtins.str lifecycle_details: The detailed state of the asset source.
+        :param _builtins.str olvm_endpoint: Endpoint for OLVM asset discovery and replication in the form of ```https://<host>:<port>```
         :param Sequence['GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArgs'] replication_credentials: Credentials for an asset source.
         :param _builtins.str state: The current state of the asset source.
         :param Mapping[str, _builtins.str] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -3399,16 +6047,21 @@ class GetAssetSourcesAssetSourceCollectionItemResult(dict):
         pulumi.set(__self__, "are_historical_metrics_collected", are_historical_metrics_collected)
         pulumi.set(__self__, "are_realtime_metrics_collected", are_realtime_metrics_collected)
         pulumi.set(__self__, "assets_compartment_id", assets_compartment_id)
+        pulumi.set(__self__, "aws_account_key", aws_account_key)
+        pulumi.set(__self__, "aws_region", aws_region)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "discovery_credentials", discovery_credentials)
         pulumi.set(__self__, "discovery_schedule_id", discovery_schedule_id)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "environment_id", environment_id)
+        pulumi.set(__self__, "environment_type", environment_type)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "inventory_id", inventory_id)
+        pulumi.set(__self__, "is_cost_information_collected", is_cost_information_collected)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "olvm_endpoint", olvm_endpoint)
         pulumi.set(__self__, "replication_credentials", replication_credentials)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -3440,6 +6093,16 @@ class GetAssetSourcesAssetSourceCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that is going to be used to create assets.
         """
         return pulumi.get(self, "assets_compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="awsAccountKey")
+    def aws_account_key(self) -> _builtins.str:
+        return pulumi.get(self, "aws_account_key")
+
+    @_builtins.property
+    @pulumi.getter(name="awsRegion")
+    def aws_region(self) -> _builtins.str:
+        return pulumi.get(self, "aws_region")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -3490,6 +6153,14 @@ class GetAssetSourcesAssetSourceCollectionItemResult(dict):
         return pulumi.get(self, "environment_id")
 
     @_builtins.property
+    @pulumi.getter(name="environmentType")
+    def environment_type(self) -> _builtins.str:
+        """
+        Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+        """
+        return pulumi.get(self, "environment_type")
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, _builtins.str]:
         """
@@ -3514,12 +6185,25 @@ class GetAssetSourcesAssetSourceCollectionItemResult(dict):
         return pulumi.get(self, "inventory_id")
 
     @_builtins.property
+    @pulumi.getter(name="isCostInformationCollected")
+    def is_cost_information_collected(self) -> _builtins.bool:
+        return pulumi.get(self, "is_cost_information_collected")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
         The detailed state of the asset source.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="olvmEndpoint")
+    def olvm_endpoint(self) -> _builtins.str:
+        """
+        Endpoint for OLVM asset discovery and replication in the form of ```https://<host>:<port>```
+        """
+        return pulumi.get(self, "olvm_endpoint")
 
     @_builtins.property
     @pulumi.getter(name="replicationCredentials")
@@ -3915,12 +6599,20 @@ class GetAssetsAssetCollectionResult(dict):
 @pulumi.output_type
 class GetAssetsAssetCollectionItemResult(dict):
     def __init__(__self__, *,
+                 asset_class_name: _builtins.str,
+                 asset_class_version: _builtins.str,
+                 asset_details: _builtins.str,
                  asset_source_ids: Sequence[_builtins.str],
                  asset_type: _builtins.str,
+                 attached_ebs_volumes_costs: Sequence['outputs.GetAssetsAssetCollectionItemAttachedEbsVolumesCostResult'],
+                 aws_ebs: Sequence['outputs.GetAssetsAssetCollectionItemAwsEbResult'],
+                 aws_ec2costs: Sequence['outputs.GetAssetsAssetCollectionItemAwsEc2costResult'],
+                 aws_ec2s: Sequence['outputs.GetAssetsAssetCollectionItemAwsEc2Result'],
                  compartment_id: _builtins.str,
                  computes: Sequence['outputs.GetAssetsAssetCollectionItemComputeResult'],
                  defined_tags: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
+                 environment_type: _builtins.str,
                  external_asset_key: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
@@ -3934,12 +6626,16 @@ class GetAssetsAssetCollectionItemResult(dict):
                  vmware_vcenters: Sequence['outputs.GetAssetsAssetCollectionItemVmwareVcenterResult'],
                  vmware_vms: Sequence['outputs.GetAssetsAssetCollectionItemVmwareVmResult']):
         """
+        :param _builtins.str asset_class_name: The name of the asset class.
+        :param _builtins.str asset_class_version: The version of the asset class.
+        :param _builtins.str asset_details: The details of the asset.
         :param Sequence[_builtins.str] asset_source_ids: List of asset source OCID.
         :param _builtins.str asset_type: The type of asset.
         :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
         :param Sequence['GetAssetsAssetCollectionItemComputeArgs'] computes: Compute related properties.
         :param Mapping[str, _builtins.str] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.str environment_type: Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
         :param _builtins.str external_asset_key: External asset key.
         :param Mapping[str, _builtins.str] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param _builtins.str id: Asset OCID that is immutable on creation.
@@ -3953,12 +6649,20 @@ class GetAssetsAssetCollectionItemResult(dict):
         :param Sequence['GetAssetsAssetCollectionItemVmwareVcenterArgs'] vmware_vcenters: VMware vCenter related properties.
         :param Sequence['GetAssetsAssetCollectionItemVmwareVmArgs'] vmware_vms: VMware virtual machine related properties.
         """
+        pulumi.set(__self__, "asset_class_name", asset_class_name)
+        pulumi.set(__self__, "asset_class_version", asset_class_version)
+        pulumi.set(__self__, "asset_details", asset_details)
         pulumi.set(__self__, "asset_source_ids", asset_source_ids)
         pulumi.set(__self__, "asset_type", asset_type)
+        pulumi.set(__self__, "attached_ebs_volumes_costs", attached_ebs_volumes_costs)
+        pulumi.set(__self__, "aws_ebs", aws_ebs)
+        pulumi.set(__self__, "aws_ec2costs", aws_ec2costs)
+        pulumi.set(__self__, "aws_ec2s", aws_ec2s)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "computes", computes)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "environment_type", environment_type)
         pulumi.set(__self__, "external_asset_key", external_asset_key)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
@@ -3971,6 +6675,30 @@ class GetAssetsAssetCollectionItemResult(dict):
         pulumi.set(__self__, "vms", vms)
         pulumi.set(__self__, "vmware_vcenters", vmware_vcenters)
         pulumi.set(__self__, "vmware_vms", vmware_vms)
+
+    @_builtins.property
+    @pulumi.getter(name="assetClassName")
+    def asset_class_name(self) -> _builtins.str:
+        """
+        The name of the asset class.
+        """
+        return pulumi.get(self, "asset_class_name")
+
+    @_builtins.property
+    @pulumi.getter(name="assetClassVersion")
+    def asset_class_version(self) -> _builtins.str:
+        """
+        The version of the asset class.
+        """
+        return pulumi.get(self, "asset_class_version")
+
+    @_builtins.property
+    @pulumi.getter(name="assetDetails")
+    def asset_details(self) -> _builtins.str:
+        """
+        The details of the asset.
+        """
+        return pulumi.get(self, "asset_details")
 
     @_builtins.property
     @pulumi.getter(name="assetSourceIds")
@@ -3987,6 +6715,26 @@ class GetAssetsAssetCollectionItemResult(dict):
         The type of asset.
         """
         return pulumi.get(self, "asset_type")
+
+    @_builtins.property
+    @pulumi.getter(name="attachedEbsVolumesCosts")
+    def attached_ebs_volumes_costs(self) -> Sequence['outputs.GetAssetsAssetCollectionItemAttachedEbsVolumesCostResult']:
+        return pulumi.get(self, "attached_ebs_volumes_costs")
+
+    @_builtins.property
+    @pulumi.getter(name="awsEbs")
+    def aws_ebs(self) -> Sequence['outputs.GetAssetsAssetCollectionItemAwsEbResult']:
+        return pulumi.get(self, "aws_ebs")
+
+    @_builtins.property
+    @pulumi.getter(name="awsEc2costs")
+    def aws_ec2costs(self) -> Sequence['outputs.GetAssetsAssetCollectionItemAwsEc2costResult']:
+        return pulumi.get(self, "aws_ec2costs")
+
+    @_builtins.property
+    @pulumi.getter(name="awsEc2s")
+    def aws_ec2s(self) -> Sequence['outputs.GetAssetsAssetCollectionItemAwsEc2Result']:
+        return pulumi.get(self, "aws_ec2s")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -4019,6 +6767,14 @@ class GetAssetsAssetCollectionItemResult(dict):
         A filter to return only resources that match the entire display name given.
         """
         return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="environmentType")
+    def environment_type(self) -> _builtins.str:
+        """
+        Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+        """
+        return pulumi.get(self, "environment_type")
 
     @_builtins.property
     @pulumi.getter(name="externalAssetKey")
@@ -4115,6 +6871,850 @@ class GetAssetsAssetCollectionItemResult(dict):
         VMware virtual machine related properties.
         """
         return pulumi.get(self, "vmware_vms")
+
+
+@pulumi.output_type
+class GetAssetsAssetCollectionItemAttachedEbsVolumesCostResult(dict):
+    def __init__(__self__, *,
+                 amount: _builtins.float,
+                 currency_code: _builtins.str):
+        pulumi.set(__self__, "amount", amount)
+        pulumi.set(__self__, "currency_code", currency_code)
+
+    @_builtins.property
+    @pulumi.getter
+    def amount(self) -> _builtins.float:
+        return pulumi.get(self, "amount")
+
+    @_builtins.property
+    @pulumi.getter(name="currencyCode")
+    def currency_code(self) -> _builtins.str:
+        return pulumi.get(self, "currency_code")
+
+
+@pulumi.output_type
+class GetAssetsAssetCollectionItemAwsEbResult(dict):
+    def __init__(__self__, *,
+                 attachments: Sequence['outputs.GetAssetsAssetCollectionItemAwsEbAttachmentResult'],
+                 availability_zone: _builtins.str,
+                 iops: _builtins.int,
+                 is_encrypted: _builtins.bool,
+                 is_multi_attach_enabled: _builtins.bool,
+                 size_in_gi_bs: _builtins.int,
+                 status: _builtins.str,
+                 tags: Sequence['outputs.GetAssetsAssetCollectionItemAwsEbTagResult'],
+                 throughput: _builtins.int,
+                 volume_key: _builtins.str,
+                 volume_type: _builtins.str):
+        pulumi.set(__self__, "attachments", attachments)
+        pulumi.set(__self__, "availability_zone", availability_zone)
+        pulumi.set(__self__, "iops", iops)
+        pulumi.set(__self__, "is_encrypted", is_encrypted)
+        pulumi.set(__self__, "is_multi_attach_enabled", is_multi_attach_enabled)
+        pulumi.set(__self__, "size_in_gi_bs", size_in_gi_bs)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "tags", tags)
+        pulumi.set(__self__, "throughput", throughput)
+        pulumi.set(__self__, "volume_key", volume_key)
+        pulumi.set(__self__, "volume_type", volume_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def attachments(self) -> Sequence['outputs.GetAssetsAssetCollectionItemAwsEbAttachmentResult']:
+        return pulumi.get(self, "attachments")
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityZone")
+    def availability_zone(self) -> _builtins.str:
+        return pulumi.get(self, "availability_zone")
+
+    @_builtins.property
+    @pulumi.getter
+    def iops(self) -> _builtins.int:
+        return pulumi.get(self, "iops")
+
+    @_builtins.property
+    @pulumi.getter(name="isEncrypted")
+    def is_encrypted(self) -> _builtins.bool:
+        return pulumi.get(self, "is_encrypted")
+
+    @_builtins.property
+    @pulumi.getter(name="isMultiAttachEnabled")
+    def is_multi_attach_enabled(self) -> _builtins.bool:
+        return pulumi.get(self, "is_multi_attach_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="sizeInGiBs")
+    def size_in_gi_bs(self) -> _builtins.int:
+        return pulumi.get(self, "size_in_gi_bs")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> Sequence['outputs.GetAssetsAssetCollectionItemAwsEbTagResult']:
+        return pulumi.get(self, "tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def throughput(self) -> _builtins.int:
+        return pulumi.get(self, "throughput")
+
+    @_builtins.property
+    @pulumi.getter(name="volumeKey")
+    def volume_key(self) -> _builtins.str:
+        return pulumi.get(self, "volume_key")
+
+    @_builtins.property
+    @pulumi.getter(name="volumeType")
+    def volume_type(self) -> _builtins.str:
+        return pulumi.get(self, "volume_type")
+
+
+@pulumi.output_type
+class GetAssetsAssetCollectionItemAwsEbAttachmentResult(dict):
+    def __init__(__self__, *,
+                 device: _builtins.str,
+                 instance_key: _builtins.str,
+                 is_delete_on_termination: _builtins.bool,
+                 status: _builtins.str,
+                 volume_key: _builtins.str):
+        pulumi.set(__self__, "device", device)
+        pulumi.set(__self__, "instance_key", instance_key)
+        pulumi.set(__self__, "is_delete_on_termination", is_delete_on_termination)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "volume_key", volume_key)
+
+    @_builtins.property
+    @pulumi.getter
+    def device(self) -> _builtins.str:
+        return pulumi.get(self, "device")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceKey")
+    def instance_key(self) -> _builtins.str:
+        return pulumi.get(self, "instance_key")
+
+    @_builtins.property
+    @pulumi.getter(name="isDeleteOnTermination")
+    def is_delete_on_termination(self) -> _builtins.bool:
+        return pulumi.get(self, "is_delete_on_termination")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="volumeKey")
+    def volume_key(self) -> _builtins.str:
+        return pulumi.get(self, "volume_key")
+
+
+@pulumi.output_type
+class GetAssetsAssetCollectionItemAwsEbTagResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAssetsAssetCollectionItemAwsEc2Result(dict):
+    def __init__(__self__, *,
+                 architecture: _builtins.str,
+                 are_elastic_inference_accelerators_present: _builtins.bool,
+                 boot_mode: _builtins.str,
+                 capacity_reservation_key: _builtins.str,
+                 image_key: _builtins.str,
+                 instance_key: _builtins.str,
+                 instance_lifecycle: _builtins.str,
+                 instance_type: _builtins.str,
+                 ip_address: _builtins.str,
+                 ipv6address: _builtins.str,
+                 is_enclave_options: _builtins.bool,
+                 is_hibernation_options: _builtins.bool,
+                 is_source_dest_check: _builtins.bool,
+                 is_spot_instance: _builtins.bool,
+                 kernel_key: _builtins.str,
+                 licenses: Sequence[_builtins.str],
+                 maintenance_options: _builtins.str,
+                 monitoring: _builtins.str,
+                 network_interfaces: Sequence['outputs.GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceResult'],
+                 placements: Sequence['outputs.GetAssetsAssetCollectionItemAwsEc2PlacementResult'],
+                 private_dns_name: _builtins.str,
+                 private_ip_address: _builtins.str,
+                 root_device_name: _builtins.str,
+                 root_device_type: _builtins.str,
+                 security_groups: Sequence['outputs.GetAssetsAssetCollectionItemAwsEc2SecurityGroupResult'],
+                 sriov_net_support: _builtins.str,
+                 states: Sequence['outputs.GetAssetsAssetCollectionItemAwsEc2StateResult'],
+                 subnet_key: _builtins.str,
+                 tags: Sequence['outputs.GetAssetsAssetCollectionItemAwsEc2TagResult'],
+                 time_launch: _builtins.str,
+                 tpm_support: _builtins.str,
+                 virtualization_type: _builtins.str,
+                 vpc_key: _builtins.str):
+        """
+        :param Sequence['GetAssetsAssetCollectionItemAwsEc2StateArgs'] states: A filter to return only assets whose lifecycleState matches the given lifecycleState.
+        """
+        pulumi.set(__self__, "architecture", architecture)
+        pulumi.set(__self__, "are_elastic_inference_accelerators_present", are_elastic_inference_accelerators_present)
+        pulumi.set(__self__, "boot_mode", boot_mode)
+        pulumi.set(__self__, "capacity_reservation_key", capacity_reservation_key)
+        pulumi.set(__self__, "image_key", image_key)
+        pulumi.set(__self__, "instance_key", instance_key)
+        pulumi.set(__self__, "instance_lifecycle", instance_lifecycle)
+        pulumi.set(__self__, "instance_type", instance_type)
+        pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "ipv6address", ipv6address)
+        pulumi.set(__self__, "is_enclave_options", is_enclave_options)
+        pulumi.set(__self__, "is_hibernation_options", is_hibernation_options)
+        pulumi.set(__self__, "is_source_dest_check", is_source_dest_check)
+        pulumi.set(__self__, "is_spot_instance", is_spot_instance)
+        pulumi.set(__self__, "kernel_key", kernel_key)
+        pulumi.set(__self__, "licenses", licenses)
+        pulumi.set(__self__, "maintenance_options", maintenance_options)
+        pulumi.set(__self__, "monitoring", monitoring)
+        pulumi.set(__self__, "network_interfaces", network_interfaces)
+        pulumi.set(__self__, "placements", placements)
+        pulumi.set(__self__, "private_dns_name", private_dns_name)
+        pulumi.set(__self__, "private_ip_address", private_ip_address)
+        pulumi.set(__self__, "root_device_name", root_device_name)
+        pulumi.set(__self__, "root_device_type", root_device_type)
+        pulumi.set(__self__, "security_groups", security_groups)
+        pulumi.set(__self__, "sriov_net_support", sriov_net_support)
+        pulumi.set(__self__, "states", states)
+        pulumi.set(__self__, "subnet_key", subnet_key)
+        pulumi.set(__self__, "tags", tags)
+        pulumi.set(__self__, "time_launch", time_launch)
+        pulumi.set(__self__, "tpm_support", tpm_support)
+        pulumi.set(__self__, "virtualization_type", virtualization_type)
+        pulumi.set(__self__, "vpc_key", vpc_key)
+
+    @_builtins.property
+    @pulumi.getter
+    def architecture(self) -> _builtins.str:
+        return pulumi.get(self, "architecture")
+
+    @_builtins.property
+    @pulumi.getter(name="areElasticInferenceAcceleratorsPresent")
+    def are_elastic_inference_accelerators_present(self) -> _builtins.bool:
+        return pulumi.get(self, "are_elastic_inference_accelerators_present")
+
+    @_builtins.property
+    @pulumi.getter(name="bootMode")
+    def boot_mode(self) -> _builtins.str:
+        return pulumi.get(self, "boot_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationKey")
+    def capacity_reservation_key(self) -> _builtins.str:
+        return pulumi.get(self, "capacity_reservation_key")
+
+    @_builtins.property
+    @pulumi.getter(name="imageKey")
+    def image_key(self) -> _builtins.str:
+        return pulumi.get(self, "image_key")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceKey")
+    def instance_key(self) -> _builtins.str:
+        return pulumi.get(self, "instance_key")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceLifecycle")
+    def instance_lifecycle(self) -> _builtins.str:
+        return pulumi.get(self, "instance_lifecycle")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceType")
+    def instance_type(self) -> _builtins.str:
+        return pulumi.get(self, "instance_type")
+
+    @_builtins.property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> _builtins.str:
+        return pulumi.get(self, "ip_address")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6address(self) -> _builtins.str:
+        return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter(name="isEnclaveOptions")
+    def is_enclave_options(self) -> _builtins.bool:
+        return pulumi.get(self, "is_enclave_options")
+
+    @_builtins.property
+    @pulumi.getter(name="isHibernationOptions")
+    def is_hibernation_options(self) -> _builtins.bool:
+        return pulumi.get(self, "is_hibernation_options")
+
+    @_builtins.property
+    @pulumi.getter(name="isSourceDestCheck")
+    def is_source_dest_check(self) -> _builtins.bool:
+        return pulumi.get(self, "is_source_dest_check")
+
+    @_builtins.property
+    @pulumi.getter(name="isSpotInstance")
+    def is_spot_instance(self) -> _builtins.bool:
+        return pulumi.get(self, "is_spot_instance")
+
+    @_builtins.property
+    @pulumi.getter(name="kernelKey")
+    def kernel_key(self) -> _builtins.str:
+        return pulumi.get(self, "kernel_key")
+
+    @_builtins.property
+    @pulumi.getter
+    def licenses(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "licenses")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceOptions")
+    def maintenance_options(self) -> _builtins.str:
+        return pulumi.get(self, "maintenance_options")
+
+    @_builtins.property
+    @pulumi.getter
+    def monitoring(self) -> _builtins.str:
+        return pulumi.get(self, "monitoring")
+
+    @_builtins.property
+    @pulumi.getter(name="networkInterfaces")
+    def network_interfaces(self) -> Sequence['outputs.GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceResult']:
+        return pulumi.get(self, "network_interfaces")
+
+    @_builtins.property
+    @pulumi.getter
+    def placements(self) -> Sequence['outputs.GetAssetsAssetCollectionItemAwsEc2PlacementResult']:
+        return pulumi.get(self, "placements")
+
+    @_builtins.property
+    @pulumi.getter(name="privateDnsName")
+    def private_dns_name(self) -> _builtins.str:
+        return pulumi.get(self, "private_dns_name")
+
+    @_builtins.property
+    @pulumi.getter(name="privateIpAddress")
+    def private_ip_address(self) -> _builtins.str:
+        return pulumi.get(self, "private_ip_address")
+
+    @_builtins.property
+    @pulumi.getter(name="rootDeviceName")
+    def root_device_name(self) -> _builtins.str:
+        return pulumi.get(self, "root_device_name")
+
+    @_builtins.property
+    @pulumi.getter(name="rootDeviceType")
+    def root_device_type(self) -> _builtins.str:
+        return pulumi.get(self, "root_device_type")
+
+    @_builtins.property
+    @pulumi.getter(name="securityGroups")
+    def security_groups(self) -> Sequence['outputs.GetAssetsAssetCollectionItemAwsEc2SecurityGroupResult']:
+        return pulumi.get(self, "security_groups")
+
+    @_builtins.property
+    @pulumi.getter(name="sriovNetSupport")
+    def sriov_net_support(self) -> _builtins.str:
+        return pulumi.get(self, "sriov_net_support")
+
+    @_builtins.property
+    @pulumi.getter
+    def states(self) -> Sequence['outputs.GetAssetsAssetCollectionItemAwsEc2StateResult']:
+        """
+        A filter to return only assets whose lifecycleState matches the given lifecycleState.
+        """
+        return pulumi.get(self, "states")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetKey")
+    def subnet_key(self) -> _builtins.str:
+        return pulumi.get(self, "subnet_key")
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> Sequence['outputs.GetAssetsAssetCollectionItemAwsEc2TagResult']:
+        return pulumi.get(self, "tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLaunch")
+    def time_launch(self) -> _builtins.str:
+        return pulumi.get(self, "time_launch")
+
+    @_builtins.property
+    @pulumi.getter(name="tpmSupport")
+    def tpm_support(self) -> _builtins.str:
+        return pulumi.get(self, "tpm_support")
+
+    @_builtins.property
+    @pulumi.getter(name="virtualizationType")
+    def virtualization_type(self) -> _builtins.str:
+        return pulumi.get(self, "virtualization_type")
+
+    @_builtins.property
+    @pulumi.getter(name="vpcKey")
+    def vpc_key(self) -> _builtins.str:
+        return pulumi.get(self, "vpc_key")
+
+
+@pulumi.output_type
+class GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceResult(dict):
+    def __init__(__self__, *,
+                 associations: Sequence['outputs.GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationResult'],
+                 attachments: Sequence['outputs.GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentResult'],
+                 description: _builtins.str,
+                 interface_type: _builtins.str,
+                 ipv4prefixes: Sequence[_builtins.str],
+                 ipv6addresses: Sequence[_builtins.str],
+                 ipv6prefixes: Sequence[_builtins.str],
+                 is_source_dest_check: _builtins.bool,
+                 mac_address: _builtins.str,
+                 network_interface_key: _builtins.str,
+                 owner_key: _builtins.str,
+                 private_ip_addresses: Sequence['outputs.GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressResult'],
+                 security_groups: Sequence['outputs.GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupResult'],
+                 status: _builtins.str,
+                 subnet_key: _builtins.str):
+        """
+        :param _builtins.str description: The tag description.
+        :param _builtins.str mac_address: Mac address of the VM.
+        """
+        pulumi.set(__self__, "associations", associations)
+        pulumi.set(__self__, "attachments", attachments)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "interface_type", interface_type)
+        pulumi.set(__self__, "ipv4prefixes", ipv4prefixes)
+        pulumi.set(__self__, "ipv6addresses", ipv6addresses)
+        pulumi.set(__self__, "ipv6prefixes", ipv6prefixes)
+        pulumi.set(__self__, "is_source_dest_check", is_source_dest_check)
+        pulumi.set(__self__, "mac_address", mac_address)
+        pulumi.set(__self__, "network_interface_key", network_interface_key)
+        pulumi.set(__self__, "owner_key", owner_key)
+        pulumi.set(__self__, "private_ip_addresses", private_ip_addresses)
+        pulumi.set(__self__, "security_groups", security_groups)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "subnet_key", subnet_key)
+
+    @_builtins.property
+    @pulumi.getter
+    def associations(self) -> Sequence['outputs.GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationResult']:
+        return pulumi.get(self, "associations")
+
+    @_builtins.property
+    @pulumi.getter
+    def attachments(self) -> Sequence['outputs.GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentResult']:
+        return pulumi.get(self, "attachments")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The tag description.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="interfaceType")
+    def interface_type(self) -> _builtins.str:
+        return pulumi.get(self, "interface_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv4prefixes(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "ipv4prefixes")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6addresses(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "ipv6addresses")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6prefixes(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "ipv6prefixes")
+
+    @_builtins.property
+    @pulumi.getter(name="isSourceDestCheck")
+    def is_source_dest_check(self) -> _builtins.bool:
+        return pulumi.get(self, "is_source_dest_check")
+
+    @_builtins.property
+    @pulumi.getter(name="macAddress")
+    def mac_address(self) -> _builtins.str:
+        """
+        Mac address of the VM.
+        """
+        return pulumi.get(self, "mac_address")
+
+    @_builtins.property
+    @pulumi.getter(name="networkInterfaceKey")
+    def network_interface_key(self) -> _builtins.str:
+        return pulumi.get(self, "network_interface_key")
+
+    @_builtins.property
+    @pulumi.getter(name="ownerKey")
+    def owner_key(self) -> _builtins.str:
+        return pulumi.get(self, "owner_key")
+
+    @_builtins.property
+    @pulumi.getter(name="privateIpAddresses")
+    def private_ip_addresses(self) -> Sequence['outputs.GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressResult']:
+        return pulumi.get(self, "private_ip_addresses")
+
+    @_builtins.property
+    @pulumi.getter(name="securityGroups")
+    def security_groups(self) -> Sequence['outputs.GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupResult']:
+        return pulumi.get(self, "security_groups")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetKey")
+    def subnet_key(self) -> _builtins.str:
+        return pulumi.get(self, "subnet_key")
+
+
+@pulumi.output_type
+class GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationResult(dict):
+    def __init__(__self__, *,
+                 carrier_ip: _builtins.str,
+                 customer_owned_ip: _builtins.str,
+                 ip_owner_key: _builtins.str,
+                 public_dns_name: _builtins.str,
+                 public_ip: _builtins.str):
+        pulumi.set(__self__, "carrier_ip", carrier_ip)
+        pulumi.set(__self__, "customer_owned_ip", customer_owned_ip)
+        pulumi.set(__self__, "ip_owner_key", ip_owner_key)
+        pulumi.set(__self__, "public_dns_name", public_dns_name)
+        pulumi.set(__self__, "public_ip", public_ip)
+
+    @_builtins.property
+    @pulumi.getter(name="carrierIp")
+    def carrier_ip(self) -> _builtins.str:
+        return pulumi.get(self, "carrier_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="customerOwnedIp")
+    def customer_owned_ip(self) -> _builtins.str:
+        return pulumi.get(self, "customer_owned_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="ipOwnerKey")
+    def ip_owner_key(self) -> _builtins.str:
+        return pulumi.get(self, "ip_owner_key")
+
+    @_builtins.property
+    @pulumi.getter(name="publicDnsName")
+    def public_dns_name(self) -> _builtins.str:
+        return pulumi.get(self, "public_dns_name")
+
+    @_builtins.property
+    @pulumi.getter(name="publicIp")
+    def public_ip(self) -> _builtins.str:
+        return pulumi.get(self, "public_ip")
+
+
+@pulumi.output_type
+class GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentResult(dict):
+    def __init__(__self__, *,
+                 attachment_key: _builtins.str,
+                 device_index: _builtins.int,
+                 is_delete_on_termination: _builtins.bool,
+                 network_card_index: _builtins.int,
+                 status: _builtins.str,
+                 time_attach: _builtins.str):
+        pulumi.set(__self__, "attachment_key", attachment_key)
+        pulumi.set(__self__, "device_index", device_index)
+        pulumi.set(__self__, "is_delete_on_termination", is_delete_on_termination)
+        pulumi.set(__self__, "network_card_index", network_card_index)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_attach", time_attach)
+
+    @_builtins.property
+    @pulumi.getter(name="attachmentKey")
+    def attachment_key(self) -> _builtins.str:
+        return pulumi.get(self, "attachment_key")
+
+    @_builtins.property
+    @pulumi.getter(name="deviceIndex")
+    def device_index(self) -> _builtins.int:
+        return pulumi.get(self, "device_index")
+
+    @_builtins.property
+    @pulumi.getter(name="isDeleteOnTermination")
+    def is_delete_on_termination(self) -> _builtins.bool:
+        return pulumi.get(self, "is_delete_on_termination")
+
+    @_builtins.property
+    @pulumi.getter(name="networkCardIndex")
+    def network_card_index(self) -> _builtins.int:
+        return pulumi.get(self, "network_card_index")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="timeAttach")
+    def time_attach(self) -> _builtins.str:
+        return pulumi.get(self, "time_attach")
+
+
+@pulumi.output_type
+class GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressResult(dict):
+    def __init__(__self__, *,
+                 associations: Sequence['outputs.GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationResult'],
+                 is_primary: _builtins.bool,
+                 private_dns_name: _builtins.str,
+                 private_ip_address: _builtins.str):
+        pulumi.set(__self__, "associations", associations)
+        pulumi.set(__self__, "is_primary", is_primary)
+        pulumi.set(__self__, "private_dns_name", private_dns_name)
+        pulumi.set(__self__, "private_ip_address", private_ip_address)
+
+    @_builtins.property
+    @pulumi.getter
+    def associations(self) -> Sequence['outputs.GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationResult']:
+        return pulumi.get(self, "associations")
+
+    @_builtins.property
+    @pulumi.getter(name="isPrimary")
+    def is_primary(self) -> _builtins.bool:
+        return pulumi.get(self, "is_primary")
+
+    @_builtins.property
+    @pulumi.getter(name="privateDnsName")
+    def private_dns_name(self) -> _builtins.str:
+        return pulumi.get(self, "private_dns_name")
+
+    @_builtins.property
+    @pulumi.getter(name="privateIpAddress")
+    def private_ip_address(self) -> _builtins.str:
+        return pulumi.get(self, "private_ip_address")
+
+
+@pulumi.output_type
+class GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationResult(dict):
+    def __init__(__self__, *,
+                 carrier_ip: _builtins.str,
+                 customer_owned_ip: _builtins.str,
+                 ip_owner_key: _builtins.str,
+                 public_dns_name: _builtins.str,
+                 public_ip: _builtins.str):
+        pulumi.set(__self__, "carrier_ip", carrier_ip)
+        pulumi.set(__self__, "customer_owned_ip", customer_owned_ip)
+        pulumi.set(__self__, "ip_owner_key", ip_owner_key)
+        pulumi.set(__self__, "public_dns_name", public_dns_name)
+        pulumi.set(__self__, "public_ip", public_ip)
+
+    @_builtins.property
+    @pulumi.getter(name="carrierIp")
+    def carrier_ip(self) -> _builtins.str:
+        return pulumi.get(self, "carrier_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="customerOwnedIp")
+    def customer_owned_ip(self) -> _builtins.str:
+        return pulumi.get(self, "customer_owned_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="ipOwnerKey")
+    def ip_owner_key(self) -> _builtins.str:
+        return pulumi.get(self, "ip_owner_key")
+
+    @_builtins.property
+    @pulumi.getter(name="publicDnsName")
+    def public_dns_name(self) -> _builtins.str:
+        return pulumi.get(self, "public_dns_name")
+
+    @_builtins.property
+    @pulumi.getter(name="publicIp")
+    def public_ip(self) -> _builtins.str:
+        return pulumi.get(self, "public_ip")
+
+
+@pulumi.output_type
+class GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupResult(dict):
+    def __init__(__self__, *,
+                 group_key: _builtins.str,
+                 group_name: _builtins.str):
+        pulumi.set(__self__, "group_key", group_key)
+        pulumi.set(__self__, "group_name", group_name)
+
+    @_builtins.property
+    @pulumi.getter(name="groupKey")
+    def group_key(self) -> _builtins.str:
+        return pulumi.get(self, "group_key")
+
+    @_builtins.property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> _builtins.str:
+        return pulumi.get(self, "group_name")
+
+
+@pulumi.output_type
+class GetAssetsAssetCollectionItemAwsEc2PlacementResult(dict):
+    def __init__(__self__, *,
+                 affinity: _builtins.str,
+                 availability_zone: _builtins.str,
+                 group_name: _builtins.str,
+                 host_key: _builtins.str,
+                 host_resource_group_arn: _builtins.str,
+                 partition_number: _builtins.int,
+                 spread_domain: _builtins.str,
+                 tenancy: _builtins.str):
+        pulumi.set(__self__, "affinity", affinity)
+        pulumi.set(__self__, "availability_zone", availability_zone)
+        pulumi.set(__self__, "group_name", group_name)
+        pulumi.set(__self__, "host_key", host_key)
+        pulumi.set(__self__, "host_resource_group_arn", host_resource_group_arn)
+        pulumi.set(__self__, "partition_number", partition_number)
+        pulumi.set(__self__, "spread_domain", spread_domain)
+        pulumi.set(__self__, "tenancy", tenancy)
+
+    @_builtins.property
+    @pulumi.getter
+    def affinity(self) -> _builtins.str:
+        return pulumi.get(self, "affinity")
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityZone")
+    def availability_zone(self) -> _builtins.str:
+        return pulumi.get(self, "availability_zone")
+
+    @_builtins.property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> _builtins.str:
+        return pulumi.get(self, "group_name")
+
+    @_builtins.property
+    @pulumi.getter(name="hostKey")
+    def host_key(self) -> _builtins.str:
+        return pulumi.get(self, "host_key")
+
+    @_builtins.property
+    @pulumi.getter(name="hostResourceGroupArn")
+    def host_resource_group_arn(self) -> _builtins.str:
+        return pulumi.get(self, "host_resource_group_arn")
+
+    @_builtins.property
+    @pulumi.getter(name="partitionNumber")
+    def partition_number(self) -> _builtins.int:
+        return pulumi.get(self, "partition_number")
+
+    @_builtins.property
+    @pulumi.getter(name="spreadDomain")
+    def spread_domain(self) -> _builtins.str:
+        return pulumi.get(self, "spread_domain")
+
+    @_builtins.property
+    @pulumi.getter
+    def tenancy(self) -> _builtins.str:
+        return pulumi.get(self, "tenancy")
+
+
+@pulumi.output_type
+class GetAssetsAssetCollectionItemAwsEc2SecurityGroupResult(dict):
+    def __init__(__self__, *,
+                 group_key: _builtins.str,
+                 group_name: _builtins.str):
+        pulumi.set(__self__, "group_key", group_key)
+        pulumi.set(__self__, "group_name", group_name)
+
+    @_builtins.property
+    @pulumi.getter(name="groupKey")
+    def group_key(self) -> _builtins.str:
+        return pulumi.get(self, "group_key")
+
+    @_builtins.property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> _builtins.str:
+        return pulumi.get(self, "group_name")
+
+
+@pulumi.output_type
+class GetAssetsAssetCollectionItemAwsEc2StateResult(dict):
+    def __init__(__self__, *,
+                 code: _builtins.int,
+                 name: _builtins.str):
+        """
+        :param _builtins.str name: The tag name.
+        """
+        pulumi.set(__self__, "code", code)
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def code(self) -> _builtins.int:
+        return pulumi.get(self, "code")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The tag name.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetAssetsAssetCollectionItemAwsEc2TagResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAssetsAssetCollectionItemAwsEc2costResult(dict):
+    def __init__(__self__, *,
+                 amount: _builtins.float,
+                 currency_code: _builtins.str):
+        pulumi.set(__self__, "amount", amount)
+        pulumi.set(__self__, "currency_code", currency_code)
+
+    @_builtins.property
+    @pulumi.getter
+    def amount(self) -> _builtins.float:
+        return pulumi.get(self, "amount")
+
+    @_builtins.property
+    @pulumi.getter(name="currencyCode")
+    def currency_code(self) -> _builtins.str:
+        return pulumi.get(self, "currency_code")
 
 
 @pulumi.output_type
@@ -4447,6 +8047,7 @@ class GetAssetsAssetCollectionItemComputeResult(dict):
 class GetAssetsAssetCollectionItemComputeDiskResult(dict):
     def __init__(__self__, *,
                  boot_order: _builtins.int,
+                 is_cbt_enabled: _builtins.bool,
                  location: _builtins.str,
                  name: _builtins.str,
                  persistent_mode: _builtins.str,
@@ -4463,6 +8064,7 @@ class GetAssetsAssetCollectionItemComputeDiskResult(dict):
         :param _builtins.str uuid_lun: Disk UUID LUN for the virtual disk, if available.
         """
         pulumi.set(__self__, "boot_order", boot_order)
+        pulumi.set(__self__, "is_cbt_enabled", is_cbt_enabled)
         pulumi.set(__self__, "location", location)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "persistent_mode", persistent_mode)
@@ -4477,6 +8079,11 @@ class GetAssetsAssetCollectionItemComputeDiskResult(dict):
         Order of boot volumes.
         """
         return pulumi.get(self, "boot_order")
+
+    @_builtins.property
+    @pulumi.getter(name="isCbtEnabled")
+    def is_cbt_enabled(self) -> _builtins.bool:
+        return pulumi.get(self, "is_cbt_enabled")
 
     @_builtins.property
     @pulumi.getter
@@ -5518,5 +9125,70 @@ class GetInventoriesInventoryCollectionItemResult(dict):
         The time when the inventory was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetSupportedCloudRegionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSupportedCloudRegionsSupportedCloudRegionCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSupportedCloudRegionsSupportedCloudRegionCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSupportedCloudRegionsSupportedCloudRegionCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSupportedCloudRegionsSupportedCloudRegionCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 asset_source_type: _builtins.str,
+                 name: _builtins.str,
+                 state: _builtins.str):
+        pulumi.set(__self__, "asset_source_type", asset_source_type)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="assetSourceType")
+    def asset_source_type(self) -> _builtins.str:
+        return pulumi.get(self, "asset_source_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        return pulumi.get(self, "state")
 
 

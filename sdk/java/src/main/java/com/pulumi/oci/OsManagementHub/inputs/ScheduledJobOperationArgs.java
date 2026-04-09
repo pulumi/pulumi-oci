@@ -6,8 +6,11 @@ package com.pulumi.oci.OsManagementHub.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.OsManagementHub.inputs.ScheduledJobOperationInstallSnapDetailsArgs;
 import com.pulumi.oci.OsManagementHub.inputs.ScheduledJobOperationManageModuleStreamsDetailsArgs;
+import com.pulumi.oci.OsManagementHub.inputs.ScheduledJobOperationRemoveSnapDetailsArgs;
 import com.pulumi.oci.OsManagementHub.inputs.ScheduledJobOperationSwitchModuleStreamsDetailsArgs;
+import com.pulumi.oci.OsManagementHub.inputs.ScheduledJobOperationSwitchSnapChannelDetailsArgs;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -19,6 +22,21 @@ import javax.annotation.Nullable;
 public final class ScheduledJobOperationArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final ScheduledJobOperationArgs Empty = new ScheduledJobOperationArgs();
+
+    /**
+     * (Updatable) Provides the information used to install a snap.
+     * 
+     */
+    @Import(name="installSnapDetails")
+    private @Nullable Output<ScheduledJobOperationInstallSnapDetailsArgs> installSnapDetails;
+
+    /**
+     * @return (Updatable) Provides the information used to install a snap.
+     * 
+     */
+    public Optional<Output<ScheduledJobOperationInstallSnapDetailsArgs>> installSnapDetails() {
+        return Optional.ofNullable(this.installSnapDetails);
+    }
 
     /**
      * (Updatable) The set of changes to make to the state of the modules, streams, and profiles on the managed target.
@@ -81,6 +99,21 @@ public final class ScheduledJobOperationArgs extends com.pulumi.resources.Resour
     }
 
     /**
+     * (Updatable) Provides the information used to remove a snap.
+     * 
+     */
+    @Import(name="removeSnapDetails")
+    private @Nullable Output<ScheduledJobOperationRemoveSnapDetailsArgs> removeSnapDetails;
+
+    /**
+     * @return (Updatable) Provides the information used to remove a snap.
+     * 
+     */
+    public Optional<Output<ScheduledJobOperationRemoveSnapDetailsArgs>> removeSnapDetails() {
+        return Optional.ofNullable(this.removeSnapDetails);
+    }
+
+    /**
      * (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
      * 
      */
@@ -111,6 +144,21 @@ public final class ScheduledJobOperationArgs extends com.pulumi.resources.Resour
     }
 
     /**
+     * (Updatable) Provides the information used to switch a snap channel.
+     * 
+     */
+    @Import(name="switchSnapChannelDetails")
+    private @Nullable Output<ScheduledJobOperationSwitchSnapChannelDetailsArgs> switchSnapChannelDetails;
+
+    /**
+     * @return (Updatable) Provides the information used to switch a snap channel.
+     * 
+     */
+    public Optional<Output<ScheduledJobOperationSwitchSnapChannelDetailsArgs>> switchSnapChannelDetails() {
+        return Optional.ofNullable(this.switchSnapChannelDetails);
+    }
+
+    /**
      * (Updatable) Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: &#39;6981d463-cd91-4a26-b7c4-ea4ded9183ed&#39;.
      * 
      */
@@ -128,12 +176,15 @@ public final class ScheduledJobOperationArgs extends com.pulumi.resources.Resour
     private ScheduledJobOperationArgs() {}
 
     private ScheduledJobOperationArgs(ScheduledJobOperationArgs $) {
+        this.installSnapDetails = $.installSnapDetails;
         this.manageModuleStreamsDetails = $.manageModuleStreamsDetails;
         this.operationType = $.operationType;
         this.packageNames = $.packageNames;
         this.rebootTimeoutInMins = $.rebootTimeoutInMins;
+        this.removeSnapDetails = $.removeSnapDetails;
         this.softwareSourceIds = $.softwareSourceIds;
         this.switchModuleStreamsDetails = $.switchModuleStreamsDetails;
+        this.switchSnapChannelDetails = $.switchSnapChannelDetails;
         this.windowsUpdateNames = $.windowsUpdateNames;
     }
 
@@ -153,6 +204,27 @@ public final class ScheduledJobOperationArgs extends com.pulumi.resources.Resour
 
         public Builder(ScheduledJobOperationArgs defaults) {
             $ = new ScheduledJobOperationArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param installSnapDetails (Updatable) Provides the information used to install a snap.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder installSnapDetails(@Nullable Output<ScheduledJobOperationInstallSnapDetailsArgs> installSnapDetails) {
+            $.installSnapDetails = installSnapDetails;
+            return this;
+        }
+
+        /**
+         * @param installSnapDetails (Updatable) Provides the information used to install a snap.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder installSnapDetails(ScheduledJobOperationInstallSnapDetailsArgs installSnapDetails) {
+            return installSnapDetails(Output.of(installSnapDetails));
         }
 
         /**
@@ -250,6 +322,27 @@ public final class ScheduledJobOperationArgs extends com.pulumi.resources.Resour
         }
 
         /**
+         * @param removeSnapDetails (Updatable) Provides the information used to remove a snap.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder removeSnapDetails(@Nullable Output<ScheduledJobOperationRemoveSnapDetailsArgs> removeSnapDetails) {
+            $.removeSnapDetails = removeSnapDetails;
+            return this;
+        }
+
+        /**
+         * @param removeSnapDetails (Updatable) Provides the information used to remove a snap.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder removeSnapDetails(ScheduledJobOperationRemoveSnapDetailsArgs removeSnapDetails) {
+            return removeSnapDetails(Output.of(removeSnapDetails));
+        }
+
+        /**
          * @param softwareSourceIds (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
          * 
          * @return builder
@@ -299,6 +392,27 @@ public final class ScheduledJobOperationArgs extends com.pulumi.resources.Resour
          */
         public Builder switchModuleStreamsDetails(ScheduledJobOperationSwitchModuleStreamsDetailsArgs switchModuleStreamsDetails) {
             return switchModuleStreamsDetails(Output.of(switchModuleStreamsDetails));
+        }
+
+        /**
+         * @param switchSnapChannelDetails (Updatable) Provides the information used to switch a snap channel.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder switchSnapChannelDetails(@Nullable Output<ScheduledJobOperationSwitchSnapChannelDetailsArgs> switchSnapChannelDetails) {
+            $.switchSnapChannelDetails = switchSnapChannelDetails;
+            return this;
+        }
+
+        /**
+         * @param switchSnapChannelDetails (Updatable) Provides the information used to switch a snap channel.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder switchSnapChannelDetails(ScheduledJobOperationSwitchSnapChannelDetailsArgs switchSnapChannelDetails) {
+            return switchSnapChannelDetails(Output.of(switchSnapChannelDetails));
         }
 
         /**

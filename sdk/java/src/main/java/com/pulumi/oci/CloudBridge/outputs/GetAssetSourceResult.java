@@ -31,6 +31,8 @@ public final class GetAssetSourceResult {
      * 
      */
     private String assetsCompartmentId;
+    private String awsAccountKey;
+    private String awsRegion;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
      * 
@@ -62,6 +64,11 @@ public final class GetAssetSourceResult {
      */
     private String environmentId;
     /**
+     * @return Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     * 
+     */
+    private String environmentType;
+    /**
      * @return The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -76,11 +83,17 @@ public final class GetAssetSourceResult {
      * 
      */
     private String inventoryId;
+    private Boolean isCostInformationCollected;
     /**
      * @return The detailed state of the asset source.
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Endpoint for OLVM asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;```
+     * 
+     */
+    private String olvmEndpoint;
     /**
      * @return Credentials for an asset source.
      * 
@@ -142,6 +155,12 @@ public final class GetAssetSourceResult {
     public String assetsCompartmentId() {
         return this.assetsCompartmentId;
     }
+    public String awsAccountKey() {
+        return this.awsAccountKey;
+    }
+    public String awsRegion() {
+        return this.awsRegion;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
      * 
@@ -185,6 +204,13 @@ public final class GetAssetSourceResult {
         return this.environmentId;
     }
     /**
+     * @return Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     * 
+     */
+    public String environmentType() {
+        return this.environmentType;
+    }
+    /**
      * @return The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -205,12 +231,22 @@ public final class GetAssetSourceResult {
     public String inventoryId() {
         return this.inventoryId;
     }
+    public Boolean isCostInformationCollected() {
+        return this.isCostInformationCollected;
+    }
     /**
      * @return The detailed state of the asset source.
      * 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * @return Endpoint for OLVM asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;```
+     * 
+     */
+    public String olvmEndpoint() {
+        return this.olvmEndpoint;
     }
     /**
      * @return Credentials for an asset source.
@@ -275,16 +311,21 @@ public final class GetAssetSourceResult {
         private Boolean areRealtimeMetricsCollected;
         private String assetSourceId;
         private String assetsCompartmentId;
+        private String awsAccountKey;
+        private String awsRegion;
         private String compartmentId;
         private Map<String,String> definedTags;
         private List<GetAssetSourceDiscoveryCredential> discoveryCredentials;
         private String discoveryScheduleId;
         private String displayName;
         private String environmentId;
+        private String environmentType;
         private Map<String,String> freeformTags;
         private String id;
         private String inventoryId;
+        private Boolean isCostInformationCollected;
         private String lifecycleDetails;
+        private String olvmEndpoint;
         private List<GetAssetSourceReplicationCredential> replicationCredentials;
         private String state;
         private Map<String,String> systemTags;
@@ -299,16 +340,21 @@ public final class GetAssetSourceResult {
     	      this.areRealtimeMetricsCollected = defaults.areRealtimeMetricsCollected;
     	      this.assetSourceId = defaults.assetSourceId;
     	      this.assetsCompartmentId = defaults.assetsCompartmentId;
+    	      this.awsAccountKey = defaults.awsAccountKey;
+    	      this.awsRegion = defaults.awsRegion;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.discoveryCredentials = defaults.discoveryCredentials;
     	      this.discoveryScheduleId = defaults.discoveryScheduleId;
     	      this.displayName = defaults.displayName;
     	      this.environmentId = defaults.environmentId;
+    	      this.environmentType = defaults.environmentType;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.inventoryId = defaults.inventoryId;
+    	      this.isCostInformationCollected = defaults.isCostInformationCollected;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.olvmEndpoint = defaults.olvmEndpoint;
     	      this.replicationCredentials = defaults.replicationCredentials;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -348,6 +394,22 @@ public final class GetAssetSourceResult {
               throw new MissingRequiredPropertyException("GetAssetSourceResult", "assetsCompartmentId");
             }
             this.assetsCompartmentId = assetsCompartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder awsAccountKey(String awsAccountKey) {
+            if (awsAccountKey == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "awsAccountKey");
+            }
+            this.awsAccountKey = awsAccountKey;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder awsRegion(String awsRegion) {
+            if (awsRegion == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "awsRegion");
+            }
+            this.awsRegion = awsRegion;
             return this;
         }
         @CustomType.Setter
@@ -402,6 +464,14 @@ public final class GetAssetSourceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder environmentType(String environmentType) {
+            if (environmentType == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "environmentType");
+            }
+            this.environmentType = environmentType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetAssetSourceResult", "freeformTags");
@@ -426,11 +496,27 @@ public final class GetAssetSourceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isCostInformationCollected(Boolean isCostInformationCollected) {
+            if (isCostInformationCollected == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "isCostInformationCollected");
+            }
+            this.isCostInformationCollected = isCostInformationCollected;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetAssetSourceResult", "lifecycleDetails");
             }
             this.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder olvmEndpoint(String olvmEndpoint) {
+            if (olvmEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetAssetSourceResult", "olvmEndpoint");
+            }
+            this.olvmEndpoint = olvmEndpoint;
             return this;
         }
         @CustomType.Setter
@@ -498,16 +584,21 @@ public final class GetAssetSourceResult {
             _resultValue.areRealtimeMetricsCollected = areRealtimeMetricsCollected;
             _resultValue.assetSourceId = assetSourceId;
             _resultValue.assetsCompartmentId = assetsCompartmentId;
+            _resultValue.awsAccountKey = awsAccountKey;
+            _resultValue.awsRegion = awsRegion;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.discoveryCredentials = discoveryCredentials;
             _resultValue.discoveryScheduleId = discoveryScheduleId;
             _resultValue.displayName = displayName;
             _resultValue.environmentId = environmentId;
+            _resultValue.environmentType = environmentType;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.inventoryId = inventoryId;
+            _resultValue.isCostInformationCollected = isCostInformationCollected;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.olvmEndpoint = olvmEndpoint;
             _resultValue.replicationCredentials = replicationCredentials;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

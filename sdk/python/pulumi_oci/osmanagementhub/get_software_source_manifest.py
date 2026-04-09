@@ -40,9 +40,6 @@ class GetSoftwareSourceManifestResult:
     @_builtins.property
     @pulumi.getter
     def content(self) -> _builtins.str:
-        """
-        Provides the manifest content used to update the package list of the software source.
-        """
         return pulumi.get(self, "content")
 
     @_builtins.property
@@ -53,9 +50,6 @@ class GetSoftwareSourceManifestResult:
     @_builtins.property
     @pulumi.getter(name="softwareSourceId")
     def software_source_id(self) -> _builtins.str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-        """
         return pulumi.get(self, "software_source_id")
 
 

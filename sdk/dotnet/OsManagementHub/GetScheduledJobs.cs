@@ -33,6 +33,7 @@ namespace Pulumi.Oci.OsManagementHub
         ///         CompartmentIdInSubtree = scheduledJobCompartmentIdInSubtree,
         ///         DisplayName = scheduledJobDisplayName,
         ///         DisplayNameContains = scheduledJobDisplayNameContains,
+        ///         DynamicSetId = testDynamicSet.Id,
         ///         Id = scheduledJobId,
         ///         IsManagedByAutonomousLinux = scheduledJobIsManagedByAutonomousLinux,
         ///         IsRestricted = scheduledJobIsRestricted,
@@ -77,6 +78,7 @@ namespace Pulumi.Oci.OsManagementHub
         ///         CompartmentIdInSubtree = scheduledJobCompartmentIdInSubtree,
         ///         DisplayName = scheduledJobDisplayName,
         ///         DisplayNameContains = scheduledJobDisplayNameContains,
+        ///         DynamicSetId = testDynamicSet.Id,
         ///         Id = scheduledJobId,
         ///         IsManagedByAutonomousLinux = scheduledJobIsManagedByAutonomousLinux,
         ///         IsRestricted = scheduledJobIsRestricted,
@@ -121,6 +123,7 @@ namespace Pulumi.Oci.OsManagementHub
         ///         CompartmentIdInSubtree = scheduledJobCompartmentIdInSubtree,
         ///         DisplayName = scheduledJobDisplayName,
         ///         DisplayNameContains = scheduledJobDisplayNameContains,
+        ///         DynamicSetId = testDynamicSet.Id,
         ///         Id = scheduledJobId,
         ///         IsManagedByAutonomousLinux = scheduledJobIsManagedByAutonomousLinux,
         ///         IsRestricted = scheduledJobIsRestricted,
@@ -170,6 +173,12 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         [Input("displayNameContains")]
         public string? DisplayNameContains { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
+        /// </summary>
+        [Input("dynamicSetId")]
+        public string? DynamicSetId { get; set; }
 
         [Input("filters")]
         private List<Inputs.GetScheduledJobsFilterArgs>? _filters;
@@ -307,6 +316,12 @@ namespace Pulumi.Oci.OsManagementHub
         [Input("displayNameContains")]
         public Input<string>? DisplayNameContains { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
+        /// </summary>
+        [Input("dynamicSetId")]
+        public Input<string>? DynamicSetId { get; set; }
+
         [Input("filters")]
         private InputList<Inputs.GetScheduledJobsFilterInputArgs>? _filters;
         public InputList<Inputs.GetScheduledJobsFilterInputArgs> Filters
@@ -431,6 +446,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly string? DisplayName;
         public readonly string? DisplayNameContains;
+        public readonly string? DynamicSetId;
         public readonly ImmutableArray<Outputs.GetScheduledJobsFilterResult> Filters;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job.
@@ -479,6 +495,8 @@ namespace Pulumi.Oci.OsManagementHub
 
             string? displayNameContains,
 
+            string? dynamicSetId,
+
             ImmutableArray<Outputs.GetScheduledJobsFilterResult> filters,
 
             string? id,
@@ -515,6 +533,7 @@ namespace Pulumi.Oci.OsManagementHub
             CompartmentIdInSubtree = compartmentIdInSubtree;
             DisplayName = displayName;
             DisplayNameContains = displayNameContains;
+            DynamicSetId = dynamicSetId;
             Filters = filters;
             Id = id;
             IsManagedByAutonomousLinux = isManagedByAutonomousLinux;

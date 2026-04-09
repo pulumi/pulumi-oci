@@ -26,7 +26,136 @@ import * as utilities from "../utilities";
  *     externalAssetKey: assetExternalAssetKey,
  *     inventoryId: testInventory.id,
  *     sourceKey: assetSourceKey,
+ *     assetClassName: assetAssetClassName,
+ *     assetClassVersion: assetAssetClassVersion,
+ *     assetDetails: assetAssetDetails,
  *     assetSourceIds: assetAssetSourceIds,
+ *     attachedEbsVolumesCost: {
+ *         amount: assetAttachedEbsVolumesCostAmount,
+ *         currencyCode: assetAttachedEbsVolumesCostCurrencyCode,
+ *     },
+ *     awsEbs: {
+ *         attachments: [{
+ *             device: assetAwsEbsAttachmentsDevice,
+ *             instanceKey: assetAwsEbsAttachmentsInstanceKey,
+ *             isDeleteOnTermination: assetAwsEbsAttachmentsIsDeleteOnTermination,
+ *             status: assetAwsEbsAttachmentsStatus,
+ *             volumeKey: assetAwsEbsAttachmentsVolumeKey,
+ *         }],
+ *         availabilityZone: assetAwsEbsAvailabilityZone,
+ *         iops: assetAwsEbsIops,
+ *         isEncrypted: assetAwsEbsIsEncrypted,
+ *         isMultiAttachEnabled: assetAwsEbsIsMultiAttachEnabled,
+ *         sizeInGiBs: assetAwsEbsSizeInGiBs,
+ *         status: assetAwsEbsStatus,
+ *         tags: [{
+ *             key: assetAwsEbsTagsKey,
+ *             value: assetAwsEbsTagsValue,
+ *         }],
+ *         throughput: assetAwsEbsThroughput,
+ *         volumeKey: assetAwsEbsVolumeKey,
+ *         volumeType: assetAwsEbsVolumeType,
+ *     },
+ *     awsEc2: {
+ *         architecture: assetAwsEc2Architecture,
+ *         areElasticInferenceAcceleratorsPresent: assetAwsEc2AreElasticInferenceAcceleratorsPresent,
+ *         bootMode: assetAwsEc2BootMode,
+ *         capacityReservationKey: assetAwsEc2CapacityReservationKey,
+ *         imageKey: assetAwsEc2ImageKey,
+ *         instanceKey: assetAwsEc2InstanceKey,
+ *         instanceLifecycle: assetAwsEc2InstanceLifecycle,
+ *         instanceType: assetAwsEc2InstanceType,
+ *         ipAddress: assetAwsEc2IpAddress,
+ *         ipv6address: assetAwsEc2Ipv6address,
+ *         isEnclaveOptions: assetAwsEc2IsEnclaveOptions,
+ *         isHibernationOptions: assetAwsEc2IsHibernationOptions,
+ *         isSourceDestCheck: assetAwsEc2IsSourceDestCheck,
+ *         isSpotInstance: assetAwsEc2IsSpotInstance,
+ *         kernelKey: assetAwsEc2KernelKey,
+ *         licenses: assetAwsEc2Licenses,
+ *         maintenanceOptions: assetAwsEc2MaintenanceOptions,
+ *         monitoring: assetAwsEc2Monitoring,
+ *         networkInterfaces: [{
+ *             association: {
+ *                 carrierIp: assetAwsEc2NetworkInterfacesAssociationCarrierIp,
+ *                 customerOwnedIp: assetAwsEc2NetworkInterfacesAssociationCustomerOwnedIp,
+ *                 ipOwnerKey: assetAwsEc2NetworkInterfacesAssociationIpOwnerKey,
+ *                 publicDnsName: assetAwsEc2NetworkInterfacesAssociationPublicDnsName,
+ *                 publicIp: assetAwsEc2NetworkInterfacesAssociationPublicIp,
+ *             },
+ *             attachment: {
+ *                 attachmentKey: assetAwsEc2NetworkInterfacesAttachmentAttachmentKey,
+ *                 deviceIndex: assetAwsEc2NetworkInterfacesAttachmentDeviceIndex,
+ *                 isDeleteOnTermination: assetAwsEc2NetworkInterfacesAttachmentIsDeleteOnTermination,
+ *                 networkCardIndex: assetAwsEc2NetworkInterfacesAttachmentNetworkCardIndex,
+ *                 status: assetAwsEc2NetworkInterfacesAttachmentStatus,
+ *                 timeAttach: assetAwsEc2NetworkInterfacesAttachmentTimeAttach,
+ *             },
+ *             description: assetAwsEc2NetworkInterfacesDescription,
+ *             interfaceType: assetAwsEc2NetworkInterfacesInterfaceType,
+ *             ipv4prefixes: assetAwsEc2NetworkInterfacesIpv4prefixes,
+ *             ipv6addresses: assetAwsEc2NetworkInterfacesIpv6addresses,
+ *             ipv6prefixes: assetAwsEc2NetworkInterfacesIpv6prefixes,
+ *             isSourceDestCheck: assetAwsEc2NetworkInterfacesIsSourceDestCheck,
+ *             macAddress: assetAwsEc2NetworkInterfacesMacAddress,
+ *             networkInterfaceKey: assetAwsEc2NetworkInterfacesNetworkInterfaceKey,
+ *             ownerKey: assetAwsEc2NetworkInterfacesOwnerKey,
+ *             privateIpAddresses: [{
+ *                 association: {
+ *                     carrierIp: assetAwsEc2NetworkInterfacesPrivateIpAddressesAssociationCarrierIp,
+ *                     customerOwnedIp: assetAwsEc2NetworkInterfacesPrivateIpAddressesAssociationCustomerOwnedIp,
+ *                     ipOwnerKey: assetAwsEc2NetworkInterfacesPrivateIpAddressesAssociationIpOwnerKey,
+ *                     publicDnsName: assetAwsEc2NetworkInterfacesPrivateIpAddressesAssociationPublicDnsName,
+ *                     publicIp: assetAwsEc2NetworkInterfacesPrivateIpAddressesAssociationPublicIp,
+ *                 },
+ *                 isPrimary: assetAwsEc2NetworkInterfacesPrivateIpAddressesIsPrimary,
+ *                 privateDnsName: assetAwsEc2NetworkInterfacesPrivateIpAddressesPrivateDnsName,
+ *                 privateIpAddress: assetAwsEc2NetworkInterfacesPrivateIpAddressesPrivateIpAddress,
+ *             }],
+ *             securityGroups: [{
+ *                 groupKey: assetAwsEc2NetworkInterfacesSecurityGroupsGroupKey,
+ *                 groupName: testGroup.name,
+ *             }],
+ *             status: assetAwsEc2NetworkInterfacesStatus,
+ *             subnetKey: assetAwsEc2NetworkInterfacesSubnetKey,
+ *         }],
+ *         placement: {
+ *             affinity: assetAwsEc2PlacementAffinity,
+ *             availabilityZone: assetAwsEc2PlacementAvailabilityZone,
+ *             groupName: testGroup.name,
+ *             hostKey: assetAwsEc2PlacementHostKey,
+ *             hostResourceGroupArn: assetAwsEc2PlacementHostResourceGroupArn,
+ *             partitionNumber: assetAwsEc2PlacementPartitionNumber,
+ *             spreadDomain: assetAwsEc2PlacementSpreadDomain,
+ *             tenancy: assetAwsEc2PlacementTenancy,
+ *         },
+ *         privateDnsName: assetAwsEc2PrivateDnsName,
+ *         privateIpAddress: assetAwsEc2PrivateIpAddress,
+ *         rootDeviceName: assetAwsEc2RootDeviceName,
+ *         rootDeviceType: assetAwsEc2RootDeviceType,
+ *         securityGroups: [{
+ *             groupKey: assetAwsEc2SecurityGroupsGroupKey,
+ *             groupName: testGroup.name,
+ *         }],
+ *         sriovNetSupport: assetAwsEc2SriovNetSupport,
+ *         state: {
+ *             code: assetAwsEc2StateCode,
+ *             name: assetAwsEc2StateName,
+ *         },
+ *         subnetKey: assetAwsEc2SubnetKey,
+ *         tags: [{
+ *             key: assetAwsEc2TagsKey,
+ *             value: assetAwsEc2TagsValue,
+ *         }],
+ *         timeLaunch: assetAwsEc2TimeLaunch,
+ *         tpmSupport: assetAwsEc2TpmSupport,
+ *         virtualizationType: assetAwsEc2VirtualizationType,
+ *         vpcKey: assetAwsEc2VpcKey,
+ *     },
+ *     awsEc2cost: {
+ *         amount: assetAwsEc2costAmount,
+ *         currencyCode: assetAwsEc2costCurrencyCode,
+ *     },
  *     compute: {
  *         connectedNetworks: assetComputeConnectedNetworks,
  *         coresCount: assetComputeCoresCount,
@@ -34,6 +163,7 @@ import * as utilities from "../utilities";
  *         description: assetComputeDescription,
  *         disks: [{
  *             bootOrder: assetComputeDisksBootOrder,
+ *             isCbtEnabled: assetComputeDisksIsCbtEnabled,
  *             location: assetComputeDisksLocation,
  *             name: assetComputeDisksName,
  *             persistentMode: assetComputeDisksPersistentMode,
@@ -94,6 +224,7 @@ import * as utilities from "../utilities";
  *         "Operations.CostCenter": "42",
  *     },
  *     displayName: assetDisplayName,
+ *     environmentType: assetEnvironmentType,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
@@ -163,6 +294,18 @@ export class Asset extends pulumi.CustomResource {
     }
 
     /**
+     * (Updatable) The class name of the asset.
+     */
+    declare public readonly assetClassName: pulumi.Output<string>;
+    /**
+     * (Updatable) The version of the asset class.
+     */
+    declare public readonly assetClassVersion: pulumi.Output<string>;
+    /**
+     * (Updatable) The details of the asset.
+     */
+    declare public readonly assetDetails: pulumi.Output<string>;
+    /**
      * (Updatable) List of asset source OCID.
      */
     declare public readonly assetSourceIds: pulumi.Output<string[]>;
@@ -170,6 +313,22 @@ export class Asset extends pulumi.CustomResource {
      * (Updatable) The type of asset.
      */
     declare public readonly assetType: pulumi.Output<string>;
+    /**
+     * (Updatable) Cost information for monthly maintenance.
+     */
+    declare public readonly attachedEbsVolumesCost: pulumi.Output<outputs.CloudBridge.AssetAttachedEbsVolumesCost>;
+    /**
+     * (Updatable) AWS EBS volume related properties.
+     */
+    declare public readonly awsEbs: pulumi.Output<outputs.CloudBridge.AssetAwsEbs>;
+    /**
+     * (Updatable) AWS virtual machine related properties.
+     */
+    declare public readonly awsEc2: pulumi.Output<outputs.CloudBridge.AssetAwsEc2>;
+    /**
+     * (Updatable) Cost information for monthly maintenance.
+     */
+    declare public readonly awsEc2cost: pulumi.Output<outputs.CloudBridge.AssetAwsEc2cost>;
     /**
      * (Updatable) The OCID of the compartment that the asset belongs to.
      */
@@ -186,6 +345,10 @@ export class Asset extends pulumi.CustomResource {
      * (Updatable) Asset display name.
      */
     declare public readonly displayName: pulumi.Output<string>;
+    /**
+     * Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     */
+    declare public /*out*/ readonly environmentType: pulumi.Output<string>;
     /**
      * The key of the asset from the external environment.
      */
@@ -244,12 +407,20 @@ export class Asset extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AssetState | undefined;
+            resourceInputs["assetClassName"] = state?.assetClassName;
+            resourceInputs["assetClassVersion"] = state?.assetClassVersion;
+            resourceInputs["assetDetails"] = state?.assetDetails;
             resourceInputs["assetSourceIds"] = state?.assetSourceIds;
             resourceInputs["assetType"] = state?.assetType;
+            resourceInputs["attachedEbsVolumesCost"] = state?.attachedEbsVolumesCost;
+            resourceInputs["awsEbs"] = state?.awsEbs;
+            resourceInputs["awsEc2"] = state?.awsEc2;
+            resourceInputs["awsEc2cost"] = state?.awsEc2cost;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["compute"] = state?.compute;
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["environmentType"] = state?.environmentType;
             resourceInputs["externalAssetKey"] = state?.externalAssetKey;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["inventoryId"] = state?.inventoryId;
@@ -278,8 +449,15 @@ export class Asset extends pulumi.CustomResource {
             if (args?.sourceKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sourceKey'");
             }
+            resourceInputs["assetClassName"] = args?.assetClassName;
+            resourceInputs["assetClassVersion"] = args?.assetClassVersion;
+            resourceInputs["assetDetails"] = args?.assetDetails;
             resourceInputs["assetSourceIds"] = args?.assetSourceIds;
             resourceInputs["assetType"] = args?.assetType;
+            resourceInputs["attachedEbsVolumesCost"] = args?.attachedEbsVolumesCost;
+            resourceInputs["awsEbs"] = args?.awsEbs;
+            resourceInputs["awsEc2"] = args?.awsEc2;
+            resourceInputs["awsEc2cost"] = args?.awsEc2cost;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["compute"] = args?.compute;
             resourceInputs["definedTags"] = args?.definedTags;
@@ -291,6 +469,7 @@ export class Asset extends pulumi.CustomResource {
             resourceInputs["vm"] = args?.vm;
             resourceInputs["vmwareVcenter"] = args?.vmwareVcenter;
             resourceInputs["vmwareVm"] = args?.vmwareVm;
+            resourceInputs["environmentType"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -306,6 +485,18 @@ export class Asset extends pulumi.CustomResource {
  */
 export interface AssetState {
     /**
+     * (Updatable) The class name of the asset.
+     */
+    assetClassName?: pulumi.Input<string>;
+    /**
+     * (Updatable) The version of the asset class.
+     */
+    assetClassVersion?: pulumi.Input<string>;
+    /**
+     * (Updatable) The details of the asset.
+     */
+    assetDetails?: pulumi.Input<string>;
+    /**
      * (Updatable) List of asset source OCID.
      */
     assetSourceIds?: pulumi.Input<pulumi.Input<string>[]>;
@@ -313,6 +504,22 @@ export interface AssetState {
      * (Updatable) The type of asset.
      */
     assetType?: pulumi.Input<string>;
+    /**
+     * (Updatable) Cost information for monthly maintenance.
+     */
+    attachedEbsVolumesCost?: pulumi.Input<inputs.CloudBridge.AssetAttachedEbsVolumesCost>;
+    /**
+     * (Updatable) AWS EBS volume related properties.
+     */
+    awsEbs?: pulumi.Input<inputs.CloudBridge.AssetAwsEbs>;
+    /**
+     * (Updatable) AWS virtual machine related properties.
+     */
+    awsEc2?: pulumi.Input<inputs.CloudBridge.AssetAwsEc2>;
+    /**
+     * (Updatable) Cost information for monthly maintenance.
+     */
+    awsEc2cost?: pulumi.Input<inputs.CloudBridge.AssetAwsEc2cost>;
     /**
      * (Updatable) The OCID of the compartment that the asset belongs to.
      */
@@ -329,6 +536,10 @@ export interface AssetState {
      * (Updatable) Asset display name.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     */
+    environmentType?: pulumi.Input<string>;
     /**
      * The key of the asset from the external environment.
      */
@@ -380,6 +591,18 @@ export interface AssetState {
  */
 export interface AssetArgs {
     /**
+     * (Updatable) The class name of the asset.
+     */
+    assetClassName?: pulumi.Input<string>;
+    /**
+     * (Updatable) The version of the asset class.
+     */
+    assetClassVersion?: pulumi.Input<string>;
+    /**
+     * (Updatable) The details of the asset.
+     */
+    assetDetails?: pulumi.Input<string>;
+    /**
      * (Updatable) List of asset source OCID.
      */
     assetSourceIds?: pulumi.Input<pulumi.Input<string>[]>;
@@ -387,6 +610,22 @@ export interface AssetArgs {
      * (Updatable) The type of asset.
      */
     assetType: pulumi.Input<string>;
+    /**
+     * (Updatable) Cost information for monthly maintenance.
+     */
+    attachedEbsVolumesCost?: pulumi.Input<inputs.CloudBridge.AssetAttachedEbsVolumesCost>;
+    /**
+     * (Updatable) AWS EBS volume related properties.
+     */
+    awsEbs?: pulumi.Input<inputs.CloudBridge.AssetAwsEbs>;
+    /**
+     * (Updatable) AWS virtual machine related properties.
+     */
+    awsEc2?: pulumi.Input<inputs.CloudBridge.AssetAwsEc2>;
+    /**
+     * (Updatable) Cost information for monthly maintenance.
+     */
+    awsEc2cost?: pulumi.Input<inputs.CloudBridge.AssetAwsEc2cost>;
     /**
      * (Updatable) The OCID of the compartment that the asset belongs to.
      */

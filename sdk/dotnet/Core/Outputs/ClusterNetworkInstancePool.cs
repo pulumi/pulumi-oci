@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
+        /// Count of instance in running state associated to the Instance Pool.
+        /// </summary>
+        public readonly int? CurrentSize;
+        /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string>? DefinedTags;
@@ -64,6 +68,8 @@ namespace Pulumi.Oci.Core.Outputs
         private ClusterNetworkInstancePool(
             string? compartmentId,
 
+            int? currentSize,
+
             ImmutableDictionary<string, string>? definedTags,
 
             string? displayName,
@@ -89,6 +95,7 @@ namespace Pulumi.Oci.Core.Outputs
             string? timeCreated)
         {
             CompartmentId = compartmentId;
+            CurrentSize = currentSize;
             DefinedTags = definedTags;
             DisplayName = displayName;
             FreeformTags = freeformTags;

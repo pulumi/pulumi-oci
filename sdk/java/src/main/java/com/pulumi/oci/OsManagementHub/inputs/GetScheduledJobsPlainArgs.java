@@ -77,6 +77,21 @@ public final class GetScheduledJobsPlainArgs extends com.pulumi.resources.Invoke
         return Optional.ofNullable(this.displayNameContains);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
+     * 
+     */
+    @Import(name="dynamicSetId")
+    private @Nullable String dynamicSetId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
+     * 
+     */
+    public Optional<String> dynamicSetId() {
+        return Optional.ofNullable(this.dynamicSetId);
+    }
+
     @Import(name="filters")
     private @Nullable List<GetScheduledJobsFilter> filters;
 
@@ -301,6 +316,7 @@ public final class GetScheduledJobsPlainArgs extends com.pulumi.resources.Invoke
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.displayName = $.displayName;
         this.displayNameContains = $.displayNameContains;
+        this.dynamicSetId = $.dynamicSetId;
         this.filters = $.filters;
         this.id = $.id;
         this.isManagedByAutonomousLinux = $.isManagedByAutonomousLinux;
@@ -377,6 +393,17 @@ public final class GetScheduledJobsPlainArgs extends com.pulumi.resources.Invoke
          */
         public Builder displayNameContains(@Nullable String displayNameContains) {
             $.displayNameContains = displayNameContains;
+            return this;
+        }
+
+        /**
+         * @param dynamicSetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dynamicSetId(@Nullable String dynamicSetId) {
+            $.dynamicSetId = dynamicSetId;
             return this;
         }
 

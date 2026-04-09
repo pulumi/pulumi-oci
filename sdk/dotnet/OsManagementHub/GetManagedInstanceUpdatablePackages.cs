@@ -31,6 +31,7 @@ namespace Pulumi.Oci.OsManagementHub
         ///     {
         ///         ManagedInstanceId = testManagedInstance.Id,
         ///         AdvisoryNames = managedInstanceUpdatablePackageAdvisoryName,
+        ///         AdvisorySeverities = managedInstanceUpdatablePackageAdvisorySeverity,
         ///         ClassificationTypes = managedInstanceUpdatablePackageClassificationType,
         ///         CompartmentId = compartmentId,
         ///         DisplayNames = managedInstanceUpdatablePackageDisplayName,
@@ -63,6 +64,7 @@ namespace Pulumi.Oci.OsManagementHub
         ///     {
         ///         ManagedInstanceId = testManagedInstance.Id,
         ///         AdvisoryNames = managedInstanceUpdatablePackageAdvisoryName,
+        ///         AdvisorySeverities = managedInstanceUpdatablePackageAdvisorySeverity,
         ///         ClassificationTypes = managedInstanceUpdatablePackageClassificationType,
         ///         CompartmentId = compartmentId,
         ///         DisplayNames = managedInstanceUpdatablePackageDisplayName,
@@ -95,6 +97,7 @@ namespace Pulumi.Oci.OsManagementHub
         ///     {
         ///         ManagedInstanceId = testManagedInstance.Id,
         ///         AdvisoryNames = managedInstanceUpdatablePackageAdvisoryName,
+        ///         AdvisorySeverities = managedInstanceUpdatablePackageAdvisorySeverity,
         ///         ClassificationTypes = managedInstanceUpdatablePackageClassificationType,
         ///         CompartmentId = compartmentId,
         ///         DisplayNames = managedInstanceUpdatablePackageDisplayName,
@@ -121,6 +124,18 @@ namespace Pulumi.Oci.OsManagementHub
         {
             get => _advisoryNames ?? (_advisoryNames = new List<string>());
             set => _advisoryNames = value;
+        }
+
+        [Input("advisorySeverities")]
+        private List<string>? _advisorySeverities;
+
+        /// <summary>
+        /// The advisory severity.
+        /// </summary>
+        public List<string> AdvisorySeverities
+        {
+            get => _advisorySeverities ?? (_advisorySeverities = new List<string>());
+            set => _advisorySeverities = value;
         }
 
         [Input("classificationTypes")]
@@ -193,6 +208,18 @@ namespace Pulumi.Oci.OsManagementHub
             set => _advisoryNames = value;
         }
 
+        [Input("advisorySeverities")]
+        private InputList<string>? _advisorySeverities;
+
+        /// <summary>
+        /// The advisory severity.
+        /// </summary>
+        public InputList<string> AdvisorySeverities
+        {
+            get => _advisorySeverities ?? (_advisorySeverities = new InputList<string>());
+            set => _advisorySeverities = value;
+        }
+
         [Input("classificationTypes")]
         private InputList<string>? _classificationTypes;
 
@@ -254,6 +281,10 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetManagedInstanceUpdatablePackagesResult
     {
         public readonly ImmutableArray<string> AdvisoryNames;
+        /// <summary>
+        /// The severity level of the security update. Only applicable when updateType is SECURITY.
+        /// </summary>
+        public readonly ImmutableArray<string> AdvisorySeverities;
         public readonly ImmutableArray<string> ClassificationTypes;
         public readonly string? CompartmentId;
         public readonly string? DisplayNameContains;
@@ -276,6 +307,8 @@ namespace Pulumi.Oci.OsManagementHub
         private GetManagedInstanceUpdatablePackagesResult(
             ImmutableArray<string> advisoryNames,
 
+            ImmutableArray<string> advisorySeverities,
+
             ImmutableArray<string> classificationTypes,
 
             string? compartmentId,
@@ -293,6 +326,7 @@ namespace Pulumi.Oci.OsManagementHub
             ImmutableArray<Outputs.GetManagedInstanceUpdatablePackagesUpdatablePackageCollectionResult> updatablePackageCollections)
         {
             AdvisoryNames = advisoryNames;
+            AdvisorySeverities = advisorySeverities;
             ClassificationTypes = classificationTypes;
             CompartmentId = compartmentId;
             DisplayNameContains = displayNameContains;

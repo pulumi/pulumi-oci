@@ -127,6 +127,10 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetManagementStationResult
     {
         /// <summary>
+        /// The architecture type.
+        /// </summary>
+        public readonly string ArchType;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
         /// </summary>
         public readonly string CompartmentId;
@@ -204,6 +208,10 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagementStationMirrorResult> Mirrors;
         /// <summary>
+        /// The operating system family.
+        /// </summary>
+        public readonly string OsFamily;
+        /// <summary>
         /// A decimal number representing the progress of the current mirror sync.
         /// </summary>
         public readonly int OverallPercentage;
@@ -243,6 +251,8 @@ namespace Pulumi.Oci.OsManagementHub
 
         [OutputConstructor]
         private GetManagementStationResult(
+            string archType,
+
             string compartmentId,
 
             ImmutableDictionary<string, string> definedTags,
@@ -283,6 +293,8 @@ namespace Pulumi.Oci.OsManagementHub
 
             ImmutableArray<Outputs.GetManagementStationMirrorResult> mirrors,
 
+            string osFamily,
+
             int overallPercentage,
 
             string overallState,
@@ -303,6 +315,7 @@ namespace Pulumi.Oci.OsManagementHub
 
             int totalMirrors)
         {
+            ArchType = archType;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             Description = description;
@@ -323,6 +336,7 @@ namespace Pulumi.Oci.OsManagementHub
             MirrorSyncStatuses = mirrorSyncStatuses;
             MirrorUniquePackageCount = mirrorUniquePackageCount;
             Mirrors = mirrors;
+            OsFamily = osFamily;
             OverallPercentage = overallPercentage;
             OverallState = overallState;
             PeerManagementStations = peerManagementStations;

@@ -27,7 +27,7 @@ class GetScheduledJobResult:
     """
     A collection of values returned by getScheduledJob.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_managed_by_autonomous_linux=None, is_restricted=None, is_subcompartment_included=None, lifecycle_stage_ids=None, locations=None, managed_compartment_ids=None, managed_instance_group_ids=None, managed_instance_ids=None, operations=None, recurring_rule=None, retry_intervals=None, schedule_type=None, scheduled_job_id=None, state=None, system_tags=None, time_created=None, time_last_execution=None, time_next_execution=None, time_updated=None, work_request_id=None, work_request_ids=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, dynamic_set_ids=None, freeform_tags=None, id=None, is_managed_by_autonomous_linux=None, is_restricted=None, is_subcompartment_included=None, lifecycle_stage_ids=None, locations=None, managed_compartment_ids=None, managed_instance_group_ids=None, managed_instance_ids=None, operations=None, recurring_rule=None, retry_intervals=None, schedule_type=None, scheduled_job_id=None, state=None, system_tags=None, time_created=None, time_last_execution=None, time_next_execution=None, time_updated=None, work_request_id=None, work_request_ids=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -40,6 +40,9 @@ class GetScheduledJobResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if dynamic_set_ids and not isinstance(dynamic_set_ids, list):
+            raise TypeError("Expected argument 'dynamic_set_ids' to be a list")
+        pulumi.set(__self__, "dynamic_set_ids", dynamic_set_ids)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -143,6 +146,14 @@ class GetScheduledJobResult:
         return pulumi.get(self, "display_name")
 
     @_builtins.property
+    @pulumi.getter(name="dynamicSetIds")
+    def dynamic_set_ids(self) -> Sequence[_builtins.str]:
+        """
+        The dynamic set [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on. A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+        """
+        return pulumi.get(self, "dynamic_set_ids")
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, _builtins.str]:
         """
@@ -186,7 +197,7 @@ class GetScheduledJobResult:
     @pulumi.getter(name="lifecycleStageIds")
     def lifecycle_stage_ids(self) -> Sequence[_builtins.str]:
         """
-        The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+        The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds, and dynamicSetIds.
         """
         return pulumi.get(self, "lifecycle_stage_ids")
 
@@ -242,7 +253,7 @@ class GetScheduledJobResult:
     @pulumi.getter(name="recurringRule")
     def recurring_rule(self) -> _builtins.str:
         """
-        The frequency schedule for a recurring scheduled job.
+        The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported. In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
         """
         return pulumi.get(self, "recurring_rule")
 
@@ -342,6 +353,7 @@ class AwaitableGetScheduledJobResult(GetScheduledJobResult):
             defined_tags=self.defined_tags,
             description=self.description,
             display_name=self.display_name,
+            dynamic_set_ids=self.dynamic_set_ids,
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_managed_by_autonomous_linux=self.is_managed_by_autonomous_linux,
@@ -396,6 +408,7 @@ def get_scheduled_job(scheduled_job_id: Optional[_builtins.str] = None,
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        dynamic_set_ids=pulumi.get(__ret__, 'dynamic_set_ids'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_managed_by_autonomous_linux=pulumi.get(__ret__, 'is_managed_by_autonomous_linux'),
@@ -447,6 +460,7 @@ def get_scheduled_job_output(scheduled_job_id: Optional[pulumi.Input[_builtins.s
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),
         display_name=pulumi.get(__response__, 'display_name'),
+        dynamic_set_ids=pulumi.get(__response__, 'dynamic_set_ids'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         is_managed_by_autonomous_linux=pulumi.get(__response__, 'is_managed_by_autonomous_linux'),

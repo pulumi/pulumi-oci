@@ -30,7 +30,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult> PreemptibleNodeConfigs;
         /// <summary>
-        /// The OCID of the subnet in which to place nodes.
+        /// the ocid of the subnet to create the vnic in
         /// </summary>
         public readonly string SubnetId;
 

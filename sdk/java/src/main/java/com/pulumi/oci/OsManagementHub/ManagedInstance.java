@@ -69,14 +69,28 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
         return this.architecture;
     }
     /**
-     * (Updatable) Updatable settings for the Autonomous Linux service.
+     * Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+     * 
+     */
+    @Export(name="areSourcesManaged", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> areSourcesManaged;
+
+    /**
+     * @return Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+     * 
+     */
+    public Output<Boolean> areSourcesManaged() {
+        return this.areSourcesManaged;
+    }
+    /**
+     * (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
      * 
      */
     @Export(name="autonomousSettings", refs={ManagedInstanceAutonomousSettings.class}, tree="[0]")
     private Output<ManagedInstanceAutonomousSettings> autonomousSettings;
 
     /**
-     * @return (Updatable) Updatable settings for the Autonomous Linux service.
+     * @return (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
      * 
      */
     public Output<ManagedInstanceAutonomousSettings> autonomousSettings() {
@@ -563,6 +577,20 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeLastCheckin() {
         return this.timeLastCheckin;
+    }
+    /**
+     * The date and time the instance&#39;s software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * 
+     */
+    @Export(name="timeLastSoftwareRefresh", refs={String.class}, tree="[0]")
+    private Output<String> timeLastSoftwareRefresh;
+
+    /**
+     * @return The date and time the instance&#39;s software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * 
+     */
+    public Output<String> timeLastSoftwareRefresh() {
+        return this.timeLastSoftwareRefresh;
     }
     /**
      * The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).

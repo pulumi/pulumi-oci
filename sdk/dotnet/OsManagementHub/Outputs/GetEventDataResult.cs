@@ -34,6 +34,10 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string ErrorLog;
         /// <summary>
+        /// Brief description on how this error is categorized.
+        /// </summary>
+        public readonly string ErrorSummary;
+        /// <summary>
         /// Number of times the event has occurred.
         /// </summary>
         public readonly int EventCount;
@@ -86,6 +90,8 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             string errorLog,
 
+            string errorSummary,
+
             int eventCount,
 
             string eventFingerprint,
@@ -111,6 +117,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
             Contents = contents;
             ErrorCause = errorCause;
             ErrorLog = errorLog;
+            ErrorSummary = errorSummary;
             EventCount = eventCount;
             EventFingerprint = eventFingerprint;
             HealthState = healthState;

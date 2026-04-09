@@ -34,6 +34,7 @@ import (
 //				CompartmentId:       pulumi.StringRef(compartmentId),
 //				DisplayName:         pulumi.StringRef(managementStationDisplayName),
 //				DisplayNameContains: pulumi.StringRef(managementStationDisplayNameContains),
+//				HealthState:         pulumi.StringRef(managementStationHealthState),
 //				Id:                  pulumi.StringRef(managementStationId),
 //				Locations:           managementStationLocation,
 //				LocationNotEqualTos: managementStationLocationNotEqualTo,
@@ -67,6 +68,8 @@ type GetManagementStationsArgs struct {
 	// A filter to return resources that may partially match the given display name.
 	DisplayNameContains *string                       `pulumi:"displayNameContains"`
 	Filters             []GetManagementStationsFilter `pulumi:"filters"`
+	// A filter that returns information for management stations in the specified health state.
+	HealthState *string `pulumi:"healthState"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
 	Id *string `pulumi:"id"`
 	// A filter to return only resources whose location does not match the given value.
@@ -87,6 +90,7 @@ type GetManagementStationsResult struct {
 	DisplayName         *string                       `pulumi:"displayName"`
 	DisplayNameContains *string                       `pulumi:"displayNameContains"`
 	Filters             []GetManagementStationsFilter `pulumi:"filters"`
+	HealthState         *string                       `pulumi:"healthState"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
 	Id                  *string  `pulumi:"id"`
 	LocationNotEqualTos []string `pulumi:"locationNotEqualTos"`
@@ -118,6 +122,8 @@ type GetManagementStationsOutputArgs struct {
 	// A filter to return resources that may partially match the given display name.
 	DisplayNameContains pulumi.StringPtrInput                 `pulumi:"displayNameContains"`
 	Filters             GetManagementStationsFilterArrayInput `pulumi:"filters"`
+	// A filter that returns information for management stations in the specified health state.
+	HealthState pulumi.StringPtrInput `pulumi:"healthState"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A filter to return only resources whose location does not match the given value.
@@ -165,6 +171,10 @@ func (o GetManagementStationsResultOutput) DisplayNameContains() pulumi.StringPt
 
 func (o GetManagementStationsResultOutput) Filters() GetManagementStationsFilterArrayOutput {
 	return o.ApplyT(func(v GetManagementStationsResult) []GetManagementStationsFilter { return v.Filters }).(GetManagementStationsFilterArrayOutput)
+}
+
+func (o GetManagementStationsResultOutput) HealthState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsResult) *string { return v.HealthState }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.

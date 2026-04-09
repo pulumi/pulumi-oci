@@ -157,6 +157,20 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
+     * Count of instance in running state associated to the Instance Pool.
+     * 
+     */
+    @Export(name="currentSize", refs={Integer.class}, tree="[0]")
+    private Output<Integer> currentSize;
+
+    /**
+     * @return Count of instance in running state associated to the Instance Pool.
+     * 
+     */
+    public Output<Integer> currentSize() {
+        return this.currentSize;
+    }
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */

@@ -93,7 +93,7 @@ public final class GetManagedInstanceGroupResult {
      */
     private Integer pendingJobCount;
     /**
-     * @return The list of software source OCIDs that the managed instance group will use.
+     * @return The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the managed instance group will use.
      * 
      */
     private List<String> softwareSourceIds;
@@ -238,7 +238,7 @@ public final class GetManagedInstanceGroupResult {
         return this.pendingJobCount;
     }
     /**
-     * @return The list of software source OCIDs that the managed instance group will use.
+     * @return The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the managed instance group will use.
      * 
      */
     public List<String> softwareSourceIds() {

@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testManagedInstanceUpdatablePackages = oci.OsManagementHub.getManagedInstanceUpdatablePackages({
  *     managedInstanceId: testManagedInstance.id,
  *     advisoryNames: managedInstanceUpdatablePackageAdvisoryName,
+ *     advisorySeverities: managedInstanceUpdatablePackageAdvisorySeverity,
  *     classificationTypes: managedInstanceUpdatablePackageClassificationType,
  *     compartmentId: compartmentId,
  *     displayNames: managedInstanceUpdatablePackageDisplayName,
@@ -31,6 +32,7 @@ export function getManagedInstanceUpdatablePackages(args: GetManagedInstanceUpda
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagementHub/getManagedInstanceUpdatablePackages:getManagedInstanceUpdatablePackages", {
         "advisoryNames": args.advisoryNames,
+        "advisorySeverities": args.advisorySeverities,
         "classificationTypes": args.classificationTypes,
         "compartmentId": args.compartmentId,
         "displayNameContains": args.displayNameContains,
@@ -48,6 +50,10 @@ export interface GetManagedInstanceUpdatablePackagesArgs {
      * The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
      */
     advisoryNames?: string[];
+    /**
+     * The advisory severity.
+     */
+    advisorySeverities?: string[];
     /**
      * A filter to return only packages that match the given update classification type.
      */
@@ -76,6 +82,10 @@ export interface GetManagedInstanceUpdatablePackagesArgs {
  */
 export interface GetManagedInstanceUpdatablePackagesResult {
     readonly advisoryNames?: string[];
+    /**
+     * The severity level of the security update. Only applicable when updateType is SECURITY.
+     */
+    readonly advisorySeverities?: string[];
     readonly classificationTypes?: string[];
     readonly compartmentId?: string;
     readonly displayNameContains?: string;
@@ -108,6 +118,7 @@ export interface GetManagedInstanceUpdatablePackagesResult {
  * const testManagedInstanceUpdatablePackages = oci.OsManagementHub.getManagedInstanceUpdatablePackages({
  *     managedInstanceId: testManagedInstance.id,
  *     advisoryNames: managedInstanceUpdatablePackageAdvisoryName,
+ *     advisorySeverities: managedInstanceUpdatablePackageAdvisorySeverity,
  *     classificationTypes: managedInstanceUpdatablePackageClassificationType,
  *     compartmentId: compartmentId,
  *     displayNames: managedInstanceUpdatablePackageDisplayName,
@@ -119,6 +130,7 @@ export function getManagedInstanceUpdatablePackagesOutput(args: GetManagedInstan
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:OsManagementHub/getManagedInstanceUpdatablePackages:getManagedInstanceUpdatablePackages", {
         "advisoryNames": args.advisoryNames,
+        "advisorySeverities": args.advisorySeverities,
         "classificationTypes": args.classificationTypes,
         "compartmentId": args.compartmentId,
         "displayNameContains": args.displayNameContains,
@@ -136,6 +148,10 @@ export interface GetManagedInstanceUpdatablePackagesOutputArgs {
      * The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
      */
     advisoryNames?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The advisory severity.
+     */
+    advisorySeverities?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A filter to return only packages that match the given update classification type.
      */

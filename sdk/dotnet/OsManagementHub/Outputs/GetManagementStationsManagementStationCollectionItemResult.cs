@@ -14,6 +14,10 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class GetManagementStationsManagementStationCollectionItemResult
     {
         /// <summary>
+        /// The architecture type.
+        /// </summary>
+        public readonly string ArchType;
+        /// <summary>
         /// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -33,6 +37,9 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
+        /// <summary>
+        /// A filter that returns information for management stations in the specified health state.
+        /// </summary>
         public readonly string HealthState;
         /// <summary>
         /// Hostname of the management station.
@@ -54,6 +61,10 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// A decimal number representing the amount of mirror capacity used by the sync.
         /// </summary>
         public readonly int MirrorCapacity;
+        /// <summary>
+        /// The operating system family.
+        /// </summary>
+        public readonly string OsFamily;
         /// <summary>
         /// A decimal number representing the progress of the current mirror sync.
         /// </summary>
@@ -82,6 +93,8 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
         [OutputConstructor]
         private GetManagementStationsManagementStationCollectionItemResult(
+            string archType,
+
             string compartmentId,
 
             ImmutableDictionary<string, string> definedTags,
@@ -104,6 +117,8 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             int mirrorCapacity,
 
+            string osFamily,
+
             int overallPercentage,
 
             string overallState,
@@ -118,6 +133,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             string? timeNextExecution)
         {
+            ArchType = archType;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             Description = description;
@@ -129,6 +145,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
             Location = location;
             ManagedInstanceId = managedInstanceId;
             MirrorCapacity = mirrorCapacity;
+            OsFamily = osFamily;
             OverallPercentage = overallPercentage;
             OverallState = overallState;
             ProfileId = profileId;

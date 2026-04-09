@@ -62,6 +62,8 @@ type LookupManagedInstanceResult struct {
 	AgentVersion string `pulumi:"agentVersion"`
 	// The CPU architecture type of the managed instance.
 	Architecture string `pulumi:"architecture"`
+	// Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+	AreSourcesManaged bool `pulumi:"areSourcesManaged"`
 	// Settings for the Autonomous Linux service.
 	AutonomousSettings []GetManagedInstanceAutonomousSetting `pulumi:"autonomousSettings"`
 	// Number of bug fix type updates available for installation.
@@ -133,6 +135,8 @@ type LookupManagedInstanceResult struct {
 	TimeLastBoot string `pulumi:"timeLastBoot"`
 	// Time that the instance last checked in with the service (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeLastCheckin string `pulumi:"timeLastCheckin"`
+	// The date and time the instance's software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeLastSoftwareRefresh string `pulumi:"timeLastSoftwareRefresh"`
 	// The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// Number of updates available for installation.
@@ -183,6 +187,11 @@ func (o LookupManagedInstanceResultOutput) AgentVersion() pulumi.StringOutput {
 // The CPU architecture type of the managed instance.
 func (o LookupManagedInstanceResultOutput) Architecture() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedInstanceResult) string { return v.Architecture }).(pulumi.StringOutput)
+}
+
+// Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+func (o LookupManagedInstanceResultOutput) AreSourcesManaged() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) bool { return v.AreSourcesManaged }).(pulumi.BoolOutput)
 }
 
 // Settings for the Autonomous Linux service.
@@ -366,6 +375,11 @@ func (o LookupManagedInstanceResultOutput) TimeLastBoot() pulumi.StringOutput {
 // Time that the instance last checked in with the service (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 func (o LookupManagedInstanceResultOutput) TimeLastCheckin() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedInstanceResult) string { return v.TimeLastCheckin }).(pulumi.StringOutput)
+}
+
+// The date and time the instance's software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+func (o LookupManagedInstanceResultOutput) TimeLastSoftwareRefresh() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) string { return v.TimeLastSoftwareRefresh }).(pulumi.StringOutput)
 }
 
 // The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).

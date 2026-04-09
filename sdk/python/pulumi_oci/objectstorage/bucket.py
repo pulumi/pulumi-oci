@@ -25,6 +25,7 @@ class BucketArgs:
                  namespace: pulumi.Input[_builtins.str],
                  access_type: Optional[pulumi.Input[_builtins.str]] = None,
                  auto_tiering: Optional[pulumi.Input[_builtins.str]] = None,
+                 bucket_scope: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -41,6 +42,7 @@ class BucketArgs:
         :param pulumi.Input[_builtins.str] namespace: The Object Storage namespace used for the request.
         :param pulumi.Input[_builtins.str] access_type: (Updatable) The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
         :param pulumi.Input[_builtins.str] auto_tiering: (Updatable) Set the auto tiering status on the bucket. By default, a bucket is created with auto tiering `Disabled`. Use this option to enable auto tiering during bucket creation. Objects in a bucket with auto tiering set to `InfrequentAccess` are transitioned automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
+        :param pulumi.Input[_builtins.str] bucket_scope: (Updatable) Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
@@ -61,6 +63,8 @@ class BucketArgs:
             pulumi.set(__self__, "access_type", access_type)
         if auto_tiering is not None:
             pulumi.set(__self__, "auto_tiering", auto_tiering)
+        if bucket_scope is not None:
+            pulumi.set(__self__, "bucket_scope", bucket_scope)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -127,6 +131,18 @@ class BucketArgs:
     @auto_tiering.setter
     def auto_tiering(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "auto_tiering", value)
+
+    @_builtins.property
+    @pulumi.getter(name="bucketScope")
+    def bucket_scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+        """
+        return pulumi.get(self, "bucket_scope")
+
+    @bucket_scope.setter
+    def bucket_scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "bucket_scope", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -249,6 +265,7 @@ class _BucketState:
                  approximate_size: Optional[pulumi.Input[_builtins.str]] = None,
                  auto_tiering: Optional[pulumi.Input[_builtins.str]] = None,
                  bucket_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 bucket_scope: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  created_by: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -274,6 +291,7 @@ class _BucketState:
         :param pulumi.Input[_builtins.str] approximate_size: The approximate total size in bytes of all objects in the bucket. Size statistics are reported periodically. You will see a lag between what is displayed and the actual size of the bucket.
         :param pulumi.Input[_builtins.str] auto_tiering: (Updatable) Set the auto tiering status on the bucket. By default, a bucket is created with auto tiering `Disabled`. Use this option to enable auto tiering during bucket creation. Objects in a bucket with auto tiering set to `InfrequentAccess` are transitioned automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
         :param pulumi.Input[_builtins.str] bucket_id: The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucket_id` cannot be used for bucket lookup.
+        :param pulumi.Input[_builtins.str] bucket_scope: (Updatable) Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The ID of the compartment in which to create the bucket.
         :param pulumi.Input[_builtins.str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -306,6 +324,8 @@ class _BucketState:
             pulumi.set(__self__, "auto_tiering", auto_tiering)
         if bucket_id is not None:
             pulumi.set(__self__, "bucket_id", bucket_id)
+        if bucket_scope is not None:
+            pulumi.set(__self__, "bucket_scope", bucket_scope)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if created_by is not None:
@@ -400,6 +420,18 @@ class _BucketState:
     @bucket_id.setter
     def bucket_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "bucket_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="bucketScope")
+    def bucket_scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+        """
+        return pulumi.get(self, "bucket_scope")
+
+    @bucket_scope.setter
+    def bucket_scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "bucket_scope", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -618,6 +650,7 @@ class Bucket(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  access_type: Optional[pulumi.Input[_builtins.str]] = None,
                  auto_tiering: Optional[pulumi.Input[_builtins.str]] = None,
+                 bucket_scope: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -651,6 +684,7 @@ class Bucket(pulumi.CustomResource):
             namespace=bucket_namespace,
             access_type=bucket_access_type,
             auto_tiering=bucket_auto_tiering,
+            bucket_scope=bucket_bucket_scope,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -685,6 +719,7 @@ class Bucket(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_type: (Updatable) The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
         :param pulumi.Input[_builtins.str] auto_tiering: (Updatable) Set the auto tiering status on the bucket. By default, a bucket is created with auto tiering `Disabled`. Use this option to enable auto tiering during bucket creation. Objects in a bucket with auto tiering set to `InfrequentAccess` are transitioned automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
+        :param pulumi.Input[_builtins.str] bucket_scope: (Updatable) Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The ID of the compartment in which to create the bucket.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -728,6 +763,7 @@ class Bucket(pulumi.CustomResource):
             namespace=bucket_namespace,
             access_type=bucket_access_type,
             auto_tiering=bucket_auto_tiering,
+            bucket_scope=bucket_bucket_scope,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -775,6 +811,7 @@ class Bucket(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  access_type: Optional[pulumi.Input[_builtins.str]] = None,
                  auto_tiering: Optional[pulumi.Input[_builtins.str]] = None,
+                 bucket_scope: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -797,6 +834,7 @@ class Bucket(pulumi.CustomResource):
 
             __props__.__dict__["access_type"] = access_type
             __props__.__dict__["auto_tiering"] = auto_tiering
+            __props__.__dict__["bucket_scope"] = bucket_scope
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -836,6 +874,7 @@ class Bucket(pulumi.CustomResource):
             approximate_size: Optional[pulumi.Input[_builtins.str]] = None,
             auto_tiering: Optional[pulumi.Input[_builtins.str]] = None,
             bucket_id: Optional[pulumi.Input[_builtins.str]] = None,
+            bucket_scope: Optional[pulumi.Input[_builtins.str]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             created_by: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -865,6 +904,7 @@ class Bucket(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] approximate_size: The approximate total size in bytes of all objects in the bucket. Size statistics are reported periodically. You will see a lag between what is displayed and the actual size of the bucket.
         :param pulumi.Input[_builtins.str] auto_tiering: (Updatable) Set the auto tiering status on the bucket. By default, a bucket is created with auto tiering `Disabled`. Use this option to enable auto tiering during bucket creation. Objects in a bucket with auto tiering set to `InfrequentAccess` are transitioned automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
         :param pulumi.Input[_builtins.str] bucket_id: The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucket_id` cannot be used for bucket lookup.
+        :param pulumi.Input[_builtins.str] bucket_scope: (Updatable) Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The ID of the compartment in which to create the bucket.
         :param pulumi.Input[_builtins.str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -896,6 +936,7 @@ class Bucket(pulumi.CustomResource):
         __props__.__dict__["approximate_size"] = approximate_size
         __props__.__dict__["auto_tiering"] = auto_tiering
         __props__.__dict__["bucket_id"] = bucket_id
+        __props__.__dict__["bucket_scope"] = bucket_scope
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["created_by"] = created_by
         __props__.__dict__["defined_tags"] = defined_tags
@@ -954,6 +995,14 @@ class Bucket(pulumi.CustomResource):
         The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucket_id` cannot be used for bucket lookup.
         """
         return pulumi.get(self, "bucket_id")
+
+    @_builtins.property
+    @pulumi.getter(name="bucketScope")
+    def bucket_scope(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+        """
+        return pulumi.get(self, "bucket_scope")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")

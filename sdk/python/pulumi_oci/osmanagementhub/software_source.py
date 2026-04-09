@@ -38,6 +38,7 @@ class SoftwareSourceArgs:
                  is_latest_content_only: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_mirror_sync_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_ssl_verify_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 origin_display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  origin_software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
                  os_family: Optional[pulumi.Input[_builtins.str]] = None,
                  packages: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -70,6 +71,7 @@ class SoftwareSourceArgs:
                * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
         :param pulumi.Input[_builtins.bool] is_mirror_sync_allowed: (Updatable) Whether this software source can be synced to a management station
         :param pulumi.Input[_builtins.bool] is_ssl_verify_enabled: (Updatable) Whether SSL validation needs to be turned on
+        :param pulumi.Input[_builtins.str] origin_display_name: The display name of the software source to be replicated
         :param pulumi.Input[_builtins.str] origin_software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
         :param pulumi.Input[_builtins.str] os_family: The OS family for the third-party software source.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] packages: A property used for compatibility only. It doesn't provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
@@ -110,6 +112,8 @@ class SoftwareSourceArgs:
             pulumi.set(__self__, "is_mirror_sync_allowed", is_mirror_sync_allowed)
         if is_ssl_verify_enabled is not None:
             pulumi.set(__self__, "is_ssl_verify_enabled", is_ssl_verify_enabled)
+        if origin_display_name is not None:
+            pulumi.set(__self__, "origin_display_name", origin_display_name)
         if origin_software_source_id is not None:
             pulumi.set(__self__, "origin_software_source_id", origin_software_source_id)
         if os_family is not None:
@@ -335,6 +339,18 @@ class SoftwareSourceArgs:
         pulumi.set(self, "is_ssl_verify_enabled", value)
 
     @_builtins.property
+    @pulumi.getter(name="originDisplayName")
+    def origin_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The display name of the software source to be replicated
+        """
+        return pulumi.get(self, "origin_display_name")
+
+    @origin_display_name.setter
+    def origin_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "origin_display_name", value)
+
+    @_builtins.property
     @pulumi.getter(name="originSoftwareSourceId")
     def origin_software_source_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -444,6 +460,7 @@ class _SoftwareSourceState:
                  is_mandatory_for_autonomous_linux: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_mirror_sync_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_ssl_verify_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 origin_display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  origin_software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
                  os_family: Optional[pulumi.Input[_builtins.str]] = None,
                  package_count: Optional[pulumi.Input[_builtins.str]] = None,
@@ -490,6 +507,7 @@ class _SoftwareSourceState:
         :param pulumi.Input[_builtins.bool] is_mandatory_for_autonomous_linux: Indicates whether the software source is required for the Autonomous Linux service.
         :param pulumi.Input[_builtins.bool] is_mirror_sync_allowed: (Updatable) Whether this software source can be synced to a management station
         :param pulumi.Input[_builtins.bool] is_ssl_verify_enabled: (Updatable) Whether SSL validation needs to be turned on
+        :param pulumi.Input[_builtins.str] origin_display_name: The display name of the software source to be replicated
         :param pulumi.Input[_builtins.str] origin_software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
         :param pulumi.Input[_builtins.str] os_family: The OS family for the third-party software source.
         :param pulumi.Input[_builtins.str] package_count: Number of packages the software source contains.
@@ -551,6 +569,8 @@ class _SoftwareSourceState:
             pulumi.set(__self__, "is_mirror_sync_allowed", is_mirror_sync_allowed)
         if is_ssl_verify_enabled is not None:
             pulumi.set(__self__, "is_ssl_verify_enabled", is_ssl_verify_enabled)
+        if origin_display_name is not None:
+            pulumi.set(__self__, "origin_display_name", origin_display_name)
         if origin_software_source_id is not None:
             pulumi.set(__self__, "origin_software_source_id", origin_software_source_id)
         if os_family is not None:
@@ -854,6 +874,18 @@ class _SoftwareSourceState:
         pulumi.set(self, "is_ssl_verify_enabled", value)
 
     @_builtins.property
+    @pulumi.getter(name="originDisplayName")
+    def origin_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The display name of the software source to be replicated
+        """
+        return pulumi.get(self, "origin_display_name")
+
+    @origin_display_name.setter
+    def origin_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "origin_display_name", value)
+
+    @_builtins.property
     @pulumi.getter(name="originSoftwareSourceId")
     def origin_software_source_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -1068,6 +1100,7 @@ class SoftwareSource(pulumi.CustomResource):
                  is_latest_content_only: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_mirror_sync_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_ssl_verify_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 origin_display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  origin_software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
                  os_family: Optional[pulumi.Input[_builtins.str]] = None,
                  packages: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -1117,6 +1150,7 @@ class SoftwareSource(pulumi.CustomResource):
                * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
         :param pulumi.Input[_builtins.bool] is_mirror_sync_allowed: (Updatable) Whether this software source can be synced to a management station
         :param pulumi.Input[_builtins.bool] is_ssl_verify_enabled: (Updatable) Whether SSL validation needs to be turned on
+        :param pulumi.Input[_builtins.str] origin_display_name: The display name of the software source to be replicated
         :param pulumi.Input[_builtins.str] origin_software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
         :param pulumi.Input[_builtins.str] os_family: The OS family for the third-party software source.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] packages: A property used for compatibility only. It doesn't provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
@@ -1180,6 +1214,7 @@ class SoftwareSource(pulumi.CustomResource):
                  is_latest_content_only: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_mirror_sync_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_ssl_verify_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 origin_display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  origin_software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
                  os_family: Optional[pulumi.Input[_builtins.str]] = None,
                  packages: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -1215,6 +1250,7 @@ class SoftwareSource(pulumi.CustomResource):
             __props__.__dict__["is_latest_content_only"] = is_latest_content_only
             __props__.__dict__["is_mirror_sync_allowed"] = is_mirror_sync_allowed
             __props__.__dict__["is_ssl_verify_enabled"] = is_ssl_verify_enabled
+            __props__.__dict__["origin_display_name"] = origin_display_name
             __props__.__dict__["origin_software_source_id"] = origin_software_source_id
             __props__.__dict__["os_family"] = os_family
             __props__.__dict__["packages"] = packages
@@ -1271,6 +1307,7 @@ class SoftwareSource(pulumi.CustomResource):
             is_mandatory_for_autonomous_linux: Optional[pulumi.Input[_builtins.bool]] = None,
             is_mirror_sync_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
             is_ssl_verify_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+            origin_display_name: Optional[pulumi.Input[_builtins.str]] = None,
             origin_software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
             os_family: Optional[pulumi.Input[_builtins.str]] = None,
             package_count: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1321,6 +1358,7 @@ class SoftwareSource(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_mandatory_for_autonomous_linux: Indicates whether the software source is required for the Autonomous Linux service.
         :param pulumi.Input[_builtins.bool] is_mirror_sync_allowed: (Updatable) Whether this software source can be synced to a management station
         :param pulumi.Input[_builtins.bool] is_ssl_verify_enabled: (Updatable) Whether SSL validation needs to be turned on
+        :param pulumi.Input[_builtins.str] origin_display_name: The display name of the software source to be replicated
         :param pulumi.Input[_builtins.str] origin_software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
         :param pulumi.Input[_builtins.str] os_family: The OS family for the third-party software source.
         :param pulumi.Input[_builtins.str] package_count: Number of packages the software source contains.
@@ -1364,6 +1402,7 @@ class SoftwareSource(pulumi.CustomResource):
         __props__.__dict__["is_mandatory_for_autonomous_linux"] = is_mandatory_for_autonomous_linux
         __props__.__dict__["is_mirror_sync_allowed"] = is_mirror_sync_allowed
         __props__.__dict__["is_ssl_verify_enabled"] = is_ssl_verify_enabled
+        __props__.__dict__["origin_display_name"] = origin_display_name
         __props__.__dict__["origin_software_source_id"] = origin_software_source_id
         __props__.__dict__["os_family"] = os_family
         __props__.__dict__["package_count"] = package_count
@@ -1562,6 +1601,14 @@ class SoftwareSource(pulumi.CustomResource):
         (Updatable) Whether SSL validation needs to be turned on
         """
         return pulumi.get(self, "is_ssl_verify_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="originDisplayName")
+    def origin_display_name(self) -> pulumi.Output[_builtins.str]:
+        """
+        The display name of the software source to be replicated
+        """
+        return pulumi.get(self, "origin_display_name")
 
     @_builtins.property
     @pulumi.getter(name="originSoftwareSourceId")

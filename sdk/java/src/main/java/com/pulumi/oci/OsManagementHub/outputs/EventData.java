@@ -41,6 +41,11 @@ public final class EventData {
      */
     private @Nullable String errorLog;
     /**
+     * @return Brief description on how this error is categorized.
+     * 
+     */
+    private @Nullable String errorSummary;
+    /**
      * @return Number of times the event has occurred.
      * 
      */
@@ -128,6 +133,13 @@ public final class EventData {
         return Optional.ofNullable(this.errorLog);
     }
     /**
+     * @return Brief description on how this error is categorized.
+     * 
+     */
+    public Optional<String> errorSummary() {
+        return Optional.ofNullable(this.errorSummary);
+    }
+    /**
      * @return Number of times the event has occurred.
      * 
      */
@@ -212,6 +224,7 @@ public final class EventData {
         private @Nullable List<EventDataContent> contents;
         private @Nullable String errorCause;
         private @Nullable String errorLog;
+        private @Nullable String errorSummary;
         private @Nullable Integer eventCount;
         private @Nullable String eventFingerprint;
         private @Nullable String healthState;
@@ -230,6 +243,7 @@ public final class EventData {
     	      this.contents = defaults.contents;
     	      this.errorCause = defaults.errorCause;
     	      this.errorLog = defaults.errorLog;
+    	      this.errorSummary = defaults.errorSummary;
     	      this.eventCount = defaults.eventCount;
     	      this.eventFingerprint = defaults.eventFingerprint;
     	      this.healthState = defaults.healthState;
@@ -279,6 +293,12 @@ public final class EventData {
         public Builder errorLog(@Nullable String errorLog) {
 
             this.errorLog = errorLog;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder errorSummary(@Nullable String errorSummary) {
+
+            this.errorSummary = errorSummary;
             return this;
         }
         @CustomType.Setter
@@ -348,6 +368,7 @@ public final class EventData {
             _resultValue.contents = contents;
             _resultValue.errorCause = errorCause;
             _resultValue.errorLog = errorLog;
+            _resultValue.errorSummary = errorSummary;
             _resultValue.eventCount = eventCount;
             _resultValue.eventFingerprint = eventFingerprint;
             _resultValue.healthState = healthState;

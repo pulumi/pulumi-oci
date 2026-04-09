@@ -136,6 +136,7 @@ public final class GetSoftwareSourceResult {
      * 
      */
     private Boolean isSslVerifyEnabled;
+    private String originDisplayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment. This property applies only to replicated vendor software sources.
      * 
@@ -385,6 +386,9 @@ public final class GetSoftwareSourceResult {
     public Boolean isSslVerifyEnabled() {
         return this.isSslVerifyEnabled;
     }
+    public String originDisplayName() {
+        return this.originDisplayName;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment. This property applies only to replicated vendor software sources.
      * 
@@ -533,6 +537,7 @@ public final class GetSoftwareSourceResult {
         private Boolean isMandatoryForAutonomousLinux;
         private Boolean isMirrorSyncAllowed;
         private Boolean isSslVerifyEnabled;
+        private String originDisplayName;
         private String originSoftwareSourceId;
         private String osFamily;
         private String packageCount;
@@ -576,6 +581,7 @@ public final class GetSoftwareSourceResult {
     	      this.isMandatoryForAutonomousLinux = defaults.isMandatoryForAutonomousLinux;
     	      this.isMirrorSyncAllowed = defaults.isMirrorSyncAllowed;
     	      this.isSslVerifyEnabled = defaults.isSslVerifyEnabled;
+    	      this.originDisplayName = defaults.originDisplayName;
     	      this.originSoftwareSourceId = defaults.originSoftwareSourceId;
     	      this.osFamily = defaults.osFamily;
     	      this.packageCount = defaults.packageCount;
@@ -783,6 +789,14 @@ public final class GetSoftwareSourceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder originDisplayName(String originDisplayName) {
+            if (originDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceResult", "originDisplayName");
+            }
+            this.originDisplayName = originDisplayName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder originSoftwareSourceId(String originSoftwareSourceId) {
             if (originSoftwareSourceId == null) {
               throw new MissingRequiredPropertyException("GetSoftwareSourceResult", "originSoftwareSourceId");
@@ -949,6 +963,7 @@ public final class GetSoftwareSourceResult {
             _resultValue.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
             _resultValue.isMirrorSyncAllowed = isMirrorSyncAllowed;
             _resultValue.isSslVerifyEnabled = isSslVerifyEnabled;
+            _resultValue.originDisplayName = originDisplayName;
             _resultValue.originSoftwareSourceId = originSoftwareSourceId;
             _resultValue.osFamily = osFamily;
             _resultValue.packageCount = packageCount;

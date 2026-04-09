@@ -44,10 +44,6 @@ public final class GetLifecycleStagesLifecycleStageCollectionItem {
      * 
      */
     private String id;
-    /**
-     * @return The user-friendly name for the lifecycle environment. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
-     * 
-     */
     private String lifecycleEnvironmentDisplayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
@@ -59,10 +55,6 @@ public final class GetLifecycleStagesLifecycleStageCollectionItem {
      * 
      */
     private String location;
-    /**
-     * @return The number of managed instances associated with the lifecycle stage.
-     * 
-     */
     private Integer managedInstances;
     /**
      * @return A filter to return only resources that match the given operating system family.
@@ -148,10 +140,6 @@ public final class GetLifecycleStagesLifecycleStageCollectionItem {
     public String id() {
         return this.id;
     }
-    /**
-     * @return The user-friendly name for the lifecycle environment. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
-     * 
-     */
     public String lifecycleEnvironmentDisplayName() {
         return this.lifecycleEnvironmentDisplayName;
     }
@@ -169,10 +157,6 @@ public final class GetLifecycleStagesLifecycleStageCollectionItem {
     public String location() {
         return this.location;
     }
-    /**
-     * @return The number of managed instances associated with the lifecycle stage.
-     * 
-     */
     public Integer managedInstances() {
         return this.managedInstances;
     }

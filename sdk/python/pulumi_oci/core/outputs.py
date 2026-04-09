@@ -2068,6 +2068,8 @@ class ClusterNetworkInstancePool(dict):
             suggest = "instance_configuration_id"
         elif key == "compartmentId":
             suggest = "compartment_id"
+        elif key == "currentSize":
+            suggest = "current_size"
         elif key == "definedTags":
             suggest = "defined_tags"
         elif key == "displayName":
@@ -2100,6 +2102,7 @@ class ClusterNetworkInstancePool(dict):
                  instance_configuration_id: _builtins.str,
                  size: _builtins.int,
                  compartment_id: Optional[_builtins.str] = None,
+                 current_size: Optional[_builtins.int] = None,
                  defined_tags: Optional[Mapping[str, _builtins.str]] = None,
                  display_name: Optional[_builtins.str] = None,
                  freeform_tags: Optional[Mapping[str, _builtins.str]] = None,
@@ -2114,6 +2117,7 @@ class ClusterNetworkInstancePool(dict):
         :param _builtins.str instance_configuration_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         :param _builtins.int size: (Updatable) The number of instances that should be in the instance pool.
         :param _builtins.str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
+        :param _builtins.int current_size: Count of instance in running state associated to the Instance Pool.
         :param Mapping[str, _builtins.str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, _builtins.str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -2127,6 +2131,8 @@ class ClusterNetworkInstancePool(dict):
         pulumi.set(__self__, "size", size)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if current_size is not None:
+            pulumi.set(__self__, "current_size", current_size)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
@@ -2171,6 +2177,14 @@ class ClusterNetworkInstancePool(dict):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="currentSize")
+    def current_size(self) -> Optional[_builtins.int]:
+        """
+        Count of instance in running state associated to the Instance Pool.
+        """
+        return pulumi.get(self, "current_size")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -21259,6 +21273,7 @@ class GetClusterNetworkClusterConfigurationResult(dict):
 class GetClusterNetworkInstancePoolResult(dict):
     def __init__(__self__, *,
                  compartment_id: _builtins.str,
+                 current_size: _builtins.int,
                  defined_tags: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
@@ -21273,6 +21288,7 @@ class GetClusterNetworkInstancePoolResult(dict):
                  time_created: _builtins.str):
         """
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
+        :param _builtins.int current_size: Count of instance in running state associated to the Instance Pool.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -21285,6 +21301,7 @@ class GetClusterNetworkInstancePoolResult(dict):
         :param _builtins.str time_created: The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "current_size", current_size)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -21305,6 +21322,14 @@ class GetClusterNetworkInstancePoolResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="currentSize")
+    def current_size(self) -> _builtins.int:
+        """
+        Count of instance in running state associated to the Instance Pool.
+        """
+        return pulumi.get(self, "current_size")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -22262,6 +22287,7 @@ class GetClusterNetworksClusterNetworkClusterConfigurationResult(dict):
 class GetClusterNetworksClusterNetworkInstancePoolResult(dict):
     def __init__(__self__, *,
                  compartment_id: _builtins.str,
+                 current_size: _builtins.int,
                  defined_tags: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
@@ -22276,6 +22302,7 @@ class GetClusterNetworksClusterNetworkInstancePoolResult(dict):
                  time_created: _builtins.str):
         """
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.int current_size: Count of instance in running state associated to the Instance Pool.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -22288,6 +22315,7 @@ class GetClusterNetworksClusterNetworkInstancePoolResult(dict):
         :param _builtins.str time_created: The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "current_size", current_size)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -22308,6 +22336,14 @@ class GetClusterNetworksClusterNetworkInstancePoolResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="currentSize")
+    def current_size(self) -> _builtins.int:
+        """
+        Count of instance in running state associated to the Instance Pool.
+        """
+        return pulumi.get(self, "current_size")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -40815,6 +40851,7 @@ class GetInstancePoolsInstancePoolResult(dict):
     def __init__(__self__, *,
                  actual_size: _builtins.int,
                  compartment_id: _builtins.str,
+                 current_size: _builtins.int,
                  defined_tags: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
@@ -40830,6 +40867,7 @@ class GetInstancePoolsInstancePoolResult(dict):
                  time_created: _builtins.str):
         """
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.int current_size: Count of instance in running state associated to the Instance Pool.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -40846,6 +40884,7 @@ class GetInstancePoolsInstancePoolResult(dict):
         """
         pulumi.set(__self__, "actual_size", actual_size)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "current_size", current_size)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -40872,6 +40911,14 @@ class GetInstancePoolsInstancePoolResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="currentSize")
+    def current_size(self) -> _builtins.int:
+        """
+        Count of instance in running state associated to the Instance Pool.
+        """
+        return pulumi.get(self, "current_size")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")

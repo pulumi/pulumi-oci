@@ -13,6 +13,11 @@ import java.util.Objects;
 @CustomType
 public final class GetManagedInstanceUpdatablePackagesUpdatablePackageCollectionItem {
     /**
+     * @return The advisory severity.
+     * 
+     */
+    private String advisorySeverity;
+    /**
      * @return The architecture for which this package was built.
      * 
      */
@@ -69,6 +74,13 @@ public final class GetManagedInstanceUpdatablePackagesUpdatablePackageCollection
     private String version;
 
     private GetManagedInstanceUpdatablePackagesUpdatablePackageCollectionItem() {}
+    /**
+     * @return The advisory severity.
+     * 
+     */
+    public String advisorySeverity() {
+        return this.advisorySeverity;
+    }
     /**
      * @return The architecture for which this package was built.
      * 
@@ -156,6 +168,7 @@ public final class GetManagedInstanceUpdatablePackagesUpdatablePackageCollection
     }
     @CustomType.Builder
     public static final class Builder {
+        private String advisorySeverity;
         private String architecture;
         private String displayName;
         private List<String> erratas;
@@ -170,6 +183,7 @@ public final class GetManagedInstanceUpdatablePackagesUpdatablePackageCollection
         public Builder() {}
         public Builder(GetManagedInstanceUpdatablePackagesUpdatablePackageCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.advisorySeverity = defaults.advisorySeverity;
     	      this.architecture = defaults.architecture;
     	      this.displayName = defaults.displayName;
     	      this.erratas = defaults.erratas;
@@ -183,6 +197,14 @@ public final class GetManagedInstanceUpdatablePackagesUpdatablePackageCollection
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
+        public Builder advisorySeverity(String advisorySeverity) {
+            if (advisorySeverity == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceUpdatablePackagesUpdatablePackageCollectionItem", "advisorySeverity");
+            }
+            this.advisorySeverity = advisorySeverity;
+            return this;
+        }
         @CustomType.Setter
         public Builder architecture(String architecture) {
             if (architecture == null) {
@@ -282,6 +304,7 @@ public final class GetManagedInstanceUpdatablePackagesUpdatablePackageCollection
         }
         public GetManagedInstanceUpdatablePackagesUpdatablePackageCollectionItem build() {
             final var _resultValue = new GetManagedInstanceUpdatablePackagesUpdatablePackageCollectionItem();
+            _resultValue.advisorySeverity = advisorySeverity;
             _resultValue.architecture = architecture;
             _resultValue.displayName = displayName;
             _resultValue.erratas = erratas;

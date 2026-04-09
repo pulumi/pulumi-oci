@@ -140,6 +140,12 @@ namespace Pulumi.Oci.Core
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
+        /// Count of instance in running state associated to the Instance Pool.
+        /// </summary>
+        [Output("currentSize")]
+        public Output<int> CurrentSize { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
@@ -384,6 +390,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        /// <summary>
+        /// Count of instance in running state associated to the Instance Pool.
+        /// </summary>
+        [Input("currentSize")]
+        public Input<int>? CurrentSize { get; set; }
 
         [Input("definedTags")]
         private InputMap<string>? _definedTags;

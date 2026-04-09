@@ -26,10 +26,12 @@ class ManagementStationArgs:
                  hostname: pulumi.Input[_builtins.str],
                  mirror: pulumi.Input['ManagementStationMirrorArgs'],
                  proxy: pulumi.Input['ManagementStationProxyArgs'],
+                 arch_type: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_auto_config_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 os_family: Optional[pulumi.Input[_builtins.str]] = None,
                  refresh_trigger: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a ManagementStation resource.
@@ -39,10 +41,12 @@ class ManagementStationArgs:
         :param pulumi.Input[_builtins.str] hostname: (Updatable) Hostname of the management station.
         :param pulumi.Input['ManagementStationMirrorArgs'] mirror: (Updatable) Information used to create the mirror configuration for a management station.
         :param pulumi.Input['ManagementStationProxyArgs'] proxy: (Updatable) Information used to create the proxy configuration for a management station.
+        :param pulumi.Input[_builtins.str] arch_type: (Updatable) The architecture type.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) User-specified description of the management station. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_auto_config_enabled: (Updatable) When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+        :param pulumi.Input[_builtins.str] os_family: (Updatable) The operating system family.
         :param pulumi.Input[_builtins.int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
                
                
@@ -54,6 +58,8 @@ class ManagementStationArgs:
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "mirror", mirror)
         pulumi.set(__self__, "proxy", proxy)
+        if arch_type is not None:
+            pulumi.set(__self__, "arch_type", arch_type)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -62,6 +68,8 @@ class ManagementStationArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_auto_config_enabled is not None:
             pulumi.set(__self__, "is_auto_config_enabled", is_auto_config_enabled)
+        if os_family is not None:
+            pulumi.set(__self__, "os_family", os_family)
         if refresh_trigger is not None:
             pulumi.set(__self__, "refresh_trigger", refresh_trigger)
 
@@ -126,6 +134,18 @@ class ManagementStationArgs:
         pulumi.set(self, "proxy", value)
 
     @_builtins.property
+    @pulumi.getter(name="archType")
+    def arch_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The architecture type.
+        """
+        return pulumi.get(self, "arch_type")
+
+    @arch_type.setter
+    def arch_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "arch_type", value)
+
+    @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -174,6 +194,18 @@ class ManagementStationArgs:
         pulumi.set(self, "is_auto_config_enabled", value)
 
     @_builtins.property
+    @pulumi.getter(name="osFamily")
+    def os_family(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The operating system family.
+        """
+        return pulumi.get(self, "os_family")
+
+    @os_family.setter
+    def os_family(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "os_family", value)
+
+    @_builtins.property
     @pulumi.getter(name="refreshTrigger")
     def refresh_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
@@ -193,6 +225,7 @@ class ManagementStationArgs:
 @pulumi.input_type
 class _ManagementStationState:
     def __init__(__self__, *,
+                 arch_type: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
@@ -211,6 +244,7 @@ class _ManagementStationState:
                  mirror_storage_size: Optional[pulumi.Input[_builtins.str]] = None,
                  mirror_sync_statuses: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementStationMirrorSyncStatusArgs']]]] = None,
                  mirror_unique_package_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 os_family: Optional[pulumi.Input[_builtins.str]] = None,
                  overall_percentage: Optional[pulumi.Input[_builtins.int]] = None,
                  overall_state: Optional[pulumi.Input[_builtins.str]] = None,
                  peer_management_stations: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementStationPeerManagementStationArgs']]]] = None,
@@ -224,6 +258,7 @@ class _ManagementStationState:
         """
         Input properties used for looking up and filtering ManagementStation resources.
 
+        :param pulumi.Input[_builtins.str] arch_type: (Updatable) The architecture type.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) User-specified description of the management station. Avoid entering confidential information.
@@ -242,6 +277,7 @@ class _ManagementStationState:
         :param pulumi.Input[_builtins.str] mirror_storage_size: Total mirror storage size in bytes.
         :param pulumi.Input[Sequence[pulumi.Input['ManagementStationMirrorSyncStatusArgs']]] mirror_sync_statuses: Status summary of the mirror sync.
         :param pulumi.Input[_builtins.int] mirror_unique_package_count: The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
+        :param pulumi.Input[_builtins.str] os_family: (Updatable) The operating system family.
         :param pulumi.Input[_builtins.int] overall_percentage: A decimal number representing the progress of the current mirror sync.
         :param pulumi.Input[_builtins.str] overall_state: Current state of the mirror sync for the management station.
         :param pulumi.Input[Sequence[pulumi.Input['ManagementStationPeerManagementStationArgs']]] peer_management_stations: A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
@@ -257,6 +293,8 @@ class _ManagementStationState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.int] total_mirrors: The number of software sources that the station is mirroring.
         """
+        if arch_type is not None:
+            pulumi.set(__self__, "arch_type", arch_type)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -293,6 +331,8 @@ class _ManagementStationState:
             pulumi.set(__self__, "mirror_sync_statuses", mirror_sync_statuses)
         if mirror_unique_package_count is not None:
             pulumi.set(__self__, "mirror_unique_package_count", mirror_unique_package_count)
+        if os_family is not None:
+            pulumi.set(__self__, "os_family", os_family)
         if overall_percentage is not None:
             pulumi.set(__self__, "overall_percentage", overall_percentage)
         if overall_state is not None:
@@ -313,6 +353,18 @@ class _ManagementStationState:
             pulumi.set(__self__, "system_tags", system_tags)
         if total_mirrors is not None:
             pulumi.set(__self__, "total_mirrors", total_mirrors)
+
+    @_builtins.property
+    @pulumi.getter(name="archType")
+    def arch_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The architecture type.
+        """
+        return pulumi.get(self, "arch_type")
+
+    @arch_type.setter
+    def arch_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "arch_type", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -531,6 +583,18 @@ class _ManagementStationState:
         pulumi.set(self, "mirror_unique_package_count", value)
 
     @_builtins.property
+    @pulumi.getter(name="osFamily")
+    def os_family(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The operating system family.
+        """
+        return pulumi.get(self, "os_family")
+
+    @os_family.setter
+    def os_family(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "os_family", value)
+
+    @_builtins.property
     @pulumi.getter(name="overallPercentage")
     def overall_percentage(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
@@ -661,6 +725,7 @@ class ManagementStation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 arch_type: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
@@ -669,6 +734,7 @@ class ManagementStation(pulumi.CustomResource):
                  hostname: Optional[pulumi.Input[_builtins.str]] = None,
                  is_auto_config_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  mirror: Optional[pulumi.Input[Union['ManagementStationMirrorArgs', 'ManagementStationMirrorArgsDict']]] = None,
+                 os_family: Optional[pulumi.Input[_builtins.str]] = None,
                  proxy: Optional[pulumi.Input[Union['ManagementStationProxyArgs', 'ManagementStationProxyArgsDict']]] = None,
                  refresh_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
@@ -703,6 +769,7 @@ class ManagementStation(pulumi.CustomResource):
                 "hosts": management_station_proxy_hosts,
                 "port": management_station_proxy_port,
             },
+            arch_type=management_station_arch_type,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -710,7 +777,8 @@ class ManagementStation(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_auto_config_enabled=management_station_is_auto_config_enabled)
+            is_auto_config_enabled=management_station_is_auto_config_enabled,
+            os_family=management_station_os_family)
         ```
 
         ## Import
@@ -724,6 +792,7 @@ class ManagementStation(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] arch_type: (Updatable) The architecture type.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) User-specified description of the management station. Avoid entering confidential information.
@@ -732,6 +801,7 @@ class ManagementStation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] hostname: (Updatable) Hostname of the management station.
         :param pulumi.Input[_builtins.bool] is_auto_config_enabled: (Updatable) When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
         :param pulumi.Input[Union['ManagementStationMirrorArgs', 'ManagementStationMirrorArgsDict']] mirror: (Updatable) Information used to create the mirror configuration for a management station.
+        :param pulumi.Input[_builtins.str] os_family: (Updatable) The operating system family.
         :param pulumi.Input[Union['ManagementStationProxyArgs', 'ManagementStationProxyArgsDict']] proxy: (Updatable) Information used to create the proxy configuration for a management station.
         :param pulumi.Input[_builtins.int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
                
@@ -776,6 +846,7 @@ class ManagementStation(pulumi.CustomResource):
                 "hosts": management_station_proxy_hosts,
                 "port": management_station_proxy_port,
             },
+            arch_type=management_station_arch_type,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -783,7 +854,8 @@ class ManagementStation(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_auto_config_enabled=management_station_is_auto_config_enabled)
+            is_auto_config_enabled=management_station_is_auto_config_enabled,
+            os_family=management_station_os_family)
         ```
 
         ## Import
@@ -810,6 +882,7 @@ class ManagementStation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 arch_type: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
@@ -818,6 +891,7 @@ class ManagementStation(pulumi.CustomResource):
                  hostname: Optional[pulumi.Input[_builtins.str]] = None,
                  is_auto_config_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  mirror: Optional[pulumi.Input[Union['ManagementStationMirrorArgs', 'ManagementStationMirrorArgsDict']]] = None,
+                 os_family: Optional[pulumi.Input[_builtins.str]] = None,
                  proxy: Optional[pulumi.Input[Union['ManagementStationProxyArgs', 'ManagementStationProxyArgsDict']]] = None,
                  refresh_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
@@ -829,6 +903,7 @@ class ManagementStation(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ManagementStationArgs.__new__(ManagementStationArgs)
 
+            __props__.__dict__["arch_type"] = arch_type
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -845,6 +920,7 @@ class ManagementStation(pulumi.CustomResource):
             if mirror is None and not opts.urn:
                 raise TypeError("Missing required property 'mirror'")
             __props__.__dict__["mirror"] = mirror
+            __props__.__dict__["os_family"] = os_family
             if proxy is None and not opts.urn:
                 raise TypeError("Missing required property 'proxy'")
             __props__.__dict__["proxy"] = proxy
@@ -877,6 +953,7 @@ class ManagementStation(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            arch_type: Optional[pulumi.Input[_builtins.str]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: Optional[pulumi.Input[_builtins.str]] = None,
@@ -895,6 +972,7 @@ class ManagementStation(pulumi.CustomResource):
             mirror_storage_size: Optional[pulumi.Input[_builtins.str]] = None,
             mirror_sync_statuses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementStationMirrorSyncStatusArgs', 'ManagementStationMirrorSyncStatusArgsDict']]]]] = None,
             mirror_unique_package_count: Optional[pulumi.Input[_builtins.int]] = None,
+            os_family: Optional[pulumi.Input[_builtins.str]] = None,
             overall_percentage: Optional[pulumi.Input[_builtins.int]] = None,
             overall_state: Optional[pulumi.Input[_builtins.str]] = None,
             peer_management_stations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementStationPeerManagementStationArgs', 'ManagementStationPeerManagementStationArgsDict']]]]] = None,
@@ -912,6 +990,7 @@ class ManagementStation(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] arch_type: (Updatable) The architecture type.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) User-specified description of the management station. Avoid entering confidential information.
@@ -930,6 +1009,7 @@ class ManagementStation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] mirror_storage_size: Total mirror storage size in bytes.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementStationMirrorSyncStatusArgs', 'ManagementStationMirrorSyncStatusArgsDict']]]] mirror_sync_statuses: Status summary of the mirror sync.
         :param pulumi.Input[_builtins.int] mirror_unique_package_count: The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
+        :param pulumi.Input[_builtins.str] os_family: (Updatable) The operating system family.
         :param pulumi.Input[_builtins.int] overall_percentage: A decimal number representing the progress of the current mirror sync.
         :param pulumi.Input[_builtins.str] overall_state: Current state of the mirror sync for the management station.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementStationPeerManagementStationArgs', 'ManagementStationPeerManagementStationArgsDict']]]] peer_management_stations: A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
@@ -949,6 +1029,7 @@ class ManagementStation(pulumi.CustomResource):
 
         __props__ = _ManagementStationState.__new__(_ManagementStationState)
 
+        __props__.__dict__["arch_type"] = arch_type
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
@@ -967,6 +1048,7 @@ class ManagementStation(pulumi.CustomResource):
         __props__.__dict__["mirror_storage_size"] = mirror_storage_size
         __props__.__dict__["mirror_sync_statuses"] = mirror_sync_statuses
         __props__.__dict__["mirror_unique_package_count"] = mirror_unique_package_count
+        __props__.__dict__["os_family"] = os_family
         __props__.__dict__["overall_percentage"] = overall_percentage
         __props__.__dict__["overall_state"] = overall_state
         __props__.__dict__["peer_management_stations"] = peer_management_stations
@@ -978,6 +1060,14 @@ class ManagementStation(pulumi.CustomResource):
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["total_mirrors"] = total_mirrors
         return ManagementStation(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter(name="archType")
+    def arch_type(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The architecture type.
+        """
+        return pulumi.get(self, "arch_type")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -1122,6 +1212,14 @@ class ManagementStation(pulumi.CustomResource):
         The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
         """
         return pulumi.get(self, "mirror_unique_package_count")
+
+    @_builtins.property
+    @pulumi.getter(name="osFamily")
+    def os_family(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The operating system family.
+        """
+        return pulumi.get(self, "os_family")
 
     @_builtins.property
     @pulumi.getter(name="overallPercentage")

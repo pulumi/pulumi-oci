@@ -180,6 +180,16 @@ export const getModels: typeof import("./getModels").getModels = null as any;
 export const getModelsOutput: typeof import("./getModels").getModelsOutput = null as any;
 utilities.lazyLoad(exports, ["getModels","getModelsOutput"], () => require("./getModels"));
 
+export { GetSemanticStoreArgs, GetSemanticStoreResult, GetSemanticStoreOutputArgs } from "./getSemanticStore";
+export const getSemanticStore: typeof import("./getSemanticStore").getSemanticStore = null as any;
+export const getSemanticStoreOutput: typeof import("./getSemanticStore").getSemanticStoreOutput = null as any;
+utilities.lazyLoad(exports, ["getSemanticStore","getSemanticStoreOutput"], () => require("./getSemanticStore"));
+
+export { GetSemanticStoresArgs, GetSemanticStoresResult, GetSemanticStoresOutputArgs } from "./getSemanticStores";
+export const getSemanticStores: typeof import("./getSemanticStores").getSemanticStores = null as any;
+export const getSemanticStoresOutput: typeof import("./getSemanticStores").getSemanticStoresOutput = null as any;
+utilities.lazyLoad(exports, ["getSemanticStores","getSemanticStoresOutput"], () => require("./getSemanticStores"));
+
 export { ImportedModelArgs, ImportedModelState } from "./importedModel";
 export type ImportedModel = import("./importedModel").ImportedModel;
 export const ImportedModel: typeof import("./importedModel").ImportedModel = null as any;
@@ -189,6 +199,11 @@ export { ModelArgs, ModelState } from "./model";
 export type Model = import("./model").Model;
 export const Model: typeof import("./model").Model = null as any;
 utilities.lazyLoad(exports, ["Model"], () => require("./model"));
+
+export { SemanticStoreArgs, SemanticStoreState } from "./semanticStore";
+export type SemanticStore = import("./semanticStore").SemanticStore;
+export const SemanticStore: typeof import("./semanticStore").SemanticStore = null as any;
+utilities.lazyLoad(exports, ["SemanticStore"], () => require("./semanticStore"));
 
 
 const _module = {
@@ -219,6 +234,8 @@ const _module = {
                 return new ImportedModel(name, <any>undefined, { urn })
             case "oci:GenerativeAi/model:Model":
                 return new Model(name, <any>undefined, { urn })
+            case "oci:GenerativeAi/semanticStore:SemanticStore":
+                return new SemanticStore(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -236,3 +253,4 @@ pulumi.runtime.registerResourceModule("oci", "GenerativeAi/endpoint", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/generativeAiPrivateEndpoint", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/importedModel", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/model", _module)
+pulumi.runtime.registerResourceModule("oci", "GenerativeAi/semanticStore", _module)

@@ -41,14 +41,8 @@ export interface GetSoftwareSourceManifestArgs {
  * A collection of values returned by getSoftwareSourceManifest.
  */
 export interface GetSoftwareSourceManifestResult {
-    /**
-     * Provides the manifest content used to update the package list of the software source.
-     */
     readonly content: string;
     readonly id: string;
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-     */
     readonly softwareSourceId: string;
 }
 /**

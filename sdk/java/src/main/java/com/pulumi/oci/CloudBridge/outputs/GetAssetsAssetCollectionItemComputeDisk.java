@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudBridge.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -16,6 +17,7 @@ public final class GetAssetsAssetCollectionItemComputeDisk {
      * 
      */
     private Integer bootOrder;
+    private Boolean isCbtEnabled;
     /**
      * @return Location of the boot/data volume.
      * 
@@ -54,6 +56,9 @@ public final class GetAssetsAssetCollectionItemComputeDisk {
      */
     public Integer bootOrder() {
         return this.bootOrder;
+    }
+    public Boolean isCbtEnabled() {
+        return this.isCbtEnabled;
     }
     /**
      * @return Location of the boot/data volume.
@@ -108,6 +113,7 @@ public final class GetAssetsAssetCollectionItemComputeDisk {
     @CustomType.Builder
     public static final class Builder {
         private Integer bootOrder;
+        private Boolean isCbtEnabled;
         private String location;
         private String name;
         private String persistentMode;
@@ -118,6 +124,7 @@ public final class GetAssetsAssetCollectionItemComputeDisk {
         public Builder(GetAssetsAssetCollectionItemComputeDisk defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bootOrder = defaults.bootOrder;
+    	      this.isCbtEnabled = defaults.isCbtEnabled;
     	      this.location = defaults.location;
     	      this.name = defaults.name;
     	      this.persistentMode = defaults.persistentMode;
@@ -132,6 +139,14 @@ public final class GetAssetsAssetCollectionItemComputeDisk {
               throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemComputeDisk", "bootOrder");
             }
             this.bootOrder = bootOrder;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isCbtEnabled(Boolean isCbtEnabled) {
+            if (isCbtEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemComputeDisk", "isCbtEnabled");
+            }
+            this.isCbtEnabled = isCbtEnabled;
             return this;
         }
         @CustomType.Setter
@@ -185,6 +200,7 @@ public final class GetAssetsAssetCollectionItemComputeDisk {
         public GetAssetsAssetCollectionItemComputeDisk build() {
             final var _resultValue = new GetAssetsAssetCollectionItemComputeDisk();
             _resultValue.bootOrder = bootOrder;
+            _resultValue.isCbtEnabled = isCbtEnabled;
             _resultValue.location = location;
             _resultValue.name = name;
             _resultValue.persistentMode = persistentMode;

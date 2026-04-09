@@ -12,10 +12,9 @@ namespace Pulumi.Oci.OsManagementHub
     public static class GetErrata
     {
         /// <summary>
-        /// This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
+        /// This data source provides details about a specific Errata resource in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists all of the currently available errata. Filter the list against a variety of criteria including but not
-        /// limited to its name, classification type, advisory severity, and OS family.
+        /// Returns information about the specified erratum based on its advisory name.
         /// 
         /// 
         /// ## Example Usage
@@ -31,14 +30,7 @@ namespace Pulumi.Oci.OsManagementHub
         ///     var testErrata = Oci.OsManagementHub.GetErrata.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
-        ///         AdvisorySeverities = erratumAdvisorySeverity,
-        ///         AdvisoryTypes = erratumAdvisoryType,
-        ///         ClassificationTypes = erratumClassificationType,
-        ///         Names = erratumName,
-        ///         NameContains = erratumNameContains,
-        ///         OsFamily = erratumOsFamily,
-        ///         TimeIssueDateEnd = erratumTimeIssueDateEnd,
-        ///         TimeIssueDateStart = erratumTimeIssueDateStart,
+        ///         Names = errataName,
         ///     });
         /// 
         /// });
@@ -48,10 +40,9 @@ namespace Pulumi.Oci.OsManagementHub
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetErrataResult>("oci:OsManagementHub/getErrata:getErrata", args ?? new GetErrataArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
+        /// This data source provides details about a specific Errata resource in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists all of the currently available errata. Filter the list against a variety of criteria including but not
-        /// limited to its name, classification type, advisory severity, and OS family.
+        /// Returns information about the specified erratum based on its advisory name.
         /// 
         /// 
         /// ## Example Usage
@@ -67,14 +58,7 @@ namespace Pulumi.Oci.OsManagementHub
         ///     var testErrata = Oci.OsManagementHub.GetErrata.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
-        ///         AdvisorySeverities = erratumAdvisorySeverity,
-        ///         AdvisoryTypes = erratumAdvisoryType,
-        ///         ClassificationTypes = erratumClassificationType,
-        ///         Names = erratumName,
-        ///         NameContains = erratumNameContains,
-        ///         OsFamily = erratumOsFamily,
-        ///         TimeIssueDateEnd = erratumTimeIssueDateEnd,
-        ///         TimeIssueDateStart = erratumTimeIssueDateStart,
+        ///         Names = errataName,
         ///     });
         /// 
         /// });
@@ -84,10 +68,9 @@ namespace Pulumi.Oci.OsManagementHub
             => global::Pulumi.Deployment.Instance.Invoke<GetErrataResult>("oci:OsManagementHub/getErrata:getErrata", args ?? new GetErrataInvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
+        /// This data source provides details about a specific Errata resource in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists all of the currently available errata. Filter the list against a variety of criteria including but not
-        /// limited to its name, classification type, advisory severity, and OS family.
+        /// Returns information about the specified erratum based on its advisory name.
         /// 
         /// 
         /// ## Example Usage
@@ -103,14 +86,7 @@ namespace Pulumi.Oci.OsManagementHub
         ///     var testErrata = Oci.OsManagementHub.GetErrata.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
-        ///         AdvisorySeverities = erratumAdvisorySeverity,
-        ///         AdvisoryTypes = erratumAdvisoryType,
-        ///         ClassificationTypes = erratumClassificationType,
-        ///         Names = erratumName,
-        ///         NameContains = erratumNameContains,
-        ///         OsFamily = erratumOsFamily,
-        ///         TimeIssueDateEnd = erratumTimeIssueDateEnd,
-        ///         TimeIssueDateStart = erratumTimeIssueDateStart,
+        ///         Names = errataName,
         ///     });
         /// 
         /// });
@@ -127,7 +103,7 @@ namespace Pulumi.Oci.OsManagementHub
         private List<string>? _advisorySeverities;
 
         /// <summary>
-        /// The advisory severity.
+        /// The severity for a security advisory, otherwise, null.
         /// </summary>
         public List<string> AdvisorySeverities
         {
@@ -139,7 +115,7 @@ namespace Pulumi.Oci.OsManagementHub
         private List<string>? _advisoryTypes;
 
         /// <summary>
-        /// A filter to return only errata that match the given advisory types.
+        /// The advisory type of the erratum.
         /// </summary>
         public List<string> AdvisoryTypes
         {
@@ -151,7 +127,7 @@ namespace Pulumi.Oci.OsManagementHub
         private List<string>? _classificationTypes;
 
         /// <summary>
-        /// A filter to return only packages that match the given update classification type.
+        /// Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
         /// </summary>
         public List<string> ClassificationTypes
         {
@@ -173,9 +149,6 @@ namespace Pulumi.Oci.OsManagementHub
             set => _filters = value;
         }
 
-        /// <summary>
-        /// A filter to return resources that may partially match the erratum name given.
-        /// </summary>
         [Input("nameContains")]
         public string? NameContains { get; set; }
 
@@ -183,7 +156,7 @@ namespace Pulumi.Oci.OsManagementHub
         private List<string>? _names;
 
         /// <summary>
-        /// The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+        /// The erratum name (such as ELSA-2023-34678).
         /// </summary>
         public List<string> Names
         {
@@ -191,21 +164,12 @@ namespace Pulumi.Oci.OsManagementHub
             set => _names = value;
         }
 
-        /// <summary>
-        /// A filter to return only resources that match the given operating system family.
-        /// </summary>
         [Input("osFamily")]
         public string? OsFamily { get; set; }
 
-        /// <summary>
-        /// The issue date before which to list all errata, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
-        /// </summary>
         [Input("timeIssueDateEnd")]
         public string? TimeIssueDateEnd { get; set; }
 
-        /// <summary>
-        /// The issue date after which to list all errata, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
-        /// </summary>
         [Input("timeIssueDateStart")]
         public string? TimeIssueDateStart { get; set; }
 
@@ -221,7 +185,7 @@ namespace Pulumi.Oci.OsManagementHub
         private InputList<string>? _advisorySeverities;
 
         /// <summary>
-        /// The advisory severity.
+        /// The severity for a security advisory, otherwise, null.
         /// </summary>
         public InputList<string> AdvisorySeverities
         {
@@ -233,7 +197,7 @@ namespace Pulumi.Oci.OsManagementHub
         private InputList<string>? _advisoryTypes;
 
         /// <summary>
-        /// A filter to return only errata that match the given advisory types.
+        /// The advisory type of the erratum.
         /// </summary>
         public InputList<string> AdvisoryTypes
         {
@@ -245,7 +209,7 @@ namespace Pulumi.Oci.OsManagementHub
         private InputList<string>? _classificationTypes;
 
         /// <summary>
-        /// A filter to return only packages that match the given update classification type.
+        /// Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
         /// </summary>
         public InputList<string> ClassificationTypes
         {
@@ -267,9 +231,6 @@ namespace Pulumi.Oci.OsManagementHub
             set => _filters = value;
         }
 
-        /// <summary>
-        /// A filter to return resources that may partially match the erratum name given.
-        /// </summary>
         [Input("nameContains")]
         public Input<string>? NameContains { get; set; }
 
@@ -277,7 +238,7 @@ namespace Pulumi.Oci.OsManagementHub
         private InputList<string>? _names;
 
         /// <summary>
-        /// The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+        /// The erratum name (such as ELSA-2023-34678).
         /// </summary>
         public InputList<string> Names
         {
@@ -285,21 +246,12 @@ namespace Pulumi.Oci.OsManagementHub
             set => _names = value;
         }
 
-        /// <summary>
-        /// A filter to return only resources that match the given operating system family.
-        /// </summary>
         [Input("osFamily")]
         public Input<string>? OsFamily { get; set; }
 
-        /// <summary>
-        /// The issue date before which to list all errata, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
-        /// </summary>
         [Input("timeIssueDateEnd")]
         public Input<string>? TimeIssueDateEnd { get; set; }
 
-        /// <summary>
-        /// The issue date after which to list all errata, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
-        /// </summary>
         [Input("timeIssueDateStart")]
         public Input<string>? TimeIssueDateStart { get; set; }
 
@@ -326,9 +278,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly ImmutableArray<string> ClassificationTypes;
         public readonly string CompartmentId;
-        /// <summary>
-        /// The list of erratum_collection.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetErrataErratumCollectionResult> ErratumCollections;
         public readonly ImmutableArray<Outputs.GetErrataFilterResult> Filters;
         /// <summary>

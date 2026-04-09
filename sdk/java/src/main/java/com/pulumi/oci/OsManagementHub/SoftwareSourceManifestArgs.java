@@ -16,17 +16,9 @@ public final class SoftwareSourceManifestArgs extends com.pulumi.resources.Resou
 
     public static final SoftwareSourceManifestArgs Empty = new SoftwareSourceManifestArgs();
 
-    /**
-     * (Updatable) Provides the manifest content used to update the package list of the software source.
-     * 
-     */
     @Import(name="content")
     private @Nullable Output<String> content;
 
-    /**
-     * @return (Updatable) Provides the manifest content used to update the package list of the software source.
-     * 
-     */
     public Optional<Output<String>> content() {
         return Optional.ofNullable(this.content);
     }
@@ -77,23 +69,11 @@ public final class SoftwareSourceManifestArgs extends com.pulumi.resources.Resou
             $ = new SoftwareSourceManifestArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param content (Updatable) Provides the manifest content used to update the package list of the software source.
-         * 
-         * @return builder
-         * 
-         */
         public Builder content(@Nullable Output<String> content) {
             $.content = content;
             return this;
         }
 
-        /**
-         * @param content (Updatable) Provides the manifest content used to update the package list of the software source.
-         * 
-         * @return builder
-         * 
-         */
         public Builder content(String content) {
             return content(Output.of(content));
         }

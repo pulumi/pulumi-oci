@@ -78,6 +78,21 @@ public final class GetScheduledJobsArgs extends com.pulumi.resources.InvokeArgs 
         return Optional.ofNullable(this.displayNameContains);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
+     * 
+     */
+    @Import(name="dynamicSetId")
+    private @Nullable Output<String> dynamicSetId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
+     * 
+     */
+    public Optional<Output<String>> dynamicSetId() {
+        return Optional.ofNullable(this.dynamicSetId);
+    }
+
     @Import(name="filters")
     private @Nullable Output<List<GetScheduledJobsFilterArgs>> filters;
 
@@ -302,6 +317,7 @@ public final class GetScheduledJobsArgs extends com.pulumi.resources.InvokeArgs 
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.displayName = $.displayName;
         this.displayNameContains = $.displayNameContains;
+        this.dynamicSetId = $.dynamicSetId;
         this.filters = $.filters;
         this.id = $.id;
         this.isManagedByAutonomousLinux = $.isManagedByAutonomousLinux;
@@ -419,6 +435,27 @@ public final class GetScheduledJobsArgs extends com.pulumi.resources.InvokeArgs 
          */
         public Builder displayNameContains(String displayNameContains) {
             return displayNameContains(Output.of(displayNameContains));
+        }
+
+        /**
+         * @param dynamicSetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dynamicSetId(@Nullable Output<String> dynamicSetId) {
+            $.dynamicSetId = dynamicSetId;
+            return this;
+        }
+
+        /**
+         * @param dynamicSetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dynamicSetId(String dynamicSetId) {
+            return dynamicSetId(Output.of(dynamicSetId));
         }
 
         public Builder filters(@Nullable Output<List<GetScheduledJobsFilterArgs>> filters) {

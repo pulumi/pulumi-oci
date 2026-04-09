@@ -42,6 +42,8 @@ import com.pulumi.oci.CloudBridge.inputs.GetInventoriesArgs;
 import com.pulumi.oci.CloudBridge.inputs.GetInventoriesPlainArgs;
 import com.pulumi.oci.CloudBridge.inputs.GetInventoryArgs;
 import com.pulumi.oci.CloudBridge.inputs.GetInventoryPlainArgs;
+import com.pulumi.oci.CloudBridge.inputs.GetSupportedCloudRegionsArgs;
+import com.pulumi.oci.CloudBridge.inputs.GetSupportedCloudRegionsPlainArgs;
 import com.pulumi.oci.CloudBridge.outputs.GetAgentDependenciesResult;
 import com.pulumi.oci.CloudBridge.outputs.GetAgentDependencyResult;
 import com.pulumi.oci.CloudBridge.outputs.GetAgentPluginResult;
@@ -59,6 +61,7 @@ import com.pulumi.oci.CloudBridge.outputs.GetEnvironmentResult;
 import com.pulumi.oci.CloudBridge.outputs.GetEnvironmentsResult;
 import com.pulumi.oci.CloudBridge.outputs.GetInventoriesResult;
 import com.pulumi.oci.CloudBridge.outputs.GetInventoryResult;
+import com.pulumi.oci.CloudBridge.outputs.GetSupportedCloudRegionsResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
@@ -2264,6 +2267,8 @@ public final class CloudBridgeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAssets = CloudBridgeFunctions.getAssets(GetAssetsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .assetClassName(assetAssetClassName)
+     *             .assetClassVersion(assetAssetClassVersion)
      *             .assetId(testAsset.id())
      *             .assetType(assetAssetType)
      *             .displayName(assetDisplayName)
@@ -2313,6 +2318,8 @@ public final class CloudBridgeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAssets = CloudBridgeFunctions.getAssets(GetAssetsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .assetClassName(assetAssetClassName)
+     *             .assetClassVersion(assetAssetClassVersion)
      *             .assetId(testAsset.id())
      *             .assetType(assetAssetType)
      *             .displayName(assetDisplayName)
@@ -2362,6 +2369,8 @@ public final class CloudBridgeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAssets = CloudBridgeFunctions.getAssets(GetAssetsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .assetClassName(assetAssetClassName)
+     *             .assetClassVersion(assetAssetClassVersion)
      *             .assetId(testAsset.id())
      *             .assetType(assetAssetType)
      *             .displayName(assetDisplayName)
@@ -2411,6 +2420,8 @@ public final class CloudBridgeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAssets = CloudBridgeFunctions.getAssets(GetAssetsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .assetClassName(assetAssetClassName)
+     *             .assetClassVersion(assetAssetClassVersion)
      *             .assetId(testAsset.id())
      *             .assetType(assetAssetType)
      *             .displayName(assetDisplayName)
@@ -2460,6 +2471,8 @@ public final class CloudBridgeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAssets = CloudBridgeFunctions.getAssets(GetAssetsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .assetClassName(assetAssetClassName)
+     *             .assetClassVersion(assetAssetClassVersion)
      *             .assetId(testAsset.id())
      *             .assetType(assetAssetType)
      *             .displayName(assetDisplayName)
@@ -3772,5 +3785,26 @@ public final class CloudBridgeFunctions {
      */
     public static CompletableFuture<GetInventoryResult> getInventoryPlain(GetInventoryPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CloudBridge/getInventory:getInventory", TypeShape.of(GetInventoryResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetSupportedCloudRegionsResult> getSupportedCloudRegions() {
+        return getSupportedCloudRegions(GetSupportedCloudRegionsArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetSupportedCloudRegionsResult> getSupportedCloudRegionsPlain() {
+        return getSupportedCloudRegionsPlain(GetSupportedCloudRegionsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetSupportedCloudRegionsResult> getSupportedCloudRegions(GetSupportedCloudRegionsArgs args) {
+        return getSupportedCloudRegions(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetSupportedCloudRegionsResult> getSupportedCloudRegionsPlain(GetSupportedCloudRegionsPlainArgs args) {
+        return getSupportedCloudRegionsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetSupportedCloudRegionsResult> getSupportedCloudRegions(GetSupportedCloudRegionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudBridge/getSupportedCloudRegions:getSupportedCloudRegions", TypeShape.of(GetSupportedCloudRegionsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetSupportedCloudRegionsResult> getSupportedCloudRegions(GetSupportedCloudRegionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudBridge/getSupportedCloudRegions:getSupportedCloudRegions", TypeShape.of(GetSupportedCloudRegionsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetSupportedCloudRegionsResult> getSupportedCloudRegionsPlain(GetSupportedCloudRegionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CloudBridge/getSupportedCloudRegions:getSupportedCloudRegions", TypeShape.of(GetSupportedCloudRegionsResult.class), args, Utilities.withVersion(options));
     }
 }

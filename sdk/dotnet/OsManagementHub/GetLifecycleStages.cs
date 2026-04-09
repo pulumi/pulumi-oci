@@ -15,34 +15,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides the list of Lifecycle Stages in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Lists lifecycle stages that match the specified compartment or lifecycle stage [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against
-        /// 
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var testLifecycleStages = Oci.OsManagementHub.GetLifecycleStages.Invoke(new()
-        ///     {
-        ///         ArchType = lifecycleStageArchType,
-        ///         CompartmentId = compartmentId,
-        ///         DisplayNames = lifecycleStageDisplayName,
-        ///         DisplayNameContains = lifecycleStageDisplayNameContains,
-        ///         LifecycleStageId = testLifecycleStage.Id,
-        ///         Locations = lifecycleStageLocation,
-        ///         LocationNotEqualTos = lifecycleStageLocationNotEqualTo,
-        ///         OsFamily = lifecycleStageOsFamily,
-        ///         SoftwareSourceId = lifecycleStageSoftwareSourceId,
-        ///         State = lifecycleStageState,
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Task<GetLifecycleStagesResult> InvokeAsync(GetLifecycleStagesArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetLifecycleStagesResult>("oci:OsManagementHub/getLifecycleStages:getLifecycleStages", args ?? new GetLifecycleStagesArgs(), options.WithDefaults());
@@ -51,34 +23,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides the list of Lifecycle Stages in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Lists lifecycle stages that match the specified compartment or lifecycle stage [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against
-        /// 
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var testLifecycleStages = Oci.OsManagementHub.GetLifecycleStages.Invoke(new()
-        ///     {
-        ///         ArchType = lifecycleStageArchType,
-        ///         CompartmentId = compartmentId,
-        ///         DisplayNames = lifecycleStageDisplayName,
-        ///         DisplayNameContains = lifecycleStageDisplayNameContains,
-        ///         LifecycleStageId = testLifecycleStage.Id,
-        ///         Locations = lifecycleStageLocation,
-        ///         LocationNotEqualTos = lifecycleStageLocationNotEqualTo,
-        ///         OsFamily = lifecycleStageOsFamily,
-        ///         SoftwareSourceId = lifecycleStageSoftwareSourceId,
-        ///         State = lifecycleStageState,
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Output<GetLifecycleStagesResult> Invoke(GetLifecycleStagesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLifecycleStagesResult>("oci:OsManagementHub/getLifecycleStages:getLifecycleStages", args ?? new GetLifecycleStagesInvokeArgs(), options.WithDefaults());
@@ -87,34 +31,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides the list of Lifecycle Stages in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Lists lifecycle stages that match the specified compartment or lifecycle stage [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against
-        /// 
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var testLifecycleStages = Oci.OsManagementHub.GetLifecycleStages.Invoke(new()
-        ///     {
-        ///         ArchType = lifecycleStageArchType,
-        ///         CompartmentId = compartmentId,
-        ///         DisplayNames = lifecycleStageDisplayName,
-        ///         DisplayNameContains = lifecycleStageDisplayNameContains,
-        ///         LifecycleStageId = testLifecycleStage.Id,
-        ///         Locations = lifecycleStageLocation,
-        ///         LocationNotEqualTos = lifecycleStageLocationNotEqualTo,
-        ///         OsFamily = lifecycleStageOsFamily,
-        ///         SoftwareSourceId = lifecycleStageSoftwareSourceId,
-        ///         State = lifecycleStageState,
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Output<GetLifecycleStagesResult> Invoke(GetLifecycleStagesInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetLifecycleStagesResult>("oci:OsManagementHub/getLifecycleStages:getLifecycleStages", args ?? new GetLifecycleStagesInvokeArgs(), options.WithDefaults());

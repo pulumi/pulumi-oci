@@ -61,6 +61,12 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
         public Input<string>? ErrorLog { get; set; }
 
         /// <summary>
+        /// Brief description on how this error is categorized.
+        /// </summary>
+        [Input("errorSummary")]
+        public Input<string>? ErrorSummary { get; set; }
+
+        /// <summary>
         /// Number of times the event has occurred.
         /// </summary>
         [Input("eventCount")]

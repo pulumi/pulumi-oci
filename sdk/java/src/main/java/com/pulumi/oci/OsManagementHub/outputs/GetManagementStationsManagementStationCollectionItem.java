@@ -15,6 +15,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetManagementStationsManagementStationCollectionItem {
     /**
+     * @return The architecture type.
+     * 
+     */
+    private String archType;
+    /**
      * @return (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
@@ -39,6 +44,10 @@ public final class GetManagementStationsManagementStationCollectionItem {
      * 
      */
     private Map<String,String> freeformTags;
+    /**
+     * @return A filter that returns information for management stations in the specified health state.
+     * 
+     */
     private String healthState;
     /**
      * @return Hostname of the management station.
@@ -65,6 +74,11 @@ public final class GetManagementStationsManagementStationCollectionItem {
      * 
      */
     private Integer mirrorCapacity;
+    /**
+     * @return The operating system family.
+     * 
+     */
+    private String osFamily;
     /**
      * @return A decimal number representing the progress of the current mirror sync.
      * 
@@ -98,6 +112,13 @@ public final class GetManagementStationsManagementStationCollectionItem {
     private @Nullable String timeNextExecution;
 
     private GetManagementStationsManagementStationCollectionItem() {}
+    /**
+     * @return The architecture type.
+     * 
+     */
+    public String archType() {
+        return this.archType;
+    }
     /**
      * @return (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
@@ -133,6 +154,10 @@ public final class GetManagementStationsManagementStationCollectionItem {
     public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
+    /**
+     * @return A filter that returns information for management stations in the specified health state.
+     * 
+     */
     public String healthState() {
         return this.healthState;
     }
@@ -170,6 +195,13 @@ public final class GetManagementStationsManagementStationCollectionItem {
      */
     public Integer mirrorCapacity() {
         return this.mirrorCapacity;
+    }
+    /**
+     * @return The operating system family.
+     * 
+     */
+    public String osFamily() {
+        return this.osFamily;
     }
     /**
      * @return A decimal number representing the progress of the current mirror sync.
@@ -226,6 +258,7 @@ public final class GetManagementStationsManagementStationCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String archType;
         private String compartmentId;
         private Map<String,String> definedTags;
         private String description;
@@ -237,6 +270,7 @@ public final class GetManagementStationsManagementStationCollectionItem {
         private String location;
         private String managedInstanceId;
         private Integer mirrorCapacity;
+        private String osFamily;
         private Integer overallPercentage;
         private String overallState;
         private String profileId;
@@ -247,6 +281,7 @@ public final class GetManagementStationsManagementStationCollectionItem {
         public Builder() {}
         public Builder(GetManagementStationsManagementStationCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.archType = defaults.archType;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
@@ -258,6 +293,7 @@ public final class GetManagementStationsManagementStationCollectionItem {
     	      this.location = defaults.location;
     	      this.managedInstanceId = defaults.managedInstanceId;
     	      this.mirrorCapacity = defaults.mirrorCapacity;
+    	      this.osFamily = defaults.osFamily;
     	      this.overallPercentage = defaults.overallPercentage;
     	      this.overallState = defaults.overallState;
     	      this.profileId = defaults.profileId;
@@ -267,6 +303,14 @@ public final class GetManagementStationsManagementStationCollectionItem {
     	      this.timeNextExecution = defaults.timeNextExecution;
         }
 
+        @CustomType.Setter
+        public Builder archType(String archType) {
+            if (archType == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationsManagementStationCollectionItem", "archType");
+            }
+            this.archType = archType;
+            return this;
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
@@ -356,6 +400,14 @@ public final class GetManagementStationsManagementStationCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder osFamily(String osFamily) {
+            if (osFamily == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationsManagementStationCollectionItem", "osFamily");
+            }
+            this.osFamily = osFamily;
+            return this;
+        }
+        @CustomType.Setter
         public Builder overallPercentage(Integer overallPercentage) {
             if (overallPercentage == null) {
               throw new MissingRequiredPropertyException("GetManagementStationsManagementStationCollectionItem", "overallPercentage");
@@ -411,6 +463,7 @@ public final class GetManagementStationsManagementStationCollectionItem {
         }
         public GetManagementStationsManagementStationCollectionItem build() {
             final var _resultValue = new GetManagementStationsManagementStationCollectionItem();
+            _resultValue.archType = archType;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
@@ -422,6 +475,7 @@ public final class GetManagementStationsManagementStationCollectionItem {
             _resultValue.location = location;
             _resultValue.managedInstanceId = managedInstanceId;
             _resultValue.mirrorCapacity = mirrorCapacity;
+            _resultValue.osFamily = osFamily;
             _resultValue.overallPercentage = overallPercentage;
             _resultValue.overallState = overallState;
             _resultValue.profileId = profileId;

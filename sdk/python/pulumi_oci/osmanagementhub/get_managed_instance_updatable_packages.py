@@ -28,10 +28,13 @@ class GetManagedInstanceUpdatablePackagesResult:
     """
     A collection of values returned by getManagedInstanceUpdatablePackages.
     """
-    def __init__(__self__, advisory_names=None, classification_types=None, compartment_id=None, display_name_contains=None, display_names=None, filters=None, id=None, managed_instance_id=None, updatable_package_collections=None):
+    def __init__(__self__, advisory_names=None, advisory_severities=None, classification_types=None, compartment_id=None, display_name_contains=None, display_names=None, filters=None, id=None, managed_instance_id=None, updatable_package_collections=None):
         if advisory_names and not isinstance(advisory_names, list):
             raise TypeError("Expected argument 'advisory_names' to be a list")
         pulumi.set(__self__, "advisory_names", advisory_names)
+        if advisory_severities and not isinstance(advisory_severities, list):
+            raise TypeError("Expected argument 'advisory_severities' to be a list")
+        pulumi.set(__self__, "advisory_severities", advisory_severities)
         if classification_types and not isinstance(classification_types, list):
             raise TypeError("Expected argument 'classification_types' to be a list")
         pulumi.set(__self__, "classification_types", classification_types)
@@ -61,6 +64,14 @@ class GetManagedInstanceUpdatablePackagesResult:
     @pulumi.getter(name="advisoryNames")
     def advisory_names(self) -> Optional[Sequence[_builtins.str]]:
         return pulumi.get(self, "advisory_names")
+
+    @_builtins.property
+    @pulumi.getter(name="advisorySeverities")
+    def advisory_severities(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        The severity level of the security update. Only applicable when updateType is SECURITY.
+        """
+        return pulumi.get(self, "advisory_severities")
 
     @_builtins.property
     @pulumi.getter(name="classificationTypes")
@@ -119,6 +130,7 @@ class AwaitableGetManagedInstanceUpdatablePackagesResult(GetManagedInstanceUpdat
             yield self
         return GetManagedInstanceUpdatablePackagesResult(
             advisory_names=self.advisory_names,
+            advisory_severities=self.advisory_severities,
             classification_types=self.classification_types,
             compartment_id=self.compartment_id,
             display_name_contains=self.display_name_contains,
@@ -130,6 +142,7 @@ class AwaitableGetManagedInstanceUpdatablePackagesResult(GetManagedInstanceUpdat
 
 
 def get_managed_instance_updatable_packages(advisory_names: Optional[Sequence[_builtins.str]] = None,
+                                            advisory_severities: Optional[Sequence[_builtins.str]] = None,
                                             classification_types: Optional[Sequence[_builtins.str]] = None,
                                             compartment_id: Optional[_builtins.str] = None,
                                             display_name_contains: Optional[_builtins.str] = None,
@@ -150,6 +163,7 @@ def get_managed_instance_updatable_packages(advisory_names: Optional[Sequence[_b
 
     test_managed_instance_updatable_packages = oci.OsManagementHub.get_managed_instance_updatable_packages(managed_instance_id=test_managed_instance["id"],
         advisory_names=managed_instance_updatable_package_advisory_name,
+        advisory_severities=managed_instance_updatable_package_advisory_severity,
         classification_types=managed_instance_updatable_package_classification_type,
         compartment_id=compartment_id,
         display_names=managed_instance_updatable_package_display_name,
@@ -158,6 +172,7 @@ def get_managed_instance_updatable_packages(advisory_names: Optional[Sequence[_b
 
 
     :param Sequence[_builtins.str] advisory_names: The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+    :param Sequence[_builtins.str] advisory_severities: The advisory severity.
     :param Sequence[_builtins.str] classification_types: A filter to return only packages that match the given update classification type.
     :param _builtins.str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
     :param _builtins.str display_name_contains: A filter to return resources that may partially match the given display name.
@@ -166,6 +181,7 @@ def get_managed_instance_updatable_packages(advisory_names: Optional[Sequence[_b
     """
     __args__ = dict()
     __args__['advisoryNames'] = advisory_names
+    __args__['advisorySeverities'] = advisory_severities
     __args__['classificationTypes'] = classification_types
     __args__['compartmentId'] = compartment_id
     __args__['displayNameContains'] = display_name_contains
@@ -177,6 +193,7 @@ def get_managed_instance_updatable_packages(advisory_names: Optional[Sequence[_b
 
     return AwaitableGetManagedInstanceUpdatablePackagesResult(
         advisory_names=pulumi.get(__ret__, 'advisory_names'),
+        advisory_severities=pulumi.get(__ret__, 'advisory_severities'),
         classification_types=pulumi.get(__ret__, 'classification_types'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         display_name_contains=pulumi.get(__ret__, 'display_name_contains'),
@@ -186,6 +203,7 @@ def get_managed_instance_updatable_packages(advisory_names: Optional[Sequence[_b
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
         updatable_package_collections=pulumi.get(__ret__, 'updatable_package_collections'))
 def get_managed_instance_updatable_packages_output(advisory_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+                                                   advisory_severities: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
                                                    classification_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
                                                    compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                                    display_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
@@ -206,6 +224,7 @@ def get_managed_instance_updatable_packages_output(advisory_names: Optional[pulu
 
     test_managed_instance_updatable_packages = oci.OsManagementHub.get_managed_instance_updatable_packages(managed_instance_id=test_managed_instance["id"],
         advisory_names=managed_instance_updatable_package_advisory_name,
+        advisory_severities=managed_instance_updatable_package_advisory_severity,
         classification_types=managed_instance_updatable_package_classification_type,
         compartment_id=compartment_id,
         display_names=managed_instance_updatable_package_display_name,
@@ -214,6 +233,7 @@ def get_managed_instance_updatable_packages_output(advisory_names: Optional[pulu
 
 
     :param Sequence[_builtins.str] advisory_names: The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+    :param Sequence[_builtins.str] advisory_severities: The advisory severity.
     :param Sequence[_builtins.str] classification_types: A filter to return only packages that match the given update classification type.
     :param _builtins.str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
     :param _builtins.str display_name_contains: A filter to return resources that may partially match the given display name.
@@ -222,6 +242,7 @@ def get_managed_instance_updatable_packages_output(advisory_names: Optional[pulu
     """
     __args__ = dict()
     __args__['advisoryNames'] = advisory_names
+    __args__['advisorySeverities'] = advisory_severities
     __args__['classificationTypes'] = classification_types
     __args__['compartmentId'] = compartment_id
     __args__['displayNameContains'] = display_name_contains
@@ -232,6 +253,7 @@ def get_managed_instance_updatable_packages_output(advisory_names: Optional[pulu
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagedInstanceUpdatablePackages:getManagedInstanceUpdatablePackages', __args__, opts=opts, typ=GetManagedInstanceUpdatablePackagesResult)
     return __ret__.apply(lambda __response__: GetManagedInstanceUpdatablePackagesResult(
         advisory_names=pulumi.get(__response__, 'advisory_names'),
+        advisory_severities=pulumi.get(__response__, 'advisory_severities'),
         classification_types=pulumi.get(__response__, 'classification_types'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         display_name_contains=pulumi.get(__response__, 'display_name_contains'),

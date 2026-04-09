@@ -14,15 +14,15 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class GetErrataErratumCollectionItemResult
     {
         /// <summary>
-        /// The advisory severity.
+        /// The severity for a security advisory, otherwise, null.
         /// </summary>
         public readonly string AdvisorySeverity;
         /// <summary>
-        /// A filter to return only errata that match the given advisory types.
+        /// The advisory type of the erratum.
         /// </summary>
         public readonly string AdvisoryType;
         /// <summary>
-        /// A filter to return only packages that match the given update classification type.
+        /// Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
         /// </summary>
         public readonly string ClassificationType;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string From;
         /// <summary>
-        /// The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+        /// The erratum name (such as ELSA-2023-34678).
         /// </summary>
         public readonly string Name;
         /// <summary>

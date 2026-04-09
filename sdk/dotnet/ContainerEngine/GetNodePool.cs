@@ -160,6 +160,10 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         public readonly string Name;
         /// <summary>
+        /// Emulation type for the physical network interface card (NIC) for nodes
+        /// </summary>
+        public readonly string NetworkLaunchType;
+        /// <summary>
         /// The configuration of nodes in the node pool.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNodePoolNodeConfigDetailResult> NodeConfigDetails;
@@ -212,6 +216,10 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         public readonly int QuantityPerSubnet;
         /// <summary>
+        /// A list of secondary vnics to attach to nodes
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetNodePoolSecondaryVnicResult> SecondaryVnics;
+        /// <summary>
         /// The SSH public key on each node in the node pool on launch.
         /// </summary>
         public readonly string SshPublicKey;
@@ -244,6 +252,8 @@ namespace Pulumi.Oci.ContainerEngine
 
             string name,
 
+            string networkLaunchType,
+
             ImmutableArray<Outputs.GetNodePoolNodeConfigDetailResult> nodeConfigDetails,
 
             ImmutableArray<Outputs.GetNodePoolNodeEvictionNodePoolSettingResult> nodeEvictionNodePoolSettings,
@@ -270,6 +280,8 @@ namespace Pulumi.Oci.ContainerEngine
 
             int quantityPerSubnet,
 
+            ImmutableArray<Outputs.GetNodePoolSecondaryVnicResult> secondaryVnics,
+
             string sshPublicKey,
 
             string state,
@@ -285,6 +297,7 @@ namespace Pulumi.Oci.ContainerEngine
             KubernetesVersion = kubernetesVersion;
             LifecycleDetails = lifecycleDetails;
             Name = name;
+            NetworkLaunchType = networkLaunchType;
             NodeConfigDetails = nodeConfigDetails;
             NodeEvictionNodePoolSettings = nodeEvictionNodePoolSettings;
             NodeImageId = nodeImageId;
@@ -298,6 +311,7 @@ namespace Pulumi.Oci.ContainerEngine
             NodeSources = nodeSources;
             Nodes = nodes;
             QuantityPerSubnet = quantityPerSubnet;
+            SecondaryVnics = secondaryVnics;
             SshPublicKey = sshPublicKey;
             State = state;
             SubnetIds = subnetIds;

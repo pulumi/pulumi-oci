@@ -482,28 +482,16 @@ class LifecycleEnvironment(pulumi.CustomResource):
             compartment_id=compartment_id,
             display_name=lifecycle_environment_display_name,
             os_family=lifecycle_environment_os_family,
-            stages=[
-                {
-                    "display_name": lifecycle_environment_stages_display_name1,
-                    "rank": lifecycle_environment_stages_rank1,
-                    "defined_tags": {
-                        "Operations.CostCenter": "42",
-                    },
-                    "freeform_tags": {
-                        "Department": "Finance",
-                    },
+            stages=[{
+                "display_name": lifecycle_environment_stages_display_name,
+                "rank": lifecycle_environment_stages_rank,
+                "defined_tags": {
+                    "Operations.CostCenter": "42",
                 },
-                {
-                    "display_name": lifecycle_environment_stages_display_name2,
-                    "rank": lifecycle_environment_stages_rank2,
-                    "defined_tags": {
-                        "Operations.CostCenter": "42",
-                    },
-                    "freeform_tags": {
-                        "Department": "Finance",
-                    },
+                "freeform_tags": {
+                    "Department": "Finance",
                 },
-            ],
+            }],
             vendor_name=lifecycle_environment_vendor_name,
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -566,28 +554,16 @@ class LifecycleEnvironment(pulumi.CustomResource):
             compartment_id=compartment_id,
             display_name=lifecycle_environment_display_name,
             os_family=lifecycle_environment_os_family,
-            stages=[
-                {
-                    "display_name": lifecycle_environment_stages_display_name1,
-                    "rank": lifecycle_environment_stages_rank1,
-                    "defined_tags": {
-                        "Operations.CostCenter": "42",
-                    },
-                    "freeform_tags": {
-                        "Department": "Finance",
-                    },
+            stages=[{
+                "display_name": lifecycle_environment_stages_display_name,
+                "rank": lifecycle_environment_stages_rank,
+                "defined_tags": {
+                    "Operations.CostCenter": "42",
                 },
-                {
-                    "display_name": lifecycle_environment_stages_display_name2,
-                    "rank": lifecycle_environment_stages_rank2,
-                    "defined_tags": {
-                        "Operations.CostCenter": "42",
-                    },
-                    "freeform_tags": {
-                        "Department": "Finance",
-                    },
+                "freeform_tags": {
+                    "Department": "Finance",
                 },
-            ],
+            }],
             vendor_name=lifecycle_environment_vendor_name,
             defined_tags={
                 "Operations.CostCenter": "42",

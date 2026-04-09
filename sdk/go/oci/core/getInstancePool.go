@@ -61,6 +61,8 @@ type LookupInstancePoolResult struct {
 	ActualSize int `pulumi:"actualSize"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
 	CompartmentId string `pulumi:"compartmentId"`
+	// Count of instance in running state associated to the Instance Pool.
+	CurrentSize int `pulumi:"currentSize"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
@@ -132,6 +134,11 @@ func (o LookupInstancePoolResultOutput) ActualSize() pulumi.IntOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
 func (o LookupInstancePoolResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstancePoolResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Count of instance in running state associated to the Instance Pool.
+func (o LookupInstancePoolResultOutput) CurrentSize() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupInstancePoolResult) int { return v.CurrentSize }).(pulumi.IntOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`

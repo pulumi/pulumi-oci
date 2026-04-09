@@ -140,6 +140,7 @@ export interface GetSoftwareSourceResult {
      * Indicates if SSL validation is enabled for the software source.
      */
     readonly isSslVerifyEnabled: boolean;
+    readonly originDisplayName: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment. This property applies only to replicated vendor software sources.
      */

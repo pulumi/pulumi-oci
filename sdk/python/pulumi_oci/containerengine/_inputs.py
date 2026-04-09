@@ -101,6 +101,12 @@ __all__ = [
     'NodePoolNodeSourceArgsDict',
     'NodePoolNodeSourceDetailsArgs',
     'NodePoolNodeSourceDetailsArgsDict',
+    'NodePoolSecondaryVnicArgs',
+    'NodePoolSecondaryVnicArgsDict',
+    'NodePoolSecondaryVnicCreateVnicDetailsArgs',
+    'NodePoolSecondaryVnicCreateVnicDetailsArgsDict',
+    'NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs',
+    'NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgsDict',
     'VirtualNodePoolInitialVirtualNodeLabelArgs',
     'VirtualNodePoolInitialVirtualNodeLabelArgsDict',
     'VirtualNodePoolPlacementConfigurationArgs',
@@ -3407,11 +3413,11 @@ class NodePoolNodeArgsDict(TypedDict):
     """
     state: NotRequired[pulumi.Input[_builtins.str]]
     """
-    The state of the nodepool.
+    The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
     """
     subnet_id: NotRequired[pulumi.Input[_builtins.str]]
     """
-    The OCID of the subnet in which this node is placed.
+    the ocid of the subnet to create the vnic in
     """
 
 @pulumi.input_type
@@ -3444,8 +3450,8 @@ class NodePoolNodeArgs:
         :param pulumi.Input[_builtins.str] node_pool_id: The OCID of the node pool to which this node belongs.
         :param pulumi.Input[_builtins.str] private_ip: The private IP address of this node.
         :param pulumi.Input[_builtins.str] public_ip: The public IP address of this node.
-        :param pulumi.Input[_builtins.str] state: The state of the nodepool.
-        :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet in which this node is placed.
+        :param pulumi.Input[_builtins.str] state: The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
+        :param pulumi.Input[_builtins.str] subnet_id: the ocid of the subnet to create the vnic in
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -3624,7 +3630,7 @@ class NodePoolNodeArgs:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The state of the nodepool.
+        The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
         """
         return pulumi.get(self, "state")
 
@@ -3636,7 +3642,7 @@ class NodePoolNodeArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the subnet in which this node is placed.
+        the ocid of the subnet to create the vnic in
         """
         return pulumi.get(self, "subnet_id")
 
@@ -4499,6 +4505,351 @@ class NodePoolNodeSourceDetailsArgs:
     @boot_volume_size_in_gbs.setter
     def boot_volume_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "boot_volume_size_in_gbs", value)
+
+
+class NodePoolSecondaryVnicArgsDict(TypedDict):
+    create_vnic_details: pulumi.Input['NodePoolSecondaryVnicCreateVnicDetailsArgsDict']
+    """
+    (Updatable) The properties of the secondary vnics
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Display name for vnic attachment
+    """
+    nic_index: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Which physical network interface card (NIC) the VNIC will use
+    """
+
+@pulumi.input_type
+class NodePoolSecondaryVnicArgs:
+    def __init__(__self__, *,
+                 create_vnic_details: pulumi.Input['NodePoolSecondaryVnicCreateVnicDetailsArgs'],
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 nic_index: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input['NodePoolSecondaryVnicCreateVnicDetailsArgs'] create_vnic_details: (Updatable) The properties of the secondary vnics
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name for vnic attachment
+        :param pulumi.Input[_builtins.int] nic_index: (Updatable) Which physical network interface card (NIC) the VNIC will use
+        """
+        pulumi.set(__self__, "create_vnic_details", create_vnic_details)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if nic_index is not None:
+            pulumi.set(__self__, "nic_index", nic_index)
+
+    @_builtins.property
+    @pulumi.getter(name="createVnicDetails")
+    def create_vnic_details(self) -> pulumi.Input['NodePoolSecondaryVnicCreateVnicDetailsArgs']:
+        """
+        (Updatable) The properties of the secondary vnics
+        """
+        return pulumi.get(self, "create_vnic_details")
+
+    @create_vnic_details.setter
+    def create_vnic_details(self, value: pulumi.Input['NodePoolSecondaryVnicCreateVnicDetailsArgs']):
+        pulumi.set(self, "create_vnic_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Display name for vnic attachment
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="nicIndex")
+    def nic_index(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) Which physical network interface card (NIC) the VNIC will use
+        """
+        return pulumi.get(self, "nic_index")
+
+    @nic_index.setter
+    def nic_index(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "nic_index", value)
+
+
+class NodePoolSecondaryVnicCreateVnicDetailsArgsDict(TypedDict):
+    subnet_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) the ocid of the subnet to create the vnic in
+    """
+    application_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The application resource that corresponds to this secondary vnic. Used to map pods to this specific vnic for scheduling
+    """
+    assign_ipv6ip: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet
+    """
+    assign_public_ip: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether the VNIC should be assigned a public IP address
+    """
+    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Display name for secondary vnic
+    """
+    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+    """
+    ip_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of ip addresses to attach to secondary vnic
+    """
+    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgsDict']]]]
+    """
+    (Updatable) A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix  and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty  and instead provide the specific IPv6 address that should be used from within that range.
+    """
+    nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
+    """
+    skip_source_dest_check: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether the source/destination check is disabled on the VNIC
+    """
+
+@pulumi.input_type
+class NodePoolSecondaryVnicCreateVnicDetailsArgs:
+    def __init__(__self__, *,
+                 subnet_id: pulumi.Input[_builtins.str],
+                 application_resources: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 assign_ipv6ip: Optional[pulumi.Input[_builtins.bool]] = None,
+                 assign_public_ip: Optional[pulumi.Input[_builtins.bool]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ip_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 skip_source_dest_check: Optional[pulumi.Input[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[_builtins.str] subnet_id: (Updatable) the ocid of the subnet to create the vnic in
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] application_resources: (Updatable) The application resource that corresponds to this secondary vnic. Used to map pods to this specific vnic for scheduling
+        :param pulumi.Input[_builtins.bool] assign_ipv6ip: (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet
+        :param pulumi.Input[_builtins.bool] assign_public_ip: (Updatable) Whether the VNIC should be assigned a public IP address
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name for secondary vnic
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.int] ip_count: (Updatable) The number of ip addresses to attach to secondary vnic
+        :param pulumi.Input[Sequence[pulumi.Input['NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: (Updatable) A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix  and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty  and instead provide the specific IPv6 address that should be used from within that range.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
+        :param pulumi.Input[_builtins.bool] skip_source_dest_check: (Updatable) Whether the source/destination check is disabled on the VNIC
+        """
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        if application_resources is not None:
+            pulumi.set(__self__, "application_resources", application_resources)
+        if assign_ipv6ip is not None:
+            pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
+        if assign_public_ip is not None:
+            pulumi.set(__self__, "assign_public_ip", assign_public_ip)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if ip_count is not None:
+            pulumi.set(__self__, "ip_count", ip_count)
+        if ipv6address_ipv6subnet_cidr_pair_details is not None:
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if skip_source_dest_check is not None:
+            pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) the ocid of the subnet to create the vnic in
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "subnet_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationResources")
+    def application_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) The application resource that corresponds to this secondary vnic. Used to map pods to this specific vnic for scheduling
+        """
+        return pulumi.get(self, "application_resources")
+
+    @application_resources.setter
+    def application_resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "application_resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="assignIpv6ip")
+    def assign_ipv6ip(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet
+        """
+        return pulumi.get(self, "assign_ipv6ip")
+
+    @assign_ipv6ip.setter
+    def assign_ipv6ip(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "assign_ipv6ip", value)
+
+    @_builtins.property
+    @pulumi.getter(name="assignPublicIp")
+    def assign_public_ip(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Whether the VNIC should be assigned a public IP address
+        """
+        return pulumi.get(self, "assign_public_ip")
+
+    @assign_public_ip.setter
+    def assign_public_ip(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "assign_public_ip", value)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Display name for secondary vnic
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipCount")
+    def ip_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The number of ip addresses to attach to secondary vnic
+        """
+        return pulumi.get(self, "ip_count")
+
+    @ip_count.setter
+    def ip_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "ip_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
+    def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
+        """
+        (Updatable) A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix  and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty  and instead provide the specific IPv6 address that should be used from within that range.
+        """
+        return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
+
+    @ipv6address_ipv6subnet_cidr_pair_details.setter
+    def ipv6address_ipv6subnet_cidr_pair_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]):
+        pulumi.set(self, "ipv6address_ipv6subnet_cidr_pair_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @nsg_ids.setter
+    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "nsg_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="skipSourceDestCheck")
+    def skip_source_dest_check(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Whether the source/destination check is disabled on the VNIC
+        """
+        return pulumi.get(self, "skip_source_dest_check")
+
+    @skip_source_dest_check.setter
+    def skip_source_dest_check(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "skip_source_dest_check", value)
+
+
+class NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgsDict(TypedDict):
+    ipv6address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix
+    """
+    ipv6subnet_cidr: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The IPv6 prefix allocated to the subnet
+    """
+
+@pulumi.input_type
+class NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs:
+    def __init__(__self__, *,
+                 ipv6address: Optional[pulumi.Input[_builtins.str]] = None,
+                 ipv6subnet_cidr: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] ipv6address: (Updatable) An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix
+        :param pulumi.Input[_builtins.str] ipv6subnet_cidr: (Updatable) The IPv6 prefix allocated to the subnet
+        """
+        if ipv6address is not None:
+            pulumi.set(__self__, "ipv6address", ipv6address)
+        if ipv6subnet_cidr is not None:
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6address(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix
+        """
+        return pulumi.get(self, "ipv6address")
+
+    @ipv6address.setter
+    def ipv6address(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ipv6address", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The IPv6 prefix allocated to the subnet
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
+
+    @ipv6subnet_cidr.setter
+    def ipv6subnet_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ipv6subnet_cidr", value)
 
 
 class VirtualNodePoolInitialVirtualNodeLabelArgsDict(TypedDict):

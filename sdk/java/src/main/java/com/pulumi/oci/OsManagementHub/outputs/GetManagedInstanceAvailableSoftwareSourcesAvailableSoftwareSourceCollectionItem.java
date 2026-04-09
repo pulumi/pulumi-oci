@@ -16,6 +16,11 @@ public final class GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSo
      */
     private String compartmentId;
     /**
+     * @return Software source description.
+     * 
+     */
+    private String description;
+    /**
      * @return A filter to return resources that match the given display names.
      * 
      */
@@ -25,6 +30,11 @@ public final class GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSo
      * 
      */
     private String id;
+    /**
+     * @return Type of the software source.
+     * 
+     */
+    private String softwareSourceType;
 
     private GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem() {}
     /**
@@ -33,6 +43,13 @@ public final class GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSo
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return Software source description.
+     * 
+     */
+    public String description() {
+        return this.description;
     }
     /**
      * @return A filter to return resources that match the given display names.
@@ -48,6 +65,13 @@ public final class GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSo
     public String id() {
         return this.id;
     }
+    /**
+     * @return Type of the software source.
+     * 
+     */
+    public String softwareSourceType() {
+        return this.softwareSourceType;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -59,14 +83,18 @@ public final class GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSo
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private String description;
         private String displayName;
         private String id;
+        private String softwareSourceType;
         public Builder() {}
         public Builder(GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
+    	      this.softwareSourceType = defaults.softwareSourceType;
         }
 
         @CustomType.Setter
@@ -75,6 +103,14 @@ public final class GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSo
               throw new MissingRequiredPropertyException("GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder description(String description) {
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
@@ -93,11 +129,21 @@ public final class GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSo
             this.id = id;
             return this;
         }
+        @CustomType.Setter
+        public Builder softwareSourceType(String softwareSourceType) {
+            if (softwareSourceType == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem", "softwareSourceType");
+            }
+            this.softwareSourceType = softwareSourceType;
+            return this;
+        }
         public GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem build() {
             final var _resultValue = new GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.description = description;
             _resultValue.displayName = displayName;
             _resultValue.id = id;
+            _resultValue.softwareSourceType = softwareSourceType;
             return _resultValue;
         }
     }

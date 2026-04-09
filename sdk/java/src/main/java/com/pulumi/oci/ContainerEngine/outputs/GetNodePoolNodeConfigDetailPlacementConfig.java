@@ -33,7 +33,7 @@ public final class GetNodePoolNodeConfigDetailPlacementConfig {
      */
     private List<GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig> preemptibleNodeConfigs;
     /**
-     * @return The OCID of the subnet in which this node is placed.
+     * @return the ocid of the subnet to create the vnic in
      * 
      */
     private String subnetId;
@@ -68,7 +68,7 @@ public final class GetNodePoolNodeConfigDetailPlacementConfig {
         return this.preemptibleNodeConfigs;
     }
     /**
-     * @return The OCID of the subnet in which this node is placed.
+     * @return the ocid of the subnet to create the vnic in
      * 
      */
     public String subnetId() {

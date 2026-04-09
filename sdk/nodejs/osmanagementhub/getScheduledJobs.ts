@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     compartmentIdInSubtree: scheduledJobCompartmentIdInSubtree,
  *     displayName: scheduledJobDisplayName,
  *     displayNameContains: scheduledJobDisplayNameContains,
+ *     dynamicSetId: testDynamicSet.id,
  *     id: scheduledJobId,
  *     isManagedByAutonomousLinux: scheduledJobIsManagedByAutonomousLinux,
  *     isRestricted: scheduledJobIsRestricted,
@@ -47,6 +48,7 @@ export function getScheduledJobs(args?: GetScheduledJobsArgs, opts?: pulumi.Invo
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "displayName": args.displayName,
         "displayNameContains": args.displayNameContains,
+        "dynamicSetId": args.dynamicSetId,
         "filters": args.filters,
         "id": args.id,
         "isManagedByAutonomousLinux": args.isManagedByAutonomousLinux,
@@ -85,6 +87,10 @@ export interface GetScheduledJobsArgs {
      * A filter to return resources that may partially match the given display name.
      */
     displayNameContains?: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
+     */
+    dynamicSetId?: string;
     filters?: inputs.OsManagementHub.GetScheduledJobsFilter[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job. A filter to return the specified job.
@@ -158,6 +164,7 @@ export interface GetScheduledJobsResult {
      */
     readonly displayName?: string;
     readonly displayNameContains?: string;
+    readonly dynamicSetId?: string;
     readonly filters?: outputs.OsManagementHub.GetScheduledJobsFilter[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job.
@@ -212,6 +219,7 @@ export interface GetScheduledJobsResult {
  *     compartmentIdInSubtree: scheduledJobCompartmentIdInSubtree,
  *     displayName: scheduledJobDisplayName,
  *     displayNameContains: scheduledJobDisplayNameContains,
+ *     dynamicSetId: testDynamicSet.id,
  *     id: scheduledJobId,
  *     isManagedByAutonomousLinux: scheduledJobIsManagedByAutonomousLinux,
  *     isRestricted: scheduledJobIsRestricted,
@@ -237,6 +245,7 @@ export function getScheduledJobsOutput(args?: GetScheduledJobsOutputArgs, opts?:
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "displayName": args.displayName,
         "displayNameContains": args.displayNameContains,
+        "dynamicSetId": args.dynamicSetId,
         "filters": args.filters,
         "id": args.id,
         "isManagedByAutonomousLinux": args.isManagedByAutonomousLinux,
@@ -275,6 +284,10 @@ export interface GetScheduledJobsOutputArgs {
      * A filter to return resources that may partially match the given display name.
      */
     displayNameContains?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
+     */
+    dynamicSetId?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetScheduledJobsFilterArgs>[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job. A filter to return the specified job.

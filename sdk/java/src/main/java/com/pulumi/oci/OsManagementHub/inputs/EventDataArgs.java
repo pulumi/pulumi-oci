@@ -95,6 +95,21 @@ public final class EventDataArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Brief description on how this error is categorized.
+     * 
+     */
+    @Import(name="errorSummary")
+    private @Nullable Output<String> errorSummary;
+
+    /**
+     * @return Brief description on how this error is categorized.
+     * 
+     */
+    public Optional<Output<String>> errorSummary() {
+        return Optional.ofNullable(this.errorSummary);
+    }
+
+    /**
      * Number of times the event has occurred.
      * 
      */
@@ -252,6 +267,7 @@ public final class EventDataArgs extends com.pulumi.resources.ResourceArgs {
         this.contents = $.contents;
         this.errorCause = $.errorCause;
         this.errorLog = $.errorLog;
+        this.errorSummary = $.errorSummary;
         this.eventCount = $.eventCount;
         this.eventFingerprint = $.eventFingerprint;
         this.healthState = $.healthState;
@@ -415,6 +431,27 @@ public final class EventDataArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder errorLog(String errorLog) {
             return errorLog(Output.of(errorLog));
+        }
+
+        /**
+         * @param errorSummary Brief description on how this error is categorized.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder errorSummary(@Nullable Output<String> errorSummary) {
+            $.errorSummary = errorSummary;
+            return this;
+        }
+
+        /**
+         * @param errorSummary Brief description on how this error is categorized.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder errorSummary(String errorSummary) {
+            return errorSummary(Output.of(errorSummary));
         }
 
         /**

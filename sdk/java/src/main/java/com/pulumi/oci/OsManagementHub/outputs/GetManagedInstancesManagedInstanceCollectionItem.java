@@ -29,6 +29,11 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
      */
     private String architecture;
     /**
+     * @return Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+     * 
+     */
+    private Boolean areSourcesManaged;
+    /**
      * @return Settings for the Autonomous Linux service.
      * 
      */
@@ -209,6 +214,11 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
      */
     private String timeLastCheckin;
     /**
+     * @return The date and time the instance&#39;s software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * 
+     */
+    private String timeLastSoftwareRefresh;
+    /**
      * @return The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
@@ -238,6 +248,13 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
      */
     public String architecture() {
         return this.architecture;
+    }
+    /**
+     * @return Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+     * 
+     */
+    public Boolean areSourcesManaged() {
+        return this.areSourcesManaged;
     }
     /**
      * @return Settings for the Autonomous Linux service.
@@ -492,6 +509,13 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
         return this.timeLastCheckin;
     }
     /**
+     * @return The date and time the instance&#39;s software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * 
+     */
+    public String timeLastSoftwareRefresh() {
+        return this.timeLastSoftwareRefresh;
+    }
+    /**
      * @return The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
@@ -524,6 +548,7 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
     public static final class Builder {
         private String agentVersion;
         private String architecture;
+        private Boolean areSourcesManaged;
         private List<GetManagedInstancesManagedInstanceCollectionItemAutonomousSetting> autonomousSettings;
         private Integer bugUpdatesAvailable;
         private String compartmentId;
@@ -560,6 +585,7 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
         private String timeCreated;
         private String timeLastBoot;
         private String timeLastCheckin;
+        private String timeLastSoftwareRefresh;
         private String timeUpdated;
         private Integer updatesAvailable;
         private Integer workRequestCount;
@@ -568,6 +594,7 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
     	      Objects.requireNonNull(defaults);
     	      this.agentVersion = defaults.agentVersion;
     	      this.architecture = defaults.architecture;
+    	      this.areSourcesManaged = defaults.areSourcesManaged;
     	      this.autonomousSettings = defaults.autonomousSettings;
     	      this.bugUpdatesAvailable = defaults.bugUpdatesAvailable;
     	      this.compartmentId = defaults.compartmentId;
@@ -604,6 +631,7 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeLastBoot = defaults.timeLastBoot;
     	      this.timeLastCheckin = defaults.timeLastCheckin;
+    	      this.timeLastSoftwareRefresh = defaults.timeLastSoftwareRefresh;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.updatesAvailable = defaults.updatesAvailable;
     	      this.workRequestCount = defaults.workRequestCount;
@@ -623,6 +651,14 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
               throw new MissingRequiredPropertyException("GetManagedInstancesManagedInstanceCollectionItem", "architecture");
             }
             this.architecture = architecture;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder areSourcesManaged(Boolean areSourcesManaged) {
+            if (areSourcesManaged == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstancesManagedInstanceCollectionItem", "areSourcesManaged");
+            }
+            this.areSourcesManaged = areSourcesManaged;
             return this;
         }
         @CustomType.Setter
@@ -929,6 +965,14 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder timeLastSoftwareRefresh(String timeLastSoftwareRefresh) {
+            if (timeLastSoftwareRefresh == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstancesManagedInstanceCollectionItem", "timeLastSoftwareRefresh");
+            }
+            this.timeLastSoftwareRefresh = timeLastSoftwareRefresh;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             if (timeUpdated == null) {
               throw new MissingRequiredPropertyException("GetManagedInstancesManagedInstanceCollectionItem", "timeUpdated");
@@ -956,6 +1000,7 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
             final var _resultValue = new GetManagedInstancesManagedInstanceCollectionItem();
             _resultValue.agentVersion = agentVersion;
             _resultValue.architecture = architecture;
+            _resultValue.areSourcesManaged = areSourcesManaged;
             _resultValue.autonomousSettings = autonomousSettings;
             _resultValue.bugUpdatesAvailable = bugUpdatesAvailable;
             _resultValue.compartmentId = compartmentId;
@@ -992,6 +1037,7 @@ public final class GetManagedInstancesManagedInstanceCollectionItem {
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeLastBoot = timeLastBoot;
             _resultValue.timeLastCheckin = timeLastCheckin;
+            _resultValue.timeLastSoftwareRefresh = timeLastSoftwareRefresh;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.updatesAvailable = updatesAvailable;
             _resultValue.workRequestCount = workRequestCount;

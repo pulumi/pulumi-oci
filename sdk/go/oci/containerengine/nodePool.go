@@ -51,6 +51,7 @@ import (
 //					},
 //				},
 //				KubernetesVersion: pulumi.Any(nodePoolKubernetesVersion),
+//				NetworkLaunchType: pulumi.Any(nodePoolNetworkLaunchType),
 //				NodeConfigDetails: &containerengine.NodePoolNodeConfigDetailsArgs{
 //					PlacementConfigs: containerengine.NodePoolNodeConfigDetailsPlacementConfigArray{
 //						&containerengine.NodePoolNodeConfigDetailsPlacementConfigArgs{
@@ -66,7 +67,13 @@ import (
 //							},
 //						},
 //					},
-//					Size:                           pulumi.Any(nodePoolNodeConfigDetailsSize),
+//					Size: pulumi.Any(nodePoolNodeConfigDetailsSize),
+//					DefinedTags: pulumi.StringMap{
+//						"Operations.CostCenter": pulumi.String("42"),
+//					},
+//					FreeformTags: pulumi.StringMap{
+//						"Department": pulumi.String("Finance"),
+//					},
 //					IsPvEncryptionInTransitEnabled: pulumi.Any(nodePoolNodeConfigDetailsIsPvEncryptionInTransitEnabled),
 //					KmsKeyId:                       pulumi.Any(testKey.Id),
 //					NodePoolPodNetworkOptionDetails: &containerengine.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs{
@@ -74,12 +81,6 @@ import (
 //						MaxPodsPerNode: pulumi.Any(nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsMaxPodsPerNode),
 //						PodNsgIds:      pulumi.Any(nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPodNsgIds),
 //						PodSubnetIds:   pulumi.Any(nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPodSubnetIds),
-//					},
-//					DefinedTags: pulumi.StringMap{
-//						"Operations.CostCenter": pulumi.String("42"),
-//					},
-//					FreeformTags: pulumi.StringMap{
-//						"Department": pulumi.String("Finance"),
 //					},
 //					NsgIds: pulumi.Any(nodePoolNodeConfigDetailsNsgIds),
 //				},
@@ -106,8 +107,36 @@ import (
 //					BootVolumeSizeInGbs: pulumi.Any(nodePoolNodeSourceDetailsBootVolumeSizeInGbs),
 //				},
 //				QuantityPerSubnet: pulumi.Any(nodePoolQuantityPerSubnet),
-//				SshPublicKey:      pulumi.Any(nodePoolSshPublicKey),
-//				SubnetIds:         pulumi.Any(nodePoolSubnetIds),
+//				SecondaryVnics: containerengine.NodePoolSecondaryVnicArray{
+//					&containerengine.NodePoolSecondaryVnicArgs{
+//						CreateVnicDetails: &containerengine.NodePoolSecondaryVnicCreateVnicDetailsArgs{
+//							SubnetId:             pulumi.Any(testSubnet.Id),
+//							ApplicationResources: pulumi.Any(nodePoolSecondaryVnicsCreateVnicDetailsApplicationResources),
+//							AssignIpv6ip:         pulumi.Any(nodePoolSecondaryVnicsCreateVnicDetailsAssignIpv6ip),
+//							AssignPublicIp:       pulumi.Any(nodePoolSecondaryVnicsCreateVnicDetailsAssignPublicIp),
+//							DefinedTags: pulumi.StringMap{
+//								"Operations.CostCenter": pulumi.String("42"),
+//							},
+//							DisplayName: pulumi.Any(nodePoolSecondaryVnicsCreateVnicDetailsDisplayName),
+//							FreeformTags: pulumi.StringMap{
+//								"Department": pulumi.String("Finance"),
+//							},
+//							IpCount: pulumi.Any(nodePoolSecondaryVnicsCreateVnicDetailsIpCount),
+//							Ipv6addressIpv6subnetCidrPairDetails: containerengine.NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArray{
+//								&containerengine.NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs{
+//									Ipv6address:    pulumi.Any(nodePoolSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address),
+//									Ipv6subnetCidr: pulumi.Any(nodePoolSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr),
+//								},
+//							},
+//							NsgIds:              pulumi.Any(nodePoolSecondaryVnicsCreateVnicDetailsNsgIds),
+//							SkipSourceDestCheck: pulumi.Any(nodePoolSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck),
+//						},
+//						DisplayName: pulumi.Any(nodePoolSecondaryVnicsDisplayName),
+//						NicIndex:    pulumi.Any(nodePoolSecondaryVnicsNicIndex),
+//					},
+//				},
+//				SshPublicKey: pulumi.Any(nodePoolSshPublicKey),
+//				SubnetIds:    pulumi.Any(nodePoolSubnetIds),
 //			})
 //			if err != nil {
 //				return err
@@ -144,6 +173,8 @@ type NodePool struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The name of the node pool. Avoid entering confidential information.
 	Name pulumi.StringOutput `pulumi:"name"`
+	// (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+	NetworkLaunchType pulumi.StringOutput `pulumi:"networkLaunchType"`
 	// (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
 	NodeConfigDetails NodePoolNodeConfigDetailsOutput `pulumi:"nodeConfigDetails"`
 	// (Updatable) Node Eviction Details configuration
@@ -172,9 +203,11 @@ type NodePool struct {
 	Nodes NodePoolNodeArrayOutput `pulumi:"nodes"`
 	// (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
 	QuantityPerSubnet pulumi.IntOutput `pulumi:"quantityPerSubnet"`
+	// (Updatable) A list of secondary vnics to attach to nodes
+	SecondaryVnics NodePoolSecondaryVnicArrayOutput `pulumi:"secondaryVnics"`
 	// (Updatable) The SSH public key on each node in the node pool on launch.
 	SshPublicKey pulumi.StringOutput `pulumi:"sshPublicKey"`
-	// The state of the nodepool.
+	// The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
 	//
@@ -238,6 +271,8 @@ type nodePoolState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) The name of the node pool. Avoid entering confidential information.
 	Name *string `pulumi:"name"`
+	// (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+	NetworkLaunchType *string `pulumi:"networkLaunchType"`
 	// (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
 	NodeConfigDetails *NodePoolNodeConfigDetails `pulumi:"nodeConfigDetails"`
 	// (Updatable) Node Eviction Details configuration
@@ -266,9 +301,11 @@ type nodePoolState struct {
 	Nodes []NodePoolNode `pulumi:"nodes"`
 	// (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
 	QuantityPerSubnet *int `pulumi:"quantityPerSubnet"`
+	// (Updatable) A list of secondary vnics to attach to nodes
+	SecondaryVnics []NodePoolSecondaryVnic `pulumi:"secondaryVnics"`
 	// (Updatable) The SSH public key on each node in the node pool on launch.
 	SshPublicKey *string `pulumi:"sshPublicKey"`
-	// The state of the nodepool.
+	// The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
 	State *string `pulumi:"state"`
 	// (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
 	//
@@ -294,6 +331,8 @@ type NodePoolState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) The name of the node pool. Avoid entering confidential information.
 	Name pulumi.StringPtrInput
+	// (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+	NetworkLaunchType pulumi.StringPtrInput
 	// (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
 	NodeConfigDetails NodePoolNodeConfigDetailsPtrInput
 	// (Updatable) Node Eviction Details configuration
@@ -322,9 +361,11 @@ type NodePoolState struct {
 	Nodes NodePoolNodeArrayInput
 	// (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
 	QuantityPerSubnet pulumi.IntPtrInput
+	// (Updatable) A list of secondary vnics to attach to nodes
+	SecondaryVnics NodePoolSecondaryVnicArrayInput
 	// (Updatable) The SSH public key on each node in the node pool on launch.
 	SshPublicKey pulumi.StringPtrInput
-	// The state of the nodepool.
+	// The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
 	State pulumi.StringPtrInput
 	// (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
 	//
@@ -352,6 +393,8 @@ type nodePoolArgs struct {
 	KubernetesVersion *string `pulumi:"kubernetesVersion"`
 	// (Updatable) The name of the node pool. Avoid entering confidential information.
 	Name *string `pulumi:"name"`
+	// (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+	NetworkLaunchType *string `pulumi:"networkLaunchType"`
 	// (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
 	NodeConfigDetails *NodePoolNodeConfigDetails `pulumi:"nodeConfigDetails"`
 	// (Updatable) Node Eviction Details configuration
@@ -376,6 +419,8 @@ type nodePoolArgs struct {
 	NodeSourceDetails *NodePoolNodeSourceDetails `pulumi:"nodeSourceDetails"`
 	// (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
 	QuantityPerSubnet *int `pulumi:"quantityPerSubnet"`
+	// (Updatable) A list of secondary vnics to attach to nodes
+	SecondaryVnics []NodePoolSecondaryVnic `pulumi:"secondaryVnics"`
 	// (Updatable) The SSH public key on each node in the node pool on launch.
 	SshPublicKey *string `pulumi:"sshPublicKey"`
 	// (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
@@ -401,6 +446,8 @@ type NodePoolArgs struct {
 	KubernetesVersion pulumi.StringPtrInput
 	// (Updatable) The name of the node pool. Avoid entering confidential information.
 	Name pulumi.StringPtrInput
+	// (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+	NetworkLaunchType pulumi.StringPtrInput
 	// (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
 	NodeConfigDetails NodePoolNodeConfigDetailsPtrInput
 	// (Updatable) Node Eviction Details configuration
@@ -425,6 +472,8 @@ type NodePoolArgs struct {
 	NodeSourceDetails NodePoolNodeSourceDetailsPtrInput
 	// (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
 	QuantityPerSubnet pulumi.IntPtrInput
+	// (Updatable) A list of secondary vnics to attach to nodes
+	SecondaryVnics NodePoolSecondaryVnicArrayInput
 	// (Updatable) The SSH public key on each node in the node pool on launch.
 	SshPublicKey pulumi.StringPtrInput
 	// (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
@@ -561,6 +610,11 @@ func (o NodePoolOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *NodePool) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+func (o NodePoolOutput) NetworkLaunchType() pulumi.StringOutput {
+	return o.ApplyT(func(v *NodePool) pulumi.StringOutput { return v.NetworkLaunchType }).(pulumi.StringOutput)
+}
+
 // (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
 func (o NodePoolOutput) NodeConfigDetails() NodePoolNodeConfigDetailsOutput {
 	return o.ApplyT(func(v *NodePool) NodePoolNodeConfigDetailsOutput { return v.NodeConfigDetails }).(NodePoolNodeConfigDetailsOutput)
@@ -625,12 +679,17 @@ func (o NodePoolOutput) QuantityPerSubnet() pulumi.IntOutput {
 	return o.ApplyT(func(v *NodePool) pulumi.IntOutput { return v.QuantityPerSubnet }).(pulumi.IntOutput)
 }
 
+// (Updatable) A list of secondary vnics to attach to nodes
+func (o NodePoolOutput) SecondaryVnics() NodePoolSecondaryVnicArrayOutput {
+	return o.ApplyT(func(v *NodePool) NodePoolSecondaryVnicArrayOutput { return v.SecondaryVnics }).(NodePoolSecondaryVnicArrayOutput)
+}
+
 // (Updatable) The SSH public key on each node in the node pool on launch.
 func (o NodePoolOutput) SshPublicKey() pulumi.StringOutput {
 	return o.ApplyT(func(v *NodePool) pulumi.StringOutput { return v.SshPublicKey }).(pulumi.StringOutput)
 }
 
-// The state of the nodepool.
+// The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
 func (o NodePoolOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *NodePool) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

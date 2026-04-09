@@ -30,6 +30,10 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
+        /// The dynamic set [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on. A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+        /// </summary>
+        public readonly ImmutableArray<string> DynamicSetIds;
+        /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
@@ -50,7 +54,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly bool IsSubcompartmentIncluded;
         /// <summary>
-        /// The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+        /// The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds, and dynamicSetIds.
         /// </summary>
         public readonly ImmutableArray<string> LifecycleStageIds;
         /// <summary>
@@ -82,7 +86,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetScheduledJobsScheduledJobCollectionItemOperationResult> Operations;
         /// <summary>
-        /// The frequency schedule for a recurring scheduled job.
+        /// The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported. In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
         /// </summary>
         public readonly string RecurringRule;
         /// <summary>
@@ -136,6 +140,8 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             string displayName,
 
+            ImmutableArray<string> dynamicSetIds,
+
             ImmutableDictionary<string, string> freeformTags,
 
             string id,
@@ -184,6 +190,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;
+            DynamicSetIds = dynamicSetIds;
             FreeformTags = freeformTags;
             Id = id;
             IsManagedByAutonomousLinux = isManagedByAutonomousLinux;

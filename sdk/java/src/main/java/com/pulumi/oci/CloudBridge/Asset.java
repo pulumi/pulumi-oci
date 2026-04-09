@@ -9,6 +9,10 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.CloudBridge.AssetArgs;
 import com.pulumi.oci.CloudBridge.inputs.AssetState;
+import com.pulumi.oci.CloudBridge.outputs.AssetAttachedEbsVolumesCost;
+import com.pulumi.oci.CloudBridge.outputs.AssetAwsEbs;
+import com.pulumi.oci.CloudBridge.outputs.AssetAwsEc2;
+import com.pulumi.oci.CloudBridge.outputs.AssetAwsEc2cost;
 import com.pulumi.oci.CloudBridge.outputs.AssetCompute;
 import com.pulumi.oci.CloudBridge.outputs.AssetVm;
 import com.pulumi.oci.CloudBridge.outputs.AssetVmwareVcenter;
@@ -38,6 +42,12 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.CloudBridge.Asset;
  * import com.pulumi.oci.CloudBridge.AssetArgs;
+ * import com.pulumi.oci.CloudBridge.inputs.AssetAttachedEbsVolumesCostArgs;
+ * import com.pulumi.oci.CloudBridge.inputs.AssetAwsEbsArgs;
+ * import com.pulumi.oci.CloudBridge.inputs.AssetAwsEc2Args;
+ * import com.pulumi.oci.CloudBridge.inputs.AssetAwsEc2PlacementArgs;
+ * import com.pulumi.oci.CloudBridge.inputs.AssetAwsEc2StateArgs;
+ * import com.pulumi.oci.CloudBridge.inputs.AssetAwsEc2costArgs;
  * import com.pulumi.oci.CloudBridge.inputs.AssetComputeArgs;
  * import com.pulumi.oci.CloudBridge.inputs.AssetComputeNvdimmControllerArgs;
  * import com.pulumi.oci.CloudBridge.inputs.AssetComputeScsiControllerArgs;
@@ -63,7 +73,136 @@ import javax.annotation.Nullable;
  *             .externalAssetKey(assetExternalAssetKey)
  *             .inventoryId(testInventory.id())
  *             .sourceKey(assetSourceKey)
+ *             .assetClassName(assetAssetClassName)
+ *             .assetClassVersion(assetAssetClassVersion)
+ *             .assetDetails(assetAssetDetails)
  *             .assetSourceIds(assetAssetSourceIds)
+ *             .attachedEbsVolumesCost(AssetAttachedEbsVolumesCostArgs.builder()
+ *                 .amount(assetAttachedEbsVolumesCostAmount)
+ *                 .currencyCode(assetAttachedEbsVolumesCostCurrencyCode)
+ *                 .build())
+ *             .awsEbs(AssetAwsEbsArgs.builder()
+ *                 .attachments(AssetAwsEbsAttachmentArgs.builder()
+ *                     .device(assetAwsEbsAttachmentsDevice)
+ *                     .instanceKey(assetAwsEbsAttachmentsInstanceKey)
+ *                     .isDeleteOnTermination(assetAwsEbsAttachmentsIsDeleteOnTermination)
+ *                     .status(assetAwsEbsAttachmentsStatus)
+ *                     .volumeKey(assetAwsEbsAttachmentsVolumeKey)
+ *                     .build())
+ *                 .availabilityZone(assetAwsEbsAvailabilityZone)
+ *                 .iops(assetAwsEbsIops)
+ *                 .isEncrypted(assetAwsEbsIsEncrypted)
+ *                 .isMultiAttachEnabled(assetAwsEbsIsMultiAttachEnabled)
+ *                 .sizeInGiBs(assetAwsEbsSizeInGiBs)
+ *                 .status(assetAwsEbsStatus)
+ *                 .tags(AssetAwsEbsTagArgs.builder()
+ *                     .key(assetAwsEbsTagsKey)
+ *                     .value(assetAwsEbsTagsValue)
+ *                     .build())
+ *                 .throughput(assetAwsEbsThroughput)
+ *                 .volumeKey(assetAwsEbsVolumeKey)
+ *                 .volumeType(assetAwsEbsVolumeType)
+ *                 .build())
+ *             .awsEc2(AssetAwsEc2Args.builder()
+ *                 .architecture(assetAwsEc2Architecture)
+ *                 .areElasticInferenceAcceleratorsPresent(assetAwsEc2AreElasticInferenceAcceleratorsPresent)
+ *                 .bootMode(assetAwsEc2BootMode)
+ *                 .capacityReservationKey(assetAwsEc2CapacityReservationKey)
+ *                 .imageKey(assetAwsEc2ImageKey)
+ *                 .instanceKey(assetAwsEc2InstanceKey)
+ *                 .instanceLifecycle(assetAwsEc2InstanceLifecycle)
+ *                 .instanceType(assetAwsEc2InstanceType)
+ *                 .ipAddress(assetAwsEc2IpAddress)
+ *                 .ipv6address(assetAwsEc2Ipv6address)
+ *                 .isEnclaveOptions(assetAwsEc2IsEnclaveOptions)
+ *                 .isHibernationOptions(assetAwsEc2IsHibernationOptions)
+ *                 .isSourceDestCheck(assetAwsEc2IsSourceDestCheck)
+ *                 .isSpotInstance(assetAwsEc2IsSpotInstance)
+ *                 .kernelKey(assetAwsEc2KernelKey)
+ *                 .licenses(assetAwsEc2Licenses)
+ *                 .maintenanceOptions(assetAwsEc2MaintenanceOptions)
+ *                 .monitoring(assetAwsEc2Monitoring)
+ *                 .networkInterfaces(AssetAwsEc2NetworkInterfaceArgs.builder()
+ *                     .association(AssetAwsEc2NetworkInterfaceAssociationArgs.builder()
+ *                         .carrierIp(assetAwsEc2NetworkInterfacesAssociationCarrierIp)
+ *                         .customerOwnedIp(assetAwsEc2NetworkInterfacesAssociationCustomerOwnedIp)
+ *                         .ipOwnerKey(assetAwsEc2NetworkInterfacesAssociationIpOwnerKey)
+ *                         .publicDnsName(assetAwsEc2NetworkInterfacesAssociationPublicDnsName)
+ *                         .publicIp(assetAwsEc2NetworkInterfacesAssociationPublicIp)
+ *                         .build())
+ *                     .attachment(AssetAwsEc2NetworkInterfaceAttachmentArgs.builder()
+ *                         .attachmentKey(assetAwsEc2NetworkInterfacesAttachmentAttachmentKey)
+ *                         .deviceIndex(assetAwsEc2NetworkInterfacesAttachmentDeviceIndex)
+ *                         .isDeleteOnTermination(assetAwsEc2NetworkInterfacesAttachmentIsDeleteOnTermination)
+ *                         .networkCardIndex(assetAwsEc2NetworkInterfacesAttachmentNetworkCardIndex)
+ *                         .status(assetAwsEc2NetworkInterfacesAttachmentStatus)
+ *                         .timeAttach(assetAwsEc2NetworkInterfacesAttachmentTimeAttach)
+ *                         .build())
+ *                     .description(assetAwsEc2NetworkInterfacesDescription)
+ *                     .interfaceType(assetAwsEc2NetworkInterfacesInterfaceType)
+ *                     .ipv4prefixes(assetAwsEc2NetworkInterfacesIpv4prefixes)
+ *                     .ipv6addresses(assetAwsEc2NetworkInterfacesIpv6addresses)
+ *                     .ipv6prefixes(assetAwsEc2NetworkInterfacesIpv6prefixes)
+ *                     .isSourceDestCheck(assetAwsEc2NetworkInterfacesIsSourceDestCheck)
+ *                     .macAddress(assetAwsEc2NetworkInterfacesMacAddress)
+ *                     .networkInterfaceKey(assetAwsEc2NetworkInterfacesNetworkInterfaceKey)
+ *                     .ownerKey(assetAwsEc2NetworkInterfacesOwnerKey)
+ *                     .privateIpAddresses(AssetAwsEc2NetworkInterfacePrivateIpAddressArgs.builder()
+ *                         .association(AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs.builder()
+ *                             .carrierIp(assetAwsEc2NetworkInterfacesPrivateIpAddressesAssociationCarrierIp)
+ *                             .customerOwnedIp(assetAwsEc2NetworkInterfacesPrivateIpAddressesAssociationCustomerOwnedIp)
+ *                             .ipOwnerKey(assetAwsEc2NetworkInterfacesPrivateIpAddressesAssociationIpOwnerKey)
+ *                             .publicDnsName(assetAwsEc2NetworkInterfacesPrivateIpAddressesAssociationPublicDnsName)
+ *                             .publicIp(assetAwsEc2NetworkInterfacesPrivateIpAddressesAssociationPublicIp)
+ *                             .build())
+ *                         .isPrimary(assetAwsEc2NetworkInterfacesPrivateIpAddressesIsPrimary)
+ *                         .privateDnsName(assetAwsEc2NetworkInterfacesPrivateIpAddressesPrivateDnsName)
+ *                         .privateIpAddress(assetAwsEc2NetworkInterfacesPrivateIpAddressesPrivateIpAddress)
+ *                         .build())
+ *                     .securityGroups(AssetAwsEc2NetworkInterfaceSecurityGroupArgs.builder()
+ *                         .groupKey(assetAwsEc2NetworkInterfacesSecurityGroupsGroupKey)
+ *                         .groupName(testGroup.name())
+ *                         .build())
+ *                     .status(assetAwsEc2NetworkInterfacesStatus)
+ *                     .subnetKey(assetAwsEc2NetworkInterfacesSubnetKey)
+ *                     .build())
+ *                 .placement(AssetAwsEc2PlacementArgs.builder()
+ *                     .affinity(assetAwsEc2PlacementAffinity)
+ *                     .availabilityZone(assetAwsEc2PlacementAvailabilityZone)
+ *                     .groupName(testGroup.name())
+ *                     .hostKey(assetAwsEc2PlacementHostKey)
+ *                     .hostResourceGroupArn(assetAwsEc2PlacementHostResourceGroupArn)
+ *                     .partitionNumber(assetAwsEc2PlacementPartitionNumber)
+ *                     .spreadDomain(assetAwsEc2PlacementSpreadDomain)
+ *                     .tenancy(assetAwsEc2PlacementTenancy)
+ *                     .build())
+ *                 .privateDnsName(assetAwsEc2PrivateDnsName)
+ *                 .privateIpAddress(assetAwsEc2PrivateIpAddress)
+ *                 .rootDeviceName(assetAwsEc2RootDeviceName)
+ *                 .rootDeviceType(assetAwsEc2RootDeviceType)
+ *                 .securityGroups(AssetAwsEc2SecurityGroupArgs.builder()
+ *                     .groupKey(assetAwsEc2SecurityGroupsGroupKey)
+ *                     .groupName(testGroup.name())
+ *                     .build())
+ *                 .sriovNetSupport(assetAwsEc2SriovNetSupport)
+ *                 .state(AssetAwsEc2StateArgs.builder()
+ *                     .code(assetAwsEc2StateCode)
+ *                     .name(assetAwsEc2StateName)
+ *                     .build())
+ *                 .subnetKey(assetAwsEc2SubnetKey)
+ *                 .tags(AssetAwsEc2TagArgs.builder()
+ *                     .key(assetAwsEc2TagsKey)
+ *                     .value(assetAwsEc2TagsValue)
+ *                     .build())
+ *                 .timeLaunch(assetAwsEc2TimeLaunch)
+ *                 .tpmSupport(assetAwsEc2TpmSupport)
+ *                 .virtualizationType(assetAwsEc2VirtualizationType)
+ *                 .vpcKey(assetAwsEc2VpcKey)
+ *                 .build())
+ *             .awsEc2cost(AssetAwsEc2costArgs.builder()
+ *                 .amount(assetAwsEc2costAmount)
+ *                 .currencyCode(assetAwsEc2costCurrencyCode)
+ *                 .build())
  *             .compute(AssetComputeArgs.builder()
  *                 .connectedNetworks(assetComputeConnectedNetworks)
  *                 .coresCount(assetComputeCoresCount)
@@ -71,6 +210,7 @@ import javax.annotation.Nullable;
  *                 .description(assetComputeDescription)
  *                 .disks(AssetComputeDiskArgs.builder()
  *                     .bootOrder(assetComputeDisksBootOrder)
+ *                     .isCbtEnabled(assetComputeDisksIsCbtEnabled)
  *                     .location(assetComputeDisksLocation)
  *                     .name(assetComputeDisksName)
  *                     .persistentMode(assetComputeDisksPersistentMode)
@@ -129,6 +269,7 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(assetDisplayName)
+ *             .environmentType(assetEnvironmentType)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .vm(AssetVmArgs.builder()
  *                 .hypervisorHost(assetVmHypervisorHost)
@@ -175,6 +316,48 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:CloudBridge/asset:Asset")
 public class Asset extends com.pulumi.resources.CustomResource {
     /**
+     * (Updatable) The class name of the asset.
+     * 
+     */
+    @Export(name="assetClassName", refs={String.class}, tree="[0]")
+    private Output<String> assetClassName;
+
+    /**
+     * @return (Updatable) The class name of the asset.
+     * 
+     */
+    public Output<String> assetClassName() {
+        return this.assetClassName;
+    }
+    /**
+     * (Updatable) The version of the asset class.
+     * 
+     */
+    @Export(name="assetClassVersion", refs={String.class}, tree="[0]")
+    private Output<String> assetClassVersion;
+
+    /**
+     * @return (Updatable) The version of the asset class.
+     * 
+     */
+    public Output<String> assetClassVersion() {
+        return this.assetClassVersion;
+    }
+    /**
+     * (Updatable) The details of the asset.
+     * 
+     */
+    @Export(name="assetDetails", refs={String.class}, tree="[0]")
+    private Output<String> assetDetails;
+
+    /**
+     * @return (Updatable) The details of the asset.
+     * 
+     */
+    public Output<String> assetDetails() {
+        return this.assetDetails;
+    }
+    /**
      * (Updatable) List of asset source OCID.
      * 
      */
@@ -201,6 +384,62 @@ public class Asset extends com.pulumi.resources.CustomResource {
      */
     public Output<String> assetType() {
         return this.assetType;
+    }
+    /**
+     * (Updatable) Cost information for monthly maintenance.
+     * 
+     */
+    @Export(name="attachedEbsVolumesCost", refs={AssetAttachedEbsVolumesCost.class}, tree="[0]")
+    private Output<AssetAttachedEbsVolumesCost> attachedEbsVolumesCost;
+
+    /**
+     * @return (Updatable) Cost information for monthly maintenance.
+     * 
+     */
+    public Output<AssetAttachedEbsVolumesCost> attachedEbsVolumesCost() {
+        return this.attachedEbsVolumesCost;
+    }
+    /**
+     * (Updatable) AWS EBS volume related properties.
+     * 
+     */
+    @Export(name="awsEbs", refs={AssetAwsEbs.class}, tree="[0]")
+    private Output<AssetAwsEbs> awsEbs;
+
+    /**
+     * @return (Updatable) AWS EBS volume related properties.
+     * 
+     */
+    public Output<AssetAwsEbs> awsEbs() {
+        return this.awsEbs;
+    }
+    /**
+     * (Updatable) AWS virtual machine related properties.
+     * 
+     */
+    @Export(name="awsEc2", refs={AssetAwsEc2.class}, tree="[0]")
+    private Output<AssetAwsEc2> awsEc2;
+
+    /**
+     * @return (Updatable) AWS virtual machine related properties.
+     * 
+     */
+    public Output<AssetAwsEc2> awsEc2() {
+        return this.awsEc2;
+    }
+    /**
+     * (Updatable) Cost information for monthly maintenance.
+     * 
+     */
+    @Export(name="awsEc2cost", refs={AssetAwsEc2cost.class}, tree="[0]")
+    private Output<AssetAwsEc2cost> awsEc2cost;
+
+    /**
+     * @return (Updatable) Cost information for monthly maintenance.
+     * 
+     */
+    public Output<AssetAwsEc2cost> awsEc2cost() {
+        return this.awsEc2cost;
     }
     /**
      * (Updatable) The OCID of the compartment that the asset belongs to.
@@ -257,6 +496,20 @@ public class Asset extends com.pulumi.resources.CustomResource {
      */
     public Output<String> displayName() {
         return this.displayName;
+    }
+    /**
+     * Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     * 
+     */
+    @Export(name="environmentType", refs={String.class}, tree="[0]")
+    private Output<String> environmentType;
+
+    /**
+     * @return Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     * 
+     */
+    public Output<String> environmentType() {
+        return this.environmentType;
     }
     /**
      * The key of the asset from the external environment.

@@ -30,22 +30,27 @@ import * as utilities from "../utilities";
  *     environmentId: testEnvironment.id,
  *     inventoryId: testInventory.id,
  *     type: assetSourceType,
- *     vcenterEndpoint: assetSourceVcenterEndpoint,
  *     areHistoricalMetricsCollected: assetSourceAreHistoricalMetricsCollected,
  *     areRealtimeMetricsCollected: assetSourceAreRealtimeMetricsCollected,
+ *     awsAccountKey: assetSourceAwsAccountKey,
+ *     awsRegion: assetSourceAwsRegion,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
  *     discoveryScheduleId: testDiscoverySchedule.id,
  *     displayName: assetSourceDisplayName,
+ *     environmentType: assetSourceEnvironmentType,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     isCostInformationCollected: assetSourceIsCostInformationCollected,
+ *     olvmEndpoint: assetSourceOlvmEndpoint,
  *     replicationCredentials: {
  *         secretId: testSecret.id,
  *         type: assetSourceReplicationCredentialsType,
  *     },
  *     systemTags: assetSourceSystemTags,
+ *     vcenterEndpoint: assetSourceVcenterEndpoint,
  * });
  * ```
  *
@@ -98,6 +103,14 @@ export class AssetSource extends pulumi.CustomResource {
      */
     declare public readonly assetsCompartmentId: pulumi.Output<string>;
     /**
+     * The key of customer's aws account to be discovered/migrated.
+     */
+    declare public readonly awsAccountKey: pulumi.Output<string>;
+    /**
+     * AWS region information, from where the resources are discovered.
+     */
+    declare public readonly awsRegion: pulumi.Output<string>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
      */
     declare public readonly compartmentId: pulumi.Output<string>;
@@ -122,6 +135,10 @@ export class AssetSource extends pulumi.CustomResource {
      */
     declare public readonly environmentId: pulumi.Output<string>;
     /**
+     * (Updatable) Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     */
+    declare public readonly environmentType: pulumi.Output<string>;
+    /**
      * (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
@@ -130,9 +147,17 @@ export class AssetSource extends pulumi.CustomResource {
      */
     declare public readonly inventoryId: pulumi.Output<string>;
     /**
+     * (Updatable) Flag indicating whether cost data collection is enabled for assets, originating from this asset source.
+     */
+    declare public readonly isCostInformationCollected: pulumi.Output<boolean>;
+    /**
      * The detailed state of the asset source.
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
+    /**
+     * (Updatable) Endpoint for OLVM asset discovery and replication in the form of ```https://<host>:<port>```
+     */
+    declare public readonly olvmEndpoint: pulumi.Output<string>;
     /**
      * (Updatable) Credentials for an asset source.
      */
@@ -182,15 +207,20 @@ export class AssetSource extends pulumi.CustomResource {
             resourceInputs["areHistoricalMetricsCollected"] = state?.areHistoricalMetricsCollected;
             resourceInputs["areRealtimeMetricsCollected"] = state?.areRealtimeMetricsCollected;
             resourceInputs["assetsCompartmentId"] = state?.assetsCompartmentId;
+            resourceInputs["awsAccountKey"] = state?.awsAccountKey;
+            resourceInputs["awsRegion"] = state?.awsRegion;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["discoveryCredentials"] = state?.discoveryCredentials;
             resourceInputs["discoveryScheduleId"] = state?.discoveryScheduleId;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["environmentId"] = state?.environmentId;
+            resourceInputs["environmentType"] = state?.environmentType;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["inventoryId"] = state?.inventoryId;
+            resourceInputs["isCostInformationCollected"] = state?.isCostInformationCollected;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["olvmEndpoint"] = state?.olvmEndpoint;
             resourceInputs["replicationCredentials"] = state?.replicationCredentials;
             resourceInputs["state"] = state?.state;
             resourceInputs["systemTags"] = state?.systemTags;
@@ -218,20 +248,22 @@ export class AssetSource extends pulumi.CustomResource {
             if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            if (args?.vcenterEndpoint === undefined && !opts.urn) {
-                throw new Error("Missing required property 'vcenterEndpoint'");
-            }
             resourceInputs["areHistoricalMetricsCollected"] = args?.areHistoricalMetricsCollected;
             resourceInputs["areRealtimeMetricsCollected"] = args?.areRealtimeMetricsCollected;
             resourceInputs["assetsCompartmentId"] = args?.assetsCompartmentId;
+            resourceInputs["awsAccountKey"] = args?.awsAccountKey;
+            resourceInputs["awsRegion"] = args?.awsRegion;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["discoveryCredentials"] = args?.discoveryCredentials;
             resourceInputs["discoveryScheduleId"] = args?.discoveryScheduleId;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["environmentId"] = args?.environmentId;
+            resourceInputs["environmentType"] = args?.environmentType;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["inventoryId"] = args?.inventoryId;
+            resourceInputs["isCostInformationCollected"] = args?.isCostInformationCollected;
+            resourceInputs["olvmEndpoint"] = args?.olvmEndpoint;
             resourceInputs["replicationCredentials"] = args?.replicationCredentials;
             resourceInputs["systemTags"] = args?.systemTags;
             resourceInputs["type"] = args?.type;
@@ -263,6 +295,14 @@ export interface AssetSourceState {
      */
     assetsCompartmentId?: pulumi.Input<string>;
     /**
+     * The key of customer's aws account to be discovered/migrated.
+     */
+    awsAccountKey?: pulumi.Input<string>;
+    /**
+     * AWS region information, from where the resources are discovered.
+     */
+    awsRegion?: pulumi.Input<string>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
      */
     compartmentId?: pulumi.Input<string>;
@@ -287,6 +327,10 @@ export interface AssetSourceState {
      */
     environmentId?: pulumi.Input<string>;
     /**
+     * (Updatable) Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     */
+    environmentType?: pulumi.Input<string>;
+    /**
      * (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -295,9 +339,17 @@ export interface AssetSourceState {
      */
     inventoryId?: pulumi.Input<string>;
     /**
+     * (Updatable) Flag indicating whether cost data collection is enabled for assets, originating from this asset source.
+     */
+    isCostInformationCollected?: pulumi.Input<boolean>;
+    /**
      * The detailed state of the asset source.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * (Updatable) Endpoint for OLVM asset discovery and replication in the form of ```https://<host>:<port>```
+     */
+    olvmEndpoint?: pulumi.Input<string>;
     /**
      * (Updatable) Credentials for an asset source.
      */
@@ -349,6 +401,14 @@ export interface AssetSourceArgs {
      */
     assetsCompartmentId: pulumi.Input<string>;
     /**
+     * The key of customer's aws account to be discovered/migrated.
+     */
+    awsAccountKey?: pulumi.Input<string>;
+    /**
+     * AWS region information, from where the resources are discovered.
+     */
+    awsRegion?: pulumi.Input<string>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
      */
     compartmentId: pulumi.Input<string>;
@@ -373,6 +433,10 @@ export interface AssetSourceArgs {
      */
     environmentId: pulumi.Input<string>;
     /**
+     * (Updatable) Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     */
+    environmentType?: pulumi.Input<string>;
+    /**
      * (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -380,6 +444,14 @@ export interface AssetSourceArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
      */
     inventoryId: pulumi.Input<string>;
+    /**
+     * (Updatable) Flag indicating whether cost data collection is enabled for assets, originating from this asset source.
+     */
+    isCostInformationCollected?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Endpoint for OLVM asset discovery and replication in the form of ```https://<host>:<port>```
+     */
+    olvmEndpoint?: pulumi.Input<string>;
     /**
      * (Updatable) Credentials for an asset source.
      */
@@ -399,5 +471,5 @@ export interface AssetSourceArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vcenterEndpoint: pulumi.Input<string>;
+    vcenterEndpoint?: pulumi.Input<string>;
 }

@@ -14,11 +14,19 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetScheduledJobsFilter {
+    /**
+     * @return The name of the snap.
+     * 
+     */
     private String name;
     private @Nullable Boolean regex;
     private List<String> values;
 
     private GetScheduledJobsFilter() {}
+    /**
+     * @return The name of the snap.
+     * 
+     */
     public String name() {
         return this.name;
     }

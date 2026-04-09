@@ -98,9 +98,6 @@ class GetErrataResult:
     @_builtins.property
     @pulumi.getter(name="erratumCollections")
     def erratum_collections(self) -> Sequence['outputs.GetErrataErratumCollectionResult']:
-        """
-        The list of erratum_collection.
-        """
         return pulumi.get(self, "erratum_collections")
 
     @_builtins.property
@@ -177,10 +174,9 @@ def get_errata(advisory_severities: Optional[Sequence[_builtins.str]] = None,
                time_issue_date_start: Optional[_builtins.str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetErrataResult:
     """
-    This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
+    This data source provides details about a specific Errata resource in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Lists all of the currently available errata. Filter the list against a variety of criteria including but not
-    limited to its name, classification type, advisory severity, and OS family.
+    Returns information about the specified erratum based on its advisory name.
 
     ## Example Usage
 
@@ -189,26 +185,15 @@ def get_errata(advisory_severities: Optional[Sequence[_builtins.str]] = None,
     import pulumi_oci as oci
 
     test_errata = oci.OsManagementHub.get_errata(compartment_id=compartment_id,
-        advisory_severities=erratum_advisory_severity,
-        advisory_types=erratum_advisory_type,
-        classification_types=erratum_classification_type,
-        names=erratum_name,
-        name_contains=erratum_name_contains,
-        os_family=erratum_os_family,
-        time_issue_date_end=erratum_time_issue_date_end,
-        time_issue_date_start=erratum_time_issue_date_start)
+        names=errata_name)
     ```
 
 
-    :param Sequence[_builtins.str] advisory_severities: The advisory severity.
-    :param Sequence[_builtins.str] advisory_types: A filter to return only errata that match the given advisory types.
-    :param Sequence[_builtins.str] classification_types: A filter to return only packages that match the given update classification type.
+    :param Sequence[_builtins.str] advisory_severities: The severity for a security advisory, otherwise, null.
+    :param Sequence[_builtins.str] advisory_types: The advisory type of the erratum.
+    :param Sequence[_builtins.str] classification_types: Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
-    :param _builtins.str name_contains: A filter to return resources that may partially match the erratum name given.
-    :param Sequence[_builtins.str] names: The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
-    :param _builtins.str os_family: A filter to return only resources that match the given operating system family.
-    :param _builtins.str time_issue_date_end: The issue date before which to list all errata, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
-    :param _builtins.str time_issue_date_start: The issue date after which to list all errata, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
+    :param Sequence[_builtins.str] names: The erratum name (such as ELSA-2023-34678).
     """
     __args__ = dict()
     __args__['advisorySeverities'] = advisory_severities
@@ -249,10 +234,9 @@ def get_errata_output(advisory_severities: Optional[pulumi.Input[Optional[Sequen
                       time_issue_date_start: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetErrataResult]:
     """
-    This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
+    This data source provides details about a specific Errata resource in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Lists all of the currently available errata. Filter the list against a variety of criteria including but not
-    limited to its name, classification type, advisory severity, and OS family.
+    Returns information about the specified erratum based on its advisory name.
 
     ## Example Usage
 
@@ -261,26 +245,15 @@ def get_errata_output(advisory_severities: Optional[pulumi.Input[Optional[Sequen
     import pulumi_oci as oci
 
     test_errata = oci.OsManagementHub.get_errata(compartment_id=compartment_id,
-        advisory_severities=erratum_advisory_severity,
-        advisory_types=erratum_advisory_type,
-        classification_types=erratum_classification_type,
-        names=erratum_name,
-        name_contains=erratum_name_contains,
-        os_family=erratum_os_family,
-        time_issue_date_end=erratum_time_issue_date_end,
-        time_issue_date_start=erratum_time_issue_date_start)
+        names=errata_name)
     ```
 
 
-    :param Sequence[_builtins.str] advisory_severities: The advisory severity.
-    :param Sequence[_builtins.str] advisory_types: A filter to return only errata that match the given advisory types.
-    :param Sequence[_builtins.str] classification_types: A filter to return only packages that match the given update classification type.
+    :param Sequence[_builtins.str] advisory_severities: The severity for a security advisory, otherwise, null.
+    :param Sequence[_builtins.str] advisory_types: The advisory type of the erratum.
+    :param Sequence[_builtins.str] classification_types: Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
-    :param _builtins.str name_contains: A filter to return resources that may partially match the erratum name given.
-    :param Sequence[_builtins.str] names: The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
-    :param _builtins.str os_family: A filter to return only resources that match the given operating system family.
-    :param _builtins.str time_issue_date_end: The issue date before which to list all errata, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
-    :param _builtins.str time_issue_date_start: The issue date after which to list all errata, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
+    :param Sequence[_builtins.str] names: The erratum name (such as ELSA-2023-34678).
     """
     __args__ = dict()
     __args__['advisorySeverities'] = advisory_severities

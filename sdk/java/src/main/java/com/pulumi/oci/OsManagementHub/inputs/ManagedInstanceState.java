@@ -54,14 +54,29 @@ public final class ManagedInstanceState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * (Updatable) Updatable settings for the Autonomous Linux service.
+     * Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+     * 
+     */
+    @Import(name="areSourcesManaged")
+    private @Nullable Output<Boolean> areSourcesManaged;
+
+    /**
+     * @return Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+     * 
+     */
+    public Optional<Output<Boolean>> areSourcesManaged() {
+        return Optional.ofNullable(this.areSourcesManaged);
+    }
+
+    /**
+     * (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
      * 
      */
     @Import(name="autonomousSettings")
     private @Nullable Output<ManagedInstanceAutonomousSettingsArgs> autonomousSettings;
 
     /**
-     * @return (Updatable) Updatable settings for the Autonomous Linux service.
+     * @return (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
      * 
      */
     public Optional<Output<ManagedInstanceAutonomousSettingsArgs>> autonomousSettings() {
@@ -585,6 +600,21 @@ public final class ManagedInstanceState extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * The date and time the instance&#39;s software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * 
+     */
+    @Import(name="timeLastSoftwareRefresh")
+    private @Nullable Output<String> timeLastSoftwareRefresh;
+
+    /**
+     * @return The date and time the instance&#39;s software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * 
+     */
+    public Optional<Output<String>> timeLastSoftwareRefresh() {
+        return Optional.ofNullable(this.timeLastSoftwareRefresh);
+    }
+
+    /**
      * The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
@@ -634,6 +664,7 @@ public final class ManagedInstanceState extends com.pulumi.resources.ResourceArg
     private ManagedInstanceState(ManagedInstanceState $) {
         this.agentVersion = $.agentVersion;
         this.architecture = $.architecture;
+        this.areSourcesManaged = $.areSourcesManaged;
         this.autonomousSettings = $.autonomousSettings;
         this.bugUpdatesAvailable = $.bugUpdatesAvailable;
         this.compartmentId = $.compartmentId;
@@ -669,6 +700,7 @@ public final class ManagedInstanceState extends com.pulumi.resources.ResourceArg
         this.timeCreated = $.timeCreated;
         this.timeLastBoot = $.timeLastBoot;
         this.timeLastCheckin = $.timeLastCheckin;
+        this.timeLastSoftwareRefresh = $.timeLastSoftwareRefresh;
         this.timeUpdated = $.timeUpdated;
         this.updatesAvailable = $.updatesAvailable;
         this.workRequestCount = $.workRequestCount;
@@ -735,7 +767,28 @@ public final class ManagedInstanceState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param autonomousSettings (Updatable) Updatable settings for the Autonomous Linux service.
+         * @param areSourcesManaged Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder areSourcesManaged(@Nullable Output<Boolean> areSourcesManaged) {
+            $.areSourcesManaged = areSourcesManaged;
+            return this;
+        }
+
+        /**
+         * @param areSourcesManaged Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder areSourcesManaged(Boolean areSourcesManaged) {
+            return areSourcesManaged(Output.of(areSourcesManaged));
+        }
+
+        /**
+         * @param autonomousSettings (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
          * 
          * @return builder
          * 
@@ -746,7 +799,7 @@ public final class ManagedInstanceState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param autonomousSettings (Updatable) Updatable settings for the Autonomous Linux service.
+         * @param autonomousSettings (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
          * 
          * @return builder
          * 
@@ -1513,6 +1566,27 @@ public final class ManagedInstanceState extends com.pulumi.resources.ResourceArg
          */
         public Builder timeLastCheckin(String timeLastCheckin) {
             return timeLastCheckin(Output.of(timeLastCheckin));
+        }
+
+        /**
+         * @param timeLastSoftwareRefresh The date and time the instance&#39;s software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeLastSoftwareRefresh(@Nullable Output<String> timeLastSoftwareRefresh) {
+            $.timeLastSoftwareRefresh = timeLastSoftwareRefresh;
+            return this;
+        }
+
+        /**
+         * @param timeLastSoftwareRefresh The date and time the instance&#39;s software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeLastSoftwareRefresh(String timeLastSoftwareRefresh) {
+            return timeLastSoftwareRefresh(Output.of(timeLastSoftwareRefresh));
         }
 
         /**

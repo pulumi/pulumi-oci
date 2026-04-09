@@ -28,6 +28,7 @@ public final class GetScheduledJobsResult {
      */
     private @Nullable String displayName;
     private @Nullable String displayNameContains;
+    private @Nullable String dynamicSetId;
     private @Nullable List<GetScheduledJobsFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job.
@@ -93,6 +94,9 @@ public final class GetScheduledJobsResult {
     }
     public Optional<String> displayNameContains() {
         return Optional.ofNullable(this.displayNameContains);
+    }
+    public Optional<String> dynamicSetId() {
+        return Optional.ofNullable(this.dynamicSetId);
     }
     public List<GetScheduledJobsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -184,6 +188,7 @@ public final class GetScheduledJobsResult {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable String displayNameContains;
+        private @Nullable String dynamicSetId;
         private @Nullable List<GetScheduledJobsFilter> filters;
         private @Nullable String id;
         private @Nullable Boolean isManagedByAutonomousLinux;
@@ -207,6 +212,7 @@ public final class GetScheduledJobsResult {
     	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
     	      this.displayName = defaults.displayName;
     	      this.displayNameContains = defaults.displayNameContains;
+    	      this.dynamicSetId = defaults.dynamicSetId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.isManagedByAutonomousLinux = defaults.isManagedByAutonomousLinux;
@@ -247,6 +253,12 @@ public final class GetScheduledJobsResult {
         public Builder displayNameContains(@Nullable String displayNameContains) {
 
             this.displayNameContains = displayNameContains;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dynamicSetId(@Nullable String dynamicSetId) {
+
+            this.dynamicSetId = dynamicSetId;
             return this;
         }
         @CustomType.Setter
@@ -365,6 +377,7 @@ public final class GetScheduledJobsResult {
             _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
             _resultValue.displayName = displayName;
             _resultValue.displayNameContains = displayNameContains;
+            _resultValue.dynamicSetId = dynamicSetId;
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.isManagedByAutonomousLinux = isManagedByAutonomousLinux;

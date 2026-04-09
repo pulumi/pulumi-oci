@@ -69,6 +69,21 @@ public final class GetManagementStationsPlainArgs extends com.pulumi.resources.I
     }
 
     /**
+     * A filter that returns information for management stations in the specified health state.
+     * 
+     */
+    @Import(name="healthState")
+    private @Nullable String healthState;
+
+    /**
+     * @return A filter that returns information for management stations in the specified health state.
+     * 
+     */
+    public Optional<String> healthState() {
+        return Optional.ofNullable(this.healthState);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
      * 
      */
@@ -150,6 +165,7 @@ public final class GetManagementStationsPlainArgs extends com.pulumi.resources.I
         this.displayName = $.displayName;
         this.displayNameContains = $.displayNameContains;
         this.filters = $.filters;
+        this.healthState = $.healthState;
         this.id = $.id;
         this.locationNotEqualTos = $.locationNotEqualTos;
         this.locations = $.locations;
@@ -215,6 +231,17 @@ public final class GetManagementStationsPlainArgs extends com.pulumi.resources.I
 
         public Builder filters(GetManagementStationsFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param healthState A filter that returns information for management stations in the specified health state.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder healthState(@Nullable String healthState) {
+            $.healthState = healthState;
+            return this;
         }
 
         /**

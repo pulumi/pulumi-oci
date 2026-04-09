@@ -13,7 +13,7 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
     public sealed class GetErrataFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+        /// The erratum name (such as ELSA-2023-34678).
         /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;

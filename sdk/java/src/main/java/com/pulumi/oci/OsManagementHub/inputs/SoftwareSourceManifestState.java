@@ -15,17 +15,9 @@ public final class SoftwareSourceManifestState extends com.pulumi.resources.Reso
 
     public static final SoftwareSourceManifestState Empty = new SoftwareSourceManifestState();
 
-    /**
-     * (Updatable) Provides the manifest content used to update the package list of the software source.
-     * 
-     */
     @Import(name="content")
     private @Nullable Output<String> content;
 
-    /**
-     * @return (Updatable) Provides the manifest content used to update the package list of the software source.
-     * 
-     */
     public Optional<Output<String>> content() {
         return Optional.ofNullable(this.content);
     }
@@ -76,23 +68,11 @@ public final class SoftwareSourceManifestState extends com.pulumi.resources.Reso
             $ = new SoftwareSourceManifestState(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param content (Updatable) Provides the manifest content used to update the package list of the software source.
-         * 
-         * @return builder
-         * 
-         */
         public Builder content(@Nullable Output<String> content) {
             $.content = content;
             return this;
         }
 
-        /**
-         * @param content (Updatable) Provides the manifest content used to update the package list of the software source.
-         * 
-         * @return builder
-         * 
-         */
         public Builder content(String content) {
             return content(Output.of(content));
         }

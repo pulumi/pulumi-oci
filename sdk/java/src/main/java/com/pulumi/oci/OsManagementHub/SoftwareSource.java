@@ -357,6 +357,20 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
         return this.isSslVerifyEnabled;
     }
     /**
+     * The display name of the software source to be replicated
+     * 
+     */
+    @Export(name="originDisplayName", refs={String.class}, tree="[0]")
+    private Output<String> originDisplayName;
+
+    /**
+     * @return The display name of the software source to be replicated
+     * 
+     */
+    public Output<String> originDisplayName() {
+        return this.originDisplayName;
+    }
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
      * 
      */

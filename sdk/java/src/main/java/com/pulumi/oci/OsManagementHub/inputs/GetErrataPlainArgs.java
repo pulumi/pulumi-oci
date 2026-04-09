@@ -18,14 +18,14 @@ public final class GetErrataPlainArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetErrataPlainArgs Empty = new GetErrataPlainArgs();
 
     /**
-     * The advisory severity.
+     * The severity for a security advisory, otherwise, null.
      * 
      */
     @Import(name="advisorySeverities")
     private @Nullable List<String> advisorySeverities;
 
     /**
-     * @return The advisory severity.
+     * @return The severity for a security advisory, otherwise, null.
      * 
      */
     public Optional<List<String>> advisorySeverities() {
@@ -33,14 +33,14 @@ public final class GetErrataPlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to return only errata that match the given advisory types.
+     * The advisory type of the erratum.
      * 
      */
     @Import(name="advisoryTypes")
     private @Nullable List<String> advisoryTypes;
 
     /**
-     * @return A filter to return only errata that match the given advisory types.
+     * @return The advisory type of the erratum.
      * 
      */
     public Optional<List<String>> advisoryTypes() {
@@ -48,14 +48,14 @@ public final class GetErrataPlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to return only packages that match the given update classification type.
+     * Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
      * 
      */
     @Import(name="classificationTypes")
     private @Nullable List<String> classificationTypes;
 
     /**
-     * @return A filter to return only packages that match the given update classification type.
+     * @return Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
      * 
      */
     public Optional<List<String>> classificationTypes() {
@@ -84,77 +84,45 @@ public final class GetErrataPlainArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.filters);
     }
 
-    /**
-     * A filter to return resources that may partially match the erratum name given.
-     * 
-     */
     @Import(name="nameContains")
     private @Nullable String nameContains;
 
-    /**
-     * @return A filter to return resources that may partially match the erratum name given.
-     * 
-     */
     public Optional<String> nameContains() {
         return Optional.ofNullable(this.nameContains);
     }
 
     /**
-     * The assigned erratum name. It&#39;s unique and not changeable.  Example: `ELSA-2020-5804`
+     * The erratum name (such as ELSA-2023-34678).
      * 
      */
     @Import(name="names")
     private @Nullable List<String> names;
 
     /**
-     * @return The assigned erratum name. It&#39;s unique and not changeable.  Example: `ELSA-2020-5804`
+     * @return The erratum name (such as ELSA-2023-34678).
      * 
      */
     public Optional<List<String>> names() {
         return Optional.ofNullable(this.names);
     }
 
-    /**
-     * A filter to return only resources that match the given operating system family.
-     * 
-     */
     @Import(name="osFamily")
     private @Nullable String osFamily;
 
-    /**
-     * @return A filter to return only resources that match the given operating system family.
-     * 
-     */
     public Optional<String> osFamily() {
         return Optional.ofNullable(this.osFamily);
     }
 
-    /**
-     * The issue date before which to list all errata, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
-     * 
-     */
     @Import(name="timeIssueDateEnd")
     private @Nullable String timeIssueDateEnd;
 
-    /**
-     * @return The issue date before which to list all errata, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
-     * 
-     */
     public Optional<String> timeIssueDateEnd() {
         return Optional.ofNullable(this.timeIssueDateEnd);
     }
 
-    /**
-     * The issue date after which to list all errata, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
-     * 
-     */
     @Import(name="timeIssueDateStart")
     private @Nullable String timeIssueDateStart;
 
-    /**
-     * @return The issue date after which to list all errata, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
-     * 
-     */
     public Optional<String> timeIssueDateStart() {
         return Optional.ofNullable(this.timeIssueDateStart);
     }
@@ -193,7 +161,7 @@ public final class GetErrataPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param advisorySeverities The advisory severity.
+         * @param advisorySeverities The severity for a security advisory, otherwise, null.
          * 
          * @return builder
          * 
@@ -204,7 +172,7 @@ public final class GetErrataPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param advisorySeverities The advisory severity.
+         * @param advisorySeverities The severity for a security advisory, otherwise, null.
          * 
          * @return builder
          * 
@@ -214,7 +182,7 @@ public final class GetErrataPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param advisoryTypes A filter to return only errata that match the given advisory types.
+         * @param advisoryTypes The advisory type of the erratum.
          * 
          * @return builder
          * 
@@ -225,7 +193,7 @@ public final class GetErrataPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param advisoryTypes A filter to return only errata that match the given advisory types.
+         * @param advisoryTypes The advisory type of the erratum.
          * 
          * @return builder
          * 
@@ -235,7 +203,7 @@ public final class GetErrataPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param classificationTypes A filter to return only packages that match the given update classification type.
+         * @param classificationTypes Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
          * 
          * @return builder
          * 
@@ -246,7 +214,7 @@ public final class GetErrataPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param classificationTypes A filter to return only packages that match the given update classification type.
+         * @param classificationTypes Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
          * 
          * @return builder
          * 
@@ -275,19 +243,13 @@ public final class GetErrataPlainArgs extends com.pulumi.resources.InvokeArgs {
             return filters(List.of(filters));
         }
 
-        /**
-         * @param nameContains A filter to return resources that may partially match the erratum name given.
-         * 
-         * @return builder
-         * 
-         */
         public Builder nameContains(@Nullable String nameContains) {
             $.nameContains = nameContains;
             return this;
         }
 
         /**
-         * @param names The assigned erratum name. It&#39;s unique and not changeable.  Example: `ELSA-2020-5804`
+         * @param names The erratum name (such as ELSA-2023-34678).
          * 
          * @return builder
          * 
@@ -298,7 +260,7 @@ public final class GetErrataPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param names The assigned erratum name. It&#39;s unique and not changeable.  Example: `ELSA-2020-5804`
+         * @param names The erratum name (such as ELSA-2023-34678).
          * 
          * @return builder
          * 
@@ -307,34 +269,16 @@ public final class GetErrataPlainArgs extends com.pulumi.resources.InvokeArgs {
             return names(List.of(names));
         }
 
-        /**
-         * @param osFamily A filter to return only resources that match the given operating system family.
-         * 
-         * @return builder
-         * 
-         */
         public Builder osFamily(@Nullable String osFamily) {
             $.osFamily = osFamily;
             return this;
         }
 
-        /**
-         * @param timeIssueDateEnd The issue date before which to list all errata, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
-         * 
-         * @return builder
-         * 
-         */
         public Builder timeIssueDateEnd(@Nullable String timeIssueDateEnd) {
             $.timeIssueDateEnd = timeIssueDateEnd;
             return this;
         }
 
-        /**
-         * @param timeIssueDateStart The issue date after which to list all errata, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
-         * 
-         * @return builder
-         * 
-         */
         public Builder timeIssueDateStart(@Nullable String timeIssueDateStart) {
             $.timeIssueDateStart = timeIssueDateStart;
             return this;

@@ -185,7 +185,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly int PendingJobCount;
         /// <summary>
-        /// The list of software source OCIDs that the managed instance group will use.
+        /// The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the managed instance group will use.
         /// </summary>
         public readonly ImmutableArray<string> SoftwareSourceIds;
         /// <summary>

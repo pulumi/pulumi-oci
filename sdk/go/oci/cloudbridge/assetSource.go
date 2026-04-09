@@ -43,22 +43,27 @@ import (
 //				EnvironmentId:                 pulumi.Any(testEnvironment.Id),
 //				InventoryId:                   pulumi.Any(testInventory.Id),
 //				Type:                          pulumi.Any(assetSourceType),
-//				VcenterEndpoint:               pulumi.Any(assetSourceVcenterEndpoint),
 //				AreHistoricalMetricsCollected: pulumi.Any(assetSourceAreHistoricalMetricsCollected),
 //				AreRealtimeMetricsCollected:   pulumi.Any(assetSourceAreRealtimeMetricsCollected),
+//				AwsAccountKey:                 pulumi.Any(assetSourceAwsAccountKey),
+//				AwsRegion:                     pulumi.Any(assetSourceAwsRegion),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				DiscoveryScheduleId: pulumi.Any(testDiscoverySchedule.Id),
 //				DisplayName:         pulumi.Any(assetSourceDisplayName),
+//				EnvironmentType:     pulumi.Any(assetSourceEnvironmentType),
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				IsCostInformationCollected: pulumi.Any(assetSourceIsCostInformationCollected),
+//				OlvmEndpoint:               pulumi.Any(assetSourceOlvmEndpoint),
 //				ReplicationCredentials: &cloudbridge.AssetSourceReplicationCredentialsArgs{
 //					SecretId: pulumi.Any(testSecret.Id),
 //					Type:     pulumi.Any(assetSourceReplicationCredentialsType),
 //				},
-//				SystemTags: pulumi.Any(assetSourceSystemTags),
+//				SystemTags:      pulumi.Any(assetSourceSystemTags),
+//				VcenterEndpoint: pulumi.Any(assetSourceVcenterEndpoint),
 //			})
 //			if err != nil {
 //				return err
@@ -85,6 +90,10 @@ type AssetSource struct {
 	AreRealtimeMetricsCollected pulumi.BoolOutput `pulumi:"areRealtimeMetricsCollected"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that is going to be used to create assets.
 	AssetsCompartmentId pulumi.StringOutput `pulumi:"assetsCompartmentId"`
+	// The key of customer's aws account to be discovered/migrated.
+	AwsAccountKey pulumi.StringOutput `pulumi:"awsAccountKey"`
+	// AWS region information, from where the resources are discovered.
+	AwsRegion pulumi.StringOutput `pulumi:"awsRegion"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -97,12 +106,18 @@ type AssetSource struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the environment.
 	EnvironmentId pulumi.StringOutput `pulumi:"environmentId"`
+	// (Updatable) Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+	EnvironmentType pulumi.StringOutput `pulumi:"environmentType"`
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
 	InventoryId pulumi.StringOutput `pulumi:"inventoryId"`
+	// (Updatable) Flag indicating whether cost data collection is enabled for assets, originating from this asset source.
+	IsCostInformationCollected pulumi.BoolOutput `pulumi:"isCostInformationCollected"`
 	// The detailed state of the asset source.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// (Updatable) Endpoint for OLVM asset discovery and replication in the form of ```https://<host>:<port>```
+	OlvmEndpoint pulumi.StringOutput `pulumi:"olvmEndpoint"`
 	// (Updatable) Credentials for an asset source.
 	ReplicationCredentials AssetSourceReplicationCredentialsOutput `pulumi:"replicationCredentials"`
 	// The current state of the asset source.
@@ -147,9 +162,6 @@ func NewAssetSource(ctx *pulumi.Context,
 	if args.Type == nil {
 		return nil, errors.New("invalid value for required argument 'Type'")
 	}
-	if args.VcenterEndpoint == nil {
-		return nil, errors.New("invalid value for required argument 'VcenterEndpoint'")
-	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AssetSource
 	err := ctx.RegisterResource("oci:CloudBridge/assetSource:AssetSource", name, args, &resource, opts...)
@@ -179,6 +191,10 @@ type assetSourceState struct {
 	AreRealtimeMetricsCollected *bool `pulumi:"areRealtimeMetricsCollected"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that is going to be used to create assets.
 	AssetsCompartmentId *string `pulumi:"assetsCompartmentId"`
+	// The key of customer's aws account to be discovered/migrated.
+	AwsAccountKey *string `pulumi:"awsAccountKey"`
+	// AWS region information, from where the resources are discovered.
+	AwsRegion *string `pulumi:"awsRegion"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -191,12 +207,18 @@ type assetSourceState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the environment.
 	EnvironmentId *string `pulumi:"environmentId"`
+	// (Updatable) Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+	EnvironmentType *string `pulumi:"environmentType"`
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
 	InventoryId *string `pulumi:"inventoryId"`
+	// (Updatable) Flag indicating whether cost data collection is enabled for assets, originating from this asset source.
+	IsCostInformationCollected *bool `pulumi:"isCostInformationCollected"`
 	// The detailed state of the asset source.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// (Updatable) Endpoint for OLVM asset discovery and replication in the form of ```https://<host>:<port>```
+	OlvmEndpoint *string `pulumi:"olvmEndpoint"`
 	// (Updatable) Credentials for an asset source.
 	ReplicationCredentials *AssetSourceReplicationCredentials `pulumi:"replicationCredentials"`
 	// The current state of the asset source.
@@ -223,6 +245,10 @@ type AssetSourceState struct {
 	AreRealtimeMetricsCollected pulumi.BoolPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that is going to be used to create assets.
 	AssetsCompartmentId pulumi.StringPtrInput
+	// The key of customer's aws account to be discovered/migrated.
+	AwsAccountKey pulumi.StringPtrInput
+	// AWS region information, from where the resources are discovered.
+	AwsRegion pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -235,12 +261,18 @@ type AssetSourceState struct {
 	DisplayName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the environment.
 	EnvironmentId pulumi.StringPtrInput
+	// (Updatable) Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+	EnvironmentType pulumi.StringPtrInput
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
 	InventoryId pulumi.StringPtrInput
+	// (Updatable) Flag indicating whether cost data collection is enabled for assets, originating from this asset source.
+	IsCostInformationCollected pulumi.BoolPtrInput
 	// The detailed state of the asset source.
 	LifecycleDetails pulumi.StringPtrInput
+	// (Updatable) Endpoint for OLVM asset discovery and replication in the form of ```https://<host>:<port>```
+	OlvmEndpoint pulumi.StringPtrInput
 	// (Updatable) Credentials for an asset source.
 	ReplicationCredentials AssetSourceReplicationCredentialsPtrInput
 	// The current state of the asset source.
@@ -271,6 +303,10 @@ type assetSourceArgs struct {
 	AreRealtimeMetricsCollected *bool `pulumi:"areRealtimeMetricsCollected"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that is going to be used to create assets.
 	AssetsCompartmentId string `pulumi:"assetsCompartmentId"`
+	// The key of customer's aws account to be discovered/migrated.
+	AwsAccountKey *string `pulumi:"awsAccountKey"`
+	// AWS region information, from where the resources are discovered.
+	AwsRegion *string `pulumi:"awsRegion"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -283,10 +319,16 @@ type assetSourceArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the environment.
 	EnvironmentId string `pulumi:"environmentId"`
+	// (Updatable) Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+	EnvironmentType *string `pulumi:"environmentType"`
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
 	InventoryId string `pulumi:"inventoryId"`
+	// (Updatable) Flag indicating whether cost data collection is enabled for assets, originating from this asset source.
+	IsCostInformationCollected *bool `pulumi:"isCostInformationCollected"`
+	// (Updatable) Endpoint for OLVM asset discovery and replication in the form of ```https://<host>:<port>```
+	OlvmEndpoint *string `pulumi:"olvmEndpoint"`
 	// (Updatable) Credentials for an asset source.
 	ReplicationCredentials *AssetSourceReplicationCredentials `pulumi:"replicationCredentials"`
 	// (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -297,7 +339,7 @@ type assetSourceArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VcenterEndpoint string `pulumi:"vcenterEndpoint"`
+	VcenterEndpoint *string `pulumi:"vcenterEndpoint"`
 }
 
 // The set of arguments for constructing a AssetSource resource.
@@ -308,6 +350,10 @@ type AssetSourceArgs struct {
 	AreRealtimeMetricsCollected pulumi.BoolPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that is going to be used to create assets.
 	AssetsCompartmentId pulumi.StringInput
+	// The key of customer's aws account to be discovered/migrated.
+	AwsAccountKey pulumi.StringPtrInput
+	// AWS region information, from where the resources are discovered.
+	AwsRegion pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
 	CompartmentId pulumi.StringInput
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -320,10 +366,16 @@ type AssetSourceArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the environment.
 	EnvironmentId pulumi.StringInput
+	// (Updatable) Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+	EnvironmentType pulumi.StringPtrInput
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
 	InventoryId pulumi.StringInput
+	// (Updatable) Flag indicating whether cost data collection is enabled for assets, originating from this asset source.
+	IsCostInformationCollected pulumi.BoolPtrInput
+	// (Updatable) Endpoint for OLVM asset discovery and replication in the form of ```https://<host>:<port>```
+	OlvmEndpoint pulumi.StringPtrInput
 	// (Updatable) Credentials for an asset source.
 	ReplicationCredentials AssetSourceReplicationCredentialsPtrInput
 	// (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -334,7 +386,7 @@ type AssetSourceArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VcenterEndpoint pulumi.StringInput
+	VcenterEndpoint pulumi.StringPtrInput
 }
 
 func (AssetSourceArgs) ElementType() reflect.Type {
@@ -439,6 +491,16 @@ func (o AssetSourceOutput) AssetsCompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AssetSource) pulumi.StringOutput { return v.AssetsCompartmentId }).(pulumi.StringOutput)
 }
 
+// The key of customer's aws account to be discovered/migrated.
+func (o AssetSourceOutput) AwsAccountKey() pulumi.StringOutput {
+	return o.ApplyT(func(v *AssetSource) pulumi.StringOutput { return v.AwsAccountKey }).(pulumi.StringOutput)
+}
+
+// AWS region information, from where the resources are discovered.
+func (o AssetSourceOutput) AwsRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v *AssetSource) pulumi.StringOutput { return v.AwsRegion }).(pulumi.StringOutput)
+}
+
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
 func (o AssetSourceOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AssetSource) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -469,6 +531,11 @@ func (o AssetSourceOutput) EnvironmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AssetSource) pulumi.StringOutput { return v.EnvironmentId }).(pulumi.StringOutput)
 }
 
+// (Updatable) Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+func (o AssetSourceOutput) EnvironmentType() pulumi.StringOutput {
+	return o.ApplyT(func(v *AssetSource) pulumi.StringOutput { return v.EnvironmentType }).(pulumi.StringOutput)
+}
+
 // (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 func (o AssetSourceOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *AssetSource) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
@@ -479,9 +546,19 @@ func (o AssetSourceOutput) InventoryId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AssetSource) pulumi.StringOutput { return v.InventoryId }).(pulumi.StringOutput)
 }
 
+// (Updatable) Flag indicating whether cost data collection is enabled for assets, originating from this asset source.
+func (o AssetSourceOutput) IsCostInformationCollected() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AssetSource) pulumi.BoolOutput { return v.IsCostInformationCollected }).(pulumi.BoolOutput)
+}
+
 // The detailed state of the asset source.
 func (o AssetSourceOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *AssetSource) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// (Updatable) Endpoint for OLVM asset discovery and replication in the form of ```https://<host>:<port>```
+func (o AssetSourceOutput) OlvmEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v *AssetSource) pulumi.StringOutput { return v.OlvmEndpoint }).(pulumi.StringOutput)
 }
 
 // (Updatable) Credentials for an asset source.

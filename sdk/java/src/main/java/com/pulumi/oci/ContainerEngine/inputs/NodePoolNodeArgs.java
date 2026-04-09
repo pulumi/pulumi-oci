@@ -199,14 +199,14 @@ public final class NodePoolNodeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The state of the nodepool.
+     * The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The state of the nodepool.
+     * @return The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
      * 
      */
     public Optional<Output<String>> state() {
@@ -214,14 +214,14 @@ public final class NodePoolNodeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the subnet in which this node is placed.
+     * the ocid of the subnet to create the vnic in
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return The OCID of the subnet in which this node is placed.
+     * @return the ocid of the subnet to create the vnic in
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -528,7 +528,7 @@ public final class NodePoolNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The state of the nodepool.
+         * @param state The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
          * 
          * @return builder
          * 
@@ -539,7 +539,7 @@ public final class NodePoolNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The state of the nodepool.
+         * @param state The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
          * 
          * @return builder
          * 
@@ -549,7 +549,7 @@ public final class NodePoolNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId The OCID of the subnet in which this node is placed.
+         * @param subnetId the ocid of the subnet to create the vnic in
          * 
          * @return builder
          * 
@@ -560,7 +560,7 @@ public final class NodePoolNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId The OCID of the subnet in which this node is placed.
+         * @param subnetId the ocid of the subnet to create the vnic in
          * 
          * @return builder
          * 

@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudBridge.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -29,6 +30,21 @@ public final class AssetComputeDiskArgs extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<Integer>> bootOrder() {
         return Optional.ofNullable(this.bootOrder);
+    }
+
+    /**
+     * (Updatable) Indicates that CBT (change disk tracking) is enabled for this virtual disk.
+     * 
+     */
+    @Import(name="isCbtEnabled")
+    private @Nullable Output<Boolean> isCbtEnabled;
+
+    /**
+     * @return (Updatable) Indicates that CBT (change disk tracking) is enabled for this virtual disk.
+     * 
+     */
+    public Optional<Output<Boolean>> isCbtEnabled() {
+        return Optional.ofNullable(this.isCbtEnabled);
     }
 
     /**
@@ -125,6 +141,7 @@ public final class AssetComputeDiskArgs extends com.pulumi.resources.ResourceArg
 
     private AssetComputeDiskArgs(AssetComputeDiskArgs $) {
         this.bootOrder = $.bootOrder;
+        this.isCbtEnabled = $.isCbtEnabled;
         this.location = $.location;
         this.name = $.name;
         this.persistentMode = $.persistentMode;
@@ -170,6 +187,27 @@ public final class AssetComputeDiskArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder bootOrder(Integer bootOrder) {
             return bootOrder(Output.of(bootOrder));
+        }
+
+        /**
+         * @param isCbtEnabled (Updatable) Indicates that CBT (change disk tracking) is enabled for this virtual disk.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCbtEnabled(@Nullable Output<Boolean> isCbtEnabled) {
+            $.isCbtEnabled = isCbtEnabled;
+            return this;
+        }
+
+        /**
+         * @param isCbtEnabled (Updatable) Indicates that CBT (change disk tracking) is enabled for this virtual disk.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCbtEnabled(Boolean isCbtEnabled) {
+            return isCbtEnabled(Output.of(isCbtEnabled));
         }
 
         /**

@@ -34,6 +34,21 @@ public final class GetManagedInstanceUpdatablePackagesArgs extends com.pulumi.re
     }
 
     /**
+     * The advisory severity.
+     * 
+     */
+    @Import(name="advisorySeverities")
+    private @Nullable Output<List<String>> advisorySeverities;
+
+    /**
+     * @return The advisory severity.
+     * 
+     */
+    public Optional<Output<List<String>>> advisorySeverities() {
+        return Optional.ofNullable(this.advisorySeverities);
+    }
+
+    /**
      * A filter to return only packages that match the given update classification type.
      * 
      */
@@ -119,6 +134,7 @@ public final class GetManagedInstanceUpdatablePackagesArgs extends com.pulumi.re
 
     private GetManagedInstanceUpdatablePackagesArgs(GetManagedInstanceUpdatablePackagesArgs $) {
         this.advisoryNames = $.advisoryNames;
+        this.advisorySeverities = $.advisorySeverities;
         this.classificationTypes = $.classificationTypes;
         this.compartmentId = $.compartmentId;
         this.displayNameContains = $.displayNameContains;
@@ -174,6 +190,37 @@ public final class GetManagedInstanceUpdatablePackagesArgs extends com.pulumi.re
          */
         public Builder advisoryNames(String... advisoryNames) {
             return advisoryNames(List.of(advisoryNames));
+        }
+
+        /**
+         * @param advisorySeverities The advisory severity.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder advisorySeverities(@Nullable Output<List<String>> advisorySeverities) {
+            $.advisorySeverities = advisorySeverities;
+            return this;
+        }
+
+        /**
+         * @param advisorySeverities The advisory severity.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder advisorySeverities(List<String> advisorySeverities) {
+            return advisorySeverities(Output.of(advisorySeverities));
+        }
+
+        /**
+         * @param advisorySeverities The advisory severity.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder advisorySeverities(String... advisorySeverities) {
+            return advisorySeverities(List.of(advisorySeverities));
         }
 
         /**

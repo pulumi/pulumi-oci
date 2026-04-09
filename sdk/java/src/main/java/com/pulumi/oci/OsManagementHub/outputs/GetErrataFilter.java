@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetErrataFilter {
     /**
-     * @return The assigned erratum name. It&#39;s unique and not changeable.  Example: `ELSA-2020-5804`
+     * @return The erratum name (such as ELSA-2023-34678).
      * 
      */
     private String name;
@@ -24,7 +24,7 @@ public final class GetErrataFilter {
 
     private GetErrataFilter() {}
     /**
-     * @return The assigned erratum name. It&#39;s unique and not changeable.  Example: `ELSA-2020-5804`
+     * @return The erratum name (such as ELSA-2023-34678).
      * 
      */
     public String name() {

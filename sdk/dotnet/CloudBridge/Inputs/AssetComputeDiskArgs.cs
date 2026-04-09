@@ -19,6 +19,12 @@ namespace Pulumi.Oci.CloudBridge.Inputs
         public Input<int>? BootOrder { get; set; }
 
         /// <summary>
+        /// (Updatable) Indicates that CBT (change disk tracking) is enabled for this virtual disk.
+        /// </summary>
+        [Input("isCbtEnabled")]
+        public Input<bool>? IsCbtEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) Location of the boot/data volume.
         /// </summary>
         [Input("location")]

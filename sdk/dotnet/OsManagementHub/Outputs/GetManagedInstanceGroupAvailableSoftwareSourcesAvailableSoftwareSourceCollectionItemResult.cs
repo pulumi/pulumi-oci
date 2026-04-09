@@ -18,6 +18,10 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// Software source description.
+        /// </summary>
+        public readonly string Description;
+        /// <summary>
         /// A filter to return resources that match the given display names.
         /// </summary>
         public readonly string DisplayName;
@@ -25,18 +29,28 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Type of the software source.
+        /// </summary>
+        public readonly string SoftwareSourceType;
 
         [OutputConstructor]
         private GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemResult(
             string compartmentId,
 
+            string description,
+
             string displayName,
 
-            string id)
+            string id,
+
+            string softwareSourceType)
         {
             CompartmentId = compartmentId;
+            Description = description;
             DisplayName = displayName;
             Id = id;
+            SoftwareSourceType = softwareSourceType;
         }
     }
 }

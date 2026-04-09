@@ -27,7 +27,16 @@ class GetAssetResult:
     """
     A collection of values returned by getAsset.
     """
-    def __init__(__self__, asset_id=None, asset_source_ids=None, asset_type=None, compartment_id=None, computes=None, defined_tags=None, display_name=None, external_asset_key=None, freeform_tags=None, id=None, inventory_id=None, source_key=None, state=None, system_tags=None, time_created=None, time_updated=None, vms=None, vmware_vcenters=None, vmware_vms=None):
+    def __init__(__self__, asset_class_name=None, asset_class_version=None, asset_details=None, asset_id=None, asset_source_ids=None, asset_type=None, attached_ebs_volumes_costs=None, aws_ebs=None, aws_ec2costs=None, aws_ec2s=None, compartment_id=None, computes=None, defined_tags=None, display_name=None, environment_type=None, external_asset_key=None, freeform_tags=None, id=None, inventory_id=None, source_key=None, state=None, system_tags=None, time_created=None, time_updated=None, vms=None, vmware_vcenters=None, vmware_vms=None):
+        if asset_class_name and not isinstance(asset_class_name, str):
+            raise TypeError("Expected argument 'asset_class_name' to be a str")
+        pulumi.set(__self__, "asset_class_name", asset_class_name)
+        if asset_class_version and not isinstance(asset_class_version, str):
+            raise TypeError("Expected argument 'asset_class_version' to be a str")
+        pulumi.set(__self__, "asset_class_version", asset_class_version)
+        if asset_details and not isinstance(asset_details, str):
+            raise TypeError("Expected argument 'asset_details' to be a str")
+        pulumi.set(__self__, "asset_details", asset_details)
         if asset_id and not isinstance(asset_id, str):
             raise TypeError("Expected argument 'asset_id' to be a str")
         pulumi.set(__self__, "asset_id", asset_id)
@@ -37,6 +46,18 @@ class GetAssetResult:
         if asset_type and not isinstance(asset_type, str):
             raise TypeError("Expected argument 'asset_type' to be a str")
         pulumi.set(__self__, "asset_type", asset_type)
+        if attached_ebs_volumes_costs and not isinstance(attached_ebs_volumes_costs, list):
+            raise TypeError("Expected argument 'attached_ebs_volumes_costs' to be a list")
+        pulumi.set(__self__, "attached_ebs_volumes_costs", attached_ebs_volumes_costs)
+        if aws_ebs and not isinstance(aws_ebs, list):
+            raise TypeError("Expected argument 'aws_ebs' to be a list")
+        pulumi.set(__self__, "aws_ebs", aws_ebs)
+        if aws_ec2costs and not isinstance(aws_ec2costs, list):
+            raise TypeError("Expected argument 'aws_ec2costs' to be a list")
+        pulumi.set(__self__, "aws_ec2costs", aws_ec2costs)
+        if aws_ec2s and not isinstance(aws_ec2s, list):
+            raise TypeError("Expected argument 'aws_ec2s' to be a list")
+        pulumi.set(__self__, "aws_ec2s", aws_ec2s)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -49,6 +70,9 @@ class GetAssetResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if environment_type and not isinstance(environment_type, str):
+            raise TypeError("Expected argument 'environment_type' to be a str")
+        pulumi.set(__self__, "environment_type", environment_type)
         if external_asset_key and not isinstance(external_asset_key, str):
             raise TypeError("Expected argument 'external_asset_key' to be a str")
         pulumi.set(__self__, "external_asset_key", external_asset_key)
@@ -87,6 +111,30 @@ class GetAssetResult:
         pulumi.set(__self__, "vmware_vms", vmware_vms)
 
     @_builtins.property
+    @pulumi.getter(name="assetClassName")
+    def asset_class_name(self) -> _builtins.str:
+        """
+        The class name of the asset.
+        """
+        return pulumi.get(self, "asset_class_name")
+
+    @_builtins.property
+    @pulumi.getter(name="assetClassVersion")
+    def asset_class_version(self) -> _builtins.str:
+        """
+        The version of the asset class.
+        """
+        return pulumi.get(self, "asset_class_version")
+
+    @_builtins.property
+    @pulumi.getter(name="assetDetails")
+    def asset_details(self) -> _builtins.str:
+        """
+        The details of the asset.
+        """
+        return pulumi.get(self, "asset_details")
+
+    @_builtins.property
     @pulumi.getter(name="assetId")
     def asset_id(self) -> _builtins.str:
         return pulumi.get(self, "asset_id")
@@ -106,6 +154,26 @@ class GetAssetResult:
         The type of asset.
         """
         return pulumi.get(self, "asset_type")
+
+    @_builtins.property
+    @pulumi.getter(name="attachedEbsVolumesCosts")
+    def attached_ebs_volumes_costs(self) -> Sequence['outputs.GetAssetAttachedEbsVolumesCostResult']:
+        return pulumi.get(self, "attached_ebs_volumes_costs")
+
+    @_builtins.property
+    @pulumi.getter(name="awsEbs")
+    def aws_ebs(self) -> Sequence['outputs.GetAssetAwsEbResult']:
+        return pulumi.get(self, "aws_ebs")
+
+    @_builtins.property
+    @pulumi.getter(name="awsEc2costs")
+    def aws_ec2costs(self) -> Sequence['outputs.GetAssetAwsEc2costResult']:
+        return pulumi.get(self, "aws_ec2costs")
+
+    @_builtins.property
+    @pulumi.getter(name="awsEc2s")
+    def aws_ec2s(self) -> Sequence['outputs.GetAssetAwsEc2Result']:
+        return pulumi.get(self, "aws_ec2s")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -138,6 +206,14 @@ class GetAssetResult:
         Asset display name.
         """
         return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="environmentType")
+    def environment_type(self) -> _builtins.str:
+        """
+        Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+        """
+        return pulumi.get(self, "environment_type")
 
     @_builtins.property
     @pulumi.getter(name="externalAssetKey")
@@ -242,13 +318,21 @@ class AwaitableGetAssetResult(GetAssetResult):
         if False:
             yield self
         return GetAssetResult(
+            asset_class_name=self.asset_class_name,
+            asset_class_version=self.asset_class_version,
+            asset_details=self.asset_details,
             asset_id=self.asset_id,
             asset_source_ids=self.asset_source_ids,
             asset_type=self.asset_type,
+            attached_ebs_volumes_costs=self.attached_ebs_volumes_costs,
+            aws_ebs=self.aws_ebs,
+            aws_ec2costs=self.aws_ec2costs,
+            aws_ec2s=self.aws_ec2s,
             compartment_id=self.compartment_id,
             computes=self.computes,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
+            environment_type=self.environment_type,
             external_asset_key=self.external_asset_key,
             freeform_tags=self.freeform_tags,
             id=self.id,
@@ -288,13 +372,21 @@ def get_asset(asset_id: Optional[_builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CloudBridge/getAsset:getAsset', __args__, opts=opts, typ=GetAssetResult).value
 
     return AwaitableGetAssetResult(
+        asset_class_name=pulumi.get(__ret__, 'asset_class_name'),
+        asset_class_version=pulumi.get(__ret__, 'asset_class_version'),
+        asset_details=pulumi.get(__ret__, 'asset_details'),
         asset_id=pulumi.get(__ret__, 'asset_id'),
         asset_source_ids=pulumi.get(__ret__, 'asset_source_ids'),
         asset_type=pulumi.get(__ret__, 'asset_type'),
+        attached_ebs_volumes_costs=pulumi.get(__ret__, 'attached_ebs_volumes_costs'),
+        aws_ebs=pulumi.get(__ret__, 'aws_ebs'),
+        aws_ec2costs=pulumi.get(__ret__, 'aws_ec2costs'),
+        aws_ec2s=pulumi.get(__ret__, 'aws_ec2s'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         computes=pulumi.get(__ret__, 'computes'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        environment_type=pulumi.get(__ret__, 'environment_type'),
         external_asset_key=pulumi.get(__ret__, 'external_asset_key'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
@@ -331,13 +423,21 @@ def get_asset_output(asset_id: Optional[pulumi.Input[_builtins.str]] = None,
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudBridge/getAsset:getAsset', __args__, opts=opts, typ=GetAssetResult)
     return __ret__.apply(lambda __response__: GetAssetResult(
+        asset_class_name=pulumi.get(__response__, 'asset_class_name'),
+        asset_class_version=pulumi.get(__response__, 'asset_class_version'),
+        asset_details=pulumi.get(__response__, 'asset_details'),
         asset_id=pulumi.get(__response__, 'asset_id'),
         asset_source_ids=pulumi.get(__response__, 'asset_source_ids'),
         asset_type=pulumi.get(__response__, 'asset_type'),
+        attached_ebs_volumes_costs=pulumi.get(__response__, 'attached_ebs_volumes_costs'),
+        aws_ebs=pulumi.get(__response__, 'aws_ebs'),
+        aws_ec2costs=pulumi.get(__response__, 'aws_ec2costs'),
+        aws_ec2s=pulumi.get(__response__, 'aws_ec2s'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         computes=pulumi.get(__response__, 'computes'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         display_name=pulumi.get(__response__, 'display_name'),
+        environment_type=pulumi.get(__response__, 'environment_type'),
         external_asset_key=pulumi.get(__response__, 'external_asset_key'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),

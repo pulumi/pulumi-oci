@@ -34,12 +34,155 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := cloudbridge.NewAsset(ctx, "test_asset", &cloudbridge.AssetArgs{
-//				AssetType:        pulumi.Any(assetAssetType),
-//				CompartmentId:    pulumi.Any(compartmentId),
-//				ExternalAssetKey: pulumi.Any(assetExternalAssetKey),
-//				InventoryId:      pulumi.Any(testInventory.Id),
-//				SourceKey:        pulumi.Any(assetSourceKey),
-//				AssetSourceIds:   pulumi.Any(assetAssetSourceIds),
+//				AssetType:         pulumi.Any(assetAssetType),
+//				CompartmentId:     pulumi.Any(compartmentId),
+//				ExternalAssetKey:  pulumi.Any(assetExternalAssetKey),
+//				InventoryId:       pulumi.Any(testInventory.Id),
+//				SourceKey:         pulumi.Any(assetSourceKey),
+//				AssetClassName:    pulumi.Any(assetAssetClassName),
+//				AssetClassVersion: pulumi.Any(assetAssetClassVersion),
+//				AssetDetails:      pulumi.Any(assetAssetDetails),
+//				AssetSourceIds:    pulumi.Any(assetAssetSourceIds),
+//				AttachedEbsVolumesCost: &cloudbridge.AssetAttachedEbsVolumesCostArgs{
+//					Amount:       pulumi.Any(assetAttachedEbsVolumesCostAmount),
+//					CurrencyCode: pulumi.Any(assetAttachedEbsVolumesCostCurrencyCode),
+//				},
+//				AwsEbs: &cloudbridge.AssetAwsEbsArgs{
+//					Attachments: cloudbridge.AssetAwsEbsAttachmentArray{
+//						&cloudbridge.AssetAwsEbsAttachmentArgs{
+//							Device:                pulumi.Any(assetAwsEbsAttachmentsDevice),
+//							InstanceKey:           pulumi.Any(assetAwsEbsAttachmentsInstanceKey),
+//							IsDeleteOnTermination: pulumi.Any(assetAwsEbsAttachmentsIsDeleteOnTermination),
+//							Status:                pulumi.Any(assetAwsEbsAttachmentsStatus),
+//							VolumeKey:             pulumi.Any(assetAwsEbsAttachmentsVolumeKey),
+//						},
+//					},
+//					AvailabilityZone:     pulumi.Any(assetAwsEbsAvailabilityZone),
+//					Iops:                 pulumi.Any(assetAwsEbsIops),
+//					IsEncrypted:          pulumi.Any(assetAwsEbsIsEncrypted),
+//					IsMultiAttachEnabled: pulumi.Any(assetAwsEbsIsMultiAttachEnabled),
+//					SizeInGiBs:           pulumi.Any(assetAwsEbsSizeInGiBs),
+//					Status:               pulumi.Any(assetAwsEbsStatus),
+//					Tags: cloudbridge.AssetAwsEbsTagArray{
+//						&cloudbridge.AssetAwsEbsTagArgs{
+//							Key:   pulumi.Any(assetAwsEbsTagsKey),
+//							Value: pulumi.Any(assetAwsEbsTagsValue),
+//						},
+//					},
+//					Throughput: pulumi.Any(assetAwsEbsThroughput),
+//					VolumeKey:  pulumi.Any(assetAwsEbsVolumeKey),
+//					VolumeType: pulumi.Any(assetAwsEbsVolumeType),
+//				},
+//				AwsEc2: &cloudbridge.AssetAwsEc2Args{
+//					Architecture:                           pulumi.Any(assetAwsEc2Architecture),
+//					AreElasticInferenceAcceleratorsPresent: pulumi.Any(assetAwsEc2AreElasticInferenceAcceleratorsPresent),
+//					BootMode:                               pulumi.Any(assetAwsEc2BootMode),
+//					CapacityReservationKey:                 pulumi.Any(assetAwsEc2CapacityReservationKey),
+//					ImageKey:                               pulumi.Any(assetAwsEc2ImageKey),
+//					InstanceKey:                            pulumi.Any(assetAwsEc2InstanceKey),
+//					InstanceLifecycle:                      pulumi.Any(assetAwsEc2InstanceLifecycle),
+//					InstanceType:                           pulumi.Any(assetAwsEc2InstanceType),
+//					IpAddress:                              pulumi.Any(assetAwsEc2IpAddress),
+//					Ipv6address:                            pulumi.Any(assetAwsEc2Ipv6address),
+//					IsEnclaveOptions:                       pulumi.Any(assetAwsEc2IsEnclaveOptions),
+//					IsHibernationOptions:                   pulumi.Any(assetAwsEc2IsHibernationOptions),
+//					IsSourceDestCheck:                      pulumi.Any(assetAwsEc2IsSourceDestCheck),
+//					IsSpotInstance:                         pulumi.Any(assetAwsEc2IsSpotInstance),
+//					KernelKey:                              pulumi.Any(assetAwsEc2KernelKey),
+//					Licenses:                               pulumi.Any(assetAwsEc2Licenses),
+//					MaintenanceOptions:                     pulumi.Any(assetAwsEc2MaintenanceOptions),
+//					Monitoring:                             pulumi.Any(assetAwsEc2Monitoring),
+//					NetworkInterfaces: cloudbridge.AssetAwsEc2NetworkInterfaceArray{
+//						&cloudbridge.AssetAwsEc2NetworkInterfaceArgs{
+//							Association: &cloudbridge.AssetAwsEc2NetworkInterfaceAssociationArgs{
+//								CarrierIp:       pulumi.Any(assetAwsEc2NetworkInterfacesAssociationCarrierIp),
+//								CustomerOwnedIp: pulumi.Any(assetAwsEc2NetworkInterfacesAssociationCustomerOwnedIp),
+//								IpOwnerKey:      pulumi.Any(assetAwsEc2NetworkInterfacesAssociationIpOwnerKey),
+//								PublicDnsName:   pulumi.Any(assetAwsEc2NetworkInterfacesAssociationPublicDnsName),
+//								PublicIp:        pulumi.Any(assetAwsEc2NetworkInterfacesAssociationPublicIp),
+//							},
+//							Attachment: &cloudbridge.AssetAwsEc2NetworkInterfaceAttachmentArgs{
+//								AttachmentKey:         pulumi.Any(assetAwsEc2NetworkInterfacesAttachmentAttachmentKey),
+//								DeviceIndex:           pulumi.Any(assetAwsEc2NetworkInterfacesAttachmentDeviceIndex),
+//								IsDeleteOnTermination: pulumi.Any(assetAwsEc2NetworkInterfacesAttachmentIsDeleteOnTermination),
+//								NetworkCardIndex:      pulumi.Any(assetAwsEc2NetworkInterfacesAttachmentNetworkCardIndex),
+//								Status:                pulumi.Any(assetAwsEc2NetworkInterfacesAttachmentStatus),
+//								TimeAttach:            pulumi.Any(assetAwsEc2NetworkInterfacesAttachmentTimeAttach),
+//							},
+//							Description:         pulumi.Any(assetAwsEc2NetworkInterfacesDescription),
+//							InterfaceType:       pulumi.Any(assetAwsEc2NetworkInterfacesInterfaceType),
+//							Ipv4prefixes:        pulumi.Any(assetAwsEc2NetworkInterfacesIpv4prefixes),
+//							Ipv6addresses:       pulumi.Any(assetAwsEc2NetworkInterfacesIpv6addresses),
+//							Ipv6prefixes:        pulumi.Any(assetAwsEc2NetworkInterfacesIpv6prefixes),
+//							IsSourceDestCheck:   pulumi.Any(assetAwsEc2NetworkInterfacesIsSourceDestCheck),
+//							MacAddress:          pulumi.Any(assetAwsEc2NetworkInterfacesMacAddress),
+//							NetworkInterfaceKey: pulumi.Any(assetAwsEc2NetworkInterfacesNetworkInterfaceKey),
+//							OwnerKey:            pulumi.Any(assetAwsEc2NetworkInterfacesOwnerKey),
+//							PrivateIpAddresses: cloudbridge.AssetAwsEc2NetworkInterfacePrivateIpAddressArray{
+//								&cloudbridge.AssetAwsEc2NetworkInterfacePrivateIpAddressArgs{
+//									Association: &cloudbridge.AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs{
+//										CarrierIp:       pulumi.Any(assetAwsEc2NetworkInterfacesPrivateIpAddressesAssociationCarrierIp),
+//										CustomerOwnedIp: pulumi.Any(assetAwsEc2NetworkInterfacesPrivateIpAddressesAssociationCustomerOwnedIp),
+//										IpOwnerKey:      pulumi.Any(assetAwsEc2NetworkInterfacesPrivateIpAddressesAssociationIpOwnerKey),
+//										PublicDnsName:   pulumi.Any(assetAwsEc2NetworkInterfacesPrivateIpAddressesAssociationPublicDnsName),
+//										PublicIp:        pulumi.Any(assetAwsEc2NetworkInterfacesPrivateIpAddressesAssociationPublicIp),
+//									},
+//									IsPrimary:        pulumi.Any(assetAwsEc2NetworkInterfacesPrivateIpAddressesIsPrimary),
+//									PrivateDnsName:   pulumi.Any(assetAwsEc2NetworkInterfacesPrivateIpAddressesPrivateDnsName),
+//									PrivateIpAddress: pulumi.Any(assetAwsEc2NetworkInterfacesPrivateIpAddressesPrivateIpAddress),
+//								},
+//							},
+//							SecurityGroups: cloudbridge.AssetAwsEc2NetworkInterfaceSecurityGroupArray{
+//								&cloudbridge.AssetAwsEc2NetworkInterfaceSecurityGroupArgs{
+//									GroupKey:  pulumi.Any(assetAwsEc2NetworkInterfacesSecurityGroupsGroupKey),
+//									GroupName: pulumi.Any(testGroup.Name),
+//								},
+//							},
+//							Status:    pulumi.Any(assetAwsEc2NetworkInterfacesStatus),
+//							SubnetKey: pulumi.Any(assetAwsEc2NetworkInterfacesSubnetKey),
+//						},
+//					},
+//					Placement: &cloudbridge.AssetAwsEc2PlacementArgs{
+//						Affinity:             pulumi.Any(assetAwsEc2PlacementAffinity),
+//						AvailabilityZone:     pulumi.Any(assetAwsEc2PlacementAvailabilityZone),
+//						GroupName:            pulumi.Any(testGroup.Name),
+//						HostKey:              pulumi.Any(assetAwsEc2PlacementHostKey),
+//						HostResourceGroupArn: pulumi.Any(assetAwsEc2PlacementHostResourceGroupArn),
+//						PartitionNumber:      pulumi.Any(assetAwsEc2PlacementPartitionNumber),
+//						SpreadDomain:         pulumi.Any(assetAwsEc2PlacementSpreadDomain),
+//						Tenancy:              pulumi.Any(assetAwsEc2PlacementTenancy),
+//					},
+//					PrivateDnsName:   pulumi.Any(assetAwsEc2PrivateDnsName),
+//					PrivateIpAddress: pulumi.Any(assetAwsEc2PrivateIpAddress),
+//					RootDeviceName:   pulumi.Any(assetAwsEc2RootDeviceName),
+//					RootDeviceType:   pulumi.Any(assetAwsEc2RootDeviceType),
+//					SecurityGroups: cloudbridge.AssetAwsEc2SecurityGroupArray{
+//						&cloudbridge.AssetAwsEc2SecurityGroupArgs{
+//							GroupKey:  pulumi.Any(assetAwsEc2SecurityGroupsGroupKey),
+//							GroupName: pulumi.Any(testGroup.Name),
+//						},
+//					},
+//					SriovNetSupport: pulumi.Any(assetAwsEc2SriovNetSupport),
+//					State: &cloudbridge.AssetAwsEc2StateArgs{
+//						Code: pulumi.Any(assetAwsEc2StateCode),
+//						Name: pulumi.Any(assetAwsEc2StateName),
+//					},
+//					SubnetKey: pulumi.Any(assetAwsEc2SubnetKey),
+//					Tags: cloudbridge.AssetAwsEc2TagArray{
+//						&cloudbridge.AssetAwsEc2TagArgs{
+//							Key:   pulumi.Any(assetAwsEc2TagsKey),
+//							Value: pulumi.Any(assetAwsEc2TagsValue),
+//						},
+//					},
+//					TimeLaunch:         pulumi.Any(assetAwsEc2TimeLaunch),
+//					TpmSupport:         pulumi.Any(assetAwsEc2TpmSupport),
+//					VirtualizationType: pulumi.Any(assetAwsEc2VirtualizationType),
+//					VpcKey:             pulumi.Any(assetAwsEc2VpcKey),
+//				},
+//				AwsEc2cost: &cloudbridge.AssetAwsEc2costArgs{
+//					Amount:       pulumi.Any(assetAwsEc2costAmount),
+//					CurrencyCode: pulumi.Any(assetAwsEc2costCurrencyCode),
+//				},
 //				Compute: &cloudbridge.AssetComputeArgs{
 //					ConnectedNetworks: pulumi.Any(assetComputeConnectedNetworks),
 //					CoresCount:        pulumi.Any(assetComputeCoresCount),
@@ -48,6 +191,7 @@ import (
 //					Disks: cloudbridge.AssetComputeDiskArray{
 //						&cloudbridge.AssetComputeDiskArgs{
 //							BootOrder:      pulumi.Any(assetComputeDisksBootOrder),
+//							IsCbtEnabled:   pulumi.Any(assetComputeDisksIsCbtEnabled),
 //							Location:       pulumi.Any(assetComputeDisksLocation),
 //							Name:           pulumi.Any(assetComputeDisksName),
 //							PersistentMode: pulumi.Any(assetComputeDisksPersistentMode),
@@ -114,7 +258,8 @@ import (
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
-//				DisplayName: pulumi.Any(assetDisplayName),
+//				DisplayName:     pulumi.Any(assetDisplayName),
+//				EnvironmentType: assetEnvironmentType,
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
@@ -166,10 +311,24 @@ import (
 type Asset struct {
 	pulumi.CustomResourceState
 
+	// (Updatable) The class name of the asset.
+	AssetClassName pulumi.StringOutput `pulumi:"assetClassName"`
+	// (Updatable) The version of the asset class.
+	AssetClassVersion pulumi.StringOutput `pulumi:"assetClassVersion"`
+	// (Updatable) The details of the asset.
+	AssetDetails pulumi.StringOutput `pulumi:"assetDetails"`
 	// (Updatable) List of asset source OCID.
 	AssetSourceIds pulumi.StringArrayOutput `pulumi:"assetSourceIds"`
 	// (Updatable) The type of asset.
 	AssetType pulumi.StringOutput `pulumi:"assetType"`
+	// (Updatable) Cost information for monthly maintenance.
+	AttachedEbsVolumesCost AssetAttachedEbsVolumesCostOutput `pulumi:"attachedEbsVolumesCost"`
+	// (Updatable) AWS EBS volume related properties.
+	AwsEbs AssetAwsEbsOutput `pulumi:"awsEbs"`
+	// (Updatable) AWS virtual machine related properties.
+	AwsEc2 AssetAwsEc2Output `pulumi:"awsEc2"`
+	// (Updatable) Cost information for monthly maintenance.
+	AwsEc2cost AssetAwsEc2costOutput `pulumi:"awsEc2cost"`
 	// (Updatable) The OCID of the compartment that the asset belongs to.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Compute related properties.
@@ -178,6 +337,8 @@ type Asset struct {
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Asset display name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+	EnvironmentType pulumi.StringOutput `pulumi:"environmentType"`
 	// The key of the asset from the external environment.
 	ExternalAssetKey pulumi.StringOutput `pulumi:"externalAssetKey"`
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -247,10 +408,24 @@ func GetAsset(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Asset resources.
 type assetState struct {
+	// (Updatable) The class name of the asset.
+	AssetClassName *string `pulumi:"assetClassName"`
+	// (Updatable) The version of the asset class.
+	AssetClassVersion *string `pulumi:"assetClassVersion"`
+	// (Updatable) The details of the asset.
+	AssetDetails *string `pulumi:"assetDetails"`
 	// (Updatable) List of asset source OCID.
 	AssetSourceIds []string `pulumi:"assetSourceIds"`
 	// (Updatable) The type of asset.
 	AssetType *string `pulumi:"assetType"`
+	// (Updatable) Cost information for monthly maintenance.
+	AttachedEbsVolumesCost *AssetAttachedEbsVolumesCost `pulumi:"attachedEbsVolumesCost"`
+	// (Updatable) AWS EBS volume related properties.
+	AwsEbs *AssetAwsEbs `pulumi:"awsEbs"`
+	// (Updatable) AWS virtual machine related properties.
+	AwsEc2 *AssetAwsEc2 `pulumi:"awsEc2"`
+	// (Updatable) Cost information for monthly maintenance.
+	AwsEc2cost *AssetAwsEc2cost `pulumi:"awsEc2cost"`
 	// (Updatable) The OCID of the compartment that the asset belongs to.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Compute related properties.
@@ -259,6 +434,8 @@ type assetState struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Asset display name.
 	DisplayName *string `pulumi:"displayName"`
+	// Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+	EnvironmentType *string `pulumi:"environmentType"`
 	// The key of the asset from the external environment.
 	ExternalAssetKey *string `pulumi:"externalAssetKey"`
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -284,10 +461,24 @@ type assetState struct {
 }
 
 type AssetState struct {
+	// (Updatable) The class name of the asset.
+	AssetClassName pulumi.StringPtrInput
+	// (Updatable) The version of the asset class.
+	AssetClassVersion pulumi.StringPtrInput
+	// (Updatable) The details of the asset.
+	AssetDetails pulumi.StringPtrInput
 	// (Updatable) List of asset source OCID.
 	AssetSourceIds pulumi.StringArrayInput
 	// (Updatable) The type of asset.
 	AssetType pulumi.StringPtrInput
+	// (Updatable) Cost information for monthly maintenance.
+	AttachedEbsVolumesCost AssetAttachedEbsVolumesCostPtrInput
+	// (Updatable) AWS EBS volume related properties.
+	AwsEbs AssetAwsEbsPtrInput
+	// (Updatable) AWS virtual machine related properties.
+	AwsEc2 AssetAwsEc2PtrInput
+	// (Updatable) Cost information for monthly maintenance.
+	AwsEc2cost AssetAwsEc2costPtrInput
 	// (Updatable) The OCID of the compartment that the asset belongs to.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Compute related properties.
@@ -296,6 +487,8 @@ type AssetState struct {
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) Asset display name.
 	DisplayName pulumi.StringPtrInput
+	// Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+	EnvironmentType pulumi.StringPtrInput
 	// The key of the asset from the external environment.
 	ExternalAssetKey pulumi.StringPtrInput
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -325,10 +518,24 @@ func (AssetState) ElementType() reflect.Type {
 }
 
 type assetArgs struct {
+	// (Updatable) The class name of the asset.
+	AssetClassName *string `pulumi:"assetClassName"`
+	// (Updatable) The version of the asset class.
+	AssetClassVersion *string `pulumi:"assetClassVersion"`
+	// (Updatable) The details of the asset.
+	AssetDetails *string `pulumi:"assetDetails"`
 	// (Updatable) List of asset source OCID.
 	AssetSourceIds []string `pulumi:"assetSourceIds"`
 	// (Updatable) The type of asset.
 	AssetType string `pulumi:"assetType"`
+	// (Updatable) Cost information for monthly maintenance.
+	AttachedEbsVolumesCost *AssetAttachedEbsVolumesCost `pulumi:"attachedEbsVolumesCost"`
+	// (Updatable) AWS EBS volume related properties.
+	AwsEbs *AssetAwsEbs `pulumi:"awsEbs"`
+	// (Updatable) AWS virtual machine related properties.
+	AwsEc2 *AssetAwsEc2 `pulumi:"awsEc2"`
+	// (Updatable) Cost information for monthly maintenance.
+	AwsEc2cost *AssetAwsEc2cost `pulumi:"awsEc2cost"`
 	// (Updatable) The OCID of the compartment that the asset belongs to.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Compute related properties.
@@ -355,10 +562,24 @@ type assetArgs struct {
 
 // The set of arguments for constructing a Asset resource.
 type AssetArgs struct {
+	// (Updatable) The class name of the asset.
+	AssetClassName pulumi.StringPtrInput
+	// (Updatable) The version of the asset class.
+	AssetClassVersion pulumi.StringPtrInput
+	// (Updatable) The details of the asset.
+	AssetDetails pulumi.StringPtrInput
 	// (Updatable) List of asset source OCID.
 	AssetSourceIds pulumi.StringArrayInput
 	// (Updatable) The type of asset.
 	AssetType pulumi.StringInput
+	// (Updatable) Cost information for monthly maintenance.
+	AttachedEbsVolumesCost AssetAttachedEbsVolumesCostPtrInput
+	// (Updatable) AWS EBS volume related properties.
+	AwsEbs AssetAwsEbsPtrInput
+	// (Updatable) AWS virtual machine related properties.
+	AwsEc2 AssetAwsEc2PtrInput
+	// (Updatable) Cost information for monthly maintenance.
+	AwsEc2cost AssetAwsEc2costPtrInput
 	// (Updatable) The OCID of the compartment that the asset belongs to.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Compute related properties.
@@ -470,6 +691,21 @@ func (o AssetOutput) ToAssetOutputWithContext(ctx context.Context) AssetOutput {
 	return o
 }
 
+// (Updatable) The class name of the asset.
+func (o AssetOutput) AssetClassName() pulumi.StringOutput {
+	return o.ApplyT(func(v *Asset) pulumi.StringOutput { return v.AssetClassName }).(pulumi.StringOutput)
+}
+
+// (Updatable) The version of the asset class.
+func (o AssetOutput) AssetClassVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v *Asset) pulumi.StringOutput { return v.AssetClassVersion }).(pulumi.StringOutput)
+}
+
+// (Updatable) The details of the asset.
+func (o AssetOutput) AssetDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v *Asset) pulumi.StringOutput { return v.AssetDetails }).(pulumi.StringOutput)
+}
+
 // (Updatable) List of asset source OCID.
 func (o AssetOutput) AssetSourceIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Asset) pulumi.StringArrayOutput { return v.AssetSourceIds }).(pulumi.StringArrayOutput)
@@ -478,6 +714,26 @@ func (o AssetOutput) AssetSourceIds() pulumi.StringArrayOutput {
 // (Updatable) The type of asset.
 func (o AssetOutput) AssetType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Asset) pulumi.StringOutput { return v.AssetType }).(pulumi.StringOutput)
+}
+
+// (Updatable) Cost information for monthly maintenance.
+func (o AssetOutput) AttachedEbsVolumesCost() AssetAttachedEbsVolumesCostOutput {
+	return o.ApplyT(func(v *Asset) AssetAttachedEbsVolumesCostOutput { return v.AttachedEbsVolumesCost }).(AssetAttachedEbsVolumesCostOutput)
+}
+
+// (Updatable) AWS EBS volume related properties.
+func (o AssetOutput) AwsEbs() AssetAwsEbsOutput {
+	return o.ApplyT(func(v *Asset) AssetAwsEbsOutput { return v.AwsEbs }).(AssetAwsEbsOutput)
+}
+
+// (Updatable) AWS virtual machine related properties.
+func (o AssetOutput) AwsEc2() AssetAwsEc2Output {
+	return o.ApplyT(func(v *Asset) AssetAwsEc2Output { return v.AwsEc2 }).(AssetAwsEc2Output)
+}
+
+// (Updatable) Cost information for monthly maintenance.
+func (o AssetOutput) AwsEc2cost() AssetAwsEc2costOutput {
+	return o.ApplyT(func(v *Asset) AssetAwsEc2costOutput { return v.AwsEc2cost }).(AssetAwsEc2costOutput)
 }
 
 // (Updatable) The OCID of the compartment that the asset belongs to.
@@ -498,6 +754,11 @@ func (o AssetOutput) DefinedTags() pulumi.StringMapOutput {
 // (Updatable) Asset display name.
 func (o AssetOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Asset) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+func (o AssetOutput) EnvironmentType() pulumi.StringOutput {
+	return o.ApplyT(func(v *Asset) pulumi.StringOutput { return v.EnvironmentType }).(pulumi.StringOutput)
 }
 
 // The key of the asset from the external environment.

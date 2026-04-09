@@ -71,6 +71,8 @@ type LookupBucketResult struct {
 	AutoTiering string `pulumi:"autoTiering"`
 	// The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucketId` cannot be used for bucket lookup.
 	BucketId string `pulumi:"bucketId"`
+	// Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+	BucketScope string `pulumi:"bucketScope"`
 	// The compartment ID in which the bucket is authorized.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
@@ -167,6 +169,11 @@ func (o LookupBucketResultOutput) AutoTiering() pulumi.StringOutput {
 // The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucketId` cannot be used for bucket lookup.
 func (o LookupBucketResultOutput) BucketId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBucketResult) string { return v.BucketId }).(pulumi.StringOutput)
+}
+
+// Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+func (o LookupBucketResultOutput) BucketScope() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupBucketResult) string { return v.BucketScope }).(pulumi.StringOutput)
 }
 
 // The compartment ID in which the bucket is authorized.

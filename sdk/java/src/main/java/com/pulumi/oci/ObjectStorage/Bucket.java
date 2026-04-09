@@ -59,6 +59,7 @@ import javax.annotation.Nullable;
  *             .namespace(bucketNamespace)
  *             .accessType(bucketAccessType)
  *             .autoTiering(bucketAutoTiering)
+ *             .bucketScope(bucketBucketScope)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .kmsKeyId(testKey.id())
@@ -161,6 +162,20 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      */
     public Output<String> bucketId() {
         return this.bucketId;
+    }
+    /**
+     * (Updatable) Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+     * 
+     */
+    @Export(name="bucketScope", refs={String.class}, tree="[0]")
+    private Output<String> bucketScope;
+
+    /**
+     * @return (Updatable) Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+     * 
+     */
+    public Output<String> bucketScope() {
+        return this.bucketScope;
     }
     /**
      * (Updatable) The ID of the compartment in which to create the bucket.

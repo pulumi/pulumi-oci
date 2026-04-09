@@ -58,10 +58,8 @@ type LookupSoftwareSourceManifestArgs struct {
 
 // A collection of values returned by getSoftwareSourceManifest.
 type LookupSoftwareSourceManifestResult struct {
-	// Provides the manifest content used to update the package list of the software source.
-	Content string `pulumi:"content"`
-	Id      string `pulumi:"id"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+	Content          string `pulumi:"content"`
+	Id               string `pulumi:"id"`
 	SoftwareSourceId string `pulumi:"softwareSourceId"`
 }
 
@@ -99,7 +97,6 @@ func (o LookupSoftwareSourceManifestResultOutput) ToLookupSoftwareSourceManifest
 	return o
 }
 
-// Provides the manifest content used to update the package list of the software source.
 func (o LookupSoftwareSourceManifestResultOutput) Content() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceManifestResult) string { return v.Content }).(pulumi.StringOutput)
 }
@@ -108,7 +105,6 @@ func (o LookupSoftwareSourceManifestResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceManifestResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 func (o LookupSoftwareSourceManifestResultOutput) SoftwareSourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceManifestResult) string { return v.SoftwareSourceId }).(pulumi.StringOutput)
 }

@@ -37,21 +37,8 @@ namespace Pulumi.Oci.OsManagementHub
     ///         {
     ///             new Oci.OsManagementHub.Inputs.LifecycleEnvironmentStageArgs
     ///             {
-    ///                 DisplayName = lifecycleEnvironmentStagesDisplayName1,
-    ///                 Rank = lifecycleEnvironmentStagesRank1,
-    ///                 DefinedTags = 
-    ///                 {
-    ///                     { "Operations.CostCenter", "42" },
-    ///                 },
-    ///                 FreeformTags = 
-    ///                 {
-    ///                     { "Department", "Finance" },
-    ///                 },
-    ///             },
-    ///             new Oci.OsManagementHub.Inputs.LifecycleEnvironmentStageArgs
-    ///             {
-    ///                 DisplayName = lifecycleEnvironmentStagesDisplayName2,
-    ///                 Rank = lifecycleEnvironmentStagesRank2,
+    ///                 DisplayName = lifecycleEnvironmentStagesDisplayName,
+    ///                 Rank = lifecycleEnvironmentStagesRank,
     ///                 DefinedTags = 
     ///                 {
     ///                     { "Operations.CostCenter", "42" },

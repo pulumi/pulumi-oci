@@ -45,6 +45,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ImportedModel{}
 	case "oci:GenerativeAi/model:Model":
 		r = &Model{}
+	case "oci:GenerativeAi/semanticStore:SemanticStore":
+		r = &SemanticStore{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -116,6 +118,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"GenerativeAi/model",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"GenerativeAi/semanticStore",
 		&module{version},
 	)
 }

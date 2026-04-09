@@ -119,6 +119,14 @@ __all__ = [
     'ModelFineTuneDetailsTrainingDatasetArgsDict',
     'ModelModelMetricArgs',
     'ModelModelMetricArgsDict',
+    'SemanticStoreDataSourceArgs',
+    'SemanticStoreDataSourceArgsDict',
+    'SemanticStoreRefreshScheduleArgs',
+    'SemanticStoreRefreshScheduleArgsDict',
+    'SemanticStoreSchemasArgs',
+    'SemanticStoreSchemasArgsDict',
+    'SemanticStoreSchemasSchemaArgs',
+    'SemanticStoreSchemasSchemaArgsDict',
     'GetAgentAgentEndpointsFilterArgs',
     'GetAgentAgentEndpointsFilterArgsDict',
     'GetAgentAgentsFilterArgs',
@@ -143,6 +151,8 @@ __all__ = [
     'GetImportedModelsFilterArgsDict',
     'GetModelsFilterArgs',
     'GetModelsFilterArgsDict',
+    'GetSemanticStoresFilterArgs',
+    'GetSemanticStoresFilterArgsDict',
 ]
 
 class AgentAgentEndpointContentModerationConfigArgsDict(TypedDict):
@@ -4288,6 +4298,207 @@ class ModelModelMetricArgs:
         pulumi.set(self, "model_metrics_type", value)
 
 
+class SemanticStoreDataSourceArgsDict(TypedDict):
+    connection_type: pulumi.Input[_builtins.str]
+    """
+    Specifies the type of underlying connection.
+    """
+    enrichment_connection_id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for enrichment.
+    """
+    querying_connection_id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for querying.
+    """
+
+@pulumi.input_type
+class SemanticStoreDataSourceArgs:
+    def __init__(__self__, *,
+                 connection_type: pulumi.Input[_builtins.str],
+                 enrichment_connection_id: pulumi.Input[_builtins.str],
+                 querying_connection_id: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] connection_type: Specifies the type of underlying connection.
+        :param pulumi.Input[_builtins.str] enrichment_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for enrichment.
+        :param pulumi.Input[_builtins.str] querying_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for querying.
+        """
+        pulumi.set(__self__, "connection_type", connection_type)
+        pulumi.set(__self__, "enrichment_connection_id", enrichment_connection_id)
+        pulumi.set(__self__, "querying_connection_id", querying_connection_id)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Specifies the type of underlying connection.
+        """
+        return pulumi.get(self, "connection_type")
+
+    @connection_type.setter
+    def connection_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "connection_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="enrichmentConnectionId")
+    def enrichment_connection_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for enrichment.
+        """
+        return pulumi.get(self, "enrichment_connection_id")
+
+    @enrichment_connection_id.setter
+    def enrichment_connection_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "enrichment_connection_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="queryingConnectionId")
+    def querying_connection_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for querying.
+        """
+        return pulumi.get(self, "querying_connection_id")
+
+    @querying_connection_id.setter
+    def querying_connection_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "querying_connection_id", value)
+
+
+class SemanticStoreRefreshScheduleArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Specifies the type of refresh schedule.
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies the refresh interval value. The interval must be provided using the ISO 8601 extended format, either as PnW or PnYnMnDTnHnMnS,  where 'P' is always required, 'T' precedes any time components less than one day, and each included component is properly suffixed.  For example, "P1DT6H" represents a duration of 1 day and 6 hours.
+    """
+
+@pulumi.input_type
+class SemanticStoreRefreshScheduleArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 value: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: (Updatable) Specifies the type of refresh schedule.
+        :param pulumi.Input[_builtins.str] value: (Updatable) Specifies the refresh interval value. The interval must be provided using the ISO 8601 extended format, either as PnW or PnYnMnDTnHnMnS,  where 'P' is always required, 'T' precedes any time components less than one day, and each included component is properly suffixed.  For example, "P1DT6H" represents a duration of 1 day and 6 hours.
+        """
+        pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Specifies the type of refresh schedule.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Specifies the refresh interval value. The interval must be provided using the ISO 8601 extended format, either as PnW or PnYnMnDTnHnMnS,  where 'P' is always required, 'T' precedes any time components less than one day, and each included component is properly suffixed.  For example, "P1DT6H" represents a duration of 1 day and 6 hours.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class SemanticStoreSchemasArgsDict(TypedDict):
+    connection_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Specifies the type of underlying connection.
+    """
+    schemas: pulumi.Input[Sequence[pulumi.Input['SemanticStoreSchemasSchemaArgsDict']]]
+    """
+    (Updatable) Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+    """
+
+@pulumi.input_type
+class SemanticStoreSchemasArgs:
+    def __init__(__self__, *,
+                 connection_type: pulumi.Input[_builtins.str],
+                 schemas: pulumi.Input[Sequence[pulumi.Input['SemanticStoreSchemasSchemaArgs']]]):
+        """
+        :param pulumi.Input[_builtins.str] connection_type: (Updatable) Specifies the type of underlying connection.
+        :param pulumi.Input[Sequence[pulumi.Input['SemanticStoreSchemasSchemaArgs']]] schemas: (Updatable) Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+        """
+        pulumi.set(__self__, "connection_type", connection_type)
+        pulumi.set(__self__, "schemas", schemas)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Specifies the type of underlying connection.
+        """
+        return pulumi.get(self, "connection_type")
+
+    @connection_type.setter
+    def connection_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "connection_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def schemas(self) -> pulumi.Input[Sequence[pulumi.Input['SemanticStoreSchemasSchemaArgs']]]:
+        """
+        (Updatable) Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+        """
+        return pulumi.get(self, "schemas")
+
+    @schemas.setter
+    def schemas(self, value: pulumi.Input[Sequence[pulumi.Input['SemanticStoreSchemasSchemaArgs']]]):
+        pulumi.set(self, "schemas", value)
+
+
+class SemanticStoreSchemasSchemaArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) 
+
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+
+@pulumi.input_type
+class SemanticStoreSchemasSchemaArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] name: (Updatable) 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+
 class GetAgentAgentEndpointsFilterArgsDict(TypedDict):
     name: _builtins.str
     values: Sequence[_builtins.str]
@@ -4797,6 +5008,50 @@ class GetModelsFilterArgsDict(TypedDict):
 
 @pulumi.input_type
 class GetModelsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetSemanticStoresFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetSemanticStoresFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

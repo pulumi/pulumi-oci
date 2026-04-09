@@ -10,33 +10,17 @@ import java.util.Objects;
 
 @CustomType
 public final class GetSoftwareSourceManifestResult {
-    /**
-     * @return Provides the manifest content used to update the package list of the software source.
-     * 
-     */
     private String content;
     private String id;
-    /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-     * 
-     */
     private String softwareSourceId;
 
     private GetSoftwareSourceManifestResult() {}
-    /**
-     * @return Provides the manifest content used to update the package list of the software source.
-     * 
-     */
     public String content() {
         return this.content;
     }
     public String id() {
         return this.id;
     }
-    /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-     * 
-     */
     public String softwareSourceId() {
         return this.softwareSourceId;
     }

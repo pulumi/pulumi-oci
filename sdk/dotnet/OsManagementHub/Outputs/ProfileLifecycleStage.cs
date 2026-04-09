@@ -14,7 +14,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class ProfileLifecycleStage
     {
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+        /// (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>

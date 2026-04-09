@@ -27,6 +27,7 @@ import * as utilities from "../utilities";
  *     namespace: bucketNamespace,
  *     accessType: bucketAccessType,
  *     autoTiering: bucketAutoTiering,
+ *     bucketScope: bucketBucketScope,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -105,6 +106,10 @@ export class Bucket extends pulumi.CustomResource {
      * The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucketId` cannot be used for bucket lookup.
      */
     declare public /*out*/ readonly bucketId: pulumi.Output<string>;
+    /**
+     * (Updatable) Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+     */
+    declare public readonly bucketScope: pulumi.Output<string>;
     /**
      * (Updatable) The ID of the compartment in which to create the bucket.
      */
@@ -196,6 +201,7 @@ export class Bucket extends pulumi.CustomResource {
             resourceInputs["approximateSize"] = state?.approximateSize;
             resourceInputs["autoTiering"] = state?.autoTiering;
             resourceInputs["bucketId"] = state?.bucketId;
+            resourceInputs["bucketScope"] = state?.bucketScope;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["createdBy"] = state?.createdBy;
             resourceInputs["definedTags"] = state?.definedTags;
@@ -223,6 +229,7 @@ export class Bucket extends pulumi.CustomResource {
             }
             resourceInputs["accessType"] = args?.accessType;
             resourceInputs["autoTiering"] = args?.autoTiering;
+            resourceInputs["bucketScope"] = args?.bucketScope;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["freeformTags"] = args?.freeformTags;
@@ -273,6 +280,10 @@ export interface BucketState {
      * The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucketId` cannot be used for bucket lookup.
      */
     bucketId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+     */
+    bucketScope?: pulumi.Input<string>;
     /**
      * (Updatable) The ID of the compartment in which to create the bucket.
      */
@@ -359,6 +370,10 @@ export interface BucketArgs {
      * (Updatable) Set the auto tiering status on the bucket. By default, a bucket is created with auto tiering `Disabled`. Use this option to enable auto tiering during bucket creation. Objects in a bucket with auto tiering set to `InfrequentAccess` are transitioned automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
      */
     autoTiering?: pulumi.Input<string>;
+    /**
+     * (Updatable) Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+     */
+    bucketScope?: pulumi.Input<string>;
     /**
      * (Updatable) The ID of the compartment in which to create the bucket.
      */

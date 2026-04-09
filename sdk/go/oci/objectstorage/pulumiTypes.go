@@ -1331,6 +1331,8 @@ type GetBucketSummariesBucketSummary struct {
 	// The auto tiering status on the bucket. A bucket is created with auto tiering `Disabled` by default. For auto tiering `InfrequentAccess`, objects are transitioned automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
 	AutoTiering string `pulumi:"autoTiering"`
 	BucketId    string `pulumi:"bucketId"`
+	// Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+	BucketScope string `pulumi:"bucketScope"`
 	// The ID of the compartment in which to list buckets.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
@@ -1388,6 +1390,8 @@ type GetBucketSummariesBucketSummaryArgs struct {
 	// The auto tiering status on the bucket. A bucket is created with auto tiering `Disabled` by default. For auto tiering `InfrequentAccess`, objects are transitioned automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
 	AutoTiering pulumi.StringInput `pulumi:"autoTiering"`
 	BucketId    pulumi.StringInput `pulumi:"bucketId"`
+	// Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+	BucketScope pulumi.StringInput `pulumi:"bucketScope"`
 	// The ID of the compartment in which to list buckets.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
@@ -1497,6 +1501,11 @@ func (o GetBucketSummariesBucketSummaryOutput) AutoTiering() pulumi.StringOutput
 
 func (o GetBucketSummariesBucketSummaryOutput) BucketId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBucketSummariesBucketSummary) string { return v.BucketId }).(pulumi.StringOutput)
+}
+
+// Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+func (o GetBucketSummariesBucketSummaryOutput) BucketScope() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummary) string { return v.BucketScope }).(pulumi.StringOutput)
 }
 
 // The ID of the compartment in which to list buckets.

@@ -27,8 +27,8 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
         /// <summary>
         /// (Updatable) Default mirror listening port for http.
         /// </summary>
-        [Input("port", required: true)]
-        public Input<string> Port { get; set; } = null!;
+        [Input("port")]
+        public Input<string>? Port { get; set; }
 
         /// <summary>
         /// (Updatable) Path to the SSL cerfificate.

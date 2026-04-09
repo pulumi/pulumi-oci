@@ -40,18 +40,8 @@ import (
 //				OsFamily:      pulumi.Any(lifecycleEnvironmentOsFamily),
 //				Stages: osmanagementhub.LifecycleEnvironmentStageArray{
 //					&osmanagementhub.LifecycleEnvironmentStageArgs{
-//						DisplayName: pulumi.Any(lifecycleEnvironmentStagesDisplayName1),
-//						Rank:        pulumi.Any(lifecycleEnvironmentStagesRank1),
-//						DefinedTags: pulumi.StringMap{
-//							"Operations.CostCenter": pulumi.String("42"),
-//						},
-//						FreeformTags: pulumi.StringMap{
-//							"Department": pulumi.String("Finance"),
-//						},
-//					},
-//					&osmanagementhub.LifecycleEnvironmentStageArgs{
-//						DisplayName: pulumi.Any(lifecycleEnvironmentStagesDisplayName2),
-//						Rank:        pulumi.Any(lifecycleEnvironmentStagesRank2),
+//						DisplayName: pulumi.Any(lifecycleEnvironmentStagesDisplayName),
+//						Rank:        pulumi.Any(lifecycleEnvironmentStagesRank),
 //						DefinedTags: pulumi.StringMap{
 //							"Operations.CostCenter": pulumi.String("42"),
 //						},

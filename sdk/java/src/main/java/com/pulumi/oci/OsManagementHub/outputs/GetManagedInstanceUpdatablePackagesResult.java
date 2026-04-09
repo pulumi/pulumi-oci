@@ -16,6 +16,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetManagedInstanceUpdatablePackagesResult {
     private @Nullable List<String> advisoryNames;
+    /**
+     * @return The severity level of the security update. Only applicable when updateType is SECURITY.
+     * 
+     */
+    private @Nullable List<String> advisorySeverities;
     private @Nullable List<String> classificationTypes;
     private @Nullable String compartmentId;
     private @Nullable String displayNameContains;
@@ -40,6 +45,13 @@ public final class GetManagedInstanceUpdatablePackagesResult {
     private GetManagedInstanceUpdatablePackagesResult() {}
     public List<String> advisoryNames() {
         return this.advisoryNames == null ? List.of() : this.advisoryNames;
+    }
+    /**
+     * @return The severity level of the security update. Only applicable when updateType is SECURITY.
+     * 
+     */
+    public List<String> advisorySeverities() {
+        return this.advisorySeverities == null ? List.of() : this.advisorySeverities;
     }
     public List<String> classificationTypes() {
         return this.classificationTypes == null ? List.of() : this.classificationTypes;
@@ -88,6 +100,7 @@ public final class GetManagedInstanceUpdatablePackagesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> advisoryNames;
+        private @Nullable List<String> advisorySeverities;
         private @Nullable List<String> classificationTypes;
         private @Nullable String compartmentId;
         private @Nullable String displayNameContains;
@@ -100,6 +113,7 @@ public final class GetManagedInstanceUpdatablePackagesResult {
         public Builder(GetManagedInstanceUpdatablePackagesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.advisoryNames = defaults.advisoryNames;
+    	      this.advisorySeverities = defaults.advisorySeverities;
     	      this.classificationTypes = defaults.classificationTypes;
     	      this.compartmentId = defaults.compartmentId;
     	      this.displayNameContains = defaults.displayNameContains;
@@ -118,6 +132,15 @@ public final class GetManagedInstanceUpdatablePackagesResult {
         }
         public Builder advisoryNames(String... advisoryNames) {
             return advisoryNames(List.of(advisoryNames));
+        }
+        @CustomType.Setter
+        public Builder advisorySeverities(@Nullable List<String> advisorySeverities) {
+
+            this.advisorySeverities = advisorySeverities;
+            return this;
+        }
+        public Builder advisorySeverities(String... advisorySeverities) {
+            return advisorySeverities(List.of(advisorySeverities));
         }
         @CustomType.Setter
         public Builder classificationTypes(@Nullable List<String> classificationTypes) {
@@ -188,6 +211,7 @@ public final class GetManagedInstanceUpdatablePackagesResult {
         public GetManagedInstanceUpdatablePackagesResult build() {
             final var _resultValue = new GetManagedInstanceUpdatablePackagesResult();
             _resultValue.advisoryNames = advisoryNames;
+            _resultValue.advisorySeverities = advisorySeverities;
             _resultValue.classificationTypes = classificationTypes;
             _resultValue.compartmentId = compartmentId;
             _resultValue.displayNameContains = displayNameContains;

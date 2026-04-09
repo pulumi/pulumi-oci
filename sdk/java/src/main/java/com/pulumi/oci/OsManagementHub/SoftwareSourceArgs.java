@@ -272,6 +272,21 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * The display name of the software source to be replicated
+     * 
+     */
+    @Import(name="originDisplayName")
+    private @Nullable Output<String> originDisplayName;
+
+    /**
+     * @return The display name of the software source to be replicated
+     * 
+     */
+    public Optional<Output<String>> originDisplayName() {
+        return Optional.ofNullable(this.originDisplayName);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
      * 
      */
@@ -410,6 +425,7 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
         this.isLatestContentOnly = $.isLatestContentOnly;
         this.isMirrorSyncAllowed = $.isMirrorSyncAllowed;
         this.isSslVerifyEnabled = $.isSslVerifyEnabled;
+        this.originDisplayName = $.originDisplayName;
         this.originSoftwareSourceId = $.originSoftwareSourceId;
         this.osFamily = $.osFamily;
         this.packages = $.packages;
@@ -782,6 +798,27 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder isSslVerifyEnabled(Boolean isSslVerifyEnabled) {
             return isSslVerifyEnabled(Output.of(isSslVerifyEnabled));
+        }
+
+        /**
+         * @param originDisplayName The display name of the software source to be replicated
+         * 
+         * @return builder
+         * 
+         */
+        public Builder originDisplayName(@Nullable Output<String> originDisplayName) {
+            $.originDisplayName = originDisplayName;
+            return this;
+        }
+
+        /**
+         * @param originDisplayName The display name of the software source to be replicated
+         * 
+         * @return builder
+         * 
+         */
+        public Builder originDisplayName(String originDisplayName) {
+            return originDisplayName(Output.of(originDisplayName));
         }
 
         /**

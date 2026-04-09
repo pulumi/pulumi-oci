@@ -59,6 +59,9 @@ __all__ = [
     'NodePoolNodeShapeConfig',
     'NodePoolNodeSource',
     'NodePoolNodeSourceDetails',
+    'NodePoolSecondaryVnic',
+    'NodePoolSecondaryVnicCreateVnicDetails',
+    'NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail',
     'VirtualNodePoolInitialVirtualNodeLabel',
     'VirtualNodePoolPlacementConfiguration',
     'VirtualNodePoolPodConfiguration',
@@ -124,6 +127,9 @@ __all__ = [
     'GetNodePoolNodeSourceResult',
     'GetNodePoolNodeSourceDetailResult',
     'GetNodePoolOptionSourceResult',
+    'GetNodePoolSecondaryVnicResult',
+    'GetNodePoolSecondaryVnicCreateVnicDetailResult',
+    'GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult',
     'GetNodePoolsFilterResult',
     'GetNodePoolsNodePoolResult',
     'GetNodePoolsNodePoolInitialNodeLabelResult',
@@ -139,6 +145,9 @@ __all__ = [
     'GetNodePoolsNodePoolNodeShapeConfigResult',
     'GetNodePoolsNodePoolNodeSourceResult',
     'GetNodePoolsNodePoolNodeSourceDetailResult',
+    'GetNodePoolsNodePoolSecondaryVnicResult',
+    'GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailResult',
+    'GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult',
     'GetPodShapesFilterResult',
     'GetPodShapesPodShapeResult',
     'GetPodShapesPodShapeMemoryOptionResult',
@@ -2815,8 +2824,8 @@ class NodePoolNode(dict):
         :param _builtins.str node_pool_id: The OCID of the node pool to which this node belongs.
         :param _builtins.str private_ip: The private IP address of this node.
         :param _builtins.str public_ip: The public IP address of this node.
-        :param _builtins.str state: The state of the nodepool.
-        :param _builtins.str subnet_id: The OCID of the subnet in which this node is placed.
+        :param _builtins.str state: The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
+        :param _builtins.str subnet_id: the ocid of the subnet to create the vnic in
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -2947,7 +2956,7 @@ class NodePoolNode(dict):
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
-        The state of the nodepool.
+        The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
         """
         return pulumi.get(self, "state")
 
@@ -2955,7 +2964,7 @@ class NodePoolNode(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[_builtins.str]:
         """
-        The OCID of the subnet in which this node is placed.
+        the ocid of the subnet to create the vnic in
         """
         return pulumi.get(self, "subnet_id")
 
@@ -3700,6 +3709,292 @@ class NodePoolNodeSourceDetails(dict):
         (Updatable) The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
         """
         return pulumi.get(self, "boot_volume_size_in_gbs")
+
+
+@pulumi.output_type
+class NodePoolSecondaryVnic(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "createVnicDetails":
+            suggest = "create_vnic_details"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "nicIndex":
+            suggest = "nic_index"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NodePoolSecondaryVnic. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NodePoolSecondaryVnic.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NodePoolSecondaryVnic.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 create_vnic_details: 'outputs.NodePoolSecondaryVnicCreateVnicDetails',
+                 display_name: Optional[_builtins.str] = None,
+                 nic_index: Optional[_builtins.int] = None):
+        """
+        :param 'NodePoolSecondaryVnicCreateVnicDetailsArgs' create_vnic_details: (Updatable) The properties of the secondary vnics
+        :param _builtins.str display_name: (Updatable) Display name for vnic attachment
+        :param _builtins.int nic_index: (Updatable) Which physical network interface card (NIC) the VNIC will use
+        """
+        pulumi.set(__self__, "create_vnic_details", create_vnic_details)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if nic_index is not None:
+            pulumi.set(__self__, "nic_index", nic_index)
+
+    @_builtins.property
+    @pulumi.getter(name="createVnicDetails")
+    def create_vnic_details(self) -> 'outputs.NodePoolSecondaryVnicCreateVnicDetails':
+        """
+        (Updatable) The properties of the secondary vnics
+        """
+        return pulumi.get(self, "create_vnic_details")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Display name for vnic attachment
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="nicIndex")
+    def nic_index(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) Which physical network interface card (NIC) the VNIC will use
+        """
+        return pulumi.get(self, "nic_index")
+
+
+@pulumi.output_type
+class NodePoolSecondaryVnicCreateVnicDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "subnetId":
+            suggest = "subnet_id"
+        elif key == "applicationResources":
+            suggest = "application_resources"
+        elif key == "assignIpv6ip":
+            suggest = "assign_ipv6ip"
+        elif key == "assignPublicIp":
+            suggest = "assign_public_ip"
+        elif key == "definedTags":
+            suggest = "defined_tags"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "freeformTags":
+            suggest = "freeform_tags"
+        elif key == "ipCount":
+            suggest = "ip_count"
+        elif key == "ipv6addressIpv6subnetCidrPairDetails":
+            suggest = "ipv6address_ipv6subnet_cidr_pair_details"
+        elif key == "nsgIds":
+            suggest = "nsg_ids"
+        elif key == "skipSourceDestCheck":
+            suggest = "skip_source_dest_check"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NodePoolSecondaryVnicCreateVnicDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NodePoolSecondaryVnicCreateVnicDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NodePoolSecondaryVnicCreateVnicDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 subnet_id: _builtins.str,
+                 application_resources: Optional[Sequence[_builtins.str]] = None,
+                 assign_ipv6ip: Optional[_builtins.bool] = None,
+                 assign_public_ip: Optional[_builtins.bool] = None,
+                 defined_tags: Optional[Mapping[str, _builtins.str]] = None,
+                 display_name: Optional[_builtins.str] = None,
+                 freeform_tags: Optional[Mapping[str, _builtins.str]] = None,
+                 ip_count: Optional[_builtins.int] = None,
+                 ipv6address_ipv6subnet_cidr_pair_details: Optional[Sequence['outputs.NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']] = None,
+                 nsg_ids: Optional[Sequence[_builtins.str]] = None,
+                 skip_source_dest_check: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str subnet_id: (Updatable) the ocid of the subnet to create the vnic in
+        :param Sequence[_builtins.str] application_resources: (Updatable) The application resource that corresponds to this secondary vnic. Used to map pods to this specific vnic for scheduling
+        :param _builtins.bool assign_ipv6ip: (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet
+        :param _builtins.bool assign_public_ip: (Updatable) Whether the VNIC should be assigned a public IP address
+        :param Mapping[str, _builtins.str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: (Updatable) Display name for secondary vnic
+        :param Mapping[str, _builtins.str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param _builtins.int ip_count: (Updatable) The number of ip addresses to attach to secondary vnic
+        :param Sequence['NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: (Updatable) A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix  and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty  and instead provide the specific IPv6 address that should be used from within that range.
+        :param Sequence[_builtins.str] nsg_ids: (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
+        :param _builtins.bool skip_source_dest_check: (Updatable) Whether the source/destination check is disabled on the VNIC
+        """
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        if application_resources is not None:
+            pulumi.set(__self__, "application_resources", application_resources)
+        if assign_ipv6ip is not None:
+            pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
+        if assign_public_ip is not None:
+            pulumi.set(__self__, "assign_public_ip", assign_public_ip)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if ip_count is not None:
+            pulumi.set(__self__, "ip_count", ip_count)
+        if ipv6address_ipv6subnet_cidr_pair_details is not None:
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if skip_source_dest_check is not None:
+            pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        (Updatable) the ocid of the subnet to create the vnic in
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="applicationResources")
+    def application_resources(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) The application resource that corresponds to this secondary vnic. Used to map pods to this specific vnic for scheduling
+        """
+        return pulumi.get(self, "application_resources")
+
+    @_builtins.property
+    @pulumi.getter(name="assignIpv6ip")
+    def assign_ipv6ip(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet
+        """
+        return pulumi.get(self, "assign_ipv6ip")
+
+    @_builtins.property
+    @pulumi.getter(name="assignPublicIp")
+    def assign_public_ip(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Whether the VNIC should be assigned a public IP address
+        """
+        return pulumi.get(self, "assign_public_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Display name for secondary vnic
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="ipCount")
+    def ip_count(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) The number of ip addresses to attach to secondary vnic
+        """
+        return pulumi.get(self, "ip_count")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
+    def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[Sequence['outputs.NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']]:
+        """
+        (Updatable) A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix  and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty  and instead provide the specific IPv6 address that should be used from within that range.
+        """
+        return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
+
+    @_builtins.property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="skipSourceDestCheck")
+    def skip_source_dest_check(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Whether the source/destination check is disabled on the VNIC
+        """
+        return pulumi.get(self, "skip_source_dest_check")
+
+
+@pulumi.output_type
+class NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ipv6subnetCidr":
+            suggest = "ipv6subnet_cidr"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ipv6address: Optional[_builtins.str] = None,
+                 ipv6subnet_cidr: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str ipv6address: (Updatable) An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix
+        :param _builtins.str ipv6subnet_cidr: (Updatable) The IPv6 prefix allocated to the subnet
+        """
+        if ipv6address is not None:
+            pulumi.set(__self__, "ipv6address", ipv6address)
+        if ipv6subnet_cidr is not None:
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6address(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix
+        """
+        return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The IPv6 prefix allocated to the subnet
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
 
 
 @pulumi.output_type
@@ -6447,7 +6742,7 @@ class GetNodePoolNodeResult(dict):
         :param _builtins.str private_ip: The private IP address of this node.
         :param _builtins.str public_ip: The public IP address of this node.
         :param _builtins.str state: The state of the nodepool.
-        :param _builtins.str subnet_id: The OCID of the subnet in which this node is placed.
+        :param _builtins.str subnet_id: the ocid of the subnet to create the vnic in
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -6572,7 +6867,7 @@ class GetNodePoolNodeResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
         """
-        The OCID of the subnet in which this node is placed.
+        the ocid of the subnet to create the vnic in
         """
         return pulumi.get(self, "subnet_id")
 
@@ -6594,7 +6889,7 @@ class GetNodePoolNodeConfigDetailResult(dict):
         :param _builtins.bool is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
         :param _builtins.str kms_key_id: The OCID of the Key Management Service key assigned to the boot volume.
         :param Sequence['GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs'] node_pool_pod_network_option_details: The CNI related configuration of pods in the node pool.
-        :param Sequence[_builtins.str] nsg_ids: The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+        :param Sequence[_builtins.str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
         :param Sequence['GetNodePoolNodeConfigDetailPlacementConfigArgs'] placement_configs: The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
         :param _builtins.int size: The number of nodes in the node pool.
         """
@@ -6651,7 +6946,7 @@ class GetNodePoolNodeConfigDetailResult(dict):
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[_builtins.str]:
         """
-        The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+        A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -6736,7 +7031,7 @@ class GetNodePoolNodeConfigDetailPlacementConfigResult(dict):
         :param _builtins.str capacity_reservation_id: The OCID of the compute capacity reservation in which to place the compute instance.
         :param Sequence[_builtins.str] fault_domains: A list of fault domains in which to place nodes.
         :param Sequence['GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs'] preemptible_node_configs: Configuration options for preemptible nodes.
-        :param _builtins.str subnet_id: The OCID of the subnet in which this node is placed.
+        :param _builtins.str subnet_id: the ocid of the subnet to create the vnic in
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
@@ -6780,7 +7075,7 @@ class GetNodePoolNodeConfigDetailPlacementConfigResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
         """
-        The OCID of the subnet in which this node is placed.
+        the ocid of the subnet to create the vnic in
         """
         return pulumi.get(self, "subnet_id")
 
@@ -7113,6 +7408,203 @@ class GetNodePoolOptionSourceResult(dict):
 
 
 @pulumi.output_type
+class GetNodePoolSecondaryVnicResult(dict):
+    def __init__(__self__, *,
+                 create_vnic_details: Sequence['outputs.GetNodePoolSecondaryVnicCreateVnicDetailResult'],
+                 display_name: _builtins.str,
+                 nic_index: _builtins.int):
+        """
+        :param Sequence['GetNodePoolSecondaryVnicCreateVnicDetailArgs'] create_vnic_details: The properties of the secondary vnics
+        :param _builtins.str display_name: Display name for vnic attachment
+        :param _builtins.int nic_index: Which physical network interface card (NIC) the VNIC will use
+        """
+        pulumi.set(__self__, "create_vnic_details", create_vnic_details)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "nic_index", nic_index)
+
+    @_builtins.property
+    @pulumi.getter(name="createVnicDetails")
+    def create_vnic_details(self) -> Sequence['outputs.GetNodePoolSecondaryVnicCreateVnicDetailResult']:
+        """
+        The properties of the secondary vnics
+        """
+        return pulumi.get(self, "create_vnic_details")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        Display name for vnic attachment
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="nicIndex")
+    def nic_index(self) -> _builtins.int:
+        """
+        Which physical network interface card (NIC) the VNIC will use
+        """
+        return pulumi.get(self, "nic_index")
+
+
+@pulumi.output_type
+class GetNodePoolSecondaryVnicCreateVnicDetailResult(dict):
+    def __init__(__self__, *,
+                 application_resources: Sequence[_builtins.str],
+                 assign_ipv6ip: _builtins.bool,
+                 assign_public_ip: _builtins.bool,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 ip_count: _builtins.int,
+                 ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
+                 nsg_ids: Sequence[_builtins.str],
+                 skip_source_dest_check: _builtins.bool,
+                 subnet_id: _builtins.str):
+        """
+        :param Sequence[_builtins.str] application_resources: The application resource that corresponds to this secondary vnic. Used to map pods to this specific vnic for scheduling
+        :param _builtins.bool assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet
+        :param _builtins.bool assign_public_ip: Whether the VNIC should be assigned a public IP address
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: Display name for vnic attachment
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param _builtins.int ip_count: The number of ip addresses to attach to secondary vnic
+        :param Sequence['GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix  and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty  and instead provide the specific IPv6 address that should be used from within that range.
+        :param Sequence[_builtins.str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
+        :param _builtins.bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC
+        :param _builtins.str subnet_id: the ocid of the subnet to create the vnic in
+        """
+        pulumi.set(__self__, "application_resources", application_resources)
+        pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
+        pulumi.set(__self__, "assign_public_ip", assign_public_ip)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "ip_count", ip_count)
+        pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationResources")
+    def application_resources(self) -> Sequence[_builtins.str]:
+        """
+        The application resource that corresponds to this secondary vnic. Used to map pods to this specific vnic for scheduling
+        """
+        return pulumi.get(self, "application_resources")
+
+    @_builtins.property
+    @pulumi.getter(name="assignIpv6ip")
+    def assign_ipv6ip(self) -> _builtins.bool:
+        """
+        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet
+        """
+        return pulumi.get(self, "assign_ipv6ip")
+
+    @_builtins.property
+    @pulumi.getter(name="assignPublicIp")
+    def assign_public_ip(self) -> _builtins.bool:
+        """
+        Whether the VNIC should be assigned a public IP address
+        """
+        return pulumi.get(self, "assign_public_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        Display name for vnic attachment
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="ipCount")
+    def ip_count(self) -> _builtins.int:
+        """
+        The number of ip addresses to attach to secondary vnic
+        """
+        return pulumi.get(self, "ip_count")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
+    def ipv6address_ipv6subnet_cidr_pair_details(self) -> Sequence['outputs.GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult']:
+        """
+        A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix  and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty  and instead provide the specific IPv6 address that should be used from within that range.
+        """
+        return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
+
+    @_builtins.property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[_builtins.str]:
+        """
+        A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="skipSourceDestCheck")
+    def skip_source_dest_check(self) -> _builtins.bool:
+        """
+        Whether the source/destination check is disabled on the VNIC
+        """
+        return pulumi.get(self, "skip_source_dest_check")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        the ocid of the subnet to create the vnic in
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult(dict):
+    def __init__(__self__, *,
+                 ipv6address: _builtins.str,
+                 ipv6subnet_cidr: _builtins.str):
+        """
+        :param _builtins.str ipv6address: An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix
+        :param _builtins.str ipv6subnet_cidr: The IPv6 prefix allocated to the subnet
+        """
+        pulumi.set(__self__, "ipv6address", ipv6address)
+        pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6address(self) -> _builtins.str:
+        """
+        An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix
+        """
+        return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> _builtins.str:
+        """
+        The IPv6 prefix allocated to the subnet
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
+
+
+@pulumi.output_type
 class GetNodePoolsFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -7157,6 +7649,7 @@ class GetNodePoolsNodePoolResult(dict):
                  kubernetes_version: _builtins.str,
                  lifecycle_details: _builtins.str,
                  name: _builtins.str,
+                 network_launch_type: _builtins.str,
                  node_config_details: Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailResult'],
                  node_eviction_node_pool_settings: Sequence['outputs.GetNodePoolsNodePoolNodeEvictionNodePoolSettingResult'],
                  node_image_id: _builtins.str,
@@ -7170,6 +7663,7 @@ class GetNodePoolsNodePoolResult(dict):
                  node_sources: Sequence['outputs.GetNodePoolsNodePoolNodeSourceResult'],
                  nodes: Sequence['outputs.GetNodePoolsNodePoolNodeResult'],
                  quantity_per_subnet: _builtins.int,
+                 secondary_vnics: Sequence['outputs.GetNodePoolsNodePoolSecondaryVnicResult'],
                  ssh_public_key: _builtins.str,
                  state: _builtins.str,
                  subnet_ids: Sequence[_builtins.str]):
@@ -7183,6 +7677,7 @@ class GetNodePoolsNodePoolResult(dict):
         :param _builtins.str kubernetes_version: The version of Kubernetes running on the nodes in the node pool.
         :param _builtins.str lifecycle_details: Details about the state of the nodepool.
         :param _builtins.str name: The name to filter on.
+        :param _builtins.str network_launch_type: Emulation type for the physical network interface card (NIC) for nodes
         :param Sequence['GetNodePoolsNodePoolNodeConfigDetailArgs'] node_config_details: The configuration of nodes in the node pool.
         :param Sequence['GetNodePoolsNodePoolNodeEvictionNodePoolSettingArgs'] node_eviction_node_pool_settings: Node Eviction Details configuration
         :param _builtins.str node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
@@ -7193,6 +7688,7 @@ class GetNodePoolsNodePoolResult(dict):
         :param Sequence['GetNodePoolsNodePoolNodeSourceDetailArgs'] node_source_details: Source running on the nodes in the node pool.
         :param Sequence['GetNodePoolsNodePoolNodeSourceArgs'] node_sources: Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
         :param _builtins.int quantity_per_subnet: The number of nodes in each subnet.
+        :param Sequence['GetNodePoolsNodePoolSecondaryVnicArgs'] secondary_vnics: A list of secondary vnics to attach to nodes
         :param _builtins.str ssh_public_key: The SSH public key on each node in the node pool on launch.
         :param _builtins.str state: A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
         :param Sequence[_builtins.str] subnet_ids: The OCIDs of the subnets in which to place nodes for this node pool.
@@ -7206,6 +7702,7 @@ class GetNodePoolsNodePoolResult(dict):
         pulumi.set(__self__, "kubernetes_version", kubernetes_version)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "network_launch_type", network_launch_type)
         pulumi.set(__self__, "node_config_details", node_config_details)
         pulumi.set(__self__, "node_eviction_node_pool_settings", node_eviction_node_pool_settings)
         pulumi.set(__self__, "node_image_id", node_image_id)
@@ -7219,6 +7716,7 @@ class GetNodePoolsNodePoolResult(dict):
         pulumi.set(__self__, "node_sources", node_sources)
         pulumi.set(__self__, "nodes", nodes)
         pulumi.set(__self__, "quantity_per_subnet", quantity_per_subnet)
+        pulumi.set(__self__, "secondary_vnics", secondary_vnics)
         pulumi.set(__self__, "ssh_public_key", ssh_public_key)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_ids", subnet_ids)
@@ -7294,6 +7792,14 @@ class GetNodePoolsNodePoolResult(dict):
         The name to filter on.
         """
         return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="networkLaunchType")
+    def network_launch_type(self) -> _builtins.str:
+        """
+        Emulation type for the physical network interface card (NIC) for nodes
+        """
+        return pulumi.get(self, "network_launch_type")
 
     @_builtins.property
     @pulumi.getter(name="nodeConfigDetails")
@@ -7393,6 +7899,14 @@ class GetNodePoolsNodePoolResult(dict):
         return pulumi.get(self, "quantity_per_subnet")
 
     @_builtins.property
+    @pulumi.getter(name="secondaryVnics")
+    def secondary_vnics(self) -> Sequence['outputs.GetNodePoolsNodePoolSecondaryVnicResult']:
+        """
+        A list of secondary vnics to attach to nodes
+        """
+        return pulumi.get(self, "secondary_vnics")
+
+    @_builtins.property
     @pulumi.getter(name="sshPublicKey")
     def ssh_public_key(self) -> _builtins.str:
         """
@@ -7472,7 +7986,7 @@ class GetNodePoolsNodePoolNodeResult(dict):
         :param _builtins.str lifecycle_details: Details about the state of the nodepool.
         :param _builtins.str name: The name to filter on.
         :param _builtins.str state: A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
-        :param _builtins.str subnet_id: The OCID of the subnet in which to place nodes.
+        :param _builtins.str subnet_id: the ocid of the subnet to create the vnic in
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -7582,7 +8096,7 @@ class GetNodePoolsNodePoolNodeResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
         """
-        The OCID of the subnet in which to place nodes.
+        the ocid of the subnet to create the vnic in
         """
         return pulumi.get(self, "subnet_id")
 
@@ -7604,7 +8118,7 @@ class GetNodePoolsNodePoolNodeConfigDetailResult(dict):
         :param _builtins.bool is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
         :param _builtins.str kms_key_id: The OCID of the Key Management Service key assigned to the boot volume.
         :param Sequence['GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs'] node_pool_pod_network_option_details: The CNI related configuration of pods in the node pool.
-        :param Sequence[_builtins.str] nsg_ids: The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+        :param Sequence[_builtins.str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
         :param Sequence['GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArgs'] placement_configs: The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
         :param _builtins.int size: The number of nodes in the node pool.
         """
@@ -7661,7 +8175,7 @@ class GetNodePoolsNodePoolNodeConfigDetailResult(dict):
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[_builtins.str]:
         """
-        The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+        A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -7746,7 +8260,7 @@ class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult(dict):
         :param _builtins.str capacity_reservation_id: The OCID of the compute capacity reservation in which to place the compute instance.
         :param Sequence[_builtins.str] fault_domains: A list of fault domains in which to place nodes.
         :param Sequence['GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs'] preemptible_node_configs: Configuration options for preemptible nodes.
-        :param _builtins.str subnet_id: The OCID of the subnet in which to place nodes.
+        :param _builtins.str subnet_id: the ocid of the subnet to create the vnic in
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
@@ -7790,7 +8304,7 @@ class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
         """
-        The OCID of the subnet in which to place nodes.
+        the ocid of the subnet to create the vnic in
         """
         return pulumi.get(self, "subnet_id")
 
@@ -8066,6 +8580,203 @@ class GetNodePoolsNodePoolNodeSourceDetailResult(dict):
         The source type for the node. Use `IMAGE` when specifying an OCID of an image.
         """
         return pulumi.get(self, "source_type")
+
+
+@pulumi.output_type
+class GetNodePoolsNodePoolSecondaryVnicResult(dict):
+    def __init__(__self__, *,
+                 create_vnic_details: Sequence['outputs.GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailResult'],
+                 display_name: _builtins.str,
+                 nic_index: _builtins.int):
+        """
+        :param Sequence['GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArgs'] create_vnic_details: The properties of the secondary vnics
+        :param _builtins.str display_name: Display name for vnic attachment
+        :param _builtins.int nic_index: Which physical network interface card (NIC) the VNIC will use
+        """
+        pulumi.set(__self__, "create_vnic_details", create_vnic_details)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "nic_index", nic_index)
+
+    @_builtins.property
+    @pulumi.getter(name="createVnicDetails")
+    def create_vnic_details(self) -> Sequence['outputs.GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailResult']:
+        """
+        The properties of the secondary vnics
+        """
+        return pulumi.get(self, "create_vnic_details")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        Display name for vnic attachment
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="nicIndex")
+    def nic_index(self) -> _builtins.int:
+        """
+        Which physical network interface card (NIC) the VNIC will use
+        """
+        return pulumi.get(self, "nic_index")
+
+
+@pulumi.output_type
+class GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailResult(dict):
+    def __init__(__self__, *,
+                 application_resources: Sequence[_builtins.str],
+                 assign_ipv6ip: _builtins.bool,
+                 assign_public_ip: _builtins.bool,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 ip_count: _builtins.int,
+                 ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
+                 nsg_ids: Sequence[_builtins.str],
+                 skip_source_dest_check: _builtins.bool,
+                 subnet_id: _builtins.str):
+        """
+        :param Sequence[_builtins.str] application_resources: The application resource that corresponds to this secondary vnic. Used to map pods to this specific vnic for scheduling
+        :param _builtins.bool assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet
+        :param _builtins.bool assign_public_ip: Whether the VNIC should be assigned a public IP address
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: Display name for vnic attachment
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param _builtins.int ip_count: The number of ip addresses to attach to secondary vnic
+        :param Sequence['GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix  and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty  and instead provide the specific IPv6 address that should be used from within that range.
+        :param Sequence[_builtins.str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
+        :param _builtins.bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC
+        :param _builtins.str subnet_id: the ocid of the subnet to create the vnic in
+        """
+        pulumi.set(__self__, "application_resources", application_resources)
+        pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
+        pulumi.set(__self__, "assign_public_ip", assign_public_ip)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "ip_count", ip_count)
+        pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationResources")
+    def application_resources(self) -> Sequence[_builtins.str]:
+        """
+        The application resource that corresponds to this secondary vnic. Used to map pods to this specific vnic for scheduling
+        """
+        return pulumi.get(self, "application_resources")
+
+    @_builtins.property
+    @pulumi.getter(name="assignIpv6ip")
+    def assign_ipv6ip(self) -> _builtins.bool:
+        """
+        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet
+        """
+        return pulumi.get(self, "assign_ipv6ip")
+
+    @_builtins.property
+    @pulumi.getter(name="assignPublicIp")
+    def assign_public_ip(self) -> _builtins.bool:
+        """
+        Whether the VNIC should be assigned a public IP address
+        """
+        return pulumi.get(self, "assign_public_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        Display name for vnic attachment
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="ipCount")
+    def ip_count(self) -> _builtins.int:
+        """
+        The number of ip addresses to attach to secondary vnic
+        """
+        return pulumi.get(self, "ip_count")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
+    def ipv6address_ipv6subnet_cidr_pair_details(self) -> Sequence['outputs.GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult']:
+        """
+        A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix  and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty  and instead provide the specific IPv6 address that should be used from within that range.
+        """
+        return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
+
+    @_builtins.property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[_builtins.str]:
+        """
+        A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="skipSourceDestCheck")
+    def skip_source_dest_check(self) -> _builtins.bool:
+        """
+        Whether the source/destination check is disabled on the VNIC
+        """
+        return pulumi.get(self, "skip_source_dest_check")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        the ocid of the subnet to create the vnic in
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult(dict):
+    def __init__(__self__, *,
+                 ipv6address: _builtins.str,
+                 ipv6subnet_cidr: _builtins.str):
+        """
+        :param _builtins.str ipv6address: An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix
+        :param _builtins.str ipv6subnet_cidr: The IPv6 prefix allocated to the subnet
+        """
+        pulumi.set(__self__, "ipv6address", ipv6address)
+        pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6address(self) -> _builtins.str:
+        """
+        An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix
+        """
+        return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> _builtins.str:
+        """
+        The IPv6 prefix allocated to the subnet
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
 
 
 @pulumi.output_type

@@ -76,6 +76,8 @@ type LookupNodePoolResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The name of the node.
 	Name string `pulumi:"name"`
+	// Emulation type for the physical network interface card (NIC) for nodes
+	NetworkLaunchType string `pulumi:"networkLaunchType"`
 	// The configuration of nodes in the node pool.
 	NodeConfigDetails []GetNodePoolNodeConfigDetail `pulumi:"nodeConfigDetails"`
 	// Node Eviction Details configuration
@@ -106,6 +108,8 @@ type LookupNodePoolResult struct {
 	Nodes []GetNodePoolNode `pulumi:"nodes"`
 	// The number of nodes in each subnet.
 	QuantityPerSubnet int `pulumi:"quantityPerSubnet"`
+	// A list of secondary vnics to attach to nodes
+	SecondaryVnics []GetNodePoolSecondaryVnic `pulumi:"secondaryVnics"`
 	// The SSH public key on each node in the node pool on launch.
 	SshPublicKey string `pulumi:"sshPublicKey"`
 	// The state of the nodepool.
@@ -193,6 +197,11 @@ func (o LookupNodePoolResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNodePoolResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// Emulation type for the physical network interface card (NIC) for nodes
+func (o LookupNodePoolResultOutput) NetworkLaunchType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNodePoolResult) string { return v.NetworkLaunchType }).(pulumi.StringOutput)
+}
+
 // The configuration of nodes in the node pool.
 func (o LookupNodePoolResultOutput) NodeConfigDetails() GetNodePoolNodeConfigDetailArrayOutput {
 	return o.ApplyT(func(v LookupNodePoolResult) []GetNodePoolNodeConfigDetail { return v.NodeConfigDetails }).(GetNodePoolNodeConfigDetailArrayOutput)
@@ -262,6 +271,11 @@ func (o LookupNodePoolResultOutput) Nodes() GetNodePoolNodeArrayOutput {
 // The number of nodes in each subnet.
 func (o LookupNodePoolResultOutput) QuantityPerSubnet() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupNodePoolResult) int { return v.QuantityPerSubnet }).(pulumi.IntOutput)
+}
+
+// A list of secondary vnics to attach to nodes
+func (o LookupNodePoolResultOutput) SecondaryVnics() GetNodePoolSecondaryVnicArrayOutput {
+	return o.ApplyT(func(v LookupNodePoolResult) []GetNodePoolSecondaryVnic { return v.SecondaryVnics }).(GetNodePoolSecondaryVnicArrayOutput)
 }
 
 // The SSH public key on each node in the node pool on launch.

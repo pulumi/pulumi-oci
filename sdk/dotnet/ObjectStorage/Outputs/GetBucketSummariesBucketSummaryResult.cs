@@ -31,6 +31,10 @@ namespace Pulumi.Oci.ObjectStorage.Outputs
         public readonly string AutoTiering;
         public readonly string BucketId;
         /// <summary>
+        /// Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+        /// </summary>
+        public readonly string BucketScope;
+        /// <summary>
         /// The ID of the compartment in which to list buckets.
         /// </summary>
         public readonly string CompartmentId;
@@ -109,6 +113,8 @@ namespace Pulumi.Oci.ObjectStorage.Outputs
 
             string bucketId,
 
+            string bucketScope,
+
             string compartmentId,
 
             string createdBy,
@@ -150,6 +156,7 @@ namespace Pulumi.Oci.ObjectStorage.Outputs
             ApproximateSize = approximateSize;
             AutoTiering = autoTiering;
             BucketId = bucketId;
+            BucketScope = bucketScope;
             CompartmentId = compartmentId;
             CreatedBy = createdBy;
             DefinedTags = definedTags;

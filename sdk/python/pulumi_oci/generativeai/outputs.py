@@ -68,6 +68,10 @@ __all__ = [
     'ModelFineTuneDetailsTrainingConfig',
     'ModelFineTuneDetailsTrainingDataset',
     'ModelModelMetric',
+    'SemanticStoreDataSource',
+    'SemanticStoreRefreshSchedule',
+    'SemanticStoreSchemas',
+    'SemanticStoreSchemasSchema',
     'GetAgentAgentEndpointContentModerationConfigResult',
     'GetAgentAgentEndpointGuardrailConfigResult',
     'GetAgentAgentEndpointGuardrailConfigContentModerationConfigResult',
@@ -208,6 +212,17 @@ __all__ = [
     'GetModelsModelCollectionItemFineTuneDetailTrainingConfigResult',
     'GetModelsModelCollectionItemFineTuneDetailTrainingDatasetResult',
     'GetModelsModelCollectionItemModelMetricResult',
+    'GetSemanticStoreDataSourceResult',
+    'GetSemanticStoreRefreshScheduleResult',
+    'GetSemanticStoreSchemaResult',
+    'GetSemanticStoreSchemaSchemaResult',
+    'GetSemanticStoresFilterResult',
+    'GetSemanticStoresSemanticStoreCollectionResult',
+    'GetSemanticStoresSemanticStoreCollectionItemResult',
+    'GetSemanticStoresSemanticStoreCollectionItemDataSourceResult',
+    'GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleResult',
+    'GetSemanticStoresSemanticStoreCollectionItemSchemaResult',
+    'GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaResult',
 ]
 
 @pulumi.output_type
@@ -3738,6 +3753,169 @@ class ModelModelMetric(dict):
         The type of the model metrics. Each type of model can expect a different set of model metrics.
         """
         return pulumi.get(self, "model_metrics_type")
+
+
+@pulumi.output_type
+class SemanticStoreDataSource(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectionType":
+            suggest = "connection_type"
+        elif key == "enrichmentConnectionId":
+            suggest = "enrichment_connection_id"
+        elif key == "queryingConnectionId":
+            suggest = "querying_connection_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SemanticStoreDataSource. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SemanticStoreDataSource.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SemanticStoreDataSource.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connection_type: _builtins.str,
+                 enrichment_connection_id: _builtins.str,
+                 querying_connection_id: _builtins.str):
+        """
+        :param _builtins.str connection_type: Specifies the type of underlying connection.
+        :param _builtins.str enrichment_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for enrichment.
+        :param _builtins.str querying_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for querying.
+        """
+        pulumi.set(__self__, "connection_type", connection_type)
+        pulumi.set(__self__, "enrichment_connection_id", enrichment_connection_id)
+        pulumi.set(__self__, "querying_connection_id", querying_connection_id)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> _builtins.str:
+        """
+        Specifies the type of underlying connection.
+        """
+        return pulumi.get(self, "connection_type")
+
+    @_builtins.property
+    @pulumi.getter(name="enrichmentConnectionId")
+    def enrichment_connection_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for enrichment.
+        """
+        return pulumi.get(self, "enrichment_connection_id")
+
+    @_builtins.property
+    @pulumi.getter(name="queryingConnectionId")
+    def querying_connection_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for querying.
+        """
+        return pulumi.get(self, "querying_connection_id")
+
+
+@pulumi.output_type
+class SemanticStoreRefreshSchedule(dict):
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str type: (Updatable) Specifies the type of refresh schedule.
+        :param _builtins.str value: (Updatable) Specifies the refresh interval value. The interval must be provided using the ISO 8601 extended format, either as PnW or PnYnMnDTnHnMnS,  where 'P' is always required, 'T' precedes any time components less than one day, and each included component is properly suffixed.  For example, "P1DT6H" represents a duration of 1 day and 6 hours.
+        """
+        pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        (Updatable) Specifies the type of refresh schedule.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Specifies the refresh interval value. The interval must be provided using the ISO 8601 extended format, either as PnW or PnYnMnDTnHnMnS,  where 'P' is always required, 'T' precedes any time components less than one day, and each included component is properly suffixed.  For example, "P1DT6H" represents a duration of 1 day and 6 hours.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class SemanticStoreSchemas(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectionType":
+            suggest = "connection_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SemanticStoreSchemas. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SemanticStoreSchemas.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SemanticStoreSchemas.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connection_type: _builtins.str,
+                 schemas: Sequence['outputs.SemanticStoreSchemasSchema']):
+        """
+        :param _builtins.str connection_type: (Updatable) Specifies the type of underlying connection.
+        :param Sequence['SemanticStoreSchemasSchemaArgs'] schemas: (Updatable) Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+        """
+        pulumi.set(__self__, "connection_type", connection_type)
+        pulumi.set(__self__, "schemas", schemas)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> _builtins.str:
+        """
+        (Updatable) Specifies the type of underlying connection.
+        """
+        return pulumi.get(self, "connection_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def schemas(self) -> Sequence['outputs.SemanticStoreSchemasSchema']:
+        """
+        (Updatable) Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+        """
+        return pulumi.get(self, "schemas")
+
+
+@pulumi.output_type
+class SemanticStoreSchemasSchema(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str):
+        """
+        :param _builtins.str name: (Updatable) 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        (Updatable) 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "name")
 
 
 @pulumi.output_type
@@ -10740,5 +10918,425 @@ class GetModelsModelCollectionItemModelMetricResult(dict):
     @pulumi.getter(name="modelMetricsType")
     def model_metrics_type(self) -> _builtins.str:
         return pulumi.get(self, "model_metrics_type")
+
+
+@pulumi.output_type
+class GetSemanticStoreDataSourceResult(dict):
+    def __init__(__self__, *,
+                 connection_type: _builtins.str,
+                 enrichment_connection_id: _builtins.str,
+                 querying_connection_id: _builtins.str):
+        """
+        :param _builtins.str connection_type: Specifies the type of underlying connection.
+        :param _builtins.str enrichment_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for enrichment.
+        :param _builtins.str querying_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for querying.
+        """
+        pulumi.set(__self__, "connection_type", connection_type)
+        pulumi.set(__self__, "enrichment_connection_id", enrichment_connection_id)
+        pulumi.set(__self__, "querying_connection_id", querying_connection_id)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> _builtins.str:
+        """
+        Specifies the type of underlying connection.
+        """
+        return pulumi.get(self, "connection_type")
+
+    @_builtins.property
+    @pulumi.getter(name="enrichmentConnectionId")
+    def enrichment_connection_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for enrichment.
+        """
+        return pulumi.get(self, "enrichment_connection_id")
+
+    @_builtins.property
+    @pulumi.getter(name="queryingConnectionId")
+    def querying_connection_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for querying.
+        """
+        return pulumi.get(self, "querying_connection_id")
+
+
+@pulumi.output_type
+class GetSemanticStoreRefreshScheduleResult(dict):
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str type: Specifies the type of refresh schedule.
+        :param _builtins.str value: Specifies the refresh interval value. The interval must be provided using the ISO 8601 extended format, either as PnW or PnYnMnDTnHnMnS,  where 'P' is always required, 'T' precedes any time components less than one day, and each included component is properly suffixed.  For example, "P1DT6H" represents a duration of 1 day and 6 hours.
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Specifies the type of refresh schedule.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Specifies the refresh interval value. The interval must be provided using the ISO 8601 extended format, either as PnW or PnYnMnDTnHnMnS,  where 'P' is always required, 'T' precedes any time components less than one day, and each included component is properly suffixed.  For example, "P1DT6H" represents a duration of 1 day and 6 hours.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetSemanticStoreSchemaResult(dict):
+    def __init__(__self__, *,
+                 connection_type: _builtins.str,
+                 schemas: Sequence['outputs.GetSemanticStoreSchemaSchemaResult']):
+        """
+        :param _builtins.str connection_type: Specifies the type of underlying connection.
+        :param Sequence['GetSemanticStoreSchemaSchemaArgs'] schemas: Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+        """
+        pulumi.set(__self__, "connection_type", connection_type)
+        pulumi.set(__self__, "schemas", schemas)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> _builtins.str:
+        """
+        Specifies the type of underlying connection.
+        """
+        return pulumi.get(self, "connection_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def schemas(self) -> Sequence['outputs.GetSemanticStoreSchemaSchemaResult']:
+        """
+        Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+        """
+        return pulumi.get(self, "schemas")
+
+
+@pulumi.output_type
+class GetSemanticStoreSchemaSchemaResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str):
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetSemanticStoresFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSemanticStoresSemanticStoreCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSemanticStoresSemanticStoreCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSemanticStoresSemanticStoreCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSemanticStoresSemanticStoreCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 data_sources: Sequence['outputs.GetSemanticStoresSemanticStoreCollectionItemDataSourceResult'],
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 refresh_schedules: Sequence['outputs.GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleResult'],
+                 schemas: Sequence['outputs.GetSemanticStoresSemanticStoreCollectionItemSchemaResult'],
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Sequence['GetSemanticStoresSemanticStoreCollectionItemDataSourceArgs'] data_sources: Defines the data source that the semantic model connects to.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: An optional description of the SemanticStore.
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SemanticStore.
+        :param _builtins.str lifecycle_details: A message describing the current state in more detail that can provide actionable information.
+        :param Sequence['GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArgs'] refresh_schedules: Specifies a refresh schedule. Null represents no automated synchronization schedule.
+        :param Sequence['GetSemanticStoresSemanticStoreCollectionItemSchemaArgs'] schemas: Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+        :param _builtins.str state: A filter to return only resources whose lifecycle state matches the given array.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time that the SemanticStore was created in the format of an RFC3339 datetime string.
+        :param _builtins.str time_updated: The date and time that the SemanticStore was updated in the format of an RFC3339 datetime string.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "data_sources", data_sources)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "refresh_schedules", refresh_schedules)
+        pulumi.set(__self__, "schemas", schemas)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dataSources")
+    def data_sources(self) -> Sequence['outputs.GetSemanticStoresSemanticStoreCollectionItemDataSourceResult']:
+        """
+        Defines the data source that the semantic model connects to.
+        """
+        return pulumi.get(self, "data_sources")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        An optional description of the SemanticStore.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SemanticStore.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message describing the current state in more detail that can provide actionable information.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="refreshSchedules")
+    def refresh_schedules(self) -> Sequence['outputs.GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleResult']:
+        """
+        Specifies a refresh schedule. Null represents no automated synchronization schedule.
+        """
+        return pulumi.get(self, "refresh_schedules")
+
+    @_builtins.property
+    @pulumi.getter
+    def schemas(self) -> Sequence['outputs.GetSemanticStoresSemanticStoreCollectionItemSchemaResult']:
+        """
+        Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+        """
+        return pulumi.get(self, "schemas")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources whose lifecycle state matches the given array.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time that the SemanticStore was created in the format of an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time that the SemanticStore was updated in the format of an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetSemanticStoresSemanticStoreCollectionItemDataSourceResult(dict):
+    def __init__(__self__, *,
+                 connection_type: _builtins.str,
+                 enrichment_connection_id: _builtins.str,
+                 querying_connection_id: _builtins.str):
+        """
+        :param _builtins.str connection_type: Specifies the type of underlying connection.
+        :param _builtins.str enrichment_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for enrichment.
+        :param _builtins.str querying_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for querying.
+        """
+        pulumi.set(__self__, "connection_type", connection_type)
+        pulumi.set(__self__, "enrichment_connection_id", enrichment_connection_id)
+        pulumi.set(__self__, "querying_connection_id", querying_connection_id)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> _builtins.str:
+        """
+        Specifies the type of underlying connection.
+        """
+        return pulumi.get(self, "connection_type")
+
+    @_builtins.property
+    @pulumi.getter(name="enrichmentConnectionId")
+    def enrichment_connection_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for enrichment.
+        """
+        return pulumi.get(self, "enrichment_connection_id")
+
+    @_builtins.property
+    @pulumi.getter(name="queryingConnectionId")
+    def querying_connection_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for querying.
+        """
+        return pulumi.get(self, "querying_connection_id")
+
+
+@pulumi.output_type
+class GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleResult(dict):
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str type: Specifies the type of refresh schedule.
+        :param _builtins.str value: Specifies the refresh interval value. The interval must be provided using the ISO 8601 extended format, either as PnW or PnYnMnDTnHnMnS,  where 'P' is always required, 'T' precedes any time components less than one day, and each included component is properly suffixed.  For example, "P1DT6H" represents a duration of 1 day and 6 hours.
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Specifies the type of refresh schedule.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Specifies the refresh interval value. The interval must be provided using the ISO 8601 extended format, either as PnW or PnYnMnDTnHnMnS,  where 'P' is always required, 'T' precedes any time components less than one day, and each included component is properly suffixed.  For example, "P1DT6H" represents a duration of 1 day and 6 hours.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetSemanticStoresSemanticStoreCollectionItemSchemaResult(dict):
+    def __init__(__self__, *,
+                 connection_type: _builtins.str,
+                 schemas: Sequence['outputs.GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaResult']):
+        """
+        :param _builtins.str connection_type: Specifies the type of underlying connection.
+        :param Sequence['GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArgs'] schemas: Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+        """
+        pulumi.set(__self__, "connection_type", connection_type)
+        pulumi.set(__self__, "schemas", schemas)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> _builtins.str:
+        """
+        Specifies the type of underlying connection.
+        """
+        return pulumi.get(self, "connection_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def schemas(self) -> Sequence['outputs.GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaResult']:
+        """
+        Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+        """
+        return pulumi.get(self, "schemas")
+
+
+@pulumi.output_type
+class GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str):
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
 
 

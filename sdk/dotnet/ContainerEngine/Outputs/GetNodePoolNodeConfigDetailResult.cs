@@ -34,7 +34,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult> NodePoolPodNetworkOptionDetails;
         /// <summary>
-        /// The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+        /// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
         /// <summary>

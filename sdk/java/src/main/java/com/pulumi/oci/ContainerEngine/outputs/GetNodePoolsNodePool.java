@@ -13,6 +13,7 @@ import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolsNodePoolNodePoolCyclin
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolsNodePoolNodeShapeConfig;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolsNodePoolNodeSource;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolsNodePoolNodeSourceDetail;
+import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolsNodePoolSecondaryVnic;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -66,6 +67,11 @@ public final class GetNodePoolsNodePool {
      * 
      */
     private String name;
+    /**
+     * @return Emulation type for the physical network interface card (NIC) for nodes
+     * 
+     */
+    private String networkLaunchType;
     /**
      * @return The configuration of nodes in the node pool.
      * 
@@ -127,6 +133,11 @@ public final class GetNodePoolsNodePool {
      * 
      */
     private Integer quantityPerSubnet;
+    /**
+     * @return A list of secondary vnics to attach to nodes
+     * 
+     */
+    private List<GetNodePoolsNodePoolSecondaryVnic> secondaryVnics;
     /**
      * @return The SSH public key on each node in the node pool on launch.
      * 
@@ -206,6 +217,13 @@ public final class GetNodePoolsNodePool {
      */
     public String name() {
         return this.name;
+    }
+    /**
+     * @return Emulation type for the physical network interface card (NIC) for nodes
+     * 
+     */
+    public String networkLaunchType() {
+        return this.networkLaunchType;
     }
     /**
      * @return The configuration of nodes in the node pool.
@@ -295,6 +313,13 @@ public final class GetNodePoolsNodePool {
         return this.quantityPerSubnet;
     }
     /**
+     * @return A list of secondary vnics to attach to nodes
+     * 
+     */
+    public List<GetNodePoolsNodePoolSecondaryVnic> secondaryVnics() {
+        return this.secondaryVnics;
+    }
+    /**
      * @return The SSH public key on each node in the node pool on launch.
      * 
      */
@@ -334,6 +359,7 @@ public final class GetNodePoolsNodePool {
         private String kubernetesVersion;
         private String lifecycleDetails;
         private String name;
+        private String networkLaunchType;
         private List<GetNodePoolsNodePoolNodeConfigDetail> nodeConfigDetails;
         private List<GetNodePoolsNodePoolNodeEvictionNodePoolSetting> nodeEvictionNodePoolSettings;
         private String nodeImageId;
@@ -347,6 +373,7 @@ public final class GetNodePoolsNodePool {
         private List<GetNodePoolsNodePoolNodeSource> nodeSources;
         private List<GetNodePoolsNodePoolNode> nodes;
         private Integer quantityPerSubnet;
+        private List<GetNodePoolsNodePoolSecondaryVnic> secondaryVnics;
         private String sshPublicKey;
         private String state;
         private List<String> subnetIds;
@@ -362,6 +389,7 @@ public final class GetNodePoolsNodePool {
     	      this.kubernetesVersion = defaults.kubernetesVersion;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.name = defaults.name;
+    	      this.networkLaunchType = defaults.networkLaunchType;
     	      this.nodeConfigDetails = defaults.nodeConfigDetails;
     	      this.nodeEvictionNodePoolSettings = defaults.nodeEvictionNodePoolSettings;
     	      this.nodeImageId = defaults.nodeImageId;
@@ -375,6 +403,7 @@ public final class GetNodePoolsNodePool {
     	      this.nodeSources = defaults.nodeSources;
     	      this.nodes = defaults.nodes;
     	      this.quantityPerSubnet = defaults.quantityPerSubnet;
+    	      this.secondaryVnics = defaults.secondaryVnics;
     	      this.sshPublicKey = defaults.sshPublicKey;
     	      this.state = defaults.state;
     	      this.subnetIds = defaults.subnetIds;
@@ -453,6 +482,14 @@ public final class GetNodePoolsNodePool {
               throw new MissingRequiredPropertyException("GetNodePoolsNodePool", "name");
             }
             this.name = name;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder networkLaunchType(String networkLaunchType) {
+            if (networkLaunchType == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsNodePool", "networkLaunchType");
+            }
+            this.networkLaunchType = networkLaunchType;
             return this;
         }
         @CustomType.Setter
@@ -581,6 +618,17 @@ public final class GetNodePoolsNodePool {
             return this;
         }
         @CustomType.Setter
+        public Builder secondaryVnics(List<GetNodePoolsNodePoolSecondaryVnic> secondaryVnics) {
+            if (secondaryVnics == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsNodePool", "secondaryVnics");
+            }
+            this.secondaryVnics = secondaryVnics;
+            return this;
+        }
+        public Builder secondaryVnics(GetNodePoolsNodePoolSecondaryVnic... secondaryVnics) {
+            return secondaryVnics(List.of(secondaryVnics));
+        }
+        @CustomType.Setter
         public Builder sshPublicKey(String sshPublicKey) {
             if (sshPublicKey == null) {
               throw new MissingRequiredPropertyException("GetNodePoolsNodePool", "sshPublicKey");
@@ -618,6 +666,7 @@ public final class GetNodePoolsNodePool {
             _resultValue.kubernetesVersion = kubernetesVersion;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.name = name;
+            _resultValue.networkLaunchType = networkLaunchType;
             _resultValue.nodeConfigDetails = nodeConfigDetails;
             _resultValue.nodeEvictionNodePoolSettings = nodeEvictionNodePoolSettings;
             _resultValue.nodeImageId = nodeImageId;
@@ -631,6 +680,7 @@ public final class GetNodePoolsNodePool {
             _resultValue.nodeSources = nodeSources;
             _resultValue.nodes = nodes;
             _resultValue.quantityPerSubnet = quantityPerSubnet;
+            _resultValue.secondaryVnics = secondaryVnics;
             _resultValue.sshPublicKey = sshPublicKey;
             _resultValue.state = state;
             _resultValue.subnetIds = subnetIds;

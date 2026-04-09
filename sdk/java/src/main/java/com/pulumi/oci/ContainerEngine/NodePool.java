@@ -17,11 +17,13 @@ import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodePoolCyclingDetails;
 import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodeShapeConfig;
 import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodeSource;
 import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodeSourceDetails;
+import com.pulumi.oci.ContainerEngine.outputs.NodePoolSecondaryVnic;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -50,6 +52,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodePoolCyclingDetailsArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeShapeConfigArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeSourceDetailsArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.NodePoolSecondaryVnicArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.NodePoolSecondaryVnicCreateVnicDetailsArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -75,6 +79,7 @@ import javax.annotation.Nullable;
  *                 .value(nodePoolInitialNodeLabelsValue)
  *                 .build())
  *             .kubernetesVersion(nodePoolKubernetesVersion)
+ *             .networkLaunchType(nodePoolNetworkLaunchType)
  *             .nodeConfigDetails(NodePoolNodeConfigDetailsArgs.builder()
  *                 .placementConfigs(NodePoolNodeConfigDetailsPlacementConfigArgs.builder()
  *                     .availabilityDomain(nodePoolNodeConfigDetailsPlacementConfigsAvailabilityDomain)
@@ -89,6 +94,8 @@ import javax.annotation.Nullable;
  *                         .build())
  *                     .build())
  *                 .size(nodePoolNodeConfigDetailsSize)
+ *                 .definedTags(Map.of("Operations.CostCenter", "42"))
+ *                 .freeformTags(Map.of("Department", "Finance"))
  *                 .isPvEncryptionInTransitEnabled(nodePoolNodeConfigDetailsIsPvEncryptionInTransitEnabled)
  *                 .kmsKeyId(testKey.id())
  *                 .nodePoolPodNetworkOptionDetails(NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs.builder()
@@ -97,8 +104,6 @@ import javax.annotation.Nullable;
  *                     .podNsgIds(nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPodNsgIds)
  *                     .podSubnetIds(nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPodSubnetIds)
  *                     .build())
- *                 .definedTags(Map.of("Operations.CostCenter", "42"))
- *                 .freeformTags(Map.of("Department", "Finance"))
  *                 .nsgIds(nodePoolNodeConfigDetailsNsgIds)
  *                 .build())
  *             .nodeEvictionNodePoolSettings(NodePoolNodeEvictionNodePoolSettingsArgs.builder()
@@ -124,6 +129,26 @@ import javax.annotation.Nullable;
  *                 .bootVolumeSizeInGbs(nodePoolNodeSourceDetailsBootVolumeSizeInGbs)
  *                 .build())
  *             .quantityPerSubnet(nodePoolQuantityPerSubnet)
+ *             .secondaryVnics(NodePoolSecondaryVnicArgs.builder()
+ *                 .createVnicDetails(NodePoolSecondaryVnicCreateVnicDetailsArgs.builder()
+ *                     .subnetId(testSubnet.id())
+ *                     .applicationResources(nodePoolSecondaryVnicsCreateVnicDetailsApplicationResources)
+ *                     .assignIpv6ip(nodePoolSecondaryVnicsCreateVnicDetailsAssignIpv6ip)
+ *                     .assignPublicIp(nodePoolSecondaryVnicsCreateVnicDetailsAssignPublicIp)
+ *                     .definedTags(Map.of("Operations.CostCenter", "42"))
+ *                     .displayName(nodePoolSecondaryVnicsCreateVnicDetailsDisplayName)
+ *                     .freeformTags(Map.of("Department", "Finance"))
+ *                     .ipCount(nodePoolSecondaryVnicsCreateVnicDetailsIpCount)
+ *                     .ipv6addressIpv6subnetCidrPairDetails(NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs.builder()
+ *                         .ipv6address(nodePoolSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address)
+ *                         .ipv6subnetCidr(nodePoolSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr)
+ *                         .build())
+ *                     .nsgIds(nodePoolSecondaryVnicsCreateVnicDetailsNsgIds)
+ *                     .skipSourceDestCheck(nodePoolSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck)
+ *                     .build())
+ *                 .displayName(nodePoolSecondaryVnicsDisplayName)
+ *                 .nicIndex(nodePoolSecondaryVnicsNicIndex)
+ *                 .build())
  *             .sshPublicKey(nodePoolSshPublicKey)
  *             .subnetIds(nodePoolSubnetIds)
  *             .build());
@@ -255,6 +280,20 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      */
     public Output<String> name() {
         return this.name;
+    }
+    /**
+     * (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+     * 
+     */
+    @Export(name="networkLaunchType", refs={String.class}, tree="[0]")
+    private Output<String> networkLaunchType;
+
+    /**
+     * @return (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+     * 
+     */
+    public Output<String> networkLaunchType() {
+        return this.networkLaunchType;
     }
     /**
      * (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
@@ -433,6 +472,20 @@ public class NodePool extends com.pulumi.resources.CustomResource {
         return this.quantityPerSubnet;
     }
     /**
+     * (Updatable) A list of secondary vnics to attach to nodes
+     * 
+     */
+    @Export(name="secondaryVnics", refs={List.class,NodePoolSecondaryVnic.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<NodePoolSecondaryVnic>> secondaryVnics;
+
+    /**
+     * @return (Updatable) A list of secondary vnics to attach to nodes
+     * 
+     */
+    public Output<Optional<List<NodePoolSecondaryVnic>>> secondaryVnics() {
+        return Codegen.optional(this.secondaryVnics);
+    }
+    /**
      * (Updatable) The SSH public key on each node in the node pool on launch.
      * 
      */
@@ -447,14 +500,14 @@ public class NodePool extends com.pulumi.resources.CustomResource {
         return this.sshPublicKey;
     }
     /**
-     * The state of the nodepool.
+     * The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The state of the nodepool.
+     * @return The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
      * 
      */
     public Output<String> state() {

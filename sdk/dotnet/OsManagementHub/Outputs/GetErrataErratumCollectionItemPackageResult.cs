@@ -34,7 +34,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly bool IsLatest;
         /// <summary>
-        /// The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+        /// The erratum name (such as ELSA-2023-34678).
         /// </summary>
         public readonly string Name;
         /// <summary>

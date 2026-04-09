@@ -83,14 +83,14 @@ public final class ProfileState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+     * (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+     * @return (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -218,14 +218,14 @@ public final class ProfileState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
+     * description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is used when creating a profile for non-OCI instances.
      * 
      */
     @Import(name="managementStationId")
     private @Nullable Output<String> managementStationId;
 
     /**
-     * @return description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
+     * @return description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is used when creating a profile for non-OCI instances.
      * 
      */
     public Optional<Output<String>> managementStationId() {
@@ -536,7 +536,7 @@ public final class ProfileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+         * @param displayName (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
          * 
          * @return builder
          * 
@@ -547,7 +547,7 @@ public final class ProfileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+         * @param displayName (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
          * 
          * @return builder
          * 
@@ -755,7 +755,7 @@ public final class ProfileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param managementStationId description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
+         * @param managementStationId description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is used when creating a profile for non-OCI instances.
          * 
          * @return builder
          * 
@@ -766,7 +766,7 @@ public final class ProfileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param managementStationId description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
+         * @param managementStationId description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is used when creating a profile for non-OCI instances.
          * 
          * @return builder
          * 

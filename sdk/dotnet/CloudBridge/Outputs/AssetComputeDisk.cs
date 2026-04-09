@@ -18,6 +18,10 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// </summary>
         public readonly int? BootOrder;
         /// <summary>
+        /// (Updatable) Indicates that CBT (change disk tracking) is enabled for this virtual disk.
+        /// </summary>
+        public readonly bool? IsCbtEnabled;
+        /// <summary>
         /// (Updatable) Location of the boot/data volume.
         /// </summary>
         public readonly string? Location;
@@ -46,6 +50,8 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         private AssetComputeDisk(
             int? bootOrder,
 
+            bool? isCbtEnabled,
+
             string? location,
 
             string? name,
@@ -59,6 +65,7 @@ namespace Pulumi.Oci.CloudBridge.Outputs
             string? uuidLun)
         {
             BootOrder = bootOrder;
+            IsCbtEnabled = isCbtEnabled;
             Location = location;
             Name = name;
             PersistentMode = persistentMode;

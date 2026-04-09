@@ -31,7 +31,7 @@ class ManagedInstanceArgs:
         The set of arguments for constructing a ManagedInstance resource.
 
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
-        :param pulumi.Input['ManagedInstanceAutonomousSettingsArgs'] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
+        :param pulumi.Input['ManagedInstanceAutonomousSettingsArgs'] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
         :param pulumi.Input[_builtins.str] description: (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] notification_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
         :param pulumi.Input[_builtins.str] primary_management_station_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as primary management station.
@@ -69,7 +69,7 @@ class ManagedInstanceArgs:
     @pulumi.getter(name="autonomousSettings")
     def autonomous_settings(self) -> Optional[pulumi.Input['ManagedInstanceAutonomousSettingsArgs']]:
         """
-        (Updatable) Updatable settings for the Autonomous Linux service.
+        (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
         """
         return pulumi.get(self, "autonomous_settings")
 
@@ -135,6 +135,7 @@ class _ManagedInstanceState:
     def __init__(__self__, *,
                  agent_version: Optional[pulumi.Input[_builtins.str]] = None,
                  architecture: Optional[pulumi.Input[_builtins.str]] = None,
+                 are_sources_managed: Optional[pulumi.Input[_builtins.bool]] = None,
                  autonomous_settings: Optional[pulumi.Input['ManagedInstanceAutonomousSettingsArgs']] = None,
                  bug_updates_available: Optional[pulumi.Input[_builtins.int]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -170,6 +171,7 @@ class _ManagedInstanceState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_last_boot: Optional[pulumi.Input[_builtins.str]] = None,
                  time_last_checkin: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_last_software_refresh: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None,
                  updates_available: Optional[pulumi.Input[_builtins.int]] = None,
                  work_request_count: Optional[pulumi.Input[_builtins.int]] = None):
@@ -178,7 +180,8 @@ class _ManagedInstanceState:
 
         :param pulumi.Input[_builtins.str] agent_version: The version of osmh-agent running on the managed instance
         :param pulumi.Input[_builtins.str] architecture: The CPU architecture type of the managed instance.
-        :param pulumi.Input['ManagedInstanceAutonomousSettingsArgs'] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
+        :param pulumi.Input[_builtins.bool] are_sources_managed: Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+        :param pulumi.Input['ManagedInstanceAutonomousSettingsArgs'] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
         :param pulumi.Input[_builtins.int] bug_updates_available: Number of bug fix type updates available for installation.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
         :param pulumi.Input[_builtins.str] description: (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
@@ -217,6 +220,7 @@ class _ManagedInstanceState:
         :param pulumi.Input[_builtins.str] time_created: The date and time the instance was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[_builtins.str] time_last_boot: Time that the instance last booted (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[_builtins.str] time_last_checkin: Time that the instance last checked in with the service (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        :param pulumi.Input[_builtins.str] time_last_software_refresh: The date and time the instance's software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[_builtins.str] time_updated: The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[_builtins.int] updates_available: Number of updates available for installation.
         :param pulumi.Input[_builtins.int] work_request_count: Number of work requests associated with this instance.
@@ -225,6 +229,8 @@ class _ManagedInstanceState:
             pulumi.set(__self__, "agent_version", agent_version)
         if architecture is not None:
             pulumi.set(__self__, "architecture", architecture)
+        if are_sources_managed is not None:
+            pulumi.set(__self__, "are_sources_managed", are_sources_managed)
         if autonomous_settings is not None:
             pulumi.set(__self__, "autonomous_settings", autonomous_settings)
         if bug_updates_available is not None:
@@ -295,6 +301,8 @@ class _ManagedInstanceState:
             pulumi.set(__self__, "time_last_boot", time_last_boot)
         if time_last_checkin is not None:
             pulumi.set(__self__, "time_last_checkin", time_last_checkin)
+        if time_last_software_refresh is not None:
+            pulumi.set(__self__, "time_last_software_refresh", time_last_software_refresh)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
         if updates_available is not None:
@@ -327,10 +335,22 @@ class _ManagedInstanceState:
         pulumi.set(self, "architecture", value)
 
     @_builtins.property
+    @pulumi.getter(name="areSourcesManaged")
+    def are_sources_managed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+        """
+        return pulumi.get(self, "are_sources_managed")
+
+    @are_sources_managed.setter
+    def are_sources_managed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "are_sources_managed", value)
+
+    @_builtins.property
     @pulumi.getter(name="autonomousSettings")
     def autonomous_settings(self) -> Optional[pulumi.Input['ManagedInstanceAutonomousSettingsArgs']]:
         """
-        (Updatable) Updatable settings for the Autonomous Linux service.
+        (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
         """
         return pulumi.get(self, "autonomous_settings")
 
@@ -751,6 +771,18 @@ class _ManagedInstanceState:
         pulumi.set(self, "time_last_checkin", value)
 
     @_builtins.property
+    @pulumi.getter(name="timeLastSoftwareRefresh")
+    def time_last_software_refresh(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The date and time the instance's software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        """
+        return pulumi.get(self, "time_last_software_refresh")
+
+    @time_last_software_refresh.setter
+    def time_last_software_refresh(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_last_software_refresh", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -819,7 +851,7 @@ class ManagedInstance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict']] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
+        :param pulumi.Input[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict']] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
         :param pulumi.Input[_builtins.str] description: (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         :param pulumi.Input[_builtins.str] notification_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
@@ -893,6 +925,7 @@ class ManagedInstance(pulumi.CustomResource):
             __props__.__dict__["secondary_management_station_id"] = secondary_management_station_id
             __props__.__dict__["agent_version"] = None
             __props__.__dict__["architecture"] = None
+            __props__.__dict__["are_sources_managed"] = None
             __props__.__dict__["bug_updates_available"] = None
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["display_name"] = None
@@ -922,6 +955,7 @@ class ManagedInstance(pulumi.CustomResource):
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_last_boot"] = None
             __props__.__dict__["time_last_checkin"] = None
+            __props__.__dict__["time_last_software_refresh"] = None
             __props__.__dict__["time_updated"] = None
             __props__.__dict__["updates_available"] = None
             __props__.__dict__["work_request_count"] = None
@@ -937,6 +971,7 @@ class ManagedInstance(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             agent_version: Optional[pulumi.Input[_builtins.str]] = None,
             architecture: Optional[pulumi.Input[_builtins.str]] = None,
+            are_sources_managed: Optional[pulumi.Input[_builtins.bool]] = None,
             autonomous_settings: Optional[pulumi.Input[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict']]] = None,
             bug_updates_available: Optional[pulumi.Input[_builtins.int]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -972,6 +1007,7 @@ class ManagedInstance(pulumi.CustomResource):
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_last_boot: Optional[pulumi.Input[_builtins.str]] = None,
             time_last_checkin: Optional[pulumi.Input[_builtins.str]] = None,
+            time_last_software_refresh: Optional[pulumi.Input[_builtins.str]] = None,
             time_updated: Optional[pulumi.Input[_builtins.str]] = None,
             updates_available: Optional[pulumi.Input[_builtins.int]] = None,
             work_request_count: Optional[pulumi.Input[_builtins.int]] = None) -> 'ManagedInstance':
@@ -984,7 +1020,8 @@ class ManagedInstance(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] agent_version: The version of osmh-agent running on the managed instance
         :param pulumi.Input[_builtins.str] architecture: The CPU architecture type of the managed instance.
-        :param pulumi.Input[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict']] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
+        :param pulumi.Input[_builtins.bool] are_sources_managed: Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+        :param pulumi.Input[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict']] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
         :param pulumi.Input[_builtins.int] bug_updates_available: Number of bug fix type updates available for installation.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
         :param pulumi.Input[_builtins.str] description: (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
@@ -1023,6 +1060,7 @@ class ManagedInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: The date and time the instance was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[_builtins.str] time_last_boot: Time that the instance last booted (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[_builtins.str] time_last_checkin: Time that the instance last checked in with the service (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        :param pulumi.Input[_builtins.str] time_last_software_refresh: The date and time the instance's software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[_builtins.str] time_updated: The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[_builtins.int] updates_available: Number of updates available for installation.
         :param pulumi.Input[_builtins.int] work_request_count: Number of work requests associated with this instance.
@@ -1033,6 +1071,7 @@ class ManagedInstance(pulumi.CustomResource):
 
         __props__.__dict__["agent_version"] = agent_version
         __props__.__dict__["architecture"] = architecture
+        __props__.__dict__["are_sources_managed"] = are_sources_managed
         __props__.__dict__["autonomous_settings"] = autonomous_settings
         __props__.__dict__["bug_updates_available"] = bug_updates_available
         __props__.__dict__["compartment_id"] = compartment_id
@@ -1068,6 +1107,7 @@ class ManagedInstance(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_last_boot"] = time_last_boot
         __props__.__dict__["time_last_checkin"] = time_last_checkin
+        __props__.__dict__["time_last_software_refresh"] = time_last_software_refresh
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["updates_available"] = updates_available
         __props__.__dict__["work_request_count"] = work_request_count
@@ -1090,10 +1130,18 @@ class ManagedInstance(pulumi.CustomResource):
         return pulumi.get(self, "architecture")
 
     @_builtins.property
+    @pulumi.getter(name="areSourcesManaged")
+    def are_sources_managed(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+        """
+        return pulumi.get(self, "are_sources_managed")
+
+    @_builtins.property
     @pulumi.getter(name="autonomousSettings")
     def autonomous_settings(self) -> pulumi.Output['outputs.ManagedInstanceAutonomousSettings']:
         """
-        (Updatable) Updatable settings for the Autonomous Linux service.
+        (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
         """
         return pulumi.get(self, "autonomous_settings")
 
@@ -1372,6 +1420,14 @@ class ManagedInstance(pulumi.CustomResource):
         Time that the instance last checked in with the service (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_last_checkin")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastSoftwareRefresh")
+    def time_last_software_refresh(self) -> pulumi.Output[_builtins.str]:
+        """
+        The date and time the instance's software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        """
+        return pulumi.get(self, "time_last_software_refresh")
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")

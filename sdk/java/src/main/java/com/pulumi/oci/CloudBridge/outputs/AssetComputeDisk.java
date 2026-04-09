@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudBridge.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -17,6 +18,11 @@ public final class AssetComputeDisk {
      * 
      */
     private @Nullable Integer bootOrder;
+    /**
+     * @return (Updatable) Indicates that CBT (change disk tracking) is enabled for this virtual disk.
+     * 
+     */
+    private @Nullable Boolean isCbtEnabled;
     /**
      * @return (Updatable) Location of the boot/data volume.
      * 
@@ -55,6 +61,13 @@ public final class AssetComputeDisk {
      */
     public Optional<Integer> bootOrder() {
         return Optional.ofNullable(this.bootOrder);
+    }
+    /**
+     * @return (Updatable) Indicates that CBT (change disk tracking) is enabled for this virtual disk.
+     * 
+     */
+    public Optional<Boolean> isCbtEnabled() {
+        return Optional.ofNullable(this.isCbtEnabled);
     }
     /**
      * @return (Updatable) Location of the boot/data volume.
@@ -109,6 +122,7 @@ public final class AssetComputeDisk {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer bootOrder;
+        private @Nullable Boolean isCbtEnabled;
         private @Nullable String location;
         private @Nullable String name;
         private @Nullable String persistentMode;
@@ -119,6 +133,7 @@ public final class AssetComputeDisk {
         public Builder(AssetComputeDisk defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bootOrder = defaults.bootOrder;
+    	      this.isCbtEnabled = defaults.isCbtEnabled;
     	      this.location = defaults.location;
     	      this.name = defaults.name;
     	      this.persistentMode = defaults.persistentMode;
@@ -131,6 +146,12 @@ public final class AssetComputeDisk {
         public Builder bootOrder(@Nullable Integer bootOrder) {
 
             this.bootOrder = bootOrder;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isCbtEnabled(@Nullable Boolean isCbtEnabled) {
+
+            this.isCbtEnabled = isCbtEnabled;
             return this;
         }
         @CustomType.Setter
@@ -172,6 +193,7 @@ public final class AssetComputeDisk {
         public AssetComputeDisk build() {
             final var _resultValue = new AssetComputeDisk();
             _resultValue.bootOrder = bootOrder;
+            _resultValue.isCbtEnabled = isCbtEnabled;
             _resultValue.location = location;
             _resultValue.name = name;
             _resultValue.persistentMode = persistentMode;

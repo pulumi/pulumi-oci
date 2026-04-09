@@ -50,6 +50,7 @@ import (
 //					Hosts:     pulumi.Any(managementStationProxyHosts),
 //					Port:      pulumi.Any(managementStationProxyPort),
 //				},
+//				ArchType: pulumi.Any(managementStationArchType),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
@@ -58,6 +59,7 @@ import (
 //					"Department": pulumi.String("Finance"),
 //				},
 //				IsAutoConfigEnabled: pulumi.Any(managementStationIsAutoConfigEnabled),
+//				OsFamily:            pulumi.Any(managementStationOsFamily),
 //			})
 //			if err != nil {
 //				return err
@@ -78,6 +80,8 @@ import (
 type ManagementStation struct {
 	pulumi.CustomResourceState
 
+	// (Updatable) The architecture type.
+	ArchType pulumi.StringOutput `pulumi:"archType"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -114,6 +118,8 @@ type ManagementStation struct {
 	MirrorSyncStatuses ManagementStationMirrorSyncStatusArrayOutput `pulumi:"mirrorSyncStatuses"`
 	// The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
 	MirrorUniquePackageCount pulumi.IntOutput `pulumi:"mirrorUniquePackageCount"`
+	// (Updatable) The operating system family.
+	OsFamily pulumi.StringOutput `pulumi:"osFamily"`
 	// A decimal number representing the progress of the current mirror sync.
 	OverallPercentage pulumi.IntOutput `pulumi:"overallPercentage"`
 	// Current state of the mirror sync for the management station.
@@ -184,6 +190,8 @@ func GetManagementStation(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ManagementStation resources.
 type managementStationState struct {
+	// (Updatable) The architecture type.
+	ArchType *string `pulumi:"archType"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -220,6 +228,8 @@ type managementStationState struct {
 	MirrorSyncStatuses []ManagementStationMirrorSyncStatus `pulumi:"mirrorSyncStatuses"`
 	// The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
 	MirrorUniquePackageCount *int `pulumi:"mirrorUniquePackageCount"`
+	// (Updatable) The operating system family.
+	OsFamily *string `pulumi:"osFamily"`
 	// A decimal number representing the progress of the current mirror sync.
 	OverallPercentage *int `pulumi:"overallPercentage"`
 	// Current state of the mirror sync for the management station.
@@ -246,6 +256,8 @@ type managementStationState struct {
 }
 
 type ManagementStationState struct {
+	// (Updatable) The architecture type.
+	ArchType pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -282,6 +294,8 @@ type ManagementStationState struct {
 	MirrorSyncStatuses ManagementStationMirrorSyncStatusArrayInput
 	// The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
 	MirrorUniquePackageCount pulumi.IntPtrInput
+	// (Updatable) The operating system family.
+	OsFamily pulumi.StringPtrInput
 	// A decimal number representing the progress of the current mirror sync.
 	OverallPercentage pulumi.IntPtrInput
 	// Current state of the mirror sync for the management station.
@@ -312,6 +326,8 @@ func (ManagementStationState) ElementType() reflect.Type {
 }
 
 type managementStationArgs struct {
+	// (Updatable) The architecture type.
+	ArchType *string `pulumi:"archType"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -328,6 +344,8 @@ type managementStationArgs struct {
 	IsAutoConfigEnabled *bool `pulumi:"isAutoConfigEnabled"`
 	// (Updatable) Information used to create the mirror configuration for a management station.
 	Mirror ManagementStationMirror `pulumi:"mirror"`
+	// (Updatable) The operating system family.
+	OsFamily *string `pulumi:"osFamily"`
 	// (Updatable) Information used to create the proxy configuration for a management station.
 	Proxy ManagementStationProxy `pulumi:"proxy"`
 	// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
@@ -339,6 +357,8 @@ type managementStationArgs struct {
 
 // The set of arguments for constructing a ManagementStation resource.
 type ManagementStationArgs struct {
+	// (Updatable) The architecture type.
+	ArchType pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -355,6 +375,8 @@ type ManagementStationArgs struct {
 	IsAutoConfigEnabled pulumi.BoolPtrInput
 	// (Updatable) Information used to create the mirror configuration for a management station.
 	Mirror ManagementStationMirrorInput
+	// (Updatable) The operating system family.
+	OsFamily pulumi.StringPtrInput
 	// (Updatable) Information used to create the proxy configuration for a management station.
 	Proxy ManagementStationProxyInput
 	// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
@@ -451,6 +473,11 @@ func (o ManagementStationOutput) ToManagementStationOutputWithContext(ctx contex
 	return o
 }
 
+// (Updatable) The architecture type.
+func (o ManagementStationOutput) ArchType() pulumi.StringOutput {
+	return o.ApplyT(func(v *ManagementStation) pulumi.StringOutput { return v.ArchType }).(pulumi.StringOutput)
+}
+
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
 func (o ManagementStationOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagementStation) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -539,6 +566,11 @@ func (o ManagementStationOutput) MirrorSyncStatuses() ManagementStationMirrorSyn
 // The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
 func (o ManagementStationOutput) MirrorUniquePackageCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *ManagementStation) pulumi.IntOutput { return v.MirrorUniquePackageCount }).(pulumi.IntOutput)
+}
+
+// (Updatable) The operating system family.
+func (o ManagementStationOutput) OsFamily() pulumi.StringOutput {
+	return o.ApplyT(func(v *ManagementStation) pulumi.StringOutput { return v.OsFamily }).(pulumi.StringOutput)
 }
 
 // A decimal number representing the progress of the current mirror sync.

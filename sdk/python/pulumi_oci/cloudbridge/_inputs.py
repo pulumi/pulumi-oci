@@ -17,6 +17,38 @@ from .. import _utilities
 __all__ = [
     'AgentPluginListArgs',
     'AgentPluginListArgsDict',
+    'AssetAttachedEbsVolumesCostArgs',
+    'AssetAttachedEbsVolumesCostArgsDict',
+    'AssetAwsEbsArgs',
+    'AssetAwsEbsArgsDict',
+    'AssetAwsEbsAttachmentArgs',
+    'AssetAwsEbsAttachmentArgsDict',
+    'AssetAwsEbsTagArgs',
+    'AssetAwsEbsTagArgsDict',
+    'AssetAwsEc2Args',
+    'AssetAwsEc2ArgsDict',
+    'AssetAwsEc2NetworkInterfaceArgs',
+    'AssetAwsEc2NetworkInterfaceArgsDict',
+    'AssetAwsEc2NetworkInterfaceAssociationArgs',
+    'AssetAwsEc2NetworkInterfaceAssociationArgsDict',
+    'AssetAwsEc2NetworkInterfaceAttachmentArgs',
+    'AssetAwsEc2NetworkInterfaceAttachmentArgsDict',
+    'AssetAwsEc2NetworkInterfacePrivateIpAddressArgs',
+    'AssetAwsEc2NetworkInterfacePrivateIpAddressArgsDict',
+    'AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs',
+    'AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgsDict',
+    'AssetAwsEc2NetworkInterfaceSecurityGroupArgs',
+    'AssetAwsEc2NetworkInterfaceSecurityGroupArgsDict',
+    'AssetAwsEc2PlacementArgs',
+    'AssetAwsEc2PlacementArgsDict',
+    'AssetAwsEc2SecurityGroupArgs',
+    'AssetAwsEc2SecurityGroupArgsDict',
+    'AssetAwsEc2StateArgs',
+    'AssetAwsEc2StateArgsDict',
+    'AssetAwsEc2TagArgs',
+    'AssetAwsEc2TagArgsDict',
+    'AssetAwsEc2costArgs',
+    'AssetAwsEc2costArgsDict',
     'AssetComputeArgs',
     'AssetComputeArgsDict',
     'AssetComputeDiskArgs',
@@ -59,6 +91,8 @@ __all__ = [
     'GetEnvironmentsFilterArgsDict',
     'GetInventoriesFilterArgs',
     'GetInventoriesFilterArgsDict',
+    'GetSupportedCloudRegionsFilterArgs',
+    'GetSupportedCloudRegionsFilterArgsDict',
 ]
 
 class AgentPluginListArgsDict(TypedDict):
@@ -248,6 +282,2270 @@ class AgentPluginListArgs:
     @time_updated.setter
     def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
+
+
+class AssetAttachedEbsVolumesCostArgsDict(TypedDict):
+    amount: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) Monthly costs for maintenance of this asset.
+    """
+    currency_code: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Currency code
+    """
+
+@pulumi.input_type
+class AssetAttachedEbsVolumesCostArgs:
+    def __init__(__self__, *,
+                 amount: Optional[pulumi.Input[_builtins.float]] = None,
+                 currency_code: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.float] amount: (Updatable) Monthly costs for maintenance of this asset.
+        :param pulumi.Input[_builtins.str] currency_code: (Updatable) Currency code
+        """
+        if amount is not None:
+            pulumi.set(__self__, "amount", amount)
+        if currency_code is not None:
+            pulumi.set(__self__, "currency_code", currency_code)
+
+    @_builtins.property
+    @pulumi.getter
+    def amount(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        (Updatable) Monthly costs for maintenance of this asset.
+        """
+        return pulumi.get(self, "amount")
+
+    @amount.setter
+    def amount(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "amount", value)
+
+    @_builtins.property
+    @pulumi.getter(name="currencyCode")
+    def currency_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Currency code
+        """
+        return pulumi.get(self, "currency_code")
+
+    @currency_code.setter
+    def currency_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "currency_code", value)
+
+
+class AssetAwsEbsArgsDict(TypedDict):
+    attachments: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetAwsEbsAttachmentArgsDict']]]]
+    """
+    (Updatable) Information about the volume attachments.
+    """
+    availability_zone: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The Availability Zone for the volume.
+    """
+    iops: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of I/O operations per second.
+    """
+    is_encrypted: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether the volume is encrypted.
+    """
+    is_multi_attach_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether Amazon EBS Multi-Attach is enabled.
+    """
+    size_in_gi_bs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The size of the volume, in GiBs.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The volume state.
+    """
+    tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetAwsEbsTagArgsDict']]]]
+    """
+    (Updatable) Any tags assigned to the volume.
+    """
+    throughput: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The throughput that the volume supports, in MiB/s.
+    """
+    volume_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The ID of the volume.
+    """
+    volume_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The volume type.
+    """
+
+@pulumi.input_type
+class AssetAwsEbsArgs:
+    def __init__(__self__, *,
+                 attachments: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEbsAttachmentArgs']]]] = None,
+                 availability_zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 iops: Optional[pulumi.Input[_builtins.int]] = None,
+                 is_encrypted: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_multi_attach_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 size_in_gi_bs: Optional[pulumi.Input[_builtins.int]] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEbsTagArgs']]]] = None,
+                 throughput: Optional[pulumi.Input[_builtins.int]] = None,
+                 volume_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 volume_type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['AssetAwsEbsAttachmentArgs']]] attachments: (Updatable) Information about the volume attachments.
+        :param pulumi.Input[_builtins.str] availability_zone: (Updatable) The Availability Zone for the volume.
+        :param pulumi.Input[_builtins.int] iops: (Updatable) The number of I/O operations per second.
+        :param pulumi.Input[_builtins.bool] is_encrypted: (Updatable) Indicates whether the volume is encrypted.
+        :param pulumi.Input[_builtins.bool] is_multi_attach_enabled: (Updatable) Indicates whether Amazon EBS Multi-Attach is enabled.
+        :param pulumi.Input[_builtins.int] size_in_gi_bs: (Updatable) The size of the volume, in GiBs.
+        :param pulumi.Input[_builtins.str] status: (Updatable) The volume state.
+        :param pulumi.Input[Sequence[pulumi.Input['AssetAwsEbsTagArgs']]] tags: (Updatable) Any tags assigned to the volume.
+        :param pulumi.Input[_builtins.int] throughput: (Updatable) The throughput that the volume supports, in MiB/s.
+        :param pulumi.Input[_builtins.str] volume_key: (Updatable) The ID of the volume.
+        :param pulumi.Input[_builtins.str] volume_type: (Updatable) The volume type.
+        """
+        if attachments is not None:
+            pulumi.set(__self__, "attachments", attachments)
+        if availability_zone is not None:
+            pulumi.set(__self__, "availability_zone", availability_zone)
+        if iops is not None:
+            pulumi.set(__self__, "iops", iops)
+        if is_encrypted is not None:
+            pulumi.set(__self__, "is_encrypted", is_encrypted)
+        if is_multi_attach_enabled is not None:
+            pulumi.set(__self__, "is_multi_attach_enabled", is_multi_attach_enabled)
+        if size_in_gi_bs is not None:
+            pulumi.set(__self__, "size_in_gi_bs", size_in_gi_bs)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+        if throughput is not None:
+            pulumi.set(__self__, "throughput", throughput)
+        if volume_key is not None:
+            pulumi.set(__self__, "volume_key", volume_key)
+        if volume_type is not None:
+            pulumi.set(__self__, "volume_type", volume_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEbsAttachmentArgs']]]]:
+        """
+        (Updatable) Information about the volume attachments.
+        """
+        return pulumi.get(self, "attachments")
+
+    @attachments.setter
+    def attachments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEbsAttachmentArgs']]]]):
+        pulumi.set(self, "attachments", value)
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityZone")
+    def availability_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The Availability Zone for the volume.
+        """
+        return pulumi.get(self, "availability_zone")
+
+    @availability_zone.setter
+    def availability_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "availability_zone", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def iops(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The number of I/O operations per second.
+        """
+        return pulumi.get(self, "iops")
+
+    @iops.setter
+    def iops(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "iops", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isEncrypted")
+    def is_encrypted(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Indicates whether the volume is encrypted.
+        """
+        return pulumi.get(self, "is_encrypted")
+
+    @is_encrypted.setter
+    def is_encrypted(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_encrypted", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isMultiAttachEnabled")
+    def is_multi_attach_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Indicates whether Amazon EBS Multi-Attach is enabled.
+        """
+        return pulumi.get(self, "is_multi_attach_enabled")
+
+    @is_multi_attach_enabled.setter
+    def is_multi_attach_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_multi_attach_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sizeInGiBs")
+    def size_in_gi_bs(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The size of the volume, in GiBs.
+        """
+        return pulumi.get(self, "size_in_gi_bs")
+
+    @size_in_gi_bs.setter
+    def size_in_gi_bs(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "size_in_gi_bs", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The volume state.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEbsTagArgs']]]]:
+        """
+        (Updatable) Any tags assigned to the volume.
+        """
+        return pulumi.get(self, "tags")
+
+    @tags.setter
+    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEbsTagArgs']]]]):
+        pulumi.set(self, "tags", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def throughput(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The throughput that the volume supports, in MiB/s.
+        """
+        return pulumi.get(self, "throughput")
+
+    @throughput.setter
+    def throughput(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "throughput", value)
+
+    @_builtins.property
+    @pulumi.getter(name="volumeKey")
+    def volume_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The ID of the volume.
+        """
+        return pulumi.get(self, "volume_key")
+
+    @volume_key.setter
+    def volume_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "volume_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="volumeType")
+    def volume_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The volume type.
+        """
+        return pulumi.get(self, "volume_type")
+
+    @volume_type.setter
+    def volume_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "volume_type", value)
+
+
+class AssetAwsEbsAttachmentArgsDict(TypedDict):
+    device: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The device name.
+    """
+    instance_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The ID of the instance.
+    """
+    is_delete_on_termination: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether the EBS volume is deleted on instance termination.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The attachment state of the volume.
+    """
+    volume_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The ID of the volume.
+    """
+
+@pulumi.input_type
+class AssetAwsEbsAttachmentArgs:
+    def __init__(__self__, *,
+                 device: Optional[pulumi.Input[_builtins.str]] = None,
+                 instance_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_delete_on_termination: Optional[pulumi.Input[_builtins.bool]] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 volume_key: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] device: (Updatable) The device name.
+        :param pulumi.Input[_builtins.str] instance_key: (Updatable) The ID of the instance.
+        :param pulumi.Input[_builtins.bool] is_delete_on_termination: (Updatable) Indicates whether the EBS volume is deleted on instance termination.
+        :param pulumi.Input[_builtins.str] status: (Updatable) The attachment state of the volume.
+        :param pulumi.Input[_builtins.str] volume_key: (Updatable) The ID of the volume.
+        """
+        if device is not None:
+            pulumi.set(__self__, "device", device)
+        if instance_key is not None:
+            pulumi.set(__self__, "instance_key", instance_key)
+        if is_delete_on_termination is not None:
+            pulumi.set(__self__, "is_delete_on_termination", is_delete_on_termination)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if volume_key is not None:
+            pulumi.set(__self__, "volume_key", volume_key)
+
+    @_builtins.property
+    @pulumi.getter
+    def device(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The device name.
+        """
+        return pulumi.get(self, "device")
+
+    @device.setter
+    def device(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "device", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceKey")
+    def instance_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The ID of the instance.
+        """
+        return pulumi.get(self, "instance_key")
+
+    @instance_key.setter
+    def instance_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "instance_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isDeleteOnTermination")
+    def is_delete_on_termination(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Indicates whether the EBS volume is deleted on instance termination.
+        """
+        return pulumi.get(self, "is_delete_on_termination")
+
+    @is_delete_on_termination.setter
+    def is_delete_on_termination(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_delete_on_termination", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The attachment state of the volume.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="volumeKey")
+    def volume_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The ID of the volume.
+        """
+        return pulumi.get(self, "volume_key")
+
+    @volume_key.setter
+    def volume_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "volume_key", value)
+
+
+class AssetAwsEbsTagArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The key of the tag.
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The value of the tag.
+    """
+
+@pulumi.input_type
+class AssetAwsEbsTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[_builtins.str]] = None,
+                 value: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] key: (Updatable) The key of the tag.
+        :param pulumi.Input[_builtins.str] value: (Updatable) The value of the tag.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The key of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The value of the tag.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class AssetAwsEc2ArgsDict(TypedDict):
+    architecture: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The architecture of the image.
+    """
+    are_elastic_inference_accelerators_present: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates if the elastic inference accelerators attached to an instance
+    """
+    boot_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The boot mode of the instance.
+    """
+    capacity_reservation_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The ID of the Capacity Reservation.
+    """
+    image_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The ID of the AMI used to launch the instance.
+    """
+    instance_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The ID of the instance.
+    """
+    instance_lifecycle: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Indicates whether this is a Spot Instance or a Scheduled Instance.
+    """
+    instance_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The instance type.
+    """
+    ip_address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The public IPv4 address, or the Carrier IP address assigned to the instance.
+    """
+    ipv6address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The IPv6 address assigned to the instance.
+    """
+    is_enclave_options: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether the instance is enabled for AWS Nitro Enclaves.
+    """
+    is_hibernation_options: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether the instance is enabled for hibernation.
+    """
+    is_source_dest_check: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether source/destination checking is enabled.
+    """
+    is_spot_instance: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If the request is a Spot Instance request, this value will be true.
+    """
+    kernel_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The kernel associated with this instance, if applicable.
+    """
+    licenses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The license configurations for the instance.
+    """
+    maintenance_options: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Provides information on the recovery and maintenance options of your instance.
+    """
+    monitoring: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The monitoring for the instance.
+    """
+    network_interfaces: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceArgsDict']]]]
+    """
+    (Updatable) The network interfaces for the instance.
+    """
+    placement: NotRequired[pulumi.Input['AssetAwsEc2PlacementArgsDict']]
+    """
+    (Updatable) Describes the placement of an instance.
+    """
+    private_dns_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) (IPv4 only) The private DNS hostname name assigned to the instance.
+    """
+    private_ip_address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The private IPv4 address assigned to the instance.
+    """
+    root_device_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The device name of the root device volume.
+    """
+    root_device_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The root device type used by the AMI. The AMI can use an EBS volume or an instance store volume.
+    """
+    security_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2SecurityGroupArgsDict']]]]
+    """
+    (Updatable) The security groups for the instance.
+    """
+    sriov_net_support: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
+    """
+    state: NotRequired[pulumi.Input['AssetAwsEc2StateArgsDict']]
+    """
+    (Updatable) Describes the current state of an instance.
+    """
+    subnet_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) EC2-VPC The ID of the subnet in which the instance is running.
+    """
+    tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2TagArgsDict']]]]
+    """
+    (Updatable) Any tags assigned to the instance.
+    """
+    time_launch: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The time the instance was launched.
+    """
+    tpm_support: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) If the instance is configured for NitroTPM support, the value is v2.0.
+    """
+    virtualization_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The virtualization type of the instance.
+    """
+    vpc_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) EC2-VPC The ID of the VPC in which the instance is running.
+    """
+
+@pulumi.input_type
+class AssetAwsEc2Args:
+    def __init__(__self__, *,
+                 architecture: Optional[pulumi.Input[_builtins.str]] = None,
+                 are_elastic_inference_accelerators_present: Optional[pulumi.Input[_builtins.bool]] = None,
+                 boot_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 capacity_reservation_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 image_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 instance_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 instance_lifecycle: Optional[pulumi.Input[_builtins.str]] = None,
+                 instance_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
+                 ipv6address: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_enclave_options: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_hibernation_options: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_source_dest_check: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_spot_instance: Optional[pulumi.Input[_builtins.bool]] = None,
+                 kernel_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 licenses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 maintenance_options: Optional[pulumi.Input[_builtins.str]] = None,
+                 monitoring: Optional[pulumi.Input[_builtins.str]] = None,
+                 network_interfaces: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceArgs']]]] = None,
+                 placement: Optional[pulumi.Input['AssetAwsEc2PlacementArgs']] = None,
+                 private_dns_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 private_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
+                 root_device_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 root_device_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2SecurityGroupArgs']]]] = None,
+                 sriov_net_support: Optional[pulumi.Input[_builtins.str]] = None,
+                 state: Optional[pulumi.Input['AssetAwsEc2StateArgs']] = None,
+                 subnet_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2TagArgs']]]] = None,
+                 time_launch: Optional[pulumi.Input[_builtins.str]] = None,
+                 tpm_support: Optional[pulumi.Input[_builtins.str]] = None,
+                 virtualization_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 vpc_key: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] architecture: (Updatable) The architecture of the image.
+        :param pulumi.Input[_builtins.bool] are_elastic_inference_accelerators_present: (Updatable) Indicates if the elastic inference accelerators attached to an instance
+        :param pulumi.Input[_builtins.str] boot_mode: (Updatable) The boot mode of the instance.
+        :param pulumi.Input[_builtins.str] capacity_reservation_key: (Updatable) The ID of the Capacity Reservation.
+        :param pulumi.Input[_builtins.str] image_key: (Updatable) The ID of the AMI used to launch the instance.
+        :param pulumi.Input[_builtins.str] instance_key: (Updatable) The ID of the instance.
+        :param pulumi.Input[_builtins.str] instance_lifecycle: (Updatable) Indicates whether this is a Spot Instance or a Scheduled Instance.
+        :param pulumi.Input[_builtins.str] instance_type: (Updatable) The instance type.
+        :param pulumi.Input[_builtins.str] ip_address: (Updatable) The public IPv4 address, or the Carrier IP address assigned to the instance.
+        :param pulumi.Input[_builtins.str] ipv6address: (Updatable) The IPv6 address assigned to the instance.
+        :param pulumi.Input[_builtins.bool] is_enclave_options: (Updatable) Indicates whether the instance is enabled for AWS Nitro Enclaves.
+        :param pulumi.Input[_builtins.bool] is_hibernation_options: (Updatable) Indicates whether the instance is enabled for hibernation.
+        :param pulumi.Input[_builtins.bool] is_source_dest_check: (Updatable) Indicates whether source/destination checking is enabled.
+        :param pulumi.Input[_builtins.bool] is_spot_instance: (Updatable) If the request is a Spot Instance request, this value will be true.
+        :param pulumi.Input[_builtins.str] kernel_key: (Updatable) The kernel associated with this instance, if applicable.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] licenses: (Updatable) The license configurations for the instance.
+        :param pulumi.Input[_builtins.str] maintenance_options: (Updatable) Provides information on the recovery and maintenance options of your instance.
+        :param pulumi.Input[_builtins.str] monitoring: (Updatable) The monitoring for the instance.
+        :param pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceArgs']]] network_interfaces: (Updatable) The network interfaces for the instance.
+        :param pulumi.Input['AssetAwsEc2PlacementArgs'] placement: (Updatable) Describes the placement of an instance.
+        :param pulumi.Input[_builtins.str] private_dns_name: (Updatable) (IPv4 only) The private DNS hostname name assigned to the instance.
+        :param pulumi.Input[_builtins.str] private_ip_address: (Updatable) The private IPv4 address assigned to the instance.
+        :param pulumi.Input[_builtins.str] root_device_name: (Updatable) The device name of the root device volume.
+        :param pulumi.Input[_builtins.str] root_device_type: (Updatable) The root device type used by the AMI. The AMI can use an EBS volume or an instance store volume.
+        :param pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2SecurityGroupArgs']]] security_groups: (Updatable) The security groups for the instance.
+        :param pulumi.Input[_builtins.str] sriov_net_support: (Updatable) Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
+        :param pulumi.Input['AssetAwsEc2StateArgs'] state: (Updatable) Describes the current state of an instance.
+        :param pulumi.Input[_builtins.str] subnet_key: (Updatable) EC2-VPC The ID of the subnet in which the instance is running.
+        :param pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2TagArgs']]] tags: (Updatable) Any tags assigned to the instance.
+        :param pulumi.Input[_builtins.str] time_launch: (Updatable) The time the instance was launched.
+        :param pulumi.Input[_builtins.str] tpm_support: (Updatable) If the instance is configured for NitroTPM support, the value is v2.0.
+        :param pulumi.Input[_builtins.str] virtualization_type: (Updatable) The virtualization type of the instance.
+        :param pulumi.Input[_builtins.str] vpc_key: (Updatable) EC2-VPC The ID of the VPC in which the instance is running.
+        """
+        if architecture is not None:
+            pulumi.set(__self__, "architecture", architecture)
+        if are_elastic_inference_accelerators_present is not None:
+            pulumi.set(__self__, "are_elastic_inference_accelerators_present", are_elastic_inference_accelerators_present)
+        if boot_mode is not None:
+            pulumi.set(__self__, "boot_mode", boot_mode)
+        if capacity_reservation_key is not None:
+            pulumi.set(__self__, "capacity_reservation_key", capacity_reservation_key)
+        if image_key is not None:
+            pulumi.set(__self__, "image_key", image_key)
+        if instance_key is not None:
+            pulumi.set(__self__, "instance_key", instance_key)
+        if instance_lifecycle is not None:
+            pulumi.set(__self__, "instance_lifecycle", instance_lifecycle)
+        if instance_type is not None:
+            pulumi.set(__self__, "instance_type", instance_type)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if ipv6address is not None:
+            pulumi.set(__self__, "ipv6address", ipv6address)
+        if is_enclave_options is not None:
+            pulumi.set(__self__, "is_enclave_options", is_enclave_options)
+        if is_hibernation_options is not None:
+            pulumi.set(__self__, "is_hibernation_options", is_hibernation_options)
+        if is_source_dest_check is not None:
+            pulumi.set(__self__, "is_source_dest_check", is_source_dest_check)
+        if is_spot_instance is not None:
+            pulumi.set(__self__, "is_spot_instance", is_spot_instance)
+        if kernel_key is not None:
+            pulumi.set(__self__, "kernel_key", kernel_key)
+        if licenses is not None:
+            pulumi.set(__self__, "licenses", licenses)
+        if maintenance_options is not None:
+            pulumi.set(__self__, "maintenance_options", maintenance_options)
+        if monitoring is not None:
+            pulumi.set(__self__, "monitoring", monitoring)
+        if network_interfaces is not None:
+            pulumi.set(__self__, "network_interfaces", network_interfaces)
+        if placement is not None:
+            pulumi.set(__self__, "placement", placement)
+        if private_dns_name is not None:
+            pulumi.set(__self__, "private_dns_name", private_dns_name)
+        if private_ip_address is not None:
+            pulumi.set(__self__, "private_ip_address", private_ip_address)
+        if root_device_name is not None:
+            pulumi.set(__self__, "root_device_name", root_device_name)
+        if root_device_type is not None:
+            pulumi.set(__self__, "root_device_type", root_device_type)
+        if security_groups is not None:
+            pulumi.set(__self__, "security_groups", security_groups)
+        if sriov_net_support is not None:
+            pulumi.set(__self__, "sriov_net_support", sriov_net_support)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if subnet_key is not None:
+            pulumi.set(__self__, "subnet_key", subnet_key)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+        if time_launch is not None:
+            pulumi.set(__self__, "time_launch", time_launch)
+        if tpm_support is not None:
+            pulumi.set(__self__, "tpm_support", tpm_support)
+        if virtualization_type is not None:
+            pulumi.set(__self__, "virtualization_type", virtualization_type)
+        if vpc_key is not None:
+            pulumi.set(__self__, "vpc_key", vpc_key)
+
+    @_builtins.property
+    @pulumi.getter
+    def architecture(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The architecture of the image.
+        """
+        return pulumi.get(self, "architecture")
+
+    @architecture.setter
+    def architecture(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "architecture", value)
+
+    @_builtins.property
+    @pulumi.getter(name="areElasticInferenceAcceleratorsPresent")
+    def are_elastic_inference_accelerators_present(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Indicates if the elastic inference accelerators attached to an instance
+        """
+        return pulumi.get(self, "are_elastic_inference_accelerators_present")
+
+    @are_elastic_inference_accelerators_present.setter
+    def are_elastic_inference_accelerators_present(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "are_elastic_inference_accelerators_present", value)
+
+    @_builtins.property
+    @pulumi.getter(name="bootMode")
+    def boot_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The boot mode of the instance.
+        """
+        return pulumi.get(self, "boot_mode")
+
+    @boot_mode.setter
+    def boot_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "boot_mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationKey")
+    def capacity_reservation_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The ID of the Capacity Reservation.
+        """
+        return pulumi.get(self, "capacity_reservation_key")
+
+    @capacity_reservation_key.setter
+    def capacity_reservation_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "capacity_reservation_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="imageKey")
+    def image_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The ID of the AMI used to launch the instance.
+        """
+        return pulumi.get(self, "image_key")
+
+    @image_key.setter
+    def image_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "image_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceKey")
+    def instance_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The ID of the instance.
+        """
+        return pulumi.get(self, "instance_key")
+
+    @instance_key.setter
+    def instance_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "instance_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceLifecycle")
+    def instance_lifecycle(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Indicates whether this is a Spot Instance or a Scheduled Instance.
+        """
+        return pulumi.get(self, "instance_lifecycle")
+
+    @instance_lifecycle.setter
+    def instance_lifecycle(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "instance_lifecycle", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceType")
+    def instance_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The instance type.
+        """
+        return pulumi.get(self, "instance_type")
+
+    @instance_type.setter
+    def instance_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "instance_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The public IPv4 address, or the Carrier IP address assigned to the instance.
+        """
+        return pulumi.get(self, "ip_address")
+
+    @ip_address.setter
+    def ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ip_address", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6address(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The IPv6 address assigned to the instance.
+        """
+        return pulumi.get(self, "ipv6address")
+
+    @ipv6address.setter
+    def ipv6address(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ipv6address", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isEnclaveOptions")
+    def is_enclave_options(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Indicates whether the instance is enabled for AWS Nitro Enclaves.
+        """
+        return pulumi.get(self, "is_enclave_options")
+
+    @is_enclave_options.setter
+    def is_enclave_options(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_enclave_options", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isHibernationOptions")
+    def is_hibernation_options(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Indicates whether the instance is enabled for hibernation.
+        """
+        return pulumi.get(self, "is_hibernation_options")
+
+    @is_hibernation_options.setter
+    def is_hibernation_options(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_hibernation_options", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isSourceDestCheck")
+    def is_source_dest_check(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Indicates whether source/destination checking is enabled.
+        """
+        return pulumi.get(self, "is_source_dest_check")
+
+    @is_source_dest_check.setter
+    def is_source_dest_check(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_source_dest_check", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isSpotInstance")
+    def is_spot_instance(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) If the request is a Spot Instance request, this value will be true.
+        """
+        return pulumi.get(self, "is_spot_instance")
+
+    @is_spot_instance.setter
+    def is_spot_instance(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_spot_instance", value)
+
+    @_builtins.property
+    @pulumi.getter(name="kernelKey")
+    def kernel_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The kernel associated with this instance, if applicable.
+        """
+        return pulumi.get(self, "kernel_key")
+
+    @kernel_key.setter
+    def kernel_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "kernel_key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def licenses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) The license configurations for the instance.
+        """
+        return pulumi.get(self, "licenses")
+
+    @licenses.setter
+    def licenses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "licenses", value)
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceOptions")
+    def maintenance_options(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Provides information on the recovery and maintenance options of your instance.
+        """
+        return pulumi.get(self, "maintenance_options")
+
+    @maintenance_options.setter
+    def maintenance_options(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "maintenance_options", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def monitoring(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The monitoring for the instance.
+        """
+        return pulumi.get(self, "monitoring")
+
+    @monitoring.setter
+    def monitoring(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "monitoring", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkInterfaces")
+    def network_interfaces(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceArgs']]]]:
+        """
+        (Updatable) The network interfaces for the instance.
+        """
+        return pulumi.get(self, "network_interfaces")
+
+    @network_interfaces.setter
+    def network_interfaces(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceArgs']]]]):
+        pulumi.set(self, "network_interfaces", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def placement(self) -> Optional[pulumi.Input['AssetAwsEc2PlacementArgs']]:
+        """
+        (Updatable) Describes the placement of an instance.
+        """
+        return pulumi.get(self, "placement")
+
+    @placement.setter
+    def placement(self, value: Optional[pulumi.Input['AssetAwsEc2PlacementArgs']]):
+        pulumi.set(self, "placement", value)
+
+    @_builtins.property
+    @pulumi.getter(name="privateDnsName")
+    def private_dns_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) (IPv4 only) The private DNS hostname name assigned to the instance.
+        """
+        return pulumi.get(self, "private_dns_name")
+
+    @private_dns_name.setter
+    def private_dns_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "private_dns_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="privateIpAddress")
+    def private_ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The private IPv4 address assigned to the instance.
+        """
+        return pulumi.get(self, "private_ip_address")
+
+    @private_ip_address.setter
+    def private_ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "private_ip_address", value)
+
+    @_builtins.property
+    @pulumi.getter(name="rootDeviceName")
+    def root_device_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The device name of the root device volume.
+        """
+        return pulumi.get(self, "root_device_name")
+
+    @root_device_name.setter
+    def root_device_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "root_device_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="rootDeviceType")
+    def root_device_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The root device type used by the AMI. The AMI can use an EBS volume or an instance store volume.
+        """
+        return pulumi.get(self, "root_device_type")
+
+    @root_device_type.setter
+    def root_device_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "root_device_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="securityGroups")
+    def security_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2SecurityGroupArgs']]]]:
+        """
+        (Updatable) The security groups for the instance.
+        """
+        return pulumi.get(self, "security_groups")
+
+    @security_groups.setter
+    def security_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2SecurityGroupArgs']]]]):
+        pulumi.set(self, "security_groups", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sriovNetSupport")
+    def sriov_net_support(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
+        """
+        return pulumi.get(self, "sriov_net_support")
+
+    @sriov_net_support.setter
+    def sriov_net_support(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "sriov_net_support", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input['AssetAwsEc2StateArgs']]:
+        """
+        (Updatable) Describes the current state of an instance.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input['AssetAwsEc2StateArgs']]):
+        pulumi.set(self, "state", value)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetKey")
+    def subnet_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) EC2-VPC The ID of the subnet in which the instance is running.
+        """
+        return pulumi.get(self, "subnet_key")
+
+    @subnet_key.setter
+    def subnet_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subnet_key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2TagArgs']]]]:
+        """
+        (Updatable) Any tags assigned to the instance.
+        """
+        return pulumi.get(self, "tags")
+
+    @tags.setter
+    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2TagArgs']]]]):
+        pulumi.set(self, "tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeLaunch")
+    def time_launch(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The time the instance was launched.
+        """
+        return pulumi.get(self, "time_launch")
+
+    @time_launch.setter
+    def time_launch(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_launch", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tpmSupport")
+    def tpm_support(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) If the instance is configured for NitroTPM support, the value is v2.0.
+        """
+        return pulumi.get(self, "tpm_support")
+
+    @tpm_support.setter
+    def tpm_support(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "tpm_support", value)
+
+    @_builtins.property
+    @pulumi.getter(name="virtualizationType")
+    def virtualization_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The virtualization type of the instance.
+        """
+        return pulumi.get(self, "virtualization_type")
+
+    @virtualization_type.setter
+    def virtualization_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "virtualization_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vpcKey")
+    def vpc_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) EC2-VPC The ID of the VPC in which the instance is running.
+        """
+        return pulumi.get(self, "vpc_key")
+
+    @vpc_key.setter
+    def vpc_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vpc_key", value)
+
+
+class AssetAwsEc2NetworkInterfaceArgsDict(TypedDict):
+    association: NotRequired[pulumi.Input['AssetAwsEc2NetworkInterfaceAssociationArgsDict']]
+    """
+    (Updatable) Describes association information for an Elastic IP address (IPv4).
+    """
+    attachment: NotRequired[pulumi.Input['AssetAwsEc2NetworkInterfaceAttachmentArgsDict']]
+    """
+    (Updatable) Describes a network interface attachment.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The description.
+    """
+    interface_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of network interface.
+    """
+    ipv4prefixes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The IPv4 delegated prefixes that are assigned to the network interface.
+    """
+    ipv6addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The IPv6 addresses associated with the network interface.
+    """
+    ipv6prefixes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The IPv6 delegated prefixes that are assigned to the network interface.
+    """
+    is_source_dest_check: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether source/destination checking is enabled.
+    """
+    mac_address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The MAC address.
+    """
+    network_interface_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The ID of the network interface.
+    """
+    owner_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The ID of the AWS account that created the network interface.
+    """
+    private_ip_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressArgsDict']]]]
+    """
+    (Updatable) The private IPv4 addresses associated with the network interface.
+    """
+    security_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceSecurityGroupArgsDict']]]]
+    """
+    (Updatable) The security groups.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The status of the network interface.
+    """
+    subnet_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The ID of the subnet.
+    """
+
+@pulumi.input_type
+class AssetAwsEc2NetworkInterfaceArgs:
+    def __init__(__self__, *,
+                 association: Optional[pulumi.Input['AssetAwsEc2NetworkInterfaceAssociationArgs']] = None,
+                 attachment: Optional[pulumi.Input['AssetAwsEc2NetworkInterfaceAttachmentArgs']] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 interface_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 ipv4prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ipv6addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ipv6prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_source_dest_check: Optional[pulumi.Input[_builtins.bool]] = None,
+                 mac_address: Optional[pulumi.Input[_builtins.str]] = None,
+                 network_interface_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 owner_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 private_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressArgs']]]] = None,
+                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceSecurityGroupArgs']]]] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 subnet_key: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input['AssetAwsEc2NetworkInterfaceAssociationArgs'] association: (Updatable) Describes association information for an Elastic IP address (IPv4).
+        :param pulumi.Input['AssetAwsEc2NetworkInterfaceAttachmentArgs'] attachment: (Updatable) Describes a network interface attachment.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description.
+        :param pulumi.Input[_builtins.str] interface_type: (Updatable) The type of network interface.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ipv4prefixes: (Updatable) The IPv4 delegated prefixes that are assigned to the network interface.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ipv6addresses: (Updatable) The IPv6 addresses associated with the network interface.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ipv6prefixes: (Updatable) The IPv6 delegated prefixes that are assigned to the network interface.
+        :param pulumi.Input[_builtins.bool] is_source_dest_check: (Updatable) Indicates whether source/destination checking is enabled.
+        :param pulumi.Input[_builtins.str] mac_address: (Updatable) The MAC address.
+        :param pulumi.Input[_builtins.str] network_interface_key: (Updatable) The ID of the network interface.
+        :param pulumi.Input[_builtins.str] owner_key: (Updatable) The ID of the AWS account that created the network interface.
+        :param pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressArgs']]] private_ip_addresses: (Updatable) The private IPv4 addresses associated with the network interface.
+        :param pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceSecurityGroupArgs']]] security_groups: (Updatable) The security groups.
+        :param pulumi.Input[_builtins.str] status: (Updatable) The status of the network interface.
+        :param pulumi.Input[_builtins.str] subnet_key: (Updatable) The ID of the subnet.
+        """
+        if association is not None:
+            pulumi.set(__self__, "association", association)
+        if attachment is not None:
+            pulumi.set(__self__, "attachment", attachment)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if interface_type is not None:
+            pulumi.set(__self__, "interface_type", interface_type)
+        if ipv4prefixes is not None:
+            pulumi.set(__self__, "ipv4prefixes", ipv4prefixes)
+        if ipv6addresses is not None:
+            pulumi.set(__self__, "ipv6addresses", ipv6addresses)
+        if ipv6prefixes is not None:
+            pulumi.set(__self__, "ipv6prefixes", ipv6prefixes)
+        if is_source_dest_check is not None:
+            pulumi.set(__self__, "is_source_dest_check", is_source_dest_check)
+        if mac_address is not None:
+            pulumi.set(__self__, "mac_address", mac_address)
+        if network_interface_key is not None:
+            pulumi.set(__self__, "network_interface_key", network_interface_key)
+        if owner_key is not None:
+            pulumi.set(__self__, "owner_key", owner_key)
+        if private_ip_addresses is not None:
+            pulumi.set(__self__, "private_ip_addresses", private_ip_addresses)
+        if security_groups is not None:
+            pulumi.set(__self__, "security_groups", security_groups)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if subnet_key is not None:
+            pulumi.set(__self__, "subnet_key", subnet_key)
+
+    @_builtins.property
+    @pulumi.getter
+    def association(self) -> Optional[pulumi.Input['AssetAwsEc2NetworkInterfaceAssociationArgs']]:
+        """
+        (Updatable) Describes association information for an Elastic IP address (IPv4).
+        """
+        return pulumi.get(self, "association")
+
+    @association.setter
+    def association(self, value: Optional[pulumi.Input['AssetAwsEc2NetworkInterfaceAssociationArgs']]):
+        pulumi.set(self, "association", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def attachment(self) -> Optional[pulumi.Input['AssetAwsEc2NetworkInterfaceAttachmentArgs']]:
+        """
+        (Updatable) Describes a network interface attachment.
+        """
+        return pulumi.get(self, "attachment")
+
+    @attachment.setter
+    def attachment(self, value: Optional[pulumi.Input['AssetAwsEc2NetworkInterfaceAttachmentArgs']]):
+        pulumi.set(self, "attachment", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The description.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="interfaceType")
+    def interface_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The type of network interface.
+        """
+        return pulumi.get(self, "interface_type")
+
+    @interface_type.setter
+    def interface_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "interface_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv4prefixes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) The IPv4 delegated prefixes that are assigned to the network interface.
+        """
+        return pulumi.get(self, "ipv4prefixes")
+
+    @ipv4prefixes.setter
+    def ipv4prefixes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "ipv4prefixes", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) The IPv6 addresses associated with the network interface.
+        """
+        return pulumi.get(self, "ipv6addresses")
+
+    @ipv6addresses.setter
+    def ipv6addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "ipv6addresses", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6prefixes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) The IPv6 delegated prefixes that are assigned to the network interface.
+        """
+        return pulumi.get(self, "ipv6prefixes")
+
+    @ipv6prefixes.setter
+    def ipv6prefixes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "ipv6prefixes", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isSourceDestCheck")
+    def is_source_dest_check(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Indicates whether source/destination checking is enabled.
+        """
+        return pulumi.get(self, "is_source_dest_check")
+
+    @is_source_dest_check.setter
+    def is_source_dest_check(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_source_dest_check", value)
+
+    @_builtins.property
+    @pulumi.getter(name="macAddress")
+    def mac_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The MAC address.
+        """
+        return pulumi.get(self, "mac_address")
+
+    @mac_address.setter
+    def mac_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "mac_address", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkInterfaceKey")
+    def network_interface_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The ID of the network interface.
+        """
+        return pulumi.get(self, "network_interface_key")
+
+    @network_interface_key.setter
+    def network_interface_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "network_interface_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ownerKey")
+    def owner_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The ID of the AWS account that created the network interface.
+        """
+        return pulumi.get(self, "owner_key")
+
+    @owner_key.setter
+    def owner_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "owner_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="privateIpAddresses")
+    def private_ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressArgs']]]]:
+        """
+        (Updatable) The private IPv4 addresses associated with the network interface.
+        """
+        return pulumi.get(self, "private_ip_addresses")
+
+    @private_ip_addresses.setter
+    def private_ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressArgs']]]]):
+        pulumi.set(self, "private_ip_addresses", value)
+
+    @_builtins.property
+    @pulumi.getter(name="securityGroups")
+    def security_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceSecurityGroupArgs']]]]:
+        """
+        (Updatable) The security groups.
+        """
+        return pulumi.get(self, "security_groups")
+
+    @security_groups.setter
+    def security_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceSecurityGroupArgs']]]]):
+        pulumi.set(self, "security_groups", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The status of the network interface.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetKey")
+    def subnet_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The ID of the subnet.
+        """
+        return pulumi.get(self, "subnet_key")
+
+    @subnet_key.setter
+    def subnet_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subnet_key", value)
+
+
+class AssetAwsEc2NetworkInterfaceAssociationArgsDict(TypedDict):
+    carrier_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The carrier IP address associated with the network interface.
+    """
+    customer_owned_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The customer-owned IP address associated with the network interface.
+    """
+    ip_owner_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The ID of the owner of the Elastic IP address.
+    """
+    public_dns_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The public DNS name.
+    """
+    public_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The public IP address or Elastic IP address bound to the network interface.
+    """
+
+@pulumi.input_type
+class AssetAwsEc2NetworkInterfaceAssociationArgs:
+    def __init__(__self__, *,
+                 carrier_ip: Optional[pulumi.Input[_builtins.str]] = None,
+                 customer_owned_ip: Optional[pulumi.Input[_builtins.str]] = None,
+                 ip_owner_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 public_dns_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 public_ip: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] carrier_ip: (Updatable) The carrier IP address associated with the network interface.
+        :param pulumi.Input[_builtins.str] customer_owned_ip: (Updatable) The customer-owned IP address associated with the network interface.
+        :param pulumi.Input[_builtins.str] ip_owner_key: (Updatable) The ID of the owner of the Elastic IP address.
+        :param pulumi.Input[_builtins.str] public_dns_name: (Updatable) The public DNS name.
+        :param pulumi.Input[_builtins.str] public_ip: (Updatable) The public IP address or Elastic IP address bound to the network interface.
+        """
+        if carrier_ip is not None:
+            pulumi.set(__self__, "carrier_ip", carrier_ip)
+        if customer_owned_ip is not None:
+            pulumi.set(__self__, "customer_owned_ip", customer_owned_ip)
+        if ip_owner_key is not None:
+            pulumi.set(__self__, "ip_owner_key", ip_owner_key)
+        if public_dns_name is not None:
+            pulumi.set(__self__, "public_dns_name", public_dns_name)
+        if public_ip is not None:
+            pulumi.set(__self__, "public_ip", public_ip)
+
+    @_builtins.property
+    @pulumi.getter(name="carrierIp")
+    def carrier_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The carrier IP address associated with the network interface.
+        """
+        return pulumi.get(self, "carrier_ip")
+
+    @carrier_ip.setter
+    def carrier_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "carrier_ip", value)
+
+    @_builtins.property
+    @pulumi.getter(name="customerOwnedIp")
+    def customer_owned_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The customer-owned IP address associated with the network interface.
+        """
+        return pulumi.get(self, "customer_owned_ip")
+
+    @customer_owned_ip.setter
+    def customer_owned_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "customer_owned_ip", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipOwnerKey")
+    def ip_owner_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The ID of the owner of the Elastic IP address.
+        """
+        return pulumi.get(self, "ip_owner_key")
+
+    @ip_owner_key.setter
+    def ip_owner_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ip_owner_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="publicDnsName")
+    def public_dns_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The public DNS name.
+        """
+        return pulumi.get(self, "public_dns_name")
+
+    @public_dns_name.setter
+    def public_dns_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "public_dns_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="publicIp")
+    def public_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The public IP address or Elastic IP address bound to the network interface.
+        """
+        return pulumi.get(self, "public_ip")
+
+    @public_ip.setter
+    def public_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "public_ip", value)
+
+
+class AssetAwsEc2NetworkInterfaceAttachmentArgsDict(TypedDict):
+    attachment_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The ID of the network interface attachment.
+    """
+    device_index: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The index of the device on the instance for the network interface attachment.
+    """
+    is_delete_on_termination: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether the network interface is deleted when the instance is terminated.
+    """
+    network_card_index: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The index of the network card.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The attachment state.
+    """
+    time_attach: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The timestamp when the attachment initiated.
+    """
+
+@pulumi.input_type
+class AssetAwsEc2NetworkInterfaceAttachmentArgs:
+    def __init__(__self__, *,
+                 attachment_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 device_index: Optional[pulumi.Input[_builtins.int]] = None,
+                 is_delete_on_termination: Optional[pulumi.Input[_builtins.bool]] = None,
+                 network_card_index: Optional[pulumi.Input[_builtins.int]] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_attach: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] attachment_key: (Updatable) The ID of the network interface attachment.
+        :param pulumi.Input[_builtins.int] device_index: (Updatable) The index of the device on the instance for the network interface attachment.
+        :param pulumi.Input[_builtins.bool] is_delete_on_termination: (Updatable) Indicates whether the network interface is deleted when the instance is terminated.
+        :param pulumi.Input[_builtins.int] network_card_index: (Updatable) The index of the network card.
+        :param pulumi.Input[_builtins.str] status: (Updatable) The attachment state.
+        :param pulumi.Input[_builtins.str] time_attach: (Updatable) The timestamp when the attachment initiated.
+        """
+        if attachment_key is not None:
+            pulumi.set(__self__, "attachment_key", attachment_key)
+        if device_index is not None:
+            pulumi.set(__self__, "device_index", device_index)
+        if is_delete_on_termination is not None:
+            pulumi.set(__self__, "is_delete_on_termination", is_delete_on_termination)
+        if network_card_index is not None:
+            pulumi.set(__self__, "network_card_index", network_card_index)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_attach is not None:
+            pulumi.set(__self__, "time_attach", time_attach)
+
+    @_builtins.property
+    @pulumi.getter(name="attachmentKey")
+    def attachment_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The ID of the network interface attachment.
+        """
+        return pulumi.get(self, "attachment_key")
+
+    @attachment_key.setter
+    def attachment_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "attachment_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="deviceIndex")
+    def device_index(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The index of the device on the instance for the network interface attachment.
+        """
+        return pulumi.get(self, "device_index")
+
+    @device_index.setter
+    def device_index(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "device_index", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isDeleteOnTermination")
+    def is_delete_on_termination(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Indicates whether the network interface is deleted when the instance is terminated.
+        """
+        return pulumi.get(self, "is_delete_on_termination")
+
+    @is_delete_on_termination.setter
+    def is_delete_on_termination(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_delete_on_termination", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkCardIndex")
+    def network_card_index(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The index of the network card.
+        """
+        return pulumi.get(self, "network_card_index")
+
+    @network_card_index.setter
+    def network_card_index(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "network_card_index", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The attachment state.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeAttach")
+    def time_attach(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The timestamp when the attachment initiated.
+        """
+        return pulumi.get(self, "time_attach")
+
+    @time_attach.setter
+    def time_attach(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_attach", value)
+
+
+class AssetAwsEc2NetworkInterfacePrivateIpAddressArgsDict(TypedDict):
+    association: NotRequired[pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgsDict']]
+    """
+    (Updatable) Describes association information for an Elastic IP address (IPv4).
+    """
+    is_primary: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether this IPv4 address is the primary private IP address of the network interface.
+    """
+    private_dns_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The private IPv4 DNS name.
+    """
+    private_ip_address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The private IPv4 address of the network interface.
+    """
+
+@pulumi.input_type
+class AssetAwsEc2NetworkInterfacePrivateIpAddressArgs:
+    def __init__(__self__, *,
+                 association: Optional[pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs']] = None,
+                 is_primary: Optional[pulumi.Input[_builtins.bool]] = None,
+                 private_dns_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 private_ip_address: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs'] association: (Updatable) Describes association information for an Elastic IP address (IPv4).
+        :param pulumi.Input[_builtins.bool] is_primary: (Updatable) Indicates whether this IPv4 address is the primary private IP address of the network interface.
+        :param pulumi.Input[_builtins.str] private_dns_name: (Updatable) The private IPv4 DNS name.
+        :param pulumi.Input[_builtins.str] private_ip_address: (Updatable) The private IPv4 address of the network interface.
+        """
+        if association is not None:
+            pulumi.set(__self__, "association", association)
+        if is_primary is not None:
+            pulumi.set(__self__, "is_primary", is_primary)
+        if private_dns_name is not None:
+            pulumi.set(__self__, "private_dns_name", private_dns_name)
+        if private_ip_address is not None:
+            pulumi.set(__self__, "private_ip_address", private_ip_address)
+
+    @_builtins.property
+    @pulumi.getter
+    def association(self) -> Optional[pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs']]:
+        """
+        (Updatable) Describes association information for an Elastic IP address (IPv4).
+        """
+        return pulumi.get(self, "association")
+
+    @association.setter
+    def association(self, value: Optional[pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs']]):
+        pulumi.set(self, "association", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isPrimary")
+    def is_primary(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Indicates whether this IPv4 address is the primary private IP address of the network interface.
+        """
+        return pulumi.get(self, "is_primary")
+
+    @is_primary.setter
+    def is_primary(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_primary", value)
+
+    @_builtins.property
+    @pulumi.getter(name="privateDnsName")
+    def private_dns_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The private IPv4 DNS name.
+        """
+        return pulumi.get(self, "private_dns_name")
+
+    @private_dns_name.setter
+    def private_dns_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "private_dns_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="privateIpAddress")
+    def private_ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The private IPv4 address of the network interface.
+        """
+        return pulumi.get(self, "private_ip_address")
+
+    @private_ip_address.setter
+    def private_ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "private_ip_address", value)
+
+
+class AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgsDict(TypedDict):
+    carrier_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The carrier IP address associated with the network interface.
+    """
+    customer_owned_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The customer-owned IP address associated with the network interface.
+    """
+    ip_owner_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The ID of the owner of the Elastic IP address.
+    """
+    public_dns_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The public DNS name.
+    """
+    public_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The public IP address or Elastic IP address bound to the network interface.
+    """
+
+@pulumi.input_type
+class AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs:
+    def __init__(__self__, *,
+                 carrier_ip: Optional[pulumi.Input[_builtins.str]] = None,
+                 customer_owned_ip: Optional[pulumi.Input[_builtins.str]] = None,
+                 ip_owner_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 public_dns_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 public_ip: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] carrier_ip: (Updatable) The carrier IP address associated with the network interface.
+        :param pulumi.Input[_builtins.str] customer_owned_ip: (Updatable) The customer-owned IP address associated with the network interface.
+        :param pulumi.Input[_builtins.str] ip_owner_key: (Updatable) The ID of the owner of the Elastic IP address.
+        :param pulumi.Input[_builtins.str] public_dns_name: (Updatable) The public DNS name.
+        :param pulumi.Input[_builtins.str] public_ip: (Updatable) The public IP address or Elastic IP address bound to the network interface.
+        """
+        if carrier_ip is not None:
+            pulumi.set(__self__, "carrier_ip", carrier_ip)
+        if customer_owned_ip is not None:
+            pulumi.set(__self__, "customer_owned_ip", customer_owned_ip)
+        if ip_owner_key is not None:
+            pulumi.set(__self__, "ip_owner_key", ip_owner_key)
+        if public_dns_name is not None:
+            pulumi.set(__self__, "public_dns_name", public_dns_name)
+        if public_ip is not None:
+            pulumi.set(__self__, "public_ip", public_ip)
+
+    @_builtins.property
+    @pulumi.getter(name="carrierIp")
+    def carrier_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The carrier IP address associated with the network interface.
+        """
+        return pulumi.get(self, "carrier_ip")
+
+    @carrier_ip.setter
+    def carrier_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "carrier_ip", value)
+
+    @_builtins.property
+    @pulumi.getter(name="customerOwnedIp")
+    def customer_owned_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The customer-owned IP address associated with the network interface.
+        """
+        return pulumi.get(self, "customer_owned_ip")
+
+    @customer_owned_ip.setter
+    def customer_owned_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "customer_owned_ip", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipOwnerKey")
+    def ip_owner_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The ID of the owner of the Elastic IP address.
+        """
+        return pulumi.get(self, "ip_owner_key")
+
+    @ip_owner_key.setter
+    def ip_owner_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ip_owner_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="publicDnsName")
+    def public_dns_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The public DNS name.
+        """
+        return pulumi.get(self, "public_dns_name")
+
+    @public_dns_name.setter
+    def public_dns_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "public_dns_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="publicIp")
+    def public_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The public IP address or Elastic IP address bound to the network interface.
+        """
+        return pulumi.get(self, "public_ip")
+
+    @public_ip.setter
+    def public_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "public_ip", value)
+
+
+class AssetAwsEc2NetworkInterfaceSecurityGroupArgsDict(TypedDict):
+    group_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The ID of the security group.
+    """
+    group_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the security group.
+    """
+
+@pulumi.input_type
+class AssetAwsEc2NetworkInterfaceSecurityGroupArgs:
+    def __init__(__self__, *,
+                 group_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 group_name: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] group_key: (Updatable) The ID of the security group.
+        :param pulumi.Input[_builtins.str] group_name: (Updatable) The name of the security group.
+        """
+        if group_key is not None:
+            pulumi.set(__self__, "group_key", group_key)
+        if group_name is not None:
+            pulumi.set(__self__, "group_name", group_name)
+
+    @_builtins.property
+    @pulumi.getter(name="groupKey")
+    def group_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The ID of the security group.
+        """
+        return pulumi.get(self, "group_key")
+
+    @group_key.setter
+    def group_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "group_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The name of the security group.
+        """
+        return pulumi.get(self, "group_name")
+
+    @group_name.setter
+    def group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "group_name", value)
+
+
+class AssetAwsEc2PlacementArgsDict(TypedDict):
+    affinity: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The affinity setting for the instance on the Dedicated Host.
+    """
+    availability_zone: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The Availability Zone of the instance.
+    """
+    group_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the placement group the instance is in.
+    """
+    host_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The ID of the Dedicated Host on which the instance resides.
+    """
+    host_resource_group_arn: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The ARN of the host resource group in which to launch the instances.
+    """
+    partition_number: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of the partition that the instance is in.
+    """
+    spread_domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Reserved for future use.
+    """
+    tenancy: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The tenancy of the instance (if the instance is running in a VPC).
+    """
+
+@pulumi.input_type
+class AssetAwsEc2PlacementArgs:
+    def __init__(__self__, *,
+                 affinity: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 group_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 host_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 host_resource_group_arn: Optional[pulumi.Input[_builtins.str]] = None,
+                 partition_number: Optional[pulumi.Input[_builtins.int]] = None,
+                 spread_domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 tenancy: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] affinity: (Updatable) The affinity setting for the instance on the Dedicated Host.
+        :param pulumi.Input[_builtins.str] availability_zone: (Updatable) The Availability Zone of the instance.
+        :param pulumi.Input[_builtins.str] group_name: (Updatable) The name of the placement group the instance is in.
+        :param pulumi.Input[_builtins.str] host_key: (Updatable) The ID of the Dedicated Host on which the instance resides.
+        :param pulumi.Input[_builtins.str] host_resource_group_arn: (Updatable) The ARN of the host resource group in which to launch the instances.
+        :param pulumi.Input[_builtins.int] partition_number: (Updatable) The number of the partition that the instance is in.
+        :param pulumi.Input[_builtins.str] spread_domain: (Updatable) Reserved for future use.
+        :param pulumi.Input[_builtins.str] tenancy: (Updatable) The tenancy of the instance (if the instance is running in a VPC).
+        """
+        if affinity is not None:
+            pulumi.set(__self__, "affinity", affinity)
+        if availability_zone is not None:
+            pulumi.set(__self__, "availability_zone", availability_zone)
+        if group_name is not None:
+            pulumi.set(__self__, "group_name", group_name)
+        if host_key is not None:
+            pulumi.set(__self__, "host_key", host_key)
+        if host_resource_group_arn is not None:
+            pulumi.set(__self__, "host_resource_group_arn", host_resource_group_arn)
+        if partition_number is not None:
+            pulumi.set(__self__, "partition_number", partition_number)
+        if spread_domain is not None:
+            pulumi.set(__self__, "spread_domain", spread_domain)
+        if tenancy is not None:
+            pulumi.set(__self__, "tenancy", tenancy)
+
+    @_builtins.property
+    @pulumi.getter
+    def affinity(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The affinity setting for the instance on the Dedicated Host.
+        """
+        return pulumi.get(self, "affinity")
+
+    @affinity.setter
+    def affinity(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "affinity", value)
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityZone")
+    def availability_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The Availability Zone of the instance.
+        """
+        return pulumi.get(self, "availability_zone")
+
+    @availability_zone.setter
+    def availability_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "availability_zone", value)
+
+    @_builtins.property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The name of the placement group the instance is in.
+        """
+        return pulumi.get(self, "group_name")
+
+    @group_name.setter
+    def group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "group_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hostKey")
+    def host_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The ID of the Dedicated Host on which the instance resides.
+        """
+        return pulumi.get(self, "host_key")
+
+    @host_key.setter
+    def host_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "host_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hostResourceGroupArn")
+    def host_resource_group_arn(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The ARN of the host resource group in which to launch the instances.
+        """
+        return pulumi.get(self, "host_resource_group_arn")
+
+    @host_resource_group_arn.setter
+    def host_resource_group_arn(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "host_resource_group_arn", value)
+
+    @_builtins.property
+    @pulumi.getter(name="partitionNumber")
+    def partition_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The number of the partition that the instance is in.
+        """
+        return pulumi.get(self, "partition_number")
+
+    @partition_number.setter
+    def partition_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "partition_number", value)
+
+    @_builtins.property
+    @pulumi.getter(name="spreadDomain")
+    def spread_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Reserved for future use.
+        """
+        return pulumi.get(self, "spread_domain")
+
+    @spread_domain.setter
+    def spread_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "spread_domain", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def tenancy(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The tenancy of the instance (if the instance is running in a VPC).
+        """
+        return pulumi.get(self, "tenancy")
+
+    @tenancy.setter
+    def tenancy(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "tenancy", value)
+
+
+class AssetAwsEc2SecurityGroupArgsDict(TypedDict):
+    group_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The ID of the security group.
+    """
+    group_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the security group.
+    """
+
+@pulumi.input_type
+class AssetAwsEc2SecurityGroupArgs:
+    def __init__(__self__, *,
+                 group_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 group_name: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] group_key: (Updatable) The ID of the security group.
+        :param pulumi.Input[_builtins.str] group_name: (Updatable) The name of the security group.
+        """
+        if group_key is not None:
+            pulumi.set(__self__, "group_key", group_key)
+        if group_name is not None:
+            pulumi.set(__self__, "group_name", group_name)
+
+    @_builtins.property
+    @pulumi.getter(name="groupKey")
+    def group_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The ID of the security group.
+        """
+        return pulumi.get(self, "group_key")
+
+    @group_key.setter
+    def group_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "group_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The name of the security group.
+        """
+        return pulumi.get(self, "group_name")
+
+    @group_name.setter
+    def group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "group_name", value)
+
+
+class AssetAwsEc2StateArgsDict(TypedDict):
+    code: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The state of the instance as a 16-bit unsigned integer.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The current state of the instance.
+    """
+
+@pulumi.input_type
+class AssetAwsEc2StateArgs:
+    def __init__(__self__, *,
+                 code: Optional[pulumi.Input[_builtins.int]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.int] code: (Updatable) The state of the instance as a 16-bit unsigned integer.
+        :param pulumi.Input[_builtins.str] name: (Updatable) The current state of the instance.
+        """
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def code(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The state of the instance as a 16-bit unsigned integer.
+        """
+        return pulumi.get(self, "code")
+
+    @code.setter
+    def code(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "code", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The current state of the instance.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+
+class AssetAwsEc2TagArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The key of the tag.
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The value of the tag.
+    """
+
+@pulumi.input_type
+class AssetAwsEc2TagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[_builtins.str]] = None,
+                 value: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] key: (Updatable) The key of the tag.
+        :param pulumi.Input[_builtins.str] value: (Updatable) The value of the tag.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The key of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The value of the tag.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class AssetAwsEc2costArgsDict(TypedDict):
+    amount: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) Monthly costs for maintenance of this asset.
+    """
+    currency_code: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Currency code
+    """
+
+@pulumi.input_type
+class AssetAwsEc2costArgs:
+    def __init__(__self__, *,
+                 amount: Optional[pulumi.Input[_builtins.float]] = None,
+                 currency_code: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.float] amount: (Updatable) Monthly costs for maintenance of this asset.
+        :param pulumi.Input[_builtins.str] currency_code: (Updatable) Currency code
+        """
+        if amount is not None:
+            pulumi.set(__self__, "amount", amount)
+        if currency_code is not None:
+            pulumi.set(__self__, "currency_code", currency_code)
+
+    @_builtins.property
+    @pulumi.getter
+    def amount(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        (Updatable) Monthly costs for maintenance of this asset.
+        """
+        return pulumi.get(self, "amount")
+
+    @amount.setter
+    def amount(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "amount", value)
+
+    @_builtins.property
+    @pulumi.getter(name="currencyCode")
+    def currency_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Currency code
+        """
+        return pulumi.get(self, "currency_code")
+
+    @currency_code.setter
+    def currency_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "currency_code", value)
 
 
 class AssetComputeArgsDict(TypedDict):
@@ -844,6 +3142,10 @@ class AssetComputeDiskArgsDict(TypedDict):
     """
     (Updatable) Order of boot volumes.
     """
+    is_cbt_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates that CBT (change disk tracking) is enabled for this virtual disk.
+    """
     location: NotRequired[pulumi.Input[_builtins.str]]
     """
     (Updatable) Location of the boot/data volume.
@@ -873,6 +3175,7 @@ class AssetComputeDiskArgsDict(TypedDict):
 class AssetComputeDiskArgs:
     def __init__(__self__, *,
                  boot_order: Optional[pulumi.Input[_builtins.int]] = None,
+                 is_cbt_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  location: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  persistent_mode: Optional[pulumi.Input[_builtins.str]] = None,
@@ -881,6 +3184,7 @@ class AssetComputeDiskArgs:
                  uuid_lun: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.int] boot_order: (Updatable) Order of boot volumes.
+        :param pulumi.Input[_builtins.bool] is_cbt_enabled: (Updatable) Indicates that CBT (change disk tracking) is enabled for this virtual disk.
         :param pulumi.Input[_builtins.str] location: (Updatable) Location of the boot/data volume.
         :param pulumi.Input[_builtins.str] name: (Updatable) Disk name.
         :param pulumi.Input[_builtins.str] persistent_mode: (Updatable) The disk persistent mode.
@@ -890,6 +3194,8 @@ class AssetComputeDiskArgs:
         """
         if boot_order is not None:
             pulumi.set(__self__, "boot_order", boot_order)
+        if is_cbt_enabled is not None:
+            pulumi.set(__self__, "is_cbt_enabled", is_cbt_enabled)
         if location is not None:
             pulumi.set(__self__, "location", location)
         if name is not None:
@@ -914,6 +3220,18 @@ class AssetComputeDiskArgs:
     @boot_order.setter
     def boot_order(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "boot_order", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isCbtEnabled")
+    def is_cbt_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Indicates that CBT (change disk tracking) is enabled for this virtual disk.
+        """
+        return pulumi.get(self, "is_cbt_enabled")
+
+    @is_cbt_enabled.setter
+    def is_cbt_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_cbt_enabled", value)
 
     @_builtins.property
     @pulumi.getter
@@ -1416,7 +3734,7 @@ class AssetComputeScsiControllerArgs:
 class AssetSourceDiscoveryCredentialsArgsDict(TypedDict):
     secret_id: pulumi.Input[_builtins.str]
     """
-    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<User>", "password": "example-password" }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ "accessKeyId": "<AccessKey>", "secretAccessKey": "<AccessKeyValue>" }`.
     """
     type: pulumi.Input[_builtins.str]
     """
@@ -1429,7 +3747,7 @@ class AssetSourceDiscoveryCredentialsArgs:
                  secret_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str]):
         """
-        :param pulumi.Input[_builtins.str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+        :param pulumi.Input[_builtins.str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<User>", "password": "example-password" }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ "accessKeyId": "<AccessKey>", "secretAccessKey": "<AccessKeyValue>" }`.
         :param pulumi.Input[_builtins.str] type: (Updatable) Authentication type
         """
         pulumi.set(__self__, "secret_id", secret_id)
@@ -1439,7 +3757,7 @@ class AssetSourceDiscoveryCredentialsArgs:
     @pulumi.getter(name="secretId")
     def secret_id(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<User>", "password": "example-password" }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ "accessKeyId": "<AccessKey>", "secretAccessKey": "<AccessKeyValue>" }`.
         """
         return pulumi.get(self, "secret_id")
 
@@ -1463,7 +3781,7 @@ class AssetSourceDiscoveryCredentialsArgs:
 class AssetSourceReplicationCredentialsArgsDict(TypedDict):
     secret_id: pulumi.Input[_builtins.str]
     """
-    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<User>", "password": "example-password" }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ "accessKeyId": "<AccessKey>", "secretAccessKey": "<AccessKeyValue>" }`.
     """
     type: pulumi.Input[_builtins.str]
     """
@@ -1476,7 +3794,7 @@ class AssetSourceReplicationCredentialsArgs:
                  secret_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str]):
         """
-        :param pulumi.Input[_builtins.str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+        :param pulumi.Input[_builtins.str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<User>", "password": "example-password" }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ "accessKeyId": "<AccessKey>", "secretAccessKey": "<AccessKeyValue>" }`.
         :param pulumi.Input[_builtins.str] type: (Updatable) Authentication type
         """
         pulumi.set(__self__, "secret_id", secret_id)
@@ -1486,7 +3804,7 @@ class AssetSourceReplicationCredentialsArgs:
     @pulumi.getter(name="secretId")
     def secret_id(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<User>", "password": "example-password" }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ "accessKeyId": "<AccessKey>", "secretAccessKey": "<AccessKeyValue>" }`.
         """
         return pulumi.get(self, "secret_id")
 
@@ -2268,6 +4586,50 @@ class GetInventoriesFilterArgsDict(TypedDict):
 
 @pulumi.input_type
 class GetInventoriesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetSupportedCloudRegionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetSupportedCloudRegionsFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

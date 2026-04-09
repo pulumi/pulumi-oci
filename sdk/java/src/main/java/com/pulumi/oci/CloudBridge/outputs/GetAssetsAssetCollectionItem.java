@@ -5,6 +5,10 @@ package com.pulumi.oci.CloudBridge.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.CloudBridge.outputs.GetAssetsAssetCollectionItemAttachedEbsVolumesCost;
+import com.pulumi.oci.CloudBridge.outputs.GetAssetsAssetCollectionItemAwsEb;
+import com.pulumi.oci.CloudBridge.outputs.GetAssetsAssetCollectionItemAwsEc2;
+import com.pulumi.oci.CloudBridge.outputs.GetAssetsAssetCollectionItemAwsEc2cost;
 import com.pulumi.oci.CloudBridge.outputs.GetAssetsAssetCollectionItemCompute;
 import com.pulumi.oci.CloudBridge.outputs.GetAssetsAssetCollectionItemVm;
 import com.pulumi.oci.CloudBridge.outputs.GetAssetsAssetCollectionItemVmwareVcenter;
@@ -17,6 +21,21 @@ import java.util.Objects;
 @CustomType
 public final class GetAssetsAssetCollectionItem {
     /**
+     * @return The name of the asset class.
+     * 
+     */
+    private String assetClassName;
+    /**
+     * @return The version of the asset class.
+     * 
+     */
+    private String assetClassVersion;
+    /**
+     * @return The details of the asset.
+     * 
+     */
+    private String assetDetails;
+    /**
      * @return List of asset source OCID.
      * 
      */
@@ -26,6 +45,10 @@ public final class GetAssetsAssetCollectionItem {
      * 
      */
     private String assetType;
+    private List<GetAssetsAssetCollectionItemAttachedEbsVolumesCost> attachedEbsVolumesCosts;
+    private List<GetAssetsAssetCollectionItemAwsEb> awsEbs;
+    private List<GetAssetsAssetCollectionItemAwsEc2cost> awsEc2costs;
+    private List<GetAssetsAssetCollectionItemAwsEc2> awsEc2s;
     /**
      * @return The ID of the compartment in which to list resources.
      * 
@@ -46,6 +69,11 @@ public final class GetAssetsAssetCollectionItem {
      * 
      */
     private String displayName;
+    /**
+     * @return Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     * 
+     */
+    private String environmentType;
     /**
      * @return External asset key.
      * 
@@ -109,6 +137,27 @@ public final class GetAssetsAssetCollectionItem {
 
     private GetAssetsAssetCollectionItem() {}
     /**
+     * @return The name of the asset class.
+     * 
+     */
+    public String assetClassName() {
+        return this.assetClassName;
+    }
+    /**
+     * @return The version of the asset class.
+     * 
+     */
+    public String assetClassVersion() {
+        return this.assetClassVersion;
+    }
+    /**
+     * @return The details of the asset.
+     * 
+     */
+    public String assetDetails() {
+        return this.assetDetails;
+    }
+    /**
      * @return List of asset source OCID.
      * 
      */
@@ -121,6 +170,18 @@ public final class GetAssetsAssetCollectionItem {
      */
     public String assetType() {
         return this.assetType;
+    }
+    public List<GetAssetsAssetCollectionItemAttachedEbsVolumesCost> attachedEbsVolumesCosts() {
+        return this.attachedEbsVolumesCosts;
+    }
+    public List<GetAssetsAssetCollectionItemAwsEb> awsEbs() {
+        return this.awsEbs;
+    }
+    public List<GetAssetsAssetCollectionItemAwsEc2cost> awsEc2costs() {
+        return this.awsEc2costs;
+    }
+    public List<GetAssetsAssetCollectionItemAwsEc2> awsEc2s() {
+        return this.awsEc2s;
     }
     /**
      * @return The ID of the compartment in which to list resources.
@@ -149,6 +210,13 @@ public final class GetAssetsAssetCollectionItem {
      */
     public String displayName() {
         return this.displayName;
+    }
+    /**
+     * @return Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     * 
+     */
+    public String environmentType() {
+        return this.environmentType;
     }
     /**
      * @return External asset key.
@@ -244,12 +312,20 @@ public final class GetAssetsAssetCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String assetClassName;
+        private String assetClassVersion;
+        private String assetDetails;
         private List<String> assetSourceIds;
         private String assetType;
+        private List<GetAssetsAssetCollectionItemAttachedEbsVolumesCost> attachedEbsVolumesCosts;
+        private List<GetAssetsAssetCollectionItemAwsEb> awsEbs;
+        private List<GetAssetsAssetCollectionItemAwsEc2cost> awsEc2costs;
+        private List<GetAssetsAssetCollectionItemAwsEc2> awsEc2s;
         private String compartmentId;
         private List<GetAssetsAssetCollectionItemCompute> computes;
         private Map<String,String> definedTags;
         private String displayName;
+        private String environmentType;
         private String externalAssetKey;
         private Map<String,String> freeformTags;
         private String id;
@@ -265,12 +341,20 @@ public final class GetAssetsAssetCollectionItem {
         public Builder() {}
         public Builder(GetAssetsAssetCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.assetClassName = defaults.assetClassName;
+    	      this.assetClassVersion = defaults.assetClassVersion;
+    	      this.assetDetails = defaults.assetDetails;
     	      this.assetSourceIds = defaults.assetSourceIds;
     	      this.assetType = defaults.assetType;
+    	      this.attachedEbsVolumesCosts = defaults.attachedEbsVolumesCosts;
+    	      this.awsEbs = defaults.awsEbs;
+    	      this.awsEc2costs = defaults.awsEc2costs;
+    	      this.awsEc2s = defaults.awsEc2s;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computes = defaults.computes;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
+    	      this.environmentType = defaults.environmentType;
     	      this.externalAssetKey = defaults.externalAssetKey;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
@@ -285,6 +369,30 @@ public final class GetAssetsAssetCollectionItem {
     	      this.vmwareVms = defaults.vmwareVms;
         }
 
+        @CustomType.Setter
+        public Builder assetClassName(String assetClassName) {
+            if (assetClassName == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "assetClassName");
+            }
+            this.assetClassName = assetClassName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder assetClassVersion(String assetClassVersion) {
+            if (assetClassVersion == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "assetClassVersion");
+            }
+            this.assetClassVersion = assetClassVersion;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder assetDetails(String assetDetails) {
+            if (assetDetails == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "assetDetails");
+            }
+            this.assetDetails = assetDetails;
+            return this;
+        }
         @CustomType.Setter
         public Builder assetSourceIds(List<String> assetSourceIds) {
             if (assetSourceIds == null) {
@@ -303,6 +411,50 @@ public final class GetAssetsAssetCollectionItem {
             }
             this.assetType = assetType;
             return this;
+        }
+        @CustomType.Setter
+        public Builder attachedEbsVolumesCosts(List<GetAssetsAssetCollectionItemAttachedEbsVolumesCost> attachedEbsVolumesCosts) {
+            if (attachedEbsVolumesCosts == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "attachedEbsVolumesCosts");
+            }
+            this.attachedEbsVolumesCosts = attachedEbsVolumesCosts;
+            return this;
+        }
+        public Builder attachedEbsVolumesCosts(GetAssetsAssetCollectionItemAttachedEbsVolumesCost... attachedEbsVolumesCosts) {
+            return attachedEbsVolumesCosts(List.of(attachedEbsVolumesCosts));
+        }
+        @CustomType.Setter
+        public Builder awsEbs(List<GetAssetsAssetCollectionItemAwsEb> awsEbs) {
+            if (awsEbs == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "awsEbs");
+            }
+            this.awsEbs = awsEbs;
+            return this;
+        }
+        public Builder awsEbs(GetAssetsAssetCollectionItemAwsEb... awsEbs) {
+            return awsEbs(List.of(awsEbs));
+        }
+        @CustomType.Setter
+        public Builder awsEc2costs(List<GetAssetsAssetCollectionItemAwsEc2cost> awsEc2costs) {
+            if (awsEc2costs == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "awsEc2costs");
+            }
+            this.awsEc2costs = awsEc2costs;
+            return this;
+        }
+        public Builder awsEc2costs(GetAssetsAssetCollectionItemAwsEc2cost... awsEc2costs) {
+            return awsEc2costs(List.of(awsEc2costs));
+        }
+        @CustomType.Setter
+        public Builder awsEc2s(List<GetAssetsAssetCollectionItemAwsEc2> awsEc2s) {
+            if (awsEc2s == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "awsEc2s");
+            }
+            this.awsEc2s = awsEc2s;
+            return this;
+        }
+        public Builder awsEc2s(GetAssetsAssetCollectionItemAwsEc2... awsEc2s) {
+            return awsEc2s(List.of(awsEc2s));
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
@@ -337,6 +489,14 @@ public final class GetAssetsAssetCollectionItem {
               throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "displayName");
             }
             this.displayName = displayName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder environmentType(String environmentType) {
+            if (environmentType == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "environmentType");
+            }
+            this.environmentType = environmentType;
             return this;
         }
         @CustomType.Setter
@@ -446,12 +606,20 @@ public final class GetAssetsAssetCollectionItem {
         }
         public GetAssetsAssetCollectionItem build() {
             final var _resultValue = new GetAssetsAssetCollectionItem();
+            _resultValue.assetClassName = assetClassName;
+            _resultValue.assetClassVersion = assetClassVersion;
+            _resultValue.assetDetails = assetDetails;
             _resultValue.assetSourceIds = assetSourceIds;
             _resultValue.assetType = assetType;
+            _resultValue.attachedEbsVolumesCosts = attachedEbsVolumesCosts;
+            _resultValue.awsEbs = awsEbs;
+            _resultValue.awsEc2costs = awsEc2costs;
+            _resultValue.awsEc2s = awsEc2s;
             _resultValue.compartmentId = compartmentId;
             _resultValue.computes = computes;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
+            _resultValue.environmentType = environmentType;
             _resultValue.externalAssetKey = externalAssetKey;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;

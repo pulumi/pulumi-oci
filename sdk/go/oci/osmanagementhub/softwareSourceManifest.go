@@ -13,7 +13,7 @@ import (
 )
 
 // This resource provides the Software Source Manifest resource in Oracle Cloud Infrastructure Os Management Hub service.
-// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/SoftwareSourceManifest
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/osmh/latest/Manifest
 //
 // Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
 //
@@ -34,8 +34,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := osmanagementhub.NewSoftwareSourceManifest(ctx, "test_software_source_manifest", &osmanagementhub.SoftwareSourceManifestArgs{
-//				SoftwareSourceId: pulumi.Any(testSoftwareSource.Id),
-//				Content:          pulumi.Any(content),
+//				UpdateSoftwareSourceManifestDetails: softwareSourceManifestUpdateSoftwareSourceManifestDetails,
+//				SoftwareSourceId:                    pulumi.Any(testSoftwareSource.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -51,12 +51,11 @@ import (
 // SoftwareSourceManifests can be imported using the `id`, e.g.
 //
 // ```sh
-// $ pulumi import oci:OsManagementHub/softwareSourceManifest:SoftwareSourceManifest test_software_source_manifest "id"
+// $ pulumi import oci:OsManagementHub/softwareSourceManifest:SoftwareSourceManifest test_software_source_manifest "softwareSources/{softwareSourceId}/manifest"
 // ```
 type SoftwareSourceManifest struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) Provides the manifest content used to update the package list of the software source.
 	Content pulumi.StringPtrOutput `pulumi:"content"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	//
@@ -98,7 +97,6 @@ func GetSoftwareSourceManifest(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering SoftwareSourceManifest resources.
 type softwareSourceManifestState struct {
-	// (Updatable) Provides the manifest content used to update the package list of the software source.
 	Content *string `pulumi:"content"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	//
@@ -108,7 +106,6 @@ type softwareSourceManifestState struct {
 }
 
 type SoftwareSourceManifestState struct {
-	// (Updatable) Provides the manifest content used to update the package list of the software source.
 	Content pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	//
@@ -122,7 +119,6 @@ func (SoftwareSourceManifestState) ElementType() reflect.Type {
 }
 
 type softwareSourceManifestArgs struct {
-	// (Updatable) Provides the manifest content used to update the package list of the software source.
 	Content *string `pulumi:"content"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	//
@@ -133,7 +129,6 @@ type softwareSourceManifestArgs struct {
 
 // The set of arguments for constructing a SoftwareSourceManifest resource.
 type SoftwareSourceManifestArgs struct {
-	// (Updatable) Provides the manifest content used to update the package list of the software source.
 	Content pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	//
@@ -229,7 +224,6 @@ func (o SoftwareSourceManifestOutput) ToSoftwareSourceManifestOutputWithContext(
 	return o
 }
 
-// (Updatable) Provides the manifest content used to update the package list of the software source.
 func (o SoftwareSourceManifestOutput) Content() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SoftwareSourceManifest) pulumi.StringPtrOutput { return v.Content }).(pulumi.StringPtrOutput)
 }

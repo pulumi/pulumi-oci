@@ -40,6 +40,11 @@ public final class GetEventsEventCollectionItemData {
      */
     private String errorLog;
     /**
+     * @return Brief description on how this error is categorized.
+     * 
+     */
+    private String errorSummary;
+    /**
      * @return Number of times the event has occurred.
      * 
      */
@@ -127,6 +132,13 @@ public final class GetEventsEventCollectionItemData {
         return this.errorLog;
     }
     /**
+     * @return Brief description on how this error is categorized.
+     * 
+     */
+    public String errorSummary() {
+        return this.errorSummary;
+    }
+    /**
      * @return Number of times the event has occurred.
      * 
      */
@@ -211,6 +223,7 @@ public final class GetEventsEventCollectionItemData {
         private List<GetEventsEventCollectionItemDataContent> contents;
         private String errorCause;
         private String errorLog;
+        private String errorSummary;
         private Integer eventCount;
         private String eventFingerprint;
         private String healthState;
@@ -229,6 +242,7 @@ public final class GetEventsEventCollectionItemData {
     	      this.contents = defaults.contents;
     	      this.errorCause = defaults.errorCause;
     	      this.errorLog = defaults.errorLog;
+    	      this.errorSummary = defaults.errorSummary;
     	      this.eventCount = defaults.eventCount;
     	      this.eventFingerprint = defaults.eventFingerprint;
     	      this.healthState = defaults.healthState;
@@ -288,6 +302,14 @@ public final class GetEventsEventCollectionItemData {
               throw new MissingRequiredPropertyException("GetEventsEventCollectionItemData", "errorLog");
             }
             this.errorLog = errorLog;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder errorSummary(String errorSummary) {
+            if (errorSummary == null) {
+              throw new MissingRequiredPropertyException("GetEventsEventCollectionItemData", "errorSummary");
+            }
+            this.errorSummary = errorSummary;
             return this;
         }
         @CustomType.Setter
@@ -377,6 +399,7 @@ public final class GetEventsEventCollectionItemData {
             _resultValue.contents = contents;
             _resultValue.errorCause = errorCause;
             _resultValue.errorLog = errorLog;
+            _resultValue.errorSummary = errorSummary;
             _resultValue.eventCount = eventCount;
             _resultValue.eventFingerprint = eventFingerprint;
             _resultValue.healthState = healthState;

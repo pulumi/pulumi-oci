@@ -30,6 +30,7 @@ from .get_environment import *
 from .get_environments import *
 from .get_inventories import *
 from .get_inventory import *
+from .get_supported_cloud_regions import *
 from .inventory import *
 from ._inputs import *
 from . import outputs

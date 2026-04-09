@@ -7,10 +7,9 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
+ * This data source provides details about a specific Errata resource in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Lists all of the currently available errata. Filter the list against a variety of criteria including but not
- * limited to its name, classification type, advisory severity, and OS family.
+ * Returns information about the specified erratum based on its advisory name.
  *
  * ## Example Usage
  *
@@ -20,14 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testErrata = oci.OsManagementHub.getErrata({
  *     compartmentId: compartmentId,
- *     advisorySeverities: erratumAdvisorySeverity,
- *     advisoryTypes: erratumAdvisoryType,
- *     classificationTypes: erratumClassificationType,
- *     names: erratumName,
- *     nameContains: erratumNameContains,
- *     osFamily: erratumOsFamily,
- *     timeIssueDateEnd: erratumTimeIssueDateEnd,
- *     timeIssueDateStart: erratumTimeIssueDateStart,
+ *     names: errataName,
  * });
  * ```
  */
@@ -52,15 +44,15 @@ export function getErrata(args: GetErrataArgs, opts?: pulumi.InvokeOptions): Pro
  */
 export interface GetErrataArgs {
     /**
-     * The advisory severity.
+     * The severity for a security advisory, otherwise, null.
      */
     advisorySeverities?: string[];
     /**
-     * A filter to return only errata that match the given advisory types.
+     * The advisory type of the erratum.
      */
     advisoryTypes?: string[];
     /**
-     * A filter to return only packages that match the given update classification type.
+     * Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
      */
     classificationTypes?: string[];
     /**
@@ -68,25 +60,13 @@ export interface GetErrataArgs {
      */
     compartmentId: string;
     filters?: inputs.OsManagementHub.GetErrataFilter[];
-    /**
-     * A filter to return resources that may partially match the erratum name given.
-     */
     nameContains?: string;
     /**
-     * The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+     * The erratum name (such as ELSA-2023-34678).
      */
     names?: string[];
-    /**
-     * A filter to return only resources that match the given operating system family.
-     */
     osFamily?: string;
-    /**
-     * The issue date before which to list all errata, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
-     */
     timeIssueDateEnd?: string;
-    /**
-     * The issue date after which to list all errata, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
-     */
     timeIssueDateStart?: string;
 }
 
@@ -107,9 +87,6 @@ export interface GetErrataResult {
      */
     readonly classificationTypes?: string[];
     readonly compartmentId: string;
-    /**
-     * The list of erratum_collection.
-     */
     readonly erratumCollections: outputs.OsManagementHub.GetErrataErratumCollection[];
     readonly filters?: outputs.OsManagementHub.GetErrataFilter[];
     /**
@@ -126,10 +103,9 @@ export interface GetErrataResult {
     readonly timeIssueDateStart?: string;
 }
 /**
- * This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
+ * This data source provides details about a specific Errata resource in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Lists all of the currently available errata. Filter the list against a variety of criteria including but not
- * limited to its name, classification type, advisory severity, and OS family.
+ * Returns information about the specified erratum based on its advisory name.
  *
  * ## Example Usage
  *
@@ -139,14 +115,7 @@ export interface GetErrataResult {
  *
  * const testErrata = oci.OsManagementHub.getErrata({
  *     compartmentId: compartmentId,
- *     advisorySeverities: erratumAdvisorySeverity,
- *     advisoryTypes: erratumAdvisoryType,
- *     classificationTypes: erratumClassificationType,
- *     names: erratumName,
- *     nameContains: erratumNameContains,
- *     osFamily: erratumOsFamily,
- *     timeIssueDateEnd: erratumTimeIssueDateEnd,
- *     timeIssueDateStart: erratumTimeIssueDateStart,
+ *     names: errataName,
  * });
  * ```
  */
@@ -171,15 +140,15 @@ export function getErrataOutput(args: GetErrataOutputArgs, opts?: pulumi.InvokeO
  */
 export interface GetErrataOutputArgs {
     /**
-     * The advisory severity.
+     * The severity for a security advisory, otherwise, null.
      */
     advisorySeverities?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * A filter to return only errata that match the given advisory types.
+     * The advisory type of the erratum.
      */
     advisoryTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * A filter to return only packages that match the given update classification type.
+     * Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
      */
     classificationTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -187,24 +156,12 @@ export interface GetErrataOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetErrataFilterArgs>[]>;
-    /**
-     * A filter to return resources that may partially match the erratum name given.
-     */
     nameContains?: pulumi.Input<string>;
     /**
-     * The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+     * The erratum name (such as ELSA-2023-34678).
      */
     names?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * A filter to return only resources that match the given operating system family.
-     */
     osFamily?: pulumi.Input<string>;
-    /**
-     * The issue date before which to list all errata, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
-     */
     timeIssueDateEnd?: pulumi.Input<string>;
-    /**
-     * The issue date after which to list all errata, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
-     */
     timeIssueDateStart?: pulumi.Input<string>;
 }

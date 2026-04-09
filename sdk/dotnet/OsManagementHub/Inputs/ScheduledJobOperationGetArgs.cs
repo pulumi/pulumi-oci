@@ -13,6 +13,12 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
     public sealed class ScheduledJobOperationGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) Provides the information used to install a snap.
+        /// </summary>
+        [Input("installSnapDetails")]
+        public Input<Inputs.ScheduledJobOperationInstallSnapDetailsGetArgs>? InstallSnapDetails { get; set; }
+
+        /// <summary>
         /// (Updatable) The set of changes to make to the state of the modules, streams, and profiles on the managed target.
         /// </summary>
         [Input("manageModuleStreamsDetails")]
@@ -42,6 +48,12 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
         [Input("rebootTimeoutInMins")]
         public Input<int>? RebootTimeoutInMins { get; set; }
 
+        /// <summary>
+        /// (Updatable) Provides the information used to remove a snap.
+        /// </summary>
+        [Input("removeSnapDetails")]
+        public Input<Inputs.ScheduledJobOperationRemoveSnapDetailsGetArgs>? RemoveSnapDetails { get; set; }
+
         [Input("softwareSourceIds")]
         private InputList<string>? _softwareSourceIds;
 
@@ -59,6 +71,12 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
         /// </summary>
         [Input("switchModuleStreamsDetails")]
         public Input<Inputs.ScheduledJobOperationSwitchModuleStreamsDetailsGetArgs>? SwitchModuleStreamsDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) Provides the information used to switch a snap channel.
+        /// </summary>
+        [Input("switchSnapChannelDetails")]
+        public Input<Inputs.ScheduledJobOperationSwitchSnapChannelDetailsGetArgs>? SwitchSnapChannelDetails { get; set; }
 
         [Input("windowsUpdateNames")]
         private InputList<string>? _windowsUpdateNames;

@@ -124,6 +124,10 @@ export class InstancePool extends pulumi.CustomResource {
      */
     declare public readonly compartmentId: pulumi.Output<string>;
     /**
+     * Count of instance in running state associated to the Instance Pool.
+     */
+    declare public /*out*/ readonly currentSize: pulumi.Output<number>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
     declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
@@ -193,6 +197,7 @@ export class InstancePool extends pulumi.CustomResource {
             const state = argsOrState as InstancePoolState | undefined;
             resourceInputs["actualSize"] = state?.actualSize;
             resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["currentSize"] = state?.currentSize;
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["freeformTags"] = state?.freeformTags;
@@ -232,6 +237,7 @@ export class InstancePool extends pulumi.CustomResource {
             resourceInputs["size"] = args?.size;
             resourceInputs["state"] = args?.state;
             resourceInputs["actualSize"] = undefined /*out*/;
+            resourceInputs["currentSize"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -251,6 +257,10 @@ export interface InstancePoolState {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
      */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * Count of instance in running state associated to the Instance Pool.
+     */
+    currentSize?: pulumi.Input<number>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */

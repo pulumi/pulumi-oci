@@ -105,7 +105,7 @@ export interface GetManagedInstanceGroupResult {
      */
     readonly pendingJobCount: number;
     /**
-     * The list of software source OCIDs that the managed instance group will use.
+     * The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the managed instance group will use.
      */
     readonly softwareSourceIds: string[];
     /**

@@ -41,7 +41,10 @@ from .get_imported_model import *
 from .get_imported_models import *
 from .get_model import *
 from .get_models import *
+from .get_semantic_store import *
+from .get_semantic_stores import *
 from .imported_model import *
 from .model import *
+from .semantic_store import *
 from ._inputs import *
 from . import outputs

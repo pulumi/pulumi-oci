@@ -47,6 +47,7 @@ namespace Pulumi.Oci.OsManagementHub
     ///             Hosts = managementStationProxyHosts,
     ///             Port = managementStationProxyPort,
     ///         },
+    ///         ArchType = managementStationArchType,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -57,6 +58,7 @@ namespace Pulumi.Oci.OsManagementHub
     ///             { "Department", "Finance" },
     ///         },
     ///         IsAutoConfigEnabled = managementStationIsAutoConfigEnabled,
+    ///         OsFamily = managementStationOsFamily,
     ///     });
     /// 
     /// });
@@ -73,6 +75,12 @@ namespace Pulumi.Oci.OsManagementHub
     [OciResourceType("oci:OsManagementHub/managementStation:ManagementStation")]
     public partial class ManagementStation : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// (Updatable) The architecture type.
+        /// </summary>
+        [Output("archType")]
+        public Output<string> ArchType { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
         /// </summary>
@@ -180,6 +188,12 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         [Output("mirrorUniquePackageCount")]
         public Output<int> MirrorUniquePackageCount { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The operating system family.
+        /// </summary>
+        [Output("osFamily")]
+        public Output<string> OsFamily { get; private set; } = null!;
 
         /// <summary>
         /// A decimal number representing the progress of the current mirror sync.
@@ -292,6 +306,12 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class ManagementStationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) The architecture type.
+        /// </summary>
+        [Input("archType")]
+        public Input<string>? ArchType { get; set; }
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
         /// </summary>
         [Input("compartmentId", required: true)]
@@ -352,6 +372,12 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<Inputs.ManagementStationMirrorArgs> Mirror { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) The operating system family.
+        /// </summary>
+        [Input("osFamily")]
+        public Input<string>? OsFamily { get; set; }
+
+        /// <summary>
         /// (Updatable) Information used to create the proxy configuration for a management station.
         /// </summary>
         [Input("proxy", required: true)]
@@ -375,6 +401,12 @@ namespace Pulumi.Oci.OsManagementHub
 
     public sealed class ManagementStationState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) The architecture type.
+        /// </summary>
+        [Input("archType")]
+        public Input<string>? ArchType { get; set; }
+
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
         /// </summary>
@@ -506,6 +538,12 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         [Input("mirrorUniquePackageCount")]
         public Input<int>? MirrorUniquePackageCount { get; set; }
+
+        /// <summary>
+        /// (Updatable) The operating system family.
+        /// </summary>
+        [Input("osFamily")]
+        public Input<string>? OsFamily { get; set; }
 
         /// <summary>
         /// A decimal number representing the progress of the current mirror sync.

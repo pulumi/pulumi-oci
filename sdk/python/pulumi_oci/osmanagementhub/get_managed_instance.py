@@ -27,13 +27,16 @@ class GetManagedInstanceResult:
     """
     A collection of values returned by getManagedInstance.
     """
-    def __init__(__self__, agent_version=None, architecture=None, autonomous_settings=None, bug_updates_available=None, compartment_id=None, description=None, display_name=None, enhancement_updates_available=None, id=None, installed_packages=None, installed_windows_updates=None, is_managed_by_autonomous_linux=None, is_management_station=None, is_reboot_required=None, ksplice_effective_kernel_version=None, lifecycle_environments=None, lifecycle_stages=None, location=None, managed_instance_groups=None, managed_instance_id=None, notification_topic_id=None, os_family=None, os_kernel_version=None, os_name=None, os_version=None, other_updates_available=None, primary_management_station_id=None, profile=None, profile_version=None, scheduled_job_count=None, secondary_management_station_id=None, security_updates_available=None, software_sources=None, status=None, tenancy_id=None, time_created=None, time_last_boot=None, time_last_checkin=None, time_updated=None, updates_available=None, work_request_count=None):
+    def __init__(__self__, agent_version=None, architecture=None, are_sources_managed=None, autonomous_settings=None, bug_updates_available=None, compartment_id=None, description=None, display_name=None, enhancement_updates_available=None, id=None, installed_packages=None, installed_windows_updates=None, is_managed_by_autonomous_linux=None, is_management_station=None, is_reboot_required=None, ksplice_effective_kernel_version=None, lifecycle_environments=None, lifecycle_stages=None, location=None, managed_instance_groups=None, managed_instance_id=None, notification_topic_id=None, os_family=None, os_kernel_version=None, os_name=None, os_version=None, other_updates_available=None, primary_management_station_id=None, profile=None, profile_version=None, scheduled_job_count=None, secondary_management_station_id=None, security_updates_available=None, software_sources=None, status=None, tenancy_id=None, time_created=None, time_last_boot=None, time_last_checkin=None, time_last_software_refresh=None, time_updated=None, updates_available=None, work_request_count=None):
         if agent_version and not isinstance(agent_version, str):
             raise TypeError("Expected argument 'agent_version' to be a str")
         pulumi.set(__self__, "agent_version", agent_version)
         if architecture and not isinstance(architecture, str):
             raise TypeError("Expected argument 'architecture' to be a str")
         pulumi.set(__self__, "architecture", architecture)
+        if are_sources_managed and not isinstance(are_sources_managed, bool):
+            raise TypeError("Expected argument 'are_sources_managed' to be a bool")
+        pulumi.set(__self__, "are_sources_managed", are_sources_managed)
         if autonomous_settings and not isinstance(autonomous_settings, list):
             raise TypeError("Expected argument 'autonomous_settings' to be a list")
         pulumi.set(__self__, "autonomous_settings", autonomous_settings)
@@ -142,6 +145,9 @@ class GetManagedInstanceResult:
         if time_last_checkin and not isinstance(time_last_checkin, str):
             raise TypeError("Expected argument 'time_last_checkin' to be a str")
         pulumi.set(__self__, "time_last_checkin", time_last_checkin)
+        if time_last_software_refresh and not isinstance(time_last_software_refresh, str):
+            raise TypeError("Expected argument 'time_last_software_refresh' to be a str")
+        pulumi.set(__self__, "time_last_software_refresh", time_last_software_refresh)
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
@@ -167,6 +173,14 @@ class GetManagedInstanceResult:
         The CPU architecture type of the managed instance.
         """
         return pulumi.get(self, "architecture")
+
+    @_builtins.property
+    @pulumi.getter(name="areSourcesManaged")
+    def are_sources_managed(self) -> _builtins.bool:
+        """
+        Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+        """
+        return pulumi.get(self, "are_sources_managed")
 
     @_builtins.property
     @pulumi.getter(name="autonomousSettings")
@@ -454,6 +468,14 @@ class GetManagedInstanceResult:
         return pulumi.get(self, "time_last_checkin")
 
     @_builtins.property
+    @pulumi.getter(name="timeLastSoftwareRefresh")
+    def time_last_software_refresh(self) -> _builtins.str:
+        """
+        The date and time the instance's software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        """
+        return pulumi.get(self, "time_last_software_refresh")
+
+    @_builtins.property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
         """
@@ -486,6 +508,7 @@ class AwaitableGetManagedInstanceResult(GetManagedInstanceResult):
         return GetManagedInstanceResult(
             agent_version=self.agent_version,
             architecture=self.architecture,
+            are_sources_managed=self.are_sources_managed,
             autonomous_settings=self.autonomous_settings,
             bug_updates_available=self.bug_updates_available,
             compartment_id=self.compartment_id,
@@ -522,6 +545,7 @@ class AwaitableGetManagedInstanceResult(GetManagedInstanceResult):
             time_created=self.time_created,
             time_last_boot=self.time_last_boot,
             time_last_checkin=self.time_last_checkin,
+            time_last_software_refresh=self.time_last_software_refresh,
             time_updated=self.time_updated,
             updates_available=self.updates_available,
             work_request_count=self.work_request_count)
@@ -554,6 +578,7 @@ def get_managed_instance(managed_instance_id: Optional[_builtins.str] = None,
     return AwaitableGetManagedInstanceResult(
         agent_version=pulumi.get(__ret__, 'agent_version'),
         architecture=pulumi.get(__ret__, 'architecture'),
+        are_sources_managed=pulumi.get(__ret__, 'are_sources_managed'),
         autonomous_settings=pulumi.get(__ret__, 'autonomous_settings'),
         bug_updates_available=pulumi.get(__ret__, 'bug_updates_available'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
@@ -590,6 +615,7 @@ def get_managed_instance(managed_instance_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_boot=pulumi.get(__ret__, 'time_last_boot'),
         time_last_checkin=pulumi.get(__ret__, 'time_last_checkin'),
+        time_last_software_refresh=pulumi.get(__ret__, 'time_last_software_refresh'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         updates_available=pulumi.get(__ret__, 'updates_available'),
         work_request_count=pulumi.get(__ret__, 'work_request_count'))
@@ -619,6 +645,7 @@ def get_managed_instance_output(managed_instance_id: Optional[pulumi.Input[_buil
     return __ret__.apply(lambda __response__: GetManagedInstanceResult(
         agent_version=pulumi.get(__response__, 'agent_version'),
         architecture=pulumi.get(__response__, 'architecture'),
+        are_sources_managed=pulumi.get(__response__, 'are_sources_managed'),
         autonomous_settings=pulumi.get(__response__, 'autonomous_settings'),
         bug_updates_available=pulumi.get(__response__, 'bug_updates_available'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
@@ -655,6 +682,7 @@ def get_managed_instance_output(managed_instance_id: Optional[pulumi.Input[_buil
         time_created=pulumi.get(__response__, 'time_created'),
         time_last_boot=pulumi.get(__response__, 'time_last_boot'),
         time_last_checkin=pulumi.get(__response__, 'time_last_checkin'),
+        time_last_software_refresh=pulumi.get(__response__, 'time_last_software_refresh'),
         time_updated=pulumi.get(__response__, 'time_updated'),
         updates_available=pulumi.get(__response__, 'updates_available'),
         work_request_count=pulumi.get(__response__, 'work_request_count')))

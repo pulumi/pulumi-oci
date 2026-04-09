@@ -17,9 +17,17 @@ public final class GetScheduledJobsFilter extends com.pulumi.resources.InvokeArg
 
     public static final GetScheduledJobsFilter Empty = new GetScheduledJobsFilter();
 
+    /**
+     * The name of the snap.
+     * 
+     */
     @Import(name="name", required=true)
     private String name;
 
+    /**
+     * @return The name of the snap.
+     * 
+     */
     public String name() {
         return this.name;
     }
@@ -64,6 +72,12 @@ public final class GetScheduledJobsFilter extends com.pulumi.resources.InvokeArg
             $ = new GetScheduledJobsFilter(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param name The name of the snap.
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             $.name = name;
             return this;

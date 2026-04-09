@@ -227,7 +227,7 @@ class GetManagedInstanceGroupResult:
     @pulumi.getter(name="softwareSourceIds")
     def software_source_ids(self) -> Sequence[_builtins.str]:
         """
-        The list of software source OCIDs that the managed instance group will use.
+        The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the managed instance group will use.
         """
         return pulumi.get(self, "software_source_ids")
 

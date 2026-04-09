@@ -58,11 +58,21 @@ type LookupAssetArgs struct {
 
 // A collection of values returned by getAsset.
 type LookupAssetResult struct {
-	AssetId string `pulumi:"assetId"`
+	// The class name of the asset.
+	AssetClassName string `pulumi:"assetClassName"`
+	// The version of the asset class.
+	AssetClassVersion string `pulumi:"assetClassVersion"`
+	// The details of the asset.
+	AssetDetails string `pulumi:"assetDetails"`
+	AssetId      string `pulumi:"assetId"`
 	// List of asset source OCID.
 	AssetSourceIds []string `pulumi:"assetSourceIds"`
 	// The type of asset.
-	AssetType string `pulumi:"assetType"`
+	AssetType               string                           `pulumi:"assetType"`
+	AttachedEbsVolumesCosts []GetAssetAttachedEbsVolumesCost `pulumi:"attachedEbsVolumesCosts"`
+	AwsEbs                  []GetAssetAwsEb                  `pulumi:"awsEbs"`
+	AwsEc2costs             []GetAssetAwsEc2cost             `pulumi:"awsEc2costs"`
+	AwsEc2s                 []GetAssetAwsEc2                 `pulumi:"awsEc2s"`
 	// The OCID of the compartment to which an asset belongs to.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Compute related properties.
@@ -71,6 +81,8 @@ type LookupAssetResult struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Asset display name.
 	DisplayName string `pulumi:"displayName"`
+	// Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+	EnvironmentType string `pulumi:"environmentType"`
 	// The key of the asset from the external environment.
 	ExternalAssetKey string `pulumi:"externalAssetKey"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -131,6 +143,21 @@ func (o LookupAssetResultOutput) ToLookupAssetResultOutputWithContext(ctx contex
 	return o
 }
 
+// The class name of the asset.
+func (o LookupAssetResultOutput) AssetClassName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAssetResult) string { return v.AssetClassName }).(pulumi.StringOutput)
+}
+
+// The version of the asset class.
+func (o LookupAssetResultOutput) AssetClassVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAssetResult) string { return v.AssetClassVersion }).(pulumi.StringOutput)
+}
+
+// The details of the asset.
+func (o LookupAssetResultOutput) AssetDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAssetResult) string { return v.AssetDetails }).(pulumi.StringOutput)
+}
+
 func (o LookupAssetResultOutput) AssetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAssetResult) string { return v.AssetId }).(pulumi.StringOutput)
 }
@@ -143,6 +170,22 @@ func (o LookupAssetResultOutput) AssetSourceIds() pulumi.StringArrayOutput {
 // The type of asset.
 func (o LookupAssetResultOutput) AssetType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAssetResult) string { return v.AssetType }).(pulumi.StringOutput)
+}
+
+func (o LookupAssetResultOutput) AttachedEbsVolumesCosts() GetAssetAttachedEbsVolumesCostArrayOutput {
+	return o.ApplyT(func(v LookupAssetResult) []GetAssetAttachedEbsVolumesCost { return v.AttachedEbsVolumesCosts }).(GetAssetAttachedEbsVolumesCostArrayOutput)
+}
+
+func (o LookupAssetResultOutput) AwsEbs() GetAssetAwsEbArrayOutput {
+	return o.ApplyT(func(v LookupAssetResult) []GetAssetAwsEb { return v.AwsEbs }).(GetAssetAwsEbArrayOutput)
+}
+
+func (o LookupAssetResultOutput) AwsEc2costs() GetAssetAwsEc2costArrayOutput {
+	return o.ApplyT(func(v LookupAssetResult) []GetAssetAwsEc2cost { return v.AwsEc2costs }).(GetAssetAwsEc2costArrayOutput)
+}
+
+func (o LookupAssetResultOutput) AwsEc2s() GetAssetAwsEc2ArrayOutput {
+	return o.ApplyT(func(v LookupAssetResult) []GetAssetAwsEc2 { return v.AwsEc2s }).(GetAssetAwsEc2ArrayOutput)
 }
 
 // The OCID of the compartment to which an asset belongs to.
@@ -163,6 +206,11 @@ func (o LookupAssetResultOutput) DefinedTags() pulumi.StringMapOutput {
 // Asset display name.
 func (o LookupAssetResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAssetResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+func (o LookupAssetResultOutput) EnvironmentType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAssetResult) string { return v.EnvironmentType }).(pulumi.StringOutput)
 }
 
 // The key of the asset from the external environment.

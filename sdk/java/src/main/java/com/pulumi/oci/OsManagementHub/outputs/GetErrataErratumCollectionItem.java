@@ -13,17 +13,17 @@ import java.util.Objects;
 @CustomType
 public final class GetErrataErratumCollectionItem {
     /**
-     * @return The advisory severity.
+     * @return The severity for a security advisory, otherwise, null.
      * 
      */
     private String advisorySeverity;
     /**
-     * @return A filter to return only errata that match the given advisory types.
+     * @return The advisory type of the erratum.
      * 
      */
     private String advisoryType;
     /**
-     * @return A filter to return only packages that match the given update classification type.
+     * @return Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
      * 
      */
     private String classificationType;
@@ -38,7 +38,7 @@ public final class GetErrataErratumCollectionItem {
      */
     private String from;
     /**
-     * @return The assigned erratum name. It&#39;s unique and not changeable.  Example: `ELSA-2020-5804`
+     * @return The erratum name (such as ELSA-2023-34678).
      * 
      */
     private String name;
@@ -90,21 +90,21 @@ public final class GetErrataErratumCollectionItem {
 
     private GetErrataErratumCollectionItem() {}
     /**
-     * @return The advisory severity.
+     * @return The severity for a security advisory, otherwise, null.
      * 
      */
     public String advisorySeverity() {
         return this.advisorySeverity;
     }
     /**
-     * @return A filter to return only errata that match the given advisory types.
+     * @return The advisory type of the erratum.
      * 
      */
     public String advisoryType() {
         return this.advisoryType;
     }
     /**
-     * @return A filter to return only packages that match the given update classification type.
+     * @return Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
      * 
      */
     public String classificationType() {
@@ -125,7 +125,7 @@ public final class GetErrataErratumCollectionItem {
         return this.from;
     }
     /**
-     * @return The assigned erratum name. It&#39;s unique and not changeable.  Example: `ELSA-2020-5804`
+     * @return The erratum name (such as ELSA-2023-34678).
      * 
      */
     public String name() {

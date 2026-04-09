@@ -20,6 +20,11 @@ import java.util.Objects;
 @CustomType
 public final class GetManagementStationResult {
     /**
+     * @return The architecture type.
+     * 
+     */
+    private String archType;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
      * 
      */
@@ -116,6 +121,11 @@ public final class GetManagementStationResult {
      */
     private List<GetManagementStationMirror> mirrors;
     /**
+     * @return The operating system family.
+     * 
+     */
+    private String osFamily;
+    /**
      * @return A decimal number representing the progress of the current mirror sync.
      * 
      */
@@ -163,6 +173,13 @@ public final class GetManagementStationResult {
     private Integer totalMirrors;
 
     private GetManagementStationResult() {}
+    /**
+     * @return The architecture type.
+     * 
+     */
+    public String archType() {
+        return this.archType;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
      * 
@@ -300,6 +317,13 @@ public final class GetManagementStationResult {
         return this.mirrors;
     }
     /**
+     * @return The operating system family.
+     * 
+     */
+    public String osFamily() {
+        return this.osFamily;
+    }
+    /**
      * @return A decimal number representing the progress of the current mirror sync.
      * 
      */
@@ -375,6 +399,7 @@ public final class GetManagementStationResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String archType;
         private String compartmentId;
         private Map<String,String> definedTags;
         private String description;
@@ -395,6 +420,7 @@ public final class GetManagementStationResult {
         private List<GetManagementStationMirrorSyncStatus> mirrorSyncStatuses;
         private Integer mirrorUniquePackageCount;
         private List<GetManagementStationMirror> mirrors;
+        private String osFamily;
         private Integer overallPercentage;
         private String overallState;
         private List<GetManagementStationPeerManagementStation> peerManagementStations;
@@ -408,6 +434,7 @@ public final class GetManagementStationResult {
         public Builder() {}
         public Builder(GetManagementStationResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.archType = defaults.archType;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
@@ -428,6 +455,7 @@ public final class GetManagementStationResult {
     	      this.mirrorSyncStatuses = defaults.mirrorSyncStatuses;
     	      this.mirrorUniquePackageCount = defaults.mirrorUniquePackageCount;
     	      this.mirrors = defaults.mirrors;
+    	      this.osFamily = defaults.osFamily;
     	      this.overallPercentage = defaults.overallPercentage;
     	      this.overallState = defaults.overallState;
     	      this.peerManagementStations = defaults.peerManagementStations;
@@ -440,6 +468,14 @@ public final class GetManagementStationResult {
     	      this.totalMirrors = defaults.totalMirrors;
         }
 
+        @CustomType.Setter
+        public Builder archType(String archType) {
+            if (archType == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "archType");
+            }
+            this.archType = archType;
+            return this;
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
@@ -610,6 +646,14 @@ public final class GetManagementStationResult {
             return mirrors(List.of(mirrors));
         }
         @CustomType.Setter
+        public Builder osFamily(String osFamily) {
+            if (osFamily == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "osFamily");
+            }
+            this.osFamily = osFamily;
+            return this;
+        }
+        @CustomType.Setter
         public Builder overallPercentage(Integer overallPercentage) {
             if (overallPercentage == null) {
               throw new MissingRequiredPropertyException("GetManagementStationResult", "overallPercentage");
@@ -697,6 +741,7 @@ public final class GetManagementStationResult {
         }
         public GetManagementStationResult build() {
             final var _resultValue = new GetManagementStationResult();
+            _resultValue.archType = archType;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
@@ -717,6 +762,7 @@ public final class GetManagementStationResult {
             _resultValue.mirrorSyncStatuses = mirrorSyncStatuses;
             _resultValue.mirrorUniquePackageCount = mirrorUniquePackageCount;
             _resultValue.mirrors = mirrors;
+            _resultValue.osFamily = osFamily;
             _resultValue.overallPercentage = overallPercentage;
             _resultValue.overallState = overallState;
             _resultValue.peerManagementStations = peerManagementStations;

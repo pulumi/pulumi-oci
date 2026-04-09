@@ -66,6 +66,36 @@ public final class AssetSourceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The key of customer&#39;s aws account to be discovered/migrated.
+     * 
+     */
+    @Import(name="awsAccountKey")
+    private @Nullable Output<String> awsAccountKey;
+
+    /**
+     * @return The key of customer&#39;s aws account to be discovered/migrated.
+     * 
+     */
+    public Optional<Output<String>> awsAccountKey() {
+        return Optional.ofNullable(this.awsAccountKey);
+    }
+
+    /**
+     * AWS region information, from where the resources are discovered.
+     * 
+     */
+    @Import(name="awsRegion")
+    private @Nullable Output<String> awsRegion;
+
+    /**
+     * @return AWS region information, from where the resources are discovered.
+     * 
+     */
+    public Optional<Output<String>> awsRegion() {
+        return Optional.ofNullable(this.awsRegion);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
      * 
      */
@@ -156,6 +186,21 @@ public final class AssetSourceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     * 
+     */
+    @Import(name="environmentType")
+    private @Nullable Output<String> environmentType;
+
+    /**
+     * @return (Updatable) Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     * 
+     */
+    public Optional<Output<String>> environmentType() {
+        return Optional.ofNullable(this.environmentType);
+    }
+
+    /**
      * (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -183,6 +228,36 @@ public final class AssetSourceArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Output<String> inventoryId() {
         return this.inventoryId;
+    }
+
+    /**
+     * (Updatable) Flag indicating whether cost data collection is enabled for assets, originating from this asset source.
+     * 
+     */
+    @Import(name="isCostInformationCollected")
+    private @Nullable Output<Boolean> isCostInformationCollected;
+
+    /**
+     * @return (Updatable) Flag indicating whether cost data collection is enabled for assets, originating from this asset source.
+     * 
+     */
+    public Optional<Output<Boolean>> isCostInformationCollected() {
+        return Optional.ofNullable(this.isCostInformationCollected);
+    }
+
+    /**
+     * (Updatable) Endpoint for OLVM asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;```
+     * 
+     */
+    @Import(name="olvmEndpoint")
+    private @Nullable Output<String> olvmEndpoint;
+
+    /**
+     * @return (Updatable) Endpoint for OLVM asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;```
+     * 
+     */
+    public Optional<Output<String>> olvmEndpoint() {
+        return Optional.ofNullable(this.olvmEndpoint);
     }
 
     /**
@@ -237,8 +312,8 @@ public final class AssetSourceArgs extends com.pulumi.resources.ResourceArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Import(name="vcenterEndpoint", required=true)
-    private Output<String> vcenterEndpoint;
+    @Import(name="vcenterEndpoint")
+    private @Nullable Output<String> vcenterEndpoint;
 
     /**
      * @return (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;/sdk```
@@ -247,8 +322,8 @@ public final class AssetSourceArgs extends com.pulumi.resources.ResourceArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> vcenterEndpoint() {
-        return this.vcenterEndpoint;
+    public Optional<Output<String>> vcenterEndpoint() {
+        return Optional.ofNullable(this.vcenterEndpoint);
     }
 
     private AssetSourceArgs() {}
@@ -257,14 +332,19 @@ public final class AssetSourceArgs extends com.pulumi.resources.ResourceArgs {
         this.areHistoricalMetricsCollected = $.areHistoricalMetricsCollected;
         this.areRealtimeMetricsCollected = $.areRealtimeMetricsCollected;
         this.assetsCompartmentId = $.assetsCompartmentId;
+        this.awsAccountKey = $.awsAccountKey;
+        this.awsRegion = $.awsRegion;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.discoveryCredentials = $.discoveryCredentials;
         this.discoveryScheduleId = $.discoveryScheduleId;
         this.displayName = $.displayName;
         this.environmentId = $.environmentId;
+        this.environmentType = $.environmentType;
         this.freeformTags = $.freeformTags;
         this.inventoryId = $.inventoryId;
+        this.isCostInformationCollected = $.isCostInformationCollected;
+        this.olvmEndpoint = $.olvmEndpoint;
         this.replicationCredentials = $.replicationCredentials;
         this.systemTags = $.systemTags;
         this.type = $.type;
@@ -350,6 +430,48 @@ public final class AssetSourceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder assetsCompartmentId(String assetsCompartmentId) {
             return assetsCompartmentId(Output.of(assetsCompartmentId));
+        }
+
+        /**
+         * @param awsAccountKey The key of customer&#39;s aws account to be discovered/migrated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder awsAccountKey(@Nullable Output<String> awsAccountKey) {
+            $.awsAccountKey = awsAccountKey;
+            return this;
+        }
+
+        /**
+         * @param awsAccountKey The key of customer&#39;s aws account to be discovered/migrated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder awsAccountKey(String awsAccountKey) {
+            return awsAccountKey(Output.of(awsAccountKey));
+        }
+
+        /**
+         * @param awsRegion AWS region information, from where the resources are discovered.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder awsRegion(@Nullable Output<String> awsRegion) {
+            $.awsRegion = awsRegion;
+            return this;
+        }
+
+        /**
+         * @param awsRegion AWS region information, from where the resources are discovered.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder awsRegion(String awsRegion) {
+            return awsRegion(Output.of(awsRegion));
         }
 
         /**
@@ -479,6 +601,27 @@ public final class AssetSourceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param environmentType (Updatable) Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder environmentType(@Nullable Output<String> environmentType) {
+            $.environmentType = environmentType;
+            return this;
+        }
+
+        /**
+         * @param environmentType (Updatable) Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder environmentType(String environmentType) {
+            return environmentType(Output.of(environmentType));
+        }
+
+        /**
          * @param freeformTags (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
@@ -518,6 +661,48 @@ public final class AssetSourceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder inventoryId(String inventoryId) {
             return inventoryId(Output.of(inventoryId));
+        }
+
+        /**
+         * @param isCostInformationCollected (Updatable) Flag indicating whether cost data collection is enabled for assets, originating from this asset source.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCostInformationCollected(@Nullable Output<Boolean> isCostInformationCollected) {
+            $.isCostInformationCollected = isCostInformationCollected;
+            return this;
+        }
+
+        /**
+         * @param isCostInformationCollected (Updatable) Flag indicating whether cost data collection is enabled for assets, originating from this asset source.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCostInformationCollected(Boolean isCostInformationCollected) {
+            return isCostInformationCollected(Output.of(isCostInformationCollected));
+        }
+
+        /**
+         * @param olvmEndpoint (Updatable) Endpoint for OLVM asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;```
+         * 
+         * @return builder
+         * 
+         */
+        public Builder olvmEndpoint(@Nullable Output<String> olvmEndpoint) {
+            $.olvmEndpoint = olvmEndpoint;
+            return this;
+        }
+
+        /**
+         * @param olvmEndpoint (Updatable) Endpoint for OLVM asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;```
+         * 
+         * @return builder
+         * 
+         */
+        public Builder olvmEndpoint(String olvmEndpoint) {
+            return olvmEndpoint(Output.of(olvmEndpoint));
         }
 
         /**
@@ -592,7 +777,7 @@ public final class AssetSourceArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder vcenterEndpoint(Output<String> vcenterEndpoint) {
+        public Builder vcenterEndpoint(@Nullable Output<String> vcenterEndpoint) {
             $.vcenterEndpoint = vcenterEndpoint;
             return this;
         }
@@ -628,9 +813,6 @@ public final class AssetSourceArgs extends com.pulumi.resources.ResourceArgs {
             }
             if ($.type == null) {
                 throw new MissingRequiredPropertyException("AssetSourceArgs", "type");
-            }
-            if ($.vcenterEndpoint == null) {
-                throw new MissingRequiredPropertyException("AssetSourceArgs", "vcenterEndpoint");
             }
             return $;
         }

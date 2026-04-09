@@ -126,14 +126,8 @@ namespace Pulumi.Oci.OsManagementHub
     [OutputType]
     public sealed class GetSoftwareSourceManifestResult
     {
-        /// <summary>
-        /// Provides the manifest content used to update the package list of the software source.
-        /// </summary>
         public readonly string Content;
         public readonly string Id;
-        /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-        /// </summary>
         public readonly string SoftwareSourceId;
 
         [OutputConstructor]

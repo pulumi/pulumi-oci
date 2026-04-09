@@ -21,6 +21,16 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:OsManagementHub/dynamicSet:DynamicSet":
+		r = &DynamicSet{}
+	case "oci:OsManagementHub/dynamicSetInstallPackagesManagement:DynamicSetInstallPackagesManagement":
+		r = &DynamicSetInstallPackagesManagement{}
+	case "oci:OsManagementHub/dynamicSetRebootManagement:DynamicSetRebootManagement":
+		r = &DynamicSetRebootManagement{}
+	case "oci:OsManagementHub/dynamicSetRemovePackagesManagement:DynamicSetRemovePackagesManagement":
+		r = &DynamicSetRemovePackagesManagement{}
+	case "oci:OsManagementHub/dynamicSetUpdatePackagesManagement:DynamicSetUpdatePackagesManagement":
+		r = &DynamicSetUpdatePackagesManagement{}
 	case "oci:OsManagementHub/event:Event":
 		r = &Event{}
 	case "oci:OsManagementHub/lifecycleEnvironment:LifecycleEnvironment":
@@ -37,8 +47,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ManagedInstance{}
 	case "oci:OsManagementHub/managedInstanceAttachProfileManagement:ManagedInstanceAttachProfileManagement":
 		r = &ManagedInstanceAttachProfileManagement{}
+	case "oci:OsManagementHub/managedInstanceAttachSoftwareSourcesManagement:ManagedInstanceAttachSoftwareSourcesManagement":
+		r = &ManagedInstanceAttachSoftwareSourcesManagement{}
 	case "oci:OsManagementHub/managedInstanceDetachProfileManagement:ManagedInstanceDetachProfileManagement":
 		r = &ManagedInstanceDetachProfileManagement{}
+	case "oci:OsManagementHub/managedInstanceDetachSoftwareSourcesManagement:ManagedInstanceDetachSoftwareSourcesManagement":
+		r = &ManagedInstanceDetachSoftwareSourcesManagement{}
 	case "oci:OsManagementHub/managedInstanceGroup:ManagedInstanceGroup":
 		r = &ManagedInstanceGroup{}
 	case "oci:OsManagementHub/managedInstanceGroupAttachManagedInstancesManagement:ManagedInstanceGroupAttachManagedInstancesManagement":
@@ -61,12 +75,28 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ManagedInstanceGroupRemovePackagesManagement{}
 	case "oci:OsManagementHub/managedInstanceGroupUpdateAllPackagesManagement:ManagedInstanceGroupUpdateAllPackagesManagement":
 		r = &ManagedInstanceGroupUpdateAllPackagesManagement{}
+	case "oci:OsManagementHub/managedInstanceInstallPackagesManagement:ManagedInstanceInstallPackagesManagement":
+		r = &ManagedInstanceInstallPackagesManagement{}
+	case "oci:OsManagementHub/managedInstanceInstallSnapsManagement:ManagedInstanceInstallSnapsManagement":
+		r = &ManagedInstanceInstallSnapsManagement{}
 	case "oci:OsManagementHub/managedInstanceInstallWindowsUpdatesManagement:ManagedInstanceInstallWindowsUpdatesManagement":
 		r = &ManagedInstanceInstallWindowsUpdatesManagement{}
 	case "oci:OsManagementHub/managedInstanceRebootManagement:ManagedInstanceRebootManagement":
 		r = &ManagedInstanceRebootManagement{}
+	case "oci:OsManagementHub/managedInstanceRefreshSoftwareManagement:ManagedInstanceRefreshSoftwareManagement":
+		r = &ManagedInstanceRefreshSoftwareManagement{}
+	case "oci:OsManagementHub/managedInstanceRemovePackagesManagement:ManagedInstanceRemovePackagesManagement":
+		r = &ManagedInstanceRemovePackagesManagement{}
+	case "oci:OsManagementHub/managedInstanceRemoveSnapsManagement:ManagedInstanceRemoveSnapsManagement":
+		r = &ManagedInstanceRemoveSnapsManagement{}
+	case "oci:OsManagementHub/managedInstanceSwitchSnapChannelManagement:ManagedInstanceSwitchSnapChannelManagement":
+		r = &ManagedInstanceSwitchSnapChannelManagement{}
 	case "oci:OsManagementHub/managedInstanceUpdatePackagesManagement:ManagedInstanceUpdatePackagesManagement":
 		r = &ManagedInstanceUpdatePackagesManagement{}
+	case "oci:OsManagementHub/managedInstancesInstallWindowsUpdatesManagement:ManagedInstancesInstallWindowsUpdatesManagement":
+		r = &ManagedInstancesInstallWindowsUpdatesManagement{}
+	case "oci:OsManagementHub/managedInstancesUpdatePackagesManagement:ManagedInstancesUpdatePackagesManagement":
+		r = &ManagedInstancesUpdatePackagesManagement{}
 	case "oci:OsManagementHub/managementStation:ManagementStation":
 		r = &ManagementStation{}
 	case "oci:OsManagementHub/managementStationAssociateManagedInstancesManagement:ManagementStationAssociateManagedInstancesManagement":
@@ -87,6 +117,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ProfileAttachManagementStationManagement{}
 	case "oci:OsManagementHub/profileAttachSoftwareSourcesManagement:ProfileAttachSoftwareSourcesManagement":
 		r = &ProfileAttachSoftwareSourcesManagement{}
+	case "oci:OsManagementHub/profileDetachManagementStationManagement:ProfileDetachManagementStationManagement":
+		r = &ProfileDetachManagementStationManagement{}
 	case "oci:OsManagementHub/profileDetachSoftwareSourcesManagement:ProfileDetachSoftwareSourcesManagement":
 		r = &ProfileDetachSoftwareSourcesManagement{}
 	case "oci:OsManagementHub/scheduledJob:ScheduledJob":
@@ -120,6 +152,31 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/dynamicSet",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/dynamicSetInstallPackagesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/dynamicSetRebootManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/dynamicSetRemovePackagesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/dynamicSetUpdatePackagesManagement",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"OsManagementHub/event",
@@ -162,7 +219,17 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"OsManagementHub/managedInstanceAttachSoftwareSourcesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"OsManagementHub/managedInstanceDetachProfileManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/managedInstanceDetachSoftwareSourcesManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -222,6 +289,16 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"OsManagementHub/managedInstanceInstallPackagesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/managedInstanceInstallSnapsManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"OsManagementHub/managedInstanceInstallWindowsUpdatesManagement",
 		&module{version},
 	)
@@ -232,7 +309,37 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"OsManagementHub/managedInstanceRefreshSoftwareManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/managedInstanceRemovePackagesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/managedInstanceRemoveSnapsManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/managedInstanceSwitchSnapChannelManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"OsManagementHub/managedInstanceUpdatePackagesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/managedInstancesInstallWindowsUpdatesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/managedInstancesUpdatePackagesManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -283,6 +390,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"OsManagementHub/profileAttachSoftwareSourcesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/profileDetachManagementStationManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

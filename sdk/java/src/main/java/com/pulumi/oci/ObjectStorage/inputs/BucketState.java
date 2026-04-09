@@ -95,6 +95,21 @@ public final class BucketState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+     * 
+     */
+    @Import(name="bucketScope")
+    private @Nullable Output<String> bucketScope;
+
+    /**
+     * @return (Updatable) Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+     * 
+     */
+    public Optional<Output<String>> bucketScope() {
+        return Optional.ofNullable(this.bucketScope);
+    }
+
+    /**
      * (Updatable) The ID of the compartment in which to create the bucket.
      * 
      */
@@ -363,6 +378,7 @@ public final class BucketState extends com.pulumi.resources.ResourceArgs {
         this.approximateSize = $.approximateSize;
         this.autoTiering = $.autoTiering;
         this.bucketId = $.bucketId;
+        this.bucketScope = $.bucketScope;
         this.compartmentId = $.compartmentId;
         this.createdBy = $.createdBy;
         this.definedTags = $.definedTags;
@@ -503,6 +519,27 @@ public final class BucketState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder bucketId(String bucketId) {
             return bucketId(Output.of(bucketId));
+        }
+
+        /**
+         * @param bucketScope (Updatable) Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bucketScope(@Nullable Output<String> bucketScope) {
+            $.bucketScope = bucketScope;
+            return this;
+        }
+
+        /**
+         * @param bucketScope (Updatable) Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bucketScope(String bucketScope) {
+            return bucketScope(Output.of(bucketScope));
         }
 
         /**

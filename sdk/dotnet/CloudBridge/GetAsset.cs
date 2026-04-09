@@ -123,6 +123,18 @@ namespace Pulumi.Oci.CloudBridge
     [OutputType]
     public sealed class GetAssetResult
     {
+        /// <summary>
+        /// The class name of the asset.
+        /// </summary>
+        public readonly string AssetClassName;
+        /// <summary>
+        /// The version of the asset class.
+        /// </summary>
+        public readonly string AssetClassVersion;
+        /// <summary>
+        /// The details of the asset.
+        /// </summary>
+        public readonly string AssetDetails;
         public readonly string AssetId;
         /// <summary>
         /// List of asset source OCID.
@@ -132,6 +144,10 @@ namespace Pulumi.Oci.CloudBridge
         /// The type of asset.
         /// </summary>
         public readonly string AssetType;
+        public readonly ImmutableArray<Outputs.GetAssetAttachedEbsVolumesCostResult> AttachedEbsVolumesCosts;
+        public readonly ImmutableArray<Outputs.GetAssetAwsEbResult> AwsEbs;
+        public readonly ImmutableArray<Outputs.GetAssetAwsEc2costResult> AwsEc2costs;
+        public readonly ImmutableArray<Outputs.GetAssetAwsEc2Result> AwsEc2s;
         /// <summary>
         /// The OCID of the compartment to which an asset belongs to.
         /// </summary>
@@ -148,6 +164,10 @@ namespace Pulumi.Oci.CloudBridge
         /// Asset display name.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+        /// </summary>
+        public readonly string EnvironmentType;
         /// <summary>
         /// The key of the asset from the external environment.
         /// </summary>
@@ -199,11 +219,25 @@ namespace Pulumi.Oci.CloudBridge
 
         [OutputConstructor]
         private GetAssetResult(
+            string assetClassName,
+
+            string assetClassVersion,
+
+            string assetDetails,
+
             string assetId,
 
             ImmutableArray<string> assetSourceIds,
 
             string assetType,
+
+            ImmutableArray<Outputs.GetAssetAttachedEbsVolumesCostResult> attachedEbsVolumesCosts,
+
+            ImmutableArray<Outputs.GetAssetAwsEbResult> awsEbs,
+
+            ImmutableArray<Outputs.GetAssetAwsEc2costResult> awsEc2costs,
+
+            ImmutableArray<Outputs.GetAssetAwsEc2Result> awsEc2s,
 
             string compartmentId,
 
@@ -212,6 +246,8 @@ namespace Pulumi.Oci.CloudBridge
             ImmutableDictionary<string, string> definedTags,
 
             string displayName,
+
+            string environmentType,
 
             string externalAssetKey,
 
@@ -237,13 +273,21 @@ namespace Pulumi.Oci.CloudBridge
 
             ImmutableArray<Outputs.GetAssetVmwareVmResult> vmwareVms)
         {
+            AssetClassName = assetClassName;
+            AssetClassVersion = assetClassVersion;
+            AssetDetails = assetDetails;
             AssetId = assetId;
             AssetSourceIds = assetSourceIds;
             AssetType = assetType;
+            AttachedEbsVolumesCosts = attachedEbsVolumesCosts;
+            AwsEbs = awsEbs;
+            AwsEc2costs = awsEc2costs;
+            AwsEc2s = awsEc2s;
             CompartmentId = compartmentId;
             Computes = computes;
             DefinedTags = definedTags;
             DisplayName = displayName;
+            EnvironmentType = environmentType;
             ExternalAssetKey = externalAssetKey;
             FreeformTags = freeformTags;
             Id = id;

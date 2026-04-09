@@ -33,6 +33,21 @@ public final class GetManagedInstanceUpdatablePackagesPlainArgs extends com.pulu
     }
 
     /**
+     * The advisory severity.
+     * 
+     */
+    @Import(name="advisorySeverities")
+    private @Nullable List<String> advisorySeverities;
+
+    /**
+     * @return The advisory severity.
+     * 
+     */
+    public Optional<List<String>> advisorySeverities() {
+        return Optional.ofNullable(this.advisorySeverities);
+    }
+
+    /**
      * A filter to return only packages that match the given update classification type.
      * 
      */
@@ -118,6 +133,7 @@ public final class GetManagedInstanceUpdatablePackagesPlainArgs extends com.pulu
 
     private GetManagedInstanceUpdatablePackagesPlainArgs(GetManagedInstanceUpdatablePackagesPlainArgs $) {
         this.advisoryNames = $.advisoryNames;
+        this.advisorySeverities = $.advisorySeverities;
         this.classificationTypes = $.classificationTypes;
         this.compartmentId = $.compartmentId;
         this.displayNameContains = $.displayNameContains;
@@ -163,6 +179,27 @@ public final class GetManagedInstanceUpdatablePackagesPlainArgs extends com.pulu
          */
         public Builder advisoryNames(String... advisoryNames) {
             return advisoryNames(List.of(advisoryNames));
+        }
+
+        /**
+         * @param advisorySeverities The advisory severity.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder advisorySeverities(@Nullable List<String> advisorySeverities) {
+            $.advisorySeverities = advisorySeverities;
+            return this;
+        }
+
+        /**
+         * @param advisorySeverities The advisory severity.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder advisorySeverities(String... advisorySeverities) {
+            return advisorySeverities(List.of(advisorySeverities));
         }
 
         /**

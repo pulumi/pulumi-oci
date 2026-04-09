@@ -19,14 +19,14 @@ public final class GetErrataFilterArgs extends com.pulumi.resources.ResourceArgs
     public static final GetErrataFilterArgs Empty = new GetErrataFilterArgs();
 
     /**
-     * The assigned erratum name. It&#39;s unique and not changeable.  Example: `ELSA-2020-5804`
+     * The erratum name (such as ELSA-2023-34678).
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return The assigned erratum name. It&#39;s unique and not changeable.  Example: `ELSA-2020-5804`
+     * @return The erratum name (such as ELSA-2023-34678).
      * 
      */
     public Output<String> name() {
@@ -74,7 +74,7 @@ public final class GetErrataFilterArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param name The assigned erratum name. It&#39;s unique and not changeable.  Example: `ELSA-2020-5804`
+         * @param name The erratum name (such as ELSA-2023-34678).
          * 
          * @return builder
          * 
@@ -85,7 +85,7 @@ public final class GetErrataFilterArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param name The assigned erratum name. It&#39;s unique and not changeable.  Example: `ELSA-2020-5804`
+         * @param name The erratum name (such as ELSA-2023-34678).
          * 
          * @return builder
          * 

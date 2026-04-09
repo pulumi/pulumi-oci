@@ -7896,6 +7896,478 @@ export namespace CloudBridge {
         timeUpdated?: pulumi.Input<string>;
     }
 
+    export interface AssetAttachedEbsVolumesCost {
+        /**
+         * (Updatable) Monthly costs for maintenance of this asset.
+         */
+        amount?: pulumi.Input<number>;
+        /**
+         * (Updatable) Currency code
+         */
+        currencyCode?: pulumi.Input<string>;
+    }
+
+    export interface AssetAwsEbs {
+        /**
+         * (Updatable) Information about the volume attachments.
+         */
+        attachments?: pulumi.Input<pulumi.Input<inputs.CloudBridge.AssetAwsEbsAttachment>[]>;
+        /**
+         * (Updatable) The Availability Zone for the volume.
+         */
+        availabilityZone?: pulumi.Input<string>;
+        /**
+         * (Updatable) The number of I/O operations per second.
+         */
+        iops?: pulumi.Input<number>;
+        /**
+         * (Updatable) Indicates whether the volume is encrypted.
+         */
+        isEncrypted?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Indicates whether Amazon EBS Multi-Attach is enabled.
+         */
+        isMultiAttachEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The size of the volume, in GiBs.
+         */
+        sizeInGiBs?: pulumi.Input<number>;
+        /**
+         * (Updatable) The volume state.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * (Updatable) Any tags assigned to the volume.
+         */
+        tags?: pulumi.Input<pulumi.Input<inputs.CloudBridge.AssetAwsEbsTag>[]>;
+        /**
+         * (Updatable) The throughput that the volume supports, in MiB/s.
+         */
+        throughput?: pulumi.Input<number>;
+        /**
+         * (Updatable) The ID of the volume.
+         */
+        volumeKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) The volume type.
+         */
+        volumeType?: pulumi.Input<string>;
+    }
+
+    export interface AssetAwsEbsAttachment {
+        /**
+         * (Updatable) The device name.
+         */
+        device?: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the instance.
+         */
+        instanceKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Indicates whether the EBS volume is deleted on instance termination.
+         */
+        isDeleteOnTermination?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The attachment state of the volume.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the volume.
+         */
+        volumeKey?: pulumi.Input<string>;
+    }
+
+    export interface AssetAwsEbsTag {
+        /**
+         * (Updatable) The key of the tag.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of the tag.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface AssetAwsEc2 {
+        /**
+         * (Updatable) The architecture of the image.
+         */
+        architecture?: pulumi.Input<string>;
+        /**
+         * (Updatable) Indicates if the elastic inference accelerators attached to an instance
+         */
+        areElasticInferenceAcceleratorsPresent?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The boot mode of the instance.
+         */
+        bootMode?: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the Capacity Reservation.
+         */
+        capacityReservationKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the AMI used to launch the instance.
+         */
+        imageKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the instance.
+         */
+        instanceKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Indicates whether this is a Spot Instance or a Scheduled Instance.
+         */
+        instanceLifecycle?: pulumi.Input<string>;
+        /**
+         * (Updatable) The instance type.
+         */
+        instanceType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The public IPv4 address, or the Carrier IP address assigned to the instance.
+         */
+        ipAddress?: pulumi.Input<string>;
+        /**
+         * (Updatable) The IPv6 address assigned to the instance.
+         */
+        ipv6address?: pulumi.Input<string>;
+        /**
+         * (Updatable) Indicates whether the instance is enabled for AWS Nitro Enclaves.
+         */
+        isEnclaveOptions?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Indicates whether the instance is enabled for hibernation.
+         */
+        isHibernationOptions?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Indicates whether source/destination checking is enabled.
+         */
+        isSourceDestCheck?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) If the request is a Spot Instance request, this value will be true.
+         */
+        isSpotInstance?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The kernel associated with this instance, if applicable.
+         */
+        kernelKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) The license configurations for the instance.
+         */
+        licenses?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Provides information on the recovery and maintenance options of your instance.
+         */
+        maintenanceOptions?: pulumi.Input<string>;
+        /**
+         * (Updatable) The monitoring for the instance.
+         */
+        monitoring?: pulumi.Input<string>;
+        /**
+         * (Updatable) The network interfaces for the instance.
+         */
+        networkInterfaces?: pulumi.Input<pulumi.Input<inputs.CloudBridge.AssetAwsEc2NetworkInterface>[]>;
+        /**
+         * (Updatable) Describes the placement of an instance.
+         */
+        placement?: pulumi.Input<inputs.CloudBridge.AssetAwsEc2Placement>;
+        /**
+         * (Updatable) (IPv4 only) The private DNS hostname name assigned to the instance.
+         */
+        privateDnsName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The private IPv4 address assigned to the instance.
+         */
+        privateIpAddress?: pulumi.Input<string>;
+        /**
+         * (Updatable) The device name of the root device volume.
+         */
+        rootDeviceName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The root device type used by the AMI. The AMI can use an EBS volume or an instance store volume.
+         */
+        rootDeviceType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The security groups for the instance.
+         */
+        securityGroups?: pulumi.Input<pulumi.Input<inputs.CloudBridge.AssetAwsEc2SecurityGroup>[]>;
+        /**
+         * (Updatable) Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
+         */
+        sriovNetSupport?: pulumi.Input<string>;
+        /**
+         * (Updatable) Describes the current state of an instance.
+         */
+        state?: pulumi.Input<inputs.CloudBridge.AssetAwsEc2State>;
+        /**
+         * (Updatable) EC2-VPC The ID of the subnet in which the instance is running.
+         */
+        subnetKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Any tags assigned to the instance.
+         */
+        tags?: pulumi.Input<pulumi.Input<inputs.CloudBridge.AssetAwsEc2Tag>[]>;
+        /**
+         * (Updatable) The time the instance was launched.
+         */
+        timeLaunch?: pulumi.Input<string>;
+        /**
+         * (Updatable) If the instance is configured for NitroTPM support, the value is v2.0.
+         */
+        tpmSupport?: pulumi.Input<string>;
+        /**
+         * (Updatable) The virtualization type of the instance.
+         */
+        virtualizationType?: pulumi.Input<string>;
+        /**
+         * (Updatable) EC2-VPC The ID of the VPC in which the instance is running.
+         */
+        vpcKey?: pulumi.Input<string>;
+    }
+
+    export interface AssetAwsEc2NetworkInterface {
+        /**
+         * (Updatable) Describes association information for an Elastic IP address (IPv4).
+         */
+        association?: pulumi.Input<inputs.CloudBridge.AssetAwsEc2NetworkInterfaceAssociation>;
+        /**
+         * (Updatable) Describes a network interface attachment.
+         */
+        attachment?: pulumi.Input<inputs.CloudBridge.AssetAwsEc2NetworkInterfaceAttachment>;
+        /**
+         * (Updatable) The description.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of network interface.
+         */
+        interfaceType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The IPv4 delegated prefixes that are assigned to the network interface.
+         */
+        ipv4prefixes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The IPv6 addresses associated with the network interface.
+         */
+        ipv6addresses?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The IPv6 delegated prefixes that are assigned to the network interface.
+         */
+        ipv6prefixes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Indicates whether source/destination checking is enabled.
+         */
+        isSourceDestCheck?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The MAC address.
+         */
+        macAddress?: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the network interface.
+         */
+        networkInterfaceKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the AWS account that created the network interface.
+         */
+        ownerKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) The private IPv4 addresses associated with the network interface.
+         */
+        privateIpAddresses?: pulumi.Input<pulumi.Input<inputs.CloudBridge.AssetAwsEc2NetworkInterfacePrivateIpAddress>[]>;
+        /**
+         * (Updatable) The security groups.
+         */
+        securityGroups?: pulumi.Input<pulumi.Input<inputs.CloudBridge.AssetAwsEc2NetworkInterfaceSecurityGroup>[]>;
+        /**
+         * (Updatable) The status of the network interface.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the subnet.
+         */
+        subnetKey?: pulumi.Input<string>;
+    }
+
+    export interface AssetAwsEc2NetworkInterfaceAssociation {
+        /**
+         * (Updatable) The carrier IP address associated with the network interface.
+         */
+        carrierIp?: pulumi.Input<string>;
+        /**
+         * (Updatable) The customer-owned IP address associated with the network interface.
+         */
+        customerOwnedIp?: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the owner of the Elastic IP address.
+         */
+        ipOwnerKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) The public DNS name.
+         */
+        publicDnsName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The public IP address or Elastic IP address bound to the network interface.
+         */
+        publicIp?: pulumi.Input<string>;
+    }
+
+    export interface AssetAwsEc2NetworkInterfaceAttachment {
+        /**
+         * (Updatable) The ID of the network interface attachment.
+         */
+        attachmentKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) The index of the device on the instance for the network interface attachment.
+         */
+        deviceIndex?: pulumi.Input<number>;
+        /**
+         * (Updatable) Indicates whether the network interface is deleted when the instance is terminated.
+         */
+        isDeleteOnTermination?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The index of the network card.
+         */
+        networkCardIndex?: pulumi.Input<number>;
+        /**
+         * (Updatable) The attachment state.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * (Updatable) The timestamp when the attachment initiated.
+         */
+        timeAttach?: pulumi.Input<string>;
+    }
+
+    export interface AssetAwsEc2NetworkInterfacePrivateIpAddress {
+        /**
+         * (Updatable) Describes association information for an Elastic IP address (IPv4).
+         */
+        association?: pulumi.Input<inputs.CloudBridge.AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation>;
+        /**
+         * (Updatable) Indicates whether this IPv4 address is the primary private IP address of the network interface.
+         */
+        isPrimary?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The private IPv4 DNS name.
+         */
+        privateDnsName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The private IPv4 address of the network interface.
+         */
+        privateIpAddress?: pulumi.Input<string>;
+    }
+
+    export interface AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation {
+        /**
+         * (Updatable) The carrier IP address associated with the network interface.
+         */
+        carrierIp?: pulumi.Input<string>;
+        /**
+         * (Updatable) The customer-owned IP address associated with the network interface.
+         */
+        customerOwnedIp?: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the owner of the Elastic IP address.
+         */
+        ipOwnerKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) The public DNS name.
+         */
+        publicDnsName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The public IP address or Elastic IP address bound to the network interface.
+         */
+        publicIp?: pulumi.Input<string>;
+    }
+
+    export interface AssetAwsEc2NetworkInterfaceSecurityGroup {
+        /**
+         * (Updatable) The ID of the security group.
+         */
+        groupKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of the security group.
+         */
+        groupName?: pulumi.Input<string>;
+    }
+
+    export interface AssetAwsEc2Placement {
+        /**
+         * (Updatable) The affinity setting for the instance on the Dedicated Host.
+         */
+        affinity?: pulumi.Input<string>;
+        /**
+         * (Updatable) The Availability Zone of the instance.
+         */
+        availabilityZone?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of the placement group the instance is in.
+         */
+        groupName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the Dedicated Host on which the instance resides.
+         */
+        hostKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) The ARN of the host resource group in which to launch the instances.
+         */
+        hostResourceGroupArn?: pulumi.Input<string>;
+        /**
+         * (Updatable) The number of the partition that the instance is in.
+         */
+        partitionNumber?: pulumi.Input<number>;
+        /**
+         * (Updatable) Reserved for future use.
+         */
+        spreadDomain?: pulumi.Input<string>;
+        /**
+         * (Updatable) The tenancy of the instance (if the instance is running in a VPC).
+         */
+        tenancy?: pulumi.Input<string>;
+    }
+
+    export interface AssetAwsEc2SecurityGroup {
+        /**
+         * (Updatable) The ID of the security group.
+         */
+        groupKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of the security group.
+         */
+        groupName?: pulumi.Input<string>;
+    }
+
+    export interface AssetAwsEc2State {
+        /**
+         * (Updatable) The state of the instance as a 16-bit unsigned integer.
+         */
+        code?: pulumi.Input<number>;
+        /**
+         * (Updatable) The current state of the instance.
+         */
+        name?: pulumi.Input<string>;
+    }
+
+    export interface AssetAwsEc2Tag {
+        /**
+         * (Updatable) The key of the tag.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of the tag.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface AssetAwsEc2cost {
+        /**
+         * (Updatable) Monthly costs for maintenance of this asset.
+         */
+        amount?: pulumi.Input<number>;
+        /**
+         * (Updatable) Currency code
+         */
+        currencyCode?: pulumi.Input<string>;
+    }
+
     export interface AssetCompute {
         /**
          * (Updatable) Number of connected networks.
@@ -8021,6 +8493,10 @@ export namespace CloudBridge {
          */
         bootOrder?: pulumi.Input<number>;
         /**
+         * (Updatable) Indicates that CBT (change disk tracking) is enabled for this virtual disk.
+         */
+        isCbtEnabled?: pulumi.Input<boolean>;
+        /**
          * (Updatable) Location of the boot/data volume.
          */
         location?: pulumi.Input<string>;
@@ -8139,7 +8615,7 @@ export namespace CloudBridge {
 
     export interface AssetSourceDiscoveryCredentials {
         /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<User>", "password": "example-password" }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ "accessKeyId": "<AccessKey>", "secretAccessKey": "<AccessKeyValue>" }`.
          */
         secretId: pulumi.Input<string>;
         /**
@@ -8150,7 +8626,7 @@ export namespace CloudBridge {
 
     export interface AssetSourceReplicationCredentials {
         /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<User>", "password": "example-password" }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ "accessKeyId": "<AccessKey>", "secretAccessKey": "<AccessKeyValue>" }`.
          */
         secretId: pulumi.Input<string>;
         /**
@@ -8354,6 +8830,18 @@ export namespace CloudBridge {
     }
 
     export interface GetInventoriesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSupportedCloudRegionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSupportedCloudRegionsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -12787,11 +13275,11 @@ export namespace ContainerEngine {
          */
         publicIp?: pulumi.Input<string>;
         /**
-         * The state of the nodepool.
+         * The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
          */
         state?: pulumi.Input<string>;
         /**
-         * The OCID of the subnet in which this node is placed.
+         * the ocid of the subnet to create the vnic in
          */
         subnetId?: pulumi.Input<string>;
     }
@@ -12981,6 +13469,79 @@ export namespace ContainerEngine {
          * (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
          */
         sourceType: pulumi.Input<string>;
+    }
+
+    export interface NodePoolSecondaryVnic {
+        /**
+         * (Updatable) The properties of the secondary vnics
+         */
+        createVnicDetails: pulumi.Input<inputs.ContainerEngine.NodePoolSecondaryVnicCreateVnicDetails>;
+        /**
+         * (Updatable) Display name for vnic attachment
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Which physical network interface card (NIC) the VNIC will use
+         */
+        nicIndex?: pulumi.Input<number>;
+    }
+
+    export interface NodePoolSecondaryVnicCreateVnicDetails {
+        /**
+         * (Updatable) The application resource that corresponds to this secondary vnic. Used to map pods to this specific vnic for scheduling
+         */
+        applicationResources?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet
+         */
+        assignIpv6ip?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Whether the VNIC should be assigned a public IP address
+         */
+        assignPublicIp?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) Display name for secondary vnic
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+         */
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) The number of ip addresses to attach to secondary vnic
+         */
+        ipCount?: pulumi.Input<number>;
+        /**
+         * (Updatable) A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix  and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty  and instead provide the specific IPv6 address that should be used from within that range.
+         */
+        ipv6addressIpv6subnetCidrPairDetails?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail>[]>;
+        /**
+         * (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Whether the source/destination check is disabled on the VNIC
+         */
+        skipSourceDestCheck?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) the ocid of the subnet to create the vnic in
+         */
+        subnetId: pulumi.Input<string>;
+    }
+
+    export interface NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail {
+        /**
+         * (Updatable) An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix
+         */
+        ipv6address?: pulumi.Input<string>;
+        /**
+         * (Updatable) The IPv6 prefix allocated to the subnet
+         */
+        ipv6subnetCidr?: pulumi.Input<string>;
     }
 
     export interface VirtualNodePoolInitialVirtualNodeLabel {
@@ -13449,6 +14010,10 @@ export namespace Core {
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
          */
         compartmentId?: pulumi.Input<string>;
+        /**
+         * Count of instance in running state associated to the Instance Pool.
+         */
+        currentSize?: pulumi.Input<number>;
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
          */
@@ -49790,6 +50355,18 @@ export namespace GenerativeAi {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetSemanticStoresFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSemanticStoresFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface ImportedModelDataSource {
         /**
          * Hugging Face access token to authenticate requests for restricted models.  This token will be securely stored in Oracle Cloud Infrastructure Vault.
@@ -49927,6 +50504,54 @@ export namespace GenerativeAi {
          * The type of the model metrics. Each type of model can expect a different set of model metrics.
          */
         modelMetricsType?: pulumi.Input<string>;
+    }
+
+    export interface SemanticStoreDataSource {
+        /**
+         * Specifies the type of underlying connection.
+         */
+        connectionType: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for enrichment.
+         */
+        enrichmentConnectionId: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for querying.
+         */
+        queryingConnectionId: pulumi.Input<string>;
+    }
+
+    export interface SemanticStoreRefreshSchedule {
+        /**
+         * (Updatable) Specifies the type of refresh schedule.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies the refresh interval value. The interval must be provided using the ISO 8601 extended format, either as PnW or PnYnMnDTnHnMnS,  where 'P' is always required, 'T' precedes any time components less than one day, and each included component is properly suffixed.  For example, "P1DT6H" represents a duration of 1 day and 6 hours.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface SemanticStoreSchemas {
+        /**
+         * (Updatable) Specifies the type of underlying connection.
+         */
+        connectionType: pulumi.Input<string>;
+        /**
+         * (Updatable) Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+         */
+        schemas: pulumi.Input<pulumi.Input<inputs.GenerativeAi.SemanticStoreSchemasSchema>[]>;
+    }
+
+    export interface SemanticStoreSchemasSchema {
+        /**
+         * (Updatable) 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        name: pulumi.Input<string>;
     }
 }
 
@@ -91299,6 +91924,143 @@ export namespace Optimizer {
 }
 
 export namespace OsManagementHub {
+    export interface DynamicSetInstallPackagesManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
+    export interface DynamicSetMatchingRule {
+        /**
+         * (Updatable) The list of managed instance architectures.
+         */
+        architectures?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The list of managed instance display names.
+         */
+        displayNames?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Indicates if the managed instance needs to be rebooted.
+         */
+        isRebootRequired?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The list of managed instance locations.
+         */
+        locations?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The list of managed instance group IDs.
+         */
+        managedInstanceGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The list of managed instance ids.
+         */
+        managedInstanceIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The list of managed instance OS families.
+         */
+        osFamilies?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The list of managed instance OS names.
+         */
+        osNames?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The list of managed instance statuses.
+         */
+        statuses?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The list of the managed instance tags.
+         */
+        tags?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.DynamicSetMatchingRuleTag>[]>;
+    }
+
+    export interface DynamicSetMatchingRuleTag {
+        /**
+         * (Updatable) The key of the tag.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The namespace of the tag.
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the tag. Common values include `defined` or `freeform`.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * (Updatable) The value associated with the tag key.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DynamicSetRebootManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
+    export interface DynamicSetRemovePackagesManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
+    export interface DynamicSetTargetCompartment {
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
+        compartmentId: pulumi.Input<string>;
+        /**
+         * (Updatable) Indicates if the child compartments are included in the matching rule. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        doesIncludeChildren: pulumi.Input<boolean>;
+    }
+
+    export interface DynamicSetUpdatePackagesManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
     export interface EventData {
         /**
          * Provides additional information for the work request associated with an event.
@@ -91320,6 +92082,10 @@ export namespace OsManagementHub {
          * The output log of the error.
          */
         errorLog?: pulumi.Input<string>;
+        /**
+         * Brief description on how this error is categorized.
+         */
+        errorSummary?: pulumi.Input<string>;
         /**
          * Number of times the event has occurred.
          */
@@ -91465,6 +92231,30 @@ export namespace OsManagementHub {
         osSystemVersion?: pulumi.Input<string>;
     }
 
+    export interface GetDynamicSetManagedInstancesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDynamicSetManagedInstancesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDynamicSetsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDynamicSetsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetEntitlementsFilter {
         name: string;
         regex?: boolean;
@@ -91479,7 +92269,7 @@ export namespace OsManagementHub {
 
     export interface GetErrataFilter {
         /**
-         * The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+         * The erratum name (such as ELSA-2023-34678).
          */
         name: string;
         regex?: boolean;
@@ -91488,7 +92278,7 @@ export namespace OsManagementHub {
 
     export interface GetErrataFilterArgs {
         /**
-         * The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+         * The erratum name (such as ELSA-2023-34678).
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
@@ -91663,6 +92453,18 @@ export namespace OsManagementHub {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetManagedInstanceGroupManagedInstancesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedInstanceGroupManagedInstancesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetManagedInstanceGroupModulesFilter {
         /**
          * The resource name.
@@ -91739,6 +92541,24 @@ export namespace OsManagementHub {
     }
 
     export interface GetManagedInstanceModulesFilterArgs {
+        /**
+         * The resource name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedInstanceSnapsFilter {
+        /**
+         * The resource name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedInstanceSnapsFilterArgs {
         /**
          * The resource name.
          */
@@ -91826,12 +92646,18 @@ export namespace OsManagementHub {
     }
 
     export interface GetScheduledJobsFilter {
+        /**
+         * The name of the snap.
+         */
         name: string;
         regex?: boolean;
         values: string[];
     }
 
     export interface GetScheduledJobsFilterArgs {
+        /**
+         * The name of the snap.
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -92207,6 +93033,21 @@ export namespace OsManagementHub {
         displayName?: pulumi.Input<string>;
     }
 
+    export interface ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
     export interface ManagedInstanceAutonomousSettings {
         /**
          * (Updatable) Indicates whether Autonomous Linux will collect crash files.
@@ -92216,6 +93057,21 @@ export namespace OsManagementHub {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
          */
         scheduledJobId?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
     }
 
     export interface ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetails {
@@ -92455,6 +93311,59 @@ export namespace OsManagementHub {
         displayName?: pulumi.Input<string>;
     }
 
+    export interface ManagedInstanceInstallPackagesManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceInstallSnapsManagementSnapDetail {
+        /**
+         * The snap channel to install from (e.g. stable, 1.2/edge, beta, candidate, or a custom channel).
+         */
+        channel?: pulumi.Input<string>;
+        /**
+         * If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+         */
+        isSigned?: pulumi.Input<boolean>;
+        /**
+         * The confinement mode for the snap.
+         */
+        mode?: pulumi.Input<string>;
+        /**
+         * The name of the snap to install.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * The snap revision to install.
+         */
+        revision?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceInstallSnapsManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
     export interface ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetails {
         /**
          * User-specified information about the job. Avoid entering confidential information.
@@ -92518,6 +93427,47 @@ export namespace OsManagementHub {
         displayName?: pulumi.Input<string>;
     }
 
+    export interface ManagedInstanceRemovePackagesManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceRemoveSnapsManagementSnapDetail {
+        /**
+         * The name of the snap to remove.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * The revision to remove. Note: This option cannot be used when removing multiple snaps.
+         */
+        revision?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceRemoveSnapsManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
     export interface ManagedInstanceSoftwareSource {
         /**
          * (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
@@ -92541,7 +93491,63 @@ export namespace OsManagementHub {
         softwareSourceType?: pulumi.Input<string>;
     }
 
+    export interface ManagedInstanceSwitchSnapChannelManagementSnapDetails {
+        /**
+         * The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+         */
+        channel?: pulumi.Input<string>;
+        /**
+         * The name of the snap.
+         */
+        name: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
     export interface ManagedInstanceUpdatePackagesManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstancesUpdatePackagesManagementWorkRequestDetails {
         /**
          * User-specified information about the job. Avoid entering confidential information.
          */
@@ -92594,7 +93600,7 @@ export namespace OsManagementHub {
         /**
          * (Updatable) Default mirror listening port for http.
          */
-        port: pulumi.Input<string>;
+        port?: pulumi.Input<string>;
         /**
          * (Updatable) Path to the SSL cerfificate.
          */
@@ -92660,7 +93666,7 @@ export namespace OsManagementHub {
 
     export interface ProfileLifecycleEnvironment {
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+         * (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -92671,7 +93677,7 @@ export namespace OsManagementHub {
 
     export interface ProfileLifecycleStage {
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+         * (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -92682,7 +93688,7 @@ export namespace OsManagementHub {
 
     export interface ProfileManagedInstanceGroup {
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+         * (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -92697,7 +93703,7 @@ export namespace OsManagementHub {
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+         * (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -92716,6 +93722,10 @@ export namespace OsManagementHub {
 
     export interface ScheduledJobOperation {
         /**
+         * (Updatable) Provides the information used to install a snap.
+         */
+        installSnapDetails?: pulumi.Input<inputs.OsManagementHub.ScheduledJobOperationInstallSnapDetails>;
+        /**
          * (Updatable) The set of changes to make to the state of the modules, streams, and profiles on the managed target.
          */
         manageModuleStreamsDetails?: pulumi.Input<inputs.OsManagementHub.ScheduledJobOperationManageModuleStreamsDetails>;
@@ -92732,6 +93742,10 @@ export namespace OsManagementHub {
          */
         rebootTimeoutInMins?: pulumi.Input<number>;
         /**
+         * (Updatable) Provides the information used to remove a snap.
+         */
+        removeSnapDetails?: pulumi.Input<inputs.OsManagementHub.ScheduledJobOperationRemoveSnapDetails>;
+        /**
          * (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
          */
         softwareSourceIds?: pulumi.Input<pulumi.Input<string>[]>;
@@ -92740,9 +93754,36 @@ export namespace OsManagementHub {
          */
         switchModuleStreamsDetails?: pulumi.Input<inputs.OsManagementHub.ScheduledJobOperationSwitchModuleStreamsDetails>;
         /**
+         * (Updatable) Provides the information used to switch a snap channel.
+         */
+        switchSnapChannelDetails?: pulumi.Input<inputs.OsManagementHub.ScheduledJobOperationSwitchSnapChannelDetails>;
+        /**
          * (Updatable) Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
          */
         windowsUpdateNames?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface ScheduledJobOperationInstallSnapDetails {
+        /**
+         * (Updatable) The snap channel to install from (e.g. stable, 1.2/edge, beta, candidate, or a custom channel).
+         */
+        channel?: pulumi.Input<string>;
+        /**
+         * (Updatable) If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+         */
+        isSigned?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The confinement mode for the snap.
+         */
+        mode?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of the snap to install.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * (Updatable) The snap revision to install.
+         */
+        revision?: pulumi.Input<string>;
     }
 
     export interface ScheduledJobOperationManageModuleStreamsDetails {
@@ -92832,6 +93873,17 @@ export namespace OsManagementHub {
         streamName: pulumi.Input<string>;
     }
 
+    export interface ScheduledJobOperationRemoveSnapDetails {
+        /**
+         * (Updatable) The name of the snap to remove.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * (Updatable) The revision to remove. Note: This option cannot be used when removing multiple snaps.
+         */
+        revision?: pulumi.Input<string>;
+    }
+
     export interface ScheduledJobOperationSwitchModuleStreamsDetails {
         /**
          * (Updatable) The name of a module.
@@ -92845,6 +93897,17 @@ export namespace OsManagementHub {
          * (Updatable) The name of a stream of the specified module.
          */
         streamName: pulumi.Input<string>;
+    }
+
+    export interface ScheduledJobOperationSwitchSnapChannelDetails {
+        /**
+         * (Updatable) The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+         */
+        channel?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of the snap.
+         */
+        name: pulumi.Input<string>;
     }
 
     export interface SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailability {

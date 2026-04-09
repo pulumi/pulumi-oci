@@ -182,6 +182,3384 @@ func (o AgentPluginListArrayOutput) Index(i pulumi.IntInput) AgentPluginListOutp
 	}).(AgentPluginListOutput)
 }
 
+type AssetAttachedEbsVolumesCost struct {
+	// (Updatable) Monthly costs for maintenance of this asset.
+	Amount *float64 `pulumi:"amount"`
+	// (Updatable) Currency code
+	CurrencyCode *string `pulumi:"currencyCode"`
+}
+
+// AssetAttachedEbsVolumesCostInput is an input type that accepts AssetAttachedEbsVolumesCostArgs and AssetAttachedEbsVolumesCostOutput values.
+// You can construct a concrete instance of `AssetAttachedEbsVolumesCostInput` via:
+//
+//	AssetAttachedEbsVolumesCostArgs{...}
+type AssetAttachedEbsVolumesCostInput interface {
+	pulumi.Input
+
+	ToAssetAttachedEbsVolumesCostOutput() AssetAttachedEbsVolumesCostOutput
+	ToAssetAttachedEbsVolumesCostOutputWithContext(context.Context) AssetAttachedEbsVolumesCostOutput
+}
+
+type AssetAttachedEbsVolumesCostArgs struct {
+	// (Updatable) Monthly costs for maintenance of this asset.
+	Amount pulumi.Float64PtrInput `pulumi:"amount"`
+	// (Updatable) Currency code
+	CurrencyCode pulumi.StringPtrInput `pulumi:"currencyCode"`
+}
+
+func (AssetAttachedEbsVolumesCostArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAttachedEbsVolumesCost)(nil)).Elem()
+}
+
+func (i AssetAttachedEbsVolumesCostArgs) ToAssetAttachedEbsVolumesCostOutput() AssetAttachedEbsVolumesCostOutput {
+	return i.ToAssetAttachedEbsVolumesCostOutputWithContext(context.Background())
+}
+
+func (i AssetAttachedEbsVolumesCostArgs) ToAssetAttachedEbsVolumesCostOutputWithContext(ctx context.Context) AssetAttachedEbsVolumesCostOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAttachedEbsVolumesCostOutput)
+}
+
+func (i AssetAttachedEbsVolumesCostArgs) ToAssetAttachedEbsVolumesCostPtrOutput() AssetAttachedEbsVolumesCostPtrOutput {
+	return i.ToAssetAttachedEbsVolumesCostPtrOutputWithContext(context.Background())
+}
+
+func (i AssetAttachedEbsVolumesCostArgs) ToAssetAttachedEbsVolumesCostPtrOutputWithContext(ctx context.Context) AssetAttachedEbsVolumesCostPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAttachedEbsVolumesCostOutput).ToAssetAttachedEbsVolumesCostPtrOutputWithContext(ctx)
+}
+
+// AssetAttachedEbsVolumesCostPtrInput is an input type that accepts AssetAttachedEbsVolumesCostArgs, AssetAttachedEbsVolumesCostPtr and AssetAttachedEbsVolumesCostPtrOutput values.
+// You can construct a concrete instance of `AssetAttachedEbsVolumesCostPtrInput` via:
+//
+//	        AssetAttachedEbsVolumesCostArgs{...}
+//
+//	or:
+//
+//	        nil
+type AssetAttachedEbsVolumesCostPtrInput interface {
+	pulumi.Input
+
+	ToAssetAttachedEbsVolumesCostPtrOutput() AssetAttachedEbsVolumesCostPtrOutput
+	ToAssetAttachedEbsVolumesCostPtrOutputWithContext(context.Context) AssetAttachedEbsVolumesCostPtrOutput
+}
+
+type assetAttachedEbsVolumesCostPtrType AssetAttachedEbsVolumesCostArgs
+
+func AssetAttachedEbsVolumesCostPtr(v *AssetAttachedEbsVolumesCostArgs) AssetAttachedEbsVolumesCostPtrInput {
+	return (*assetAttachedEbsVolumesCostPtrType)(v)
+}
+
+func (*assetAttachedEbsVolumesCostPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AssetAttachedEbsVolumesCost)(nil)).Elem()
+}
+
+func (i *assetAttachedEbsVolumesCostPtrType) ToAssetAttachedEbsVolumesCostPtrOutput() AssetAttachedEbsVolumesCostPtrOutput {
+	return i.ToAssetAttachedEbsVolumesCostPtrOutputWithContext(context.Background())
+}
+
+func (i *assetAttachedEbsVolumesCostPtrType) ToAssetAttachedEbsVolumesCostPtrOutputWithContext(ctx context.Context) AssetAttachedEbsVolumesCostPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAttachedEbsVolumesCostPtrOutput)
+}
+
+type AssetAttachedEbsVolumesCostOutput struct{ *pulumi.OutputState }
+
+func (AssetAttachedEbsVolumesCostOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAttachedEbsVolumesCost)(nil)).Elem()
+}
+
+func (o AssetAttachedEbsVolumesCostOutput) ToAssetAttachedEbsVolumesCostOutput() AssetAttachedEbsVolumesCostOutput {
+	return o
+}
+
+func (o AssetAttachedEbsVolumesCostOutput) ToAssetAttachedEbsVolumesCostOutputWithContext(ctx context.Context) AssetAttachedEbsVolumesCostOutput {
+	return o
+}
+
+func (o AssetAttachedEbsVolumesCostOutput) ToAssetAttachedEbsVolumesCostPtrOutput() AssetAttachedEbsVolumesCostPtrOutput {
+	return o.ToAssetAttachedEbsVolumesCostPtrOutputWithContext(context.Background())
+}
+
+func (o AssetAttachedEbsVolumesCostOutput) ToAssetAttachedEbsVolumesCostPtrOutputWithContext(ctx context.Context) AssetAttachedEbsVolumesCostPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AssetAttachedEbsVolumesCost) *AssetAttachedEbsVolumesCost {
+		return &v
+	}).(AssetAttachedEbsVolumesCostPtrOutput)
+}
+
+// (Updatable) Monthly costs for maintenance of this asset.
+func (o AssetAttachedEbsVolumesCostOutput) Amount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v AssetAttachedEbsVolumesCost) *float64 { return v.Amount }).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) Currency code
+func (o AssetAttachedEbsVolumesCostOutput) CurrencyCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAttachedEbsVolumesCost) *string { return v.CurrencyCode }).(pulumi.StringPtrOutput)
+}
+
+type AssetAttachedEbsVolumesCostPtrOutput struct{ *pulumi.OutputState }
+
+func (AssetAttachedEbsVolumesCostPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AssetAttachedEbsVolumesCost)(nil)).Elem()
+}
+
+func (o AssetAttachedEbsVolumesCostPtrOutput) ToAssetAttachedEbsVolumesCostPtrOutput() AssetAttachedEbsVolumesCostPtrOutput {
+	return o
+}
+
+func (o AssetAttachedEbsVolumesCostPtrOutput) ToAssetAttachedEbsVolumesCostPtrOutputWithContext(ctx context.Context) AssetAttachedEbsVolumesCostPtrOutput {
+	return o
+}
+
+func (o AssetAttachedEbsVolumesCostPtrOutput) Elem() AssetAttachedEbsVolumesCostOutput {
+	return o.ApplyT(func(v *AssetAttachedEbsVolumesCost) AssetAttachedEbsVolumesCost {
+		if v != nil {
+			return *v
+		}
+		var ret AssetAttachedEbsVolumesCost
+		return ret
+	}).(AssetAttachedEbsVolumesCostOutput)
+}
+
+// (Updatable) Monthly costs for maintenance of this asset.
+func (o AssetAttachedEbsVolumesCostPtrOutput) Amount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *AssetAttachedEbsVolumesCost) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.Amount
+	}).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) Currency code
+func (o AssetAttachedEbsVolumesCostPtrOutput) CurrencyCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAttachedEbsVolumesCost) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CurrencyCode
+	}).(pulumi.StringPtrOutput)
+}
+
+type AssetAwsEbs struct {
+	// (Updatable) Information about the volume attachments.
+	Attachments []AssetAwsEbsAttachment `pulumi:"attachments"`
+	// (Updatable) The Availability Zone for the volume.
+	AvailabilityZone *string `pulumi:"availabilityZone"`
+	// (Updatable) The number of I/O operations per second.
+	Iops *int `pulumi:"iops"`
+	// (Updatable) Indicates whether the volume is encrypted.
+	IsEncrypted *bool `pulumi:"isEncrypted"`
+	// (Updatable) Indicates whether Amazon EBS Multi-Attach is enabled.
+	IsMultiAttachEnabled *bool `pulumi:"isMultiAttachEnabled"`
+	// (Updatable) The size of the volume, in GiBs.
+	SizeInGiBs *int `pulumi:"sizeInGiBs"`
+	// (Updatable) The volume state.
+	Status *string `pulumi:"status"`
+	// (Updatable) Any tags assigned to the volume.
+	Tags []AssetAwsEbsTag `pulumi:"tags"`
+	// (Updatable) The throughput that the volume supports, in MiB/s.
+	Throughput *int `pulumi:"throughput"`
+	// (Updatable) The ID of the volume.
+	VolumeKey *string `pulumi:"volumeKey"`
+	// (Updatable) The volume type.
+	VolumeType *string `pulumi:"volumeType"`
+}
+
+// AssetAwsEbsInput is an input type that accepts AssetAwsEbsArgs and AssetAwsEbsOutput values.
+// You can construct a concrete instance of `AssetAwsEbsInput` via:
+//
+//	AssetAwsEbsArgs{...}
+type AssetAwsEbsInput interface {
+	pulumi.Input
+
+	ToAssetAwsEbsOutput() AssetAwsEbsOutput
+	ToAssetAwsEbsOutputWithContext(context.Context) AssetAwsEbsOutput
+}
+
+type AssetAwsEbsArgs struct {
+	// (Updatable) Information about the volume attachments.
+	Attachments AssetAwsEbsAttachmentArrayInput `pulumi:"attachments"`
+	// (Updatable) The Availability Zone for the volume.
+	AvailabilityZone pulumi.StringPtrInput `pulumi:"availabilityZone"`
+	// (Updatable) The number of I/O operations per second.
+	Iops pulumi.IntPtrInput `pulumi:"iops"`
+	// (Updatable) Indicates whether the volume is encrypted.
+	IsEncrypted pulumi.BoolPtrInput `pulumi:"isEncrypted"`
+	// (Updatable) Indicates whether Amazon EBS Multi-Attach is enabled.
+	IsMultiAttachEnabled pulumi.BoolPtrInput `pulumi:"isMultiAttachEnabled"`
+	// (Updatable) The size of the volume, in GiBs.
+	SizeInGiBs pulumi.IntPtrInput `pulumi:"sizeInGiBs"`
+	// (Updatable) The volume state.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// (Updatable) Any tags assigned to the volume.
+	Tags AssetAwsEbsTagArrayInput `pulumi:"tags"`
+	// (Updatable) The throughput that the volume supports, in MiB/s.
+	Throughput pulumi.IntPtrInput `pulumi:"throughput"`
+	// (Updatable) The ID of the volume.
+	VolumeKey pulumi.StringPtrInput `pulumi:"volumeKey"`
+	// (Updatable) The volume type.
+	VolumeType pulumi.StringPtrInput `pulumi:"volumeType"`
+}
+
+func (AssetAwsEbsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEbs)(nil)).Elem()
+}
+
+func (i AssetAwsEbsArgs) ToAssetAwsEbsOutput() AssetAwsEbsOutput {
+	return i.ToAssetAwsEbsOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEbsArgs) ToAssetAwsEbsOutputWithContext(ctx context.Context) AssetAwsEbsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEbsOutput)
+}
+
+func (i AssetAwsEbsArgs) ToAssetAwsEbsPtrOutput() AssetAwsEbsPtrOutput {
+	return i.ToAssetAwsEbsPtrOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEbsArgs) ToAssetAwsEbsPtrOutputWithContext(ctx context.Context) AssetAwsEbsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEbsOutput).ToAssetAwsEbsPtrOutputWithContext(ctx)
+}
+
+// AssetAwsEbsPtrInput is an input type that accepts AssetAwsEbsArgs, AssetAwsEbsPtr and AssetAwsEbsPtrOutput values.
+// You can construct a concrete instance of `AssetAwsEbsPtrInput` via:
+//
+//	        AssetAwsEbsArgs{...}
+//
+//	or:
+//
+//	        nil
+type AssetAwsEbsPtrInput interface {
+	pulumi.Input
+
+	ToAssetAwsEbsPtrOutput() AssetAwsEbsPtrOutput
+	ToAssetAwsEbsPtrOutputWithContext(context.Context) AssetAwsEbsPtrOutput
+}
+
+type assetAwsEbsPtrType AssetAwsEbsArgs
+
+func AssetAwsEbsPtr(v *AssetAwsEbsArgs) AssetAwsEbsPtrInput {
+	return (*assetAwsEbsPtrType)(v)
+}
+
+func (*assetAwsEbsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AssetAwsEbs)(nil)).Elem()
+}
+
+func (i *assetAwsEbsPtrType) ToAssetAwsEbsPtrOutput() AssetAwsEbsPtrOutput {
+	return i.ToAssetAwsEbsPtrOutputWithContext(context.Background())
+}
+
+func (i *assetAwsEbsPtrType) ToAssetAwsEbsPtrOutputWithContext(ctx context.Context) AssetAwsEbsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEbsPtrOutput)
+}
+
+type AssetAwsEbsOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEbsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEbs)(nil)).Elem()
+}
+
+func (o AssetAwsEbsOutput) ToAssetAwsEbsOutput() AssetAwsEbsOutput {
+	return o
+}
+
+func (o AssetAwsEbsOutput) ToAssetAwsEbsOutputWithContext(ctx context.Context) AssetAwsEbsOutput {
+	return o
+}
+
+func (o AssetAwsEbsOutput) ToAssetAwsEbsPtrOutput() AssetAwsEbsPtrOutput {
+	return o.ToAssetAwsEbsPtrOutputWithContext(context.Background())
+}
+
+func (o AssetAwsEbsOutput) ToAssetAwsEbsPtrOutputWithContext(ctx context.Context) AssetAwsEbsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AssetAwsEbs) *AssetAwsEbs {
+		return &v
+	}).(AssetAwsEbsPtrOutput)
+}
+
+// (Updatable) Information about the volume attachments.
+func (o AssetAwsEbsOutput) Attachments() AssetAwsEbsAttachmentArrayOutput {
+	return o.ApplyT(func(v AssetAwsEbs) []AssetAwsEbsAttachment { return v.Attachments }).(AssetAwsEbsAttachmentArrayOutput)
+}
+
+// (Updatable) The Availability Zone for the volume.
+func (o AssetAwsEbsOutput) AvailabilityZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEbs) *string { return v.AvailabilityZone }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The number of I/O operations per second.
+func (o AssetAwsEbsOutput) Iops() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AssetAwsEbs) *int { return v.Iops }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Indicates whether the volume is encrypted.
+func (o AssetAwsEbsOutput) IsEncrypted() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AssetAwsEbs) *bool { return v.IsEncrypted }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Indicates whether Amazon EBS Multi-Attach is enabled.
+func (o AssetAwsEbsOutput) IsMultiAttachEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AssetAwsEbs) *bool { return v.IsMultiAttachEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The size of the volume, in GiBs.
+func (o AssetAwsEbsOutput) SizeInGiBs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AssetAwsEbs) *int { return v.SizeInGiBs }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The volume state.
+func (o AssetAwsEbsOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEbs) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Any tags assigned to the volume.
+func (o AssetAwsEbsOutput) Tags() AssetAwsEbsTagArrayOutput {
+	return o.ApplyT(func(v AssetAwsEbs) []AssetAwsEbsTag { return v.Tags }).(AssetAwsEbsTagArrayOutput)
+}
+
+// (Updatable) The throughput that the volume supports, in MiB/s.
+func (o AssetAwsEbsOutput) Throughput() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AssetAwsEbs) *int { return v.Throughput }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The ID of the volume.
+func (o AssetAwsEbsOutput) VolumeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEbs) *string { return v.VolumeKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The volume type.
+func (o AssetAwsEbsOutput) VolumeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEbs) *string { return v.VolumeType }).(pulumi.StringPtrOutput)
+}
+
+type AssetAwsEbsPtrOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEbsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AssetAwsEbs)(nil)).Elem()
+}
+
+func (o AssetAwsEbsPtrOutput) ToAssetAwsEbsPtrOutput() AssetAwsEbsPtrOutput {
+	return o
+}
+
+func (o AssetAwsEbsPtrOutput) ToAssetAwsEbsPtrOutputWithContext(ctx context.Context) AssetAwsEbsPtrOutput {
+	return o
+}
+
+func (o AssetAwsEbsPtrOutput) Elem() AssetAwsEbsOutput {
+	return o.ApplyT(func(v *AssetAwsEbs) AssetAwsEbs {
+		if v != nil {
+			return *v
+		}
+		var ret AssetAwsEbs
+		return ret
+	}).(AssetAwsEbsOutput)
+}
+
+// (Updatable) Information about the volume attachments.
+func (o AssetAwsEbsPtrOutput) Attachments() AssetAwsEbsAttachmentArrayOutput {
+	return o.ApplyT(func(v *AssetAwsEbs) []AssetAwsEbsAttachment {
+		if v == nil {
+			return nil
+		}
+		return v.Attachments
+	}).(AssetAwsEbsAttachmentArrayOutput)
+}
+
+// (Updatable) The Availability Zone for the volume.
+func (o AssetAwsEbsPtrOutput) AvailabilityZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEbs) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AvailabilityZone
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The number of I/O operations per second.
+func (o AssetAwsEbsPtrOutput) Iops() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEbs) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Iops
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Indicates whether the volume is encrypted.
+func (o AssetAwsEbsPtrOutput) IsEncrypted() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEbs) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsEncrypted
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Indicates whether Amazon EBS Multi-Attach is enabled.
+func (o AssetAwsEbsPtrOutput) IsMultiAttachEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEbs) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsMultiAttachEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The size of the volume, in GiBs.
+func (o AssetAwsEbsPtrOutput) SizeInGiBs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEbs) *int {
+		if v == nil {
+			return nil
+		}
+		return v.SizeInGiBs
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The volume state.
+func (o AssetAwsEbsPtrOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEbs) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Status
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Any tags assigned to the volume.
+func (o AssetAwsEbsPtrOutput) Tags() AssetAwsEbsTagArrayOutput {
+	return o.ApplyT(func(v *AssetAwsEbs) []AssetAwsEbsTag {
+		if v == nil {
+			return nil
+		}
+		return v.Tags
+	}).(AssetAwsEbsTagArrayOutput)
+}
+
+// (Updatable) The throughput that the volume supports, in MiB/s.
+func (o AssetAwsEbsPtrOutput) Throughput() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEbs) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Throughput
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The ID of the volume.
+func (o AssetAwsEbsPtrOutput) VolumeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEbs) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VolumeKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The volume type.
+func (o AssetAwsEbsPtrOutput) VolumeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEbs) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VolumeType
+	}).(pulumi.StringPtrOutput)
+}
+
+type AssetAwsEbsAttachment struct {
+	// (Updatable) The device name.
+	Device *string `pulumi:"device"`
+	// (Updatable) The ID of the instance.
+	InstanceKey *string `pulumi:"instanceKey"`
+	// (Updatable) Indicates whether the EBS volume is deleted on instance termination.
+	IsDeleteOnTermination *bool `pulumi:"isDeleteOnTermination"`
+	// (Updatable) The attachment state of the volume.
+	Status *string `pulumi:"status"`
+	// (Updatable) The ID of the volume.
+	VolumeKey *string `pulumi:"volumeKey"`
+}
+
+// AssetAwsEbsAttachmentInput is an input type that accepts AssetAwsEbsAttachmentArgs and AssetAwsEbsAttachmentOutput values.
+// You can construct a concrete instance of `AssetAwsEbsAttachmentInput` via:
+//
+//	AssetAwsEbsAttachmentArgs{...}
+type AssetAwsEbsAttachmentInput interface {
+	pulumi.Input
+
+	ToAssetAwsEbsAttachmentOutput() AssetAwsEbsAttachmentOutput
+	ToAssetAwsEbsAttachmentOutputWithContext(context.Context) AssetAwsEbsAttachmentOutput
+}
+
+type AssetAwsEbsAttachmentArgs struct {
+	// (Updatable) The device name.
+	Device pulumi.StringPtrInput `pulumi:"device"`
+	// (Updatable) The ID of the instance.
+	InstanceKey pulumi.StringPtrInput `pulumi:"instanceKey"`
+	// (Updatable) Indicates whether the EBS volume is deleted on instance termination.
+	IsDeleteOnTermination pulumi.BoolPtrInput `pulumi:"isDeleteOnTermination"`
+	// (Updatable) The attachment state of the volume.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// (Updatable) The ID of the volume.
+	VolumeKey pulumi.StringPtrInput `pulumi:"volumeKey"`
+}
+
+func (AssetAwsEbsAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEbsAttachment)(nil)).Elem()
+}
+
+func (i AssetAwsEbsAttachmentArgs) ToAssetAwsEbsAttachmentOutput() AssetAwsEbsAttachmentOutput {
+	return i.ToAssetAwsEbsAttachmentOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEbsAttachmentArgs) ToAssetAwsEbsAttachmentOutputWithContext(ctx context.Context) AssetAwsEbsAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEbsAttachmentOutput)
+}
+
+// AssetAwsEbsAttachmentArrayInput is an input type that accepts AssetAwsEbsAttachmentArray and AssetAwsEbsAttachmentArrayOutput values.
+// You can construct a concrete instance of `AssetAwsEbsAttachmentArrayInput` via:
+//
+//	AssetAwsEbsAttachmentArray{ AssetAwsEbsAttachmentArgs{...} }
+type AssetAwsEbsAttachmentArrayInput interface {
+	pulumi.Input
+
+	ToAssetAwsEbsAttachmentArrayOutput() AssetAwsEbsAttachmentArrayOutput
+	ToAssetAwsEbsAttachmentArrayOutputWithContext(context.Context) AssetAwsEbsAttachmentArrayOutput
+}
+
+type AssetAwsEbsAttachmentArray []AssetAwsEbsAttachmentInput
+
+func (AssetAwsEbsAttachmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AssetAwsEbsAttachment)(nil)).Elem()
+}
+
+func (i AssetAwsEbsAttachmentArray) ToAssetAwsEbsAttachmentArrayOutput() AssetAwsEbsAttachmentArrayOutput {
+	return i.ToAssetAwsEbsAttachmentArrayOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEbsAttachmentArray) ToAssetAwsEbsAttachmentArrayOutputWithContext(ctx context.Context) AssetAwsEbsAttachmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEbsAttachmentArrayOutput)
+}
+
+type AssetAwsEbsAttachmentOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEbsAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEbsAttachment)(nil)).Elem()
+}
+
+func (o AssetAwsEbsAttachmentOutput) ToAssetAwsEbsAttachmentOutput() AssetAwsEbsAttachmentOutput {
+	return o
+}
+
+func (o AssetAwsEbsAttachmentOutput) ToAssetAwsEbsAttachmentOutputWithContext(ctx context.Context) AssetAwsEbsAttachmentOutput {
+	return o
+}
+
+// (Updatable) The device name.
+func (o AssetAwsEbsAttachmentOutput) Device() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEbsAttachment) *string { return v.Device }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The ID of the instance.
+func (o AssetAwsEbsAttachmentOutput) InstanceKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEbsAttachment) *string { return v.InstanceKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Indicates whether the EBS volume is deleted on instance termination.
+func (o AssetAwsEbsAttachmentOutput) IsDeleteOnTermination() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AssetAwsEbsAttachment) *bool { return v.IsDeleteOnTermination }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The attachment state of the volume.
+func (o AssetAwsEbsAttachmentOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEbsAttachment) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The ID of the volume.
+func (o AssetAwsEbsAttachmentOutput) VolumeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEbsAttachment) *string { return v.VolumeKey }).(pulumi.StringPtrOutput)
+}
+
+type AssetAwsEbsAttachmentArrayOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEbsAttachmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AssetAwsEbsAttachment)(nil)).Elem()
+}
+
+func (o AssetAwsEbsAttachmentArrayOutput) ToAssetAwsEbsAttachmentArrayOutput() AssetAwsEbsAttachmentArrayOutput {
+	return o
+}
+
+func (o AssetAwsEbsAttachmentArrayOutput) ToAssetAwsEbsAttachmentArrayOutputWithContext(ctx context.Context) AssetAwsEbsAttachmentArrayOutput {
+	return o
+}
+
+func (o AssetAwsEbsAttachmentArrayOutput) Index(i pulumi.IntInput) AssetAwsEbsAttachmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AssetAwsEbsAttachment {
+		return vs[0].([]AssetAwsEbsAttachment)[vs[1].(int)]
+	}).(AssetAwsEbsAttachmentOutput)
+}
+
+type AssetAwsEbsTag struct {
+	// (Updatable) The key of the tag.
+	Key *string `pulumi:"key"`
+	// (Updatable) The value of the tag.
+	Value *string `pulumi:"value"`
+}
+
+// AssetAwsEbsTagInput is an input type that accepts AssetAwsEbsTagArgs and AssetAwsEbsTagOutput values.
+// You can construct a concrete instance of `AssetAwsEbsTagInput` via:
+//
+//	AssetAwsEbsTagArgs{...}
+type AssetAwsEbsTagInput interface {
+	pulumi.Input
+
+	ToAssetAwsEbsTagOutput() AssetAwsEbsTagOutput
+	ToAssetAwsEbsTagOutputWithContext(context.Context) AssetAwsEbsTagOutput
+}
+
+type AssetAwsEbsTagArgs struct {
+	// (Updatable) The key of the tag.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// (Updatable) The value of the tag.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (AssetAwsEbsTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEbsTag)(nil)).Elem()
+}
+
+func (i AssetAwsEbsTagArgs) ToAssetAwsEbsTagOutput() AssetAwsEbsTagOutput {
+	return i.ToAssetAwsEbsTagOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEbsTagArgs) ToAssetAwsEbsTagOutputWithContext(ctx context.Context) AssetAwsEbsTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEbsTagOutput)
+}
+
+// AssetAwsEbsTagArrayInput is an input type that accepts AssetAwsEbsTagArray and AssetAwsEbsTagArrayOutput values.
+// You can construct a concrete instance of `AssetAwsEbsTagArrayInput` via:
+//
+//	AssetAwsEbsTagArray{ AssetAwsEbsTagArgs{...} }
+type AssetAwsEbsTagArrayInput interface {
+	pulumi.Input
+
+	ToAssetAwsEbsTagArrayOutput() AssetAwsEbsTagArrayOutput
+	ToAssetAwsEbsTagArrayOutputWithContext(context.Context) AssetAwsEbsTagArrayOutput
+}
+
+type AssetAwsEbsTagArray []AssetAwsEbsTagInput
+
+func (AssetAwsEbsTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AssetAwsEbsTag)(nil)).Elem()
+}
+
+func (i AssetAwsEbsTagArray) ToAssetAwsEbsTagArrayOutput() AssetAwsEbsTagArrayOutput {
+	return i.ToAssetAwsEbsTagArrayOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEbsTagArray) ToAssetAwsEbsTagArrayOutputWithContext(ctx context.Context) AssetAwsEbsTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEbsTagArrayOutput)
+}
+
+type AssetAwsEbsTagOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEbsTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEbsTag)(nil)).Elem()
+}
+
+func (o AssetAwsEbsTagOutput) ToAssetAwsEbsTagOutput() AssetAwsEbsTagOutput {
+	return o
+}
+
+func (o AssetAwsEbsTagOutput) ToAssetAwsEbsTagOutputWithContext(ctx context.Context) AssetAwsEbsTagOutput {
+	return o
+}
+
+// (Updatable) The key of the tag.
+func (o AssetAwsEbsTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEbsTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The value of the tag.
+func (o AssetAwsEbsTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEbsTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type AssetAwsEbsTagArrayOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEbsTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AssetAwsEbsTag)(nil)).Elem()
+}
+
+func (o AssetAwsEbsTagArrayOutput) ToAssetAwsEbsTagArrayOutput() AssetAwsEbsTagArrayOutput {
+	return o
+}
+
+func (o AssetAwsEbsTagArrayOutput) ToAssetAwsEbsTagArrayOutputWithContext(ctx context.Context) AssetAwsEbsTagArrayOutput {
+	return o
+}
+
+func (o AssetAwsEbsTagArrayOutput) Index(i pulumi.IntInput) AssetAwsEbsTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AssetAwsEbsTag {
+		return vs[0].([]AssetAwsEbsTag)[vs[1].(int)]
+	}).(AssetAwsEbsTagOutput)
+}
+
+type AssetAwsEc2 struct {
+	// (Updatable) The architecture of the image.
+	Architecture *string `pulumi:"architecture"`
+	// (Updatable) Indicates if the elastic inference accelerators attached to an instance
+	AreElasticInferenceAcceleratorsPresent *bool `pulumi:"areElasticInferenceAcceleratorsPresent"`
+	// (Updatable) The boot mode of the instance.
+	BootMode *string `pulumi:"bootMode"`
+	// (Updatable) The ID of the Capacity Reservation.
+	CapacityReservationKey *string `pulumi:"capacityReservationKey"`
+	// (Updatable) The ID of the AMI used to launch the instance.
+	ImageKey *string `pulumi:"imageKey"`
+	// (Updatable) The ID of the instance.
+	InstanceKey *string `pulumi:"instanceKey"`
+	// (Updatable) Indicates whether this is a Spot Instance or a Scheduled Instance.
+	InstanceLifecycle *string `pulumi:"instanceLifecycle"`
+	// (Updatable) The instance type.
+	InstanceType *string `pulumi:"instanceType"`
+	// (Updatable) The public IPv4 address, or the Carrier IP address assigned to the instance.
+	IpAddress *string `pulumi:"ipAddress"`
+	// (Updatable) The IPv6 address assigned to the instance.
+	Ipv6address *string `pulumi:"ipv6address"`
+	// (Updatable) Indicates whether the instance is enabled for AWS Nitro Enclaves.
+	IsEnclaveOptions *bool `pulumi:"isEnclaveOptions"`
+	// (Updatable) Indicates whether the instance is enabled for hibernation.
+	IsHibernationOptions *bool `pulumi:"isHibernationOptions"`
+	// (Updatable) Indicates whether source/destination checking is enabled.
+	IsSourceDestCheck *bool `pulumi:"isSourceDestCheck"`
+	// (Updatable) If the request is a Spot Instance request, this value will be true.
+	IsSpotInstance *bool `pulumi:"isSpotInstance"`
+	// (Updatable) The kernel associated with this instance, if applicable.
+	KernelKey *string `pulumi:"kernelKey"`
+	// (Updatable) The license configurations for the instance.
+	Licenses []string `pulumi:"licenses"`
+	// (Updatable) Provides information on the recovery and maintenance options of your instance.
+	MaintenanceOptions *string `pulumi:"maintenanceOptions"`
+	// (Updatable) The monitoring for the instance.
+	Monitoring *string `pulumi:"monitoring"`
+	// (Updatable) The network interfaces for the instance.
+	NetworkInterfaces []AssetAwsEc2NetworkInterface `pulumi:"networkInterfaces"`
+	// (Updatable) Describes the placement of an instance.
+	Placement *AssetAwsEc2Placement `pulumi:"placement"`
+	// (Updatable) (IPv4 only) The private DNS hostname name assigned to the instance.
+	PrivateDnsName *string `pulumi:"privateDnsName"`
+	// (Updatable) The private IPv4 address assigned to the instance.
+	PrivateIpAddress *string `pulumi:"privateIpAddress"`
+	// (Updatable) The device name of the root device volume.
+	RootDeviceName *string `pulumi:"rootDeviceName"`
+	// (Updatable) The root device type used by the AMI. The AMI can use an EBS volume or an instance store volume.
+	RootDeviceType *string `pulumi:"rootDeviceType"`
+	// (Updatable) The security groups for the instance.
+	SecurityGroups []AssetAwsEc2SecurityGroup `pulumi:"securityGroups"`
+	// (Updatable) Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
+	SriovNetSupport *string `pulumi:"sriovNetSupport"`
+	// (Updatable) Describes the current state of an instance.
+	State *AssetAwsEc2State `pulumi:"state"`
+	// (Updatable) EC2-VPC The ID of the subnet in which the instance is running.
+	SubnetKey *string `pulumi:"subnetKey"`
+	// (Updatable) Any tags assigned to the instance.
+	Tags []AssetAwsEc2Tag `pulumi:"tags"`
+	// (Updatable) The time the instance was launched.
+	TimeLaunch *string `pulumi:"timeLaunch"`
+	// (Updatable) If the instance is configured for NitroTPM support, the value is v2.0.
+	TpmSupport *string `pulumi:"tpmSupport"`
+	// (Updatable) The virtualization type of the instance.
+	VirtualizationType *string `pulumi:"virtualizationType"`
+	// (Updatable) EC2-VPC The ID of the VPC in which the instance is running.
+	VpcKey *string `pulumi:"vpcKey"`
+}
+
+// AssetAwsEc2Input is an input type that accepts AssetAwsEc2Args and AssetAwsEc2Output values.
+// You can construct a concrete instance of `AssetAwsEc2Input` via:
+//
+//	AssetAwsEc2Args{...}
+type AssetAwsEc2Input interface {
+	pulumi.Input
+
+	ToAssetAwsEc2Output() AssetAwsEc2Output
+	ToAssetAwsEc2OutputWithContext(context.Context) AssetAwsEc2Output
+}
+
+type AssetAwsEc2Args struct {
+	// (Updatable) The architecture of the image.
+	Architecture pulumi.StringPtrInput `pulumi:"architecture"`
+	// (Updatable) Indicates if the elastic inference accelerators attached to an instance
+	AreElasticInferenceAcceleratorsPresent pulumi.BoolPtrInput `pulumi:"areElasticInferenceAcceleratorsPresent"`
+	// (Updatable) The boot mode of the instance.
+	BootMode pulumi.StringPtrInput `pulumi:"bootMode"`
+	// (Updatable) The ID of the Capacity Reservation.
+	CapacityReservationKey pulumi.StringPtrInput `pulumi:"capacityReservationKey"`
+	// (Updatable) The ID of the AMI used to launch the instance.
+	ImageKey pulumi.StringPtrInput `pulumi:"imageKey"`
+	// (Updatable) The ID of the instance.
+	InstanceKey pulumi.StringPtrInput `pulumi:"instanceKey"`
+	// (Updatable) Indicates whether this is a Spot Instance or a Scheduled Instance.
+	InstanceLifecycle pulumi.StringPtrInput `pulumi:"instanceLifecycle"`
+	// (Updatable) The instance type.
+	InstanceType pulumi.StringPtrInput `pulumi:"instanceType"`
+	// (Updatable) The public IPv4 address, or the Carrier IP address assigned to the instance.
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
+	// (Updatable) The IPv6 address assigned to the instance.
+	Ipv6address pulumi.StringPtrInput `pulumi:"ipv6address"`
+	// (Updatable) Indicates whether the instance is enabled for AWS Nitro Enclaves.
+	IsEnclaveOptions pulumi.BoolPtrInput `pulumi:"isEnclaveOptions"`
+	// (Updatable) Indicates whether the instance is enabled for hibernation.
+	IsHibernationOptions pulumi.BoolPtrInput `pulumi:"isHibernationOptions"`
+	// (Updatable) Indicates whether source/destination checking is enabled.
+	IsSourceDestCheck pulumi.BoolPtrInput `pulumi:"isSourceDestCheck"`
+	// (Updatable) If the request is a Spot Instance request, this value will be true.
+	IsSpotInstance pulumi.BoolPtrInput `pulumi:"isSpotInstance"`
+	// (Updatable) The kernel associated with this instance, if applicable.
+	KernelKey pulumi.StringPtrInput `pulumi:"kernelKey"`
+	// (Updatable) The license configurations for the instance.
+	Licenses pulumi.StringArrayInput `pulumi:"licenses"`
+	// (Updatable) Provides information on the recovery and maintenance options of your instance.
+	MaintenanceOptions pulumi.StringPtrInput `pulumi:"maintenanceOptions"`
+	// (Updatable) The monitoring for the instance.
+	Monitoring pulumi.StringPtrInput `pulumi:"monitoring"`
+	// (Updatable) The network interfaces for the instance.
+	NetworkInterfaces AssetAwsEc2NetworkInterfaceArrayInput `pulumi:"networkInterfaces"`
+	// (Updatable) Describes the placement of an instance.
+	Placement AssetAwsEc2PlacementPtrInput `pulumi:"placement"`
+	// (Updatable) (IPv4 only) The private DNS hostname name assigned to the instance.
+	PrivateDnsName pulumi.StringPtrInput `pulumi:"privateDnsName"`
+	// (Updatable) The private IPv4 address assigned to the instance.
+	PrivateIpAddress pulumi.StringPtrInput `pulumi:"privateIpAddress"`
+	// (Updatable) The device name of the root device volume.
+	RootDeviceName pulumi.StringPtrInput `pulumi:"rootDeviceName"`
+	// (Updatable) The root device type used by the AMI. The AMI can use an EBS volume or an instance store volume.
+	RootDeviceType pulumi.StringPtrInput `pulumi:"rootDeviceType"`
+	// (Updatable) The security groups for the instance.
+	SecurityGroups AssetAwsEc2SecurityGroupArrayInput `pulumi:"securityGroups"`
+	// (Updatable) Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
+	SriovNetSupport pulumi.StringPtrInput `pulumi:"sriovNetSupport"`
+	// (Updatable) Describes the current state of an instance.
+	State AssetAwsEc2StatePtrInput `pulumi:"state"`
+	// (Updatable) EC2-VPC The ID of the subnet in which the instance is running.
+	SubnetKey pulumi.StringPtrInput `pulumi:"subnetKey"`
+	// (Updatable) Any tags assigned to the instance.
+	Tags AssetAwsEc2TagArrayInput `pulumi:"tags"`
+	// (Updatable) The time the instance was launched.
+	TimeLaunch pulumi.StringPtrInput `pulumi:"timeLaunch"`
+	// (Updatable) If the instance is configured for NitroTPM support, the value is v2.0.
+	TpmSupport pulumi.StringPtrInput `pulumi:"tpmSupport"`
+	// (Updatable) The virtualization type of the instance.
+	VirtualizationType pulumi.StringPtrInput `pulumi:"virtualizationType"`
+	// (Updatable) EC2-VPC The ID of the VPC in which the instance is running.
+	VpcKey pulumi.StringPtrInput `pulumi:"vpcKey"`
+}
+
+func (AssetAwsEc2Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEc2)(nil)).Elem()
+}
+
+func (i AssetAwsEc2Args) ToAssetAwsEc2Output() AssetAwsEc2Output {
+	return i.ToAssetAwsEc2OutputWithContext(context.Background())
+}
+
+func (i AssetAwsEc2Args) ToAssetAwsEc2OutputWithContext(ctx context.Context) AssetAwsEc2Output {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2Output)
+}
+
+func (i AssetAwsEc2Args) ToAssetAwsEc2PtrOutput() AssetAwsEc2PtrOutput {
+	return i.ToAssetAwsEc2PtrOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEc2Args) ToAssetAwsEc2PtrOutputWithContext(ctx context.Context) AssetAwsEc2PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2Output).ToAssetAwsEc2PtrOutputWithContext(ctx)
+}
+
+// AssetAwsEc2PtrInput is an input type that accepts AssetAwsEc2Args, AssetAwsEc2Ptr and AssetAwsEc2PtrOutput values.
+// You can construct a concrete instance of `AssetAwsEc2PtrInput` via:
+//
+//	        AssetAwsEc2Args{...}
+//
+//	or:
+//
+//	        nil
+type AssetAwsEc2PtrInput interface {
+	pulumi.Input
+
+	ToAssetAwsEc2PtrOutput() AssetAwsEc2PtrOutput
+	ToAssetAwsEc2PtrOutputWithContext(context.Context) AssetAwsEc2PtrOutput
+}
+
+type assetAwsEc2PtrType AssetAwsEc2Args
+
+func AssetAwsEc2Ptr(v *AssetAwsEc2Args) AssetAwsEc2PtrInput {
+	return (*assetAwsEc2PtrType)(v)
+}
+
+func (*assetAwsEc2PtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AssetAwsEc2)(nil)).Elem()
+}
+
+func (i *assetAwsEc2PtrType) ToAssetAwsEc2PtrOutput() AssetAwsEc2PtrOutput {
+	return i.ToAssetAwsEc2PtrOutputWithContext(context.Background())
+}
+
+func (i *assetAwsEc2PtrType) ToAssetAwsEc2PtrOutputWithContext(ctx context.Context) AssetAwsEc2PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2PtrOutput)
+}
+
+type AssetAwsEc2Output struct{ *pulumi.OutputState }
+
+func (AssetAwsEc2Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEc2)(nil)).Elem()
+}
+
+func (o AssetAwsEc2Output) ToAssetAwsEc2Output() AssetAwsEc2Output {
+	return o
+}
+
+func (o AssetAwsEc2Output) ToAssetAwsEc2OutputWithContext(ctx context.Context) AssetAwsEc2Output {
+	return o
+}
+
+func (o AssetAwsEc2Output) ToAssetAwsEc2PtrOutput() AssetAwsEc2PtrOutput {
+	return o.ToAssetAwsEc2PtrOutputWithContext(context.Background())
+}
+
+func (o AssetAwsEc2Output) ToAssetAwsEc2PtrOutputWithContext(ctx context.Context) AssetAwsEc2PtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AssetAwsEc2) *AssetAwsEc2 {
+		return &v
+	}).(AssetAwsEc2PtrOutput)
+}
+
+// (Updatable) The architecture of the image.
+func (o AssetAwsEc2Output) Architecture() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *string { return v.Architecture }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Indicates if the elastic inference accelerators attached to an instance
+func (o AssetAwsEc2Output) AreElasticInferenceAcceleratorsPresent() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *bool { return v.AreElasticInferenceAcceleratorsPresent }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The boot mode of the instance.
+func (o AssetAwsEc2Output) BootMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *string { return v.BootMode }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The ID of the Capacity Reservation.
+func (o AssetAwsEc2Output) CapacityReservationKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *string { return v.CapacityReservationKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The ID of the AMI used to launch the instance.
+func (o AssetAwsEc2Output) ImageKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *string { return v.ImageKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The ID of the instance.
+func (o AssetAwsEc2Output) InstanceKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *string { return v.InstanceKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Indicates whether this is a Spot Instance or a Scheduled Instance.
+func (o AssetAwsEc2Output) InstanceLifecycle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *string { return v.InstanceLifecycle }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The instance type.
+func (o AssetAwsEc2Output) InstanceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *string { return v.InstanceType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The public IPv4 address, or the Carrier IP address assigned to the instance.
+func (o AssetAwsEc2Output) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The IPv6 address assigned to the instance.
+func (o AssetAwsEc2Output) Ipv6address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *string { return v.Ipv6address }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Indicates whether the instance is enabled for AWS Nitro Enclaves.
+func (o AssetAwsEc2Output) IsEnclaveOptions() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *bool { return v.IsEnclaveOptions }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Indicates whether the instance is enabled for hibernation.
+func (o AssetAwsEc2Output) IsHibernationOptions() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *bool { return v.IsHibernationOptions }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Indicates whether source/destination checking is enabled.
+func (o AssetAwsEc2Output) IsSourceDestCheck() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *bool { return v.IsSourceDestCheck }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If the request is a Spot Instance request, this value will be true.
+func (o AssetAwsEc2Output) IsSpotInstance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *bool { return v.IsSpotInstance }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The kernel associated with this instance, if applicable.
+func (o AssetAwsEc2Output) KernelKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *string { return v.KernelKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The license configurations for the instance.
+func (o AssetAwsEc2Output) Licenses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v AssetAwsEc2) []string { return v.Licenses }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Provides information on the recovery and maintenance options of your instance.
+func (o AssetAwsEc2Output) MaintenanceOptions() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *string { return v.MaintenanceOptions }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The monitoring for the instance.
+func (o AssetAwsEc2Output) Monitoring() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *string { return v.Monitoring }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The network interfaces for the instance.
+func (o AssetAwsEc2Output) NetworkInterfaces() AssetAwsEc2NetworkInterfaceArrayOutput {
+	return o.ApplyT(func(v AssetAwsEc2) []AssetAwsEc2NetworkInterface { return v.NetworkInterfaces }).(AssetAwsEc2NetworkInterfaceArrayOutput)
+}
+
+// (Updatable) Describes the placement of an instance.
+func (o AssetAwsEc2Output) Placement() AssetAwsEc2PlacementPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *AssetAwsEc2Placement { return v.Placement }).(AssetAwsEc2PlacementPtrOutput)
+}
+
+// (Updatable) (IPv4 only) The private DNS hostname name assigned to the instance.
+func (o AssetAwsEc2Output) PrivateDnsName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *string { return v.PrivateDnsName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The private IPv4 address assigned to the instance.
+func (o AssetAwsEc2Output) PrivateIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *string { return v.PrivateIpAddress }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The device name of the root device volume.
+func (o AssetAwsEc2Output) RootDeviceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *string { return v.RootDeviceName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The root device type used by the AMI. The AMI can use an EBS volume or an instance store volume.
+func (o AssetAwsEc2Output) RootDeviceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *string { return v.RootDeviceType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The security groups for the instance.
+func (o AssetAwsEc2Output) SecurityGroups() AssetAwsEc2SecurityGroupArrayOutput {
+	return o.ApplyT(func(v AssetAwsEc2) []AssetAwsEc2SecurityGroup { return v.SecurityGroups }).(AssetAwsEc2SecurityGroupArrayOutput)
+}
+
+// (Updatable) Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
+func (o AssetAwsEc2Output) SriovNetSupport() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *string { return v.SriovNetSupport }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Describes the current state of an instance.
+func (o AssetAwsEc2Output) State() AssetAwsEc2StatePtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *AssetAwsEc2State { return v.State }).(AssetAwsEc2StatePtrOutput)
+}
+
+// (Updatable) EC2-VPC The ID of the subnet in which the instance is running.
+func (o AssetAwsEc2Output) SubnetKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *string { return v.SubnetKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Any tags assigned to the instance.
+func (o AssetAwsEc2Output) Tags() AssetAwsEc2TagArrayOutput {
+	return o.ApplyT(func(v AssetAwsEc2) []AssetAwsEc2Tag { return v.Tags }).(AssetAwsEc2TagArrayOutput)
+}
+
+// (Updatable) The time the instance was launched.
+func (o AssetAwsEc2Output) TimeLaunch() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *string { return v.TimeLaunch }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If the instance is configured for NitroTPM support, the value is v2.0.
+func (o AssetAwsEc2Output) TpmSupport() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *string { return v.TpmSupport }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The virtualization type of the instance.
+func (o AssetAwsEc2Output) VirtualizationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *string { return v.VirtualizationType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) EC2-VPC The ID of the VPC in which the instance is running.
+func (o AssetAwsEc2Output) VpcKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2) *string { return v.VpcKey }).(pulumi.StringPtrOutput)
+}
+
+type AssetAwsEc2PtrOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEc2PtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AssetAwsEc2)(nil)).Elem()
+}
+
+func (o AssetAwsEc2PtrOutput) ToAssetAwsEc2PtrOutput() AssetAwsEc2PtrOutput {
+	return o
+}
+
+func (o AssetAwsEc2PtrOutput) ToAssetAwsEc2PtrOutputWithContext(ctx context.Context) AssetAwsEc2PtrOutput {
+	return o
+}
+
+func (o AssetAwsEc2PtrOutput) Elem() AssetAwsEc2Output {
+	return o.ApplyT(func(v *AssetAwsEc2) AssetAwsEc2 {
+		if v != nil {
+			return *v
+		}
+		var ret AssetAwsEc2
+		return ret
+	}).(AssetAwsEc2Output)
+}
+
+// (Updatable) The architecture of the image.
+func (o AssetAwsEc2PtrOutput) Architecture() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Architecture
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Indicates if the elastic inference accelerators attached to an instance
+func (o AssetAwsEc2PtrOutput) AreElasticInferenceAcceleratorsPresent() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.AreElasticInferenceAcceleratorsPresent
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The boot mode of the instance.
+func (o AssetAwsEc2PtrOutput) BootMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BootMode
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The ID of the Capacity Reservation.
+func (o AssetAwsEc2PtrOutput) CapacityReservationKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CapacityReservationKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The ID of the AMI used to launch the instance.
+func (o AssetAwsEc2PtrOutput) ImageKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ImageKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The ID of the instance.
+func (o AssetAwsEc2PtrOutput) InstanceKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InstanceKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Indicates whether this is a Spot Instance or a Scheduled Instance.
+func (o AssetAwsEc2PtrOutput) InstanceLifecycle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InstanceLifecycle
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The instance type.
+func (o AssetAwsEc2PtrOutput) InstanceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InstanceType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The public IPv4 address, or the Carrier IP address assigned to the instance.
+func (o AssetAwsEc2PtrOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.IpAddress
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The IPv6 address assigned to the instance.
+func (o AssetAwsEc2PtrOutput) Ipv6address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Ipv6address
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Indicates whether the instance is enabled for AWS Nitro Enclaves.
+func (o AssetAwsEc2PtrOutput) IsEnclaveOptions() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsEnclaveOptions
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Indicates whether the instance is enabled for hibernation.
+func (o AssetAwsEc2PtrOutput) IsHibernationOptions() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsHibernationOptions
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Indicates whether source/destination checking is enabled.
+func (o AssetAwsEc2PtrOutput) IsSourceDestCheck() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsSourceDestCheck
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If the request is a Spot Instance request, this value will be true.
+func (o AssetAwsEc2PtrOutput) IsSpotInstance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsSpotInstance
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The kernel associated with this instance, if applicable.
+func (o AssetAwsEc2PtrOutput) KernelKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.KernelKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The license configurations for the instance.
+func (o AssetAwsEc2PtrOutput) Licenses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Licenses
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Provides information on the recovery and maintenance options of your instance.
+func (o AssetAwsEc2PtrOutput) MaintenanceOptions() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MaintenanceOptions
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The monitoring for the instance.
+func (o AssetAwsEc2PtrOutput) Monitoring() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Monitoring
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The network interfaces for the instance.
+func (o AssetAwsEc2PtrOutput) NetworkInterfaces() AssetAwsEc2NetworkInterfaceArrayOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) []AssetAwsEc2NetworkInterface {
+		if v == nil {
+			return nil
+		}
+		return v.NetworkInterfaces
+	}).(AssetAwsEc2NetworkInterfaceArrayOutput)
+}
+
+// (Updatable) Describes the placement of an instance.
+func (o AssetAwsEc2PtrOutput) Placement() AssetAwsEc2PlacementPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *AssetAwsEc2Placement {
+		if v == nil {
+			return nil
+		}
+		return v.Placement
+	}).(AssetAwsEc2PlacementPtrOutput)
+}
+
+// (Updatable) (IPv4 only) The private DNS hostname name assigned to the instance.
+func (o AssetAwsEc2PtrOutput) PrivateDnsName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PrivateDnsName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The private IPv4 address assigned to the instance.
+func (o AssetAwsEc2PtrOutput) PrivateIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PrivateIpAddress
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The device name of the root device volume.
+func (o AssetAwsEc2PtrOutput) RootDeviceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RootDeviceName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The root device type used by the AMI. The AMI can use an EBS volume or an instance store volume.
+func (o AssetAwsEc2PtrOutput) RootDeviceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RootDeviceType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The security groups for the instance.
+func (o AssetAwsEc2PtrOutput) SecurityGroups() AssetAwsEc2SecurityGroupArrayOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) []AssetAwsEc2SecurityGroup {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityGroups
+	}).(AssetAwsEc2SecurityGroupArrayOutput)
+}
+
+// (Updatable) Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
+func (o AssetAwsEc2PtrOutput) SriovNetSupport() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SriovNetSupport
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Describes the current state of an instance.
+func (o AssetAwsEc2PtrOutput) State() AssetAwsEc2StatePtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *AssetAwsEc2State {
+		if v == nil {
+			return nil
+		}
+		return v.State
+	}).(AssetAwsEc2StatePtrOutput)
+}
+
+// (Updatable) EC2-VPC The ID of the subnet in which the instance is running.
+func (o AssetAwsEc2PtrOutput) SubnetKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SubnetKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Any tags assigned to the instance.
+func (o AssetAwsEc2PtrOutput) Tags() AssetAwsEc2TagArrayOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) []AssetAwsEc2Tag {
+		if v == nil {
+			return nil
+		}
+		return v.Tags
+	}).(AssetAwsEc2TagArrayOutput)
+}
+
+// (Updatable) The time the instance was launched.
+func (o AssetAwsEc2PtrOutput) TimeLaunch() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeLaunch
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If the instance is configured for NitroTPM support, the value is v2.0.
+func (o AssetAwsEc2PtrOutput) TpmSupport() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TpmSupport
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The virtualization type of the instance.
+func (o AssetAwsEc2PtrOutput) VirtualizationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VirtualizationType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) EC2-VPC The ID of the VPC in which the instance is running.
+func (o AssetAwsEc2PtrOutput) VpcKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VpcKey
+	}).(pulumi.StringPtrOutput)
+}
+
+type AssetAwsEc2NetworkInterface struct {
+	// (Updatable) Describes association information for an Elastic IP address (IPv4).
+	Association *AssetAwsEc2NetworkInterfaceAssociation `pulumi:"association"`
+	// (Updatable) Describes a network interface attachment.
+	Attachment *AssetAwsEc2NetworkInterfaceAttachment `pulumi:"attachment"`
+	// (Updatable) The description.
+	Description *string `pulumi:"description"`
+	// (Updatable) The type of network interface.
+	InterfaceType *string `pulumi:"interfaceType"`
+	// (Updatable) The IPv4 delegated prefixes that are assigned to the network interface.
+	Ipv4prefixes []string `pulumi:"ipv4prefixes"`
+	// (Updatable) The IPv6 addresses associated with the network interface.
+	Ipv6addresses []string `pulumi:"ipv6addresses"`
+	// (Updatable) The IPv6 delegated prefixes that are assigned to the network interface.
+	Ipv6prefixes []string `pulumi:"ipv6prefixes"`
+	// (Updatable) Indicates whether source/destination checking is enabled.
+	IsSourceDestCheck *bool `pulumi:"isSourceDestCheck"`
+	// (Updatable) The MAC address.
+	MacAddress *string `pulumi:"macAddress"`
+	// (Updatable) The ID of the network interface.
+	NetworkInterfaceKey *string `pulumi:"networkInterfaceKey"`
+	// (Updatable) The ID of the AWS account that created the network interface.
+	OwnerKey *string `pulumi:"ownerKey"`
+	// (Updatable) The private IPv4 addresses associated with the network interface.
+	PrivateIpAddresses []AssetAwsEc2NetworkInterfacePrivateIpAddress `pulumi:"privateIpAddresses"`
+	// (Updatable) The security groups.
+	SecurityGroups []AssetAwsEc2NetworkInterfaceSecurityGroup `pulumi:"securityGroups"`
+	// (Updatable) The status of the network interface.
+	Status *string `pulumi:"status"`
+	// (Updatable) The ID of the subnet.
+	SubnetKey *string `pulumi:"subnetKey"`
+}
+
+// AssetAwsEc2NetworkInterfaceInput is an input type that accepts AssetAwsEc2NetworkInterfaceArgs and AssetAwsEc2NetworkInterfaceOutput values.
+// You can construct a concrete instance of `AssetAwsEc2NetworkInterfaceInput` via:
+//
+//	AssetAwsEc2NetworkInterfaceArgs{...}
+type AssetAwsEc2NetworkInterfaceInput interface {
+	pulumi.Input
+
+	ToAssetAwsEc2NetworkInterfaceOutput() AssetAwsEc2NetworkInterfaceOutput
+	ToAssetAwsEc2NetworkInterfaceOutputWithContext(context.Context) AssetAwsEc2NetworkInterfaceOutput
+}
+
+type AssetAwsEc2NetworkInterfaceArgs struct {
+	// (Updatable) Describes association information for an Elastic IP address (IPv4).
+	Association AssetAwsEc2NetworkInterfaceAssociationPtrInput `pulumi:"association"`
+	// (Updatable) Describes a network interface attachment.
+	Attachment AssetAwsEc2NetworkInterfaceAttachmentPtrInput `pulumi:"attachment"`
+	// (Updatable) The description.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// (Updatable) The type of network interface.
+	InterfaceType pulumi.StringPtrInput `pulumi:"interfaceType"`
+	// (Updatable) The IPv4 delegated prefixes that are assigned to the network interface.
+	Ipv4prefixes pulumi.StringArrayInput `pulumi:"ipv4prefixes"`
+	// (Updatable) The IPv6 addresses associated with the network interface.
+	Ipv6addresses pulumi.StringArrayInput `pulumi:"ipv6addresses"`
+	// (Updatable) The IPv6 delegated prefixes that are assigned to the network interface.
+	Ipv6prefixes pulumi.StringArrayInput `pulumi:"ipv6prefixes"`
+	// (Updatable) Indicates whether source/destination checking is enabled.
+	IsSourceDestCheck pulumi.BoolPtrInput `pulumi:"isSourceDestCheck"`
+	// (Updatable) The MAC address.
+	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
+	// (Updatable) The ID of the network interface.
+	NetworkInterfaceKey pulumi.StringPtrInput `pulumi:"networkInterfaceKey"`
+	// (Updatable) The ID of the AWS account that created the network interface.
+	OwnerKey pulumi.StringPtrInput `pulumi:"ownerKey"`
+	// (Updatable) The private IPv4 addresses associated with the network interface.
+	PrivateIpAddresses AssetAwsEc2NetworkInterfacePrivateIpAddressArrayInput `pulumi:"privateIpAddresses"`
+	// (Updatable) The security groups.
+	SecurityGroups AssetAwsEc2NetworkInterfaceSecurityGroupArrayInput `pulumi:"securityGroups"`
+	// (Updatable) The status of the network interface.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// (Updatable) The ID of the subnet.
+	SubnetKey pulumi.StringPtrInput `pulumi:"subnetKey"`
+}
+
+func (AssetAwsEc2NetworkInterfaceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEc2NetworkInterface)(nil)).Elem()
+}
+
+func (i AssetAwsEc2NetworkInterfaceArgs) ToAssetAwsEc2NetworkInterfaceOutput() AssetAwsEc2NetworkInterfaceOutput {
+	return i.ToAssetAwsEc2NetworkInterfaceOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEc2NetworkInterfaceArgs) ToAssetAwsEc2NetworkInterfaceOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfaceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2NetworkInterfaceOutput)
+}
+
+// AssetAwsEc2NetworkInterfaceArrayInput is an input type that accepts AssetAwsEc2NetworkInterfaceArray and AssetAwsEc2NetworkInterfaceArrayOutput values.
+// You can construct a concrete instance of `AssetAwsEc2NetworkInterfaceArrayInput` via:
+//
+//	AssetAwsEc2NetworkInterfaceArray{ AssetAwsEc2NetworkInterfaceArgs{...} }
+type AssetAwsEc2NetworkInterfaceArrayInput interface {
+	pulumi.Input
+
+	ToAssetAwsEc2NetworkInterfaceArrayOutput() AssetAwsEc2NetworkInterfaceArrayOutput
+	ToAssetAwsEc2NetworkInterfaceArrayOutputWithContext(context.Context) AssetAwsEc2NetworkInterfaceArrayOutput
+}
+
+type AssetAwsEc2NetworkInterfaceArray []AssetAwsEc2NetworkInterfaceInput
+
+func (AssetAwsEc2NetworkInterfaceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AssetAwsEc2NetworkInterface)(nil)).Elem()
+}
+
+func (i AssetAwsEc2NetworkInterfaceArray) ToAssetAwsEc2NetworkInterfaceArrayOutput() AssetAwsEc2NetworkInterfaceArrayOutput {
+	return i.ToAssetAwsEc2NetworkInterfaceArrayOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEc2NetworkInterfaceArray) ToAssetAwsEc2NetworkInterfaceArrayOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfaceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2NetworkInterfaceArrayOutput)
+}
+
+type AssetAwsEc2NetworkInterfaceOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEc2NetworkInterfaceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEc2NetworkInterface)(nil)).Elem()
+}
+
+func (o AssetAwsEc2NetworkInterfaceOutput) ToAssetAwsEc2NetworkInterfaceOutput() AssetAwsEc2NetworkInterfaceOutput {
+	return o
+}
+
+func (o AssetAwsEc2NetworkInterfaceOutput) ToAssetAwsEc2NetworkInterfaceOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfaceOutput {
+	return o
+}
+
+// (Updatable) Describes association information for an Elastic IP address (IPv4).
+func (o AssetAwsEc2NetworkInterfaceOutput) Association() AssetAwsEc2NetworkInterfaceAssociationPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterface) *AssetAwsEc2NetworkInterfaceAssociation { return v.Association }).(AssetAwsEc2NetworkInterfaceAssociationPtrOutput)
+}
+
+// (Updatable) Describes a network interface attachment.
+func (o AssetAwsEc2NetworkInterfaceOutput) Attachment() AssetAwsEc2NetworkInterfaceAttachmentPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterface) *AssetAwsEc2NetworkInterfaceAttachment { return v.Attachment }).(AssetAwsEc2NetworkInterfaceAttachmentPtrOutput)
+}
+
+// (Updatable) The description.
+func (o AssetAwsEc2NetworkInterfaceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterface) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of network interface.
+func (o AssetAwsEc2NetworkInterfaceOutput) InterfaceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterface) *string { return v.InterfaceType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The IPv4 delegated prefixes that are assigned to the network interface.
+func (o AssetAwsEc2NetworkInterfaceOutput) Ipv4prefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterface) []string { return v.Ipv4prefixes }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The IPv6 addresses associated with the network interface.
+func (o AssetAwsEc2NetworkInterfaceOutput) Ipv6addresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterface) []string { return v.Ipv6addresses }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The IPv6 delegated prefixes that are assigned to the network interface.
+func (o AssetAwsEc2NetworkInterfaceOutput) Ipv6prefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterface) []string { return v.Ipv6prefixes }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Indicates whether source/destination checking is enabled.
+func (o AssetAwsEc2NetworkInterfaceOutput) IsSourceDestCheck() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterface) *bool { return v.IsSourceDestCheck }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The MAC address.
+func (o AssetAwsEc2NetworkInterfaceOutput) MacAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterface) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The ID of the network interface.
+func (o AssetAwsEc2NetworkInterfaceOutput) NetworkInterfaceKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterface) *string { return v.NetworkInterfaceKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The ID of the AWS account that created the network interface.
+func (o AssetAwsEc2NetworkInterfaceOutput) OwnerKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterface) *string { return v.OwnerKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The private IPv4 addresses associated with the network interface.
+func (o AssetAwsEc2NetworkInterfaceOutput) PrivateIpAddresses() AssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterface) []AssetAwsEc2NetworkInterfacePrivateIpAddress {
+		return v.PrivateIpAddresses
+	}).(AssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput)
+}
+
+// (Updatable) The security groups.
+func (o AssetAwsEc2NetworkInterfaceOutput) SecurityGroups() AssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterface) []AssetAwsEc2NetworkInterfaceSecurityGroup {
+		return v.SecurityGroups
+	}).(AssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput)
+}
+
+// (Updatable) The status of the network interface.
+func (o AssetAwsEc2NetworkInterfaceOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterface) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The ID of the subnet.
+func (o AssetAwsEc2NetworkInterfaceOutput) SubnetKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterface) *string { return v.SubnetKey }).(pulumi.StringPtrOutput)
+}
+
+type AssetAwsEc2NetworkInterfaceArrayOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEc2NetworkInterfaceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AssetAwsEc2NetworkInterface)(nil)).Elem()
+}
+
+func (o AssetAwsEc2NetworkInterfaceArrayOutput) ToAssetAwsEc2NetworkInterfaceArrayOutput() AssetAwsEc2NetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o AssetAwsEc2NetworkInterfaceArrayOutput) ToAssetAwsEc2NetworkInterfaceArrayOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o AssetAwsEc2NetworkInterfaceArrayOutput) Index(i pulumi.IntInput) AssetAwsEc2NetworkInterfaceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AssetAwsEc2NetworkInterface {
+		return vs[0].([]AssetAwsEc2NetworkInterface)[vs[1].(int)]
+	}).(AssetAwsEc2NetworkInterfaceOutput)
+}
+
+type AssetAwsEc2NetworkInterfaceAssociation struct {
+	// (Updatable) The carrier IP address associated with the network interface.
+	CarrierIp *string `pulumi:"carrierIp"`
+	// (Updatable) The customer-owned IP address associated with the network interface.
+	CustomerOwnedIp *string `pulumi:"customerOwnedIp"`
+	// (Updatable) The ID of the owner of the Elastic IP address.
+	IpOwnerKey *string `pulumi:"ipOwnerKey"`
+	// (Updatable) The public DNS name.
+	PublicDnsName *string `pulumi:"publicDnsName"`
+	// (Updatable) The public IP address or Elastic IP address bound to the network interface.
+	PublicIp *string `pulumi:"publicIp"`
+}
+
+// AssetAwsEc2NetworkInterfaceAssociationInput is an input type that accepts AssetAwsEc2NetworkInterfaceAssociationArgs and AssetAwsEc2NetworkInterfaceAssociationOutput values.
+// You can construct a concrete instance of `AssetAwsEc2NetworkInterfaceAssociationInput` via:
+//
+//	AssetAwsEc2NetworkInterfaceAssociationArgs{...}
+type AssetAwsEc2NetworkInterfaceAssociationInput interface {
+	pulumi.Input
+
+	ToAssetAwsEc2NetworkInterfaceAssociationOutput() AssetAwsEc2NetworkInterfaceAssociationOutput
+	ToAssetAwsEc2NetworkInterfaceAssociationOutputWithContext(context.Context) AssetAwsEc2NetworkInterfaceAssociationOutput
+}
+
+type AssetAwsEc2NetworkInterfaceAssociationArgs struct {
+	// (Updatable) The carrier IP address associated with the network interface.
+	CarrierIp pulumi.StringPtrInput `pulumi:"carrierIp"`
+	// (Updatable) The customer-owned IP address associated with the network interface.
+	CustomerOwnedIp pulumi.StringPtrInput `pulumi:"customerOwnedIp"`
+	// (Updatable) The ID of the owner of the Elastic IP address.
+	IpOwnerKey pulumi.StringPtrInput `pulumi:"ipOwnerKey"`
+	// (Updatable) The public DNS name.
+	PublicDnsName pulumi.StringPtrInput `pulumi:"publicDnsName"`
+	// (Updatable) The public IP address or Elastic IP address bound to the network interface.
+	PublicIp pulumi.StringPtrInput `pulumi:"publicIp"`
+}
+
+func (AssetAwsEc2NetworkInterfaceAssociationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEc2NetworkInterfaceAssociation)(nil)).Elem()
+}
+
+func (i AssetAwsEc2NetworkInterfaceAssociationArgs) ToAssetAwsEc2NetworkInterfaceAssociationOutput() AssetAwsEc2NetworkInterfaceAssociationOutput {
+	return i.ToAssetAwsEc2NetworkInterfaceAssociationOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEc2NetworkInterfaceAssociationArgs) ToAssetAwsEc2NetworkInterfaceAssociationOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfaceAssociationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2NetworkInterfaceAssociationOutput)
+}
+
+func (i AssetAwsEc2NetworkInterfaceAssociationArgs) ToAssetAwsEc2NetworkInterfaceAssociationPtrOutput() AssetAwsEc2NetworkInterfaceAssociationPtrOutput {
+	return i.ToAssetAwsEc2NetworkInterfaceAssociationPtrOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEc2NetworkInterfaceAssociationArgs) ToAssetAwsEc2NetworkInterfaceAssociationPtrOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfaceAssociationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2NetworkInterfaceAssociationOutput).ToAssetAwsEc2NetworkInterfaceAssociationPtrOutputWithContext(ctx)
+}
+
+// AssetAwsEc2NetworkInterfaceAssociationPtrInput is an input type that accepts AssetAwsEc2NetworkInterfaceAssociationArgs, AssetAwsEc2NetworkInterfaceAssociationPtr and AssetAwsEc2NetworkInterfaceAssociationPtrOutput values.
+// You can construct a concrete instance of `AssetAwsEc2NetworkInterfaceAssociationPtrInput` via:
+//
+//	        AssetAwsEc2NetworkInterfaceAssociationArgs{...}
+//
+//	or:
+//
+//	        nil
+type AssetAwsEc2NetworkInterfaceAssociationPtrInput interface {
+	pulumi.Input
+
+	ToAssetAwsEc2NetworkInterfaceAssociationPtrOutput() AssetAwsEc2NetworkInterfaceAssociationPtrOutput
+	ToAssetAwsEc2NetworkInterfaceAssociationPtrOutputWithContext(context.Context) AssetAwsEc2NetworkInterfaceAssociationPtrOutput
+}
+
+type assetAwsEc2NetworkInterfaceAssociationPtrType AssetAwsEc2NetworkInterfaceAssociationArgs
+
+func AssetAwsEc2NetworkInterfaceAssociationPtr(v *AssetAwsEc2NetworkInterfaceAssociationArgs) AssetAwsEc2NetworkInterfaceAssociationPtrInput {
+	return (*assetAwsEc2NetworkInterfaceAssociationPtrType)(v)
+}
+
+func (*assetAwsEc2NetworkInterfaceAssociationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AssetAwsEc2NetworkInterfaceAssociation)(nil)).Elem()
+}
+
+func (i *assetAwsEc2NetworkInterfaceAssociationPtrType) ToAssetAwsEc2NetworkInterfaceAssociationPtrOutput() AssetAwsEc2NetworkInterfaceAssociationPtrOutput {
+	return i.ToAssetAwsEc2NetworkInterfaceAssociationPtrOutputWithContext(context.Background())
+}
+
+func (i *assetAwsEc2NetworkInterfaceAssociationPtrType) ToAssetAwsEc2NetworkInterfaceAssociationPtrOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfaceAssociationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2NetworkInterfaceAssociationPtrOutput)
+}
+
+type AssetAwsEc2NetworkInterfaceAssociationOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEc2NetworkInterfaceAssociationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEc2NetworkInterfaceAssociation)(nil)).Elem()
+}
+
+func (o AssetAwsEc2NetworkInterfaceAssociationOutput) ToAssetAwsEc2NetworkInterfaceAssociationOutput() AssetAwsEc2NetworkInterfaceAssociationOutput {
+	return o
+}
+
+func (o AssetAwsEc2NetworkInterfaceAssociationOutput) ToAssetAwsEc2NetworkInterfaceAssociationOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfaceAssociationOutput {
+	return o
+}
+
+func (o AssetAwsEc2NetworkInterfaceAssociationOutput) ToAssetAwsEc2NetworkInterfaceAssociationPtrOutput() AssetAwsEc2NetworkInterfaceAssociationPtrOutput {
+	return o.ToAssetAwsEc2NetworkInterfaceAssociationPtrOutputWithContext(context.Background())
+}
+
+func (o AssetAwsEc2NetworkInterfaceAssociationOutput) ToAssetAwsEc2NetworkInterfaceAssociationPtrOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfaceAssociationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AssetAwsEc2NetworkInterfaceAssociation) *AssetAwsEc2NetworkInterfaceAssociation {
+		return &v
+	}).(AssetAwsEc2NetworkInterfaceAssociationPtrOutput)
+}
+
+// (Updatable) The carrier IP address associated with the network interface.
+func (o AssetAwsEc2NetworkInterfaceAssociationOutput) CarrierIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterfaceAssociation) *string { return v.CarrierIp }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The customer-owned IP address associated with the network interface.
+func (o AssetAwsEc2NetworkInterfaceAssociationOutput) CustomerOwnedIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterfaceAssociation) *string { return v.CustomerOwnedIp }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The ID of the owner of the Elastic IP address.
+func (o AssetAwsEc2NetworkInterfaceAssociationOutput) IpOwnerKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterfaceAssociation) *string { return v.IpOwnerKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The public DNS name.
+func (o AssetAwsEc2NetworkInterfaceAssociationOutput) PublicDnsName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterfaceAssociation) *string { return v.PublicDnsName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The public IP address or Elastic IP address bound to the network interface.
+func (o AssetAwsEc2NetworkInterfaceAssociationOutput) PublicIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterfaceAssociation) *string { return v.PublicIp }).(pulumi.StringPtrOutput)
+}
+
+type AssetAwsEc2NetworkInterfaceAssociationPtrOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEc2NetworkInterfaceAssociationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AssetAwsEc2NetworkInterfaceAssociation)(nil)).Elem()
+}
+
+func (o AssetAwsEc2NetworkInterfaceAssociationPtrOutput) ToAssetAwsEc2NetworkInterfaceAssociationPtrOutput() AssetAwsEc2NetworkInterfaceAssociationPtrOutput {
+	return o
+}
+
+func (o AssetAwsEc2NetworkInterfaceAssociationPtrOutput) ToAssetAwsEc2NetworkInterfaceAssociationPtrOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfaceAssociationPtrOutput {
+	return o
+}
+
+func (o AssetAwsEc2NetworkInterfaceAssociationPtrOutput) Elem() AssetAwsEc2NetworkInterfaceAssociationOutput {
+	return o.ApplyT(func(v *AssetAwsEc2NetworkInterfaceAssociation) AssetAwsEc2NetworkInterfaceAssociation {
+		if v != nil {
+			return *v
+		}
+		var ret AssetAwsEc2NetworkInterfaceAssociation
+		return ret
+	}).(AssetAwsEc2NetworkInterfaceAssociationOutput)
+}
+
+// (Updatable) The carrier IP address associated with the network interface.
+func (o AssetAwsEc2NetworkInterfaceAssociationPtrOutput) CarrierIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2NetworkInterfaceAssociation) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CarrierIp
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The customer-owned IP address associated with the network interface.
+func (o AssetAwsEc2NetworkInterfaceAssociationPtrOutput) CustomerOwnedIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2NetworkInterfaceAssociation) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CustomerOwnedIp
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The ID of the owner of the Elastic IP address.
+func (o AssetAwsEc2NetworkInterfaceAssociationPtrOutput) IpOwnerKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2NetworkInterfaceAssociation) *string {
+		if v == nil {
+			return nil
+		}
+		return v.IpOwnerKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The public DNS name.
+func (o AssetAwsEc2NetworkInterfaceAssociationPtrOutput) PublicDnsName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2NetworkInterfaceAssociation) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PublicDnsName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The public IP address or Elastic IP address bound to the network interface.
+func (o AssetAwsEc2NetworkInterfaceAssociationPtrOutput) PublicIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2NetworkInterfaceAssociation) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PublicIp
+	}).(pulumi.StringPtrOutput)
+}
+
+type AssetAwsEc2NetworkInterfaceAttachment struct {
+	// (Updatable) The ID of the network interface attachment.
+	AttachmentKey *string `pulumi:"attachmentKey"`
+	// (Updatable) The index of the device on the instance for the network interface attachment.
+	DeviceIndex *int `pulumi:"deviceIndex"`
+	// (Updatable) Indicates whether the network interface is deleted when the instance is terminated.
+	IsDeleteOnTermination *bool `pulumi:"isDeleteOnTermination"`
+	// (Updatable) The index of the network card.
+	NetworkCardIndex *int `pulumi:"networkCardIndex"`
+	// (Updatable) The attachment state.
+	Status *string `pulumi:"status"`
+	// (Updatable) The timestamp when the attachment initiated.
+	TimeAttach *string `pulumi:"timeAttach"`
+}
+
+// AssetAwsEc2NetworkInterfaceAttachmentInput is an input type that accepts AssetAwsEc2NetworkInterfaceAttachmentArgs and AssetAwsEc2NetworkInterfaceAttachmentOutput values.
+// You can construct a concrete instance of `AssetAwsEc2NetworkInterfaceAttachmentInput` via:
+//
+//	AssetAwsEc2NetworkInterfaceAttachmentArgs{...}
+type AssetAwsEc2NetworkInterfaceAttachmentInput interface {
+	pulumi.Input
+
+	ToAssetAwsEc2NetworkInterfaceAttachmentOutput() AssetAwsEc2NetworkInterfaceAttachmentOutput
+	ToAssetAwsEc2NetworkInterfaceAttachmentOutputWithContext(context.Context) AssetAwsEc2NetworkInterfaceAttachmentOutput
+}
+
+type AssetAwsEc2NetworkInterfaceAttachmentArgs struct {
+	// (Updatable) The ID of the network interface attachment.
+	AttachmentKey pulumi.StringPtrInput `pulumi:"attachmentKey"`
+	// (Updatable) The index of the device on the instance for the network interface attachment.
+	DeviceIndex pulumi.IntPtrInput `pulumi:"deviceIndex"`
+	// (Updatable) Indicates whether the network interface is deleted when the instance is terminated.
+	IsDeleteOnTermination pulumi.BoolPtrInput `pulumi:"isDeleteOnTermination"`
+	// (Updatable) The index of the network card.
+	NetworkCardIndex pulumi.IntPtrInput `pulumi:"networkCardIndex"`
+	// (Updatable) The attachment state.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// (Updatable) The timestamp when the attachment initiated.
+	TimeAttach pulumi.StringPtrInput `pulumi:"timeAttach"`
+}
+
+func (AssetAwsEc2NetworkInterfaceAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEc2NetworkInterfaceAttachment)(nil)).Elem()
+}
+
+func (i AssetAwsEc2NetworkInterfaceAttachmentArgs) ToAssetAwsEc2NetworkInterfaceAttachmentOutput() AssetAwsEc2NetworkInterfaceAttachmentOutput {
+	return i.ToAssetAwsEc2NetworkInterfaceAttachmentOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEc2NetworkInterfaceAttachmentArgs) ToAssetAwsEc2NetworkInterfaceAttachmentOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfaceAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2NetworkInterfaceAttachmentOutput)
+}
+
+func (i AssetAwsEc2NetworkInterfaceAttachmentArgs) ToAssetAwsEc2NetworkInterfaceAttachmentPtrOutput() AssetAwsEc2NetworkInterfaceAttachmentPtrOutput {
+	return i.ToAssetAwsEc2NetworkInterfaceAttachmentPtrOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEc2NetworkInterfaceAttachmentArgs) ToAssetAwsEc2NetworkInterfaceAttachmentPtrOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfaceAttachmentPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2NetworkInterfaceAttachmentOutput).ToAssetAwsEc2NetworkInterfaceAttachmentPtrOutputWithContext(ctx)
+}
+
+// AssetAwsEc2NetworkInterfaceAttachmentPtrInput is an input type that accepts AssetAwsEc2NetworkInterfaceAttachmentArgs, AssetAwsEc2NetworkInterfaceAttachmentPtr and AssetAwsEc2NetworkInterfaceAttachmentPtrOutput values.
+// You can construct a concrete instance of `AssetAwsEc2NetworkInterfaceAttachmentPtrInput` via:
+//
+//	        AssetAwsEc2NetworkInterfaceAttachmentArgs{...}
+//
+//	or:
+//
+//	        nil
+type AssetAwsEc2NetworkInterfaceAttachmentPtrInput interface {
+	pulumi.Input
+
+	ToAssetAwsEc2NetworkInterfaceAttachmentPtrOutput() AssetAwsEc2NetworkInterfaceAttachmentPtrOutput
+	ToAssetAwsEc2NetworkInterfaceAttachmentPtrOutputWithContext(context.Context) AssetAwsEc2NetworkInterfaceAttachmentPtrOutput
+}
+
+type assetAwsEc2NetworkInterfaceAttachmentPtrType AssetAwsEc2NetworkInterfaceAttachmentArgs
+
+func AssetAwsEc2NetworkInterfaceAttachmentPtr(v *AssetAwsEc2NetworkInterfaceAttachmentArgs) AssetAwsEc2NetworkInterfaceAttachmentPtrInput {
+	return (*assetAwsEc2NetworkInterfaceAttachmentPtrType)(v)
+}
+
+func (*assetAwsEc2NetworkInterfaceAttachmentPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AssetAwsEc2NetworkInterfaceAttachment)(nil)).Elem()
+}
+
+func (i *assetAwsEc2NetworkInterfaceAttachmentPtrType) ToAssetAwsEc2NetworkInterfaceAttachmentPtrOutput() AssetAwsEc2NetworkInterfaceAttachmentPtrOutput {
+	return i.ToAssetAwsEc2NetworkInterfaceAttachmentPtrOutputWithContext(context.Background())
+}
+
+func (i *assetAwsEc2NetworkInterfaceAttachmentPtrType) ToAssetAwsEc2NetworkInterfaceAttachmentPtrOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfaceAttachmentPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2NetworkInterfaceAttachmentPtrOutput)
+}
+
+type AssetAwsEc2NetworkInterfaceAttachmentOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEc2NetworkInterfaceAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEc2NetworkInterfaceAttachment)(nil)).Elem()
+}
+
+func (o AssetAwsEc2NetworkInterfaceAttachmentOutput) ToAssetAwsEc2NetworkInterfaceAttachmentOutput() AssetAwsEc2NetworkInterfaceAttachmentOutput {
+	return o
+}
+
+func (o AssetAwsEc2NetworkInterfaceAttachmentOutput) ToAssetAwsEc2NetworkInterfaceAttachmentOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfaceAttachmentOutput {
+	return o
+}
+
+func (o AssetAwsEc2NetworkInterfaceAttachmentOutput) ToAssetAwsEc2NetworkInterfaceAttachmentPtrOutput() AssetAwsEc2NetworkInterfaceAttachmentPtrOutput {
+	return o.ToAssetAwsEc2NetworkInterfaceAttachmentPtrOutputWithContext(context.Background())
+}
+
+func (o AssetAwsEc2NetworkInterfaceAttachmentOutput) ToAssetAwsEc2NetworkInterfaceAttachmentPtrOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfaceAttachmentPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AssetAwsEc2NetworkInterfaceAttachment) *AssetAwsEc2NetworkInterfaceAttachment {
+		return &v
+	}).(AssetAwsEc2NetworkInterfaceAttachmentPtrOutput)
+}
+
+// (Updatable) The ID of the network interface attachment.
+func (o AssetAwsEc2NetworkInterfaceAttachmentOutput) AttachmentKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterfaceAttachment) *string { return v.AttachmentKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The index of the device on the instance for the network interface attachment.
+func (o AssetAwsEc2NetworkInterfaceAttachmentOutput) DeviceIndex() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterfaceAttachment) *int { return v.DeviceIndex }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Indicates whether the network interface is deleted when the instance is terminated.
+func (o AssetAwsEc2NetworkInterfaceAttachmentOutput) IsDeleteOnTermination() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterfaceAttachment) *bool { return v.IsDeleteOnTermination }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The index of the network card.
+func (o AssetAwsEc2NetworkInterfaceAttachmentOutput) NetworkCardIndex() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterfaceAttachment) *int { return v.NetworkCardIndex }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The attachment state.
+func (o AssetAwsEc2NetworkInterfaceAttachmentOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterfaceAttachment) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The timestamp when the attachment initiated.
+func (o AssetAwsEc2NetworkInterfaceAttachmentOutput) TimeAttach() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterfaceAttachment) *string { return v.TimeAttach }).(pulumi.StringPtrOutput)
+}
+
+type AssetAwsEc2NetworkInterfaceAttachmentPtrOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEc2NetworkInterfaceAttachmentPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AssetAwsEc2NetworkInterfaceAttachment)(nil)).Elem()
+}
+
+func (o AssetAwsEc2NetworkInterfaceAttachmentPtrOutput) ToAssetAwsEc2NetworkInterfaceAttachmentPtrOutput() AssetAwsEc2NetworkInterfaceAttachmentPtrOutput {
+	return o
+}
+
+func (o AssetAwsEc2NetworkInterfaceAttachmentPtrOutput) ToAssetAwsEc2NetworkInterfaceAttachmentPtrOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfaceAttachmentPtrOutput {
+	return o
+}
+
+func (o AssetAwsEc2NetworkInterfaceAttachmentPtrOutput) Elem() AssetAwsEc2NetworkInterfaceAttachmentOutput {
+	return o.ApplyT(func(v *AssetAwsEc2NetworkInterfaceAttachment) AssetAwsEc2NetworkInterfaceAttachment {
+		if v != nil {
+			return *v
+		}
+		var ret AssetAwsEc2NetworkInterfaceAttachment
+		return ret
+	}).(AssetAwsEc2NetworkInterfaceAttachmentOutput)
+}
+
+// (Updatable) The ID of the network interface attachment.
+func (o AssetAwsEc2NetworkInterfaceAttachmentPtrOutput) AttachmentKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2NetworkInterfaceAttachment) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AttachmentKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The index of the device on the instance for the network interface attachment.
+func (o AssetAwsEc2NetworkInterfaceAttachmentPtrOutput) DeviceIndex() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2NetworkInterfaceAttachment) *int {
+		if v == nil {
+			return nil
+		}
+		return v.DeviceIndex
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Indicates whether the network interface is deleted when the instance is terminated.
+func (o AssetAwsEc2NetworkInterfaceAttachmentPtrOutput) IsDeleteOnTermination() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2NetworkInterfaceAttachment) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsDeleteOnTermination
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The index of the network card.
+func (o AssetAwsEc2NetworkInterfaceAttachmentPtrOutput) NetworkCardIndex() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2NetworkInterfaceAttachment) *int {
+		if v == nil {
+			return nil
+		}
+		return v.NetworkCardIndex
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The attachment state.
+func (o AssetAwsEc2NetworkInterfaceAttachmentPtrOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2NetworkInterfaceAttachment) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Status
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The timestamp when the attachment initiated.
+func (o AssetAwsEc2NetworkInterfaceAttachmentPtrOutput) TimeAttach() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2NetworkInterfaceAttachment) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeAttach
+	}).(pulumi.StringPtrOutput)
+}
+
+type AssetAwsEc2NetworkInterfacePrivateIpAddress struct {
+	// (Updatable) Describes association information for an Elastic IP address (IPv4).
+	Association *AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation `pulumi:"association"`
+	// (Updatable) Indicates whether this IPv4 address is the primary private IP address of the network interface.
+	IsPrimary *bool `pulumi:"isPrimary"`
+	// (Updatable) The private IPv4 DNS name.
+	PrivateDnsName *string `pulumi:"privateDnsName"`
+	// (Updatable) The private IPv4 address of the network interface.
+	PrivateIpAddress *string `pulumi:"privateIpAddress"`
+}
+
+// AssetAwsEc2NetworkInterfacePrivateIpAddressInput is an input type that accepts AssetAwsEc2NetworkInterfacePrivateIpAddressArgs and AssetAwsEc2NetworkInterfacePrivateIpAddressOutput values.
+// You can construct a concrete instance of `AssetAwsEc2NetworkInterfacePrivateIpAddressInput` via:
+//
+//	AssetAwsEc2NetworkInterfacePrivateIpAddressArgs{...}
+type AssetAwsEc2NetworkInterfacePrivateIpAddressInput interface {
+	pulumi.Input
+
+	ToAssetAwsEc2NetworkInterfacePrivateIpAddressOutput() AssetAwsEc2NetworkInterfacePrivateIpAddressOutput
+	ToAssetAwsEc2NetworkInterfacePrivateIpAddressOutputWithContext(context.Context) AssetAwsEc2NetworkInterfacePrivateIpAddressOutput
+}
+
+type AssetAwsEc2NetworkInterfacePrivateIpAddressArgs struct {
+	// (Updatable) Describes association information for an Elastic IP address (IPv4).
+	Association AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrInput `pulumi:"association"`
+	// (Updatable) Indicates whether this IPv4 address is the primary private IP address of the network interface.
+	IsPrimary pulumi.BoolPtrInput `pulumi:"isPrimary"`
+	// (Updatable) The private IPv4 DNS name.
+	PrivateDnsName pulumi.StringPtrInput `pulumi:"privateDnsName"`
+	// (Updatable) The private IPv4 address of the network interface.
+	PrivateIpAddress pulumi.StringPtrInput `pulumi:"privateIpAddress"`
+}
+
+func (AssetAwsEc2NetworkInterfacePrivateIpAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEc2NetworkInterfacePrivateIpAddress)(nil)).Elem()
+}
+
+func (i AssetAwsEc2NetworkInterfacePrivateIpAddressArgs) ToAssetAwsEc2NetworkInterfacePrivateIpAddressOutput() AssetAwsEc2NetworkInterfacePrivateIpAddressOutput {
+	return i.ToAssetAwsEc2NetworkInterfacePrivateIpAddressOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEc2NetworkInterfacePrivateIpAddressArgs) ToAssetAwsEc2NetworkInterfacePrivateIpAddressOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfacePrivateIpAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2NetworkInterfacePrivateIpAddressOutput)
+}
+
+// AssetAwsEc2NetworkInterfacePrivateIpAddressArrayInput is an input type that accepts AssetAwsEc2NetworkInterfacePrivateIpAddressArray and AssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput values.
+// You can construct a concrete instance of `AssetAwsEc2NetworkInterfacePrivateIpAddressArrayInput` via:
+//
+//	AssetAwsEc2NetworkInterfacePrivateIpAddressArray{ AssetAwsEc2NetworkInterfacePrivateIpAddressArgs{...} }
+type AssetAwsEc2NetworkInterfacePrivateIpAddressArrayInput interface {
+	pulumi.Input
+
+	ToAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput() AssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput
+	ToAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutputWithContext(context.Context) AssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput
+}
+
+type AssetAwsEc2NetworkInterfacePrivateIpAddressArray []AssetAwsEc2NetworkInterfacePrivateIpAddressInput
+
+func (AssetAwsEc2NetworkInterfacePrivateIpAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AssetAwsEc2NetworkInterfacePrivateIpAddress)(nil)).Elem()
+}
+
+func (i AssetAwsEc2NetworkInterfacePrivateIpAddressArray) ToAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput() AssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput {
+	return i.ToAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEc2NetworkInterfacePrivateIpAddressArray) ToAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput)
+}
+
+type AssetAwsEc2NetworkInterfacePrivateIpAddressOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEc2NetworkInterfacePrivateIpAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEc2NetworkInterfacePrivateIpAddress)(nil)).Elem()
+}
+
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressOutput) ToAssetAwsEc2NetworkInterfacePrivateIpAddressOutput() AssetAwsEc2NetworkInterfacePrivateIpAddressOutput {
+	return o
+}
+
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressOutput) ToAssetAwsEc2NetworkInterfacePrivateIpAddressOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfacePrivateIpAddressOutput {
+	return o
+}
+
+// (Updatable) Describes association information for an Elastic IP address (IPv4).
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressOutput) Association() AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterfacePrivateIpAddress) *AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation {
+		return v.Association
+	}).(AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput)
+}
+
+// (Updatable) Indicates whether this IPv4 address is the primary private IP address of the network interface.
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressOutput) IsPrimary() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterfacePrivateIpAddress) *bool { return v.IsPrimary }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The private IPv4 DNS name.
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressOutput) PrivateDnsName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterfacePrivateIpAddress) *string { return v.PrivateDnsName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The private IPv4 address of the network interface.
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressOutput) PrivateIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterfacePrivateIpAddress) *string { return v.PrivateIpAddress }).(pulumi.StringPtrOutput)
+}
+
+type AssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AssetAwsEc2NetworkInterfacePrivateIpAddress)(nil)).Elem()
+}
+
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput) ToAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput() AssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput {
+	return o
+}
+
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput) ToAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput {
+	return o
+}
+
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput) Index(i pulumi.IntInput) AssetAwsEc2NetworkInterfacePrivateIpAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AssetAwsEc2NetworkInterfacePrivateIpAddress {
+		return vs[0].([]AssetAwsEc2NetworkInterfacePrivateIpAddress)[vs[1].(int)]
+	}).(AssetAwsEc2NetworkInterfacePrivateIpAddressOutput)
+}
+
+type AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation struct {
+	// (Updatable) The carrier IP address associated with the network interface.
+	CarrierIp *string `pulumi:"carrierIp"`
+	// (Updatable) The customer-owned IP address associated with the network interface.
+	CustomerOwnedIp *string `pulumi:"customerOwnedIp"`
+	// (Updatable) The ID of the owner of the Elastic IP address.
+	IpOwnerKey *string `pulumi:"ipOwnerKey"`
+	// (Updatable) The public DNS name.
+	PublicDnsName *string `pulumi:"publicDnsName"`
+	// (Updatable) The public IP address or Elastic IP address bound to the network interface.
+	PublicIp *string `pulumi:"publicIp"`
+}
+
+// AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationInput is an input type that accepts AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs and AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput values.
+// You can construct a concrete instance of `AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationInput` via:
+//
+//	AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs{...}
+type AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationInput interface {
+	pulumi.Input
+
+	ToAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput() AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput
+	ToAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutputWithContext(context.Context) AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput
+}
+
+type AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs struct {
+	// (Updatable) The carrier IP address associated with the network interface.
+	CarrierIp pulumi.StringPtrInput `pulumi:"carrierIp"`
+	// (Updatable) The customer-owned IP address associated with the network interface.
+	CustomerOwnedIp pulumi.StringPtrInput `pulumi:"customerOwnedIp"`
+	// (Updatable) The ID of the owner of the Elastic IP address.
+	IpOwnerKey pulumi.StringPtrInput `pulumi:"ipOwnerKey"`
+	// (Updatable) The public DNS name.
+	PublicDnsName pulumi.StringPtrInput `pulumi:"publicDnsName"`
+	// (Updatable) The public IP address or Elastic IP address bound to the network interface.
+	PublicIp pulumi.StringPtrInput `pulumi:"publicIp"`
+}
+
+func (AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation)(nil)).Elem()
+}
+
+func (i AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs) ToAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput() AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput {
+	return i.ToAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs) ToAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput)
+}
+
+func (i AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs) ToAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput() AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput {
+	return i.ToAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs) ToAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput).ToAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutputWithContext(ctx)
+}
+
+// AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrInput is an input type that accepts AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs, AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtr and AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput values.
+// You can construct a concrete instance of `AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrInput` via:
+//
+//	        AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs{...}
+//
+//	or:
+//
+//	        nil
+type AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrInput interface {
+	pulumi.Input
+
+	ToAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput() AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput
+	ToAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutputWithContext(context.Context) AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput
+}
+
+type assetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrType AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs
+
+func AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtr(v *AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs) AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrInput {
+	return (*assetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrType)(v)
+}
+
+func (*assetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation)(nil)).Elem()
+}
+
+func (i *assetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrType) ToAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput() AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput {
+	return i.ToAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutputWithContext(context.Background())
+}
+
+func (i *assetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrType) ToAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput)
+}
+
+type AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation)(nil)).Elem()
+}
+
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) ToAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput() AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput {
+	return o
+}
+
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) ToAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput {
+	return o
+}
+
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) ToAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput() AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput {
+	return o.ToAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutputWithContext(context.Background())
+}
+
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) ToAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation) *AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation {
+		return &v
+	}).(AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput)
+}
+
+// (Updatable) The carrier IP address associated with the network interface.
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) CarrierIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation) *string { return v.CarrierIp }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The customer-owned IP address associated with the network interface.
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) CustomerOwnedIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation) *string { return v.CustomerOwnedIp }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The ID of the owner of the Elastic IP address.
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) IpOwnerKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation) *string { return v.IpOwnerKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The public DNS name.
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) PublicDnsName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation) *string { return v.PublicDnsName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The public IP address or Elastic IP address bound to the network interface.
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) PublicIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation) *string { return v.PublicIp }).(pulumi.StringPtrOutput)
+}
+
+type AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation)(nil)).Elem()
+}
+
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput) ToAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput() AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput {
+	return o
+}
+
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput) ToAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput {
+	return o
+}
+
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput) Elem() AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput {
+	return o.ApplyT(func(v *AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation) AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation {
+		if v != nil {
+			return *v
+		}
+		var ret AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation
+		return ret
+	}).(AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput)
+}
+
+// (Updatable) The carrier IP address associated with the network interface.
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput) CarrierIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CarrierIp
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The customer-owned IP address associated with the network interface.
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput) CustomerOwnedIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CustomerOwnedIp
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The ID of the owner of the Elastic IP address.
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput) IpOwnerKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation) *string {
+		if v == nil {
+			return nil
+		}
+		return v.IpOwnerKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The public DNS name.
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput) PublicDnsName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PublicDnsName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The public IP address or Elastic IP address bound to the network interface.
+func (o AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput) PublicIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2NetworkInterfacePrivateIpAddressAssociation) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PublicIp
+	}).(pulumi.StringPtrOutput)
+}
+
+type AssetAwsEc2NetworkInterfaceSecurityGroup struct {
+	// (Updatable) The ID of the security group.
+	GroupKey *string `pulumi:"groupKey"`
+	// (Updatable) The name of the security group.
+	GroupName *string `pulumi:"groupName"`
+}
+
+// AssetAwsEc2NetworkInterfaceSecurityGroupInput is an input type that accepts AssetAwsEc2NetworkInterfaceSecurityGroupArgs and AssetAwsEc2NetworkInterfaceSecurityGroupOutput values.
+// You can construct a concrete instance of `AssetAwsEc2NetworkInterfaceSecurityGroupInput` via:
+//
+//	AssetAwsEc2NetworkInterfaceSecurityGroupArgs{...}
+type AssetAwsEc2NetworkInterfaceSecurityGroupInput interface {
+	pulumi.Input
+
+	ToAssetAwsEc2NetworkInterfaceSecurityGroupOutput() AssetAwsEc2NetworkInterfaceSecurityGroupOutput
+	ToAssetAwsEc2NetworkInterfaceSecurityGroupOutputWithContext(context.Context) AssetAwsEc2NetworkInterfaceSecurityGroupOutput
+}
+
+type AssetAwsEc2NetworkInterfaceSecurityGroupArgs struct {
+	// (Updatable) The ID of the security group.
+	GroupKey pulumi.StringPtrInput `pulumi:"groupKey"`
+	// (Updatable) The name of the security group.
+	GroupName pulumi.StringPtrInput `pulumi:"groupName"`
+}
+
+func (AssetAwsEc2NetworkInterfaceSecurityGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEc2NetworkInterfaceSecurityGroup)(nil)).Elem()
+}
+
+func (i AssetAwsEc2NetworkInterfaceSecurityGroupArgs) ToAssetAwsEc2NetworkInterfaceSecurityGroupOutput() AssetAwsEc2NetworkInterfaceSecurityGroupOutput {
+	return i.ToAssetAwsEc2NetworkInterfaceSecurityGroupOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEc2NetworkInterfaceSecurityGroupArgs) ToAssetAwsEc2NetworkInterfaceSecurityGroupOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfaceSecurityGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2NetworkInterfaceSecurityGroupOutput)
+}
+
+// AssetAwsEc2NetworkInterfaceSecurityGroupArrayInput is an input type that accepts AssetAwsEc2NetworkInterfaceSecurityGroupArray and AssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput values.
+// You can construct a concrete instance of `AssetAwsEc2NetworkInterfaceSecurityGroupArrayInput` via:
+//
+//	AssetAwsEc2NetworkInterfaceSecurityGroupArray{ AssetAwsEc2NetworkInterfaceSecurityGroupArgs{...} }
+type AssetAwsEc2NetworkInterfaceSecurityGroupArrayInput interface {
+	pulumi.Input
+
+	ToAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput() AssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput
+	ToAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutputWithContext(context.Context) AssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput
+}
+
+type AssetAwsEc2NetworkInterfaceSecurityGroupArray []AssetAwsEc2NetworkInterfaceSecurityGroupInput
+
+func (AssetAwsEc2NetworkInterfaceSecurityGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AssetAwsEc2NetworkInterfaceSecurityGroup)(nil)).Elem()
+}
+
+func (i AssetAwsEc2NetworkInterfaceSecurityGroupArray) ToAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput() AssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput {
+	return i.ToAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEc2NetworkInterfaceSecurityGroupArray) ToAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput)
+}
+
+type AssetAwsEc2NetworkInterfaceSecurityGroupOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEc2NetworkInterfaceSecurityGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEc2NetworkInterfaceSecurityGroup)(nil)).Elem()
+}
+
+func (o AssetAwsEc2NetworkInterfaceSecurityGroupOutput) ToAssetAwsEc2NetworkInterfaceSecurityGroupOutput() AssetAwsEc2NetworkInterfaceSecurityGroupOutput {
+	return o
+}
+
+func (o AssetAwsEc2NetworkInterfaceSecurityGroupOutput) ToAssetAwsEc2NetworkInterfaceSecurityGroupOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfaceSecurityGroupOutput {
+	return o
+}
+
+// (Updatable) The ID of the security group.
+func (o AssetAwsEc2NetworkInterfaceSecurityGroupOutput) GroupKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterfaceSecurityGroup) *string { return v.GroupKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the security group.
+func (o AssetAwsEc2NetworkInterfaceSecurityGroupOutput) GroupName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2NetworkInterfaceSecurityGroup) *string { return v.GroupName }).(pulumi.StringPtrOutput)
+}
+
+type AssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AssetAwsEc2NetworkInterfaceSecurityGroup)(nil)).Elem()
+}
+
+func (o AssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput) ToAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput() AssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput {
+	return o
+}
+
+func (o AssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput) ToAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutputWithContext(ctx context.Context) AssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput {
+	return o
+}
+
+func (o AssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput) Index(i pulumi.IntInput) AssetAwsEc2NetworkInterfaceSecurityGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AssetAwsEc2NetworkInterfaceSecurityGroup {
+		return vs[0].([]AssetAwsEc2NetworkInterfaceSecurityGroup)[vs[1].(int)]
+	}).(AssetAwsEc2NetworkInterfaceSecurityGroupOutput)
+}
+
+type AssetAwsEc2Placement struct {
+	// (Updatable) The affinity setting for the instance on the Dedicated Host.
+	Affinity *string `pulumi:"affinity"`
+	// (Updatable) The Availability Zone of the instance.
+	AvailabilityZone *string `pulumi:"availabilityZone"`
+	// (Updatable) The name of the placement group the instance is in.
+	GroupName *string `pulumi:"groupName"`
+	// (Updatable) The ID of the Dedicated Host on which the instance resides.
+	HostKey *string `pulumi:"hostKey"`
+	// (Updatable) The ARN of the host resource group in which to launch the instances.
+	HostResourceGroupArn *string `pulumi:"hostResourceGroupArn"`
+	// (Updatable) The number of the partition that the instance is in.
+	PartitionNumber *int `pulumi:"partitionNumber"`
+	// (Updatable) Reserved for future use.
+	SpreadDomain *string `pulumi:"spreadDomain"`
+	// (Updatable) The tenancy of the instance (if the instance is running in a VPC).
+	Tenancy *string `pulumi:"tenancy"`
+}
+
+// AssetAwsEc2PlacementInput is an input type that accepts AssetAwsEc2PlacementArgs and AssetAwsEc2PlacementOutput values.
+// You can construct a concrete instance of `AssetAwsEc2PlacementInput` via:
+//
+//	AssetAwsEc2PlacementArgs{...}
+type AssetAwsEc2PlacementInput interface {
+	pulumi.Input
+
+	ToAssetAwsEc2PlacementOutput() AssetAwsEc2PlacementOutput
+	ToAssetAwsEc2PlacementOutputWithContext(context.Context) AssetAwsEc2PlacementOutput
+}
+
+type AssetAwsEc2PlacementArgs struct {
+	// (Updatable) The affinity setting for the instance on the Dedicated Host.
+	Affinity pulumi.StringPtrInput `pulumi:"affinity"`
+	// (Updatable) The Availability Zone of the instance.
+	AvailabilityZone pulumi.StringPtrInput `pulumi:"availabilityZone"`
+	// (Updatable) The name of the placement group the instance is in.
+	GroupName pulumi.StringPtrInput `pulumi:"groupName"`
+	// (Updatable) The ID of the Dedicated Host on which the instance resides.
+	HostKey pulumi.StringPtrInput `pulumi:"hostKey"`
+	// (Updatable) The ARN of the host resource group in which to launch the instances.
+	HostResourceGroupArn pulumi.StringPtrInput `pulumi:"hostResourceGroupArn"`
+	// (Updatable) The number of the partition that the instance is in.
+	PartitionNumber pulumi.IntPtrInput `pulumi:"partitionNumber"`
+	// (Updatable) Reserved for future use.
+	SpreadDomain pulumi.StringPtrInput `pulumi:"spreadDomain"`
+	// (Updatable) The tenancy of the instance (if the instance is running in a VPC).
+	Tenancy pulumi.StringPtrInput `pulumi:"tenancy"`
+}
+
+func (AssetAwsEc2PlacementArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEc2Placement)(nil)).Elem()
+}
+
+func (i AssetAwsEc2PlacementArgs) ToAssetAwsEc2PlacementOutput() AssetAwsEc2PlacementOutput {
+	return i.ToAssetAwsEc2PlacementOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEc2PlacementArgs) ToAssetAwsEc2PlacementOutputWithContext(ctx context.Context) AssetAwsEc2PlacementOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2PlacementOutput)
+}
+
+func (i AssetAwsEc2PlacementArgs) ToAssetAwsEc2PlacementPtrOutput() AssetAwsEc2PlacementPtrOutput {
+	return i.ToAssetAwsEc2PlacementPtrOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEc2PlacementArgs) ToAssetAwsEc2PlacementPtrOutputWithContext(ctx context.Context) AssetAwsEc2PlacementPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2PlacementOutput).ToAssetAwsEc2PlacementPtrOutputWithContext(ctx)
+}
+
+// AssetAwsEc2PlacementPtrInput is an input type that accepts AssetAwsEc2PlacementArgs, AssetAwsEc2PlacementPtr and AssetAwsEc2PlacementPtrOutput values.
+// You can construct a concrete instance of `AssetAwsEc2PlacementPtrInput` via:
+//
+//	        AssetAwsEc2PlacementArgs{...}
+//
+//	or:
+//
+//	        nil
+type AssetAwsEc2PlacementPtrInput interface {
+	pulumi.Input
+
+	ToAssetAwsEc2PlacementPtrOutput() AssetAwsEc2PlacementPtrOutput
+	ToAssetAwsEc2PlacementPtrOutputWithContext(context.Context) AssetAwsEc2PlacementPtrOutput
+}
+
+type assetAwsEc2PlacementPtrType AssetAwsEc2PlacementArgs
+
+func AssetAwsEc2PlacementPtr(v *AssetAwsEc2PlacementArgs) AssetAwsEc2PlacementPtrInput {
+	return (*assetAwsEc2PlacementPtrType)(v)
+}
+
+func (*assetAwsEc2PlacementPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AssetAwsEc2Placement)(nil)).Elem()
+}
+
+func (i *assetAwsEc2PlacementPtrType) ToAssetAwsEc2PlacementPtrOutput() AssetAwsEc2PlacementPtrOutput {
+	return i.ToAssetAwsEc2PlacementPtrOutputWithContext(context.Background())
+}
+
+func (i *assetAwsEc2PlacementPtrType) ToAssetAwsEc2PlacementPtrOutputWithContext(ctx context.Context) AssetAwsEc2PlacementPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2PlacementPtrOutput)
+}
+
+type AssetAwsEc2PlacementOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEc2PlacementOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEc2Placement)(nil)).Elem()
+}
+
+func (o AssetAwsEc2PlacementOutput) ToAssetAwsEc2PlacementOutput() AssetAwsEc2PlacementOutput {
+	return o
+}
+
+func (o AssetAwsEc2PlacementOutput) ToAssetAwsEc2PlacementOutputWithContext(ctx context.Context) AssetAwsEc2PlacementOutput {
+	return o
+}
+
+func (o AssetAwsEc2PlacementOutput) ToAssetAwsEc2PlacementPtrOutput() AssetAwsEc2PlacementPtrOutput {
+	return o.ToAssetAwsEc2PlacementPtrOutputWithContext(context.Background())
+}
+
+func (o AssetAwsEc2PlacementOutput) ToAssetAwsEc2PlacementPtrOutputWithContext(ctx context.Context) AssetAwsEc2PlacementPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AssetAwsEc2Placement) *AssetAwsEc2Placement {
+		return &v
+	}).(AssetAwsEc2PlacementPtrOutput)
+}
+
+// (Updatable) The affinity setting for the instance on the Dedicated Host.
+func (o AssetAwsEc2PlacementOutput) Affinity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2Placement) *string { return v.Affinity }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Availability Zone of the instance.
+func (o AssetAwsEc2PlacementOutput) AvailabilityZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2Placement) *string { return v.AvailabilityZone }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the placement group the instance is in.
+func (o AssetAwsEc2PlacementOutput) GroupName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2Placement) *string { return v.GroupName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The ID of the Dedicated Host on which the instance resides.
+func (o AssetAwsEc2PlacementOutput) HostKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2Placement) *string { return v.HostKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The ARN of the host resource group in which to launch the instances.
+func (o AssetAwsEc2PlacementOutput) HostResourceGroupArn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2Placement) *string { return v.HostResourceGroupArn }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The number of the partition that the instance is in.
+func (o AssetAwsEc2PlacementOutput) PartitionNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2Placement) *int { return v.PartitionNumber }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Reserved for future use.
+func (o AssetAwsEc2PlacementOutput) SpreadDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2Placement) *string { return v.SpreadDomain }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The tenancy of the instance (if the instance is running in a VPC).
+func (o AssetAwsEc2PlacementOutput) Tenancy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2Placement) *string { return v.Tenancy }).(pulumi.StringPtrOutput)
+}
+
+type AssetAwsEc2PlacementPtrOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEc2PlacementPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AssetAwsEc2Placement)(nil)).Elem()
+}
+
+func (o AssetAwsEc2PlacementPtrOutput) ToAssetAwsEc2PlacementPtrOutput() AssetAwsEc2PlacementPtrOutput {
+	return o
+}
+
+func (o AssetAwsEc2PlacementPtrOutput) ToAssetAwsEc2PlacementPtrOutputWithContext(ctx context.Context) AssetAwsEc2PlacementPtrOutput {
+	return o
+}
+
+func (o AssetAwsEc2PlacementPtrOutput) Elem() AssetAwsEc2PlacementOutput {
+	return o.ApplyT(func(v *AssetAwsEc2Placement) AssetAwsEc2Placement {
+		if v != nil {
+			return *v
+		}
+		var ret AssetAwsEc2Placement
+		return ret
+	}).(AssetAwsEc2PlacementOutput)
+}
+
+// (Updatable) The affinity setting for the instance on the Dedicated Host.
+func (o AssetAwsEc2PlacementPtrOutput) Affinity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2Placement) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Affinity
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Availability Zone of the instance.
+func (o AssetAwsEc2PlacementPtrOutput) AvailabilityZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2Placement) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AvailabilityZone
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the placement group the instance is in.
+func (o AssetAwsEc2PlacementPtrOutput) GroupName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2Placement) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GroupName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The ID of the Dedicated Host on which the instance resides.
+func (o AssetAwsEc2PlacementPtrOutput) HostKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2Placement) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HostKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The ARN of the host resource group in which to launch the instances.
+func (o AssetAwsEc2PlacementPtrOutput) HostResourceGroupArn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2Placement) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HostResourceGroupArn
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The number of the partition that the instance is in.
+func (o AssetAwsEc2PlacementPtrOutput) PartitionNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2Placement) *int {
+		if v == nil {
+			return nil
+		}
+		return v.PartitionNumber
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Reserved for future use.
+func (o AssetAwsEc2PlacementPtrOutput) SpreadDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2Placement) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SpreadDomain
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The tenancy of the instance (if the instance is running in a VPC).
+func (o AssetAwsEc2PlacementPtrOutput) Tenancy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2Placement) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Tenancy
+	}).(pulumi.StringPtrOutput)
+}
+
+type AssetAwsEc2SecurityGroup struct {
+	// (Updatable) The ID of the security group.
+	GroupKey *string `pulumi:"groupKey"`
+	// (Updatable) The name of the security group.
+	GroupName *string `pulumi:"groupName"`
+}
+
+// AssetAwsEc2SecurityGroupInput is an input type that accepts AssetAwsEc2SecurityGroupArgs and AssetAwsEc2SecurityGroupOutput values.
+// You can construct a concrete instance of `AssetAwsEc2SecurityGroupInput` via:
+//
+//	AssetAwsEc2SecurityGroupArgs{...}
+type AssetAwsEc2SecurityGroupInput interface {
+	pulumi.Input
+
+	ToAssetAwsEc2SecurityGroupOutput() AssetAwsEc2SecurityGroupOutput
+	ToAssetAwsEc2SecurityGroupOutputWithContext(context.Context) AssetAwsEc2SecurityGroupOutput
+}
+
+type AssetAwsEc2SecurityGroupArgs struct {
+	// (Updatable) The ID of the security group.
+	GroupKey pulumi.StringPtrInput `pulumi:"groupKey"`
+	// (Updatable) The name of the security group.
+	GroupName pulumi.StringPtrInput `pulumi:"groupName"`
+}
+
+func (AssetAwsEc2SecurityGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEc2SecurityGroup)(nil)).Elem()
+}
+
+func (i AssetAwsEc2SecurityGroupArgs) ToAssetAwsEc2SecurityGroupOutput() AssetAwsEc2SecurityGroupOutput {
+	return i.ToAssetAwsEc2SecurityGroupOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEc2SecurityGroupArgs) ToAssetAwsEc2SecurityGroupOutputWithContext(ctx context.Context) AssetAwsEc2SecurityGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2SecurityGroupOutput)
+}
+
+// AssetAwsEc2SecurityGroupArrayInput is an input type that accepts AssetAwsEc2SecurityGroupArray and AssetAwsEc2SecurityGroupArrayOutput values.
+// You can construct a concrete instance of `AssetAwsEc2SecurityGroupArrayInput` via:
+//
+//	AssetAwsEc2SecurityGroupArray{ AssetAwsEc2SecurityGroupArgs{...} }
+type AssetAwsEc2SecurityGroupArrayInput interface {
+	pulumi.Input
+
+	ToAssetAwsEc2SecurityGroupArrayOutput() AssetAwsEc2SecurityGroupArrayOutput
+	ToAssetAwsEc2SecurityGroupArrayOutputWithContext(context.Context) AssetAwsEc2SecurityGroupArrayOutput
+}
+
+type AssetAwsEc2SecurityGroupArray []AssetAwsEc2SecurityGroupInput
+
+func (AssetAwsEc2SecurityGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AssetAwsEc2SecurityGroup)(nil)).Elem()
+}
+
+func (i AssetAwsEc2SecurityGroupArray) ToAssetAwsEc2SecurityGroupArrayOutput() AssetAwsEc2SecurityGroupArrayOutput {
+	return i.ToAssetAwsEc2SecurityGroupArrayOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEc2SecurityGroupArray) ToAssetAwsEc2SecurityGroupArrayOutputWithContext(ctx context.Context) AssetAwsEc2SecurityGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2SecurityGroupArrayOutput)
+}
+
+type AssetAwsEc2SecurityGroupOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEc2SecurityGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEc2SecurityGroup)(nil)).Elem()
+}
+
+func (o AssetAwsEc2SecurityGroupOutput) ToAssetAwsEc2SecurityGroupOutput() AssetAwsEc2SecurityGroupOutput {
+	return o
+}
+
+func (o AssetAwsEc2SecurityGroupOutput) ToAssetAwsEc2SecurityGroupOutputWithContext(ctx context.Context) AssetAwsEc2SecurityGroupOutput {
+	return o
+}
+
+// (Updatable) The ID of the security group.
+func (o AssetAwsEc2SecurityGroupOutput) GroupKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2SecurityGroup) *string { return v.GroupKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the security group.
+func (o AssetAwsEc2SecurityGroupOutput) GroupName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2SecurityGroup) *string { return v.GroupName }).(pulumi.StringPtrOutput)
+}
+
+type AssetAwsEc2SecurityGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEc2SecurityGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AssetAwsEc2SecurityGroup)(nil)).Elem()
+}
+
+func (o AssetAwsEc2SecurityGroupArrayOutput) ToAssetAwsEc2SecurityGroupArrayOutput() AssetAwsEc2SecurityGroupArrayOutput {
+	return o
+}
+
+func (o AssetAwsEc2SecurityGroupArrayOutput) ToAssetAwsEc2SecurityGroupArrayOutputWithContext(ctx context.Context) AssetAwsEc2SecurityGroupArrayOutput {
+	return o
+}
+
+func (o AssetAwsEc2SecurityGroupArrayOutput) Index(i pulumi.IntInput) AssetAwsEc2SecurityGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AssetAwsEc2SecurityGroup {
+		return vs[0].([]AssetAwsEc2SecurityGroup)[vs[1].(int)]
+	}).(AssetAwsEc2SecurityGroupOutput)
+}
+
+type AssetAwsEc2State struct {
+	// (Updatable) The state of the instance as a 16-bit unsigned integer.
+	Code *int `pulumi:"code"`
+	// (Updatable) The current state of the instance.
+	Name *string `pulumi:"name"`
+}
+
+// AssetAwsEc2StateInput is an input type that accepts AssetAwsEc2StateArgs and AssetAwsEc2StateOutput values.
+// You can construct a concrete instance of `AssetAwsEc2StateInput` via:
+//
+//	AssetAwsEc2StateArgs{...}
+type AssetAwsEc2StateInput interface {
+	pulumi.Input
+
+	ToAssetAwsEc2StateOutput() AssetAwsEc2StateOutput
+	ToAssetAwsEc2StateOutputWithContext(context.Context) AssetAwsEc2StateOutput
+}
+
+type AssetAwsEc2StateArgs struct {
+	// (Updatable) The state of the instance as a 16-bit unsigned integer.
+	Code pulumi.IntPtrInput `pulumi:"code"`
+	// (Updatable) The current state of the instance.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+}
+
+func (AssetAwsEc2StateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEc2State)(nil)).Elem()
+}
+
+func (i AssetAwsEc2StateArgs) ToAssetAwsEc2StateOutput() AssetAwsEc2StateOutput {
+	return i.ToAssetAwsEc2StateOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEc2StateArgs) ToAssetAwsEc2StateOutputWithContext(ctx context.Context) AssetAwsEc2StateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2StateOutput)
+}
+
+func (i AssetAwsEc2StateArgs) ToAssetAwsEc2StatePtrOutput() AssetAwsEc2StatePtrOutput {
+	return i.ToAssetAwsEc2StatePtrOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEc2StateArgs) ToAssetAwsEc2StatePtrOutputWithContext(ctx context.Context) AssetAwsEc2StatePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2StateOutput).ToAssetAwsEc2StatePtrOutputWithContext(ctx)
+}
+
+// AssetAwsEc2StatePtrInput is an input type that accepts AssetAwsEc2StateArgs, AssetAwsEc2StatePtr and AssetAwsEc2StatePtrOutput values.
+// You can construct a concrete instance of `AssetAwsEc2StatePtrInput` via:
+//
+//	        AssetAwsEc2StateArgs{...}
+//
+//	or:
+//
+//	        nil
+type AssetAwsEc2StatePtrInput interface {
+	pulumi.Input
+
+	ToAssetAwsEc2StatePtrOutput() AssetAwsEc2StatePtrOutput
+	ToAssetAwsEc2StatePtrOutputWithContext(context.Context) AssetAwsEc2StatePtrOutput
+}
+
+type assetAwsEc2StatePtrType AssetAwsEc2StateArgs
+
+func AssetAwsEc2StatePtr(v *AssetAwsEc2StateArgs) AssetAwsEc2StatePtrInput {
+	return (*assetAwsEc2StatePtrType)(v)
+}
+
+func (*assetAwsEc2StatePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AssetAwsEc2State)(nil)).Elem()
+}
+
+func (i *assetAwsEc2StatePtrType) ToAssetAwsEc2StatePtrOutput() AssetAwsEc2StatePtrOutput {
+	return i.ToAssetAwsEc2StatePtrOutputWithContext(context.Background())
+}
+
+func (i *assetAwsEc2StatePtrType) ToAssetAwsEc2StatePtrOutputWithContext(ctx context.Context) AssetAwsEc2StatePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2StatePtrOutput)
+}
+
+type AssetAwsEc2StateOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEc2StateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEc2State)(nil)).Elem()
+}
+
+func (o AssetAwsEc2StateOutput) ToAssetAwsEc2StateOutput() AssetAwsEc2StateOutput {
+	return o
+}
+
+func (o AssetAwsEc2StateOutput) ToAssetAwsEc2StateOutputWithContext(ctx context.Context) AssetAwsEc2StateOutput {
+	return o
+}
+
+func (o AssetAwsEc2StateOutput) ToAssetAwsEc2StatePtrOutput() AssetAwsEc2StatePtrOutput {
+	return o.ToAssetAwsEc2StatePtrOutputWithContext(context.Background())
+}
+
+func (o AssetAwsEc2StateOutput) ToAssetAwsEc2StatePtrOutputWithContext(ctx context.Context) AssetAwsEc2StatePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AssetAwsEc2State) *AssetAwsEc2State {
+		return &v
+	}).(AssetAwsEc2StatePtrOutput)
+}
+
+// (Updatable) The state of the instance as a 16-bit unsigned integer.
+func (o AssetAwsEc2StateOutput) Code() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2State) *int { return v.Code }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The current state of the instance.
+func (o AssetAwsEc2StateOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2State) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+type AssetAwsEc2StatePtrOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEc2StatePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AssetAwsEc2State)(nil)).Elem()
+}
+
+func (o AssetAwsEc2StatePtrOutput) ToAssetAwsEc2StatePtrOutput() AssetAwsEc2StatePtrOutput {
+	return o
+}
+
+func (o AssetAwsEc2StatePtrOutput) ToAssetAwsEc2StatePtrOutputWithContext(ctx context.Context) AssetAwsEc2StatePtrOutput {
+	return o
+}
+
+func (o AssetAwsEc2StatePtrOutput) Elem() AssetAwsEc2StateOutput {
+	return o.ApplyT(func(v *AssetAwsEc2State) AssetAwsEc2State {
+		if v != nil {
+			return *v
+		}
+		var ret AssetAwsEc2State
+		return ret
+	}).(AssetAwsEc2StateOutput)
+}
+
+// (Updatable) The state of the instance as a 16-bit unsigned integer.
+func (o AssetAwsEc2StatePtrOutput) Code() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2State) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Code
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The current state of the instance.
+func (o AssetAwsEc2StatePtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2State) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+type AssetAwsEc2Tag struct {
+	// (Updatable) The key of the tag.
+	Key *string `pulumi:"key"`
+	// (Updatable) The value of the tag.
+	Value *string `pulumi:"value"`
+}
+
+// AssetAwsEc2TagInput is an input type that accepts AssetAwsEc2TagArgs and AssetAwsEc2TagOutput values.
+// You can construct a concrete instance of `AssetAwsEc2TagInput` via:
+//
+//	AssetAwsEc2TagArgs{...}
+type AssetAwsEc2TagInput interface {
+	pulumi.Input
+
+	ToAssetAwsEc2TagOutput() AssetAwsEc2TagOutput
+	ToAssetAwsEc2TagOutputWithContext(context.Context) AssetAwsEc2TagOutput
+}
+
+type AssetAwsEc2TagArgs struct {
+	// (Updatable) The key of the tag.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// (Updatable) The value of the tag.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (AssetAwsEc2TagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEc2Tag)(nil)).Elem()
+}
+
+func (i AssetAwsEc2TagArgs) ToAssetAwsEc2TagOutput() AssetAwsEc2TagOutput {
+	return i.ToAssetAwsEc2TagOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEc2TagArgs) ToAssetAwsEc2TagOutputWithContext(ctx context.Context) AssetAwsEc2TagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2TagOutput)
+}
+
+// AssetAwsEc2TagArrayInput is an input type that accepts AssetAwsEc2TagArray and AssetAwsEc2TagArrayOutput values.
+// You can construct a concrete instance of `AssetAwsEc2TagArrayInput` via:
+//
+//	AssetAwsEc2TagArray{ AssetAwsEc2TagArgs{...} }
+type AssetAwsEc2TagArrayInput interface {
+	pulumi.Input
+
+	ToAssetAwsEc2TagArrayOutput() AssetAwsEc2TagArrayOutput
+	ToAssetAwsEc2TagArrayOutputWithContext(context.Context) AssetAwsEc2TagArrayOutput
+}
+
+type AssetAwsEc2TagArray []AssetAwsEc2TagInput
+
+func (AssetAwsEc2TagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AssetAwsEc2Tag)(nil)).Elem()
+}
+
+func (i AssetAwsEc2TagArray) ToAssetAwsEc2TagArrayOutput() AssetAwsEc2TagArrayOutput {
+	return i.ToAssetAwsEc2TagArrayOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEc2TagArray) ToAssetAwsEc2TagArrayOutputWithContext(ctx context.Context) AssetAwsEc2TagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2TagArrayOutput)
+}
+
+type AssetAwsEc2TagOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEc2TagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEc2Tag)(nil)).Elem()
+}
+
+func (o AssetAwsEc2TagOutput) ToAssetAwsEc2TagOutput() AssetAwsEc2TagOutput {
+	return o
+}
+
+func (o AssetAwsEc2TagOutput) ToAssetAwsEc2TagOutputWithContext(ctx context.Context) AssetAwsEc2TagOutput {
+	return o
+}
+
+// (Updatable) The key of the tag.
+func (o AssetAwsEc2TagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2Tag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The value of the tag.
+func (o AssetAwsEc2TagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2Tag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type AssetAwsEc2TagArrayOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEc2TagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AssetAwsEc2Tag)(nil)).Elem()
+}
+
+func (o AssetAwsEc2TagArrayOutput) ToAssetAwsEc2TagArrayOutput() AssetAwsEc2TagArrayOutput {
+	return o
+}
+
+func (o AssetAwsEc2TagArrayOutput) ToAssetAwsEc2TagArrayOutputWithContext(ctx context.Context) AssetAwsEc2TagArrayOutput {
+	return o
+}
+
+func (o AssetAwsEc2TagArrayOutput) Index(i pulumi.IntInput) AssetAwsEc2TagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AssetAwsEc2Tag {
+		return vs[0].([]AssetAwsEc2Tag)[vs[1].(int)]
+	}).(AssetAwsEc2TagOutput)
+}
+
+type AssetAwsEc2cost struct {
+	// (Updatable) Monthly costs for maintenance of this asset.
+	Amount *float64 `pulumi:"amount"`
+	// (Updatable) Currency code
+	CurrencyCode *string `pulumi:"currencyCode"`
+}
+
+// AssetAwsEc2costInput is an input type that accepts AssetAwsEc2costArgs and AssetAwsEc2costOutput values.
+// You can construct a concrete instance of `AssetAwsEc2costInput` via:
+//
+//	AssetAwsEc2costArgs{...}
+type AssetAwsEc2costInput interface {
+	pulumi.Input
+
+	ToAssetAwsEc2costOutput() AssetAwsEc2costOutput
+	ToAssetAwsEc2costOutputWithContext(context.Context) AssetAwsEc2costOutput
+}
+
+type AssetAwsEc2costArgs struct {
+	// (Updatable) Monthly costs for maintenance of this asset.
+	Amount pulumi.Float64PtrInput `pulumi:"amount"`
+	// (Updatable) Currency code
+	CurrencyCode pulumi.StringPtrInput `pulumi:"currencyCode"`
+}
+
+func (AssetAwsEc2costArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEc2cost)(nil)).Elem()
+}
+
+func (i AssetAwsEc2costArgs) ToAssetAwsEc2costOutput() AssetAwsEc2costOutput {
+	return i.ToAssetAwsEc2costOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEc2costArgs) ToAssetAwsEc2costOutputWithContext(ctx context.Context) AssetAwsEc2costOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2costOutput)
+}
+
+func (i AssetAwsEc2costArgs) ToAssetAwsEc2costPtrOutput() AssetAwsEc2costPtrOutput {
+	return i.ToAssetAwsEc2costPtrOutputWithContext(context.Background())
+}
+
+func (i AssetAwsEc2costArgs) ToAssetAwsEc2costPtrOutputWithContext(ctx context.Context) AssetAwsEc2costPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2costOutput).ToAssetAwsEc2costPtrOutputWithContext(ctx)
+}
+
+// AssetAwsEc2costPtrInput is an input type that accepts AssetAwsEc2costArgs, AssetAwsEc2costPtr and AssetAwsEc2costPtrOutput values.
+// You can construct a concrete instance of `AssetAwsEc2costPtrInput` via:
+//
+//	        AssetAwsEc2costArgs{...}
+//
+//	or:
+//
+//	        nil
+type AssetAwsEc2costPtrInput interface {
+	pulumi.Input
+
+	ToAssetAwsEc2costPtrOutput() AssetAwsEc2costPtrOutput
+	ToAssetAwsEc2costPtrOutputWithContext(context.Context) AssetAwsEc2costPtrOutput
+}
+
+type assetAwsEc2costPtrType AssetAwsEc2costArgs
+
+func AssetAwsEc2costPtr(v *AssetAwsEc2costArgs) AssetAwsEc2costPtrInput {
+	return (*assetAwsEc2costPtrType)(v)
+}
+
+func (*assetAwsEc2costPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AssetAwsEc2cost)(nil)).Elem()
+}
+
+func (i *assetAwsEc2costPtrType) ToAssetAwsEc2costPtrOutput() AssetAwsEc2costPtrOutput {
+	return i.ToAssetAwsEc2costPtrOutputWithContext(context.Background())
+}
+
+func (i *assetAwsEc2costPtrType) ToAssetAwsEc2costPtrOutputWithContext(ctx context.Context) AssetAwsEc2costPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssetAwsEc2costPtrOutput)
+}
+
+type AssetAwsEc2costOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEc2costOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssetAwsEc2cost)(nil)).Elem()
+}
+
+func (o AssetAwsEc2costOutput) ToAssetAwsEc2costOutput() AssetAwsEc2costOutput {
+	return o
+}
+
+func (o AssetAwsEc2costOutput) ToAssetAwsEc2costOutputWithContext(ctx context.Context) AssetAwsEc2costOutput {
+	return o
+}
+
+func (o AssetAwsEc2costOutput) ToAssetAwsEc2costPtrOutput() AssetAwsEc2costPtrOutput {
+	return o.ToAssetAwsEc2costPtrOutputWithContext(context.Background())
+}
+
+func (o AssetAwsEc2costOutput) ToAssetAwsEc2costPtrOutputWithContext(ctx context.Context) AssetAwsEc2costPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AssetAwsEc2cost) *AssetAwsEc2cost {
+		return &v
+	}).(AssetAwsEc2costPtrOutput)
+}
+
+// (Updatable) Monthly costs for maintenance of this asset.
+func (o AssetAwsEc2costOutput) Amount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2cost) *float64 { return v.Amount }).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) Currency code
+func (o AssetAwsEc2costOutput) CurrencyCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssetAwsEc2cost) *string { return v.CurrencyCode }).(pulumi.StringPtrOutput)
+}
+
+type AssetAwsEc2costPtrOutput struct{ *pulumi.OutputState }
+
+func (AssetAwsEc2costPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AssetAwsEc2cost)(nil)).Elem()
+}
+
+func (o AssetAwsEc2costPtrOutput) ToAssetAwsEc2costPtrOutput() AssetAwsEc2costPtrOutput {
+	return o
+}
+
+func (o AssetAwsEc2costPtrOutput) ToAssetAwsEc2costPtrOutputWithContext(ctx context.Context) AssetAwsEc2costPtrOutput {
+	return o
+}
+
+func (o AssetAwsEc2costPtrOutput) Elem() AssetAwsEc2costOutput {
+	return o.ApplyT(func(v *AssetAwsEc2cost) AssetAwsEc2cost {
+		if v != nil {
+			return *v
+		}
+		var ret AssetAwsEc2cost
+		return ret
+	}).(AssetAwsEc2costOutput)
+}
+
+// (Updatable) Monthly costs for maintenance of this asset.
+func (o AssetAwsEc2costPtrOutput) Amount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2cost) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.Amount
+	}).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) Currency code
+func (o AssetAwsEc2costPtrOutput) CurrencyCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AssetAwsEc2cost) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CurrencyCode
+	}).(pulumi.StringPtrOutput)
+}
+
 type AssetCompute struct {
 	// (Updatable) Number of connected networks.
 	ConnectedNetworks *int `pulumi:"connectedNetworks"`
@@ -854,6 +4232,8 @@ func (o AssetComputePtrOutput) ThreadsPerCoreCount() pulumi.IntPtrOutput {
 type AssetComputeDisk struct {
 	// (Updatable) Order of boot volumes.
 	BootOrder *int `pulumi:"bootOrder"`
+	// (Updatable) Indicates that CBT (change disk tracking) is enabled for this virtual disk.
+	IsCbtEnabled *bool `pulumi:"isCbtEnabled"`
 	// (Updatable) Location of the boot/data volume.
 	Location *string `pulumi:"location"`
 	// (Updatable) Disk name.
@@ -882,6 +4262,8 @@ type AssetComputeDiskInput interface {
 type AssetComputeDiskArgs struct {
 	// (Updatable) Order of boot volumes.
 	BootOrder pulumi.IntPtrInput `pulumi:"bootOrder"`
+	// (Updatable) Indicates that CBT (change disk tracking) is enabled for this virtual disk.
+	IsCbtEnabled pulumi.BoolPtrInput `pulumi:"isCbtEnabled"`
 	// (Updatable) Location of the boot/data volume.
 	Location pulumi.StringPtrInput `pulumi:"location"`
 	// (Updatable) Disk name.
@@ -950,6 +4332,11 @@ func (o AssetComputeDiskOutput) ToAssetComputeDiskOutputWithContext(ctx context.
 // (Updatable) Order of boot volumes.
 func (o AssetComputeDiskOutput) BootOrder() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AssetComputeDisk) *int { return v.BootOrder }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Indicates that CBT (change disk tracking) is enabled for this virtual disk.
+func (o AssetComputeDiskOutput) IsCbtEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AssetComputeDisk) *bool { return v.IsCbtEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Location of the boot/data volume.
@@ -1724,7 +5111,7 @@ func (o AssetComputeScsiControllerPtrOutput) UnitNumber() pulumi.IntPtrOutput {
 }
 
 type AssetSourceDiscoveryCredentials struct {
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<User>", "password": "example-password" }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ "accessKeyId": "<AccessKey>", "secretAccessKey": "<AccessKeyValue>" }`.
 	SecretId string `pulumi:"secretId"`
 	// (Updatable) Authentication type
 	Type string `pulumi:"type"`
@@ -1742,7 +5129,7 @@ type AssetSourceDiscoveryCredentialsInput interface {
 }
 
 type AssetSourceDiscoveryCredentialsArgs struct {
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<User>", "password": "example-password" }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ "accessKeyId": "<AccessKey>", "secretAccessKey": "<AccessKeyValue>" }`.
 	SecretId pulumi.StringInput `pulumi:"secretId"`
 	// (Updatable) Authentication type
 	Type pulumi.StringInput `pulumi:"type"`
@@ -1825,7 +5212,7 @@ func (o AssetSourceDiscoveryCredentialsOutput) ToAssetSourceDiscoveryCredentials
 	}).(AssetSourceDiscoveryCredentialsPtrOutput)
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<User>", "password": "example-password" }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ "accessKeyId": "<AccessKey>", "secretAccessKey": "<AccessKeyValue>" }`.
 func (o AssetSourceDiscoveryCredentialsOutput) SecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v AssetSourceDiscoveryCredentials) string { return v.SecretId }).(pulumi.StringOutput)
 }
@@ -1859,7 +5246,7 @@ func (o AssetSourceDiscoveryCredentialsPtrOutput) Elem() AssetSourceDiscoveryCre
 	}).(AssetSourceDiscoveryCredentialsOutput)
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<User>", "password": "example-password" }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ "accessKeyId": "<AccessKey>", "secretAccessKey": "<AccessKeyValue>" }`.
 func (o AssetSourceDiscoveryCredentialsPtrOutput) SecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AssetSourceDiscoveryCredentials) *string {
 		if v == nil {
@@ -1880,7 +5267,7 @@ func (o AssetSourceDiscoveryCredentialsPtrOutput) Type() pulumi.StringPtrOutput 
 }
 
 type AssetSourceReplicationCredentials struct {
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<User>", "password": "example-password" }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ "accessKeyId": "<AccessKey>", "secretAccessKey": "<AccessKeyValue>" }`.
 	SecretId string `pulumi:"secretId"`
 	// (Updatable) Authentication type
 	Type string `pulumi:"type"`
@@ -1898,7 +5285,7 @@ type AssetSourceReplicationCredentialsInput interface {
 }
 
 type AssetSourceReplicationCredentialsArgs struct {
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<User>", "password": "example-password" }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ "accessKeyId": "<AccessKey>", "secretAccessKey": "<AccessKeyValue>" }`.
 	SecretId pulumi.StringInput `pulumi:"secretId"`
 	// (Updatable) Authentication type
 	Type pulumi.StringInput `pulumi:"type"`
@@ -1981,7 +5368,7 @@ func (o AssetSourceReplicationCredentialsOutput) ToAssetSourceReplicationCredent
 	}).(AssetSourceReplicationCredentialsPtrOutput)
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<User>", "password": "example-password" }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ "accessKeyId": "<AccessKey>", "secretAccessKey": "<AccessKeyValue>" }`.
 func (o AssetSourceReplicationCredentialsOutput) SecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v AssetSourceReplicationCredentials) string { return v.SecretId }).(pulumi.StringOutput)
 }
@@ -2015,7 +5402,7 @@ func (o AssetSourceReplicationCredentialsPtrOutput) Elem() AssetSourceReplicatio
 	}).(AssetSourceReplicationCredentialsOutput)
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<User>", "password": "example-password" }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ "accessKeyId": "<AccessKey>", "secretAccessKey": "<AccessKeyValue>" }`.
 func (o AssetSourceReplicationCredentialsPtrOutput) SecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AssetSourceReplicationCredentials) *string {
 		if v == nil {
@@ -4706,6 +8093,2072 @@ func (o GetApplianceImagesFilterArrayOutput) Index(i pulumi.IntInput) GetApplian
 	}).(GetApplianceImagesFilterOutput)
 }
 
+type GetAssetAttachedEbsVolumesCost struct {
+	Amount       float64 `pulumi:"amount"`
+	CurrencyCode string  `pulumi:"currencyCode"`
+}
+
+// GetAssetAttachedEbsVolumesCostInput is an input type that accepts GetAssetAttachedEbsVolumesCostArgs and GetAssetAttachedEbsVolumesCostOutput values.
+// You can construct a concrete instance of `GetAssetAttachedEbsVolumesCostInput` via:
+//
+//	GetAssetAttachedEbsVolumesCostArgs{...}
+type GetAssetAttachedEbsVolumesCostInput interface {
+	pulumi.Input
+
+	ToGetAssetAttachedEbsVolumesCostOutput() GetAssetAttachedEbsVolumesCostOutput
+	ToGetAssetAttachedEbsVolumesCostOutputWithContext(context.Context) GetAssetAttachedEbsVolumesCostOutput
+}
+
+type GetAssetAttachedEbsVolumesCostArgs struct {
+	Amount       pulumi.Float64Input `pulumi:"amount"`
+	CurrencyCode pulumi.StringInput  `pulumi:"currencyCode"`
+}
+
+func (GetAssetAttachedEbsVolumesCostArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAttachedEbsVolumesCost)(nil)).Elem()
+}
+
+func (i GetAssetAttachedEbsVolumesCostArgs) ToGetAssetAttachedEbsVolumesCostOutput() GetAssetAttachedEbsVolumesCostOutput {
+	return i.ToGetAssetAttachedEbsVolumesCostOutputWithContext(context.Background())
+}
+
+func (i GetAssetAttachedEbsVolumesCostArgs) ToGetAssetAttachedEbsVolumesCostOutputWithContext(ctx context.Context) GetAssetAttachedEbsVolumesCostOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAttachedEbsVolumesCostOutput)
+}
+
+// GetAssetAttachedEbsVolumesCostArrayInput is an input type that accepts GetAssetAttachedEbsVolumesCostArray and GetAssetAttachedEbsVolumesCostArrayOutput values.
+// You can construct a concrete instance of `GetAssetAttachedEbsVolumesCostArrayInput` via:
+//
+//	GetAssetAttachedEbsVolumesCostArray{ GetAssetAttachedEbsVolumesCostArgs{...} }
+type GetAssetAttachedEbsVolumesCostArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetAttachedEbsVolumesCostArrayOutput() GetAssetAttachedEbsVolumesCostArrayOutput
+	ToGetAssetAttachedEbsVolumesCostArrayOutputWithContext(context.Context) GetAssetAttachedEbsVolumesCostArrayOutput
+}
+
+type GetAssetAttachedEbsVolumesCostArray []GetAssetAttachedEbsVolumesCostInput
+
+func (GetAssetAttachedEbsVolumesCostArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAttachedEbsVolumesCost)(nil)).Elem()
+}
+
+func (i GetAssetAttachedEbsVolumesCostArray) ToGetAssetAttachedEbsVolumesCostArrayOutput() GetAssetAttachedEbsVolumesCostArrayOutput {
+	return i.ToGetAssetAttachedEbsVolumesCostArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetAttachedEbsVolumesCostArray) ToGetAssetAttachedEbsVolumesCostArrayOutputWithContext(ctx context.Context) GetAssetAttachedEbsVolumesCostArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAttachedEbsVolumesCostArrayOutput)
+}
+
+type GetAssetAttachedEbsVolumesCostOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAttachedEbsVolumesCostOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAttachedEbsVolumesCost)(nil)).Elem()
+}
+
+func (o GetAssetAttachedEbsVolumesCostOutput) ToGetAssetAttachedEbsVolumesCostOutput() GetAssetAttachedEbsVolumesCostOutput {
+	return o
+}
+
+func (o GetAssetAttachedEbsVolumesCostOutput) ToGetAssetAttachedEbsVolumesCostOutputWithContext(ctx context.Context) GetAssetAttachedEbsVolumesCostOutput {
+	return o
+}
+
+func (o GetAssetAttachedEbsVolumesCostOutput) Amount() pulumi.Float64Output {
+	return o.ApplyT(func(v GetAssetAttachedEbsVolumesCost) float64 { return v.Amount }).(pulumi.Float64Output)
+}
+
+func (o GetAssetAttachedEbsVolumesCostOutput) CurrencyCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAttachedEbsVolumesCost) string { return v.CurrencyCode }).(pulumi.StringOutput)
+}
+
+type GetAssetAttachedEbsVolumesCostArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAttachedEbsVolumesCostArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAttachedEbsVolumesCost)(nil)).Elem()
+}
+
+func (o GetAssetAttachedEbsVolumesCostArrayOutput) ToGetAssetAttachedEbsVolumesCostArrayOutput() GetAssetAttachedEbsVolumesCostArrayOutput {
+	return o
+}
+
+func (o GetAssetAttachedEbsVolumesCostArrayOutput) ToGetAssetAttachedEbsVolumesCostArrayOutputWithContext(ctx context.Context) GetAssetAttachedEbsVolumesCostArrayOutput {
+	return o
+}
+
+func (o GetAssetAttachedEbsVolumesCostArrayOutput) Index(i pulumi.IntInput) GetAssetAttachedEbsVolumesCostOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetAttachedEbsVolumesCost {
+		return vs[0].([]GetAssetAttachedEbsVolumesCost)[vs[1].(int)]
+	}).(GetAssetAttachedEbsVolumesCostOutput)
+}
+
+type GetAssetAwsEb struct {
+	Attachments          []GetAssetAwsEbAttachment `pulumi:"attachments"`
+	AvailabilityZone     string                    `pulumi:"availabilityZone"`
+	Iops                 int                       `pulumi:"iops"`
+	IsEncrypted          bool                      `pulumi:"isEncrypted"`
+	IsMultiAttachEnabled bool                      `pulumi:"isMultiAttachEnabled"`
+	SizeInGiBs           int                       `pulumi:"sizeInGiBs"`
+	Status               string                    `pulumi:"status"`
+	Tags                 []GetAssetAwsEbTag        `pulumi:"tags"`
+	Throughput           int                       `pulumi:"throughput"`
+	VolumeKey            string                    `pulumi:"volumeKey"`
+	VolumeType           string                    `pulumi:"volumeType"`
+}
+
+// GetAssetAwsEbInput is an input type that accepts GetAssetAwsEbArgs and GetAssetAwsEbOutput values.
+// You can construct a concrete instance of `GetAssetAwsEbInput` via:
+//
+//	GetAssetAwsEbArgs{...}
+type GetAssetAwsEbInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEbOutput() GetAssetAwsEbOutput
+	ToGetAssetAwsEbOutputWithContext(context.Context) GetAssetAwsEbOutput
+}
+
+type GetAssetAwsEbArgs struct {
+	Attachments          GetAssetAwsEbAttachmentArrayInput `pulumi:"attachments"`
+	AvailabilityZone     pulumi.StringInput                `pulumi:"availabilityZone"`
+	Iops                 pulumi.IntInput                   `pulumi:"iops"`
+	IsEncrypted          pulumi.BoolInput                  `pulumi:"isEncrypted"`
+	IsMultiAttachEnabled pulumi.BoolInput                  `pulumi:"isMultiAttachEnabled"`
+	SizeInGiBs           pulumi.IntInput                   `pulumi:"sizeInGiBs"`
+	Status               pulumi.StringInput                `pulumi:"status"`
+	Tags                 GetAssetAwsEbTagArrayInput        `pulumi:"tags"`
+	Throughput           pulumi.IntInput                   `pulumi:"throughput"`
+	VolumeKey            pulumi.StringInput                `pulumi:"volumeKey"`
+	VolumeType           pulumi.StringInput                `pulumi:"volumeType"`
+}
+
+func (GetAssetAwsEbArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEb)(nil)).Elem()
+}
+
+func (i GetAssetAwsEbArgs) ToGetAssetAwsEbOutput() GetAssetAwsEbOutput {
+	return i.ToGetAssetAwsEbOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEbArgs) ToGetAssetAwsEbOutputWithContext(ctx context.Context) GetAssetAwsEbOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEbOutput)
+}
+
+// GetAssetAwsEbArrayInput is an input type that accepts GetAssetAwsEbArray and GetAssetAwsEbArrayOutput values.
+// You can construct a concrete instance of `GetAssetAwsEbArrayInput` via:
+//
+//	GetAssetAwsEbArray{ GetAssetAwsEbArgs{...} }
+type GetAssetAwsEbArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEbArrayOutput() GetAssetAwsEbArrayOutput
+	ToGetAssetAwsEbArrayOutputWithContext(context.Context) GetAssetAwsEbArrayOutput
+}
+
+type GetAssetAwsEbArray []GetAssetAwsEbInput
+
+func (GetAssetAwsEbArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEb)(nil)).Elem()
+}
+
+func (i GetAssetAwsEbArray) ToGetAssetAwsEbArrayOutput() GetAssetAwsEbArrayOutput {
+	return i.ToGetAssetAwsEbArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEbArray) ToGetAssetAwsEbArrayOutputWithContext(ctx context.Context) GetAssetAwsEbArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEbArrayOutput)
+}
+
+type GetAssetAwsEbOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEbOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEb)(nil)).Elem()
+}
+
+func (o GetAssetAwsEbOutput) ToGetAssetAwsEbOutput() GetAssetAwsEbOutput {
+	return o
+}
+
+func (o GetAssetAwsEbOutput) ToGetAssetAwsEbOutputWithContext(ctx context.Context) GetAssetAwsEbOutput {
+	return o
+}
+
+func (o GetAssetAwsEbOutput) Attachments() GetAssetAwsEbAttachmentArrayOutput {
+	return o.ApplyT(func(v GetAssetAwsEb) []GetAssetAwsEbAttachment { return v.Attachments }).(GetAssetAwsEbAttachmentArrayOutput)
+}
+
+func (o GetAssetAwsEbOutput) AvailabilityZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEb) string { return v.AvailabilityZone }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEbOutput) Iops() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssetAwsEb) int { return v.Iops }).(pulumi.IntOutput)
+}
+
+func (o GetAssetAwsEbOutput) IsEncrypted() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetAwsEb) bool { return v.IsEncrypted }).(pulumi.BoolOutput)
+}
+
+func (o GetAssetAwsEbOutput) IsMultiAttachEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetAwsEb) bool { return v.IsMultiAttachEnabled }).(pulumi.BoolOutput)
+}
+
+func (o GetAssetAwsEbOutput) SizeInGiBs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssetAwsEb) int { return v.SizeInGiBs }).(pulumi.IntOutput)
+}
+
+func (o GetAssetAwsEbOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEb) string { return v.Status }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEbOutput) Tags() GetAssetAwsEbTagArrayOutput {
+	return o.ApplyT(func(v GetAssetAwsEb) []GetAssetAwsEbTag { return v.Tags }).(GetAssetAwsEbTagArrayOutput)
+}
+
+func (o GetAssetAwsEbOutput) Throughput() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssetAwsEb) int { return v.Throughput }).(pulumi.IntOutput)
+}
+
+func (o GetAssetAwsEbOutput) VolumeKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEb) string { return v.VolumeKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEbOutput) VolumeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEb) string { return v.VolumeType }).(pulumi.StringOutput)
+}
+
+type GetAssetAwsEbArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEbArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEb)(nil)).Elem()
+}
+
+func (o GetAssetAwsEbArrayOutput) ToGetAssetAwsEbArrayOutput() GetAssetAwsEbArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEbArrayOutput) ToGetAssetAwsEbArrayOutputWithContext(ctx context.Context) GetAssetAwsEbArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEbArrayOutput) Index(i pulumi.IntInput) GetAssetAwsEbOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetAwsEb {
+		return vs[0].([]GetAssetAwsEb)[vs[1].(int)]
+	}).(GetAssetAwsEbOutput)
+}
+
+type GetAssetAwsEbAttachment struct {
+	Device                string `pulumi:"device"`
+	InstanceKey           string `pulumi:"instanceKey"`
+	IsDeleteOnTermination bool   `pulumi:"isDeleteOnTermination"`
+	Status                string `pulumi:"status"`
+	VolumeKey             string `pulumi:"volumeKey"`
+}
+
+// GetAssetAwsEbAttachmentInput is an input type that accepts GetAssetAwsEbAttachmentArgs and GetAssetAwsEbAttachmentOutput values.
+// You can construct a concrete instance of `GetAssetAwsEbAttachmentInput` via:
+//
+//	GetAssetAwsEbAttachmentArgs{...}
+type GetAssetAwsEbAttachmentInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEbAttachmentOutput() GetAssetAwsEbAttachmentOutput
+	ToGetAssetAwsEbAttachmentOutputWithContext(context.Context) GetAssetAwsEbAttachmentOutput
+}
+
+type GetAssetAwsEbAttachmentArgs struct {
+	Device                pulumi.StringInput `pulumi:"device"`
+	InstanceKey           pulumi.StringInput `pulumi:"instanceKey"`
+	IsDeleteOnTermination pulumi.BoolInput   `pulumi:"isDeleteOnTermination"`
+	Status                pulumi.StringInput `pulumi:"status"`
+	VolumeKey             pulumi.StringInput `pulumi:"volumeKey"`
+}
+
+func (GetAssetAwsEbAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEbAttachment)(nil)).Elem()
+}
+
+func (i GetAssetAwsEbAttachmentArgs) ToGetAssetAwsEbAttachmentOutput() GetAssetAwsEbAttachmentOutput {
+	return i.ToGetAssetAwsEbAttachmentOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEbAttachmentArgs) ToGetAssetAwsEbAttachmentOutputWithContext(ctx context.Context) GetAssetAwsEbAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEbAttachmentOutput)
+}
+
+// GetAssetAwsEbAttachmentArrayInput is an input type that accepts GetAssetAwsEbAttachmentArray and GetAssetAwsEbAttachmentArrayOutput values.
+// You can construct a concrete instance of `GetAssetAwsEbAttachmentArrayInput` via:
+//
+//	GetAssetAwsEbAttachmentArray{ GetAssetAwsEbAttachmentArgs{...} }
+type GetAssetAwsEbAttachmentArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEbAttachmentArrayOutput() GetAssetAwsEbAttachmentArrayOutput
+	ToGetAssetAwsEbAttachmentArrayOutputWithContext(context.Context) GetAssetAwsEbAttachmentArrayOutput
+}
+
+type GetAssetAwsEbAttachmentArray []GetAssetAwsEbAttachmentInput
+
+func (GetAssetAwsEbAttachmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEbAttachment)(nil)).Elem()
+}
+
+func (i GetAssetAwsEbAttachmentArray) ToGetAssetAwsEbAttachmentArrayOutput() GetAssetAwsEbAttachmentArrayOutput {
+	return i.ToGetAssetAwsEbAttachmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEbAttachmentArray) ToGetAssetAwsEbAttachmentArrayOutputWithContext(ctx context.Context) GetAssetAwsEbAttachmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEbAttachmentArrayOutput)
+}
+
+type GetAssetAwsEbAttachmentOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEbAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEbAttachment)(nil)).Elem()
+}
+
+func (o GetAssetAwsEbAttachmentOutput) ToGetAssetAwsEbAttachmentOutput() GetAssetAwsEbAttachmentOutput {
+	return o
+}
+
+func (o GetAssetAwsEbAttachmentOutput) ToGetAssetAwsEbAttachmentOutputWithContext(ctx context.Context) GetAssetAwsEbAttachmentOutput {
+	return o
+}
+
+func (o GetAssetAwsEbAttachmentOutput) Device() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEbAttachment) string { return v.Device }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEbAttachmentOutput) InstanceKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEbAttachment) string { return v.InstanceKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEbAttachmentOutput) IsDeleteOnTermination() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetAwsEbAttachment) bool { return v.IsDeleteOnTermination }).(pulumi.BoolOutput)
+}
+
+func (o GetAssetAwsEbAttachmentOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEbAttachment) string { return v.Status }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEbAttachmentOutput) VolumeKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEbAttachment) string { return v.VolumeKey }).(pulumi.StringOutput)
+}
+
+type GetAssetAwsEbAttachmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEbAttachmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEbAttachment)(nil)).Elem()
+}
+
+func (o GetAssetAwsEbAttachmentArrayOutput) ToGetAssetAwsEbAttachmentArrayOutput() GetAssetAwsEbAttachmentArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEbAttachmentArrayOutput) ToGetAssetAwsEbAttachmentArrayOutputWithContext(ctx context.Context) GetAssetAwsEbAttachmentArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEbAttachmentArrayOutput) Index(i pulumi.IntInput) GetAssetAwsEbAttachmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetAwsEbAttachment {
+		return vs[0].([]GetAssetAwsEbAttachment)[vs[1].(int)]
+	}).(GetAssetAwsEbAttachmentOutput)
+}
+
+type GetAssetAwsEbTag struct {
+	Key   string `pulumi:"key"`
+	Value string `pulumi:"value"`
+}
+
+// GetAssetAwsEbTagInput is an input type that accepts GetAssetAwsEbTagArgs and GetAssetAwsEbTagOutput values.
+// You can construct a concrete instance of `GetAssetAwsEbTagInput` via:
+//
+//	GetAssetAwsEbTagArgs{...}
+type GetAssetAwsEbTagInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEbTagOutput() GetAssetAwsEbTagOutput
+	ToGetAssetAwsEbTagOutputWithContext(context.Context) GetAssetAwsEbTagOutput
+}
+
+type GetAssetAwsEbTagArgs struct {
+	Key   pulumi.StringInput `pulumi:"key"`
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAssetAwsEbTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEbTag)(nil)).Elem()
+}
+
+func (i GetAssetAwsEbTagArgs) ToGetAssetAwsEbTagOutput() GetAssetAwsEbTagOutput {
+	return i.ToGetAssetAwsEbTagOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEbTagArgs) ToGetAssetAwsEbTagOutputWithContext(ctx context.Context) GetAssetAwsEbTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEbTagOutput)
+}
+
+// GetAssetAwsEbTagArrayInput is an input type that accepts GetAssetAwsEbTagArray and GetAssetAwsEbTagArrayOutput values.
+// You can construct a concrete instance of `GetAssetAwsEbTagArrayInput` via:
+//
+//	GetAssetAwsEbTagArray{ GetAssetAwsEbTagArgs{...} }
+type GetAssetAwsEbTagArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEbTagArrayOutput() GetAssetAwsEbTagArrayOutput
+	ToGetAssetAwsEbTagArrayOutputWithContext(context.Context) GetAssetAwsEbTagArrayOutput
+}
+
+type GetAssetAwsEbTagArray []GetAssetAwsEbTagInput
+
+func (GetAssetAwsEbTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEbTag)(nil)).Elem()
+}
+
+func (i GetAssetAwsEbTagArray) ToGetAssetAwsEbTagArrayOutput() GetAssetAwsEbTagArrayOutput {
+	return i.ToGetAssetAwsEbTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEbTagArray) ToGetAssetAwsEbTagArrayOutputWithContext(ctx context.Context) GetAssetAwsEbTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEbTagArrayOutput)
+}
+
+type GetAssetAwsEbTagOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEbTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEbTag)(nil)).Elem()
+}
+
+func (o GetAssetAwsEbTagOutput) ToGetAssetAwsEbTagOutput() GetAssetAwsEbTagOutput {
+	return o
+}
+
+func (o GetAssetAwsEbTagOutput) ToGetAssetAwsEbTagOutputWithContext(ctx context.Context) GetAssetAwsEbTagOutput {
+	return o
+}
+
+func (o GetAssetAwsEbTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEbTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEbTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEbTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetAssetAwsEbTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEbTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEbTag)(nil)).Elem()
+}
+
+func (o GetAssetAwsEbTagArrayOutput) ToGetAssetAwsEbTagArrayOutput() GetAssetAwsEbTagArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEbTagArrayOutput) ToGetAssetAwsEbTagArrayOutputWithContext(ctx context.Context) GetAssetAwsEbTagArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEbTagArrayOutput) Index(i pulumi.IntInput) GetAssetAwsEbTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetAwsEbTag {
+		return vs[0].([]GetAssetAwsEbTag)[vs[1].(int)]
+	}).(GetAssetAwsEbTagOutput)
+}
+
+type GetAssetAwsEc2 struct {
+	Architecture                           string                           `pulumi:"architecture"`
+	AreElasticInferenceAcceleratorsPresent bool                             `pulumi:"areElasticInferenceAcceleratorsPresent"`
+	BootMode                               string                           `pulumi:"bootMode"`
+	CapacityReservationKey                 string                           `pulumi:"capacityReservationKey"`
+	ImageKey                               string                           `pulumi:"imageKey"`
+	InstanceKey                            string                           `pulumi:"instanceKey"`
+	InstanceLifecycle                      string                           `pulumi:"instanceLifecycle"`
+	InstanceType                           string                           `pulumi:"instanceType"`
+	IpAddress                              string                           `pulumi:"ipAddress"`
+	Ipv6address                            string                           `pulumi:"ipv6address"`
+	IsEnclaveOptions                       bool                             `pulumi:"isEnclaveOptions"`
+	IsHibernationOptions                   bool                             `pulumi:"isHibernationOptions"`
+	IsSourceDestCheck                      bool                             `pulumi:"isSourceDestCheck"`
+	IsSpotInstance                         bool                             `pulumi:"isSpotInstance"`
+	KernelKey                              string                           `pulumi:"kernelKey"`
+	Licenses                               []string                         `pulumi:"licenses"`
+	MaintenanceOptions                     string                           `pulumi:"maintenanceOptions"`
+	Monitoring                             string                           `pulumi:"monitoring"`
+	NetworkInterfaces                      []GetAssetAwsEc2NetworkInterface `pulumi:"networkInterfaces"`
+	Placements                             []GetAssetAwsEc2Placement        `pulumi:"placements"`
+	PrivateDnsName                         string                           `pulumi:"privateDnsName"`
+	PrivateIpAddress                       string                           `pulumi:"privateIpAddress"`
+	RootDeviceName                         string                           `pulumi:"rootDeviceName"`
+	RootDeviceType                         string                           `pulumi:"rootDeviceType"`
+	SecurityGroups                         []GetAssetAwsEc2SecurityGroup    `pulumi:"securityGroups"`
+	SriovNetSupport                        string                           `pulumi:"sriovNetSupport"`
+	// The current state of the asset.
+	States             []GetAssetAwsEc2State `pulumi:"states"`
+	SubnetKey          string                `pulumi:"subnetKey"`
+	Tags               []GetAssetAwsEc2Tag   `pulumi:"tags"`
+	TimeLaunch         string                `pulumi:"timeLaunch"`
+	TpmSupport         string                `pulumi:"tpmSupport"`
+	VirtualizationType string                `pulumi:"virtualizationType"`
+	VpcKey             string                `pulumi:"vpcKey"`
+}
+
+// GetAssetAwsEc2Input is an input type that accepts GetAssetAwsEc2Args and GetAssetAwsEc2Output values.
+// You can construct a concrete instance of `GetAssetAwsEc2Input` via:
+//
+//	GetAssetAwsEc2Args{...}
+type GetAssetAwsEc2Input interface {
+	pulumi.Input
+
+	ToGetAssetAwsEc2Output() GetAssetAwsEc2Output
+	ToGetAssetAwsEc2OutputWithContext(context.Context) GetAssetAwsEc2Output
+}
+
+type GetAssetAwsEc2Args struct {
+	Architecture                           pulumi.StringInput                       `pulumi:"architecture"`
+	AreElasticInferenceAcceleratorsPresent pulumi.BoolInput                         `pulumi:"areElasticInferenceAcceleratorsPresent"`
+	BootMode                               pulumi.StringInput                       `pulumi:"bootMode"`
+	CapacityReservationKey                 pulumi.StringInput                       `pulumi:"capacityReservationKey"`
+	ImageKey                               pulumi.StringInput                       `pulumi:"imageKey"`
+	InstanceKey                            pulumi.StringInput                       `pulumi:"instanceKey"`
+	InstanceLifecycle                      pulumi.StringInput                       `pulumi:"instanceLifecycle"`
+	InstanceType                           pulumi.StringInput                       `pulumi:"instanceType"`
+	IpAddress                              pulumi.StringInput                       `pulumi:"ipAddress"`
+	Ipv6address                            pulumi.StringInput                       `pulumi:"ipv6address"`
+	IsEnclaveOptions                       pulumi.BoolInput                         `pulumi:"isEnclaveOptions"`
+	IsHibernationOptions                   pulumi.BoolInput                         `pulumi:"isHibernationOptions"`
+	IsSourceDestCheck                      pulumi.BoolInput                         `pulumi:"isSourceDestCheck"`
+	IsSpotInstance                         pulumi.BoolInput                         `pulumi:"isSpotInstance"`
+	KernelKey                              pulumi.StringInput                       `pulumi:"kernelKey"`
+	Licenses                               pulumi.StringArrayInput                  `pulumi:"licenses"`
+	MaintenanceOptions                     pulumi.StringInput                       `pulumi:"maintenanceOptions"`
+	Monitoring                             pulumi.StringInput                       `pulumi:"monitoring"`
+	NetworkInterfaces                      GetAssetAwsEc2NetworkInterfaceArrayInput `pulumi:"networkInterfaces"`
+	Placements                             GetAssetAwsEc2PlacementArrayInput        `pulumi:"placements"`
+	PrivateDnsName                         pulumi.StringInput                       `pulumi:"privateDnsName"`
+	PrivateIpAddress                       pulumi.StringInput                       `pulumi:"privateIpAddress"`
+	RootDeviceName                         pulumi.StringInput                       `pulumi:"rootDeviceName"`
+	RootDeviceType                         pulumi.StringInput                       `pulumi:"rootDeviceType"`
+	SecurityGroups                         GetAssetAwsEc2SecurityGroupArrayInput    `pulumi:"securityGroups"`
+	SriovNetSupport                        pulumi.StringInput                       `pulumi:"sriovNetSupport"`
+	// The current state of the asset.
+	States             GetAssetAwsEc2StateArrayInput `pulumi:"states"`
+	SubnetKey          pulumi.StringInput            `pulumi:"subnetKey"`
+	Tags               GetAssetAwsEc2TagArrayInput   `pulumi:"tags"`
+	TimeLaunch         pulumi.StringInput            `pulumi:"timeLaunch"`
+	TpmSupport         pulumi.StringInput            `pulumi:"tpmSupport"`
+	VirtualizationType pulumi.StringInput            `pulumi:"virtualizationType"`
+	VpcKey             pulumi.StringInput            `pulumi:"vpcKey"`
+}
+
+func (GetAssetAwsEc2Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEc2)(nil)).Elem()
+}
+
+func (i GetAssetAwsEc2Args) ToGetAssetAwsEc2Output() GetAssetAwsEc2Output {
+	return i.ToGetAssetAwsEc2OutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEc2Args) ToGetAssetAwsEc2OutputWithContext(ctx context.Context) GetAssetAwsEc2Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEc2Output)
+}
+
+// GetAssetAwsEc2ArrayInput is an input type that accepts GetAssetAwsEc2Array and GetAssetAwsEc2ArrayOutput values.
+// You can construct a concrete instance of `GetAssetAwsEc2ArrayInput` via:
+//
+//	GetAssetAwsEc2Array{ GetAssetAwsEc2Args{...} }
+type GetAssetAwsEc2ArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEc2ArrayOutput() GetAssetAwsEc2ArrayOutput
+	ToGetAssetAwsEc2ArrayOutputWithContext(context.Context) GetAssetAwsEc2ArrayOutput
+}
+
+type GetAssetAwsEc2Array []GetAssetAwsEc2Input
+
+func (GetAssetAwsEc2Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEc2)(nil)).Elem()
+}
+
+func (i GetAssetAwsEc2Array) ToGetAssetAwsEc2ArrayOutput() GetAssetAwsEc2ArrayOutput {
+	return i.ToGetAssetAwsEc2ArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEc2Array) ToGetAssetAwsEc2ArrayOutputWithContext(ctx context.Context) GetAssetAwsEc2ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEc2ArrayOutput)
+}
+
+type GetAssetAwsEc2Output struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEc2Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEc2)(nil)).Elem()
+}
+
+func (o GetAssetAwsEc2Output) ToGetAssetAwsEc2Output() GetAssetAwsEc2Output {
+	return o
+}
+
+func (o GetAssetAwsEc2Output) ToGetAssetAwsEc2OutputWithContext(ctx context.Context) GetAssetAwsEc2Output {
+	return o
+}
+
+func (o GetAssetAwsEc2Output) Architecture() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) string { return v.Architecture }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2Output) AreElasticInferenceAcceleratorsPresent() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) bool { return v.AreElasticInferenceAcceleratorsPresent }).(pulumi.BoolOutput)
+}
+
+func (o GetAssetAwsEc2Output) BootMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) string { return v.BootMode }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2Output) CapacityReservationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) string { return v.CapacityReservationKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2Output) ImageKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) string { return v.ImageKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2Output) InstanceKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) string { return v.InstanceKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2Output) InstanceLifecycle() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) string { return v.InstanceLifecycle }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2Output) InstanceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) string { return v.InstanceType }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2Output) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2Output) Ipv6address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) string { return v.Ipv6address }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2Output) IsEnclaveOptions() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) bool { return v.IsEnclaveOptions }).(pulumi.BoolOutput)
+}
+
+func (o GetAssetAwsEc2Output) IsHibernationOptions() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) bool { return v.IsHibernationOptions }).(pulumi.BoolOutput)
+}
+
+func (o GetAssetAwsEc2Output) IsSourceDestCheck() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) bool { return v.IsSourceDestCheck }).(pulumi.BoolOutput)
+}
+
+func (o GetAssetAwsEc2Output) IsSpotInstance() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) bool { return v.IsSpotInstance }).(pulumi.BoolOutput)
+}
+
+func (o GetAssetAwsEc2Output) KernelKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) string { return v.KernelKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2Output) Licenses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) []string { return v.Licenses }).(pulumi.StringArrayOutput)
+}
+
+func (o GetAssetAwsEc2Output) MaintenanceOptions() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) string { return v.MaintenanceOptions }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2Output) Monitoring() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) string { return v.Monitoring }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2Output) NetworkInterfaces() GetAssetAwsEc2NetworkInterfaceArrayOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) []GetAssetAwsEc2NetworkInterface { return v.NetworkInterfaces }).(GetAssetAwsEc2NetworkInterfaceArrayOutput)
+}
+
+func (o GetAssetAwsEc2Output) Placements() GetAssetAwsEc2PlacementArrayOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) []GetAssetAwsEc2Placement { return v.Placements }).(GetAssetAwsEc2PlacementArrayOutput)
+}
+
+func (o GetAssetAwsEc2Output) PrivateDnsName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) string { return v.PrivateDnsName }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2Output) PrivateIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) string { return v.PrivateIpAddress }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2Output) RootDeviceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) string { return v.RootDeviceName }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2Output) RootDeviceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) string { return v.RootDeviceType }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2Output) SecurityGroups() GetAssetAwsEc2SecurityGroupArrayOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) []GetAssetAwsEc2SecurityGroup { return v.SecurityGroups }).(GetAssetAwsEc2SecurityGroupArrayOutput)
+}
+
+func (o GetAssetAwsEc2Output) SriovNetSupport() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) string { return v.SriovNetSupport }).(pulumi.StringOutput)
+}
+
+// The current state of the asset.
+func (o GetAssetAwsEc2Output) States() GetAssetAwsEc2StateArrayOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) []GetAssetAwsEc2State { return v.States }).(GetAssetAwsEc2StateArrayOutput)
+}
+
+func (o GetAssetAwsEc2Output) SubnetKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) string { return v.SubnetKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2Output) Tags() GetAssetAwsEc2TagArrayOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) []GetAssetAwsEc2Tag { return v.Tags }).(GetAssetAwsEc2TagArrayOutput)
+}
+
+func (o GetAssetAwsEc2Output) TimeLaunch() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) string { return v.TimeLaunch }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2Output) TpmSupport() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) string { return v.TpmSupport }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2Output) VirtualizationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) string { return v.VirtualizationType }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2Output) VpcKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2) string { return v.VpcKey }).(pulumi.StringOutput)
+}
+
+type GetAssetAwsEc2ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEc2ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEc2)(nil)).Elem()
+}
+
+func (o GetAssetAwsEc2ArrayOutput) ToGetAssetAwsEc2ArrayOutput() GetAssetAwsEc2ArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2ArrayOutput) ToGetAssetAwsEc2ArrayOutputWithContext(ctx context.Context) GetAssetAwsEc2ArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2ArrayOutput) Index(i pulumi.IntInput) GetAssetAwsEc2Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetAwsEc2 {
+		return vs[0].([]GetAssetAwsEc2)[vs[1].(int)]
+	}).(GetAssetAwsEc2Output)
+}
+
+type GetAssetAwsEc2NetworkInterface struct {
+	Associations []GetAssetAwsEc2NetworkInterfaceAssociation `pulumi:"associations"`
+	Attachments  []GetAssetAwsEc2NetworkInterfaceAttachment  `pulumi:"attachments"`
+	// The tag description.
+	Description       string   `pulumi:"description"`
+	InterfaceType     string   `pulumi:"interfaceType"`
+	Ipv4prefixes      []string `pulumi:"ipv4prefixes"`
+	Ipv6addresses     []string `pulumi:"ipv6addresses"`
+	Ipv6prefixes      []string `pulumi:"ipv6prefixes"`
+	IsSourceDestCheck bool     `pulumi:"isSourceDestCheck"`
+	// Mac address of the VM.
+	MacAddress          string                                           `pulumi:"macAddress"`
+	NetworkInterfaceKey string                                           `pulumi:"networkInterfaceKey"`
+	OwnerKey            string                                           `pulumi:"ownerKey"`
+	PrivateIpAddresses  []GetAssetAwsEc2NetworkInterfacePrivateIpAddress `pulumi:"privateIpAddresses"`
+	SecurityGroups      []GetAssetAwsEc2NetworkInterfaceSecurityGroup    `pulumi:"securityGroups"`
+	Status              string                                           `pulumi:"status"`
+	SubnetKey           string                                           `pulumi:"subnetKey"`
+}
+
+// GetAssetAwsEc2NetworkInterfaceInput is an input type that accepts GetAssetAwsEc2NetworkInterfaceArgs and GetAssetAwsEc2NetworkInterfaceOutput values.
+// You can construct a concrete instance of `GetAssetAwsEc2NetworkInterfaceInput` via:
+//
+//	GetAssetAwsEc2NetworkInterfaceArgs{...}
+type GetAssetAwsEc2NetworkInterfaceInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEc2NetworkInterfaceOutput() GetAssetAwsEc2NetworkInterfaceOutput
+	ToGetAssetAwsEc2NetworkInterfaceOutputWithContext(context.Context) GetAssetAwsEc2NetworkInterfaceOutput
+}
+
+type GetAssetAwsEc2NetworkInterfaceArgs struct {
+	Associations GetAssetAwsEc2NetworkInterfaceAssociationArrayInput `pulumi:"associations"`
+	Attachments  GetAssetAwsEc2NetworkInterfaceAttachmentArrayInput  `pulumi:"attachments"`
+	// The tag description.
+	Description       pulumi.StringInput      `pulumi:"description"`
+	InterfaceType     pulumi.StringInput      `pulumi:"interfaceType"`
+	Ipv4prefixes      pulumi.StringArrayInput `pulumi:"ipv4prefixes"`
+	Ipv6addresses     pulumi.StringArrayInput `pulumi:"ipv6addresses"`
+	Ipv6prefixes      pulumi.StringArrayInput `pulumi:"ipv6prefixes"`
+	IsSourceDestCheck pulumi.BoolInput        `pulumi:"isSourceDestCheck"`
+	// Mac address of the VM.
+	MacAddress          pulumi.StringInput                                       `pulumi:"macAddress"`
+	NetworkInterfaceKey pulumi.StringInput                                       `pulumi:"networkInterfaceKey"`
+	OwnerKey            pulumi.StringInput                                       `pulumi:"ownerKey"`
+	PrivateIpAddresses  GetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayInput `pulumi:"privateIpAddresses"`
+	SecurityGroups      GetAssetAwsEc2NetworkInterfaceSecurityGroupArrayInput    `pulumi:"securityGroups"`
+	Status              pulumi.StringInput                                       `pulumi:"status"`
+	SubnetKey           pulumi.StringInput                                       `pulumi:"subnetKey"`
+}
+
+func (GetAssetAwsEc2NetworkInterfaceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEc2NetworkInterface)(nil)).Elem()
+}
+
+func (i GetAssetAwsEc2NetworkInterfaceArgs) ToGetAssetAwsEc2NetworkInterfaceOutput() GetAssetAwsEc2NetworkInterfaceOutput {
+	return i.ToGetAssetAwsEc2NetworkInterfaceOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEc2NetworkInterfaceArgs) ToGetAssetAwsEc2NetworkInterfaceOutputWithContext(ctx context.Context) GetAssetAwsEc2NetworkInterfaceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEc2NetworkInterfaceOutput)
+}
+
+// GetAssetAwsEc2NetworkInterfaceArrayInput is an input type that accepts GetAssetAwsEc2NetworkInterfaceArray and GetAssetAwsEc2NetworkInterfaceArrayOutput values.
+// You can construct a concrete instance of `GetAssetAwsEc2NetworkInterfaceArrayInput` via:
+//
+//	GetAssetAwsEc2NetworkInterfaceArray{ GetAssetAwsEc2NetworkInterfaceArgs{...} }
+type GetAssetAwsEc2NetworkInterfaceArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEc2NetworkInterfaceArrayOutput() GetAssetAwsEc2NetworkInterfaceArrayOutput
+	ToGetAssetAwsEc2NetworkInterfaceArrayOutputWithContext(context.Context) GetAssetAwsEc2NetworkInterfaceArrayOutput
+}
+
+type GetAssetAwsEc2NetworkInterfaceArray []GetAssetAwsEc2NetworkInterfaceInput
+
+func (GetAssetAwsEc2NetworkInterfaceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEc2NetworkInterface)(nil)).Elem()
+}
+
+func (i GetAssetAwsEc2NetworkInterfaceArray) ToGetAssetAwsEc2NetworkInterfaceArrayOutput() GetAssetAwsEc2NetworkInterfaceArrayOutput {
+	return i.ToGetAssetAwsEc2NetworkInterfaceArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEc2NetworkInterfaceArray) ToGetAssetAwsEc2NetworkInterfaceArrayOutputWithContext(ctx context.Context) GetAssetAwsEc2NetworkInterfaceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEc2NetworkInterfaceArrayOutput)
+}
+
+type GetAssetAwsEc2NetworkInterfaceOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEc2NetworkInterfaceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEc2NetworkInterface)(nil)).Elem()
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceOutput) ToGetAssetAwsEc2NetworkInterfaceOutput() GetAssetAwsEc2NetworkInterfaceOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceOutput) ToGetAssetAwsEc2NetworkInterfaceOutputWithContext(ctx context.Context) GetAssetAwsEc2NetworkInterfaceOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceOutput) Associations() GetAssetAwsEc2NetworkInterfaceAssociationArrayOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterface) []GetAssetAwsEc2NetworkInterfaceAssociation {
+		return v.Associations
+	}).(GetAssetAwsEc2NetworkInterfaceAssociationArrayOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceOutput) Attachments() GetAssetAwsEc2NetworkInterfaceAttachmentArrayOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterface) []GetAssetAwsEc2NetworkInterfaceAttachment {
+		return v.Attachments
+	}).(GetAssetAwsEc2NetworkInterfaceAttachmentArrayOutput)
+}
+
+// The tag description.
+func (o GetAssetAwsEc2NetworkInterfaceOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterface) string { return v.Description }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceOutput) InterfaceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterface) string { return v.InterfaceType }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceOutput) Ipv4prefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterface) []string { return v.Ipv4prefixes }).(pulumi.StringArrayOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceOutput) Ipv6addresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterface) []string { return v.Ipv6addresses }).(pulumi.StringArrayOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceOutput) Ipv6prefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterface) []string { return v.Ipv6prefixes }).(pulumi.StringArrayOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceOutput) IsSourceDestCheck() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterface) bool { return v.IsSourceDestCheck }).(pulumi.BoolOutput)
+}
+
+// Mac address of the VM.
+func (o GetAssetAwsEc2NetworkInterfaceOutput) MacAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterface) string { return v.MacAddress }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceOutput) NetworkInterfaceKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterface) string { return v.NetworkInterfaceKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceOutput) OwnerKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterface) string { return v.OwnerKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceOutput) PrivateIpAddresses() GetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterface) []GetAssetAwsEc2NetworkInterfacePrivateIpAddress {
+		return v.PrivateIpAddresses
+	}).(GetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceOutput) SecurityGroups() GetAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterface) []GetAssetAwsEc2NetworkInterfaceSecurityGroup {
+		return v.SecurityGroups
+	}).(GetAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterface) string { return v.Status }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceOutput) SubnetKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterface) string { return v.SubnetKey }).(pulumi.StringOutput)
+}
+
+type GetAssetAwsEc2NetworkInterfaceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEc2NetworkInterfaceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEc2NetworkInterface)(nil)).Elem()
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceArrayOutput) ToGetAssetAwsEc2NetworkInterfaceArrayOutput() GetAssetAwsEc2NetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceArrayOutput) ToGetAssetAwsEc2NetworkInterfaceArrayOutputWithContext(ctx context.Context) GetAssetAwsEc2NetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceArrayOutput) Index(i pulumi.IntInput) GetAssetAwsEc2NetworkInterfaceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetAwsEc2NetworkInterface {
+		return vs[0].([]GetAssetAwsEc2NetworkInterface)[vs[1].(int)]
+	}).(GetAssetAwsEc2NetworkInterfaceOutput)
+}
+
+type GetAssetAwsEc2NetworkInterfaceAssociation struct {
+	CarrierIp       string `pulumi:"carrierIp"`
+	CustomerOwnedIp string `pulumi:"customerOwnedIp"`
+	IpOwnerKey      string `pulumi:"ipOwnerKey"`
+	PublicDnsName   string `pulumi:"publicDnsName"`
+	PublicIp        string `pulumi:"publicIp"`
+}
+
+// GetAssetAwsEc2NetworkInterfaceAssociationInput is an input type that accepts GetAssetAwsEc2NetworkInterfaceAssociationArgs and GetAssetAwsEc2NetworkInterfaceAssociationOutput values.
+// You can construct a concrete instance of `GetAssetAwsEc2NetworkInterfaceAssociationInput` via:
+//
+//	GetAssetAwsEc2NetworkInterfaceAssociationArgs{...}
+type GetAssetAwsEc2NetworkInterfaceAssociationInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEc2NetworkInterfaceAssociationOutput() GetAssetAwsEc2NetworkInterfaceAssociationOutput
+	ToGetAssetAwsEc2NetworkInterfaceAssociationOutputWithContext(context.Context) GetAssetAwsEc2NetworkInterfaceAssociationOutput
+}
+
+type GetAssetAwsEc2NetworkInterfaceAssociationArgs struct {
+	CarrierIp       pulumi.StringInput `pulumi:"carrierIp"`
+	CustomerOwnedIp pulumi.StringInput `pulumi:"customerOwnedIp"`
+	IpOwnerKey      pulumi.StringInput `pulumi:"ipOwnerKey"`
+	PublicDnsName   pulumi.StringInput `pulumi:"publicDnsName"`
+	PublicIp        pulumi.StringInput `pulumi:"publicIp"`
+}
+
+func (GetAssetAwsEc2NetworkInterfaceAssociationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEc2NetworkInterfaceAssociation)(nil)).Elem()
+}
+
+func (i GetAssetAwsEc2NetworkInterfaceAssociationArgs) ToGetAssetAwsEc2NetworkInterfaceAssociationOutput() GetAssetAwsEc2NetworkInterfaceAssociationOutput {
+	return i.ToGetAssetAwsEc2NetworkInterfaceAssociationOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEc2NetworkInterfaceAssociationArgs) ToGetAssetAwsEc2NetworkInterfaceAssociationOutputWithContext(ctx context.Context) GetAssetAwsEc2NetworkInterfaceAssociationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEc2NetworkInterfaceAssociationOutput)
+}
+
+// GetAssetAwsEc2NetworkInterfaceAssociationArrayInput is an input type that accepts GetAssetAwsEc2NetworkInterfaceAssociationArray and GetAssetAwsEc2NetworkInterfaceAssociationArrayOutput values.
+// You can construct a concrete instance of `GetAssetAwsEc2NetworkInterfaceAssociationArrayInput` via:
+//
+//	GetAssetAwsEc2NetworkInterfaceAssociationArray{ GetAssetAwsEc2NetworkInterfaceAssociationArgs{...} }
+type GetAssetAwsEc2NetworkInterfaceAssociationArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEc2NetworkInterfaceAssociationArrayOutput() GetAssetAwsEc2NetworkInterfaceAssociationArrayOutput
+	ToGetAssetAwsEc2NetworkInterfaceAssociationArrayOutputWithContext(context.Context) GetAssetAwsEc2NetworkInterfaceAssociationArrayOutput
+}
+
+type GetAssetAwsEc2NetworkInterfaceAssociationArray []GetAssetAwsEc2NetworkInterfaceAssociationInput
+
+func (GetAssetAwsEc2NetworkInterfaceAssociationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEc2NetworkInterfaceAssociation)(nil)).Elem()
+}
+
+func (i GetAssetAwsEc2NetworkInterfaceAssociationArray) ToGetAssetAwsEc2NetworkInterfaceAssociationArrayOutput() GetAssetAwsEc2NetworkInterfaceAssociationArrayOutput {
+	return i.ToGetAssetAwsEc2NetworkInterfaceAssociationArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEc2NetworkInterfaceAssociationArray) ToGetAssetAwsEc2NetworkInterfaceAssociationArrayOutputWithContext(ctx context.Context) GetAssetAwsEc2NetworkInterfaceAssociationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEc2NetworkInterfaceAssociationArrayOutput)
+}
+
+type GetAssetAwsEc2NetworkInterfaceAssociationOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEc2NetworkInterfaceAssociationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEc2NetworkInterfaceAssociation)(nil)).Elem()
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceAssociationOutput) ToGetAssetAwsEc2NetworkInterfaceAssociationOutput() GetAssetAwsEc2NetworkInterfaceAssociationOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceAssociationOutput) ToGetAssetAwsEc2NetworkInterfaceAssociationOutputWithContext(ctx context.Context) GetAssetAwsEc2NetworkInterfaceAssociationOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceAssociationOutput) CarrierIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterfaceAssociation) string { return v.CarrierIp }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceAssociationOutput) CustomerOwnedIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterfaceAssociation) string { return v.CustomerOwnedIp }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceAssociationOutput) IpOwnerKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterfaceAssociation) string { return v.IpOwnerKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceAssociationOutput) PublicDnsName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterfaceAssociation) string { return v.PublicDnsName }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceAssociationOutput) PublicIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterfaceAssociation) string { return v.PublicIp }).(pulumi.StringOutput)
+}
+
+type GetAssetAwsEc2NetworkInterfaceAssociationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEc2NetworkInterfaceAssociationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEc2NetworkInterfaceAssociation)(nil)).Elem()
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceAssociationArrayOutput) ToGetAssetAwsEc2NetworkInterfaceAssociationArrayOutput() GetAssetAwsEc2NetworkInterfaceAssociationArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceAssociationArrayOutput) ToGetAssetAwsEc2NetworkInterfaceAssociationArrayOutputWithContext(ctx context.Context) GetAssetAwsEc2NetworkInterfaceAssociationArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceAssociationArrayOutput) Index(i pulumi.IntInput) GetAssetAwsEc2NetworkInterfaceAssociationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetAwsEc2NetworkInterfaceAssociation {
+		return vs[0].([]GetAssetAwsEc2NetworkInterfaceAssociation)[vs[1].(int)]
+	}).(GetAssetAwsEc2NetworkInterfaceAssociationOutput)
+}
+
+type GetAssetAwsEc2NetworkInterfaceAttachment struct {
+	AttachmentKey         string `pulumi:"attachmentKey"`
+	DeviceIndex           int    `pulumi:"deviceIndex"`
+	IsDeleteOnTermination bool   `pulumi:"isDeleteOnTermination"`
+	NetworkCardIndex      int    `pulumi:"networkCardIndex"`
+	Status                string `pulumi:"status"`
+	TimeAttach            string `pulumi:"timeAttach"`
+}
+
+// GetAssetAwsEc2NetworkInterfaceAttachmentInput is an input type that accepts GetAssetAwsEc2NetworkInterfaceAttachmentArgs and GetAssetAwsEc2NetworkInterfaceAttachmentOutput values.
+// You can construct a concrete instance of `GetAssetAwsEc2NetworkInterfaceAttachmentInput` via:
+//
+//	GetAssetAwsEc2NetworkInterfaceAttachmentArgs{...}
+type GetAssetAwsEc2NetworkInterfaceAttachmentInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEc2NetworkInterfaceAttachmentOutput() GetAssetAwsEc2NetworkInterfaceAttachmentOutput
+	ToGetAssetAwsEc2NetworkInterfaceAttachmentOutputWithContext(context.Context) GetAssetAwsEc2NetworkInterfaceAttachmentOutput
+}
+
+type GetAssetAwsEc2NetworkInterfaceAttachmentArgs struct {
+	AttachmentKey         pulumi.StringInput `pulumi:"attachmentKey"`
+	DeviceIndex           pulumi.IntInput    `pulumi:"deviceIndex"`
+	IsDeleteOnTermination pulumi.BoolInput   `pulumi:"isDeleteOnTermination"`
+	NetworkCardIndex      pulumi.IntInput    `pulumi:"networkCardIndex"`
+	Status                pulumi.StringInput `pulumi:"status"`
+	TimeAttach            pulumi.StringInput `pulumi:"timeAttach"`
+}
+
+func (GetAssetAwsEc2NetworkInterfaceAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEc2NetworkInterfaceAttachment)(nil)).Elem()
+}
+
+func (i GetAssetAwsEc2NetworkInterfaceAttachmentArgs) ToGetAssetAwsEc2NetworkInterfaceAttachmentOutput() GetAssetAwsEc2NetworkInterfaceAttachmentOutput {
+	return i.ToGetAssetAwsEc2NetworkInterfaceAttachmentOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEc2NetworkInterfaceAttachmentArgs) ToGetAssetAwsEc2NetworkInterfaceAttachmentOutputWithContext(ctx context.Context) GetAssetAwsEc2NetworkInterfaceAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEc2NetworkInterfaceAttachmentOutput)
+}
+
+// GetAssetAwsEc2NetworkInterfaceAttachmentArrayInput is an input type that accepts GetAssetAwsEc2NetworkInterfaceAttachmentArray and GetAssetAwsEc2NetworkInterfaceAttachmentArrayOutput values.
+// You can construct a concrete instance of `GetAssetAwsEc2NetworkInterfaceAttachmentArrayInput` via:
+//
+//	GetAssetAwsEc2NetworkInterfaceAttachmentArray{ GetAssetAwsEc2NetworkInterfaceAttachmentArgs{...} }
+type GetAssetAwsEc2NetworkInterfaceAttachmentArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEc2NetworkInterfaceAttachmentArrayOutput() GetAssetAwsEc2NetworkInterfaceAttachmentArrayOutput
+	ToGetAssetAwsEc2NetworkInterfaceAttachmentArrayOutputWithContext(context.Context) GetAssetAwsEc2NetworkInterfaceAttachmentArrayOutput
+}
+
+type GetAssetAwsEc2NetworkInterfaceAttachmentArray []GetAssetAwsEc2NetworkInterfaceAttachmentInput
+
+func (GetAssetAwsEc2NetworkInterfaceAttachmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEc2NetworkInterfaceAttachment)(nil)).Elem()
+}
+
+func (i GetAssetAwsEc2NetworkInterfaceAttachmentArray) ToGetAssetAwsEc2NetworkInterfaceAttachmentArrayOutput() GetAssetAwsEc2NetworkInterfaceAttachmentArrayOutput {
+	return i.ToGetAssetAwsEc2NetworkInterfaceAttachmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEc2NetworkInterfaceAttachmentArray) ToGetAssetAwsEc2NetworkInterfaceAttachmentArrayOutputWithContext(ctx context.Context) GetAssetAwsEc2NetworkInterfaceAttachmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEc2NetworkInterfaceAttachmentArrayOutput)
+}
+
+type GetAssetAwsEc2NetworkInterfaceAttachmentOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEc2NetworkInterfaceAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEc2NetworkInterfaceAttachment)(nil)).Elem()
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceAttachmentOutput) ToGetAssetAwsEc2NetworkInterfaceAttachmentOutput() GetAssetAwsEc2NetworkInterfaceAttachmentOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceAttachmentOutput) ToGetAssetAwsEc2NetworkInterfaceAttachmentOutputWithContext(ctx context.Context) GetAssetAwsEc2NetworkInterfaceAttachmentOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceAttachmentOutput) AttachmentKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterfaceAttachment) string { return v.AttachmentKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceAttachmentOutput) DeviceIndex() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterfaceAttachment) int { return v.DeviceIndex }).(pulumi.IntOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceAttachmentOutput) IsDeleteOnTermination() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterfaceAttachment) bool { return v.IsDeleteOnTermination }).(pulumi.BoolOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceAttachmentOutput) NetworkCardIndex() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterfaceAttachment) int { return v.NetworkCardIndex }).(pulumi.IntOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceAttachmentOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterfaceAttachment) string { return v.Status }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceAttachmentOutput) TimeAttach() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterfaceAttachment) string { return v.TimeAttach }).(pulumi.StringOutput)
+}
+
+type GetAssetAwsEc2NetworkInterfaceAttachmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEc2NetworkInterfaceAttachmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEc2NetworkInterfaceAttachment)(nil)).Elem()
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceAttachmentArrayOutput) ToGetAssetAwsEc2NetworkInterfaceAttachmentArrayOutput() GetAssetAwsEc2NetworkInterfaceAttachmentArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceAttachmentArrayOutput) ToGetAssetAwsEc2NetworkInterfaceAttachmentArrayOutputWithContext(ctx context.Context) GetAssetAwsEc2NetworkInterfaceAttachmentArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceAttachmentArrayOutput) Index(i pulumi.IntInput) GetAssetAwsEc2NetworkInterfaceAttachmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetAwsEc2NetworkInterfaceAttachment {
+		return vs[0].([]GetAssetAwsEc2NetworkInterfaceAttachment)[vs[1].(int)]
+	}).(GetAssetAwsEc2NetworkInterfaceAttachmentOutput)
+}
+
+type GetAssetAwsEc2NetworkInterfacePrivateIpAddress struct {
+	Associations     []GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociation `pulumi:"associations"`
+	IsPrimary        bool                                                        `pulumi:"isPrimary"`
+	PrivateDnsName   string                                                      `pulumi:"privateDnsName"`
+	PrivateIpAddress string                                                      `pulumi:"privateIpAddress"`
+}
+
+// GetAssetAwsEc2NetworkInterfacePrivateIpAddressInput is an input type that accepts GetAssetAwsEc2NetworkInterfacePrivateIpAddressArgs and GetAssetAwsEc2NetworkInterfacePrivateIpAddressOutput values.
+// You can construct a concrete instance of `GetAssetAwsEc2NetworkInterfacePrivateIpAddressInput` via:
+//
+//	GetAssetAwsEc2NetworkInterfacePrivateIpAddressArgs{...}
+type GetAssetAwsEc2NetworkInterfacePrivateIpAddressInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressOutput() GetAssetAwsEc2NetworkInterfacePrivateIpAddressOutput
+	ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressOutputWithContext(context.Context) GetAssetAwsEc2NetworkInterfacePrivateIpAddressOutput
+}
+
+type GetAssetAwsEc2NetworkInterfacePrivateIpAddressArgs struct {
+	Associations     GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayInput `pulumi:"associations"`
+	IsPrimary        pulumi.BoolInput                                                    `pulumi:"isPrimary"`
+	PrivateDnsName   pulumi.StringInput                                                  `pulumi:"privateDnsName"`
+	PrivateIpAddress pulumi.StringInput                                                  `pulumi:"privateIpAddress"`
+}
+
+func (GetAssetAwsEc2NetworkInterfacePrivateIpAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEc2NetworkInterfacePrivateIpAddress)(nil)).Elem()
+}
+
+func (i GetAssetAwsEc2NetworkInterfacePrivateIpAddressArgs) ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressOutput() GetAssetAwsEc2NetworkInterfacePrivateIpAddressOutput {
+	return i.ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEc2NetworkInterfacePrivateIpAddressArgs) ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressOutputWithContext(ctx context.Context) GetAssetAwsEc2NetworkInterfacePrivateIpAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEc2NetworkInterfacePrivateIpAddressOutput)
+}
+
+// GetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayInput is an input type that accepts GetAssetAwsEc2NetworkInterfacePrivateIpAddressArray and GetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput values.
+// You can construct a concrete instance of `GetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayInput` via:
+//
+//	GetAssetAwsEc2NetworkInterfacePrivateIpAddressArray{ GetAssetAwsEc2NetworkInterfacePrivateIpAddressArgs{...} }
+type GetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput() GetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput
+	ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutputWithContext(context.Context) GetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput
+}
+
+type GetAssetAwsEc2NetworkInterfacePrivateIpAddressArray []GetAssetAwsEc2NetworkInterfacePrivateIpAddressInput
+
+func (GetAssetAwsEc2NetworkInterfacePrivateIpAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEc2NetworkInterfacePrivateIpAddress)(nil)).Elem()
+}
+
+func (i GetAssetAwsEc2NetworkInterfacePrivateIpAddressArray) ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput() GetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput {
+	return i.ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEc2NetworkInterfacePrivateIpAddressArray) ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutputWithContext(ctx context.Context) GetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput)
+}
+
+type GetAssetAwsEc2NetworkInterfacePrivateIpAddressOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEc2NetworkInterfacePrivateIpAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEc2NetworkInterfacePrivateIpAddress)(nil)).Elem()
+}
+
+func (o GetAssetAwsEc2NetworkInterfacePrivateIpAddressOutput) ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressOutput() GetAssetAwsEc2NetworkInterfacePrivateIpAddressOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2NetworkInterfacePrivateIpAddressOutput) ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressOutputWithContext(ctx context.Context) GetAssetAwsEc2NetworkInterfacePrivateIpAddressOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2NetworkInterfacePrivateIpAddressOutput) Associations() GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterfacePrivateIpAddress) []GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociation {
+		return v.Associations
+	}).(GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfacePrivateIpAddressOutput) IsPrimary() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterfacePrivateIpAddress) bool { return v.IsPrimary }).(pulumi.BoolOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfacePrivateIpAddressOutput) PrivateDnsName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterfacePrivateIpAddress) string { return v.PrivateDnsName }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfacePrivateIpAddressOutput) PrivateIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterfacePrivateIpAddress) string { return v.PrivateIpAddress }).(pulumi.StringOutput)
+}
+
+type GetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEc2NetworkInterfacePrivateIpAddress)(nil)).Elem()
+}
+
+func (o GetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput) ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput() GetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput) ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutputWithContext(ctx context.Context) GetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput) Index(i pulumi.IntInput) GetAssetAwsEc2NetworkInterfacePrivateIpAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetAwsEc2NetworkInterfacePrivateIpAddress {
+		return vs[0].([]GetAssetAwsEc2NetworkInterfacePrivateIpAddress)[vs[1].(int)]
+	}).(GetAssetAwsEc2NetworkInterfacePrivateIpAddressOutput)
+}
+
+type GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociation struct {
+	CarrierIp       string `pulumi:"carrierIp"`
+	CustomerOwnedIp string `pulumi:"customerOwnedIp"`
+	IpOwnerKey      string `pulumi:"ipOwnerKey"`
+	PublicDnsName   string `pulumi:"publicDnsName"`
+	PublicIp        string `pulumi:"publicIp"`
+}
+
+// GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationInput is an input type that accepts GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs and GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput values.
+// You can construct a concrete instance of `GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationInput` via:
+//
+//	GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs{...}
+type GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput() GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput
+	ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutputWithContext(context.Context) GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput
+}
+
+type GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs struct {
+	CarrierIp       pulumi.StringInput `pulumi:"carrierIp"`
+	CustomerOwnedIp pulumi.StringInput `pulumi:"customerOwnedIp"`
+	IpOwnerKey      pulumi.StringInput `pulumi:"ipOwnerKey"`
+	PublicDnsName   pulumi.StringInput `pulumi:"publicDnsName"`
+	PublicIp        pulumi.StringInput `pulumi:"publicIp"`
+}
+
+func (GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociation)(nil)).Elem()
+}
+
+func (i GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs) ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput() GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput {
+	return i.ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs) ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutputWithContext(ctx context.Context) GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput)
+}
+
+// GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayInput is an input type that accepts GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArray and GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput values.
+// You can construct a concrete instance of `GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayInput` via:
+//
+//	GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArray{ GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs{...} }
+type GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput() GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput
+	ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutputWithContext(context.Context) GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput
+}
+
+type GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArray []GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationInput
+
+func (GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociation)(nil)).Elem()
+}
+
+func (i GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArray) ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput() GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput {
+	return i.ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArray) ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutputWithContext(ctx context.Context) GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput)
+}
+
+type GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociation)(nil)).Elem()
+}
+
+func (o GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput() GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutputWithContext(ctx context.Context) GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) CarrierIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociation) string { return v.CarrierIp }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) CustomerOwnedIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociation) string { return v.CustomerOwnedIp }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) IpOwnerKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociation) string { return v.IpOwnerKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) PublicDnsName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociation) string { return v.PublicDnsName }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) PublicIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociation) string { return v.PublicIp }).(pulumi.StringOutput)
+}
+
+type GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociation)(nil)).Elem()
+}
+
+func (o GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput) ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput() GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput) ToGetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutputWithContext(ctx context.Context) GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput) Index(i pulumi.IntInput) GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociation {
+		return vs[0].([]GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociation)[vs[1].(int)]
+	}).(GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput)
+}
+
+type GetAssetAwsEc2NetworkInterfaceSecurityGroup struct {
+	GroupKey  string `pulumi:"groupKey"`
+	GroupName string `pulumi:"groupName"`
+}
+
+// GetAssetAwsEc2NetworkInterfaceSecurityGroupInput is an input type that accepts GetAssetAwsEc2NetworkInterfaceSecurityGroupArgs and GetAssetAwsEc2NetworkInterfaceSecurityGroupOutput values.
+// You can construct a concrete instance of `GetAssetAwsEc2NetworkInterfaceSecurityGroupInput` via:
+//
+//	GetAssetAwsEc2NetworkInterfaceSecurityGroupArgs{...}
+type GetAssetAwsEc2NetworkInterfaceSecurityGroupInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEc2NetworkInterfaceSecurityGroupOutput() GetAssetAwsEc2NetworkInterfaceSecurityGroupOutput
+	ToGetAssetAwsEc2NetworkInterfaceSecurityGroupOutputWithContext(context.Context) GetAssetAwsEc2NetworkInterfaceSecurityGroupOutput
+}
+
+type GetAssetAwsEc2NetworkInterfaceSecurityGroupArgs struct {
+	GroupKey  pulumi.StringInput `pulumi:"groupKey"`
+	GroupName pulumi.StringInput `pulumi:"groupName"`
+}
+
+func (GetAssetAwsEc2NetworkInterfaceSecurityGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEc2NetworkInterfaceSecurityGroup)(nil)).Elem()
+}
+
+func (i GetAssetAwsEc2NetworkInterfaceSecurityGroupArgs) ToGetAssetAwsEc2NetworkInterfaceSecurityGroupOutput() GetAssetAwsEc2NetworkInterfaceSecurityGroupOutput {
+	return i.ToGetAssetAwsEc2NetworkInterfaceSecurityGroupOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEc2NetworkInterfaceSecurityGroupArgs) ToGetAssetAwsEc2NetworkInterfaceSecurityGroupOutputWithContext(ctx context.Context) GetAssetAwsEc2NetworkInterfaceSecurityGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEc2NetworkInterfaceSecurityGroupOutput)
+}
+
+// GetAssetAwsEc2NetworkInterfaceSecurityGroupArrayInput is an input type that accepts GetAssetAwsEc2NetworkInterfaceSecurityGroupArray and GetAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput values.
+// You can construct a concrete instance of `GetAssetAwsEc2NetworkInterfaceSecurityGroupArrayInput` via:
+//
+//	GetAssetAwsEc2NetworkInterfaceSecurityGroupArray{ GetAssetAwsEc2NetworkInterfaceSecurityGroupArgs{...} }
+type GetAssetAwsEc2NetworkInterfaceSecurityGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput() GetAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput
+	ToGetAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutputWithContext(context.Context) GetAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput
+}
+
+type GetAssetAwsEc2NetworkInterfaceSecurityGroupArray []GetAssetAwsEc2NetworkInterfaceSecurityGroupInput
+
+func (GetAssetAwsEc2NetworkInterfaceSecurityGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEc2NetworkInterfaceSecurityGroup)(nil)).Elem()
+}
+
+func (i GetAssetAwsEc2NetworkInterfaceSecurityGroupArray) ToGetAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput() GetAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput {
+	return i.ToGetAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEc2NetworkInterfaceSecurityGroupArray) ToGetAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutputWithContext(ctx context.Context) GetAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput)
+}
+
+type GetAssetAwsEc2NetworkInterfaceSecurityGroupOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEc2NetworkInterfaceSecurityGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEc2NetworkInterfaceSecurityGroup)(nil)).Elem()
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceSecurityGroupOutput) ToGetAssetAwsEc2NetworkInterfaceSecurityGroupOutput() GetAssetAwsEc2NetworkInterfaceSecurityGroupOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceSecurityGroupOutput) ToGetAssetAwsEc2NetworkInterfaceSecurityGroupOutputWithContext(ctx context.Context) GetAssetAwsEc2NetworkInterfaceSecurityGroupOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceSecurityGroupOutput) GroupKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterfaceSecurityGroup) string { return v.GroupKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceSecurityGroupOutput) GroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2NetworkInterfaceSecurityGroup) string { return v.GroupName }).(pulumi.StringOutput)
+}
+
+type GetAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEc2NetworkInterfaceSecurityGroup)(nil)).Elem()
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput) ToGetAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput() GetAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput) ToGetAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutputWithContext(ctx context.Context) GetAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput) Index(i pulumi.IntInput) GetAssetAwsEc2NetworkInterfaceSecurityGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetAwsEc2NetworkInterfaceSecurityGroup {
+		return vs[0].([]GetAssetAwsEc2NetworkInterfaceSecurityGroup)[vs[1].(int)]
+	}).(GetAssetAwsEc2NetworkInterfaceSecurityGroupOutput)
+}
+
+type GetAssetAwsEc2Placement struct {
+	Affinity             string `pulumi:"affinity"`
+	AvailabilityZone     string `pulumi:"availabilityZone"`
+	GroupName            string `pulumi:"groupName"`
+	HostKey              string `pulumi:"hostKey"`
+	HostResourceGroupArn string `pulumi:"hostResourceGroupArn"`
+	PartitionNumber      int    `pulumi:"partitionNumber"`
+	SpreadDomain         string `pulumi:"spreadDomain"`
+	Tenancy              string `pulumi:"tenancy"`
+}
+
+// GetAssetAwsEc2PlacementInput is an input type that accepts GetAssetAwsEc2PlacementArgs and GetAssetAwsEc2PlacementOutput values.
+// You can construct a concrete instance of `GetAssetAwsEc2PlacementInput` via:
+//
+//	GetAssetAwsEc2PlacementArgs{...}
+type GetAssetAwsEc2PlacementInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEc2PlacementOutput() GetAssetAwsEc2PlacementOutput
+	ToGetAssetAwsEc2PlacementOutputWithContext(context.Context) GetAssetAwsEc2PlacementOutput
+}
+
+type GetAssetAwsEc2PlacementArgs struct {
+	Affinity             pulumi.StringInput `pulumi:"affinity"`
+	AvailabilityZone     pulumi.StringInput `pulumi:"availabilityZone"`
+	GroupName            pulumi.StringInput `pulumi:"groupName"`
+	HostKey              pulumi.StringInput `pulumi:"hostKey"`
+	HostResourceGroupArn pulumi.StringInput `pulumi:"hostResourceGroupArn"`
+	PartitionNumber      pulumi.IntInput    `pulumi:"partitionNumber"`
+	SpreadDomain         pulumi.StringInput `pulumi:"spreadDomain"`
+	Tenancy              pulumi.StringInput `pulumi:"tenancy"`
+}
+
+func (GetAssetAwsEc2PlacementArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEc2Placement)(nil)).Elem()
+}
+
+func (i GetAssetAwsEc2PlacementArgs) ToGetAssetAwsEc2PlacementOutput() GetAssetAwsEc2PlacementOutput {
+	return i.ToGetAssetAwsEc2PlacementOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEc2PlacementArgs) ToGetAssetAwsEc2PlacementOutputWithContext(ctx context.Context) GetAssetAwsEc2PlacementOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEc2PlacementOutput)
+}
+
+// GetAssetAwsEc2PlacementArrayInput is an input type that accepts GetAssetAwsEc2PlacementArray and GetAssetAwsEc2PlacementArrayOutput values.
+// You can construct a concrete instance of `GetAssetAwsEc2PlacementArrayInput` via:
+//
+//	GetAssetAwsEc2PlacementArray{ GetAssetAwsEc2PlacementArgs{...} }
+type GetAssetAwsEc2PlacementArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEc2PlacementArrayOutput() GetAssetAwsEc2PlacementArrayOutput
+	ToGetAssetAwsEc2PlacementArrayOutputWithContext(context.Context) GetAssetAwsEc2PlacementArrayOutput
+}
+
+type GetAssetAwsEc2PlacementArray []GetAssetAwsEc2PlacementInput
+
+func (GetAssetAwsEc2PlacementArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEc2Placement)(nil)).Elem()
+}
+
+func (i GetAssetAwsEc2PlacementArray) ToGetAssetAwsEc2PlacementArrayOutput() GetAssetAwsEc2PlacementArrayOutput {
+	return i.ToGetAssetAwsEc2PlacementArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEc2PlacementArray) ToGetAssetAwsEc2PlacementArrayOutputWithContext(ctx context.Context) GetAssetAwsEc2PlacementArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEc2PlacementArrayOutput)
+}
+
+type GetAssetAwsEc2PlacementOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEc2PlacementOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEc2Placement)(nil)).Elem()
+}
+
+func (o GetAssetAwsEc2PlacementOutput) ToGetAssetAwsEc2PlacementOutput() GetAssetAwsEc2PlacementOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2PlacementOutput) ToGetAssetAwsEc2PlacementOutputWithContext(ctx context.Context) GetAssetAwsEc2PlacementOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2PlacementOutput) Affinity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2Placement) string { return v.Affinity }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2PlacementOutput) AvailabilityZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2Placement) string { return v.AvailabilityZone }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2PlacementOutput) GroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2Placement) string { return v.GroupName }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2PlacementOutput) HostKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2Placement) string { return v.HostKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2PlacementOutput) HostResourceGroupArn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2Placement) string { return v.HostResourceGroupArn }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2PlacementOutput) PartitionNumber() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2Placement) int { return v.PartitionNumber }).(pulumi.IntOutput)
+}
+
+func (o GetAssetAwsEc2PlacementOutput) SpreadDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2Placement) string { return v.SpreadDomain }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2PlacementOutput) Tenancy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2Placement) string { return v.Tenancy }).(pulumi.StringOutput)
+}
+
+type GetAssetAwsEc2PlacementArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEc2PlacementArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEc2Placement)(nil)).Elem()
+}
+
+func (o GetAssetAwsEc2PlacementArrayOutput) ToGetAssetAwsEc2PlacementArrayOutput() GetAssetAwsEc2PlacementArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2PlacementArrayOutput) ToGetAssetAwsEc2PlacementArrayOutputWithContext(ctx context.Context) GetAssetAwsEc2PlacementArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2PlacementArrayOutput) Index(i pulumi.IntInput) GetAssetAwsEc2PlacementOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetAwsEc2Placement {
+		return vs[0].([]GetAssetAwsEc2Placement)[vs[1].(int)]
+	}).(GetAssetAwsEc2PlacementOutput)
+}
+
+type GetAssetAwsEc2SecurityGroup struct {
+	GroupKey  string `pulumi:"groupKey"`
+	GroupName string `pulumi:"groupName"`
+}
+
+// GetAssetAwsEc2SecurityGroupInput is an input type that accepts GetAssetAwsEc2SecurityGroupArgs and GetAssetAwsEc2SecurityGroupOutput values.
+// You can construct a concrete instance of `GetAssetAwsEc2SecurityGroupInput` via:
+//
+//	GetAssetAwsEc2SecurityGroupArgs{...}
+type GetAssetAwsEc2SecurityGroupInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEc2SecurityGroupOutput() GetAssetAwsEc2SecurityGroupOutput
+	ToGetAssetAwsEc2SecurityGroupOutputWithContext(context.Context) GetAssetAwsEc2SecurityGroupOutput
+}
+
+type GetAssetAwsEc2SecurityGroupArgs struct {
+	GroupKey  pulumi.StringInput `pulumi:"groupKey"`
+	GroupName pulumi.StringInput `pulumi:"groupName"`
+}
+
+func (GetAssetAwsEc2SecurityGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEc2SecurityGroup)(nil)).Elem()
+}
+
+func (i GetAssetAwsEc2SecurityGroupArgs) ToGetAssetAwsEc2SecurityGroupOutput() GetAssetAwsEc2SecurityGroupOutput {
+	return i.ToGetAssetAwsEc2SecurityGroupOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEc2SecurityGroupArgs) ToGetAssetAwsEc2SecurityGroupOutputWithContext(ctx context.Context) GetAssetAwsEc2SecurityGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEc2SecurityGroupOutput)
+}
+
+// GetAssetAwsEc2SecurityGroupArrayInput is an input type that accepts GetAssetAwsEc2SecurityGroupArray and GetAssetAwsEc2SecurityGroupArrayOutput values.
+// You can construct a concrete instance of `GetAssetAwsEc2SecurityGroupArrayInput` via:
+//
+//	GetAssetAwsEc2SecurityGroupArray{ GetAssetAwsEc2SecurityGroupArgs{...} }
+type GetAssetAwsEc2SecurityGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEc2SecurityGroupArrayOutput() GetAssetAwsEc2SecurityGroupArrayOutput
+	ToGetAssetAwsEc2SecurityGroupArrayOutputWithContext(context.Context) GetAssetAwsEc2SecurityGroupArrayOutput
+}
+
+type GetAssetAwsEc2SecurityGroupArray []GetAssetAwsEc2SecurityGroupInput
+
+func (GetAssetAwsEc2SecurityGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEc2SecurityGroup)(nil)).Elem()
+}
+
+func (i GetAssetAwsEc2SecurityGroupArray) ToGetAssetAwsEc2SecurityGroupArrayOutput() GetAssetAwsEc2SecurityGroupArrayOutput {
+	return i.ToGetAssetAwsEc2SecurityGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEc2SecurityGroupArray) ToGetAssetAwsEc2SecurityGroupArrayOutputWithContext(ctx context.Context) GetAssetAwsEc2SecurityGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEc2SecurityGroupArrayOutput)
+}
+
+type GetAssetAwsEc2SecurityGroupOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEc2SecurityGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEc2SecurityGroup)(nil)).Elem()
+}
+
+func (o GetAssetAwsEc2SecurityGroupOutput) ToGetAssetAwsEc2SecurityGroupOutput() GetAssetAwsEc2SecurityGroupOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2SecurityGroupOutput) ToGetAssetAwsEc2SecurityGroupOutputWithContext(ctx context.Context) GetAssetAwsEc2SecurityGroupOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2SecurityGroupOutput) GroupKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2SecurityGroup) string { return v.GroupKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2SecurityGroupOutput) GroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2SecurityGroup) string { return v.GroupName }).(pulumi.StringOutput)
+}
+
+type GetAssetAwsEc2SecurityGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEc2SecurityGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEc2SecurityGroup)(nil)).Elem()
+}
+
+func (o GetAssetAwsEc2SecurityGroupArrayOutput) ToGetAssetAwsEc2SecurityGroupArrayOutput() GetAssetAwsEc2SecurityGroupArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2SecurityGroupArrayOutput) ToGetAssetAwsEc2SecurityGroupArrayOutputWithContext(ctx context.Context) GetAssetAwsEc2SecurityGroupArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2SecurityGroupArrayOutput) Index(i pulumi.IntInput) GetAssetAwsEc2SecurityGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetAwsEc2SecurityGroup {
+		return vs[0].([]GetAssetAwsEc2SecurityGroup)[vs[1].(int)]
+	}).(GetAssetAwsEc2SecurityGroupOutput)
+}
+
+type GetAssetAwsEc2State struct {
+	Code int `pulumi:"code"`
+	// The tag name.
+	Name string `pulumi:"name"`
+}
+
+// GetAssetAwsEc2StateInput is an input type that accepts GetAssetAwsEc2StateArgs and GetAssetAwsEc2StateOutput values.
+// You can construct a concrete instance of `GetAssetAwsEc2StateInput` via:
+//
+//	GetAssetAwsEc2StateArgs{...}
+type GetAssetAwsEc2StateInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEc2StateOutput() GetAssetAwsEc2StateOutput
+	ToGetAssetAwsEc2StateOutputWithContext(context.Context) GetAssetAwsEc2StateOutput
+}
+
+type GetAssetAwsEc2StateArgs struct {
+	Code pulumi.IntInput `pulumi:"code"`
+	// The tag name.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetAssetAwsEc2StateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEc2State)(nil)).Elem()
+}
+
+func (i GetAssetAwsEc2StateArgs) ToGetAssetAwsEc2StateOutput() GetAssetAwsEc2StateOutput {
+	return i.ToGetAssetAwsEc2StateOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEc2StateArgs) ToGetAssetAwsEc2StateOutputWithContext(ctx context.Context) GetAssetAwsEc2StateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEc2StateOutput)
+}
+
+// GetAssetAwsEc2StateArrayInput is an input type that accepts GetAssetAwsEc2StateArray and GetAssetAwsEc2StateArrayOutput values.
+// You can construct a concrete instance of `GetAssetAwsEc2StateArrayInput` via:
+//
+//	GetAssetAwsEc2StateArray{ GetAssetAwsEc2StateArgs{...} }
+type GetAssetAwsEc2StateArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEc2StateArrayOutput() GetAssetAwsEc2StateArrayOutput
+	ToGetAssetAwsEc2StateArrayOutputWithContext(context.Context) GetAssetAwsEc2StateArrayOutput
+}
+
+type GetAssetAwsEc2StateArray []GetAssetAwsEc2StateInput
+
+func (GetAssetAwsEc2StateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEc2State)(nil)).Elem()
+}
+
+func (i GetAssetAwsEc2StateArray) ToGetAssetAwsEc2StateArrayOutput() GetAssetAwsEc2StateArrayOutput {
+	return i.ToGetAssetAwsEc2StateArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEc2StateArray) ToGetAssetAwsEc2StateArrayOutputWithContext(ctx context.Context) GetAssetAwsEc2StateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEc2StateArrayOutput)
+}
+
+type GetAssetAwsEc2StateOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEc2StateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEc2State)(nil)).Elem()
+}
+
+func (o GetAssetAwsEc2StateOutput) ToGetAssetAwsEc2StateOutput() GetAssetAwsEc2StateOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2StateOutput) ToGetAssetAwsEc2StateOutputWithContext(ctx context.Context) GetAssetAwsEc2StateOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2StateOutput) Code() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2State) int { return v.Code }).(pulumi.IntOutput)
+}
+
+// The tag name.
+func (o GetAssetAwsEc2StateOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2State) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetAssetAwsEc2StateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEc2StateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEc2State)(nil)).Elem()
+}
+
+func (o GetAssetAwsEc2StateArrayOutput) ToGetAssetAwsEc2StateArrayOutput() GetAssetAwsEc2StateArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2StateArrayOutput) ToGetAssetAwsEc2StateArrayOutputWithContext(ctx context.Context) GetAssetAwsEc2StateArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2StateArrayOutput) Index(i pulumi.IntInput) GetAssetAwsEc2StateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetAwsEc2State {
+		return vs[0].([]GetAssetAwsEc2State)[vs[1].(int)]
+	}).(GetAssetAwsEc2StateOutput)
+}
+
+type GetAssetAwsEc2Tag struct {
+	Key   string `pulumi:"key"`
+	Value string `pulumi:"value"`
+}
+
+// GetAssetAwsEc2TagInput is an input type that accepts GetAssetAwsEc2TagArgs and GetAssetAwsEc2TagOutput values.
+// You can construct a concrete instance of `GetAssetAwsEc2TagInput` via:
+//
+//	GetAssetAwsEc2TagArgs{...}
+type GetAssetAwsEc2TagInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEc2TagOutput() GetAssetAwsEc2TagOutput
+	ToGetAssetAwsEc2TagOutputWithContext(context.Context) GetAssetAwsEc2TagOutput
+}
+
+type GetAssetAwsEc2TagArgs struct {
+	Key   pulumi.StringInput `pulumi:"key"`
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAssetAwsEc2TagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEc2Tag)(nil)).Elem()
+}
+
+func (i GetAssetAwsEc2TagArgs) ToGetAssetAwsEc2TagOutput() GetAssetAwsEc2TagOutput {
+	return i.ToGetAssetAwsEc2TagOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEc2TagArgs) ToGetAssetAwsEc2TagOutputWithContext(ctx context.Context) GetAssetAwsEc2TagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEc2TagOutput)
+}
+
+// GetAssetAwsEc2TagArrayInput is an input type that accepts GetAssetAwsEc2TagArray and GetAssetAwsEc2TagArrayOutput values.
+// You can construct a concrete instance of `GetAssetAwsEc2TagArrayInput` via:
+//
+//	GetAssetAwsEc2TagArray{ GetAssetAwsEc2TagArgs{...} }
+type GetAssetAwsEc2TagArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEc2TagArrayOutput() GetAssetAwsEc2TagArrayOutput
+	ToGetAssetAwsEc2TagArrayOutputWithContext(context.Context) GetAssetAwsEc2TagArrayOutput
+}
+
+type GetAssetAwsEc2TagArray []GetAssetAwsEc2TagInput
+
+func (GetAssetAwsEc2TagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEc2Tag)(nil)).Elem()
+}
+
+func (i GetAssetAwsEc2TagArray) ToGetAssetAwsEc2TagArrayOutput() GetAssetAwsEc2TagArrayOutput {
+	return i.ToGetAssetAwsEc2TagArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEc2TagArray) ToGetAssetAwsEc2TagArrayOutputWithContext(ctx context.Context) GetAssetAwsEc2TagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEc2TagArrayOutput)
+}
+
+type GetAssetAwsEc2TagOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEc2TagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEc2Tag)(nil)).Elem()
+}
+
+func (o GetAssetAwsEc2TagOutput) ToGetAssetAwsEc2TagOutput() GetAssetAwsEc2TagOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2TagOutput) ToGetAssetAwsEc2TagOutputWithContext(ctx context.Context) GetAssetAwsEc2TagOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2TagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2Tag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+func (o GetAssetAwsEc2TagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2Tag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetAssetAwsEc2TagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEc2TagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEc2Tag)(nil)).Elem()
+}
+
+func (o GetAssetAwsEc2TagArrayOutput) ToGetAssetAwsEc2TagArrayOutput() GetAssetAwsEc2TagArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2TagArrayOutput) ToGetAssetAwsEc2TagArrayOutputWithContext(ctx context.Context) GetAssetAwsEc2TagArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2TagArrayOutput) Index(i pulumi.IntInput) GetAssetAwsEc2TagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetAwsEc2Tag {
+		return vs[0].([]GetAssetAwsEc2Tag)[vs[1].(int)]
+	}).(GetAssetAwsEc2TagOutput)
+}
+
+type GetAssetAwsEc2cost struct {
+	Amount       float64 `pulumi:"amount"`
+	CurrencyCode string  `pulumi:"currencyCode"`
+}
+
+// GetAssetAwsEc2costInput is an input type that accepts GetAssetAwsEc2costArgs and GetAssetAwsEc2costOutput values.
+// You can construct a concrete instance of `GetAssetAwsEc2costInput` via:
+//
+//	GetAssetAwsEc2costArgs{...}
+type GetAssetAwsEc2costInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEc2costOutput() GetAssetAwsEc2costOutput
+	ToGetAssetAwsEc2costOutputWithContext(context.Context) GetAssetAwsEc2costOutput
+}
+
+type GetAssetAwsEc2costArgs struct {
+	Amount       pulumi.Float64Input `pulumi:"amount"`
+	CurrencyCode pulumi.StringInput  `pulumi:"currencyCode"`
+}
+
+func (GetAssetAwsEc2costArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEc2cost)(nil)).Elem()
+}
+
+func (i GetAssetAwsEc2costArgs) ToGetAssetAwsEc2costOutput() GetAssetAwsEc2costOutput {
+	return i.ToGetAssetAwsEc2costOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEc2costArgs) ToGetAssetAwsEc2costOutputWithContext(ctx context.Context) GetAssetAwsEc2costOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEc2costOutput)
+}
+
+// GetAssetAwsEc2costArrayInput is an input type that accepts GetAssetAwsEc2costArray and GetAssetAwsEc2costArrayOutput values.
+// You can construct a concrete instance of `GetAssetAwsEc2costArrayInput` via:
+//
+//	GetAssetAwsEc2costArray{ GetAssetAwsEc2costArgs{...} }
+type GetAssetAwsEc2costArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetAwsEc2costArrayOutput() GetAssetAwsEc2costArrayOutput
+	ToGetAssetAwsEc2costArrayOutputWithContext(context.Context) GetAssetAwsEc2costArrayOutput
+}
+
+type GetAssetAwsEc2costArray []GetAssetAwsEc2costInput
+
+func (GetAssetAwsEc2costArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEc2cost)(nil)).Elem()
+}
+
+func (i GetAssetAwsEc2costArray) ToGetAssetAwsEc2costArrayOutput() GetAssetAwsEc2costArrayOutput {
+	return i.ToGetAssetAwsEc2costArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetAwsEc2costArray) ToGetAssetAwsEc2costArrayOutputWithContext(ctx context.Context) GetAssetAwsEc2costArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetAwsEc2costArrayOutput)
+}
+
+type GetAssetAwsEc2costOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEc2costOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetAwsEc2cost)(nil)).Elem()
+}
+
+func (o GetAssetAwsEc2costOutput) ToGetAssetAwsEc2costOutput() GetAssetAwsEc2costOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2costOutput) ToGetAssetAwsEc2costOutputWithContext(ctx context.Context) GetAssetAwsEc2costOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2costOutput) Amount() pulumi.Float64Output {
+	return o.ApplyT(func(v GetAssetAwsEc2cost) float64 { return v.Amount }).(pulumi.Float64Output)
+}
+
+func (o GetAssetAwsEc2costOutput) CurrencyCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetAwsEc2cost) string { return v.CurrencyCode }).(pulumi.StringOutput)
+}
+
+type GetAssetAwsEc2costArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetAwsEc2costArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetAwsEc2cost)(nil)).Elem()
+}
+
+func (o GetAssetAwsEc2costArrayOutput) ToGetAssetAwsEc2costArrayOutput() GetAssetAwsEc2costArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2costArrayOutput) ToGetAssetAwsEc2costArrayOutputWithContext(ctx context.Context) GetAssetAwsEc2costArrayOutput {
+	return o
+}
+
+func (o GetAssetAwsEc2costArrayOutput) Index(i pulumi.IntInput) GetAssetAwsEc2costOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetAwsEc2cost {
+		return vs[0].([]GetAssetAwsEc2cost)[vs[1].(int)]
+	}).(GetAssetAwsEc2costOutput)
+}
+
 type GetAssetCompute struct {
 	// Number of connected networks.
 	ConnectedNetworks int `pulumi:"connectedNetworks"`
@@ -5057,7 +10510,8 @@ func (o GetAssetComputeArrayOutput) Index(i pulumi.IntInput) GetAssetComputeOutp
 
 type GetAssetComputeDisk struct {
 	// Order of boot volumes.
-	BootOrder int `pulumi:"bootOrder"`
+	BootOrder    int  `pulumi:"bootOrder"`
+	IsCbtEnabled bool `pulumi:"isCbtEnabled"`
 	// Location of the boot/data volume.
 	Location string `pulumi:"location"`
 	// The tag name.
@@ -5085,7 +10539,8 @@ type GetAssetComputeDiskInput interface {
 
 type GetAssetComputeDiskArgs struct {
 	// Order of boot volumes.
-	BootOrder pulumi.IntInput `pulumi:"bootOrder"`
+	BootOrder    pulumi.IntInput  `pulumi:"bootOrder"`
+	IsCbtEnabled pulumi.BoolInput `pulumi:"isCbtEnabled"`
 	// Location of the boot/data volume.
 	Location pulumi.StringInput `pulumi:"location"`
 	// The tag name.
@@ -5154,6 +10609,10 @@ func (o GetAssetComputeDiskOutput) ToGetAssetComputeDiskOutputWithContext(ctx co
 // Order of boot volumes.
 func (o GetAssetComputeDiskOutput) BootOrder() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAssetComputeDisk) int { return v.BootOrder }).(pulumi.IntOutput)
+}
+
+func (o GetAssetComputeDiskOutput) IsCbtEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetComputeDisk) bool { return v.IsCbtEnabled }).(pulumi.BoolOutput)
 }
 
 // Location of the boot/data volume.
@@ -6132,6 +11591,8 @@ type GetAssetSourcesAssetSourceCollectionItem struct {
 	AreRealtimeMetricsCollected bool `pulumi:"areRealtimeMetricsCollected"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that is going to be used to create assets.
 	AssetsCompartmentId string `pulumi:"assetsCompartmentId"`
+	AwsAccountKey       string `pulumi:"awsAccountKey"`
+	AwsRegion           string `pulumi:"awsRegion"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -6144,14 +11605,19 @@ type GetAssetSourcesAssetSourceCollectionItem struct {
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the environment.
 	EnvironmentId string `pulumi:"environmentId"`
+	// Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+	EnvironmentType string `pulumi:"environmentType"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
 	Id string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
-	InventoryId string `pulumi:"inventoryId"`
+	InventoryId                string `pulumi:"inventoryId"`
+	IsCostInformationCollected bool   `pulumi:"isCostInformationCollected"`
 	// The detailed state of the asset source.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Endpoint for OLVM asset discovery and replication in the form of ```https://<host>:<port>```
+	OlvmEndpoint string `pulumi:"olvmEndpoint"`
 	// Credentials for an asset source.
 	ReplicationCredentials []GetAssetSourcesAssetSourceCollectionItemReplicationCredential `pulumi:"replicationCredentials"`
 	// The current state of the asset source.
@@ -6186,6 +11652,8 @@ type GetAssetSourcesAssetSourceCollectionItemArgs struct {
 	AreRealtimeMetricsCollected pulumi.BoolInput `pulumi:"areRealtimeMetricsCollected"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that is going to be used to create assets.
 	AssetsCompartmentId pulumi.StringInput `pulumi:"assetsCompartmentId"`
+	AwsAccountKey       pulumi.StringInput `pulumi:"awsAccountKey"`
+	AwsRegion           pulumi.StringInput `pulumi:"awsRegion"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -6198,14 +11666,19 @@ type GetAssetSourcesAssetSourceCollectionItemArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the environment.
 	EnvironmentId pulumi.StringInput `pulumi:"environmentId"`
+	// Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+	EnvironmentType pulumi.StringInput `pulumi:"environmentType"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
-	InventoryId pulumi.StringInput `pulumi:"inventoryId"`
+	InventoryId                pulumi.StringInput `pulumi:"inventoryId"`
+	IsCostInformationCollected pulumi.BoolInput   `pulumi:"isCostInformationCollected"`
 	// The detailed state of the asset source.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Endpoint for OLVM asset discovery and replication in the form of ```https://<host>:<port>```
+	OlvmEndpoint pulumi.StringInput `pulumi:"olvmEndpoint"`
 	// Credentials for an asset source.
 	ReplicationCredentials GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArrayInput `pulumi:"replicationCredentials"`
 	// The current state of the asset source.
@@ -6288,6 +11761,14 @@ func (o GetAssetSourcesAssetSourceCollectionItemOutput) AssetsCompartmentId() pu
 	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) string { return v.AssetsCompartmentId }).(pulumi.StringOutput)
 }
 
+func (o GetAssetSourcesAssetSourceCollectionItemOutput) AwsAccountKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) string { return v.AwsAccountKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetSourcesAssetSourceCollectionItemOutput) AwsRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) string { return v.AwsRegion }).(pulumi.StringOutput)
+}
+
 // The ID of the compartment in which to list resources.
 func (o GetAssetSourcesAssetSourceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -6320,6 +11801,11 @@ func (o GetAssetSourcesAssetSourceCollectionItemOutput) EnvironmentId() pulumi.S
 	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) string { return v.EnvironmentId }).(pulumi.StringOutput)
 }
 
+// Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+func (o GetAssetSourcesAssetSourceCollectionItemOutput) EnvironmentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) string { return v.EnvironmentType }).(pulumi.StringOutput)
+}
+
 // The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 func (o GetAssetSourcesAssetSourceCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
@@ -6335,9 +11821,18 @@ func (o GetAssetSourcesAssetSourceCollectionItemOutput) InventoryId() pulumi.Str
 	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) string { return v.InventoryId }).(pulumi.StringOutput)
 }
 
+func (o GetAssetSourcesAssetSourceCollectionItemOutput) IsCostInformationCollected() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) bool { return v.IsCostInformationCollected }).(pulumi.BoolOutput)
+}
+
 // The detailed state of the asset source.
 func (o GetAssetSourcesAssetSourceCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Endpoint for OLVM asset discovery and replication in the form of ```https://<host>:<port>```
+func (o GetAssetSourcesAssetSourceCollectionItemOutput) OlvmEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) string { return v.OlvmEndpoint }).(pulumi.StringOutput)
 }
 
 // Credentials for an asset source.
@@ -7333,10 +12828,20 @@ func (o GetAssetsAssetCollectionArrayOutput) Index(i pulumi.IntInput) GetAssetsA
 }
 
 type GetAssetsAssetCollectionItem struct {
+	// The name of the asset class.
+	AssetClassName string `pulumi:"assetClassName"`
+	// The version of the asset class.
+	AssetClassVersion string `pulumi:"assetClassVersion"`
+	// The details of the asset.
+	AssetDetails string `pulumi:"assetDetails"`
 	// List of asset source OCID.
 	AssetSourceIds []string `pulumi:"assetSourceIds"`
 	// The type of asset.
-	AssetType string `pulumi:"assetType"`
+	AssetType               string                                               `pulumi:"assetType"`
+	AttachedEbsVolumesCosts []GetAssetsAssetCollectionItemAttachedEbsVolumesCost `pulumi:"attachedEbsVolumesCosts"`
+	AwsEbs                  []GetAssetsAssetCollectionItemAwsEb                  `pulumi:"awsEbs"`
+	AwsEc2costs             []GetAssetsAssetCollectionItemAwsEc2cost             `pulumi:"awsEc2costs"`
+	AwsEc2s                 []GetAssetsAssetCollectionItemAwsEc2                 `pulumi:"awsEc2s"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Compute related properties.
@@ -7345,6 +12850,8 @@ type GetAssetsAssetCollectionItem struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
+	// Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+	EnvironmentType string `pulumi:"environmentType"`
 	// External asset key.
 	ExternalAssetKey string `pulumi:"externalAssetKey"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -7383,10 +12890,20 @@ type GetAssetsAssetCollectionItemInput interface {
 }
 
 type GetAssetsAssetCollectionItemArgs struct {
+	// The name of the asset class.
+	AssetClassName pulumi.StringInput `pulumi:"assetClassName"`
+	// The version of the asset class.
+	AssetClassVersion pulumi.StringInput `pulumi:"assetClassVersion"`
+	// The details of the asset.
+	AssetDetails pulumi.StringInput `pulumi:"assetDetails"`
 	// List of asset source OCID.
 	AssetSourceIds pulumi.StringArrayInput `pulumi:"assetSourceIds"`
 	// The type of asset.
-	AssetType pulumi.StringInput `pulumi:"assetType"`
+	AssetType               pulumi.StringInput                                           `pulumi:"assetType"`
+	AttachedEbsVolumesCosts GetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayInput `pulumi:"attachedEbsVolumesCosts"`
+	AwsEbs                  GetAssetsAssetCollectionItemAwsEbArrayInput                  `pulumi:"awsEbs"`
+	AwsEc2costs             GetAssetsAssetCollectionItemAwsEc2costArrayInput             `pulumi:"awsEc2costs"`
+	AwsEc2s                 GetAssetsAssetCollectionItemAwsEc2ArrayInput                 `pulumi:"awsEc2s"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Compute related properties.
@@ -7395,6 +12912,8 @@ type GetAssetsAssetCollectionItemArgs struct {
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+	EnvironmentType pulumi.StringInput `pulumi:"environmentType"`
 	// External asset key.
 	ExternalAssetKey pulumi.StringInput `pulumi:"externalAssetKey"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -7472,6 +12991,21 @@ func (o GetAssetsAssetCollectionItemOutput) ToGetAssetsAssetCollectionItemOutput
 	return o
 }
 
+// The name of the asset class.
+func (o GetAssetsAssetCollectionItemOutput) AssetClassName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItem) string { return v.AssetClassName }).(pulumi.StringOutput)
+}
+
+// The version of the asset class.
+func (o GetAssetsAssetCollectionItemOutput) AssetClassVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItem) string { return v.AssetClassVersion }).(pulumi.StringOutput)
+}
+
+// The details of the asset.
+func (o GetAssetsAssetCollectionItemOutput) AssetDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItem) string { return v.AssetDetails }).(pulumi.StringOutput)
+}
+
 // List of asset source OCID.
 func (o GetAssetsAssetCollectionItemOutput) AssetSourceIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAssetsAssetCollectionItem) []string { return v.AssetSourceIds }).(pulumi.StringArrayOutput)
@@ -7480,6 +13014,24 @@ func (o GetAssetsAssetCollectionItemOutput) AssetSourceIds() pulumi.StringArrayO
 // The type of asset.
 func (o GetAssetsAssetCollectionItemOutput) AssetType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAssetsAssetCollectionItem) string { return v.AssetType }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemOutput) AttachedEbsVolumesCosts() GetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItem) []GetAssetsAssetCollectionItemAttachedEbsVolumesCost {
+		return v.AttachedEbsVolumesCosts
+	}).(GetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayOutput)
+}
+
+func (o GetAssetsAssetCollectionItemOutput) AwsEbs() GetAssetsAssetCollectionItemAwsEbArrayOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItem) []GetAssetsAssetCollectionItemAwsEb { return v.AwsEbs }).(GetAssetsAssetCollectionItemAwsEbArrayOutput)
+}
+
+func (o GetAssetsAssetCollectionItemOutput) AwsEc2costs() GetAssetsAssetCollectionItemAwsEc2costArrayOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItem) []GetAssetsAssetCollectionItemAwsEc2cost { return v.AwsEc2costs }).(GetAssetsAssetCollectionItemAwsEc2costArrayOutput)
+}
+
+func (o GetAssetsAssetCollectionItemOutput) AwsEc2s() GetAssetsAssetCollectionItemAwsEc2ArrayOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItem) []GetAssetsAssetCollectionItemAwsEc2 { return v.AwsEc2s }).(GetAssetsAssetCollectionItemAwsEc2ArrayOutput)
 }
 
 // The ID of the compartment in which to list resources.
@@ -7500,6 +13052,11 @@ func (o GetAssetsAssetCollectionItemOutput) DefinedTags() pulumi.StringMapOutput
 // A filter to return only resources that match the entire display name given.
 func (o GetAssetsAssetCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAssetsAssetCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+func (o GetAssetsAssetCollectionItemOutput) EnvironmentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItem) string { return v.EnvironmentType }).(pulumi.StringOutput)
 }
 
 // External asset key.
@@ -7582,6 +13139,2096 @@ func (o GetAssetsAssetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAss
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItem {
 		return vs[0].([]GetAssetsAssetCollectionItem)[vs[1].(int)]
 	}).(GetAssetsAssetCollectionItemOutput)
+}
+
+type GetAssetsAssetCollectionItemAttachedEbsVolumesCost struct {
+	Amount       float64 `pulumi:"amount"`
+	CurrencyCode string  `pulumi:"currencyCode"`
+}
+
+// GetAssetsAssetCollectionItemAttachedEbsVolumesCostInput is an input type that accepts GetAssetsAssetCollectionItemAttachedEbsVolumesCostArgs and GetAssetsAssetCollectionItemAttachedEbsVolumesCostOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAttachedEbsVolumesCostInput` via:
+//
+//	GetAssetsAssetCollectionItemAttachedEbsVolumesCostArgs{...}
+type GetAssetsAssetCollectionItemAttachedEbsVolumesCostInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAttachedEbsVolumesCostOutput() GetAssetsAssetCollectionItemAttachedEbsVolumesCostOutput
+	ToGetAssetsAssetCollectionItemAttachedEbsVolumesCostOutputWithContext(context.Context) GetAssetsAssetCollectionItemAttachedEbsVolumesCostOutput
+}
+
+type GetAssetsAssetCollectionItemAttachedEbsVolumesCostArgs struct {
+	Amount       pulumi.Float64Input `pulumi:"amount"`
+	CurrencyCode pulumi.StringInput  `pulumi:"currencyCode"`
+}
+
+func (GetAssetsAssetCollectionItemAttachedEbsVolumesCostArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAttachedEbsVolumesCost)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAttachedEbsVolumesCostArgs) ToGetAssetsAssetCollectionItemAttachedEbsVolumesCostOutput() GetAssetsAssetCollectionItemAttachedEbsVolumesCostOutput {
+	return i.ToGetAssetsAssetCollectionItemAttachedEbsVolumesCostOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAttachedEbsVolumesCostArgs) ToGetAssetsAssetCollectionItemAttachedEbsVolumesCostOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAttachedEbsVolumesCostOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAttachedEbsVolumesCostOutput)
+}
+
+// GetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayInput is an input type that accepts GetAssetsAssetCollectionItemAttachedEbsVolumesCostArray and GetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayInput` via:
+//
+//	GetAssetsAssetCollectionItemAttachedEbsVolumesCostArray{ GetAssetsAssetCollectionItemAttachedEbsVolumesCostArgs{...} }
+type GetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayOutput() GetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayOutput
+	ToGetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayOutputWithContext(context.Context) GetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayOutput
+}
+
+type GetAssetsAssetCollectionItemAttachedEbsVolumesCostArray []GetAssetsAssetCollectionItemAttachedEbsVolumesCostInput
+
+func (GetAssetsAssetCollectionItemAttachedEbsVolumesCostArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAttachedEbsVolumesCost)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAttachedEbsVolumesCostArray) ToGetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayOutput() GetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayOutput {
+	return i.ToGetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAttachedEbsVolumesCostArray) ToGetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayOutput)
+}
+
+type GetAssetsAssetCollectionItemAttachedEbsVolumesCostOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAttachedEbsVolumesCostOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAttachedEbsVolumesCost)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAttachedEbsVolumesCostOutput) ToGetAssetsAssetCollectionItemAttachedEbsVolumesCostOutput() GetAssetsAssetCollectionItemAttachedEbsVolumesCostOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAttachedEbsVolumesCostOutput) ToGetAssetsAssetCollectionItemAttachedEbsVolumesCostOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAttachedEbsVolumesCostOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAttachedEbsVolumesCostOutput) Amount() pulumi.Float64Output {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAttachedEbsVolumesCost) float64 { return v.Amount }).(pulumi.Float64Output)
+}
+
+func (o GetAssetsAssetCollectionItemAttachedEbsVolumesCostOutput) CurrencyCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAttachedEbsVolumesCost) string { return v.CurrencyCode }).(pulumi.StringOutput)
+}
+
+type GetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAttachedEbsVolumesCost)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayOutput) ToGetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayOutput() GetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayOutput) ToGetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemAttachedEbsVolumesCostOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemAttachedEbsVolumesCost {
+		return vs[0].([]GetAssetsAssetCollectionItemAttachedEbsVolumesCost)[vs[1].(int)]
+	}).(GetAssetsAssetCollectionItemAttachedEbsVolumesCostOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEb struct {
+	Attachments          []GetAssetsAssetCollectionItemAwsEbAttachment `pulumi:"attachments"`
+	AvailabilityZone     string                                        `pulumi:"availabilityZone"`
+	Iops                 int                                           `pulumi:"iops"`
+	IsEncrypted          bool                                          `pulumi:"isEncrypted"`
+	IsMultiAttachEnabled bool                                          `pulumi:"isMultiAttachEnabled"`
+	SizeInGiBs           int                                           `pulumi:"sizeInGiBs"`
+	Status               string                                        `pulumi:"status"`
+	Tags                 []GetAssetsAssetCollectionItemAwsEbTag        `pulumi:"tags"`
+	Throughput           int                                           `pulumi:"throughput"`
+	VolumeKey            string                                        `pulumi:"volumeKey"`
+	VolumeType           string                                        `pulumi:"volumeType"`
+}
+
+// GetAssetsAssetCollectionItemAwsEbInput is an input type that accepts GetAssetsAssetCollectionItemAwsEbArgs and GetAssetsAssetCollectionItemAwsEbOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEbInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEbArgs{...}
+type GetAssetsAssetCollectionItemAwsEbInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEbOutput() GetAssetsAssetCollectionItemAwsEbOutput
+	ToGetAssetsAssetCollectionItemAwsEbOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEbOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEbArgs struct {
+	Attachments          GetAssetsAssetCollectionItemAwsEbAttachmentArrayInput `pulumi:"attachments"`
+	AvailabilityZone     pulumi.StringInput                                    `pulumi:"availabilityZone"`
+	Iops                 pulumi.IntInput                                       `pulumi:"iops"`
+	IsEncrypted          pulumi.BoolInput                                      `pulumi:"isEncrypted"`
+	IsMultiAttachEnabled pulumi.BoolInput                                      `pulumi:"isMultiAttachEnabled"`
+	SizeInGiBs           pulumi.IntInput                                       `pulumi:"sizeInGiBs"`
+	Status               pulumi.StringInput                                    `pulumi:"status"`
+	Tags                 GetAssetsAssetCollectionItemAwsEbTagArrayInput        `pulumi:"tags"`
+	Throughput           pulumi.IntInput                                       `pulumi:"throughput"`
+	VolumeKey            pulumi.StringInput                                    `pulumi:"volumeKey"`
+	VolumeType           pulumi.StringInput                                    `pulumi:"volumeType"`
+}
+
+func (GetAssetsAssetCollectionItemAwsEbArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEb)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEbArgs) ToGetAssetsAssetCollectionItemAwsEbOutput() GetAssetsAssetCollectionItemAwsEbOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEbOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEbArgs) ToGetAssetsAssetCollectionItemAwsEbOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEbOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEbOutput)
+}
+
+// GetAssetsAssetCollectionItemAwsEbArrayInput is an input type that accepts GetAssetsAssetCollectionItemAwsEbArray and GetAssetsAssetCollectionItemAwsEbArrayOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEbArrayInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEbArray{ GetAssetsAssetCollectionItemAwsEbArgs{...} }
+type GetAssetsAssetCollectionItemAwsEbArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEbArrayOutput() GetAssetsAssetCollectionItemAwsEbArrayOutput
+	ToGetAssetsAssetCollectionItemAwsEbArrayOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEbArrayOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEbArray []GetAssetsAssetCollectionItemAwsEbInput
+
+func (GetAssetsAssetCollectionItemAwsEbArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEb)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEbArray) ToGetAssetsAssetCollectionItemAwsEbArrayOutput() GetAssetsAssetCollectionItemAwsEbArrayOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEbArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEbArray) ToGetAssetsAssetCollectionItemAwsEbArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEbArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEbArrayOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEbOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEbOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEb)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbOutput) ToGetAssetsAssetCollectionItemAwsEbOutput() GetAssetsAssetCollectionItemAwsEbOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbOutput) ToGetAssetsAssetCollectionItemAwsEbOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEbOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbOutput) Attachments() GetAssetsAssetCollectionItemAwsEbAttachmentArrayOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEb) []GetAssetsAssetCollectionItemAwsEbAttachment {
+		return v.Attachments
+	}).(GetAssetsAssetCollectionItemAwsEbAttachmentArrayOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbOutput) AvailabilityZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEb) string { return v.AvailabilityZone }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbOutput) Iops() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEb) int { return v.Iops }).(pulumi.IntOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbOutput) IsEncrypted() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEb) bool { return v.IsEncrypted }).(pulumi.BoolOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbOutput) IsMultiAttachEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEb) bool { return v.IsMultiAttachEnabled }).(pulumi.BoolOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbOutput) SizeInGiBs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEb) int { return v.SizeInGiBs }).(pulumi.IntOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEb) string { return v.Status }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbOutput) Tags() GetAssetsAssetCollectionItemAwsEbTagArrayOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEb) []GetAssetsAssetCollectionItemAwsEbTag { return v.Tags }).(GetAssetsAssetCollectionItemAwsEbTagArrayOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbOutput) Throughput() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEb) int { return v.Throughput }).(pulumi.IntOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbOutput) VolumeKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEb) string { return v.VolumeKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbOutput) VolumeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEb) string { return v.VolumeType }).(pulumi.StringOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEbArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEbArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEb)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbArrayOutput) ToGetAssetsAssetCollectionItemAwsEbArrayOutput() GetAssetsAssetCollectionItemAwsEbArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbArrayOutput) ToGetAssetsAssetCollectionItemAwsEbArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEbArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemAwsEbOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemAwsEb {
+		return vs[0].([]GetAssetsAssetCollectionItemAwsEb)[vs[1].(int)]
+	}).(GetAssetsAssetCollectionItemAwsEbOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEbAttachment struct {
+	Device                string `pulumi:"device"`
+	InstanceKey           string `pulumi:"instanceKey"`
+	IsDeleteOnTermination bool   `pulumi:"isDeleteOnTermination"`
+	Status                string `pulumi:"status"`
+	VolumeKey             string `pulumi:"volumeKey"`
+}
+
+// GetAssetsAssetCollectionItemAwsEbAttachmentInput is an input type that accepts GetAssetsAssetCollectionItemAwsEbAttachmentArgs and GetAssetsAssetCollectionItemAwsEbAttachmentOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEbAttachmentInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEbAttachmentArgs{...}
+type GetAssetsAssetCollectionItemAwsEbAttachmentInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEbAttachmentOutput() GetAssetsAssetCollectionItemAwsEbAttachmentOutput
+	ToGetAssetsAssetCollectionItemAwsEbAttachmentOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEbAttachmentOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEbAttachmentArgs struct {
+	Device                pulumi.StringInput `pulumi:"device"`
+	InstanceKey           pulumi.StringInput `pulumi:"instanceKey"`
+	IsDeleteOnTermination pulumi.BoolInput   `pulumi:"isDeleteOnTermination"`
+	Status                pulumi.StringInput `pulumi:"status"`
+	VolumeKey             pulumi.StringInput `pulumi:"volumeKey"`
+}
+
+func (GetAssetsAssetCollectionItemAwsEbAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEbAttachment)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEbAttachmentArgs) ToGetAssetsAssetCollectionItemAwsEbAttachmentOutput() GetAssetsAssetCollectionItemAwsEbAttachmentOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEbAttachmentOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEbAttachmentArgs) ToGetAssetsAssetCollectionItemAwsEbAttachmentOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEbAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEbAttachmentOutput)
+}
+
+// GetAssetsAssetCollectionItemAwsEbAttachmentArrayInput is an input type that accepts GetAssetsAssetCollectionItemAwsEbAttachmentArray and GetAssetsAssetCollectionItemAwsEbAttachmentArrayOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEbAttachmentArrayInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEbAttachmentArray{ GetAssetsAssetCollectionItemAwsEbAttachmentArgs{...} }
+type GetAssetsAssetCollectionItemAwsEbAttachmentArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEbAttachmentArrayOutput() GetAssetsAssetCollectionItemAwsEbAttachmentArrayOutput
+	ToGetAssetsAssetCollectionItemAwsEbAttachmentArrayOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEbAttachmentArrayOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEbAttachmentArray []GetAssetsAssetCollectionItemAwsEbAttachmentInput
+
+func (GetAssetsAssetCollectionItemAwsEbAttachmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEbAttachment)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEbAttachmentArray) ToGetAssetsAssetCollectionItemAwsEbAttachmentArrayOutput() GetAssetsAssetCollectionItemAwsEbAttachmentArrayOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEbAttachmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEbAttachmentArray) ToGetAssetsAssetCollectionItemAwsEbAttachmentArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEbAttachmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEbAttachmentArrayOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEbAttachmentOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEbAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEbAttachment)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbAttachmentOutput) ToGetAssetsAssetCollectionItemAwsEbAttachmentOutput() GetAssetsAssetCollectionItemAwsEbAttachmentOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbAttachmentOutput) ToGetAssetsAssetCollectionItemAwsEbAttachmentOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEbAttachmentOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbAttachmentOutput) Device() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEbAttachment) string { return v.Device }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbAttachmentOutput) InstanceKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEbAttachment) string { return v.InstanceKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbAttachmentOutput) IsDeleteOnTermination() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEbAttachment) bool { return v.IsDeleteOnTermination }).(pulumi.BoolOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbAttachmentOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEbAttachment) string { return v.Status }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbAttachmentOutput) VolumeKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEbAttachment) string { return v.VolumeKey }).(pulumi.StringOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEbAttachmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEbAttachmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEbAttachment)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbAttachmentArrayOutput) ToGetAssetsAssetCollectionItemAwsEbAttachmentArrayOutput() GetAssetsAssetCollectionItemAwsEbAttachmentArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbAttachmentArrayOutput) ToGetAssetsAssetCollectionItemAwsEbAttachmentArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEbAttachmentArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbAttachmentArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemAwsEbAttachmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemAwsEbAttachment {
+		return vs[0].([]GetAssetsAssetCollectionItemAwsEbAttachment)[vs[1].(int)]
+	}).(GetAssetsAssetCollectionItemAwsEbAttachmentOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEbTag struct {
+	Key   string `pulumi:"key"`
+	Value string `pulumi:"value"`
+}
+
+// GetAssetsAssetCollectionItemAwsEbTagInput is an input type that accepts GetAssetsAssetCollectionItemAwsEbTagArgs and GetAssetsAssetCollectionItemAwsEbTagOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEbTagInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEbTagArgs{...}
+type GetAssetsAssetCollectionItemAwsEbTagInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEbTagOutput() GetAssetsAssetCollectionItemAwsEbTagOutput
+	ToGetAssetsAssetCollectionItemAwsEbTagOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEbTagOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEbTagArgs struct {
+	Key   pulumi.StringInput `pulumi:"key"`
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAssetsAssetCollectionItemAwsEbTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEbTag)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEbTagArgs) ToGetAssetsAssetCollectionItemAwsEbTagOutput() GetAssetsAssetCollectionItemAwsEbTagOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEbTagOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEbTagArgs) ToGetAssetsAssetCollectionItemAwsEbTagOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEbTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEbTagOutput)
+}
+
+// GetAssetsAssetCollectionItemAwsEbTagArrayInput is an input type that accepts GetAssetsAssetCollectionItemAwsEbTagArray and GetAssetsAssetCollectionItemAwsEbTagArrayOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEbTagArrayInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEbTagArray{ GetAssetsAssetCollectionItemAwsEbTagArgs{...} }
+type GetAssetsAssetCollectionItemAwsEbTagArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEbTagArrayOutput() GetAssetsAssetCollectionItemAwsEbTagArrayOutput
+	ToGetAssetsAssetCollectionItemAwsEbTagArrayOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEbTagArrayOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEbTagArray []GetAssetsAssetCollectionItemAwsEbTagInput
+
+func (GetAssetsAssetCollectionItemAwsEbTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEbTag)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEbTagArray) ToGetAssetsAssetCollectionItemAwsEbTagArrayOutput() GetAssetsAssetCollectionItemAwsEbTagArrayOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEbTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEbTagArray) ToGetAssetsAssetCollectionItemAwsEbTagArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEbTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEbTagArrayOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEbTagOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEbTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEbTag)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbTagOutput) ToGetAssetsAssetCollectionItemAwsEbTagOutput() GetAssetsAssetCollectionItemAwsEbTagOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbTagOutput) ToGetAssetsAssetCollectionItemAwsEbTagOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEbTagOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEbTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEbTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEbTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEbTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEbTag)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbTagArrayOutput) ToGetAssetsAssetCollectionItemAwsEbTagArrayOutput() GetAssetsAssetCollectionItemAwsEbTagArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbTagArrayOutput) ToGetAssetsAssetCollectionItemAwsEbTagArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEbTagArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEbTagArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemAwsEbTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemAwsEbTag {
+		return vs[0].([]GetAssetsAssetCollectionItemAwsEbTag)[vs[1].(int)]
+	}).(GetAssetsAssetCollectionItemAwsEbTagOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2 struct {
+	Architecture                           string                                               `pulumi:"architecture"`
+	AreElasticInferenceAcceleratorsPresent bool                                                 `pulumi:"areElasticInferenceAcceleratorsPresent"`
+	BootMode                               string                                               `pulumi:"bootMode"`
+	CapacityReservationKey                 string                                               `pulumi:"capacityReservationKey"`
+	ImageKey                               string                                               `pulumi:"imageKey"`
+	InstanceKey                            string                                               `pulumi:"instanceKey"`
+	InstanceLifecycle                      string                                               `pulumi:"instanceLifecycle"`
+	InstanceType                           string                                               `pulumi:"instanceType"`
+	IpAddress                              string                                               `pulumi:"ipAddress"`
+	Ipv6address                            string                                               `pulumi:"ipv6address"`
+	IsEnclaveOptions                       bool                                                 `pulumi:"isEnclaveOptions"`
+	IsHibernationOptions                   bool                                                 `pulumi:"isHibernationOptions"`
+	IsSourceDestCheck                      bool                                                 `pulumi:"isSourceDestCheck"`
+	IsSpotInstance                         bool                                                 `pulumi:"isSpotInstance"`
+	KernelKey                              string                                               `pulumi:"kernelKey"`
+	Licenses                               []string                                             `pulumi:"licenses"`
+	MaintenanceOptions                     string                                               `pulumi:"maintenanceOptions"`
+	Monitoring                             string                                               `pulumi:"monitoring"`
+	NetworkInterfaces                      []GetAssetsAssetCollectionItemAwsEc2NetworkInterface `pulumi:"networkInterfaces"`
+	Placements                             []GetAssetsAssetCollectionItemAwsEc2Placement        `pulumi:"placements"`
+	PrivateDnsName                         string                                               `pulumi:"privateDnsName"`
+	PrivateIpAddress                       string                                               `pulumi:"privateIpAddress"`
+	RootDeviceName                         string                                               `pulumi:"rootDeviceName"`
+	RootDeviceType                         string                                               `pulumi:"rootDeviceType"`
+	SecurityGroups                         []GetAssetsAssetCollectionItemAwsEc2SecurityGroup    `pulumi:"securityGroups"`
+	SriovNetSupport                        string                                               `pulumi:"sriovNetSupport"`
+	// A filter to return only assets whose lifecycleState matches the given lifecycleState.
+	States             []GetAssetsAssetCollectionItemAwsEc2State `pulumi:"states"`
+	SubnetKey          string                                    `pulumi:"subnetKey"`
+	Tags               []GetAssetsAssetCollectionItemAwsEc2Tag   `pulumi:"tags"`
+	TimeLaunch         string                                    `pulumi:"timeLaunch"`
+	TpmSupport         string                                    `pulumi:"tpmSupport"`
+	VirtualizationType string                                    `pulumi:"virtualizationType"`
+	VpcKey             string                                    `pulumi:"vpcKey"`
+}
+
+// GetAssetsAssetCollectionItemAwsEc2Input is an input type that accepts GetAssetsAssetCollectionItemAwsEc2Args and GetAssetsAssetCollectionItemAwsEc2Output values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEc2Input` via:
+//
+//	GetAssetsAssetCollectionItemAwsEc2Args{...}
+type GetAssetsAssetCollectionItemAwsEc2Input interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEc2Output() GetAssetsAssetCollectionItemAwsEc2Output
+	ToGetAssetsAssetCollectionItemAwsEc2OutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEc2Output
+}
+
+type GetAssetsAssetCollectionItemAwsEc2Args struct {
+	Architecture                           pulumi.StringInput                                           `pulumi:"architecture"`
+	AreElasticInferenceAcceleratorsPresent pulumi.BoolInput                                             `pulumi:"areElasticInferenceAcceleratorsPresent"`
+	BootMode                               pulumi.StringInput                                           `pulumi:"bootMode"`
+	CapacityReservationKey                 pulumi.StringInput                                           `pulumi:"capacityReservationKey"`
+	ImageKey                               pulumi.StringInput                                           `pulumi:"imageKey"`
+	InstanceKey                            pulumi.StringInput                                           `pulumi:"instanceKey"`
+	InstanceLifecycle                      pulumi.StringInput                                           `pulumi:"instanceLifecycle"`
+	InstanceType                           pulumi.StringInput                                           `pulumi:"instanceType"`
+	IpAddress                              pulumi.StringInput                                           `pulumi:"ipAddress"`
+	Ipv6address                            pulumi.StringInput                                           `pulumi:"ipv6address"`
+	IsEnclaveOptions                       pulumi.BoolInput                                             `pulumi:"isEnclaveOptions"`
+	IsHibernationOptions                   pulumi.BoolInput                                             `pulumi:"isHibernationOptions"`
+	IsSourceDestCheck                      pulumi.BoolInput                                             `pulumi:"isSourceDestCheck"`
+	IsSpotInstance                         pulumi.BoolInput                                             `pulumi:"isSpotInstance"`
+	KernelKey                              pulumi.StringInput                                           `pulumi:"kernelKey"`
+	Licenses                               pulumi.StringArrayInput                                      `pulumi:"licenses"`
+	MaintenanceOptions                     pulumi.StringInput                                           `pulumi:"maintenanceOptions"`
+	Monitoring                             pulumi.StringInput                                           `pulumi:"monitoring"`
+	NetworkInterfaces                      GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayInput `pulumi:"networkInterfaces"`
+	Placements                             GetAssetsAssetCollectionItemAwsEc2PlacementArrayInput        `pulumi:"placements"`
+	PrivateDnsName                         pulumi.StringInput                                           `pulumi:"privateDnsName"`
+	PrivateIpAddress                       pulumi.StringInput                                           `pulumi:"privateIpAddress"`
+	RootDeviceName                         pulumi.StringInput                                           `pulumi:"rootDeviceName"`
+	RootDeviceType                         pulumi.StringInput                                           `pulumi:"rootDeviceType"`
+	SecurityGroups                         GetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayInput    `pulumi:"securityGroups"`
+	SriovNetSupport                        pulumi.StringInput                                           `pulumi:"sriovNetSupport"`
+	// A filter to return only assets whose lifecycleState matches the given lifecycleState.
+	States             GetAssetsAssetCollectionItemAwsEc2StateArrayInput `pulumi:"states"`
+	SubnetKey          pulumi.StringInput                                `pulumi:"subnetKey"`
+	Tags               GetAssetsAssetCollectionItemAwsEc2TagArrayInput   `pulumi:"tags"`
+	TimeLaunch         pulumi.StringInput                                `pulumi:"timeLaunch"`
+	TpmSupport         pulumi.StringInput                                `pulumi:"tpmSupport"`
+	VirtualizationType pulumi.StringInput                                `pulumi:"virtualizationType"`
+	VpcKey             pulumi.StringInput                                `pulumi:"vpcKey"`
+}
+
+func (GetAssetsAssetCollectionItemAwsEc2Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2Args) ToGetAssetsAssetCollectionItemAwsEc2Output() GetAssetsAssetCollectionItemAwsEc2Output {
+	return i.ToGetAssetsAssetCollectionItemAwsEc2OutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2Args) ToGetAssetsAssetCollectionItemAwsEc2OutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEc2Output)
+}
+
+// GetAssetsAssetCollectionItemAwsEc2ArrayInput is an input type that accepts GetAssetsAssetCollectionItemAwsEc2Array and GetAssetsAssetCollectionItemAwsEc2ArrayOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEc2ArrayInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEc2Array{ GetAssetsAssetCollectionItemAwsEc2Args{...} }
+type GetAssetsAssetCollectionItemAwsEc2ArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEc2ArrayOutput() GetAssetsAssetCollectionItemAwsEc2ArrayOutput
+	ToGetAssetsAssetCollectionItemAwsEc2ArrayOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEc2ArrayOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEc2Array []GetAssetsAssetCollectionItemAwsEc2Input
+
+func (GetAssetsAssetCollectionItemAwsEc2Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEc2)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2Array) ToGetAssetsAssetCollectionItemAwsEc2ArrayOutput() GetAssetsAssetCollectionItemAwsEc2ArrayOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEc2ArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2Array) ToGetAssetsAssetCollectionItemAwsEc2ArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEc2ArrayOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2Output struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEc2Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) ToGetAssetsAssetCollectionItemAwsEc2Output() GetAssetsAssetCollectionItemAwsEc2Output {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) ToGetAssetsAssetCollectionItemAwsEc2OutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2Output {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) Architecture() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) string { return v.Architecture }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) AreElasticInferenceAcceleratorsPresent() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) bool { return v.AreElasticInferenceAcceleratorsPresent }).(pulumi.BoolOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) BootMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) string { return v.BootMode }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) CapacityReservationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) string { return v.CapacityReservationKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) ImageKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) string { return v.ImageKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) InstanceKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) string { return v.InstanceKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) InstanceLifecycle() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) string { return v.InstanceLifecycle }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) InstanceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) string { return v.InstanceType }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) Ipv6address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) string { return v.Ipv6address }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) IsEnclaveOptions() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) bool { return v.IsEnclaveOptions }).(pulumi.BoolOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) IsHibernationOptions() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) bool { return v.IsHibernationOptions }).(pulumi.BoolOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) IsSourceDestCheck() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) bool { return v.IsSourceDestCheck }).(pulumi.BoolOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) IsSpotInstance() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) bool { return v.IsSpotInstance }).(pulumi.BoolOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) KernelKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) string { return v.KernelKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) Licenses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) []string { return v.Licenses }).(pulumi.StringArrayOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) MaintenanceOptions() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) string { return v.MaintenanceOptions }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) Monitoring() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) string { return v.Monitoring }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) NetworkInterfaces() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) []GetAssetsAssetCollectionItemAwsEc2NetworkInterface {
+		return v.NetworkInterfaces
+	}).(GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) Placements() GetAssetsAssetCollectionItemAwsEc2PlacementArrayOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) []GetAssetsAssetCollectionItemAwsEc2Placement {
+		return v.Placements
+	}).(GetAssetsAssetCollectionItemAwsEc2PlacementArrayOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) PrivateDnsName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) string { return v.PrivateDnsName }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) PrivateIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) string { return v.PrivateIpAddress }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) RootDeviceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) string { return v.RootDeviceName }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) RootDeviceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) string { return v.RootDeviceType }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) SecurityGroups() GetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) []GetAssetsAssetCollectionItemAwsEc2SecurityGroup {
+		return v.SecurityGroups
+	}).(GetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) SriovNetSupport() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) string { return v.SriovNetSupport }).(pulumi.StringOutput)
+}
+
+// A filter to return only assets whose lifecycleState matches the given lifecycleState.
+func (o GetAssetsAssetCollectionItemAwsEc2Output) States() GetAssetsAssetCollectionItemAwsEc2StateArrayOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) []GetAssetsAssetCollectionItemAwsEc2State { return v.States }).(GetAssetsAssetCollectionItemAwsEc2StateArrayOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) SubnetKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) string { return v.SubnetKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) Tags() GetAssetsAssetCollectionItemAwsEc2TagArrayOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) []GetAssetsAssetCollectionItemAwsEc2Tag { return v.Tags }).(GetAssetsAssetCollectionItemAwsEc2TagArrayOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) TimeLaunch() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) string { return v.TimeLaunch }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) TpmSupport() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) string { return v.TpmSupport }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) VirtualizationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) string { return v.VirtualizationType }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2Output) VpcKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2) string { return v.VpcKey }).(pulumi.StringOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEc2ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEc2)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2ArrayOutput) ToGetAssetsAssetCollectionItemAwsEc2ArrayOutput() GetAssetsAssetCollectionItemAwsEc2ArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2ArrayOutput) ToGetAssetsAssetCollectionItemAwsEc2ArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2ArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2ArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemAwsEc2Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemAwsEc2 {
+		return vs[0].([]GetAssetsAssetCollectionItemAwsEc2)[vs[1].(int)]
+	}).(GetAssetsAssetCollectionItemAwsEc2Output)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterface struct {
+	Associations []GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociation `pulumi:"associations"`
+	Attachments  []GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachment  `pulumi:"attachments"`
+	// The tag description.
+	Description       string   `pulumi:"description"`
+	InterfaceType     string   `pulumi:"interfaceType"`
+	Ipv4prefixes      []string `pulumi:"ipv4prefixes"`
+	Ipv6addresses     []string `pulumi:"ipv6addresses"`
+	Ipv6prefixes      []string `pulumi:"ipv6prefixes"`
+	IsSourceDestCheck bool     `pulumi:"isSourceDestCheck"`
+	// Mac address of the VM.
+	MacAddress          string                                                               `pulumi:"macAddress"`
+	NetworkInterfaceKey string                                                               `pulumi:"networkInterfaceKey"`
+	OwnerKey            string                                                               `pulumi:"ownerKey"`
+	PrivateIpAddresses  []GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddress `pulumi:"privateIpAddresses"`
+	SecurityGroups      []GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroup    `pulumi:"securityGroups"`
+	Status              string                                                               `pulumi:"status"`
+	SubnetKey           string                                                               `pulumi:"subnetKey"`
+}
+
+// GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceInput is an input type that accepts GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArgs and GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArgs{...}
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput
+	ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArgs struct {
+	Associations GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayInput `pulumi:"associations"`
+	Attachments  GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayInput  `pulumi:"attachments"`
+	// The tag description.
+	Description       pulumi.StringInput      `pulumi:"description"`
+	InterfaceType     pulumi.StringInput      `pulumi:"interfaceType"`
+	Ipv4prefixes      pulumi.StringArrayInput `pulumi:"ipv4prefixes"`
+	Ipv6addresses     pulumi.StringArrayInput `pulumi:"ipv6addresses"`
+	Ipv6prefixes      pulumi.StringArrayInput `pulumi:"ipv6prefixes"`
+	IsSourceDestCheck pulumi.BoolInput        `pulumi:"isSourceDestCheck"`
+	// Mac address of the VM.
+	MacAddress          pulumi.StringInput                                                           `pulumi:"macAddress"`
+	NetworkInterfaceKey pulumi.StringInput                                                           `pulumi:"networkInterfaceKey"`
+	OwnerKey            pulumi.StringInput                                                           `pulumi:"ownerKey"`
+	PrivateIpAddresses  GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayInput `pulumi:"privateIpAddresses"`
+	SecurityGroups      GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayInput    `pulumi:"securityGroups"`
+	Status              pulumi.StringInput                                                           `pulumi:"status"`
+	SubnetKey           pulumi.StringInput                                                           `pulumi:"subnetKey"`
+}
+
+func (GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2NetworkInterface)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArgs) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArgs) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput)
+}
+
+// GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayInput is an input type that accepts GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArray and GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArray{ GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArgs{...} }
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayOutput
+	ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArray []GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceInput
+
+func (GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEc2NetworkInterface)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArray) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArray) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2NetworkInterface)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput) Associations() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterface) []GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociation {
+		return v.Associations
+	}).(GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput) Attachments() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterface) []GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachment {
+		return v.Attachments
+	}).(GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayOutput)
+}
+
+// The tag description.
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterface) string { return v.Description }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput) InterfaceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterface) string { return v.InterfaceType }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput) Ipv4prefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterface) []string { return v.Ipv4prefixes }).(pulumi.StringArrayOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput) Ipv6addresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterface) []string { return v.Ipv6addresses }).(pulumi.StringArrayOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput) Ipv6prefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterface) []string { return v.Ipv6prefixes }).(pulumi.StringArrayOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput) IsSourceDestCheck() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterface) bool { return v.IsSourceDestCheck }).(pulumi.BoolOutput)
+}
+
+// Mac address of the VM.
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput) MacAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterface) string { return v.MacAddress }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput) NetworkInterfaceKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterface) string { return v.NetworkInterfaceKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput) OwnerKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterface) string { return v.OwnerKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput) PrivateIpAddresses() GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterface) []GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddress {
+		return v.PrivateIpAddresses
+	}).(GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput) SecurityGroups() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterface) []GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroup {
+		return v.SecurityGroups
+	}).(GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterface) string { return v.Status }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput) SubnetKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterface) string { return v.SubnetKey }).(pulumi.StringOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEc2NetworkInterface)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayOutput) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayOutput) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemAwsEc2NetworkInterface {
+		return vs[0].([]GetAssetsAssetCollectionItemAwsEc2NetworkInterface)[vs[1].(int)]
+	}).(GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociation struct {
+	CarrierIp       string `pulumi:"carrierIp"`
+	CustomerOwnedIp string `pulumi:"customerOwnedIp"`
+	IpOwnerKey      string `pulumi:"ipOwnerKey"`
+	PublicDnsName   string `pulumi:"publicDnsName"`
+	PublicIp        string `pulumi:"publicIp"`
+}
+
+// GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationInput is an input type that accepts GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArgs and GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArgs{...}
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutput
+	ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArgs struct {
+	CarrierIp       pulumi.StringInput `pulumi:"carrierIp"`
+	CustomerOwnedIp pulumi.StringInput `pulumi:"customerOwnedIp"`
+	IpOwnerKey      pulumi.StringInput `pulumi:"ipOwnerKey"`
+	PublicDnsName   pulumi.StringInput `pulumi:"publicDnsName"`
+	PublicIp        pulumi.StringInput `pulumi:"publicIp"`
+}
+
+func (GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociation)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArgs) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArgs) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutput)
+}
+
+// GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayInput is an input type that accepts GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArray and GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArray{ GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArgs{...} }
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayOutput
+	ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArray []GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationInput
+
+func (GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociation)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArray) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArray) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociation)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutput) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutput) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutput) CarrierIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociation) string { return v.CarrierIp }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutput) CustomerOwnedIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociation) string { return v.CustomerOwnedIp }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutput) IpOwnerKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociation) string { return v.IpOwnerKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutput) PublicDnsName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociation) string { return v.PublicDnsName }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutput) PublicIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociation) string { return v.PublicIp }).(pulumi.StringOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociation)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayOutput) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayOutput) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociation {
+		return vs[0].([]GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociation)[vs[1].(int)]
+	}).(GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachment struct {
+	AttachmentKey         string `pulumi:"attachmentKey"`
+	DeviceIndex           int    `pulumi:"deviceIndex"`
+	IsDeleteOnTermination bool   `pulumi:"isDeleteOnTermination"`
+	NetworkCardIndex      int    `pulumi:"networkCardIndex"`
+	Status                string `pulumi:"status"`
+	TimeAttach            string `pulumi:"timeAttach"`
+}
+
+// GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentInput is an input type that accepts GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArgs and GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArgs{...}
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutput
+	ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArgs struct {
+	AttachmentKey         pulumi.StringInput `pulumi:"attachmentKey"`
+	DeviceIndex           pulumi.IntInput    `pulumi:"deviceIndex"`
+	IsDeleteOnTermination pulumi.BoolInput   `pulumi:"isDeleteOnTermination"`
+	NetworkCardIndex      pulumi.IntInput    `pulumi:"networkCardIndex"`
+	Status                pulumi.StringInput `pulumi:"status"`
+	TimeAttach            pulumi.StringInput `pulumi:"timeAttach"`
+}
+
+func (GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachment)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArgs) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArgs) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutput)
+}
+
+// GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayInput is an input type that accepts GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArray and GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArray{ GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArgs{...} }
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayOutput
+	ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArray []GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentInput
+
+func (GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachment)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArray) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArray) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachment)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutput) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutput) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutput) AttachmentKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachment) string { return v.AttachmentKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutput) DeviceIndex() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachment) int { return v.DeviceIndex }).(pulumi.IntOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutput) IsDeleteOnTermination() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachment) bool {
+		return v.IsDeleteOnTermination
+	}).(pulumi.BoolOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutput) NetworkCardIndex() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachment) int { return v.NetworkCardIndex }).(pulumi.IntOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachment) string { return v.Status }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutput) TimeAttach() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachment) string { return v.TimeAttach }).(pulumi.StringOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachment)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayOutput) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayOutput) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachment {
+		return vs[0].([]GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachment)[vs[1].(int)]
+	}).(GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddress struct {
+	Associations     []GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociation `pulumi:"associations"`
+	IsPrimary        bool                                                                            `pulumi:"isPrimary"`
+	PrivateDnsName   string                                                                          `pulumi:"privateDnsName"`
+	PrivateIpAddress string                                                                          `pulumi:"privateIpAddress"`
+}
+
+// GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressInput is an input type that accepts GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArgs and GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArgs{...}
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutput
+	ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArgs struct {
+	Associations     GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayInput `pulumi:"associations"`
+	IsPrimary        pulumi.BoolInput                                                                        `pulumi:"isPrimary"`
+	PrivateDnsName   pulumi.StringInput                                                                      `pulumi:"privateDnsName"`
+	PrivateIpAddress pulumi.StringInput                                                                      `pulumi:"privateIpAddress"`
+}
+
+func (GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddress)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArgs) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArgs) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutput)
+}
+
+// GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayInput is an input type that accepts GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArray and GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArray{ GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArgs{...} }
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayOutput
+	ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArray []GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressInput
+
+func (GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddress)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArray) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArray) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddress)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutput) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutput) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutput) Associations() GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddress) []GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociation {
+		return v.Associations
+	}).(GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutput) IsPrimary() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddress) bool { return v.IsPrimary }).(pulumi.BoolOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutput) PrivateDnsName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddress) string {
+		return v.PrivateDnsName
+	}).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutput) PrivateIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddress) string {
+		return v.PrivateIpAddress
+	}).(pulumi.StringOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddress)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayOutput) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayOutput) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddress {
+		return vs[0].([]GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddress)[vs[1].(int)]
+	}).(GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociation struct {
+	CarrierIp       string `pulumi:"carrierIp"`
+	CustomerOwnedIp string `pulumi:"customerOwnedIp"`
+	IpOwnerKey      string `pulumi:"ipOwnerKey"`
+	PublicDnsName   string `pulumi:"publicDnsName"`
+	PublicIp        string `pulumi:"publicIp"`
+}
+
+// GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationInput is an input type that accepts GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs and GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs{...}
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput
+	ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs struct {
+	CarrierIp       pulumi.StringInput `pulumi:"carrierIp"`
+	CustomerOwnedIp pulumi.StringInput `pulumi:"customerOwnedIp"`
+	IpOwnerKey      pulumi.StringInput `pulumi:"ipOwnerKey"`
+	PublicDnsName   pulumi.StringInput `pulumi:"publicDnsName"`
+	PublicIp        pulumi.StringInput `pulumi:"publicIp"`
+}
+
+func (GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociation)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput)
+}
+
+// GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayInput is an input type that accepts GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArray and GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArray{ GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs{...} }
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput
+	ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArray []GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationInput
+
+func (GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociation)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArray) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArray) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociation)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) CarrierIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociation) string {
+		return v.CarrierIp
+	}).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) CustomerOwnedIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociation) string {
+		return v.CustomerOwnedIp
+	}).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) IpOwnerKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociation) string {
+		return v.IpOwnerKey
+	}).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) PublicDnsName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociation) string {
+		return v.PublicDnsName
+	}).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput) PublicIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociation) string {
+		return v.PublicIp
+	}).(pulumi.StringOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociation)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociation {
+		return vs[0].([]GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociation)[vs[1].(int)]
+	}).(GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroup struct {
+	GroupKey  string `pulumi:"groupKey"`
+	GroupName string `pulumi:"groupName"`
+}
+
+// GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupInput is an input type that accepts GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArgs and GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArgs{...}
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupOutput
+	ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArgs struct {
+	GroupKey  pulumi.StringInput `pulumi:"groupKey"`
+	GroupName pulumi.StringInput `pulumi:"groupName"`
+}
+
+func (GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroup)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArgs) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArgs) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupOutput)
+}
+
+// GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayInput is an input type that accepts GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArray and GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArray{ GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArgs{...} }
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayOutput
+	ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArray []GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupInput
+
+func (GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroup)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArray) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArray) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroup)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupOutput) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupOutput) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupOutput) GroupKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroup) string { return v.GroupKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupOutput) GroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroup) string { return v.GroupName }).(pulumi.StringOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroup)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayOutput) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayOutput() GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayOutput) ToGetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroup {
+		return vs[0].([]GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroup)[vs[1].(int)]
+	}).(GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2Placement struct {
+	Affinity             string `pulumi:"affinity"`
+	AvailabilityZone     string `pulumi:"availabilityZone"`
+	GroupName            string `pulumi:"groupName"`
+	HostKey              string `pulumi:"hostKey"`
+	HostResourceGroupArn string `pulumi:"hostResourceGroupArn"`
+	PartitionNumber      int    `pulumi:"partitionNumber"`
+	SpreadDomain         string `pulumi:"spreadDomain"`
+	Tenancy              string `pulumi:"tenancy"`
+}
+
+// GetAssetsAssetCollectionItemAwsEc2PlacementInput is an input type that accepts GetAssetsAssetCollectionItemAwsEc2PlacementArgs and GetAssetsAssetCollectionItemAwsEc2PlacementOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEc2PlacementInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEc2PlacementArgs{...}
+type GetAssetsAssetCollectionItemAwsEc2PlacementInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEc2PlacementOutput() GetAssetsAssetCollectionItemAwsEc2PlacementOutput
+	ToGetAssetsAssetCollectionItemAwsEc2PlacementOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEc2PlacementOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEc2PlacementArgs struct {
+	Affinity             pulumi.StringInput `pulumi:"affinity"`
+	AvailabilityZone     pulumi.StringInput `pulumi:"availabilityZone"`
+	GroupName            pulumi.StringInput `pulumi:"groupName"`
+	HostKey              pulumi.StringInput `pulumi:"hostKey"`
+	HostResourceGroupArn pulumi.StringInput `pulumi:"hostResourceGroupArn"`
+	PartitionNumber      pulumi.IntInput    `pulumi:"partitionNumber"`
+	SpreadDomain         pulumi.StringInput `pulumi:"spreadDomain"`
+	Tenancy              pulumi.StringInput `pulumi:"tenancy"`
+}
+
+func (GetAssetsAssetCollectionItemAwsEc2PlacementArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2Placement)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2PlacementArgs) ToGetAssetsAssetCollectionItemAwsEc2PlacementOutput() GetAssetsAssetCollectionItemAwsEc2PlacementOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEc2PlacementOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2PlacementArgs) ToGetAssetsAssetCollectionItemAwsEc2PlacementOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2PlacementOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEc2PlacementOutput)
+}
+
+// GetAssetsAssetCollectionItemAwsEc2PlacementArrayInput is an input type that accepts GetAssetsAssetCollectionItemAwsEc2PlacementArray and GetAssetsAssetCollectionItemAwsEc2PlacementArrayOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEc2PlacementArrayInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEc2PlacementArray{ GetAssetsAssetCollectionItemAwsEc2PlacementArgs{...} }
+type GetAssetsAssetCollectionItemAwsEc2PlacementArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEc2PlacementArrayOutput() GetAssetsAssetCollectionItemAwsEc2PlacementArrayOutput
+	ToGetAssetsAssetCollectionItemAwsEc2PlacementArrayOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEc2PlacementArrayOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEc2PlacementArray []GetAssetsAssetCollectionItemAwsEc2PlacementInput
+
+func (GetAssetsAssetCollectionItemAwsEc2PlacementArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEc2Placement)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2PlacementArray) ToGetAssetsAssetCollectionItemAwsEc2PlacementArrayOutput() GetAssetsAssetCollectionItemAwsEc2PlacementArrayOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEc2PlacementArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2PlacementArray) ToGetAssetsAssetCollectionItemAwsEc2PlacementArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2PlacementArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEc2PlacementArrayOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2PlacementOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEc2PlacementOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2Placement)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2PlacementOutput) ToGetAssetsAssetCollectionItemAwsEc2PlacementOutput() GetAssetsAssetCollectionItemAwsEc2PlacementOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2PlacementOutput) ToGetAssetsAssetCollectionItemAwsEc2PlacementOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2PlacementOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2PlacementOutput) Affinity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2Placement) string { return v.Affinity }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2PlacementOutput) AvailabilityZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2Placement) string { return v.AvailabilityZone }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2PlacementOutput) GroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2Placement) string { return v.GroupName }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2PlacementOutput) HostKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2Placement) string { return v.HostKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2PlacementOutput) HostResourceGroupArn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2Placement) string { return v.HostResourceGroupArn }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2PlacementOutput) PartitionNumber() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2Placement) int { return v.PartitionNumber }).(pulumi.IntOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2PlacementOutput) SpreadDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2Placement) string { return v.SpreadDomain }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2PlacementOutput) Tenancy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2Placement) string { return v.Tenancy }).(pulumi.StringOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2PlacementArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEc2PlacementArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEc2Placement)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2PlacementArrayOutput) ToGetAssetsAssetCollectionItemAwsEc2PlacementArrayOutput() GetAssetsAssetCollectionItemAwsEc2PlacementArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2PlacementArrayOutput) ToGetAssetsAssetCollectionItemAwsEc2PlacementArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2PlacementArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2PlacementArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemAwsEc2PlacementOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemAwsEc2Placement {
+		return vs[0].([]GetAssetsAssetCollectionItemAwsEc2Placement)[vs[1].(int)]
+	}).(GetAssetsAssetCollectionItemAwsEc2PlacementOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2SecurityGroup struct {
+	GroupKey  string `pulumi:"groupKey"`
+	GroupName string `pulumi:"groupName"`
+}
+
+// GetAssetsAssetCollectionItemAwsEc2SecurityGroupInput is an input type that accepts GetAssetsAssetCollectionItemAwsEc2SecurityGroupArgs and GetAssetsAssetCollectionItemAwsEc2SecurityGroupOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEc2SecurityGroupInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEc2SecurityGroupArgs{...}
+type GetAssetsAssetCollectionItemAwsEc2SecurityGroupInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEc2SecurityGroupOutput() GetAssetsAssetCollectionItemAwsEc2SecurityGroupOutput
+	ToGetAssetsAssetCollectionItemAwsEc2SecurityGroupOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEc2SecurityGroupOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEc2SecurityGroupArgs struct {
+	GroupKey  pulumi.StringInput `pulumi:"groupKey"`
+	GroupName pulumi.StringInput `pulumi:"groupName"`
+}
+
+func (GetAssetsAssetCollectionItemAwsEc2SecurityGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2SecurityGroup)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2SecurityGroupArgs) ToGetAssetsAssetCollectionItemAwsEc2SecurityGroupOutput() GetAssetsAssetCollectionItemAwsEc2SecurityGroupOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEc2SecurityGroupOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2SecurityGroupArgs) ToGetAssetsAssetCollectionItemAwsEc2SecurityGroupOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2SecurityGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEc2SecurityGroupOutput)
+}
+
+// GetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayInput is an input type that accepts GetAssetsAssetCollectionItemAwsEc2SecurityGroupArray and GetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEc2SecurityGroupArray{ GetAssetsAssetCollectionItemAwsEc2SecurityGroupArgs{...} }
+type GetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayOutput() GetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayOutput
+	ToGetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEc2SecurityGroupArray []GetAssetsAssetCollectionItemAwsEc2SecurityGroupInput
+
+func (GetAssetsAssetCollectionItemAwsEc2SecurityGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEc2SecurityGroup)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2SecurityGroupArray) ToGetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayOutput() GetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2SecurityGroupArray) ToGetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2SecurityGroupOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEc2SecurityGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2SecurityGroup)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2SecurityGroupOutput) ToGetAssetsAssetCollectionItemAwsEc2SecurityGroupOutput() GetAssetsAssetCollectionItemAwsEc2SecurityGroupOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2SecurityGroupOutput) ToGetAssetsAssetCollectionItemAwsEc2SecurityGroupOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2SecurityGroupOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2SecurityGroupOutput) GroupKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2SecurityGroup) string { return v.GroupKey }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2SecurityGroupOutput) GroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2SecurityGroup) string { return v.GroupName }).(pulumi.StringOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEc2SecurityGroup)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayOutput) ToGetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayOutput() GetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayOutput) ToGetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemAwsEc2SecurityGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemAwsEc2SecurityGroup {
+		return vs[0].([]GetAssetsAssetCollectionItemAwsEc2SecurityGroup)[vs[1].(int)]
+	}).(GetAssetsAssetCollectionItemAwsEc2SecurityGroupOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2State struct {
+	Code int `pulumi:"code"`
+	// The tag name.
+	Name string `pulumi:"name"`
+}
+
+// GetAssetsAssetCollectionItemAwsEc2StateInput is an input type that accepts GetAssetsAssetCollectionItemAwsEc2StateArgs and GetAssetsAssetCollectionItemAwsEc2StateOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEc2StateInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEc2StateArgs{...}
+type GetAssetsAssetCollectionItemAwsEc2StateInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEc2StateOutput() GetAssetsAssetCollectionItemAwsEc2StateOutput
+	ToGetAssetsAssetCollectionItemAwsEc2StateOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEc2StateOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEc2StateArgs struct {
+	Code pulumi.IntInput `pulumi:"code"`
+	// The tag name.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetAssetsAssetCollectionItemAwsEc2StateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2State)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2StateArgs) ToGetAssetsAssetCollectionItemAwsEc2StateOutput() GetAssetsAssetCollectionItemAwsEc2StateOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEc2StateOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2StateArgs) ToGetAssetsAssetCollectionItemAwsEc2StateOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2StateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEc2StateOutput)
+}
+
+// GetAssetsAssetCollectionItemAwsEc2StateArrayInput is an input type that accepts GetAssetsAssetCollectionItemAwsEc2StateArray and GetAssetsAssetCollectionItemAwsEc2StateArrayOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEc2StateArrayInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEc2StateArray{ GetAssetsAssetCollectionItemAwsEc2StateArgs{...} }
+type GetAssetsAssetCollectionItemAwsEc2StateArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEc2StateArrayOutput() GetAssetsAssetCollectionItemAwsEc2StateArrayOutput
+	ToGetAssetsAssetCollectionItemAwsEc2StateArrayOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEc2StateArrayOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEc2StateArray []GetAssetsAssetCollectionItemAwsEc2StateInput
+
+func (GetAssetsAssetCollectionItemAwsEc2StateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEc2State)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2StateArray) ToGetAssetsAssetCollectionItemAwsEc2StateArrayOutput() GetAssetsAssetCollectionItemAwsEc2StateArrayOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEc2StateArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2StateArray) ToGetAssetsAssetCollectionItemAwsEc2StateArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2StateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEc2StateArrayOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2StateOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEc2StateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2State)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2StateOutput) ToGetAssetsAssetCollectionItemAwsEc2StateOutput() GetAssetsAssetCollectionItemAwsEc2StateOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2StateOutput) ToGetAssetsAssetCollectionItemAwsEc2StateOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2StateOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2StateOutput) Code() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2State) int { return v.Code }).(pulumi.IntOutput)
+}
+
+// The tag name.
+func (o GetAssetsAssetCollectionItemAwsEc2StateOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2State) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2StateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEc2StateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEc2State)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2StateArrayOutput) ToGetAssetsAssetCollectionItemAwsEc2StateArrayOutput() GetAssetsAssetCollectionItemAwsEc2StateArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2StateArrayOutput) ToGetAssetsAssetCollectionItemAwsEc2StateArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2StateArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2StateArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemAwsEc2StateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemAwsEc2State {
+		return vs[0].([]GetAssetsAssetCollectionItemAwsEc2State)[vs[1].(int)]
+	}).(GetAssetsAssetCollectionItemAwsEc2StateOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2Tag struct {
+	Key   string `pulumi:"key"`
+	Value string `pulumi:"value"`
+}
+
+// GetAssetsAssetCollectionItemAwsEc2TagInput is an input type that accepts GetAssetsAssetCollectionItemAwsEc2TagArgs and GetAssetsAssetCollectionItemAwsEc2TagOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEc2TagInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEc2TagArgs{...}
+type GetAssetsAssetCollectionItemAwsEc2TagInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEc2TagOutput() GetAssetsAssetCollectionItemAwsEc2TagOutput
+	ToGetAssetsAssetCollectionItemAwsEc2TagOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEc2TagOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEc2TagArgs struct {
+	Key   pulumi.StringInput `pulumi:"key"`
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAssetsAssetCollectionItemAwsEc2TagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2Tag)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2TagArgs) ToGetAssetsAssetCollectionItemAwsEc2TagOutput() GetAssetsAssetCollectionItemAwsEc2TagOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEc2TagOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2TagArgs) ToGetAssetsAssetCollectionItemAwsEc2TagOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2TagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEc2TagOutput)
+}
+
+// GetAssetsAssetCollectionItemAwsEc2TagArrayInput is an input type that accepts GetAssetsAssetCollectionItemAwsEc2TagArray and GetAssetsAssetCollectionItemAwsEc2TagArrayOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEc2TagArrayInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEc2TagArray{ GetAssetsAssetCollectionItemAwsEc2TagArgs{...} }
+type GetAssetsAssetCollectionItemAwsEc2TagArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEc2TagArrayOutput() GetAssetsAssetCollectionItemAwsEc2TagArrayOutput
+	ToGetAssetsAssetCollectionItemAwsEc2TagArrayOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEc2TagArrayOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEc2TagArray []GetAssetsAssetCollectionItemAwsEc2TagInput
+
+func (GetAssetsAssetCollectionItemAwsEc2TagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEc2Tag)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2TagArray) ToGetAssetsAssetCollectionItemAwsEc2TagArrayOutput() GetAssetsAssetCollectionItemAwsEc2TagArrayOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEc2TagArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2TagArray) ToGetAssetsAssetCollectionItemAwsEc2TagArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2TagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEc2TagArrayOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2TagOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEc2TagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2Tag)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2TagOutput) ToGetAssetsAssetCollectionItemAwsEc2TagOutput() GetAssetsAssetCollectionItemAwsEc2TagOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2TagOutput) ToGetAssetsAssetCollectionItemAwsEc2TagOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2TagOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2TagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2Tag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2TagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2Tag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2TagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEc2TagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEc2Tag)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2TagArrayOutput) ToGetAssetsAssetCollectionItemAwsEc2TagArrayOutput() GetAssetsAssetCollectionItemAwsEc2TagArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2TagArrayOutput) ToGetAssetsAssetCollectionItemAwsEc2TagArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2TagArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2TagArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemAwsEc2TagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemAwsEc2Tag {
+		return vs[0].([]GetAssetsAssetCollectionItemAwsEc2Tag)[vs[1].(int)]
+	}).(GetAssetsAssetCollectionItemAwsEc2TagOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2cost struct {
+	Amount       float64 `pulumi:"amount"`
+	CurrencyCode string  `pulumi:"currencyCode"`
+}
+
+// GetAssetsAssetCollectionItemAwsEc2costInput is an input type that accepts GetAssetsAssetCollectionItemAwsEc2costArgs and GetAssetsAssetCollectionItemAwsEc2costOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEc2costInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEc2costArgs{...}
+type GetAssetsAssetCollectionItemAwsEc2costInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEc2costOutput() GetAssetsAssetCollectionItemAwsEc2costOutput
+	ToGetAssetsAssetCollectionItemAwsEc2costOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEc2costOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEc2costArgs struct {
+	Amount       pulumi.Float64Input `pulumi:"amount"`
+	CurrencyCode pulumi.StringInput  `pulumi:"currencyCode"`
+}
+
+func (GetAssetsAssetCollectionItemAwsEc2costArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2cost)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2costArgs) ToGetAssetsAssetCollectionItemAwsEc2costOutput() GetAssetsAssetCollectionItemAwsEc2costOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEc2costOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2costArgs) ToGetAssetsAssetCollectionItemAwsEc2costOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2costOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEc2costOutput)
+}
+
+// GetAssetsAssetCollectionItemAwsEc2costArrayInput is an input type that accepts GetAssetsAssetCollectionItemAwsEc2costArray and GetAssetsAssetCollectionItemAwsEc2costArrayOutput values.
+// You can construct a concrete instance of `GetAssetsAssetCollectionItemAwsEc2costArrayInput` via:
+//
+//	GetAssetsAssetCollectionItemAwsEc2costArray{ GetAssetsAssetCollectionItemAwsEc2costArgs{...} }
+type GetAssetsAssetCollectionItemAwsEc2costArrayInput interface {
+	pulumi.Input
+
+	ToGetAssetsAssetCollectionItemAwsEc2costArrayOutput() GetAssetsAssetCollectionItemAwsEc2costArrayOutput
+	ToGetAssetsAssetCollectionItemAwsEc2costArrayOutputWithContext(context.Context) GetAssetsAssetCollectionItemAwsEc2costArrayOutput
+}
+
+type GetAssetsAssetCollectionItemAwsEc2costArray []GetAssetsAssetCollectionItemAwsEc2costInput
+
+func (GetAssetsAssetCollectionItemAwsEc2costArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEc2cost)(nil)).Elem()
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2costArray) ToGetAssetsAssetCollectionItemAwsEc2costArrayOutput() GetAssetsAssetCollectionItemAwsEc2costArrayOutput {
+	return i.ToGetAssetsAssetCollectionItemAwsEc2costArrayOutputWithContext(context.Background())
+}
+
+func (i GetAssetsAssetCollectionItemAwsEc2costArray) ToGetAssetsAssetCollectionItemAwsEc2costArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2costArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemAwsEc2costArrayOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2costOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEc2costOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2cost)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2costOutput) ToGetAssetsAssetCollectionItemAwsEc2costOutput() GetAssetsAssetCollectionItemAwsEc2costOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2costOutput) ToGetAssetsAssetCollectionItemAwsEc2costOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2costOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2costOutput) Amount() pulumi.Float64Output {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2cost) float64 { return v.Amount }).(pulumi.Float64Output)
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2costOutput) CurrencyCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemAwsEc2cost) string { return v.CurrencyCode }).(pulumi.StringOutput)
+}
+
+type GetAssetsAssetCollectionItemAwsEc2costArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAssetsAssetCollectionItemAwsEc2costArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAssetsAssetCollectionItemAwsEc2cost)(nil)).Elem()
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2costArrayOutput) ToGetAssetsAssetCollectionItemAwsEc2costArrayOutput() GetAssetsAssetCollectionItemAwsEc2costArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2costArrayOutput) ToGetAssetsAssetCollectionItemAwsEc2costArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemAwsEc2costArrayOutput {
+	return o
+}
+
+func (o GetAssetsAssetCollectionItemAwsEc2costArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemAwsEc2costOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemAwsEc2cost {
+		return vs[0].([]GetAssetsAssetCollectionItemAwsEc2cost)[vs[1].(int)]
+	}).(GetAssetsAssetCollectionItemAwsEc2costOutput)
 }
 
 type GetAssetsAssetCollectionItemCompute struct {
@@ -7943,7 +15590,8 @@ func (o GetAssetsAssetCollectionItemComputeArrayOutput) Index(i pulumi.IntInput)
 
 type GetAssetsAssetCollectionItemComputeDisk struct {
 	// Order of boot volumes.
-	BootOrder int `pulumi:"bootOrder"`
+	BootOrder    int  `pulumi:"bootOrder"`
+	IsCbtEnabled bool `pulumi:"isCbtEnabled"`
 	// Location of the boot/data volume.
 	Location string `pulumi:"location"`
 	// The tag name.
@@ -7971,7 +15619,8 @@ type GetAssetsAssetCollectionItemComputeDiskInput interface {
 
 type GetAssetsAssetCollectionItemComputeDiskArgs struct {
 	// Order of boot volumes.
-	BootOrder pulumi.IntInput `pulumi:"bootOrder"`
+	BootOrder    pulumi.IntInput  `pulumi:"bootOrder"`
+	IsCbtEnabled pulumi.BoolInput `pulumi:"isCbtEnabled"`
 	// Location of the boot/data volume.
 	Location pulumi.StringInput `pulumi:"location"`
 	// The tag name.
@@ -8040,6 +15689,10 @@ func (o GetAssetsAssetCollectionItemComputeDiskOutput) ToGetAssetsAssetCollectio
 // Order of boot volumes.
 func (o GetAssetsAssetCollectionItemComputeDiskOutput) BootOrder() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeDisk) int { return v.BootOrder }).(pulumi.IntOutput)
+}
+
+func (o GetAssetsAssetCollectionItemComputeDiskOutput) IsCbtEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeDisk) bool { return v.IsCbtEnabled }).(pulumi.BoolOutput)
 }
 
 // Location of the boot/data volume.
@@ -10484,9 +18137,349 @@ func (o GetInventoriesInventoryCollectionItemArrayOutput) Index(i pulumi.IntInpu
 	}).(GetInventoriesInventoryCollectionItemOutput)
 }
 
+type GetSupportedCloudRegionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSupportedCloudRegionsFilterInput is an input type that accepts GetSupportedCloudRegionsFilterArgs and GetSupportedCloudRegionsFilterOutput values.
+// You can construct a concrete instance of `GetSupportedCloudRegionsFilterInput` via:
+//
+//	GetSupportedCloudRegionsFilterArgs{...}
+type GetSupportedCloudRegionsFilterInput interface {
+	pulumi.Input
+
+	ToGetSupportedCloudRegionsFilterOutput() GetSupportedCloudRegionsFilterOutput
+	ToGetSupportedCloudRegionsFilterOutputWithContext(context.Context) GetSupportedCloudRegionsFilterOutput
+}
+
+type GetSupportedCloudRegionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSupportedCloudRegionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSupportedCloudRegionsFilter)(nil)).Elem()
+}
+
+func (i GetSupportedCloudRegionsFilterArgs) ToGetSupportedCloudRegionsFilterOutput() GetSupportedCloudRegionsFilterOutput {
+	return i.ToGetSupportedCloudRegionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSupportedCloudRegionsFilterArgs) ToGetSupportedCloudRegionsFilterOutputWithContext(ctx context.Context) GetSupportedCloudRegionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedCloudRegionsFilterOutput)
+}
+
+// GetSupportedCloudRegionsFilterArrayInput is an input type that accepts GetSupportedCloudRegionsFilterArray and GetSupportedCloudRegionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSupportedCloudRegionsFilterArrayInput` via:
+//
+//	GetSupportedCloudRegionsFilterArray{ GetSupportedCloudRegionsFilterArgs{...} }
+type GetSupportedCloudRegionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSupportedCloudRegionsFilterArrayOutput() GetSupportedCloudRegionsFilterArrayOutput
+	ToGetSupportedCloudRegionsFilterArrayOutputWithContext(context.Context) GetSupportedCloudRegionsFilterArrayOutput
+}
+
+type GetSupportedCloudRegionsFilterArray []GetSupportedCloudRegionsFilterInput
+
+func (GetSupportedCloudRegionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSupportedCloudRegionsFilter)(nil)).Elem()
+}
+
+func (i GetSupportedCloudRegionsFilterArray) ToGetSupportedCloudRegionsFilterArrayOutput() GetSupportedCloudRegionsFilterArrayOutput {
+	return i.ToGetSupportedCloudRegionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSupportedCloudRegionsFilterArray) ToGetSupportedCloudRegionsFilterArrayOutputWithContext(ctx context.Context) GetSupportedCloudRegionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedCloudRegionsFilterArrayOutput)
+}
+
+type GetSupportedCloudRegionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSupportedCloudRegionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSupportedCloudRegionsFilter)(nil)).Elem()
+}
+
+func (o GetSupportedCloudRegionsFilterOutput) ToGetSupportedCloudRegionsFilterOutput() GetSupportedCloudRegionsFilterOutput {
+	return o
+}
+
+func (o GetSupportedCloudRegionsFilterOutput) ToGetSupportedCloudRegionsFilterOutputWithContext(ctx context.Context) GetSupportedCloudRegionsFilterOutput {
+	return o
+}
+
+func (o GetSupportedCloudRegionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSupportedCloudRegionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSupportedCloudRegionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSupportedCloudRegionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSupportedCloudRegionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSupportedCloudRegionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSupportedCloudRegionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSupportedCloudRegionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSupportedCloudRegionsFilter)(nil)).Elem()
+}
+
+func (o GetSupportedCloudRegionsFilterArrayOutput) ToGetSupportedCloudRegionsFilterArrayOutput() GetSupportedCloudRegionsFilterArrayOutput {
+	return o
+}
+
+func (o GetSupportedCloudRegionsFilterArrayOutput) ToGetSupportedCloudRegionsFilterArrayOutputWithContext(ctx context.Context) GetSupportedCloudRegionsFilterArrayOutput {
+	return o
+}
+
+func (o GetSupportedCloudRegionsFilterArrayOutput) Index(i pulumi.IntInput) GetSupportedCloudRegionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSupportedCloudRegionsFilter {
+		return vs[0].([]GetSupportedCloudRegionsFilter)[vs[1].(int)]
+	}).(GetSupportedCloudRegionsFilterOutput)
+}
+
+type GetSupportedCloudRegionsSupportedCloudRegionCollection struct {
+	Items []GetSupportedCloudRegionsSupportedCloudRegionCollectionItem `pulumi:"items"`
+}
+
+// GetSupportedCloudRegionsSupportedCloudRegionCollectionInput is an input type that accepts GetSupportedCloudRegionsSupportedCloudRegionCollectionArgs and GetSupportedCloudRegionsSupportedCloudRegionCollectionOutput values.
+// You can construct a concrete instance of `GetSupportedCloudRegionsSupportedCloudRegionCollectionInput` via:
+//
+//	GetSupportedCloudRegionsSupportedCloudRegionCollectionArgs{...}
+type GetSupportedCloudRegionsSupportedCloudRegionCollectionInput interface {
+	pulumi.Input
+
+	ToGetSupportedCloudRegionsSupportedCloudRegionCollectionOutput() GetSupportedCloudRegionsSupportedCloudRegionCollectionOutput
+	ToGetSupportedCloudRegionsSupportedCloudRegionCollectionOutputWithContext(context.Context) GetSupportedCloudRegionsSupportedCloudRegionCollectionOutput
+}
+
+type GetSupportedCloudRegionsSupportedCloudRegionCollectionArgs struct {
+	Items GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSupportedCloudRegionsSupportedCloudRegionCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSupportedCloudRegionsSupportedCloudRegionCollection)(nil)).Elem()
+}
+
+func (i GetSupportedCloudRegionsSupportedCloudRegionCollectionArgs) ToGetSupportedCloudRegionsSupportedCloudRegionCollectionOutput() GetSupportedCloudRegionsSupportedCloudRegionCollectionOutput {
+	return i.ToGetSupportedCloudRegionsSupportedCloudRegionCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSupportedCloudRegionsSupportedCloudRegionCollectionArgs) ToGetSupportedCloudRegionsSupportedCloudRegionCollectionOutputWithContext(ctx context.Context) GetSupportedCloudRegionsSupportedCloudRegionCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedCloudRegionsSupportedCloudRegionCollectionOutput)
+}
+
+// GetSupportedCloudRegionsSupportedCloudRegionCollectionArrayInput is an input type that accepts GetSupportedCloudRegionsSupportedCloudRegionCollectionArray and GetSupportedCloudRegionsSupportedCloudRegionCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSupportedCloudRegionsSupportedCloudRegionCollectionArrayInput` via:
+//
+//	GetSupportedCloudRegionsSupportedCloudRegionCollectionArray{ GetSupportedCloudRegionsSupportedCloudRegionCollectionArgs{...} }
+type GetSupportedCloudRegionsSupportedCloudRegionCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSupportedCloudRegionsSupportedCloudRegionCollectionArrayOutput() GetSupportedCloudRegionsSupportedCloudRegionCollectionArrayOutput
+	ToGetSupportedCloudRegionsSupportedCloudRegionCollectionArrayOutputWithContext(context.Context) GetSupportedCloudRegionsSupportedCloudRegionCollectionArrayOutput
+}
+
+type GetSupportedCloudRegionsSupportedCloudRegionCollectionArray []GetSupportedCloudRegionsSupportedCloudRegionCollectionInput
+
+func (GetSupportedCloudRegionsSupportedCloudRegionCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSupportedCloudRegionsSupportedCloudRegionCollection)(nil)).Elem()
+}
+
+func (i GetSupportedCloudRegionsSupportedCloudRegionCollectionArray) ToGetSupportedCloudRegionsSupportedCloudRegionCollectionArrayOutput() GetSupportedCloudRegionsSupportedCloudRegionCollectionArrayOutput {
+	return i.ToGetSupportedCloudRegionsSupportedCloudRegionCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSupportedCloudRegionsSupportedCloudRegionCollectionArray) ToGetSupportedCloudRegionsSupportedCloudRegionCollectionArrayOutputWithContext(ctx context.Context) GetSupportedCloudRegionsSupportedCloudRegionCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedCloudRegionsSupportedCloudRegionCollectionArrayOutput)
+}
+
+type GetSupportedCloudRegionsSupportedCloudRegionCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSupportedCloudRegionsSupportedCloudRegionCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSupportedCloudRegionsSupportedCloudRegionCollection)(nil)).Elem()
+}
+
+func (o GetSupportedCloudRegionsSupportedCloudRegionCollectionOutput) ToGetSupportedCloudRegionsSupportedCloudRegionCollectionOutput() GetSupportedCloudRegionsSupportedCloudRegionCollectionOutput {
+	return o
+}
+
+func (o GetSupportedCloudRegionsSupportedCloudRegionCollectionOutput) ToGetSupportedCloudRegionsSupportedCloudRegionCollectionOutputWithContext(ctx context.Context) GetSupportedCloudRegionsSupportedCloudRegionCollectionOutput {
+	return o
+}
+
+func (o GetSupportedCloudRegionsSupportedCloudRegionCollectionOutput) Items() GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSupportedCloudRegionsSupportedCloudRegionCollection) []GetSupportedCloudRegionsSupportedCloudRegionCollectionItem {
+		return v.Items
+	}).(GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayOutput)
+}
+
+type GetSupportedCloudRegionsSupportedCloudRegionCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSupportedCloudRegionsSupportedCloudRegionCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSupportedCloudRegionsSupportedCloudRegionCollection)(nil)).Elem()
+}
+
+func (o GetSupportedCloudRegionsSupportedCloudRegionCollectionArrayOutput) ToGetSupportedCloudRegionsSupportedCloudRegionCollectionArrayOutput() GetSupportedCloudRegionsSupportedCloudRegionCollectionArrayOutput {
+	return o
+}
+
+func (o GetSupportedCloudRegionsSupportedCloudRegionCollectionArrayOutput) ToGetSupportedCloudRegionsSupportedCloudRegionCollectionArrayOutputWithContext(ctx context.Context) GetSupportedCloudRegionsSupportedCloudRegionCollectionArrayOutput {
+	return o
+}
+
+func (o GetSupportedCloudRegionsSupportedCloudRegionCollectionArrayOutput) Index(i pulumi.IntInput) GetSupportedCloudRegionsSupportedCloudRegionCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSupportedCloudRegionsSupportedCloudRegionCollection {
+		return vs[0].([]GetSupportedCloudRegionsSupportedCloudRegionCollection)[vs[1].(int)]
+	}).(GetSupportedCloudRegionsSupportedCloudRegionCollectionOutput)
+}
+
+type GetSupportedCloudRegionsSupportedCloudRegionCollectionItem struct {
+	AssetSourceType string `pulumi:"assetSourceType"`
+	Name            string `pulumi:"name"`
+	State           string `pulumi:"state"`
+}
+
+// GetSupportedCloudRegionsSupportedCloudRegionCollectionItemInput is an input type that accepts GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArgs and GetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutput values.
+// You can construct a concrete instance of `GetSupportedCloudRegionsSupportedCloudRegionCollectionItemInput` via:
+//
+//	GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArgs{...}
+type GetSupportedCloudRegionsSupportedCloudRegionCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutput() GetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutput
+	ToGetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutputWithContext(context.Context) GetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutput
+}
+
+type GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArgs struct {
+	AssetSourceType pulumi.StringInput `pulumi:"assetSourceType"`
+	Name            pulumi.StringInput `pulumi:"name"`
+	State           pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSupportedCloudRegionsSupportedCloudRegionCollectionItem)(nil)).Elem()
+}
+
+func (i GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArgs) ToGetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutput() GetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutput {
+	return i.ToGetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArgs) ToGetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutputWithContext(ctx context.Context) GetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutput)
+}
+
+// GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayInput is an input type that accepts GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArray and GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayInput` via:
+//
+//	GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArray{ GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArgs{...} }
+type GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayOutput() GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayOutput
+	ToGetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayOutputWithContext(context.Context) GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayOutput
+}
+
+type GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArray []GetSupportedCloudRegionsSupportedCloudRegionCollectionItemInput
+
+func (GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSupportedCloudRegionsSupportedCloudRegionCollectionItem)(nil)).Elem()
+}
+
+func (i GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArray) ToGetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayOutput() GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayOutput {
+	return i.ToGetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArray) ToGetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayOutputWithContext(ctx context.Context) GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayOutput)
+}
+
+type GetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSupportedCloudRegionsSupportedCloudRegionCollectionItem)(nil)).Elem()
+}
+
+func (o GetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutput) ToGetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutput() GetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutput {
+	return o
+}
+
+func (o GetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutput) ToGetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutputWithContext(ctx context.Context) GetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutput {
+	return o
+}
+
+func (o GetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutput) AssetSourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSupportedCloudRegionsSupportedCloudRegionCollectionItem) string { return v.AssetSourceType }).(pulumi.StringOutput)
+}
+
+func (o GetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSupportedCloudRegionsSupportedCloudRegionCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSupportedCloudRegionsSupportedCloudRegionCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+type GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSupportedCloudRegionsSupportedCloudRegionCollectionItem)(nil)).Elem()
+}
+
+func (o GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayOutput) ToGetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayOutput() GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayOutput) ToGetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayOutputWithContext(ctx context.Context) GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSupportedCloudRegionsSupportedCloudRegionCollectionItem {
+		return vs[0].([]GetSupportedCloudRegionsSupportedCloudRegionCollectionItem)[vs[1].(int)]
+	}).(GetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentPluginListInput)(nil)).Elem(), AgentPluginListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentPluginListArrayInput)(nil)).Elem(), AgentPluginListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAttachedEbsVolumesCostInput)(nil)).Elem(), AssetAttachedEbsVolumesCostArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAttachedEbsVolumesCostPtrInput)(nil)).Elem(), AssetAttachedEbsVolumesCostArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEbsInput)(nil)).Elem(), AssetAwsEbsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEbsPtrInput)(nil)).Elem(), AssetAwsEbsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEbsAttachmentInput)(nil)).Elem(), AssetAwsEbsAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEbsAttachmentArrayInput)(nil)).Elem(), AssetAwsEbsAttachmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEbsTagInput)(nil)).Elem(), AssetAwsEbsTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEbsTagArrayInput)(nil)).Elem(), AssetAwsEbsTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEc2Input)(nil)).Elem(), AssetAwsEc2Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEc2PtrInput)(nil)).Elem(), AssetAwsEc2Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEc2NetworkInterfaceInput)(nil)).Elem(), AssetAwsEc2NetworkInterfaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEc2NetworkInterfaceArrayInput)(nil)).Elem(), AssetAwsEc2NetworkInterfaceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEc2NetworkInterfaceAssociationInput)(nil)).Elem(), AssetAwsEc2NetworkInterfaceAssociationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEc2NetworkInterfaceAssociationPtrInput)(nil)).Elem(), AssetAwsEc2NetworkInterfaceAssociationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEc2NetworkInterfaceAttachmentInput)(nil)).Elem(), AssetAwsEc2NetworkInterfaceAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEc2NetworkInterfaceAttachmentPtrInput)(nil)).Elem(), AssetAwsEc2NetworkInterfaceAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEc2NetworkInterfacePrivateIpAddressInput)(nil)).Elem(), AssetAwsEc2NetworkInterfacePrivateIpAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEc2NetworkInterfacePrivateIpAddressArrayInput)(nil)).Elem(), AssetAwsEc2NetworkInterfacePrivateIpAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationInput)(nil)).Elem(), AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrInput)(nil)).Elem(), AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEc2NetworkInterfaceSecurityGroupInput)(nil)).Elem(), AssetAwsEc2NetworkInterfaceSecurityGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEc2NetworkInterfaceSecurityGroupArrayInput)(nil)).Elem(), AssetAwsEc2NetworkInterfaceSecurityGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEc2PlacementInput)(nil)).Elem(), AssetAwsEc2PlacementArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEc2PlacementPtrInput)(nil)).Elem(), AssetAwsEc2PlacementArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEc2SecurityGroupInput)(nil)).Elem(), AssetAwsEc2SecurityGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEc2SecurityGroupArrayInput)(nil)).Elem(), AssetAwsEc2SecurityGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEc2StateInput)(nil)).Elem(), AssetAwsEc2StateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEc2StatePtrInput)(nil)).Elem(), AssetAwsEc2StateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEc2TagInput)(nil)).Elem(), AssetAwsEc2TagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEc2TagArrayInput)(nil)).Elem(), AssetAwsEc2TagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEc2costInput)(nil)).Elem(), AssetAwsEc2costArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssetAwsEc2costPtrInput)(nil)).Elem(), AssetAwsEc2costArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AssetComputeInput)(nil)).Elem(), AssetComputeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AssetComputePtrInput)(nil)).Elem(), AssetComputeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AssetComputeDiskInput)(nil)).Elem(), AssetComputeDiskArgs{})
@@ -10537,6 +18530,38 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplianceImagesApplianceImageCollectionItemArrayInput)(nil)).Elem(), GetApplianceImagesApplianceImageCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplianceImagesFilterInput)(nil)).Elem(), GetApplianceImagesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplianceImagesFilterArrayInput)(nil)).Elem(), GetApplianceImagesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAttachedEbsVolumesCostInput)(nil)).Elem(), GetAssetAttachedEbsVolumesCostArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAttachedEbsVolumesCostArrayInput)(nil)).Elem(), GetAssetAttachedEbsVolumesCostArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEbInput)(nil)).Elem(), GetAssetAwsEbArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEbArrayInput)(nil)).Elem(), GetAssetAwsEbArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEbAttachmentInput)(nil)).Elem(), GetAssetAwsEbAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEbAttachmentArrayInput)(nil)).Elem(), GetAssetAwsEbAttachmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEbTagInput)(nil)).Elem(), GetAssetAwsEbTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEbTagArrayInput)(nil)).Elem(), GetAssetAwsEbTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEc2Input)(nil)).Elem(), GetAssetAwsEc2Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEc2ArrayInput)(nil)).Elem(), GetAssetAwsEc2Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEc2NetworkInterfaceInput)(nil)).Elem(), GetAssetAwsEc2NetworkInterfaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEc2NetworkInterfaceArrayInput)(nil)).Elem(), GetAssetAwsEc2NetworkInterfaceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEc2NetworkInterfaceAssociationInput)(nil)).Elem(), GetAssetAwsEc2NetworkInterfaceAssociationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEc2NetworkInterfaceAssociationArrayInput)(nil)).Elem(), GetAssetAwsEc2NetworkInterfaceAssociationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEc2NetworkInterfaceAttachmentInput)(nil)).Elem(), GetAssetAwsEc2NetworkInterfaceAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEc2NetworkInterfaceAttachmentArrayInput)(nil)).Elem(), GetAssetAwsEc2NetworkInterfaceAttachmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEc2NetworkInterfacePrivateIpAddressInput)(nil)).Elem(), GetAssetAwsEc2NetworkInterfacePrivateIpAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayInput)(nil)).Elem(), GetAssetAwsEc2NetworkInterfacePrivateIpAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationInput)(nil)).Elem(), GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayInput)(nil)).Elem(), GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEc2NetworkInterfaceSecurityGroupInput)(nil)).Elem(), GetAssetAwsEc2NetworkInterfaceSecurityGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEc2NetworkInterfaceSecurityGroupArrayInput)(nil)).Elem(), GetAssetAwsEc2NetworkInterfaceSecurityGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEc2PlacementInput)(nil)).Elem(), GetAssetAwsEc2PlacementArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEc2PlacementArrayInput)(nil)).Elem(), GetAssetAwsEc2PlacementArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEc2SecurityGroupInput)(nil)).Elem(), GetAssetAwsEc2SecurityGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEc2SecurityGroupArrayInput)(nil)).Elem(), GetAssetAwsEc2SecurityGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEc2StateInput)(nil)).Elem(), GetAssetAwsEc2StateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEc2StateArrayInput)(nil)).Elem(), GetAssetAwsEc2StateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEc2TagInput)(nil)).Elem(), GetAssetAwsEc2TagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEc2TagArrayInput)(nil)).Elem(), GetAssetAwsEc2TagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEc2costInput)(nil)).Elem(), GetAssetAwsEc2costArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetAwsEc2costArrayInput)(nil)).Elem(), GetAssetAwsEc2costArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetComputeInput)(nil)).Elem(), GetAssetComputeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetComputeArrayInput)(nil)).Elem(), GetAssetComputeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetComputeDiskInput)(nil)).Elem(), GetAssetComputeDiskArgs{})
@@ -10577,6 +18602,38 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionArrayInput)(nil)).Elem(), GetAssetsAssetCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemInput)(nil)).Elem(), GetAssetsAssetCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemArrayInput)(nil)).Elem(), GetAssetsAssetCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAttachedEbsVolumesCostInput)(nil)).Elem(), GetAssetsAssetCollectionItemAttachedEbsVolumesCostArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayInput)(nil)).Elem(), GetAssetsAssetCollectionItemAttachedEbsVolumesCostArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEbInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEbArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEbArrayInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEbArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEbAttachmentInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEbAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEbAttachmentArrayInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEbAttachmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEbTagInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEbTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEbTagArrayInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEbTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2Input)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEc2Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2ArrayInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEc2Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2PlacementInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEc2PlacementArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2PlacementArrayInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEc2PlacementArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2SecurityGroupInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEc2SecurityGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEc2SecurityGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2StateInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEc2StateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2StateArrayInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEc2StateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2TagInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEc2TagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2TagArrayInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEc2TagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2costInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEc2costArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemAwsEc2costArrayInput)(nil)).Elem(), GetAssetsAssetCollectionItemAwsEc2costArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemComputeInput)(nil)).Elem(), GetAssetsAssetCollectionItemComputeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemComputeArrayInput)(nil)).Elem(), GetAssetsAssetCollectionItemComputeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAssetsAssetCollectionItemComputeDiskInput)(nil)).Elem(), GetAssetsAssetCollectionItemComputeDiskArgs{})
@@ -10619,8 +18676,46 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInventoriesInventoryCollectionArrayInput)(nil)).Elem(), GetInventoriesInventoryCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInventoriesInventoryCollectionItemInput)(nil)).Elem(), GetInventoriesInventoryCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInventoriesInventoryCollectionItemArrayInput)(nil)).Elem(), GetInventoriesInventoryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedCloudRegionsFilterInput)(nil)).Elem(), GetSupportedCloudRegionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedCloudRegionsFilterArrayInput)(nil)).Elem(), GetSupportedCloudRegionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedCloudRegionsSupportedCloudRegionCollectionInput)(nil)).Elem(), GetSupportedCloudRegionsSupportedCloudRegionCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedCloudRegionsSupportedCloudRegionCollectionArrayInput)(nil)).Elem(), GetSupportedCloudRegionsSupportedCloudRegionCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedCloudRegionsSupportedCloudRegionCollectionItemInput)(nil)).Elem(), GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayInput)(nil)).Elem(), GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArray{})
 	pulumi.RegisterOutputType(AgentPluginListOutput{})
 	pulumi.RegisterOutputType(AgentPluginListArrayOutput{})
+	pulumi.RegisterOutputType(AssetAttachedEbsVolumesCostOutput{})
+	pulumi.RegisterOutputType(AssetAttachedEbsVolumesCostPtrOutput{})
+	pulumi.RegisterOutputType(AssetAwsEbsOutput{})
+	pulumi.RegisterOutputType(AssetAwsEbsPtrOutput{})
+	pulumi.RegisterOutputType(AssetAwsEbsAttachmentOutput{})
+	pulumi.RegisterOutputType(AssetAwsEbsAttachmentArrayOutput{})
+	pulumi.RegisterOutputType(AssetAwsEbsTagOutput{})
+	pulumi.RegisterOutputType(AssetAwsEbsTagArrayOutput{})
+	pulumi.RegisterOutputType(AssetAwsEc2Output{})
+	pulumi.RegisterOutputType(AssetAwsEc2PtrOutput{})
+	pulumi.RegisterOutputType(AssetAwsEc2NetworkInterfaceOutput{})
+	pulumi.RegisterOutputType(AssetAwsEc2NetworkInterfaceArrayOutput{})
+	pulumi.RegisterOutputType(AssetAwsEc2NetworkInterfaceAssociationOutput{})
+	pulumi.RegisterOutputType(AssetAwsEc2NetworkInterfaceAssociationPtrOutput{})
+	pulumi.RegisterOutputType(AssetAwsEc2NetworkInterfaceAttachmentOutput{})
+	pulumi.RegisterOutputType(AssetAwsEc2NetworkInterfaceAttachmentPtrOutput{})
+	pulumi.RegisterOutputType(AssetAwsEc2NetworkInterfacePrivateIpAddressOutput{})
+	pulumi.RegisterOutputType(AssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput{})
+	pulumi.RegisterOutputType(AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput{})
+	pulumi.RegisterOutputType(AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationPtrOutput{})
+	pulumi.RegisterOutputType(AssetAwsEc2NetworkInterfaceSecurityGroupOutput{})
+	pulumi.RegisterOutputType(AssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput{})
+	pulumi.RegisterOutputType(AssetAwsEc2PlacementOutput{})
+	pulumi.RegisterOutputType(AssetAwsEc2PlacementPtrOutput{})
+	pulumi.RegisterOutputType(AssetAwsEc2SecurityGroupOutput{})
+	pulumi.RegisterOutputType(AssetAwsEc2SecurityGroupArrayOutput{})
+	pulumi.RegisterOutputType(AssetAwsEc2StateOutput{})
+	pulumi.RegisterOutputType(AssetAwsEc2StatePtrOutput{})
+	pulumi.RegisterOutputType(AssetAwsEc2TagOutput{})
+	pulumi.RegisterOutputType(AssetAwsEc2TagArrayOutput{})
+	pulumi.RegisterOutputType(AssetAwsEc2costOutput{})
+	pulumi.RegisterOutputType(AssetAwsEc2costPtrOutput{})
 	pulumi.RegisterOutputType(AssetComputeOutput{})
 	pulumi.RegisterOutputType(AssetComputePtrOutput{})
 	pulumi.RegisterOutputType(AssetComputeDiskOutput{})
@@ -10671,6 +18766,38 @@ func init() {
 	pulumi.RegisterOutputType(GetApplianceImagesApplianceImageCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetApplianceImagesFilterOutput{})
 	pulumi.RegisterOutputType(GetApplianceImagesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetAttachedEbsVolumesCostOutput{})
+	pulumi.RegisterOutputType(GetAssetAttachedEbsVolumesCostArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEbOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEbArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEbAttachmentOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEbAttachmentArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEbTagOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEbTagArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEc2Output{})
+	pulumi.RegisterOutputType(GetAssetAwsEc2ArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEc2NetworkInterfaceOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEc2NetworkInterfaceArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEc2NetworkInterfaceAssociationOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEc2NetworkInterfaceAssociationArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEc2NetworkInterfaceAttachmentOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEc2NetworkInterfaceAttachmentArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEc2NetworkInterfacePrivateIpAddressOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEc2NetworkInterfacePrivateIpAddressArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEc2NetworkInterfaceSecurityGroupOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEc2NetworkInterfaceSecurityGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEc2PlacementOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEc2PlacementArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEc2SecurityGroupOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEc2SecurityGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEc2StateOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEc2StateArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEc2TagOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEc2TagArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEc2costOutput{})
+	pulumi.RegisterOutputType(GetAssetAwsEc2costArrayOutput{})
 	pulumi.RegisterOutputType(GetAssetComputeOutput{})
 	pulumi.RegisterOutputType(GetAssetComputeArrayOutput{})
 	pulumi.RegisterOutputType(GetAssetComputeDiskOutput{})
@@ -10711,6 +18838,38 @@ func init() {
 	pulumi.RegisterOutputType(GetAssetsAssetCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAttachedEbsVolumesCostOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAttachedEbsVolumesCostArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEbOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEbArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEbAttachmentOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEbAttachmentArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEbTagOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEbTagArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEc2Output{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEc2ArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAssociationArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceAttachmentArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEc2NetworkInterfacePrivateIpAddressAssociationArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEc2NetworkInterfaceSecurityGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEc2PlacementOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEc2PlacementArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEc2SecurityGroupOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEc2SecurityGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEc2StateOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEc2StateArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEc2TagOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEc2TagArrayOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEc2costOutput{})
+	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemAwsEc2costArrayOutput{})
 	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemComputeOutput{})
 	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemComputeArrayOutput{})
 	pulumi.RegisterOutputType(GetAssetsAssetCollectionItemComputeDiskOutput{})
@@ -10753,4 +18912,10 @@ func init() {
 	pulumi.RegisterOutputType(GetInventoriesInventoryCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetInventoriesInventoryCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetInventoriesInventoryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSupportedCloudRegionsFilterOutput{})
+	pulumi.RegisterOutputType(GetSupportedCloudRegionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSupportedCloudRegionsSupportedCloudRegionCollectionOutput{})
+	pulumi.RegisterOutputType(GetSupportedCloudRegionsSupportedCloudRegionCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSupportedCloudRegionsSupportedCloudRegionCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSupportedCloudRegionsSupportedCloudRegionCollectionItemArrayOutput{})
 }

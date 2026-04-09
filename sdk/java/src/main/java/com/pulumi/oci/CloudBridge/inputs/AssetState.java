@@ -5,6 +5,10 @@ package com.pulumi.oci.CloudBridge.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.CloudBridge.inputs.AssetAttachedEbsVolumesCostArgs;
+import com.pulumi.oci.CloudBridge.inputs.AssetAwsEbsArgs;
+import com.pulumi.oci.CloudBridge.inputs.AssetAwsEc2Args;
+import com.pulumi.oci.CloudBridge.inputs.AssetAwsEc2costArgs;
 import com.pulumi.oci.CloudBridge.inputs.AssetComputeArgs;
 import com.pulumi.oci.CloudBridge.inputs.AssetVmArgs;
 import com.pulumi.oci.CloudBridge.inputs.AssetVmwareVcenterArgs;
@@ -20,6 +24,51 @@ import javax.annotation.Nullable;
 public final class AssetState extends com.pulumi.resources.ResourceArgs {
 
     public static final AssetState Empty = new AssetState();
+
+    /**
+     * (Updatable) The class name of the asset.
+     * 
+     */
+    @Import(name="assetClassName")
+    private @Nullable Output<String> assetClassName;
+
+    /**
+     * @return (Updatable) The class name of the asset.
+     * 
+     */
+    public Optional<Output<String>> assetClassName() {
+        return Optional.ofNullable(this.assetClassName);
+    }
+
+    /**
+     * (Updatable) The version of the asset class.
+     * 
+     */
+    @Import(name="assetClassVersion")
+    private @Nullable Output<String> assetClassVersion;
+
+    /**
+     * @return (Updatable) The version of the asset class.
+     * 
+     */
+    public Optional<Output<String>> assetClassVersion() {
+        return Optional.ofNullable(this.assetClassVersion);
+    }
+
+    /**
+     * (Updatable) The details of the asset.
+     * 
+     */
+    @Import(name="assetDetails")
+    private @Nullable Output<String> assetDetails;
+
+    /**
+     * @return (Updatable) The details of the asset.
+     * 
+     */
+    public Optional<Output<String>> assetDetails() {
+        return Optional.ofNullable(this.assetDetails);
+    }
 
     /**
      * (Updatable) List of asset source OCID.
@@ -49,6 +98,66 @@ public final class AssetState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> assetType() {
         return Optional.ofNullable(this.assetType);
+    }
+
+    /**
+     * (Updatable) Cost information for monthly maintenance.
+     * 
+     */
+    @Import(name="attachedEbsVolumesCost")
+    private @Nullable Output<AssetAttachedEbsVolumesCostArgs> attachedEbsVolumesCost;
+
+    /**
+     * @return (Updatable) Cost information for monthly maintenance.
+     * 
+     */
+    public Optional<Output<AssetAttachedEbsVolumesCostArgs>> attachedEbsVolumesCost() {
+        return Optional.ofNullable(this.attachedEbsVolumesCost);
+    }
+
+    /**
+     * (Updatable) AWS EBS volume related properties.
+     * 
+     */
+    @Import(name="awsEbs")
+    private @Nullable Output<AssetAwsEbsArgs> awsEbs;
+
+    /**
+     * @return (Updatable) AWS EBS volume related properties.
+     * 
+     */
+    public Optional<Output<AssetAwsEbsArgs>> awsEbs() {
+        return Optional.ofNullable(this.awsEbs);
+    }
+
+    /**
+     * (Updatable) AWS virtual machine related properties.
+     * 
+     */
+    @Import(name="awsEc2")
+    private @Nullable Output<AssetAwsEc2Args> awsEc2;
+
+    /**
+     * @return (Updatable) AWS virtual machine related properties.
+     * 
+     */
+    public Optional<Output<AssetAwsEc2Args>> awsEc2() {
+        return Optional.ofNullable(this.awsEc2);
+    }
+
+    /**
+     * (Updatable) Cost information for monthly maintenance.
+     * 
+     */
+    @Import(name="awsEc2cost")
+    private @Nullable Output<AssetAwsEc2costArgs> awsEc2cost;
+
+    /**
+     * @return (Updatable) Cost information for monthly maintenance.
+     * 
+     */
+    public Optional<Output<AssetAwsEc2costArgs>> awsEc2cost() {
+        return Optional.ofNullable(this.awsEc2cost);
     }
 
     /**
@@ -109,6 +218,21 @@ public final class AssetState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
+    }
+
+    /**
+     * Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     * 
+     */
+    @Import(name="environmentType")
+    private @Nullable Output<String> environmentType;
+
+    /**
+     * @return Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     * 
+     */
+    public Optional<Output<String>> environmentType() {
+        return Optional.ofNullable(this.environmentType);
     }
 
     /**
@@ -279,12 +403,20 @@ public final class AssetState extends com.pulumi.resources.ResourceArgs {
     private AssetState() {}
 
     private AssetState(AssetState $) {
+        this.assetClassName = $.assetClassName;
+        this.assetClassVersion = $.assetClassVersion;
+        this.assetDetails = $.assetDetails;
         this.assetSourceIds = $.assetSourceIds;
         this.assetType = $.assetType;
+        this.attachedEbsVolumesCost = $.attachedEbsVolumesCost;
+        this.awsEbs = $.awsEbs;
+        this.awsEc2 = $.awsEc2;
+        this.awsEc2cost = $.awsEc2cost;
         this.compartmentId = $.compartmentId;
         this.compute = $.compute;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
+        this.environmentType = $.environmentType;
         this.externalAssetKey = $.externalAssetKey;
         this.freeformTags = $.freeformTags;
         this.inventoryId = $.inventoryId;
@@ -314,6 +446,69 @@ public final class AssetState extends com.pulumi.resources.ResourceArgs {
 
         public Builder(AssetState defaults) {
             $ = new AssetState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param assetClassName (Updatable) The class name of the asset.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assetClassName(@Nullable Output<String> assetClassName) {
+            $.assetClassName = assetClassName;
+            return this;
+        }
+
+        /**
+         * @param assetClassName (Updatable) The class name of the asset.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assetClassName(String assetClassName) {
+            return assetClassName(Output.of(assetClassName));
+        }
+
+        /**
+         * @param assetClassVersion (Updatable) The version of the asset class.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assetClassVersion(@Nullable Output<String> assetClassVersion) {
+            $.assetClassVersion = assetClassVersion;
+            return this;
+        }
+
+        /**
+         * @param assetClassVersion (Updatable) The version of the asset class.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assetClassVersion(String assetClassVersion) {
+            return assetClassVersion(Output.of(assetClassVersion));
+        }
+
+        /**
+         * @param assetDetails (Updatable) The details of the asset.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assetDetails(@Nullable Output<String> assetDetails) {
+            $.assetDetails = assetDetails;
+            return this;
+        }
+
+        /**
+         * @param assetDetails (Updatable) The details of the asset.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assetDetails(String assetDetails) {
+            return assetDetails(Output.of(assetDetails));
         }
 
         /**
@@ -366,6 +561,90 @@ public final class AssetState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder assetType(String assetType) {
             return assetType(Output.of(assetType));
+        }
+
+        /**
+         * @param attachedEbsVolumesCost (Updatable) Cost information for monthly maintenance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachedEbsVolumesCost(@Nullable Output<AssetAttachedEbsVolumesCostArgs> attachedEbsVolumesCost) {
+            $.attachedEbsVolumesCost = attachedEbsVolumesCost;
+            return this;
+        }
+
+        /**
+         * @param attachedEbsVolumesCost (Updatable) Cost information for monthly maintenance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachedEbsVolumesCost(AssetAttachedEbsVolumesCostArgs attachedEbsVolumesCost) {
+            return attachedEbsVolumesCost(Output.of(attachedEbsVolumesCost));
+        }
+
+        /**
+         * @param awsEbs (Updatable) AWS EBS volume related properties.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder awsEbs(@Nullable Output<AssetAwsEbsArgs> awsEbs) {
+            $.awsEbs = awsEbs;
+            return this;
+        }
+
+        /**
+         * @param awsEbs (Updatable) AWS EBS volume related properties.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder awsEbs(AssetAwsEbsArgs awsEbs) {
+            return awsEbs(Output.of(awsEbs));
+        }
+
+        /**
+         * @param awsEc2 (Updatable) AWS virtual machine related properties.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder awsEc2(@Nullable Output<AssetAwsEc2Args> awsEc2) {
+            $.awsEc2 = awsEc2;
+            return this;
+        }
+
+        /**
+         * @param awsEc2 (Updatable) AWS virtual machine related properties.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder awsEc2(AssetAwsEc2Args awsEc2) {
+            return awsEc2(Output.of(awsEc2));
+        }
+
+        /**
+         * @param awsEc2cost (Updatable) Cost information for monthly maintenance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder awsEc2cost(@Nullable Output<AssetAwsEc2costArgs> awsEc2cost) {
+            $.awsEc2cost = awsEc2cost;
+            return this;
+        }
+
+        /**
+         * @param awsEc2cost (Updatable) Cost information for monthly maintenance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder awsEc2cost(AssetAwsEc2costArgs awsEc2cost) {
+            return awsEc2cost(Output.of(awsEc2cost));
         }
 
         /**
@@ -450,6 +729,27 @@ public final class AssetState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param environmentType Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder environmentType(@Nullable Output<String> environmentType) {
+            $.environmentType = environmentType;
+            return this;
+        }
+
+        /**
+         * @param environmentType Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder environmentType(String environmentType) {
+            return environmentType(Output.of(environmentType));
         }
 
         /**

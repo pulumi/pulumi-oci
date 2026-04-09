@@ -22,6 +22,10 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string Architecture;
         /// <summary>
+        /// Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+        /// </summary>
+        public readonly bool AreSourcesManaged;
+        /// <summary>
         /// Settings for the Autonomous Linux service.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedInstancesManagedInstanceCollectionItemAutonomousSettingResult> AutonomousSettings;
@@ -166,6 +170,10 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string TimeLastCheckin;
         /// <summary>
+        /// The date and time the instance's software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        /// </summary>
+        public readonly string TimeLastSoftwareRefresh;
+        /// <summary>
         /// The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         /// </summary>
         public readonly string TimeUpdated;
@@ -183,6 +191,8 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
             string agentVersion,
 
             string architecture,
+
+            bool areSourcesManaged,
 
             ImmutableArray<Outputs.GetManagedInstancesManagedInstanceCollectionItemAutonomousSettingResult> autonomousSettings,
 
@@ -256,6 +266,8 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             string timeLastCheckin,
 
+            string timeLastSoftwareRefresh,
+
             string timeUpdated,
 
             int updatesAvailable,
@@ -264,6 +276,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         {
             AgentVersion = agentVersion;
             Architecture = architecture;
+            AreSourcesManaged = areSourcesManaged;
             AutonomousSettings = autonomousSettings;
             BugUpdatesAvailable = bugUpdatesAvailable;
             CompartmentId = compartmentId;
@@ -300,6 +313,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
             TimeCreated = timeCreated;
             TimeLastBoot = timeLastBoot;
             TimeLastCheckin = timeLastCheckin;
+            TimeLastSoftwareRefresh = timeLastSoftwareRefresh;
             TimeUpdated = timeUpdated;
             UpdatesAvailable = updatesAvailable;
             WorkRequestCount = workRequestCount;

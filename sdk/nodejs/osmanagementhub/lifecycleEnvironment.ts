@@ -25,28 +25,16 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     displayName: lifecycleEnvironmentDisplayName,
  *     osFamily: lifecycleEnvironmentOsFamily,
- *     stages: [
- *         {
- *             displayName: lifecycleEnvironmentStagesDisplayName1,
- *             rank: lifecycleEnvironmentStagesRank1,
- *             definedTags: {
- *                 "Operations.CostCenter": "42",
- *             },
- *             freeformTags: {
- *                 Department: "Finance",
- *             },
+ *     stages: [{
+ *         displayName: lifecycleEnvironmentStagesDisplayName,
+ *         rank: lifecycleEnvironmentStagesRank,
+ *         definedTags: {
+ *             "Operations.CostCenter": "42",
  *         },
- *         {
- *             displayName: lifecycleEnvironmentStagesDisplayName2,
- *             rank: lifecycleEnvironmentStagesRank2,
- *             definedTags: {
- *                 "Operations.CostCenter": "42",
- *             },
- *             freeformTags: {
- *                 Department: "Finance",
- *             },
+ *         freeformTags: {
+ *             Department: "Finance",
  *         },
- *     ],
+ *     }],
  *     vendorName: lifecycleEnvironmentVendorName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",

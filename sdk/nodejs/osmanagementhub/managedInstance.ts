@@ -59,7 +59,11 @@ export class ManagedInstance extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly architecture: pulumi.Output<string>;
     /**
-     * (Updatable) Updatable settings for the Autonomous Linux service.
+     * Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+     */
+    declare public /*out*/ readonly areSourcesManaged: pulumi.Output<boolean>;
+    /**
+     * (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
      */
     declare public readonly autonomousSettings: pulumi.Output<outputs.OsManagementHub.ManagedInstanceAutonomousSettings>;
     /**
@@ -203,6 +207,10 @@ export class ManagedInstance extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly timeLastCheckin: pulumi.Output<string>;
     /**
+     * The date and time the instance's software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     */
+    declare public /*out*/ readonly timeLastSoftwareRefresh: pulumi.Output<string>;
+    /**
      * The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
@@ -230,6 +238,7 @@ export class ManagedInstance extends pulumi.CustomResource {
             const state = argsOrState as ManagedInstanceState | undefined;
             resourceInputs["agentVersion"] = state?.agentVersion;
             resourceInputs["architecture"] = state?.architecture;
+            resourceInputs["areSourcesManaged"] = state?.areSourcesManaged;
             resourceInputs["autonomousSettings"] = state?.autonomousSettings;
             resourceInputs["bugUpdatesAvailable"] = state?.bugUpdatesAvailable;
             resourceInputs["compartmentId"] = state?.compartmentId;
@@ -265,6 +274,7 @@ export class ManagedInstance extends pulumi.CustomResource {
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeLastBoot"] = state?.timeLastBoot;
             resourceInputs["timeLastCheckin"] = state?.timeLastCheckin;
+            resourceInputs["timeLastSoftwareRefresh"] = state?.timeLastSoftwareRefresh;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
             resourceInputs["updatesAvailable"] = state?.updatesAvailable;
             resourceInputs["workRequestCount"] = state?.workRequestCount;
@@ -281,6 +291,7 @@ export class ManagedInstance extends pulumi.CustomResource {
             resourceInputs["secondaryManagementStationId"] = args?.secondaryManagementStationId;
             resourceInputs["agentVersion"] = undefined /*out*/;
             resourceInputs["architecture"] = undefined /*out*/;
+            resourceInputs["areSourcesManaged"] = undefined /*out*/;
             resourceInputs["bugUpdatesAvailable"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["displayName"] = undefined /*out*/;
@@ -310,6 +321,7 @@ export class ManagedInstance extends pulumi.CustomResource {
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeLastBoot"] = undefined /*out*/;
             resourceInputs["timeLastCheckin"] = undefined /*out*/;
+            resourceInputs["timeLastSoftwareRefresh"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
             resourceInputs["updatesAvailable"] = undefined /*out*/;
             resourceInputs["workRequestCount"] = undefined /*out*/;
@@ -332,7 +344,11 @@ export interface ManagedInstanceState {
      */
     architecture?: pulumi.Input<string>;
     /**
-     * (Updatable) Updatable settings for the Autonomous Linux service.
+     * Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+     */
+    areSourcesManaged?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
      */
     autonomousSettings?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceAutonomousSettings>;
     /**
@@ -476,6 +492,10 @@ export interface ManagedInstanceState {
      */
     timeLastCheckin?: pulumi.Input<string>;
     /**
+     * The date and time the instance's software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     */
+    timeLastSoftwareRefresh?: pulumi.Input<string>;
+    /**
      * The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     timeUpdated?: pulumi.Input<string>;
@@ -494,7 +514,7 @@ export interface ManagedInstanceState {
  */
 export interface ManagedInstanceArgs {
     /**
-     * (Updatable) Updatable settings for the Autonomous Linux service.
+     * (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
      */
     autonomousSettings?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceAutonomousSettings>;
     /**

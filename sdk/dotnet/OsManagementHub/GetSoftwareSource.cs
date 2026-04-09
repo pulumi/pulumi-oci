@@ -220,6 +220,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// Indicates if SSL validation is enabled for the software source.
         /// </summary>
         public readonly bool IsSslVerifyEnabled;
+        public readonly string OriginDisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment. This property applies only to replicated vendor software sources.
         /// </summary>
@@ -334,6 +335,8 @@ namespace Pulumi.Oci.OsManagementHub
 
             bool isSslVerifyEnabled,
 
+            string originDisplayName,
+
             string originSoftwareSourceId,
 
             string osFamily,
@@ -391,6 +394,7 @@ namespace Pulumi.Oci.OsManagementHub
             IsMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
             IsMirrorSyncAllowed = isMirrorSyncAllowed;
             IsSslVerifyEnabled = isSslVerifyEnabled;
+            OriginDisplayName = originDisplayName;
             OriginSoftwareSourceId = originSoftwareSourceId;
             OsFamily = osFamily;
             PackageCount = packageCount;

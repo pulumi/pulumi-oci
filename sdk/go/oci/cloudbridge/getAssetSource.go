@@ -65,6 +65,8 @@ type LookupAssetSourceResult struct {
 	AssetSourceId               string `pulumi:"assetSourceId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that is going to be used to create assets.
 	AssetsCompartmentId string `pulumi:"assetsCompartmentId"`
+	AwsAccountKey       string `pulumi:"awsAccountKey"`
+	AwsRegion           string `pulumi:"awsRegion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -77,14 +79,19 @@ type LookupAssetSourceResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the environment.
 	EnvironmentId string `pulumi:"environmentId"`
+	// Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+	EnvironmentType string `pulumi:"environmentType"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
 	Id string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
-	InventoryId string `pulumi:"inventoryId"`
+	InventoryId                string `pulumi:"inventoryId"`
+	IsCostInformationCollected bool   `pulumi:"isCostInformationCollected"`
 	// The detailed state of the asset source.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Endpoint for OLVM asset discovery and replication in the form of ```https://<host>:<port>```
+	OlvmEndpoint string `pulumi:"olvmEndpoint"`
 	// Credentials for an asset source.
 	ReplicationCredentials []GetAssetSourceReplicationCredential `pulumi:"replicationCredentials"`
 	// The current state of the asset source.
@@ -154,6 +161,14 @@ func (o LookupAssetSourceResultOutput) AssetsCompartmentId() pulumi.StringOutput
 	return o.ApplyT(func(v LookupAssetSourceResult) string { return v.AssetsCompartmentId }).(pulumi.StringOutput)
 }
 
+func (o LookupAssetSourceResultOutput) AwsAccountKey() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAssetSourceResult) string { return v.AwsAccountKey }).(pulumi.StringOutput)
+}
+
+func (o LookupAssetSourceResultOutput) AwsRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAssetSourceResult) string { return v.AwsRegion }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
 func (o LookupAssetSourceResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAssetSourceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -184,6 +199,11 @@ func (o LookupAssetSourceResultOutput) EnvironmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAssetSourceResult) string { return v.EnvironmentId }).(pulumi.StringOutput)
 }
 
+// Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+func (o LookupAssetSourceResultOutput) EnvironmentType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAssetSourceResult) string { return v.EnvironmentType }).(pulumi.StringOutput)
+}
+
 // The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 func (o LookupAssetSourceResultOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupAssetSourceResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
@@ -199,9 +219,18 @@ func (o LookupAssetSourceResultOutput) InventoryId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAssetSourceResult) string { return v.InventoryId }).(pulumi.StringOutput)
 }
 
+func (o LookupAssetSourceResultOutput) IsCostInformationCollected() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupAssetSourceResult) bool { return v.IsCostInformationCollected }).(pulumi.BoolOutput)
+}
+
 // The detailed state of the asset source.
 func (o LookupAssetSourceResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAssetSourceResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Endpoint for OLVM asset discovery and replication in the form of ```https://<host>:<port>```
+func (o LookupAssetSourceResultOutput) OlvmEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAssetSourceResult) string { return v.OlvmEndpoint }).(pulumi.StringOutput)
 }
 
 // Credentials for an asset source.

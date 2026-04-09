@@ -677,6 +677,7 @@ class GetBucketSummariesBucketSummaryResult(dict):
                  approximate_size: _builtins.str,
                  auto_tiering: _builtins.str,
                  bucket_id: _builtins.str,
+                 bucket_scope: _builtins.str,
                  compartment_id: _builtins.str,
                  created_by: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
@@ -700,6 +701,7 @@ class GetBucketSummariesBucketSummaryResult(dict):
         :param _builtins.str approximate_count: The approximate number of objects in the bucket. Count statistics are reported periodically. You will see a lag between what is displayed and the actual object count.
         :param _builtins.str approximate_size: The approximate total size in bytes of all objects in the bucket. Size statistics are reported periodically. You will see a lag between what is displayed and the actual size of the bucket.
         :param _builtins.str auto_tiering: The auto tiering status on the bucket. A bucket is created with auto tiering `Disabled` by default. For auto tiering `InfrequentAccess`, objects are transitioned automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
+        :param _builtins.str bucket_scope: Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
         :param _builtins.str compartment_id: The ID of the compartment in which to list buckets.
         :param _builtins.str created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -722,6 +724,7 @@ class GetBucketSummariesBucketSummaryResult(dict):
         pulumi.set(__self__, "approximate_size", approximate_size)
         pulumi.set(__self__, "auto_tiering", auto_tiering)
         pulumi.set(__self__, "bucket_id", bucket_id)
+        pulumi.set(__self__, "bucket_scope", bucket_scope)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "created_by", created_by)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -777,6 +780,14 @@ class GetBucketSummariesBucketSummaryResult(dict):
     @pulumi.getter(name="bucketId")
     def bucket_id(self) -> _builtins.str:
         return pulumi.get(self, "bucket_id")
+
+    @_builtins.property
+    @pulumi.getter(name="bucketScope")
+    def bucket_scope(self) -> _builtins.str:
+        """
+        Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+        """
+        return pulumi.get(self, "bucket_scope")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")

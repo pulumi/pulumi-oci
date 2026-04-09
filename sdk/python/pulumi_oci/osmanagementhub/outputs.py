@@ -16,6 +16,13 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'DynamicSetInstallPackagesManagementWorkRequestDetails',
+    'DynamicSetMatchingRule',
+    'DynamicSetMatchingRuleTag',
+    'DynamicSetRebootManagementWorkRequestDetails',
+    'DynamicSetRemovePackagesManagementWorkRequestDetails',
+    'DynamicSetTargetCompartment',
+    'DynamicSetUpdatePackagesManagementWorkRequestDetails',
     'EventData',
     'EventDataAdditionalDetail',
     'EventDataAdditionalDetailVmcore',
@@ -31,7 +38,9 @@ __all__ = [
     'LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetails',
     'LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetails',
     'LifecycleStageRebootManagementWorkRequestDetails',
+    'ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetails',
     'ManagedInstanceAutonomousSettings',
+    'ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetails',
     'ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetails',
     'ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetails',
     'ManagedInstanceGroupAutonomousSettings',
@@ -47,13 +56,23 @@ __all__ = [
     'ManagedInstanceGroupRemovePackagesManagementWorkRequestDetails',
     'ManagedInstanceGroupSoftwareSource',
     'ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetails',
+    'ManagedInstanceInstallPackagesManagementWorkRequestDetails',
+    'ManagedInstanceInstallSnapsManagementSnapDetail',
+    'ManagedInstanceInstallSnapsManagementWorkRequestDetails',
     'ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetails',
     'ManagedInstanceLifecycleEnvironment',
     'ManagedInstanceLifecycleStage',
     'ManagedInstanceManagedInstanceGroup',
     'ManagedInstanceRebootManagementWorkRequestDetails',
+    'ManagedInstanceRemovePackagesManagementWorkRequestDetails',
+    'ManagedInstanceRemoveSnapsManagementSnapDetail',
+    'ManagedInstanceRemoveSnapsManagementWorkRequestDetails',
     'ManagedInstanceSoftwareSource',
+    'ManagedInstanceSwitchSnapChannelManagementSnapDetails',
+    'ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails',
     'ManagedInstanceUpdatePackagesManagementWorkRequestDetails',
+    'ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetails',
+    'ManagedInstancesUpdatePackagesManagementWorkRequestDetails',
     'ManagementStationAssociateManagedInstancesManagementWorkRequestDetails',
     'ManagementStationHealth',
     'ManagementStationMirror',
@@ -65,12 +84,15 @@ __all__ = [
     'ProfileManagedInstanceGroup',
     'ProfileSoftwareSource',
     'ScheduledJobOperation',
+    'ScheduledJobOperationInstallSnapDetails',
     'ScheduledJobOperationManageModuleStreamsDetails',
     'ScheduledJobOperationManageModuleStreamsDetailsDisable',
     'ScheduledJobOperationManageModuleStreamsDetailsEnable',
     'ScheduledJobOperationManageModuleStreamsDetailsInstall',
     'ScheduledJobOperationManageModuleStreamsDetailsRemove',
+    'ScheduledJobOperationRemoveSnapDetails',
     'ScheduledJobOperationSwitchModuleStreamsDetails',
+    'ScheduledJobOperationSwitchSnapChannelDetails',
     'SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailability',
     'SoftwareSourceCustomSoftwareSourceFilter',
     'SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter',
@@ -78,6 +100,22 @@ __all__ = [
     'SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter',
     'SoftwareSourceVendorSoftwareSource',
     'WorkRequestRerunManagementWorkRequestDetails',
+    'GetDynamicSetManagedInstancesFilterResult',
+    'GetDynamicSetManagedInstancesManagedInstanceCollectionResult',
+    'GetDynamicSetManagedInstancesManagedInstanceCollectionItemResult',
+    'GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingResult',
+    'GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentResult',
+    'GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageResult',
+    'GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupResult',
+    'GetDynamicSetMatchingRuleResult',
+    'GetDynamicSetMatchingRuleTagResult',
+    'GetDynamicSetTargetCompartmentResult',
+    'GetDynamicSetsDynamicSetCollectionResult',
+    'GetDynamicSetsDynamicSetCollectionItemResult',
+    'GetDynamicSetsDynamicSetCollectionItemMatchingRuleResult',
+    'GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagResult',
+    'GetDynamicSetsDynamicSetCollectionItemTargetCompartmentResult',
+    'GetDynamicSetsFilterResult',
     'GetEntitlementsEntitlementCollectionResult',
     'GetEntitlementsEntitlementCollectionItemResult',
     'GetEntitlementsFilterResult',
@@ -145,6 +183,13 @@ __all__ = [
     'GetManagedInstanceGroupInstalledPackagesFilterResult',
     'GetManagedInstanceGroupInstalledPackagesManagedInstanceGroupInstalledPackageCollectionResult',
     'GetManagedInstanceGroupInstalledPackagesManagedInstanceGroupInstalledPackageCollectionItemResult',
+    'GetManagedInstanceGroupManagedInstancesFilterResult',
+    'GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionResult',
+    'GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemResult',
+    'GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingResult',
+    'GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentResult',
+    'GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageResult',
+    'GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupResult',
     'GetManagedInstanceGroupModulesFilterResult',
     'GetManagedInstanceGroupModulesManagedInstanceGroupModuleCollectionResult',
     'GetManagedInstanceGroupModulesManagedInstanceGroupModuleCollectionItemResult',
@@ -167,6 +212,9 @@ __all__ = [
     'GetManagedInstanceModulesFilterResult',
     'GetManagedInstanceModulesManagedInstanceModuleCollectionResult',
     'GetManagedInstanceModulesManagedInstanceModuleCollectionItemResult',
+    'GetManagedInstanceSnapsFilterResult',
+    'GetManagedInstanceSnapsSnapCollectionResult',
+    'GetManagedInstanceSnapsSnapCollectionItemResult',
     'GetManagedInstanceSoftwareSourceResult',
     'GetManagedInstanceUpdatablePackagesFilterResult',
     'GetManagedInstanceUpdatablePackagesUpdatablePackageCollectionResult',
@@ -210,22 +258,28 @@ __all__ = [
     'GetProfilesProfileCollectionItemManagedInstanceGroupResult',
     'GetProfilesProfileCollectionItemSoftwareSourceResult',
     'GetScheduledJobOperationResult',
+    'GetScheduledJobOperationInstallSnapDetailResult',
     'GetScheduledJobOperationManageModuleStreamsDetailResult',
     'GetScheduledJobOperationManageModuleStreamsDetailDisableResult',
     'GetScheduledJobOperationManageModuleStreamsDetailEnableResult',
     'GetScheduledJobOperationManageModuleStreamsDetailInstallResult',
     'GetScheduledJobOperationManageModuleStreamsDetailRemoveResult',
+    'GetScheduledJobOperationRemoveSnapDetailResult',
     'GetScheduledJobOperationSwitchModuleStreamsDetailResult',
+    'GetScheduledJobOperationSwitchSnapChannelDetailResult',
     'GetScheduledJobsFilterResult',
     'GetScheduledJobsScheduledJobCollectionResult',
     'GetScheduledJobsScheduledJobCollectionItemResult',
     'GetScheduledJobsScheduledJobCollectionItemOperationResult',
+    'GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailResult',
     'GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailResult',
     'GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailDisableResult',
     'GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailEnableResult',
     'GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailInstallResult',
     'GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailRemoveResult',
+    'GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailResult',
     'GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetailResult',
+    'GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailResult',
     'GetSoftwarePackageDependencyResult',
     'GetSoftwarePackageFileResult',
     'GetSoftwarePackageSoftwareSourceResult',
@@ -279,6 +333,494 @@ __all__ = [
 ]
 
 @pulumi.output_type
+class DynamicSetInstallPackagesManagementWorkRequestDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DynamicSetInstallPackagesManagementWorkRequestDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DynamicSetInstallPackagesManagementWorkRequestDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DynamicSetInstallPackagesManagementWorkRequestDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[_builtins.str] = None,
+                 display_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str description: User-specified information about the job. Avoid entering confidential information.
+        :param _builtins.str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
+class DynamicSetMatchingRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayNames":
+            suggest = "display_names"
+        elif key == "isRebootRequired":
+            suggest = "is_reboot_required"
+        elif key == "managedInstanceGroupIds":
+            suggest = "managed_instance_group_ids"
+        elif key == "managedInstanceIds":
+            suggest = "managed_instance_ids"
+        elif key == "osFamilies":
+            suggest = "os_families"
+        elif key == "osNames":
+            suggest = "os_names"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DynamicSetMatchingRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DynamicSetMatchingRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DynamicSetMatchingRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 architectures: Optional[Sequence[_builtins.str]] = None,
+                 display_names: Optional[Sequence[_builtins.str]] = None,
+                 is_reboot_required: Optional[_builtins.bool] = None,
+                 locations: Optional[Sequence[_builtins.str]] = None,
+                 managed_instance_group_ids: Optional[Sequence[_builtins.str]] = None,
+                 managed_instance_ids: Optional[Sequence[_builtins.str]] = None,
+                 os_families: Optional[Sequence[_builtins.str]] = None,
+                 os_names: Optional[Sequence[_builtins.str]] = None,
+                 statuses: Optional[Sequence[_builtins.str]] = None,
+                 tags: Optional[Sequence['outputs.DynamicSetMatchingRuleTag']] = None):
+        """
+        :param Sequence[_builtins.str] architectures: (Updatable) The list of managed instance architectures.
+        :param Sequence[_builtins.str] display_names: (Updatable) The list of managed instance display names.
+        :param _builtins.bool is_reboot_required: (Updatable) Indicates if the managed instance needs to be rebooted.
+        :param Sequence[_builtins.str] locations: (Updatable) The list of managed instance locations.
+        :param Sequence[_builtins.str] managed_instance_group_ids: (Updatable) The list of managed instance group IDs.
+        :param Sequence[_builtins.str] managed_instance_ids: (Updatable) The list of managed instance ids.
+        :param Sequence[_builtins.str] os_families: (Updatable) The list of managed instance OS families.
+        :param Sequence[_builtins.str] os_names: (Updatable) The list of managed instance OS names.
+        :param Sequence[_builtins.str] statuses: (Updatable) The list of managed instance statuses.
+        :param Sequence['DynamicSetMatchingRuleTagArgs'] tags: (Updatable) The list of the managed instance tags.
+        """
+        if architectures is not None:
+            pulumi.set(__self__, "architectures", architectures)
+        if display_names is not None:
+            pulumi.set(__self__, "display_names", display_names)
+        if is_reboot_required is not None:
+            pulumi.set(__self__, "is_reboot_required", is_reboot_required)
+        if locations is not None:
+            pulumi.set(__self__, "locations", locations)
+        if managed_instance_group_ids is not None:
+            pulumi.set(__self__, "managed_instance_group_ids", managed_instance_group_ids)
+        if managed_instance_ids is not None:
+            pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
+        if os_families is not None:
+            pulumi.set(__self__, "os_families", os_families)
+        if os_names is not None:
+            pulumi.set(__self__, "os_names", os_names)
+        if statuses is not None:
+            pulumi.set(__self__, "statuses", statuses)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+
+    @_builtins.property
+    @pulumi.getter
+    def architectures(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) The list of managed instance architectures.
+        """
+        return pulumi.get(self, "architectures")
+
+    @_builtins.property
+    @pulumi.getter(name="displayNames")
+    def display_names(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) The list of managed instance display names.
+        """
+        return pulumi.get(self, "display_names")
+
+    @_builtins.property
+    @pulumi.getter(name="isRebootRequired")
+    def is_reboot_required(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Indicates if the managed instance needs to be rebooted.
+        """
+        return pulumi.get(self, "is_reboot_required")
+
+    @_builtins.property
+    @pulumi.getter
+    def locations(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) The list of managed instance locations.
+        """
+        return pulumi.get(self, "locations")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceGroupIds")
+    def managed_instance_group_ids(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) The list of managed instance group IDs.
+        """
+        return pulumi.get(self, "managed_instance_group_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceIds")
+    def managed_instance_ids(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) The list of managed instance ids.
+        """
+        return pulumi.get(self, "managed_instance_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="osFamilies")
+    def os_families(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) The list of managed instance OS families.
+        """
+        return pulumi.get(self, "os_families")
+
+    @_builtins.property
+    @pulumi.getter(name="osNames")
+    def os_names(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) The list of managed instance OS names.
+        """
+        return pulumi.get(self, "os_names")
+
+    @_builtins.property
+    @pulumi.getter
+    def statuses(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) The list of managed instance statuses.
+        """
+        return pulumi.get(self, "statuses")
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> Optional[Sequence['outputs.DynamicSetMatchingRuleTag']]:
+        """
+        (Updatable) The list of the managed instance tags.
+        """
+        return pulumi.get(self, "tags")
+
+
+@pulumi.output_type
+class DynamicSetMatchingRuleTag(dict):
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 key: Optional[_builtins.str] = None,
+                 namespace: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str type: (Updatable) The type of the tag. Common values include `defined` or `freeform`.
+        :param _builtins.str key: (Updatable) The key of the tag.
+        :param _builtins.str namespace: (Updatable) The namespace of the tag.
+        :param _builtins.str value: (Updatable) The value associated with the tag key.
+        """
+        pulumi.set(__self__, "type", type)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        (Updatable) The type of the tag. Common values include `defined` or `freeform`.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The key of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The namespace of the tag.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The value associated with the tag key.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DynamicSetRebootManagementWorkRequestDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DynamicSetRebootManagementWorkRequestDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DynamicSetRebootManagementWorkRequestDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DynamicSetRebootManagementWorkRequestDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[_builtins.str] = None,
+                 display_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str description: User-specified information about the job. Avoid entering confidential information.
+        :param _builtins.str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
+class DynamicSetRemovePackagesManagementWorkRequestDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DynamicSetRemovePackagesManagementWorkRequestDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DynamicSetRemovePackagesManagementWorkRequestDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DynamicSetRemovePackagesManagementWorkRequestDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[_builtins.str] = None,
+                 display_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str description: User-specified information about the job. Avoid entering confidential information.
+        :param _builtins.str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
+class DynamicSetTargetCompartment(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "doesIncludeChildren":
+            suggest = "does_include_children"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DynamicSetTargetCompartment. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DynamicSetTargetCompartment.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DynamicSetTargetCompartment.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 does_include_children: _builtins.bool):
+        """
+        :param _builtins.str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.bool does_include_children: (Updatable) Indicates if the child compartments are included in the matching rule. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "does_include_children", does_include_children)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="doesIncludeChildren")
+    def does_include_children(self) -> _builtins.bool:
+        """
+        (Updatable) Indicates if the child compartments are included in the matching rule. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "does_include_children")
+
+
+@pulumi.output_type
+class DynamicSetUpdatePackagesManagementWorkRequestDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DynamicSetUpdatePackagesManagementWorkRequestDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DynamicSetUpdatePackagesManagementWorkRequestDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DynamicSetUpdatePackagesManagementWorkRequestDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[_builtins.str] = None,
+                 display_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str description: User-specified information about the job. Avoid entering confidential information.
+        :param _builtins.str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
 class EventData(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -291,6 +833,8 @@ class EventData(dict):
             suggest = "error_cause"
         elif key == "errorLog":
             suggest = "error_log"
+        elif key == "errorSummary":
+            suggest = "error_summary"
         elif key == "eventCount":
             suggest = "event_count"
         elif key == "eventFingerprint":
@@ -325,6 +869,7 @@ class EventData(dict):
                  contents: Optional[Sequence['outputs.EventDataContent']] = None,
                  error_cause: Optional[_builtins.str] = None,
                  error_log: Optional[_builtins.str] = None,
+                 error_summary: Optional[_builtins.str] = None,
                  event_count: Optional[_builtins.int] = None,
                  event_fingerprint: Optional[_builtins.str] = None,
                  health_state: Optional[_builtins.str] = None,
@@ -341,6 +886,7 @@ class EventData(dict):
         :param Sequence['EventDataContentArgs'] contents: Provides information collected for the exploit attempt event.
         :param _builtins.str error_cause: The commands executed by the agent that caused the error.
         :param _builtins.str error_log: The output log of the error.
+        :param _builtins.str error_summary: Brief description on how this error is categorized.
         :param _builtins.int event_count: Number of times the event has occurred.
         :param _builtins.str event_fingerprint: Fingerprint of the event.
         :param _builtins.str health_state: Health state of the management station
@@ -362,6 +908,8 @@ class EventData(dict):
             pulumi.set(__self__, "error_cause", error_cause)
         if error_log is not None:
             pulumi.set(__self__, "error_log", error_log)
+        if error_summary is not None:
+            pulumi.set(__self__, "error_summary", error_summary)
         if event_count is not None:
             pulumi.set(__self__, "event_count", event_count)
         if event_fingerprint is not None:
@@ -422,6 +970,14 @@ class EventData(dict):
         The output log of the error.
         """
         return pulumi.get(self, "error_log")
+
+    @_builtins.property
+    @pulumi.getter(name="errorSummary")
+    def error_summary(self) -> Optional[_builtins.str]:
+        """
+        Brief description on how this error is categorized.
+        """
+        return pulumi.get(self, "error_summary")
 
     @_builtins.property
     @pulumi.getter(name="eventCount")
@@ -1626,6 +2182,62 @@ class LifecycleStageRebootManagementWorkRequestDetails(dict):
 
 
 @pulumi.output_type
+class ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[_builtins.str] = None,
+                 display_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str description: User-specified information about the job. Avoid entering confidential information.
+        :param _builtins.str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
 class ManagedInstanceAutonomousSettings(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -1673,6 +2285,62 @@ class ManagedInstanceAutonomousSettings(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
         """
         return pulumi.get(self, "scheduled_job_id")
+
+
+@pulumi.output_type
+class ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[_builtins.str] = None,
+                 display_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str description: User-specified information about the job. Avoid entering confidential information.
+        :param _builtins.str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
 
 
 @pulumi.output_type
@@ -2592,6 +3260,201 @@ class ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetails(dict):
 
 
 @pulumi.output_type
+class ManagedInstanceInstallPackagesManagementWorkRequestDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagedInstanceInstallPackagesManagementWorkRequestDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagedInstanceInstallPackagesManagementWorkRequestDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagedInstanceInstallPackagesManagementWorkRequestDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[_builtins.str] = None,
+                 display_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str description: User-specified information about the job. Avoid entering confidential information.
+        :param _builtins.str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
+class ManagedInstanceInstallSnapsManagementSnapDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isSigned":
+            suggest = "is_signed"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagedInstanceInstallSnapsManagementSnapDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagedInstanceInstallSnapsManagementSnapDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagedInstanceInstallSnapsManagementSnapDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 channel: Optional[_builtins.str] = None,
+                 is_signed: Optional[_builtins.bool] = None,
+                 mode: Optional[_builtins.str] = None,
+                 revision: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str name: The name of the snap to install.
+        :param _builtins.str channel: The snap channel to install from (e.g. stable, 1.2/edge, beta, candidate, or a custom channel).
+        :param _builtins.bool is_signed: If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+        :param _builtins.str mode: The confinement mode for the snap.
+        :param _builtins.str revision: The snap revision to install.
+        """
+        pulumi.set(__self__, "name", name)
+        if channel is not None:
+            pulumi.set(__self__, "channel", channel)
+        if is_signed is not None:
+            pulumi.set(__self__, "is_signed", is_signed)
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+        if revision is not None:
+            pulumi.set(__self__, "revision", revision)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the snap to install.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def channel(self) -> Optional[_builtins.str]:
+        """
+        The snap channel to install from (e.g. stable, 1.2/edge, beta, candidate, or a custom channel).
+        """
+        return pulumi.get(self, "channel")
+
+    @_builtins.property
+    @pulumi.getter(name="isSigned")
+    def is_signed(self) -> Optional[_builtins.bool]:
+        """
+        If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+        """
+        return pulumi.get(self, "is_signed")
+
+    @_builtins.property
+    @pulumi.getter
+    def mode(self) -> Optional[_builtins.str]:
+        """
+        The confinement mode for the snap.
+        """
+        return pulumi.get(self, "mode")
+
+    @_builtins.property
+    @pulumi.getter
+    def revision(self) -> Optional[_builtins.str]:
+        """
+        The snap revision to install.
+        """
+        return pulumi.get(self, "revision")
+
+
+@pulumi.output_type
+class ManagedInstanceInstallSnapsManagementWorkRequestDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagedInstanceInstallSnapsManagementWorkRequestDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagedInstanceInstallSnapsManagementWorkRequestDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagedInstanceInstallSnapsManagementWorkRequestDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[_builtins.str] = None,
+                 display_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str description: User-specified information about the job. Avoid entering confidential information.
+        :param _builtins.str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
 class ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetails(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -2848,6 +3711,148 @@ class ManagedInstanceRebootManagementWorkRequestDetails(dict):
 
 
 @pulumi.output_type
+class ManagedInstanceRemovePackagesManagementWorkRequestDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagedInstanceRemovePackagesManagementWorkRequestDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagedInstanceRemovePackagesManagementWorkRequestDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagedInstanceRemovePackagesManagementWorkRequestDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[_builtins.str] = None,
+                 display_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str description: User-specified information about the job. Avoid entering confidential information.
+        :param _builtins.str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
+class ManagedInstanceRemoveSnapsManagementSnapDetail(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 revision: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str name: The name of the snap to remove.
+        :param _builtins.str revision: The revision to remove. Note: This option cannot be used when removing multiple snaps.
+        """
+        pulumi.set(__self__, "name", name)
+        if revision is not None:
+            pulumi.set(__self__, "revision", revision)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the snap to remove.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def revision(self) -> Optional[_builtins.str]:
+        """
+        The revision to remove. Note: This option cannot be used when removing multiple snaps.
+        """
+        return pulumi.get(self, "revision")
+
+
+@pulumi.output_type
+class ManagedInstanceRemoveSnapsManagementWorkRequestDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagedInstanceRemoveSnapsManagementWorkRequestDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagedInstanceRemoveSnapsManagementWorkRequestDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagedInstanceRemoveSnapsManagementWorkRequestDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[_builtins.str] = None,
+                 display_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str description: User-specified information about the job. Avoid entering confidential information.
+        :param _builtins.str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
 class ManagedInstanceSoftwareSource(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -2936,6 +3941,92 @@ class ManagedInstanceSoftwareSource(dict):
 
 
 @pulumi.output_type
+class ManagedInstanceSwitchSnapChannelManagementSnapDetails(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 channel: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str name: The name of the snap.
+        :param _builtins.str channel: The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+        """
+        pulumi.set(__self__, "name", name)
+        if channel is not None:
+            pulumi.set(__self__, "channel", channel)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the snap.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def channel(self) -> Optional[_builtins.str]:
+        """
+        The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+        """
+        return pulumi.get(self, "channel")
+
+
+@pulumi.output_type
+class ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[_builtins.str] = None,
+                 display_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str description: User-specified information about the job. Avoid entering confidential information.
+        :param _builtins.str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
 class ManagedInstanceUpdatePackagesManagementWorkRequestDetails(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -2952,6 +4043,118 @@ class ManagedInstanceUpdatePackagesManagementWorkRequestDetails(dict):
 
     def get(self, key: str, default = None) -> Any:
         ManagedInstanceUpdatePackagesManagementWorkRequestDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[_builtins.str] = None,
+                 display_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str description: User-specified information about the job. Avoid entering confidential information.
+        :param _builtins.str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
+class ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[_builtins.str] = None,
+                 display_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str description: User-specified information about the job. Avoid entering confidential information.
+        :param _builtins.str display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
+class ManagedInstancesUpdatePackagesManagementWorkRequestDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagedInstancesUpdatePackagesManagementWorkRequestDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagedInstancesUpdatePackagesManagementWorkRequestDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagedInstancesUpdatePackagesManagementWorkRequestDetails.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -3099,22 +4302,23 @@ class ManagementStationMirror(dict):
 
     def __init__(__self__, *,
                  directory: _builtins.str,
-                 port: _builtins.str,
                  sslport: _builtins.str,
                  is_sslverify_enabled: Optional[_builtins.bool] = None,
+                 port: Optional[_builtins.str] = None,
                  sslcert: Optional[_builtins.str] = None):
         """
         :param _builtins.str directory: (Updatable) Path to the data volume on the management station where software source mirrors are stored.
-        :param _builtins.str port: (Updatable) Default mirror listening port for http.
         :param _builtins.str sslport: (Updatable) Default mirror listening port for https.
         :param _builtins.bool is_sslverify_enabled: (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+        :param _builtins.str port: (Updatable) Default mirror listening port for http.
         :param _builtins.str sslcert: (Updatable) Path to the SSL cerfificate.
         """
         pulumi.set(__self__, "directory", directory)
-        pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "sslport", sslport)
         if is_sslverify_enabled is not None:
             pulumi.set(__self__, "is_sslverify_enabled", is_sslverify_enabled)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
         if sslcert is not None:
             pulumi.set(__self__, "sslcert", sslcert)
 
@@ -3125,14 +4329,6 @@ class ManagementStationMirror(dict):
         (Updatable) Path to the data volume on the management station where software source mirrors are stored.
         """
         return pulumi.get(self, "directory")
-
-    @_builtins.property
-    @pulumi.getter
-    def port(self) -> _builtins.str:
-        """
-        (Updatable) Default mirror listening port for http.
-        """
-        return pulumi.get(self, "port")
 
     @_builtins.property
     @pulumi.getter
@@ -3149,6 +4345,14 @@ class ManagementStationMirror(dict):
         (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
         """
         return pulumi.get(self, "is_sslverify_enabled")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Default mirror listening port for http.
+        """
+        return pulumi.get(self, "port")
 
     @_builtins.property
     @pulumi.getter
@@ -3368,7 +4572,7 @@ class ProfileLifecycleEnvironment(dict):
                  display_name: Optional[_builtins.str] = None,
                  id: Optional[_builtins.str] = None):
         """
-        :param _builtins.str display_name: (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+        :param _builtins.str display_name: (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         if display_name is not None:
@@ -3380,7 +4584,7 @@ class ProfileLifecycleEnvironment(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[_builtins.str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+        (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -3416,7 +4620,7 @@ class ProfileLifecycleStage(dict):
                  display_name: Optional[_builtins.str] = None,
                  id: Optional[_builtins.str] = None):
         """
-        :param _builtins.str display_name: (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+        :param _builtins.str display_name: (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         if display_name is not None:
@@ -3428,7 +4632,7 @@ class ProfileLifecycleStage(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[_builtins.str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+        (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -3464,7 +4668,7 @@ class ProfileManagedInstanceGroup(dict):
                  display_name: Optional[_builtins.str] = None,
                  id: Optional[_builtins.str] = None):
         """
-        :param _builtins.str display_name: (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+        :param _builtins.str display_name: (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         if display_name is not None:
@@ -3476,7 +4680,7 @@ class ProfileManagedInstanceGroup(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[_builtins.str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+        (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -3520,7 +4724,7 @@ class ProfileSoftwareSource(dict):
                  software_source_type: Optional[_builtins.str] = None):
         """
         :param _builtins.str description: (Updatable) User-specified description of the registration profile.
-        :param _builtins.str display_name: (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+        :param _builtins.str display_name: (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         :param _builtins.bool is_mandatory_for_autonomous_linux: Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
         :param _builtins.str software_source_type: Type of the software source.
@@ -3548,7 +4752,7 @@ class ProfileSoftwareSource(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[_builtins.str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+        (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -3584,16 +4788,22 @@ class ScheduledJobOperation(dict):
         suggest = None
         if key == "operationType":
             suggest = "operation_type"
+        elif key == "installSnapDetails":
+            suggest = "install_snap_details"
         elif key == "manageModuleStreamsDetails":
             suggest = "manage_module_streams_details"
         elif key == "packageNames":
             suggest = "package_names"
         elif key == "rebootTimeoutInMins":
             suggest = "reboot_timeout_in_mins"
+        elif key == "removeSnapDetails":
+            suggest = "remove_snap_details"
         elif key == "softwareSourceIds":
             suggest = "software_source_ids"
         elif key == "switchModuleStreamsDetails":
             suggest = "switch_module_streams_details"
+        elif key == "switchSnapChannelDetails":
+            suggest = "switch_snap_channel_details"
         elif key == "windowsUpdateNames":
             suggest = "windows_update_names"
 
@@ -3610,32 +4820,44 @@ class ScheduledJobOperation(dict):
 
     def __init__(__self__, *,
                  operation_type: _builtins.str,
+                 install_snap_details: Optional['outputs.ScheduledJobOperationInstallSnapDetails'] = None,
                  manage_module_streams_details: Optional['outputs.ScheduledJobOperationManageModuleStreamsDetails'] = None,
                  package_names: Optional[Sequence[_builtins.str]] = None,
                  reboot_timeout_in_mins: Optional[_builtins.int] = None,
+                 remove_snap_details: Optional['outputs.ScheduledJobOperationRemoveSnapDetails'] = None,
                  software_source_ids: Optional[Sequence[_builtins.str]] = None,
                  switch_module_streams_details: Optional['outputs.ScheduledJobOperationSwitchModuleStreamsDetails'] = None,
+                 switch_snap_channel_details: Optional['outputs.ScheduledJobOperationSwitchSnapChannelDetails'] = None,
                  windows_update_names: Optional[Sequence[_builtins.str]] = None):
         """
         :param _builtins.str operation_type: (Updatable) The type of operation this scheduled job performs.
+        :param 'ScheduledJobOperationInstallSnapDetailsArgs' install_snap_details: (Updatable) Provides the information used to install a snap.
         :param 'ScheduledJobOperationManageModuleStreamsDetailsArgs' manage_module_streams_details: (Updatable) The set of changes to make to the state of the modules, streams, and profiles on the managed target.
         :param Sequence[_builtins.str] package_names: (Updatable) The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
         :param _builtins.int reboot_timeout_in_mins: (Updatable) The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
+        :param 'ScheduledJobOperationRemoveSnapDetailsArgs' remove_snap_details: (Updatable) Provides the information used to remove a snap.
         :param Sequence[_builtins.str] software_source_ids: (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
         :param 'ScheduledJobOperationSwitchModuleStreamsDetailsArgs' switch_module_streams_details: (Updatable) Provides the information used to update a module stream.
+        :param 'ScheduledJobOperationSwitchSnapChannelDetailsArgs' switch_snap_channel_details: (Updatable) Provides the information used to switch a snap channel.
         :param Sequence[_builtins.str] windows_update_names: (Updatable) Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
         """
         pulumi.set(__self__, "operation_type", operation_type)
+        if install_snap_details is not None:
+            pulumi.set(__self__, "install_snap_details", install_snap_details)
         if manage_module_streams_details is not None:
             pulumi.set(__self__, "manage_module_streams_details", manage_module_streams_details)
         if package_names is not None:
             pulumi.set(__self__, "package_names", package_names)
         if reboot_timeout_in_mins is not None:
             pulumi.set(__self__, "reboot_timeout_in_mins", reboot_timeout_in_mins)
+        if remove_snap_details is not None:
+            pulumi.set(__self__, "remove_snap_details", remove_snap_details)
         if software_source_ids is not None:
             pulumi.set(__self__, "software_source_ids", software_source_ids)
         if switch_module_streams_details is not None:
             pulumi.set(__self__, "switch_module_streams_details", switch_module_streams_details)
+        if switch_snap_channel_details is not None:
+            pulumi.set(__self__, "switch_snap_channel_details", switch_snap_channel_details)
         if windows_update_names is not None:
             pulumi.set(__self__, "windows_update_names", windows_update_names)
 
@@ -3646,6 +4868,14 @@ class ScheduledJobOperation(dict):
         (Updatable) The type of operation this scheduled job performs.
         """
         return pulumi.get(self, "operation_type")
+
+    @_builtins.property
+    @pulumi.getter(name="installSnapDetails")
+    def install_snap_details(self) -> Optional['outputs.ScheduledJobOperationInstallSnapDetails']:
+        """
+        (Updatable) Provides the information used to install a snap.
+        """
+        return pulumi.get(self, "install_snap_details")
 
     @_builtins.property
     @pulumi.getter(name="manageModuleStreamsDetails")
@@ -3672,6 +4902,14 @@ class ScheduledJobOperation(dict):
         return pulumi.get(self, "reboot_timeout_in_mins")
 
     @_builtins.property
+    @pulumi.getter(name="removeSnapDetails")
+    def remove_snap_details(self) -> Optional['outputs.ScheduledJobOperationRemoveSnapDetails']:
+        """
+        (Updatable) Provides the information used to remove a snap.
+        """
+        return pulumi.get(self, "remove_snap_details")
+
+    @_builtins.property
     @pulumi.getter(name="softwareSourceIds")
     def software_source_ids(self) -> Optional[Sequence[_builtins.str]]:
         """
@@ -3688,12 +4926,103 @@ class ScheduledJobOperation(dict):
         return pulumi.get(self, "switch_module_streams_details")
 
     @_builtins.property
+    @pulumi.getter(name="switchSnapChannelDetails")
+    def switch_snap_channel_details(self) -> Optional['outputs.ScheduledJobOperationSwitchSnapChannelDetails']:
+        """
+        (Updatable) Provides the information used to switch a snap channel.
+        """
+        return pulumi.get(self, "switch_snap_channel_details")
+
+    @_builtins.property
     @pulumi.getter(name="windowsUpdateNames")
     def windows_update_names(self) -> Optional[Sequence[_builtins.str]]:
         """
         (Updatable) Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
         """
         return pulumi.get(self, "windows_update_names")
+
+
+@pulumi.output_type
+class ScheduledJobOperationInstallSnapDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isSigned":
+            suggest = "is_signed"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScheduledJobOperationInstallSnapDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScheduledJobOperationInstallSnapDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScheduledJobOperationInstallSnapDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 channel: Optional[_builtins.str] = None,
+                 is_signed: Optional[_builtins.bool] = None,
+                 mode: Optional[_builtins.str] = None,
+                 revision: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str name: (Updatable) The name of the snap to install.
+        :param _builtins.str channel: (Updatable) The snap channel to install from (e.g. stable, 1.2/edge, beta, candidate, or a custom channel).
+        :param _builtins.bool is_signed: (Updatable) If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+        :param _builtins.str mode: (Updatable) The confinement mode for the snap.
+        :param _builtins.str revision: (Updatable) The snap revision to install.
+        """
+        pulumi.set(__self__, "name", name)
+        if channel is not None:
+            pulumi.set(__self__, "channel", channel)
+        if is_signed is not None:
+            pulumi.set(__self__, "is_signed", is_signed)
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+        if revision is not None:
+            pulumi.set(__self__, "revision", revision)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        (Updatable) The name of the snap to install.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def channel(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The snap channel to install from (e.g. stable, 1.2/edge, beta, candidate, or a custom channel).
+        """
+        return pulumi.get(self, "channel")
+
+    @_builtins.property
+    @pulumi.getter(name="isSigned")
+    def is_signed(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+        """
+        return pulumi.get(self, "is_signed")
+
+    @_builtins.property
+    @pulumi.getter
+    def mode(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The confinement mode for the snap.
+        """
+        return pulumi.get(self, "mode")
+
+    @_builtins.property
+    @pulumi.getter
+    def revision(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The snap revision to install.
+        """
+        return pulumi.get(self, "revision")
 
 
 @pulumi.output_type
@@ -4026,6 +5355,36 @@ class ScheduledJobOperationManageModuleStreamsDetailsRemove(dict):
 
 
 @pulumi.output_type
+class ScheduledJobOperationRemoveSnapDetails(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 revision: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str name: (Updatable) The name of the snap to remove.
+        :param _builtins.str revision: (Updatable) The revision to remove. Note: This option cannot be used when removing multiple snaps.
+        """
+        pulumi.set(__self__, "name", name)
+        if revision is not None:
+            pulumi.set(__self__, "revision", revision)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        (Updatable) The name of the snap to remove.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def revision(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The revision to remove. Note: This option cannot be used when removing multiple snaps.
+        """
+        return pulumi.get(self, "revision")
+
+
+@pulumi.output_type
 class ScheduledJobOperationSwitchModuleStreamsDetails(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -4085,6 +5444,36 @@ class ScheduledJobOperationSwitchModuleStreamsDetails(dict):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
         """
         return pulumi.get(self, "software_source_id")
+
+
+@pulumi.output_type
+class ScheduledJobOperationSwitchSnapChannelDetails(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 channel: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str name: (Updatable) The name of the snap.
+        :param _builtins.str channel: (Updatable) The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+        """
+        pulumi.set(__self__, "name", name)
+        if channel is not None:
+            pulumi.set(__self__, "channel", channel)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        (Updatable) The name of the snap.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def channel(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+        """
+        return pulumi.get(self, "channel")
 
 
 @pulumi.output_type
@@ -4531,6 +5920,988 @@ class WorkRequestRerunManagementWorkRequestDetails(dict):
 
 
 @pulumi.output_type
+class GetDynamicSetManagedInstancesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDynamicSetManagedInstancesManagedInstanceCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDynamicSetManagedInstancesManagedInstanceCollectionItemResult']):
+        """
+        :param Sequence['GetDynamicSetManagedInstancesManagedInstanceCollectionItemArgs'] items: List of managed instances.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDynamicSetManagedInstancesManagedInstanceCollectionItemResult']:
+        """
+        List of managed instances.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDynamicSetManagedInstancesManagedInstanceCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 agent_version: _builtins.str,
+                 architecture: _builtins.str,
+                 autonomous_settings: Sequence['outputs.GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingResult'],
+                 compartment_id: _builtins.str,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 id: _builtins.str,
+                 is_managed_by_autonomous_linux: _builtins.bool,
+                 is_management_station: _builtins.bool,
+                 is_reboot_required: _builtins.bool,
+                 lifecycle_environments: Sequence['outputs.GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentResult'],
+                 lifecycle_stages: Sequence['outputs.GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageResult'],
+                 location: _builtins.str,
+                 managed_instance_groups: Sequence['outputs.GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupResult'],
+                 notification_topic_id: _builtins.str,
+                 os_family: _builtins.str,
+                 status: _builtins.str,
+                 tenancy_id: _builtins.str,
+                 time_last_boot: _builtins.str,
+                 updates_available: _builtins.int):
+        """
+        :param _builtins.str agent_version: The version of osmh-agent running on the managed instance
+        :param _builtins.str architecture: The CPU architecture type of the managed instance.
+        :param Sequence['GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArgs'] autonomous_settings: Settings for the Autonomous Linux service.
+        :param _builtins.str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+        :param _builtins.str description: User-specified description of the managed instance.
+        :param _builtins.str display_name: A filter to return resources that match the given user-friendly name.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+        :param _builtins.bool is_managed_by_autonomous_linux: Indicates whether Autonomous Linux manages this instance.
+        :param _builtins.bool is_management_station: Whether this managed instance is acting as an on-premises management station.
+        :param _builtins.bool is_reboot_required: Indicates whether a reboot is required to complete installation of updates.
+        :param Sequence['GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArgs'] lifecycle_environments: Id and name of a resource to simplify the display for the user.
+        :param Sequence['GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArgs'] lifecycle_stages: Id and name of a resource to simplify the display for the user.
+        :param _builtins.str location: The location of the managed instance.
+        :param Sequence['GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArgs'] managed_instance_groups: Id and name of a resource to simplify the display for the user.
+        :param _builtins.str notification_topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+        :param _builtins.str os_family: The operating system type of the managed instance.
+        :param _builtins.str status: Current status of the managed instance.
+        :param _builtins.str tenancy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy this managed instance resides in.
+        :param _builtins.str time_last_boot: Time that the instance last booted (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        :param _builtins.int updates_available: Number of updates available for installation.
+        """
+        pulumi.set(__self__, "agent_version", agent_version)
+        pulumi.set(__self__, "architecture", architecture)
+        pulumi.set(__self__, "autonomous_settings", autonomous_settings)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_managed_by_autonomous_linux", is_managed_by_autonomous_linux)
+        pulumi.set(__self__, "is_management_station", is_management_station)
+        pulumi.set(__self__, "is_reboot_required", is_reboot_required)
+        pulumi.set(__self__, "lifecycle_environments", lifecycle_environments)
+        pulumi.set(__self__, "lifecycle_stages", lifecycle_stages)
+        pulumi.set(__self__, "location", location)
+        pulumi.set(__self__, "managed_instance_groups", managed_instance_groups)
+        pulumi.set(__self__, "notification_topic_id", notification_topic_id)
+        pulumi.set(__self__, "os_family", os_family)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "tenancy_id", tenancy_id)
+        pulumi.set(__self__, "time_last_boot", time_last_boot)
+        pulumi.set(__self__, "updates_available", updates_available)
+
+    @_builtins.property
+    @pulumi.getter(name="agentVersion")
+    def agent_version(self) -> _builtins.str:
+        """
+        The version of osmh-agent running on the managed instance
+        """
+        return pulumi.get(self, "agent_version")
+
+    @_builtins.property
+    @pulumi.getter
+    def architecture(self) -> _builtins.str:
+        """
+        The CPU architecture type of the managed instance.
+        """
+        return pulumi.get(self, "architecture")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousSettings")
+    def autonomous_settings(self) -> Sequence['outputs.GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingResult']:
+        """
+        Settings for the Autonomous Linux service.
+        """
+        return pulumi.get(self, "autonomous_settings")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        User-specified description of the managed instance.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return resources that match the given user-friendly name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isManagedByAutonomousLinux")
+    def is_managed_by_autonomous_linux(self) -> _builtins.bool:
+        """
+        Indicates whether Autonomous Linux manages this instance.
+        """
+        return pulumi.get(self, "is_managed_by_autonomous_linux")
+
+    @_builtins.property
+    @pulumi.getter(name="isManagementStation")
+    def is_management_station(self) -> _builtins.bool:
+        """
+        Whether this managed instance is acting as an on-premises management station.
+        """
+        return pulumi.get(self, "is_management_station")
+
+    @_builtins.property
+    @pulumi.getter(name="isRebootRequired")
+    def is_reboot_required(self) -> _builtins.bool:
+        """
+        Indicates whether a reboot is required to complete installation of updates.
+        """
+        return pulumi.get(self, "is_reboot_required")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleEnvironments")
+    def lifecycle_environments(self) -> Sequence['outputs.GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentResult']:
+        """
+        Id and name of a resource to simplify the display for the user.
+        """
+        return pulumi.get(self, "lifecycle_environments")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleStages")
+    def lifecycle_stages(self) -> Sequence['outputs.GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageResult']:
+        """
+        Id and name of a resource to simplify the display for the user.
+        """
+        return pulumi.get(self, "lifecycle_stages")
+
+    @_builtins.property
+    @pulumi.getter
+    def location(self) -> _builtins.str:
+        """
+        The location of the managed instance.
+        """
+        return pulumi.get(self, "location")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceGroups")
+    def managed_instance_groups(self) -> Sequence['outputs.GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupResult']:
+        """
+        Id and name of a resource to simplify the display for the user.
+        """
+        return pulumi.get(self, "managed_instance_groups")
+
+    @_builtins.property
+    @pulumi.getter(name="notificationTopicId")
+    def notification_topic_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+        """
+        return pulumi.get(self, "notification_topic_id")
+
+    @_builtins.property
+    @pulumi.getter(name="osFamily")
+    def os_family(self) -> _builtins.str:
+        """
+        The operating system type of the managed instance.
+        """
+        return pulumi.get(self, "os_family")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        Current status of the managed instance.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="tenancyId")
+    def tenancy_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy this managed instance resides in.
+        """
+        return pulumi.get(self, "tenancy_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastBoot")
+    def time_last_boot(self) -> _builtins.str:
+        """
+        Time that the instance last booted (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        """
+        return pulumi.get(self, "time_last_boot")
+
+    @_builtins.property
+    @pulumi.getter(name="updatesAvailable")
+    def updates_available(self) -> _builtins.int:
+        """
+        Number of updates available for installation.
+        """
+        return pulumi.get(self, "updates_available")
+
+
+@pulumi.output_type
+class GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingResult(dict):
+    def __init__(__self__, *,
+                 is_data_collection_authorized: _builtins.bool,
+                 scheduled_job_id: _builtins.str):
+        """
+        :param _builtins.bool is_data_collection_authorized: Indicates whether Autonomous Linux will collect crash files. This setting can be changed by the user.
+        :param _builtins.str scheduled_job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
+        """
+        pulumi.set(__self__, "is_data_collection_authorized", is_data_collection_authorized)
+        pulumi.set(__self__, "scheduled_job_id", scheduled_job_id)
+
+    @_builtins.property
+    @pulumi.getter(name="isDataCollectionAuthorized")
+    def is_data_collection_authorized(self) -> _builtins.bool:
+        """
+        Indicates whether Autonomous Linux will collect crash files. This setting can be changed by the user.
+        """
+        return pulumi.get(self, "is_data_collection_authorized")
+
+    @_builtins.property
+    @pulumi.getter(name="scheduledJobId")
+    def scheduled_job_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
+        """
+        return pulumi.get(self, "scheduled_job_id")
+
+
+@pulumi.output_type
+class GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentResult(dict):
+    def __init__(__self__, *,
+                 display_name: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str display_name: A filter to return resources that match the given user-friendly name.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return resources that match the given user-friendly name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageResult(dict):
+    def __init__(__self__, *,
+                 display_name: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str display_name: A filter to return resources that match the given user-friendly name.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return resources that match the given user-friendly name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupResult(dict):
+    def __init__(__self__, *,
+                 display_name: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str display_name: A filter to return resources that match the given user-friendly name.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return resources that match the given user-friendly name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetDynamicSetMatchingRuleResult(dict):
+    def __init__(__self__, *,
+                 architectures: Sequence[_builtins.str],
+                 display_names: Sequence[_builtins.str],
+                 is_reboot_required: _builtins.bool,
+                 locations: Sequence[_builtins.str],
+                 managed_instance_group_ids: Sequence[_builtins.str],
+                 managed_instance_ids: Sequence[_builtins.str],
+                 os_families: Sequence[_builtins.str],
+                 os_names: Sequence[_builtins.str],
+                 statuses: Sequence[_builtins.str],
+                 tags: Sequence['outputs.GetDynamicSetMatchingRuleTagResult']):
+        """
+        :param Sequence[_builtins.str] architectures: The list of managed instance architectures.
+        :param Sequence[_builtins.str] display_names: The list of managed instance display names.
+        :param _builtins.bool is_reboot_required: Indicates if the managed instance needs to be rebooted.
+        :param Sequence[_builtins.str] locations: The list of managed instance locations.
+        :param Sequence[_builtins.str] managed_instance_group_ids: The list of managed instance group IDs.
+        :param Sequence[_builtins.str] managed_instance_ids: The list of managed instance ids.
+        :param Sequence[_builtins.str] os_families: The list of managed instance OS families.
+        :param Sequence[_builtins.str] os_names: The list of managed instance OS names.
+        :param Sequence[_builtins.str] statuses: The list of managed instance statuses.
+        :param Sequence['GetDynamicSetMatchingRuleTagArgs'] tags: The list of the managed instance tags.
+        """
+        pulumi.set(__self__, "architectures", architectures)
+        pulumi.set(__self__, "display_names", display_names)
+        pulumi.set(__self__, "is_reboot_required", is_reboot_required)
+        pulumi.set(__self__, "locations", locations)
+        pulumi.set(__self__, "managed_instance_group_ids", managed_instance_group_ids)
+        pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
+        pulumi.set(__self__, "os_families", os_families)
+        pulumi.set(__self__, "os_names", os_names)
+        pulumi.set(__self__, "statuses", statuses)
+        pulumi.set(__self__, "tags", tags)
+
+    @_builtins.property
+    @pulumi.getter
+    def architectures(self) -> Sequence[_builtins.str]:
+        """
+        The list of managed instance architectures.
+        """
+        return pulumi.get(self, "architectures")
+
+    @_builtins.property
+    @pulumi.getter(name="displayNames")
+    def display_names(self) -> Sequence[_builtins.str]:
+        """
+        The list of managed instance display names.
+        """
+        return pulumi.get(self, "display_names")
+
+    @_builtins.property
+    @pulumi.getter(name="isRebootRequired")
+    def is_reboot_required(self) -> _builtins.bool:
+        """
+        Indicates if the managed instance needs to be rebooted.
+        """
+        return pulumi.get(self, "is_reboot_required")
+
+    @_builtins.property
+    @pulumi.getter
+    def locations(self) -> Sequence[_builtins.str]:
+        """
+        The list of managed instance locations.
+        """
+        return pulumi.get(self, "locations")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceGroupIds")
+    def managed_instance_group_ids(self) -> Sequence[_builtins.str]:
+        """
+        The list of managed instance group IDs.
+        """
+        return pulumi.get(self, "managed_instance_group_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceIds")
+    def managed_instance_ids(self) -> Sequence[_builtins.str]:
+        """
+        The list of managed instance ids.
+        """
+        return pulumi.get(self, "managed_instance_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="osFamilies")
+    def os_families(self) -> Sequence[_builtins.str]:
+        """
+        The list of managed instance OS families.
+        """
+        return pulumi.get(self, "os_families")
+
+    @_builtins.property
+    @pulumi.getter(name="osNames")
+    def os_names(self) -> Sequence[_builtins.str]:
+        """
+        The list of managed instance OS names.
+        """
+        return pulumi.get(self, "os_names")
+
+    @_builtins.property
+    @pulumi.getter
+    def statuses(self) -> Sequence[_builtins.str]:
+        """
+        The list of managed instance statuses.
+        """
+        return pulumi.get(self, "statuses")
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> Sequence['outputs.GetDynamicSetMatchingRuleTagResult']:
+        """
+        The list of the managed instance tags.
+        """
+        return pulumi.get(self, "tags")
+
+
+@pulumi.output_type
+class GetDynamicSetMatchingRuleTagResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 namespace: _builtins.str,
+                 type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: The key of the tag.
+        :param _builtins.str namespace: The namespace of the tag.
+        :param _builtins.str type: The type of the tag. Common values include `defined` or `freeform`.
+        :param _builtins.str value: The value associated with the tag key.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The key of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        The namespace of the tag.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the tag. Common values include `defined` or `freeform`.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        The value associated with the tag key.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDynamicSetTargetCompartmentResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 does_include_children: _builtins.bool):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.bool does_include_children: Indicates if the child compartments are included in the matching rule.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "does_include_children", does_include_children)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="doesIncludeChildren")
+    def does_include_children(self) -> _builtins.bool:
+        """
+        Indicates if the child compartments are included in the matching rule.
+        """
+        return pulumi.get(self, "does_include_children")
+
+
+@pulumi.output_type
+class GetDynamicSetsDynamicSetCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDynamicSetsDynamicSetCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDynamicSetsDynamicSetCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDynamicSetsDynamicSetCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 match_type: _builtins.str,
+                 matching_rules: Sequence['outputs.GetDynamicSetsDynamicSetCollectionItemMatchingRuleResult'],
+                 scheduled_job_count: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 target_compartments: Sequence['outputs.GetDynamicSetsDynamicSetCollectionItemTargetCompartmentResult'],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: User-specified description for the dynamic set.
+        :param _builtins.str display_name: A filter to return resources that match the given user-friendly name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set.
+        :param _builtins.str match_type: Include either any or all attributes.
+        :param Sequence['GetDynamicSetsDynamicSetCollectionItemMatchingRuleArgs'] matching_rules: An object that defines the set of rules that identifies the target instances in a dynamic set.
+        :param _builtins.str scheduled_job_count: Number of scheduled jobs currently targeting this dynamic set.
+        :param _builtins.str state: The current state of the event.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Sequence['GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArgs'] target_compartments: The list of compartment details.
+        :param _builtins.str time_created: The date and time the dynamic set was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        :param _builtins.str time_updated: The date and time the dynamic set was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "match_type", match_type)
+        pulumi.set(__self__, "matching_rules", matching_rules)
+        pulumi.set(__self__, "scheduled_job_count", scheduled_job_count)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_compartments", target_compartments)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        User-specified description for the dynamic set.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return resources that match the given user-friendly name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="matchType")
+    def match_type(self) -> _builtins.str:
+        """
+        Include either any or all attributes.
+        """
+        return pulumi.get(self, "match_type")
+
+    @_builtins.property
+    @pulumi.getter(name="matchingRules")
+    def matching_rules(self) -> Sequence['outputs.GetDynamicSetsDynamicSetCollectionItemMatchingRuleResult']:
+        """
+        An object that defines the set of rules that identifies the target instances in a dynamic set.
+        """
+        return pulumi.get(self, "matching_rules")
+
+    @_builtins.property
+    @pulumi.getter(name="scheduledJobCount")
+    def scheduled_job_count(self) -> _builtins.str:
+        """
+        Number of scheduled jobs currently targeting this dynamic set.
+        """
+        return pulumi.get(self, "scheduled_job_count")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current state of the event.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="targetCompartments")
+    def target_compartments(self) -> Sequence['outputs.GetDynamicSetsDynamicSetCollectionItemTargetCompartmentResult']:
+        """
+        The list of compartment details.
+        """
+        return pulumi.get(self, "target_compartments")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the dynamic set was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the dynamic set was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetDynamicSetsDynamicSetCollectionItemMatchingRuleResult(dict):
+    def __init__(__self__, *,
+                 architectures: Sequence[_builtins.str],
+                 display_names: Sequence[_builtins.str],
+                 is_reboot_required: _builtins.bool,
+                 locations: Sequence[_builtins.str],
+                 managed_instance_group_ids: Sequence[_builtins.str],
+                 managed_instance_ids: Sequence[_builtins.str],
+                 os_families: Sequence[_builtins.str],
+                 os_names: Sequence[_builtins.str],
+                 statuses: Sequence[_builtins.str],
+                 tags: Sequence['outputs.GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagResult']):
+        """
+        :param Sequence[_builtins.str] architectures: The list of managed instance architectures.
+        :param Sequence[_builtins.str] display_names: The list of managed instance display names.
+        :param _builtins.bool is_reboot_required: Indicates if the managed instance needs to be rebooted.
+        :param Sequence[_builtins.str] locations: The list of managed instance locations.
+        :param Sequence[_builtins.str] managed_instance_group_ids: The list of managed instance group IDs.
+        :param Sequence[_builtins.str] managed_instance_ids: The list of managed instance ids.
+        :param Sequence[_builtins.str] os_families: The list of managed instance OS families.
+        :param Sequence[_builtins.str] os_names: The list of managed instance OS names.
+        :param Sequence[_builtins.str] statuses: The list of managed instance statuses.
+        :param Sequence['GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArgs'] tags: The list of the managed instance tags.
+        """
+        pulumi.set(__self__, "architectures", architectures)
+        pulumi.set(__self__, "display_names", display_names)
+        pulumi.set(__self__, "is_reboot_required", is_reboot_required)
+        pulumi.set(__self__, "locations", locations)
+        pulumi.set(__self__, "managed_instance_group_ids", managed_instance_group_ids)
+        pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
+        pulumi.set(__self__, "os_families", os_families)
+        pulumi.set(__self__, "os_names", os_names)
+        pulumi.set(__self__, "statuses", statuses)
+        pulumi.set(__self__, "tags", tags)
+
+    @_builtins.property
+    @pulumi.getter
+    def architectures(self) -> Sequence[_builtins.str]:
+        """
+        The list of managed instance architectures.
+        """
+        return pulumi.get(self, "architectures")
+
+    @_builtins.property
+    @pulumi.getter(name="displayNames")
+    def display_names(self) -> Sequence[_builtins.str]:
+        """
+        The list of managed instance display names.
+        """
+        return pulumi.get(self, "display_names")
+
+    @_builtins.property
+    @pulumi.getter(name="isRebootRequired")
+    def is_reboot_required(self) -> _builtins.bool:
+        """
+        Indicates if the managed instance needs to be rebooted.
+        """
+        return pulumi.get(self, "is_reboot_required")
+
+    @_builtins.property
+    @pulumi.getter
+    def locations(self) -> Sequence[_builtins.str]:
+        """
+        The list of managed instance locations.
+        """
+        return pulumi.get(self, "locations")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceGroupIds")
+    def managed_instance_group_ids(self) -> Sequence[_builtins.str]:
+        """
+        The list of managed instance group IDs.
+        """
+        return pulumi.get(self, "managed_instance_group_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceIds")
+    def managed_instance_ids(self) -> Sequence[_builtins.str]:
+        """
+        The list of managed instance ids.
+        """
+        return pulumi.get(self, "managed_instance_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="osFamilies")
+    def os_families(self) -> Sequence[_builtins.str]:
+        """
+        The list of managed instance OS families.
+        """
+        return pulumi.get(self, "os_families")
+
+    @_builtins.property
+    @pulumi.getter(name="osNames")
+    def os_names(self) -> Sequence[_builtins.str]:
+        """
+        The list of managed instance OS names.
+        """
+        return pulumi.get(self, "os_names")
+
+    @_builtins.property
+    @pulumi.getter
+    def statuses(self) -> Sequence[_builtins.str]:
+        """
+        The list of managed instance statuses.
+        """
+        return pulumi.get(self, "statuses")
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> Sequence['outputs.GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagResult']:
+        """
+        The list of the managed instance tags.
+        """
+        return pulumi.get(self, "tags")
+
+
+@pulumi.output_type
+class GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 namespace: _builtins.str,
+                 type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: The key of the tag.
+        :param _builtins.str namespace: The namespace of the tag.
+        :param _builtins.str type: The type of the tag. Common values include `defined` or `freeform`.
+        :param _builtins.str value: The value associated with the tag key.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The key of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        The namespace of the tag.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the tag. Common values include `defined` or `freeform`.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        The value associated with the tag key.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDynamicSetsDynamicSetCollectionItemTargetCompartmentResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 does_include_children: _builtins.bool):
+        """
+        :param _builtins.str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+        :param _builtins.bool does_include_children: Indicates if the child compartments are included in the matching rule.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "does_include_children", does_include_children)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="doesIncludeChildren")
+    def does_include_children(self) -> _builtins.bool:
+        """
+        Indicates if the child compartments are included in the matching rule.
+        """
+        return pulumi.get(self, "does_include_children")
+
+
+@pulumi.output_type
+class GetDynamicSetsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetEntitlementsEntitlementCollectionResult(dict):
     def __init__(__self__, *,
                  compartment_id: _builtins.str,
@@ -4668,12 +7039,12 @@ class GetErrataErratumCollectionItemResult(dict):
                  time_issued: _builtins.str,
                  time_updated: _builtins.str):
         """
-        :param _builtins.str advisory_severity: The advisory severity.
-        :param _builtins.str advisory_type: A filter to return only errata that match the given advisory types.
-        :param _builtins.str classification_type: A filter to return only packages that match the given update classification type.
+        :param _builtins.str advisory_severity: The severity for a security advisory, otherwise, null.
+        :param _builtins.str advisory_type: The advisory type of the erratum.
+        :param _builtins.str classification_type: Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
         :param _builtins.str description: Software source description.
         :param _builtins.str from_: Information specifying from where the erratum was release.
-        :param _builtins.str name: The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+        :param _builtins.str name: The erratum name (such as ELSA-2023-34678).
         :param Sequence[_builtins.str] os_families: The OS families the package belongs to.
         :param Sequence['GetErrataErratumCollectionItemPackageArgs'] packages: List of packages affected by this erratum.
         :param _builtins.str references: Information describing how to find more information about. the erratum.
@@ -4704,7 +7075,7 @@ class GetErrataErratumCollectionItemResult(dict):
     @pulumi.getter(name="advisorySeverity")
     def advisory_severity(self) -> _builtins.str:
         """
-        The advisory severity.
+        The severity for a security advisory, otherwise, null.
         """
         return pulumi.get(self, "advisory_severity")
 
@@ -4712,7 +7083,7 @@ class GetErrataErratumCollectionItemResult(dict):
     @pulumi.getter(name="advisoryType")
     def advisory_type(self) -> _builtins.str:
         """
-        A filter to return only errata that match the given advisory types.
+        The advisory type of the erratum.
         """
         return pulumi.get(self, "advisory_type")
 
@@ -4720,7 +7091,7 @@ class GetErrataErratumCollectionItemResult(dict):
     @pulumi.getter(name="classificationType")
     def classification_type(self) -> _builtins.str:
         """
-        A filter to return only packages that match the given update classification type.
+        Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
         """
         return pulumi.get(self, "classification_type")
 
@@ -4744,7 +7115,7 @@ class GetErrataErratumCollectionItemResult(dict):
     @pulumi.getter
     def name(self) -> _builtins.str:
         """
-        The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+        The erratum name (such as ELSA-2023-34678).
         """
         return pulumi.get(self, "name")
 
@@ -4840,7 +7211,7 @@ class GetErrataErratumCollectionItemPackageResult(dict):
         :param _builtins.str checksum_type: Type of the checksum.
         :param _builtins.str display_name: Software source name.
         :param _builtins.bool is_latest: Indicates whether this package is the latest version.
-        :param _builtins.str name: The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+        :param _builtins.str name: The erratum name (such as ELSA-2023-34678).
         :param Sequence[_builtins.str] os_families: The OS families the package belongs to.
         :param Sequence['GetErrataErratumCollectionItemPackageSoftwareSourceArgs'] software_sources: List of software sources that provide the software package. This property is deprecated and it will be removed in a future API release.
         :param _builtins.str type: Type of the package.
@@ -4901,7 +7272,7 @@ class GetErrataErratumCollectionItemPackageResult(dict):
     @pulumi.getter
     def name(self) -> _builtins.str:
         """
-        The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+        The erratum name (such as ELSA-2023-34678).
         """
         return pulumi.get(self, "name")
 
@@ -5007,7 +7378,7 @@ class GetErrataFilterResult(dict):
                  values: Sequence[_builtins.str],
                  regex: Optional[_builtins.bool] = None):
         """
-        :param _builtins.str name: The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+        :param _builtins.str name: The erratum name (such as ELSA-2023-34678).
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -5018,7 +7389,7 @@ class GetErrataFilterResult(dict):
     @pulumi.getter
     def name(self) -> _builtins.str:
         """
-        The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+        The erratum name (such as ELSA-2023-34678).
         """
         return pulumi.get(self, "name")
 
@@ -5220,6 +7591,7 @@ class GetEventDataResult(dict):
                  contents: Sequence['outputs.GetEventDataContentResult'],
                  error_cause: _builtins.str,
                  error_log: _builtins.str,
+                 error_summary: _builtins.str,
                  event_count: _builtins.int,
                  event_fingerprint: _builtins.str,
                  health_state: _builtins.str,
@@ -5236,6 +7608,7 @@ class GetEventDataResult(dict):
         :param Sequence['GetEventDataContentArgs'] contents: Provides information collected for the exploit attempt event.
         :param _builtins.str error_cause: The commands executed by the agent that caused the error.
         :param _builtins.str error_log: The output log of the error.
+        :param _builtins.str error_summary: Brief description on how this error is categorized.
         :param _builtins.int event_count: Number of times the event has occurred.
         :param _builtins.str event_fingerprint: Fingerprint of the event.
         :param _builtins.str health_state: Health state of the management station
@@ -5252,6 +7625,7 @@ class GetEventDataResult(dict):
         pulumi.set(__self__, "contents", contents)
         pulumi.set(__self__, "error_cause", error_cause)
         pulumi.set(__self__, "error_log", error_log)
+        pulumi.set(__self__, "error_summary", error_summary)
         pulumi.set(__self__, "event_count", event_count)
         pulumi.set(__self__, "event_fingerprint", event_fingerprint)
         pulumi.set(__self__, "health_state", health_state)
@@ -5302,6 +7676,14 @@ class GetEventDataResult(dict):
         The output log of the error.
         """
         return pulumi.get(self, "error_log")
+
+    @_builtins.property
+    @pulumi.getter(name="errorSummary")
+    def error_summary(self) -> _builtins.str:
+        """
+        Brief description on how this error is categorized.
+        """
+        return pulumi.get(self, "error_summary")
 
     @_builtins.property
     @pulumi.getter(name="eventCount")
@@ -5872,6 +8254,7 @@ class GetEventsEventCollectionItemDataResult(dict):
                  contents: Sequence['outputs.GetEventsEventCollectionItemDataContentResult'],
                  error_cause: _builtins.str,
                  error_log: _builtins.str,
+                 error_summary: _builtins.str,
                  event_count: _builtins.int,
                  event_fingerprint: _builtins.str,
                  health_state: _builtins.str,
@@ -5888,6 +8271,7 @@ class GetEventsEventCollectionItemDataResult(dict):
         :param Sequence['GetEventsEventCollectionItemDataContentArgs'] contents: Provides information collected for the exploit attempt event.
         :param _builtins.str error_cause: The commands executed by the agent that caused the error.
         :param _builtins.str error_log: The output log of the error.
+        :param _builtins.str error_summary: Brief description on how this error is categorized.
         :param _builtins.int event_count: Number of times the event has occurred.
         :param _builtins.str event_fingerprint: The eventFingerprint of the KernelEventData.
         :param _builtins.str health_state: Health state of the management station
@@ -5904,6 +8288,7 @@ class GetEventsEventCollectionItemDataResult(dict):
         pulumi.set(__self__, "contents", contents)
         pulumi.set(__self__, "error_cause", error_cause)
         pulumi.set(__self__, "error_log", error_log)
+        pulumi.set(__self__, "error_summary", error_summary)
         pulumi.set(__self__, "event_count", event_count)
         pulumi.set(__self__, "event_fingerprint", event_fingerprint)
         pulumi.set(__self__, "health_state", health_state)
@@ -5954,6 +8339,14 @@ class GetEventsEventCollectionItemDataResult(dict):
         The output log of the error.
         """
         return pulumi.get(self, "error_log")
+
+    @_builtins.property
+    @pulumi.getter(name="errorSummary")
+    def error_summary(self) -> _builtins.str:
+        """
+        Brief description on how this error is categorized.
+        """
+        return pulumi.get(self, "error_summary")
 
     @_builtins.property
     @pulumi.getter(name="eventCount")
@@ -6863,10 +9256,8 @@ class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageResult(dict
         :param _builtins.str display_name: A filter to return resources that match the given display names.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-        :param _builtins.str lifecycle_environment_display_name: The user-friendly name for the lifecycle environment. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param _builtins.str lifecycle_environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
         :param _builtins.str location: A filter to return only resources whose location matches the given value.
-        :param _builtins.int managed_instances: The number of managed instances associated with the lifecycle stage.
         :param _builtins.str os_family: A filter to return only resources that match the given operating system family.
         :param _builtins.int rank: User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
         :param Sequence['GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdArgs'] software_source_ids: Provides identifying information for the specified software source.
@@ -6946,9 +9337,6 @@ class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageResult(dict
     @_builtins.property
     @pulumi.getter(name="lifecycleEnvironmentDisplayName")
     def lifecycle_environment_display_name(self) -> _builtins.str:
-        """
-        The user-friendly name for the lifecycle environment. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "lifecycle_environment_display_name")
 
     @_builtins.property
@@ -6970,9 +9358,6 @@ class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageResult(dict
     @_builtins.property
     @pulumi.getter(name="managedInstances")
     def managed_instances(self) -> _builtins.int:
-        """
-        The number of managed instances associated with the lifecycle stage.
-        """
         return pulumi.get(self, "managed_instances")
 
     @_builtins.property
@@ -7260,10 +9645,8 @@ class GetLifecycleStagesLifecycleStageCollectionItemResult(dict):
         :param _builtins.str display_name: A filter to return resources that match the given display names.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-        :param _builtins.str lifecycle_environment_display_name: The user-friendly name for the lifecycle environment. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param _builtins.str lifecycle_environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
         :param _builtins.str location: A filter to return only resources whose location matches the given value.
-        :param _builtins.int managed_instances: The number of managed instances associated with the lifecycle stage.
         :param _builtins.str os_family: A filter to return only resources that match the given operating system family.
         :param _builtins.int rank: User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
         :param Sequence['GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdArgs'] software_source_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
@@ -7343,9 +9726,6 @@ class GetLifecycleStagesLifecycleStageCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="lifecycleEnvironmentDisplayName")
     def lifecycle_environment_display_name(self) -> _builtins.str:
-        """
-        The user-friendly name for the lifecycle environment. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "lifecycle_environment_display_name")
 
     @_builtins.property
@@ -7367,9 +9747,6 @@ class GetLifecycleStagesLifecycleStageCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="managedInstances")
     def managed_instances(self) -> _builtins.int:
-        """
-        The number of managed instances associated with the lifecycle stage.
-        """
         return pulumi.get(self, "managed_instances")
 
     @_builtins.property
@@ -7747,16 +10124,22 @@ class GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectio
 class GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: _builtins.str,
+                 description: _builtins.str,
                  display_name: _builtins.str,
-                 id: _builtins.str):
+                 id: _builtins.str,
+                 software_source_type: _builtins.str):
         """
         :param _builtins.str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+        :param _builtins.str description: Software source description.
         :param _builtins.str display_name: A filter to return resources that match the given display names.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        :param _builtins.str software_source_type: Type of the software source.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "software_source_type", software_source_type)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -7765,6 +10148,14 @@ class GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectio
         The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Software source description.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -7781,6 +10172,14 @@ class GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectio
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="softwareSourceType")
+    def software_source_type(self) -> _builtins.str:
+        """
+        Type of the software source.
+        """
+        return pulumi.get(self, "software_source_type")
 
 
 @pulumi.output_type
@@ -8437,16 +10836,22 @@ class GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceColl
 class GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: _builtins.str,
+                 description: _builtins.str,
                  display_name: _builtins.str,
-                 id: _builtins.str):
+                 id: _builtins.str,
+                 software_source_type: _builtins.str):
         """
         :param _builtins.str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+        :param _builtins.str description: Software source description.
         :param _builtins.str display_name: A filter to return resources that match the given display names.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        :param _builtins.str software_source_type: Type of the software source.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "software_source_type", software_source_type)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -8455,6 +10860,14 @@ class GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceColl
         The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Software source description.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -8471,6 +10884,14 @@ class GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceColl
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="softwareSourceType")
+    def software_source_type(self) -> _builtins.str:
+        """
+        Type of the software source.
+        """
+        return pulumi.get(self, "software_source_type")
 
 
 @pulumi.output_type
@@ -8578,6 +10999,394 @@ class GetManagedInstanceGroupInstalledPackagesManagedInstanceGroupInstalledPacka
         The name of the package that is installed on the managed instance group.
         """
         return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetManagedInstanceGroupManagedInstancesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemResult']):
+        """
+        :param Sequence['GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArgs'] items: List of managed instances.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemResult']:
+        """
+        List of managed instances.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 agent_version: _builtins.str,
+                 architecture: _builtins.str,
+                 autonomous_settings: Sequence['outputs.GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingResult'],
+                 compartment_id: _builtins.str,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 id: _builtins.str,
+                 is_managed_by_autonomous_linux: _builtins.bool,
+                 is_management_station: _builtins.bool,
+                 is_reboot_required: _builtins.bool,
+                 lifecycle_environments: Sequence['outputs.GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentResult'],
+                 lifecycle_stages: Sequence['outputs.GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageResult'],
+                 location: _builtins.str,
+                 managed_instance_groups: Sequence['outputs.GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupResult'],
+                 notification_topic_id: _builtins.str,
+                 os_family: _builtins.str,
+                 status: _builtins.str,
+                 tenancy_id: _builtins.str,
+                 time_last_boot: _builtins.str,
+                 updates_available: _builtins.int):
+        """
+        :param _builtins.str agent_version: The version of osmh-agent running on the managed instance
+        :param _builtins.str architecture: The CPU architecture type of the managed instance.
+        :param Sequence['GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArgs'] autonomous_settings: Settings for the Autonomous Linux service.
+        :param _builtins.str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+        :param _builtins.str description: User-specified description of the managed instance.
+        :param _builtins.str display_name: A filter to return resources that match the given display names.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+        :param _builtins.bool is_managed_by_autonomous_linux: Indicates whether Autonomous Linux manages this instance.
+        :param _builtins.bool is_management_station: Whether this managed instance is acting as an on-premises management station.
+        :param _builtins.bool is_reboot_required: Indicates whether a reboot is required to complete installation of updates.
+        :param Sequence['GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArgs'] lifecycle_environments: Id and name of a resource to simplify the display for the user.
+        :param Sequence['GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArgs'] lifecycle_stages: Id and name of a resource to simplify the display for the user.
+        :param _builtins.str location: The location of the managed instance.
+        :param Sequence['GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArgs'] managed_instance_groups: Id and name of a resource to simplify the display for the user.
+        :param _builtins.str notification_topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+        :param _builtins.str os_family: The operating system type of the managed instance.
+        :param _builtins.str status: Current status of the managed instance.
+        :param _builtins.str tenancy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy this managed instance resides in.
+        :param _builtins.str time_last_boot: Time that the instance last booted (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        :param _builtins.int updates_available: Number of updates available for installation.
+        """
+        pulumi.set(__self__, "agent_version", agent_version)
+        pulumi.set(__self__, "architecture", architecture)
+        pulumi.set(__self__, "autonomous_settings", autonomous_settings)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_managed_by_autonomous_linux", is_managed_by_autonomous_linux)
+        pulumi.set(__self__, "is_management_station", is_management_station)
+        pulumi.set(__self__, "is_reboot_required", is_reboot_required)
+        pulumi.set(__self__, "lifecycle_environments", lifecycle_environments)
+        pulumi.set(__self__, "lifecycle_stages", lifecycle_stages)
+        pulumi.set(__self__, "location", location)
+        pulumi.set(__self__, "managed_instance_groups", managed_instance_groups)
+        pulumi.set(__self__, "notification_topic_id", notification_topic_id)
+        pulumi.set(__self__, "os_family", os_family)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "tenancy_id", tenancy_id)
+        pulumi.set(__self__, "time_last_boot", time_last_boot)
+        pulumi.set(__self__, "updates_available", updates_available)
+
+    @_builtins.property
+    @pulumi.getter(name="agentVersion")
+    def agent_version(self) -> _builtins.str:
+        """
+        The version of osmh-agent running on the managed instance
+        """
+        return pulumi.get(self, "agent_version")
+
+    @_builtins.property
+    @pulumi.getter
+    def architecture(self) -> _builtins.str:
+        """
+        The CPU architecture type of the managed instance.
+        """
+        return pulumi.get(self, "architecture")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousSettings")
+    def autonomous_settings(self) -> Sequence['outputs.GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingResult']:
+        """
+        Settings for the Autonomous Linux service.
+        """
+        return pulumi.get(self, "autonomous_settings")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        User-specified description of the managed instance.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return resources that match the given display names.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isManagedByAutonomousLinux")
+    def is_managed_by_autonomous_linux(self) -> _builtins.bool:
+        """
+        Indicates whether Autonomous Linux manages this instance.
+        """
+        return pulumi.get(self, "is_managed_by_autonomous_linux")
+
+    @_builtins.property
+    @pulumi.getter(name="isManagementStation")
+    def is_management_station(self) -> _builtins.bool:
+        """
+        Whether this managed instance is acting as an on-premises management station.
+        """
+        return pulumi.get(self, "is_management_station")
+
+    @_builtins.property
+    @pulumi.getter(name="isRebootRequired")
+    def is_reboot_required(self) -> _builtins.bool:
+        """
+        Indicates whether a reboot is required to complete installation of updates.
+        """
+        return pulumi.get(self, "is_reboot_required")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleEnvironments")
+    def lifecycle_environments(self) -> Sequence['outputs.GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentResult']:
+        """
+        Id and name of a resource to simplify the display for the user.
+        """
+        return pulumi.get(self, "lifecycle_environments")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleStages")
+    def lifecycle_stages(self) -> Sequence['outputs.GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageResult']:
+        """
+        Id and name of a resource to simplify the display for the user.
+        """
+        return pulumi.get(self, "lifecycle_stages")
+
+    @_builtins.property
+    @pulumi.getter
+    def location(self) -> _builtins.str:
+        """
+        The location of the managed instance.
+        """
+        return pulumi.get(self, "location")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceGroups")
+    def managed_instance_groups(self) -> Sequence['outputs.GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupResult']:
+        """
+        Id and name of a resource to simplify the display for the user.
+        """
+        return pulumi.get(self, "managed_instance_groups")
+
+    @_builtins.property
+    @pulumi.getter(name="notificationTopicId")
+    def notification_topic_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+        """
+        return pulumi.get(self, "notification_topic_id")
+
+    @_builtins.property
+    @pulumi.getter(name="osFamily")
+    def os_family(self) -> _builtins.str:
+        """
+        The operating system type of the managed instance.
+        """
+        return pulumi.get(self, "os_family")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        Current status of the managed instance.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="tenancyId")
+    def tenancy_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy this managed instance resides in.
+        """
+        return pulumi.get(self, "tenancy_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastBoot")
+    def time_last_boot(self) -> _builtins.str:
+        """
+        Time that the instance last booted (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        """
+        return pulumi.get(self, "time_last_boot")
+
+    @_builtins.property
+    @pulumi.getter(name="updatesAvailable")
+    def updates_available(self) -> _builtins.int:
+        """
+        Number of updates available for installation.
+        """
+        return pulumi.get(self, "updates_available")
+
+
+@pulumi.output_type
+class GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingResult(dict):
+    def __init__(__self__, *,
+                 is_data_collection_authorized: _builtins.bool,
+                 scheduled_job_id: _builtins.str):
+        """
+        :param _builtins.bool is_data_collection_authorized: Indicates whether Autonomous Linux will collect crash files. This setting can be changed by the user.
+        :param _builtins.str scheduled_job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
+        """
+        pulumi.set(__self__, "is_data_collection_authorized", is_data_collection_authorized)
+        pulumi.set(__self__, "scheduled_job_id", scheduled_job_id)
+
+    @_builtins.property
+    @pulumi.getter(name="isDataCollectionAuthorized")
+    def is_data_collection_authorized(self) -> _builtins.bool:
+        """
+        Indicates whether Autonomous Linux will collect crash files. This setting can be changed by the user.
+        """
+        return pulumi.get(self, "is_data_collection_authorized")
+
+    @_builtins.property
+    @pulumi.getter(name="scheduledJobId")
+    def scheduled_job_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
+        """
+        return pulumi.get(self, "scheduled_job_id")
+
+
+@pulumi.output_type
+class GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentResult(dict):
+    def __init__(__self__, *,
+                 display_name: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str display_name: A filter to return resources that match the given display names.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return resources that match the given display names.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageResult(dict):
+    def __init__(__self__, *,
+                 display_name: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str display_name: A filter to return resources that match the given display names.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return resources that match the given display names.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupResult(dict):
+    def __init__(__self__, *,
+                 display_name: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str display_name: A filter to return resources that match the given display names.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return resources that match the given display names.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+        """
+        return pulumi.get(self, "id")
 
 
 @pulumi.output_type
@@ -9645,6 +12454,152 @@ class GetManagedInstanceModulesManagedInstanceModuleCollectionItemResult(dict):
 
 
 @pulumi.output_type
+class GetManagedInstanceSnapsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The resource name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagedInstanceSnapsSnapCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagedInstanceSnapsSnapCollectionItemResult']):
+        """
+        :param Sequence['GetManagedInstanceSnapsSnapCollectionItemArgs'] items: The list of snaps.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedInstanceSnapsSnapCollectionItemResult']:
+        """
+        The list of snaps.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetManagedInstanceSnapsSnapCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 name: _builtins.str,
+                 publisher: _builtins.str,
+                 revision: _builtins.str,
+                 store_url: _builtins.str,
+                 time_refreshed: _builtins.str,
+                 tracking: _builtins.str,
+                 version: _builtins.str):
+        """
+        :param _builtins.str description: The description of of snap.
+        :param _builtins.str name: The resource name.
+        :param _builtins.str publisher: The publisher of the snap.
+        :param _builtins.str revision: The revision number of the snap channel.
+        :param _builtins.str store_url: The snap's store url.
+        :param _builtins.str time_refreshed: The date and time of the snap's last refresh in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format.
+        :param _builtins.str tracking: The track this snap is following.
+        :param _builtins.str version: The version of the snap.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "publisher", publisher)
+        pulumi.set(__self__, "revision", revision)
+        pulumi.set(__self__, "store_url", store_url)
+        pulumi.set(__self__, "time_refreshed", time_refreshed)
+        pulumi.set(__self__, "tracking", tracking)
+        pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of of snap.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def publisher(self) -> _builtins.str:
+        """
+        The publisher of the snap.
+        """
+        return pulumi.get(self, "publisher")
+
+    @_builtins.property
+    @pulumi.getter
+    def revision(self) -> _builtins.str:
+        """
+        The revision number of the snap channel.
+        """
+        return pulumi.get(self, "revision")
+
+    @_builtins.property
+    @pulumi.getter(name="storeUrl")
+    def store_url(self) -> _builtins.str:
+        """
+        The snap's store url.
+        """
+        return pulumi.get(self, "store_url")
+
+    @_builtins.property
+    @pulumi.getter(name="timeRefreshed")
+    def time_refreshed(self) -> _builtins.str:
+        """
+        The date and time of the snap's last refresh in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format.
+        """
+        return pulumi.get(self, "time_refreshed")
+
+    @_builtins.property
+    @pulumi.getter
+    def tracking(self) -> _builtins.str:
+        """
+        The track this snap is following.
+        """
+        return pulumi.get(self, "tracking")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> _builtins.str:
+        """
+        The version of the snap.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
 class GetManagedInstanceSoftwareSourceResult(dict):
     def __init__(__self__, *,
                  description: _builtins.str,
@@ -9760,6 +12715,7 @@ class GetManagedInstanceUpdatablePackagesUpdatablePackageCollectionResult(dict):
 @pulumi.output_type
 class GetManagedInstanceUpdatablePackagesUpdatablePackageCollectionItemResult(dict):
     def __init__(__self__, *,
+                 advisory_severity: _builtins.str,
                  architecture: _builtins.str,
                  display_name: _builtins.str,
                  erratas: Sequence[_builtins.str],
@@ -9772,6 +12728,7 @@ class GetManagedInstanceUpdatablePackagesUpdatablePackageCollectionItemResult(di
                  update_type: _builtins.str,
                  version: _builtins.str):
         """
+        :param _builtins.str advisory_severity: The advisory severity.
         :param _builtins.str architecture: The architecture for which this package was built.
         :param _builtins.str display_name: A filter to return resources that match the given display names.
         :param Sequence[_builtins.str] erratas: List of errata applicable to this update.
@@ -9784,6 +12741,7 @@ class GetManagedInstanceUpdatablePackagesUpdatablePackageCollectionItemResult(di
         :param _builtins.str update_type: The type of update.
         :param _builtins.str version: Version of the installed package.
         """
+        pulumi.set(__self__, "advisory_severity", advisory_severity)
         pulumi.set(__self__, "architecture", architecture)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "erratas", erratas)
@@ -9795,6 +12753,14 @@ class GetManagedInstanceUpdatablePackagesUpdatablePackageCollectionItemResult(di
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "update_type", update_type)
         pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter(name="advisorySeverity")
+    def advisory_severity(self) -> _builtins.str:
+        """
+        The advisory severity.
+        """
+        return pulumi.get(self, "advisory_severity")
 
     @_builtins.property
     @pulumi.getter
@@ -9991,6 +12957,7 @@ class GetManagedInstancesManagedInstanceCollectionItemResult(dict):
     def __init__(__self__, *,
                  agent_version: _builtins.str,
                  architecture: _builtins.str,
+                 are_sources_managed: _builtins.bool,
                  autonomous_settings: Sequence['outputs.GetManagedInstancesManagedInstanceCollectionItemAutonomousSettingResult'],
                  bug_updates_available: _builtins.int,
                  compartment_id: _builtins.str,
@@ -10027,12 +12994,14 @@ class GetManagedInstancesManagedInstanceCollectionItemResult(dict):
                  time_created: _builtins.str,
                  time_last_boot: _builtins.str,
                  time_last_checkin: _builtins.str,
+                 time_last_software_refresh: _builtins.str,
                  time_updated: _builtins.str,
                  updates_available: _builtins.int,
                  work_request_count: _builtins.int):
         """
         :param _builtins.str agent_version: A filter to return only managed instances with the specified version of osmh-agent running.
         :param _builtins.str architecture: The CPU architecture type of the managed instance.
+        :param _builtins.bool are_sources_managed: Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
         :param Sequence['GetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArgs'] autonomous_settings: Settings for the Autonomous Linux service.
         :param _builtins.int bug_updates_available: Number of bug fix type updates available for installation.
         :param _builtins.str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
@@ -10069,12 +13038,14 @@ class GetManagedInstancesManagedInstanceCollectionItemResult(dict):
         :param _builtins.str time_created: The date and time the instance was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param _builtins.str time_last_boot: Time that the instance last booted (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param _builtins.str time_last_checkin: Time that the instance last checked in with the service (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        :param _builtins.str time_last_software_refresh: The date and time the instance's software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param _builtins.str time_updated: The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param _builtins.int updates_available: Number of updates available for installation.
         :param _builtins.int work_request_count: Number of work requests associated with this instance.
         """
         pulumi.set(__self__, "agent_version", agent_version)
         pulumi.set(__self__, "architecture", architecture)
+        pulumi.set(__self__, "are_sources_managed", are_sources_managed)
         pulumi.set(__self__, "autonomous_settings", autonomous_settings)
         pulumi.set(__self__, "bug_updates_available", bug_updates_available)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -10111,6 +13082,7 @@ class GetManagedInstancesManagedInstanceCollectionItemResult(dict):
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_last_boot", time_last_boot)
         pulumi.set(__self__, "time_last_checkin", time_last_checkin)
+        pulumi.set(__self__, "time_last_software_refresh", time_last_software_refresh)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "updates_available", updates_available)
         pulumi.set(__self__, "work_request_count", work_request_count)
@@ -10130,6 +13102,14 @@ class GetManagedInstancesManagedInstanceCollectionItemResult(dict):
         The CPU architecture type of the managed instance.
         """
         return pulumi.get(self, "architecture")
+
+    @_builtins.property
+    @pulumi.getter(name="areSourcesManaged")
+    def are_sources_managed(self) -> _builtins.bool:
+        """
+        Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+        """
+        return pulumi.get(self, "are_sources_managed")
 
     @_builtins.property
     @pulumi.getter(name="autonomousSettings")
@@ -10418,6 +13398,14 @@ class GetManagedInstancesManagedInstanceCollectionItemResult(dict):
         Time that the instance last checked in with the service (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_last_checkin")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastSoftwareRefresh")
+    def time_last_software_refresh(self) -> _builtins.str:
+        """
+        The date and time the instance's software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        """
+        return pulumi.get(self, "time_last_software_refresh")
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
@@ -11070,6 +14058,7 @@ class GetManagementStationsManagementStationCollectionResult(dict):
 @pulumi.output_type
 class GetManagementStationsManagementStationCollectionItemResult(dict):
     def __init__(__self__, *,
+                 arch_type: _builtins.str,
                  compartment_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
                  description: _builtins.str,
@@ -11081,6 +14070,7 @@ class GetManagementStationsManagementStationCollectionItemResult(dict):
                  location: _builtins.str,
                  managed_instance_id: _builtins.str,
                  mirror_capacity: _builtins.int,
+                 os_family: _builtins.str,
                  overall_percentage: _builtins.int,
                  overall_state: _builtins.str,
                  profile_id: _builtins.str,
@@ -11089,16 +14079,19 @@ class GetManagementStationsManagementStationCollectionItemResult(dict):
                  system_tags: Mapping[str, _builtins.str],
                  time_next_execution: Optional[_builtins.str] = None):
         """
+        :param _builtins.str arch_type: The architecture type.
         :param _builtins.str compartment_id: (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str description: Explanation of the health status.
         :param _builtins.str display_name: A filter to return resources that match the given user-friendly name.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param _builtins.str health_state: A filter that returns information for management stations in the specified health state.
         :param _builtins.str hostname: Hostname of the management station.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
         :param _builtins.str location: A filter to return only resources whose location matches the given value.
         :param _builtins.str managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
         :param _builtins.int mirror_capacity: A decimal number representing the amount of mirror capacity used by the sync.
+        :param _builtins.str os_family: The operating system family.
         :param _builtins.int overall_percentage: A decimal number representing the progress of the current mirror sync.
         :param _builtins.str overall_state: Current state of the mirror sync for the management station.
         :param _builtins.str profile_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
@@ -11106,6 +14099,7 @@ class GetManagementStationsManagementStationCollectionItemResult(dict):
         :param _builtins.str state: A filter that returns information for management stations in the specified state.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
+        pulumi.set(__self__, "arch_type", arch_type)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
@@ -11117,6 +14111,7 @@ class GetManagementStationsManagementStationCollectionItemResult(dict):
         pulumi.set(__self__, "location", location)
         pulumi.set(__self__, "managed_instance_id", managed_instance_id)
         pulumi.set(__self__, "mirror_capacity", mirror_capacity)
+        pulumi.set(__self__, "os_family", os_family)
         pulumi.set(__self__, "overall_percentage", overall_percentage)
         pulumi.set(__self__, "overall_state", overall_state)
         pulumi.set(__self__, "profile_id", profile_id)
@@ -11125,6 +14120,14 @@ class GetManagementStationsManagementStationCollectionItemResult(dict):
         pulumi.set(__self__, "system_tags", system_tags)
         if time_next_execution is not None:
             pulumi.set(__self__, "time_next_execution", time_next_execution)
+
+    @_builtins.property
+    @pulumi.getter(name="archType")
+    def arch_type(self) -> _builtins.str:
+        """
+        The architecture type.
+        """
+        return pulumi.get(self, "arch_type")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -11169,6 +14172,9 @@ class GetManagementStationsManagementStationCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="healthState")
     def health_state(self) -> _builtins.str:
+        """
+        A filter that returns information for management stations in the specified health state.
+        """
         return pulumi.get(self, "health_state")
 
     @_builtins.property
@@ -11210,6 +14216,14 @@ class GetManagementStationsManagementStationCollectionItemResult(dict):
         A decimal number representing the amount of mirror capacity used by the sync.
         """
         return pulumi.get(self, "mirror_capacity")
+
+    @_builtins.property
+    @pulumi.getter(name="osFamily")
+    def os_family(self) -> _builtins.str:
+        """
+        The operating system family.
+        """
+        return pulumi.get(self, "os_family")
 
     @_builtins.property
     @pulumi.getter(name="overallPercentage")
@@ -11287,16 +14301,22 @@ class GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionResult(
 class GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: _builtins.str,
+                 description: _builtins.str,
                  display_name: _builtins.str,
-                 id: _builtins.str):
+                 id: _builtins.str,
+                 software_source_type: _builtins.str):
         """
         :param _builtins.str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+        :param _builtins.str description: Software source description.
         :param _builtins.str display_name: A filter to return resources that match the given display names.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        :param _builtins.str software_source_type: Type of the software source.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "software_source_type", software_source_type)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -11305,6 +14325,14 @@ class GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemRes
         The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Software source description.
+        """
+        return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -11321,6 +14349,14 @@ class GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemRes
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="softwareSourceType")
+    def software_source_type(self) -> _builtins.str:
+        """
+        Type of the software source.
+        """
+        return pulumi.get(self, "software_source_type")
 
 
 @pulumi.output_type
@@ -12120,29 +15156,46 @@ class GetProfilesProfileCollectionItemSoftwareSourceResult(dict):
 @pulumi.output_type
 class GetScheduledJobOperationResult(dict):
     def __init__(__self__, *,
+                 install_snap_details: Sequence['outputs.GetScheduledJobOperationInstallSnapDetailResult'],
                  manage_module_streams_details: Sequence['outputs.GetScheduledJobOperationManageModuleStreamsDetailResult'],
                  operation_type: _builtins.str,
                  package_names: Sequence[_builtins.str],
                  reboot_timeout_in_mins: _builtins.int,
+                 remove_snap_details: Sequence['outputs.GetScheduledJobOperationRemoveSnapDetailResult'],
                  software_source_ids: Sequence[_builtins.str],
                  switch_module_streams_details: Sequence['outputs.GetScheduledJobOperationSwitchModuleStreamsDetailResult'],
+                 switch_snap_channel_details: Sequence['outputs.GetScheduledJobOperationSwitchSnapChannelDetailResult'],
                  windows_update_names: Sequence[_builtins.str]):
         """
+        :param Sequence['GetScheduledJobOperationInstallSnapDetailArgs'] install_snap_details: Provides the information used to install a snap.
         :param Sequence['GetScheduledJobOperationManageModuleStreamsDetailArgs'] manage_module_streams_details: The set of changes to make to the state of the modules, streams, and profiles on the managed target.
         :param _builtins.str operation_type: The type of operation this scheduled job performs.
         :param Sequence[_builtins.str] package_names: The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
         :param _builtins.int reboot_timeout_in_mins: The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
+        :param Sequence['GetScheduledJobOperationRemoveSnapDetailArgs'] remove_snap_details: Provides the information used to remove a snap.
         :param Sequence[_builtins.str] software_source_ids: The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
         :param Sequence['GetScheduledJobOperationSwitchModuleStreamsDetailArgs'] switch_module_streams_details: Provides the information used to update a module stream.
+        :param Sequence['GetScheduledJobOperationSwitchSnapChannelDetailArgs'] switch_snap_channel_details: Provides the information used to switch a snap channel.
         :param Sequence[_builtins.str] windows_update_names: Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
         """
+        pulumi.set(__self__, "install_snap_details", install_snap_details)
         pulumi.set(__self__, "manage_module_streams_details", manage_module_streams_details)
         pulumi.set(__self__, "operation_type", operation_type)
         pulumi.set(__self__, "package_names", package_names)
         pulumi.set(__self__, "reboot_timeout_in_mins", reboot_timeout_in_mins)
+        pulumi.set(__self__, "remove_snap_details", remove_snap_details)
         pulumi.set(__self__, "software_source_ids", software_source_ids)
         pulumi.set(__self__, "switch_module_streams_details", switch_module_streams_details)
+        pulumi.set(__self__, "switch_snap_channel_details", switch_snap_channel_details)
         pulumi.set(__self__, "windows_update_names", windows_update_names)
+
+    @_builtins.property
+    @pulumi.getter(name="installSnapDetails")
+    def install_snap_details(self) -> Sequence['outputs.GetScheduledJobOperationInstallSnapDetailResult']:
+        """
+        Provides the information used to install a snap.
+        """
+        return pulumi.get(self, "install_snap_details")
 
     @_builtins.property
     @pulumi.getter(name="manageModuleStreamsDetails")
@@ -12177,6 +15230,14 @@ class GetScheduledJobOperationResult(dict):
         return pulumi.get(self, "reboot_timeout_in_mins")
 
     @_builtins.property
+    @pulumi.getter(name="removeSnapDetails")
+    def remove_snap_details(self) -> Sequence['outputs.GetScheduledJobOperationRemoveSnapDetailResult']:
+        """
+        Provides the information used to remove a snap.
+        """
+        return pulumi.get(self, "remove_snap_details")
+
+    @_builtins.property
     @pulumi.getter(name="softwareSourceIds")
     def software_source_ids(self) -> Sequence[_builtins.str]:
         """
@@ -12193,12 +15254,82 @@ class GetScheduledJobOperationResult(dict):
         return pulumi.get(self, "switch_module_streams_details")
 
     @_builtins.property
+    @pulumi.getter(name="switchSnapChannelDetails")
+    def switch_snap_channel_details(self) -> Sequence['outputs.GetScheduledJobOperationSwitchSnapChannelDetailResult']:
+        """
+        Provides the information used to switch a snap channel.
+        """
+        return pulumi.get(self, "switch_snap_channel_details")
+
+    @_builtins.property
     @pulumi.getter(name="windowsUpdateNames")
     def windows_update_names(self) -> Sequence[_builtins.str]:
         """
         Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
         """
         return pulumi.get(self, "windows_update_names")
+
+
+@pulumi.output_type
+class GetScheduledJobOperationInstallSnapDetailResult(dict):
+    def __init__(__self__, *,
+                 channel: _builtins.str,
+                 is_signed: _builtins.bool,
+                 mode: _builtins.str,
+                 name: _builtins.str,
+                 revision: _builtins.str):
+        """
+        :param _builtins.str channel: The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+        :param _builtins.bool is_signed: If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+        :param _builtins.str mode: The confinement mode for the snap.
+        :param _builtins.str name: The name of the snap.
+        :param _builtins.str revision: The revision to remove. Note: This option cannot be used when removing multiple snaps.
+        """
+        pulumi.set(__self__, "channel", channel)
+        pulumi.set(__self__, "is_signed", is_signed)
+        pulumi.set(__self__, "mode", mode)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "revision", revision)
+
+    @_builtins.property
+    @pulumi.getter
+    def channel(self) -> _builtins.str:
+        """
+        The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+        """
+        return pulumi.get(self, "channel")
+
+    @_builtins.property
+    @pulumi.getter(name="isSigned")
+    def is_signed(self) -> _builtins.bool:
+        """
+        If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+        """
+        return pulumi.get(self, "is_signed")
+
+    @_builtins.property
+    @pulumi.getter
+    def mode(self) -> _builtins.str:
+        """
+        The confinement mode for the snap.
+        """
+        return pulumi.get(self, "mode")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the snap.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def revision(self) -> _builtins.str:
+        """
+        The revision to remove. Note: This option cannot be used when removing multiple snaps.
+        """
+        return pulumi.get(self, "revision")
 
 
 @pulumi.output_type
@@ -12435,6 +15566,35 @@ class GetScheduledJobOperationManageModuleStreamsDetailRemoveResult(dict):
 
 
 @pulumi.output_type
+class GetScheduledJobOperationRemoveSnapDetailResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 revision: _builtins.str):
+        """
+        :param _builtins.str name: The name of the snap.
+        :param _builtins.str revision: The revision to remove. Note: This option cannot be used when removing multiple snaps.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "revision", revision)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the snap.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def revision(self) -> _builtins.str:
+        """
+        The revision to remove. Note: This option cannot be used when removing multiple snaps.
+        """
+        return pulumi.get(self, "revision")
+
+
+@pulumi.output_type
 class GetScheduledJobOperationSwitchModuleStreamsDetailResult(dict):
     def __init__(__self__, *,
                  module_name: _builtins.str,
@@ -12475,11 +15635,43 @@ class GetScheduledJobOperationSwitchModuleStreamsDetailResult(dict):
 
 
 @pulumi.output_type
+class GetScheduledJobOperationSwitchSnapChannelDetailResult(dict):
+    def __init__(__self__, *,
+                 channel: _builtins.str,
+                 name: _builtins.str):
+        """
+        :param _builtins.str channel: The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+        :param _builtins.str name: The name of the snap.
+        """
+        pulumi.set(__self__, "channel", channel)
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def channel(self) -> _builtins.str:
+        """
+        The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+        """
+        return pulumi.get(self, "channel")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the snap.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
 class GetScheduledJobsFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
                  regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The name of the snap.
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -12488,6 +15680,9 @@ class GetScheduledJobsFilterResult(dict):
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        """
+        The name of the snap.
+        """
         return pulumi.get(self, "name")
 
     @_builtins.property
@@ -12520,6 +15715,7 @@ class GetScheduledJobsScheduledJobCollectionItemResult(dict):
                  defined_tags: Mapping[str, _builtins.str],
                  description: _builtins.str,
                  display_name: _builtins.str,
+                 dynamic_set_ids: Sequence[_builtins.str],
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  is_managed_by_autonomous_linux: _builtins.bool,
@@ -12547,12 +15743,13 @@ class GetScheduledJobsScheduledJobCollectionItemResult(dict):
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str description: User-specified description for the scheduled job.
         :param _builtins.str display_name: A filter to return resources that match the given user-friendly name.
+        :param Sequence[_builtins.str] dynamic_set_ids: The dynamic set [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on. A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job. A filter to return the specified job.
         :param _builtins.bool is_managed_by_autonomous_linux: Indicates whether to list only resources managed by the Autonomous Linux service.
         :param _builtins.bool is_restricted: A filter to return only restricted scheduled jobs.
         :param _builtins.bool is_subcompartment_included: Indicates whether to apply the scheduled job to all compartments in the tenancy when managedCompartmentIds specifies the tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (root compartment).
-        :param Sequence[_builtins.str] lifecycle_stage_ids: The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+        :param Sequence[_builtins.str] lifecycle_stage_ids: The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds, and dynamicSetIds.
         :param Sequence[_builtins.str] locations: The list of locations this scheduled job should operate on for a job targeting on compartments. (Empty list means apply to all locations). This can only be set when managedCompartmentIds is not empty.
         :param Sequence[_builtins.str] managed_compartment_ids: The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on. A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with managedInstanceIds, managedInstanceGroupIds, and lifecycleStageIds.
         :param Sequence[_builtins.str] managed_instance_group_ids: The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on. A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with managedInstanceIds, managedCompartmentIds, and lifecycleStageIds.
@@ -12566,7 +15763,7 @@ class GetScheduledJobsScheduledJobCollectionItemResult(dict):
                * UPDATE_OTHER
                * UPDATE_KSPLICE_USERSPACE
                * UPDATE_KSPLICE_KERNEL
-        :param _builtins.str recurring_rule: The frequency schedule for a recurring scheduled job.
+        :param _builtins.str recurring_rule: The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported. In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
         :param Sequence[_builtins.int] retry_intervals: The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically retry  a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the initial  execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service waits 5 minutes  and then retries. If that fails, the service waits 10 minutes and then retries.
         :param _builtins.str schedule_type: A filter to return only scheduled jobs of the given scheduling type (one-time or recurring).
         :param _builtins.str state: A filter to return only scheduled jobs currently in the given state.
@@ -12582,6 +15779,7 @@ class GetScheduledJobsScheduledJobCollectionItemResult(dict):
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "dynamic_set_ids", dynamic_set_ids)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_managed_by_autonomous_linux", is_managed_by_autonomous_linux)
@@ -12638,6 +15836,14 @@ class GetScheduledJobsScheduledJobCollectionItemResult(dict):
         return pulumi.get(self, "display_name")
 
     @_builtins.property
+    @pulumi.getter(name="dynamicSetIds")
+    def dynamic_set_ids(self) -> Sequence[_builtins.str]:
+        """
+        The dynamic set [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on. A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+        """
+        return pulumi.get(self, "dynamic_set_ids")
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, _builtins.str]:
         """
@@ -12681,7 +15887,7 @@ class GetScheduledJobsScheduledJobCollectionItemResult(dict):
     @pulumi.getter(name="lifecycleStageIds")
     def lifecycle_stage_ids(self) -> Sequence[_builtins.str]:
         """
-        The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+        The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds, and dynamicSetIds.
         """
         return pulumi.get(self, "lifecycle_stage_ids")
 
@@ -12737,7 +15943,7 @@ class GetScheduledJobsScheduledJobCollectionItemResult(dict):
     @pulumi.getter(name="recurringRule")
     def recurring_rule(self) -> _builtins.str:
         """
-        The frequency schedule for a recurring scheduled job.
+        The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported. In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
         """
         return pulumi.get(self, "recurring_rule")
 
@@ -12825,29 +16031,46 @@ class GetScheduledJobsScheduledJobCollectionItemResult(dict):
 @pulumi.output_type
 class GetScheduledJobsScheduledJobCollectionItemOperationResult(dict):
     def __init__(__self__, *,
+                 install_snap_details: Sequence['outputs.GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailResult'],
                  manage_module_streams_details: Sequence['outputs.GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailResult'],
                  operation_type: _builtins.str,
                  package_names: Sequence[_builtins.str],
                  reboot_timeout_in_mins: _builtins.int,
+                 remove_snap_details: Sequence['outputs.GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailResult'],
                  software_source_ids: Sequence[_builtins.str],
                  switch_module_streams_details: Sequence['outputs.GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetailResult'],
+                 switch_snap_channel_details: Sequence['outputs.GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailResult'],
                  windows_update_names: Sequence[_builtins.str]):
         """
+        :param Sequence['GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArgs'] install_snap_details: Provides the information used to install a snap.
         :param Sequence['GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailArgs'] manage_module_streams_details: The set of changes to make to the state of the modules, streams, and profiles on the managed target.
         :param _builtins.str operation_type: A filter to return only scheduled jobs with the given operation type.
         :param Sequence[_builtins.str] package_names: The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
         :param _builtins.int reboot_timeout_in_mins: The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
+        :param Sequence['GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArgs'] remove_snap_details: Provides the information used to remove a snap.
         :param Sequence[_builtins.str] software_source_ids: The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
         :param Sequence['GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetailArgs'] switch_module_streams_details: Provides the information used to update a module stream.
+        :param Sequence['GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArgs'] switch_snap_channel_details: Provides the information used to switch a snap channel.
         :param Sequence[_builtins.str] windows_update_names: Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
         """
+        pulumi.set(__self__, "install_snap_details", install_snap_details)
         pulumi.set(__self__, "manage_module_streams_details", manage_module_streams_details)
         pulumi.set(__self__, "operation_type", operation_type)
         pulumi.set(__self__, "package_names", package_names)
         pulumi.set(__self__, "reboot_timeout_in_mins", reboot_timeout_in_mins)
+        pulumi.set(__self__, "remove_snap_details", remove_snap_details)
         pulumi.set(__self__, "software_source_ids", software_source_ids)
         pulumi.set(__self__, "switch_module_streams_details", switch_module_streams_details)
+        pulumi.set(__self__, "switch_snap_channel_details", switch_snap_channel_details)
         pulumi.set(__self__, "windows_update_names", windows_update_names)
+
+    @_builtins.property
+    @pulumi.getter(name="installSnapDetails")
+    def install_snap_details(self) -> Sequence['outputs.GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailResult']:
+        """
+        Provides the information used to install a snap.
+        """
+        return pulumi.get(self, "install_snap_details")
 
     @_builtins.property
     @pulumi.getter(name="manageModuleStreamsDetails")
@@ -12882,6 +16105,14 @@ class GetScheduledJobsScheduledJobCollectionItemOperationResult(dict):
         return pulumi.get(self, "reboot_timeout_in_mins")
 
     @_builtins.property
+    @pulumi.getter(name="removeSnapDetails")
+    def remove_snap_details(self) -> Sequence['outputs.GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailResult']:
+        """
+        Provides the information used to remove a snap.
+        """
+        return pulumi.get(self, "remove_snap_details")
+
+    @_builtins.property
     @pulumi.getter(name="softwareSourceIds")
     def software_source_ids(self) -> Sequence[_builtins.str]:
         """
@@ -12898,12 +16129,82 @@ class GetScheduledJobsScheduledJobCollectionItemOperationResult(dict):
         return pulumi.get(self, "switch_module_streams_details")
 
     @_builtins.property
+    @pulumi.getter(name="switchSnapChannelDetails")
+    def switch_snap_channel_details(self) -> Sequence['outputs.GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailResult']:
+        """
+        Provides the information used to switch a snap channel.
+        """
+        return pulumi.get(self, "switch_snap_channel_details")
+
+    @_builtins.property
     @pulumi.getter(name="windowsUpdateNames")
     def windows_update_names(self) -> Sequence[_builtins.str]:
         """
         Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
         """
         return pulumi.get(self, "windows_update_names")
+
+
+@pulumi.output_type
+class GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailResult(dict):
+    def __init__(__self__, *,
+                 channel: _builtins.str,
+                 is_signed: _builtins.bool,
+                 mode: _builtins.str,
+                 name: _builtins.str,
+                 revision: _builtins.str):
+        """
+        :param _builtins.str channel: The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+        :param _builtins.bool is_signed: If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+        :param _builtins.str mode: The confinement mode for the snap.
+        :param _builtins.str name: The name of the snap.
+        :param _builtins.str revision: The revision to remove. Note: This option cannot be used when removing multiple snaps.
+        """
+        pulumi.set(__self__, "channel", channel)
+        pulumi.set(__self__, "is_signed", is_signed)
+        pulumi.set(__self__, "mode", mode)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "revision", revision)
+
+    @_builtins.property
+    @pulumi.getter
+    def channel(self) -> _builtins.str:
+        """
+        The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+        """
+        return pulumi.get(self, "channel")
+
+    @_builtins.property
+    @pulumi.getter(name="isSigned")
+    def is_signed(self) -> _builtins.bool:
+        """
+        If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+        """
+        return pulumi.get(self, "is_signed")
+
+    @_builtins.property
+    @pulumi.getter
+    def mode(self) -> _builtins.str:
+        """
+        The confinement mode for the snap.
+        """
+        return pulumi.get(self, "mode")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the snap.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def revision(self) -> _builtins.str:
+        """
+        The revision to remove. Note: This option cannot be used when removing multiple snaps.
+        """
+        return pulumi.get(self, "revision")
 
 
 @pulumi.output_type
@@ -13140,6 +16441,35 @@ class GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDeta
 
 
 @pulumi.output_type
+class GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 revision: _builtins.str):
+        """
+        :param _builtins.str name: The name of the snap.
+        :param _builtins.str revision: The revision to remove. Note: This option cannot be used when removing multiple snaps.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "revision", revision)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the snap.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def revision(self) -> _builtins.str:
+        """
+        The revision to remove. Note: This option cannot be used when removing multiple snaps.
+        """
+        return pulumi.get(self, "revision")
+
+
+@pulumi.output_type
 class GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetailResult(dict):
     def __init__(__self__, *,
                  module_name: _builtins.str,
@@ -13177,6 +16507,35 @@ class GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDeta
         The name of a stream of the specified module.
         """
         return pulumi.get(self, "stream_name")
+
+
+@pulumi.output_type
+class GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailResult(dict):
+    def __init__(__self__, *,
+                 channel: _builtins.str,
+                 name: _builtins.str):
+        """
+        :param _builtins.str channel: The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+        :param _builtins.str name: The name of the snap.
+        """
+        pulumi.set(__self__, "channel", channel)
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def channel(self) -> _builtins.str:
+        """
+        The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+        """
+        return pulumi.get(self, "channel")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the snap.
+        """
+        return pulumi.get(self, "name")
 
 
 @pulumi.output_type
@@ -14161,6 +17520,7 @@ class GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemRes
                  checksum_type: _builtins.str,
                  display_name: _builtins.str,
                  is_latest: _builtins.bool,
+                 last_modified_date: _builtins.str,
                  name: _builtins.str,
                  os_families: Sequence[_builtins.str],
                  software_sources: Sequence['outputs.GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceResult'],
@@ -14172,6 +17532,7 @@ class GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemRes
         :param _builtins.str checksum_type: Type of the checksum.
         :param _builtins.str display_name: A filter to return resources that match the given user-friendly name.
         :param _builtins.bool is_latest: Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
+        :param _builtins.str last_modified_date: The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param _builtins.str name: Unique identifier for the package. Note that this is not an OCID.
         :param Sequence[_builtins.str] os_families: The OS families the package belongs to.
         :param Sequence['GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArgs'] software_sources: List of software sources that provide the software package. This property is deprecated and it will be removed in a future API release.
@@ -14183,6 +17544,7 @@ class GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemRes
         pulumi.set(__self__, "checksum_type", checksum_type)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "is_latest", is_latest)
+        pulumi.set(__self__, "last_modified_date", last_modified_date)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "os_families", os_families)
         pulumi.set(__self__, "software_sources", software_sources)
@@ -14228,6 +17590,14 @@ class GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemRes
         Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
         """
         return pulumi.get(self, "is_latest")
+
+    @_builtins.property
+    @pulumi.getter(name="lastModifiedDate")
+    def last_modified_date(self) -> _builtins.str:
+        """
+        The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        """
+        return pulumi.get(self, "last_modified_date")
 
     @_builtins.property
     @pulumi.getter

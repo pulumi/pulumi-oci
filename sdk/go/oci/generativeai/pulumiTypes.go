@@ -9197,6 +9197,599 @@ func (o ModelModelMetricArrayOutput) Index(i pulumi.IntInput) ModelModelMetricOu
 	}).(ModelModelMetricOutput)
 }
 
+type SemanticStoreDataSource struct {
+	// Specifies the type of underlying connection.
+	ConnectionType string `pulumi:"connectionType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for enrichment.
+	EnrichmentConnectionId string `pulumi:"enrichmentConnectionId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for querying.
+	QueryingConnectionId string `pulumi:"queryingConnectionId"`
+}
+
+// SemanticStoreDataSourceInput is an input type that accepts SemanticStoreDataSourceArgs and SemanticStoreDataSourceOutput values.
+// You can construct a concrete instance of `SemanticStoreDataSourceInput` via:
+//
+//	SemanticStoreDataSourceArgs{...}
+type SemanticStoreDataSourceInput interface {
+	pulumi.Input
+
+	ToSemanticStoreDataSourceOutput() SemanticStoreDataSourceOutput
+	ToSemanticStoreDataSourceOutputWithContext(context.Context) SemanticStoreDataSourceOutput
+}
+
+type SemanticStoreDataSourceArgs struct {
+	// Specifies the type of underlying connection.
+	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for enrichment.
+	EnrichmentConnectionId pulumi.StringInput `pulumi:"enrichmentConnectionId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for querying.
+	QueryingConnectionId pulumi.StringInput `pulumi:"queryingConnectionId"`
+}
+
+func (SemanticStoreDataSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SemanticStoreDataSource)(nil)).Elem()
+}
+
+func (i SemanticStoreDataSourceArgs) ToSemanticStoreDataSourceOutput() SemanticStoreDataSourceOutput {
+	return i.ToSemanticStoreDataSourceOutputWithContext(context.Background())
+}
+
+func (i SemanticStoreDataSourceArgs) ToSemanticStoreDataSourceOutputWithContext(ctx context.Context) SemanticStoreDataSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SemanticStoreDataSourceOutput)
+}
+
+func (i SemanticStoreDataSourceArgs) ToSemanticStoreDataSourcePtrOutput() SemanticStoreDataSourcePtrOutput {
+	return i.ToSemanticStoreDataSourcePtrOutputWithContext(context.Background())
+}
+
+func (i SemanticStoreDataSourceArgs) ToSemanticStoreDataSourcePtrOutputWithContext(ctx context.Context) SemanticStoreDataSourcePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SemanticStoreDataSourceOutput).ToSemanticStoreDataSourcePtrOutputWithContext(ctx)
+}
+
+// SemanticStoreDataSourcePtrInput is an input type that accepts SemanticStoreDataSourceArgs, SemanticStoreDataSourcePtr and SemanticStoreDataSourcePtrOutput values.
+// You can construct a concrete instance of `SemanticStoreDataSourcePtrInput` via:
+//
+//	        SemanticStoreDataSourceArgs{...}
+//
+//	or:
+//
+//	        nil
+type SemanticStoreDataSourcePtrInput interface {
+	pulumi.Input
+
+	ToSemanticStoreDataSourcePtrOutput() SemanticStoreDataSourcePtrOutput
+	ToSemanticStoreDataSourcePtrOutputWithContext(context.Context) SemanticStoreDataSourcePtrOutput
+}
+
+type semanticStoreDataSourcePtrType SemanticStoreDataSourceArgs
+
+func SemanticStoreDataSourcePtr(v *SemanticStoreDataSourceArgs) SemanticStoreDataSourcePtrInput {
+	return (*semanticStoreDataSourcePtrType)(v)
+}
+
+func (*semanticStoreDataSourcePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SemanticStoreDataSource)(nil)).Elem()
+}
+
+func (i *semanticStoreDataSourcePtrType) ToSemanticStoreDataSourcePtrOutput() SemanticStoreDataSourcePtrOutput {
+	return i.ToSemanticStoreDataSourcePtrOutputWithContext(context.Background())
+}
+
+func (i *semanticStoreDataSourcePtrType) ToSemanticStoreDataSourcePtrOutputWithContext(ctx context.Context) SemanticStoreDataSourcePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SemanticStoreDataSourcePtrOutput)
+}
+
+type SemanticStoreDataSourceOutput struct{ *pulumi.OutputState }
+
+func (SemanticStoreDataSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SemanticStoreDataSource)(nil)).Elem()
+}
+
+func (o SemanticStoreDataSourceOutput) ToSemanticStoreDataSourceOutput() SemanticStoreDataSourceOutput {
+	return o
+}
+
+func (o SemanticStoreDataSourceOutput) ToSemanticStoreDataSourceOutputWithContext(ctx context.Context) SemanticStoreDataSourceOutput {
+	return o
+}
+
+func (o SemanticStoreDataSourceOutput) ToSemanticStoreDataSourcePtrOutput() SemanticStoreDataSourcePtrOutput {
+	return o.ToSemanticStoreDataSourcePtrOutputWithContext(context.Background())
+}
+
+func (o SemanticStoreDataSourceOutput) ToSemanticStoreDataSourcePtrOutputWithContext(ctx context.Context) SemanticStoreDataSourcePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SemanticStoreDataSource) *SemanticStoreDataSource {
+		return &v
+	}).(SemanticStoreDataSourcePtrOutput)
+}
+
+// Specifies the type of underlying connection.
+func (o SemanticStoreDataSourceOutput) ConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v SemanticStoreDataSource) string { return v.ConnectionType }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for enrichment.
+func (o SemanticStoreDataSourceOutput) EnrichmentConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v SemanticStoreDataSource) string { return v.EnrichmentConnectionId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for querying.
+func (o SemanticStoreDataSourceOutput) QueryingConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v SemanticStoreDataSource) string { return v.QueryingConnectionId }).(pulumi.StringOutput)
+}
+
+type SemanticStoreDataSourcePtrOutput struct{ *pulumi.OutputState }
+
+func (SemanticStoreDataSourcePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SemanticStoreDataSource)(nil)).Elem()
+}
+
+func (o SemanticStoreDataSourcePtrOutput) ToSemanticStoreDataSourcePtrOutput() SemanticStoreDataSourcePtrOutput {
+	return o
+}
+
+func (o SemanticStoreDataSourcePtrOutput) ToSemanticStoreDataSourcePtrOutputWithContext(ctx context.Context) SemanticStoreDataSourcePtrOutput {
+	return o
+}
+
+func (o SemanticStoreDataSourcePtrOutput) Elem() SemanticStoreDataSourceOutput {
+	return o.ApplyT(func(v *SemanticStoreDataSource) SemanticStoreDataSource {
+		if v != nil {
+			return *v
+		}
+		var ret SemanticStoreDataSource
+		return ret
+	}).(SemanticStoreDataSourceOutput)
+}
+
+// Specifies the type of underlying connection.
+func (o SemanticStoreDataSourcePtrOutput) ConnectionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SemanticStoreDataSource) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ConnectionType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for enrichment.
+func (o SemanticStoreDataSourcePtrOutput) EnrichmentConnectionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SemanticStoreDataSource) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.EnrichmentConnectionId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for querying.
+func (o SemanticStoreDataSourcePtrOutput) QueryingConnectionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SemanticStoreDataSource) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.QueryingConnectionId
+	}).(pulumi.StringPtrOutput)
+}
+
+type SemanticStoreRefreshSchedule struct {
+	// (Updatable) Specifies the type of refresh schedule.
+	Type string `pulumi:"type"`
+	// (Updatable) Specifies the refresh interval value. The interval must be provided using the ISO 8601 extended format, either as PnW or PnYnMnDTnHnMnS,  where 'P' is always required, 'T' precedes any time components less than one day, and each included component is properly suffixed.  For example, "P1DT6H" represents a duration of 1 day and 6 hours.
+	Value *string `pulumi:"value"`
+}
+
+// SemanticStoreRefreshScheduleInput is an input type that accepts SemanticStoreRefreshScheduleArgs and SemanticStoreRefreshScheduleOutput values.
+// You can construct a concrete instance of `SemanticStoreRefreshScheduleInput` via:
+//
+//	SemanticStoreRefreshScheduleArgs{...}
+type SemanticStoreRefreshScheduleInput interface {
+	pulumi.Input
+
+	ToSemanticStoreRefreshScheduleOutput() SemanticStoreRefreshScheduleOutput
+	ToSemanticStoreRefreshScheduleOutputWithContext(context.Context) SemanticStoreRefreshScheduleOutput
+}
+
+type SemanticStoreRefreshScheduleArgs struct {
+	// (Updatable) Specifies the type of refresh schedule.
+	Type pulumi.StringInput `pulumi:"type"`
+	// (Updatable) Specifies the refresh interval value. The interval must be provided using the ISO 8601 extended format, either as PnW or PnYnMnDTnHnMnS,  where 'P' is always required, 'T' precedes any time components less than one day, and each included component is properly suffixed.  For example, "P1DT6H" represents a duration of 1 day and 6 hours.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (SemanticStoreRefreshScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SemanticStoreRefreshSchedule)(nil)).Elem()
+}
+
+func (i SemanticStoreRefreshScheduleArgs) ToSemanticStoreRefreshScheduleOutput() SemanticStoreRefreshScheduleOutput {
+	return i.ToSemanticStoreRefreshScheduleOutputWithContext(context.Background())
+}
+
+func (i SemanticStoreRefreshScheduleArgs) ToSemanticStoreRefreshScheduleOutputWithContext(ctx context.Context) SemanticStoreRefreshScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SemanticStoreRefreshScheduleOutput)
+}
+
+func (i SemanticStoreRefreshScheduleArgs) ToSemanticStoreRefreshSchedulePtrOutput() SemanticStoreRefreshSchedulePtrOutput {
+	return i.ToSemanticStoreRefreshSchedulePtrOutputWithContext(context.Background())
+}
+
+func (i SemanticStoreRefreshScheduleArgs) ToSemanticStoreRefreshSchedulePtrOutputWithContext(ctx context.Context) SemanticStoreRefreshSchedulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SemanticStoreRefreshScheduleOutput).ToSemanticStoreRefreshSchedulePtrOutputWithContext(ctx)
+}
+
+// SemanticStoreRefreshSchedulePtrInput is an input type that accepts SemanticStoreRefreshScheduleArgs, SemanticStoreRefreshSchedulePtr and SemanticStoreRefreshSchedulePtrOutput values.
+// You can construct a concrete instance of `SemanticStoreRefreshSchedulePtrInput` via:
+//
+//	        SemanticStoreRefreshScheduleArgs{...}
+//
+//	or:
+//
+//	        nil
+type SemanticStoreRefreshSchedulePtrInput interface {
+	pulumi.Input
+
+	ToSemanticStoreRefreshSchedulePtrOutput() SemanticStoreRefreshSchedulePtrOutput
+	ToSemanticStoreRefreshSchedulePtrOutputWithContext(context.Context) SemanticStoreRefreshSchedulePtrOutput
+}
+
+type semanticStoreRefreshSchedulePtrType SemanticStoreRefreshScheduleArgs
+
+func SemanticStoreRefreshSchedulePtr(v *SemanticStoreRefreshScheduleArgs) SemanticStoreRefreshSchedulePtrInput {
+	return (*semanticStoreRefreshSchedulePtrType)(v)
+}
+
+func (*semanticStoreRefreshSchedulePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SemanticStoreRefreshSchedule)(nil)).Elem()
+}
+
+func (i *semanticStoreRefreshSchedulePtrType) ToSemanticStoreRefreshSchedulePtrOutput() SemanticStoreRefreshSchedulePtrOutput {
+	return i.ToSemanticStoreRefreshSchedulePtrOutputWithContext(context.Background())
+}
+
+func (i *semanticStoreRefreshSchedulePtrType) ToSemanticStoreRefreshSchedulePtrOutputWithContext(ctx context.Context) SemanticStoreRefreshSchedulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SemanticStoreRefreshSchedulePtrOutput)
+}
+
+type SemanticStoreRefreshScheduleOutput struct{ *pulumi.OutputState }
+
+func (SemanticStoreRefreshScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SemanticStoreRefreshSchedule)(nil)).Elem()
+}
+
+func (o SemanticStoreRefreshScheduleOutput) ToSemanticStoreRefreshScheduleOutput() SemanticStoreRefreshScheduleOutput {
+	return o
+}
+
+func (o SemanticStoreRefreshScheduleOutput) ToSemanticStoreRefreshScheduleOutputWithContext(ctx context.Context) SemanticStoreRefreshScheduleOutput {
+	return o
+}
+
+func (o SemanticStoreRefreshScheduleOutput) ToSemanticStoreRefreshSchedulePtrOutput() SemanticStoreRefreshSchedulePtrOutput {
+	return o.ToSemanticStoreRefreshSchedulePtrOutputWithContext(context.Background())
+}
+
+func (o SemanticStoreRefreshScheduleOutput) ToSemanticStoreRefreshSchedulePtrOutputWithContext(ctx context.Context) SemanticStoreRefreshSchedulePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SemanticStoreRefreshSchedule) *SemanticStoreRefreshSchedule {
+		return &v
+	}).(SemanticStoreRefreshSchedulePtrOutput)
+}
+
+// (Updatable) Specifies the type of refresh schedule.
+func (o SemanticStoreRefreshScheduleOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v SemanticStoreRefreshSchedule) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// (Updatable) Specifies the refresh interval value. The interval must be provided using the ISO 8601 extended format, either as PnW or PnYnMnDTnHnMnS,  where 'P' is always required, 'T' precedes any time components less than one day, and each included component is properly suffixed.  For example, "P1DT6H" represents a duration of 1 day and 6 hours.
+func (o SemanticStoreRefreshScheduleOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SemanticStoreRefreshSchedule) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type SemanticStoreRefreshSchedulePtrOutput struct{ *pulumi.OutputState }
+
+func (SemanticStoreRefreshSchedulePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SemanticStoreRefreshSchedule)(nil)).Elem()
+}
+
+func (o SemanticStoreRefreshSchedulePtrOutput) ToSemanticStoreRefreshSchedulePtrOutput() SemanticStoreRefreshSchedulePtrOutput {
+	return o
+}
+
+func (o SemanticStoreRefreshSchedulePtrOutput) ToSemanticStoreRefreshSchedulePtrOutputWithContext(ctx context.Context) SemanticStoreRefreshSchedulePtrOutput {
+	return o
+}
+
+func (o SemanticStoreRefreshSchedulePtrOutput) Elem() SemanticStoreRefreshScheduleOutput {
+	return o.ApplyT(func(v *SemanticStoreRefreshSchedule) SemanticStoreRefreshSchedule {
+		if v != nil {
+			return *v
+		}
+		var ret SemanticStoreRefreshSchedule
+		return ret
+	}).(SemanticStoreRefreshScheduleOutput)
+}
+
+// (Updatable) Specifies the type of refresh schedule.
+func (o SemanticStoreRefreshSchedulePtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SemanticStoreRefreshSchedule) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies the refresh interval value. The interval must be provided using the ISO 8601 extended format, either as PnW or PnYnMnDTnHnMnS,  where 'P' is always required, 'T' precedes any time components less than one day, and each included component is properly suffixed.  For example, "P1DT6H" represents a duration of 1 day and 6 hours.
+func (o SemanticStoreRefreshSchedulePtrOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SemanticStoreRefreshSchedule) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
+type SemanticStoreSchemas struct {
+	// (Updatable) Specifies the type of underlying connection.
+	ConnectionType string `pulumi:"connectionType"`
+	// (Updatable) Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+	Schemas []SemanticStoreSchemasSchema `pulumi:"schemas"`
+}
+
+// SemanticStoreSchemasInput is an input type that accepts SemanticStoreSchemasArgs and SemanticStoreSchemasOutput values.
+// You can construct a concrete instance of `SemanticStoreSchemasInput` via:
+//
+//	SemanticStoreSchemasArgs{...}
+type SemanticStoreSchemasInput interface {
+	pulumi.Input
+
+	ToSemanticStoreSchemasOutput() SemanticStoreSchemasOutput
+	ToSemanticStoreSchemasOutputWithContext(context.Context) SemanticStoreSchemasOutput
+}
+
+type SemanticStoreSchemasArgs struct {
+	// (Updatable) Specifies the type of underlying connection.
+	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
+	// (Updatable) Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+	Schemas SemanticStoreSchemasSchemaArrayInput `pulumi:"schemas"`
+}
+
+func (SemanticStoreSchemasArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SemanticStoreSchemas)(nil)).Elem()
+}
+
+func (i SemanticStoreSchemasArgs) ToSemanticStoreSchemasOutput() SemanticStoreSchemasOutput {
+	return i.ToSemanticStoreSchemasOutputWithContext(context.Background())
+}
+
+func (i SemanticStoreSchemasArgs) ToSemanticStoreSchemasOutputWithContext(ctx context.Context) SemanticStoreSchemasOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SemanticStoreSchemasOutput)
+}
+
+func (i SemanticStoreSchemasArgs) ToSemanticStoreSchemasPtrOutput() SemanticStoreSchemasPtrOutput {
+	return i.ToSemanticStoreSchemasPtrOutputWithContext(context.Background())
+}
+
+func (i SemanticStoreSchemasArgs) ToSemanticStoreSchemasPtrOutputWithContext(ctx context.Context) SemanticStoreSchemasPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SemanticStoreSchemasOutput).ToSemanticStoreSchemasPtrOutputWithContext(ctx)
+}
+
+// SemanticStoreSchemasPtrInput is an input type that accepts SemanticStoreSchemasArgs, SemanticStoreSchemasPtr and SemanticStoreSchemasPtrOutput values.
+// You can construct a concrete instance of `SemanticStoreSchemasPtrInput` via:
+//
+//	        SemanticStoreSchemasArgs{...}
+//
+//	or:
+//
+//	        nil
+type SemanticStoreSchemasPtrInput interface {
+	pulumi.Input
+
+	ToSemanticStoreSchemasPtrOutput() SemanticStoreSchemasPtrOutput
+	ToSemanticStoreSchemasPtrOutputWithContext(context.Context) SemanticStoreSchemasPtrOutput
+}
+
+type semanticStoreSchemasPtrType SemanticStoreSchemasArgs
+
+func SemanticStoreSchemasPtr(v *SemanticStoreSchemasArgs) SemanticStoreSchemasPtrInput {
+	return (*semanticStoreSchemasPtrType)(v)
+}
+
+func (*semanticStoreSchemasPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SemanticStoreSchemas)(nil)).Elem()
+}
+
+func (i *semanticStoreSchemasPtrType) ToSemanticStoreSchemasPtrOutput() SemanticStoreSchemasPtrOutput {
+	return i.ToSemanticStoreSchemasPtrOutputWithContext(context.Background())
+}
+
+func (i *semanticStoreSchemasPtrType) ToSemanticStoreSchemasPtrOutputWithContext(ctx context.Context) SemanticStoreSchemasPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SemanticStoreSchemasPtrOutput)
+}
+
+type SemanticStoreSchemasOutput struct{ *pulumi.OutputState }
+
+func (SemanticStoreSchemasOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SemanticStoreSchemas)(nil)).Elem()
+}
+
+func (o SemanticStoreSchemasOutput) ToSemanticStoreSchemasOutput() SemanticStoreSchemasOutput {
+	return o
+}
+
+func (o SemanticStoreSchemasOutput) ToSemanticStoreSchemasOutputWithContext(ctx context.Context) SemanticStoreSchemasOutput {
+	return o
+}
+
+func (o SemanticStoreSchemasOutput) ToSemanticStoreSchemasPtrOutput() SemanticStoreSchemasPtrOutput {
+	return o.ToSemanticStoreSchemasPtrOutputWithContext(context.Background())
+}
+
+func (o SemanticStoreSchemasOutput) ToSemanticStoreSchemasPtrOutputWithContext(ctx context.Context) SemanticStoreSchemasPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SemanticStoreSchemas) *SemanticStoreSchemas {
+		return &v
+	}).(SemanticStoreSchemasPtrOutput)
+}
+
+// (Updatable) Specifies the type of underlying connection.
+func (o SemanticStoreSchemasOutput) ConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v SemanticStoreSchemas) string { return v.ConnectionType }).(pulumi.StringOutput)
+}
+
+// (Updatable) Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+func (o SemanticStoreSchemasOutput) Schemas() SemanticStoreSchemasSchemaArrayOutput {
+	return o.ApplyT(func(v SemanticStoreSchemas) []SemanticStoreSchemasSchema { return v.Schemas }).(SemanticStoreSchemasSchemaArrayOutput)
+}
+
+type SemanticStoreSchemasPtrOutput struct{ *pulumi.OutputState }
+
+func (SemanticStoreSchemasPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SemanticStoreSchemas)(nil)).Elem()
+}
+
+func (o SemanticStoreSchemasPtrOutput) ToSemanticStoreSchemasPtrOutput() SemanticStoreSchemasPtrOutput {
+	return o
+}
+
+func (o SemanticStoreSchemasPtrOutput) ToSemanticStoreSchemasPtrOutputWithContext(ctx context.Context) SemanticStoreSchemasPtrOutput {
+	return o
+}
+
+func (o SemanticStoreSchemasPtrOutput) Elem() SemanticStoreSchemasOutput {
+	return o.ApplyT(func(v *SemanticStoreSchemas) SemanticStoreSchemas {
+		if v != nil {
+			return *v
+		}
+		var ret SemanticStoreSchemas
+		return ret
+	}).(SemanticStoreSchemasOutput)
+}
+
+// (Updatable) Specifies the type of underlying connection.
+func (o SemanticStoreSchemasPtrOutput) ConnectionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SemanticStoreSchemas) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ConnectionType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+func (o SemanticStoreSchemasPtrOutput) Schemas() SemanticStoreSchemasSchemaArrayOutput {
+	return o.ApplyT(func(v *SemanticStoreSchemas) []SemanticStoreSchemasSchema {
+		if v == nil {
+			return nil
+		}
+		return v.Schemas
+	}).(SemanticStoreSchemasSchemaArrayOutput)
+}
+
+type SemanticStoreSchemasSchema struct {
+	// (Updatable)
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Name string `pulumi:"name"`
+}
+
+// SemanticStoreSchemasSchemaInput is an input type that accepts SemanticStoreSchemasSchemaArgs and SemanticStoreSchemasSchemaOutput values.
+// You can construct a concrete instance of `SemanticStoreSchemasSchemaInput` via:
+//
+//	SemanticStoreSchemasSchemaArgs{...}
+type SemanticStoreSchemasSchemaInput interface {
+	pulumi.Input
+
+	ToSemanticStoreSchemasSchemaOutput() SemanticStoreSchemasSchemaOutput
+	ToSemanticStoreSchemasSchemaOutputWithContext(context.Context) SemanticStoreSchemasSchemaOutput
+}
+
+type SemanticStoreSchemasSchemaArgs struct {
+	// (Updatable)
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (SemanticStoreSchemasSchemaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SemanticStoreSchemasSchema)(nil)).Elem()
+}
+
+func (i SemanticStoreSchemasSchemaArgs) ToSemanticStoreSchemasSchemaOutput() SemanticStoreSchemasSchemaOutput {
+	return i.ToSemanticStoreSchemasSchemaOutputWithContext(context.Background())
+}
+
+func (i SemanticStoreSchemasSchemaArgs) ToSemanticStoreSchemasSchemaOutputWithContext(ctx context.Context) SemanticStoreSchemasSchemaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SemanticStoreSchemasSchemaOutput)
+}
+
+// SemanticStoreSchemasSchemaArrayInput is an input type that accepts SemanticStoreSchemasSchemaArray and SemanticStoreSchemasSchemaArrayOutput values.
+// You can construct a concrete instance of `SemanticStoreSchemasSchemaArrayInput` via:
+//
+//	SemanticStoreSchemasSchemaArray{ SemanticStoreSchemasSchemaArgs{...} }
+type SemanticStoreSchemasSchemaArrayInput interface {
+	pulumi.Input
+
+	ToSemanticStoreSchemasSchemaArrayOutput() SemanticStoreSchemasSchemaArrayOutput
+	ToSemanticStoreSchemasSchemaArrayOutputWithContext(context.Context) SemanticStoreSchemasSchemaArrayOutput
+}
+
+type SemanticStoreSchemasSchemaArray []SemanticStoreSchemasSchemaInput
+
+func (SemanticStoreSchemasSchemaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SemanticStoreSchemasSchema)(nil)).Elem()
+}
+
+func (i SemanticStoreSchemasSchemaArray) ToSemanticStoreSchemasSchemaArrayOutput() SemanticStoreSchemasSchemaArrayOutput {
+	return i.ToSemanticStoreSchemasSchemaArrayOutputWithContext(context.Background())
+}
+
+func (i SemanticStoreSchemasSchemaArray) ToSemanticStoreSchemasSchemaArrayOutputWithContext(ctx context.Context) SemanticStoreSchemasSchemaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SemanticStoreSchemasSchemaArrayOutput)
+}
+
+type SemanticStoreSchemasSchemaOutput struct{ *pulumi.OutputState }
+
+func (SemanticStoreSchemasSchemaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SemanticStoreSchemasSchema)(nil)).Elem()
+}
+
+func (o SemanticStoreSchemasSchemaOutput) ToSemanticStoreSchemasSchemaOutput() SemanticStoreSchemasSchemaOutput {
+	return o
+}
+
+func (o SemanticStoreSchemasSchemaOutput) ToSemanticStoreSchemasSchemaOutputWithContext(ctx context.Context) SemanticStoreSchemasSchemaOutput {
+	return o
+}
+
+// (Updatable)
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o SemanticStoreSchemasSchemaOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v SemanticStoreSchemasSchema) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type SemanticStoreSchemasSchemaArrayOutput struct{ *pulumi.OutputState }
+
+func (SemanticStoreSchemasSchemaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SemanticStoreSchemasSchema)(nil)).Elem()
+}
+
+func (o SemanticStoreSchemasSchemaArrayOutput) ToSemanticStoreSchemasSchemaArrayOutput() SemanticStoreSchemasSchemaArrayOutput {
+	return o
+}
+
+func (o SemanticStoreSchemasSchemaArrayOutput) ToSemanticStoreSchemasSchemaArrayOutputWithContext(ctx context.Context) SemanticStoreSchemasSchemaArrayOutput {
+	return o
+}
+
+func (o SemanticStoreSchemasSchemaArrayOutput) Index(i pulumi.IntInput) SemanticStoreSchemasSchemaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SemanticStoreSchemasSchema {
+		return vs[0].([]SemanticStoreSchemasSchema)[vs[1].(int)]
+	}).(SemanticStoreSchemasSchemaOutput)
+}
+
 type GetAgentAgentEndpointContentModerationConfig struct {
 	// A flag to enable or disable content moderation on input.
 	ShouldEnableOnInput bool `pulumi:"shouldEnableOnInput"`
@@ -26962,6 +27555,1272 @@ func (o GetModelsModelCollectionItemModelMetricArrayOutput) Index(i pulumi.IntIn
 	}).(GetModelsModelCollectionItemModelMetricOutput)
 }
 
+type GetSemanticStoreDataSource struct {
+	// Specifies the type of underlying connection.
+	ConnectionType string `pulumi:"connectionType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for enrichment.
+	EnrichmentConnectionId string `pulumi:"enrichmentConnectionId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for querying.
+	QueryingConnectionId string `pulumi:"queryingConnectionId"`
+}
+
+// GetSemanticStoreDataSourceInput is an input type that accepts GetSemanticStoreDataSourceArgs and GetSemanticStoreDataSourceOutput values.
+// You can construct a concrete instance of `GetSemanticStoreDataSourceInput` via:
+//
+//	GetSemanticStoreDataSourceArgs{...}
+type GetSemanticStoreDataSourceInput interface {
+	pulumi.Input
+
+	ToGetSemanticStoreDataSourceOutput() GetSemanticStoreDataSourceOutput
+	ToGetSemanticStoreDataSourceOutputWithContext(context.Context) GetSemanticStoreDataSourceOutput
+}
+
+type GetSemanticStoreDataSourceArgs struct {
+	// Specifies the type of underlying connection.
+	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for enrichment.
+	EnrichmentConnectionId pulumi.StringInput `pulumi:"enrichmentConnectionId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for querying.
+	QueryingConnectionId pulumi.StringInput `pulumi:"queryingConnectionId"`
+}
+
+func (GetSemanticStoreDataSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSemanticStoreDataSource)(nil)).Elem()
+}
+
+func (i GetSemanticStoreDataSourceArgs) ToGetSemanticStoreDataSourceOutput() GetSemanticStoreDataSourceOutput {
+	return i.ToGetSemanticStoreDataSourceOutputWithContext(context.Background())
+}
+
+func (i GetSemanticStoreDataSourceArgs) ToGetSemanticStoreDataSourceOutputWithContext(ctx context.Context) GetSemanticStoreDataSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSemanticStoreDataSourceOutput)
+}
+
+// GetSemanticStoreDataSourceArrayInput is an input type that accepts GetSemanticStoreDataSourceArray and GetSemanticStoreDataSourceArrayOutput values.
+// You can construct a concrete instance of `GetSemanticStoreDataSourceArrayInput` via:
+//
+//	GetSemanticStoreDataSourceArray{ GetSemanticStoreDataSourceArgs{...} }
+type GetSemanticStoreDataSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetSemanticStoreDataSourceArrayOutput() GetSemanticStoreDataSourceArrayOutput
+	ToGetSemanticStoreDataSourceArrayOutputWithContext(context.Context) GetSemanticStoreDataSourceArrayOutput
+}
+
+type GetSemanticStoreDataSourceArray []GetSemanticStoreDataSourceInput
+
+func (GetSemanticStoreDataSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSemanticStoreDataSource)(nil)).Elem()
+}
+
+func (i GetSemanticStoreDataSourceArray) ToGetSemanticStoreDataSourceArrayOutput() GetSemanticStoreDataSourceArrayOutput {
+	return i.ToGetSemanticStoreDataSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetSemanticStoreDataSourceArray) ToGetSemanticStoreDataSourceArrayOutputWithContext(ctx context.Context) GetSemanticStoreDataSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSemanticStoreDataSourceArrayOutput)
+}
+
+type GetSemanticStoreDataSourceOutput struct{ *pulumi.OutputState }
+
+func (GetSemanticStoreDataSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSemanticStoreDataSource)(nil)).Elem()
+}
+
+func (o GetSemanticStoreDataSourceOutput) ToGetSemanticStoreDataSourceOutput() GetSemanticStoreDataSourceOutput {
+	return o
+}
+
+func (o GetSemanticStoreDataSourceOutput) ToGetSemanticStoreDataSourceOutputWithContext(ctx context.Context) GetSemanticStoreDataSourceOutput {
+	return o
+}
+
+// Specifies the type of underlying connection.
+func (o GetSemanticStoreDataSourceOutput) ConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSemanticStoreDataSource) string { return v.ConnectionType }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for enrichment.
+func (o GetSemanticStoreDataSourceOutput) EnrichmentConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSemanticStoreDataSource) string { return v.EnrichmentConnectionId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for querying.
+func (o GetSemanticStoreDataSourceOutput) QueryingConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSemanticStoreDataSource) string { return v.QueryingConnectionId }).(pulumi.StringOutput)
+}
+
+type GetSemanticStoreDataSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSemanticStoreDataSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSemanticStoreDataSource)(nil)).Elem()
+}
+
+func (o GetSemanticStoreDataSourceArrayOutput) ToGetSemanticStoreDataSourceArrayOutput() GetSemanticStoreDataSourceArrayOutput {
+	return o
+}
+
+func (o GetSemanticStoreDataSourceArrayOutput) ToGetSemanticStoreDataSourceArrayOutputWithContext(ctx context.Context) GetSemanticStoreDataSourceArrayOutput {
+	return o
+}
+
+func (o GetSemanticStoreDataSourceArrayOutput) Index(i pulumi.IntInput) GetSemanticStoreDataSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSemanticStoreDataSource {
+		return vs[0].([]GetSemanticStoreDataSource)[vs[1].(int)]
+	}).(GetSemanticStoreDataSourceOutput)
+}
+
+type GetSemanticStoreRefreshSchedule struct {
+	// Specifies the type of refresh schedule.
+	Type string `pulumi:"type"`
+	// Specifies the refresh interval value. The interval must be provided using the ISO 8601 extended format, either as PnW or PnYnMnDTnHnMnS,  where 'P' is always required, 'T' precedes any time components less than one day, and each included component is properly suffixed.  For example, "P1DT6H" represents a duration of 1 day and 6 hours.
+	Value string `pulumi:"value"`
+}
+
+// GetSemanticStoreRefreshScheduleInput is an input type that accepts GetSemanticStoreRefreshScheduleArgs and GetSemanticStoreRefreshScheduleOutput values.
+// You can construct a concrete instance of `GetSemanticStoreRefreshScheduleInput` via:
+//
+//	GetSemanticStoreRefreshScheduleArgs{...}
+type GetSemanticStoreRefreshScheduleInput interface {
+	pulumi.Input
+
+	ToGetSemanticStoreRefreshScheduleOutput() GetSemanticStoreRefreshScheduleOutput
+	ToGetSemanticStoreRefreshScheduleOutputWithContext(context.Context) GetSemanticStoreRefreshScheduleOutput
+}
+
+type GetSemanticStoreRefreshScheduleArgs struct {
+	// Specifies the type of refresh schedule.
+	Type pulumi.StringInput `pulumi:"type"`
+	// Specifies the refresh interval value. The interval must be provided using the ISO 8601 extended format, either as PnW or PnYnMnDTnHnMnS,  where 'P' is always required, 'T' precedes any time components less than one day, and each included component is properly suffixed.  For example, "P1DT6H" represents a duration of 1 day and 6 hours.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetSemanticStoreRefreshScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSemanticStoreRefreshSchedule)(nil)).Elem()
+}
+
+func (i GetSemanticStoreRefreshScheduleArgs) ToGetSemanticStoreRefreshScheduleOutput() GetSemanticStoreRefreshScheduleOutput {
+	return i.ToGetSemanticStoreRefreshScheduleOutputWithContext(context.Background())
+}
+
+func (i GetSemanticStoreRefreshScheduleArgs) ToGetSemanticStoreRefreshScheduleOutputWithContext(ctx context.Context) GetSemanticStoreRefreshScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSemanticStoreRefreshScheduleOutput)
+}
+
+// GetSemanticStoreRefreshScheduleArrayInput is an input type that accepts GetSemanticStoreRefreshScheduleArray and GetSemanticStoreRefreshScheduleArrayOutput values.
+// You can construct a concrete instance of `GetSemanticStoreRefreshScheduleArrayInput` via:
+//
+//	GetSemanticStoreRefreshScheduleArray{ GetSemanticStoreRefreshScheduleArgs{...} }
+type GetSemanticStoreRefreshScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetSemanticStoreRefreshScheduleArrayOutput() GetSemanticStoreRefreshScheduleArrayOutput
+	ToGetSemanticStoreRefreshScheduleArrayOutputWithContext(context.Context) GetSemanticStoreRefreshScheduleArrayOutput
+}
+
+type GetSemanticStoreRefreshScheduleArray []GetSemanticStoreRefreshScheduleInput
+
+func (GetSemanticStoreRefreshScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSemanticStoreRefreshSchedule)(nil)).Elem()
+}
+
+func (i GetSemanticStoreRefreshScheduleArray) ToGetSemanticStoreRefreshScheduleArrayOutput() GetSemanticStoreRefreshScheduleArrayOutput {
+	return i.ToGetSemanticStoreRefreshScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetSemanticStoreRefreshScheduleArray) ToGetSemanticStoreRefreshScheduleArrayOutputWithContext(ctx context.Context) GetSemanticStoreRefreshScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSemanticStoreRefreshScheduleArrayOutput)
+}
+
+type GetSemanticStoreRefreshScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetSemanticStoreRefreshScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSemanticStoreRefreshSchedule)(nil)).Elem()
+}
+
+func (o GetSemanticStoreRefreshScheduleOutput) ToGetSemanticStoreRefreshScheduleOutput() GetSemanticStoreRefreshScheduleOutput {
+	return o
+}
+
+func (o GetSemanticStoreRefreshScheduleOutput) ToGetSemanticStoreRefreshScheduleOutputWithContext(ctx context.Context) GetSemanticStoreRefreshScheduleOutput {
+	return o
+}
+
+// Specifies the type of refresh schedule.
+func (o GetSemanticStoreRefreshScheduleOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSemanticStoreRefreshSchedule) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// Specifies the refresh interval value. The interval must be provided using the ISO 8601 extended format, either as PnW or PnYnMnDTnHnMnS,  where 'P' is always required, 'T' precedes any time components less than one day, and each included component is properly suffixed.  For example, "P1DT6H" represents a duration of 1 day and 6 hours.
+func (o GetSemanticStoreRefreshScheduleOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSemanticStoreRefreshSchedule) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetSemanticStoreRefreshScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSemanticStoreRefreshScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSemanticStoreRefreshSchedule)(nil)).Elem()
+}
+
+func (o GetSemanticStoreRefreshScheduleArrayOutput) ToGetSemanticStoreRefreshScheduleArrayOutput() GetSemanticStoreRefreshScheduleArrayOutput {
+	return o
+}
+
+func (o GetSemanticStoreRefreshScheduleArrayOutput) ToGetSemanticStoreRefreshScheduleArrayOutputWithContext(ctx context.Context) GetSemanticStoreRefreshScheduleArrayOutput {
+	return o
+}
+
+func (o GetSemanticStoreRefreshScheduleArrayOutput) Index(i pulumi.IntInput) GetSemanticStoreRefreshScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSemanticStoreRefreshSchedule {
+		return vs[0].([]GetSemanticStoreRefreshSchedule)[vs[1].(int)]
+	}).(GetSemanticStoreRefreshScheduleOutput)
+}
+
+type GetSemanticStoreSchema struct {
+	// Specifies the type of underlying connection.
+	ConnectionType string `pulumi:"connectionType"`
+	// Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+	Schemas []GetSemanticStoreSchemaSchema `pulumi:"schemas"`
+}
+
+// GetSemanticStoreSchemaInput is an input type that accepts GetSemanticStoreSchemaArgs and GetSemanticStoreSchemaOutput values.
+// You can construct a concrete instance of `GetSemanticStoreSchemaInput` via:
+//
+//	GetSemanticStoreSchemaArgs{...}
+type GetSemanticStoreSchemaInput interface {
+	pulumi.Input
+
+	ToGetSemanticStoreSchemaOutput() GetSemanticStoreSchemaOutput
+	ToGetSemanticStoreSchemaOutputWithContext(context.Context) GetSemanticStoreSchemaOutput
+}
+
+type GetSemanticStoreSchemaArgs struct {
+	// Specifies the type of underlying connection.
+	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
+	// Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+	Schemas GetSemanticStoreSchemaSchemaArrayInput `pulumi:"schemas"`
+}
+
+func (GetSemanticStoreSchemaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSemanticStoreSchema)(nil)).Elem()
+}
+
+func (i GetSemanticStoreSchemaArgs) ToGetSemanticStoreSchemaOutput() GetSemanticStoreSchemaOutput {
+	return i.ToGetSemanticStoreSchemaOutputWithContext(context.Background())
+}
+
+func (i GetSemanticStoreSchemaArgs) ToGetSemanticStoreSchemaOutputWithContext(ctx context.Context) GetSemanticStoreSchemaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSemanticStoreSchemaOutput)
+}
+
+// GetSemanticStoreSchemaArrayInput is an input type that accepts GetSemanticStoreSchemaArray and GetSemanticStoreSchemaArrayOutput values.
+// You can construct a concrete instance of `GetSemanticStoreSchemaArrayInput` via:
+//
+//	GetSemanticStoreSchemaArray{ GetSemanticStoreSchemaArgs{...} }
+type GetSemanticStoreSchemaArrayInput interface {
+	pulumi.Input
+
+	ToGetSemanticStoreSchemaArrayOutput() GetSemanticStoreSchemaArrayOutput
+	ToGetSemanticStoreSchemaArrayOutputWithContext(context.Context) GetSemanticStoreSchemaArrayOutput
+}
+
+type GetSemanticStoreSchemaArray []GetSemanticStoreSchemaInput
+
+func (GetSemanticStoreSchemaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSemanticStoreSchema)(nil)).Elem()
+}
+
+func (i GetSemanticStoreSchemaArray) ToGetSemanticStoreSchemaArrayOutput() GetSemanticStoreSchemaArrayOutput {
+	return i.ToGetSemanticStoreSchemaArrayOutputWithContext(context.Background())
+}
+
+func (i GetSemanticStoreSchemaArray) ToGetSemanticStoreSchemaArrayOutputWithContext(ctx context.Context) GetSemanticStoreSchemaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSemanticStoreSchemaArrayOutput)
+}
+
+type GetSemanticStoreSchemaOutput struct{ *pulumi.OutputState }
+
+func (GetSemanticStoreSchemaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSemanticStoreSchema)(nil)).Elem()
+}
+
+func (o GetSemanticStoreSchemaOutput) ToGetSemanticStoreSchemaOutput() GetSemanticStoreSchemaOutput {
+	return o
+}
+
+func (o GetSemanticStoreSchemaOutput) ToGetSemanticStoreSchemaOutputWithContext(ctx context.Context) GetSemanticStoreSchemaOutput {
+	return o
+}
+
+// Specifies the type of underlying connection.
+func (o GetSemanticStoreSchemaOutput) ConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSemanticStoreSchema) string { return v.ConnectionType }).(pulumi.StringOutput)
+}
+
+// Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+func (o GetSemanticStoreSchemaOutput) Schemas() GetSemanticStoreSchemaSchemaArrayOutput {
+	return o.ApplyT(func(v GetSemanticStoreSchema) []GetSemanticStoreSchemaSchema { return v.Schemas }).(GetSemanticStoreSchemaSchemaArrayOutput)
+}
+
+type GetSemanticStoreSchemaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSemanticStoreSchemaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSemanticStoreSchema)(nil)).Elem()
+}
+
+func (o GetSemanticStoreSchemaArrayOutput) ToGetSemanticStoreSchemaArrayOutput() GetSemanticStoreSchemaArrayOutput {
+	return o
+}
+
+func (o GetSemanticStoreSchemaArrayOutput) ToGetSemanticStoreSchemaArrayOutputWithContext(ctx context.Context) GetSemanticStoreSchemaArrayOutput {
+	return o
+}
+
+func (o GetSemanticStoreSchemaArrayOutput) Index(i pulumi.IntInput) GetSemanticStoreSchemaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSemanticStoreSchema {
+		return vs[0].([]GetSemanticStoreSchema)[vs[1].(int)]
+	}).(GetSemanticStoreSchemaOutput)
+}
+
+type GetSemanticStoreSchemaSchema struct {
+	Name string `pulumi:"name"`
+}
+
+// GetSemanticStoreSchemaSchemaInput is an input type that accepts GetSemanticStoreSchemaSchemaArgs and GetSemanticStoreSchemaSchemaOutput values.
+// You can construct a concrete instance of `GetSemanticStoreSchemaSchemaInput` via:
+//
+//	GetSemanticStoreSchemaSchemaArgs{...}
+type GetSemanticStoreSchemaSchemaInput interface {
+	pulumi.Input
+
+	ToGetSemanticStoreSchemaSchemaOutput() GetSemanticStoreSchemaSchemaOutput
+	ToGetSemanticStoreSchemaSchemaOutputWithContext(context.Context) GetSemanticStoreSchemaSchemaOutput
+}
+
+type GetSemanticStoreSchemaSchemaArgs struct {
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetSemanticStoreSchemaSchemaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSemanticStoreSchemaSchema)(nil)).Elem()
+}
+
+func (i GetSemanticStoreSchemaSchemaArgs) ToGetSemanticStoreSchemaSchemaOutput() GetSemanticStoreSchemaSchemaOutput {
+	return i.ToGetSemanticStoreSchemaSchemaOutputWithContext(context.Background())
+}
+
+func (i GetSemanticStoreSchemaSchemaArgs) ToGetSemanticStoreSchemaSchemaOutputWithContext(ctx context.Context) GetSemanticStoreSchemaSchemaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSemanticStoreSchemaSchemaOutput)
+}
+
+// GetSemanticStoreSchemaSchemaArrayInput is an input type that accepts GetSemanticStoreSchemaSchemaArray and GetSemanticStoreSchemaSchemaArrayOutput values.
+// You can construct a concrete instance of `GetSemanticStoreSchemaSchemaArrayInput` via:
+//
+//	GetSemanticStoreSchemaSchemaArray{ GetSemanticStoreSchemaSchemaArgs{...} }
+type GetSemanticStoreSchemaSchemaArrayInput interface {
+	pulumi.Input
+
+	ToGetSemanticStoreSchemaSchemaArrayOutput() GetSemanticStoreSchemaSchemaArrayOutput
+	ToGetSemanticStoreSchemaSchemaArrayOutputWithContext(context.Context) GetSemanticStoreSchemaSchemaArrayOutput
+}
+
+type GetSemanticStoreSchemaSchemaArray []GetSemanticStoreSchemaSchemaInput
+
+func (GetSemanticStoreSchemaSchemaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSemanticStoreSchemaSchema)(nil)).Elem()
+}
+
+func (i GetSemanticStoreSchemaSchemaArray) ToGetSemanticStoreSchemaSchemaArrayOutput() GetSemanticStoreSchemaSchemaArrayOutput {
+	return i.ToGetSemanticStoreSchemaSchemaArrayOutputWithContext(context.Background())
+}
+
+func (i GetSemanticStoreSchemaSchemaArray) ToGetSemanticStoreSchemaSchemaArrayOutputWithContext(ctx context.Context) GetSemanticStoreSchemaSchemaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSemanticStoreSchemaSchemaArrayOutput)
+}
+
+type GetSemanticStoreSchemaSchemaOutput struct{ *pulumi.OutputState }
+
+func (GetSemanticStoreSchemaSchemaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSemanticStoreSchemaSchema)(nil)).Elem()
+}
+
+func (o GetSemanticStoreSchemaSchemaOutput) ToGetSemanticStoreSchemaSchemaOutput() GetSemanticStoreSchemaSchemaOutput {
+	return o
+}
+
+func (o GetSemanticStoreSchemaSchemaOutput) ToGetSemanticStoreSchemaSchemaOutputWithContext(ctx context.Context) GetSemanticStoreSchemaSchemaOutput {
+	return o
+}
+
+func (o GetSemanticStoreSchemaSchemaOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSemanticStoreSchemaSchema) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetSemanticStoreSchemaSchemaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSemanticStoreSchemaSchemaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSemanticStoreSchemaSchema)(nil)).Elem()
+}
+
+func (o GetSemanticStoreSchemaSchemaArrayOutput) ToGetSemanticStoreSchemaSchemaArrayOutput() GetSemanticStoreSchemaSchemaArrayOutput {
+	return o
+}
+
+func (o GetSemanticStoreSchemaSchemaArrayOutput) ToGetSemanticStoreSchemaSchemaArrayOutputWithContext(ctx context.Context) GetSemanticStoreSchemaSchemaArrayOutput {
+	return o
+}
+
+func (o GetSemanticStoreSchemaSchemaArrayOutput) Index(i pulumi.IntInput) GetSemanticStoreSchemaSchemaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSemanticStoreSchemaSchema {
+		return vs[0].([]GetSemanticStoreSchemaSchema)[vs[1].(int)]
+	}).(GetSemanticStoreSchemaSchemaOutput)
+}
+
+type GetSemanticStoresFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSemanticStoresFilterInput is an input type that accepts GetSemanticStoresFilterArgs and GetSemanticStoresFilterOutput values.
+// You can construct a concrete instance of `GetSemanticStoresFilterInput` via:
+//
+//	GetSemanticStoresFilterArgs{...}
+type GetSemanticStoresFilterInput interface {
+	pulumi.Input
+
+	ToGetSemanticStoresFilterOutput() GetSemanticStoresFilterOutput
+	ToGetSemanticStoresFilterOutputWithContext(context.Context) GetSemanticStoresFilterOutput
+}
+
+type GetSemanticStoresFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSemanticStoresFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSemanticStoresFilter)(nil)).Elem()
+}
+
+func (i GetSemanticStoresFilterArgs) ToGetSemanticStoresFilterOutput() GetSemanticStoresFilterOutput {
+	return i.ToGetSemanticStoresFilterOutputWithContext(context.Background())
+}
+
+func (i GetSemanticStoresFilterArgs) ToGetSemanticStoresFilterOutputWithContext(ctx context.Context) GetSemanticStoresFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSemanticStoresFilterOutput)
+}
+
+// GetSemanticStoresFilterArrayInput is an input type that accepts GetSemanticStoresFilterArray and GetSemanticStoresFilterArrayOutput values.
+// You can construct a concrete instance of `GetSemanticStoresFilterArrayInput` via:
+//
+//	GetSemanticStoresFilterArray{ GetSemanticStoresFilterArgs{...} }
+type GetSemanticStoresFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSemanticStoresFilterArrayOutput() GetSemanticStoresFilterArrayOutput
+	ToGetSemanticStoresFilterArrayOutputWithContext(context.Context) GetSemanticStoresFilterArrayOutput
+}
+
+type GetSemanticStoresFilterArray []GetSemanticStoresFilterInput
+
+func (GetSemanticStoresFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSemanticStoresFilter)(nil)).Elem()
+}
+
+func (i GetSemanticStoresFilterArray) ToGetSemanticStoresFilterArrayOutput() GetSemanticStoresFilterArrayOutput {
+	return i.ToGetSemanticStoresFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSemanticStoresFilterArray) ToGetSemanticStoresFilterArrayOutputWithContext(ctx context.Context) GetSemanticStoresFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSemanticStoresFilterArrayOutput)
+}
+
+type GetSemanticStoresFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSemanticStoresFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSemanticStoresFilter)(nil)).Elem()
+}
+
+func (o GetSemanticStoresFilterOutput) ToGetSemanticStoresFilterOutput() GetSemanticStoresFilterOutput {
+	return o
+}
+
+func (o GetSemanticStoresFilterOutput) ToGetSemanticStoresFilterOutputWithContext(ctx context.Context) GetSemanticStoresFilterOutput {
+	return o
+}
+
+func (o GetSemanticStoresFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSemanticStoresFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSemanticStoresFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSemanticStoresFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSemanticStoresFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSemanticStoresFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSemanticStoresFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSemanticStoresFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSemanticStoresFilter)(nil)).Elem()
+}
+
+func (o GetSemanticStoresFilterArrayOutput) ToGetSemanticStoresFilterArrayOutput() GetSemanticStoresFilterArrayOutput {
+	return o
+}
+
+func (o GetSemanticStoresFilterArrayOutput) ToGetSemanticStoresFilterArrayOutputWithContext(ctx context.Context) GetSemanticStoresFilterArrayOutput {
+	return o
+}
+
+func (o GetSemanticStoresFilterArrayOutput) Index(i pulumi.IntInput) GetSemanticStoresFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSemanticStoresFilter {
+		return vs[0].([]GetSemanticStoresFilter)[vs[1].(int)]
+	}).(GetSemanticStoresFilterOutput)
+}
+
+type GetSemanticStoresSemanticStoreCollection struct {
+	Items []GetSemanticStoresSemanticStoreCollectionItem `pulumi:"items"`
+}
+
+// GetSemanticStoresSemanticStoreCollectionInput is an input type that accepts GetSemanticStoresSemanticStoreCollectionArgs and GetSemanticStoresSemanticStoreCollectionOutput values.
+// You can construct a concrete instance of `GetSemanticStoresSemanticStoreCollectionInput` via:
+//
+//	GetSemanticStoresSemanticStoreCollectionArgs{...}
+type GetSemanticStoresSemanticStoreCollectionInput interface {
+	pulumi.Input
+
+	ToGetSemanticStoresSemanticStoreCollectionOutput() GetSemanticStoresSemanticStoreCollectionOutput
+	ToGetSemanticStoresSemanticStoreCollectionOutputWithContext(context.Context) GetSemanticStoresSemanticStoreCollectionOutput
+}
+
+type GetSemanticStoresSemanticStoreCollectionArgs struct {
+	Items GetSemanticStoresSemanticStoreCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSemanticStoresSemanticStoreCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSemanticStoresSemanticStoreCollection)(nil)).Elem()
+}
+
+func (i GetSemanticStoresSemanticStoreCollectionArgs) ToGetSemanticStoresSemanticStoreCollectionOutput() GetSemanticStoresSemanticStoreCollectionOutput {
+	return i.ToGetSemanticStoresSemanticStoreCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSemanticStoresSemanticStoreCollectionArgs) ToGetSemanticStoresSemanticStoreCollectionOutputWithContext(ctx context.Context) GetSemanticStoresSemanticStoreCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSemanticStoresSemanticStoreCollectionOutput)
+}
+
+// GetSemanticStoresSemanticStoreCollectionArrayInput is an input type that accepts GetSemanticStoresSemanticStoreCollectionArray and GetSemanticStoresSemanticStoreCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSemanticStoresSemanticStoreCollectionArrayInput` via:
+//
+//	GetSemanticStoresSemanticStoreCollectionArray{ GetSemanticStoresSemanticStoreCollectionArgs{...} }
+type GetSemanticStoresSemanticStoreCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSemanticStoresSemanticStoreCollectionArrayOutput() GetSemanticStoresSemanticStoreCollectionArrayOutput
+	ToGetSemanticStoresSemanticStoreCollectionArrayOutputWithContext(context.Context) GetSemanticStoresSemanticStoreCollectionArrayOutput
+}
+
+type GetSemanticStoresSemanticStoreCollectionArray []GetSemanticStoresSemanticStoreCollectionInput
+
+func (GetSemanticStoresSemanticStoreCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSemanticStoresSemanticStoreCollection)(nil)).Elem()
+}
+
+func (i GetSemanticStoresSemanticStoreCollectionArray) ToGetSemanticStoresSemanticStoreCollectionArrayOutput() GetSemanticStoresSemanticStoreCollectionArrayOutput {
+	return i.ToGetSemanticStoresSemanticStoreCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSemanticStoresSemanticStoreCollectionArray) ToGetSemanticStoresSemanticStoreCollectionArrayOutputWithContext(ctx context.Context) GetSemanticStoresSemanticStoreCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSemanticStoresSemanticStoreCollectionArrayOutput)
+}
+
+type GetSemanticStoresSemanticStoreCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSemanticStoresSemanticStoreCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSemanticStoresSemanticStoreCollection)(nil)).Elem()
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionOutput) ToGetSemanticStoresSemanticStoreCollectionOutput() GetSemanticStoresSemanticStoreCollectionOutput {
+	return o
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionOutput) ToGetSemanticStoresSemanticStoreCollectionOutputWithContext(ctx context.Context) GetSemanticStoresSemanticStoreCollectionOutput {
+	return o
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionOutput) Items() GetSemanticStoresSemanticStoreCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSemanticStoresSemanticStoreCollection) []GetSemanticStoresSemanticStoreCollectionItem {
+		return v.Items
+	}).(GetSemanticStoresSemanticStoreCollectionItemArrayOutput)
+}
+
+type GetSemanticStoresSemanticStoreCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSemanticStoresSemanticStoreCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSemanticStoresSemanticStoreCollection)(nil)).Elem()
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionArrayOutput) ToGetSemanticStoresSemanticStoreCollectionArrayOutput() GetSemanticStoresSemanticStoreCollectionArrayOutput {
+	return o
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionArrayOutput) ToGetSemanticStoresSemanticStoreCollectionArrayOutputWithContext(ctx context.Context) GetSemanticStoresSemanticStoreCollectionArrayOutput {
+	return o
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionArrayOutput) Index(i pulumi.IntInput) GetSemanticStoresSemanticStoreCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSemanticStoresSemanticStoreCollection {
+		return vs[0].([]GetSemanticStoresSemanticStoreCollection)[vs[1].(int)]
+	}).(GetSemanticStoresSemanticStoreCollectionOutput)
+}
+
+type GetSemanticStoresSemanticStoreCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defines the data source that the semantic model connects to.
+	DataSources []GetSemanticStoresSemanticStoreCollectionItemDataSource `pulumi:"dataSources"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// An optional description of the SemanticStore.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SemanticStore.
+	Id string `pulumi:"id"`
+	// A message describing the current state in more detail that can provide actionable information.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Specifies a refresh schedule. Null represents no automated synchronization schedule.
+	RefreshSchedules []GetSemanticStoresSemanticStoreCollectionItemRefreshSchedule `pulumi:"refreshSchedules"`
+	// Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+	Schemas []GetSemanticStoresSemanticStoreCollectionItemSchema `pulumi:"schemas"`
+	// A filter to return only resources whose lifecycle state matches the given array.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time that the SemanticStore was created in the format of an RFC3339 datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time that the SemanticStore was updated in the format of an RFC3339 datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetSemanticStoresSemanticStoreCollectionItemInput is an input type that accepts GetSemanticStoresSemanticStoreCollectionItemArgs and GetSemanticStoresSemanticStoreCollectionItemOutput values.
+// You can construct a concrete instance of `GetSemanticStoresSemanticStoreCollectionItemInput` via:
+//
+//	GetSemanticStoresSemanticStoreCollectionItemArgs{...}
+type GetSemanticStoresSemanticStoreCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSemanticStoresSemanticStoreCollectionItemOutput() GetSemanticStoresSemanticStoreCollectionItemOutput
+	ToGetSemanticStoresSemanticStoreCollectionItemOutputWithContext(context.Context) GetSemanticStoresSemanticStoreCollectionItemOutput
+}
+
+type GetSemanticStoresSemanticStoreCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defines the data source that the semantic model connects to.
+	DataSources GetSemanticStoresSemanticStoreCollectionItemDataSourceArrayInput `pulumi:"dataSources"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// An optional description of the SemanticStore.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SemanticStore.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state in more detail that can provide actionable information.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Specifies a refresh schedule. Null represents no automated synchronization schedule.
+	RefreshSchedules GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayInput `pulumi:"refreshSchedules"`
+	// Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+	Schemas GetSemanticStoresSemanticStoreCollectionItemSchemaArrayInput `pulumi:"schemas"`
+	// A filter to return only resources whose lifecycle state matches the given array.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time that the SemanticStore was created in the format of an RFC3339 datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time that the SemanticStore was updated in the format of an RFC3339 datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetSemanticStoresSemanticStoreCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSemanticStoresSemanticStoreCollectionItem)(nil)).Elem()
+}
+
+func (i GetSemanticStoresSemanticStoreCollectionItemArgs) ToGetSemanticStoresSemanticStoreCollectionItemOutput() GetSemanticStoresSemanticStoreCollectionItemOutput {
+	return i.ToGetSemanticStoresSemanticStoreCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSemanticStoresSemanticStoreCollectionItemArgs) ToGetSemanticStoresSemanticStoreCollectionItemOutputWithContext(ctx context.Context) GetSemanticStoresSemanticStoreCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSemanticStoresSemanticStoreCollectionItemOutput)
+}
+
+// GetSemanticStoresSemanticStoreCollectionItemArrayInput is an input type that accepts GetSemanticStoresSemanticStoreCollectionItemArray and GetSemanticStoresSemanticStoreCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSemanticStoresSemanticStoreCollectionItemArrayInput` via:
+//
+//	GetSemanticStoresSemanticStoreCollectionItemArray{ GetSemanticStoresSemanticStoreCollectionItemArgs{...} }
+type GetSemanticStoresSemanticStoreCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSemanticStoresSemanticStoreCollectionItemArrayOutput() GetSemanticStoresSemanticStoreCollectionItemArrayOutput
+	ToGetSemanticStoresSemanticStoreCollectionItemArrayOutputWithContext(context.Context) GetSemanticStoresSemanticStoreCollectionItemArrayOutput
+}
+
+type GetSemanticStoresSemanticStoreCollectionItemArray []GetSemanticStoresSemanticStoreCollectionItemInput
+
+func (GetSemanticStoresSemanticStoreCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSemanticStoresSemanticStoreCollectionItem)(nil)).Elem()
+}
+
+func (i GetSemanticStoresSemanticStoreCollectionItemArray) ToGetSemanticStoresSemanticStoreCollectionItemArrayOutput() GetSemanticStoresSemanticStoreCollectionItemArrayOutput {
+	return i.ToGetSemanticStoresSemanticStoreCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSemanticStoresSemanticStoreCollectionItemArray) ToGetSemanticStoresSemanticStoreCollectionItemArrayOutputWithContext(ctx context.Context) GetSemanticStoresSemanticStoreCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSemanticStoresSemanticStoreCollectionItemArrayOutput)
+}
+
+type GetSemanticStoresSemanticStoreCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSemanticStoresSemanticStoreCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSemanticStoresSemanticStoreCollectionItem)(nil)).Elem()
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemOutput) ToGetSemanticStoresSemanticStoreCollectionItemOutput() GetSemanticStoresSemanticStoreCollectionItemOutput {
+	return o
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemOutput) ToGetSemanticStoresSemanticStoreCollectionItemOutputWithContext(ctx context.Context) GetSemanticStoresSemanticStoreCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetSemanticStoresSemanticStoreCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSemanticStoresSemanticStoreCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defines the data source that the semantic model connects to.
+func (o GetSemanticStoresSemanticStoreCollectionItemOutput) DataSources() GetSemanticStoresSemanticStoreCollectionItemDataSourceArrayOutput {
+	return o.ApplyT(func(v GetSemanticStoresSemanticStoreCollectionItem) []GetSemanticStoresSemanticStoreCollectionItemDataSource {
+		return v.DataSources
+	}).(GetSemanticStoresSemanticStoreCollectionItemDataSourceArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetSemanticStoresSemanticStoreCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSemanticStoresSemanticStoreCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// An optional description of the SemanticStore.
+func (o GetSemanticStoresSemanticStoreCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSemanticStoresSemanticStoreCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetSemanticStoresSemanticStoreCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSemanticStoresSemanticStoreCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetSemanticStoresSemanticStoreCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSemanticStoresSemanticStoreCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SemanticStore.
+func (o GetSemanticStoresSemanticStoreCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSemanticStoresSemanticStoreCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail that can provide actionable information.
+func (o GetSemanticStoresSemanticStoreCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSemanticStoresSemanticStoreCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Specifies a refresh schedule. Null represents no automated synchronization schedule.
+func (o GetSemanticStoresSemanticStoreCollectionItemOutput) RefreshSchedules() GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayOutput {
+	return o.ApplyT(func(v GetSemanticStoresSemanticStoreCollectionItem) []GetSemanticStoresSemanticStoreCollectionItemRefreshSchedule {
+		return v.RefreshSchedules
+	}).(GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayOutput)
+}
+
+// Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+func (o GetSemanticStoresSemanticStoreCollectionItemOutput) Schemas() GetSemanticStoresSemanticStoreCollectionItemSchemaArrayOutput {
+	return o.ApplyT(func(v GetSemanticStoresSemanticStoreCollectionItem) []GetSemanticStoresSemanticStoreCollectionItemSchema {
+		return v.Schemas
+	}).(GetSemanticStoresSemanticStoreCollectionItemSchemaArrayOutput)
+}
+
+// A filter to return only resources whose lifecycle state matches the given array.
+func (o GetSemanticStoresSemanticStoreCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSemanticStoresSemanticStoreCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetSemanticStoresSemanticStoreCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSemanticStoresSemanticStoreCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time that the SemanticStore was created in the format of an RFC3339 datetime string.
+func (o GetSemanticStoresSemanticStoreCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSemanticStoresSemanticStoreCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time that the SemanticStore was updated in the format of an RFC3339 datetime string.
+func (o GetSemanticStoresSemanticStoreCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSemanticStoresSemanticStoreCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetSemanticStoresSemanticStoreCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSemanticStoresSemanticStoreCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSemanticStoresSemanticStoreCollectionItem)(nil)).Elem()
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemArrayOutput) ToGetSemanticStoresSemanticStoreCollectionItemArrayOutput() GetSemanticStoresSemanticStoreCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemArrayOutput) ToGetSemanticStoresSemanticStoreCollectionItemArrayOutputWithContext(ctx context.Context) GetSemanticStoresSemanticStoreCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSemanticStoresSemanticStoreCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSemanticStoresSemanticStoreCollectionItem {
+		return vs[0].([]GetSemanticStoresSemanticStoreCollectionItem)[vs[1].(int)]
+	}).(GetSemanticStoresSemanticStoreCollectionItemOutput)
+}
+
+type GetSemanticStoresSemanticStoreCollectionItemDataSource struct {
+	// Specifies the type of underlying connection.
+	ConnectionType string `pulumi:"connectionType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for enrichment.
+	EnrichmentConnectionId string `pulumi:"enrichmentConnectionId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for querying.
+	QueryingConnectionId string `pulumi:"queryingConnectionId"`
+}
+
+// GetSemanticStoresSemanticStoreCollectionItemDataSourceInput is an input type that accepts GetSemanticStoresSemanticStoreCollectionItemDataSourceArgs and GetSemanticStoresSemanticStoreCollectionItemDataSourceOutput values.
+// You can construct a concrete instance of `GetSemanticStoresSemanticStoreCollectionItemDataSourceInput` via:
+//
+//	GetSemanticStoresSemanticStoreCollectionItemDataSourceArgs{...}
+type GetSemanticStoresSemanticStoreCollectionItemDataSourceInput interface {
+	pulumi.Input
+
+	ToGetSemanticStoresSemanticStoreCollectionItemDataSourceOutput() GetSemanticStoresSemanticStoreCollectionItemDataSourceOutput
+	ToGetSemanticStoresSemanticStoreCollectionItemDataSourceOutputWithContext(context.Context) GetSemanticStoresSemanticStoreCollectionItemDataSourceOutput
+}
+
+type GetSemanticStoresSemanticStoreCollectionItemDataSourceArgs struct {
+	// Specifies the type of underlying connection.
+	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for enrichment.
+	EnrichmentConnectionId pulumi.StringInput `pulumi:"enrichmentConnectionId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for querying.
+	QueryingConnectionId pulumi.StringInput `pulumi:"queryingConnectionId"`
+}
+
+func (GetSemanticStoresSemanticStoreCollectionItemDataSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSemanticStoresSemanticStoreCollectionItemDataSource)(nil)).Elem()
+}
+
+func (i GetSemanticStoresSemanticStoreCollectionItemDataSourceArgs) ToGetSemanticStoresSemanticStoreCollectionItemDataSourceOutput() GetSemanticStoresSemanticStoreCollectionItemDataSourceOutput {
+	return i.ToGetSemanticStoresSemanticStoreCollectionItemDataSourceOutputWithContext(context.Background())
+}
+
+func (i GetSemanticStoresSemanticStoreCollectionItemDataSourceArgs) ToGetSemanticStoresSemanticStoreCollectionItemDataSourceOutputWithContext(ctx context.Context) GetSemanticStoresSemanticStoreCollectionItemDataSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSemanticStoresSemanticStoreCollectionItemDataSourceOutput)
+}
+
+// GetSemanticStoresSemanticStoreCollectionItemDataSourceArrayInput is an input type that accepts GetSemanticStoresSemanticStoreCollectionItemDataSourceArray and GetSemanticStoresSemanticStoreCollectionItemDataSourceArrayOutput values.
+// You can construct a concrete instance of `GetSemanticStoresSemanticStoreCollectionItemDataSourceArrayInput` via:
+//
+//	GetSemanticStoresSemanticStoreCollectionItemDataSourceArray{ GetSemanticStoresSemanticStoreCollectionItemDataSourceArgs{...} }
+type GetSemanticStoresSemanticStoreCollectionItemDataSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetSemanticStoresSemanticStoreCollectionItemDataSourceArrayOutput() GetSemanticStoresSemanticStoreCollectionItemDataSourceArrayOutput
+	ToGetSemanticStoresSemanticStoreCollectionItemDataSourceArrayOutputWithContext(context.Context) GetSemanticStoresSemanticStoreCollectionItemDataSourceArrayOutput
+}
+
+type GetSemanticStoresSemanticStoreCollectionItemDataSourceArray []GetSemanticStoresSemanticStoreCollectionItemDataSourceInput
+
+func (GetSemanticStoresSemanticStoreCollectionItemDataSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSemanticStoresSemanticStoreCollectionItemDataSource)(nil)).Elem()
+}
+
+func (i GetSemanticStoresSemanticStoreCollectionItemDataSourceArray) ToGetSemanticStoresSemanticStoreCollectionItemDataSourceArrayOutput() GetSemanticStoresSemanticStoreCollectionItemDataSourceArrayOutput {
+	return i.ToGetSemanticStoresSemanticStoreCollectionItemDataSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetSemanticStoresSemanticStoreCollectionItemDataSourceArray) ToGetSemanticStoresSemanticStoreCollectionItemDataSourceArrayOutputWithContext(ctx context.Context) GetSemanticStoresSemanticStoreCollectionItemDataSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSemanticStoresSemanticStoreCollectionItemDataSourceArrayOutput)
+}
+
+type GetSemanticStoresSemanticStoreCollectionItemDataSourceOutput struct{ *pulumi.OutputState }
+
+func (GetSemanticStoresSemanticStoreCollectionItemDataSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSemanticStoresSemanticStoreCollectionItemDataSource)(nil)).Elem()
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemDataSourceOutput) ToGetSemanticStoresSemanticStoreCollectionItemDataSourceOutput() GetSemanticStoresSemanticStoreCollectionItemDataSourceOutput {
+	return o
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemDataSourceOutput) ToGetSemanticStoresSemanticStoreCollectionItemDataSourceOutputWithContext(ctx context.Context) GetSemanticStoresSemanticStoreCollectionItemDataSourceOutput {
+	return o
+}
+
+// Specifies the type of underlying connection.
+func (o GetSemanticStoresSemanticStoreCollectionItemDataSourceOutput) ConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSemanticStoresSemanticStoreCollectionItemDataSource) string { return v.ConnectionType }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for enrichment.
+func (o GetSemanticStoresSemanticStoreCollectionItemDataSourceOutput) EnrichmentConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSemanticStoresSemanticStoreCollectionItemDataSource) string { return v.EnrichmentConnectionId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Database Tools Connection for querying.
+func (o GetSemanticStoresSemanticStoreCollectionItemDataSourceOutput) QueryingConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSemanticStoresSemanticStoreCollectionItemDataSource) string { return v.QueryingConnectionId }).(pulumi.StringOutput)
+}
+
+type GetSemanticStoresSemanticStoreCollectionItemDataSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSemanticStoresSemanticStoreCollectionItemDataSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSemanticStoresSemanticStoreCollectionItemDataSource)(nil)).Elem()
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemDataSourceArrayOutput) ToGetSemanticStoresSemanticStoreCollectionItemDataSourceArrayOutput() GetSemanticStoresSemanticStoreCollectionItemDataSourceArrayOutput {
+	return o
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemDataSourceArrayOutput) ToGetSemanticStoresSemanticStoreCollectionItemDataSourceArrayOutputWithContext(ctx context.Context) GetSemanticStoresSemanticStoreCollectionItemDataSourceArrayOutput {
+	return o
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemDataSourceArrayOutput) Index(i pulumi.IntInput) GetSemanticStoresSemanticStoreCollectionItemDataSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSemanticStoresSemanticStoreCollectionItemDataSource {
+		return vs[0].([]GetSemanticStoresSemanticStoreCollectionItemDataSource)[vs[1].(int)]
+	}).(GetSemanticStoresSemanticStoreCollectionItemDataSourceOutput)
+}
+
+type GetSemanticStoresSemanticStoreCollectionItemRefreshSchedule struct {
+	// Specifies the type of refresh schedule.
+	Type string `pulumi:"type"`
+	// Specifies the refresh interval value. The interval must be provided using the ISO 8601 extended format, either as PnW or PnYnMnDTnHnMnS,  where 'P' is always required, 'T' precedes any time components less than one day, and each included component is properly suffixed.  For example, "P1DT6H" represents a duration of 1 day and 6 hours.
+	Value string `pulumi:"value"`
+}
+
+// GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleInput is an input type that accepts GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArgs and GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleOutput values.
+// You can construct a concrete instance of `GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleInput` via:
+//
+//	GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArgs{...}
+type GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleInput interface {
+	pulumi.Input
+
+	ToGetSemanticStoresSemanticStoreCollectionItemRefreshScheduleOutput() GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleOutput
+	ToGetSemanticStoresSemanticStoreCollectionItemRefreshScheduleOutputWithContext(context.Context) GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleOutput
+}
+
+type GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArgs struct {
+	// Specifies the type of refresh schedule.
+	Type pulumi.StringInput `pulumi:"type"`
+	// Specifies the refresh interval value. The interval must be provided using the ISO 8601 extended format, either as PnW or PnYnMnDTnHnMnS,  where 'P' is always required, 'T' precedes any time components less than one day, and each included component is properly suffixed.  For example, "P1DT6H" represents a duration of 1 day and 6 hours.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSemanticStoresSemanticStoreCollectionItemRefreshSchedule)(nil)).Elem()
+}
+
+func (i GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArgs) ToGetSemanticStoresSemanticStoreCollectionItemRefreshScheduleOutput() GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleOutput {
+	return i.ToGetSemanticStoresSemanticStoreCollectionItemRefreshScheduleOutputWithContext(context.Background())
+}
+
+func (i GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArgs) ToGetSemanticStoresSemanticStoreCollectionItemRefreshScheduleOutputWithContext(ctx context.Context) GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleOutput)
+}
+
+// GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayInput is an input type that accepts GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArray and GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayOutput values.
+// You can construct a concrete instance of `GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayInput` via:
+//
+//	GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArray{ GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArgs{...} }
+type GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayInput interface {
+	pulumi.Input
+
+	ToGetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayOutput() GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayOutput
+	ToGetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayOutputWithContext(context.Context) GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayOutput
+}
+
+type GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArray []GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleInput
+
+func (GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSemanticStoresSemanticStoreCollectionItemRefreshSchedule)(nil)).Elem()
+}
+
+func (i GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArray) ToGetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayOutput() GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayOutput {
+	return i.ToGetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArray) ToGetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayOutputWithContext(ctx context.Context) GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayOutput)
+}
+
+type GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleOutput struct{ *pulumi.OutputState }
+
+func (GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSemanticStoresSemanticStoreCollectionItemRefreshSchedule)(nil)).Elem()
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleOutput) ToGetSemanticStoresSemanticStoreCollectionItemRefreshScheduleOutput() GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleOutput {
+	return o
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleOutput) ToGetSemanticStoresSemanticStoreCollectionItemRefreshScheduleOutputWithContext(ctx context.Context) GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleOutput {
+	return o
+}
+
+// Specifies the type of refresh schedule.
+func (o GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSemanticStoresSemanticStoreCollectionItemRefreshSchedule) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// Specifies the refresh interval value. The interval must be provided using the ISO 8601 extended format, either as PnW or PnYnMnDTnHnMnS,  where 'P' is always required, 'T' precedes any time components less than one day, and each included component is properly suffixed.  For example, "P1DT6H" represents a duration of 1 day and 6 hours.
+func (o GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSemanticStoresSemanticStoreCollectionItemRefreshSchedule) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSemanticStoresSemanticStoreCollectionItemRefreshSchedule)(nil)).Elem()
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayOutput) ToGetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayOutput() GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayOutput {
+	return o
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayOutput) ToGetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayOutputWithContext(ctx context.Context) GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayOutput {
+	return o
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayOutput) Index(i pulumi.IntInput) GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSemanticStoresSemanticStoreCollectionItemRefreshSchedule {
+		return vs[0].([]GetSemanticStoresSemanticStoreCollectionItemRefreshSchedule)[vs[1].(int)]
+	}).(GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleOutput)
+}
+
+type GetSemanticStoresSemanticStoreCollectionItemSchema struct {
+	// Specifies the type of underlying connection.
+	ConnectionType string `pulumi:"connectionType"`
+	// Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+	Schemas []GetSemanticStoresSemanticStoreCollectionItemSchemaSchema `pulumi:"schemas"`
+}
+
+// GetSemanticStoresSemanticStoreCollectionItemSchemaInput is an input type that accepts GetSemanticStoresSemanticStoreCollectionItemSchemaArgs and GetSemanticStoresSemanticStoreCollectionItemSchemaOutput values.
+// You can construct a concrete instance of `GetSemanticStoresSemanticStoreCollectionItemSchemaInput` via:
+//
+//	GetSemanticStoresSemanticStoreCollectionItemSchemaArgs{...}
+type GetSemanticStoresSemanticStoreCollectionItemSchemaInput interface {
+	pulumi.Input
+
+	ToGetSemanticStoresSemanticStoreCollectionItemSchemaOutput() GetSemanticStoresSemanticStoreCollectionItemSchemaOutput
+	ToGetSemanticStoresSemanticStoreCollectionItemSchemaOutputWithContext(context.Context) GetSemanticStoresSemanticStoreCollectionItemSchemaOutput
+}
+
+type GetSemanticStoresSemanticStoreCollectionItemSchemaArgs struct {
+	// Specifies the type of underlying connection.
+	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
+	// Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+	Schemas GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayInput `pulumi:"schemas"`
+}
+
+func (GetSemanticStoresSemanticStoreCollectionItemSchemaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSemanticStoresSemanticStoreCollectionItemSchema)(nil)).Elem()
+}
+
+func (i GetSemanticStoresSemanticStoreCollectionItemSchemaArgs) ToGetSemanticStoresSemanticStoreCollectionItemSchemaOutput() GetSemanticStoresSemanticStoreCollectionItemSchemaOutput {
+	return i.ToGetSemanticStoresSemanticStoreCollectionItemSchemaOutputWithContext(context.Background())
+}
+
+func (i GetSemanticStoresSemanticStoreCollectionItemSchemaArgs) ToGetSemanticStoresSemanticStoreCollectionItemSchemaOutputWithContext(ctx context.Context) GetSemanticStoresSemanticStoreCollectionItemSchemaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSemanticStoresSemanticStoreCollectionItemSchemaOutput)
+}
+
+// GetSemanticStoresSemanticStoreCollectionItemSchemaArrayInput is an input type that accepts GetSemanticStoresSemanticStoreCollectionItemSchemaArray and GetSemanticStoresSemanticStoreCollectionItemSchemaArrayOutput values.
+// You can construct a concrete instance of `GetSemanticStoresSemanticStoreCollectionItemSchemaArrayInput` via:
+//
+//	GetSemanticStoresSemanticStoreCollectionItemSchemaArray{ GetSemanticStoresSemanticStoreCollectionItemSchemaArgs{...} }
+type GetSemanticStoresSemanticStoreCollectionItemSchemaArrayInput interface {
+	pulumi.Input
+
+	ToGetSemanticStoresSemanticStoreCollectionItemSchemaArrayOutput() GetSemanticStoresSemanticStoreCollectionItemSchemaArrayOutput
+	ToGetSemanticStoresSemanticStoreCollectionItemSchemaArrayOutputWithContext(context.Context) GetSemanticStoresSemanticStoreCollectionItemSchemaArrayOutput
+}
+
+type GetSemanticStoresSemanticStoreCollectionItemSchemaArray []GetSemanticStoresSemanticStoreCollectionItemSchemaInput
+
+func (GetSemanticStoresSemanticStoreCollectionItemSchemaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSemanticStoresSemanticStoreCollectionItemSchema)(nil)).Elem()
+}
+
+func (i GetSemanticStoresSemanticStoreCollectionItemSchemaArray) ToGetSemanticStoresSemanticStoreCollectionItemSchemaArrayOutput() GetSemanticStoresSemanticStoreCollectionItemSchemaArrayOutput {
+	return i.ToGetSemanticStoresSemanticStoreCollectionItemSchemaArrayOutputWithContext(context.Background())
+}
+
+func (i GetSemanticStoresSemanticStoreCollectionItemSchemaArray) ToGetSemanticStoresSemanticStoreCollectionItemSchemaArrayOutputWithContext(ctx context.Context) GetSemanticStoresSemanticStoreCollectionItemSchemaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSemanticStoresSemanticStoreCollectionItemSchemaArrayOutput)
+}
+
+type GetSemanticStoresSemanticStoreCollectionItemSchemaOutput struct{ *pulumi.OutputState }
+
+func (GetSemanticStoresSemanticStoreCollectionItemSchemaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSemanticStoresSemanticStoreCollectionItemSchema)(nil)).Elem()
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemSchemaOutput) ToGetSemanticStoresSemanticStoreCollectionItemSchemaOutput() GetSemanticStoresSemanticStoreCollectionItemSchemaOutput {
+	return o
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemSchemaOutput) ToGetSemanticStoresSemanticStoreCollectionItemSchemaOutputWithContext(ctx context.Context) GetSemanticStoresSemanticStoreCollectionItemSchemaOutput {
+	return o
+}
+
+// Specifies the type of underlying connection.
+func (o GetSemanticStoresSemanticStoreCollectionItemSchemaOutput) ConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSemanticStoresSemanticStoreCollectionItemSchema) string { return v.ConnectionType }).(pulumi.StringOutput)
+}
+
+// Array of database schemas to be included in the connection. Each schema must define a name. A simple schema definition includes only the name, for example: { "schemas": [ { "name": "HR" } ] } Only one schema name is allowed now. Additional configuration options may be supported in extended forms later.
+func (o GetSemanticStoresSemanticStoreCollectionItemSchemaOutput) Schemas() GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayOutput {
+	return o.ApplyT(func(v GetSemanticStoresSemanticStoreCollectionItemSchema) []GetSemanticStoresSemanticStoreCollectionItemSchemaSchema {
+		return v.Schemas
+	}).(GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayOutput)
+}
+
+type GetSemanticStoresSemanticStoreCollectionItemSchemaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSemanticStoresSemanticStoreCollectionItemSchemaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSemanticStoresSemanticStoreCollectionItemSchema)(nil)).Elem()
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemSchemaArrayOutput) ToGetSemanticStoresSemanticStoreCollectionItemSchemaArrayOutput() GetSemanticStoresSemanticStoreCollectionItemSchemaArrayOutput {
+	return o
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemSchemaArrayOutput) ToGetSemanticStoresSemanticStoreCollectionItemSchemaArrayOutputWithContext(ctx context.Context) GetSemanticStoresSemanticStoreCollectionItemSchemaArrayOutput {
+	return o
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemSchemaArrayOutput) Index(i pulumi.IntInput) GetSemanticStoresSemanticStoreCollectionItemSchemaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSemanticStoresSemanticStoreCollectionItemSchema {
+		return vs[0].([]GetSemanticStoresSemanticStoreCollectionItemSchema)[vs[1].(int)]
+	}).(GetSemanticStoresSemanticStoreCollectionItemSchemaOutput)
+}
+
+type GetSemanticStoresSemanticStoreCollectionItemSchemaSchema struct {
+	Name string `pulumi:"name"`
+}
+
+// GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaInput is an input type that accepts GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArgs and GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaOutput values.
+// You can construct a concrete instance of `GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaInput` via:
+//
+//	GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArgs{...}
+type GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaInput interface {
+	pulumi.Input
+
+	ToGetSemanticStoresSemanticStoreCollectionItemSchemaSchemaOutput() GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaOutput
+	ToGetSemanticStoresSemanticStoreCollectionItemSchemaSchemaOutputWithContext(context.Context) GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaOutput
+}
+
+type GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArgs struct {
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSemanticStoresSemanticStoreCollectionItemSchemaSchema)(nil)).Elem()
+}
+
+func (i GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArgs) ToGetSemanticStoresSemanticStoreCollectionItemSchemaSchemaOutput() GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaOutput {
+	return i.ToGetSemanticStoresSemanticStoreCollectionItemSchemaSchemaOutputWithContext(context.Background())
+}
+
+func (i GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArgs) ToGetSemanticStoresSemanticStoreCollectionItemSchemaSchemaOutputWithContext(ctx context.Context) GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaOutput)
+}
+
+// GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayInput is an input type that accepts GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArray and GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayOutput values.
+// You can construct a concrete instance of `GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayInput` via:
+//
+//	GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArray{ GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArgs{...} }
+type GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayInput interface {
+	pulumi.Input
+
+	ToGetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayOutput() GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayOutput
+	ToGetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayOutputWithContext(context.Context) GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayOutput
+}
+
+type GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArray []GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaInput
+
+func (GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSemanticStoresSemanticStoreCollectionItemSchemaSchema)(nil)).Elem()
+}
+
+func (i GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArray) ToGetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayOutput() GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayOutput {
+	return i.ToGetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayOutputWithContext(context.Background())
+}
+
+func (i GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArray) ToGetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayOutputWithContext(ctx context.Context) GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayOutput)
+}
+
+type GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaOutput struct{ *pulumi.OutputState }
+
+func (GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSemanticStoresSemanticStoreCollectionItemSchemaSchema)(nil)).Elem()
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaOutput) ToGetSemanticStoresSemanticStoreCollectionItemSchemaSchemaOutput() GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaOutput {
+	return o
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaOutput) ToGetSemanticStoresSemanticStoreCollectionItemSchemaSchemaOutputWithContext(ctx context.Context) GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaOutput {
+	return o
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSemanticStoresSemanticStoreCollectionItemSchemaSchema) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSemanticStoresSemanticStoreCollectionItemSchemaSchema)(nil)).Elem()
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayOutput) ToGetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayOutput() GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayOutput {
+	return o
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayOutput) ToGetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayOutputWithContext(ctx context.Context) GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayOutput {
+	return o
+}
+
+func (o GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayOutput) Index(i pulumi.IntInput) GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSemanticStoresSemanticStoreCollectionItemSchemaSchema {
+		return vs[0].([]GetSemanticStoresSemanticStoreCollectionItemSchemaSchema)[vs[1].(int)]
+	}).(GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentEndpointContentModerationConfigInput)(nil)).Elem(), AgentAgentEndpointContentModerationConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentEndpointContentModerationConfigPtrInput)(nil)).Elem(), AgentAgentEndpointContentModerationConfigArgs{})
@@ -27067,6 +28926,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelFineTuneDetailsTrainingDatasetPtrInput)(nil)).Elem(), ModelFineTuneDetailsTrainingDatasetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelModelMetricInput)(nil)).Elem(), ModelModelMetricArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelModelMetricArrayInput)(nil)).Elem(), ModelModelMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SemanticStoreDataSourceInput)(nil)).Elem(), SemanticStoreDataSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SemanticStoreDataSourcePtrInput)(nil)).Elem(), SemanticStoreDataSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SemanticStoreRefreshScheduleInput)(nil)).Elem(), SemanticStoreRefreshScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SemanticStoreRefreshSchedulePtrInput)(nil)).Elem(), SemanticStoreRefreshScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SemanticStoreSchemasInput)(nil)).Elem(), SemanticStoreSchemasArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SemanticStoreSchemasPtrInput)(nil)).Elem(), SemanticStoreSchemasArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SemanticStoreSchemasSchemaInput)(nil)).Elem(), SemanticStoreSchemasSchemaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SemanticStoreSchemasSchemaArrayInput)(nil)).Elem(), SemanticStoreSchemasSchemaArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointContentModerationConfigInput)(nil)).Elem(), GetAgentAgentEndpointContentModerationConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointContentModerationConfigArrayInput)(nil)).Elem(), GetAgentAgentEndpointContentModerationConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointGuardrailConfigInput)(nil)).Elem(), GetAgentAgentEndpointGuardrailConfigArgs{})
@@ -27347,6 +29214,28 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemFineTuneDetailTrainingDatasetArrayInput)(nil)).Elem(), GetModelsModelCollectionItemFineTuneDetailTrainingDatasetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemModelMetricInput)(nil)).Elem(), GetModelsModelCollectionItemModelMetricArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemModelMetricArrayInput)(nil)).Elem(), GetModelsModelCollectionItemModelMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoreDataSourceInput)(nil)).Elem(), GetSemanticStoreDataSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoreDataSourceArrayInput)(nil)).Elem(), GetSemanticStoreDataSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoreRefreshScheduleInput)(nil)).Elem(), GetSemanticStoreRefreshScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoreRefreshScheduleArrayInput)(nil)).Elem(), GetSemanticStoreRefreshScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoreSchemaInput)(nil)).Elem(), GetSemanticStoreSchemaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoreSchemaArrayInput)(nil)).Elem(), GetSemanticStoreSchemaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoreSchemaSchemaInput)(nil)).Elem(), GetSemanticStoreSchemaSchemaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoreSchemaSchemaArrayInput)(nil)).Elem(), GetSemanticStoreSchemaSchemaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoresFilterInput)(nil)).Elem(), GetSemanticStoresFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoresFilterArrayInput)(nil)).Elem(), GetSemanticStoresFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoresSemanticStoreCollectionInput)(nil)).Elem(), GetSemanticStoresSemanticStoreCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoresSemanticStoreCollectionArrayInput)(nil)).Elem(), GetSemanticStoresSemanticStoreCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoresSemanticStoreCollectionItemInput)(nil)).Elem(), GetSemanticStoresSemanticStoreCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoresSemanticStoreCollectionItemArrayInput)(nil)).Elem(), GetSemanticStoresSemanticStoreCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoresSemanticStoreCollectionItemDataSourceInput)(nil)).Elem(), GetSemanticStoresSemanticStoreCollectionItemDataSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoresSemanticStoreCollectionItemDataSourceArrayInput)(nil)).Elem(), GetSemanticStoresSemanticStoreCollectionItemDataSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleInput)(nil)).Elem(), GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayInput)(nil)).Elem(), GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoresSemanticStoreCollectionItemSchemaInput)(nil)).Elem(), GetSemanticStoresSemanticStoreCollectionItemSchemaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoresSemanticStoreCollectionItemSchemaArrayInput)(nil)).Elem(), GetSemanticStoresSemanticStoreCollectionItemSchemaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaInput)(nil)).Elem(), GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayInput)(nil)).Elem(), GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArray{})
 	pulumi.RegisterOutputType(AgentAgentEndpointContentModerationConfigOutput{})
 	pulumi.RegisterOutputType(AgentAgentEndpointContentModerationConfigPtrOutput{})
 	pulumi.RegisterOutputType(AgentAgentEndpointGuardrailConfigOutput{})
@@ -27451,6 +29340,14 @@ func init() {
 	pulumi.RegisterOutputType(ModelFineTuneDetailsTrainingDatasetPtrOutput{})
 	pulumi.RegisterOutputType(ModelModelMetricOutput{})
 	pulumi.RegisterOutputType(ModelModelMetricArrayOutput{})
+	pulumi.RegisterOutputType(SemanticStoreDataSourceOutput{})
+	pulumi.RegisterOutputType(SemanticStoreDataSourcePtrOutput{})
+	pulumi.RegisterOutputType(SemanticStoreRefreshScheduleOutput{})
+	pulumi.RegisterOutputType(SemanticStoreRefreshSchedulePtrOutput{})
+	pulumi.RegisterOutputType(SemanticStoreSchemasOutput{})
+	pulumi.RegisterOutputType(SemanticStoreSchemasPtrOutput{})
+	pulumi.RegisterOutputType(SemanticStoreSchemasSchemaOutput{})
+	pulumi.RegisterOutputType(SemanticStoreSchemasSchemaArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentAgentEndpointContentModerationConfigOutput{})
 	pulumi.RegisterOutputType(GetAgentAgentEndpointContentModerationConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentAgentEndpointGuardrailConfigOutput{})
@@ -27731,4 +29628,26 @@ func init() {
 	pulumi.RegisterOutputType(GetModelsModelCollectionItemFineTuneDetailTrainingDatasetArrayOutput{})
 	pulumi.RegisterOutputType(GetModelsModelCollectionItemModelMetricOutput{})
 	pulumi.RegisterOutputType(GetModelsModelCollectionItemModelMetricArrayOutput{})
+	pulumi.RegisterOutputType(GetSemanticStoreDataSourceOutput{})
+	pulumi.RegisterOutputType(GetSemanticStoreDataSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetSemanticStoreRefreshScheduleOutput{})
+	pulumi.RegisterOutputType(GetSemanticStoreRefreshScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetSemanticStoreSchemaOutput{})
+	pulumi.RegisterOutputType(GetSemanticStoreSchemaArrayOutput{})
+	pulumi.RegisterOutputType(GetSemanticStoreSchemaSchemaOutput{})
+	pulumi.RegisterOutputType(GetSemanticStoreSchemaSchemaArrayOutput{})
+	pulumi.RegisterOutputType(GetSemanticStoresFilterOutput{})
+	pulumi.RegisterOutputType(GetSemanticStoresFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSemanticStoresSemanticStoreCollectionOutput{})
+	pulumi.RegisterOutputType(GetSemanticStoresSemanticStoreCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSemanticStoresSemanticStoreCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSemanticStoresSemanticStoreCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSemanticStoresSemanticStoreCollectionItemDataSourceOutput{})
+	pulumi.RegisterOutputType(GetSemanticStoresSemanticStoreCollectionItemDataSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleOutput{})
+	pulumi.RegisterOutputType(GetSemanticStoresSemanticStoreCollectionItemRefreshScheduleArrayOutput{})
+	pulumi.RegisterOutputType(GetSemanticStoresSemanticStoreCollectionItemSchemaOutput{})
+	pulumi.RegisterOutputType(GetSemanticStoresSemanticStoreCollectionItemSchemaArrayOutput{})
+	pulumi.RegisterOutputType(GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaOutput{})
+	pulumi.RegisterOutputType(GetSemanticStoresSemanticStoreCollectionItemSchemaSchemaArrayOutput{})
 }

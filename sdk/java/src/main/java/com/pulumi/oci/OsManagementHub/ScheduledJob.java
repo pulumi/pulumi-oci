@@ -38,8 +38,11 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.OsManagementHub.ScheduledJob;
  * import com.pulumi.oci.OsManagementHub.ScheduledJobArgs;
  * import com.pulumi.oci.OsManagementHub.inputs.ScheduledJobOperationArgs;
+ * import com.pulumi.oci.OsManagementHub.inputs.ScheduledJobOperationInstallSnapDetailsArgs;
  * import com.pulumi.oci.OsManagementHub.inputs.ScheduledJobOperationManageModuleStreamsDetailsArgs;
+ * import com.pulumi.oci.OsManagementHub.inputs.ScheduledJobOperationRemoveSnapDetailsArgs;
  * import com.pulumi.oci.OsManagementHub.inputs.ScheduledJobOperationSwitchModuleStreamsDetailsArgs;
+ * import com.pulumi.oci.OsManagementHub.inputs.ScheduledJobOperationSwitchSnapChannelDetailsArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -57,6 +60,13 @@ import javax.annotation.Nullable;
  *             .compartmentId(compartmentId)
  *             .operations(ScheduledJobOperationArgs.builder()
  *                 .operationType(scheduledJobOperationsOperationType)
+ *                 .installSnapDetails(ScheduledJobOperationInstallSnapDetailsArgs.builder()
+ *                     .name(scheduledJobOperationsInstallSnapDetailsName)
+ *                     .channel(scheduledJobOperationsInstallSnapDetailsChannel)
+ *                     .isSigned(scheduledJobOperationsInstallSnapDetailsIsSigned)
+ *                     .mode(scheduledJobOperationsInstallSnapDetailsMode)
+ *                     .revision(scheduledJobOperationsInstallSnapDetailsRevision)
+ *                     .build())
  *                 .manageModuleStreamsDetails(ScheduledJobOperationManageModuleStreamsDetailsArgs.builder()
  *                     .disables(ScheduledJobOperationManageModuleStreamsDetailsDisableArgs.builder()
  *                         .moduleName(scheduledJobOperationsManageModuleStreamsDetailsDisableModuleName)
@@ -83,11 +93,19 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .packageNames(scheduledJobOperationsPackageNames)
  *                 .rebootTimeoutInMins(scheduledJobOperationsRebootTimeoutInMins)
+ *                 .removeSnapDetails(ScheduledJobOperationRemoveSnapDetailsArgs.builder()
+ *                     .name(scheduledJobOperationsRemoveSnapDetailsName)
+ *                     .revision(scheduledJobOperationsRemoveSnapDetailsRevision)
+ *                     .build())
  *                 .softwareSourceIds(scheduledJobOperationsSoftwareSourceIds)
  *                 .switchModuleStreamsDetails(ScheduledJobOperationSwitchModuleStreamsDetailsArgs.builder()
  *                     .moduleName(scheduledJobOperationsSwitchModuleStreamsDetailsModuleName)
  *                     .streamName(testStream.name())
  *                     .softwareSourceId(testSoftwareSource.id())
+ *                     .build())
+ *                 .switchSnapChannelDetails(ScheduledJobOperationSwitchSnapChannelDetailsArgs.builder()
+ *                     .name(scheduledJobOperationsSwitchSnapChannelDetailsName)
+ *                     .channel(scheduledJobOperationsSwitchSnapChannelDetailsChannel)
  *                     .build())
  *                 .windowsUpdateNames(scheduledJobOperationsWindowsUpdateNames)
  *                 .build())
@@ -96,6 +114,7 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(scheduledJobDescription)
  *             .displayName(scheduledJobDisplayName)
+ *             .dynamicSetIds(scheduledJobDynamicSetIds)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .isManagedByAutonomousLinux(scheduledJobIsManagedByAutonomousLinux)
  *             .isSubcompartmentIncluded(scheduledJobIsSubcompartmentIncluded)
@@ -182,6 +201,20 @@ public class ScheduledJob extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
+     * The dynamic set [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on. A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, lifecycleStageIds, managedCompartmentIds.
+     * 
+     */
+    @Export(name="dynamicSetIds", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> dynamicSetIds;
+
+    /**
+     * @return The dynamic set [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on. A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, lifecycleStageIds, managedCompartmentIds.
+     * 
+     */
+    public Output<List<String>> dynamicSetIds() {
+        return this.dynamicSetIds;
+    }
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -238,14 +271,14 @@ public class ScheduledJob extends com.pulumi.resources.CustomResource {
         return this.isSubcompartmentIncluded;
     }
     /**
-     * The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,  or managedInstanceGroupIds, or managedCompartmentIds.
+     * The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,  or managedInstanceGroupIds, or managedCompartmentIds, or dynamicSetIds.
      * 
      */
     @Export(name="lifecycleStageIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> lifecycleStageIds;
 
     /**
-     * @return The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,  or managedInstanceGroupIds, or managedCompartmentIds.
+     * @return The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,  or managedInstanceGroupIds, or managedCompartmentIds, or dynamicSetIds.
      * 
      */
     public Output<List<String>> lifecycleStageIds() {
@@ -266,42 +299,42 @@ public class ScheduledJob extends com.pulumi.resources.CustomResource {
         return this.locations;
     }
     /**
-     * The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set  isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must  supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds.
+     * The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set  isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must  supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds, or dynamicSetIds.
      * 
      */
     @Export(name="managedCompartmentIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> managedCompartmentIds;
 
     /**
-     * @return The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set  isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must  supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds.
+     * @return The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set  isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must  supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds, or dynamicSetIds.
      * 
      */
     public Output<List<String>> managedCompartmentIds() {
         return this.managedCompartmentIds;
     }
     /**
-     * The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds, or managedCompartmentIds, or lifecycleStageIds.
+     * The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
      * 
      */
     @Export(name="managedInstanceGroupIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> managedInstanceGroupIds;
 
     /**
-     * @return The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds, or managedCompartmentIds, or lifecycleStageIds.
+     * @return The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
      * 
      */
     public Output<List<String>> managedInstanceGroupIds() {
         return this.managedInstanceGroupIds;
     }
     /**
-     * The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or  managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds.
+     * The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or  managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
      * 
      */
     @Export(name="managedInstanceIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> managedInstanceIds;
 
     /**
-     * @return The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or  managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds.
+     * @return The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or  managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
      * 
      */
     public Output<List<String>> managedInstanceIds() {
@@ -338,14 +371,14 @@ public class ScheduledJob extends com.pulumi.resources.CustomResource {
         return this.operations;
     }
     /**
-     * (Updatable) The frequency schedule for a recurring scheduled job.
+     * (Updatable) The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Note: Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported. In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY&#34;, HOURLY are supported.
      * 
      */
     @Export(name="recurringRule", refs={String.class}, tree="[0]")
     private Output<String> recurringRule;
 
     /**
-     * @return (Updatable) The frequency schedule for a recurring scheduled job.
+     * @return (Updatable) The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Note: Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported. In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY&#34;, HOURLY are supported.
      * 
      */
     public Output<String> recurringRule() {

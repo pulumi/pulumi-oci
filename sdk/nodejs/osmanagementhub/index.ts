@@ -5,10 +5,50 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { DynamicSetArgs, DynamicSetState } from "./dynamicSet";
+export type DynamicSet = import("./dynamicSet").DynamicSet;
+export const DynamicSet: typeof import("./dynamicSet").DynamicSet = null as any;
+utilities.lazyLoad(exports, ["DynamicSet"], () => require("./dynamicSet"));
+
+export { DynamicSetInstallPackagesManagementArgs, DynamicSetInstallPackagesManagementState } from "./dynamicSetInstallPackagesManagement";
+export type DynamicSetInstallPackagesManagement = import("./dynamicSetInstallPackagesManagement").DynamicSetInstallPackagesManagement;
+export const DynamicSetInstallPackagesManagement: typeof import("./dynamicSetInstallPackagesManagement").DynamicSetInstallPackagesManagement = null as any;
+utilities.lazyLoad(exports, ["DynamicSetInstallPackagesManagement"], () => require("./dynamicSetInstallPackagesManagement"));
+
+export { DynamicSetRebootManagementArgs, DynamicSetRebootManagementState } from "./dynamicSetRebootManagement";
+export type DynamicSetRebootManagement = import("./dynamicSetRebootManagement").DynamicSetRebootManagement;
+export const DynamicSetRebootManagement: typeof import("./dynamicSetRebootManagement").DynamicSetRebootManagement = null as any;
+utilities.lazyLoad(exports, ["DynamicSetRebootManagement"], () => require("./dynamicSetRebootManagement"));
+
+export { DynamicSetRemovePackagesManagementArgs, DynamicSetRemovePackagesManagementState } from "./dynamicSetRemovePackagesManagement";
+export type DynamicSetRemovePackagesManagement = import("./dynamicSetRemovePackagesManagement").DynamicSetRemovePackagesManagement;
+export const DynamicSetRemovePackagesManagement: typeof import("./dynamicSetRemovePackagesManagement").DynamicSetRemovePackagesManagement = null as any;
+utilities.lazyLoad(exports, ["DynamicSetRemovePackagesManagement"], () => require("./dynamicSetRemovePackagesManagement"));
+
+export { DynamicSetUpdatePackagesManagementArgs, DynamicSetUpdatePackagesManagementState } from "./dynamicSetUpdatePackagesManagement";
+export type DynamicSetUpdatePackagesManagement = import("./dynamicSetUpdatePackagesManagement").DynamicSetUpdatePackagesManagement;
+export const DynamicSetUpdatePackagesManagement: typeof import("./dynamicSetUpdatePackagesManagement").DynamicSetUpdatePackagesManagement = null as any;
+utilities.lazyLoad(exports, ["DynamicSetUpdatePackagesManagement"], () => require("./dynamicSetUpdatePackagesManagement"));
+
 export { EventArgs, EventState } from "./event";
 export type Event = import("./event").Event;
 export const Event: typeof import("./event").Event = null as any;
 utilities.lazyLoad(exports, ["Event"], () => require("./event"));
+
+export { GetDynamicSetArgs, GetDynamicSetResult, GetDynamicSetOutputArgs } from "./getDynamicSet";
+export const getDynamicSet: typeof import("./getDynamicSet").getDynamicSet = null as any;
+export const getDynamicSetOutput: typeof import("./getDynamicSet").getDynamicSetOutput = null as any;
+utilities.lazyLoad(exports, ["getDynamicSet","getDynamicSetOutput"], () => require("./getDynamicSet"));
+
+export { GetDynamicSetManagedInstancesArgs, GetDynamicSetManagedInstancesResult, GetDynamicSetManagedInstancesOutputArgs } from "./getDynamicSetManagedInstances";
+export const getDynamicSetManagedInstances: typeof import("./getDynamicSetManagedInstances").getDynamicSetManagedInstances = null as any;
+export const getDynamicSetManagedInstancesOutput: typeof import("./getDynamicSetManagedInstances").getDynamicSetManagedInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getDynamicSetManagedInstances","getDynamicSetManagedInstancesOutput"], () => require("./getDynamicSetManagedInstances"));
+
+export { GetDynamicSetsArgs, GetDynamicSetsResult, GetDynamicSetsOutputArgs } from "./getDynamicSets";
+export const getDynamicSets: typeof import("./getDynamicSets").getDynamicSets = null as any;
+export const getDynamicSetsOutput: typeof import("./getDynamicSets").getDynamicSetsOutput = null as any;
+utilities.lazyLoad(exports, ["getDynamicSets","getDynamicSetsOutput"], () => require("./getDynamicSets"));
 
 export { GetEntitlementsArgs, GetEntitlementsResult, GetEntitlementsOutputArgs } from "./getEntitlements";
 export const getEntitlements: typeof import("./getEntitlements").getEntitlements = null as any;
@@ -105,6 +145,11 @@ export const getManagedInstanceGroupInstalledPackages: typeof import("./getManag
 export const getManagedInstanceGroupInstalledPackagesOutput: typeof import("./getManagedInstanceGroupInstalledPackages").getManagedInstanceGroupInstalledPackagesOutput = null as any;
 utilities.lazyLoad(exports, ["getManagedInstanceGroupInstalledPackages","getManagedInstanceGroupInstalledPackagesOutput"], () => require("./getManagedInstanceGroupInstalledPackages"));
 
+export { GetManagedInstanceGroupManagedInstancesArgs, GetManagedInstanceGroupManagedInstancesResult, GetManagedInstanceGroupManagedInstancesOutputArgs } from "./getManagedInstanceGroupManagedInstances";
+export const getManagedInstanceGroupManagedInstances: typeof import("./getManagedInstanceGroupManagedInstances").getManagedInstanceGroupManagedInstances = null as any;
+export const getManagedInstanceGroupManagedInstancesOutput: typeof import("./getManagedInstanceGroupManagedInstances").getManagedInstanceGroupManagedInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedInstanceGroupManagedInstances","getManagedInstanceGroupManagedInstancesOutput"], () => require("./getManagedInstanceGroupManagedInstances"));
+
 export { GetManagedInstanceGroupModulesArgs, GetManagedInstanceGroupModulesResult, GetManagedInstanceGroupModulesOutputArgs } from "./getManagedInstanceGroupModules";
 export const getManagedInstanceGroupModules: typeof import("./getManagedInstanceGroupModules").getManagedInstanceGroupModules = null as any;
 export const getManagedInstanceGroupModulesOutput: typeof import("./getManagedInstanceGroupModules").getManagedInstanceGroupModulesOutput = null as any;
@@ -129,6 +174,11 @@ export { GetManagedInstanceModulesArgs, GetManagedInstanceModulesResult, GetMana
 export const getManagedInstanceModules: typeof import("./getManagedInstanceModules").getManagedInstanceModules = null as any;
 export const getManagedInstanceModulesOutput: typeof import("./getManagedInstanceModules").getManagedInstanceModulesOutput = null as any;
 utilities.lazyLoad(exports, ["getManagedInstanceModules","getManagedInstanceModulesOutput"], () => require("./getManagedInstanceModules"));
+
+export { GetManagedInstanceSnapsArgs, GetManagedInstanceSnapsResult, GetManagedInstanceSnapsOutputArgs } from "./getManagedInstanceSnaps";
+export const getManagedInstanceSnaps: typeof import("./getManagedInstanceSnaps").getManagedInstanceSnaps = null as any;
+export const getManagedInstanceSnapsOutput: typeof import("./getManagedInstanceSnaps").getManagedInstanceSnapsOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedInstanceSnaps","getManagedInstanceSnapsOutput"], () => require("./getManagedInstanceSnaps"));
 
 export { GetManagedInstanceUpdatablePackagesArgs, GetManagedInstanceUpdatablePackagesResult, GetManagedInstanceUpdatablePackagesOutputArgs } from "./getManagedInstanceUpdatablePackages";
 export const getManagedInstanceUpdatablePackages: typeof import("./getManagedInstanceUpdatablePackages").getManagedInstanceUpdatablePackages = null as any;
@@ -310,10 +360,20 @@ export type ManagedInstanceAttachProfileManagement = import("./managedInstanceAt
 export const ManagedInstanceAttachProfileManagement: typeof import("./managedInstanceAttachProfileManagement").ManagedInstanceAttachProfileManagement = null as any;
 utilities.lazyLoad(exports, ["ManagedInstanceAttachProfileManagement"], () => require("./managedInstanceAttachProfileManagement"));
 
+export { ManagedInstanceAttachSoftwareSourcesManagementArgs, ManagedInstanceAttachSoftwareSourcesManagementState } from "./managedInstanceAttachSoftwareSourcesManagement";
+export type ManagedInstanceAttachSoftwareSourcesManagement = import("./managedInstanceAttachSoftwareSourcesManagement").ManagedInstanceAttachSoftwareSourcesManagement;
+export const ManagedInstanceAttachSoftwareSourcesManagement: typeof import("./managedInstanceAttachSoftwareSourcesManagement").ManagedInstanceAttachSoftwareSourcesManagement = null as any;
+utilities.lazyLoad(exports, ["ManagedInstanceAttachSoftwareSourcesManagement"], () => require("./managedInstanceAttachSoftwareSourcesManagement"));
+
 export { ManagedInstanceDetachProfileManagementArgs, ManagedInstanceDetachProfileManagementState } from "./managedInstanceDetachProfileManagement";
 export type ManagedInstanceDetachProfileManagement = import("./managedInstanceDetachProfileManagement").ManagedInstanceDetachProfileManagement;
 export const ManagedInstanceDetachProfileManagement: typeof import("./managedInstanceDetachProfileManagement").ManagedInstanceDetachProfileManagement = null as any;
 utilities.lazyLoad(exports, ["ManagedInstanceDetachProfileManagement"], () => require("./managedInstanceDetachProfileManagement"));
+
+export { ManagedInstanceDetachSoftwareSourcesManagementArgs, ManagedInstanceDetachSoftwareSourcesManagementState } from "./managedInstanceDetachSoftwareSourcesManagement";
+export type ManagedInstanceDetachSoftwareSourcesManagement = import("./managedInstanceDetachSoftwareSourcesManagement").ManagedInstanceDetachSoftwareSourcesManagement;
+export const ManagedInstanceDetachSoftwareSourcesManagement: typeof import("./managedInstanceDetachSoftwareSourcesManagement").ManagedInstanceDetachSoftwareSourcesManagement = null as any;
+utilities.lazyLoad(exports, ["ManagedInstanceDetachSoftwareSourcesManagement"], () => require("./managedInstanceDetachSoftwareSourcesManagement"));
 
 export { ManagedInstanceGroupArgs, ManagedInstanceGroupState } from "./managedInstanceGroup";
 export type ManagedInstanceGroup = import("./managedInstanceGroup").ManagedInstanceGroup;
@@ -370,6 +430,16 @@ export type ManagedInstanceGroupUpdateAllPackagesManagement = import("./managedI
 export const ManagedInstanceGroupUpdateAllPackagesManagement: typeof import("./managedInstanceGroupUpdateAllPackagesManagement").ManagedInstanceGroupUpdateAllPackagesManagement = null as any;
 utilities.lazyLoad(exports, ["ManagedInstanceGroupUpdateAllPackagesManagement"], () => require("./managedInstanceGroupUpdateAllPackagesManagement"));
 
+export { ManagedInstanceInstallPackagesManagementArgs, ManagedInstanceInstallPackagesManagementState } from "./managedInstanceInstallPackagesManagement";
+export type ManagedInstanceInstallPackagesManagement = import("./managedInstanceInstallPackagesManagement").ManagedInstanceInstallPackagesManagement;
+export const ManagedInstanceInstallPackagesManagement: typeof import("./managedInstanceInstallPackagesManagement").ManagedInstanceInstallPackagesManagement = null as any;
+utilities.lazyLoad(exports, ["ManagedInstanceInstallPackagesManagement"], () => require("./managedInstanceInstallPackagesManagement"));
+
+export { ManagedInstanceInstallSnapsManagementArgs, ManagedInstanceInstallSnapsManagementState } from "./managedInstanceInstallSnapsManagement";
+export type ManagedInstanceInstallSnapsManagement = import("./managedInstanceInstallSnapsManagement").ManagedInstanceInstallSnapsManagement;
+export const ManagedInstanceInstallSnapsManagement: typeof import("./managedInstanceInstallSnapsManagement").ManagedInstanceInstallSnapsManagement = null as any;
+utilities.lazyLoad(exports, ["ManagedInstanceInstallSnapsManagement"], () => require("./managedInstanceInstallSnapsManagement"));
+
 export { ManagedInstanceInstallWindowsUpdatesManagementArgs, ManagedInstanceInstallWindowsUpdatesManagementState } from "./managedInstanceInstallWindowsUpdatesManagement";
 export type ManagedInstanceInstallWindowsUpdatesManagement = import("./managedInstanceInstallWindowsUpdatesManagement").ManagedInstanceInstallWindowsUpdatesManagement;
 export const ManagedInstanceInstallWindowsUpdatesManagement: typeof import("./managedInstanceInstallWindowsUpdatesManagement").ManagedInstanceInstallWindowsUpdatesManagement = null as any;
@@ -380,10 +450,40 @@ export type ManagedInstanceRebootManagement = import("./managedInstanceRebootMan
 export const ManagedInstanceRebootManagement: typeof import("./managedInstanceRebootManagement").ManagedInstanceRebootManagement = null as any;
 utilities.lazyLoad(exports, ["ManagedInstanceRebootManagement"], () => require("./managedInstanceRebootManagement"));
 
+export { ManagedInstanceRefreshSoftwareManagementArgs, ManagedInstanceRefreshSoftwareManagementState } from "./managedInstanceRefreshSoftwareManagement";
+export type ManagedInstanceRefreshSoftwareManagement = import("./managedInstanceRefreshSoftwareManagement").ManagedInstanceRefreshSoftwareManagement;
+export const ManagedInstanceRefreshSoftwareManagement: typeof import("./managedInstanceRefreshSoftwareManagement").ManagedInstanceRefreshSoftwareManagement = null as any;
+utilities.lazyLoad(exports, ["ManagedInstanceRefreshSoftwareManagement"], () => require("./managedInstanceRefreshSoftwareManagement"));
+
+export { ManagedInstanceRemovePackagesManagementArgs, ManagedInstanceRemovePackagesManagementState } from "./managedInstanceRemovePackagesManagement";
+export type ManagedInstanceRemovePackagesManagement = import("./managedInstanceRemovePackagesManagement").ManagedInstanceRemovePackagesManagement;
+export const ManagedInstanceRemovePackagesManagement: typeof import("./managedInstanceRemovePackagesManagement").ManagedInstanceRemovePackagesManagement = null as any;
+utilities.lazyLoad(exports, ["ManagedInstanceRemovePackagesManagement"], () => require("./managedInstanceRemovePackagesManagement"));
+
+export { ManagedInstanceRemoveSnapsManagementArgs, ManagedInstanceRemoveSnapsManagementState } from "./managedInstanceRemoveSnapsManagement";
+export type ManagedInstanceRemoveSnapsManagement = import("./managedInstanceRemoveSnapsManagement").ManagedInstanceRemoveSnapsManagement;
+export const ManagedInstanceRemoveSnapsManagement: typeof import("./managedInstanceRemoveSnapsManagement").ManagedInstanceRemoveSnapsManagement = null as any;
+utilities.lazyLoad(exports, ["ManagedInstanceRemoveSnapsManagement"], () => require("./managedInstanceRemoveSnapsManagement"));
+
+export { ManagedInstanceSwitchSnapChannelManagementArgs, ManagedInstanceSwitchSnapChannelManagementState } from "./managedInstanceSwitchSnapChannelManagement";
+export type ManagedInstanceSwitchSnapChannelManagement = import("./managedInstanceSwitchSnapChannelManagement").ManagedInstanceSwitchSnapChannelManagement;
+export const ManagedInstanceSwitchSnapChannelManagement: typeof import("./managedInstanceSwitchSnapChannelManagement").ManagedInstanceSwitchSnapChannelManagement = null as any;
+utilities.lazyLoad(exports, ["ManagedInstanceSwitchSnapChannelManagement"], () => require("./managedInstanceSwitchSnapChannelManagement"));
+
 export { ManagedInstanceUpdatePackagesManagementArgs, ManagedInstanceUpdatePackagesManagementState } from "./managedInstanceUpdatePackagesManagement";
 export type ManagedInstanceUpdatePackagesManagement = import("./managedInstanceUpdatePackagesManagement").ManagedInstanceUpdatePackagesManagement;
 export const ManagedInstanceUpdatePackagesManagement: typeof import("./managedInstanceUpdatePackagesManagement").ManagedInstanceUpdatePackagesManagement = null as any;
 utilities.lazyLoad(exports, ["ManagedInstanceUpdatePackagesManagement"], () => require("./managedInstanceUpdatePackagesManagement"));
+
+export { ManagedInstancesInstallWindowsUpdatesManagementArgs, ManagedInstancesInstallWindowsUpdatesManagementState } from "./managedInstancesInstallWindowsUpdatesManagement";
+export type ManagedInstancesInstallWindowsUpdatesManagement = import("./managedInstancesInstallWindowsUpdatesManagement").ManagedInstancesInstallWindowsUpdatesManagement;
+export const ManagedInstancesInstallWindowsUpdatesManagement: typeof import("./managedInstancesInstallWindowsUpdatesManagement").ManagedInstancesInstallWindowsUpdatesManagement = null as any;
+utilities.lazyLoad(exports, ["ManagedInstancesInstallWindowsUpdatesManagement"], () => require("./managedInstancesInstallWindowsUpdatesManagement"));
+
+export { ManagedInstancesUpdatePackagesManagementArgs, ManagedInstancesUpdatePackagesManagementState } from "./managedInstancesUpdatePackagesManagement";
+export type ManagedInstancesUpdatePackagesManagement = import("./managedInstancesUpdatePackagesManagement").ManagedInstancesUpdatePackagesManagement;
+export const ManagedInstancesUpdatePackagesManagement: typeof import("./managedInstancesUpdatePackagesManagement").ManagedInstancesUpdatePackagesManagement = null as any;
+utilities.lazyLoad(exports, ["ManagedInstancesUpdatePackagesManagement"], () => require("./managedInstancesUpdatePackagesManagement"));
 
 export { ManagementStationArgs, ManagementStationState } from "./managementStation";
 export type ManagementStation = import("./managementStation").ManagementStation;
@@ -434,6 +534,11 @@ export { ProfileAttachSoftwareSourcesManagementArgs, ProfileAttachSoftwareSource
 export type ProfileAttachSoftwareSourcesManagement = import("./profileAttachSoftwareSourcesManagement").ProfileAttachSoftwareSourcesManagement;
 export const ProfileAttachSoftwareSourcesManagement: typeof import("./profileAttachSoftwareSourcesManagement").ProfileAttachSoftwareSourcesManagement = null as any;
 utilities.lazyLoad(exports, ["ProfileAttachSoftwareSourcesManagement"], () => require("./profileAttachSoftwareSourcesManagement"));
+
+export { ProfileDetachManagementStationManagementArgs, ProfileDetachManagementStationManagementState } from "./profileDetachManagementStationManagement";
+export type ProfileDetachManagementStationManagement = import("./profileDetachManagementStationManagement").ProfileDetachManagementStationManagement;
+export const ProfileDetachManagementStationManagement: typeof import("./profileDetachManagementStationManagement").ProfileDetachManagementStationManagement = null as any;
+utilities.lazyLoad(exports, ["ProfileDetachManagementStationManagement"], () => require("./profileDetachManagementStationManagement"));
 
 export { ProfileDetachSoftwareSourcesManagementArgs, ProfileDetachSoftwareSourcesManagementState } from "./profileDetachSoftwareSourcesManagement";
 export type ProfileDetachSoftwareSourcesManagement = import("./profileDetachSoftwareSourcesManagement").ProfileDetachSoftwareSourcesManagement;
@@ -490,6 +595,16 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:OsManagementHub/dynamicSet:DynamicSet":
+                return new DynamicSet(name, <any>undefined, { urn })
+            case "oci:OsManagementHub/dynamicSetInstallPackagesManagement:DynamicSetInstallPackagesManagement":
+                return new DynamicSetInstallPackagesManagement(name, <any>undefined, { urn })
+            case "oci:OsManagementHub/dynamicSetRebootManagement:DynamicSetRebootManagement":
+                return new DynamicSetRebootManagement(name, <any>undefined, { urn })
+            case "oci:OsManagementHub/dynamicSetRemovePackagesManagement:DynamicSetRemovePackagesManagement":
+                return new DynamicSetRemovePackagesManagement(name, <any>undefined, { urn })
+            case "oci:OsManagementHub/dynamicSetUpdatePackagesManagement:DynamicSetUpdatePackagesManagement":
+                return new DynamicSetUpdatePackagesManagement(name, <any>undefined, { urn })
             case "oci:OsManagementHub/event:Event":
                 return new Event(name, <any>undefined, { urn })
             case "oci:OsManagementHub/lifecycleEnvironment:LifecycleEnvironment":
@@ -506,8 +621,12 @@ const _module = {
                 return new ManagedInstance(name, <any>undefined, { urn })
             case "oci:OsManagementHub/managedInstanceAttachProfileManagement:ManagedInstanceAttachProfileManagement":
                 return new ManagedInstanceAttachProfileManagement(name, <any>undefined, { urn })
+            case "oci:OsManagementHub/managedInstanceAttachSoftwareSourcesManagement:ManagedInstanceAttachSoftwareSourcesManagement":
+                return new ManagedInstanceAttachSoftwareSourcesManagement(name, <any>undefined, { urn })
             case "oci:OsManagementHub/managedInstanceDetachProfileManagement:ManagedInstanceDetachProfileManagement":
                 return new ManagedInstanceDetachProfileManagement(name, <any>undefined, { urn })
+            case "oci:OsManagementHub/managedInstanceDetachSoftwareSourcesManagement:ManagedInstanceDetachSoftwareSourcesManagement":
+                return new ManagedInstanceDetachSoftwareSourcesManagement(name, <any>undefined, { urn })
             case "oci:OsManagementHub/managedInstanceGroup:ManagedInstanceGroup":
                 return new ManagedInstanceGroup(name, <any>undefined, { urn })
             case "oci:OsManagementHub/managedInstanceGroupAttachManagedInstancesManagement:ManagedInstanceGroupAttachManagedInstancesManagement":
@@ -530,12 +649,28 @@ const _module = {
                 return new ManagedInstanceGroupRemovePackagesManagement(name, <any>undefined, { urn })
             case "oci:OsManagementHub/managedInstanceGroupUpdateAllPackagesManagement:ManagedInstanceGroupUpdateAllPackagesManagement":
                 return new ManagedInstanceGroupUpdateAllPackagesManagement(name, <any>undefined, { urn })
+            case "oci:OsManagementHub/managedInstanceInstallPackagesManagement:ManagedInstanceInstallPackagesManagement":
+                return new ManagedInstanceInstallPackagesManagement(name, <any>undefined, { urn })
+            case "oci:OsManagementHub/managedInstanceInstallSnapsManagement:ManagedInstanceInstallSnapsManagement":
+                return new ManagedInstanceInstallSnapsManagement(name, <any>undefined, { urn })
             case "oci:OsManagementHub/managedInstanceInstallWindowsUpdatesManagement:ManagedInstanceInstallWindowsUpdatesManagement":
                 return new ManagedInstanceInstallWindowsUpdatesManagement(name, <any>undefined, { urn })
             case "oci:OsManagementHub/managedInstanceRebootManagement:ManagedInstanceRebootManagement":
                 return new ManagedInstanceRebootManagement(name, <any>undefined, { urn })
+            case "oci:OsManagementHub/managedInstanceRefreshSoftwareManagement:ManagedInstanceRefreshSoftwareManagement":
+                return new ManagedInstanceRefreshSoftwareManagement(name, <any>undefined, { urn })
+            case "oci:OsManagementHub/managedInstanceRemovePackagesManagement:ManagedInstanceRemovePackagesManagement":
+                return new ManagedInstanceRemovePackagesManagement(name, <any>undefined, { urn })
+            case "oci:OsManagementHub/managedInstanceRemoveSnapsManagement:ManagedInstanceRemoveSnapsManagement":
+                return new ManagedInstanceRemoveSnapsManagement(name, <any>undefined, { urn })
+            case "oci:OsManagementHub/managedInstanceSwitchSnapChannelManagement:ManagedInstanceSwitchSnapChannelManagement":
+                return new ManagedInstanceSwitchSnapChannelManagement(name, <any>undefined, { urn })
             case "oci:OsManagementHub/managedInstanceUpdatePackagesManagement:ManagedInstanceUpdatePackagesManagement":
                 return new ManagedInstanceUpdatePackagesManagement(name, <any>undefined, { urn })
+            case "oci:OsManagementHub/managedInstancesInstallWindowsUpdatesManagement:ManagedInstancesInstallWindowsUpdatesManagement":
+                return new ManagedInstancesInstallWindowsUpdatesManagement(name, <any>undefined, { urn })
+            case "oci:OsManagementHub/managedInstancesUpdatePackagesManagement:ManagedInstancesUpdatePackagesManagement":
+                return new ManagedInstancesUpdatePackagesManagement(name, <any>undefined, { urn })
             case "oci:OsManagementHub/managementStation:ManagementStation":
                 return new ManagementStation(name, <any>undefined, { urn })
             case "oci:OsManagementHub/managementStationAssociateManagedInstancesManagement:ManagementStationAssociateManagedInstancesManagement":
@@ -556,6 +691,8 @@ const _module = {
                 return new ProfileAttachManagementStationManagement(name, <any>undefined, { urn })
             case "oci:OsManagementHub/profileAttachSoftwareSourcesManagement:ProfileAttachSoftwareSourcesManagement":
                 return new ProfileAttachSoftwareSourcesManagement(name, <any>undefined, { urn })
+            case "oci:OsManagementHub/profileDetachManagementStationManagement:ProfileDetachManagementStationManagement":
+                return new ProfileDetachManagementStationManagement(name, <any>undefined, { urn })
             case "oci:OsManagementHub/profileDetachSoftwareSourcesManagement:ProfileDetachSoftwareSourcesManagement":
                 return new ProfileDetachSoftwareSourcesManagement(name, <any>undefined, { urn })
             case "oci:OsManagementHub/scheduledJob:ScheduledJob":
@@ -581,6 +718,11 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "OsManagementHub/dynamicSet", _module)
+pulumi.runtime.registerResourceModule("oci", "OsManagementHub/dynamicSetInstallPackagesManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "OsManagementHub/dynamicSetRebootManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "OsManagementHub/dynamicSetRemovePackagesManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "OsManagementHub/dynamicSetUpdatePackagesManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/event", _module)
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/lifecycleEnvironment", _module)
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/lifecycleStageAttachManagedInstancesManagement", _module)
@@ -589,7 +731,9 @@ pulumi.runtime.registerResourceModule("oci", "OsManagementHub/lifecycleStageProm
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/lifecycleStageRebootManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managedInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managedInstanceAttachProfileManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managedInstanceAttachSoftwareSourcesManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managedInstanceDetachProfileManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managedInstanceDetachSoftwareSourcesManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managedInstanceGroup", _module)
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managedInstanceGroupAttachManagedInstancesManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managedInstanceGroupAttachSoftwareSourcesManagement", _module)
@@ -601,9 +745,17 @@ pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managedInstanceGro
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managedInstanceGroupRebootManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managedInstanceGroupRemovePackagesManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managedInstanceGroupUpdateAllPackagesManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managedInstanceInstallPackagesManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managedInstanceInstallSnapsManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managedInstanceInstallWindowsUpdatesManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managedInstanceRebootManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managedInstanceRefreshSoftwareManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managedInstanceRemovePackagesManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managedInstanceRemoveSnapsManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managedInstanceSwitchSnapChannelManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managedInstanceUpdatePackagesManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managedInstancesInstallWindowsUpdatesManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managedInstancesUpdatePackagesManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managementStation", _module)
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managementStationAssociateManagedInstancesManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/managementStationMirrorSynchronizeManagement", _module)
@@ -614,6 +766,7 @@ pulumi.runtime.registerResourceModule("oci", "OsManagementHub/profileAttachLifec
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/profileAttachManagedInstanceGroupManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/profileAttachManagementStationManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/profileAttachSoftwareSourcesManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "OsManagementHub/profileDetachManagementStationManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/profileDetachSoftwareSourcesManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/scheduledJob", _module)
 pulumi.runtime.registerResourceModule("oci", "OsManagementHub/softwareSource", _module)

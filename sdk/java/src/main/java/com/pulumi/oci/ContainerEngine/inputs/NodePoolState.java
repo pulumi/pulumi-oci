@@ -13,6 +13,7 @@ import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodePoolCyclingDetailsArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeShapeConfigArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeSourceArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeSourceDetailsArgs;
+import com.pulumi.oci.ContainerEngine.inputs.NodePoolSecondaryVnicArgs;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -144,6 +145,21 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
+    }
+
+    /**
+     * (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+     * 
+     */
+    @Import(name="networkLaunchType")
+    private @Nullable Output<String> networkLaunchType;
+
+    /**
+     * @return (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+     * 
+     */
+    public Optional<Output<String>> networkLaunchType() {
+        return Optional.ofNullable(this.networkLaunchType);
     }
 
     /**
@@ -343,6 +359,21 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) A list of secondary vnics to attach to nodes
+     * 
+     */
+    @Import(name="secondaryVnics")
+    private @Nullable Output<List<NodePoolSecondaryVnicArgs>> secondaryVnics;
+
+    /**
+     * @return (Updatable) A list of secondary vnics to attach to nodes
+     * 
+     */
+    public Optional<Output<List<NodePoolSecondaryVnicArgs>>> secondaryVnics() {
+        return Optional.ofNullable(this.secondaryVnics);
+    }
+
+    /**
      * (Updatable) The SSH public key on each node in the node pool on launch.
      * 
      */
@@ -358,14 +389,14 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The state of the nodepool.
+     * The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The state of the nodepool.
+     * @return The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
      * 
      */
     public Optional<Output<String>> state() {
@@ -404,6 +435,7 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
         this.kubernetesVersion = $.kubernetesVersion;
         this.lifecycleDetails = $.lifecycleDetails;
         this.name = $.name;
+        this.networkLaunchType = $.networkLaunchType;
         this.nodeConfigDetails = $.nodeConfigDetails;
         this.nodeEvictionNodePoolSettings = $.nodeEvictionNodePoolSettings;
         this.nodeImageId = $.nodeImageId;
@@ -416,6 +448,7 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
         this.nodeSources = $.nodeSources;
         this.nodes = $.nodes;
         this.quantityPerSubnet = $.quantityPerSubnet;
+        this.secondaryVnics = $.secondaryVnics;
         this.sshPublicKey = $.sshPublicKey;
         this.state = $.state;
         this.subnetIds = $.subnetIds;
@@ -615,6 +648,27 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        /**
+         * @param networkLaunchType (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkLaunchType(@Nullable Output<String> networkLaunchType) {
+            $.networkLaunchType = networkLaunchType;
+            return this;
+        }
+
+        /**
+         * @param networkLaunchType (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkLaunchType(String networkLaunchType) {
+            return networkLaunchType(Output.of(networkLaunchType));
         }
 
         /**
@@ -906,6 +960,37 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param secondaryVnics (Updatable) A list of secondary vnics to attach to nodes
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secondaryVnics(@Nullable Output<List<NodePoolSecondaryVnicArgs>> secondaryVnics) {
+            $.secondaryVnics = secondaryVnics;
+            return this;
+        }
+
+        /**
+         * @param secondaryVnics (Updatable) A list of secondary vnics to attach to nodes
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secondaryVnics(List<NodePoolSecondaryVnicArgs> secondaryVnics) {
+            return secondaryVnics(Output.of(secondaryVnics));
+        }
+
+        /**
+         * @param secondaryVnics (Updatable) A list of secondary vnics to attach to nodes
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secondaryVnics(NodePoolSecondaryVnicArgs... secondaryVnics) {
+            return secondaryVnics(List.of(secondaryVnics));
+        }
+
+        /**
          * @param sshPublicKey (Updatable) The SSH public key on each node in the node pool on launch.
          * 
          * @return builder
@@ -927,7 +1012,7 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The state of the nodepool.
+         * @param state The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
          * 
          * @return builder
          * 
@@ -938,7 +1023,7 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The state of the nodepool.
+         * @param state The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
          * 
          * @return builder
          * 

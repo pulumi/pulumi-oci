@@ -35,6 +35,7 @@ namespace Pulumi.Oci.ObjectStorage
     ///         Namespace = bucketNamespace,
     ///         AccessType = bucketAccessType,
     ///         AutoTiering = bucketAutoTiering,
+    ///         BucketScope = bucketBucketScope,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -106,6 +107,12 @@ namespace Pulumi.Oci.ObjectStorage
         /// </summary>
         [Output("bucketId")]
         public Output<string> BucketId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+        /// </summary>
+        [Output("bucketScope")]
+        public Output<string> BucketScope { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The ID of the compartment in which to create the bucket.
@@ -272,6 +279,12 @@ namespace Pulumi.Oci.ObjectStorage
         public Input<string>? AutoTiering { get; set; }
 
         /// <summary>
+        /// (Updatable) Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+        /// </summary>
+        [Input("bucketScope")]
+        public Input<string>? BucketScope { get; set; }
+
+        /// <summary>
         /// (Updatable) The ID of the compartment in which to create the bucket.
         /// </summary>
         [Input("compartmentId", required: true)]
@@ -402,6 +415,12 @@ namespace Pulumi.Oci.ObjectStorage
         /// </summary>
         [Input("bucketId")]
         public Input<string>? BucketId { get; set; }
+
+        /// <summary>
+        /// (Updatable) Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+        /// </summary>
+        [Input("bucketScope")]
+        public Input<string>? BucketScope { get; set; }
 
         /// <summary>
         /// (Updatable) The ID of the compartment in which to create the bucket.

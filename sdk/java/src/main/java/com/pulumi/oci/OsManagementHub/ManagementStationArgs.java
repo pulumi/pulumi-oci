@@ -22,6 +22,21 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
     public static final ManagementStationArgs Empty = new ManagementStationArgs();
 
     /**
+     * (Updatable) The architecture type.
+     * 
+     */
+    @Import(name="archType")
+    private @Nullable Output<String> archType;
+
+    /**
+     * @return (Updatable) The architecture type.
+     * 
+     */
+    public Optional<Output<String>> archType() {
+        return Optional.ofNullable(this.archType);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
      * 
      */
@@ -142,6 +157,21 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * (Updatable) The operating system family.
+     * 
+     */
+    @Import(name="osFamily")
+    private @Nullable Output<String> osFamily;
+
+    /**
+     * @return (Updatable) The operating system family.
+     * 
+     */
+    public Optional<Output<String>> osFamily() {
+        return Optional.ofNullable(this.osFamily);
+    }
+
+    /**
      * (Updatable) Information used to create the proxy configuration for a management station.
      * 
      */
@@ -180,6 +210,7 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
     private ManagementStationArgs() {}
 
     private ManagementStationArgs(ManagementStationArgs $) {
+        this.archType = $.archType;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.description = $.description;
@@ -188,6 +219,7 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
         this.hostname = $.hostname;
         this.isAutoConfigEnabled = $.isAutoConfigEnabled;
         this.mirror = $.mirror;
+        this.osFamily = $.osFamily;
         this.proxy = $.proxy;
         this.refreshTrigger = $.refreshTrigger;
     }
@@ -208,6 +240,27 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
 
         public Builder(ManagementStationArgs defaults) {
             $ = new ManagementStationArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param archType (Updatable) The architecture type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder archType(@Nullable Output<String> archType) {
+            $.archType = archType;
+            return this;
+        }
+
+        /**
+         * @param archType (Updatable) The architecture type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder archType(String archType) {
+            return archType(Output.of(archType));
         }
 
         /**
@@ -376,6 +429,27 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder mirror(ManagementStationMirrorArgs mirror) {
             return mirror(Output.of(mirror));
+        }
+
+        /**
+         * @param osFamily (Updatable) The operating system family.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder osFamily(@Nullable Output<String> osFamily) {
+            $.osFamily = osFamily;
+            return this;
+        }
+
+        /**
+         * @param osFamily (Updatable) The operating system family.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder osFamily(String osFamily) {
+            return osFamily(Output.of(osFamily));
         }
 
         /**

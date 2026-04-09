@@ -166,6 +166,12 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<bool> IsSslVerifyEnabled { get; private set; } = null!;
 
         /// <summary>
+        /// The display name of the software source to be replicated
+        /// </summary>
+        [Output("originDisplayName")]
+        public Output<string> OriginDisplayName { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
         /// </summary>
         [Output("originSoftwareSourceId")]
@@ -421,6 +427,12 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<bool>? IsSslVerifyEnabled { get; set; }
 
         /// <summary>
+        /// The display name of the software source to be replicated
+        /// </summary>
+        [Input("originDisplayName")]
+        public Input<string>? OriginDisplayName { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
         /// </summary>
         [Input("originSoftwareSourceId")]
@@ -636,6 +648,12 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         [Input("isSslVerifyEnabled")]
         public Input<bool>? IsSslVerifyEnabled { get; set; }
+
+        /// <summary>
+        /// The display name of the software source to be replicated
+        /// </summary>
+        [Input("originDisplayName")]
+        public Input<string>? OriginDisplayName { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.

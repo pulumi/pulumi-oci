@@ -51,15 +51,15 @@ public final class ManagementStationMirrorArgs extends com.pulumi.resources.Reso
      * (Updatable) Default mirror listening port for http.
      * 
      */
-    @Import(name="port", required=true)
-    private Output<String> port;
+    @Import(name="port")
+    private @Nullable Output<String> port;
 
     /**
      * @return (Updatable) Default mirror listening port for http.
      * 
      */
-    public Output<String> port() {
-        return this.port;
+    public Optional<Output<String>> port() {
+        return Optional.ofNullable(this.port);
     }
 
     /**
@@ -168,7 +168,7 @@ public final class ManagementStationMirrorArgs extends com.pulumi.resources.Reso
          * @return builder
          * 
          */
-        public Builder port(Output<String> port) {
+        public Builder port(@Nullable Output<String> port) {
             $.port = port;
             return this;
         }
@@ -228,9 +228,6 @@ public final class ManagementStationMirrorArgs extends com.pulumi.resources.Reso
         public ManagementStationMirrorArgs build() {
             if ($.directory == null) {
                 throw new MissingRequiredPropertyException("ManagementStationMirrorArgs", "directory");
-            }
-            if ($.port == null) {
-                throw new MissingRequiredPropertyException("ManagementStationMirrorArgs", "port");
             }
             if ($.sslport == null) {
                 throw new MissingRequiredPropertyException("ManagementStationMirrorArgs", "sslport");

@@ -28,7 +28,13 @@ class GetAssetsResult:
     """
     A collection of values returned by getAssets.
     """
-    def __init__(__self__, asset_collections=None, asset_id=None, asset_type=None, compartment_id=None, display_name=None, external_asset_key=None, filters=None, id=None, inventory_id=None, source_key=None, state=None):
+    def __init__(__self__, asset_class_name=None, asset_class_version=None, asset_collections=None, asset_id=None, asset_type=None, compartment_id=None, display_name=None, external_asset_key=None, filters=None, id=None, inventory_id=None, source_key=None, state=None):
+        if asset_class_name and not isinstance(asset_class_name, str):
+            raise TypeError("Expected argument 'asset_class_name' to be a str")
+        pulumi.set(__self__, "asset_class_name", asset_class_name)
+        if asset_class_version and not isinstance(asset_class_version, str):
+            raise TypeError("Expected argument 'asset_class_version' to be a str")
+        pulumi.set(__self__, "asset_class_version", asset_class_version)
         if asset_collections and not isinstance(asset_collections, list):
             raise TypeError("Expected argument 'asset_collections' to be a list")
         pulumi.set(__self__, "asset_collections", asset_collections)
@@ -62,6 +68,22 @@ class GetAssetsResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="assetClassName")
+    def asset_class_name(self) -> Optional[_builtins.str]:
+        """
+        The class name of the asset.
+        """
+        return pulumi.get(self, "asset_class_name")
+
+    @_builtins.property
+    @pulumi.getter(name="assetClassVersion")
+    def asset_class_version(self) -> Optional[_builtins.str]:
+        """
+        The version of the asset class.
+        """
+        return pulumi.get(self, "asset_class_version")
 
     @_builtins.property
     @pulumi.getter(name="assetCollections")
@@ -152,6 +174,8 @@ class AwaitableGetAssetsResult(GetAssetsResult):
         if False:
             yield self
         return GetAssetsResult(
+            asset_class_name=self.asset_class_name,
+            asset_class_version=self.asset_class_version,
             asset_collections=self.asset_collections,
             asset_id=self.asset_id,
             asset_type=self.asset_type,
@@ -165,7 +189,9 @@ class AwaitableGetAssetsResult(GetAssetsResult):
             state=self.state)
 
 
-def get_assets(asset_id: Optional[_builtins.str] = None,
+def get_assets(asset_class_name: Optional[_builtins.str] = None,
+               asset_class_version: Optional[_builtins.str] = None,
+               asset_id: Optional[_builtins.str] = None,
                asset_type: Optional[_builtins.str] = None,
                compartment_id: Optional[_builtins.str] = None,
                display_name: Optional[_builtins.str] = None,
@@ -187,6 +213,8 @@ def get_assets(asset_id: Optional[_builtins.str] = None,
     import pulumi_oci as oci
 
     test_assets = oci.CloudBridge.get_assets(compartment_id=compartment_id,
+        asset_class_name=asset_asset_class_name,
+        asset_class_version=asset_asset_class_version,
         asset_id=test_asset["id"],
         asset_type=asset_asset_type,
         display_name=asset_display_name,
@@ -197,6 +225,8 @@ def get_assets(asset_id: Optional[_builtins.str] = None,
     ```
 
 
+    :param _builtins.str asset_class_name: The name of the asset class.
+    :param _builtins.str asset_class_version: The version of the asset class.
     :param _builtins.str asset_id: Unique asset identifier.
     :param _builtins.str asset_type: The type of asset.
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
@@ -207,6 +237,8 @@ def get_assets(asset_id: Optional[_builtins.str] = None,
     :param _builtins.str state: A filter to return only assets whose lifecycleState matches the given lifecycleState.
     """
     __args__ = dict()
+    __args__['assetClassName'] = asset_class_name
+    __args__['assetClassVersion'] = asset_class_version
     __args__['assetId'] = asset_id
     __args__['assetType'] = asset_type
     __args__['compartmentId'] = compartment_id
@@ -220,6 +252,8 @@ def get_assets(asset_id: Optional[_builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('oci:CloudBridge/getAssets:getAssets', __args__, opts=opts, typ=GetAssetsResult).value
 
     return AwaitableGetAssetsResult(
+        asset_class_name=pulumi.get(__ret__, 'asset_class_name'),
+        asset_class_version=pulumi.get(__ret__, 'asset_class_version'),
         asset_collections=pulumi.get(__ret__, 'asset_collections'),
         asset_id=pulumi.get(__ret__, 'asset_id'),
         asset_type=pulumi.get(__ret__, 'asset_type'),
@@ -231,7 +265,9 @@ def get_assets(asset_id: Optional[_builtins.str] = None,
         inventory_id=pulumi.get(__ret__, 'inventory_id'),
         source_key=pulumi.get(__ret__, 'source_key'),
         state=pulumi.get(__ret__, 'state'))
-def get_assets_output(asset_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_assets_output(asset_class_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                      asset_class_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                      asset_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                       asset_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                       compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                       display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
@@ -253,6 +289,8 @@ def get_assets_output(asset_id: Optional[pulumi.Input[Optional[_builtins.str]]] 
     import pulumi_oci as oci
 
     test_assets = oci.CloudBridge.get_assets(compartment_id=compartment_id,
+        asset_class_name=asset_asset_class_name,
+        asset_class_version=asset_asset_class_version,
         asset_id=test_asset["id"],
         asset_type=asset_asset_type,
         display_name=asset_display_name,
@@ -263,6 +301,8 @@ def get_assets_output(asset_id: Optional[pulumi.Input[Optional[_builtins.str]]] 
     ```
 
 
+    :param _builtins.str asset_class_name: The name of the asset class.
+    :param _builtins.str asset_class_version: The version of the asset class.
     :param _builtins.str asset_id: Unique asset identifier.
     :param _builtins.str asset_type: The type of asset.
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
@@ -273,6 +313,8 @@ def get_assets_output(asset_id: Optional[pulumi.Input[Optional[_builtins.str]]] 
     :param _builtins.str state: A filter to return only assets whose lifecycleState matches the given lifecycleState.
     """
     __args__ = dict()
+    __args__['assetClassName'] = asset_class_name
+    __args__['assetClassVersion'] = asset_class_version
     __args__['assetId'] = asset_id
     __args__['assetType'] = asset_type
     __args__['compartmentId'] = compartment_id
@@ -285,6 +327,8 @@ def get_assets_output(asset_id: Optional[pulumi.Input[Optional[_builtins.str]]] 
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:CloudBridge/getAssets:getAssets', __args__, opts=opts, typ=GetAssetsResult)
     return __ret__.apply(lambda __response__: GetAssetsResult(
+        asset_class_name=pulumi.get(__response__, 'asset_class_name'),
+        asset_class_version=pulumi.get(__response__, 'asset_class_version'),
         asset_collections=pulumi.get(__response__, 'asset_collections'),
         asset_id=pulumi.get(__response__, 'asset_id'),
         asset_type=pulumi.get(__response__, 'asset_type'),

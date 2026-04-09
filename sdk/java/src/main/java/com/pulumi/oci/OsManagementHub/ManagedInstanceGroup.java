@@ -102,14 +102,14 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
         return this.archType;
     }
     /**
-     * (Updatable) Updatable settings for the Autonomous Linux service.
+     * (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
      * 
      */
     @Export(name="autonomousSettings", refs={ManagedInstanceGroupAutonomousSettings.class}, tree="[0]")
     private Output<ManagedInstanceGroupAutonomousSettings> autonomousSettings;
 
     /**
-     * @return (Updatable) Updatable settings for the Autonomous Linux service.
+     * @return (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
      * 
      */
     public Output<ManagedInstanceGroupAutonomousSettings> autonomousSettings() {

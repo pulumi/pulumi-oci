@@ -30,6 +30,8 @@ namespace Pulumi.Oci.CloudBridge
         ///     var testAssets = Oci.CloudBridge.GetAssets.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         AssetClassName = assetAssetClassName,
+        ///         AssetClassVersion = assetAssetClassVersion,
         ///         AssetId = testAsset.Id,
         ///         AssetType = assetAssetType,
         ///         DisplayName = assetDisplayName,
@@ -64,6 +66,8 @@ namespace Pulumi.Oci.CloudBridge
         ///     var testAssets = Oci.CloudBridge.GetAssets.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         AssetClassName = assetAssetClassName,
+        ///         AssetClassVersion = assetAssetClassVersion,
         ///         AssetId = testAsset.Id,
         ///         AssetType = assetAssetType,
         ///         DisplayName = assetDisplayName,
@@ -98,6 +102,8 @@ namespace Pulumi.Oci.CloudBridge
         ///     var testAssets = Oci.CloudBridge.GetAssets.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         AssetClassName = assetAssetClassName,
+        ///         AssetClassVersion = assetAssetClassVersion,
         ///         AssetId = testAsset.Id,
         ///         AssetType = assetAssetType,
         ///         DisplayName = assetDisplayName,
@@ -117,6 +123,18 @@ namespace Pulumi.Oci.CloudBridge
 
     public sealed class GetAssetsArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The name of the asset class.
+        /// </summary>
+        [Input("assetClassName")]
+        public string? AssetClassName { get; set; }
+
+        /// <summary>
+        /// The version of the asset class.
+        /// </summary>
+        [Input("assetClassVersion")]
+        public string? AssetClassVersion { get; set; }
+
         /// <summary>
         /// Unique asset identifier.
         /// </summary>
@@ -181,6 +199,18 @@ namespace Pulumi.Oci.CloudBridge
 
     public sealed class GetAssetsInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The name of the asset class.
+        /// </summary>
+        [Input("assetClassName")]
+        public Input<string>? AssetClassName { get; set; }
+
+        /// <summary>
+        /// The version of the asset class.
+        /// </summary>
+        [Input("assetClassVersion")]
+        public Input<string>? AssetClassVersion { get; set; }
+
         /// <summary>
         /// Unique asset identifier.
         /// </summary>
@@ -248,6 +278,14 @@ namespace Pulumi.Oci.CloudBridge
     public sealed class GetAssetsResult
     {
         /// <summary>
+        /// The class name of the asset.
+        /// </summary>
+        public readonly string? AssetClassName;
+        /// <summary>
+        /// The version of the asset class.
+        /// </summary>
+        public readonly string? AssetClassVersion;
+        /// <summary>
         /// The list of asset_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAssetsAssetCollectionResult> AssetCollections;
@@ -288,6 +326,10 @@ namespace Pulumi.Oci.CloudBridge
 
         [OutputConstructor]
         private GetAssetsResult(
+            string? assetClassName,
+
+            string? assetClassVersion,
+
             ImmutableArray<Outputs.GetAssetsAssetCollectionResult> assetCollections,
 
             string? assetId,
@@ -310,6 +352,8 @@ namespace Pulumi.Oci.CloudBridge
 
             string? state)
         {
+            AssetClassName = assetClassName;
+            AssetClassVersion = assetClassVersion;
             AssetCollections = assetCollections;
             AssetId = assetId;
             AssetType = assetType;

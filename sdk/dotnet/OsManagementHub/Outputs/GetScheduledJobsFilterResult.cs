@@ -13,6 +13,9 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     [OutputType]
     public sealed class GetScheduledJobsFilterResult
     {
+        /// <summary>
+        /// The name of the snap.
+        /// </summary>
         public readonly string Name;
         public readonly bool? Regex;
         public readonly ImmutableArray<string> Values;

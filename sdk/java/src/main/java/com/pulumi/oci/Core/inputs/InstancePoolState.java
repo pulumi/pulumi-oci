@@ -52,6 +52,21 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Count of instance in running state associated to the Instance Pool.
+     * 
+     */
+    @Import(name="currentSize")
+    private @Nullable Output<Integer> currentSize;
+
+    /**
+     * @return Count of instance in running state associated to the Instance Pool.
+     * 
+     */
+    public Optional<Output<Integer>> currentSize() {
+        return Optional.ofNullable(this.currentSize);
+    }
+
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
@@ -246,6 +261,7 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
     private InstancePoolState(InstancePoolState $) {
         this.actualSize = $.actualSize;
         this.compartmentId = $.compartmentId;
+        this.currentSize = $.currentSize;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
@@ -318,6 +334,27 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param currentSize Count of instance in running state associated to the Instance Pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder currentSize(@Nullable Output<Integer> currentSize) {
+            $.currentSize = currentSize;
+            return this;
+        }
+
+        /**
+         * @param currentSize Count of instance in running state associated to the Instance Pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder currentSize(Integer currentSize) {
+            return currentSize(Output.of(currentSize));
         }
 
         /**

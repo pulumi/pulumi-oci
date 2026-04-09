@@ -29,6 +29,7 @@ class NodePoolArgs:
                  initial_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolInitialNodeLabelArgs']]]] = None,
                  kubernetes_version: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
+                 network_launch_type: Optional[pulumi.Input[_builtins.str]] = None,
                  node_config_details: Optional[pulumi.Input['NodePoolNodeConfigDetailsArgs']] = None,
                  node_eviction_node_pool_settings: Optional[pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs']] = None,
                  node_image_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -38,6 +39,7 @@ class NodePoolArgs:
                  node_shape_config: Optional[pulumi.Input['NodePoolNodeShapeConfigArgs']] = None,
                  node_source_details: Optional[pulumi.Input['NodePoolNodeSourceDetailsArgs']] = None,
                  quantity_per_subnet: Optional[pulumi.Input[_builtins.int]] = None,
+                 secondary_vnics: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolSecondaryVnicArgs']]]] = None,
                  ssh_public_key: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
@@ -51,6 +53,7 @@ class NodePoolArgs:
         :param pulumi.Input[Sequence[pulumi.Input['NodePoolInitialNodeLabelArgs']]] initial_node_labels: (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
         :param pulumi.Input[_builtins.str] kubernetes_version: (Updatable) The version of Kubernetes to install on the nodes in the node pool.
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the node pool. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] network_launch_type: (Updatable) Emulation type for the physical network interface card (NIC) for nodes
         :param pulumi.Input['NodePoolNodeConfigDetailsArgs'] node_config_details: (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
         :param pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs'] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
         :param pulumi.Input[_builtins.str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
@@ -60,6 +63,7 @@ class NodePoolArgs:
         :param pulumi.Input['NodePoolNodeShapeConfigArgs'] node_shape_config: (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
         :param pulumi.Input['NodePoolNodeSourceDetailsArgs'] node_source_details: (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
         :param pulumi.Input[_builtins.int] quantity_per_subnet: (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
+        :param pulumi.Input[Sequence[pulumi.Input['NodePoolSecondaryVnicArgs']]] secondary_vnics: (Updatable) A list of secondary vnics to attach to nodes
         :param pulumi.Input[_builtins.str] ssh_public_key: (Updatable) The SSH public key on each node in the node pool on launch.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnet_ids: (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. 
                
@@ -80,6 +84,8 @@ class NodePoolArgs:
             pulumi.set(__self__, "kubernetes_version", kubernetes_version)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if network_launch_type is not None:
+            pulumi.set(__self__, "network_launch_type", network_launch_type)
         if node_config_details is not None:
             pulumi.set(__self__, "node_config_details", node_config_details)
         if node_eviction_node_pool_settings is not None:
@@ -104,6 +110,8 @@ class NodePoolArgs:
             pulumi.set(__self__, "node_source_details", node_source_details)
         if quantity_per_subnet is not None:
             pulumi.set(__self__, "quantity_per_subnet", quantity_per_subnet)
+        if secondary_vnics is not None:
+            pulumi.set(__self__, "secondary_vnics", secondary_vnics)
         if ssh_public_key is not None:
             pulumi.set(__self__, "ssh_public_key", ssh_public_key)
         if subnet_ids is not None:
@@ -204,6 +212,18 @@ class NodePoolArgs:
     @name.setter
     def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkLaunchType")
+    def network_launch_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+        """
+        return pulumi.get(self, "network_launch_type")
+
+    @network_launch_type.setter
+    def network_launch_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "network_launch_type", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeConfigDetails")
@@ -316,6 +336,18 @@ class NodePoolArgs:
         pulumi.set(self, "quantity_per_subnet", value)
 
     @_builtins.property
+    @pulumi.getter(name="secondaryVnics")
+    def secondary_vnics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolSecondaryVnicArgs']]]]:
+        """
+        (Updatable) A list of secondary vnics to attach to nodes
+        """
+        return pulumi.get(self, "secondary_vnics")
+
+    @secondary_vnics.setter
+    def secondary_vnics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolSecondaryVnicArgs']]]]):
+        pulumi.set(self, "secondary_vnics", value)
+
+    @_builtins.property
     @pulumi.getter(name="sshPublicKey")
     def ssh_public_key(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -355,6 +387,7 @@ class _NodePoolState:
                  kubernetes_version: Optional[pulumi.Input[_builtins.str]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
+                 network_launch_type: Optional[pulumi.Input[_builtins.str]] = None,
                  node_config_details: Optional[pulumi.Input['NodePoolNodeConfigDetailsArgs']] = None,
                  node_eviction_node_pool_settings: Optional[pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs']] = None,
                  node_image_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -367,6 +400,7 @@ class _NodePoolState:
                  node_sources: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolNodeSourceArgs']]]] = None,
                  nodes: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolNodeArgs']]]] = None,
                  quantity_per_subnet: Optional[pulumi.Input[_builtins.int]] = None,
+                 secondary_vnics: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolSecondaryVnicArgs']]]] = None,
                  ssh_public_key: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
@@ -381,6 +415,7 @@ class _NodePoolState:
         :param pulumi.Input[_builtins.str] kubernetes_version: (Updatable) The version of Kubernetes to install on the nodes in the node pool.
         :param pulumi.Input[_builtins.str] lifecycle_details: Details about the state of the node.
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the node pool. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] network_launch_type: (Updatable) Emulation type for the physical network interface card (NIC) for nodes
         :param pulumi.Input['NodePoolNodeConfigDetailsArgs'] node_config_details: (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
         :param pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs'] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
         :param pulumi.Input[_builtins.str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
@@ -393,8 +428,9 @@ class _NodePoolState:
         :param pulumi.Input[Sequence[pulumi.Input['NodePoolNodeSourceArgs']]] node_sources: Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
         :param pulumi.Input[Sequence[pulumi.Input['NodePoolNodeArgs']]] nodes: The nodes in the node pool.
         :param pulumi.Input[_builtins.int] quantity_per_subnet: (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
+        :param pulumi.Input[Sequence[pulumi.Input['NodePoolSecondaryVnicArgs']]] secondary_vnics: (Updatable) A list of secondary vnics to attach to nodes
         :param pulumi.Input[_builtins.str] ssh_public_key: (Updatable) The SSH public key on each node in the node pool on launch.
-        :param pulumi.Input[_builtins.str] state: The state of the nodepool.
+        :param pulumi.Input[_builtins.str] state: The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnet_ids: (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. 
                
                
@@ -417,6 +453,8 @@ class _NodePoolState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if network_launch_type is not None:
+            pulumi.set(__self__, "network_launch_type", network_launch_type)
         if node_config_details is not None:
             pulumi.set(__self__, "node_config_details", node_config_details)
         if node_eviction_node_pool_settings is not None:
@@ -447,6 +485,8 @@ class _NodePoolState:
             pulumi.set(__self__, "nodes", nodes)
         if quantity_per_subnet is not None:
             pulumi.set(__self__, "quantity_per_subnet", quantity_per_subnet)
+        if secondary_vnics is not None:
+            pulumi.set(__self__, "secondary_vnics", secondary_vnics)
         if ssh_public_key is not None:
             pulumi.set(__self__, "ssh_public_key", ssh_public_key)
         if state is not None:
@@ -549,6 +589,18 @@ class _NodePoolState:
     @name.setter
     def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkLaunchType")
+    def network_launch_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+        """
+        return pulumi.get(self, "network_launch_type")
+
+    @network_launch_type.setter
+    def network_launch_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "network_launch_type", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeConfigDetails")
@@ -697,6 +749,18 @@ class _NodePoolState:
         pulumi.set(self, "quantity_per_subnet", value)
 
     @_builtins.property
+    @pulumi.getter(name="secondaryVnics")
+    def secondary_vnics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolSecondaryVnicArgs']]]]:
+        """
+        (Updatable) A list of secondary vnics to attach to nodes
+        """
+        return pulumi.get(self, "secondary_vnics")
+
+    @secondary_vnics.setter
+    def secondary_vnics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolSecondaryVnicArgs']]]]):
+        pulumi.set(self, "secondary_vnics", value)
+
+    @_builtins.property
     @pulumi.getter(name="sshPublicKey")
     def ssh_public_key(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -712,7 +776,7 @@ class _NodePoolState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The state of the nodepool.
+        The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
         """
         return pulumi.get(self, "state")
 
@@ -750,6 +814,7 @@ class NodePool(pulumi.CustomResource):
                  initial_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NodePoolInitialNodeLabelArgs', 'NodePoolInitialNodeLabelArgsDict']]]]] = None,
                  kubernetes_version: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
+                 network_launch_type: Optional[pulumi.Input[_builtins.str]] = None,
                  node_config_details: Optional[pulumi.Input[Union['NodePoolNodeConfigDetailsArgs', 'NodePoolNodeConfigDetailsArgsDict']]] = None,
                  node_eviction_node_pool_settings: Optional[pulumi.Input[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict']]] = None,
                  node_image_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -760,6 +825,7 @@ class NodePool(pulumi.CustomResource):
                  node_shape_config: Optional[pulumi.Input[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict']]] = None,
                  node_source_details: Optional[pulumi.Input[Union['NodePoolNodeSourceDetailsArgs', 'NodePoolNodeSourceDetailsArgsDict']]] = None,
                  quantity_per_subnet: Optional[pulumi.Input[_builtins.int]] = None,
+                 secondary_vnics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NodePoolSecondaryVnicArgs', 'NodePoolSecondaryVnicArgsDict']]]]] = None,
                  ssh_public_key: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -793,6 +859,7 @@ class NodePool(pulumi.CustomResource):
                 "value": node_pool_initial_node_labels_value,
             }],
             kubernetes_version=node_pool_kubernetes_version,
+            network_launch_type=node_pool_network_launch_type,
             node_config_details={
                 "placement_configs": [{
                     "availability_domain": node_pool_node_config_details_placement_configs_availability_domain,
@@ -807,6 +874,12 @@ class NodePool(pulumi.CustomResource):
                     },
                 }],
                 "size": node_pool_node_config_details_size,
+                "defined_tags": {
+                    "Operations.CostCenter": "42",
+                },
+                "freeform_tags": {
+                    "Department": "Finance",
+                },
                 "is_pv_encryption_in_transit_enabled": node_pool_node_config_details_is_pv_encryption_in_transit_enabled,
                 "kms_key_id": test_key["id"],
                 "node_pool_pod_network_option_details": {
@@ -814,12 +887,6 @@ class NodePool(pulumi.CustomResource):
                     "max_pods_per_node": node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node,
                     "pod_nsg_ids": node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids,
                     "pod_subnet_ids": node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids,
-                },
-                "defined_tags": {
-                    "Operations.CostCenter": "42",
-                },
-                "freeform_tags": {
-                    "Department": "Finance",
                 },
                 "nsg_ids": node_pool_node_config_details_nsg_ids,
             },
@@ -846,6 +913,30 @@ class NodePool(pulumi.CustomResource):
                 "boot_volume_size_in_gbs": node_pool_node_source_details_boot_volume_size_in_gbs,
             },
             quantity_per_subnet=node_pool_quantity_per_subnet,
+            secondary_vnics=[{
+                "create_vnic_details": {
+                    "subnet_id": test_subnet["id"],
+                    "application_resources": node_pool_secondary_vnics_create_vnic_details_application_resources,
+                    "assign_ipv6ip": node_pool_secondary_vnics_create_vnic_details_assign_ipv6ip,
+                    "assign_public_ip": node_pool_secondary_vnics_create_vnic_details_assign_public_ip,
+                    "defined_tags": {
+                        "Operations.CostCenter": "42",
+                    },
+                    "display_name": node_pool_secondary_vnics_create_vnic_details_display_name,
+                    "freeform_tags": {
+                        "Department": "Finance",
+                    },
+                    "ip_count": node_pool_secondary_vnics_create_vnic_details_ip_count,
+                    "ipv6address_ipv6subnet_cidr_pair_details": [{
+                        "ipv6address": node_pool_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
+                        "ipv6subnet_cidr": node_pool_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+                    }],
+                    "nsg_ids": node_pool_secondary_vnics_create_vnic_details_nsg_ids,
+                    "skip_source_dest_check": node_pool_secondary_vnics_create_vnic_details_skip_source_dest_check,
+                },
+                "display_name": node_pool_secondary_vnics_display_name,
+                "nic_index": node_pool_secondary_vnics_nic_index,
+            }],
             ssh_public_key=node_pool_ssh_public_key,
             subnet_ids=node_pool_subnet_ids)
         ```
@@ -868,6 +959,7 @@ class NodePool(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolInitialNodeLabelArgs', 'NodePoolInitialNodeLabelArgsDict']]]] initial_node_labels: (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
         :param pulumi.Input[_builtins.str] kubernetes_version: (Updatable) The version of Kubernetes to install on the nodes in the node pool.
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the node pool. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] network_launch_type: (Updatable) Emulation type for the physical network interface card (NIC) for nodes
         :param pulumi.Input[Union['NodePoolNodeConfigDetailsArgs', 'NodePoolNodeConfigDetailsArgsDict']] node_config_details: (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
         :param pulumi.Input[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict']] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
         :param pulumi.Input[_builtins.str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
@@ -878,6 +970,7 @@ class NodePool(pulumi.CustomResource):
         :param pulumi.Input[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict']] node_shape_config: (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
         :param pulumi.Input[Union['NodePoolNodeSourceDetailsArgs', 'NodePoolNodeSourceDetailsArgsDict']] node_source_details: (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
         :param pulumi.Input[_builtins.int] quantity_per_subnet: (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolSecondaryVnicArgs', 'NodePoolSecondaryVnicArgsDict']]]] secondary_vnics: (Updatable) A list of secondary vnics to attach to nodes
         :param pulumi.Input[_builtins.str] ssh_public_key: (Updatable) The SSH public key on each node in the node pool on launch.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnet_ids: (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. 
                
@@ -921,6 +1014,7 @@ class NodePool(pulumi.CustomResource):
                 "value": node_pool_initial_node_labels_value,
             }],
             kubernetes_version=node_pool_kubernetes_version,
+            network_launch_type=node_pool_network_launch_type,
             node_config_details={
                 "placement_configs": [{
                     "availability_domain": node_pool_node_config_details_placement_configs_availability_domain,
@@ -935,6 +1029,12 @@ class NodePool(pulumi.CustomResource):
                     },
                 }],
                 "size": node_pool_node_config_details_size,
+                "defined_tags": {
+                    "Operations.CostCenter": "42",
+                },
+                "freeform_tags": {
+                    "Department": "Finance",
+                },
                 "is_pv_encryption_in_transit_enabled": node_pool_node_config_details_is_pv_encryption_in_transit_enabled,
                 "kms_key_id": test_key["id"],
                 "node_pool_pod_network_option_details": {
@@ -942,12 +1042,6 @@ class NodePool(pulumi.CustomResource):
                     "max_pods_per_node": node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node,
                     "pod_nsg_ids": node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids,
                     "pod_subnet_ids": node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids,
-                },
-                "defined_tags": {
-                    "Operations.CostCenter": "42",
-                },
-                "freeform_tags": {
-                    "Department": "Finance",
                 },
                 "nsg_ids": node_pool_node_config_details_nsg_ids,
             },
@@ -974,6 +1068,30 @@ class NodePool(pulumi.CustomResource):
                 "boot_volume_size_in_gbs": node_pool_node_source_details_boot_volume_size_in_gbs,
             },
             quantity_per_subnet=node_pool_quantity_per_subnet,
+            secondary_vnics=[{
+                "create_vnic_details": {
+                    "subnet_id": test_subnet["id"],
+                    "application_resources": node_pool_secondary_vnics_create_vnic_details_application_resources,
+                    "assign_ipv6ip": node_pool_secondary_vnics_create_vnic_details_assign_ipv6ip,
+                    "assign_public_ip": node_pool_secondary_vnics_create_vnic_details_assign_public_ip,
+                    "defined_tags": {
+                        "Operations.CostCenter": "42",
+                    },
+                    "display_name": node_pool_secondary_vnics_create_vnic_details_display_name,
+                    "freeform_tags": {
+                        "Department": "Finance",
+                    },
+                    "ip_count": node_pool_secondary_vnics_create_vnic_details_ip_count,
+                    "ipv6address_ipv6subnet_cidr_pair_details": [{
+                        "ipv6address": node_pool_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
+                        "ipv6subnet_cidr": node_pool_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+                    }],
+                    "nsg_ids": node_pool_secondary_vnics_create_vnic_details_nsg_ids,
+                    "skip_source_dest_check": node_pool_secondary_vnics_create_vnic_details_skip_source_dest_check,
+                },
+                "display_name": node_pool_secondary_vnics_display_name,
+                "nic_index": node_pool_secondary_vnics_nic_index,
+            }],
             ssh_public_key=node_pool_ssh_public_key,
             subnet_ids=node_pool_subnet_ids)
         ```
@@ -1009,6 +1127,7 @@ class NodePool(pulumi.CustomResource):
                  initial_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NodePoolInitialNodeLabelArgs', 'NodePoolInitialNodeLabelArgsDict']]]]] = None,
                  kubernetes_version: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
+                 network_launch_type: Optional[pulumi.Input[_builtins.str]] = None,
                  node_config_details: Optional[pulumi.Input[Union['NodePoolNodeConfigDetailsArgs', 'NodePoolNodeConfigDetailsArgsDict']]] = None,
                  node_eviction_node_pool_settings: Optional[pulumi.Input[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict']]] = None,
                  node_image_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1019,6 +1138,7 @@ class NodePool(pulumi.CustomResource):
                  node_shape_config: Optional[pulumi.Input[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict']]] = None,
                  node_source_details: Optional[pulumi.Input[Union['NodePoolNodeSourceDetailsArgs', 'NodePoolNodeSourceDetailsArgsDict']]] = None,
                  quantity_per_subnet: Optional[pulumi.Input[_builtins.int]] = None,
+                 secondary_vnics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NodePoolSecondaryVnicArgs', 'NodePoolSecondaryVnicArgsDict']]]]] = None,
                  ssh_public_key: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -1041,6 +1161,7 @@ class NodePool(pulumi.CustomResource):
             __props__.__dict__["initial_node_labels"] = initial_node_labels
             __props__.__dict__["kubernetes_version"] = kubernetes_version
             __props__.__dict__["name"] = name
+            __props__.__dict__["network_launch_type"] = network_launch_type
             __props__.__dict__["node_config_details"] = node_config_details
             __props__.__dict__["node_eviction_node_pool_settings"] = node_eviction_node_pool_settings
             __props__.__dict__["node_image_id"] = node_image_id
@@ -1053,6 +1174,7 @@ class NodePool(pulumi.CustomResource):
             __props__.__dict__["node_shape_config"] = node_shape_config
             __props__.__dict__["node_source_details"] = node_source_details
             __props__.__dict__["quantity_per_subnet"] = quantity_per_subnet
+            __props__.__dict__["secondary_vnics"] = secondary_vnics
             __props__.__dict__["ssh_public_key"] = ssh_public_key
             __props__.__dict__["subnet_ids"] = subnet_ids
             __props__.__dict__["lifecycle_details"] = None
@@ -1077,6 +1199,7 @@ class NodePool(pulumi.CustomResource):
             kubernetes_version: Optional[pulumi.Input[_builtins.str]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
             name: Optional[pulumi.Input[_builtins.str]] = None,
+            network_launch_type: Optional[pulumi.Input[_builtins.str]] = None,
             node_config_details: Optional[pulumi.Input[Union['NodePoolNodeConfigDetailsArgs', 'NodePoolNodeConfigDetailsArgsDict']]] = None,
             node_eviction_node_pool_settings: Optional[pulumi.Input[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict']]] = None,
             node_image_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1089,6 +1212,7 @@ class NodePool(pulumi.CustomResource):
             node_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NodePoolNodeSourceArgs', 'NodePoolNodeSourceArgsDict']]]]] = None,
             nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NodePoolNodeArgs', 'NodePoolNodeArgsDict']]]]] = None,
             quantity_per_subnet: Optional[pulumi.Input[_builtins.int]] = None,
+            secondary_vnics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NodePoolSecondaryVnicArgs', 'NodePoolSecondaryVnicArgsDict']]]]] = None,
             ssh_public_key: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'NodePool':
@@ -1107,6 +1231,7 @@ class NodePool(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] kubernetes_version: (Updatable) The version of Kubernetes to install on the nodes in the node pool.
         :param pulumi.Input[_builtins.str] lifecycle_details: Details about the state of the node.
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the node pool. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] network_launch_type: (Updatable) Emulation type for the physical network interface card (NIC) for nodes
         :param pulumi.Input[Union['NodePoolNodeConfigDetailsArgs', 'NodePoolNodeConfigDetailsArgsDict']] node_config_details: (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
         :param pulumi.Input[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict']] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
         :param pulumi.Input[_builtins.str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
@@ -1119,8 +1244,9 @@ class NodePool(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolNodeSourceArgs', 'NodePoolNodeSourceArgsDict']]]] node_sources: Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolNodeArgs', 'NodePoolNodeArgsDict']]]] nodes: The nodes in the node pool.
         :param pulumi.Input[_builtins.int] quantity_per_subnet: (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolSecondaryVnicArgs', 'NodePoolSecondaryVnicArgsDict']]]] secondary_vnics: (Updatable) A list of secondary vnics to attach to nodes
         :param pulumi.Input[_builtins.str] ssh_public_key: (Updatable) The SSH public key on each node in the node pool on launch.
-        :param pulumi.Input[_builtins.str] state: The state of the nodepool.
+        :param pulumi.Input[_builtins.str] state: The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnet_ids: (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. 
                
                
@@ -1139,6 +1265,7 @@ class NodePool(pulumi.CustomResource):
         __props__.__dict__["kubernetes_version"] = kubernetes_version
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["name"] = name
+        __props__.__dict__["network_launch_type"] = network_launch_type
         __props__.__dict__["node_config_details"] = node_config_details
         __props__.__dict__["node_eviction_node_pool_settings"] = node_eviction_node_pool_settings
         __props__.__dict__["node_image_id"] = node_image_id
@@ -1151,6 +1278,7 @@ class NodePool(pulumi.CustomResource):
         __props__.__dict__["node_sources"] = node_sources
         __props__.__dict__["nodes"] = nodes
         __props__.__dict__["quantity_per_subnet"] = quantity_per_subnet
+        __props__.__dict__["secondary_vnics"] = secondary_vnics
         __props__.__dict__["ssh_public_key"] = ssh_public_key
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_ids"] = subnet_ids
@@ -1219,6 +1347,14 @@ class NodePool(pulumi.CustomResource):
         (Updatable) The name of the node pool. Avoid entering confidential information.
         """
         return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="networkLaunchType")
+    def network_launch_type(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+        """
+        return pulumi.get(self, "network_launch_type")
 
     @_builtins.property
     @pulumi.getter(name="nodeConfigDetails")
@@ -1319,6 +1455,14 @@ class NodePool(pulumi.CustomResource):
         return pulumi.get(self, "quantity_per_subnet")
 
     @_builtins.property
+    @pulumi.getter(name="secondaryVnics")
+    def secondary_vnics(self) -> pulumi.Output[Optional[Sequence['outputs.NodePoolSecondaryVnic']]]:
+        """
+        (Updatable) A list of secondary vnics to attach to nodes
+        """
+        return pulumi.get(self, "secondary_vnics")
+
+    @_builtins.property
     @pulumi.getter(name="sshPublicKey")
     def ssh_public_key(self) -> pulumi.Output[_builtins.str]:
         """
@@ -1330,7 +1474,7 @@ class NodePool(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
-        The state of the nodepool.
+        The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
         """
         return pulumi.get(self, "state")
 

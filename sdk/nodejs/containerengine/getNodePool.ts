@@ -80,6 +80,10 @@ export interface GetNodePoolResult {
      */
     readonly name: string;
     /**
+     * Emulation type for the physical network interface card (NIC) for nodes
+     */
+    readonly networkLaunchType: string;
+    /**
      * The configuration of nodes in the node pool.
      */
     readonly nodeConfigDetails: outputs.ContainerEngine.GetNodePoolNodeConfigDetail[];
@@ -135,6 +139,10 @@ export interface GetNodePoolResult {
      * The number of nodes in each subnet.
      */
     readonly quantityPerSubnet: number;
+    /**
+     * A list of secondary vnics to attach to nodes
+     */
+    readonly secondaryVnics: outputs.ContainerEngine.GetNodePoolSecondaryVnic[];
     /**
      * The SSH public key on each node in the node pool on launch.
      */

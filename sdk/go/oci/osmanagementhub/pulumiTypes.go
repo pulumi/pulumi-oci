@@ -13,6 +13,1225 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type DynamicSetInstallPackagesManagementWorkRequestDetails struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description *string `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName *string `pulumi:"displayName"`
+}
+
+// DynamicSetInstallPackagesManagementWorkRequestDetailsInput is an input type that accepts DynamicSetInstallPackagesManagementWorkRequestDetailsArgs and DynamicSetInstallPackagesManagementWorkRequestDetailsOutput values.
+// You can construct a concrete instance of `DynamicSetInstallPackagesManagementWorkRequestDetailsInput` via:
+//
+//	DynamicSetInstallPackagesManagementWorkRequestDetailsArgs{...}
+type DynamicSetInstallPackagesManagementWorkRequestDetailsInput interface {
+	pulumi.Input
+
+	ToDynamicSetInstallPackagesManagementWorkRequestDetailsOutput() DynamicSetInstallPackagesManagementWorkRequestDetailsOutput
+	ToDynamicSetInstallPackagesManagementWorkRequestDetailsOutputWithContext(context.Context) DynamicSetInstallPackagesManagementWorkRequestDetailsOutput
+}
+
+type DynamicSetInstallPackagesManagementWorkRequestDetailsArgs struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+}
+
+func (DynamicSetInstallPackagesManagementWorkRequestDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DynamicSetInstallPackagesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i DynamicSetInstallPackagesManagementWorkRequestDetailsArgs) ToDynamicSetInstallPackagesManagementWorkRequestDetailsOutput() DynamicSetInstallPackagesManagementWorkRequestDetailsOutput {
+	return i.ToDynamicSetInstallPackagesManagementWorkRequestDetailsOutputWithContext(context.Background())
+}
+
+func (i DynamicSetInstallPackagesManagementWorkRequestDetailsArgs) ToDynamicSetInstallPackagesManagementWorkRequestDetailsOutputWithContext(ctx context.Context) DynamicSetInstallPackagesManagementWorkRequestDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DynamicSetInstallPackagesManagementWorkRequestDetailsOutput)
+}
+
+func (i DynamicSetInstallPackagesManagementWorkRequestDetailsArgs) ToDynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput() DynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput {
+	return i.ToDynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i DynamicSetInstallPackagesManagementWorkRequestDetailsArgs) ToDynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) DynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DynamicSetInstallPackagesManagementWorkRequestDetailsOutput).ToDynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx)
+}
+
+// DynamicSetInstallPackagesManagementWorkRequestDetailsPtrInput is an input type that accepts DynamicSetInstallPackagesManagementWorkRequestDetailsArgs, DynamicSetInstallPackagesManagementWorkRequestDetailsPtr and DynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput values.
+// You can construct a concrete instance of `DynamicSetInstallPackagesManagementWorkRequestDetailsPtrInput` via:
+//
+//	        DynamicSetInstallPackagesManagementWorkRequestDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type DynamicSetInstallPackagesManagementWorkRequestDetailsPtrInput interface {
+	pulumi.Input
+
+	ToDynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput() DynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput
+	ToDynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutputWithContext(context.Context) DynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput
+}
+
+type dynamicSetInstallPackagesManagementWorkRequestDetailsPtrType DynamicSetInstallPackagesManagementWorkRequestDetailsArgs
+
+func DynamicSetInstallPackagesManagementWorkRequestDetailsPtr(v *DynamicSetInstallPackagesManagementWorkRequestDetailsArgs) DynamicSetInstallPackagesManagementWorkRequestDetailsPtrInput {
+	return (*dynamicSetInstallPackagesManagementWorkRequestDetailsPtrType)(v)
+}
+
+func (*dynamicSetInstallPackagesManagementWorkRequestDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DynamicSetInstallPackagesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i *dynamicSetInstallPackagesManagementWorkRequestDetailsPtrType) ToDynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput() DynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput {
+	return i.ToDynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *dynamicSetInstallPackagesManagementWorkRequestDetailsPtrType) ToDynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) DynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput)
+}
+
+type DynamicSetInstallPackagesManagementWorkRequestDetailsOutput struct{ *pulumi.OutputState }
+
+func (DynamicSetInstallPackagesManagementWorkRequestDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DynamicSetInstallPackagesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o DynamicSetInstallPackagesManagementWorkRequestDetailsOutput) ToDynamicSetInstallPackagesManagementWorkRequestDetailsOutput() DynamicSetInstallPackagesManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o DynamicSetInstallPackagesManagementWorkRequestDetailsOutput) ToDynamicSetInstallPackagesManagementWorkRequestDetailsOutputWithContext(ctx context.Context) DynamicSetInstallPackagesManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o DynamicSetInstallPackagesManagementWorkRequestDetailsOutput) ToDynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput() DynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput {
+	return o.ToDynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o DynamicSetInstallPackagesManagementWorkRequestDetailsOutput) ToDynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) DynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DynamicSetInstallPackagesManagementWorkRequestDetails) *DynamicSetInstallPackagesManagementWorkRequestDetails {
+		return &v
+	}).(DynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o DynamicSetInstallPackagesManagementWorkRequestDetailsOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DynamicSetInstallPackagesManagementWorkRequestDetails) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o DynamicSetInstallPackagesManagementWorkRequestDetailsOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DynamicSetInstallPackagesManagementWorkRequestDetails) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+type DynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (DynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DynamicSetInstallPackagesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o DynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput) ToDynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput() DynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o DynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput) ToDynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) DynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o DynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput) Elem() DynamicSetInstallPackagesManagementWorkRequestDetailsOutput {
+	return o.ApplyT(func(v *DynamicSetInstallPackagesManagementWorkRequestDetails) DynamicSetInstallPackagesManagementWorkRequestDetails {
+		if v != nil {
+			return *v
+		}
+		var ret DynamicSetInstallPackagesManagementWorkRequestDetails
+		return ret
+	}).(DynamicSetInstallPackagesManagementWorkRequestDetailsOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o DynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DynamicSetInstallPackagesManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o DynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DynamicSetInstallPackagesManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DisplayName
+	}).(pulumi.StringPtrOutput)
+}
+
+type DynamicSetMatchingRule struct {
+	// (Updatable) The list of managed instance architectures.
+	Architectures []string `pulumi:"architectures"`
+	// (Updatable) The list of managed instance display names.
+	DisplayNames []string `pulumi:"displayNames"`
+	// (Updatable) Indicates if the managed instance needs to be rebooted.
+	IsRebootRequired *bool `pulumi:"isRebootRequired"`
+	// (Updatable) The list of managed instance locations.
+	Locations []string `pulumi:"locations"`
+	// (Updatable) The list of managed instance group IDs.
+	ManagedInstanceGroupIds []string `pulumi:"managedInstanceGroupIds"`
+	// (Updatable) The list of managed instance ids.
+	ManagedInstanceIds []string `pulumi:"managedInstanceIds"`
+	// (Updatable) The list of managed instance OS families.
+	OsFamilies []string `pulumi:"osFamilies"`
+	// (Updatable) The list of managed instance OS names.
+	OsNames []string `pulumi:"osNames"`
+	// (Updatable) The list of managed instance statuses.
+	Statuses []string `pulumi:"statuses"`
+	// (Updatable) The list of the managed instance tags.
+	Tags []DynamicSetMatchingRuleTag `pulumi:"tags"`
+}
+
+// DynamicSetMatchingRuleInput is an input type that accepts DynamicSetMatchingRuleArgs and DynamicSetMatchingRuleOutput values.
+// You can construct a concrete instance of `DynamicSetMatchingRuleInput` via:
+//
+//	DynamicSetMatchingRuleArgs{...}
+type DynamicSetMatchingRuleInput interface {
+	pulumi.Input
+
+	ToDynamicSetMatchingRuleOutput() DynamicSetMatchingRuleOutput
+	ToDynamicSetMatchingRuleOutputWithContext(context.Context) DynamicSetMatchingRuleOutput
+}
+
+type DynamicSetMatchingRuleArgs struct {
+	// (Updatable) The list of managed instance architectures.
+	Architectures pulumi.StringArrayInput `pulumi:"architectures"`
+	// (Updatable) The list of managed instance display names.
+	DisplayNames pulumi.StringArrayInput `pulumi:"displayNames"`
+	// (Updatable) Indicates if the managed instance needs to be rebooted.
+	IsRebootRequired pulumi.BoolPtrInput `pulumi:"isRebootRequired"`
+	// (Updatable) The list of managed instance locations.
+	Locations pulumi.StringArrayInput `pulumi:"locations"`
+	// (Updatable) The list of managed instance group IDs.
+	ManagedInstanceGroupIds pulumi.StringArrayInput `pulumi:"managedInstanceGroupIds"`
+	// (Updatable) The list of managed instance ids.
+	ManagedInstanceIds pulumi.StringArrayInput `pulumi:"managedInstanceIds"`
+	// (Updatable) The list of managed instance OS families.
+	OsFamilies pulumi.StringArrayInput `pulumi:"osFamilies"`
+	// (Updatable) The list of managed instance OS names.
+	OsNames pulumi.StringArrayInput `pulumi:"osNames"`
+	// (Updatable) The list of managed instance statuses.
+	Statuses pulumi.StringArrayInput `pulumi:"statuses"`
+	// (Updatable) The list of the managed instance tags.
+	Tags DynamicSetMatchingRuleTagArrayInput `pulumi:"tags"`
+}
+
+func (DynamicSetMatchingRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DynamicSetMatchingRule)(nil)).Elem()
+}
+
+func (i DynamicSetMatchingRuleArgs) ToDynamicSetMatchingRuleOutput() DynamicSetMatchingRuleOutput {
+	return i.ToDynamicSetMatchingRuleOutputWithContext(context.Background())
+}
+
+func (i DynamicSetMatchingRuleArgs) ToDynamicSetMatchingRuleOutputWithContext(ctx context.Context) DynamicSetMatchingRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DynamicSetMatchingRuleOutput)
+}
+
+func (i DynamicSetMatchingRuleArgs) ToDynamicSetMatchingRulePtrOutput() DynamicSetMatchingRulePtrOutput {
+	return i.ToDynamicSetMatchingRulePtrOutputWithContext(context.Background())
+}
+
+func (i DynamicSetMatchingRuleArgs) ToDynamicSetMatchingRulePtrOutputWithContext(ctx context.Context) DynamicSetMatchingRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DynamicSetMatchingRuleOutput).ToDynamicSetMatchingRulePtrOutputWithContext(ctx)
+}
+
+// DynamicSetMatchingRulePtrInput is an input type that accepts DynamicSetMatchingRuleArgs, DynamicSetMatchingRulePtr and DynamicSetMatchingRulePtrOutput values.
+// You can construct a concrete instance of `DynamicSetMatchingRulePtrInput` via:
+//
+//	        DynamicSetMatchingRuleArgs{...}
+//
+//	or:
+//
+//	        nil
+type DynamicSetMatchingRulePtrInput interface {
+	pulumi.Input
+
+	ToDynamicSetMatchingRulePtrOutput() DynamicSetMatchingRulePtrOutput
+	ToDynamicSetMatchingRulePtrOutputWithContext(context.Context) DynamicSetMatchingRulePtrOutput
+}
+
+type dynamicSetMatchingRulePtrType DynamicSetMatchingRuleArgs
+
+func DynamicSetMatchingRulePtr(v *DynamicSetMatchingRuleArgs) DynamicSetMatchingRulePtrInput {
+	return (*dynamicSetMatchingRulePtrType)(v)
+}
+
+func (*dynamicSetMatchingRulePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DynamicSetMatchingRule)(nil)).Elem()
+}
+
+func (i *dynamicSetMatchingRulePtrType) ToDynamicSetMatchingRulePtrOutput() DynamicSetMatchingRulePtrOutput {
+	return i.ToDynamicSetMatchingRulePtrOutputWithContext(context.Background())
+}
+
+func (i *dynamicSetMatchingRulePtrType) ToDynamicSetMatchingRulePtrOutputWithContext(ctx context.Context) DynamicSetMatchingRulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DynamicSetMatchingRulePtrOutput)
+}
+
+type DynamicSetMatchingRuleOutput struct{ *pulumi.OutputState }
+
+func (DynamicSetMatchingRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DynamicSetMatchingRule)(nil)).Elem()
+}
+
+func (o DynamicSetMatchingRuleOutput) ToDynamicSetMatchingRuleOutput() DynamicSetMatchingRuleOutput {
+	return o
+}
+
+func (o DynamicSetMatchingRuleOutput) ToDynamicSetMatchingRuleOutputWithContext(ctx context.Context) DynamicSetMatchingRuleOutput {
+	return o
+}
+
+func (o DynamicSetMatchingRuleOutput) ToDynamicSetMatchingRulePtrOutput() DynamicSetMatchingRulePtrOutput {
+	return o.ToDynamicSetMatchingRulePtrOutputWithContext(context.Background())
+}
+
+func (o DynamicSetMatchingRuleOutput) ToDynamicSetMatchingRulePtrOutputWithContext(ctx context.Context) DynamicSetMatchingRulePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DynamicSetMatchingRule) *DynamicSetMatchingRule {
+		return &v
+	}).(DynamicSetMatchingRulePtrOutput)
+}
+
+// (Updatable) The list of managed instance architectures.
+func (o DynamicSetMatchingRuleOutput) Architectures() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DynamicSetMatchingRule) []string { return v.Architectures }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The list of managed instance display names.
+func (o DynamicSetMatchingRuleOutput) DisplayNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DynamicSetMatchingRule) []string { return v.DisplayNames }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Indicates if the managed instance needs to be rebooted.
+func (o DynamicSetMatchingRuleOutput) IsRebootRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DynamicSetMatchingRule) *bool { return v.IsRebootRequired }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The list of managed instance locations.
+func (o DynamicSetMatchingRuleOutput) Locations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DynamicSetMatchingRule) []string { return v.Locations }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The list of managed instance group IDs.
+func (o DynamicSetMatchingRuleOutput) ManagedInstanceGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DynamicSetMatchingRule) []string { return v.ManagedInstanceGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The list of managed instance ids.
+func (o DynamicSetMatchingRuleOutput) ManagedInstanceIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DynamicSetMatchingRule) []string { return v.ManagedInstanceIds }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The list of managed instance OS families.
+func (o DynamicSetMatchingRuleOutput) OsFamilies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DynamicSetMatchingRule) []string { return v.OsFamilies }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The list of managed instance OS names.
+func (o DynamicSetMatchingRuleOutput) OsNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DynamicSetMatchingRule) []string { return v.OsNames }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The list of managed instance statuses.
+func (o DynamicSetMatchingRuleOutput) Statuses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DynamicSetMatchingRule) []string { return v.Statuses }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The list of the managed instance tags.
+func (o DynamicSetMatchingRuleOutput) Tags() DynamicSetMatchingRuleTagArrayOutput {
+	return o.ApplyT(func(v DynamicSetMatchingRule) []DynamicSetMatchingRuleTag { return v.Tags }).(DynamicSetMatchingRuleTagArrayOutput)
+}
+
+type DynamicSetMatchingRulePtrOutput struct{ *pulumi.OutputState }
+
+func (DynamicSetMatchingRulePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DynamicSetMatchingRule)(nil)).Elem()
+}
+
+func (o DynamicSetMatchingRulePtrOutput) ToDynamicSetMatchingRulePtrOutput() DynamicSetMatchingRulePtrOutput {
+	return o
+}
+
+func (o DynamicSetMatchingRulePtrOutput) ToDynamicSetMatchingRulePtrOutputWithContext(ctx context.Context) DynamicSetMatchingRulePtrOutput {
+	return o
+}
+
+func (o DynamicSetMatchingRulePtrOutput) Elem() DynamicSetMatchingRuleOutput {
+	return o.ApplyT(func(v *DynamicSetMatchingRule) DynamicSetMatchingRule {
+		if v != nil {
+			return *v
+		}
+		var ret DynamicSetMatchingRule
+		return ret
+	}).(DynamicSetMatchingRuleOutput)
+}
+
+// (Updatable) The list of managed instance architectures.
+func (o DynamicSetMatchingRulePtrOutput) Architectures() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DynamicSetMatchingRule) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Architectures
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The list of managed instance display names.
+func (o DynamicSetMatchingRulePtrOutput) DisplayNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DynamicSetMatchingRule) []string {
+		if v == nil {
+			return nil
+		}
+		return v.DisplayNames
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Indicates if the managed instance needs to be rebooted.
+func (o DynamicSetMatchingRulePtrOutput) IsRebootRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DynamicSetMatchingRule) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsRebootRequired
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The list of managed instance locations.
+func (o DynamicSetMatchingRulePtrOutput) Locations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DynamicSetMatchingRule) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Locations
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The list of managed instance group IDs.
+func (o DynamicSetMatchingRulePtrOutput) ManagedInstanceGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DynamicSetMatchingRule) []string {
+		if v == nil {
+			return nil
+		}
+		return v.ManagedInstanceGroupIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The list of managed instance ids.
+func (o DynamicSetMatchingRulePtrOutput) ManagedInstanceIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DynamicSetMatchingRule) []string {
+		if v == nil {
+			return nil
+		}
+		return v.ManagedInstanceIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The list of managed instance OS families.
+func (o DynamicSetMatchingRulePtrOutput) OsFamilies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DynamicSetMatchingRule) []string {
+		if v == nil {
+			return nil
+		}
+		return v.OsFamilies
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The list of managed instance OS names.
+func (o DynamicSetMatchingRulePtrOutput) OsNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DynamicSetMatchingRule) []string {
+		if v == nil {
+			return nil
+		}
+		return v.OsNames
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The list of managed instance statuses.
+func (o DynamicSetMatchingRulePtrOutput) Statuses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DynamicSetMatchingRule) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Statuses
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The list of the managed instance tags.
+func (o DynamicSetMatchingRulePtrOutput) Tags() DynamicSetMatchingRuleTagArrayOutput {
+	return o.ApplyT(func(v *DynamicSetMatchingRule) []DynamicSetMatchingRuleTag {
+		if v == nil {
+			return nil
+		}
+		return v.Tags
+	}).(DynamicSetMatchingRuleTagArrayOutput)
+}
+
+type DynamicSetMatchingRuleTag struct {
+	// (Updatable) The key of the tag.
+	Key *string `pulumi:"key"`
+	// (Updatable) The namespace of the tag.
+	Namespace *string `pulumi:"namespace"`
+	// (Updatable) The type of the tag. Common values include `defined` or `freeform`.
+	Type string `pulumi:"type"`
+	// (Updatable) The value associated with the tag key.
+	Value *string `pulumi:"value"`
+}
+
+// DynamicSetMatchingRuleTagInput is an input type that accepts DynamicSetMatchingRuleTagArgs and DynamicSetMatchingRuleTagOutput values.
+// You can construct a concrete instance of `DynamicSetMatchingRuleTagInput` via:
+//
+//	DynamicSetMatchingRuleTagArgs{...}
+type DynamicSetMatchingRuleTagInput interface {
+	pulumi.Input
+
+	ToDynamicSetMatchingRuleTagOutput() DynamicSetMatchingRuleTagOutput
+	ToDynamicSetMatchingRuleTagOutputWithContext(context.Context) DynamicSetMatchingRuleTagOutput
+}
+
+type DynamicSetMatchingRuleTagArgs struct {
+	// (Updatable) The key of the tag.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// (Updatable) The namespace of the tag.
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// (Updatable) The type of the tag. Common values include `defined` or `freeform`.
+	Type pulumi.StringInput `pulumi:"type"`
+	// (Updatable) The value associated with the tag key.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (DynamicSetMatchingRuleTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DynamicSetMatchingRuleTag)(nil)).Elem()
+}
+
+func (i DynamicSetMatchingRuleTagArgs) ToDynamicSetMatchingRuleTagOutput() DynamicSetMatchingRuleTagOutput {
+	return i.ToDynamicSetMatchingRuleTagOutputWithContext(context.Background())
+}
+
+func (i DynamicSetMatchingRuleTagArgs) ToDynamicSetMatchingRuleTagOutputWithContext(ctx context.Context) DynamicSetMatchingRuleTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DynamicSetMatchingRuleTagOutput)
+}
+
+// DynamicSetMatchingRuleTagArrayInput is an input type that accepts DynamicSetMatchingRuleTagArray and DynamicSetMatchingRuleTagArrayOutput values.
+// You can construct a concrete instance of `DynamicSetMatchingRuleTagArrayInput` via:
+//
+//	DynamicSetMatchingRuleTagArray{ DynamicSetMatchingRuleTagArgs{...} }
+type DynamicSetMatchingRuleTagArrayInput interface {
+	pulumi.Input
+
+	ToDynamicSetMatchingRuleTagArrayOutput() DynamicSetMatchingRuleTagArrayOutput
+	ToDynamicSetMatchingRuleTagArrayOutputWithContext(context.Context) DynamicSetMatchingRuleTagArrayOutput
+}
+
+type DynamicSetMatchingRuleTagArray []DynamicSetMatchingRuleTagInput
+
+func (DynamicSetMatchingRuleTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DynamicSetMatchingRuleTag)(nil)).Elem()
+}
+
+func (i DynamicSetMatchingRuleTagArray) ToDynamicSetMatchingRuleTagArrayOutput() DynamicSetMatchingRuleTagArrayOutput {
+	return i.ToDynamicSetMatchingRuleTagArrayOutputWithContext(context.Background())
+}
+
+func (i DynamicSetMatchingRuleTagArray) ToDynamicSetMatchingRuleTagArrayOutputWithContext(ctx context.Context) DynamicSetMatchingRuleTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DynamicSetMatchingRuleTagArrayOutput)
+}
+
+type DynamicSetMatchingRuleTagOutput struct{ *pulumi.OutputState }
+
+func (DynamicSetMatchingRuleTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DynamicSetMatchingRuleTag)(nil)).Elem()
+}
+
+func (o DynamicSetMatchingRuleTagOutput) ToDynamicSetMatchingRuleTagOutput() DynamicSetMatchingRuleTagOutput {
+	return o
+}
+
+func (o DynamicSetMatchingRuleTagOutput) ToDynamicSetMatchingRuleTagOutputWithContext(ctx context.Context) DynamicSetMatchingRuleTagOutput {
+	return o
+}
+
+// (Updatable) The key of the tag.
+func (o DynamicSetMatchingRuleTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DynamicSetMatchingRuleTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The namespace of the tag.
+func (o DynamicSetMatchingRuleTagOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DynamicSetMatchingRuleTag) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of the tag. Common values include `defined` or `freeform`.
+func (o DynamicSetMatchingRuleTagOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v DynamicSetMatchingRuleTag) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// (Updatable) The value associated with the tag key.
+func (o DynamicSetMatchingRuleTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DynamicSetMatchingRuleTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type DynamicSetMatchingRuleTagArrayOutput struct{ *pulumi.OutputState }
+
+func (DynamicSetMatchingRuleTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DynamicSetMatchingRuleTag)(nil)).Elem()
+}
+
+func (o DynamicSetMatchingRuleTagArrayOutput) ToDynamicSetMatchingRuleTagArrayOutput() DynamicSetMatchingRuleTagArrayOutput {
+	return o
+}
+
+func (o DynamicSetMatchingRuleTagArrayOutput) ToDynamicSetMatchingRuleTagArrayOutputWithContext(ctx context.Context) DynamicSetMatchingRuleTagArrayOutput {
+	return o
+}
+
+func (o DynamicSetMatchingRuleTagArrayOutput) Index(i pulumi.IntInput) DynamicSetMatchingRuleTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DynamicSetMatchingRuleTag {
+		return vs[0].([]DynamicSetMatchingRuleTag)[vs[1].(int)]
+	}).(DynamicSetMatchingRuleTagOutput)
+}
+
+type DynamicSetRebootManagementWorkRequestDetails struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description *string `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName *string `pulumi:"displayName"`
+}
+
+// DynamicSetRebootManagementWorkRequestDetailsInput is an input type that accepts DynamicSetRebootManagementWorkRequestDetailsArgs and DynamicSetRebootManagementWorkRequestDetailsOutput values.
+// You can construct a concrete instance of `DynamicSetRebootManagementWorkRequestDetailsInput` via:
+//
+//	DynamicSetRebootManagementWorkRequestDetailsArgs{...}
+type DynamicSetRebootManagementWorkRequestDetailsInput interface {
+	pulumi.Input
+
+	ToDynamicSetRebootManagementWorkRequestDetailsOutput() DynamicSetRebootManagementWorkRequestDetailsOutput
+	ToDynamicSetRebootManagementWorkRequestDetailsOutputWithContext(context.Context) DynamicSetRebootManagementWorkRequestDetailsOutput
+}
+
+type DynamicSetRebootManagementWorkRequestDetailsArgs struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+}
+
+func (DynamicSetRebootManagementWorkRequestDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DynamicSetRebootManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i DynamicSetRebootManagementWorkRequestDetailsArgs) ToDynamicSetRebootManagementWorkRequestDetailsOutput() DynamicSetRebootManagementWorkRequestDetailsOutput {
+	return i.ToDynamicSetRebootManagementWorkRequestDetailsOutputWithContext(context.Background())
+}
+
+func (i DynamicSetRebootManagementWorkRequestDetailsArgs) ToDynamicSetRebootManagementWorkRequestDetailsOutputWithContext(ctx context.Context) DynamicSetRebootManagementWorkRequestDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DynamicSetRebootManagementWorkRequestDetailsOutput)
+}
+
+func (i DynamicSetRebootManagementWorkRequestDetailsArgs) ToDynamicSetRebootManagementWorkRequestDetailsPtrOutput() DynamicSetRebootManagementWorkRequestDetailsPtrOutput {
+	return i.ToDynamicSetRebootManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i DynamicSetRebootManagementWorkRequestDetailsArgs) ToDynamicSetRebootManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) DynamicSetRebootManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DynamicSetRebootManagementWorkRequestDetailsOutput).ToDynamicSetRebootManagementWorkRequestDetailsPtrOutputWithContext(ctx)
+}
+
+// DynamicSetRebootManagementWorkRequestDetailsPtrInput is an input type that accepts DynamicSetRebootManagementWorkRequestDetailsArgs, DynamicSetRebootManagementWorkRequestDetailsPtr and DynamicSetRebootManagementWorkRequestDetailsPtrOutput values.
+// You can construct a concrete instance of `DynamicSetRebootManagementWorkRequestDetailsPtrInput` via:
+//
+//	        DynamicSetRebootManagementWorkRequestDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type DynamicSetRebootManagementWorkRequestDetailsPtrInput interface {
+	pulumi.Input
+
+	ToDynamicSetRebootManagementWorkRequestDetailsPtrOutput() DynamicSetRebootManagementWorkRequestDetailsPtrOutput
+	ToDynamicSetRebootManagementWorkRequestDetailsPtrOutputWithContext(context.Context) DynamicSetRebootManagementWorkRequestDetailsPtrOutput
+}
+
+type dynamicSetRebootManagementWorkRequestDetailsPtrType DynamicSetRebootManagementWorkRequestDetailsArgs
+
+func DynamicSetRebootManagementWorkRequestDetailsPtr(v *DynamicSetRebootManagementWorkRequestDetailsArgs) DynamicSetRebootManagementWorkRequestDetailsPtrInput {
+	return (*dynamicSetRebootManagementWorkRequestDetailsPtrType)(v)
+}
+
+func (*dynamicSetRebootManagementWorkRequestDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DynamicSetRebootManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i *dynamicSetRebootManagementWorkRequestDetailsPtrType) ToDynamicSetRebootManagementWorkRequestDetailsPtrOutput() DynamicSetRebootManagementWorkRequestDetailsPtrOutput {
+	return i.ToDynamicSetRebootManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *dynamicSetRebootManagementWorkRequestDetailsPtrType) ToDynamicSetRebootManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) DynamicSetRebootManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DynamicSetRebootManagementWorkRequestDetailsPtrOutput)
+}
+
+type DynamicSetRebootManagementWorkRequestDetailsOutput struct{ *pulumi.OutputState }
+
+func (DynamicSetRebootManagementWorkRequestDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DynamicSetRebootManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o DynamicSetRebootManagementWorkRequestDetailsOutput) ToDynamicSetRebootManagementWorkRequestDetailsOutput() DynamicSetRebootManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o DynamicSetRebootManagementWorkRequestDetailsOutput) ToDynamicSetRebootManagementWorkRequestDetailsOutputWithContext(ctx context.Context) DynamicSetRebootManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o DynamicSetRebootManagementWorkRequestDetailsOutput) ToDynamicSetRebootManagementWorkRequestDetailsPtrOutput() DynamicSetRebootManagementWorkRequestDetailsPtrOutput {
+	return o.ToDynamicSetRebootManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o DynamicSetRebootManagementWorkRequestDetailsOutput) ToDynamicSetRebootManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) DynamicSetRebootManagementWorkRequestDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DynamicSetRebootManagementWorkRequestDetails) *DynamicSetRebootManagementWorkRequestDetails {
+		return &v
+	}).(DynamicSetRebootManagementWorkRequestDetailsPtrOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o DynamicSetRebootManagementWorkRequestDetailsOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DynamicSetRebootManagementWorkRequestDetails) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o DynamicSetRebootManagementWorkRequestDetailsOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DynamicSetRebootManagementWorkRequestDetails) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+type DynamicSetRebootManagementWorkRequestDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (DynamicSetRebootManagementWorkRequestDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DynamicSetRebootManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o DynamicSetRebootManagementWorkRequestDetailsPtrOutput) ToDynamicSetRebootManagementWorkRequestDetailsPtrOutput() DynamicSetRebootManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o DynamicSetRebootManagementWorkRequestDetailsPtrOutput) ToDynamicSetRebootManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) DynamicSetRebootManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o DynamicSetRebootManagementWorkRequestDetailsPtrOutput) Elem() DynamicSetRebootManagementWorkRequestDetailsOutput {
+	return o.ApplyT(func(v *DynamicSetRebootManagementWorkRequestDetails) DynamicSetRebootManagementWorkRequestDetails {
+		if v != nil {
+			return *v
+		}
+		var ret DynamicSetRebootManagementWorkRequestDetails
+		return ret
+	}).(DynamicSetRebootManagementWorkRequestDetailsOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o DynamicSetRebootManagementWorkRequestDetailsPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DynamicSetRebootManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o DynamicSetRebootManagementWorkRequestDetailsPtrOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DynamicSetRebootManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DisplayName
+	}).(pulumi.StringPtrOutput)
+}
+
+type DynamicSetRemovePackagesManagementWorkRequestDetails struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description *string `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName *string `pulumi:"displayName"`
+}
+
+// DynamicSetRemovePackagesManagementWorkRequestDetailsInput is an input type that accepts DynamicSetRemovePackagesManagementWorkRequestDetailsArgs and DynamicSetRemovePackagesManagementWorkRequestDetailsOutput values.
+// You can construct a concrete instance of `DynamicSetRemovePackagesManagementWorkRequestDetailsInput` via:
+//
+//	DynamicSetRemovePackagesManagementWorkRequestDetailsArgs{...}
+type DynamicSetRemovePackagesManagementWorkRequestDetailsInput interface {
+	pulumi.Input
+
+	ToDynamicSetRemovePackagesManagementWorkRequestDetailsOutput() DynamicSetRemovePackagesManagementWorkRequestDetailsOutput
+	ToDynamicSetRemovePackagesManagementWorkRequestDetailsOutputWithContext(context.Context) DynamicSetRemovePackagesManagementWorkRequestDetailsOutput
+}
+
+type DynamicSetRemovePackagesManagementWorkRequestDetailsArgs struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+}
+
+func (DynamicSetRemovePackagesManagementWorkRequestDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DynamicSetRemovePackagesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i DynamicSetRemovePackagesManagementWorkRequestDetailsArgs) ToDynamicSetRemovePackagesManagementWorkRequestDetailsOutput() DynamicSetRemovePackagesManagementWorkRequestDetailsOutput {
+	return i.ToDynamicSetRemovePackagesManagementWorkRequestDetailsOutputWithContext(context.Background())
+}
+
+func (i DynamicSetRemovePackagesManagementWorkRequestDetailsArgs) ToDynamicSetRemovePackagesManagementWorkRequestDetailsOutputWithContext(ctx context.Context) DynamicSetRemovePackagesManagementWorkRequestDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DynamicSetRemovePackagesManagementWorkRequestDetailsOutput)
+}
+
+func (i DynamicSetRemovePackagesManagementWorkRequestDetailsArgs) ToDynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput() DynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput {
+	return i.ToDynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i DynamicSetRemovePackagesManagementWorkRequestDetailsArgs) ToDynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) DynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DynamicSetRemovePackagesManagementWorkRequestDetailsOutput).ToDynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx)
+}
+
+// DynamicSetRemovePackagesManagementWorkRequestDetailsPtrInput is an input type that accepts DynamicSetRemovePackagesManagementWorkRequestDetailsArgs, DynamicSetRemovePackagesManagementWorkRequestDetailsPtr and DynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput values.
+// You can construct a concrete instance of `DynamicSetRemovePackagesManagementWorkRequestDetailsPtrInput` via:
+//
+//	        DynamicSetRemovePackagesManagementWorkRequestDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type DynamicSetRemovePackagesManagementWorkRequestDetailsPtrInput interface {
+	pulumi.Input
+
+	ToDynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput() DynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput
+	ToDynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutputWithContext(context.Context) DynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput
+}
+
+type dynamicSetRemovePackagesManagementWorkRequestDetailsPtrType DynamicSetRemovePackagesManagementWorkRequestDetailsArgs
+
+func DynamicSetRemovePackagesManagementWorkRequestDetailsPtr(v *DynamicSetRemovePackagesManagementWorkRequestDetailsArgs) DynamicSetRemovePackagesManagementWorkRequestDetailsPtrInput {
+	return (*dynamicSetRemovePackagesManagementWorkRequestDetailsPtrType)(v)
+}
+
+func (*dynamicSetRemovePackagesManagementWorkRequestDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DynamicSetRemovePackagesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i *dynamicSetRemovePackagesManagementWorkRequestDetailsPtrType) ToDynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput() DynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput {
+	return i.ToDynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *dynamicSetRemovePackagesManagementWorkRequestDetailsPtrType) ToDynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) DynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput)
+}
+
+type DynamicSetRemovePackagesManagementWorkRequestDetailsOutput struct{ *pulumi.OutputState }
+
+func (DynamicSetRemovePackagesManagementWorkRequestDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DynamicSetRemovePackagesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o DynamicSetRemovePackagesManagementWorkRequestDetailsOutput) ToDynamicSetRemovePackagesManagementWorkRequestDetailsOutput() DynamicSetRemovePackagesManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o DynamicSetRemovePackagesManagementWorkRequestDetailsOutput) ToDynamicSetRemovePackagesManagementWorkRequestDetailsOutputWithContext(ctx context.Context) DynamicSetRemovePackagesManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o DynamicSetRemovePackagesManagementWorkRequestDetailsOutput) ToDynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput() DynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput {
+	return o.ToDynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o DynamicSetRemovePackagesManagementWorkRequestDetailsOutput) ToDynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) DynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DynamicSetRemovePackagesManagementWorkRequestDetails) *DynamicSetRemovePackagesManagementWorkRequestDetails {
+		return &v
+	}).(DynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o DynamicSetRemovePackagesManagementWorkRequestDetailsOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DynamicSetRemovePackagesManagementWorkRequestDetails) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o DynamicSetRemovePackagesManagementWorkRequestDetailsOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DynamicSetRemovePackagesManagementWorkRequestDetails) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+type DynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (DynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DynamicSetRemovePackagesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o DynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput) ToDynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput() DynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o DynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput) ToDynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) DynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o DynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput) Elem() DynamicSetRemovePackagesManagementWorkRequestDetailsOutput {
+	return o.ApplyT(func(v *DynamicSetRemovePackagesManagementWorkRequestDetails) DynamicSetRemovePackagesManagementWorkRequestDetails {
+		if v != nil {
+			return *v
+		}
+		var ret DynamicSetRemovePackagesManagementWorkRequestDetails
+		return ret
+	}).(DynamicSetRemovePackagesManagementWorkRequestDetailsOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o DynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DynamicSetRemovePackagesManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o DynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DynamicSetRemovePackagesManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DisplayName
+	}).(pulumi.StringPtrOutput)
+}
+
+type DynamicSetTargetCompartment struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// (Updatable) Indicates if the child compartments are included in the matching rule.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DoesIncludeChildren bool `pulumi:"doesIncludeChildren"`
+}
+
+// DynamicSetTargetCompartmentInput is an input type that accepts DynamicSetTargetCompartmentArgs and DynamicSetTargetCompartmentOutput values.
+// You can construct a concrete instance of `DynamicSetTargetCompartmentInput` via:
+//
+//	DynamicSetTargetCompartmentArgs{...}
+type DynamicSetTargetCompartmentInput interface {
+	pulumi.Input
+
+	ToDynamicSetTargetCompartmentOutput() DynamicSetTargetCompartmentOutput
+	ToDynamicSetTargetCompartmentOutputWithContext(context.Context) DynamicSetTargetCompartmentOutput
+}
+
+type DynamicSetTargetCompartmentArgs struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// (Updatable) Indicates if the child compartments are included in the matching rule.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DoesIncludeChildren pulumi.BoolInput `pulumi:"doesIncludeChildren"`
+}
+
+func (DynamicSetTargetCompartmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DynamicSetTargetCompartment)(nil)).Elem()
+}
+
+func (i DynamicSetTargetCompartmentArgs) ToDynamicSetTargetCompartmentOutput() DynamicSetTargetCompartmentOutput {
+	return i.ToDynamicSetTargetCompartmentOutputWithContext(context.Background())
+}
+
+func (i DynamicSetTargetCompartmentArgs) ToDynamicSetTargetCompartmentOutputWithContext(ctx context.Context) DynamicSetTargetCompartmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DynamicSetTargetCompartmentOutput)
+}
+
+// DynamicSetTargetCompartmentArrayInput is an input type that accepts DynamicSetTargetCompartmentArray and DynamicSetTargetCompartmentArrayOutput values.
+// You can construct a concrete instance of `DynamicSetTargetCompartmentArrayInput` via:
+//
+//	DynamicSetTargetCompartmentArray{ DynamicSetTargetCompartmentArgs{...} }
+type DynamicSetTargetCompartmentArrayInput interface {
+	pulumi.Input
+
+	ToDynamicSetTargetCompartmentArrayOutput() DynamicSetTargetCompartmentArrayOutput
+	ToDynamicSetTargetCompartmentArrayOutputWithContext(context.Context) DynamicSetTargetCompartmentArrayOutput
+}
+
+type DynamicSetTargetCompartmentArray []DynamicSetTargetCompartmentInput
+
+func (DynamicSetTargetCompartmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DynamicSetTargetCompartment)(nil)).Elem()
+}
+
+func (i DynamicSetTargetCompartmentArray) ToDynamicSetTargetCompartmentArrayOutput() DynamicSetTargetCompartmentArrayOutput {
+	return i.ToDynamicSetTargetCompartmentArrayOutputWithContext(context.Background())
+}
+
+func (i DynamicSetTargetCompartmentArray) ToDynamicSetTargetCompartmentArrayOutputWithContext(ctx context.Context) DynamicSetTargetCompartmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DynamicSetTargetCompartmentArrayOutput)
+}
+
+type DynamicSetTargetCompartmentOutput struct{ *pulumi.OutputState }
+
+func (DynamicSetTargetCompartmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DynamicSetTargetCompartment)(nil)).Elem()
+}
+
+func (o DynamicSetTargetCompartmentOutput) ToDynamicSetTargetCompartmentOutput() DynamicSetTargetCompartmentOutput {
+	return o
+}
+
+func (o DynamicSetTargetCompartmentOutput) ToDynamicSetTargetCompartmentOutputWithContext(ctx context.Context) DynamicSetTargetCompartmentOutput {
+	return o
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o DynamicSetTargetCompartmentOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v DynamicSetTargetCompartment) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// (Updatable) Indicates if the child compartments are included in the matching rule.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o DynamicSetTargetCompartmentOutput) DoesIncludeChildren() pulumi.BoolOutput {
+	return o.ApplyT(func(v DynamicSetTargetCompartment) bool { return v.DoesIncludeChildren }).(pulumi.BoolOutput)
+}
+
+type DynamicSetTargetCompartmentArrayOutput struct{ *pulumi.OutputState }
+
+func (DynamicSetTargetCompartmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DynamicSetTargetCompartment)(nil)).Elem()
+}
+
+func (o DynamicSetTargetCompartmentArrayOutput) ToDynamicSetTargetCompartmentArrayOutput() DynamicSetTargetCompartmentArrayOutput {
+	return o
+}
+
+func (o DynamicSetTargetCompartmentArrayOutput) ToDynamicSetTargetCompartmentArrayOutputWithContext(ctx context.Context) DynamicSetTargetCompartmentArrayOutput {
+	return o
+}
+
+func (o DynamicSetTargetCompartmentArrayOutput) Index(i pulumi.IntInput) DynamicSetTargetCompartmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DynamicSetTargetCompartment {
+		return vs[0].([]DynamicSetTargetCompartment)[vs[1].(int)]
+	}).(DynamicSetTargetCompartmentOutput)
+}
+
+type DynamicSetUpdatePackagesManagementWorkRequestDetails struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description *string `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName *string `pulumi:"displayName"`
+}
+
+// DynamicSetUpdatePackagesManagementWorkRequestDetailsInput is an input type that accepts DynamicSetUpdatePackagesManagementWorkRequestDetailsArgs and DynamicSetUpdatePackagesManagementWorkRequestDetailsOutput values.
+// You can construct a concrete instance of `DynamicSetUpdatePackagesManagementWorkRequestDetailsInput` via:
+//
+//	DynamicSetUpdatePackagesManagementWorkRequestDetailsArgs{...}
+type DynamicSetUpdatePackagesManagementWorkRequestDetailsInput interface {
+	pulumi.Input
+
+	ToDynamicSetUpdatePackagesManagementWorkRequestDetailsOutput() DynamicSetUpdatePackagesManagementWorkRequestDetailsOutput
+	ToDynamicSetUpdatePackagesManagementWorkRequestDetailsOutputWithContext(context.Context) DynamicSetUpdatePackagesManagementWorkRequestDetailsOutput
+}
+
+type DynamicSetUpdatePackagesManagementWorkRequestDetailsArgs struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+}
+
+func (DynamicSetUpdatePackagesManagementWorkRequestDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DynamicSetUpdatePackagesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i DynamicSetUpdatePackagesManagementWorkRequestDetailsArgs) ToDynamicSetUpdatePackagesManagementWorkRequestDetailsOutput() DynamicSetUpdatePackagesManagementWorkRequestDetailsOutput {
+	return i.ToDynamicSetUpdatePackagesManagementWorkRequestDetailsOutputWithContext(context.Background())
+}
+
+func (i DynamicSetUpdatePackagesManagementWorkRequestDetailsArgs) ToDynamicSetUpdatePackagesManagementWorkRequestDetailsOutputWithContext(ctx context.Context) DynamicSetUpdatePackagesManagementWorkRequestDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DynamicSetUpdatePackagesManagementWorkRequestDetailsOutput)
+}
+
+func (i DynamicSetUpdatePackagesManagementWorkRequestDetailsArgs) ToDynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput() DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput {
+	return i.ToDynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i DynamicSetUpdatePackagesManagementWorkRequestDetailsArgs) ToDynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DynamicSetUpdatePackagesManagementWorkRequestDetailsOutput).ToDynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx)
+}
+
+// DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrInput is an input type that accepts DynamicSetUpdatePackagesManagementWorkRequestDetailsArgs, DynamicSetUpdatePackagesManagementWorkRequestDetailsPtr and DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput values.
+// You can construct a concrete instance of `DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrInput` via:
+//
+//	        DynamicSetUpdatePackagesManagementWorkRequestDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrInput interface {
+	pulumi.Input
+
+	ToDynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput() DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput
+	ToDynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutputWithContext(context.Context) DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput
+}
+
+type dynamicSetUpdatePackagesManagementWorkRequestDetailsPtrType DynamicSetUpdatePackagesManagementWorkRequestDetailsArgs
+
+func DynamicSetUpdatePackagesManagementWorkRequestDetailsPtr(v *DynamicSetUpdatePackagesManagementWorkRequestDetailsArgs) DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrInput {
+	return (*dynamicSetUpdatePackagesManagementWorkRequestDetailsPtrType)(v)
+}
+
+func (*dynamicSetUpdatePackagesManagementWorkRequestDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DynamicSetUpdatePackagesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i *dynamicSetUpdatePackagesManagementWorkRequestDetailsPtrType) ToDynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput() DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput {
+	return i.ToDynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *dynamicSetUpdatePackagesManagementWorkRequestDetailsPtrType) ToDynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput)
+}
+
+type DynamicSetUpdatePackagesManagementWorkRequestDetailsOutput struct{ *pulumi.OutputState }
+
+func (DynamicSetUpdatePackagesManagementWorkRequestDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DynamicSetUpdatePackagesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o DynamicSetUpdatePackagesManagementWorkRequestDetailsOutput) ToDynamicSetUpdatePackagesManagementWorkRequestDetailsOutput() DynamicSetUpdatePackagesManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o DynamicSetUpdatePackagesManagementWorkRequestDetailsOutput) ToDynamicSetUpdatePackagesManagementWorkRequestDetailsOutputWithContext(ctx context.Context) DynamicSetUpdatePackagesManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o DynamicSetUpdatePackagesManagementWorkRequestDetailsOutput) ToDynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput() DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput {
+	return o.ToDynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o DynamicSetUpdatePackagesManagementWorkRequestDetailsOutput) ToDynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DynamicSetUpdatePackagesManagementWorkRequestDetails) *DynamicSetUpdatePackagesManagementWorkRequestDetails {
+		return &v
+	}).(DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o DynamicSetUpdatePackagesManagementWorkRequestDetailsOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DynamicSetUpdatePackagesManagementWorkRequestDetails) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o DynamicSetUpdatePackagesManagementWorkRequestDetailsOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DynamicSetUpdatePackagesManagementWorkRequestDetails) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+type DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DynamicSetUpdatePackagesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput) ToDynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput() DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput) ToDynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput) Elem() DynamicSetUpdatePackagesManagementWorkRequestDetailsOutput {
+	return o.ApplyT(func(v *DynamicSetUpdatePackagesManagementWorkRequestDetails) DynamicSetUpdatePackagesManagementWorkRequestDetails {
+		if v != nil {
+			return *v
+		}
+		var ret DynamicSetUpdatePackagesManagementWorkRequestDetails
+		return ret
+	}).(DynamicSetUpdatePackagesManagementWorkRequestDetailsOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DynamicSetUpdatePackagesManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DynamicSetUpdatePackagesManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DisplayName
+	}).(pulumi.StringPtrOutput)
+}
+
 type EventData struct {
 	// Provides additional information for the work request associated with an event.
 	AdditionalDetails []EventDataAdditionalDetail `pulumi:"additionalDetails"`
@@ -24,6 +1243,8 @@ type EventData struct {
 	ErrorCause *string `pulumi:"errorCause"`
 	// The output log of the error.
 	ErrorLog *string `pulumi:"errorLog"`
+	// Brief description on how this error is categorized.
+	ErrorSummary *string `pulumi:"errorSummary"`
 	// Number of times the event has occurred.
 	EventCount *int `pulumi:"eventCount"`
 	// Fingerprint of the event.
@@ -68,6 +1289,8 @@ type EventDataArgs struct {
 	ErrorCause pulumi.StringPtrInput `pulumi:"errorCause"`
 	// The output log of the error.
 	ErrorLog pulumi.StringPtrInput `pulumi:"errorLog"`
+	// Brief description on how this error is categorized.
+	ErrorSummary pulumi.StringPtrInput `pulumi:"errorSummary"`
 	// Number of times the event has occurred.
 	EventCount pulumi.IntPtrInput `pulumi:"eventCount"`
 	// Fingerprint of the event.
@@ -164,6 +1387,11 @@ func (o EventDataOutput) ErrorCause() pulumi.StringPtrOutput {
 // The output log of the error.
 func (o EventDataOutput) ErrorLog() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EventData) *string { return v.ErrorLog }).(pulumi.StringPtrOutput)
+}
+
+// Brief description on how this error is categorized.
+func (o EventDataOutput) ErrorSummary() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EventData) *string { return v.ErrorSummary }).(pulumi.StringPtrOutput)
 }
 
 // Number of times the event has occurred.
@@ -2403,6 +3631,174 @@ func (o LifecycleStageRebootManagementWorkRequestDetailsPtrOutput) DisplayName()
 	}).(pulumi.StringPtrOutput)
 }
 
+type ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetails struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description *string `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName *string `pulumi:"displayName"`
+}
+
+// ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsInput is an input type that accepts ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsArgs and ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutput values.
+// You can construct a concrete instance of `ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsInput` via:
+//
+//	ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsArgs{...}
+type ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsInput interface {
+	pulumi.Input
+
+	ToManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutput() ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutput
+	ToManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutputWithContext(context.Context) ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutput
+}
+
+type ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsArgs struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+}
+
+func (ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsArgs) ToManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutput() ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutput {
+	return i.ToManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutputWithContext(context.Background())
+}
+
+func (i ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsArgs) ToManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutputWithContext(ctx context.Context) ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutput)
+}
+
+func (i ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsArgs) ToManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput() ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput {
+	return i.ToManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsArgs) ToManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutput).ToManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutputWithContext(ctx)
+}
+
+// ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrInput is an input type that accepts ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsArgs, ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtr and ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput values.
+// You can construct a concrete instance of `ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrInput` via:
+//
+//	        ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrInput interface {
+	pulumi.Input
+
+	ToManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput() ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput
+	ToManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutputWithContext(context.Context) ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput
+}
+
+type managedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrType ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsArgs
+
+func ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtr(v *ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsArgs) ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrInput {
+	return (*managedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrType)(v)
+}
+
+func (*managedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i *managedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrType) ToManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput() ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput {
+	return i.ToManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *managedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrType) ToManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput)
+}
+
+type ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutput) ToManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutput() ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutput) ToManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutputWithContext(ctx context.Context) ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutput) ToManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput() ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput {
+	return o.ToManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutput) ToManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetails) *ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetails {
+		return &v
+	}).(ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetails) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetails) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+type ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput) ToManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput() ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput) ToManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput) Elem() ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutput {
+	return o.ApplyT(func(v *ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetails) ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetails
+		return ret
+	}).(ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DisplayName
+	}).(pulumi.StringPtrOutput)
+}
+
 type ManagedInstanceAutonomousSettings struct {
 	// (Updatable) Indicates whether Autonomous Linux will collect crash files.
 	IsDataCollectionAuthorized *bool `pulumi:"isDataCollectionAuthorized"`
@@ -2556,6 +3952,174 @@ func (o ManagedInstanceAutonomousSettingsPtrOutput) ScheduledJobId() pulumi.Stri
 			return nil
 		}
 		return v.ScheduledJobId
+	}).(pulumi.StringPtrOutput)
+}
+
+type ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetails struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description *string `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName *string `pulumi:"displayName"`
+}
+
+// ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsInput is an input type that accepts ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsArgs and ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutput values.
+// You can construct a concrete instance of `ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsInput` via:
+//
+//	ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsArgs{...}
+type ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsInput interface {
+	pulumi.Input
+
+	ToManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutput() ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutput
+	ToManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutputWithContext(context.Context) ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutput
+}
+
+type ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsArgs struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+}
+
+func (ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsArgs) ToManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutput() ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutput {
+	return i.ToManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutputWithContext(context.Background())
+}
+
+func (i ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsArgs) ToManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutputWithContext(ctx context.Context) ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutput)
+}
+
+func (i ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsArgs) ToManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput() ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput {
+	return i.ToManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsArgs) ToManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutput).ToManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutputWithContext(ctx)
+}
+
+// ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrInput is an input type that accepts ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsArgs, ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtr and ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput values.
+// You can construct a concrete instance of `ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrInput` via:
+//
+//	        ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrInput interface {
+	pulumi.Input
+
+	ToManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput() ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput
+	ToManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutputWithContext(context.Context) ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput
+}
+
+type managedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrType ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsArgs
+
+func ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtr(v *ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsArgs) ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrInput {
+	return (*managedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrType)(v)
+}
+
+func (*managedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i *managedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrType) ToManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput() ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput {
+	return i.ToManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *managedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrType) ToManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput)
+}
+
+type ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutput) ToManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutput() ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutput) ToManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutputWithContext(ctx context.Context) ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutput) ToManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput() ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput {
+	return o.ToManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutput) ToManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetails) *ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetails {
+		return &v
+	}).(ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetails) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetails) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+type ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput) ToManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput() ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput) ToManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput) Elem() ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutput {
+	return o.ApplyT(func(v *ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetails) ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetails
+		return ret
+	}).(ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DisplayName
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -4862,6 +6426,475 @@ func (o ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsPtrOutp
 	}).(pulumi.StringPtrOutput)
 }
 
+type ManagedInstanceInstallPackagesManagementWorkRequestDetails struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description *string `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName *string `pulumi:"displayName"`
+}
+
+// ManagedInstanceInstallPackagesManagementWorkRequestDetailsInput is an input type that accepts ManagedInstanceInstallPackagesManagementWorkRequestDetailsArgs and ManagedInstanceInstallPackagesManagementWorkRequestDetailsOutput values.
+// You can construct a concrete instance of `ManagedInstanceInstallPackagesManagementWorkRequestDetailsInput` via:
+//
+//	ManagedInstanceInstallPackagesManagementWorkRequestDetailsArgs{...}
+type ManagedInstanceInstallPackagesManagementWorkRequestDetailsInput interface {
+	pulumi.Input
+
+	ToManagedInstanceInstallPackagesManagementWorkRequestDetailsOutput() ManagedInstanceInstallPackagesManagementWorkRequestDetailsOutput
+	ToManagedInstanceInstallPackagesManagementWorkRequestDetailsOutputWithContext(context.Context) ManagedInstanceInstallPackagesManagementWorkRequestDetailsOutput
+}
+
+type ManagedInstanceInstallPackagesManagementWorkRequestDetailsArgs struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+}
+
+func (ManagedInstanceInstallPackagesManagementWorkRequestDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstanceInstallPackagesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i ManagedInstanceInstallPackagesManagementWorkRequestDetailsArgs) ToManagedInstanceInstallPackagesManagementWorkRequestDetailsOutput() ManagedInstanceInstallPackagesManagementWorkRequestDetailsOutput {
+	return i.ToManagedInstanceInstallPackagesManagementWorkRequestDetailsOutputWithContext(context.Background())
+}
+
+func (i ManagedInstanceInstallPackagesManagementWorkRequestDetailsArgs) ToManagedInstanceInstallPackagesManagementWorkRequestDetailsOutputWithContext(ctx context.Context) ManagedInstanceInstallPackagesManagementWorkRequestDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceInstallPackagesManagementWorkRequestDetailsOutput)
+}
+
+func (i ManagedInstanceInstallPackagesManagementWorkRequestDetailsArgs) ToManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput() ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput {
+	return i.ToManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ManagedInstanceInstallPackagesManagementWorkRequestDetailsArgs) ToManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceInstallPackagesManagementWorkRequestDetailsOutput).ToManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx)
+}
+
+// ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrInput is an input type that accepts ManagedInstanceInstallPackagesManagementWorkRequestDetailsArgs, ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtr and ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput values.
+// You can construct a concrete instance of `ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrInput` via:
+//
+//	        ManagedInstanceInstallPackagesManagementWorkRequestDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrInput interface {
+	pulumi.Input
+
+	ToManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput() ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput
+	ToManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutputWithContext(context.Context) ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput
+}
+
+type managedInstanceInstallPackagesManagementWorkRequestDetailsPtrType ManagedInstanceInstallPackagesManagementWorkRequestDetailsArgs
+
+func ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtr(v *ManagedInstanceInstallPackagesManagementWorkRequestDetailsArgs) ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrInput {
+	return (*managedInstanceInstallPackagesManagementWorkRequestDetailsPtrType)(v)
+}
+
+func (*managedInstanceInstallPackagesManagementWorkRequestDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedInstanceInstallPackagesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i *managedInstanceInstallPackagesManagementWorkRequestDetailsPtrType) ToManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput() ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput {
+	return i.ToManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *managedInstanceInstallPackagesManagementWorkRequestDetailsPtrType) ToManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput)
+}
+
+type ManagedInstanceInstallPackagesManagementWorkRequestDetailsOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstanceInstallPackagesManagementWorkRequestDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstanceInstallPackagesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o ManagedInstanceInstallPackagesManagementWorkRequestDetailsOutput) ToManagedInstanceInstallPackagesManagementWorkRequestDetailsOutput() ManagedInstanceInstallPackagesManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o ManagedInstanceInstallPackagesManagementWorkRequestDetailsOutput) ToManagedInstanceInstallPackagesManagementWorkRequestDetailsOutputWithContext(ctx context.Context) ManagedInstanceInstallPackagesManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o ManagedInstanceInstallPackagesManagementWorkRequestDetailsOutput) ToManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput() ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput {
+	return o.ToManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ManagedInstanceInstallPackagesManagementWorkRequestDetailsOutput) ToManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ManagedInstanceInstallPackagesManagementWorkRequestDetails) *ManagedInstanceInstallPackagesManagementWorkRequestDetails {
+		return &v
+	}).(ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o ManagedInstanceInstallPackagesManagementWorkRequestDetailsOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstanceInstallPackagesManagementWorkRequestDetails) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedInstanceInstallPackagesManagementWorkRequestDetailsOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstanceInstallPackagesManagementWorkRequestDetails) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+type ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedInstanceInstallPackagesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput) ToManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput() ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput) ToManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput) Elem() ManagedInstanceInstallPackagesManagementWorkRequestDetailsOutput {
+	return o.ApplyT(func(v *ManagedInstanceInstallPackagesManagementWorkRequestDetails) ManagedInstanceInstallPackagesManagementWorkRequestDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ManagedInstanceInstallPackagesManagementWorkRequestDetails
+		return ret
+	}).(ManagedInstanceInstallPackagesManagementWorkRequestDetailsOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceInstallPackagesManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceInstallPackagesManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DisplayName
+	}).(pulumi.StringPtrOutput)
+}
+
+type ManagedInstanceInstallSnapsManagementSnapDetail struct {
+	// The snap channel to install from (e.g. stable, 1.2/edge, beta, candidate, or a custom channel).
+	Channel *string `pulumi:"channel"`
+	// If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+	IsSigned *bool `pulumi:"isSigned"`
+	// The confinement mode for the snap.
+	Mode *string `pulumi:"mode"`
+	// The name of the snap to install.
+	Name string `pulumi:"name"`
+	// The snap revision to install.
+	Revision *string `pulumi:"revision"`
+}
+
+// ManagedInstanceInstallSnapsManagementSnapDetailInput is an input type that accepts ManagedInstanceInstallSnapsManagementSnapDetailArgs and ManagedInstanceInstallSnapsManagementSnapDetailOutput values.
+// You can construct a concrete instance of `ManagedInstanceInstallSnapsManagementSnapDetailInput` via:
+//
+//	ManagedInstanceInstallSnapsManagementSnapDetailArgs{...}
+type ManagedInstanceInstallSnapsManagementSnapDetailInput interface {
+	pulumi.Input
+
+	ToManagedInstanceInstallSnapsManagementSnapDetailOutput() ManagedInstanceInstallSnapsManagementSnapDetailOutput
+	ToManagedInstanceInstallSnapsManagementSnapDetailOutputWithContext(context.Context) ManagedInstanceInstallSnapsManagementSnapDetailOutput
+}
+
+type ManagedInstanceInstallSnapsManagementSnapDetailArgs struct {
+	// The snap channel to install from (e.g. stable, 1.2/edge, beta, candidate, or a custom channel).
+	Channel pulumi.StringPtrInput `pulumi:"channel"`
+	// If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+	IsSigned pulumi.BoolPtrInput `pulumi:"isSigned"`
+	// The confinement mode for the snap.
+	Mode pulumi.StringPtrInput `pulumi:"mode"`
+	// The name of the snap to install.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The snap revision to install.
+	Revision pulumi.StringPtrInput `pulumi:"revision"`
+}
+
+func (ManagedInstanceInstallSnapsManagementSnapDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstanceInstallSnapsManagementSnapDetail)(nil)).Elem()
+}
+
+func (i ManagedInstanceInstallSnapsManagementSnapDetailArgs) ToManagedInstanceInstallSnapsManagementSnapDetailOutput() ManagedInstanceInstallSnapsManagementSnapDetailOutput {
+	return i.ToManagedInstanceInstallSnapsManagementSnapDetailOutputWithContext(context.Background())
+}
+
+func (i ManagedInstanceInstallSnapsManagementSnapDetailArgs) ToManagedInstanceInstallSnapsManagementSnapDetailOutputWithContext(ctx context.Context) ManagedInstanceInstallSnapsManagementSnapDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceInstallSnapsManagementSnapDetailOutput)
+}
+
+// ManagedInstanceInstallSnapsManagementSnapDetailArrayInput is an input type that accepts ManagedInstanceInstallSnapsManagementSnapDetailArray and ManagedInstanceInstallSnapsManagementSnapDetailArrayOutput values.
+// You can construct a concrete instance of `ManagedInstanceInstallSnapsManagementSnapDetailArrayInput` via:
+//
+//	ManagedInstanceInstallSnapsManagementSnapDetailArray{ ManagedInstanceInstallSnapsManagementSnapDetailArgs{...} }
+type ManagedInstanceInstallSnapsManagementSnapDetailArrayInput interface {
+	pulumi.Input
+
+	ToManagedInstanceInstallSnapsManagementSnapDetailArrayOutput() ManagedInstanceInstallSnapsManagementSnapDetailArrayOutput
+	ToManagedInstanceInstallSnapsManagementSnapDetailArrayOutputWithContext(context.Context) ManagedInstanceInstallSnapsManagementSnapDetailArrayOutput
+}
+
+type ManagedInstanceInstallSnapsManagementSnapDetailArray []ManagedInstanceInstallSnapsManagementSnapDetailInput
+
+func (ManagedInstanceInstallSnapsManagementSnapDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagedInstanceInstallSnapsManagementSnapDetail)(nil)).Elem()
+}
+
+func (i ManagedInstanceInstallSnapsManagementSnapDetailArray) ToManagedInstanceInstallSnapsManagementSnapDetailArrayOutput() ManagedInstanceInstallSnapsManagementSnapDetailArrayOutput {
+	return i.ToManagedInstanceInstallSnapsManagementSnapDetailArrayOutputWithContext(context.Background())
+}
+
+func (i ManagedInstanceInstallSnapsManagementSnapDetailArray) ToManagedInstanceInstallSnapsManagementSnapDetailArrayOutputWithContext(ctx context.Context) ManagedInstanceInstallSnapsManagementSnapDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceInstallSnapsManagementSnapDetailArrayOutput)
+}
+
+type ManagedInstanceInstallSnapsManagementSnapDetailOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstanceInstallSnapsManagementSnapDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstanceInstallSnapsManagementSnapDetail)(nil)).Elem()
+}
+
+func (o ManagedInstanceInstallSnapsManagementSnapDetailOutput) ToManagedInstanceInstallSnapsManagementSnapDetailOutput() ManagedInstanceInstallSnapsManagementSnapDetailOutput {
+	return o
+}
+
+func (o ManagedInstanceInstallSnapsManagementSnapDetailOutput) ToManagedInstanceInstallSnapsManagementSnapDetailOutputWithContext(ctx context.Context) ManagedInstanceInstallSnapsManagementSnapDetailOutput {
+	return o
+}
+
+// The snap channel to install from (e.g. stable, 1.2/edge, beta, candidate, or a custom channel).
+func (o ManagedInstanceInstallSnapsManagementSnapDetailOutput) Channel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstanceInstallSnapsManagementSnapDetail) *string { return v.Channel }).(pulumi.StringPtrOutput)
+}
+
+// If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+func (o ManagedInstanceInstallSnapsManagementSnapDetailOutput) IsSigned() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ManagedInstanceInstallSnapsManagementSnapDetail) *bool { return v.IsSigned }).(pulumi.BoolPtrOutput)
+}
+
+// The confinement mode for the snap.
+func (o ManagedInstanceInstallSnapsManagementSnapDetailOutput) Mode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstanceInstallSnapsManagementSnapDetail) *string { return v.Mode }).(pulumi.StringPtrOutput)
+}
+
+// The name of the snap to install.
+func (o ManagedInstanceInstallSnapsManagementSnapDetailOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagedInstanceInstallSnapsManagementSnapDetail) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The snap revision to install.
+func (o ManagedInstanceInstallSnapsManagementSnapDetailOutput) Revision() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstanceInstallSnapsManagementSnapDetail) *string { return v.Revision }).(pulumi.StringPtrOutput)
+}
+
+type ManagedInstanceInstallSnapsManagementSnapDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstanceInstallSnapsManagementSnapDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagedInstanceInstallSnapsManagementSnapDetail)(nil)).Elem()
+}
+
+func (o ManagedInstanceInstallSnapsManagementSnapDetailArrayOutput) ToManagedInstanceInstallSnapsManagementSnapDetailArrayOutput() ManagedInstanceInstallSnapsManagementSnapDetailArrayOutput {
+	return o
+}
+
+func (o ManagedInstanceInstallSnapsManagementSnapDetailArrayOutput) ToManagedInstanceInstallSnapsManagementSnapDetailArrayOutputWithContext(ctx context.Context) ManagedInstanceInstallSnapsManagementSnapDetailArrayOutput {
+	return o
+}
+
+func (o ManagedInstanceInstallSnapsManagementSnapDetailArrayOutput) Index(i pulumi.IntInput) ManagedInstanceInstallSnapsManagementSnapDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagedInstanceInstallSnapsManagementSnapDetail {
+		return vs[0].([]ManagedInstanceInstallSnapsManagementSnapDetail)[vs[1].(int)]
+	}).(ManagedInstanceInstallSnapsManagementSnapDetailOutput)
+}
+
+type ManagedInstanceInstallSnapsManagementWorkRequestDetails struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description *string `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName *string `pulumi:"displayName"`
+}
+
+// ManagedInstanceInstallSnapsManagementWorkRequestDetailsInput is an input type that accepts ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs and ManagedInstanceInstallSnapsManagementWorkRequestDetailsOutput values.
+// You can construct a concrete instance of `ManagedInstanceInstallSnapsManagementWorkRequestDetailsInput` via:
+//
+//	ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs{...}
+type ManagedInstanceInstallSnapsManagementWorkRequestDetailsInput interface {
+	pulumi.Input
+
+	ToManagedInstanceInstallSnapsManagementWorkRequestDetailsOutput() ManagedInstanceInstallSnapsManagementWorkRequestDetailsOutput
+	ToManagedInstanceInstallSnapsManagementWorkRequestDetailsOutputWithContext(context.Context) ManagedInstanceInstallSnapsManagementWorkRequestDetailsOutput
+}
+
+type ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+}
+
+func (ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstanceInstallSnapsManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs) ToManagedInstanceInstallSnapsManagementWorkRequestDetailsOutput() ManagedInstanceInstallSnapsManagementWorkRequestDetailsOutput {
+	return i.ToManagedInstanceInstallSnapsManagementWorkRequestDetailsOutputWithContext(context.Background())
+}
+
+func (i ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs) ToManagedInstanceInstallSnapsManagementWorkRequestDetailsOutputWithContext(ctx context.Context) ManagedInstanceInstallSnapsManagementWorkRequestDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceInstallSnapsManagementWorkRequestDetailsOutput)
+}
+
+func (i ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs) ToManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput() ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput {
+	return i.ToManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs) ToManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceInstallSnapsManagementWorkRequestDetailsOutput).ToManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutputWithContext(ctx)
+}
+
+// ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrInput is an input type that accepts ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs, ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtr and ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput values.
+// You can construct a concrete instance of `ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrInput` via:
+//
+//	        ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrInput interface {
+	pulumi.Input
+
+	ToManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput() ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput
+	ToManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutputWithContext(context.Context) ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput
+}
+
+type managedInstanceInstallSnapsManagementWorkRequestDetailsPtrType ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs
+
+func ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtr(v *ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs) ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrInput {
+	return (*managedInstanceInstallSnapsManagementWorkRequestDetailsPtrType)(v)
+}
+
+func (*managedInstanceInstallSnapsManagementWorkRequestDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedInstanceInstallSnapsManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i *managedInstanceInstallSnapsManagementWorkRequestDetailsPtrType) ToManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput() ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput {
+	return i.ToManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *managedInstanceInstallSnapsManagementWorkRequestDetailsPtrType) ToManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput)
+}
+
+type ManagedInstanceInstallSnapsManagementWorkRequestDetailsOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstanceInstallSnapsManagementWorkRequestDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstanceInstallSnapsManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o ManagedInstanceInstallSnapsManagementWorkRequestDetailsOutput) ToManagedInstanceInstallSnapsManagementWorkRequestDetailsOutput() ManagedInstanceInstallSnapsManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o ManagedInstanceInstallSnapsManagementWorkRequestDetailsOutput) ToManagedInstanceInstallSnapsManagementWorkRequestDetailsOutputWithContext(ctx context.Context) ManagedInstanceInstallSnapsManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o ManagedInstanceInstallSnapsManagementWorkRequestDetailsOutput) ToManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput() ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput {
+	return o.ToManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ManagedInstanceInstallSnapsManagementWorkRequestDetailsOutput) ToManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ManagedInstanceInstallSnapsManagementWorkRequestDetails) *ManagedInstanceInstallSnapsManagementWorkRequestDetails {
+		return &v
+	}).(ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o ManagedInstanceInstallSnapsManagementWorkRequestDetailsOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstanceInstallSnapsManagementWorkRequestDetails) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedInstanceInstallSnapsManagementWorkRequestDetailsOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstanceInstallSnapsManagementWorkRequestDetails) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+type ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedInstanceInstallSnapsManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput) ToManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput() ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput) ToManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput) Elem() ManagedInstanceInstallSnapsManagementWorkRequestDetailsOutput {
+	return o.ApplyT(func(v *ManagedInstanceInstallSnapsManagementWorkRequestDetails) ManagedInstanceInstallSnapsManagementWorkRequestDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ManagedInstanceInstallSnapsManagementWorkRequestDetails
+		return ret
+	}).(ManagedInstanceInstallSnapsManagementWorkRequestDetailsOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceInstallSnapsManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceInstallSnapsManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DisplayName
+	}).(pulumi.StringPtrOutput)
+}
+
 type ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetails struct {
 	// User-specified information about the job. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
@@ -5516,6 +7549,448 @@ func (o ManagedInstanceRebootManagementWorkRequestDetailsPtrOutput) DisplayName(
 	}).(pulumi.StringPtrOutput)
 }
 
+type ManagedInstanceRemovePackagesManagementWorkRequestDetails struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description *string `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName *string `pulumi:"displayName"`
+}
+
+// ManagedInstanceRemovePackagesManagementWorkRequestDetailsInput is an input type that accepts ManagedInstanceRemovePackagesManagementWorkRequestDetailsArgs and ManagedInstanceRemovePackagesManagementWorkRequestDetailsOutput values.
+// You can construct a concrete instance of `ManagedInstanceRemovePackagesManagementWorkRequestDetailsInput` via:
+//
+//	ManagedInstanceRemovePackagesManagementWorkRequestDetailsArgs{...}
+type ManagedInstanceRemovePackagesManagementWorkRequestDetailsInput interface {
+	pulumi.Input
+
+	ToManagedInstanceRemovePackagesManagementWorkRequestDetailsOutput() ManagedInstanceRemovePackagesManagementWorkRequestDetailsOutput
+	ToManagedInstanceRemovePackagesManagementWorkRequestDetailsOutputWithContext(context.Context) ManagedInstanceRemovePackagesManagementWorkRequestDetailsOutput
+}
+
+type ManagedInstanceRemovePackagesManagementWorkRequestDetailsArgs struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+}
+
+func (ManagedInstanceRemovePackagesManagementWorkRequestDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstanceRemovePackagesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i ManagedInstanceRemovePackagesManagementWorkRequestDetailsArgs) ToManagedInstanceRemovePackagesManagementWorkRequestDetailsOutput() ManagedInstanceRemovePackagesManagementWorkRequestDetailsOutput {
+	return i.ToManagedInstanceRemovePackagesManagementWorkRequestDetailsOutputWithContext(context.Background())
+}
+
+func (i ManagedInstanceRemovePackagesManagementWorkRequestDetailsArgs) ToManagedInstanceRemovePackagesManagementWorkRequestDetailsOutputWithContext(ctx context.Context) ManagedInstanceRemovePackagesManagementWorkRequestDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceRemovePackagesManagementWorkRequestDetailsOutput)
+}
+
+func (i ManagedInstanceRemovePackagesManagementWorkRequestDetailsArgs) ToManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput() ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput {
+	return i.ToManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ManagedInstanceRemovePackagesManagementWorkRequestDetailsArgs) ToManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceRemovePackagesManagementWorkRequestDetailsOutput).ToManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx)
+}
+
+// ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrInput is an input type that accepts ManagedInstanceRemovePackagesManagementWorkRequestDetailsArgs, ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtr and ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput values.
+// You can construct a concrete instance of `ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrInput` via:
+//
+//	        ManagedInstanceRemovePackagesManagementWorkRequestDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrInput interface {
+	pulumi.Input
+
+	ToManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput() ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput
+	ToManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutputWithContext(context.Context) ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput
+}
+
+type managedInstanceRemovePackagesManagementWorkRequestDetailsPtrType ManagedInstanceRemovePackagesManagementWorkRequestDetailsArgs
+
+func ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtr(v *ManagedInstanceRemovePackagesManagementWorkRequestDetailsArgs) ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrInput {
+	return (*managedInstanceRemovePackagesManagementWorkRequestDetailsPtrType)(v)
+}
+
+func (*managedInstanceRemovePackagesManagementWorkRequestDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedInstanceRemovePackagesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i *managedInstanceRemovePackagesManagementWorkRequestDetailsPtrType) ToManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput() ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput {
+	return i.ToManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *managedInstanceRemovePackagesManagementWorkRequestDetailsPtrType) ToManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput)
+}
+
+type ManagedInstanceRemovePackagesManagementWorkRequestDetailsOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstanceRemovePackagesManagementWorkRequestDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstanceRemovePackagesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o ManagedInstanceRemovePackagesManagementWorkRequestDetailsOutput) ToManagedInstanceRemovePackagesManagementWorkRequestDetailsOutput() ManagedInstanceRemovePackagesManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o ManagedInstanceRemovePackagesManagementWorkRequestDetailsOutput) ToManagedInstanceRemovePackagesManagementWorkRequestDetailsOutputWithContext(ctx context.Context) ManagedInstanceRemovePackagesManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o ManagedInstanceRemovePackagesManagementWorkRequestDetailsOutput) ToManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput() ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput {
+	return o.ToManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ManagedInstanceRemovePackagesManagementWorkRequestDetailsOutput) ToManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ManagedInstanceRemovePackagesManagementWorkRequestDetails) *ManagedInstanceRemovePackagesManagementWorkRequestDetails {
+		return &v
+	}).(ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o ManagedInstanceRemovePackagesManagementWorkRequestDetailsOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstanceRemovePackagesManagementWorkRequestDetails) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedInstanceRemovePackagesManagementWorkRequestDetailsOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstanceRemovePackagesManagementWorkRequestDetails) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+type ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedInstanceRemovePackagesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput) ToManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput() ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput) ToManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput) Elem() ManagedInstanceRemovePackagesManagementWorkRequestDetailsOutput {
+	return o.ApplyT(func(v *ManagedInstanceRemovePackagesManagementWorkRequestDetails) ManagedInstanceRemovePackagesManagementWorkRequestDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ManagedInstanceRemovePackagesManagementWorkRequestDetails
+		return ret
+	}).(ManagedInstanceRemovePackagesManagementWorkRequestDetailsOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceRemovePackagesManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceRemovePackagesManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DisplayName
+	}).(pulumi.StringPtrOutput)
+}
+
+type ManagedInstanceRemoveSnapsManagementSnapDetail struct {
+	// The name of the snap to remove.
+	Name string `pulumi:"name"`
+	// The revision to remove. Note: This option cannot be used when removing multiple snaps.
+	Revision *string `pulumi:"revision"`
+}
+
+// ManagedInstanceRemoveSnapsManagementSnapDetailInput is an input type that accepts ManagedInstanceRemoveSnapsManagementSnapDetailArgs and ManagedInstanceRemoveSnapsManagementSnapDetailOutput values.
+// You can construct a concrete instance of `ManagedInstanceRemoveSnapsManagementSnapDetailInput` via:
+//
+//	ManagedInstanceRemoveSnapsManagementSnapDetailArgs{...}
+type ManagedInstanceRemoveSnapsManagementSnapDetailInput interface {
+	pulumi.Input
+
+	ToManagedInstanceRemoveSnapsManagementSnapDetailOutput() ManagedInstanceRemoveSnapsManagementSnapDetailOutput
+	ToManagedInstanceRemoveSnapsManagementSnapDetailOutputWithContext(context.Context) ManagedInstanceRemoveSnapsManagementSnapDetailOutput
+}
+
+type ManagedInstanceRemoveSnapsManagementSnapDetailArgs struct {
+	// The name of the snap to remove.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The revision to remove. Note: This option cannot be used when removing multiple snaps.
+	Revision pulumi.StringPtrInput `pulumi:"revision"`
+}
+
+func (ManagedInstanceRemoveSnapsManagementSnapDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstanceRemoveSnapsManagementSnapDetail)(nil)).Elem()
+}
+
+func (i ManagedInstanceRemoveSnapsManagementSnapDetailArgs) ToManagedInstanceRemoveSnapsManagementSnapDetailOutput() ManagedInstanceRemoveSnapsManagementSnapDetailOutput {
+	return i.ToManagedInstanceRemoveSnapsManagementSnapDetailOutputWithContext(context.Background())
+}
+
+func (i ManagedInstanceRemoveSnapsManagementSnapDetailArgs) ToManagedInstanceRemoveSnapsManagementSnapDetailOutputWithContext(ctx context.Context) ManagedInstanceRemoveSnapsManagementSnapDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceRemoveSnapsManagementSnapDetailOutput)
+}
+
+// ManagedInstanceRemoveSnapsManagementSnapDetailArrayInput is an input type that accepts ManagedInstanceRemoveSnapsManagementSnapDetailArray and ManagedInstanceRemoveSnapsManagementSnapDetailArrayOutput values.
+// You can construct a concrete instance of `ManagedInstanceRemoveSnapsManagementSnapDetailArrayInput` via:
+//
+//	ManagedInstanceRemoveSnapsManagementSnapDetailArray{ ManagedInstanceRemoveSnapsManagementSnapDetailArgs{...} }
+type ManagedInstanceRemoveSnapsManagementSnapDetailArrayInput interface {
+	pulumi.Input
+
+	ToManagedInstanceRemoveSnapsManagementSnapDetailArrayOutput() ManagedInstanceRemoveSnapsManagementSnapDetailArrayOutput
+	ToManagedInstanceRemoveSnapsManagementSnapDetailArrayOutputWithContext(context.Context) ManagedInstanceRemoveSnapsManagementSnapDetailArrayOutput
+}
+
+type ManagedInstanceRemoveSnapsManagementSnapDetailArray []ManagedInstanceRemoveSnapsManagementSnapDetailInput
+
+func (ManagedInstanceRemoveSnapsManagementSnapDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagedInstanceRemoveSnapsManagementSnapDetail)(nil)).Elem()
+}
+
+func (i ManagedInstanceRemoveSnapsManagementSnapDetailArray) ToManagedInstanceRemoveSnapsManagementSnapDetailArrayOutput() ManagedInstanceRemoveSnapsManagementSnapDetailArrayOutput {
+	return i.ToManagedInstanceRemoveSnapsManagementSnapDetailArrayOutputWithContext(context.Background())
+}
+
+func (i ManagedInstanceRemoveSnapsManagementSnapDetailArray) ToManagedInstanceRemoveSnapsManagementSnapDetailArrayOutputWithContext(ctx context.Context) ManagedInstanceRemoveSnapsManagementSnapDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceRemoveSnapsManagementSnapDetailArrayOutput)
+}
+
+type ManagedInstanceRemoveSnapsManagementSnapDetailOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstanceRemoveSnapsManagementSnapDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstanceRemoveSnapsManagementSnapDetail)(nil)).Elem()
+}
+
+func (o ManagedInstanceRemoveSnapsManagementSnapDetailOutput) ToManagedInstanceRemoveSnapsManagementSnapDetailOutput() ManagedInstanceRemoveSnapsManagementSnapDetailOutput {
+	return o
+}
+
+func (o ManagedInstanceRemoveSnapsManagementSnapDetailOutput) ToManagedInstanceRemoveSnapsManagementSnapDetailOutputWithContext(ctx context.Context) ManagedInstanceRemoveSnapsManagementSnapDetailOutput {
+	return o
+}
+
+// The name of the snap to remove.
+func (o ManagedInstanceRemoveSnapsManagementSnapDetailOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagedInstanceRemoveSnapsManagementSnapDetail) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The revision to remove. Note: This option cannot be used when removing multiple snaps.
+func (o ManagedInstanceRemoveSnapsManagementSnapDetailOutput) Revision() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstanceRemoveSnapsManagementSnapDetail) *string { return v.Revision }).(pulumi.StringPtrOutput)
+}
+
+type ManagedInstanceRemoveSnapsManagementSnapDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstanceRemoveSnapsManagementSnapDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagedInstanceRemoveSnapsManagementSnapDetail)(nil)).Elem()
+}
+
+func (o ManagedInstanceRemoveSnapsManagementSnapDetailArrayOutput) ToManagedInstanceRemoveSnapsManagementSnapDetailArrayOutput() ManagedInstanceRemoveSnapsManagementSnapDetailArrayOutput {
+	return o
+}
+
+func (o ManagedInstanceRemoveSnapsManagementSnapDetailArrayOutput) ToManagedInstanceRemoveSnapsManagementSnapDetailArrayOutputWithContext(ctx context.Context) ManagedInstanceRemoveSnapsManagementSnapDetailArrayOutput {
+	return o
+}
+
+func (o ManagedInstanceRemoveSnapsManagementSnapDetailArrayOutput) Index(i pulumi.IntInput) ManagedInstanceRemoveSnapsManagementSnapDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagedInstanceRemoveSnapsManagementSnapDetail {
+		return vs[0].([]ManagedInstanceRemoveSnapsManagementSnapDetail)[vs[1].(int)]
+	}).(ManagedInstanceRemoveSnapsManagementSnapDetailOutput)
+}
+
+type ManagedInstanceRemoveSnapsManagementWorkRequestDetails struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description *string `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName *string `pulumi:"displayName"`
+}
+
+// ManagedInstanceRemoveSnapsManagementWorkRequestDetailsInput is an input type that accepts ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs and ManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutput values.
+// You can construct a concrete instance of `ManagedInstanceRemoveSnapsManagementWorkRequestDetailsInput` via:
+//
+//	ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs{...}
+type ManagedInstanceRemoveSnapsManagementWorkRequestDetailsInput interface {
+	pulumi.Input
+
+	ToManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutput() ManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutput
+	ToManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutputWithContext(context.Context) ManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutput
+}
+
+type ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+}
+
+func (ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstanceRemoveSnapsManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs) ToManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutput() ManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutput {
+	return i.ToManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutputWithContext(context.Background())
+}
+
+func (i ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs) ToManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutputWithContext(ctx context.Context) ManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutput)
+}
+
+func (i ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs) ToManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput() ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput {
+	return i.ToManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs) ToManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutput).ToManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutputWithContext(ctx)
+}
+
+// ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrInput is an input type that accepts ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs, ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtr and ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput values.
+// You can construct a concrete instance of `ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrInput` via:
+//
+//	        ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrInput interface {
+	pulumi.Input
+
+	ToManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput() ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput
+	ToManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutputWithContext(context.Context) ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput
+}
+
+type managedInstanceRemoveSnapsManagementWorkRequestDetailsPtrType ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs
+
+func ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtr(v *ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs) ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrInput {
+	return (*managedInstanceRemoveSnapsManagementWorkRequestDetailsPtrType)(v)
+}
+
+func (*managedInstanceRemoveSnapsManagementWorkRequestDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedInstanceRemoveSnapsManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i *managedInstanceRemoveSnapsManagementWorkRequestDetailsPtrType) ToManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput() ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput {
+	return i.ToManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *managedInstanceRemoveSnapsManagementWorkRequestDetailsPtrType) ToManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput)
+}
+
+type ManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstanceRemoveSnapsManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o ManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutput) ToManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutput() ManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o ManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutput) ToManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutputWithContext(ctx context.Context) ManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o ManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutput) ToManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput() ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput {
+	return o.ToManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutput) ToManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ManagedInstanceRemoveSnapsManagementWorkRequestDetails) *ManagedInstanceRemoveSnapsManagementWorkRequestDetails {
+		return &v
+	}).(ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o ManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstanceRemoveSnapsManagementWorkRequestDetails) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstanceRemoveSnapsManagementWorkRequestDetails) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+type ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedInstanceRemoveSnapsManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput) ToManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput() ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput) ToManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput) Elem() ManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutput {
+	return o.ApplyT(func(v *ManagedInstanceRemoveSnapsManagementWorkRequestDetails) ManagedInstanceRemoveSnapsManagementWorkRequestDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ManagedInstanceRemoveSnapsManagementWorkRequestDetails
+		return ret
+	}).(ManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceRemoveSnapsManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceRemoveSnapsManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DisplayName
+	}).(pulumi.StringPtrOutput)
+}
+
 type ManagedInstanceSoftwareSource struct {
 	// (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
@@ -5647,6 +8122,330 @@ func (o ManagedInstanceSoftwareSourceArrayOutput) Index(i pulumi.IntInput) Manag
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagedInstanceSoftwareSource {
 		return vs[0].([]ManagedInstanceSoftwareSource)[vs[1].(int)]
 	}).(ManagedInstanceSoftwareSourceOutput)
+}
+
+type ManagedInstanceSwitchSnapChannelManagementSnapDetails struct {
+	// The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+	Channel *string `pulumi:"channel"`
+	// The name of the snap.
+	Name string `pulumi:"name"`
+}
+
+// ManagedInstanceSwitchSnapChannelManagementSnapDetailsInput is an input type that accepts ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs and ManagedInstanceSwitchSnapChannelManagementSnapDetailsOutput values.
+// You can construct a concrete instance of `ManagedInstanceSwitchSnapChannelManagementSnapDetailsInput` via:
+//
+//	ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs{...}
+type ManagedInstanceSwitchSnapChannelManagementSnapDetailsInput interface {
+	pulumi.Input
+
+	ToManagedInstanceSwitchSnapChannelManagementSnapDetailsOutput() ManagedInstanceSwitchSnapChannelManagementSnapDetailsOutput
+	ToManagedInstanceSwitchSnapChannelManagementSnapDetailsOutputWithContext(context.Context) ManagedInstanceSwitchSnapChannelManagementSnapDetailsOutput
+}
+
+type ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs struct {
+	// The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+	Channel pulumi.StringPtrInput `pulumi:"channel"`
+	// The name of the snap.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstanceSwitchSnapChannelManagementSnapDetails)(nil)).Elem()
+}
+
+func (i ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs) ToManagedInstanceSwitchSnapChannelManagementSnapDetailsOutput() ManagedInstanceSwitchSnapChannelManagementSnapDetailsOutput {
+	return i.ToManagedInstanceSwitchSnapChannelManagementSnapDetailsOutputWithContext(context.Background())
+}
+
+func (i ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs) ToManagedInstanceSwitchSnapChannelManagementSnapDetailsOutputWithContext(ctx context.Context) ManagedInstanceSwitchSnapChannelManagementSnapDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceSwitchSnapChannelManagementSnapDetailsOutput)
+}
+
+func (i ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs) ToManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput() ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput {
+	return i.ToManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs) ToManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceSwitchSnapChannelManagementSnapDetailsOutput).ToManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutputWithContext(ctx)
+}
+
+// ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrInput is an input type that accepts ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs, ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtr and ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput values.
+// You can construct a concrete instance of `ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrInput` via:
+//
+//	        ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrInput interface {
+	pulumi.Input
+
+	ToManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput() ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput
+	ToManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutputWithContext(context.Context) ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput
+}
+
+type managedInstanceSwitchSnapChannelManagementSnapDetailsPtrType ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs
+
+func ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtr(v *ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs) ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrInput {
+	return (*managedInstanceSwitchSnapChannelManagementSnapDetailsPtrType)(v)
+}
+
+func (*managedInstanceSwitchSnapChannelManagementSnapDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedInstanceSwitchSnapChannelManagementSnapDetails)(nil)).Elem()
+}
+
+func (i *managedInstanceSwitchSnapChannelManagementSnapDetailsPtrType) ToManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput() ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput {
+	return i.ToManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *managedInstanceSwitchSnapChannelManagementSnapDetailsPtrType) ToManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput)
+}
+
+type ManagedInstanceSwitchSnapChannelManagementSnapDetailsOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstanceSwitchSnapChannelManagementSnapDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstanceSwitchSnapChannelManagementSnapDetails)(nil)).Elem()
+}
+
+func (o ManagedInstanceSwitchSnapChannelManagementSnapDetailsOutput) ToManagedInstanceSwitchSnapChannelManagementSnapDetailsOutput() ManagedInstanceSwitchSnapChannelManagementSnapDetailsOutput {
+	return o
+}
+
+func (o ManagedInstanceSwitchSnapChannelManagementSnapDetailsOutput) ToManagedInstanceSwitchSnapChannelManagementSnapDetailsOutputWithContext(ctx context.Context) ManagedInstanceSwitchSnapChannelManagementSnapDetailsOutput {
+	return o
+}
+
+func (o ManagedInstanceSwitchSnapChannelManagementSnapDetailsOutput) ToManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput() ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput {
+	return o.ToManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ManagedInstanceSwitchSnapChannelManagementSnapDetailsOutput) ToManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ManagedInstanceSwitchSnapChannelManagementSnapDetails) *ManagedInstanceSwitchSnapChannelManagementSnapDetails {
+		return &v
+	}).(ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput)
+}
+
+// The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+func (o ManagedInstanceSwitchSnapChannelManagementSnapDetailsOutput) Channel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstanceSwitchSnapChannelManagementSnapDetails) *string { return v.Channel }).(pulumi.StringPtrOutput)
+}
+
+// The name of the snap.
+func (o ManagedInstanceSwitchSnapChannelManagementSnapDetailsOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagedInstanceSwitchSnapChannelManagementSnapDetails) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedInstanceSwitchSnapChannelManagementSnapDetails)(nil)).Elem()
+}
+
+func (o ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput) ToManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput() ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput {
+	return o
+}
+
+func (o ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput) ToManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput {
+	return o
+}
+
+func (o ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput) Elem() ManagedInstanceSwitchSnapChannelManagementSnapDetailsOutput {
+	return o.ApplyT(func(v *ManagedInstanceSwitchSnapChannelManagementSnapDetails) ManagedInstanceSwitchSnapChannelManagementSnapDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ManagedInstanceSwitchSnapChannelManagementSnapDetails
+		return ret
+	}).(ManagedInstanceSwitchSnapChannelManagementSnapDetailsOutput)
+}
+
+// The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+func (o ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput) Channel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceSwitchSnapChannelManagementSnapDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Channel
+	}).(pulumi.StringPtrOutput)
+}
+
+// The name of the snap.
+func (o ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceSwitchSnapChannelManagementSnapDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+type ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description *string `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName *string `pulumi:"displayName"`
+}
+
+// ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsInput is an input type that accepts ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs and ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutput values.
+// You can construct a concrete instance of `ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsInput` via:
+//
+//	ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs{...}
+type ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsInput interface {
+	pulumi.Input
+
+	ToManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutput() ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutput
+	ToManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutputWithContext(context.Context) ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutput
+}
+
+type ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+}
+
+func (ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs) ToManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutput() ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutput {
+	return i.ToManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutputWithContext(context.Background())
+}
+
+func (i ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs) ToManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutputWithContext(ctx context.Context) ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutput)
+}
+
+func (i ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs) ToManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput() ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput {
+	return i.ToManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs) ToManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutput).ToManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutputWithContext(ctx)
+}
+
+// ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrInput is an input type that accepts ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs, ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtr and ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput values.
+// You can construct a concrete instance of `ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrInput` via:
+//
+//	        ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrInput interface {
+	pulumi.Input
+
+	ToManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput() ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput
+	ToManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutputWithContext(context.Context) ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput
+}
+
+type managedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrType ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs
+
+func ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtr(v *ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs) ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrInput {
+	return (*managedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrType)(v)
+}
+
+func (*managedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i *managedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrType) ToManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput() ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput {
+	return i.ToManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *managedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrType) ToManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput)
+}
+
+type ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutput) ToManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutput() ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutput) ToManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutputWithContext(ctx context.Context) ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutput) ToManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput() ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput {
+	return o.ToManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutput) ToManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails) *ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails {
+		return &v
+	}).(ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+type ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput) ToManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput() ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput) ToManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput) Elem() ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutput {
+	return o.ApplyT(func(v *ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails) ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails
+		return ret
+	}).(ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DisplayName
+	}).(pulumi.StringPtrOutput)
 }
 
 type ManagedInstanceUpdatePackagesManagementWorkRequestDetails struct {
@@ -5810,6 +8609,346 @@ func (o ManagedInstanceUpdatePackagesManagementWorkRequestDetailsPtrOutput) Desc
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ManagedInstanceUpdatePackagesManagementWorkRequestDetailsPtrOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ManagedInstanceUpdatePackagesManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DisplayName
+	}).(pulumi.StringPtrOutput)
+}
+
+type ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetails struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description *string `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName *string `pulumi:"displayName"`
+}
+
+// ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsInput is an input type that accepts ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsArgs and ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutput values.
+// You can construct a concrete instance of `ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsInput` via:
+//
+//	ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsArgs{...}
+type ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsInput interface {
+	pulumi.Input
+
+	ToManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutput() ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutput
+	ToManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutputWithContext(context.Context) ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutput
+}
+
+type ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsArgs struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+}
+
+func (ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsArgs) ToManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutput() ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutput {
+	return i.ToManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutputWithContext(context.Background())
+}
+
+func (i ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsArgs) ToManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutputWithContext(ctx context.Context) ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutput)
+}
+
+func (i ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsArgs) ToManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput() ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput {
+	return i.ToManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsArgs) ToManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutput).ToManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutputWithContext(ctx)
+}
+
+// ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrInput is an input type that accepts ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsArgs, ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtr and ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput values.
+// You can construct a concrete instance of `ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrInput` via:
+//
+//	        ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrInput interface {
+	pulumi.Input
+
+	ToManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput() ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput
+	ToManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutputWithContext(context.Context) ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput
+}
+
+type managedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrType ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsArgs
+
+func ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtr(v *ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsArgs) ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrInput {
+	return (*managedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrType)(v)
+}
+
+func (*managedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i *managedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrType) ToManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput() ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput {
+	return i.ToManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *managedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrType) ToManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput)
+}
+
+type ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutput) ToManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutput() ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutput) ToManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutputWithContext(ctx context.Context) ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutput) ToManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput() ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput {
+	return o.ToManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutput) ToManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetails) *ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetails {
+		return &v
+	}).(ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetails) *string {
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetails) *string {
+		return v.DisplayName
+	}).(pulumi.StringPtrOutput)
+}
+
+type ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput) ToManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput() ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput) ToManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput) Elem() ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutput {
+	return o.ApplyT(func(v *ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetails) ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetails
+		return ret
+	}).(ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DisplayName
+	}).(pulumi.StringPtrOutput)
+}
+
+type ManagedInstancesUpdatePackagesManagementWorkRequestDetails struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description *string `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName *string `pulumi:"displayName"`
+}
+
+// ManagedInstancesUpdatePackagesManagementWorkRequestDetailsInput is an input type that accepts ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs and ManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutput values.
+// You can construct a concrete instance of `ManagedInstancesUpdatePackagesManagementWorkRequestDetailsInput` via:
+//
+//	ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs{...}
+type ManagedInstancesUpdatePackagesManagementWorkRequestDetailsInput interface {
+	pulumi.Input
+
+	ToManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutput() ManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutput
+	ToManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutputWithContext(context.Context) ManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutput
+}
+
+type ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs struct {
+	// User-specified information about the job. Avoid entering confidential information.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+}
+
+func (ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstancesUpdatePackagesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs) ToManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutput() ManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutput {
+	return i.ToManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutputWithContext(context.Background())
+}
+
+func (i ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs) ToManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutputWithContext(ctx context.Context) ManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutput)
+}
+
+func (i ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs) ToManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput() ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput {
+	return i.ToManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs) ToManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutput).ToManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx)
+}
+
+// ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrInput is an input type that accepts ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs, ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtr and ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput values.
+// You can construct a concrete instance of `ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrInput` via:
+//
+//	        ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrInput interface {
+	pulumi.Input
+
+	ToManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput() ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput
+	ToManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutputWithContext(context.Context) ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput
+}
+
+type managedInstancesUpdatePackagesManagementWorkRequestDetailsPtrType ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs
+
+func ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtr(v *ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs) ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrInput {
+	return (*managedInstancesUpdatePackagesManagementWorkRequestDetailsPtrType)(v)
+}
+
+func (*managedInstancesUpdatePackagesManagementWorkRequestDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedInstancesUpdatePackagesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (i *managedInstancesUpdatePackagesManagementWorkRequestDetailsPtrType) ToManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput() ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput {
+	return i.ToManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *managedInstancesUpdatePackagesManagementWorkRequestDetailsPtrType) ToManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput)
+}
+
+type ManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedInstancesUpdatePackagesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o ManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutput) ToManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutput() ManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o ManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutput) ToManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutputWithContext(ctx context.Context) ManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutput {
+	return o
+}
+
+func (o ManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutput) ToManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput() ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput {
+	return o.ToManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutput) ToManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ManagedInstancesUpdatePackagesManagementWorkRequestDetails) *ManagedInstancesUpdatePackagesManagementWorkRequestDetails {
+		return &v
+	}).(ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o ManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstancesUpdatePackagesManagementWorkRequestDetails) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedInstancesUpdatePackagesManagementWorkRequestDetails) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+type ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedInstancesUpdatePackagesManagementWorkRequestDetails)(nil)).Elem()
+}
+
+func (o ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput) ToManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput() ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput) ToManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutputWithContext(ctx context.Context) ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput {
+	return o
+}
+
+func (o ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput) Elem() ManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutput {
+	return o.ApplyT(func(v *ManagedInstancesUpdatePackagesManagementWorkRequestDetails) ManagedInstancesUpdatePackagesManagementWorkRequestDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ManagedInstancesUpdatePackagesManagementWorkRequestDetails
+		return ret
+	}).(ManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutput)
+}
+
+// User-specified information about the job. Avoid entering confidential information.
+func (o ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstancesUpdatePackagesManagementWorkRequestDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstancesUpdatePackagesManagementWorkRequestDetails) *string {
 		if v == nil {
 			return nil
 		}
@@ -6101,7 +9240,7 @@ type ManagementStationMirror struct {
 	// (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
 	IsSslverifyEnabled *bool `pulumi:"isSslverifyEnabled"`
 	// (Updatable) Default mirror listening port for http.
-	Port string `pulumi:"port"`
+	Port *string `pulumi:"port"`
 	// (Updatable) Path to the SSL cerfificate.
 	Sslcert *string `pulumi:"sslcert"`
 	// (Updatable) Default mirror listening port for https.
@@ -6125,7 +9264,7 @@ type ManagementStationMirrorArgs struct {
 	// (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
 	IsSslverifyEnabled pulumi.BoolPtrInput `pulumi:"isSslverifyEnabled"`
 	// (Updatable) Default mirror listening port for http.
-	Port pulumi.StringInput `pulumi:"port"`
+	Port pulumi.StringPtrInput `pulumi:"port"`
 	// (Updatable) Path to the SSL cerfificate.
 	Sslcert pulumi.StringPtrInput `pulumi:"sslcert"`
 	// (Updatable) Default mirror listening port for https.
@@ -6220,8 +9359,8 @@ func (o ManagementStationMirrorOutput) IsSslverifyEnabled() pulumi.BoolPtrOutput
 }
 
 // (Updatable) Default mirror listening port for http.
-func (o ManagementStationMirrorOutput) Port() pulumi.StringOutput {
-	return o.ApplyT(func(v ManagementStationMirror) string { return v.Port }).(pulumi.StringOutput)
+func (o ManagementStationMirrorOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementStationMirror) *string { return v.Port }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Path to the SSL cerfificate.
@@ -6284,7 +9423,7 @@ func (o ManagementStationMirrorPtrOutput) Port() pulumi.StringPtrOutput {
 		if v == nil {
 			return nil
 		}
-		return &v.Port
+		return v.Port
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -6742,7 +9881,7 @@ func (o ManagementStationProxyPtrOutput) Port() pulumi.StringPtrOutput {
 }
 
 type ProfileLifecycleEnvironment struct {
-	// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+	// (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id *string `pulumi:"id"`
@@ -6760,7 +9899,7 @@ type ProfileLifecycleEnvironmentInput interface {
 }
 
 type ProfileLifecycleEnvironmentArgs struct {
-	// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+	// (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id pulumi.StringPtrInput `pulumi:"id"`
@@ -6817,7 +9956,7 @@ func (o ProfileLifecycleEnvironmentOutput) ToProfileLifecycleEnvironmentOutputWi
 	return o
 }
 
-// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+// (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
 func (o ProfileLifecycleEnvironmentOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProfileLifecycleEnvironment) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -6848,7 +9987,7 @@ func (o ProfileLifecycleEnvironmentArrayOutput) Index(i pulumi.IntInput) Profile
 }
 
 type ProfileLifecycleStage struct {
-	// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+	// (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id *string `pulumi:"id"`
@@ -6866,7 +10005,7 @@ type ProfileLifecycleStageInput interface {
 }
 
 type ProfileLifecycleStageArgs struct {
-	// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+	// (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id pulumi.StringPtrInput `pulumi:"id"`
@@ -6923,7 +10062,7 @@ func (o ProfileLifecycleStageOutput) ToProfileLifecycleStageOutputWithContext(ct
 	return o
 }
 
-// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+// (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
 func (o ProfileLifecycleStageOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProfileLifecycleStage) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -6954,7 +10093,7 @@ func (o ProfileLifecycleStageArrayOutput) Index(i pulumi.IntInput) ProfileLifecy
 }
 
 type ProfileManagedInstanceGroup struct {
-	// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+	// (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id *string `pulumi:"id"`
@@ -6972,7 +10111,7 @@ type ProfileManagedInstanceGroupInput interface {
 }
 
 type ProfileManagedInstanceGroupArgs struct {
-	// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+	// (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id pulumi.StringPtrInput `pulumi:"id"`
@@ -7029,7 +10168,7 @@ func (o ProfileManagedInstanceGroupOutput) ToProfileManagedInstanceGroupOutputWi
 	return o
 }
 
-// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+// (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
 func (o ProfileManagedInstanceGroupOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProfileManagedInstanceGroup) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -7062,7 +10201,7 @@ func (o ProfileManagedInstanceGroupArrayOutput) Index(i pulumi.IntInput) Profile
 type ProfileSoftwareSource struct {
 	// (Updatable) User-specified description of the registration profile.
 	Description *string `pulumi:"description"`
-	// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+	// (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id *string `pulumi:"id"`
@@ -7086,7 +10225,7 @@ type ProfileSoftwareSourceInput interface {
 type ProfileSoftwareSourceArgs struct {
 	// (Updatable) User-specified description of the registration profile.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+	// (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id pulumi.StringPtrInput `pulumi:"id"`
@@ -7152,7 +10291,7 @@ func (o ProfileSoftwareSourceOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProfileSoftwareSource) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+// (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
 func (o ProfileSoftwareSourceOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProfileSoftwareSource) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -7193,6 +10332,8 @@ func (o ProfileSoftwareSourceArrayOutput) Index(i pulumi.IntInput) ProfileSoftwa
 }
 
 type ScheduledJobOperation struct {
+	// (Updatable) Provides the information used to install a snap.
+	InstallSnapDetails *ScheduledJobOperationInstallSnapDetails `pulumi:"installSnapDetails"`
 	// (Updatable) The set of changes to make to the state of the modules, streams, and profiles on the managed target.
 	ManageModuleStreamsDetails *ScheduledJobOperationManageModuleStreamsDetails `pulumi:"manageModuleStreamsDetails"`
 	// (Updatable) The type of operation this scheduled job performs.
@@ -7201,10 +10342,14 @@ type ScheduledJobOperation struct {
 	PackageNames []string `pulumi:"packageNames"`
 	// (Updatable) The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
 	RebootTimeoutInMins *int `pulumi:"rebootTimeoutInMins"`
+	// (Updatable) Provides the information used to remove a snap.
+	RemoveSnapDetails *ScheduledJobOperationRemoveSnapDetails `pulumi:"removeSnapDetails"`
 	// (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
 	SoftwareSourceIds []string `pulumi:"softwareSourceIds"`
 	// (Updatable) Provides the information used to update a module stream.
 	SwitchModuleStreamsDetails *ScheduledJobOperationSwitchModuleStreamsDetails `pulumi:"switchModuleStreamsDetails"`
+	// (Updatable) Provides the information used to switch a snap channel.
+	SwitchSnapChannelDetails *ScheduledJobOperationSwitchSnapChannelDetails `pulumi:"switchSnapChannelDetails"`
 	// (Updatable) Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
 	WindowsUpdateNames []string `pulumi:"windowsUpdateNames"`
 }
@@ -7221,6 +10366,8 @@ type ScheduledJobOperationInput interface {
 }
 
 type ScheduledJobOperationArgs struct {
+	// (Updatable) Provides the information used to install a snap.
+	InstallSnapDetails ScheduledJobOperationInstallSnapDetailsPtrInput `pulumi:"installSnapDetails"`
 	// (Updatable) The set of changes to make to the state of the modules, streams, and profiles on the managed target.
 	ManageModuleStreamsDetails ScheduledJobOperationManageModuleStreamsDetailsPtrInput `pulumi:"manageModuleStreamsDetails"`
 	// (Updatable) The type of operation this scheduled job performs.
@@ -7229,10 +10376,14 @@ type ScheduledJobOperationArgs struct {
 	PackageNames pulumi.StringArrayInput `pulumi:"packageNames"`
 	// (Updatable) The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
 	RebootTimeoutInMins pulumi.IntPtrInput `pulumi:"rebootTimeoutInMins"`
+	// (Updatable) Provides the information used to remove a snap.
+	RemoveSnapDetails ScheduledJobOperationRemoveSnapDetailsPtrInput `pulumi:"removeSnapDetails"`
 	// (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
 	SoftwareSourceIds pulumi.StringArrayInput `pulumi:"softwareSourceIds"`
 	// (Updatable) Provides the information used to update a module stream.
 	SwitchModuleStreamsDetails ScheduledJobOperationSwitchModuleStreamsDetailsPtrInput `pulumi:"switchModuleStreamsDetails"`
+	// (Updatable) Provides the information used to switch a snap channel.
+	SwitchSnapChannelDetails ScheduledJobOperationSwitchSnapChannelDetailsPtrInput `pulumi:"switchSnapChannelDetails"`
 	// (Updatable) Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
 	WindowsUpdateNames pulumi.StringArrayInput `pulumi:"windowsUpdateNames"`
 }
@@ -7288,6 +10439,11 @@ func (o ScheduledJobOperationOutput) ToScheduledJobOperationOutputWithContext(ct
 	return o
 }
 
+// (Updatable) Provides the information used to install a snap.
+func (o ScheduledJobOperationOutput) InstallSnapDetails() ScheduledJobOperationInstallSnapDetailsPtrOutput {
+	return o.ApplyT(func(v ScheduledJobOperation) *ScheduledJobOperationInstallSnapDetails { return v.InstallSnapDetails }).(ScheduledJobOperationInstallSnapDetailsPtrOutput)
+}
+
 // (Updatable) The set of changes to make to the state of the modules, streams, and profiles on the managed target.
 func (o ScheduledJobOperationOutput) ManageModuleStreamsDetails() ScheduledJobOperationManageModuleStreamsDetailsPtrOutput {
 	return o.ApplyT(func(v ScheduledJobOperation) *ScheduledJobOperationManageModuleStreamsDetails {
@@ -7310,6 +10466,11 @@ func (o ScheduledJobOperationOutput) RebootTimeoutInMins() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ScheduledJobOperation) *int { return v.RebootTimeoutInMins }).(pulumi.IntPtrOutput)
 }
 
+// (Updatable) Provides the information used to remove a snap.
+func (o ScheduledJobOperationOutput) RemoveSnapDetails() ScheduledJobOperationRemoveSnapDetailsPtrOutput {
+	return o.ApplyT(func(v ScheduledJobOperation) *ScheduledJobOperationRemoveSnapDetails { return v.RemoveSnapDetails }).(ScheduledJobOperationRemoveSnapDetailsPtrOutput)
+}
+
 // (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
 func (o ScheduledJobOperationOutput) SoftwareSourceIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ScheduledJobOperation) []string { return v.SoftwareSourceIds }).(pulumi.StringArrayOutput)
@@ -7320,6 +10481,13 @@ func (o ScheduledJobOperationOutput) SwitchModuleStreamsDetails() ScheduledJobOp
 	return o.ApplyT(func(v ScheduledJobOperation) *ScheduledJobOperationSwitchModuleStreamsDetails {
 		return v.SwitchModuleStreamsDetails
 	}).(ScheduledJobOperationSwitchModuleStreamsDetailsPtrOutput)
+}
+
+// (Updatable) Provides the information used to switch a snap channel.
+func (o ScheduledJobOperationOutput) SwitchSnapChannelDetails() ScheduledJobOperationSwitchSnapChannelDetailsPtrOutput {
+	return o.ApplyT(func(v ScheduledJobOperation) *ScheduledJobOperationSwitchSnapChannelDetails {
+		return v.SwitchSnapChannelDetails
+	}).(ScheduledJobOperationSwitchSnapChannelDetailsPtrOutput)
 }
 
 // (Updatable) Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
@@ -7345,6 +10513,219 @@ func (o ScheduledJobOperationArrayOutput) Index(i pulumi.IntInput) ScheduledJobO
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ScheduledJobOperation {
 		return vs[0].([]ScheduledJobOperation)[vs[1].(int)]
 	}).(ScheduledJobOperationOutput)
+}
+
+type ScheduledJobOperationInstallSnapDetails struct {
+	// (Updatable) The snap channel to install from (e.g. stable, 1.2/edge, beta, candidate, or a custom channel).
+	Channel *string `pulumi:"channel"`
+	// (Updatable) If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+	IsSigned *bool `pulumi:"isSigned"`
+	// (Updatable) The confinement mode for the snap.
+	Mode *string `pulumi:"mode"`
+	// (Updatable) The name of the snap to install.
+	Name string `pulumi:"name"`
+	// (Updatable) The snap revision to install.
+	Revision *string `pulumi:"revision"`
+}
+
+// ScheduledJobOperationInstallSnapDetailsInput is an input type that accepts ScheduledJobOperationInstallSnapDetailsArgs and ScheduledJobOperationInstallSnapDetailsOutput values.
+// You can construct a concrete instance of `ScheduledJobOperationInstallSnapDetailsInput` via:
+//
+//	ScheduledJobOperationInstallSnapDetailsArgs{...}
+type ScheduledJobOperationInstallSnapDetailsInput interface {
+	pulumi.Input
+
+	ToScheduledJobOperationInstallSnapDetailsOutput() ScheduledJobOperationInstallSnapDetailsOutput
+	ToScheduledJobOperationInstallSnapDetailsOutputWithContext(context.Context) ScheduledJobOperationInstallSnapDetailsOutput
+}
+
+type ScheduledJobOperationInstallSnapDetailsArgs struct {
+	// (Updatable) The snap channel to install from (e.g. stable, 1.2/edge, beta, candidate, or a custom channel).
+	Channel pulumi.StringPtrInput `pulumi:"channel"`
+	// (Updatable) If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+	IsSigned pulumi.BoolPtrInput `pulumi:"isSigned"`
+	// (Updatable) The confinement mode for the snap.
+	Mode pulumi.StringPtrInput `pulumi:"mode"`
+	// (Updatable) The name of the snap to install.
+	Name pulumi.StringInput `pulumi:"name"`
+	// (Updatable) The snap revision to install.
+	Revision pulumi.StringPtrInput `pulumi:"revision"`
+}
+
+func (ScheduledJobOperationInstallSnapDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledJobOperationInstallSnapDetails)(nil)).Elem()
+}
+
+func (i ScheduledJobOperationInstallSnapDetailsArgs) ToScheduledJobOperationInstallSnapDetailsOutput() ScheduledJobOperationInstallSnapDetailsOutput {
+	return i.ToScheduledJobOperationInstallSnapDetailsOutputWithContext(context.Background())
+}
+
+func (i ScheduledJobOperationInstallSnapDetailsArgs) ToScheduledJobOperationInstallSnapDetailsOutputWithContext(ctx context.Context) ScheduledJobOperationInstallSnapDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledJobOperationInstallSnapDetailsOutput)
+}
+
+func (i ScheduledJobOperationInstallSnapDetailsArgs) ToScheduledJobOperationInstallSnapDetailsPtrOutput() ScheduledJobOperationInstallSnapDetailsPtrOutput {
+	return i.ToScheduledJobOperationInstallSnapDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduledJobOperationInstallSnapDetailsArgs) ToScheduledJobOperationInstallSnapDetailsPtrOutputWithContext(ctx context.Context) ScheduledJobOperationInstallSnapDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledJobOperationInstallSnapDetailsOutput).ToScheduledJobOperationInstallSnapDetailsPtrOutputWithContext(ctx)
+}
+
+// ScheduledJobOperationInstallSnapDetailsPtrInput is an input type that accepts ScheduledJobOperationInstallSnapDetailsArgs, ScheduledJobOperationInstallSnapDetailsPtr and ScheduledJobOperationInstallSnapDetailsPtrOutput values.
+// You can construct a concrete instance of `ScheduledJobOperationInstallSnapDetailsPtrInput` via:
+//
+//	        ScheduledJobOperationInstallSnapDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduledJobOperationInstallSnapDetailsPtrInput interface {
+	pulumi.Input
+
+	ToScheduledJobOperationInstallSnapDetailsPtrOutput() ScheduledJobOperationInstallSnapDetailsPtrOutput
+	ToScheduledJobOperationInstallSnapDetailsPtrOutputWithContext(context.Context) ScheduledJobOperationInstallSnapDetailsPtrOutput
+}
+
+type scheduledJobOperationInstallSnapDetailsPtrType ScheduledJobOperationInstallSnapDetailsArgs
+
+func ScheduledJobOperationInstallSnapDetailsPtr(v *ScheduledJobOperationInstallSnapDetailsArgs) ScheduledJobOperationInstallSnapDetailsPtrInput {
+	return (*scheduledJobOperationInstallSnapDetailsPtrType)(v)
+}
+
+func (*scheduledJobOperationInstallSnapDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduledJobOperationInstallSnapDetails)(nil)).Elem()
+}
+
+func (i *scheduledJobOperationInstallSnapDetailsPtrType) ToScheduledJobOperationInstallSnapDetailsPtrOutput() ScheduledJobOperationInstallSnapDetailsPtrOutput {
+	return i.ToScheduledJobOperationInstallSnapDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduledJobOperationInstallSnapDetailsPtrType) ToScheduledJobOperationInstallSnapDetailsPtrOutputWithContext(ctx context.Context) ScheduledJobOperationInstallSnapDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledJobOperationInstallSnapDetailsPtrOutput)
+}
+
+type ScheduledJobOperationInstallSnapDetailsOutput struct{ *pulumi.OutputState }
+
+func (ScheduledJobOperationInstallSnapDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledJobOperationInstallSnapDetails)(nil)).Elem()
+}
+
+func (o ScheduledJobOperationInstallSnapDetailsOutput) ToScheduledJobOperationInstallSnapDetailsOutput() ScheduledJobOperationInstallSnapDetailsOutput {
+	return o
+}
+
+func (o ScheduledJobOperationInstallSnapDetailsOutput) ToScheduledJobOperationInstallSnapDetailsOutputWithContext(ctx context.Context) ScheduledJobOperationInstallSnapDetailsOutput {
+	return o
+}
+
+func (o ScheduledJobOperationInstallSnapDetailsOutput) ToScheduledJobOperationInstallSnapDetailsPtrOutput() ScheduledJobOperationInstallSnapDetailsPtrOutput {
+	return o.ToScheduledJobOperationInstallSnapDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduledJobOperationInstallSnapDetailsOutput) ToScheduledJobOperationInstallSnapDetailsPtrOutputWithContext(ctx context.Context) ScheduledJobOperationInstallSnapDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduledJobOperationInstallSnapDetails) *ScheduledJobOperationInstallSnapDetails {
+		return &v
+	}).(ScheduledJobOperationInstallSnapDetailsPtrOutput)
+}
+
+// (Updatable) The snap channel to install from (e.g. stable, 1.2/edge, beta, candidate, or a custom channel).
+func (o ScheduledJobOperationInstallSnapDetailsOutput) Channel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledJobOperationInstallSnapDetails) *string { return v.Channel }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+func (o ScheduledJobOperationInstallSnapDetailsOutput) IsSigned() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ScheduledJobOperationInstallSnapDetails) *bool { return v.IsSigned }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The confinement mode for the snap.
+func (o ScheduledJobOperationInstallSnapDetailsOutput) Mode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledJobOperationInstallSnapDetails) *string { return v.Mode }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the snap to install.
+func (o ScheduledJobOperationInstallSnapDetailsOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v ScheduledJobOperationInstallSnapDetails) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// (Updatable) The snap revision to install.
+func (o ScheduledJobOperationInstallSnapDetailsOutput) Revision() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledJobOperationInstallSnapDetails) *string { return v.Revision }).(pulumi.StringPtrOutput)
+}
+
+type ScheduledJobOperationInstallSnapDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduledJobOperationInstallSnapDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduledJobOperationInstallSnapDetails)(nil)).Elem()
+}
+
+func (o ScheduledJobOperationInstallSnapDetailsPtrOutput) ToScheduledJobOperationInstallSnapDetailsPtrOutput() ScheduledJobOperationInstallSnapDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduledJobOperationInstallSnapDetailsPtrOutput) ToScheduledJobOperationInstallSnapDetailsPtrOutputWithContext(ctx context.Context) ScheduledJobOperationInstallSnapDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduledJobOperationInstallSnapDetailsPtrOutput) Elem() ScheduledJobOperationInstallSnapDetailsOutput {
+	return o.ApplyT(func(v *ScheduledJobOperationInstallSnapDetails) ScheduledJobOperationInstallSnapDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduledJobOperationInstallSnapDetails
+		return ret
+	}).(ScheduledJobOperationInstallSnapDetailsOutput)
+}
+
+// (Updatable) The snap channel to install from (e.g. stable, 1.2/edge, beta, candidate, or a custom channel).
+func (o ScheduledJobOperationInstallSnapDetailsPtrOutput) Channel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledJobOperationInstallSnapDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Channel
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+func (o ScheduledJobOperationInstallSnapDetailsPtrOutput) IsSigned() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ScheduledJobOperationInstallSnapDetails) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsSigned
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The confinement mode for the snap.
+func (o ScheduledJobOperationInstallSnapDetailsPtrOutput) Mode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledJobOperationInstallSnapDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Mode
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the snap to install.
+func (o ScheduledJobOperationInstallSnapDetailsPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledJobOperationInstallSnapDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The snap revision to install.
+func (o ScheduledJobOperationInstallSnapDetailsPtrOutput) Revision() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledJobOperationInstallSnapDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Revision
+	}).(pulumi.StringPtrOutput)
 }
 
 type ScheduledJobOperationManageModuleStreamsDetails struct {
@@ -8027,6 +11408,162 @@ func (o ScheduledJobOperationManageModuleStreamsDetailsRemoveArrayOutput) Index(
 	}).(ScheduledJobOperationManageModuleStreamsDetailsRemoveOutput)
 }
 
+type ScheduledJobOperationRemoveSnapDetails struct {
+	// (Updatable) The name of the snap to remove.
+	Name string `pulumi:"name"`
+	// (Updatable) The revision to remove. Note: This option cannot be used when removing multiple snaps.
+	Revision *string `pulumi:"revision"`
+}
+
+// ScheduledJobOperationRemoveSnapDetailsInput is an input type that accepts ScheduledJobOperationRemoveSnapDetailsArgs and ScheduledJobOperationRemoveSnapDetailsOutput values.
+// You can construct a concrete instance of `ScheduledJobOperationRemoveSnapDetailsInput` via:
+//
+//	ScheduledJobOperationRemoveSnapDetailsArgs{...}
+type ScheduledJobOperationRemoveSnapDetailsInput interface {
+	pulumi.Input
+
+	ToScheduledJobOperationRemoveSnapDetailsOutput() ScheduledJobOperationRemoveSnapDetailsOutput
+	ToScheduledJobOperationRemoveSnapDetailsOutputWithContext(context.Context) ScheduledJobOperationRemoveSnapDetailsOutput
+}
+
+type ScheduledJobOperationRemoveSnapDetailsArgs struct {
+	// (Updatable) The name of the snap to remove.
+	Name pulumi.StringInput `pulumi:"name"`
+	// (Updatable) The revision to remove. Note: This option cannot be used when removing multiple snaps.
+	Revision pulumi.StringPtrInput `pulumi:"revision"`
+}
+
+func (ScheduledJobOperationRemoveSnapDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledJobOperationRemoveSnapDetails)(nil)).Elem()
+}
+
+func (i ScheduledJobOperationRemoveSnapDetailsArgs) ToScheduledJobOperationRemoveSnapDetailsOutput() ScheduledJobOperationRemoveSnapDetailsOutput {
+	return i.ToScheduledJobOperationRemoveSnapDetailsOutputWithContext(context.Background())
+}
+
+func (i ScheduledJobOperationRemoveSnapDetailsArgs) ToScheduledJobOperationRemoveSnapDetailsOutputWithContext(ctx context.Context) ScheduledJobOperationRemoveSnapDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledJobOperationRemoveSnapDetailsOutput)
+}
+
+func (i ScheduledJobOperationRemoveSnapDetailsArgs) ToScheduledJobOperationRemoveSnapDetailsPtrOutput() ScheduledJobOperationRemoveSnapDetailsPtrOutput {
+	return i.ToScheduledJobOperationRemoveSnapDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduledJobOperationRemoveSnapDetailsArgs) ToScheduledJobOperationRemoveSnapDetailsPtrOutputWithContext(ctx context.Context) ScheduledJobOperationRemoveSnapDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledJobOperationRemoveSnapDetailsOutput).ToScheduledJobOperationRemoveSnapDetailsPtrOutputWithContext(ctx)
+}
+
+// ScheduledJobOperationRemoveSnapDetailsPtrInput is an input type that accepts ScheduledJobOperationRemoveSnapDetailsArgs, ScheduledJobOperationRemoveSnapDetailsPtr and ScheduledJobOperationRemoveSnapDetailsPtrOutput values.
+// You can construct a concrete instance of `ScheduledJobOperationRemoveSnapDetailsPtrInput` via:
+//
+//	        ScheduledJobOperationRemoveSnapDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduledJobOperationRemoveSnapDetailsPtrInput interface {
+	pulumi.Input
+
+	ToScheduledJobOperationRemoveSnapDetailsPtrOutput() ScheduledJobOperationRemoveSnapDetailsPtrOutput
+	ToScheduledJobOperationRemoveSnapDetailsPtrOutputWithContext(context.Context) ScheduledJobOperationRemoveSnapDetailsPtrOutput
+}
+
+type scheduledJobOperationRemoveSnapDetailsPtrType ScheduledJobOperationRemoveSnapDetailsArgs
+
+func ScheduledJobOperationRemoveSnapDetailsPtr(v *ScheduledJobOperationRemoveSnapDetailsArgs) ScheduledJobOperationRemoveSnapDetailsPtrInput {
+	return (*scheduledJobOperationRemoveSnapDetailsPtrType)(v)
+}
+
+func (*scheduledJobOperationRemoveSnapDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduledJobOperationRemoveSnapDetails)(nil)).Elem()
+}
+
+func (i *scheduledJobOperationRemoveSnapDetailsPtrType) ToScheduledJobOperationRemoveSnapDetailsPtrOutput() ScheduledJobOperationRemoveSnapDetailsPtrOutput {
+	return i.ToScheduledJobOperationRemoveSnapDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduledJobOperationRemoveSnapDetailsPtrType) ToScheduledJobOperationRemoveSnapDetailsPtrOutputWithContext(ctx context.Context) ScheduledJobOperationRemoveSnapDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledJobOperationRemoveSnapDetailsPtrOutput)
+}
+
+type ScheduledJobOperationRemoveSnapDetailsOutput struct{ *pulumi.OutputState }
+
+func (ScheduledJobOperationRemoveSnapDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledJobOperationRemoveSnapDetails)(nil)).Elem()
+}
+
+func (o ScheduledJobOperationRemoveSnapDetailsOutput) ToScheduledJobOperationRemoveSnapDetailsOutput() ScheduledJobOperationRemoveSnapDetailsOutput {
+	return o
+}
+
+func (o ScheduledJobOperationRemoveSnapDetailsOutput) ToScheduledJobOperationRemoveSnapDetailsOutputWithContext(ctx context.Context) ScheduledJobOperationRemoveSnapDetailsOutput {
+	return o
+}
+
+func (o ScheduledJobOperationRemoveSnapDetailsOutput) ToScheduledJobOperationRemoveSnapDetailsPtrOutput() ScheduledJobOperationRemoveSnapDetailsPtrOutput {
+	return o.ToScheduledJobOperationRemoveSnapDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduledJobOperationRemoveSnapDetailsOutput) ToScheduledJobOperationRemoveSnapDetailsPtrOutputWithContext(ctx context.Context) ScheduledJobOperationRemoveSnapDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduledJobOperationRemoveSnapDetails) *ScheduledJobOperationRemoveSnapDetails {
+		return &v
+	}).(ScheduledJobOperationRemoveSnapDetailsPtrOutput)
+}
+
+// (Updatable) The name of the snap to remove.
+func (o ScheduledJobOperationRemoveSnapDetailsOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v ScheduledJobOperationRemoveSnapDetails) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// (Updatable) The revision to remove. Note: This option cannot be used when removing multiple snaps.
+func (o ScheduledJobOperationRemoveSnapDetailsOutput) Revision() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledJobOperationRemoveSnapDetails) *string { return v.Revision }).(pulumi.StringPtrOutput)
+}
+
+type ScheduledJobOperationRemoveSnapDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduledJobOperationRemoveSnapDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduledJobOperationRemoveSnapDetails)(nil)).Elem()
+}
+
+func (o ScheduledJobOperationRemoveSnapDetailsPtrOutput) ToScheduledJobOperationRemoveSnapDetailsPtrOutput() ScheduledJobOperationRemoveSnapDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduledJobOperationRemoveSnapDetailsPtrOutput) ToScheduledJobOperationRemoveSnapDetailsPtrOutputWithContext(ctx context.Context) ScheduledJobOperationRemoveSnapDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduledJobOperationRemoveSnapDetailsPtrOutput) Elem() ScheduledJobOperationRemoveSnapDetailsOutput {
+	return o.ApplyT(func(v *ScheduledJobOperationRemoveSnapDetails) ScheduledJobOperationRemoveSnapDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduledJobOperationRemoveSnapDetails
+		return ret
+	}).(ScheduledJobOperationRemoveSnapDetailsOutput)
+}
+
+// (Updatable) The name of the snap to remove.
+func (o ScheduledJobOperationRemoveSnapDetailsPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledJobOperationRemoveSnapDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The revision to remove. Note: This option cannot be used when removing multiple snaps.
+func (o ScheduledJobOperationRemoveSnapDetailsPtrOutput) Revision() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledJobOperationRemoveSnapDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Revision
+	}).(pulumi.StringPtrOutput)
+}
+
 type ScheduledJobOperationSwitchModuleStreamsDetails struct {
 	// (Updatable) The name of a module.
 	ModuleName string `pulumi:"moduleName"`
@@ -8199,6 +11736,162 @@ func (o ScheduledJobOperationSwitchModuleStreamsDetailsPtrOutput) StreamName() p
 			return nil
 		}
 		return &v.StreamName
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduledJobOperationSwitchSnapChannelDetails struct {
+	// (Updatable) The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+	Channel *string `pulumi:"channel"`
+	// (Updatable) The name of the snap.
+	Name string `pulumi:"name"`
+}
+
+// ScheduledJobOperationSwitchSnapChannelDetailsInput is an input type that accepts ScheduledJobOperationSwitchSnapChannelDetailsArgs and ScheduledJobOperationSwitchSnapChannelDetailsOutput values.
+// You can construct a concrete instance of `ScheduledJobOperationSwitchSnapChannelDetailsInput` via:
+//
+//	ScheduledJobOperationSwitchSnapChannelDetailsArgs{...}
+type ScheduledJobOperationSwitchSnapChannelDetailsInput interface {
+	pulumi.Input
+
+	ToScheduledJobOperationSwitchSnapChannelDetailsOutput() ScheduledJobOperationSwitchSnapChannelDetailsOutput
+	ToScheduledJobOperationSwitchSnapChannelDetailsOutputWithContext(context.Context) ScheduledJobOperationSwitchSnapChannelDetailsOutput
+}
+
+type ScheduledJobOperationSwitchSnapChannelDetailsArgs struct {
+	// (Updatable) The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+	Channel pulumi.StringPtrInput `pulumi:"channel"`
+	// (Updatable) The name of the snap.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (ScheduledJobOperationSwitchSnapChannelDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledJobOperationSwitchSnapChannelDetails)(nil)).Elem()
+}
+
+func (i ScheduledJobOperationSwitchSnapChannelDetailsArgs) ToScheduledJobOperationSwitchSnapChannelDetailsOutput() ScheduledJobOperationSwitchSnapChannelDetailsOutput {
+	return i.ToScheduledJobOperationSwitchSnapChannelDetailsOutputWithContext(context.Background())
+}
+
+func (i ScheduledJobOperationSwitchSnapChannelDetailsArgs) ToScheduledJobOperationSwitchSnapChannelDetailsOutputWithContext(ctx context.Context) ScheduledJobOperationSwitchSnapChannelDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledJobOperationSwitchSnapChannelDetailsOutput)
+}
+
+func (i ScheduledJobOperationSwitchSnapChannelDetailsArgs) ToScheduledJobOperationSwitchSnapChannelDetailsPtrOutput() ScheduledJobOperationSwitchSnapChannelDetailsPtrOutput {
+	return i.ToScheduledJobOperationSwitchSnapChannelDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduledJobOperationSwitchSnapChannelDetailsArgs) ToScheduledJobOperationSwitchSnapChannelDetailsPtrOutputWithContext(ctx context.Context) ScheduledJobOperationSwitchSnapChannelDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledJobOperationSwitchSnapChannelDetailsOutput).ToScheduledJobOperationSwitchSnapChannelDetailsPtrOutputWithContext(ctx)
+}
+
+// ScheduledJobOperationSwitchSnapChannelDetailsPtrInput is an input type that accepts ScheduledJobOperationSwitchSnapChannelDetailsArgs, ScheduledJobOperationSwitchSnapChannelDetailsPtr and ScheduledJobOperationSwitchSnapChannelDetailsPtrOutput values.
+// You can construct a concrete instance of `ScheduledJobOperationSwitchSnapChannelDetailsPtrInput` via:
+//
+//	        ScheduledJobOperationSwitchSnapChannelDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduledJobOperationSwitchSnapChannelDetailsPtrInput interface {
+	pulumi.Input
+
+	ToScheduledJobOperationSwitchSnapChannelDetailsPtrOutput() ScheduledJobOperationSwitchSnapChannelDetailsPtrOutput
+	ToScheduledJobOperationSwitchSnapChannelDetailsPtrOutputWithContext(context.Context) ScheduledJobOperationSwitchSnapChannelDetailsPtrOutput
+}
+
+type scheduledJobOperationSwitchSnapChannelDetailsPtrType ScheduledJobOperationSwitchSnapChannelDetailsArgs
+
+func ScheduledJobOperationSwitchSnapChannelDetailsPtr(v *ScheduledJobOperationSwitchSnapChannelDetailsArgs) ScheduledJobOperationSwitchSnapChannelDetailsPtrInput {
+	return (*scheduledJobOperationSwitchSnapChannelDetailsPtrType)(v)
+}
+
+func (*scheduledJobOperationSwitchSnapChannelDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduledJobOperationSwitchSnapChannelDetails)(nil)).Elem()
+}
+
+func (i *scheduledJobOperationSwitchSnapChannelDetailsPtrType) ToScheduledJobOperationSwitchSnapChannelDetailsPtrOutput() ScheduledJobOperationSwitchSnapChannelDetailsPtrOutput {
+	return i.ToScheduledJobOperationSwitchSnapChannelDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduledJobOperationSwitchSnapChannelDetailsPtrType) ToScheduledJobOperationSwitchSnapChannelDetailsPtrOutputWithContext(ctx context.Context) ScheduledJobOperationSwitchSnapChannelDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledJobOperationSwitchSnapChannelDetailsPtrOutput)
+}
+
+type ScheduledJobOperationSwitchSnapChannelDetailsOutput struct{ *pulumi.OutputState }
+
+func (ScheduledJobOperationSwitchSnapChannelDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledJobOperationSwitchSnapChannelDetails)(nil)).Elem()
+}
+
+func (o ScheduledJobOperationSwitchSnapChannelDetailsOutput) ToScheduledJobOperationSwitchSnapChannelDetailsOutput() ScheduledJobOperationSwitchSnapChannelDetailsOutput {
+	return o
+}
+
+func (o ScheduledJobOperationSwitchSnapChannelDetailsOutput) ToScheduledJobOperationSwitchSnapChannelDetailsOutputWithContext(ctx context.Context) ScheduledJobOperationSwitchSnapChannelDetailsOutput {
+	return o
+}
+
+func (o ScheduledJobOperationSwitchSnapChannelDetailsOutput) ToScheduledJobOperationSwitchSnapChannelDetailsPtrOutput() ScheduledJobOperationSwitchSnapChannelDetailsPtrOutput {
+	return o.ToScheduledJobOperationSwitchSnapChannelDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduledJobOperationSwitchSnapChannelDetailsOutput) ToScheduledJobOperationSwitchSnapChannelDetailsPtrOutputWithContext(ctx context.Context) ScheduledJobOperationSwitchSnapChannelDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduledJobOperationSwitchSnapChannelDetails) *ScheduledJobOperationSwitchSnapChannelDetails {
+		return &v
+	}).(ScheduledJobOperationSwitchSnapChannelDetailsPtrOutput)
+}
+
+// (Updatable) The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+func (o ScheduledJobOperationSwitchSnapChannelDetailsOutput) Channel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledJobOperationSwitchSnapChannelDetails) *string { return v.Channel }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the snap.
+func (o ScheduledJobOperationSwitchSnapChannelDetailsOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v ScheduledJobOperationSwitchSnapChannelDetails) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type ScheduledJobOperationSwitchSnapChannelDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduledJobOperationSwitchSnapChannelDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduledJobOperationSwitchSnapChannelDetails)(nil)).Elem()
+}
+
+func (o ScheduledJobOperationSwitchSnapChannelDetailsPtrOutput) ToScheduledJobOperationSwitchSnapChannelDetailsPtrOutput() ScheduledJobOperationSwitchSnapChannelDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduledJobOperationSwitchSnapChannelDetailsPtrOutput) ToScheduledJobOperationSwitchSnapChannelDetailsPtrOutputWithContext(ctx context.Context) ScheduledJobOperationSwitchSnapChannelDetailsPtrOutput {
+	return o
+}
+
+func (o ScheduledJobOperationSwitchSnapChannelDetailsPtrOutput) Elem() ScheduledJobOperationSwitchSnapChannelDetailsOutput {
+	return o.ApplyT(func(v *ScheduledJobOperationSwitchSnapChannelDetails) ScheduledJobOperationSwitchSnapChannelDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduledJobOperationSwitchSnapChannelDetails
+		return ret
+	}).(ScheduledJobOperationSwitchSnapChannelDetailsOutput)
+}
+
+// (Updatable) The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+func (o ScheduledJobOperationSwitchSnapChannelDetailsPtrOutput) Channel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledJobOperationSwitchSnapChannelDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Channel
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the snap.
+func (o ScheduledJobOperationSwitchSnapChannelDetailsPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledJobOperationSwitchSnapChannelDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Name
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -9140,6 +12833,2165 @@ func (o WorkRequestRerunManagementWorkRequestDetailsPtrOutput) DisplayName() pul
 	}).(pulumi.StringPtrOutput)
 }
 
+type GetDynamicSetManagedInstancesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDynamicSetManagedInstancesFilterInput is an input type that accepts GetDynamicSetManagedInstancesFilterArgs and GetDynamicSetManagedInstancesFilterOutput values.
+// You can construct a concrete instance of `GetDynamicSetManagedInstancesFilterInput` via:
+//
+//	GetDynamicSetManagedInstancesFilterArgs{...}
+type GetDynamicSetManagedInstancesFilterInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetManagedInstancesFilterOutput() GetDynamicSetManagedInstancesFilterOutput
+	ToGetDynamicSetManagedInstancesFilterOutputWithContext(context.Context) GetDynamicSetManagedInstancesFilterOutput
+}
+
+type GetDynamicSetManagedInstancesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDynamicSetManagedInstancesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetManagedInstancesFilter)(nil)).Elem()
+}
+
+func (i GetDynamicSetManagedInstancesFilterArgs) ToGetDynamicSetManagedInstancesFilterOutput() GetDynamicSetManagedInstancesFilterOutput {
+	return i.ToGetDynamicSetManagedInstancesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetManagedInstancesFilterArgs) ToGetDynamicSetManagedInstancesFilterOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetManagedInstancesFilterOutput)
+}
+
+// GetDynamicSetManagedInstancesFilterArrayInput is an input type that accepts GetDynamicSetManagedInstancesFilterArray and GetDynamicSetManagedInstancesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDynamicSetManagedInstancesFilterArrayInput` via:
+//
+//	GetDynamicSetManagedInstancesFilterArray{ GetDynamicSetManagedInstancesFilterArgs{...} }
+type GetDynamicSetManagedInstancesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetManagedInstancesFilterArrayOutput() GetDynamicSetManagedInstancesFilterArrayOutput
+	ToGetDynamicSetManagedInstancesFilterArrayOutputWithContext(context.Context) GetDynamicSetManagedInstancesFilterArrayOutput
+}
+
+type GetDynamicSetManagedInstancesFilterArray []GetDynamicSetManagedInstancesFilterInput
+
+func (GetDynamicSetManagedInstancesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetManagedInstancesFilter)(nil)).Elem()
+}
+
+func (i GetDynamicSetManagedInstancesFilterArray) ToGetDynamicSetManagedInstancesFilterArrayOutput() GetDynamicSetManagedInstancesFilterArrayOutput {
+	return i.ToGetDynamicSetManagedInstancesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetManagedInstancesFilterArray) ToGetDynamicSetManagedInstancesFilterArrayOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetManagedInstancesFilterArrayOutput)
+}
+
+type GetDynamicSetManagedInstancesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetManagedInstancesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetManagedInstancesFilter)(nil)).Elem()
+}
+
+func (o GetDynamicSetManagedInstancesFilterOutput) ToGetDynamicSetManagedInstancesFilterOutput() GetDynamicSetManagedInstancesFilterOutput {
+	return o
+}
+
+func (o GetDynamicSetManagedInstancesFilterOutput) ToGetDynamicSetManagedInstancesFilterOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesFilterOutput {
+	return o
+}
+
+func (o GetDynamicSetManagedInstancesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDynamicSetManagedInstancesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDynamicSetManagedInstancesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDynamicSetManagedInstancesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetManagedInstancesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetManagedInstancesFilter)(nil)).Elem()
+}
+
+func (o GetDynamicSetManagedInstancesFilterArrayOutput) ToGetDynamicSetManagedInstancesFilterArrayOutput() GetDynamicSetManagedInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetManagedInstancesFilterArrayOutput) ToGetDynamicSetManagedInstancesFilterArrayOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetManagedInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetDynamicSetManagedInstancesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDynamicSetManagedInstancesFilter {
+		return vs[0].([]GetDynamicSetManagedInstancesFilter)[vs[1].(int)]
+	}).(GetDynamicSetManagedInstancesFilterOutput)
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollection struct {
+	// List of managed instances.
+	Items []GetDynamicSetManagedInstancesManagedInstanceCollectionItem `pulumi:"items"`
+}
+
+// GetDynamicSetManagedInstancesManagedInstanceCollectionInput is an input type that accepts GetDynamicSetManagedInstancesManagedInstanceCollectionArgs and GetDynamicSetManagedInstancesManagedInstanceCollectionOutput values.
+// You can construct a concrete instance of `GetDynamicSetManagedInstancesManagedInstanceCollectionInput` via:
+//
+//	GetDynamicSetManagedInstancesManagedInstanceCollectionArgs{...}
+type GetDynamicSetManagedInstancesManagedInstanceCollectionInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetManagedInstancesManagedInstanceCollectionOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionOutput
+	ToGetDynamicSetManagedInstancesManagedInstanceCollectionOutputWithContext(context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionOutput
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionArgs struct {
+	// List of managed instances.
+	Items GetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDynamicSetManagedInstancesManagedInstanceCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetManagedInstancesManagedInstanceCollection)(nil)).Elem()
+}
+
+func (i GetDynamicSetManagedInstancesManagedInstanceCollectionArgs) ToGetDynamicSetManagedInstancesManagedInstanceCollectionOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionOutput {
+	return i.ToGetDynamicSetManagedInstancesManagedInstanceCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetManagedInstancesManagedInstanceCollectionArgs) ToGetDynamicSetManagedInstancesManagedInstanceCollectionOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetManagedInstancesManagedInstanceCollectionOutput)
+}
+
+// GetDynamicSetManagedInstancesManagedInstanceCollectionArrayInput is an input type that accepts GetDynamicSetManagedInstancesManagedInstanceCollectionArray and GetDynamicSetManagedInstancesManagedInstanceCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDynamicSetManagedInstancesManagedInstanceCollectionArrayInput` via:
+//
+//	GetDynamicSetManagedInstancesManagedInstanceCollectionArray{ GetDynamicSetManagedInstancesManagedInstanceCollectionArgs{...} }
+type GetDynamicSetManagedInstancesManagedInstanceCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetManagedInstancesManagedInstanceCollectionArrayOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionArrayOutput
+	ToGetDynamicSetManagedInstancesManagedInstanceCollectionArrayOutputWithContext(context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionArrayOutput
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionArray []GetDynamicSetManagedInstancesManagedInstanceCollectionInput
+
+func (GetDynamicSetManagedInstancesManagedInstanceCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetManagedInstancesManagedInstanceCollection)(nil)).Elem()
+}
+
+func (i GetDynamicSetManagedInstancesManagedInstanceCollectionArray) ToGetDynamicSetManagedInstancesManagedInstanceCollectionArrayOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionArrayOutput {
+	return i.ToGetDynamicSetManagedInstancesManagedInstanceCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetManagedInstancesManagedInstanceCollectionArray) ToGetDynamicSetManagedInstancesManagedInstanceCollectionArrayOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetManagedInstancesManagedInstanceCollectionArrayOutput)
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetManagedInstancesManagedInstanceCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetManagedInstancesManagedInstanceCollection)(nil)).Elem()
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionOutput) ToGetDynamicSetManagedInstancesManagedInstanceCollectionOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionOutput {
+	return o
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionOutput) ToGetDynamicSetManagedInstancesManagedInstanceCollectionOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionOutput {
+	return o
+}
+
+// List of managed instances.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionOutput) Items() GetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollection) []GetDynamicSetManagedInstancesManagedInstanceCollectionItem {
+		return v.Items
+	}).(GetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayOutput)
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetManagedInstancesManagedInstanceCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetManagedInstancesManagedInstanceCollection)(nil)).Elem()
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionArrayOutput) ToGetDynamicSetManagedInstancesManagedInstanceCollectionArrayOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionArrayOutput) ToGetDynamicSetManagedInstancesManagedInstanceCollectionArrayOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionArrayOutput) Index(i pulumi.IntInput) GetDynamicSetManagedInstancesManagedInstanceCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDynamicSetManagedInstancesManagedInstanceCollection {
+		return vs[0].([]GetDynamicSetManagedInstancesManagedInstanceCollection)[vs[1].(int)]
+	}).(GetDynamicSetManagedInstancesManagedInstanceCollectionOutput)
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItem struct {
+	// The version of osmh-agent running on the managed instance
+	AgentVersion string `pulumi:"agentVersion"`
+	// The CPU architecture type of the managed instance.
+	Architecture string `pulumi:"architecture"`
+	// Settings for the Autonomous Linux service.
+	AutonomousSettings []GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSetting `pulumi:"autonomousSettings"`
+	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// User-specified description of the managed instance.
+	Description string `pulumi:"description"`
+	// A filter to return resources that match the given user-friendly name.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+	Id string `pulumi:"id"`
+	// Indicates whether Autonomous Linux manages this instance.
+	IsManagedByAutonomousLinux bool `pulumi:"isManagedByAutonomousLinux"`
+	// Whether this managed instance is acting as an on-premises management station.
+	IsManagementStation bool `pulumi:"isManagementStation"`
+	// Indicates whether a reboot is required to complete installation of updates.
+	IsRebootRequired bool `pulumi:"isRebootRequired"`
+	// Id and name of a resource to simplify the display for the user.
+	LifecycleEnvironments []GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironment `pulumi:"lifecycleEnvironments"`
+	// Id and name of a resource to simplify the display for the user.
+	LifecycleStages []GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStage `pulumi:"lifecycleStages"`
+	// The location of the managed instance.
+	Location string `pulumi:"location"`
+	// Id and name of a resource to simplify the display for the user.
+	ManagedInstanceGroups []GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroup `pulumi:"managedInstanceGroups"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+	NotificationTopicId string `pulumi:"notificationTopicId"`
+	// The operating system type of the managed instance.
+	OsFamily string `pulumi:"osFamily"`
+	// Current status of the managed instance.
+	Status string `pulumi:"status"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy this managed instance resides in.
+	TenancyId string `pulumi:"tenancyId"`
+	// Time that the instance last booted (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeLastBoot string `pulumi:"timeLastBoot"`
+	// Number of updates available for installation.
+	UpdatesAvailable int `pulumi:"updatesAvailable"`
+}
+
+// GetDynamicSetManagedInstancesManagedInstanceCollectionItemInput is an input type that accepts GetDynamicSetManagedInstancesManagedInstanceCollectionItemArgs and GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput values.
+// You can construct a concrete instance of `GetDynamicSetManagedInstancesManagedInstanceCollectionItemInput` via:
+//
+//	GetDynamicSetManagedInstancesManagedInstanceCollectionItemArgs{...}
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput
+	ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemOutputWithContext(context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemArgs struct {
+	// The version of osmh-agent running on the managed instance
+	AgentVersion pulumi.StringInput `pulumi:"agentVersion"`
+	// The CPU architecture type of the managed instance.
+	Architecture pulumi.StringInput `pulumi:"architecture"`
+	// Settings for the Autonomous Linux service.
+	AutonomousSettings GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayInput `pulumi:"autonomousSettings"`
+	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// User-specified description of the managed instance.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return resources that match the given user-friendly name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates whether Autonomous Linux manages this instance.
+	IsManagedByAutonomousLinux pulumi.BoolInput `pulumi:"isManagedByAutonomousLinux"`
+	// Whether this managed instance is acting as an on-premises management station.
+	IsManagementStation pulumi.BoolInput `pulumi:"isManagementStation"`
+	// Indicates whether a reboot is required to complete installation of updates.
+	IsRebootRequired pulumi.BoolInput `pulumi:"isRebootRequired"`
+	// Id and name of a resource to simplify the display for the user.
+	LifecycleEnvironments GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayInput `pulumi:"lifecycleEnvironments"`
+	// Id and name of a resource to simplify the display for the user.
+	LifecycleStages GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayInput `pulumi:"lifecycleStages"`
+	// The location of the managed instance.
+	Location pulumi.StringInput `pulumi:"location"`
+	// Id and name of a resource to simplify the display for the user.
+	ManagedInstanceGroups GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayInput `pulumi:"managedInstanceGroups"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+	NotificationTopicId pulumi.StringInput `pulumi:"notificationTopicId"`
+	// The operating system type of the managed instance.
+	OsFamily pulumi.StringInput `pulumi:"osFamily"`
+	// Current status of the managed instance.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy this managed instance resides in.
+	TenancyId pulumi.StringInput `pulumi:"tenancyId"`
+	// Time that the instance last booted (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeLastBoot pulumi.StringInput `pulumi:"timeLastBoot"`
+	// Number of updates available for installation.
+	UpdatesAvailable pulumi.IntInput `pulumi:"updatesAvailable"`
+}
+
+func (GetDynamicSetManagedInstancesManagedInstanceCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetManagedInstancesManagedInstanceCollectionItem)(nil)).Elem()
+}
+
+func (i GetDynamicSetManagedInstancesManagedInstanceCollectionItemArgs) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput {
+	return i.ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetManagedInstancesManagedInstanceCollectionItemArgs) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput)
+}
+
+// GetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayInput is an input type that accepts GetDynamicSetManagedInstancesManagedInstanceCollectionItemArray and GetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayInput` via:
+//
+//	GetDynamicSetManagedInstancesManagedInstanceCollectionItemArray{ GetDynamicSetManagedInstancesManagedInstanceCollectionItemArgs{...} }
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayOutput
+	ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayOutputWithContext(context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayOutput
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemArray []GetDynamicSetManagedInstancesManagedInstanceCollectionItemInput
+
+func (GetDynamicSetManagedInstancesManagedInstanceCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetManagedInstancesManagedInstanceCollectionItem)(nil)).Elem()
+}
+
+func (i GetDynamicSetManagedInstancesManagedInstanceCollectionItemArray) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayOutput {
+	return i.ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetManagedInstancesManagedInstanceCollectionItemArray) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayOutput)
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetManagedInstancesManagedInstanceCollectionItem)(nil)).Elem()
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput {
+	return o
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput {
+	return o
+}
+
+// The version of osmh-agent running on the managed instance
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput) AgentVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItem) string { return v.AgentVersion }).(pulumi.StringOutput)
+}
+
+// The CPU architecture type of the managed instance.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput) Architecture() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItem) string { return v.Architecture }).(pulumi.StringOutput)
+}
+
+// Settings for the Autonomous Linux service.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput) AutonomousSettings() GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItem) []GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSetting {
+		return v.AutonomousSettings
+	}).(GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput)
+}
+
+// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// User-specified description of the managed instance.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return resources that match the given user-friendly name.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates whether Autonomous Linux manages this instance.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput) IsManagedByAutonomousLinux() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItem) bool {
+		return v.IsManagedByAutonomousLinux
+	}).(pulumi.BoolOutput)
+}
+
+// Whether this managed instance is acting as an on-premises management station.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput) IsManagementStation() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItem) bool { return v.IsManagementStation }).(pulumi.BoolOutput)
+}
+
+// Indicates whether a reboot is required to complete installation of updates.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput) IsRebootRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItem) bool { return v.IsRebootRequired }).(pulumi.BoolOutput)
+}
+
+// Id and name of a resource to simplify the display for the user.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput) LifecycleEnvironments() GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItem) []GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironment {
+		return v.LifecycleEnvironments
+	}).(GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput)
+}
+
+// Id and name of a resource to simplify the display for the user.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput) LifecycleStages() GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItem) []GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStage {
+		return v.LifecycleStages
+	}).(GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput)
+}
+
+// The location of the managed instance.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput) Location() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItem) string { return v.Location }).(pulumi.StringOutput)
+}
+
+// Id and name of a resource to simplify the display for the user.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput) ManagedInstanceGroups() GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItem) []GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroup {
+		return v.ManagedInstanceGroups
+	}).(GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput) NotificationTopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItem) string {
+		return v.NotificationTopicId
+	}).(pulumi.StringOutput)
+}
+
+// The operating system type of the managed instance.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput) OsFamily() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItem) string { return v.OsFamily }).(pulumi.StringOutput)
+}
+
+// Current status of the managed instance.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy this managed instance resides in.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput) TenancyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItem) string { return v.TenancyId }).(pulumi.StringOutput)
+}
+
+// Time that the instance last booted (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput) TimeLastBoot() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItem) string { return v.TimeLastBoot }).(pulumi.StringOutput)
+}
+
+// Number of updates available for installation.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput) UpdatesAvailable() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItem) int { return v.UpdatesAvailable }).(pulumi.IntOutput)
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetManagedInstancesManagedInstanceCollectionItem)(nil)).Elem()
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayOutput) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayOutput) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDynamicSetManagedInstancesManagedInstanceCollectionItem {
+		return vs[0].([]GetDynamicSetManagedInstancesManagedInstanceCollectionItem)[vs[1].(int)]
+	}).(GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput)
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSetting struct {
+	// Indicates whether Autonomous Linux will collect crash files. This setting can be changed by the user.
+	IsDataCollectionAuthorized bool `pulumi:"isDataCollectionAuthorized"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
+	ScheduledJobId string `pulumi:"scheduledJobId"`
+}
+
+// GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingInput is an input type that accepts GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArgs and GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput values.
+// You can construct a concrete instance of `GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingInput` via:
+//
+//	GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArgs{...}
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput
+	ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutputWithContext(context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArgs struct {
+	// Indicates whether Autonomous Linux will collect crash files. This setting can be changed by the user.
+	IsDataCollectionAuthorized pulumi.BoolInput `pulumi:"isDataCollectionAuthorized"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
+	ScheduledJobId pulumi.StringInput `pulumi:"scheduledJobId"`
+}
+
+func (GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSetting)(nil)).Elem()
+}
+
+func (i GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArgs) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput {
+	return i.ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArgs) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput)
+}
+
+// GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayInput is an input type that accepts GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArray and GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput values.
+// You can construct a concrete instance of `GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayInput` via:
+//
+//	GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArray{ GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArgs{...} }
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput
+	ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutputWithContext(context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArray []GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingInput
+
+func (GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSetting)(nil)).Elem()
+}
+
+func (i GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArray) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput {
+	return i.ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArray) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput)
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSetting)(nil)).Elem()
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput {
+	return o
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput {
+	return o
+}
+
+// Indicates whether Autonomous Linux will collect crash files. This setting can be changed by the user.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput) IsDataCollectionAuthorized() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSetting) bool {
+		return v.IsDataCollectionAuthorized
+	}).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput) ScheduledJobId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSetting) string {
+		return v.ScheduledJobId
+	}).(pulumi.StringOutput)
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSetting)(nil)).Elem()
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput) Index(i pulumi.IntInput) GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSetting {
+		return vs[0].([]GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSetting)[vs[1].(int)]
+	}).(GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput)
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironment struct {
+	// A filter to return resources that match the given user-friendly name.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+	Id string `pulumi:"id"`
+}
+
+// GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentInput is an input type that accepts GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArgs and GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput values.
+// You can construct a concrete instance of `GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentInput` via:
+//
+//	GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArgs{...}
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput
+	ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutputWithContext(context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArgs struct {
+	// A filter to return resources that match the given user-friendly name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironment)(nil)).Elem()
+}
+
+func (i GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArgs) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput {
+	return i.ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArgs) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput)
+}
+
+// GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayInput is an input type that accepts GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArray and GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput values.
+// You can construct a concrete instance of `GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayInput` via:
+//
+//	GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArray{ GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArgs{...} }
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput
+	ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutputWithContext(context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArray []GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentInput
+
+func (GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironment)(nil)).Elem()
+}
+
+func (i GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArray) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput {
+	return i.ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArray) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput)
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironment)(nil)).Elem()
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput {
+	return o
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput {
+	return o
+}
+
+// A filter to return resources that match the given user-friendly name.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironment) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironment) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironment)(nil)).Elem()
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput) Index(i pulumi.IntInput) GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironment {
+		return vs[0].([]GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironment)[vs[1].(int)]
+	}).(GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput)
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStage struct {
+	// A filter to return resources that match the given user-friendly name.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+	Id string `pulumi:"id"`
+}
+
+// GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageInput is an input type that accepts GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArgs and GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput values.
+// You can construct a concrete instance of `GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageInput` via:
+//
+//	GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArgs{...}
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput
+	ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageOutputWithContext(context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArgs struct {
+	// A filter to return resources that match the given user-friendly name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStage)(nil)).Elem()
+}
+
+func (i GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArgs) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput {
+	return i.ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArgs) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput)
+}
+
+// GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayInput is an input type that accepts GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArray and GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput values.
+// You can construct a concrete instance of `GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayInput` via:
+//
+//	GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArray{ GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArgs{...} }
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput
+	ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutputWithContext(context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArray []GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageInput
+
+func (GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStage)(nil)).Elem()
+}
+
+func (i GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArray) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput {
+	return i.ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArray) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput)
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStage)(nil)).Elem()
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput {
+	return o
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput {
+	return o
+}
+
+// A filter to return resources that match the given user-friendly name.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStage) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStage) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStage)(nil)).Elem()
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput) Index(i pulumi.IntInput) GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStage {
+		return vs[0].([]GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStage)[vs[1].(int)]
+	}).(GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput)
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroup struct {
+	// A filter to return resources that match the given user-friendly name.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+	Id string `pulumi:"id"`
+}
+
+// GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupInput is an input type that accepts GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArgs and GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput values.
+// You can construct a concrete instance of `GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupInput` via:
+//
+//	GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArgs{...}
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput
+	ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutputWithContext(context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArgs struct {
+	// A filter to return resources that match the given user-friendly name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroup)(nil)).Elem()
+}
+
+func (i GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArgs) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput {
+	return i.ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArgs) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput)
+}
+
+// GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayInput is an input type that accepts GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArray and GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput values.
+// You can construct a concrete instance of `GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayInput` via:
+//
+//	GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArray{ GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArgs{...} }
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput
+	ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutputWithContext(context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArray []GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupInput
+
+func (GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroup)(nil)).Elem()
+}
+
+func (i GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArray) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput {
+	return i.ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArray) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput)
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroup)(nil)).Elem()
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput {
+	return o
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput {
+	return o
+}
+
+// A filter to return resources that match the given user-friendly name.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroup) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroup) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+type GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroup)(nil)).Elem()
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput() GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput) ToGetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutputWithContext(ctx context.Context) GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput) Index(i pulumi.IntInput) GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroup {
+		return vs[0].([]GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroup)[vs[1].(int)]
+	}).(GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput)
+}
+
+type GetDynamicSetMatchingRule struct {
+	// The list of managed instance architectures.
+	Architectures []string `pulumi:"architectures"`
+	// The list of managed instance display names.
+	DisplayNames []string `pulumi:"displayNames"`
+	// Indicates if the managed instance needs to be rebooted.
+	IsRebootRequired bool `pulumi:"isRebootRequired"`
+	// The list of managed instance locations.
+	Locations []string `pulumi:"locations"`
+	// The list of managed instance group IDs.
+	ManagedInstanceGroupIds []string `pulumi:"managedInstanceGroupIds"`
+	// The list of managed instance ids.
+	ManagedInstanceIds []string `pulumi:"managedInstanceIds"`
+	// The list of managed instance OS families.
+	OsFamilies []string `pulumi:"osFamilies"`
+	// The list of managed instance OS names.
+	OsNames []string `pulumi:"osNames"`
+	// The list of managed instance statuses.
+	Statuses []string `pulumi:"statuses"`
+	// The list of the managed instance tags.
+	Tags []GetDynamicSetMatchingRuleTag `pulumi:"tags"`
+}
+
+// GetDynamicSetMatchingRuleInput is an input type that accepts GetDynamicSetMatchingRuleArgs and GetDynamicSetMatchingRuleOutput values.
+// You can construct a concrete instance of `GetDynamicSetMatchingRuleInput` via:
+//
+//	GetDynamicSetMatchingRuleArgs{...}
+type GetDynamicSetMatchingRuleInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetMatchingRuleOutput() GetDynamicSetMatchingRuleOutput
+	ToGetDynamicSetMatchingRuleOutputWithContext(context.Context) GetDynamicSetMatchingRuleOutput
+}
+
+type GetDynamicSetMatchingRuleArgs struct {
+	// The list of managed instance architectures.
+	Architectures pulumi.StringArrayInput `pulumi:"architectures"`
+	// The list of managed instance display names.
+	DisplayNames pulumi.StringArrayInput `pulumi:"displayNames"`
+	// Indicates if the managed instance needs to be rebooted.
+	IsRebootRequired pulumi.BoolInput `pulumi:"isRebootRequired"`
+	// The list of managed instance locations.
+	Locations pulumi.StringArrayInput `pulumi:"locations"`
+	// The list of managed instance group IDs.
+	ManagedInstanceGroupIds pulumi.StringArrayInput `pulumi:"managedInstanceGroupIds"`
+	// The list of managed instance ids.
+	ManagedInstanceIds pulumi.StringArrayInput `pulumi:"managedInstanceIds"`
+	// The list of managed instance OS families.
+	OsFamilies pulumi.StringArrayInput `pulumi:"osFamilies"`
+	// The list of managed instance OS names.
+	OsNames pulumi.StringArrayInput `pulumi:"osNames"`
+	// The list of managed instance statuses.
+	Statuses pulumi.StringArrayInput `pulumi:"statuses"`
+	// The list of the managed instance tags.
+	Tags GetDynamicSetMatchingRuleTagArrayInput `pulumi:"tags"`
+}
+
+func (GetDynamicSetMatchingRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetMatchingRule)(nil)).Elem()
+}
+
+func (i GetDynamicSetMatchingRuleArgs) ToGetDynamicSetMatchingRuleOutput() GetDynamicSetMatchingRuleOutput {
+	return i.ToGetDynamicSetMatchingRuleOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetMatchingRuleArgs) ToGetDynamicSetMatchingRuleOutputWithContext(ctx context.Context) GetDynamicSetMatchingRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetMatchingRuleOutput)
+}
+
+// GetDynamicSetMatchingRuleArrayInput is an input type that accepts GetDynamicSetMatchingRuleArray and GetDynamicSetMatchingRuleArrayOutput values.
+// You can construct a concrete instance of `GetDynamicSetMatchingRuleArrayInput` via:
+//
+//	GetDynamicSetMatchingRuleArray{ GetDynamicSetMatchingRuleArgs{...} }
+type GetDynamicSetMatchingRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetMatchingRuleArrayOutput() GetDynamicSetMatchingRuleArrayOutput
+	ToGetDynamicSetMatchingRuleArrayOutputWithContext(context.Context) GetDynamicSetMatchingRuleArrayOutput
+}
+
+type GetDynamicSetMatchingRuleArray []GetDynamicSetMatchingRuleInput
+
+func (GetDynamicSetMatchingRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetMatchingRule)(nil)).Elem()
+}
+
+func (i GetDynamicSetMatchingRuleArray) ToGetDynamicSetMatchingRuleArrayOutput() GetDynamicSetMatchingRuleArrayOutput {
+	return i.ToGetDynamicSetMatchingRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetMatchingRuleArray) ToGetDynamicSetMatchingRuleArrayOutputWithContext(ctx context.Context) GetDynamicSetMatchingRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetMatchingRuleArrayOutput)
+}
+
+type GetDynamicSetMatchingRuleOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetMatchingRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetMatchingRule)(nil)).Elem()
+}
+
+func (o GetDynamicSetMatchingRuleOutput) ToGetDynamicSetMatchingRuleOutput() GetDynamicSetMatchingRuleOutput {
+	return o
+}
+
+func (o GetDynamicSetMatchingRuleOutput) ToGetDynamicSetMatchingRuleOutputWithContext(ctx context.Context) GetDynamicSetMatchingRuleOutput {
+	return o
+}
+
+// The list of managed instance architectures.
+func (o GetDynamicSetMatchingRuleOutput) Architectures() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetMatchingRule) []string { return v.Architectures }).(pulumi.StringArrayOutput)
+}
+
+// The list of managed instance display names.
+func (o GetDynamicSetMatchingRuleOutput) DisplayNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetMatchingRule) []string { return v.DisplayNames }).(pulumi.StringArrayOutput)
+}
+
+// Indicates if the managed instance needs to be rebooted.
+func (o GetDynamicSetMatchingRuleOutput) IsRebootRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDynamicSetMatchingRule) bool { return v.IsRebootRequired }).(pulumi.BoolOutput)
+}
+
+// The list of managed instance locations.
+func (o GetDynamicSetMatchingRuleOutput) Locations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetMatchingRule) []string { return v.Locations }).(pulumi.StringArrayOutput)
+}
+
+// The list of managed instance group IDs.
+func (o GetDynamicSetMatchingRuleOutput) ManagedInstanceGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetMatchingRule) []string { return v.ManagedInstanceGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// The list of managed instance ids.
+func (o GetDynamicSetMatchingRuleOutput) ManagedInstanceIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetMatchingRule) []string { return v.ManagedInstanceIds }).(pulumi.StringArrayOutput)
+}
+
+// The list of managed instance OS families.
+func (o GetDynamicSetMatchingRuleOutput) OsFamilies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetMatchingRule) []string { return v.OsFamilies }).(pulumi.StringArrayOutput)
+}
+
+// The list of managed instance OS names.
+func (o GetDynamicSetMatchingRuleOutput) OsNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetMatchingRule) []string { return v.OsNames }).(pulumi.StringArrayOutput)
+}
+
+// The list of managed instance statuses.
+func (o GetDynamicSetMatchingRuleOutput) Statuses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetMatchingRule) []string { return v.Statuses }).(pulumi.StringArrayOutput)
+}
+
+// The list of the managed instance tags.
+func (o GetDynamicSetMatchingRuleOutput) Tags() GetDynamicSetMatchingRuleTagArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetMatchingRule) []GetDynamicSetMatchingRuleTag { return v.Tags }).(GetDynamicSetMatchingRuleTagArrayOutput)
+}
+
+type GetDynamicSetMatchingRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetMatchingRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetMatchingRule)(nil)).Elem()
+}
+
+func (o GetDynamicSetMatchingRuleArrayOutput) ToGetDynamicSetMatchingRuleArrayOutput() GetDynamicSetMatchingRuleArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetMatchingRuleArrayOutput) ToGetDynamicSetMatchingRuleArrayOutputWithContext(ctx context.Context) GetDynamicSetMatchingRuleArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetMatchingRuleArrayOutput) Index(i pulumi.IntInput) GetDynamicSetMatchingRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDynamicSetMatchingRule {
+		return vs[0].([]GetDynamicSetMatchingRule)[vs[1].(int)]
+	}).(GetDynamicSetMatchingRuleOutput)
+}
+
+type GetDynamicSetMatchingRuleTag struct {
+	// The key of the tag.
+	Key string `pulumi:"key"`
+	// The namespace of the tag.
+	Namespace string `pulumi:"namespace"`
+	// The type of the tag. Common values include `defined` or `freeform`.
+	Type string `pulumi:"type"`
+	// The value associated with the tag key.
+	Value string `pulumi:"value"`
+}
+
+// GetDynamicSetMatchingRuleTagInput is an input type that accepts GetDynamicSetMatchingRuleTagArgs and GetDynamicSetMatchingRuleTagOutput values.
+// You can construct a concrete instance of `GetDynamicSetMatchingRuleTagInput` via:
+//
+//	GetDynamicSetMatchingRuleTagArgs{...}
+type GetDynamicSetMatchingRuleTagInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetMatchingRuleTagOutput() GetDynamicSetMatchingRuleTagOutput
+	ToGetDynamicSetMatchingRuleTagOutputWithContext(context.Context) GetDynamicSetMatchingRuleTagOutput
+}
+
+type GetDynamicSetMatchingRuleTagArgs struct {
+	// The key of the tag.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The namespace of the tag.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The type of the tag. Common values include `defined` or `freeform`.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The value associated with the tag key.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDynamicSetMatchingRuleTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetMatchingRuleTag)(nil)).Elem()
+}
+
+func (i GetDynamicSetMatchingRuleTagArgs) ToGetDynamicSetMatchingRuleTagOutput() GetDynamicSetMatchingRuleTagOutput {
+	return i.ToGetDynamicSetMatchingRuleTagOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetMatchingRuleTagArgs) ToGetDynamicSetMatchingRuleTagOutputWithContext(ctx context.Context) GetDynamicSetMatchingRuleTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetMatchingRuleTagOutput)
+}
+
+// GetDynamicSetMatchingRuleTagArrayInput is an input type that accepts GetDynamicSetMatchingRuleTagArray and GetDynamicSetMatchingRuleTagArrayOutput values.
+// You can construct a concrete instance of `GetDynamicSetMatchingRuleTagArrayInput` via:
+//
+//	GetDynamicSetMatchingRuleTagArray{ GetDynamicSetMatchingRuleTagArgs{...} }
+type GetDynamicSetMatchingRuleTagArrayInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetMatchingRuleTagArrayOutput() GetDynamicSetMatchingRuleTagArrayOutput
+	ToGetDynamicSetMatchingRuleTagArrayOutputWithContext(context.Context) GetDynamicSetMatchingRuleTagArrayOutput
+}
+
+type GetDynamicSetMatchingRuleTagArray []GetDynamicSetMatchingRuleTagInput
+
+func (GetDynamicSetMatchingRuleTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetMatchingRuleTag)(nil)).Elem()
+}
+
+func (i GetDynamicSetMatchingRuleTagArray) ToGetDynamicSetMatchingRuleTagArrayOutput() GetDynamicSetMatchingRuleTagArrayOutput {
+	return i.ToGetDynamicSetMatchingRuleTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetMatchingRuleTagArray) ToGetDynamicSetMatchingRuleTagArrayOutputWithContext(ctx context.Context) GetDynamicSetMatchingRuleTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetMatchingRuleTagArrayOutput)
+}
+
+type GetDynamicSetMatchingRuleTagOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetMatchingRuleTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetMatchingRuleTag)(nil)).Elem()
+}
+
+func (o GetDynamicSetMatchingRuleTagOutput) ToGetDynamicSetMatchingRuleTagOutput() GetDynamicSetMatchingRuleTagOutput {
+	return o
+}
+
+func (o GetDynamicSetMatchingRuleTagOutput) ToGetDynamicSetMatchingRuleTagOutputWithContext(ctx context.Context) GetDynamicSetMatchingRuleTagOutput {
+	return o
+}
+
+// The key of the tag.
+func (o GetDynamicSetMatchingRuleTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetMatchingRuleTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// The namespace of the tag.
+func (o GetDynamicSetMatchingRuleTagOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetMatchingRuleTag) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The type of the tag. Common values include `defined` or `freeform`.
+func (o GetDynamicSetMatchingRuleTagOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetMatchingRuleTag) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The value associated with the tag key.
+func (o GetDynamicSetMatchingRuleTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetMatchingRuleTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetDynamicSetMatchingRuleTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetMatchingRuleTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetMatchingRuleTag)(nil)).Elem()
+}
+
+func (o GetDynamicSetMatchingRuleTagArrayOutput) ToGetDynamicSetMatchingRuleTagArrayOutput() GetDynamicSetMatchingRuleTagArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetMatchingRuleTagArrayOutput) ToGetDynamicSetMatchingRuleTagArrayOutputWithContext(ctx context.Context) GetDynamicSetMatchingRuleTagArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetMatchingRuleTagArrayOutput) Index(i pulumi.IntInput) GetDynamicSetMatchingRuleTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDynamicSetMatchingRuleTag {
+		return vs[0].([]GetDynamicSetMatchingRuleTag)[vs[1].(int)]
+	}).(GetDynamicSetMatchingRuleTagOutput)
+}
+
+type GetDynamicSetTargetCompartment struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Indicates if the child compartments are included in the matching rule.
+	DoesIncludeChildren bool `pulumi:"doesIncludeChildren"`
+}
+
+// GetDynamicSetTargetCompartmentInput is an input type that accepts GetDynamicSetTargetCompartmentArgs and GetDynamicSetTargetCompartmentOutput values.
+// You can construct a concrete instance of `GetDynamicSetTargetCompartmentInput` via:
+//
+//	GetDynamicSetTargetCompartmentArgs{...}
+type GetDynamicSetTargetCompartmentInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetTargetCompartmentOutput() GetDynamicSetTargetCompartmentOutput
+	ToGetDynamicSetTargetCompartmentOutputWithContext(context.Context) GetDynamicSetTargetCompartmentOutput
+}
+
+type GetDynamicSetTargetCompartmentArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Indicates if the child compartments are included in the matching rule.
+	DoesIncludeChildren pulumi.BoolInput `pulumi:"doesIncludeChildren"`
+}
+
+func (GetDynamicSetTargetCompartmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetTargetCompartment)(nil)).Elem()
+}
+
+func (i GetDynamicSetTargetCompartmentArgs) ToGetDynamicSetTargetCompartmentOutput() GetDynamicSetTargetCompartmentOutput {
+	return i.ToGetDynamicSetTargetCompartmentOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetTargetCompartmentArgs) ToGetDynamicSetTargetCompartmentOutputWithContext(ctx context.Context) GetDynamicSetTargetCompartmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetTargetCompartmentOutput)
+}
+
+// GetDynamicSetTargetCompartmentArrayInput is an input type that accepts GetDynamicSetTargetCompartmentArray and GetDynamicSetTargetCompartmentArrayOutput values.
+// You can construct a concrete instance of `GetDynamicSetTargetCompartmentArrayInput` via:
+//
+//	GetDynamicSetTargetCompartmentArray{ GetDynamicSetTargetCompartmentArgs{...} }
+type GetDynamicSetTargetCompartmentArrayInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetTargetCompartmentArrayOutput() GetDynamicSetTargetCompartmentArrayOutput
+	ToGetDynamicSetTargetCompartmentArrayOutputWithContext(context.Context) GetDynamicSetTargetCompartmentArrayOutput
+}
+
+type GetDynamicSetTargetCompartmentArray []GetDynamicSetTargetCompartmentInput
+
+func (GetDynamicSetTargetCompartmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetTargetCompartment)(nil)).Elem()
+}
+
+func (i GetDynamicSetTargetCompartmentArray) ToGetDynamicSetTargetCompartmentArrayOutput() GetDynamicSetTargetCompartmentArrayOutput {
+	return i.ToGetDynamicSetTargetCompartmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetTargetCompartmentArray) ToGetDynamicSetTargetCompartmentArrayOutputWithContext(ctx context.Context) GetDynamicSetTargetCompartmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetTargetCompartmentArrayOutput)
+}
+
+type GetDynamicSetTargetCompartmentOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetTargetCompartmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetTargetCompartment)(nil)).Elem()
+}
+
+func (o GetDynamicSetTargetCompartmentOutput) ToGetDynamicSetTargetCompartmentOutput() GetDynamicSetTargetCompartmentOutput {
+	return o
+}
+
+func (o GetDynamicSetTargetCompartmentOutput) ToGetDynamicSetTargetCompartmentOutputWithContext(ctx context.Context) GetDynamicSetTargetCompartmentOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetDynamicSetTargetCompartmentOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetTargetCompartment) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Indicates if the child compartments are included in the matching rule.
+func (o GetDynamicSetTargetCompartmentOutput) DoesIncludeChildren() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDynamicSetTargetCompartment) bool { return v.DoesIncludeChildren }).(pulumi.BoolOutput)
+}
+
+type GetDynamicSetTargetCompartmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetTargetCompartmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetTargetCompartment)(nil)).Elem()
+}
+
+func (o GetDynamicSetTargetCompartmentArrayOutput) ToGetDynamicSetTargetCompartmentArrayOutput() GetDynamicSetTargetCompartmentArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetTargetCompartmentArrayOutput) ToGetDynamicSetTargetCompartmentArrayOutputWithContext(ctx context.Context) GetDynamicSetTargetCompartmentArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetTargetCompartmentArrayOutput) Index(i pulumi.IntInput) GetDynamicSetTargetCompartmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDynamicSetTargetCompartment {
+		return vs[0].([]GetDynamicSetTargetCompartment)[vs[1].(int)]
+	}).(GetDynamicSetTargetCompartmentOutput)
+}
+
+type GetDynamicSetsDynamicSetCollection struct {
+	Items []GetDynamicSetsDynamicSetCollectionItem `pulumi:"items"`
+}
+
+// GetDynamicSetsDynamicSetCollectionInput is an input type that accepts GetDynamicSetsDynamicSetCollectionArgs and GetDynamicSetsDynamicSetCollectionOutput values.
+// You can construct a concrete instance of `GetDynamicSetsDynamicSetCollectionInput` via:
+//
+//	GetDynamicSetsDynamicSetCollectionArgs{...}
+type GetDynamicSetsDynamicSetCollectionInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetsDynamicSetCollectionOutput() GetDynamicSetsDynamicSetCollectionOutput
+	ToGetDynamicSetsDynamicSetCollectionOutputWithContext(context.Context) GetDynamicSetsDynamicSetCollectionOutput
+}
+
+type GetDynamicSetsDynamicSetCollectionArgs struct {
+	Items GetDynamicSetsDynamicSetCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDynamicSetsDynamicSetCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetsDynamicSetCollection)(nil)).Elem()
+}
+
+func (i GetDynamicSetsDynamicSetCollectionArgs) ToGetDynamicSetsDynamicSetCollectionOutput() GetDynamicSetsDynamicSetCollectionOutput {
+	return i.ToGetDynamicSetsDynamicSetCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetsDynamicSetCollectionArgs) ToGetDynamicSetsDynamicSetCollectionOutputWithContext(ctx context.Context) GetDynamicSetsDynamicSetCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetsDynamicSetCollectionOutput)
+}
+
+// GetDynamicSetsDynamicSetCollectionArrayInput is an input type that accepts GetDynamicSetsDynamicSetCollectionArray and GetDynamicSetsDynamicSetCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDynamicSetsDynamicSetCollectionArrayInput` via:
+//
+//	GetDynamicSetsDynamicSetCollectionArray{ GetDynamicSetsDynamicSetCollectionArgs{...} }
+type GetDynamicSetsDynamicSetCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetsDynamicSetCollectionArrayOutput() GetDynamicSetsDynamicSetCollectionArrayOutput
+	ToGetDynamicSetsDynamicSetCollectionArrayOutputWithContext(context.Context) GetDynamicSetsDynamicSetCollectionArrayOutput
+}
+
+type GetDynamicSetsDynamicSetCollectionArray []GetDynamicSetsDynamicSetCollectionInput
+
+func (GetDynamicSetsDynamicSetCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetsDynamicSetCollection)(nil)).Elem()
+}
+
+func (i GetDynamicSetsDynamicSetCollectionArray) ToGetDynamicSetsDynamicSetCollectionArrayOutput() GetDynamicSetsDynamicSetCollectionArrayOutput {
+	return i.ToGetDynamicSetsDynamicSetCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetsDynamicSetCollectionArray) ToGetDynamicSetsDynamicSetCollectionArrayOutputWithContext(ctx context.Context) GetDynamicSetsDynamicSetCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetsDynamicSetCollectionArrayOutput)
+}
+
+type GetDynamicSetsDynamicSetCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetsDynamicSetCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetsDynamicSetCollection)(nil)).Elem()
+}
+
+func (o GetDynamicSetsDynamicSetCollectionOutput) ToGetDynamicSetsDynamicSetCollectionOutput() GetDynamicSetsDynamicSetCollectionOutput {
+	return o
+}
+
+func (o GetDynamicSetsDynamicSetCollectionOutput) ToGetDynamicSetsDynamicSetCollectionOutputWithContext(ctx context.Context) GetDynamicSetsDynamicSetCollectionOutput {
+	return o
+}
+
+func (o GetDynamicSetsDynamicSetCollectionOutput) Items() GetDynamicSetsDynamicSetCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollection) []GetDynamicSetsDynamicSetCollectionItem { return v.Items }).(GetDynamicSetsDynamicSetCollectionItemArrayOutput)
+}
+
+type GetDynamicSetsDynamicSetCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetsDynamicSetCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetsDynamicSetCollection)(nil)).Elem()
+}
+
+func (o GetDynamicSetsDynamicSetCollectionArrayOutput) ToGetDynamicSetsDynamicSetCollectionArrayOutput() GetDynamicSetsDynamicSetCollectionArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetsDynamicSetCollectionArrayOutput) ToGetDynamicSetsDynamicSetCollectionArrayOutputWithContext(ctx context.Context) GetDynamicSetsDynamicSetCollectionArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetsDynamicSetCollectionArrayOutput) Index(i pulumi.IntInput) GetDynamicSetsDynamicSetCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDynamicSetsDynamicSetCollection {
+		return vs[0].([]GetDynamicSetsDynamicSetCollection)[vs[1].(int)]
+	}).(GetDynamicSetsDynamicSetCollectionOutput)
+}
+
+type GetDynamicSetsDynamicSetCollectionItem struct {
+	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// User-specified description for the dynamic set.
+	Description string `pulumi:"description"`
+	// A filter to return resources that match the given user-friendly name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set.
+	Id string `pulumi:"id"`
+	// Include either any or all attributes.
+	MatchType string `pulumi:"matchType"`
+	// An object that defines the set of rules that identifies the target instances in a dynamic set.
+	MatchingRules []GetDynamicSetsDynamicSetCollectionItemMatchingRule `pulumi:"matchingRules"`
+	// Number of scheduled jobs currently targeting this dynamic set.
+	ScheduledJobCount string `pulumi:"scheduledJobCount"`
+	// The current state of the event.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The list of compartment details.
+	TargetCompartments []GetDynamicSetsDynamicSetCollectionItemTargetCompartment `pulumi:"targetCompartments"`
+	// The date and time the dynamic set was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the dynamic set was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetDynamicSetsDynamicSetCollectionItemInput is an input type that accepts GetDynamicSetsDynamicSetCollectionItemArgs and GetDynamicSetsDynamicSetCollectionItemOutput values.
+// You can construct a concrete instance of `GetDynamicSetsDynamicSetCollectionItemInput` via:
+//
+//	GetDynamicSetsDynamicSetCollectionItemArgs{...}
+type GetDynamicSetsDynamicSetCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetsDynamicSetCollectionItemOutput() GetDynamicSetsDynamicSetCollectionItemOutput
+	ToGetDynamicSetsDynamicSetCollectionItemOutputWithContext(context.Context) GetDynamicSetsDynamicSetCollectionItemOutput
+}
+
+type GetDynamicSetsDynamicSetCollectionItemArgs struct {
+	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// User-specified description for the dynamic set.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return resources that match the given user-friendly name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Include either any or all attributes.
+	MatchType pulumi.StringInput `pulumi:"matchType"`
+	// An object that defines the set of rules that identifies the target instances in a dynamic set.
+	MatchingRules GetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayInput `pulumi:"matchingRules"`
+	// Number of scheduled jobs currently targeting this dynamic set.
+	ScheduledJobCount pulumi.StringInput `pulumi:"scheduledJobCount"`
+	// The current state of the event.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The list of compartment details.
+	TargetCompartments GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayInput `pulumi:"targetCompartments"`
+	// The date and time the dynamic set was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the dynamic set was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetDynamicSetsDynamicSetCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetsDynamicSetCollectionItem)(nil)).Elem()
+}
+
+func (i GetDynamicSetsDynamicSetCollectionItemArgs) ToGetDynamicSetsDynamicSetCollectionItemOutput() GetDynamicSetsDynamicSetCollectionItemOutput {
+	return i.ToGetDynamicSetsDynamicSetCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetsDynamicSetCollectionItemArgs) ToGetDynamicSetsDynamicSetCollectionItemOutputWithContext(ctx context.Context) GetDynamicSetsDynamicSetCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetsDynamicSetCollectionItemOutput)
+}
+
+// GetDynamicSetsDynamicSetCollectionItemArrayInput is an input type that accepts GetDynamicSetsDynamicSetCollectionItemArray and GetDynamicSetsDynamicSetCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDynamicSetsDynamicSetCollectionItemArrayInput` via:
+//
+//	GetDynamicSetsDynamicSetCollectionItemArray{ GetDynamicSetsDynamicSetCollectionItemArgs{...} }
+type GetDynamicSetsDynamicSetCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetsDynamicSetCollectionItemArrayOutput() GetDynamicSetsDynamicSetCollectionItemArrayOutput
+	ToGetDynamicSetsDynamicSetCollectionItemArrayOutputWithContext(context.Context) GetDynamicSetsDynamicSetCollectionItemArrayOutput
+}
+
+type GetDynamicSetsDynamicSetCollectionItemArray []GetDynamicSetsDynamicSetCollectionItemInput
+
+func (GetDynamicSetsDynamicSetCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetsDynamicSetCollectionItem)(nil)).Elem()
+}
+
+func (i GetDynamicSetsDynamicSetCollectionItemArray) ToGetDynamicSetsDynamicSetCollectionItemArrayOutput() GetDynamicSetsDynamicSetCollectionItemArrayOutput {
+	return i.ToGetDynamicSetsDynamicSetCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetsDynamicSetCollectionItemArray) ToGetDynamicSetsDynamicSetCollectionItemArrayOutputWithContext(ctx context.Context) GetDynamicSetsDynamicSetCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetsDynamicSetCollectionItemArrayOutput)
+}
+
+type GetDynamicSetsDynamicSetCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetsDynamicSetCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetsDynamicSetCollectionItem)(nil)).Elem()
+}
+
+func (o GetDynamicSetsDynamicSetCollectionItemOutput) ToGetDynamicSetsDynamicSetCollectionItemOutput() GetDynamicSetsDynamicSetCollectionItemOutput {
+	return o
+}
+
+func (o GetDynamicSetsDynamicSetCollectionItemOutput) ToGetDynamicSetsDynamicSetCollectionItemOutputWithContext(ctx context.Context) GetDynamicSetsDynamicSetCollectionItemOutput {
+	return o
+}
+
+// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+func (o GetDynamicSetsDynamicSetCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetDynamicSetsDynamicSetCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// User-specified description for the dynamic set.
+func (o GetDynamicSetsDynamicSetCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return resources that match the given user-friendly name.
+func (o GetDynamicSetsDynamicSetCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetDynamicSetsDynamicSetCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set.
+func (o GetDynamicSetsDynamicSetCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Include either any or all attributes.
+func (o GetDynamicSetsDynamicSetCollectionItemOutput) MatchType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItem) string { return v.MatchType }).(pulumi.StringOutput)
+}
+
+// An object that defines the set of rules that identifies the target instances in a dynamic set.
+func (o GetDynamicSetsDynamicSetCollectionItemOutput) MatchingRules() GetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItem) []GetDynamicSetsDynamicSetCollectionItemMatchingRule {
+		return v.MatchingRules
+	}).(GetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayOutput)
+}
+
+// Number of scheduled jobs currently targeting this dynamic set.
+func (o GetDynamicSetsDynamicSetCollectionItemOutput) ScheduledJobCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItem) string { return v.ScheduledJobCount }).(pulumi.StringOutput)
+}
+
+// The current state of the event.
+func (o GetDynamicSetsDynamicSetCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetDynamicSetsDynamicSetCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The list of compartment details.
+func (o GetDynamicSetsDynamicSetCollectionItemOutput) TargetCompartments() GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItem) []GetDynamicSetsDynamicSetCollectionItemTargetCompartment {
+		return v.TargetCompartments
+	}).(GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayOutput)
+}
+
+// The date and time the dynamic set was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+func (o GetDynamicSetsDynamicSetCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the dynamic set was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+func (o GetDynamicSetsDynamicSetCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetDynamicSetsDynamicSetCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetsDynamicSetCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetsDynamicSetCollectionItem)(nil)).Elem()
+}
+
+func (o GetDynamicSetsDynamicSetCollectionItemArrayOutput) ToGetDynamicSetsDynamicSetCollectionItemArrayOutput() GetDynamicSetsDynamicSetCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetsDynamicSetCollectionItemArrayOutput) ToGetDynamicSetsDynamicSetCollectionItemArrayOutputWithContext(ctx context.Context) GetDynamicSetsDynamicSetCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetsDynamicSetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDynamicSetsDynamicSetCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDynamicSetsDynamicSetCollectionItem {
+		return vs[0].([]GetDynamicSetsDynamicSetCollectionItem)[vs[1].(int)]
+	}).(GetDynamicSetsDynamicSetCollectionItemOutput)
+}
+
+type GetDynamicSetsDynamicSetCollectionItemMatchingRule struct {
+	// The list of managed instance architectures.
+	Architectures []string `pulumi:"architectures"`
+	// The list of managed instance display names.
+	DisplayNames []string `pulumi:"displayNames"`
+	// Indicates if the managed instance needs to be rebooted.
+	IsRebootRequired bool `pulumi:"isRebootRequired"`
+	// The list of managed instance locations.
+	Locations []string `pulumi:"locations"`
+	// The list of managed instance group IDs.
+	ManagedInstanceGroupIds []string `pulumi:"managedInstanceGroupIds"`
+	// The list of managed instance ids.
+	ManagedInstanceIds []string `pulumi:"managedInstanceIds"`
+	// The list of managed instance OS families.
+	OsFamilies []string `pulumi:"osFamilies"`
+	// The list of managed instance OS names.
+	OsNames []string `pulumi:"osNames"`
+	// The list of managed instance statuses.
+	Statuses []string `pulumi:"statuses"`
+	// The list of the managed instance tags.
+	Tags []GetDynamicSetsDynamicSetCollectionItemMatchingRuleTag `pulumi:"tags"`
+}
+
+// GetDynamicSetsDynamicSetCollectionItemMatchingRuleInput is an input type that accepts GetDynamicSetsDynamicSetCollectionItemMatchingRuleArgs and GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput values.
+// You can construct a concrete instance of `GetDynamicSetsDynamicSetCollectionItemMatchingRuleInput` via:
+//
+//	GetDynamicSetsDynamicSetCollectionItemMatchingRuleArgs{...}
+type GetDynamicSetsDynamicSetCollectionItemMatchingRuleInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput() GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput
+	ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleOutputWithContext(context.Context) GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput
+}
+
+type GetDynamicSetsDynamicSetCollectionItemMatchingRuleArgs struct {
+	// The list of managed instance architectures.
+	Architectures pulumi.StringArrayInput `pulumi:"architectures"`
+	// The list of managed instance display names.
+	DisplayNames pulumi.StringArrayInput `pulumi:"displayNames"`
+	// Indicates if the managed instance needs to be rebooted.
+	IsRebootRequired pulumi.BoolInput `pulumi:"isRebootRequired"`
+	// The list of managed instance locations.
+	Locations pulumi.StringArrayInput `pulumi:"locations"`
+	// The list of managed instance group IDs.
+	ManagedInstanceGroupIds pulumi.StringArrayInput `pulumi:"managedInstanceGroupIds"`
+	// The list of managed instance ids.
+	ManagedInstanceIds pulumi.StringArrayInput `pulumi:"managedInstanceIds"`
+	// The list of managed instance OS families.
+	OsFamilies pulumi.StringArrayInput `pulumi:"osFamilies"`
+	// The list of managed instance OS names.
+	OsNames pulumi.StringArrayInput `pulumi:"osNames"`
+	// The list of managed instance statuses.
+	Statuses pulumi.StringArrayInput `pulumi:"statuses"`
+	// The list of the managed instance tags.
+	Tags GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayInput `pulumi:"tags"`
+}
+
+func (GetDynamicSetsDynamicSetCollectionItemMatchingRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetsDynamicSetCollectionItemMatchingRule)(nil)).Elem()
+}
+
+func (i GetDynamicSetsDynamicSetCollectionItemMatchingRuleArgs) ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput() GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput {
+	return i.ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetsDynamicSetCollectionItemMatchingRuleArgs) ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleOutputWithContext(ctx context.Context) GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput)
+}
+
+// GetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayInput is an input type that accepts GetDynamicSetsDynamicSetCollectionItemMatchingRuleArray and GetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayOutput values.
+// You can construct a concrete instance of `GetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayInput` via:
+//
+//	GetDynamicSetsDynamicSetCollectionItemMatchingRuleArray{ GetDynamicSetsDynamicSetCollectionItemMatchingRuleArgs{...} }
+type GetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayOutput() GetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayOutput
+	ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayOutputWithContext(context.Context) GetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayOutput
+}
+
+type GetDynamicSetsDynamicSetCollectionItemMatchingRuleArray []GetDynamicSetsDynamicSetCollectionItemMatchingRuleInput
+
+func (GetDynamicSetsDynamicSetCollectionItemMatchingRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetsDynamicSetCollectionItemMatchingRule)(nil)).Elem()
+}
+
+func (i GetDynamicSetsDynamicSetCollectionItemMatchingRuleArray) ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayOutput() GetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayOutput {
+	return i.ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetsDynamicSetCollectionItemMatchingRuleArray) ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayOutputWithContext(ctx context.Context) GetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayOutput)
+}
+
+type GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetsDynamicSetCollectionItemMatchingRule)(nil)).Elem()
+}
+
+func (o GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput) ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput() GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput {
+	return o
+}
+
+func (o GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput) ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleOutputWithContext(ctx context.Context) GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput {
+	return o
+}
+
+// The list of managed instance architectures.
+func (o GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput) Architectures() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItemMatchingRule) []string { return v.Architectures }).(pulumi.StringArrayOutput)
+}
+
+// The list of managed instance display names.
+func (o GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput) DisplayNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItemMatchingRule) []string { return v.DisplayNames }).(pulumi.StringArrayOutput)
+}
+
+// Indicates if the managed instance needs to be rebooted.
+func (o GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput) IsRebootRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItemMatchingRule) bool { return v.IsRebootRequired }).(pulumi.BoolOutput)
+}
+
+// The list of managed instance locations.
+func (o GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput) Locations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItemMatchingRule) []string { return v.Locations }).(pulumi.StringArrayOutput)
+}
+
+// The list of managed instance group IDs.
+func (o GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput) ManagedInstanceGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItemMatchingRule) []string { return v.ManagedInstanceGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// The list of managed instance ids.
+func (o GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput) ManagedInstanceIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItemMatchingRule) []string { return v.ManagedInstanceIds }).(pulumi.StringArrayOutput)
+}
+
+// The list of managed instance OS families.
+func (o GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput) OsFamilies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItemMatchingRule) []string { return v.OsFamilies }).(pulumi.StringArrayOutput)
+}
+
+// The list of managed instance OS names.
+func (o GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput) OsNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItemMatchingRule) []string { return v.OsNames }).(pulumi.StringArrayOutput)
+}
+
+// The list of managed instance statuses.
+func (o GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput) Statuses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItemMatchingRule) []string { return v.Statuses }).(pulumi.StringArrayOutput)
+}
+
+// The list of the managed instance tags.
+func (o GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput) Tags() GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItemMatchingRule) []GetDynamicSetsDynamicSetCollectionItemMatchingRuleTag {
+		return v.Tags
+	}).(GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayOutput)
+}
+
+type GetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetsDynamicSetCollectionItemMatchingRule)(nil)).Elem()
+}
+
+func (o GetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayOutput) ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayOutput() GetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayOutput) ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayOutputWithContext(ctx context.Context) GetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayOutput) Index(i pulumi.IntInput) GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDynamicSetsDynamicSetCollectionItemMatchingRule {
+		return vs[0].([]GetDynamicSetsDynamicSetCollectionItemMatchingRule)[vs[1].(int)]
+	}).(GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput)
+}
+
+type GetDynamicSetsDynamicSetCollectionItemMatchingRuleTag struct {
+	// The key of the tag.
+	Key string `pulumi:"key"`
+	// The namespace of the tag.
+	Namespace string `pulumi:"namespace"`
+	// The type of the tag. Common values include `defined` or `freeform`.
+	Type string `pulumi:"type"`
+	// The value associated with the tag key.
+	Value string `pulumi:"value"`
+}
+
+// GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagInput is an input type that accepts GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArgs and GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutput values.
+// You can construct a concrete instance of `GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagInput` via:
+//
+//	GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArgs{...}
+type GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutput() GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutput
+	ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutputWithContext(context.Context) GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutput
+}
+
+type GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArgs struct {
+	// The key of the tag.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The namespace of the tag.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The type of the tag. Common values include `defined` or `freeform`.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The value associated with the tag key.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetsDynamicSetCollectionItemMatchingRuleTag)(nil)).Elem()
+}
+
+func (i GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArgs) ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutput() GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutput {
+	return i.ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArgs) ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutputWithContext(ctx context.Context) GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutput)
+}
+
+// GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayInput is an input type that accepts GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArray and GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayOutput values.
+// You can construct a concrete instance of `GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayInput` via:
+//
+//	GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArray{ GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArgs{...} }
+type GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayOutput() GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayOutput
+	ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayOutputWithContext(context.Context) GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayOutput
+}
+
+type GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArray []GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagInput
+
+func (GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetsDynamicSetCollectionItemMatchingRuleTag)(nil)).Elem()
+}
+
+func (i GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArray) ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayOutput() GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayOutput {
+	return i.ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArray) ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayOutputWithContext(ctx context.Context) GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayOutput)
+}
+
+type GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetsDynamicSetCollectionItemMatchingRuleTag)(nil)).Elem()
+}
+
+func (o GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutput) ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutput() GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutput {
+	return o
+}
+
+func (o GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutput) ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutputWithContext(ctx context.Context) GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutput {
+	return o
+}
+
+// The key of the tag.
+func (o GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItemMatchingRuleTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// The namespace of the tag.
+func (o GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItemMatchingRuleTag) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The type of the tag. Common values include `defined` or `freeform`.
+func (o GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItemMatchingRuleTag) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The value associated with the tag key.
+func (o GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItemMatchingRuleTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetsDynamicSetCollectionItemMatchingRuleTag)(nil)).Elem()
+}
+
+func (o GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayOutput) ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayOutput() GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayOutput) ToGetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayOutputWithContext(ctx context.Context) GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayOutput) Index(i pulumi.IntInput) GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDynamicSetsDynamicSetCollectionItemMatchingRuleTag {
+		return vs[0].([]GetDynamicSetsDynamicSetCollectionItemMatchingRuleTag)[vs[1].(int)]
+	}).(GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutput)
+}
+
+type GetDynamicSetsDynamicSetCollectionItemTargetCompartment struct {
+	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Indicates if the child compartments are included in the matching rule.
+	DoesIncludeChildren bool `pulumi:"doesIncludeChildren"`
+}
+
+// GetDynamicSetsDynamicSetCollectionItemTargetCompartmentInput is an input type that accepts GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArgs and GetDynamicSetsDynamicSetCollectionItemTargetCompartmentOutput values.
+// You can construct a concrete instance of `GetDynamicSetsDynamicSetCollectionItemTargetCompartmentInput` via:
+//
+//	GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArgs{...}
+type GetDynamicSetsDynamicSetCollectionItemTargetCompartmentInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetsDynamicSetCollectionItemTargetCompartmentOutput() GetDynamicSetsDynamicSetCollectionItemTargetCompartmentOutput
+	ToGetDynamicSetsDynamicSetCollectionItemTargetCompartmentOutputWithContext(context.Context) GetDynamicSetsDynamicSetCollectionItemTargetCompartmentOutput
+}
+
+type GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArgs struct {
+	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Indicates if the child compartments are included in the matching rule.
+	DoesIncludeChildren pulumi.BoolInput `pulumi:"doesIncludeChildren"`
+}
+
+func (GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetsDynamicSetCollectionItemTargetCompartment)(nil)).Elem()
+}
+
+func (i GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArgs) ToGetDynamicSetsDynamicSetCollectionItemTargetCompartmentOutput() GetDynamicSetsDynamicSetCollectionItemTargetCompartmentOutput {
+	return i.ToGetDynamicSetsDynamicSetCollectionItemTargetCompartmentOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArgs) ToGetDynamicSetsDynamicSetCollectionItemTargetCompartmentOutputWithContext(ctx context.Context) GetDynamicSetsDynamicSetCollectionItemTargetCompartmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetsDynamicSetCollectionItemTargetCompartmentOutput)
+}
+
+// GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayInput is an input type that accepts GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArray and GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayOutput values.
+// You can construct a concrete instance of `GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayInput` via:
+//
+//	GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArray{ GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArgs{...} }
+type GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayOutput() GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayOutput
+	ToGetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayOutputWithContext(context.Context) GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayOutput
+}
+
+type GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArray []GetDynamicSetsDynamicSetCollectionItemTargetCompartmentInput
+
+func (GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetsDynamicSetCollectionItemTargetCompartment)(nil)).Elem()
+}
+
+func (i GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArray) ToGetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayOutput() GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayOutput {
+	return i.ToGetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArray) ToGetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayOutputWithContext(ctx context.Context) GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayOutput)
+}
+
+type GetDynamicSetsDynamicSetCollectionItemTargetCompartmentOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetsDynamicSetCollectionItemTargetCompartmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetsDynamicSetCollectionItemTargetCompartment)(nil)).Elem()
+}
+
+func (o GetDynamicSetsDynamicSetCollectionItemTargetCompartmentOutput) ToGetDynamicSetsDynamicSetCollectionItemTargetCompartmentOutput() GetDynamicSetsDynamicSetCollectionItemTargetCompartmentOutput {
+	return o
+}
+
+func (o GetDynamicSetsDynamicSetCollectionItemTargetCompartmentOutput) ToGetDynamicSetsDynamicSetCollectionItemTargetCompartmentOutputWithContext(ctx context.Context) GetDynamicSetsDynamicSetCollectionItemTargetCompartmentOutput {
+	return o
+}
+
+// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+func (o GetDynamicSetsDynamicSetCollectionItemTargetCompartmentOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItemTargetCompartment) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Indicates if the child compartments are included in the matching rule.
+func (o GetDynamicSetsDynamicSetCollectionItemTargetCompartmentOutput) DoesIncludeChildren() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDynamicSetsDynamicSetCollectionItemTargetCompartment) bool { return v.DoesIncludeChildren }).(pulumi.BoolOutput)
+}
+
+type GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetsDynamicSetCollectionItemTargetCompartment)(nil)).Elem()
+}
+
+func (o GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayOutput) ToGetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayOutput() GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayOutput) ToGetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayOutputWithContext(ctx context.Context) GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayOutput) Index(i pulumi.IntInput) GetDynamicSetsDynamicSetCollectionItemTargetCompartmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDynamicSetsDynamicSetCollectionItemTargetCompartment {
+		return vs[0].([]GetDynamicSetsDynamicSetCollectionItemTargetCompartment)[vs[1].(int)]
+	}).(GetDynamicSetsDynamicSetCollectionItemTargetCompartmentOutput)
+}
+
+type GetDynamicSetsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDynamicSetsFilterInput is an input type that accepts GetDynamicSetsFilterArgs and GetDynamicSetsFilterOutput values.
+// You can construct a concrete instance of `GetDynamicSetsFilterInput` via:
+//
+//	GetDynamicSetsFilterArgs{...}
+type GetDynamicSetsFilterInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetsFilterOutput() GetDynamicSetsFilterOutput
+	ToGetDynamicSetsFilterOutputWithContext(context.Context) GetDynamicSetsFilterOutput
+}
+
+type GetDynamicSetsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDynamicSetsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetsFilter)(nil)).Elem()
+}
+
+func (i GetDynamicSetsFilterArgs) ToGetDynamicSetsFilterOutput() GetDynamicSetsFilterOutput {
+	return i.ToGetDynamicSetsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetsFilterArgs) ToGetDynamicSetsFilterOutputWithContext(ctx context.Context) GetDynamicSetsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetsFilterOutput)
+}
+
+// GetDynamicSetsFilterArrayInput is an input type that accepts GetDynamicSetsFilterArray and GetDynamicSetsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDynamicSetsFilterArrayInput` via:
+//
+//	GetDynamicSetsFilterArray{ GetDynamicSetsFilterArgs{...} }
+type GetDynamicSetsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDynamicSetsFilterArrayOutput() GetDynamicSetsFilterArrayOutput
+	ToGetDynamicSetsFilterArrayOutputWithContext(context.Context) GetDynamicSetsFilterArrayOutput
+}
+
+type GetDynamicSetsFilterArray []GetDynamicSetsFilterInput
+
+func (GetDynamicSetsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetsFilter)(nil)).Elem()
+}
+
+func (i GetDynamicSetsFilterArray) ToGetDynamicSetsFilterArrayOutput() GetDynamicSetsFilterArrayOutput {
+	return i.ToGetDynamicSetsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDynamicSetsFilterArray) ToGetDynamicSetsFilterArrayOutputWithContext(ctx context.Context) GetDynamicSetsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicSetsFilterArrayOutput)
+}
+
+type GetDynamicSetsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDynamicSetsFilter)(nil)).Elem()
+}
+
+func (o GetDynamicSetsFilterOutput) ToGetDynamicSetsFilterOutput() GetDynamicSetsFilterOutput {
+	return o
+}
+
+func (o GetDynamicSetsFilterOutput) ToGetDynamicSetsFilterOutputWithContext(ctx context.Context) GetDynamicSetsFilterOutput {
+	return o
+}
+
+func (o GetDynamicSetsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDynamicSetsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDynamicSetsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDynamicSetsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDynamicSetsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDynamicSetsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDynamicSetsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDynamicSetsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDynamicSetsFilter)(nil)).Elem()
+}
+
+func (o GetDynamicSetsFilterArrayOutput) ToGetDynamicSetsFilterArrayOutput() GetDynamicSetsFilterArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetsFilterArrayOutput) ToGetDynamicSetsFilterArrayOutputWithContext(ctx context.Context) GetDynamicSetsFilterArrayOutput {
+	return o
+}
+
+func (o GetDynamicSetsFilterArrayOutput) Index(i pulumi.IntInput) GetDynamicSetsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDynamicSetsFilter {
+		return vs[0].([]GetDynamicSetsFilter)[vs[1].(int)]
+	}).(GetDynamicSetsFilterOutput)
+}
+
 type GetEntitlementsEntitlementCollection struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -9573,17 +15425,17 @@ func (o GetErrataErratumCollectionArrayOutput) Index(i pulumi.IntInput) GetErrat
 }
 
 type GetErrataErratumCollectionItem struct {
-	// The advisory severity.
+	// The severity for a security advisory, otherwise, null.
 	AdvisorySeverity string `pulumi:"advisorySeverity"`
-	// A filter to return only errata that match the given advisory types.
+	// The advisory type of the erratum.
 	AdvisoryType string `pulumi:"advisoryType"`
-	// A filter to return only packages that match the given update classification type.
+	// Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
 	ClassificationType string `pulumi:"classificationType"`
 	// Software source description.
 	Description string `pulumi:"description"`
 	// Information specifying from where the erratum was release.
 	From string `pulumi:"from"`
-	// The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+	// The erratum name (such as ELSA-2023-34678).
 	Name string `pulumi:"name"`
 	// The OS families the package belongs to.
 	OsFamilies []string `pulumi:"osFamilies"`
@@ -9617,17 +15469,17 @@ type GetErrataErratumCollectionItemInput interface {
 }
 
 type GetErrataErratumCollectionItemArgs struct {
-	// The advisory severity.
+	// The severity for a security advisory, otherwise, null.
 	AdvisorySeverity pulumi.StringInput `pulumi:"advisorySeverity"`
-	// A filter to return only errata that match the given advisory types.
+	// The advisory type of the erratum.
 	AdvisoryType pulumi.StringInput `pulumi:"advisoryType"`
-	// A filter to return only packages that match the given update classification type.
+	// Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
 	ClassificationType pulumi.StringInput `pulumi:"classificationType"`
 	// Software source description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Information specifying from where the erratum was release.
 	From pulumi.StringInput `pulumi:"from"`
-	// The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+	// The erratum name (such as ELSA-2023-34678).
 	Name pulumi.StringInput `pulumi:"name"`
 	// The OS families the package belongs to.
 	OsFamilies pulumi.StringArrayInput `pulumi:"osFamilies"`
@@ -9700,17 +15552,17 @@ func (o GetErrataErratumCollectionItemOutput) ToGetErrataErratumCollectionItemOu
 	return o
 }
 
-// The advisory severity.
+// The severity for a security advisory, otherwise, null.
 func (o GetErrataErratumCollectionItemOutput) AdvisorySeverity() pulumi.StringOutput {
 	return o.ApplyT(func(v GetErrataErratumCollectionItem) string { return v.AdvisorySeverity }).(pulumi.StringOutput)
 }
 
-// A filter to return only errata that match the given advisory types.
+// The advisory type of the erratum.
 func (o GetErrataErratumCollectionItemOutput) AdvisoryType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetErrataErratumCollectionItem) string { return v.AdvisoryType }).(pulumi.StringOutput)
 }
 
-// A filter to return only packages that match the given update classification type.
+// Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
 func (o GetErrataErratumCollectionItemOutput) ClassificationType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetErrataErratumCollectionItem) string { return v.ClassificationType }).(pulumi.StringOutput)
 }
@@ -9725,7 +15577,7 @@ func (o GetErrataErratumCollectionItemOutput) From() pulumi.StringOutput {
 	return o.ApplyT(func(v GetErrataErratumCollectionItem) string { return v.From }).(pulumi.StringOutput)
 }
 
-// The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+// The erratum name (such as ELSA-2023-34678).
 func (o GetErrataErratumCollectionItemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetErrataErratumCollectionItem) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -9806,7 +15658,7 @@ type GetErrataErratumCollectionItemPackage struct {
 	DisplayName string `pulumi:"displayName"`
 	// Indicates whether this package is the latest version.
 	IsLatest bool `pulumi:"isLatest"`
-	// The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+	// The erratum name (such as ELSA-2023-34678).
 	Name string `pulumi:"name"`
 	// The OS families the package belongs to.
 	OsFamilies []string `pulumi:"osFamilies"`
@@ -9840,7 +15692,7 @@ type GetErrataErratumCollectionItemPackageArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Indicates whether this package is the latest version.
 	IsLatest pulumi.BoolInput `pulumi:"isLatest"`
-	// The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+	// The erratum name (such as ELSA-2023-34678).
 	Name pulumi.StringInput `pulumi:"name"`
 	// The OS families the package belongs to.
 	OsFamilies pulumi.StringArrayInput `pulumi:"osFamilies"`
@@ -9928,7 +15780,7 @@ func (o GetErrataErratumCollectionItemPackageOutput) IsLatest() pulumi.BoolOutpu
 	return o.ApplyT(func(v GetErrataErratumCollectionItemPackage) bool { return v.IsLatest }).(pulumi.BoolOutput)
 }
 
-// The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+// The erratum name (such as ELSA-2023-34678).
 func (o GetErrataErratumCollectionItemPackageOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetErrataErratumCollectionItemPackage) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -10111,7 +15963,7 @@ func (o GetErrataErratumCollectionItemPackageSoftwareSourceArrayOutput) Index(i 
 }
 
 type GetErrataFilter struct {
-	// The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+	// The erratum name (such as ELSA-2023-34678).
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
 	Values []string `pulumi:"values"`
@@ -10129,7 +15981,7 @@ type GetErrataFilterInput interface {
 }
 
 type GetErrataFilterArgs struct {
-	// The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+	// The erratum name (such as ELSA-2023-34678).
 	Name   pulumi.StringInput      `pulumi:"name"`
 	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
 	Values pulumi.StringArrayInput `pulumi:"values"`
@@ -10186,7 +16038,7 @@ func (o GetErrataFilterOutput) ToGetErrataFilterOutputWithContext(ctx context.Co
 	return o
 }
 
-// The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+// The erratum name (such as ELSA-2023-34678).
 func (o GetErrataFilterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetErrataFilter) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -10541,6 +16393,8 @@ type GetEventData struct {
 	ErrorCause string `pulumi:"errorCause"`
 	// The output log of the error.
 	ErrorLog string `pulumi:"errorLog"`
+	// Brief description on how this error is categorized.
+	ErrorSummary string `pulumi:"errorSummary"`
 	// Number of times the event has occurred.
 	EventCount int `pulumi:"eventCount"`
 	// Fingerprint of the event.
@@ -10585,6 +16439,8 @@ type GetEventDataArgs struct {
 	ErrorCause pulumi.StringInput `pulumi:"errorCause"`
 	// The output log of the error.
 	ErrorLog pulumi.StringInput `pulumi:"errorLog"`
+	// Brief description on how this error is categorized.
+	ErrorSummary pulumi.StringInput `pulumi:"errorSummary"`
 	// Number of times the event has occurred.
 	EventCount pulumi.IntInput `pulumi:"eventCount"`
 	// Fingerprint of the event.
@@ -10681,6 +16537,11 @@ func (o GetEventDataOutput) ErrorCause() pulumi.StringOutput {
 // The output log of the error.
 func (o GetEventDataOutput) ErrorLog() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEventData) string { return v.ErrorLog }).(pulumi.StringOutput)
+}
+
+// Brief description on how this error is categorized.
+func (o GetEventDataOutput) ErrorSummary() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEventData) string { return v.ErrorSummary }).(pulumi.StringOutput)
 }
 
 // Number of times the event has occurred.
@@ -11675,6 +17536,8 @@ type GetEventsEventCollectionItemData struct {
 	ErrorCause string `pulumi:"errorCause"`
 	// The output log of the error.
 	ErrorLog string `pulumi:"errorLog"`
+	// Brief description on how this error is categorized.
+	ErrorSummary string `pulumi:"errorSummary"`
 	// Number of times the event has occurred.
 	EventCount int `pulumi:"eventCount"`
 	// The eventFingerprint of the KernelEventData.
@@ -11719,6 +17582,8 @@ type GetEventsEventCollectionItemDataArgs struct {
 	ErrorCause pulumi.StringInput `pulumi:"errorCause"`
 	// The output log of the error.
 	ErrorLog pulumi.StringInput `pulumi:"errorLog"`
+	// Brief description on how this error is categorized.
+	ErrorSummary pulumi.StringInput `pulumi:"errorSummary"`
 	// Number of times the event has occurred.
 	EventCount pulumi.IntInput `pulumi:"eventCount"`
 	// The eventFingerprint of the KernelEventData.
@@ -11817,6 +17682,11 @@ func (o GetEventsEventCollectionItemDataOutput) ErrorCause() pulumi.StringOutput
 // The output log of the error.
 func (o GetEventsEventCollectionItemDataOutput) ErrorLog() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEventsEventCollectionItemData) string { return v.ErrorLog }).(pulumi.StringOutput)
+}
+
+// Brief description on how this error is categorized.
+func (o GetEventsEventCollectionItemDataOutput) ErrorSummary() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEventsEventCollectionItemData) string { return v.ErrorSummary }).(pulumi.StringOutput)
 }
 
 // Number of times the event has occurred.
@@ -13570,15 +19440,13 @@ type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-	Id string `pulumi:"id"`
-	// The user-friendly name for the lifecycle environment. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	Id                              string `pulumi:"id"`
 	LifecycleEnvironmentDisplayName string `pulumi:"lifecycleEnvironmentDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
 	LifecycleEnvironmentId string `pulumi:"lifecycleEnvironmentId"`
 	// A filter to return only resources whose location matches the given value.
-	Location string `pulumi:"location"`
-	// The number of managed instances associated with the lifecycle stage.
-	ManagedInstances int `pulumi:"managedInstances"`
+	Location         string `pulumi:"location"`
+	ManagedInstances int    `pulumi:"managedInstances"`
 	// A filter to return only resources that match the given operating system family.
 	OsFamily string `pulumi:"osFamily"`
 	// User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
@@ -13620,15 +19488,13 @@ type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageArgs struct 
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
-	// The user-friendly name for the lifecycle environment. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	Id                              pulumi.StringInput `pulumi:"id"`
 	LifecycleEnvironmentDisplayName pulumi.StringInput `pulumi:"lifecycleEnvironmentDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
 	LifecycleEnvironmentId pulumi.StringInput `pulumi:"lifecycleEnvironmentId"`
 	// A filter to return only resources whose location matches the given value.
-	Location pulumi.StringInput `pulumi:"location"`
-	// The number of managed instances associated with the lifecycle stage.
-	ManagedInstances pulumi.IntInput `pulumi:"managedInstances"`
+	Location         pulumi.StringInput `pulumi:"location"`
+	ManagedInstances pulumi.IntInput    `pulumi:"managedInstances"`
 	// A filter to return only resources that match the given operating system family.
 	OsFamily pulumi.StringInput `pulumi:"osFamily"`
 	// User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
@@ -13732,7 +19598,6 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) I
 	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The user-friendly name for the lifecycle environment. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) LifecycleEnvironmentDisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) string {
 		return v.LifecycleEnvironmentDisplayName
@@ -13751,7 +19616,6 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) L
 	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) string { return v.Location }).(pulumi.StringOutput)
 }
 
-// The number of managed instances associated with the lifecycle stage.
 func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) ManagedInstances() pulumi.IntOutput {
 	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) int { return v.ManagedInstances }).(pulumi.IntOutput)
 }
@@ -14416,15 +20280,13 @@ type GetLifecycleStagesLifecycleStageCollectionItem struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-	Id string `pulumi:"id"`
-	// The user-friendly name for the lifecycle environment. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	Id                              string `pulumi:"id"`
 	LifecycleEnvironmentDisplayName string `pulumi:"lifecycleEnvironmentDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
 	LifecycleEnvironmentId string `pulumi:"lifecycleEnvironmentId"`
 	// A filter to return only resources whose location matches the given value.
-	Location string `pulumi:"location"`
-	// The number of managed instances associated with the lifecycle stage.
-	ManagedInstances int `pulumi:"managedInstances"`
+	Location         string `pulumi:"location"`
+	ManagedInstances int    `pulumi:"managedInstances"`
 	// A filter to return only resources that match the given operating system family.
 	OsFamily string `pulumi:"osFamily"`
 	// User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
@@ -14466,15 +20328,13 @@ type GetLifecycleStagesLifecycleStageCollectionItemArgs struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
-	// The user-friendly name for the lifecycle environment. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	Id                              pulumi.StringInput `pulumi:"id"`
 	LifecycleEnvironmentDisplayName pulumi.StringInput `pulumi:"lifecycleEnvironmentDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
 	LifecycleEnvironmentId pulumi.StringInput `pulumi:"lifecycleEnvironmentId"`
 	// A filter to return only resources whose location matches the given value.
-	Location pulumi.StringInput `pulumi:"location"`
-	// The number of managed instances associated with the lifecycle stage.
-	ManagedInstances pulumi.IntInput `pulumi:"managedInstances"`
+	Location         pulumi.StringInput `pulumi:"location"`
+	ManagedInstances pulumi.IntInput    `pulumi:"managedInstances"`
 	// A filter to return only resources that match the given operating system family.
 	OsFamily pulumi.StringInput `pulumi:"osFamily"`
 	// User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
@@ -14574,7 +20434,6 @@ func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) Id() pulumi.String
 	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The user-friendly name for the lifecycle environment. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) LifecycleEnvironmentDisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) string {
 		return v.LifecycleEnvironmentDisplayName
@@ -14591,7 +20450,6 @@ func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) Location() pulumi.
 	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) string { return v.Location }).(pulumi.StringOutput)
 }
 
-// The number of managed instances associated with the lifecycle stage.
 func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) ManagedInstances() pulumi.IntOutput {
 	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) int { return v.ManagedInstances }).(pulumi.IntOutput)
 }
@@ -15511,10 +21369,14 @@ func (o GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollect
 type GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem struct {
 	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId string `pulumi:"compartmentId"`
+	// Software source description.
+	Description string `pulumi:"description"`
 	// A filter to return resources that match the given display names.
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id string `pulumi:"id"`
+	// Type of the software source.
+	SoftwareSourceType string `pulumi:"softwareSourceType"`
 }
 
 // GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemInput is an input type that accepts GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs and GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput values.
@@ -15531,10 +21393,14 @@ type GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollection
 type GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs struct {
 	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Software source description.
+	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return resources that match the given display names.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Type of the software source.
+	SoftwareSourceType pulumi.StringInput `pulumi:"softwareSourceType"`
 }
 
 func (GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs) ElementType() reflect.Type {
@@ -15595,6 +21461,13 @@ func (o GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollect
 	}).(pulumi.StringOutput)
 }
 
+// Software source description.
+func (o GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
 // A filter to return resources that match the given display names.
 func (o GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem) string {
@@ -15606,6 +21479,13 @@ func (o GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollect
 func (o GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem) string {
 		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// Type of the software source.
+func (o GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) SoftwareSourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem) string {
+		return v.SoftwareSourceType
 	}).(pulumi.StringOutput)
 }
 
@@ -17629,10 +23509,14 @@ func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCo
 type GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem struct {
 	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId string `pulumi:"compartmentId"`
+	// Software source description.
+	Description string `pulumi:"description"`
 	// A filter to return resources that match the given display names.
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id string `pulumi:"id"`
+	// Type of the software source.
+	SoftwareSourceType string `pulumi:"softwareSourceType"`
 }
 
 // GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemInput is an input type that accepts GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs and GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput values.
@@ -17649,10 +23533,14 @@ type GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceColle
 type GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs struct {
 	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Software source description.
+	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return resources that match the given display names.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Type of the software source.
+	SoftwareSourceType pulumi.StringInput `pulumi:"softwareSourceType"`
 }
 
 func (GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs) ElementType() reflect.Type {
@@ -17713,6 +23601,13 @@ func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCo
 	}).(pulumi.StringOutput)
 }
 
+// Software source description.
+func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
 // A filter to return resources that match the given display names.
 func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem) string {
@@ -17724,6 +23619,13 @@ func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCo
 func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem) string {
 		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// Type of the software source.
+func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) SoftwareSourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem) string {
+		return v.SoftwareSourceType
 	}).(pulumi.StringOutput)
 }
 
@@ -18169,6 +24071,951 @@ func (o GetManagedInstanceGroupInstalledPackagesManagedInstanceGroupInstalledPac
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceGroupInstalledPackagesManagedInstanceGroupInstalledPackageCollectionItem {
 		return vs[0].([]GetManagedInstanceGroupInstalledPackagesManagedInstanceGroupInstalledPackageCollectionItem)[vs[1].(int)]
 	}).(GetManagedInstanceGroupInstalledPackagesManagedInstanceGroupInstalledPackageCollectionItemOutput)
+}
+
+type GetManagedInstanceGroupManagedInstancesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedInstanceGroupManagedInstancesFilterInput is an input type that accepts GetManagedInstanceGroupManagedInstancesFilterArgs and GetManagedInstanceGroupManagedInstancesFilterOutput values.
+// You can construct a concrete instance of `GetManagedInstanceGroupManagedInstancesFilterInput` via:
+//
+//	GetManagedInstanceGroupManagedInstancesFilterArgs{...}
+type GetManagedInstanceGroupManagedInstancesFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceGroupManagedInstancesFilterOutput() GetManagedInstanceGroupManagedInstancesFilterOutput
+	ToGetManagedInstanceGroupManagedInstancesFilterOutputWithContext(context.Context) GetManagedInstanceGroupManagedInstancesFilterOutput
+}
+
+type GetManagedInstanceGroupManagedInstancesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedInstanceGroupManagedInstancesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesFilter)(nil)).Elem()
+}
+
+func (i GetManagedInstanceGroupManagedInstancesFilterArgs) ToGetManagedInstanceGroupManagedInstancesFilterOutput() GetManagedInstanceGroupManagedInstancesFilterOutput {
+	return i.ToGetManagedInstanceGroupManagedInstancesFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceGroupManagedInstancesFilterArgs) ToGetManagedInstanceGroupManagedInstancesFilterOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupManagedInstancesFilterOutput)
+}
+
+// GetManagedInstanceGroupManagedInstancesFilterArrayInput is an input type that accepts GetManagedInstanceGroupManagedInstancesFilterArray and GetManagedInstanceGroupManagedInstancesFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedInstanceGroupManagedInstancesFilterArrayInput` via:
+//
+//	GetManagedInstanceGroupManagedInstancesFilterArray{ GetManagedInstanceGroupManagedInstancesFilterArgs{...} }
+type GetManagedInstanceGroupManagedInstancesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceGroupManagedInstancesFilterArrayOutput() GetManagedInstanceGroupManagedInstancesFilterArrayOutput
+	ToGetManagedInstanceGroupManagedInstancesFilterArrayOutputWithContext(context.Context) GetManagedInstanceGroupManagedInstancesFilterArrayOutput
+}
+
+type GetManagedInstanceGroupManagedInstancesFilterArray []GetManagedInstanceGroupManagedInstancesFilterInput
+
+func (GetManagedInstanceGroupManagedInstancesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceGroupManagedInstancesFilter)(nil)).Elem()
+}
+
+func (i GetManagedInstanceGroupManagedInstancesFilterArray) ToGetManagedInstanceGroupManagedInstancesFilterArrayOutput() GetManagedInstanceGroupManagedInstancesFilterArrayOutput {
+	return i.ToGetManagedInstanceGroupManagedInstancesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceGroupManagedInstancesFilterArray) ToGetManagedInstanceGroupManagedInstancesFilterArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupManagedInstancesFilterArrayOutput)
+}
+
+type GetManagedInstanceGroupManagedInstancesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceGroupManagedInstancesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesFilter)(nil)).Elem()
+}
+
+func (o GetManagedInstanceGroupManagedInstancesFilterOutput) ToGetManagedInstanceGroupManagedInstancesFilterOutput() GetManagedInstanceGroupManagedInstancesFilterOutput {
+	return o
+}
+
+func (o GetManagedInstanceGroupManagedInstancesFilterOutput) ToGetManagedInstanceGroupManagedInstancesFilterOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesFilterOutput {
+	return o
+}
+
+func (o GetManagedInstanceGroupManagedInstancesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedInstanceGroupManagedInstancesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedInstanceGroupManagedInstancesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedInstanceGroupManagedInstancesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceGroupManagedInstancesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceGroupManagedInstancesFilter)(nil)).Elem()
+}
+
+func (o GetManagedInstanceGroupManagedInstancesFilterArrayOutput) ToGetManagedInstanceGroupManagedInstancesFilterArrayOutput() GetManagedInstanceGroupManagedInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceGroupManagedInstancesFilterArrayOutput) ToGetManagedInstanceGroupManagedInstancesFilterArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceGroupManagedInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupManagedInstancesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceGroupManagedInstancesFilter {
+		return vs[0].([]GetManagedInstanceGroupManagedInstancesFilter)[vs[1].(int)]
+	}).(GetManagedInstanceGroupManagedInstancesFilterOutput)
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollection struct {
+	// List of managed instances.
+	Items []GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem `pulumi:"items"`
+}
+
+// GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionInput is an input type that accepts GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArgs and GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionOutput values.
+// You can construct a concrete instance of `GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionInput` via:
+//
+//	GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArgs{...}
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionOutput
+	ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionOutputWithContext(context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionOutput
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArgs struct {
+	// List of managed instances.
+	Items GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesManagedInstanceCollection)(nil)).Elem()
+}
+
+func (i GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArgs) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionOutput {
+	return i.ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArgs) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionOutput)
+}
+
+// GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayInput is an input type that accepts GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArray and GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayInput` via:
+//
+//	GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArray{ GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArgs{...} }
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayOutput
+	ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayOutputWithContext(context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayOutput
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArray []GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionInput
+
+func (GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceGroupManagedInstancesManagedInstanceCollection)(nil)).Elem()
+}
+
+func (i GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArray) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayOutput {
+	return i.ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArray) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayOutput)
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesManagedInstanceCollection)(nil)).Elem()
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionOutput) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionOutput {
+	return o
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionOutput) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionOutput {
+	return o
+}
+
+// List of managed instances.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionOutput) Items() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollection) []GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem {
+		return v.Items
+	}).(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayOutput)
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceGroupManagedInstancesManagedInstanceCollection)(nil)).Elem()
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayOutput) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayOutput) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceGroupManagedInstancesManagedInstanceCollection {
+		return vs[0].([]GetManagedInstanceGroupManagedInstancesManagedInstanceCollection)[vs[1].(int)]
+	}).(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionOutput)
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem struct {
+	// The version of osmh-agent running on the managed instance
+	AgentVersion string `pulumi:"agentVersion"`
+	// The CPU architecture type of the managed instance.
+	Architecture string `pulumi:"architecture"`
+	// Settings for the Autonomous Linux service.
+	AutonomousSettings []GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSetting `pulumi:"autonomousSettings"`
+	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// User-specified description of the managed instance.
+	Description string `pulumi:"description"`
+	// A filter to return resources that match the given display names.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+	Id string `pulumi:"id"`
+	// Indicates whether Autonomous Linux manages this instance.
+	IsManagedByAutonomousLinux bool `pulumi:"isManagedByAutonomousLinux"`
+	// Whether this managed instance is acting as an on-premises management station.
+	IsManagementStation bool `pulumi:"isManagementStation"`
+	// Indicates whether a reboot is required to complete installation of updates.
+	IsRebootRequired bool `pulumi:"isRebootRequired"`
+	// Id and name of a resource to simplify the display for the user.
+	LifecycleEnvironments []GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironment `pulumi:"lifecycleEnvironments"`
+	// Id and name of a resource to simplify the display for the user.
+	LifecycleStages []GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStage `pulumi:"lifecycleStages"`
+	// The location of the managed instance.
+	Location string `pulumi:"location"`
+	// Id and name of a resource to simplify the display for the user.
+	ManagedInstanceGroups []GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroup `pulumi:"managedInstanceGroups"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+	NotificationTopicId string `pulumi:"notificationTopicId"`
+	// The operating system type of the managed instance.
+	OsFamily string `pulumi:"osFamily"`
+	// Current status of the managed instance.
+	Status string `pulumi:"status"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy this managed instance resides in.
+	TenancyId string `pulumi:"tenancyId"`
+	// Time that the instance last booted (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeLastBoot string `pulumi:"timeLastBoot"`
+	// Number of updates available for installation.
+	UpdatesAvailable int `pulumi:"updatesAvailable"`
+}
+
+// GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemInput is an input type that accepts GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArgs and GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemInput` via:
+//
+//	GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArgs{...}
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput
+	ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutputWithContext(context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArgs struct {
+	// The version of osmh-agent running on the managed instance
+	AgentVersion pulumi.StringInput `pulumi:"agentVersion"`
+	// The CPU architecture type of the managed instance.
+	Architecture pulumi.StringInput `pulumi:"architecture"`
+	// Settings for the Autonomous Linux service.
+	AutonomousSettings GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayInput `pulumi:"autonomousSettings"`
+	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// User-specified description of the managed instance.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return resources that match the given display names.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates whether Autonomous Linux manages this instance.
+	IsManagedByAutonomousLinux pulumi.BoolInput `pulumi:"isManagedByAutonomousLinux"`
+	// Whether this managed instance is acting as an on-premises management station.
+	IsManagementStation pulumi.BoolInput `pulumi:"isManagementStation"`
+	// Indicates whether a reboot is required to complete installation of updates.
+	IsRebootRequired pulumi.BoolInput `pulumi:"isRebootRequired"`
+	// Id and name of a resource to simplify the display for the user.
+	LifecycleEnvironments GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayInput `pulumi:"lifecycleEnvironments"`
+	// Id and name of a resource to simplify the display for the user.
+	LifecycleStages GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayInput `pulumi:"lifecycleStages"`
+	// The location of the managed instance.
+	Location pulumi.StringInput `pulumi:"location"`
+	// Id and name of a resource to simplify the display for the user.
+	ManagedInstanceGroups GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayInput `pulumi:"managedInstanceGroups"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+	NotificationTopicId pulumi.StringInput `pulumi:"notificationTopicId"`
+	// The operating system type of the managed instance.
+	OsFamily pulumi.StringInput `pulumi:"osFamily"`
+	// Current status of the managed instance.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy this managed instance resides in.
+	TenancyId pulumi.StringInput `pulumi:"tenancyId"`
+	// Time that the instance last booted (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeLastBoot pulumi.StringInput `pulumi:"timeLastBoot"`
+	// Number of updates available for installation.
+	UpdatesAvailable pulumi.IntInput `pulumi:"updatesAvailable"`
+}
+
+func (GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArgs) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput {
+	return i.ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArgs) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput)
+}
+
+// GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayInput is an input type that accepts GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArray and GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayInput` via:
+//
+//	GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArray{ GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArgs{...} }
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayOutput
+	ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayOutputWithContext(context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayOutput
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArray []GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemInput
+
+func (GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArray) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayOutput {
+	return i.ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArray) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayOutput)
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput {
+	return o
+}
+
+// The version of osmh-agent running on the managed instance
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput) AgentVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem) string {
+		return v.AgentVersion
+	}).(pulumi.StringOutput)
+}
+
+// The CPU architecture type of the managed instance.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput) Architecture() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem) string {
+		return v.Architecture
+	}).(pulumi.StringOutput)
+}
+
+// Settings for the Autonomous Linux service.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput) AutonomousSettings() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem) []GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSetting {
+		return v.AutonomousSettings
+	}).(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput)
+}
+
+// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// User-specified description of the managed instance.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return resources that match the given display names.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates whether Autonomous Linux manages this instance.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput) IsManagedByAutonomousLinux() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem) bool {
+		return v.IsManagedByAutonomousLinux
+	}).(pulumi.BoolOutput)
+}
+
+// Whether this managed instance is acting as an on-premises management station.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput) IsManagementStation() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem) bool {
+		return v.IsManagementStation
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates whether a reboot is required to complete installation of updates.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput) IsRebootRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem) bool {
+		return v.IsRebootRequired
+	}).(pulumi.BoolOutput)
+}
+
+// Id and name of a resource to simplify the display for the user.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput) LifecycleEnvironments() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem) []GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironment {
+		return v.LifecycleEnvironments
+	}).(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput)
+}
+
+// Id and name of a resource to simplify the display for the user.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput) LifecycleStages() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem) []GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStage {
+		return v.LifecycleStages
+	}).(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput)
+}
+
+// The location of the managed instance.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput) Location() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem) string { return v.Location }).(pulumi.StringOutput)
+}
+
+// Id and name of a resource to simplify the display for the user.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput) ManagedInstanceGroups() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem) []GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroup {
+		return v.ManagedInstanceGroups
+	}).(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput) NotificationTopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem) string {
+		return v.NotificationTopicId
+	}).(pulumi.StringOutput)
+}
+
+// The operating system type of the managed instance.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput) OsFamily() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem) string { return v.OsFamily }).(pulumi.StringOutput)
+}
+
+// Current status of the managed instance.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy this managed instance resides in.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput) TenancyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem) string {
+		return v.TenancyId
+	}).(pulumi.StringOutput)
+}
+
+// Time that the instance last booted (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput) TimeLastBoot() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem) string {
+		return v.TimeLastBoot
+	}).(pulumi.StringOutput)
+}
+
+// Number of updates available for installation.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput) UpdatesAvailable() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem) int {
+		return v.UpdatesAvailable
+	}).(pulumi.IntOutput)
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayOutput) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayOutput) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem {
+		return vs[0].([]GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItem)[vs[1].(int)]
+	}).(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput)
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSetting struct {
+	// Indicates whether Autonomous Linux will collect crash files. This setting can be changed by the user.
+	IsDataCollectionAuthorized bool `pulumi:"isDataCollectionAuthorized"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
+	ScheduledJobId string `pulumi:"scheduledJobId"`
+}
+
+// GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingInput is an input type that accepts GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArgs and GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput values.
+// You can construct a concrete instance of `GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingInput` via:
+//
+//	GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArgs{...}
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput
+	ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutputWithContext(context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArgs struct {
+	// Indicates whether Autonomous Linux will collect crash files. This setting can be changed by the user.
+	IsDataCollectionAuthorized pulumi.BoolInput `pulumi:"isDataCollectionAuthorized"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
+	ScheduledJobId pulumi.StringInput `pulumi:"scheduledJobId"`
+}
+
+func (GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSetting)(nil)).Elem()
+}
+
+func (i GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArgs) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput {
+	return i.ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArgs) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput)
+}
+
+// GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayInput is an input type that accepts GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArray and GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput values.
+// You can construct a concrete instance of `GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayInput` via:
+//
+//	GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArray{ GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArgs{...} }
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput
+	ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutputWithContext(context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArray []GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingInput
+
+func (GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSetting)(nil)).Elem()
+}
+
+func (i GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArray) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput {
+	return i.ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArray) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput)
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSetting)(nil)).Elem()
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput {
+	return o
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput {
+	return o
+}
+
+// Indicates whether Autonomous Linux will collect crash files. This setting can be changed by the user.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput) IsDataCollectionAuthorized() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSetting) bool {
+		return v.IsDataCollectionAuthorized
+	}).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput) ScheduledJobId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSetting) string {
+		return v.ScheduledJobId
+	}).(pulumi.StringOutput)
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSetting)(nil)).Elem()
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSetting {
+		return vs[0].([]GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSetting)[vs[1].(int)]
+	}).(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput)
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironment struct {
+	// A filter to return resources that match the given display names.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+	Id string `pulumi:"id"`
+}
+
+// GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentInput is an input type that accepts GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArgs and GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput values.
+// You can construct a concrete instance of `GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentInput` via:
+//
+//	GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArgs{...}
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput
+	ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutputWithContext(context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArgs struct {
+	// A filter to return resources that match the given display names.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironment)(nil)).Elem()
+}
+
+func (i GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArgs) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput {
+	return i.ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArgs) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput)
+}
+
+// GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayInput is an input type that accepts GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArray and GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput values.
+// You can construct a concrete instance of `GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayInput` via:
+//
+//	GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArray{ GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArgs{...} }
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput
+	ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutputWithContext(context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArray []GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentInput
+
+func (GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironment)(nil)).Elem()
+}
+
+func (i GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArray) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput {
+	return i.ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArray) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput)
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironment)(nil)).Elem()
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput {
+	return o
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput {
+	return o
+}
+
+// A filter to return resources that match the given display names.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironment) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironment) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironment)(nil)).Elem()
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironment {
+		return vs[0].([]GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironment)[vs[1].(int)]
+	}).(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput)
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStage struct {
+	// A filter to return resources that match the given display names.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+	Id string `pulumi:"id"`
+}
+
+// GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageInput is an input type that accepts GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArgs and GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput values.
+// You can construct a concrete instance of `GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageInput` via:
+//
+//	GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArgs{...}
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput
+	ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageOutputWithContext(context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArgs struct {
+	// A filter to return resources that match the given display names.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStage)(nil)).Elem()
+}
+
+func (i GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArgs) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput {
+	return i.ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArgs) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput)
+}
+
+// GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayInput is an input type that accepts GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArray and GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput values.
+// You can construct a concrete instance of `GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayInput` via:
+//
+//	GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArray{ GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArgs{...} }
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput
+	ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutputWithContext(context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArray []GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageInput
+
+func (GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStage)(nil)).Elem()
+}
+
+func (i GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArray) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput {
+	return i.ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArray) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput)
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStage)(nil)).Elem()
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput {
+	return o
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput {
+	return o
+}
+
+// A filter to return resources that match the given display names.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStage) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStage) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStage)(nil)).Elem()
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStage {
+		return vs[0].([]GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStage)[vs[1].(int)]
+	}).(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput)
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroup struct {
+	// A filter to return resources that match the given display names.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+	Id string `pulumi:"id"`
+}
+
+// GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupInput is an input type that accepts GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArgs and GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput values.
+// You can construct a concrete instance of `GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupInput` via:
+//
+//	GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArgs{...}
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput
+	ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutputWithContext(context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArgs struct {
+	// A filter to return resources that match the given display names.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroup)(nil)).Elem()
+}
+
+func (i GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArgs) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput {
+	return i.ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArgs) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput)
+}
+
+// GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayInput is an input type that accepts GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArray and GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput values.
+// You can construct a concrete instance of `GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayInput` via:
+//
+//	GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArray{ GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArgs{...} }
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput
+	ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutputWithContext(context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArray []GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupInput
+
+func (GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroup)(nil)).Elem()
+}
+
+func (i GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArray) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput {
+	return i.ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArray) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput)
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroup)(nil)).Elem()
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput {
+	return o
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput {
+	return o
+}
+
+// A filter to return resources that match the given display names.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroup) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroup) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+type GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroup)(nil)).Elem()
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput() GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput) ToGetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroup {
+		return vs[0].([]GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroup)[vs[1].(int)]
+	}).(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput)
 }
 
 type GetManagedInstanceGroupModulesFilter struct {
@@ -20928,6 +27775,374 @@ func (o GetManagedInstanceModulesManagedInstanceModuleCollectionItemArrayOutput)
 	}).(GetManagedInstanceModulesManagedInstanceModuleCollectionItemOutput)
 }
 
+type GetManagedInstanceSnapsFilter struct {
+	// The resource name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedInstanceSnapsFilterInput is an input type that accepts GetManagedInstanceSnapsFilterArgs and GetManagedInstanceSnapsFilterOutput values.
+// You can construct a concrete instance of `GetManagedInstanceSnapsFilterInput` via:
+//
+//	GetManagedInstanceSnapsFilterArgs{...}
+type GetManagedInstanceSnapsFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceSnapsFilterOutput() GetManagedInstanceSnapsFilterOutput
+	ToGetManagedInstanceSnapsFilterOutputWithContext(context.Context) GetManagedInstanceSnapsFilterOutput
+}
+
+type GetManagedInstanceSnapsFilterArgs struct {
+	// The resource name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedInstanceSnapsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceSnapsFilter)(nil)).Elem()
+}
+
+func (i GetManagedInstanceSnapsFilterArgs) ToGetManagedInstanceSnapsFilterOutput() GetManagedInstanceSnapsFilterOutput {
+	return i.ToGetManagedInstanceSnapsFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceSnapsFilterArgs) ToGetManagedInstanceSnapsFilterOutputWithContext(ctx context.Context) GetManagedInstanceSnapsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceSnapsFilterOutput)
+}
+
+// GetManagedInstanceSnapsFilterArrayInput is an input type that accepts GetManagedInstanceSnapsFilterArray and GetManagedInstanceSnapsFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedInstanceSnapsFilterArrayInput` via:
+//
+//	GetManagedInstanceSnapsFilterArray{ GetManagedInstanceSnapsFilterArgs{...} }
+type GetManagedInstanceSnapsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceSnapsFilterArrayOutput() GetManagedInstanceSnapsFilterArrayOutput
+	ToGetManagedInstanceSnapsFilterArrayOutputWithContext(context.Context) GetManagedInstanceSnapsFilterArrayOutput
+}
+
+type GetManagedInstanceSnapsFilterArray []GetManagedInstanceSnapsFilterInput
+
+func (GetManagedInstanceSnapsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceSnapsFilter)(nil)).Elem()
+}
+
+func (i GetManagedInstanceSnapsFilterArray) ToGetManagedInstanceSnapsFilterArrayOutput() GetManagedInstanceSnapsFilterArrayOutput {
+	return i.ToGetManagedInstanceSnapsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceSnapsFilterArray) ToGetManagedInstanceSnapsFilterArrayOutputWithContext(ctx context.Context) GetManagedInstanceSnapsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceSnapsFilterArrayOutput)
+}
+
+type GetManagedInstanceSnapsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceSnapsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceSnapsFilter)(nil)).Elem()
+}
+
+func (o GetManagedInstanceSnapsFilterOutput) ToGetManagedInstanceSnapsFilterOutput() GetManagedInstanceSnapsFilterOutput {
+	return o
+}
+
+func (o GetManagedInstanceSnapsFilterOutput) ToGetManagedInstanceSnapsFilterOutputWithContext(ctx context.Context) GetManagedInstanceSnapsFilterOutput {
+	return o
+}
+
+// The resource name.
+func (o GetManagedInstanceSnapsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceSnapsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedInstanceSnapsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceSnapsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedInstanceSnapsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedInstanceSnapsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedInstanceSnapsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceSnapsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceSnapsFilter)(nil)).Elem()
+}
+
+func (o GetManagedInstanceSnapsFilterArrayOutput) ToGetManagedInstanceSnapsFilterArrayOutput() GetManagedInstanceSnapsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceSnapsFilterArrayOutput) ToGetManagedInstanceSnapsFilterArrayOutputWithContext(ctx context.Context) GetManagedInstanceSnapsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceSnapsFilterArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceSnapsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceSnapsFilter {
+		return vs[0].([]GetManagedInstanceSnapsFilter)[vs[1].(int)]
+	}).(GetManagedInstanceSnapsFilterOutput)
+}
+
+type GetManagedInstanceSnapsSnapCollection struct {
+	// The list of snaps.
+	Items []GetManagedInstanceSnapsSnapCollectionItem `pulumi:"items"`
+}
+
+// GetManagedInstanceSnapsSnapCollectionInput is an input type that accepts GetManagedInstanceSnapsSnapCollectionArgs and GetManagedInstanceSnapsSnapCollectionOutput values.
+// You can construct a concrete instance of `GetManagedInstanceSnapsSnapCollectionInput` via:
+//
+//	GetManagedInstanceSnapsSnapCollectionArgs{...}
+type GetManagedInstanceSnapsSnapCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceSnapsSnapCollectionOutput() GetManagedInstanceSnapsSnapCollectionOutput
+	ToGetManagedInstanceSnapsSnapCollectionOutputWithContext(context.Context) GetManagedInstanceSnapsSnapCollectionOutput
+}
+
+type GetManagedInstanceSnapsSnapCollectionArgs struct {
+	// The list of snaps.
+	Items GetManagedInstanceSnapsSnapCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedInstanceSnapsSnapCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceSnapsSnapCollection)(nil)).Elem()
+}
+
+func (i GetManagedInstanceSnapsSnapCollectionArgs) ToGetManagedInstanceSnapsSnapCollectionOutput() GetManagedInstanceSnapsSnapCollectionOutput {
+	return i.ToGetManagedInstanceSnapsSnapCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceSnapsSnapCollectionArgs) ToGetManagedInstanceSnapsSnapCollectionOutputWithContext(ctx context.Context) GetManagedInstanceSnapsSnapCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceSnapsSnapCollectionOutput)
+}
+
+// GetManagedInstanceSnapsSnapCollectionArrayInput is an input type that accepts GetManagedInstanceSnapsSnapCollectionArray and GetManagedInstanceSnapsSnapCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedInstanceSnapsSnapCollectionArrayInput` via:
+//
+//	GetManagedInstanceSnapsSnapCollectionArray{ GetManagedInstanceSnapsSnapCollectionArgs{...} }
+type GetManagedInstanceSnapsSnapCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceSnapsSnapCollectionArrayOutput() GetManagedInstanceSnapsSnapCollectionArrayOutput
+	ToGetManagedInstanceSnapsSnapCollectionArrayOutputWithContext(context.Context) GetManagedInstanceSnapsSnapCollectionArrayOutput
+}
+
+type GetManagedInstanceSnapsSnapCollectionArray []GetManagedInstanceSnapsSnapCollectionInput
+
+func (GetManagedInstanceSnapsSnapCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceSnapsSnapCollection)(nil)).Elem()
+}
+
+func (i GetManagedInstanceSnapsSnapCollectionArray) ToGetManagedInstanceSnapsSnapCollectionArrayOutput() GetManagedInstanceSnapsSnapCollectionArrayOutput {
+	return i.ToGetManagedInstanceSnapsSnapCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceSnapsSnapCollectionArray) ToGetManagedInstanceSnapsSnapCollectionArrayOutputWithContext(ctx context.Context) GetManagedInstanceSnapsSnapCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceSnapsSnapCollectionArrayOutput)
+}
+
+type GetManagedInstanceSnapsSnapCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceSnapsSnapCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceSnapsSnapCollection)(nil)).Elem()
+}
+
+func (o GetManagedInstanceSnapsSnapCollectionOutput) ToGetManagedInstanceSnapsSnapCollectionOutput() GetManagedInstanceSnapsSnapCollectionOutput {
+	return o
+}
+
+func (o GetManagedInstanceSnapsSnapCollectionOutput) ToGetManagedInstanceSnapsSnapCollectionOutputWithContext(ctx context.Context) GetManagedInstanceSnapsSnapCollectionOutput {
+	return o
+}
+
+// The list of snaps.
+func (o GetManagedInstanceSnapsSnapCollectionOutput) Items() GetManagedInstanceSnapsSnapCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedInstanceSnapsSnapCollection) []GetManagedInstanceSnapsSnapCollectionItem {
+		return v.Items
+	}).(GetManagedInstanceSnapsSnapCollectionItemArrayOutput)
+}
+
+type GetManagedInstanceSnapsSnapCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceSnapsSnapCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceSnapsSnapCollection)(nil)).Elem()
+}
+
+func (o GetManagedInstanceSnapsSnapCollectionArrayOutput) ToGetManagedInstanceSnapsSnapCollectionArrayOutput() GetManagedInstanceSnapsSnapCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceSnapsSnapCollectionArrayOutput) ToGetManagedInstanceSnapsSnapCollectionArrayOutputWithContext(ctx context.Context) GetManagedInstanceSnapsSnapCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceSnapsSnapCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceSnapsSnapCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceSnapsSnapCollection {
+		return vs[0].([]GetManagedInstanceSnapsSnapCollection)[vs[1].(int)]
+	}).(GetManagedInstanceSnapsSnapCollectionOutput)
+}
+
+type GetManagedInstanceSnapsSnapCollectionItem struct {
+	// The description of of snap.
+	Description string `pulumi:"description"`
+	// The resource name.
+	Name string `pulumi:"name"`
+	// The publisher of the snap.
+	Publisher string `pulumi:"publisher"`
+	// The revision number of the snap channel.
+	Revision string `pulumi:"revision"`
+	// The snap's store url.
+	StoreUrl string `pulumi:"storeUrl"`
+	// The date and time of the snap's last refresh in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format.
+	TimeRefreshed string `pulumi:"timeRefreshed"`
+	// The track this snap is following.
+	Tracking string `pulumi:"tracking"`
+	// The version of the snap.
+	Version string `pulumi:"version"`
+}
+
+// GetManagedInstanceSnapsSnapCollectionItemInput is an input type that accepts GetManagedInstanceSnapsSnapCollectionItemArgs and GetManagedInstanceSnapsSnapCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedInstanceSnapsSnapCollectionItemInput` via:
+//
+//	GetManagedInstanceSnapsSnapCollectionItemArgs{...}
+type GetManagedInstanceSnapsSnapCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceSnapsSnapCollectionItemOutput() GetManagedInstanceSnapsSnapCollectionItemOutput
+	ToGetManagedInstanceSnapsSnapCollectionItemOutputWithContext(context.Context) GetManagedInstanceSnapsSnapCollectionItemOutput
+}
+
+type GetManagedInstanceSnapsSnapCollectionItemArgs struct {
+	// The description of of snap.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The resource name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The publisher of the snap.
+	Publisher pulumi.StringInput `pulumi:"publisher"`
+	// The revision number of the snap channel.
+	Revision pulumi.StringInput `pulumi:"revision"`
+	// The snap's store url.
+	StoreUrl pulumi.StringInput `pulumi:"storeUrl"`
+	// The date and time of the snap's last refresh in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format.
+	TimeRefreshed pulumi.StringInput `pulumi:"timeRefreshed"`
+	// The track this snap is following.
+	Tracking pulumi.StringInput `pulumi:"tracking"`
+	// The version of the snap.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetManagedInstanceSnapsSnapCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceSnapsSnapCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedInstanceSnapsSnapCollectionItemArgs) ToGetManagedInstanceSnapsSnapCollectionItemOutput() GetManagedInstanceSnapsSnapCollectionItemOutput {
+	return i.ToGetManagedInstanceSnapsSnapCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceSnapsSnapCollectionItemArgs) ToGetManagedInstanceSnapsSnapCollectionItemOutputWithContext(ctx context.Context) GetManagedInstanceSnapsSnapCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceSnapsSnapCollectionItemOutput)
+}
+
+// GetManagedInstanceSnapsSnapCollectionItemArrayInput is an input type that accepts GetManagedInstanceSnapsSnapCollectionItemArray and GetManagedInstanceSnapsSnapCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedInstanceSnapsSnapCollectionItemArrayInput` via:
+//
+//	GetManagedInstanceSnapsSnapCollectionItemArray{ GetManagedInstanceSnapsSnapCollectionItemArgs{...} }
+type GetManagedInstanceSnapsSnapCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceSnapsSnapCollectionItemArrayOutput() GetManagedInstanceSnapsSnapCollectionItemArrayOutput
+	ToGetManagedInstanceSnapsSnapCollectionItemArrayOutputWithContext(context.Context) GetManagedInstanceSnapsSnapCollectionItemArrayOutput
+}
+
+type GetManagedInstanceSnapsSnapCollectionItemArray []GetManagedInstanceSnapsSnapCollectionItemInput
+
+func (GetManagedInstanceSnapsSnapCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceSnapsSnapCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedInstanceSnapsSnapCollectionItemArray) ToGetManagedInstanceSnapsSnapCollectionItemArrayOutput() GetManagedInstanceSnapsSnapCollectionItemArrayOutput {
+	return i.ToGetManagedInstanceSnapsSnapCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceSnapsSnapCollectionItemArray) ToGetManagedInstanceSnapsSnapCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedInstanceSnapsSnapCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceSnapsSnapCollectionItemArrayOutput)
+}
+
+type GetManagedInstanceSnapsSnapCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceSnapsSnapCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceSnapsSnapCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedInstanceSnapsSnapCollectionItemOutput) ToGetManagedInstanceSnapsSnapCollectionItemOutput() GetManagedInstanceSnapsSnapCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedInstanceSnapsSnapCollectionItemOutput) ToGetManagedInstanceSnapsSnapCollectionItemOutputWithContext(ctx context.Context) GetManagedInstanceSnapsSnapCollectionItemOutput {
+	return o
+}
+
+// The description of of snap.
+func (o GetManagedInstanceSnapsSnapCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceSnapsSnapCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The resource name.
+func (o GetManagedInstanceSnapsSnapCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceSnapsSnapCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The publisher of the snap.
+func (o GetManagedInstanceSnapsSnapCollectionItemOutput) Publisher() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceSnapsSnapCollectionItem) string { return v.Publisher }).(pulumi.StringOutput)
+}
+
+// The revision number of the snap channel.
+func (o GetManagedInstanceSnapsSnapCollectionItemOutput) Revision() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceSnapsSnapCollectionItem) string { return v.Revision }).(pulumi.StringOutput)
+}
+
+// The snap's store url.
+func (o GetManagedInstanceSnapsSnapCollectionItemOutput) StoreUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceSnapsSnapCollectionItem) string { return v.StoreUrl }).(pulumi.StringOutput)
+}
+
+// The date and time of the snap's last refresh in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format.
+func (o GetManagedInstanceSnapsSnapCollectionItemOutput) TimeRefreshed() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceSnapsSnapCollectionItem) string { return v.TimeRefreshed }).(pulumi.StringOutput)
+}
+
+// The track this snap is following.
+func (o GetManagedInstanceSnapsSnapCollectionItemOutput) Tracking() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceSnapsSnapCollectionItem) string { return v.Tracking }).(pulumi.StringOutput)
+}
+
+// The version of the snap.
+func (o GetManagedInstanceSnapsSnapCollectionItemOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceSnapsSnapCollectionItem) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetManagedInstanceSnapsSnapCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceSnapsSnapCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceSnapsSnapCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedInstanceSnapsSnapCollectionItemArrayOutput) ToGetManagedInstanceSnapsSnapCollectionItemArrayOutput() GetManagedInstanceSnapsSnapCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceSnapsSnapCollectionItemArrayOutput) ToGetManagedInstanceSnapsSnapCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedInstanceSnapsSnapCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceSnapsSnapCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceSnapsSnapCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceSnapsSnapCollectionItem {
+		return vs[0].([]GetManagedInstanceSnapsSnapCollectionItem)[vs[1].(int)]
+	}).(GetManagedInstanceSnapsSnapCollectionItemOutput)
+}
+
 type GetManagedInstanceSoftwareSource struct {
 	// Software source description.
 	Description string `pulumi:"description"`
@@ -21270,6 +28485,8 @@ func (o GetManagedInstanceUpdatablePackagesUpdatablePackageCollectionArrayOutput
 }
 
 type GetManagedInstanceUpdatablePackagesUpdatablePackageCollectionItem struct {
+	// The advisory severity.
+	AdvisorySeverity string `pulumi:"advisorySeverity"`
 	// The architecture for which this package was built.
 	Architecture string `pulumi:"architecture"`
 	// A filter to return resources that match the given display names.
@@ -21306,6 +28523,8 @@ type GetManagedInstanceUpdatablePackagesUpdatablePackageCollectionItemInput inte
 }
 
 type GetManagedInstanceUpdatablePackagesUpdatablePackageCollectionItemArgs struct {
+	// The advisory severity.
+	AdvisorySeverity pulumi.StringInput `pulumi:"advisorySeverity"`
 	// The architecture for which this package was built.
 	Architecture pulumi.StringInput `pulumi:"architecture"`
 	// A filter to return resources that match the given display names.
@@ -21379,6 +28598,13 @@ func (o GetManagedInstanceUpdatablePackagesUpdatablePackageCollectionItemOutput)
 
 func (o GetManagedInstanceUpdatablePackagesUpdatablePackageCollectionItemOutput) ToGetManagedInstanceUpdatablePackagesUpdatablePackageCollectionItemOutputWithContext(ctx context.Context) GetManagedInstanceUpdatablePackagesUpdatablePackageCollectionItemOutput {
 	return o
+}
+
+// The advisory severity.
+func (o GetManagedInstanceUpdatablePackagesUpdatablePackageCollectionItemOutput) AdvisorySeverity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceUpdatablePackagesUpdatablePackageCollectionItem) string {
+		return v.AdvisorySeverity
+	}).(pulumi.StringOutput)
 }
 
 // The architecture for which this package was built.
@@ -21816,6 +29042,8 @@ type GetManagedInstancesManagedInstanceCollectionItem struct {
 	AgentVersion string `pulumi:"agentVersion"`
 	// The CPU architecture type of the managed instance.
 	Architecture string `pulumi:"architecture"`
+	// Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+	AreSourcesManaged bool `pulumi:"areSourcesManaged"`
 	// Settings for the Autonomous Linux service.
 	AutonomousSettings []GetManagedInstancesManagedInstanceCollectionItemAutonomousSetting `pulumi:"autonomousSettings"`
 	// Number of bug fix type updates available for installation.
@@ -21888,6 +29116,8 @@ type GetManagedInstancesManagedInstanceCollectionItem struct {
 	TimeLastBoot string `pulumi:"timeLastBoot"`
 	// Time that the instance last checked in with the service (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeLastCheckin string `pulumi:"timeLastCheckin"`
+	// The date and time the instance's software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeLastSoftwareRefresh string `pulumi:"timeLastSoftwareRefresh"`
 	// The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// Number of updates available for installation.
@@ -21912,6 +29142,8 @@ type GetManagedInstancesManagedInstanceCollectionItemArgs struct {
 	AgentVersion pulumi.StringInput `pulumi:"agentVersion"`
 	// The CPU architecture type of the managed instance.
 	Architecture pulumi.StringInput `pulumi:"architecture"`
+	// Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+	AreSourcesManaged pulumi.BoolInput `pulumi:"areSourcesManaged"`
 	// Settings for the Autonomous Linux service.
 	AutonomousSettings GetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayInput `pulumi:"autonomousSettings"`
 	// Number of bug fix type updates available for installation.
@@ -21984,6 +29216,8 @@ type GetManagedInstancesManagedInstanceCollectionItemArgs struct {
 	TimeLastBoot pulumi.StringInput `pulumi:"timeLastBoot"`
 	// Time that the instance last checked in with the service (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeLastCheckin pulumi.StringInput `pulumi:"timeLastCheckin"`
+	// The date and time the instance's software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeLastSoftwareRefresh pulumi.StringInput `pulumi:"timeLastSoftwareRefresh"`
 	// The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// Number of updates available for installation.
@@ -22051,6 +29285,11 @@ func (o GetManagedInstancesManagedInstanceCollectionItemOutput) AgentVersion() p
 // The CPU architecture type of the managed instance.
 func (o GetManagedInstancesManagedInstanceCollectionItemOutput) Architecture() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedInstancesManagedInstanceCollectionItem) string { return v.Architecture }).(pulumi.StringOutput)
+}
+
+// Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+func (o GetManagedInstancesManagedInstanceCollectionItemOutput) AreSourcesManaged() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstanceCollectionItem) bool { return v.AreSourcesManaged }).(pulumi.BoolOutput)
 }
 
 // Settings for the Autonomous Linux service.
@@ -22243,6 +29482,11 @@ func (o GetManagedInstancesManagedInstanceCollectionItemOutput) TimeLastBoot() p
 // Time that the instance last checked in with the service (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 func (o GetManagedInstancesManagedInstanceCollectionItemOutput) TimeLastCheckin() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedInstancesManagedInstanceCollectionItem) string { return v.TimeLastCheckin }).(pulumi.StringOutput)
+}
+
+// The date and time the instance's software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+func (o GetManagedInstancesManagedInstanceCollectionItemOutput) TimeLastSoftwareRefresh() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstanceCollectionItem) string { return v.TimeLastSoftwareRefresh }).(pulumi.StringOutput)
 }
 
 // The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
@@ -24046,6 +31290,8 @@ func (o GetManagementStationsManagementStationCollectionArrayOutput) Index(i pul
 }
 
 type GetManagementStationsManagementStationCollectionItem struct {
+	// The architecture type.
+	ArchType string `pulumi:"archType"`
 	// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -24056,7 +31302,8 @@ type GetManagementStationsManagementStationCollectionItem struct {
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	HealthState  string            `pulumi:"healthState"`
+	// A filter that returns information for management stations in the specified health state.
+	HealthState string `pulumi:"healthState"`
 	// Hostname of the management station.
 	Hostname string `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
@@ -24067,6 +31314,8 @@ type GetManagementStationsManagementStationCollectionItem struct {
 	ManagedInstanceId string `pulumi:"managedInstanceId"`
 	// A decimal number representing the amount of mirror capacity used by the sync.
 	MirrorCapacity int `pulumi:"mirrorCapacity"`
+	// The operating system family.
+	OsFamily string `pulumi:"osFamily"`
 	// A decimal number representing the progress of the current mirror sync.
 	OverallPercentage int `pulumi:"overallPercentage"`
 	// Current state of the mirror sync for the management station.
@@ -24094,6 +31343,8 @@ type GetManagementStationsManagementStationCollectionItemInput interface {
 }
 
 type GetManagementStationsManagementStationCollectionItemArgs struct {
+	// The architecture type.
+	ArchType pulumi.StringInput `pulumi:"archType"`
 	// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -24104,7 +31355,8 @@ type GetManagementStationsManagementStationCollectionItemArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	HealthState  pulumi.StringInput    `pulumi:"healthState"`
+	// A filter that returns information for management stations in the specified health state.
+	HealthState pulumi.StringInput `pulumi:"healthState"`
 	// Hostname of the management station.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
@@ -24115,6 +31367,8 @@ type GetManagementStationsManagementStationCollectionItemArgs struct {
 	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
 	// A decimal number representing the amount of mirror capacity used by the sync.
 	MirrorCapacity pulumi.IntInput `pulumi:"mirrorCapacity"`
+	// The operating system family.
+	OsFamily pulumi.StringInput `pulumi:"osFamily"`
 	// A decimal number representing the progress of the current mirror sync.
 	OverallPercentage pulumi.IntInput `pulumi:"overallPercentage"`
 	// Current state of the mirror sync for the management station.
@@ -24181,6 +31435,11 @@ func (o GetManagementStationsManagementStationCollectionItemOutput) ToGetManagem
 	return o
 }
 
+// The architecture type.
+func (o GetManagementStationsManagementStationCollectionItemOutput) ArchType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) string { return v.ArchType }).(pulumi.StringOutput)
+}
+
 // (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 func (o GetManagementStationsManagementStationCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -24206,6 +31465,7 @@ func (o GetManagementStationsManagementStationCollectionItemOutput) FreeformTags
 	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
+// A filter that returns information for management stations in the specified health state.
 func (o GetManagementStationsManagementStationCollectionItemOutput) HealthState() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) string { return v.HealthState }).(pulumi.StringOutput)
 }
@@ -24233,6 +31493,11 @@ func (o GetManagementStationsManagementStationCollectionItemOutput) ManagedInsta
 // A decimal number representing the amount of mirror capacity used by the sync.
 func (o GetManagementStationsManagementStationCollectionItemOutput) MirrorCapacity() pulumi.IntOutput {
 	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) int { return v.MirrorCapacity }).(pulumi.IntOutput)
+}
+
+// The operating system family.
+func (o GetManagementStationsManagementStationCollectionItemOutput) OsFamily() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) string { return v.OsFamily }).(pulumi.StringOutput)
 }
 
 // A decimal number representing the progress of the current mirror sync.
@@ -24391,10 +31656,14 @@ func (o GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArray
 type GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem struct {
 	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId string `pulumi:"compartmentId"`
+	// Software source description.
+	Description string `pulumi:"description"`
 	// A filter to return resources that match the given display names.
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id string `pulumi:"id"`
+	// Type of the software source.
+	SoftwareSourceType string `pulumi:"softwareSourceType"`
 }
 
 // GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemInput is an input type that accepts GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs and GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput values.
@@ -24411,10 +31680,14 @@ type GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemInpu
 type GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs struct {
 	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Software source description.
+	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return resources that match the given display names.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Type of the software source.
+	SoftwareSourceType pulumi.StringInput `pulumi:"softwareSourceType"`
 }
 
 func (GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs) ElementType() reflect.Type {
@@ -24475,6 +31748,13 @@ func (o GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemO
 	}).(pulumi.StringOutput)
 }
 
+// Software source description.
+func (o GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
 // A filter to return resources that match the given display names.
 func (o GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem) string {
@@ -24485,6 +31765,13 @@ func (o GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemO
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 func (o GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Type of the software source.
+func (o GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) SoftwareSourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem) string {
+		return v.SoftwareSourceType
+	}).(pulumi.StringOutput)
 }
 
 type GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -26488,6 +33775,8 @@ func (o GetProfilesProfileCollectionItemSoftwareSourceArrayOutput) Index(i pulum
 }
 
 type GetScheduledJobOperation struct {
+	// Provides the information used to install a snap.
+	InstallSnapDetails []GetScheduledJobOperationInstallSnapDetail `pulumi:"installSnapDetails"`
 	// The set of changes to make to the state of the modules, streams, and profiles on the managed target.
 	ManageModuleStreamsDetails []GetScheduledJobOperationManageModuleStreamsDetail `pulumi:"manageModuleStreamsDetails"`
 	// The type of operation this scheduled job performs.
@@ -26496,10 +33785,14 @@ type GetScheduledJobOperation struct {
 	PackageNames []string `pulumi:"packageNames"`
 	// The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
 	RebootTimeoutInMins int `pulumi:"rebootTimeoutInMins"`
+	// Provides the information used to remove a snap.
+	RemoveSnapDetails []GetScheduledJobOperationRemoveSnapDetail `pulumi:"removeSnapDetails"`
 	// The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
 	SoftwareSourceIds []string `pulumi:"softwareSourceIds"`
 	// Provides the information used to update a module stream.
 	SwitchModuleStreamsDetails []GetScheduledJobOperationSwitchModuleStreamsDetail `pulumi:"switchModuleStreamsDetails"`
+	// Provides the information used to switch a snap channel.
+	SwitchSnapChannelDetails []GetScheduledJobOperationSwitchSnapChannelDetail `pulumi:"switchSnapChannelDetails"`
 	// Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
 	WindowsUpdateNames []string `pulumi:"windowsUpdateNames"`
 }
@@ -26516,6 +33809,8 @@ type GetScheduledJobOperationInput interface {
 }
 
 type GetScheduledJobOperationArgs struct {
+	// Provides the information used to install a snap.
+	InstallSnapDetails GetScheduledJobOperationInstallSnapDetailArrayInput `pulumi:"installSnapDetails"`
 	// The set of changes to make to the state of the modules, streams, and profiles on the managed target.
 	ManageModuleStreamsDetails GetScheduledJobOperationManageModuleStreamsDetailArrayInput `pulumi:"manageModuleStreamsDetails"`
 	// The type of operation this scheduled job performs.
@@ -26524,10 +33819,14 @@ type GetScheduledJobOperationArgs struct {
 	PackageNames pulumi.StringArrayInput `pulumi:"packageNames"`
 	// The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
 	RebootTimeoutInMins pulumi.IntInput `pulumi:"rebootTimeoutInMins"`
+	// Provides the information used to remove a snap.
+	RemoveSnapDetails GetScheduledJobOperationRemoveSnapDetailArrayInput `pulumi:"removeSnapDetails"`
 	// The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
 	SoftwareSourceIds pulumi.StringArrayInput `pulumi:"softwareSourceIds"`
 	// Provides the information used to update a module stream.
 	SwitchModuleStreamsDetails GetScheduledJobOperationSwitchModuleStreamsDetailArrayInput `pulumi:"switchModuleStreamsDetails"`
+	// Provides the information used to switch a snap channel.
+	SwitchSnapChannelDetails GetScheduledJobOperationSwitchSnapChannelDetailArrayInput `pulumi:"switchSnapChannelDetails"`
 	// Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
 	WindowsUpdateNames pulumi.StringArrayInput `pulumi:"windowsUpdateNames"`
 }
@@ -26583,6 +33882,13 @@ func (o GetScheduledJobOperationOutput) ToGetScheduledJobOperationOutputWithCont
 	return o
 }
 
+// Provides the information used to install a snap.
+func (o GetScheduledJobOperationOutput) InstallSnapDetails() GetScheduledJobOperationInstallSnapDetailArrayOutput {
+	return o.ApplyT(func(v GetScheduledJobOperation) []GetScheduledJobOperationInstallSnapDetail {
+		return v.InstallSnapDetails
+	}).(GetScheduledJobOperationInstallSnapDetailArrayOutput)
+}
+
 // The set of changes to make to the state of the modules, streams, and profiles on the managed target.
 func (o GetScheduledJobOperationOutput) ManageModuleStreamsDetails() GetScheduledJobOperationManageModuleStreamsDetailArrayOutput {
 	return o.ApplyT(func(v GetScheduledJobOperation) []GetScheduledJobOperationManageModuleStreamsDetail {
@@ -26605,6 +33911,13 @@ func (o GetScheduledJobOperationOutput) RebootTimeoutInMins() pulumi.IntOutput {
 	return o.ApplyT(func(v GetScheduledJobOperation) int { return v.RebootTimeoutInMins }).(pulumi.IntOutput)
 }
 
+// Provides the information used to remove a snap.
+func (o GetScheduledJobOperationOutput) RemoveSnapDetails() GetScheduledJobOperationRemoveSnapDetailArrayOutput {
+	return o.ApplyT(func(v GetScheduledJobOperation) []GetScheduledJobOperationRemoveSnapDetail {
+		return v.RemoveSnapDetails
+	}).(GetScheduledJobOperationRemoveSnapDetailArrayOutput)
+}
+
 // The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
 func (o GetScheduledJobOperationOutput) SoftwareSourceIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetScheduledJobOperation) []string { return v.SoftwareSourceIds }).(pulumi.StringArrayOutput)
@@ -26615,6 +33928,13 @@ func (o GetScheduledJobOperationOutput) SwitchModuleStreamsDetails() GetSchedule
 	return o.ApplyT(func(v GetScheduledJobOperation) []GetScheduledJobOperationSwitchModuleStreamsDetail {
 		return v.SwitchModuleStreamsDetails
 	}).(GetScheduledJobOperationSwitchModuleStreamsDetailArrayOutput)
+}
+
+// Provides the information used to switch a snap channel.
+func (o GetScheduledJobOperationOutput) SwitchSnapChannelDetails() GetScheduledJobOperationSwitchSnapChannelDetailArrayOutput {
+	return o.ApplyT(func(v GetScheduledJobOperation) []GetScheduledJobOperationSwitchSnapChannelDetail {
+		return v.SwitchSnapChannelDetails
+	}).(GetScheduledJobOperationSwitchSnapChannelDetailArrayOutput)
 }
 
 // Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
@@ -26640,6 +33960,139 @@ func (o GetScheduledJobOperationArrayOutput) Index(i pulumi.IntInput) GetSchedul
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledJobOperation {
 		return vs[0].([]GetScheduledJobOperation)[vs[1].(int)]
 	}).(GetScheduledJobOperationOutput)
+}
+
+type GetScheduledJobOperationInstallSnapDetail struct {
+	// The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+	Channel string `pulumi:"channel"`
+	// If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+	IsSigned bool `pulumi:"isSigned"`
+	// The confinement mode for the snap.
+	Mode string `pulumi:"mode"`
+	// The name of the snap.
+	Name string `pulumi:"name"`
+	// The revision to remove. Note: This option cannot be used when removing multiple snaps.
+	Revision string `pulumi:"revision"`
+}
+
+// GetScheduledJobOperationInstallSnapDetailInput is an input type that accepts GetScheduledJobOperationInstallSnapDetailArgs and GetScheduledJobOperationInstallSnapDetailOutput values.
+// You can construct a concrete instance of `GetScheduledJobOperationInstallSnapDetailInput` via:
+//
+//	GetScheduledJobOperationInstallSnapDetailArgs{...}
+type GetScheduledJobOperationInstallSnapDetailInput interface {
+	pulumi.Input
+
+	ToGetScheduledJobOperationInstallSnapDetailOutput() GetScheduledJobOperationInstallSnapDetailOutput
+	ToGetScheduledJobOperationInstallSnapDetailOutputWithContext(context.Context) GetScheduledJobOperationInstallSnapDetailOutput
+}
+
+type GetScheduledJobOperationInstallSnapDetailArgs struct {
+	// The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+	Channel pulumi.StringInput `pulumi:"channel"`
+	// If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+	IsSigned pulumi.BoolInput `pulumi:"isSigned"`
+	// The confinement mode for the snap.
+	Mode pulumi.StringInput `pulumi:"mode"`
+	// The name of the snap.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The revision to remove. Note: This option cannot be used when removing multiple snaps.
+	Revision pulumi.StringInput `pulumi:"revision"`
+}
+
+func (GetScheduledJobOperationInstallSnapDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledJobOperationInstallSnapDetail)(nil)).Elem()
+}
+
+func (i GetScheduledJobOperationInstallSnapDetailArgs) ToGetScheduledJobOperationInstallSnapDetailOutput() GetScheduledJobOperationInstallSnapDetailOutput {
+	return i.ToGetScheduledJobOperationInstallSnapDetailOutputWithContext(context.Background())
+}
+
+func (i GetScheduledJobOperationInstallSnapDetailArgs) ToGetScheduledJobOperationInstallSnapDetailOutputWithContext(ctx context.Context) GetScheduledJobOperationInstallSnapDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledJobOperationInstallSnapDetailOutput)
+}
+
+// GetScheduledJobOperationInstallSnapDetailArrayInput is an input type that accepts GetScheduledJobOperationInstallSnapDetailArray and GetScheduledJobOperationInstallSnapDetailArrayOutput values.
+// You can construct a concrete instance of `GetScheduledJobOperationInstallSnapDetailArrayInput` via:
+//
+//	GetScheduledJobOperationInstallSnapDetailArray{ GetScheduledJobOperationInstallSnapDetailArgs{...} }
+type GetScheduledJobOperationInstallSnapDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledJobOperationInstallSnapDetailArrayOutput() GetScheduledJobOperationInstallSnapDetailArrayOutput
+	ToGetScheduledJobOperationInstallSnapDetailArrayOutputWithContext(context.Context) GetScheduledJobOperationInstallSnapDetailArrayOutput
+}
+
+type GetScheduledJobOperationInstallSnapDetailArray []GetScheduledJobOperationInstallSnapDetailInput
+
+func (GetScheduledJobOperationInstallSnapDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledJobOperationInstallSnapDetail)(nil)).Elem()
+}
+
+func (i GetScheduledJobOperationInstallSnapDetailArray) ToGetScheduledJobOperationInstallSnapDetailArrayOutput() GetScheduledJobOperationInstallSnapDetailArrayOutput {
+	return i.ToGetScheduledJobOperationInstallSnapDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledJobOperationInstallSnapDetailArray) ToGetScheduledJobOperationInstallSnapDetailArrayOutputWithContext(ctx context.Context) GetScheduledJobOperationInstallSnapDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledJobOperationInstallSnapDetailArrayOutput)
+}
+
+type GetScheduledJobOperationInstallSnapDetailOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledJobOperationInstallSnapDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledJobOperationInstallSnapDetail)(nil)).Elem()
+}
+
+func (o GetScheduledJobOperationInstallSnapDetailOutput) ToGetScheduledJobOperationInstallSnapDetailOutput() GetScheduledJobOperationInstallSnapDetailOutput {
+	return o
+}
+
+func (o GetScheduledJobOperationInstallSnapDetailOutput) ToGetScheduledJobOperationInstallSnapDetailOutputWithContext(ctx context.Context) GetScheduledJobOperationInstallSnapDetailOutput {
+	return o
+}
+
+// The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+func (o GetScheduledJobOperationInstallSnapDetailOutput) Channel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledJobOperationInstallSnapDetail) string { return v.Channel }).(pulumi.StringOutput)
+}
+
+// If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+func (o GetScheduledJobOperationInstallSnapDetailOutput) IsSigned() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetScheduledJobOperationInstallSnapDetail) bool { return v.IsSigned }).(pulumi.BoolOutput)
+}
+
+// The confinement mode for the snap.
+func (o GetScheduledJobOperationInstallSnapDetailOutput) Mode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledJobOperationInstallSnapDetail) string { return v.Mode }).(pulumi.StringOutput)
+}
+
+// The name of the snap.
+func (o GetScheduledJobOperationInstallSnapDetailOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledJobOperationInstallSnapDetail) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The revision to remove. Note: This option cannot be used when removing multiple snaps.
+func (o GetScheduledJobOperationInstallSnapDetailOutput) Revision() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledJobOperationInstallSnapDetail) string { return v.Revision }).(pulumi.StringOutput)
+}
+
+type GetScheduledJobOperationInstallSnapDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledJobOperationInstallSnapDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledJobOperationInstallSnapDetail)(nil)).Elem()
+}
+
+func (o GetScheduledJobOperationInstallSnapDetailArrayOutput) ToGetScheduledJobOperationInstallSnapDetailArrayOutput() GetScheduledJobOperationInstallSnapDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduledJobOperationInstallSnapDetailArrayOutput) ToGetScheduledJobOperationInstallSnapDetailArrayOutputWithContext(ctx context.Context) GetScheduledJobOperationInstallSnapDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduledJobOperationInstallSnapDetailArrayOutput) Index(i pulumi.IntInput) GetScheduledJobOperationInstallSnapDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledJobOperationInstallSnapDetail {
+		return vs[0].([]GetScheduledJobOperationInstallSnapDetail)[vs[1].(int)]
+	}).(GetScheduledJobOperationInstallSnapDetailOutput)
 }
 
 type GetScheduledJobOperationManageModuleStreamsDetail struct {
@@ -27252,6 +34705,112 @@ func (o GetScheduledJobOperationManageModuleStreamsDetailRemoveArrayOutput) Inde
 	}).(GetScheduledJobOperationManageModuleStreamsDetailRemoveOutput)
 }
 
+type GetScheduledJobOperationRemoveSnapDetail struct {
+	// The name of the snap.
+	Name string `pulumi:"name"`
+	// The revision to remove. Note: This option cannot be used when removing multiple snaps.
+	Revision string `pulumi:"revision"`
+}
+
+// GetScheduledJobOperationRemoveSnapDetailInput is an input type that accepts GetScheduledJobOperationRemoveSnapDetailArgs and GetScheduledJobOperationRemoveSnapDetailOutput values.
+// You can construct a concrete instance of `GetScheduledJobOperationRemoveSnapDetailInput` via:
+//
+//	GetScheduledJobOperationRemoveSnapDetailArgs{...}
+type GetScheduledJobOperationRemoveSnapDetailInput interface {
+	pulumi.Input
+
+	ToGetScheduledJobOperationRemoveSnapDetailOutput() GetScheduledJobOperationRemoveSnapDetailOutput
+	ToGetScheduledJobOperationRemoveSnapDetailOutputWithContext(context.Context) GetScheduledJobOperationRemoveSnapDetailOutput
+}
+
+type GetScheduledJobOperationRemoveSnapDetailArgs struct {
+	// The name of the snap.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The revision to remove. Note: This option cannot be used when removing multiple snaps.
+	Revision pulumi.StringInput `pulumi:"revision"`
+}
+
+func (GetScheduledJobOperationRemoveSnapDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledJobOperationRemoveSnapDetail)(nil)).Elem()
+}
+
+func (i GetScheduledJobOperationRemoveSnapDetailArgs) ToGetScheduledJobOperationRemoveSnapDetailOutput() GetScheduledJobOperationRemoveSnapDetailOutput {
+	return i.ToGetScheduledJobOperationRemoveSnapDetailOutputWithContext(context.Background())
+}
+
+func (i GetScheduledJobOperationRemoveSnapDetailArgs) ToGetScheduledJobOperationRemoveSnapDetailOutputWithContext(ctx context.Context) GetScheduledJobOperationRemoveSnapDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledJobOperationRemoveSnapDetailOutput)
+}
+
+// GetScheduledJobOperationRemoveSnapDetailArrayInput is an input type that accepts GetScheduledJobOperationRemoveSnapDetailArray and GetScheduledJobOperationRemoveSnapDetailArrayOutput values.
+// You can construct a concrete instance of `GetScheduledJobOperationRemoveSnapDetailArrayInput` via:
+//
+//	GetScheduledJobOperationRemoveSnapDetailArray{ GetScheduledJobOperationRemoveSnapDetailArgs{...} }
+type GetScheduledJobOperationRemoveSnapDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledJobOperationRemoveSnapDetailArrayOutput() GetScheduledJobOperationRemoveSnapDetailArrayOutput
+	ToGetScheduledJobOperationRemoveSnapDetailArrayOutputWithContext(context.Context) GetScheduledJobOperationRemoveSnapDetailArrayOutput
+}
+
+type GetScheduledJobOperationRemoveSnapDetailArray []GetScheduledJobOperationRemoveSnapDetailInput
+
+func (GetScheduledJobOperationRemoveSnapDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledJobOperationRemoveSnapDetail)(nil)).Elem()
+}
+
+func (i GetScheduledJobOperationRemoveSnapDetailArray) ToGetScheduledJobOperationRemoveSnapDetailArrayOutput() GetScheduledJobOperationRemoveSnapDetailArrayOutput {
+	return i.ToGetScheduledJobOperationRemoveSnapDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledJobOperationRemoveSnapDetailArray) ToGetScheduledJobOperationRemoveSnapDetailArrayOutputWithContext(ctx context.Context) GetScheduledJobOperationRemoveSnapDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledJobOperationRemoveSnapDetailArrayOutput)
+}
+
+type GetScheduledJobOperationRemoveSnapDetailOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledJobOperationRemoveSnapDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledJobOperationRemoveSnapDetail)(nil)).Elem()
+}
+
+func (o GetScheduledJobOperationRemoveSnapDetailOutput) ToGetScheduledJobOperationRemoveSnapDetailOutput() GetScheduledJobOperationRemoveSnapDetailOutput {
+	return o
+}
+
+func (o GetScheduledJobOperationRemoveSnapDetailOutput) ToGetScheduledJobOperationRemoveSnapDetailOutputWithContext(ctx context.Context) GetScheduledJobOperationRemoveSnapDetailOutput {
+	return o
+}
+
+// The name of the snap.
+func (o GetScheduledJobOperationRemoveSnapDetailOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledJobOperationRemoveSnapDetail) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The revision to remove. Note: This option cannot be used when removing multiple snaps.
+func (o GetScheduledJobOperationRemoveSnapDetailOutput) Revision() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledJobOperationRemoveSnapDetail) string { return v.Revision }).(pulumi.StringOutput)
+}
+
+type GetScheduledJobOperationRemoveSnapDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledJobOperationRemoveSnapDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledJobOperationRemoveSnapDetail)(nil)).Elem()
+}
+
+func (o GetScheduledJobOperationRemoveSnapDetailArrayOutput) ToGetScheduledJobOperationRemoveSnapDetailArrayOutput() GetScheduledJobOperationRemoveSnapDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduledJobOperationRemoveSnapDetailArrayOutput) ToGetScheduledJobOperationRemoveSnapDetailArrayOutputWithContext(ctx context.Context) GetScheduledJobOperationRemoveSnapDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduledJobOperationRemoveSnapDetailArrayOutput) Index(i pulumi.IntInput) GetScheduledJobOperationRemoveSnapDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledJobOperationRemoveSnapDetail {
+		return vs[0].([]GetScheduledJobOperationRemoveSnapDetail)[vs[1].(int)]
+	}).(GetScheduledJobOperationRemoveSnapDetailOutput)
+}
+
 type GetScheduledJobOperationSwitchModuleStreamsDetail struct {
 	// The name of a module.
 	ModuleName string `pulumi:"moduleName"`
@@ -27367,7 +34926,114 @@ func (o GetScheduledJobOperationSwitchModuleStreamsDetailArrayOutput) Index(i pu
 	}).(GetScheduledJobOperationSwitchModuleStreamsDetailOutput)
 }
 
+type GetScheduledJobOperationSwitchSnapChannelDetail struct {
+	// The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+	Channel string `pulumi:"channel"`
+	// The name of the snap.
+	Name string `pulumi:"name"`
+}
+
+// GetScheduledJobOperationSwitchSnapChannelDetailInput is an input type that accepts GetScheduledJobOperationSwitchSnapChannelDetailArgs and GetScheduledJobOperationSwitchSnapChannelDetailOutput values.
+// You can construct a concrete instance of `GetScheduledJobOperationSwitchSnapChannelDetailInput` via:
+//
+//	GetScheduledJobOperationSwitchSnapChannelDetailArgs{...}
+type GetScheduledJobOperationSwitchSnapChannelDetailInput interface {
+	pulumi.Input
+
+	ToGetScheduledJobOperationSwitchSnapChannelDetailOutput() GetScheduledJobOperationSwitchSnapChannelDetailOutput
+	ToGetScheduledJobOperationSwitchSnapChannelDetailOutputWithContext(context.Context) GetScheduledJobOperationSwitchSnapChannelDetailOutput
+}
+
+type GetScheduledJobOperationSwitchSnapChannelDetailArgs struct {
+	// The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+	Channel pulumi.StringInput `pulumi:"channel"`
+	// The name of the snap.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetScheduledJobOperationSwitchSnapChannelDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledJobOperationSwitchSnapChannelDetail)(nil)).Elem()
+}
+
+func (i GetScheduledJobOperationSwitchSnapChannelDetailArgs) ToGetScheduledJobOperationSwitchSnapChannelDetailOutput() GetScheduledJobOperationSwitchSnapChannelDetailOutput {
+	return i.ToGetScheduledJobOperationSwitchSnapChannelDetailOutputWithContext(context.Background())
+}
+
+func (i GetScheduledJobOperationSwitchSnapChannelDetailArgs) ToGetScheduledJobOperationSwitchSnapChannelDetailOutputWithContext(ctx context.Context) GetScheduledJobOperationSwitchSnapChannelDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledJobOperationSwitchSnapChannelDetailOutput)
+}
+
+// GetScheduledJobOperationSwitchSnapChannelDetailArrayInput is an input type that accepts GetScheduledJobOperationSwitchSnapChannelDetailArray and GetScheduledJobOperationSwitchSnapChannelDetailArrayOutput values.
+// You can construct a concrete instance of `GetScheduledJobOperationSwitchSnapChannelDetailArrayInput` via:
+//
+//	GetScheduledJobOperationSwitchSnapChannelDetailArray{ GetScheduledJobOperationSwitchSnapChannelDetailArgs{...} }
+type GetScheduledJobOperationSwitchSnapChannelDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledJobOperationSwitchSnapChannelDetailArrayOutput() GetScheduledJobOperationSwitchSnapChannelDetailArrayOutput
+	ToGetScheduledJobOperationSwitchSnapChannelDetailArrayOutputWithContext(context.Context) GetScheduledJobOperationSwitchSnapChannelDetailArrayOutput
+}
+
+type GetScheduledJobOperationSwitchSnapChannelDetailArray []GetScheduledJobOperationSwitchSnapChannelDetailInput
+
+func (GetScheduledJobOperationSwitchSnapChannelDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledJobOperationSwitchSnapChannelDetail)(nil)).Elem()
+}
+
+func (i GetScheduledJobOperationSwitchSnapChannelDetailArray) ToGetScheduledJobOperationSwitchSnapChannelDetailArrayOutput() GetScheduledJobOperationSwitchSnapChannelDetailArrayOutput {
+	return i.ToGetScheduledJobOperationSwitchSnapChannelDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledJobOperationSwitchSnapChannelDetailArray) ToGetScheduledJobOperationSwitchSnapChannelDetailArrayOutputWithContext(ctx context.Context) GetScheduledJobOperationSwitchSnapChannelDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledJobOperationSwitchSnapChannelDetailArrayOutput)
+}
+
+type GetScheduledJobOperationSwitchSnapChannelDetailOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledJobOperationSwitchSnapChannelDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledJobOperationSwitchSnapChannelDetail)(nil)).Elem()
+}
+
+func (o GetScheduledJobOperationSwitchSnapChannelDetailOutput) ToGetScheduledJobOperationSwitchSnapChannelDetailOutput() GetScheduledJobOperationSwitchSnapChannelDetailOutput {
+	return o
+}
+
+func (o GetScheduledJobOperationSwitchSnapChannelDetailOutput) ToGetScheduledJobOperationSwitchSnapChannelDetailOutputWithContext(ctx context.Context) GetScheduledJobOperationSwitchSnapChannelDetailOutput {
+	return o
+}
+
+// The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+func (o GetScheduledJobOperationSwitchSnapChannelDetailOutput) Channel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledJobOperationSwitchSnapChannelDetail) string { return v.Channel }).(pulumi.StringOutput)
+}
+
+// The name of the snap.
+func (o GetScheduledJobOperationSwitchSnapChannelDetailOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledJobOperationSwitchSnapChannelDetail) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetScheduledJobOperationSwitchSnapChannelDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledJobOperationSwitchSnapChannelDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledJobOperationSwitchSnapChannelDetail)(nil)).Elem()
+}
+
+func (o GetScheduledJobOperationSwitchSnapChannelDetailArrayOutput) ToGetScheduledJobOperationSwitchSnapChannelDetailArrayOutput() GetScheduledJobOperationSwitchSnapChannelDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduledJobOperationSwitchSnapChannelDetailArrayOutput) ToGetScheduledJobOperationSwitchSnapChannelDetailArrayOutputWithContext(ctx context.Context) GetScheduledJobOperationSwitchSnapChannelDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduledJobOperationSwitchSnapChannelDetailArrayOutput) Index(i pulumi.IntInput) GetScheduledJobOperationSwitchSnapChannelDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledJobOperationSwitchSnapChannelDetail {
+		return vs[0].([]GetScheduledJobOperationSwitchSnapChannelDetail)[vs[1].(int)]
+	}).(GetScheduledJobOperationSwitchSnapChannelDetailOutput)
+}
+
 type GetScheduledJobsFilter struct {
+	// The name of the snap.
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
 	Values []string `pulumi:"values"`
@@ -27385,6 +35051,7 @@ type GetScheduledJobsFilterInput interface {
 }
 
 type GetScheduledJobsFilterArgs struct {
+	// The name of the snap.
 	Name   pulumi.StringInput      `pulumi:"name"`
 	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
 	Values pulumi.StringArrayInput `pulumi:"values"`
@@ -27441,6 +35108,7 @@ func (o GetScheduledJobsFilterOutput) ToGetScheduledJobsFilterOutputWithContext(
 	return o
 }
 
+// The name of the snap.
 func (o GetScheduledJobsFilterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduledJobsFilter) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -27578,6 +35246,8 @@ type GetScheduledJobsScheduledJobCollectionItem struct {
 	Description string `pulumi:"description"`
 	// A filter to return resources that match the given user-friendly name.
 	DisplayName string `pulumi:"displayName"`
+	// The dynamic set [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on. A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+	DynamicSetIds []string `pulumi:"dynamicSetIds"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job. A filter to return the specified job.
@@ -27588,7 +35258,7 @@ type GetScheduledJobsScheduledJobCollectionItem struct {
 	IsRestricted bool `pulumi:"isRestricted"`
 	// Indicates whether to apply the scheduled job to all compartments in the tenancy when managedCompartmentIds specifies the tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (root compartment).
 	IsSubcompartmentIncluded bool `pulumi:"isSubcompartmentIncluded"`
-	// The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+	// The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds, and dynamicSetIds.
 	LifecycleStageIds []string `pulumi:"lifecycleStageIds"`
 	// The list of locations this scheduled job should operate on for a job targeting on compartments. (Empty list means apply to all locations). This can only be set when managedCompartmentIds is not empty.
 	Locations []string `pulumi:"locations"`
@@ -27608,7 +35278,7 @@ type GetScheduledJobsScheduledJobCollectionItem struct {
 	// * UPDATE_KSPLICE_USERSPACE
 	// * UPDATE_KSPLICE_KERNEL
 	Operations []GetScheduledJobsScheduledJobCollectionItemOperation `pulumi:"operations"`
-	// The frequency schedule for a recurring scheduled job.
+	// The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported. In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
 	RecurringRule string `pulumi:"recurringRule"`
 	// The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically retry  a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the initial  execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service waits 5 minutes  and then retries. If that fails, the service waits 10 minutes and then retries.
 	RetryIntervals []int `pulumi:"retryIntervals"`
@@ -27652,6 +35322,8 @@ type GetScheduledJobsScheduledJobCollectionItemArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return resources that match the given user-friendly name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The dynamic set [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on. A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+	DynamicSetIds pulumi.StringArrayInput `pulumi:"dynamicSetIds"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job. A filter to return the specified job.
@@ -27662,7 +35334,7 @@ type GetScheduledJobsScheduledJobCollectionItemArgs struct {
 	IsRestricted pulumi.BoolInput `pulumi:"isRestricted"`
 	// Indicates whether to apply the scheduled job to all compartments in the tenancy when managedCompartmentIds specifies the tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (root compartment).
 	IsSubcompartmentIncluded pulumi.BoolInput `pulumi:"isSubcompartmentIncluded"`
-	// The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+	// The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds, and dynamicSetIds.
 	LifecycleStageIds pulumi.StringArrayInput `pulumi:"lifecycleStageIds"`
 	// The list of locations this scheduled job should operate on for a job targeting on compartments. (Empty list means apply to all locations). This can only be set when managedCompartmentIds is not empty.
 	Locations pulumi.StringArrayInput `pulumi:"locations"`
@@ -27682,7 +35354,7 @@ type GetScheduledJobsScheduledJobCollectionItemArgs struct {
 	// * UPDATE_KSPLICE_USERSPACE
 	// * UPDATE_KSPLICE_KERNEL
 	Operations GetScheduledJobsScheduledJobCollectionItemOperationArrayInput `pulumi:"operations"`
-	// The frequency schedule for a recurring scheduled job.
+	// The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported. In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
 	RecurringRule pulumi.StringInput `pulumi:"recurringRule"`
 	// The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically retry  a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the initial  execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service waits 5 minutes  and then retries. If that fails, the service waits 10 minutes and then retries.
 	RetryIntervals pulumi.IntArrayInput `pulumi:"retryIntervals"`
@@ -27777,6 +35449,11 @@ func (o GetScheduledJobsScheduledJobCollectionItemOutput) DisplayName() pulumi.S
 	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// The dynamic set [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on. A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+func (o GetScheduledJobsScheduledJobCollectionItemOutput) DynamicSetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItem) []string { return v.DynamicSetIds }).(pulumi.StringArrayOutput)
+}
+
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 func (o GetScheduledJobsScheduledJobCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
@@ -27802,7 +35479,7 @@ func (o GetScheduledJobsScheduledJobCollectionItemOutput) IsSubcompartmentInclud
 	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItem) bool { return v.IsSubcompartmentIncluded }).(pulumi.BoolOutput)
 }
 
-// The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+// The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds, and dynamicSetIds.
 func (o GetScheduledJobsScheduledJobCollectionItemOutput) LifecycleStageIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItem) []string { return v.LifecycleStageIds }).(pulumi.StringArrayOutput)
 }
@@ -27842,7 +35519,7 @@ func (o GetScheduledJobsScheduledJobCollectionItemOutput) Operations() GetSchedu
 	}).(GetScheduledJobsScheduledJobCollectionItemOperationArrayOutput)
 }
 
-// The frequency schedule for a recurring scheduled job.
+// The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported. In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
 func (o GetScheduledJobsScheduledJobCollectionItemOutput) RecurringRule() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItem) string { return v.RecurringRule }).(pulumi.StringOutput)
 }
@@ -27918,6 +35595,8 @@ func (o GetScheduledJobsScheduledJobCollectionItemArrayOutput) Index(i pulumi.In
 }
 
 type GetScheduledJobsScheduledJobCollectionItemOperation struct {
+	// Provides the information used to install a snap.
+	InstallSnapDetails []GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetail `pulumi:"installSnapDetails"`
 	// The set of changes to make to the state of the modules, streams, and profiles on the managed target.
 	ManageModuleStreamsDetails []GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetail `pulumi:"manageModuleStreamsDetails"`
 	// A filter to return only scheduled jobs with the given operation type.
@@ -27926,10 +35605,14 @@ type GetScheduledJobsScheduledJobCollectionItemOperation struct {
 	PackageNames []string `pulumi:"packageNames"`
 	// The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
 	RebootTimeoutInMins int `pulumi:"rebootTimeoutInMins"`
+	// Provides the information used to remove a snap.
+	RemoveSnapDetails []GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetail `pulumi:"removeSnapDetails"`
 	// The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
 	SoftwareSourceIds []string `pulumi:"softwareSourceIds"`
 	// Provides the information used to update a module stream.
 	SwitchModuleStreamsDetails []GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetail `pulumi:"switchModuleStreamsDetails"`
+	// Provides the information used to switch a snap channel.
+	SwitchSnapChannelDetails []GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetail `pulumi:"switchSnapChannelDetails"`
 	// Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
 	WindowsUpdateNames []string `pulumi:"windowsUpdateNames"`
 }
@@ -27946,6 +35629,8 @@ type GetScheduledJobsScheduledJobCollectionItemOperationInput interface {
 }
 
 type GetScheduledJobsScheduledJobCollectionItemOperationArgs struct {
+	// Provides the information used to install a snap.
+	InstallSnapDetails GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayInput `pulumi:"installSnapDetails"`
 	// The set of changes to make to the state of the modules, streams, and profiles on the managed target.
 	ManageModuleStreamsDetails GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailArrayInput `pulumi:"manageModuleStreamsDetails"`
 	// A filter to return only scheduled jobs with the given operation type.
@@ -27954,10 +35639,14 @@ type GetScheduledJobsScheduledJobCollectionItemOperationArgs struct {
 	PackageNames pulumi.StringArrayInput `pulumi:"packageNames"`
 	// The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
 	RebootTimeoutInMins pulumi.IntInput `pulumi:"rebootTimeoutInMins"`
+	// Provides the information used to remove a snap.
+	RemoveSnapDetails GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayInput `pulumi:"removeSnapDetails"`
 	// The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
 	SoftwareSourceIds pulumi.StringArrayInput `pulumi:"softwareSourceIds"`
 	// Provides the information used to update a module stream.
 	SwitchModuleStreamsDetails GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetailArrayInput `pulumi:"switchModuleStreamsDetails"`
+	// Provides the information used to switch a snap channel.
+	SwitchSnapChannelDetails GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayInput `pulumi:"switchSnapChannelDetails"`
 	// Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
 	WindowsUpdateNames pulumi.StringArrayInput `pulumi:"windowsUpdateNames"`
 }
@@ -28013,6 +35702,13 @@ func (o GetScheduledJobsScheduledJobCollectionItemOperationOutput) ToGetSchedule
 	return o
 }
 
+// Provides the information used to install a snap.
+func (o GetScheduledJobsScheduledJobCollectionItemOperationOutput) InstallSnapDetails() GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayOutput {
+	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItemOperation) []GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetail {
+		return v.InstallSnapDetails
+	}).(GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayOutput)
+}
+
 // The set of changes to make to the state of the modules, streams, and profiles on the managed target.
 func (o GetScheduledJobsScheduledJobCollectionItemOperationOutput) ManageModuleStreamsDetails() GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailArrayOutput {
 	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItemOperation) []GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetail {
@@ -28035,6 +35731,13 @@ func (o GetScheduledJobsScheduledJobCollectionItemOperationOutput) RebootTimeout
 	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItemOperation) int { return v.RebootTimeoutInMins }).(pulumi.IntOutput)
 }
 
+// Provides the information used to remove a snap.
+func (o GetScheduledJobsScheduledJobCollectionItemOperationOutput) RemoveSnapDetails() GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayOutput {
+	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItemOperation) []GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetail {
+		return v.RemoveSnapDetails
+	}).(GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayOutput)
+}
+
 // The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
 func (o GetScheduledJobsScheduledJobCollectionItemOperationOutput) SoftwareSourceIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItemOperation) []string { return v.SoftwareSourceIds }).(pulumi.StringArrayOutput)
@@ -28045,6 +35748,13 @@ func (o GetScheduledJobsScheduledJobCollectionItemOperationOutput) SwitchModuleS
 	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItemOperation) []GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetail {
 		return v.SwitchModuleStreamsDetails
 	}).(GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetailArrayOutput)
+}
+
+// Provides the information used to switch a snap channel.
+func (o GetScheduledJobsScheduledJobCollectionItemOperationOutput) SwitchSnapChannelDetails() GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayOutput {
+	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItemOperation) []GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetail {
+		return v.SwitchSnapChannelDetails
+	}).(GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayOutput)
 }
 
 // Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
@@ -28070,6 +35780,139 @@ func (o GetScheduledJobsScheduledJobCollectionItemOperationArrayOutput) Index(i 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledJobsScheduledJobCollectionItemOperation {
 		return vs[0].([]GetScheduledJobsScheduledJobCollectionItemOperation)[vs[1].(int)]
 	}).(GetScheduledJobsScheduledJobCollectionItemOperationOutput)
+}
+
+type GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetail struct {
+	// The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+	Channel string `pulumi:"channel"`
+	// If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+	IsSigned bool `pulumi:"isSigned"`
+	// The confinement mode for the snap.
+	Mode string `pulumi:"mode"`
+	// The name of the snap.
+	Name string `pulumi:"name"`
+	// The revision to remove. Note: This option cannot be used when removing multiple snaps.
+	Revision string `pulumi:"revision"`
+}
+
+// GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailInput is an input type that accepts GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArgs and GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutput values.
+// You can construct a concrete instance of `GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailInput` via:
+//
+//	GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArgs{...}
+type GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailInput interface {
+	pulumi.Input
+
+	ToGetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutput() GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutput
+	ToGetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutputWithContext(context.Context) GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutput
+}
+
+type GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArgs struct {
+	// The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+	Channel pulumi.StringInput `pulumi:"channel"`
+	// If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+	IsSigned pulumi.BoolInput `pulumi:"isSigned"`
+	// The confinement mode for the snap.
+	Mode pulumi.StringInput `pulumi:"mode"`
+	// The name of the snap.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The revision to remove. Note: This option cannot be used when removing multiple snaps.
+	Revision pulumi.StringInput `pulumi:"revision"`
+}
+
+func (GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetail)(nil)).Elem()
+}
+
+func (i GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArgs) ToGetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutput() GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutput {
+	return i.ToGetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutputWithContext(context.Background())
+}
+
+func (i GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArgs) ToGetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutputWithContext(ctx context.Context) GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutput)
+}
+
+// GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayInput is an input type that accepts GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArray and GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayOutput values.
+// You can construct a concrete instance of `GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayInput` via:
+//
+//	GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArray{ GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArgs{...} }
+type GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayOutput() GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayOutput
+	ToGetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayOutputWithContext(context.Context) GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayOutput
+}
+
+type GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArray []GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailInput
+
+func (GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetail)(nil)).Elem()
+}
+
+func (i GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArray) ToGetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayOutput() GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayOutput {
+	return i.ToGetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArray) ToGetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayOutputWithContext(ctx context.Context) GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayOutput)
+}
+
+type GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetail)(nil)).Elem()
+}
+
+func (o GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutput) ToGetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutput() GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutput {
+	return o
+}
+
+func (o GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutput) ToGetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutputWithContext(ctx context.Context) GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutput {
+	return o
+}
+
+// The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+func (o GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutput) Channel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetail) string { return v.Channel }).(pulumi.StringOutput)
+}
+
+// If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+func (o GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutput) IsSigned() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetail) bool { return v.IsSigned }).(pulumi.BoolOutput)
+}
+
+// The confinement mode for the snap.
+func (o GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutput) Mode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetail) string { return v.Mode }).(pulumi.StringOutput)
+}
+
+// The name of the snap.
+func (o GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetail) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The revision to remove. Note: This option cannot be used when removing multiple snaps.
+func (o GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutput) Revision() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetail) string { return v.Revision }).(pulumi.StringOutput)
+}
+
+type GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetail)(nil)).Elem()
+}
+
+func (o GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayOutput) ToGetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayOutput() GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayOutput) ToGetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayOutputWithContext(ctx context.Context) GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayOutput) Index(i pulumi.IntInput) GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetail {
+		return vs[0].([]GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetail)[vs[1].(int)]
+	}).(GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutput)
 }
 
 type GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetail struct {
@@ -28710,6 +36553,112 @@ func (o GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDe
 	}).(GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailRemoveOutput)
 }
 
+type GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetail struct {
+	// The name of the snap.
+	Name string `pulumi:"name"`
+	// The revision to remove. Note: This option cannot be used when removing multiple snaps.
+	Revision string `pulumi:"revision"`
+}
+
+// GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailInput is an input type that accepts GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArgs and GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailOutput values.
+// You can construct a concrete instance of `GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailInput` via:
+//
+//	GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArgs{...}
+type GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailInput interface {
+	pulumi.Input
+
+	ToGetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailOutput() GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailOutput
+	ToGetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailOutputWithContext(context.Context) GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailOutput
+}
+
+type GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArgs struct {
+	// The name of the snap.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The revision to remove. Note: This option cannot be used when removing multiple snaps.
+	Revision pulumi.StringInput `pulumi:"revision"`
+}
+
+func (GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetail)(nil)).Elem()
+}
+
+func (i GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArgs) ToGetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailOutput() GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailOutput {
+	return i.ToGetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailOutputWithContext(context.Background())
+}
+
+func (i GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArgs) ToGetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailOutputWithContext(ctx context.Context) GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailOutput)
+}
+
+// GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayInput is an input type that accepts GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArray and GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayOutput values.
+// You can construct a concrete instance of `GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayInput` via:
+//
+//	GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArray{ GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArgs{...} }
+type GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayOutput() GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayOutput
+	ToGetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayOutputWithContext(context.Context) GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayOutput
+}
+
+type GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArray []GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailInput
+
+func (GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetail)(nil)).Elem()
+}
+
+func (i GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArray) ToGetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayOutput() GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayOutput {
+	return i.ToGetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArray) ToGetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayOutputWithContext(ctx context.Context) GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayOutput)
+}
+
+type GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetail)(nil)).Elem()
+}
+
+func (o GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailOutput) ToGetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailOutput() GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailOutput {
+	return o
+}
+
+func (o GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailOutput) ToGetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailOutputWithContext(ctx context.Context) GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailOutput {
+	return o
+}
+
+// The name of the snap.
+func (o GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetail) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The revision to remove. Note: This option cannot be used when removing multiple snaps.
+func (o GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailOutput) Revision() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetail) string { return v.Revision }).(pulumi.StringOutput)
+}
+
+type GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetail)(nil)).Elem()
+}
+
+func (o GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayOutput) ToGetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayOutput() GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayOutput) ToGetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayOutputWithContext(ctx context.Context) GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayOutput) Index(i pulumi.IntInput) GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetail {
+		return vs[0].([]GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetail)[vs[1].(int)]
+	}).(GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailOutput)
+}
+
 type GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetail struct {
 	// The name of a module.
 	ModuleName string `pulumi:"moduleName"`
@@ -28829,6 +36778,116 @@ func (o GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDe
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetail {
 		return vs[0].([]GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetail)[vs[1].(int)]
 	}).(GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetailOutput)
+}
+
+type GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetail struct {
+	// The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+	Channel string `pulumi:"channel"`
+	// The name of the snap.
+	Name string `pulumi:"name"`
+}
+
+// GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailInput is an input type that accepts GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArgs and GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailOutput values.
+// You can construct a concrete instance of `GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailInput` via:
+//
+//	GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArgs{...}
+type GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailInput interface {
+	pulumi.Input
+
+	ToGetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailOutput() GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailOutput
+	ToGetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailOutputWithContext(context.Context) GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailOutput
+}
+
+type GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArgs struct {
+	// The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+	Channel pulumi.StringInput `pulumi:"channel"`
+	// The name of the snap.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetail)(nil)).Elem()
+}
+
+func (i GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArgs) ToGetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailOutput() GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailOutput {
+	return i.ToGetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailOutputWithContext(context.Background())
+}
+
+func (i GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArgs) ToGetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailOutputWithContext(ctx context.Context) GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailOutput)
+}
+
+// GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayInput is an input type that accepts GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArray and GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayOutput values.
+// You can construct a concrete instance of `GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayInput` via:
+//
+//	GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArray{ GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArgs{...} }
+type GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayOutput() GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayOutput
+	ToGetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayOutputWithContext(context.Context) GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayOutput
+}
+
+type GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArray []GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailInput
+
+func (GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetail)(nil)).Elem()
+}
+
+func (i GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArray) ToGetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayOutput() GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayOutput {
+	return i.ToGetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArray) ToGetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayOutputWithContext(ctx context.Context) GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayOutput)
+}
+
+type GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetail)(nil)).Elem()
+}
+
+func (o GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailOutput) ToGetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailOutput() GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailOutput {
+	return o
+}
+
+func (o GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailOutput) ToGetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailOutputWithContext(ctx context.Context) GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailOutput {
+	return o
+}
+
+// The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+func (o GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailOutput) Channel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetail) string {
+		return v.Channel
+	}).(pulumi.StringOutput)
+}
+
+// The name of the snap.
+func (o GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetail) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetail)(nil)).Elem()
+}
+
+func (o GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayOutput) ToGetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayOutput() GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayOutput) ToGetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayOutputWithContext(ctx context.Context) GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayOutput {
+	return o
+}
+
+func (o GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayOutput) Index(i pulumi.IntInput) GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetail {
+		return vs[0].([]GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetail)[vs[1].(int)]
+	}).(GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailOutput)
 }
 
 type GetSoftwarePackageDependency struct {
@@ -30916,6 +38975,8 @@ type GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItem str
 	DisplayName string `pulumi:"displayName"`
 	// Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
 	IsLatest bool `pulumi:"isLatest"`
+	// The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	LastModifiedDate string `pulumi:"lastModifiedDate"`
 	// Unique identifier for the package. Note that this is not an OCID.
 	Name string `pulumi:"name"`
 	// The OS families the package belongs to.
@@ -30950,6 +39011,8 @@ type GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemArgs
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
 	IsLatest pulumi.BoolInput `pulumi:"isLatest"`
+	// The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	LastModifiedDate pulumi.StringInput `pulumi:"lastModifiedDate"`
 	// Unique identifier for the package. Note that this is not an OCID.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The OS families the package belongs to.
@@ -31046,6 +39109,13 @@ func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemO
 	return o.ApplyT(func(v GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItem) bool {
 		return v.IsLatest
 	}).(pulumi.BoolOutput)
+}
+
+// The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+func (o GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItemOutput) LastModifiedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSoftwareSourceAvailableSoftwarePackagesSoftwarePackageCollectionItem) string {
+		return v.LastModifiedDate
+	}).(pulumi.StringOutput)
 }
 
 // Unique identifier for the package. Note that this is not an OCID.
@@ -35494,6 +43564,20 @@ func (o GetWindowsUpdatesWindowsUpdateCollectionItemArrayOutput) Index(i pulumi.
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*DynamicSetInstallPackagesManagementWorkRequestDetailsInput)(nil)).Elem(), DynamicSetInstallPackagesManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DynamicSetInstallPackagesManagementWorkRequestDetailsPtrInput)(nil)).Elem(), DynamicSetInstallPackagesManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DynamicSetMatchingRuleInput)(nil)).Elem(), DynamicSetMatchingRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DynamicSetMatchingRulePtrInput)(nil)).Elem(), DynamicSetMatchingRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DynamicSetMatchingRuleTagInput)(nil)).Elem(), DynamicSetMatchingRuleTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DynamicSetMatchingRuleTagArrayInput)(nil)).Elem(), DynamicSetMatchingRuleTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DynamicSetRebootManagementWorkRequestDetailsInput)(nil)).Elem(), DynamicSetRebootManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DynamicSetRebootManagementWorkRequestDetailsPtrInput)(nil)).Elem(), DynamicSetRebootManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DynamicSetRemovePackagesManagementWorkRequestDetailsInput)(nil)).Elem(), DynamicSetRemovePackagesManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DynamicSetRemovePackagesManagementWorkRequestDetailsPtrInput)(nil)).Elem(), DynamicSetRemovePackagesManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DynamicSetTargetCompartmentInput)(nil)).Elem(), DynamicSetTargetCompartmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DynamicSetTargetCompartmentArrayInput)(nil)).Elem(), DynamicSetTargetCompartmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DynamicSetUpdatePackagesManagementWorkRequestDetailsInput)(nil)).Elem(), DynamicSetUpdatePackagesManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrInput)(nil)).Elem(), DynamicSetUpdatePackagesManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EventDataInput)(nil)).Elem(), EventDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EventDataArrayInput)(nil)).Elem(), EventDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EventDataAdditionalDetailInput)(nil)).Elem(), EventDataAdditionalDetailArgs{})
@@ -35524,8 +43608,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsPtrInput)(nil)).Elem(), LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*LifecycleStageRebootManagementWorkRequestDetailsInput)(nil)).Elem(), LifecycleStageRebootManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*LifecycleStageRebootManagementWorkRequestDetailsPtrInput)(nil)).Elem(), LifecycleStageRebootManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsInput)(nil)).Elem(), ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrInput)(nil)).Elem(), ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceAutonomousSettingsInput)(nil)).Elem(), ManagedInstanceAutonomousSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceAutonomousSettingsPtrInput)(nil)).Elem(), ManagedInstanceAutonomousSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsInput)(nil)).Elem(), ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrInput)(nil)).Elem(), ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsInput)(nil)).Elem(), ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsPtrInput)(nil)).Elem(), ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetailsInput)(nil)).Elem(), ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetailsArgs{})
@@ -35556,6 +43644,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceGroupSoftwareSourceArrayInput)(nil)).Elem(), ManagedInstanceGroupSoftwareSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsInput)(nil)).Elem(), ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsPtrInput)(nil)).Elem(), ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceInstallPackagesManagementWorkRequestDetailsInput)(nil)).Elem(), ManagedInstanceInstallPackagesManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrInput)(nil)).Elem(), ManagedInstanceInstallPackagesManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceInstallSnapsManagementSnapDetailInput)(nil)).Elem(), ManagedInstanceInstallSnapsManagementSnapDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceInstallSnapsManagementSnapDetailArrayInput)(nil)).Elem(), ManagedInstanceInstallSnapsManagementSnapDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceInstallSnapsManagementWorkRequestDetailsInput)(nil)).Elem(), ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrInput)(nil)).Elem(), ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsInput)(nil)).Elem(), ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsPtrInput)(nil)).Elem(), ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceLifecycleEnvironmentInput)(nil)).Elem(), ManagedInstanceLifecycleEnvironmentArgs{})
@@ -35566,10 +43660,24 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceManagedInstanceGroupArrayInput)(nil)).Elem(), ManagedInstanceManagedInstanceGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceRebootManagementWorkRequestDetailsInput)(nil)).Elem(), ManagedInstanceRebootManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceRebootManagementWorkRequestDetailsPtrInput)(nil)).Elem(), ManagedInstanceRebootManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceRemovePackagesManagementWorkRequestDetailsInput)(nil)).Elem(), ManagedInstanceRemovePackagesManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrInput)(nil)).Elem(), ManagedInstanceRemovePackagesManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceRemoveSnapsManagementSnapDetailInput)(nil)).Elem(), ManagedInstanceRemoveSnapsManagementSnapDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceRemoveSnapsManagementSnapDetailArrayInput)(nil)).Elem(), ManagedInstanceRemoveSnapsManagementSnapDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceRemoveSnapsManagementWorkRequestDetailsInput)(nil)).Elem(), ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrInput)(nil)).Elem(), ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceSoftwareSourceInput)(nil)).Elem(), ManagedInstanceSoftwareSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceSoftwareSourceArrayInput)(nil)).Elem(), ManagedInstanceSoftwareSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceSwitchSnapChannelManagementSnapDetailsInput)(nil)).Elem(), ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrInput)(nil)).Elem(), ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsInput)(nil)).Elem(), ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrInput)(nil)).Elem(), ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceUpdatePackagesManagementWorkRequestDetailsInput)(nil)).Elem(), ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstanceUpdatePackagesManagementWorkRequestDetailsPtrInput)(nil)).Elem(), ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsInput)(nil)).Elem(), ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrInput)(nil)).Elem(), ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstancesUpdatePackagesManagementWorkRequestDetailsInput)(nil)).Elem(), ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrInput)(nil)).Elem(), ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsInput)(nil)).Elem(), ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrInput)(nil)).Elem(), ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementStationHealthInput)(nil)).Elem(), ManagementStationHealthArgs{})
@@ -35592,6 +43700,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ProfileSoftwareSourceArrayInput)(nil)).Elem(), ProfileSoftwareSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledJobOperationInput)(nil)).Elem(), ScheduledJobOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledJobOperationArrayInput)(nil)).Elem(), ScheduledJobOperationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledJobOperationInstallSnapDetailsInput)(nil)).Elem(), ScheduledJobOperationInstallSnapDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledJobOperationInstallSnapDetailsPtrInput)(nil)).Elem(), ScheduledJobOperationInstallSnapDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledJobOperationManageModuleStreamsDetailsInput)(nil)).Elem(), ScheduledJobOperationManageModuleStreamsDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledJobOperationManageModuleStreamsDetailsPtrInput)(nil)).Elem(), ScheduledJobOperationManageModuleStreamsDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledJobOperationManageModuleStreamsDetailsDisableInput)(nil)).Elem(), ScheduledJobOperationManageModuleStreamsDetailsDisableArgs{})
@@ -35602,8 +43712,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledJobOperationManageModuleStreamsDetailsInstallArrayInput)(nil)).Elem(), ScheduledJobOperationManageModuleStreamsDetailsInstallArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledJobOperationManageModuleStreamsDetailsRemoveInput)(nil)).Elem(), ScheduledJobOperationManageModuleStreamsDetailsRemoveArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledJobOperationManageModuleStreamsDetailsRemoveArrayInput)(nil)).Elem(), ScheduledJobOperationManageModuleStreamsDetailsRemoveArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledJobOperationRemoveSnapDetailsInput)(nil)).Elem(), ScheduledJobOperationRemoveSnapDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledJobOperationRemoveSnapDetailsPtrInput)(nil)).Elem(), ScheduledJobOperationRemoveSnapDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledJobOperationSwitchModuleStreamsDetailsInput)(nil)).Elem(), ScheduledJobOperationSwitchModuleStreamsDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledJobOperationSwitchModuleStreamsDetailsPtrInput)(nil)).Elem(), ScheduledJobOperationSwitchModuleStreamsDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledJobOperationSwitchSnapChannelDetailsInput)(nil)).Elem(), ScheduledJobOperationSwitchSnapChannelDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledJobOperationSwitchSnapChannelDetailsPtrInput)(nil)).Elem(), ScheduledJobOperationSwitchSnapChannelDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityInput)(nil)).Elem(), SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArrayInput)(nil)).Elem(), SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SoftwareSourceCustomSoftwareSourceFilterInput)(nil)).Elem(), SoftwareSourceCustomSoftwareSourceFilterArgs{})
@@ -35618,6 +43732,38 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*SoftwareSourceVendorSoftwareSourceArrayInput)(nil)).Elem(), SoftwareSourceVendorSoftwareSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkRequestRerunManagementWorkRequestDetailsInput)(nil)).Elem(), WorkRequestRerunManagementWorkRequestDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkRequestRerunManagementWorkRequestDetailsPtrInput)(nil)).Elem(), WorkRequestRerunManagementWorkRequestDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetManagedInstancesFilterInput)(nil)).Elem(), GetDynamicSetManagedInstancesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetManagedInstancesFilterArrayInput)(nil)).Elem(), GetDynamicSetManagedInstancesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetManagedInstancesManagedInstanceCollectionInput)(nil)).Elem(), GetDynamicSetManagedInstancesManagedInstanceCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetManagedInstancesManagedInstanceCollectionArrayInput)(nil)).Elem(), GetDynamicSetManagedInstancesManagedInstanceCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetManagedInstancesManagedInstanceCollectionItemInput)(nil)).Elem(), GetDynamicSetManagedInstancesManagedInstanceCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayInput)(nil)).Elem(), GetDynamicSetManagedInstancesManagedInstanceCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingInput)(nil)).Elem(), GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayInput)(nil)).Elem(), GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentInput)(nil)).Elem(), GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayInput)(nil)).Elem(), GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageInput)(nil)).Elem(), GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayInput)(nil)).Elem(), GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupInput)(nil)).Elem(), GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayInput)(nil)).Elem(), GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetMatchingRuleInput)(nil)).Elem(), GetDynamicSetMatchingRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetMatchingRuleArrayInput)(nil)).Elem(), GetDynamicSetMatchingRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetMatchingRuleTagInput)(nil)).Elem(), GetDynamicSetMatchingRuleTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetMatchingRuleTagArrayInput)(nil)).Elem(), GetDynamicSetMatchingRuleTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetTargetCompartmentInput)(nil)).Elem(), GetDynamicSetTargetCompartmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetTargetCompartmentArrayInput)(nil)).Elem(), GetDynamicSetTargetCompartmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetsDynamicSetCollectionInput)(nil)).Elem(), GetDynamicSetsDynamicSetCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetsDynamicSetCollectionArrayInput)(nil)).Elem(), GetDynamicSetsDynamicSetCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetsDynamicSetCollectionItemInput)(nil)).Elem(), GetDynamicSetsDynamicSetCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetsDynamicSetCollectionItemArrayInput)(nil)).Elem(), GetDynamicSetsDynamicSetCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetsDynamicSetCollectionItemMatchingRuleInput)(nil)).Elem(), GetDynamicSetsDynamicSetCollectionItemMatchingRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayInput)(nil)).Elem(), GetDynamicSetsDynamicSetCollectionItemMatchingRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagInput)(nil)).Elem(), GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayInput)(nil)).Elem(), GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetsDynamicSetCollectionItemTargetCompartmentInput)(nil)).Elem(), GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayInput)(nil)).Elem(), GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetsFilterInput)(nil)).Elem(), GetDynamicSetsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDynamicSetsFilterArrayInput)(nil)).Elem(), GetDynamicSetsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEntitlementsEntitlementCollectionInput)(nil)).Elem(), GetEntitlementsEntitlementCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEntitlementsEntitlementCollectionArrayInput)(nil)).Elem(), GetEntitlementsEntitlementCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEntitlementsEntitlementCollectionItemInput)(nil)).Elem(), GetEntitlementsEntitlementCollectionItemArgs{})
@@ -35752,6 +43898,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceGroupInstalledPackagesManagedInstanceGroupInstalledPackageCollectionArrayInput)(nil)).Elem(), GetManagedInstanceGroupInstalledPackagesManagedInstanceGroupInstalledPackageCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceGroupInstalledPackagesManagedInstanceGroupInstalledPackageCollectionItemInput)(nil)).Elem(), GetManagedInstanceGroupInstalledPackagesManagedInstanceGroupInstalledPackageCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceGroupInstalledPackagesManagedInstanceGroupInstalledPackageCollectionItemArrayInput)(nil)).Elem(), GetManagedInstanceGroupInstalledPackagesManagedInstanceGroupInstalledPackageCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesFilterInput)(nil)).Elem(), GetManagedInstanceGroupManagedInstancesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesFilterArrayInput)(nil)).Elem(), GetManagedInstanceGroupManagedInstancesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionInput)(nil)).Elem(), GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayInput)(nil)).Elem(), GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemInput)(nil)).Elem(), GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayInput)(nil)).Elem(), GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingInput)(nil)).Elem(), GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayInput)(nil)).Elem(), GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentInput)(nil)).Elem(), GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayInput)(nil)).Elem(), GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageInput)(nil)).Elem(), GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayInput)(nil)).Elem(), GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupInput)(nil)).Elem(), GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayInput)(nil)).Elem(), GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceGroupModulesFilterInput)(nil)).Elem(), GetManagedInstanceGroupModulesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceGroupModulesFilterArrayInput)(nil)).Elem(), GetManagedInstanceGroupModulesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceGroupModulesManagedInstanceGroupModuleCollectionInput)(nil)).Elem(), GetManagedInstanceGroupModulesManagedInstanceGroupModuleCollectionArgs{})
@@ -35796,6 +43956,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceModulesManagedInstanceModuleCollectionArrayInput)(nil)).Elem(), GetManagedInstanceModulesManagedInstanceModuleCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceModulesManagedInstanceModuleCollectionItemInput)(nil)).Elem(), GetManagedInstanceModulesManagedInstanceModuleCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceModulesManagedInstanceModuleCollectionItemArrayInput)(nil)).Elem(), GetManagedInstanceModulesManagedInstanceModuleCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceSnapsFilterInput)(nil)).Elem(), GetManagedInstanceSnapsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceSnapsFilterArrayInput)(nil)).Elem(), GetManagedInstanceSnapsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceSnapsSnapCollectionInput)(nil)).Elem(), GetManagedInstanceSnapsSnapCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceSnapsSnapCollectionArrayInput)(nil)).Elem(), GetManagedInstanceSnapsSnapCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceSnapsSnapCollectionItemInput)(nil)).Elem(), GetManagedInstanceSnapsSnapCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceSnapsSnapCollectionItemArrayInput)(nil)).Elem(), GetManagedInstanceSnapsSnapCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceSoftwareSourceInput)(nil)).Elem(), GetManagedInstanceSoftwareSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceSoftwareSourceArrayInput)(nil)).Elem(), GetManagedInstanceSoftwareSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceUpdatablePackagesFilterInput)(nil)).Elem(), GetManagedInstanceUpdatablePackagesFilterArgs{})
@@ -35882,6 +44048,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProfilesProfileCollectionItemSoftwareSourceArrayInput)(nil)).Elem(), GetProfilesProfileCollectionItemSoftwareSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobOperationInput)(nil)).Elem(), GetScheduledJobOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobOperationArrayInput)(nil)).Elem(), GetScheduledJobOperationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobOperationInstallSnapDetailInput)(nil)).Elem(), GetScheduledJobOperationInstallSnapDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobOperationInstallSnapDetailArrayInput)(nil)).Elem(), GetScheduledJobOperationInstallSnapDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobOperationManageModuleStreamsDetailInput)(nil)).Elem(), GetScheduledJobOperationManageModuleStreamsDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobOperationManageModuleStreamsDetailArrayInput)(nil)).Elem(), GetScheduledJobOperationManageModuleStreamsDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobOperationManageModuleStreamsDetailDisableInput)(nil)).Elem(), GetScheduledJobOperationManageModuleStreamsDetailDisableArgs{})
@@ -35892,8 +44060,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobOperationManageModuleStreamsDetailInstallArrayInput)(nil)).Elem(), GetScheduledJobOperationManageModuleStreamsDetailInstallArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobOperationManageModuleStreamsDetailRemoveInput)(nil)).Elem(), GetScheduledJobOperationManageModuleStreamsDetailRemoveArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobOperationManageModuleStreamsDetailRemoveArrayInput)(nil)).Elem(), GetScheduledJobOperationManageModuleStreamsDetailRemoveArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobOperationRemoveSnapDetailInput)(nil)).Elem(), GetScheduledJobOperationRemoveSnapDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobOperationRemoveSnapDetailArrayInput)(nil)).Elem(), GetScheduledJobOperationRemoveSnapDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobOperationSwitchModuleStreamsDetailInput)(nil)).Elem(), GetScheduledJobOperationSwitchModuleStreamsDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobOperationSwitchModuleStreamsDetailArrayInput)(nil)).Elem(), GetScheduledJobOperationSwitchModuleStreamsDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobOperationSwitchSnapChannelDetailInput)(nil)).Elem(), GetScheduledJobOperationSwitchSnapChannelDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobOperationSwitchSnapChannelDetailArrayInput)(nil)).Elem(), GetScheduledJobOperationSwitchSnapChannelDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobsFilterInput)(nil)).Elem(), GetScheduledJobsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobsFilterArrayInput)(nil)).Elem(), GetScheduledJobsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobsScheduledJobCollectionInput)(nil)).Elem(), GetScheduledJobsScheduledJobCollectionArgs{})
@@ -35902,6 +44074,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobsScheduledJobCollectionItemArrayInput)(nil)).Elem(), GetScheduledJobsScheduledJobCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobsScheduledJobCollectionItemOperationInput)(nil)).Elem(), GetScheduledJobsScheduledJobCollectionItemOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobsScheduledJobCollectionItemOperationArrayInput)(nil)).Elem(), GetScheduledJobsScheduledJobCollectionItemOperationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailInput)(nil)).Elem(), GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayInput)(nil)).Elem(), GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailInput)(nil)).Elem(), GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailArrayInput)(nil)).Elem(), GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailDisableInput)(nil)).Elem(), GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailDisableArgs{})
@@ -35912,8 +44086,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailInstallArrayInput)(nil)).Elem(), GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailInstallArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailRemoveInput)(nil)).Elem(), GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailRemoveArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailRemoveArrayInput)(nil)).Elem(), GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailRemoveArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailInput)(nil)).Elem(), GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayInput)(nil)).Elem(), GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetailInput)(nil)).Elem(), GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetailArrayInput)(nil)).Elem(), GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailInput)(nil)).Elem(), GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayInput)(nil)).Elem(), GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwarePackageDependencyInput)(nil)).Elem(), GetSoftwarePackageDependencyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwarePackageDependencyArrayInput)(nil)).Elem(), GetSoftwarePackageDependencyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwarePackageFileInput)(nil)).Elem(), GetSoftwarePackageFileArgs{})
@@ -36014,6 +44192,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWindowsUpdatesWindowsUpdateCollectionArrayInput)(nil)).Elem(), GetWindowsUpdatesWindowsUpdateCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWindowsUpdatesWindowsUpdateCollectionItemInput)(nil)).Elem(), GetWindowsUpdatesWindowsUpdateCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWindowsUpdatesWindowsUpdateCollectionItemArrayInput)(nil)).Elem(), GetWindowsUpdatesWindowsUpdateCollectionItemArray{})
+	pulumi.RegisterOutputType(DynamicSetInstallPackagesManagementWorkRequestDetailsOutput{})
+	pulumi.RegisterOutputType(DynamicSetInstallPackagesManagementWorkRequestDetailsPtrOutput{})
+	pulumi.RegisterOutputType(DynamicSetMatchingRuleOutput{})
+	pulumi.RegisterOutputType(DynamicSetMatchingRulePtrOutput{})
+	pulumi.RegisterOutputType(DynamicSetMatchingRuleTagOutput{})
+	pulumi.RegisterOutputType(DynamicSetMatchingRuleTagArrayOutput{})
+	pulumi.RegisterOutputType(DynamicSetRebootManagementWorkRequestDetailsOutput{})
+	pulumi.RegisterOutputType(DynamicSetRebootManagementWorkRequestDetailsPtrOutput{})
+	pulumi.RegisterOutputType(DynamicSetRemovePackagesManagementWorkRequestDetailsOutput{})
+	pulumi.RegisterOutputType(DynamicSetRemovePackagesManagementWorkRequestDetailsPtrOutput{})
+	pulumi.RegisterOutputType(DynamicSetTargetCompartmentOutput{})
+	pulumi.RegisterOutputType(DynamicSetTargetCompartmentArrayOutput{})
+	pulumi.RegisterOutputType(DynamicSetUpdatePackagesManagementWorkRequestDetailsOutput{})
+	pulumi.RegisterOutputType(DynamicSetUpdatePackagesManagementWorkRequestDetailsPtrOutput{})
 	pulumi.RegisterOutputType(EventDataOutput{})
 	pulumi.RegisterOutputType(EventDataArrayOutput{})
 	pulumi.RegisterOutputType(EventDataAdditionalDetailOutput{})
@@ -36044,8 +44236,12 @@ func init() {
 	pulumi.RegisterOutputType(LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsPtrOutput{})
 	pulumi.RegisterOutputType(LifecycleStageRebootManagementWorkRequestDetailsOutput{})
 	pulumi.RegisterOutputType(LifecycleStageRebootManagementWorkRequestDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsOutput{})
+	pulumi.RegisterOutputType(ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceAutonomousSettingsOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceAutonomousSettingsPtrOutput{})
+	pulumi.RegisterOutputType(ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsOutput{})
+	pulumi.RegisterOutputType(ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetailsOutput{})
@@ -36076,6 +44272,12 @@ func init() {
 	pulumi.RegisterOutputType(ManagedInstanceGroupSoftwareSourceArrayOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ManagedInstanceInstallPackagesManagementWorkRequestDetailsOutput{})
+	pulumi.RegisterOutputType(ManagedInstanceInstallPackagesManagementWorkRequestDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ManagedInstanceInstallSnapsManagementSnapDetailOutput{})
+	pulumi.RegisterOutputType(ManagedInstanceInstallSnapsManagementSnapDetailArrayOutput{})
+	pulumi.RegisterOutputType(ManagedInstanceInstallSnapsManagementWorkRequestDetailsOutput{})
+	pulumi.RegisterOutputType(ManagedInstanceInstallSnapsManagementWorkRequestDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceLifecycleEnvironmentOutput{})
@@ -36086,10 +44288,24 @@ func init() {
 	pulumi.RegisterOutputType(ManagedInstanceManagedInstanceGroupArrayOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceRebootManagementWorkRequestDetailsOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceRebootManagementWorkRequestDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ManagedInstanceRemovePackagesManagementWorkRequestDetailsOutput{})
+	pulumi.RegisterOutputType(ManagedInstanceRemovePackagesManagementWorkRequestDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ManagedInstanceRemoveSnapsManagementSnapDetailOutput{})
+	pulumi.RegisterOutputType(ManagedInstanceRemoveSnapsManagementSnapDetailArrayOutput{})
+	pulumi.RegisterOutputType(ManagedInstanceRemoveSnapsManagementWorkRequestDetailsOutput{})
+	pulumi.RegisterOutputType(ManagedInstanceRemoveSnapsManagementWorkRequestDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceSoftwareSourceOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceSoftwareSourceArrayOutput{})
+	pulumi.RegisterOutputType(ManagedInstanceSwitchSnapChannelManagementSnapDetailsOutput{})
+	pulumi.RegisterOutputType(ManagedInstanceSwitchSnapChannelManagementSnapDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsOutput{})
+	pulumi.RegisterOutputType(ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceUpdatePackagesManagementWorkRequestDetailsOutput{})
 	pulumi.RegisterOutputType(ManagedInstanceUpdatePackagesManagementWorkRequestDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsOutput{})
+	pulumi.RegisterOutputType(ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ManagedInstancesUpdatePackagesManagementWorkRequestDetailsOutput{})
+	pulumi.RegisterOutputType(ManagedInstancesUpdatePackagesManagementWorkRequestDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsOutput{})
 	pulumi.RegisterOutputType(ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ManagementStationHealthOutput{})
@@ -36112,6 +44328,8 @@ func init() {
 	pulumi.RegisterOutputType(ProfileSoftwareSourceArrayOutput{})
 	pulumi.RegisterOutputType(ScheduledJobOperationOutput{})
 	pulumi.RegisterOutputType(ScheduledJobOperationArrayOutput{})
+	pulumi.RegisterOutputType(ScheduledJobOperationInstallSnapDetailsOutput{})
+	pulumi.RegisterOutputType(ScheduledJobOperationInstallSnapDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ScheduledJobOperationManageModuleStreamsDetailsOutput{})
 	pulumi.RegisterOutputType(ScheduledJobOperationManageModuleStreamsDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ScheduledJobOperationManageModuleStreamsDetailsDisableOutput{})
@@ -36122,8 +44340,12 @@ func init() {
 	pulumi.RegisterOutputType(ScheduledJobOperationManageModuleStreamsDetailsInstallArrayOutput{})
 	pulumi.RegisterOutputType(ScheduledJobOperationManageModuleStreamsDetailsRemoveOutput{})
 	pulumi.RegisterOutputType(ScheduledJobOperationManageModuleStreamsDetailsRemoveArrayOutput{})
+	pulumi.RegisterOutputType(ScheduledJobOperationRemoveSnapDetailsOutput{})
+	pulumi.RegisterOutputType(ScheduledJobOperationRemoveSnapDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ScheduledJobOperationSwitchModuleStreamsDetailsOutput{})
 	pulumi.RegisterOutputType(ScheduledJobOperationSwitchModuleStreamsDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ScheduledJobOperationSwitchSnapChannelDetailsOutput{})
+	pulumi.RegisterOutputType(ScheduledJobOperationSwitchSnapChannelDetailsPtrOutput{})
 	pulumi.RegisterOutputType(SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityOutput{})
 	pulumi.RegisterOutputType(SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArrayOutput{})
 	pulumi.RegisterOutputType(SoftwareSourceCustomSoftwareSourceFilterOutput{})
@@ -36138,6 +44360,38 @@ func init() {
 	pulumi.RegisterOutputType(SoftwareSourceVendorSoftwareSourceArrayOutput{})
 	pulumi.RegisterOutputType(WorkRequestRerunManagementWorkRequestDetailsOutput{})
 	pulumi.RegisterOutputType(WorkRequestRerunManagementWorkRequestDetailsPtrOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetManagedInstancesFilterOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetManagedInstancesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetManagedInstancesManagedInstanceCollectionOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetManagedInstancesManagedInstanceCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetManagedInstancesManagedInstanceCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetManagedInstancesManagedInstanceCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetMatchingRuleOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetMatchingRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetMatchingRuleTagOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetMatchingRuleTagArrayOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetTargetCompartmentOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetTargetCompartmentArrayOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetsDynamicSetCollectionOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetsDynamicSetCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetsDynamicSetCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetsDynamicSetCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetsDynamicSetCollectionItemMatchingRuleOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetsDynamicSetCollectionItemMatchingRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetsDynamicSetCollectionItemMatchingRuleTagArrayOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetsDynamicSetCollectionItemTargetCompartmentOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetsDynamicSetCollectionItemTargetCompartmentArrayOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetsFilterOutput{})
+	pulumi.RegisterOutputType(GetDynamicSetsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetEntitlementsEntitlementCollectionOutput{})
 	pulumi.RegisterOutputType(GetEntitlementsEntitlementCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetEntitlementsEntitlementCollectionItemOutput{})
@@ -36272,6 +44526,20 @@ func init() {
 	pulumi.RegisterOutputType(GetManagedInstanceGroupInstalledPackagesManagedInstanceGroupInstalledPackageCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedInstanceGroupInstalledPackagesManagedInstanceGroupInstalledPackageCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetManagedInstanceGroupInstalledPackagesManagedInstanceGroupInstalledPackageCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceGroupManagedInstancesFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceGroupManagedInstancesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemAutonomousSettingArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleEnvironmentArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemLifecycleStageArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceGroupManagedInstancesManagedInstanceCollectionItemManagedInstanceGroupArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedInstanceGroupModulesFilterOutput{})
 	pulumi.RegisterOutputType(GetManagedInstanceGroupModulesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedInstanceGroupModulesManagedInstanceGroupModuleCollectionOutput{})
@@ -36316,6 +44584,12 @@ func init() {
 	pulumi.RegisterOutputType(GetManagedInstanceModulesManagedInstanceModuleCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedInstanceModulesManagedInstanceModuleCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetManagedInstanceModulesManagedInstanceModuleCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceSnapsFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceSnapsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceSnapsSnapCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceSnapsSnapCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceSnapsSnapCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceSnapsSnapCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedInstanceSoftwareSourceOutput{})
 	pulumi.RegisterOutputType(GetManagedInstanceSoftwareSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedInstanceUpdatablePackagesFilterOutput{})
@@ -36402,6 +44676,8 @@ func init() {
 	pulumi.RegisterOutputType(GetProfilesProfileCollectionItemSoftwareSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetScheduledJobOperationOutput{})
 	pulumi.RegisterOutputType(GetScheduledJobOperationArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledJobOperationInstallSnapDetailOutput{})
+	pulumi.RegisterOutputType(GetScheduledJobOperationInstallSnapDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetScheduledJobOperationManageModuleStreamsDetailOutput{})
 	pulumi.RegisterOutputType(GetScheduledJobOperationManageModuleStreamsDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetScheduledJobOperationManageModuleStreamsDetailDisableOutput{})
@@ -36412,8 +44688,12 @@ func init() {
 	pulumi.RegisterOutputType(GetScheduledJobOperationManageModuleStreamsDetailInstallArrayOutput{})
 	pulumi.RegisterOutputType(GetScheduledJobOperationManageModuleStreamsDetailRemoveOutput{})
 	pulumi.RegisterOutputType(GetScheduledJobOperationManageModuleStreamsDetailRemoveArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledJobOperationRemoveSnapDetailOutput{})
+	pulumi.RegisterOutputType(GetScheduledJobOperationRemoveSnapDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetScheduledJobOperationSwitchModuleStreamsDetailOutput{})
 	pulumi.RegisterOutputType(GetScheduledJobOperationSwitchModuleStreamsDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledJobOperationSwitchSnapChannelDetailOutput{})
+	pulumi.RegisterOutputType(GetScheduledJobOperationSwitchSnapChannelDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetScheduledJobsFilterOutput{})
 	pulumi.RegisterOutputType(GetScheduledJobsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetScheduledJobsScheduledJobCollectionOutput{})
@@ -36422,6 +44702,8 @@ func init() {
 	pulumi.RegisterOutputType(GetScheduledJobsScheduledJobCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetScheduledJobsScheduledJobCollectionItemOperationOutput{})
 	pulumi.RegisterOutputType(GetScheduledJobsScheduledJobCollectionItemOperationArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailOutput{})
+	pulumi.RegisterOutputType(GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailOutput{})
 	pulumi.RegisterOutputType(GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailDisableOutput{})
@@ -36432,8 +44714,12 @@ func init() {
 	pulumi.RegisterOutputType(GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailInstallArrayOutput{})
 	pulumi.RegisterOutputType(GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailRemoveOutput{})
 	pulumi.RegisterOutputType(GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailRemoveArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailOutput{})
+	pulumi.RegisterOutputType(GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetailOutput{})
 	pulumi.RegisterOutputType(GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailOutput{})
+	pulumi.RegisterOutputType(GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetSoftwarePackageDependencyOutput{})
 	pulumi.RegisterOutputType(GetSoftwarePackageDependencyArrayOutput{})
 	pulumi.RegisterOutputType(GetSoftwarePackageFileOutput{})

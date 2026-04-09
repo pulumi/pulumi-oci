@@ -19,6 +19,8 @@ import * as utilities from "../utilities";
  *
  * const testAssets = oci.CloudBridge.getAssets({
  *     compartmentId: compartmentId,
+ *     assetClassName: assetAssetClassName,
+ *     assetClassVersion: assetAssetClassVersion,
  *     assetId: testAsset.id,
  *     assetType: assetAssetType,
  *     displayName: assetDisplayName,
@@ -32,6 +34,8 @@ import * as utilities from "../utilities";
 export function getAssets(args: GetAssetsArgs, opts?: pulumi.InvokeOptions): Promise<GetAssetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudBridge/getAssets:getAssets", {
+        "assetClassName": args.assetClassName,
+        "assetClassVersion": args.assetClassVersion,
         "assetId": args.assetId,
         "assetType": args.assetType,
         "compartmentId": args.compartmentId,
@@ -48,6 +52,14 @@ export function getAssets(args: GetAssetsArgs, opts?: pulumi.InvokeOptions): Pro
  * A collection of arguments for invoking getAssets.
  */
 export interface GetAssetsArgs {
+    /**
+     * The name of the asset class.
+     */
+    assetClassName?: string;
+    /**
+     * The version of the asset class.
+     */
+    assetClassVersion?: string;
     /**
      * Unique asset identifier.
      */
@@ -87,6 +99,14 @@ export interface GetAssetsArgs {
  * A collection of values returned by getAssets.
  */
 export interface GetAssetsResult {
+    /**
+     * The class name of the asset.
+     */
+    readonly assetClassName?: string;
+    /**
+     * The version of the asset class.
+     */
+    readonly assetClassVersion?: string;
     /**
      * The list of asset_collection.
      */
@@ -139,6 +159,8 @@ export interface GetAssetsResult {
  *
  * const testAssets = oci.CloudBridge.getAssets({
  *     compartmentId: compartmentId,
+ *     assetClassName: assetAssetClassName,
+ *     assetClassVersion: assetAssetClassVersion,
  *     assetId: testAsset.id,
  *     assetType: assetAssetType,
  *     displayName: assetDisplayName,
@@ -152,6 +174,8 @@ export interface GetAssetsResult {
 export function getAssetsOutput(args: GetAssetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAssetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:CloudBridge/getAssets:getAssets", {
+        "assetClassName": args.assetClassName,
+        "assetClassVersion": args.assetClassVersion,
         "assetId": args.assetId,
         "assetType": args.assetType,
         "compartmentId": args.compartmentId,
@@ -168,6 +192,14 @@ export function getAssetsOutput(args: GetAssetsOutputArgs, opts?: pulumi.InvokeO
  * A collection of arguments for invoking getAssets.
  */
 export interface GetAssetsOutputArgs {
+    /**
+     * The name of the asset class.
+     */
+    assetClassName?: pulumi.Input<string>;
+    /**
+     * The version of the asset class.
+     */
+    assetClassVersion?: pulumi.Input<string>;
     /**
      * Unique asset identifier.
      */

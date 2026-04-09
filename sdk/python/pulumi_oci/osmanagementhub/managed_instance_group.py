@@ -46,7 +46,7 @@ class ManagedInstanceGroupArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input['ManagedInstanceGroupAutonomousSettingsArgs'] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
+        :param pulumi.Input['ManagedInstanceGroupAutonomousSettingsArgs'] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -145,7 +145,7 @@ class ManagedInstanceGroupArgs:
     @pulumi.getter(name="autonomousSettings")
     def autonomous_settings(self) -> Optional[pulumi.Input['ManagedInstanceGroupAutonomousSettingsArgs']]:
         """
-        (Updatable) Updatable settings for the Autonomous Linux service.
+        (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
         """
         return pulumi.get(self, "autonomous_settings")
 
@@ -266,7 +266,7 @@ class _ManagedInstanceGroupState:
         Input properties used for looking up and filtering ManagedInstanceGroup resources.
 
         :param pulumi.Input[_builtins.str] arch_type: The CPU architecture type of the managed instances that will be attached to this group.
-        :param pulumi.Input['ManagedInstanceGroupAutonomousSettingsArgs'] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
+        :param pulumi.Input['ManagedInstanceGroupAutonomousSettingsArgs'] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
@@ -350,7 +350,7 @@ class _ManagedInstanceGroupState:
     @pulumi.getter(name="autonomousSettings")
     def autonomous_settings(self) -> Optional[pulumi.Input['ManagedInstanceGroupAutonomousSettingsArgs']]:
         """
-        (Updatable) Updatable settings for the Autonomous Linux service.
+        (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
         """
         return pulumi.get(self, "autonomous_settings")
 
@@ -659,7 +659,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] arch_type: The CPU architecture type of the managed instances that will be attached to this group.
-        :param pulumi.Input[Union['ManagedInstanceGroupAutonomousSettingsArgs', 'ManagedInstanceGroupAutonomousSettingsArgsDict']] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
+        :param pulumi.Input[Union['ManagedInstanceGroupAutonomousSettingsArgs', 'ManagedInstanceGroupAutonomousSettingsArgsDict']] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
@@ -834,7 +834,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] arch_type: The CPU architecture type of the managed instances that will be attached to this group.
-        :param pulumi.Input[Union['ManagedInstanceGroupAutonomousSettingsArgs', 'ManagedInstanceGroupAutonomousSettingsArgsDict']] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
+        :param pulumi.Input[Union['ManagedInstanceGroupAutonomousSettingsArgs', 'ManagedInstanceGroupAutonomousSettingsArgsDict']] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
@@ -898,7 +898,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
     @pulumi.getter(name="autonomousSettings")
     def autonomous_settings(self) -> pulumi.Output['outputs.ManagedInstanceGroupAutonomousSettings']:
         """
-        (Updatable) Updatable settings for the Autonomous Linux service.
+        (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
         """
         return pulumi.get(self, "autonomous_settings")
 

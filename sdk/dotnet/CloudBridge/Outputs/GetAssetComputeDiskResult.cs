@@ -17,6 +17,7 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// Order of boot volumes.
         /// </summary>
         public readonly int BootOrder;
+        public readonly bool IsCbtEnabled;
         /// <summary>
         /// Location of the boot/data volume.
         /// </summary>
@@ -46,6 +47,8 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         private GetAssetComputeDiskResult(
             int bootOrder,
 
+            bool isCbtEnabled,
+
             string location,
 
             string name,
@@ -59,6 +62,7 @@ namespace Pulumi.Oci.CloudBridge.Outputs
             string uuidLun)
         {
             BootOrder = bootOrder;
+            IsCbtEnabled = isCbtEnabled;
             Location = location;
             Name = name;
             PersistentMode = persistentMode;

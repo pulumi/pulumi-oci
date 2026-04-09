@@ -34,6 +34,7 @@ import (
 //				CompartmentIdInSubtree:     pulumi.BoolRef(scheduledJobCompartmentIdInSubtree),
 //				DisplayName:                pulumi.StringRef(scheduledJobDisplayName),
 //				DisplayNameContains:        pulumi.StringRef(scheduledJobDisplayNameContains),
+//				DynamicSetId:               pulumi.StringRef(testDynamicSet.Id),
 //				Id:                         pulumi.StringRef(scheduledJobId),
 //				IsManagedByAutonomousLinux: pulumi.BoolRef(scheduledJobIsManagedByAutonomousLinux),
 //				IsRestricted:               pulumi.BoolRef(scheduledJobIsRestricted),
@@ -76,8 +77,10 @@ type GetScheduledJobsArgs struct {
 	// A filter to return resources that match the given user-friendly name.
 	DisplayName *string `pulumi:"displayName"`
 	// A filter to return resources that may partially match the given display name.
-	DisplayNameContains *string                  `pulumi:"displayNameContains"`
-	Filters             []GetScheduledJobsFilter `pulumi:"filters"`
+	DisplayNameContains *string `pulumi:"displayNameContains"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
+	DynamicSetId *string                  `pulumi:"dynamicSetId"`
+	Filters      []GetScheduledJobsFilter `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job. A filter to return the specified job.
 	Id *string `pulumi:"id"`
 	// Indicates whether to list only resources managed by the Autonomous Linux service.
@@ -116,6 +119,7 @@ type GetScheduledJobsResult struct {
 	// User-friendly name for the scheduled job.
 	DisplayName         *string                  `pulumi:"displayName"`
 	DisplayNameContains *string                  `pulumi:"displayNameContains"`
+	DynamicSetId        *string                  `pulumi:"dynamicSetId"`
 	Filters             []GetScheduledJobsFilter `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job.
 	Id *string `pulumi:"id"`
@@ -159,8 +163,10 @@ type GetScheduledJobsOutputArgs struct {
 	// A filter to return resources that match the given user-friendly name.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A filter to return resources that may partially match the given display name.
-	DisplayNameContains pulumi.StringPtrInput            `pulumi:"displayNameContains"`
-	Filters             GetScheduledJobsFilterArrayInput `pulumi:"filters"`
+	DisplayNameContains pulumi.StringPtrInput `pulumi:"displayNameContains"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
+	DynamicSetId pulumi.StringPtrInput            `pulumi:"dynamicSetId"`
+	Filters      GetScheduledJobsFilterArrayInput `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job. A filter to return the specified job.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Indicates whether to list only resources managed by the Autonomous Linux service.
@@ -226,6 +232,10 @@ func (o GetScheduledJobsResultOutput) DisplayName() pulumi.StringPtrOutput {
 
 func (o GetScheduledJobsResultOutput) DisplayNameContains() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetScheduledJobsResult) *string { return v.DisplayNameContains }).(pulumi.StringPtrOutput)
+}
+
+func (o GetScheduledJobsResultOutput) DynamicSetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScheduledJobsResult) *string { return v.DynamicSetId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetScheduledJobsResultOutput) Filters() GetScheduledJobsFilterArrayOutput {

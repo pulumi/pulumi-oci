@@ -27,7 +27,7 @@ class GetAssetSourceResult:
     """
     A collection of values returned by getAssetSource.
     """
-    def __init__(__self__, are_historical_metrics_collected=None, are_realtime_metrics_collected=None, asset_source_id=None, assets_compartment_id=None, compartment_id=None, defined_tags=None, discovery_credentials=None, discovery_schedule_id=None, display_name=None, environment_id=None, freeform_tags=None, id=None, inventory_id=None, lifecycle_details=None, replication_credentials=None, state=None, system_tags=None, time_created=None, time_updated=None, type=None, vcenter_endpoint=None):
+    def __init__(__self__, are_historical_metrics_collected=None, are_realtime_metrics_collected=None, asset_source_id=None, assets_compartment_id=None, aws_account_key=None, aws_region=None, compartment_id=None, defined_tags=None, discovery_credentials=None, discovery_schedule_id=None, display_name=None, environment_id=None, environment_type=None, freeform_tags=None, id=None, inventory_id=None, is_cost_information_collected=None, lifecycle_details=None, olvm_endpoint=None, replication_credentials=None, state=None, system_tags=None, time_created=None, time_updated=None, type=None, vcenter_endpoint=None):
         if are_historical_metrics_collected and not isinstance(are_historical_metrics_collected, bool):
             raise TypeError("Expected argument 'are_historical_metrics_collected' to be a bool")
         pulumi.set(__self__, "are_historical_metrics_collected", are_historical_metrics_collected)
@@ -40,6 +40,12 @@ class GetAssetSourceResult:
         if assets_compartment_id and not isinstance(assets_compartment_id, str):
             raise TypeError("Expected argument 'assets_compartment_id' to be a str")
         pulumi.set(__self__, "assets_compartment_id", assets_compartment_id)
+        if aws_account_key and not isinstance(aws_account_key, str):
+            raise TypeError("Expected argument 'aws_account_key' to be a str")
+        pulumi.set(__self__, "aws_account_key", aws_account_key)
+        if aws_region and not isinstance(aws_region, str):
+            raise TypeError("Expected argument 'aws_region' to be a str")
+        pulumi.set(__self__, "aws_region", aws_region)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -58,6 +64,9 @@ class GetAssetSourceResult:
         if environment_id and not isinstance(environment_id, str):
             raise TypeError("Expected argument 'environment_id' to be a str")
         pulumi.set(__self__, "environment_id", environment_id)
+        if environment_type and not isinstance(environment_type, str):
+            raise TypeError("Expected argument 'environment_type' to be a str")
+        pulumi.set(__self__, "environment_type", environment_type)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -67,9 +76,15 @@ class GetAssetSourceResult:
         if inventory_id and not isinstance(inventory_id, str):
             raise TypeError("Expected argument 'inventory_id' to be a str")
         pulumi.set(__self__, "inventory_id", inventory_id)
+        if is_cost_information_collected and not isinstance(is_cost_information_collected, bool):
+            raise TypeError("Expected argument 'is_cost_information_collected' to be a bool")
+        pulumi.set(__self__, "is_cost_information_collected", is_cost_information_collected)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if olvm_endpoint and not isinstance(olvm_endpoint, str):
+            raise TypeError("Expected argument 'olvm_endpoint' to be a str")
+        pulumi.set(__self__, "olvm_endpoint", olvm_endpoint)
         if replication_credentials and not isinstance(replication_credentials, list):
             raise TypeError("Expected argument 'replication_credentials' to be a list")
         pulumi.set(__self__, "replication_credentials", replication_credentials)
@@ -122,6 +137,16 @@ class GetAssetSourceResult:
         return pulumi.get(self, "assets_compartment_id")
 
     @_builtins.property
+    @pulumi.getter(name="awsAccountKey")
+    def aws_account_key(self) -> _builtins.str:
+        return pulumi.get(self, "aws_account_key")
+
+    @_builtins.property
+    @pulumi.getter(name="awsRegion")
+    def aws_region(self) -> _builtins.str:
+        return pulumi.get(self, "aws_region")
+
+    @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
@@ -170,6 +195,14 @@ class GetAssetSourceResult:
         return pulumi.get(self, "environment_id")
 
     @_builtins.property
+    @pulumi.getter(name="environmentType")
+    def environment_type(self) -> _builtins.str:
+        """
+        Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+        """
+        return pulumi.get(self, "environment_type")
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, _builtins.str]:
         """
@@ -194,12 +227,25 @@ class GetAssetSourceResult:
         return pulumi.get(self, "inventory_id")
 
     @_builtins.property
+    @pulumi.getter(name="isCostInformationCollected")
+    def is_cost_information_collected(self) -> _builtins.bool:
+        return pulumi.get(self, "is_cost_information_collected")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
         The detailed state of the asset source.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="olvmEndpoint")
+    def olvm_endpoint(self) -> _builtins.str:
+        """
+        Endpoint for OLVM asset discovery and replication in the form of ```https://<host>:<port>```
+        """
+        return pulumi.get(self, "olvm_endpoint")
 
     @_builtins.property
     @pulumi.getter(name="replicationCredentials")
@@ -268,16 +314,21 @@ class AwaitableGetAssetSourceResult(GetAssetSourceResult):
             are_realtime_metrics_collected=self.are_realtime_metrics_collected,
             asset_source_id=self.asset_source_id,
             assets_compartment_id=self.assets_compartment_id,
+            aws_account_key=self.aws_account_key,
+            aws_region=self.aws_region,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             discovery_credentials=self.discovery_credentials,
             discovery_schedule_id=self.discovery_schedule_id,
             display_name=self.display_name,
             environment_id=self.environment_id,
+            environment_type=self.environment_type,
             freeform_tags=self.freeform_tags,
             id=self.id,
             inventory_id=self.inventory_id,
+            is_cost_information_collected=self.is_cost_information_collected,
             lifecycle_details=self.lifecycle_details,
+            olvm_endpoint=self.olvm_endpoint,
             replication_credentials=self.replication_credentials,
             state=self.state,
             system_tags=self.system_tags,
@@ -316,16 +367,21 @@ def get_asset_source(asset_source_id: Optional[_builtins.str] = None,
         are_realtime_metrics_collected=pulumi.get(__ret__, 'are_realtime_metrics_collected'),
         asset_source_id=pulumi.get(__ret__, 'asset_source_id'),
         assets_compartment_id=pulumi.get(__ret__, 'assets_compartment_id'),
+        aws_account_key=pulumi.get(__ret__, 'aws_account_key'),
+        aws_region=pulumi.get(__ret__, 'aws_region'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         discovery_credentials=pulumi.get(__ret__, 'discovery_credentials'),
         discovery_schedule_id=pulumi.get(__ret__, 'discovery_schedule_id'),
         display_name=pulumi.get(__ret__, 'display_name'),
         environment_id=pulumi.get(__ret__, 'environment_id'),
+        environment_type=pulumi.get(__ret__, 'environment_type'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         inventory_id=pulumi.get(__ret__, 'inventory_id'),
+        is_cost_information_collected=pulumi.get(__ret__, 'is_cost_information_collected'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        olvm_endpoint=pulumi.get(__ret__, 'olvm_endpoint'),
         replication_credentials=pulumi.get(__ret__, 'replication_credentials'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
@@ -361,16 +417,21 @@ def get_asset_source_output(asset_source_id: Optional[pulumi.Input[_builtins.str
         are_realtime_metrics_collected=pulumi.get(__response__, 'are_realtime_metrics_collected'),
         asset_source_id=pulumi.get(__response__, 'asset_source_id'),
         assets_compartment_id=pulumi.get(__response__, 'assets_compartment_id'),
+        aws_account_key=pulumi.get(__response__, 'aws_account_key'),
+        aws_region=pulumi.get(__response__, 'aws_region'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         discovery_credentials=pulumi.get(__response__, 'discovery_credentials'),
         discovery_schedule_id=pulumi.get(__response__, 'discovery_schedule_id'),
         display_name=pulumi.get(__response__, 'display_name'),
         environment_id=pulumi.get(__response__, 'environment_id'),
+        environment_type=pulumi.get(__response__, 'environment_type'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         inventory_id=pulumi.get(__response__, 'inventory_id'),
+        is_cost_information_collected=pulumi.get(__response__, 'is_cost_information_collected'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        olvm_endpoint=pulumi.get(__response__, 'olvm_endpoint'),
         replication_credentials=pulumi.get(__response__, 'replication_credentials'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),

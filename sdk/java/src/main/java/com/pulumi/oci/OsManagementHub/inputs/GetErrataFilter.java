@@ -18,14 +18,14 @@ public final class GetErrataFilter extends com.pulumi.resources.InvokeArgs {
     public static final GetErrataFilter Empty = new GetErrataFilter();
 
     /**
-     * The assigned erratum name. It&#39;s unique and not changeable.  Example: `ELSA-2020-5804`
+     * The erratum name (such as ELSA-2023-34678).
      * 
      */
     @Import(name="name", required=true)
     private String name;
 
     /**
-     * @return The assigned erratum name. It&#39;s unique and not changeable.  Example: `ELSA-2020-5804`
+     * @return The erratum name (such as ELSA-2023-34678).
      * 
      */
     public String name() {
@@ -73,7 +73,7 @@ public final class GetErrataFilter extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param name The assigned erratum name. It&#39;s unique and not changeable.  Example: `ELSA-2020-5804`
+         * @param name The erratum name (such as ELSA-2023-34678).
          * 
          * @return builder
          * 

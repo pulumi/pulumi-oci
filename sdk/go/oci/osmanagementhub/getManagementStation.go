@@ -58,6 +58,8 @@ type LookupManagementStationArgs struct {
 
 // A collection of values returned by getManagementStation.
 type LookupManagementStationResult struct {
+	// The architecture type.
+	ArchType string `pulumi:"archType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -97,6 +99,8 @@ type LookupManagementStationResult struct {
 	MirrorUniquePackageCount int `pulumi:"mirrorUniquePackageCount"`
 	// Mirror information used for the management station configuration.
 	Mirrors []GetManagementStationMirror `pulumi:"mirrors"`
+	// The operating system family.
+	OsFamily string `pulumi:"osFamily"`
 	// A decimal number representing the progress of the current mirror sync.
 	OverallPercentage int `pulumi:"overallPercentage"`
 	// Current state of the mirror sync for the management station.
@@ -150,6 +154,11 @@ func (o LookupManagementStationResultOutput) ToLookupManagementStationResultOutp
 
 func (o LookupManagementStationResultOutput) ToLookupManagementStationResultOutputWithContext(ctx context.Context) LookupManagementStationResultOutput {
 	return o
+}
+
+// The architecture type.
+func (o LookupManagementStationResultOutput) ArchType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) string { return v.ArchType }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
@@ -251,6 +260,11 @@ func (o LookupManagementStationResultOutput) MirrorUniquePackageCount() pulumi.I
 // Mirror information used for the management station configuration.
 func (o LookupManagementStationResultOutput) Mirrors() GetManagementStationMirrorArrayOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) []GetManagementStationMirror { return v.Mirrors }).(GetManagementStationMirrorArrayOutput)
+}
+
+// The operating system family.
+func (o LookupManagementStationResultOutput) OsFamily() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) string { return v.OsFamily }).(pulumi.StringOutput)
 }
 
 // A decimal number representing the progress of the current mirror sync.

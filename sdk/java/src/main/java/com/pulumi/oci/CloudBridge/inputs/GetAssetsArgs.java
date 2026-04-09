@@ -19,6 +19,36 @@ public final class GetAssetsArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetAssetsArgs Empty = new GetAssetsArgs();
 
     /**
+     * The name of the asset class.
+     * 
+     */
+    @Import(name="assetClassName")
+    private @Nullable Output<String> assetClassName;
+
+    /**
+     * @return The name of the asset class.
+     * 
+     */
+    public Optional<Output<String>> assetClassName() {
+        return Optional.ofNullable(this.assetClassName);
+    }
+
+    /**
+     * The version of the asset class.
+     * 
+     */
+    @Import(name="assetClassVersion")
+    private @Nullable Output<String> assetClassVersion;
+
+    /**
+     * @return The version of the asset class.
+     * 
+     */
+    public Optional<Output<String>> assetClassVersion() {
+        return Optional.ofNullable(this.assetClassVersion);
+    }
+
+    /**
      * Unique asset identifier.
      * 
      */
@@ -148,6 +178,8 @@ public final class GetAssetsArgs extends com.pulumi.resources.InvokeArgs {
     private GetAssetsArgs() {}
 
     private GetAssetsArgs(GetAssetsArgs $) {
+        this.assetClassName = $.assetClassName;
+        this.assetClassVersion = $.assetClassVersion;
         this.assetId = $.assetId;
         this.assetType = $.assetType;
         this.compartmentId = $.compartmentId;
@@ -175,6 +207,48 @@ public final class GetAssetsArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder(GetAssetsArgs defaults) {
             $ = new GetAssetsArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param assetClassName The name of the asset class.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assetClassName(@Nullable Output<String> assetClassName) {
+            $.assetClassName = assetClassName;
+            return this;
+        }
+
+        /**
+         * @param assetClassName The name of the asset class.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assetClassName(String assetClassName) {
+            return assetClassName(Output.of(assetClassName));
+        }
+
+        /**
+         * @param assetClassVersion The version of the asset class.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assetClassVersion(@Nullable Output<String> assetClassVersion) {
+            $.assetClassVersion = assetClassVersion;
+            return this;
+        }
+
+        /**
+         * @param assetClassVersion The version of the asset class.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assetClassVersion(String assetClassVersion) {
+            return assetClassVersion(Output.of(assetClassVersion));
         }
 
         /**

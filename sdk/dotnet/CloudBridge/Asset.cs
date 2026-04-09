@@ -34,7 +34,173 @@ namespace Pulumi.Oci.CloudBridge
     ///         ExternalAssetKey = assetExternalAssetKey,
     ///         InventoryId = testInventory.Id,
     ///         SourceKey = assetSourceKey,
+    ///         AssetClassName = assetAssetClassName,
+    ///         AssetClassVersion = assetAssetClassVersion,
+    ///         AssetDetails = assetAssetDetails,
     ///         AssetSourceIds = assetAssetSourceIds,
+    ///         AttachedEbsVolumesCost = new Oci.CloudBridge.Inputs.AssetAttachedEbsVolumesCostArgs
+    ///         {
+    ///             Amount = assetAttachedEbsVolumesCostAmount,
+    ///             CurrencyCode = assetAttachedEbsVolumesCostCurrencyCode,
+    ///         },
+    ///         AwsEbs = new Oci.CloudBridge.Inputs.AssetAwsEbsArgs
+    ///         {
+    ///             Attachments = new[]
+    ///             {
+    ///                 new Oci.CloudBridge.Inputs.AssetAwsEbsAttachmentArgs
+    ///                 {
+    ///                     Device = assetAwsEbsAttachmentsDevice,
+    ///                     InstanceKey = assetAwsEbsAttachmentsInstanceKey,
+    ///                     IsDeleteOnTermination = assetAwsEbsAttachmentsIsDeleteOnTermination,
+    ///                     Status = assetAwsEbsAttachmentsStatus,
+    ///                     VolumeKey = assetAwsEbsAttachmentsVolumeKey,
+    ///                 },
+    ///             },
+    ///             AvailabilityZone = assetAwsEbsAvailabilityZone,
+    ///             Iops = assetAwsEbsIops,
+    ///             IsEncrypted = assetAwsEbsIsEncrypted,
+    ///             IsMultiAttachEnabled = assetAwsEbsIsMultiAttachEnabled,
+    ///             SizeInGiBs = assetAwsEbsSizeInGiBs,
+    ///             Status = assetAwsEbsStatus,
+    ///             Tags = new[]
+    ///             {
+    ///                 new Oci.CloudBridge.Inputs.AssetAwsEbsTagArgs
+    ///                 {
+    ///                     Key = assetAwsEbsTagsKey,
+    ///                     Value = assetAwsEbsTagsValue,
+    ///                 },
+    ///             },
+    ///             Throughput = assetAwsEbsThroughput,
+    ///             VolumeKey = assetAwsEbsVolumeKey,
+    ///             VolumeType = assetAwsEbsVolumeType,
+    ///         },
+    ///         AwsEc2 = new Oci.CloudBridge.Inputs.AssetAwsEc2Args
+    ///         {
+    ///             Architecture = assetAwsEc2Architecture,
+    ///             AreElasticInferenceAcceleratorsPresent = assetAwsEc2AreElasticInferenceAcceleratorsPresent,
+    ///             BootMode = assetAwsEc2BootMode,
+    ///             CapacityReservationKey = assetAwsEc2CapacityReservationKey,
+    ///             ImageKey = assetAwsEc2ImageKey,
+    ///             InstanceKey = assetAwsEc2InstanceKey,
+    ///             InstanceLifecycle = assetAwsEc2InstanceLifecycle,
+    ///             InstanceType = assetAwsEc2InstanceType,
+    ///             IpAddress = assetAwsEc2IpAddress,
+    ///             Ipv6address = assetAwsEc2Ipv6address,
+    ///             IsEnclaveOptions = assetAwsEc2IsEnclaveOptions,
+    ///             IsHibernationOptions = assetAwsEc2IsHibernationOptions,
+    ///             IsSourceDestCheck = assetAwsEc2IsSourceDestCheck,
+    ///             IsSpotInstance = assetAwsEc2IsSpotInstance,
+    ///             KernelKey = assetAwsEc2KernelKey,
+    ///             Licenses = assetAwsEc2Licenses,
+    ///             MaintenanceOptions = assetAwsEc2MaintenanceOptions,
+    ///             Monitoring = assetAwsEc2Monitoring,
+    ///             NetworkInterfaces = new[]
+    ///             {
+    ///                 new Oci.CloudBridge.Inputs.AssetAwsEc2NetworkInterfaceArgs
+    ///                 {
+    ///                     Association = new Oci.CloudBridge.Inputs.AssetAwsEc2NetworkInterfaceAssociationArgs
+    ///                     {
+    ///                         CarrierIp = assetAwsEc2NetworkInterfacesAssociationCarrierIp,
+    ///                         CustomerOwnedIp = assetAwsEc2NetworkInterfacesAssociationCustomerOwnedIp,
+    ///                         IpOwnerKey = assetAwsEc2NetworkInterfacesAssociationIpOwnerKey,
+    ///                         PublicDnsName = assetAwsEc2NetworkInterfacesAssociationPublicDnsName,
+    ///                         PublicIp = assetAwsEc2NetworkInterfacesAssociationPublicIp,
+    ///                     },
+    ///                     Attachment = new Oci.CloudBridge.Inputs.AssetAwsEc2NetworkInterfaceAttachmentArgs
+    ///                     {
+    ///                         AttachmentKey = assetAwsEc2NetworkInterfacesAttachmentAttachmentKey,
+    ///                         DeviceIndex = assetAwsEc2NetworkInterfacesAttachmentDeviceIndex,
+    ///                         IsDeleteOnTermination = assetAwsEc2NetworkInterfacesAttachmentIsDeleteOnTermination,
+    ///                         NetworkCardIndex = assetAwsEc2NetworkInterfacesAttachmentNetworkCardIndex,
+    ///                         Status = assetAwsEc2NetworkInterfacesAttachmentStatus,
+    ///                         TimeAttach = assetAwsEc2NetworkInterfacesAttachmentTimeAttach,
+    ///                     },
+    ///                     Description = assetAwsEc2NetworkInterfacesDescription,
+    ///                     InterfaceType = assetAwsEc2NetworkInterfacesInterfaceType,
+    ///                     Ipv4prefixes = assetAwsEc2NetworkInterfacesIpv4prefixes,
+    ///                     Ipv6addresses = assetAwsEc2NetworkInterfacesIpv6addresses,
+    ///                     Ipv6prefixes = assetAwsEc2NetworkInterfacesIpv6prefixes,
+    ///                     IsSourceDestCheck = assetAwsEc2NetworkInterfacesIsSourceDestCheck,
+    ///                     MacAddress = assetAwsEc2NetworkInterfacesMacAddress,
+    ///                     NetworkInterfaceKey = assetAwsEc2NetworkInterfacesNetworkInterfaceKey,
+    ///                     OwnerKey = assetAwsEc2NetworkInterfacesOwnerKey,
+    ///                     PrivateIpAddresses = new[]
+    ///                     {
+    ///                         new Oci.CloudBridge.Inputs.AssetAwsEc2NetworkInterfacePrivateIpAddressArgs
+    ///                         {
+    ///                             Association = new Oci.CloudBridge.Inputs.AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs
+    ///                             {
+    ///                                 CarrierIp = assetAwsEc2NetworkInterfacesPrivateIpAddressesAssociationCarrierIp,
+    ///                                 CustomerOwnedIp = assetAwsEc2NetworkInterfacesPrivateIpAddressesAssociationCustomerOwnedIp,
+    ///                                 IpOwnerKey = assetAwsEc2NetworkInterfacesPrivateIpAddressesAssociationIpOwnerKey,
+    ///                                 PublicDnsName = assetAwsEc2NetworkInterfacesPrivateIpAddressesAssociationPublicDnsName,
+    ///                                 PublicIp = assetAwsEc2NetworkInterfacesPrivateIpAddressesAssociationPublicIp,
+    ///                             },
+    ///                             IsPrimary = assetAwsEc2NetworkInterfacesPrivateIpAddressesIsPrimary,
+    ///                             PrivateDnsName = assetAwsEc2NetworkInterfacesPrivateIpAddressesPrivateDnsName,
+    ///                             PrivateIpAddress = assetAwsEc2NetworkInterfacesPrivateIpAddressesPrivateIpAddress,
+    ///                         },
+    ///                     },
+    ///                     SecurityGroups = new[]
+    ///                     {
+    ///                         new Oci.CloudBridge.Inputs.AssetAwsEc2NetworkInterfaceSecurityGroupArgs
+    ///                         {
+    ///                             GroupKey = assetAwsEc2NetworkInterfacesSecurityGroupsGroupKey,
+    ///                             GroupName = testGroup.Name,
+    ///                         },
+    ///                     },
+    ///                     Status = assetAwsEc2NetworkInterfacesStatus,
+    ///                     SubnetKey = assetAwsEc2NetworkInterfacesSubnetKey,
+    ///                 },
+    ///             },
+    ///             Placement = new Oci.CloudBridge.Inputs.AssetAwsEc2PlacementArgs
+    ///             {
+    ///                 Affinity = assetAwsEc2PlacementAffinity,
+    ///                 AvailabilityZone = assetAwsEc2PlacementAvailabilityZone,
+    ///                 GroupName = testGroup.Name,
+    ///                 HostKey = assetAwsEc2PlacementHostKey,
+    ///                 HostResourceGroupArn = assetAwsEc2PlacementHostResourceGroupArn,
+    ///                 PartitionNumber = assetAwsEc2PlacementPartitionNumber,
+    ///                 SpreadDomain = assetAwsEc2PlacementSpreadDomain,
+    ///                 Tenancy = assetAwsEc2PlacementTenancy,
+    ///             },
+    ///             PrivateDnsName = assetAwsEc2PrivateDnsName,
+    ///             PrivateIpAddress = assetAwsEc2PrivateIpAddress,
+    ///             RootDeviceName = assetAwsEc2RootDeviceName,
+    ///             RootDeviceType = assetAwsEc2RootDeviceType,
+    ///             SecurityGroups = new[]
+    ///             {
+    ///                 new Oci.CloudBridge.Inputs.AssetAwsEc2SecurityGroupArgs
+    ///                 {
+    ///                     GroupKey = assetAwsEc2SecurityGroupsGroupKey,
+    ///                     GroupName = testGroup.Name,
+    ///                 },
+    ///             },
+    ///             SriovNetSupport = assetAwsEc2SriovNetSupport,
+    ///             State = new Oci.CloudBridge.Inputs.AssetAwsEc2StateArgs
+    ///             {
+    ///                 Code = assetAwsEc2StateCode,
+    ///                 Name = assetAwsEc2StateName,
+    ///             },
+    ///             SubnetKey = assetAwsEc2SubnetKey,
+    ///             Tags = new[]
+    ///             {
+    ///                 new Oci.CloudBridge.Inputs.AssetAwsEc2TagArgs
+    ///                 {
+    ///                     Key = assetAwsEc2TagsKey,
+    ///                     Value = assetAwsEc2TagsValue,
+    ///                 },
+    ///             },
+    ///             TimeLaunch = assetAwsEc2TimeLaunch,
+    ///             TpmSupport = assetAwsEc2TpmSupport,
+    ///             VirtualizationType = assetAwsEc2VirtualizationType,
+    ///             VpcKey = assetAwsEc2VpcKey,
+    ///         },
+    ///         AwsEc2cost = new Oci.CloudBridge.Inputs.AssetAwsEc2costArgs
+    ///         {
+    ///             Amount = assetAwsEc2costAmount,
+    ///             CurrencyCode = assetAwsEc2costCurrencyCode,
+    ///         },
     ///         Compute = new Oci.CloudBridge.Inputs.AssetComputeArgs
     ///         {
     ///             ConnectedNetworks = assetComputeConnectedNetworks,
@@ -46,6 +212,7 @@ namespace Pulumi.Oci.CloudBridge
     ///                 new Oci.CloudBridge.Inputs.AssetComputeDiskArgs
     ///                 {
     ///                     BootOrder = assetComputeDisksBootOrder,
+    ///                     IsCbtEnabled = assetComputeDisksIsCbtEnabled,
     ///                     Location = assetComputeDisksLocation,
     ///                     Name = assetComputeDisksName,
     ///                     PersistentMode = assetComputeDisksPersistentMode,
@@ -122,6 +289,7 @@ namespace Pulumi.Oci.CloudBridge
     ///             { "Operations.CostCenter", "42" },
     ///         },
     ///         DisplayName = assetDisplayName,
+    ///         EnvironmentType = assetEnvironmentType,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
@@ -176,6 +344,24 @@ namespace Pulumi.Oci.CloudBridge
     public partial class Asset : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// (Updatable) The class name of the asset.
+        /// </summary>
+        [Output("assetClassName")]
+        public Output<string> AssetClassName { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The version of the asset class.
+        /// </summary>
+        [Output("assetClassVersion")]
+        public Output<string> AssetClassVersion { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The details of the asset.
+        /// </summary>
+        [Output("assetDetails")]
+        public Output<string> AssetDetails { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) List of asset source OCID.
         /// </summary>
         [Output("assetSourceIds")]
@@ -186,6 +372,30 @@ namespace Pulumi.Oci.CloudBridge
         /// </summary>
         [Output("assetType")]
         public Output<string> AssetType { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Cost information for monthly maintenance.
+        /// </summary>
+        [Output("attachedEbsVolumesCost")]
+        public Output<Outputs.AssetAttachedEbsVolumesCost> AttachedEbsVolumesCost { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) AWS EBS volume related properties.
+        /// </summary>
+        [Output("awsEbs")]
+        public Output<Outputs.AssetAwsEbs> AwsEbs { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) AWS virtual machine related properties.
+        /// </summary>
+        [Output("awsEc2")]
+        public Output<Outputs.AssetAwsEc2> AwsEc2 { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Cost information for monthly maintenance.
+        /// </summary>
+        [Output("awsEc2cost")]
+        public Output<Outputs.AssetAwsEc2cost> AwsEc2cost { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the compartment that the asset belongs to.
@@ -210,6 +420,12 @@ namespace Pulumi.Oci.CloudBridge
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
+
+        /// <summary>
+        /// Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+        /// </summary>
+        [Output("environmentType")]
+        public Output<string> EnvironmentType { get; private set; } = null!;
 
         /// <summary>
         /// The key of the asset from the external environment.
@@ -323,6 +539,24 @@ namespace Pulumi.Oci.CloudBridge
 
     public sealed class AssetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) The class name of the asset.
+        /// </summary>
+        [Input("assetClassName")]
+        public Input<string>? AssetClassName { get; set; }
+
+        /// <summary>
+        /// (Updatable) The version of the asset class.
+        /// </summary>
+        [Input("assetClassVersion")]
+        public Input<string>? AssetClassVersion { get; set; }
+
+        /// <summary>
+        /// (Updatable) The details of the asset.
+        /// </summary>
+        [Input("assetDetails")]
+        public Input<string>? AssetDetails { get; set; }
+
         [Input("assetSourceIds")]
         private InputList<string>? _assetSourceIds;
 
@@ -340,6 +574,30 @@ namespace Pulumi.Oci.CloudBridge
         /// </summary>
         [Input("assetType", required: true)]
         public Input<string> AssetType { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Cost information for monthly maintenance.
+        /// </summary>
+        [Input("attachedEbsVolumesCost")]
+        public Input<Inputs.AssetAttachedEbsVolumesCostArgs>? AttachedEbsVolumesCost { get; set; }
+
+        /// <summary>
+        /// (Updatable) AWS EBS volume related properties.
+        /// </summary>
+        [Input("awsEbs")]
+        public Input<Inputs.AssetAwsEbsArgs>? AwsEbs { get; set; }
+
+        /// <summary>
+        /// (Updatable) AWS virtual machine related properties.
+        /// </summary>
+        [Input("awsEc2")]
+        public Input<Inputs.AssetAwsEc2Args>? AwsEc2 { get; set; }
+
+        /// <summary>
+        /// (Updatable) Cost information for monthly maintenance.
+        /// </summary>
+        [Input("awsEc2cost")]
+        public Input<Inputs.AssetAwsEc2costArgs>? AwsEc2cost { get; set; }
 
         /// <summary>
         /// (Updatable) The OCID of the compartment that the asset belongs to.
@@ -427,6 +685,24 @@ namespace Pulumi.Oci.CloudBridge
 
     public sealed class AssetState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) The class name of the asset.
+        /// </summary>
+        [Input("assetClassName")]
+        public Input<string>? AssetClassName { get; set; }
+
+        /// <summary>
+        /// (Updatable) The version of the asset class.
+        /// </summary>
+        [Input("assetClassVersion")]
+        public Input<string>? AssetClassVersion { get; set; }
+
+        /// <summary>
+        /// (Updatable) The details of the asset.
+        /// </summary>
+        [Input("assetDetails")]
+        public Input<string>? AssetDetails { get; set; }
+
         [Input("assetSourceIds")]
         private InputList<string>? _assetSourceIds;
 
@@ -444,6 +720,30 @@ namespace Pulumi.Oci.CloudBridge
         /// </summary>
         [Input("assetType")]
         public Input<string>? AssetType { get; set; }
+
+        /// <summary>
+        /// (Updatable) Cost information for monthly maintenance.
+        /// </summary>
+        [Input("attachedEbsVolumesCost")]
+        public Input<Inputs.AssetAttachedEbsVolumesCostGetArgs>? AttachedEbsVolumesCost { get; set; }
+
+        /// <summary>
+        /// (Updatable) AWS EBS volume related properties.
+        /// </summary>
+        [Input("awsEbs")]
+        public Input<Inputs.AssetAwsEbsGetArgs>? AwsEbs { get; set; }
+
+        /// <summary>
+        /// (Updatable) AWS virtual machine related properties.
+        /// </summary>
+        [Input("awsEc2")]
+        public Input<Inputs.AssetAwsEc2GetArgs>? AwsEc2 { get; set; }
+
+        /// <summary>
+        /// (Updatable) Cost information for monthly maintenance.
+        /// </summary>
+        [Input("awsEc2cost")]
+        public Input<Inputs.AssetAwsEc2costGetArgs>? AwsEc2cost { get; set; }
 
         /// <summary>
         /// (Updatable) The OCID of the compartment that the asset belongs to.
@@ -474,6 +774,12 @@ namespace Pulumi.Oci.CloudBridge
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        /// <summary>
+        /// Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+        /// </summary>
+        [Input("environmentType")]
+        public Input<string>? EnvironmentType { get; set; }
 
         /// <summary>
         /// The key of the asset from the external environment.

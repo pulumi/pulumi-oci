@@ -28,7 +28,7 @@ class GetScheduledJobsResult:
     """
     A collection of values returned by getScheduledJobs.
     """
-    def __init__(__self__, compartment_id=None, compartment_id_in_subtree=None, display_name=None, display_name_contains=None, filters=None, id=None, is_managed_by_autonomous_linux=None, is_restricted=None, lifecycle_stage_id=None, location_not_equal_tos=None, locations=None, managed_compartment_id=None, managed_instance_group_id=None, managed_instance_id=None, operation_type=None, schedule_type=None, scheduled_job_collections=None, state=None, time_end=None, time_start=None):
+    def __init__(__self__, compartment_id=None, compartment_id_in_subtree=None, display_name=None, display_name_contains=None, dynamic_set_id=None, filters=None, id=None, is_managed_by_autonomous_linux=None, is_restricted=None, lifecycle_stage_id=None, location_not_equal_tos=None, locations=None, managed_compartment_id=None, managed_instance_group_id=None, managed_instance_id=None, operation_type=None, schedule_type=None, scheduled_job_collections=None, state=None, time_end=None, time_start=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -41,6 +41,9 @@ class GetScheduledJobsResult:
         if display_name_contains and not isinstance(display_name_contains, str):
             raise TypeError("Expected argument 'display_name_contains' to be a str")
         pulumi.set(__self__, "display_name_contains", display_name_contains)
+        if dynamic_set_id and not isinstance(dynamic_set_id, str):
+            raise TypeError("Expected argument 'dynamic_set_id' to be a str")
+        pulumi.set(__self__, "dynamic_set_id", dynamic_set_id)
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
@@ -115,6 +118,11 @@ class GetScheduledJobsResult:
     @pulumi.getter(name="displayNameContains")
     def display_name_contains(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "display_name_contains")
+
+    @_builtins.property
+    @pulumi.getter(name="dynamicSetId")
+    def dynamic_set_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "dynamic_set_id")
 
     @_builtins.property
     @pulumi.getter
@@ -228,6 +236,7 @@ class AwaitableGetScheduledJobsResult(GetScheduledJobsResult):
             compartment_id_in_subtree=self.compartment_id_in_subtree,
             display_name=self.display_name,
             display_name_contains=self.display_name_contains,
+            dynamic_set_id=self.dynamic_set_id,
             filters=self.filters,
             id=self.id,
             is_managed_by_autonomous_linux=self.is_managed_by_autonomous_linux,
@@ -250,6 +259,7 @@ def get_scheduled_jobs(compartment_id: Optional[_builtins.str] = None,
                        compartment_id_in_subtree: Optional[_builtins.bool] = None,
                        display_name: Optional[_builtins.str] = None,
                        display_name_contains: Optional[_builtins.str] = None,
+                       dynamic_set_id: Optional[_builtins.str] = None,
                        filters: Optional[Sequence[Union['GetScheduledJobsFilterArgs', 'GetScheduledJobsFilterArgsDict']]] = None,
                        id: Optional[_builtins.str] = None,
                        is_managed_by_autonomous_linux: Optional[_builtins.bool] = None,
@@ -281,6 +291,7 @@ def get_scheduled_jobs(compartment_id: Optional[_builtins.str] = None,
         compartment_id_in_subtree=scheduled_job_compartment_id_in_subtree,
         display_name=scheduled_job_display_name,
         display_name_contains=scheduled_job_display_name_contains,
+        dynamic_set_id=test_dynamic_set["id"],
         id=scheduled_job_id,
         is_managed_by_autonomous_linux=scheduled_job_is_managed_by_autonomous_linux,
         is_restricted=scheduled_job_is_restricted,
@@ -302,6 +313,7 @@ def get_scheduled_jobs(compartment_id: Optional[_builtins.str] = None,
     :param _builtins.bool compartment_id_in_subtree: Indicates whether to include subcompartments in the returned results. Default is false.
     :param _builtins.str display_name: A filter to return resources that match the given user-friendly name.
     :param _builtins.str display_name_contains: A filter to return resources that may partially match the given display name.
+    :param _builtins.str dynamic_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
     :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job. A filter to return the specified job.
     :param _builtins.bool is_managed_by_autonomous_linux: Indicates whether to list only resources managed by the Autonomous Linux service.
     :param _builtins.bool is_restricted: A filter to return only restricted scheduled jobs.
@@ -322,6 +334,7 @@ def get_scheduled_jobs(compartment_id: Optional[_builtins.str] = None,
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['displayName'] = display_name
     __args__['displayNameContains'] = display_name_contains
+    __args__['dynamicSetId'] = dynamic_set_id
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['isManagedByAutonomousLinux'] = is_managed_by_autonomous_linux
@@ -345,6 +358,7 @@ def get_scheduled_jobs(compartment_id: Optional[_builtins.str] = None,
         compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
         display_name=pulumi.get(__ret__, 'display_name'),
         display_name_contains=pulumi.get(__ret__, 'display_name_contains'),
+        dynamic_set_id=pulumi.get(__ret__, 'dynamic_set_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         is_managed_by_autonomous_linux=pulumi.get(__ret__, 'is_managed_by_autonomous_linux'),
@@ -365,6 +379,7 @@ def get_scheduled_jobs_output(compartment_id: Optional[pulumi.Input[Optional[_bu
                               compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                               display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                               display_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                              dynamic_set_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetScheduledJobsFilterArgs', 'GetScheduledJobsFilterArgsDict']]]]] = None,
                               id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                               is_managed_by_autonomous_linux: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
@@ -396,6 +411,7 @@ def get_scheduled_jobs_output(compartment_id: Optional[pulumi.Input[Optional[_bu
         compartment_id_in_subtree=scheduled_job_compartment_id_in_subtree,
         display_name=scheduled_job_display_name,
         display_name_contains=scheduled_job_display_name_contains,
+        dynamic_set_id=test_dynamic_set["id"],
         id=scheduled_job_id,
         is_managed_by_autonomous_linux=scheduled_job_is_managed_by_autonomous_linux,
         is_restricted=scheduled_job_is_restricted,
@@ -417,6 +433,7 @@ def get_scheduled_jobs_output(compartment_id: Optional[pulumi.Input[Optional[_bu
     :param _builtins.bool compartment_id_in_subtree: Indicates whether to include subcompartments in the returned results. Default is false.
     :param _builtins.str display_name: A filter to return resources that match the given user-friendly name.
     :param _builtins.str display_name_contains: A filter to return resources that may partially match the given display name.
+    :param _builtins.str dynamic_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
     :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job. A filter to return the specified job.
     :param _builtins.bool is_managed_by_autonomous_linux: Indicates whether to list only resources managed by the Autonomous Linux service.
     :param _builtins.bool is_restricted: A filter to return only restricted scheduled jobs.
@@ -437,6 +454,7 @@ def get_scheduled_jobs_output(compartment_id: Optional[pulumi.Input[Optional[_bu
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['displayName'] = display_name
     __args__['displayNameContains'] = display_name_contains
+    __args__['dynamicSetId'] = dynamic_set_id
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['isManagedByAutonomousLinux'] = is_managed_by_autonomous_linux
@@ -459,6 +477,7 @@ def get_scheduled_jobs_output(compartment_id: Optional[pulumi.Input[Optional[_bu
         compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
         display_name=pulumi.get(__response__, 'display_name'),
         display_name_contains=pulumi.get(__response__, 'display_name_contains'),
+        dynamic_set_id=pulumi.get(__response__, 'dynamic_set_id'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
         is_managed_by_autonomous_linux=pulumi.get(__response__, 'is_managed_by_autonomous_linux'),

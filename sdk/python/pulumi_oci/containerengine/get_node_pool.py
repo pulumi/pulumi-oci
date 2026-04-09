@@ -27,7 +27,7 @@ class GetNodePoolResult:
     """
     A collection of values returned by getNodePool.
     """
-    def __init__(__self__, cluster_id=None, compartment_id=None, defined_tags=None, freeform_tags=None, id=None, initial_node_labels=None, kubernetes_version=None, lifecycle_details=None, name=None, node_config_details=None, node_eviction_node_pool_settings=None, node_image_id=None, node_image_name=None, node_metadata=None, node_pool_cycling_details=None, node_pool_id=None, node_shape=None, node_shape_configs=None, node_source_details=None, node_sources=None, nodes=None, quantity_per_subnet=None, ssh_public_key=None, state=None, subnet_ids=None):
+    def __init__(__self__, cluster_id=None, compartment_id=None, defined_tags=None, freeform_tags=None, id=None, initial_node_labels=None, kubernetes_version=None, lifecycle_details=None, name=None, network_launch_type=None, node_config_details=None, node_eviction_node_pool_settings=None, node_image_id=None, node_image_name=None, node_metadata=None, node_pool_cycling_details=None, node_pool_id=None, node_shape=None, node_shape_configs=None, node_source_details=None, node_sources=None, nodes=None, quantity_per_subnet=None, secondary_vnics=None, ssh_public_key=None, state=None, subnet_ids=None):
         if cluster_id and not isinstance(cluster_id, str):
             raise TypeError("Expected argument 'cluster_id' to be a str")
         pulumi.set(__self__, "cluster_id", cluster_id)
@@ -55,6 +55,9 @@ class GetNodePoolResult:
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if network_launch_type and not isinstance(network_launch_type, str):
+            raise TypeError("Expected argument 'network_launch_type' to be a str")
+        pulumi.set(__self__, "network_launch_type", network_launch_type)
         if node_config_details and not isinstance(node_config_details, list):
             raise TypeError("Expected argument 'node_config_details' to be a list")
         pulumi.set(__self__, "node_config_details", node_config_details)
@@ -94,6 +97,9 @@ class GetNodePoolResult:
         if quantity_per_subnet and not isinstance(quantity_per_subnet, int):
             raise TypeError("Expected argument 'quantity_per_subnet' to be a int")
         pulumi.set(__self__, "quantity_per_subnet", quantity_per_subnet)
+        if secondary_vnics and not isinstance(secondary_vnics, list):
+            raise TypeError("Expected argument 'secondary_vnics' to be a list")
+        pulumi.set(__self__, "secondary_vnics", secondary_vnics)
         if ssh_public_key and not isinstance(ssh_public_key, str):
             raise TypeError("Expected argument 'ssh_public_key' to be a str")
         pulumi.set(__self__, "ssh_public_key", ssh_public_key)
@@ -175,6 +181,14 @@ class GetNodePoolResult:
         The name of the node.
         """
         return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="networkLaunchType")
+    def network_launch_type(self) -> _builtins.str:
+        """
+        Emulation type for the physical network interface card (NIC) for nodes
+        """
+        return pulumi.get(self, "network_launch_type")
 
     @_builtins.property
     @pulumi.getter(name="nodeConfigDetails")
@@ -283,6 +297,14 @@ class GetNodePoolResult:
         return pulumi.get(self, "quantity_per_subnet")
 
     @_builtins.property
+    @pulumi.getter(name="secondaryVnics")
+    def secondary_vnics(self) -> Sequence['outputs.GetNodePoolSecondaryVnicResult']:
+        """
+        A list of secondary vnics to attach to nodes
+        """
+        return pulumi.get(self, "secondary_vnics")
+
+    @_builtins.property
     @pulumi.getter(name="sshPublicKey")
     def ssh_public_key(self) -> _builtins.str:
         """
@@ -322,6 +344,7 @@ class AwaitableGetNodePoolResult(GetNodePoolResult):
             kubernetes_version=self.kubernetes_version,
             lifecycle_details=self.lifecycle_details,
             name=self.name,
+            network_launch_type=self.network_launch_type,
             node_config_details=self.node_config_details,
             node_eviction_node_pool_settings=self.node_eviction_node_pool_settings,
             node_image_id=self.node_image_id,
@@ -335,6 +358,7 @@ class AwaitableGetNodePoolResult(GetNodePoolResult):
             node_sources=self.node_sources,
             nodes=self.nodes,
             quantity_per_subnet=self.quantity_per_subnet,
+            secondary_vnics=self.secondary_vnics,
             ssh_public_key=self.ssh_public_key,
             state=self.state,
             subnet_ids=self.subnet_ids)
@@ -374,6 +398,7 @@ def get_node_pool(node_pool_id: Optional[_builtins.str] = None,
         kubernetes_version=pulumi.get(__ret__, 'kubernetes_version'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         name=pulumi.get(__ret__, 'name'),
+        network_launch_type=pulumi.get(__ret__, 'network_launch_type'),
         node_config_details=pulumi.get(__ret__, 'node_config_details'),
         node_eviction_node_pool_settings=pulumi.get(__ret__, 'node_eviction_node_pool_settings'),
         node_image_id=pulumi.get(__ret__, 'node_image_id'),
@@ -387,6 +412,7 @@ def get_node_pool(node_pool_id: Optional[_builtins.str] = None,
         node_sources=pulumi.get(__ret__, 'node_sources'),
         nodes=pulumi.get(__ret__, 'nodes'),
         quantity_per_subnet=pulumi.get(__ret__, 'quantity_per_subnet'),
+        secondary_vnics=pulumi.get(__ret__, 'secondary_vnics'),
         ssh_public_key=pulumi.get(__ret__, 'ssh_public_key'),
         state=pulumi.get(__ret__, 'state'),
         subnet_ids=pulumi.get(__ret__, 'subnet_ids'))
@@ -423,6 +449,7 @@ def get_node_pool_output(node_pool_id: Optional[pulumi.Input[_builtins.str]] = N
         kubernetes_version=pulumi.get(__response__, 'kubernetes_version'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         name=pulumi.get(__response__, 'name'),
+        network_launch_type=pulumi.get(__response__, 'network_launch_type'),
         node_config_details=pulumi.get(__response__, 'node_config_details'),
         node_eviction_node_pool_settings=pulumi.get(__response__, 'node_eviction_node_pool_settings'),
         node_image_id=pulumi.get(__response__, 'node_image_id'),
@@ -436,6 +463,7 @@ def get_node_pool_output(node_pool_id: Optional[pulumi.Input[_builtins.str]] = N
         node_sources=pulumi.get(__response__, 'node_sources'),
         nodes=pulumi.get(__response__, 'nodes'),
         quantity_per_subnet=pulumi.get(__response__, 'quantity_per_subnet'),
+        secondary_vnics=pulumi.get(__response__, 'secondary_vnics'),
         ssh_public_key=pulumi.get(__response__, 'ssh_public_key'),
         state=pulumi.get(__response__, 'state'),
         subnet_ids=pulumi.get(__response__, 'subnet_ids')))

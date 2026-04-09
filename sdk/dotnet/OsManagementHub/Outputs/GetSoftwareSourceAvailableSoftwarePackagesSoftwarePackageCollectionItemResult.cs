@@ -34,6 +34,10 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly bool IsLatest;
         /// <summary>
+        /// The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        /// </summary>
+        public readonly string LastModifiedDate;
+        /// <summary>
         /// Unique identifier for the package. Note that this is not an OCID.
         /// </summary>
         public readonly string Name;
@@ -66,6 +70,8 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             bool isLatest,
 
+            string lastModifiedDate,
+
             string name,
 
             ImmutableArray<string> osFamilies,
@@ -81,6 +87,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
             ChecksumType = checksumType;
             DisplayName = displayName;
             IsLatest = isLatest;
+            LastModifiedDate = lastModifiedDate;
             Name = name;
             OsFamilies = osFamilies;
             SoftwareSources = softwareSources;

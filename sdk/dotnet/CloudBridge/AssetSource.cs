@@ -39,25 +39,30 @@ namespace Pulumi.Oci.CloudBridge
     ///         EnvironmentId = testEnvironment.Id,
     ///         InventoryId = testInventory.Id,
     ///         Type = assetSourceType,
-    ///         VcenterEndpoint = assetSourceVcenterEndpoint,
     ///         AreHistoricalMetricsCollected = assetSourceAreHistoricalMetricsCollected,
     ///         AreRealtimeMetricsCollected = assetSourceAreRealtimeMetricsCollected,
+    ///         AwsAccountKey = assetSourceAwsAccountKey,
+    ///         AwsRegion = assetSourceAwsRegion,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
     ///         DiscoveryScheduleId = testDiscoverySchedule.Id,
     ///         DisplayName = assetSourceDisplayName,
+    ///         EnvironmentType = assetSourceEnvironmentType,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         IsCostInformationCollected = assetSourceIsCostInformationCollected,
+    ///         OlvmEndpoint = assetSourceOlvmEndpoint,
     ///         ReplicationCredentials = new Oci.CloudBridge.Inputs.AssetSourceReplicationCredentialsArgs
     ///         {
     ///             SecretId = testSecret.Id,
     ///             Type = assetSourceReplicationCredentialsType,
     ///         },
     ///         SystemTags = assetSourceSystemTags,
+    ///         VcenterEndpoint = assetSourceVcenterEndpoint,
     ///     });
     /// 
     /// });
@@ -91,6 +96,18 @@ namespace Pulumi.Oci.CloudBridge
         /// </summary>
         [Output("assetsCompartmentId")]
         public Output<string> AssetsCompartmentId { get; private set; } = null!;
+
+        /// <summary>
+        /// The key of customer's aws account to be discovered/migrated.
+        /// </summary>
+        [Output("awsAccountKey")]
+        public Output<string> AwsAccountKey { get; private set; } = null!;
+
+        /// <summary>
+        /// AWS region information, from where the resources are discovered.
+        /// </summary>
+        [Output("awsRegion")]
+        public Output<string> AwsRegion { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
@@ -129,6 +146,12 @@ namespace Pulumi.Oci.CloudBridge
         public Output<string> EnvironmentId { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+        /// </summary>
+        [Output("environmentType")]
+        public Output<string> EnvironmentType { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
@@ -141,10 +164,22 @@ namespace Pulumi.Oci.CloudBridge
         public Output<string> InventoryId { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Flag indicating whether cost data collection is enabled for assets, originating from this asset source.
+        /// </summary>
+        [Output("isCostInformationCollected")]
+        public Output<bool> IsCostInformationCollected { get; private set; } = null!;
+
+        /// <summary>
         /// The detailed state of the asset source.
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Endpoint for OLVM asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;```
+        /// </summary>
+        [Output("olvmEndpoint")]
+        public Output<string> OlvmEndpoint { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Credentials for an asset source.
@@ -257,6 +292,18 @@ namespace Pulumi.Oci.CloudBridge
         public Input<string> AssetsCompartmentId { get; set; } = null!;
 
         /// <summary>
+        /// The key of customer's aws account to be discovered/migrated.
+        /// </summary>
+        [Input("awsAccountKey")]
+        public Input<string>? AwsAccountKey { get; set; }
+
+        /// <summary>
+        /// AWS region information, from where the resources are discovered.
+        /// </summary>
+        [Input("awsRegion")]
+        public Input<string>? AwsRegion { get; set; }
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
         /// </summary>
         [Input("compartmentId", required: true)]
@@ -298,6 +345,12 @@ namespace Pulumi.Oci.CloudBridge
         [Input("environmentId", required: true)]
         public Input<string> EnvironmentId { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+        /// </summary>
+        [Input("environmentType")]
+        public Input<string>? EnvironmentType { get; set; }
+
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
 
@@ -315,6 +368,18 @@ namespace Pulumi.Oci.CloudBridge
         /// </summary>
         [Input("inventoryId", required: true)]
         public Input<string> InventoryId { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Flag indicating whether cost data collection is enabled for assets, originating from this asset source.
+        /// </summary>
+        [Input("isCostInformationCollected")]
+        public Input<bool>? IsCostInformationCollected { get; set; }
+
+        /// <summary>
+        /// (Updatable) Endpoint for OLVM asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;```
+        /// </summary>
+        [Input("olvmEndpoint")]
+        public Input<string>? OlvmEndpoint { get; set; }
 
         /// <summary>
         /// (Updatable) Credentials for an asset source.
@@ -347,8 +412,8 @@ namespace Pulumi.Oci.CloudBridge
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("vcenterEndpoint", required: true)]
-        public Input<string> VcenterEndpoint { get; set; } = null!;
+        [Input("vcenterEndpoint")]
+        public Input<string>? VcenterEndpoint { get; set; }
 
         public AssetSourceArgs()
         {
@@ -375,6 +440,18 @@ namespace Pulumi.Oci.CloudBridge
         /// </summary>
         [Input("assetsCompartmentId")]
         public Input<string>? AssetsCompartmentId { get; set; }
+
+        /// <summary>
+        /// The key of customer's aws account to be discovered/migrated.
+        /// </summary>
+        [Input("awsAccountKey")]
+        public Input<string>? AwsAccountKey { get; set; }
+
+        /// <summary>
+        /// AWS region information, from where the resources are discovered.
+        /// </summary>
+        [Input("awsRegion")]
+        public Input<string>? AwsRegion { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
@@ -418,6 +495,12 @@ namespace Pulumi.Oci.CloudBridge
         [Input("environmentId")]
         public Input<string>? EnvironmentId { get; set; }
 
+        /// <summary>
+        /// (Updatable) Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+        /// </summary>
+        [Input("environmentType")]
+        public Input<string>? EnvironmentType { get; set; }
+
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
 
@@ -437,10 +520,22 @@ namespace Pulumi.Oci.CloudBridge
         public Input<string>? InventoryId { get; set; }
 
         /// <summary>
+        /// (Updatable) Flag indicating whether cost data collection is enabled for assets, originating from this asset source.
+        /// </summary>
+        [Input("isCostInformationCollected")]
+        public Input<bool>? IsCostInformationCollected { get; set; }
+
+        /// <summary>
         /// The detailed state of the asset source.
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) Endpoint for OLVM asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;```
+        /// </summary>
+        [Input("olvmEndpoint")]
+        public Input<string>? OlvmEndpoint { get; set; }
 
         /// <summary>
         /// (Updatable) Credentials for an asset source.

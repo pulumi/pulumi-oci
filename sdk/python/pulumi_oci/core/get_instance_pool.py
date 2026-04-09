@@ -27,13 +27,16 @@ class GetInstancePoolResult:
     """
     A collection of values returned by getInstancePool.
     """
-    def __init__(__self__, actual_size=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, instance_configuration_id=None, instance_display_name_formatter=None, instance_hostname_formatter=None, instance_pool_id=None, lifecycle_managements=None, load_balancers=None, placement_configurations=None, size=None, state=None, time_created=None):
+    def __init__(__self__, actual_size=None, compartment_id=None, current_size=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, instance_configuration_id=None, instance_display_name_formatter=None, instance_hostname_formatter=None, instance_pool_id=None, lifecycle_managements=None, load_balancers=None, placement_configurations=None, size=None, state=None, time_created=None):
         if actual_size and not isinstance(actual_size, int):
             raise TypeError("Expected argument 'actual_size' to be a int")
         pulumi.set(__self__, "actual_size", actual_size)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if current_size and not isinstance(current_size, int):
+            raise TypeError("Expected argument 'current_size' to be a int")
+        pulumi.set(__self__, "current_size", current_size)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -89,6 +92,14 @@ class GetInstancePoolResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="currentSize")
+    def current_size(self) -> _builtins.int:
+        """
+        Count of instance in running state associated to the Instance Pool.
+        """
+        return pulumi.get(self, "current_size")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -211,6 +222,7 @@ class AwaitableGetInstancePoolResult(GetInstancePoolResult):
         return GetInstancePoolResult(
             actual_size=self.actual_size,
             compartment_id=self.compartment_id,
+            current_size=self.current_size,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
@@ -254,6 +266,7 @@ def get_instance_pool(instance_pool_id: Optional[_builtins.str] = None,
     return AwaitableGetInstancePoolResult(
         actual_size=pulumi.get(__ret__, 'actual_size'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        current_size=pulumi.get(__ret__, 'current_size'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
@@ -294,6 +307,7 @@ def get_instance_pool_output(instance_pool_id: Optional[pulumi.Input[_builtins.s
     return __ret__.apply(lambda __response__: GetInstancePoolResult(
         actual_size=pulumi.get(__response__, 'actual_size'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        current_size=pulumi.get(__response__, 'current_size'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),

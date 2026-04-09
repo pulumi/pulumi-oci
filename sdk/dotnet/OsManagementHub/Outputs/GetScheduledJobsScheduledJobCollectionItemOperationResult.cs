@@ -14,6 +14,10 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class GetScheduledJobsScheduledJobCollectionItemOperationResult
     {
         /// <summary>
+        /// Provides the information used to install a snap.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailResult> InstallSnapDetails;
+        /// <summary>
         /// The set of changes to make to the state of the modules, streams, and profiles on the managed target.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailResult> ManageModuleStreamsDetails;
@@ -30,6 +34,10 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly int RebootTimeoutInMins;
         /// <summary>
+        /// Provides the information used to remove a snap.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailResult> RemoveSnapDetails;
+        /// <summary>
         /// The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
         /// </summary>
         public readonly ImmutableArray<string> SoftwareSourceIds;
@@ -38,12 +46,18 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetailResult> SwitchModuleStreamsDetails;
         /// <summary>
+        /// Provides the information used to switch a snap channel.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailResult> SwitchSnapChannelDetails;
+        /// <summary>
         /// Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
         /// </summary>
         public readonly ImmutableArray<string> WindowsUpdateNames;
 
         [OutputConstructor]
         private GetScheduledJobsScheduledJobCollectionItemOperationResult(
+            ImmutableArray<Outputs.GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetailResult> installSnapDetails,
+
             ImmutableArray<Outputs.GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetailResult> manageModuleStreamsDetails,
 
             string operationType,
@@ -52,18 +66,25 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             int rebootTimeoutInMins,
 
+            ImmutableArray<Outputs.GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetailResult> removeSnapDetails,
+
             ImmutableArray<string> softwareSourceIds,
 
             ImmutableArray<Outputs.GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetailResult> switchModuleStreamsDetails,
 
+            ImmutableArray<Outputs.GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetailResult> switchSnapChannelDetails,
+
             ImmutableArray<string> windowsUpdateNames)
         {
+            InstallSnapDetails = installSnapDetails;
             ManageModuleStreamsDetails = manageModuleStreamsDetails;
             OperationType = operationType;
             PackageNames = packageNames;
             RebootTimeoutInMins = rebootTimeoutInMins;
+            RemoveSnapDetails = removeSnapDetails;
             SoftwareSourceIds = softwareSourceIds;
             SwitchModuleStreamsDetails = switchModuleStreamsDetails;
+            SwitchSnapChannelDetails = switchSnapChannelDetails;
             WindowsUpdateNames = windowsUpdateNames;
         }
     }

@@ -200,24 +200,6 @@ def get_lifecycle_stages(arch_type: Optional[_builtins.str] = None,
 
     Lists lifecycle stages that match the specified compartment or lifecycle stage [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_lifecycle_stages = oci.OsManagementHub.get_lifecycle_stages(arch_type=lifecycle_stage_arch_type,
-        compartment_id=compartment_id,
-        display_names=lifecycle_stage_display_name,
-        display_name_contains=lifecycle_stage_display_name_contains,
-        lifecycle_stage_id=test_lifecycle_stage["id"],
-        locations=lifecycle_stage_location,
-        location_not_equal_tos=lifecycle_stage_location_not_equal_to,
-        os_family=lifecycle_stage_os_family,
-        software_source_id=lifecycle_stage_software_source_id,
-        state=lifecycle_stage_state)
-    ```
-
 
     :param _builtins.str arch_type: A filter to return only profiles that match the given archType.
     :param _builtins.str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
@@ -275,24 +257,6 @@ def get_lifecycle_stages_output(arch_type: Optional[pulumi.Input[Optional[_built
     This data source provides the list of Lifecycle Stages in Oracle Cloud Infrastructure Os Management Hub service.
 
     Lists lifecycle stages that match the specified compartment or lifecycle stage [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_lifecycle_stages = oci.OsManagementHub.get_lifecycle_stages(arch_type=lifecycle_stage_arch_type,
-        compartment_id=compartment_id,
-        display_names=lifecycle_stage_display_name,
-        display_name_contains=lifecycle_stage_display_name_contains,
-        lifecycle_stage_id=test_lifecycle_stage["id"],
-        locations=lifecycle_stage_location,
-        location_not_equal_tos=lifecycle_stage_location_not_equal_to,
-        os_family=lifecycle_stage_os_family,
-        software_source_id=lifecycle_stage_software_source_id,
-        state=lifecycle_stage_state)
-    ```
 
 
     :param _builtins.str arch_type: A filter to return only profiles that match the given archType.

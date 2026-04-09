@@ -23,6 +23,11 @@ public final class GetInstancePoolResult {
      */
     private String compartmentId;
     /**
+     * @return Count of instance in running state associated to the Instance Pool.
+     * 
+     */
+    private Integer currentSize;
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
@@ -103,6 +108,13 @@ public final class GetInstancePoolResult {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return Count of instance in running state associated to the Instance Pool.
+     * 
+     */
+    public Integer currentSize() {
+        return this.currentSize;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -214,6 +226,7 @@ public final class GetInstancePoolResult {
     public static final class Builder {
         private Integer actualSize;
         private String compartmentId;
+        private Integer currentSize;
         private Map<String,String> definedTags;
         private String displayName;
         private Map<String,String> freeformTags;
@@ -233,6 +246,7 @@ public final class GetInstancePoolResult {
     	      Objects.requireNonNull(defaults);
     	      this.actualSize = defaults.actualSize;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.currentSize = defaults.currentSize;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
@@ -263,6 +277,14 @@ public final class GetInstancePoolResult {
               throw new MissingRequiredPropertyException("GetInstancePoolResult", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder currentSize(Integer currentSize) {
+            if (currentSize == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolResult", "currentSize");
+            }
+            this.currentSize = currentSize;
             return this;
         }
         @CustomType.Setter
@@ -390,6 +412,7 @@ public final class GetInstancePoolResult {
             final var _resultValue = new GetInstancePoolResult();
             _resultValue.actualSize = actualSize;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.currentSize = currentSize;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;

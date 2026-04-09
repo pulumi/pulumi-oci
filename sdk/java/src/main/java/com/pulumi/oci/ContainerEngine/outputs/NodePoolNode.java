@@ -75,12 +75,12 @@ public final class NodePoolNode {
      */
     private @Nullable String publicIp;
     /**
-     * @return The state of the nodepool.
+     * @return The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
      * 
      */
     private @Nullable String state;
     /**
-     * @return The OCID of the subnet in which this node is placed.
+     * @return the ocid of the subnet to create the vnic in
      * 
      */
     private @Nullable String subnetId;
@@ -171,14 +171,14 @@ public final class NodePoolNode {
         return Optional.ofNullable(this.publicIp);
     }
     /**
-     * @return The state of the nodepool.
+     * @return The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
      * 
      */
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
     /**
-     * @return The OCID of the subnet in which this node is placed.
+     * @return the ocid of the subnet to create the vnic in
      * 
      */
     public Optional<String> subnetId() {

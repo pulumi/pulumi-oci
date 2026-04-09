@@ -77,7 +77,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<string> ArchType { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Updatable settings for the Autonomous Linux service.
+        /// (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
         /// </summary>
         [Output("autonomousSettings")]
         public Output<Outputs.ManagedInstanceGroupAutonomousSettings> AutonomousSettings { get; private set; } = null!;
@@ -253,7 +253,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string> ArchType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Updatable settings for the Autonomous Linux service.
+        /// (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
         /// </summary>
         [Input("autonomousSettings")]
         public Input<Inputs.ManagedInstanceGroupAutonomousSettingsArgs>? AutonomousSettings { get; set; }
@@ -367,7 +367,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? ArchType { get; set; }
 
         /// <summary>
-        /// (Updatable) Updatable settings for the Autonomous Linux service.
+        /// (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
         /// </summary>
         [Input("autonomousSettings")]
         public Input<Inputs.ManagedInstanceGroupAutonomousSettingsGetArgs>? AutonomousSettings { get; set; }

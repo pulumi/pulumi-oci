@@ -27,6 +27,7 @@ public final class GetManagementStationsResult {
     private @Nullable String displayName;
     private @Nullable String displayNameContains;
     private @Nullable List<GetManagementStationsFilter> filters;
+    private @Nullable String healthState;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
      * 
@@ -74,6 +75,9 @@ public final class GetManagementStationsResult {
     }
     public List<GetManagementStationsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
+    }
+    public Optional<String> healthState() {
+        return Optional.ofNullable(this.healthState);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
@@ -127,6 +131,7 @@ public final class GetManagementStationsResult {
         private @Nullable String displayName;
         private @Nullable String displayNameContains;
         private @Nullable List<GetManagementStationsFilter> filters;
+        private @Nullable String healthState;
         private @Nullable String id;
         private @Nullable List<String> locationNotEqualTos;
         private @Nullable List<String> locations;
@@ -140,6 +145,7 @@ public final class GetManagementStationsResult {
     	      this.displayName = defaults.displayName;
     	      this.displayNameContains = defaults.displayNameContains;
     	      this.filters = defaults.filters;
+    	      this.healthState = defaults.healthState;
     	      this.id = defaults.id;
     	      this.locationNotEqualTos = defaults.locationNotEqualTos;
     	      this.locations = defaults.locations;
@@ -174,6 +180,12 @@ public final class GetManagementStationsResult {
         }
         public Builder filters(GetManagementStationsFilter... filters) {
             return filters(List.of(filters));
+        }
+        @CustomType.Setter
+        public Builder healthState(@Nullable String healthState) {
+
+            this.healthState = healthState;
+            return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
@@ -228,6 +240,7 @@ public final class GetManagementStationsResult {
             _resultValue.displayName = displayName;
             _resultValue.displayNameContains = displayNameContains;
             _resultValue.filters = filters;
+            _resultValue.healthState = healthState;
             _resultValue.id = id;
             _resultValue.locationNotEqualTos = locationNotEqualTos;
             _resultValue.locations = locations;

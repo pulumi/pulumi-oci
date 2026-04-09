@@ -50,6 +50,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
+        /// Emulation type for the physical network interface card (NIC) for nodes
+        /// </summary>
+        public readonly string NetworkLaunchType;
+        /// <summary>
         /// The configuration of nodes in the node pool.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNodePoolsNodePoolNodeConfigDetailResult> NodeConfigDetails;
@@ -93,6 +97,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly int QuantityPerSubnet;
         /// <summary>
+        /// A list of secondary vnics to attach to nodes
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetNodePoolsNodePoolSecondaryVnicResult> SecondaryVnics;
+        /// <summary>
         /// The SSH public key on each node in the node pool on launch.
         /// </summary>
         public readonly string SshPublicKey;
@@ -125,6 +133,8 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             string name,
 
+            string networkLaunchType,
+
             ImmutableArray<Outputs.GetNodePoolsNodePoolNodeConfigDetailResult> nodeConfigDetails,
 
             ImmutableArray<Outputs.GetNodePoolsNodePoolNodeEvictionNodePoolSettingResult> nodeEvictionNodePoolSettings,
@@ -151,6 +161,8 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             int quantityPerSubnet,
 
+            ImmutableArray<Outputs.GetNodePoolsNodePoolSecondaryVnicResult> secondaryVnics,
+
             string sshPublicKey,
 
             string state,
@@ -166,6 +178,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
             KubernetesVersion = kubernetesVersion;
             LifecycleDetails = lifecycleDetails;
             Name = name;
+            NetworkLaunchType = networkLaunchType;
             NodeConfigDetails = nodeConfigDetails;
             NodeEvictionNodePoolSettings = nodeEvictionNodePoolSettings;
             NodeImageId = nodeImageId;
@@ -179,6 +192,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
             NodeSources = nodeSources;
             Nodes = nodes;
             QuantityPerSubnet = quantityPerSubnet;
+            SecondaryVnics = secondaryVnics;
             SshPublicKey = sshPublicKey;
             State = state;
             SubnetIds = subnetIds;

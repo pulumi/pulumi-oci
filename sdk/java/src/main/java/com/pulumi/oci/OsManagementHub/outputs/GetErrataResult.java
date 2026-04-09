@@ -31,10 +31,6 @@ public final class GetErrataResult {
      */
     private @Nullable List<String> classificationTypes;
     private String compartmentId;
-    /**
-     * @return The list of erratum_collection.
-     * 
-     */
     private List<GetErrataErratumCollection> erratumCollections;
     private @Nullable List<GetErrataFilter> filters;
     /**
@@ -77,10 +73,6 @@ public final class GetErrataResult {
     public String compartmentId() {
         return this.compartmentId;
     }
-    /**
-     * @return The list of erratum_collection.
-     * 
-     */
     public List<GetErrataErratumCollection> erratumCollections() {
         return this.erratumCollections;
     }

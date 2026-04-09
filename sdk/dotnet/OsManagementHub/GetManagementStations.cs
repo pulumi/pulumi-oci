@@ -33,6 +33,7 @@ namespace Pulumi.Oci.OsManagementHub
         ///         CompartmentId = compartmentId,
         ///         DisplayName = managementStationDisplayName,
         ///         DisplayNameContains = managementStationDisplayNameContains,
+        ///         HealthState = managementStationHealthState,
         ///         Id = managementStationId,
         ///         Locations = managementStationLocation,
         ///         LocationNotEqualTos = managementStationLocationNotEqualTo,
@@ -68,6 +69,7 @@ namespace Pulumi.Oci.OsManagementHub
         ///         CompartmentId = compartmentId,
         ///         DisplayName = managementStationDisplayName,
         ///         DisplayNameContains = managementStationDisplayNameContains,
+        ///         HealthState = managementStationHealthState,
         ///         Id = managementStationId,
         ///         Locations = managementStationLocation,
         ///         LocationNotEqualTos = managementStationLocationNotEqualTo,
@@ -103,6 +105,7 @@ namespace Pulumi.Oci.OsManagementHub
         ///         CompartmentId = compartmentId,
         ///         DisplayName = managementStationDisplayName,
         ///         DisplayNameContains = managementStationDisplayNameContains,
+        ///         HealthState = managementStationHealthState,
         ///         Id = managementStationId,
         ///         Locations = managementStationLocation,
         ///         LocationNotEqualTos = managementStationLocationNotEqualTo,
@@ -145,6 +148,12 @@ namespace Pulumi.Oci.OsManagementHub
             get => _filters ?? (_filters = new List<Inputs.GetManagementStationsFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// A filter that returns information for management stations in the specified health state.
+        /// </summary>
+        [Input("healthState")]
+        public string? HealthState { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
@@ -223,6 +232,12 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
+        /// A filter that returns information for management stations in the specified health state.
+        /// </summary>
+        [Input("healthState")]
+        public Input<string>? HealthState { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
         /// </summary>
         [Input("id")]
@@ -284,6 +299,7 @@ namespace Pulumi.Oci.OsManagementHub
         public readonly string? DisplayName;
         public readonly string? DisplayNameContains;
         public readonly ImmutableArray<Outputs.GetManagementStationsFilterResult> Filters;
+        public readonly string? HealthState;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         /// </summary>
@@ -316,6 +332,8 @@ namespace Pulumi.Oci.OsManagementHub
 
             ImmutableArray<Outputs.GetManagementStationsFilterResult> filters,
 
+            string? healthState,
+
             string? id,
 
             ImmutableArray<string> locationNotEqualTos,
@@ -332,6 +350,7 @@ namespace Pulumi.Oci.OsManagementHub
             DisplayName = displayName;
             DisplayNameContains = displayNameContains;
             Filters = filters;
+            HealthState = healthState;
             Id = id;
             LocationNotEqualTos = locationNotEqualTos;
             Locations = locations;

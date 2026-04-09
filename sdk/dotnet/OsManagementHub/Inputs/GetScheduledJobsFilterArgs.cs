@@ -12,6 +12,9 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
 
     public sealed class GetScheduledJobsFilterInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The name of the snap.
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 

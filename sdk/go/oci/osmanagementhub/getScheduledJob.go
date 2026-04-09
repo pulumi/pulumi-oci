@@ -66,6 +66,8 @@ type LookupScheduledJobResult struct {
 	Description string `pulumi:"description"`
 	// User-friendly name for the scheduled job.
 	DisplayName string `pulumi:"displayName"`
+	// The dynamic set [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on. A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+	DynamicSetIds []string `pulumi:"dynamicSetIds"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job.
@@ -76,7 +78,7 @@ type LookupScheduledJobResult struct {
 	IsRestricted bool `pulumi:"isRestricted"`
 	// Indicates whether to apply the scheduled job to all compartments in the tenancy when managedCompartmentIds specifies the tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (root compartment).
 	IsSubcompartmentIncluded bool `pulumi:"isSubcompartmentIncluded"`
-	// The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+	// The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds, and dynamicSetIds.
 	LifecycleStageIds []string `pulumi:"lifecycleStageIds"`
 	// The list of locations this scheduled job should operate on for a job targeting on compartments. (Empty list means apply to all locations). This can only be set when managedCompartmentIds is not empty.
 	Locations []string `pulumi:"locations"`
@@ -96,7 +98,7 @@ type LookupScheduledJobResult struct {
 	// * UPDATE_KSPLICE_USERSPACE
 	// * UPDATE_KSPLICE_KERNEL
 	Operations []GetScheduledJobOperation `pulumi:"operations"`
-	// The frequency schedule for a recurring scheduled job.
+	// The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported. In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
 	RecurringRule string `pulumi:"recurringRule"`
 	// The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically retry  a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the initial  execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service waits 5 minutes  and then retries. If that fails, the service waits 10 minutes and then retries.
 	RetryIntervals []int `pulumi:"retryIntervals"`
@@ -175,6 +177,11 @@ func (o LookupScheduledJobResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScheduledJobResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// The dynamic set [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on. A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+func (o LookupScheduledJobResultOutput) DynamicSetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupScheduledJobResult) []string { return v.DynamicSetIds }).(pulumi.StringArrayOutput)
+}
+
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 func (o LookupScheduledJobResultOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupScheduledJobResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
@@ -200,7 +207,7 @@ func (o LookupScheduledJobResultOutput) IsSubcompartmentIncluded() pulumi.BoolOu
 	return o.ApplyT(func(v LookupScheduledJobResult) bool { return v.IsSubcompartmentIncluded }).(pulumi.BoolOutput)
 }
 
-// The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+// The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds, and dynamicSetIds.
 func (o LookupScheduledJobResultOutput) LifecycleStageIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupScheduledJobResult) []string { return v.LifecycleStageIds }).(pulumi.StringArrayOutput)
 }
@@ -238,7 +245,7 @@ func (o LookupScheduledJobResultOutput) Operations() GetScheduledJobOperationArr
 	return o.ApplyT(func(v LookupScheduledJobResult) []GetScheduledJobOperation { return v.Operations }).(GetScheduledJobOperationArrayOutput)
 }
 
-// The frequency schedule for a recurring scheduled job.
+// The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported. In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
 func (o LookupScheduledJobResultOutput) RecurringRule() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScheduledJobResult) string { return v.RecurringRule }).(pulumi.StringOutput)
 }

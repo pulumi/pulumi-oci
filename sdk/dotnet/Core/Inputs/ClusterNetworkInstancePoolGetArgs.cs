@@ -18,6 +18,12 @@ namespace Pulumi.Oci.Core.Inputs
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
+        /// <summary>
+        /// Count of instance in running state associated to the Instance Pool.
+        /// </summary>
+        [Input("currentSize")]
+        public Input<int>? CurrentSize { get; set; }
+
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
 

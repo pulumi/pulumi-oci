@@ -103,13 +103,13 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public Input<string>? PublicIp { get; set; }
 
         /// <summary>
-        /// The state of the nodepool.
+        /// The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The OCID of the subnet in which this node is placed.
+        /// the ocid of the subnet to create the vnic in
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }

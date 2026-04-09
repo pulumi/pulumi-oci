@@ -11,7 +11,7 @@ namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
     /// This resource provides the Software Source Manifest resource in Oracle Cloud Infrastructure Os Management Hub service.
-    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/SoftwareSourceManifest
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/osmh/latest/Manifest
     /// 
     /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
     /// 
@@ -29,8 +29,8 @@ namespace Pulumi.Oci.OsManagementHub
     /// {
     ///     var testSoftwareSourceManifest = new Oci.OsManagementHub.SoftwareSourceManifest("test_software_source_manifest", new()
     ///     {
+    ///         UpdateSoftwareSourceManifestDetails = softwareSourceManifestUpdateSoftwareSourceManifestDetails,
     ///         SoftwareSourceId = testSoftwareSource.Id,
-    ///         Content = content,
     ///     });
     /// 
     /// });
@@ -41,15 +41,12 @@ namespace Pulumi.Oci.OsManagementHub
     /// SoftwareSourceManifests can be imported using the `Id`, e.g.
     /// 
     /// ```sh
-    /// $ pulumi import oci:OsManagementHub/softwareSourceManifest:SoftwareSourceManifest test_software_source_manifest "id"
+    /// $ pulumi import oci:OsManagementHub/softwareSourceManifest:SoftwareSourceManifest test_software_source_manifest "softwareSources/{softwareSourceId}/manifest"
     /// ```
     /// </summary>
     [OciResourceType("oci:OsManagementHub/softwareSourceManifest:SoftwareSourceManifest")]
     public partial class SoftwareSourceManifest : global::Pulumi.CustomResource
     {
-        /// <summary>
-        /// (Updatable) Provides the manifest content used to update the package list of the software source.
-        /// </summary>
         [Output("content")]
         public Output<string?> Content { get; private set; } = null!;
 
@@ -109,9 +106,6 @@ namespace Pulumi.Oci.OsManagementHub
 
     public sealed class SoftwareSourceManifestArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// (Updatable) Provides the manifest content used to update the package list of the software source.
-        /// </summary>
         [Input("content")]
         public Input<string>? Content { get; set; }
 
@@ -133,9 +127,6 @@ namespace Pulumi.Oci.OsManagementHub
 
     public sealed class SoftwareSourceManifestState : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// (Updatable) Provides the manifest content used to update the package list of the software source.
-        /// </summary>
         [Input("content")]
         public Input<string>? Content { get; set; }
 

@@ -123,6 +123,8 @@ type InstancePool struct {
 	ActualSize pulumi.IntOutput `pulumi:"actualSize"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// Count of instance in running state associated to the Instance Pool.
+	CurrentSize pulumi.IntOutput `pulumi:"currentSize"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -200,6 +202,8 @@ type instancePoolState struct {
 	ActualSize *int `pulumi:"actualSize"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// Count of instance in running state associated to the Instance Pool.
+	CurrentSize *int `pulumi:"currentSize"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -236,6 +240,8 @@ type InstancePoolState struct {
 	ActualSize pulumi.IntPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
 	CompartmentId pulumi.StringPtrInput
+	// Count of instance in running state associated to the Instance Pool.
+	CurrentSize pulumi.IntPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -431,6 +437,11 @@ func (o InstancePoolOutput) ActualSize() pulumi.IntOutput {
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
 func (o InstancePoolOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *InstancePool) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Count of instance in running state associated to the Instance Pool.
+func (o InstancePoolOutput) CurrentSize() pulumi.IntOutput {
+	return o.ApplyT(func(v *InstancePool) pulumi.IntOutput { return v.CurrentSize }).(pulumi.IntOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`

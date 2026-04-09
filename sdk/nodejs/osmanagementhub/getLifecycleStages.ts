@@ -10,26 +10,6 @@ import * as utilities from "../utilities";
  * This data source provides the list of Lifecycle Stages in Oracle Cloud Infrastructure Os Management Hub service.
  *
  * Lists lifecycle stages that match the specified compartment or lifecycle stage [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testLifecycleStages = oci.OsManagementHub.getLifecycleStages({
- *     archType: lifecycleStageArchType,
- *     compartmentId: compartmentId,
- *     displayNames: lifecycleStageDisplayName,
- *     displayNameContains: lifecycleStageDisplayNameContains,
- *     lifecycleStageId: testLifecycleStage.id,
- *     locations: lifecycleStageLocation,
- *     locationNotEqualTos: lifecycleStageLocationNotEqualTo,
- *     osFamily: lifecycleStageOsFamily,
- *     softwareSourceId: lifecycleStageSoftwareSourceId,
- *     state: lifecycleStageState,
- * });
- * ```
  */
 export function getLifecycleStages(args?: GetLifecycleStagesArgs, opts?: pulumi.InvokeOptions): Promise<GetLifecycleStagesResult> {
     args = args || {};
@@ -145,26 +125,6 @@ export interface GetLifecycleStagesResult {
  * This data source provides the list of Lifecycle Stages in Oracle Cloud Infrastructure Os Management Hub service.
  *
  * Lists lifecycle stages that match the specified compartment or lifecycle stage [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testLifecycleStages = oci.OsManagementHub.getLifecycleStages({
- *     archType: lifecycleStageArchType,
- *     compartmentId: compartmentId,
- *     displayNames: lifecycleStageDisplayName,
- *     displayNameContains: lifecycleStageDisplayNameContains,
- *     lifecycleStageId: testLifecycleStage.id,
- *     locations: lifecycleStageLocation,
- *     locationNotEqualTos: lifecycleStageLocationNotEqualTo,
- *     osFamily: lifecycleStageOsFamily,
- *     softwareSourceId: lifecycleStageSoftwareSourceId,
- *     state: lifecycleStageState,
- * });
- * ```
  */
 export function getLifecycleStagesOutput(args?: GetLifecycleStagesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLifecycleStagesResult> {
     args = args || {};

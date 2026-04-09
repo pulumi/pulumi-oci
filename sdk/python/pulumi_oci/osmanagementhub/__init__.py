@@ -6,7 +6,15 @@ import builtins as _builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .dynamic_set import *
+from .dynamic_set_install_packages_management import *
+from .dynamic_set_reboot_management import *
+from .dynamic_set_remove_packages_management import *
+from .dynamic_set_update_packages_management import *
 from .event import *
+from .get_dynamic_set import *
+from .get_dynamic_set_managed_instances import *
+from .get_dynamic_sets import *
 from .get_entitlements import *
 from .get_errata import *
 from .get_erratum import *
@@ -26,11 +34,13 @@ from .get_managed_instance_group_available_modules import *
 from .get_managed_instance_group_available_packages import *
 from .get_managed_instance_group_available_software_sources import *
 from .get_managed_instance_group_installed_packages import *
+from .get_managed_instance_group_managed_instances import *
 from .get_managed_instance_group_modules import *
 from .get_managed_instance_groups import *
 from .get_managed_instance_installed_packages import *
 from .get_managed_instance_installed_windows_updates import *
 from .get_managed_instance_modules import *
+from .get_managed_instance_snaps import *
 from .get_managed_instance_updatable_packages import *
 from .get_managed_instances import *
 from .get_management_station import *
@@ -67,7 +77,9 @@ from .lifecycle_stage_promote_software_source_management import *
 from .lifecycle_stage_reboot_management import *
 from .managed_instance import *
 from .managed_instance_attach_profile_management import *
+from .managed_instance_attach_software_sources_management import *
 from .managed_instance_detach_profile_management import *
+from .managed_instance_detach_software_sources_management import *
 from .managed_instance_group import *
 from .managed_instance_group_attach_managed_instances_management import *
 from .managed_instance_group_attach_software_sources_management import *
@@ -79,9 +91,17 @@ from .managed_instance_group_manage_module_streams_management import *
 from .managed_instance_group_reboot_management import *
 from .managed_instance_group_remove_packages_management import *
 from .managed_instance_group_update_all_packages_management import *
+from .managed_instance_install_packages_management import *
+from .managed_instance_install_snaps_management import *
 from .managed_instance_install_windows_updates_management import *
 from .managed_instance_reboot_management import *
+from .managed_instance_refresh_software_management import *
+from .managed_instance_remove_packages_management import *
+from .managed_instance_remove_snaps_management import *
+from .managed_instance_switch_snap_channel_management import *
 from .managed_instance_update_packages_management import *
+from .managed_instances_install_windows_updates_management import *
+from .managed_instances_update_packages_management import *
 from .management_station import *
 from .management_station_associate_managed_instances_management import *
 from .management_station_mirror_synchronize_management import *
@@ -92,6 +112,7 @@ from .profile_attach_lifecycle_stage_management import *
 from .profile_attach_managed_instance_group_management import *
 from .profile_attach_management_station_management import *
 from .profile_attach_software_sources_management import *
+from .profile_detach_management_station_management import *
 from .profile_detach_software_sources_management import *
 from .scheduled_job import *
 from .software_source import *

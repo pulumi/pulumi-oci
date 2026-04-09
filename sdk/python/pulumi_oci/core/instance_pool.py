@@ -232,6 +232,7 @@ class _InstancePoolState:
     def __init__(__self__, *,
                  actual_size: Optional[pulumi.Input[_builtins.int]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 current_size: Optional[pulumi.Input[_builtins.int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -249,6 +250,7 @@ class _InstancePoolState:
 
         :param pulumi.Input[_builtins.int] actual_size: The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
+        :param pulumi.Input[_builtins.int] current_size: Count of instance in running state associated to the Instance Pool.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -272,6 +274,8 @@ class _InstancePoolState:
             pulumi.set(__self__, "actual_size", actual_size)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if current_size is not None:
+            pulumi.set(__self__, "current_size", current_size)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
@@ -320,6 +324,18 @@ class _InstancePoolState:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="currentSize")
+    def current_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Count of instance in running state associated to the Instance Pool.
+        """
+        return pulumi.get(self, "current_size")
+
+    @current_size.setter
+    def current_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "current_size", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -737,6 +753,7 @@ class InstancePool(pulumi.CustomResource):
             __props__.__dict__["size"] = size
             __props__.__dict__["state"] = state
             __props__.__dict__["actual_size"] = None
+            __props__.__dict__["current_size"] = None
             __props__.__dict__["time_created"] = None
         super(InstancePool, __self__).__init__(
             'oci:Core/instancePool:InstancePool',
@@ -750,6 +767,7 @@ class InstancePool(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             actual_size: Optional[pulumi.Input[_builtins.int]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+            current_size: Optional[pulumi.Input[_builtins.int]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -771,6 +789,7 @@ class InstancePool(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] actual_size: The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
+        :param pulumi.Input[_builtins.int] current_size: Count of instance in running state associated to the Instance Pool.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -796,6 +815,7 @@ class InstancePool(pulumi.CustomResource):
 
         __props__.__dict__["actual_size"] = actual_size
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["current_size"] = current_size
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
@@ -825,6 +845,14 @@ class InstancePool(pulumi.CustomResource):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="currentSize")
+    def current_size(self) -> pulumi.Output[_builtins.int]:
+        """
+        Count of instance in running state associated to the Instance Pool.
+        """
+        return pulumi.get(self, "current_size")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")

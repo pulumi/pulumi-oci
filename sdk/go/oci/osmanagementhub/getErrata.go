@@ -11,10 +11,9 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
+// This data source provides details about a specific Errata resource in Oracle Cloud Infrastructure Os Management Hub service.
 //
-// Lists all of the currently available errata. Filter the list against a variety of criteria including but not
-// limited to its name, classification type, advisory severity, and OS family.
+// Returns information about the specified erratum based on its advisory name.
 //
 // ## Example Usage
 //
@@ -31,15 +30,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := osmanagementhub.GetErrata(ctx, &osmanagementhub.GetErrataArgs{
-//				CompartmentId:       compartmentId,
-//				AdvisorySeverities:  erratumAdvisorySeverity,
-//				AdvisoryTypes:       erratumAdvisoryType,
-//				ClassificationTypes: erratumClassificationType,
-//				Names:               erratumName,
-//				NameContains:        pulumi.StringRef(erratumNameContains),
-//				OsFamily:            pulumi.StringRef(erratumOsFamily),
-//				TimeIssueDateEnd:    pulumi.StringRef(erratumTimeIssueDateEnd),
-//				TimeIssueDateStart:  pulumi.StringRef(erratumTimeIssueDateStart),
+//				CompartmentId: compartmentId,
+//				Names:         errataName,
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -61,25 +53,21 @@ func GetErrata(ctx *pulumi.Context, args *GetErrataArgs, opts ...pulumi.InvokeOp
 
 // A collection of arguments for invoking getErrata.
 type GetErrataArgs struct {
-	// The advisory severity.
+	// The severity for a security advisory, otherwise, null.
 	AdvisorySeverities []string `pulumi:"advisorySeverities"`
-	// A filter to return only errata that match the given advisory types.
+	// The advisory type of the erratum.
 	AdvisoryTypes []string `pulumi:"advisoryTypes"`
-	// A filter to return only packages that match the given update classification type.
+	// Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
 	ClassificationTypes []string `pulumi:"classificationTypes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
 	CompartmentId string            `pulumi:"compartmentId"`
 	Filters       []GetErrataFilter `pulumi:"filters"`
-	// A filter to return resources that may partially match the erratum name given.
-	NameContains *string `pulumi:"nameContains"`
-	// The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
-	Names []string `pulumi:"names"`
-	// A filter to return only resources that match the given operating system family.
-	OsFamily *string `pulumi:"osFamily"`
-	// The issue date before which to list all errata, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
-	TimeIssueDateEnd *string `pulumi:"timeIssueDateEnd"`
-	// The issue date after which to list all errata, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
-	TimeIssueDateStart *string `pulumi:"timeIssueDateStart"`
+	NameContains  *string           `pulumi:"nameContains"`
+	// The erratum name (such as ELSA-2023-34678).
+	Names              []string `pulumi:"names"`
+	OsFamily           *string  `pulumi:"osFamily"`
+	TimeIssueDateEnd   *string  `pulumi:"timeIssueDateEnd"`
+	TimeIssueDateStart *string  `pulumi:"timeIssueDateStart"`
 }
 
 // A collection of values returned by getErrata.
@@ -89,11 +77,10 @@ type GetErrataResult struct {
 	// The advisory type of the erratum.
 	AdvisoryTypes []string `pulumi:"advisoryTypes"`
 	// Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
-	ClassificationTypes []string `pulumi:"classificationTypes"`
-	CompartmentId       string   `pulumi:"compartmentId"`
-	// The list of erratum_collection.
-	ErratumCollections []GetErrataErratumCollection `pulumi:"erratumCollections"`
-	Filters            []GetErrataFilter            `pulumi:"filters"`
+	ClassificationTypes []string                     `pulumi:"classificationTypes"`
+	CompartmentId       string                       `pulumi:"compartmentId"`
+	ErratumCollections  []GetErrataErratumCollection `pulumi:"erratumCollections"`
+	Filters             []GetErrataFilter            `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id           string  `pulumi:"id"`
 	NameContains *string `pulumi:"nameContains"`
@@ -115,25 +102,21 @@ func GetErrataOutput(ctx *pulumi.Context, args GetErrataOutputArgs, opts ...pulu
 
 // A collection of arguments for invoking getErrata.
 type GetErrataOutputArgs struct {
-	// The advisory severity.
+	// The severity for a security advisory, otherwise, null.
 	AdvisorySeverities pulumi.StringArrayInput `pulumi:"advisorySeverities"`
-	// A filter to return only errata that match the given advisory types.
+	// The advisory type of the erratum.
 	AdvisoryTypes pulumi.StringArrayInput `pulumi:"advisoryTypes"`
-	// A filter to return only packages that match the given update classification type.
+	// Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
 	ClassificationTypes pulumi.StringArrayInput `pulumi:"classificationTypes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
 	CompartmentId pulumi.StringInput        `pulumi:"compartmentId"`
 	Filters       GetErrataFilterArrayInput `pulumi:"filters"`
-	// A filter to return resources that may partially match the erratum name given.
-	NameContains pulumi.StringPtrInput `pulumi:"nameContains"`
-	// The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
-	Names pulumi.StringArrayInput `pulumi:"names"`
-	// A filter to return only resources that match the given operating system family.
-	OsFamily pulumi.StringPtrInput `pulumi:"osFamily"`
-	// The issue date before which to list all errata, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
-	TimeIssueDateEnd pulumi.StringPtrInput `pulumi:"timeIssueDateEnd"`
-	// The issue date after which to list all errata, in ISO 8601 format  Example: 2017-07-14T02:40:00.000Z
-	TimeIssueDateStart pulumi.StringPtrInput `pulumi:"timeIssueDateStart"`
+	NameContains  pulumi.StringPtrInput     `pulumi:"nameContains"`
+	// The erratum name (such as ELSA-2023-34678).
+	Names              pulumi.StringArrayInput `pulumi:"names"`
+	OsFamily           pulumi.StringPtrInput   `pulumi:"osFamily"`
+	TimeIssueDateEnd   pulumi.StringPtrInput   `pulumi:"timeIssueDateEnd"`
+	TimeIssueDateStart pulumi.StringPtrInput   `pulumi:"timeIssueDateStart"`
 }
 
 func (GetErrataOutputArgs) ElementType() reflect.Type {
@@ -174,7 +157,6 @@ func (o GetErrataResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetErrataResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The list of erratum_collection.
 func (o GetErrataResultOutput) ErratumCollections() GetErrataErratumCollectionArrayOutput {
 	return o.ApplyT(func(v GetErrataResult) []GetErrataErratumCollection { return v.ErratumCollections }).(GetErrataErratumCollectionArrayOutput)
 }

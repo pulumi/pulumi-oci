@@ -27,7 +27,10 @@ class GetManagementStationResult:
     """
     A collection of values returned by getManagementStation.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, healths=None, hostname=None, id=None, is_auto_config_enabled=None, location=None, managed_instance_id=None, management_station_id=None, mirror_capacity=None, mirror_package_count=None, mirror_size=None, mirror_storage_available_size=None, mirror_storage_size=None, mirror_sync_statuses=None, mirror_unique_package_count=None, mirrors=None, overall_percentage=None, overall_state=None, peer_management_stations=None, profile_id=None, proxies=None, refresh_trigger=None, scheduled_job_id=None, state=None, system_tags=None, total_mirrors=None):
+    def __init__(__self__, arch_type=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, healths=None, hostname=None, id=None, is_auto_config_enabled=None, location=None, managed_instance_id=None, management_station_id=None, mirror_capacity=None, mirror_package_count=None, mirror_size=None, mirror_storage_available_size=None, mirror_storage_size=None, mirror_sync_statuses=None, mirror_unique_package_count=None, mirrors=None, os_family=None, overall_percentage=None, overall_state=None, peer_management_stations=None, profile_id=None, proxies=None, refresh_trigger=None, scheduled_job_id=None, state=None, system_tags=None, total_mirrors=None):
+        if arch_type and not isinstance(arch_type, str):
+            raise TypeError("Expected argument 'arch_type' to be a str")
+        pulumi.set(__self__, "arch_type", arch_type)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -88,6 +91,9 @@ class GetManagementStationResult:
         if mirrors and not isinstance(mirrors, list):
             raise TypeError("Expected argument 'mirrors' to be a list")
         pulumi.set(__self__, "mirrors", mirrors)
+        if os_family and not isinstance(os_family, str):
+            raise TypeError("Expected argument 'os_family' to be a str")
+        pulumi.set(__self__, "os_family", os_family)
         if overall_percentage and not isinstance(overall_percentage, int):
             raise TypeError("Expected argument 'overall_percentage' to be a int")
         pulumi.set(__self__, "overall_percentage", overall_percentage)
@@ -118,6 +124,14 @@ class GetManagementStationResult:
         if total_mirrors and not isinstance(total_mirrors, int):
             raise TypeError("Expected argument 'total_mirrors' to be a int")
         pulumi.set(__self__, "total_mirrors", total_mirrors)
+
+    @_builtins.property
+    @pulumi.getter(name="archType")
+    def arch_type(self) -> _builtins.str:
+        """
+        The architecture type.
+        """
+        return pulumi.get(self, "arch_type")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -277,6 +291,14 @@ class GetManagementStationResult:
         return pulumi.get(self, "mirrors")
 
     @_builtins.property
+    @pulumi.getter(name="osFamily")
+    def os_family(self) -> _builtins.str:
+        """
+        The operating system family.
+        """
+        return pulumi.get(self, "os_family")
+
+    @_builtins.property
     @pulumi.getter(name="overallPercentage")
     def overall_percentage(self) -> _builtins.int:
         """
@@ -360,6 +382,7 @@ class AwaitableGetManagementStationResult(GetManagementStationResult):
         if False:
             yield self
         return GetManagementStationResult(
+            arch_type=self.arch_type,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             description=self.description,
@@ -380,6 +403,7 @@ class AwaitableGetManagementStationResult(GetManagementStationResult):
             mirror_sync_statuses=self.mirror_sync_statuses,
             mirror_unique_package_count=self.mirror_unique_package_count,
             mirrors=self.mirrors,
+            os_family=self.os_family,
             overall_percentage=self.overall_percentage,
             overall_state=self.overall_state,
             peer_management_stations=self.peer_management_stations,
@@ -417,6 +441,7 @@ def get_management_station(management_station_id: Optional[_builtins.str] = None
     __ret__ = pulumi.runtime.invoke('oci:OsManagementHub/getManagementStation:getManagementStation', __args__, opts=opts, typ=GetManagementStationResult).value
 
     return AwaitableGetManagementStationResult(
+        arch_type=pulumi.get(__ret__, 'arch_type'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
@@ -437,6 +462,7 @@ def get_management_station(management_station_id: Optional[_builtins.str] = None
         mirror_sync_statuses=pulumi.get(__ret__, 'mirror_sync_statuses'),
         mirror_unique_package_count=pulumi.get(__ret__, 'mirror_unique_package_count'),
         mirrors=pulumi.get(__ret__, 'mirrors'),
+        os_family=pulumi.get(__ret__, 'os_family'),
         overall_percentage=pulumi.get(__ret__, 'overall_percentage'),
         overall_state=pulumi.get(__ret__, 'overall_state'),
         peer_management_stations=pulumi.get(__ret__, 'peer_management_stations'),
@@ -471,6 +497,7 @@ def get_management_station_output(management_station_id: Optional[pulumi.Input[_
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:OsManagementHub/getManagementStation:getManagementStation', __args__, opts=opts, typ=GetManagementStationResult)
     return __ret__.apply(lambda __response__: GetManagementStationResult(
+        arch_type=pulumi.get(__response__, 'arch_type'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),
@@ -491,6 +518,7 @@ def get_management_station_output(management_station_id: Optional[pulumi.Input[_
         mirror_sync_statuses=pulumi.get(__response__, 'mirror_sync_statuses'),
         mirror_unique_package_count=pulumi.get(__response__, 'mirror_unique_package_count'),
         mirrors=pulumi.get(__response__, 'mirrors'),
+        os_family=pulumi.get(__response__, 'os_family'),
         overall_percentage=pulumi.get(__response__, 'overall_percentage'),
         overall_state=pulumi.get(__response__, 'overall_state'),
         peer_management_stations=pulumi.get(__response__, 'peer_management_stations'),

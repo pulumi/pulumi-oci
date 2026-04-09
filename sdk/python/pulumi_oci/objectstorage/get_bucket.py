@@ -27,7 +27,7 @@ class GetBucketResult:
     """
     A collection of values returned by getBucket.
     """
-    def __init__(__self__, access_type=None, approximate_count=None, approximate_size=None, auto_tiering=None, bucket_id=None, compartment_id=None, created_by=None, defined_tags=None, etag=None, freeform_tags=None, id=None, is_read_only=None, kms_key_id=None, metadata=None, name=None, namespace=None, object_events_enabled=None, object_lifecycle_policy_etag=None, replication_enabled=None, retention_rules=None, storage_tier=None, time_created=None, versioning=None):
+    def __init__(__self__, access_type=None, approximate_count=None, approximate_size=None, auto_tiering=None, bucket_id=None, bucket_scope=None, compartment_id=None, created_by=None, defined_tags=None, etag=None, freeform_tags=None, id=None, is_read_only=None, kms_key_id=None, metadata=None, name=None, namespace=None, object_events_enabled=None, object_lifecycle_policy_etag=None, replication_enabled=None, retention_rules=None, storage_tier=None, time_created=None, versioning=None):
         if access_type and not isinstance(access_type, str):
             raise TypeError("Expected argument 'access_type' to be a str")
         pulumi.set(__self__, "access_type", access_type)
@@ -43,6 +43,9 @@ class GetBucketResult:
         if bucket_id and not isinstance(bucket_id, str):
             raise TypeError("Expected argument 'bucket_id' to be a str")
         pulumi.set(__self__, "bucket_id", bucket_id)
+        if bucket_scope and not isinstance(bucket_scope, str):
+            raise TypeError("Expected argument 'bucket_scope' to be a str")
+        pulumi.set(__self__, "bucket_scope", bucket_scope)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -137,6 +140,14 @@ class GetBucketResult:
         The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucket_id` cannot be used for bucket lookup.
         """
         return pulumi.get(self, "bucket_id")
+
+    @_builtins.property
+    @pulumi.getter(name="bucketScope")
+    def bucket_scope(self) -> _builtins.str:
+        """
+        Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+        """
+        return pulumi.get(self, "bucket_scope")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -291,6 +302,7 @@ class AwaitableGetBucketResult(GetBucketResult):
             approximate_size=self.approximate_size,
             auto_tiering=self.auto_tiering,
             bucket_id=self.bucket_id,
+            bucket_scope=self.bucket_scope,
             compartment_id=self.compartment_id,
             created_by=self.created_by,
             defined_tags=self.defined_tags,
@@ -345,6 +357,7 @@ def get_bucket(name: Optional[_builtins.str] = None,
         approximate_size=pulumi.get(__ret__, 'approximate_size'),
         auto_tiering=pulumi.get(__ret__, 'auto_tiering'),
         bucket_id=pulumi.get(__ret__, 'bucket_id'),
+        bucket_scope=pulumi.get(__ret__, 'bucket_scope'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         created_by=pulumi.get(__ret__, 'created_by'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
@@ -396,6 +409,7 @@ def get_bucket_output(name: Optional[pulumi.Input[_builtins.str]] = None,
         approximate_size=pulumi.get(__response__, 'approximate_size'),
         auto_tiering=pulumi.get(__response__, 'auto_tiering'),
         bucket_id=pulumi.get(__response__, 'bucket_id'),
+        bucket_scope=pulumi.get(__response__, 'bucket_scope'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         created_by=pulumi.get(__response__, 'created_by'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),

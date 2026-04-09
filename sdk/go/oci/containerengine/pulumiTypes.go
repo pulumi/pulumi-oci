@@ -5132,9 +5132,9 @@ type NodePoolNode struct {
 	PrivateIp *string `pulumi:"privateIp"`
 	// The public IP address of this node.
 	PublicIp *string `pulumi:"publicIp"`
-	// The state of the nodepool.
+	// The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
 	State *string `pulumi:"state"`
-	// The OCID of the subnet in which this node is placed.
+	// the ocid of the subnet to create the vnic in
 	SubnetId *string `pulumi:"subnetId"`
 }
 
@@ -5174,9 +5174,9 @@ type NodePoolNodeArgs struct {
 	PrivateIp pulumi.StringPtrInput `pulumi:"privateIp"`
 	// The public IP address of this node.
 	PublicIp pulumi.StringPtrInput `pulumi:"publicIp"`
-	// The state of the nodepool.
+	// The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
 	State pulumi.StringPtrInput `pulumi:"state"`
-	// The OCID of the subnet in which this node is placed.
+	// the ocid of the subnet to create the vnic in
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
@@ -5291,12 +5291,12 @@ func (o NodePoolNodeOutput) PublicIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNode) *string { return v.PublicIp }).(pulumi.StringPtrOutput)
 }
 
-// The state of the nodepool.
+// The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
 func (o NodePoolNodeOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNode) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the subnet in which this node is placed.
+// the ocid of the subnet to create the vnic in
 func (o NodePoolNodeOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNode) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
@@ -7159,6 +7159,375 @@ func (o NodePoolNodeSourceDetailsPtrOutput) SourceType() pulumi.StringPtrOutput 
 		}
 		return &v.SourceType
 	}).(pulumi.StringPtrOutput)
+}
+
+type NodePoolSecondaryVnic struct {
+	// (Updatable) The properties of the secondary vnics
+	CreateVnicDetails NodePoolSecondaryVnicCreateVnicDetails `pulumi:"createVnicDetails"`
+	// (Updatable) Display name for vnic attachment
+	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Which physical network interface card (NIC) the VNIC will use
+	NicIndex *int `pulumi:"nicIndex"`
+}
+
+// NodePoolSecondaryVnicInput is an input type that accepts NodePoolSecondaryVnicArgs and NodePoolSecondaryVnicOutput values.
+// You can construct a concrete instance of `NodePoolSecondaryVnicInput` via:
+//
+//	NodePoolSecondaryVnicArgs{...}
+type NodePoolSecondaryVnicInput interface {
+	pulumi.Input
+
+	ToNodePoolSecondaryVnicOutput() NodePoolSecondaryVnicOutput
+	ToNodePoolSecondaryVnicOutputWithContext(context.Context) NodePoolSecondaryVnicOutput
+}
+
+type NodePoolSecondaryVnicArgs struct {
+	// (Updatable) The properties of the secondary vnics
+	CreateVnicDetails NodePoolSecondaryVnicCreateVnicDetailsInput `pulumi:"createVnicDetails"`
+	// (Updatable) Display name for vnic attachment
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// (Updatable) Which physical network interface card (NIC) the VNIC will use
+	NicIndex pulumi.IntPtrInput `pulumi:"nicIndex"`
+}
+
+func (NodePoolSecondaryVnicArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodePoolSecondaryVnic)(nil)).Elem()
+}
+
+func (i NodePoolSecondaryVnicArgs) ToNodePoolSecondaryVnicOutput() NodePoolSecondaryVnicOutput {
+	return i.ToNodePoolSecondaryVnicOutputWithContext(context.Background())
+}
+
+func (i NodePoolSecondaryVnicArgs) ToNodePoolSecondaryVnicOutputWithContext(ctx context.Context) NodePoolSecondaryVnicOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolSecondaryVnicOutput)
+}
+
+// NodePoolSecondaryVnicArrayInput is an input type that accepts NodePoolSecondaryVnicArray and NodePoolSecondaryVnicArrayOutput values.
+// You can construct a concrete instance of `NodePoolSecondaryVnicArrayInput` via:
+//
+//	NodePoolSecondaryVnicArray{ NodePoolSecondaryVnicArgs{...} }
+type NodePoolSecondaryVnicArrayInput interface {
+	pulumi.Input
+
+	ToNodePoolSecondaryVnicArrayOutput() NodePoolSecondaryVnicArrayOutput
+	ToNodePoolSecondaryVnicArrayOutputWithContext(context.Context) NodePoolSecondaryVnicArrayOutput
+}
+
+type NodePoolSecondaryVnicArray []NodePoolSecondaryVnicInput
+
+func (NodePoolSecondaryVnicArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NodePoolSecondaryVnic)(nil)).Elem()
+}
+
+func (i NodePoolSecondaryVnicArray) ToNodePoolSecondaryVnicArrayOutput() NodePoolSecondaryVnicArrayOutput {
+	return i.ToNodePoolSecondaryVnicArrayOutputWithContext(context.Background())
+}
+
+func (i NodePoolSecondaryVnicArray) ToNodePoolSecondaryVnicArrayOutputWithContext(ctx context.Context) NodePoolSecondaryVnicArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolSecondaryVnicArrayOutput)
+}
+
+type NodePoolSecondaryVnicOutput struct{ *pulumi.OutputState }
+
+func (NodePoolSecondaryVnicOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodePoolSecondaryVnic)(nil)).Elem()
+}
+
+func (o NodePoolSecondaryVnicOutput) ToNodePoolSecondaryVnicOutput() NodePoolSecondaryVnicOutput {
+	return o
+}
+
+func (o NodePoolSecondaryVnicOutput) ToNodePoolSecondaryVnicOutputWithContext(ctx context.Context) NodePoolSecondaryVnicOutput {
+	return o
+}
+
+// (Updatable) The properties of the secondary vnics
+func (o NodePoolSecondaryVnicOutput) CreateVnicDetails() NodePoolSecondaryVnicCreateVnicDetailsOutput {
+	return o.ApplyT(func(v NodePoolSecondaryVnic) NodePoolSecondaryVnicCreateVnicDetails { return v.CreateVnicDetails }).(NodePoolSecondaryVnicCreateVnicDetailsOutput)
+}
+
+// (Updatable) Display name for vnic attachment
+func (o NodePoolSecondaryVnicOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodePoolSecondaryVnic) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Which physical network interface card (NIC) the VNIC will use
+func (o NodePoolSecondaryVnicOutput) NicIndex() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NodePoolSecondaryVnic) *int { return v.NicIndex }).(pulumi.IntPtrOutput)
+}
+
+type NodePoolSecondaryVnicArrayOutput struct{ *pulumi.OutputState }
+
+func (NodePoolSecondaryVnicArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NodePoolSecondaryVnic)(nil)).Elem()
+}
+
+func (o NodePoolSecondaryVnicArrayOutput) ToNodePoolSecondaryVnicArrayOutput() NodePoolSecondaryVnicArrayOutput {
+	return o
+}
+
+func (o NodePoolSecondaryVnicArrayOutput) ToNodePoolSecondaryVnicArrayOutputWithContext(ctx context.Context) NodePoolSecondaryVnicArrayOutput {
+	return o
+}
+
+func (o NodePoolSecondaryVnicArrayOutput) Index(i pulumi.IntInput) NodePoolSecondaryVnicOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NodePoolSecondaryVnic {
+		return vs[0].([]NodePoolSecondaryVnic)[vs[1].(int)]
+	}).(NodePoolSecondaryVnicOutput)
+}
+
+type NodePoolSecondaryVnicCreateVnicDetails struct {
+	// (Updatable) The application resource that corresponds to this secondary vnic. Used to map pods to this specific vnic for scheduling
+	ApplicationResources []string `pulumi:"applicationResources"`
+	// (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet
+	AssignIpv6ip *bool `pulumi:"assignIpv6ip"`
+	// (Updatable) Whether the VNIC should be assigned a public IP address
+	AssignPublicIp *bool `pulumi:"assignPublicIp"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// (Updatable) Display name for secondary vnic
+	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) The number of ip addresses to attach to secondary vnic
+	IpCount *int `pulumi:"ipCount"`
+	// (Updatable) A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix  and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty  and instead provide the specific IPv6 address that should be used from within that range.
+	Ipv6addressIpv6subnetCidrPairDetails []NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
+	// (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
+	NsgIds []string `pulumi:"nsgIds"`
+	// (Updatable) Whether the source/destination check is disabled on the VNIC
+	SkipSourceDestCheck *bool `pulumi:"skipSourceDestCheck"`
+	// (Updatable) the ocid of the subnet to create the vnic in
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// NodePoolSecondaryVnicCreateVnicDetailsInput is an input type that accepts NodePoolSecondaryVnicCreateVnicDetailsArgs and NodePoolSecondaryVnicCreateVnicDetailsOutput values.
+// You can construct a concrete instance of `NodePoolSecondaryVnicCreateVnicDetailsInput` via:
+//
+//	NodePoolSecondaryVnicCreateVnicDetailsArgs{...}
+type NodePoolSecondaryVnicCreateVnicDetailsInput interface {
+	pulumi.Input
+
+	ToNodePoolSecondaryVnicCreateVnicDetailsOutput() NodePoolSecondaryVnicCreateVnicDetailsOutput
+	ToNodePoolSecondaryVnicCreateVnicDetailsOutputWithContext(context.Context) NodePoolSecondaryVnicCreateVnicDetailsOutput
+}
+
+type NodePoolSecondaryVnicCreateVnicDetailsArgs struct {
+	// (Updatable) The application resource that corresponds to this secondary vnic. Used to map pods to this specific vnic for scheduling
+	ApplicationResources pulumi.StringArrayInput `pulumi:"applicationResources"`
+	// (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet
+	AssignIpv6ip pulumi.BoolPtrInput `pulumi:"assignIpv6ip"`
+	// (Updatable) Whether the VNIC should be assigned a public IP address
+	AssignPublicIp pulumi.BoolPtrInput `pulumi:"assignPublicIp"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// (Updatable) Display name for secondary vnic
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// (Updatable) The number of ip addresses to attach to secondary vnic
+	IpCount pulumi.IntPtrInput `pulumi:"ipCount"`
+	// (Updatable) A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix  and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty  and instead provide the specific IPv6 address that should be used from within that range.
+	Ipv6addressIpv6subnetCidrPairDetails NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayInput `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
+	// (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// (Updatable) Whether the source/destination check is disabled on the VNIC
+	SkipSourceDestCheck pulumi.BoolPtrInput `pulumi:"skipSourceDestCheck"`
+	// (Updatable) the ocid of the subnet to create the vnic in
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (NodePoolSecondaryVnicCreateVnicDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodePoolSecondaryVnicCreateVnicDetails)(nil)).Elem()
+}
+
+func (i NodePoolSecondaryVnicCreateVnicDetailsArgs) ToNodePoolSecondaryVnicCreateVnicDetailsOutput() NodePoolSecondaryVnicCreateVnicDetailsOutput {
+	return i.ToNodePoolSecondaryVnicCreateVnicDetailsOutputWithContext(context.Background())
+}
+
+func (i NodePoolSecondaryVnicCreateVnicDetailsArgs) ToNodePoolSecondaryVnicCreateVnicDetailsOutputWithContext(ctx context.Context) NodePoolSecondaryVnicCreateVnicDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolSecondaryVnicCreateVnicDetailsOutput)
+}
+
+type NodePoolSecondaryVnicCreateVnicDetailsOutput struct{ *pulumi.OutputState }
+
+func (NodePoolSecondaryVnicCreateVnicDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodePoolSecondaryVnicCreateVnicDetails)(nil)).Elem()
+}
+
+func (o NodePoolSecondaryVnicCreateVnicDetailsOutput) ToNodePoolSecondaryVnicCreateVnicDetailsOutput() NodePoolSecondaryVnicCreateVnicDetailsOutput {
+	return o
+}
+
+func (o NodePoolSecondaryVnicCreateVnicDetailsOutput) ToNodePoolSecondaryVnicCreateVnicDetailsOutputWithContext(ctx context.Context) NodePoolSecondaryVnicCreateVnicDetailsOutput {
+	return o
+}
+
+// (Updatable) The application resource that corresponds to this secondary vnic. Used to map pods to this specific vnic for scheduling
+func (o NodePoolSecondaryVnicCreateVnicDetailsOutput) ApplicationResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NodePoolSecondaryVnicCreateVnicDetails) []string { return v.ApplicationResources }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet
+func (o NodePoolSecondaryVnicCreateVnicDetailsOutput) AssignIpv6ip() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v NodePoolSecondaryVnicCreateVnicDetails) *bool { return v.AssignIpv6ip }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Whether the VNIC should be assigned a public IP address
+func (o NodePoolSecondaryVnicCreateVnicDetailsOutput) AssignPublicIp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v NodePoolSecondaryVnicCreateVnicDetails) *bool { return v.AssignPublicIp }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o NodePoolSecondaryVnicCreateVnicDetailsOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v NodePoolSecondaryVnicCreateVnicDetails) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) Display name for secondary vnic
+func (o NodePoolSecondaryVnicCreateVnicDetailsOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodePoolSecondaryVnicCreateVnicDetails) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o NodePoolSecondaryVnicCreateVnicDetailsOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v NodePoolSecondaryVnicCreateVnicDetails) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) The number of ip addresses to attach to secondary vnic
+func (o NodePoolSecondaryVnicCreateVnicDetailsOutput) IpCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NodePoolSecondaryVnicCreateVnicDetails) *int { return v.IpCount }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix  and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty  and instead provide the specific IPv6 address that should be used from within that range.
+func (o NodePoolSecondaryVnicCreateVnicDetailsOutput) Ipv6addressIpv6subnetCidrPairDetails() NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o.ApplyT(func(v NodePoolSecondaryVnicCreateVnicDetails) []NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail {
+		return v.Ipv6addressIpv6subnetCidrPairDetails
+	}).(NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
+// (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
+func (o NodePoolSecondaryVnicCreateVnicDetailsOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NodePoolSecondaryVnicCreateVnicDetails) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Whether the source/destination check is disabled on the VNIC
+func (o NodePoolSecondaryVnicCreateVnicDetailsOutput) SkipSourceDestCheck() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v NodePoolSecondaryVnicCreateVnicDetails) *bool { return v.SkipSourceDestCheck }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) the ocid of the subnet to create the vnic in
+func (o NodePoolSecondaryVnicCreateVnicDetailsOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v NodePoolSecondaryVnicCreateVnicDetails) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail struct {
+	// (Updatable) An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix
+	Ipv6address *string `pulumi:"ipv6address"`
+	// (Updatable) The IPv6 prefix allocated to the subnet
+	Ipv6subnetCidr *string `pulumi:"ipv6subnetCidr"`
+}
+
+// NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailInput is an input type that accepts NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs and NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailOutput values.
+// You can construct a concrete instance of `NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailInput` via:
+//
+//	NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs{...}
+type NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailInput interface {
+	pulumi.Input
+
+	ToNodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailOutput() NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailOutput
+	ToNodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Context) NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailOutput
+}
+
+type NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs struct {
+	// (Updatable) An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix
+	Ipv6address pulumi.StringPtrInput `pulumi:"ipv6address"`
+	// (Updatable) The IPv6 prefix allocated to the subnet
+	Ipv6subnetCidr pulumi.StringPtrInput `pulumi:"ipv6subnetCidr"`
+}
+
+func (NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs) ToNodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailOutput() NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailOutput {
+	return i.ToNodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Background())
+}
+
+func (i NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs) ToNodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailOutput)
+}
+
+// NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayInput is an input type that accepts NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArray and NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayOutput values.
+// You can construct a concrete instance of `NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayInput` via:
+//
+//	NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArray{ NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs{...} }
+type NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayInput interface {
+	pulumi.Input
+
+	ToNodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayOutput() NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayOutput
+	ToNodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Context) NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayOutput
+}
+
+type NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArray []NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailInput
+
+func (NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArray) ToNodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayOutput() NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return i.ToNodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Background())
+}
+
+func (i NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArray) ToNodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
+type NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailOutput struct{ *pulumi.OutputState }
+
+func (NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailOutput) ToNodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailOutput() NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+func (o NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailOutput) ToNodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+// (Updatable) An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix
+func (o NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail) *string {
+		return v.Ipv6address
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The IPv6 prefix allocated to the subnet
+func (o NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6subnetCidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail) *string {
+		return v.Ipv6subnetCidr
+	}).(pulumi.StringPtrOutput)
+}
+
+type NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToNodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayOutput() NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToNodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayOutput) Index(i pulumi.IntInput) NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail {
+		return vs[0].([]NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail)[vs[1].(int)]
+	}).(NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailOutput)
 }
 
 type VirtualNodePoolInitialVirtualNodeLabel struct {
@@ -13789,7 +14158,7 @@ type GetNodePoolNode struct {
 	PublicIp string `pulumi:"publicIp"`
 	// The state of the nodepool.
 	State string `pulumi:"state"`
-	// The OCID of the subnet in which this node is placed.
+	// the ocid of the subnet to create the vnic in
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -13831,7 +14200,7 @@ type GetNodePoolNodeArgs struct {
 	PublicIp pulumi.StringInput `pulumi:"publicIp"`
 	// The state of the nodepool.
 	State pulumi.StringInput `pulumi:"state"`
-	// The OCID of the subnet in which this node is placed.
+	// the ocid of the subnet to create the vnic in
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -13951,7 +14320,7 @@ func (o GetNodePoolNodeOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNode) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The OCID of the subnet in which this node is placed.
+// the ocid of the subnet to create the vnic in
 func (o GetNodePoolNodeOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNode) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -13987,7 +14356,7 @@ type GetNodePoolNodeConfigDetail struct {
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// The CNI related configuration of pods in the node pool.
 	NodePoolPodNetworkOptionDetails []GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail `pulumi:"nodePoolPodNetworkOptionDetails"`
-	// The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+	// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
 	NsgIds []string `pulumi:"nsgIds"`
 	// The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
 	PlacementConfigs []GetNodePoolNodeConfigDetailPlacementConfig `pulumi:"placementConfigs"`
@@ -14017,7 +14386,7 @@ type GetNodePoolNodeConfigDetailArgs struct {
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// The CNI related configuration of pods in the node pool.
 	NodePoolPodNetworkOptionDetails GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayInput `pulumi:"nodePoolPodNetworkOptionDetails"`
-	// The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+	// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
 	PlacementConfigs GetNodePoolNodeConfigDetailPlacementConfigArrayInput `pulumi:"placementConfigs"`
@@ -14103,7 +14472,7 @@ func (o GetNodePoolNodeConfigDetailOutput) NodePoolPodNetworkOptionDetails() Get
 	}).(GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput)
 }
 
-// The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
 func (o GetNodePoolNodeConfigDetailOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigDetail) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
@@ -14273,7 +14642,7 @@ type GetNodePoolNodeConfigDetailPlacementConfig struct {
 	FaultDomains []string `pulumi:"faultDomains"`
 	// Configuration options for preemptible nodes.
 	PreemptibleNodeConfigs []GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig `pulumi:"preemptibleNodeConfigs"`
-	// The OCID of the subnet in which this node is placed.
+	// the ocid of the subnet to create the vnic in
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -14297,7 +14666,7 @@ type GetNodePoolNodeConfigDetailPlacementConfigArgs struct {
 	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
 	// Configuration options for preemptible nodes.
 	PreemptibleNodeConfigs GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput `pulumi:"preemptibleNodeConfigs"`
-	// The OCID of the subnet in which this node is placed.
+	// the ocid of the subnet to create the vnic in
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -14374,7 +14743,7 @@ func (o GetNodePoolNodeConfigDetailPlacementConfigOutput) PreemptibleNodeConfigs
 	}).(GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput)
 }
 
-// The OCID of the subnet in which this node is placed.
+// the ocid of the subnet to create the vnic in
 func (o GetNodePoolNodeConfigDetailPlacementConfigOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigDetailPlacementConfig) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -15413,6 +15782,422 @@ func (o GetNodePoolOptionSourceArrayOutput) Index(i pulumi.IntInput) GetNodePool
 	}).(GetNodePoolOptionSourceOutput)
 }
 
+type GetNodePoolSecondaryVnic struct {
+	// The properties of the secondary vnics
+	CreateVnicDetails []GetNodePoolSecondaryVnicCreateVnicDetail `pulumi:"createVnicDetails"`
+	// Display name for vnic attachment
+	DisplayName string `pulumi:"displayName"`
+	// Which physical network interface card (NIC) the VNIC will use
+	NicIndex int `pulumi:"nicIndex"`
+}
+
+// GetNodePoolSecondaryVnicInput is an input type that accepts GetNodePoolSecondaryVnicArgs and GetNodePoolSecondaryVnicOutput values.
+// You can construct a concrete instance of `GetNodePoolSecondaryVnicInput` via:
+//
+//	GetNodePoolSecondaryVnicArgs{...}
+type GetNodePoolSecondaryVnicInput interface {
+	pulumi.Input
+
+	ToGetNodePoolSecondaryVnicOutput() GetNodePoolSecondaryVnicOutput
+	ToGetNodePoolSecondaryVnicOutputWithContext(context.Context) GetNodePoolSecondaryVnicOutput
+}
+
+type GetNodePoolSecondaryVnicArgs struct {
+	// The properties of the secondary vnics
+	CreateVnicDetails GetNodePoolSecondaryVnicCreateVnicDetailArrayInput `pulumi:"createVnicDetails"`
+	// Display name for vnic attachment
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Which physical network interface card (NIC) the VNIC will use
+	NicIndex pulumi.IntInput `pulumi:"nicIndex"`
+}
+
+func (GetNodePoolSecondaryVnicArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolSecondaryVnic)(nil)).Elem()
+}
+
+func (i GetNodePoolSecondaryVnicArgs) ToGetNodePoolSecondaryVnicOutput() GetNodePoolSecondaryVnicOutput {
+	return i.ToGetNodePoolSecondaryVnicOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolSecondaryVnicArgs) ToGetNodePoolSecondaryVnicOutputWithContext(ctx context.Context) GetNodePoolSecondaryVnicOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolSecondaryVnicOutput)
+}
+
+// GetNodePoolSecondaryVnicArrayInput is an input type that accepts GetNodePoolSecondaryVnicArray and GetNodePoolSecondaryVnicArrayOutput values.
+// You can construct a concrete instance of `GetNodePoolSecondaryVnicArrayInput` via:
+//
+//	GetNodePoolSecondaryVnicArray{ GetNodePoolSecondaryVnicArgs{...} }
+type GetNodePoolSecondaryVnicArrayInput interface {
+	pulumi.Input
+
+	ToGetNodePoolSecondaryVnicArrayOutput() GetNodePoolSecondaryVnicArrayOutput
+	ToGetNodePoolSecondaryVnicArrayOutputWithContext(context.Context) GetNodePoolSecondaryVnicArrayOutput
+}
+
+type GetNodePoolSecondaryVnicArray []GetNodePoolSecondaryVnicInput
+
+func (GetNodePoolSecondaryVnicArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolSecondaryVnic)(nil)).Elem()
+}
+
+func (i GetNodePoolSecondaryVnicArray) ToGetNodePoolSecondaryVnicArrayOutput() GetNodePoolSecondaryVnicArrayOutput {
+	return i.ToGetNodePoolSecondaryVnicArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolSecondaryVnicArray) ToGetNodePoolSecondaryVnicArrayOutputWithContext(ctx context.Context) GetNodePoolSecondaryVnicArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolSecondaryVnicArrayOutput)
+}
+
+type GetNodePoolSecondaryVnicOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolSecondaryVnicOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolSecondaryVnic)(nil)).Elem()
+}
+
+func (o GetNodePoolSecondaryVnicOutput) ToGetNodePoolSecondaryVnicOutput() GetNodePoolSecondaryVnicOutput {
+	return o
+}
+
+func (o GetNodePoolSecondaryVnicOutput) ToGetNodePoolSecondaryVnicOutputWithContext(ctx context.Context) GetNodePoolSecondaryVnicOutput {
+	return o
+}
+
+// The properties of the secondary vnics
+func (o GetNodePoolSecondaryVnicOutput) CreateVnicDetails() GetNodePoolSecondaryVnicCreateVnicDetailArrayOutput {
+	return o.ApplyT(func(v GetNodePoolSecondaryVnic) []GetNodePoolSecondaryVnicCreateVnicDetail {
+		return v.CreateVnicDetails
+	}).(GetNodePoolSecondaryVnicCreateVnicDetailArrayOutput)
+}
+
+// Display name for vnic attachment
+func (o GetNodePoolSecondaryVnicOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolSecondaryVnic) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Which physical network interface card (NIC) the VNIC will use
+func (o GetNodePoolSecondaryVnicOutput) NicIndex() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNodePoolSecondaryVnic) int { return v.NicIndex }).(pulumi.IntOutput)
+}
+
+type GetNodePoolSecondaryVnicArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolSecondaryVnicArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolSecondaryVnic)(nil)).Elem()
+}
+
+func (o GetNodePoolSecondaryVnicArrayOutput) ToGetNodePoolSecondaryVnicArrayOutput() GetNodePoolSecondaryVnicArrayOutput {
+	return o
+}
+
+func (o GetNodePoolSecondaryVnicArrayOutput) ToGetNodePoolSecondaryVnicArrayOutputWithContext(ctx context.Context) GetNodePoolSecondaryVnicArrayOutput {
+	return o
+}
+
+func (o GetNodePoolSecondaryVnicArrayOutput) Index(i pulumi.IntInput) GetNodePoolSecondaryVnicOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolSecondaryVnic {
+		return vs[0].([]GetNodePoolSecondaryVnic)[vs[1].(int)]
+	}).(GetNodePoolSecondaryVnicOutput)
+}
+
+type GetNodePoolSecondaryVnicCreateVnicDetail struct {
+	// The application resource that corresponds to this secondary vnic. Used to map pods to this specific vnic for scheduling
+	ApplicationResources []string `pulumi:"applicationResources"`
+	// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet
+	AssignIpv6ip bool `pulumi:"assignIpv6ip"`
+	// Whether the VNIC should be assigned a public IP address
+	AssignPublicIp bool `pulumi:"assignPublicIp"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Display name for vnic attachment
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The number of ip addresses to attach to secondary vnic
+	IpCount int `pulumi:"ipCount"`
+	// A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix  and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty  and instead provide the specific IPv6 address that should be used from within that range.
+	Ipv6addressIpv6subnetCidrPairDetails []GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
+	// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
+	NsgIds []string `pulumi:"nsgIds"`
+	// Whether the source/destination check is disabled on the VNIC
+	SkipSourceDestCheck bool `pulumi:"skipSourceDestCheck"`
+	// the ocid of the subnet to create the vnic in
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetNodePoolSecondaryVnicCreateVnicDetailInput is an input type that accepts GetNodePoolSecondaryVnicCreateVnicDetailArgs and GetNodePoolSecondaryVnicCreateVnicDetailOutput values.
+// You can construct a concrete instance of `GetNodePoolSecondaryVnicCreateVnicDetailInput` via:
+//
+//	GetNodePoolSecondaryVnicCreateVnicDetailArgs{...}
+type GetNodePoolSecondaryVnicCreateVnicDetailInput interface {
+	pulumi.Input
+
+	ToGetNodePoolSecondaryVnicCreateVnicDetailOutput() GetNodePoolSecondaryVnicCreateVnicDetailOutput
+	ToGetNodePoolSecondaryVnicCreateVnicDetailOutputWithContext(context.Context) GetNodePoolSecondaryVnicCreateVnicDetailOutput
+}
+
+type GetNodePoolSecondaryVnicCreateVnicDetailArgs struct {
+	// The application resource that corresponds to this secondary vnic. Used to map pods to this specific vnic for scheduling
+	ApplicationResources pulumi.StringArrayInput `pulumi:"applicationResources"`
+	// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet
+	AssignIpv6ip pulumi.BoolInput `pulumi:"assignIpv6ip"`
+	// Whether the VNIC should be assigned a public IP address
+	AssignPublicIp pulumi.BoolInput `pulumi:"assignPublicIp"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Display name for vnic attachment
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The number of ip addresses to attach to secondary vnic
+	IpCount pulumi.IntInput `pulumi:"ipCount"`
+	// A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix  and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty  and instead provide the specific IPv6 address that should be used from within that range.
+	Ipv6addressIpv6subnetCidrPairDetails GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
+	// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// Whether the source/destination check is disabled on the VNIC
+	SkipSourceDestCheck pulumi.BoolInput `pulumi:"skipSourceDestCheck"`
+	// the ocid of the subnet to create the vnic in
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetNodePoolSecondaryVnicCreateVnicDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolSecondaryVnicCreateVnicDetail)(nil)).Elem()
+}
+
+func (i GetNodePoolSecondaryVnicCreateVnicDetailArgs) ToGetNodePoolSecondaryVnicCreateVnicDetailOutput() GetNodePoolSecondaryVnicCreateVnicDetailOutput {
+	return i.ToGetNodePoolSecondaryVnicCreateVnicDetailOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolSecondaryVnicCreateVnicDetailArgs) ToGetNodePoolSecondaryVnicCreateVnicDetailOutputWithContext(ctx context.Context) GetNodePoolSecondaryVnicCreateVnicDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolSecondaryVnicCreateVnicDetailOutput)
+}
+
+// GetNodePoolSecondaryVnicCreateVnicDetailArrayInput is an input type that accepts GetNodePoolSecondaryVnicCreateVnicDetailArray and GetNodePoolSecondaryVnicCreateVnicDetailArrayOutput values.
+// You can construct a concrete instance of `GetNodePoolSecondaryVnicCreateVnicDetailArrayInput` via:
+//
+//	GetNodePoolSecondaryVnicCreateVnicDetailArray{ GetNodePoolSecondaryVnicCreateVnicDetailArgs{...} }
+type GetNodePoolSecondaryVnicCreateVnicDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetNodePoolSecondaryVnicCreateVnicDetailArrayOutput() GetNodePoolSecondaryVnicCreateVnicDetailArrayOutput
+	ToGetNodePoolSecondaryVnicCreateVnicDetailArrayOutputWithContext(context.Context) GetNodePoolSecondaryVnicCreateVnicDetailArrayOutput
+}
+
+type GetNodePoolSecondaryVnicCreateVnicDetailArray []GetNodePoolSecondaryVnicCreateVnicDetailInput
+
+func (GetNodePoolSecondaryVnicCreateVnicDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolSecondaryVnicCreateVnicDetail)(nil)).Elem()
+}
+
+func (i GetNodePoolSecondaryVnicCreateVnicDetailArray) ToGetNodePoolSecondaryVnicCreateVnicDetailArrayOutput() GetNodePoolSecondaryVnicCreateVnicDetailArrayOutput {
+	return i.ToGetNodePoolSecondaryVnicCreateVnicDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolSecondaryVnicCreateVnicDetailArray) ToGetNodePoolSecondaryVnicCreateVnicDetailArrayOutputWithContext(ctx context.Context) GetNodePoolSecondaryVnicCreateVnicDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolSecondaryVnicCreateVnicDetailArrayOutput)
+}
+
+type GetNodePoolSecondaryVnicCreateVnicDetailOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolSecondaryVnicCreateVnicDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolSecondaryVnicCreateVnicDetail)(nil)).Elem()
+}
+
+func (o GetNodePoolSecondaryVnicCreateVnicDetailOutput) ToGetNodePoolSecondaryVnicCreateVnicDetailOutput() GetNodePoolSecondaryVnicCreateVnicDetailOutput {
+	return o
+}
+
+func (o GetNodePoolSecondaryVnicCreateVnicDetailOutput) ToGetNodePoolSecondaryVnicCreateVnicDetailOutputWithContext(ctx context.Context) GetNodePoolSecondaryVnicCreateVnicDetailOutput {
+	return o
+}
+
+// The application resource that corresponds to this secondary vnic. Used to map pods to this specific vnic for scheduling
+func (o GetNodePoolSecondaryVnicCreateVnicDetailOutput) ApplicationResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNodePoolSecondaryVnicCreateVnicDetail) []string { return v.ApplicationResources }).(pulumi.StringArrayOutput)
+}
+
+// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet
+func (o GetNodePoolSecondaryVnicCreateVnicDetailOutput) AssignIpv6ip() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNodePoolSecondaryVnicCreateVnicDetail) bool { return v.AssignIpv6ip }).(pulumi.BoolOutput)
+}
+
+// Whether the VNIC should be assigned a public IP address
+func (o GetNodePoolSecondaryVnicCreateVnicDetailOutput) AssignPublicIp() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNodePoolSecondaryVnicCreateVnicDetail) bool { return v.AssignPublicIp }).(pulumi.BoolOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetNodePoolSecondaryVnicCreateVnicDetailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNodePoolSecondaryVnicCreateVnicDetail) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Display name for vnic attachment
+func (o GetNodePoolSecondaryVnicCreateVnicDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolSecondaryVnicCreateVnicDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetNodePoolSecondaryVnicCreateVnicDetailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNodePoolSecondaryVnicCreateVnicDetail) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The number of ip addresses to attach to secondary vnic
+func (o GetNodePoolSecondaryVnicCreateVnicDetailOutput) IpCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNodePoolSecondaryVnicCreateVnicDetail) int { return v.IpCount }).(pulumi.IntOutput)
+}
+
+// A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix  and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty  and instead provide the specific IPv6 address that should be used from within that range.
+func (o GetNodePoolSecondaryVnicCreateVnicDetailOutput) Ipv6addressIpv6subnetCidrPairDetails() GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o.ApplyT(func(v GetNodePoolSecondaryVnicCreateVnicDetail) []GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail {
+		return v.Ipv6addressIpv6subnetCidrPairDetails
+	}).(GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
+// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
+func (o GetNodePoolSecondaryVnicCreateVnicDetailOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNodePoolSecondaryVnicCreateVnicDetail) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// Whether the source/destination check is disabled on the VNIC
+func (o GetNodePoolSecondaryVnicCreateVnicDetailOutput) SkipSourceDestCheck() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNodePoolSecondaryVnicCreateVnicDetail) bool { return v.SkipSourceDestCheck }).(pulumi.BoolOutput)
+}
+
+// the ocid of the subnet to create the vnic in
+func (o GetNodePoolSecondaryVnicCreateVnicDetailOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolSecondaryVnicCreateVnicDetail) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetNodePoolSecondaryVnicCreateVnicDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolSecondaryVnicCreateVnicDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolSecondaryVnicCreateVnicDetail)(nil)).Elem()
+}
+
+func (o GetNodePoolSecondaryVnicCreateVnicDetailArrayOutput) ToGetNodePoolSecondaryVnicCreateVnicDetailArrayOutput() GetNodePoolSecondaryVnicCreateVnicDetailArrayOutput {
+	return o
+}
+
+func (o GetNodePoolSecondaryVnicCreateVnicDetailArrayOutput) ToGetNodePoolSecondaryVnicCreateVnicDetailArrayOutputWithContext(ctx context.Context) GetNodePoolSecondaryVnicCreateVnicDetailArrayOutput {
+	return o
+}
+
+func (o GetNodePoolSecondaryVnicCreateVnicDetailArrayOutput) Index(i pulumi.IntInput) GetNodePoolSecondaryVnicCreateVnicDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolSecondaryVnicCreateVnicDetail {
+		return vs[0].([]GetNodePoolSecondaryVnicCreateVnicDetail)[vs[1].(int)]
+	}).(GetNodePoolSecondaryVnicCreateVnicDetailOutput)
+}
+
+type GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail struct {
+	// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix
+	Ipv6address string `pulumi:"ipv6address"`
+	// The IPv6 prefix allocated to the subnet
+	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
+}
+
+// GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput is an input type that accepts GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs and GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput values.
+// You can construct a concrete instance of `GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput` via:
+//
+//	GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs{...}
+type GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput interface {
+	pulumi.Input
+
+	ToGetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput() GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput
+	ToGetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Context) GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput
+}
+
+type GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs struct {
+	// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix
+	Ipv6address pulumi.StringInput `pulumi:"ipv6address"`
+	// The IPv6 prefix allocated to the subnet
+	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
+}
+
+func (GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs) ToGetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput() GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return i.ToGetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs) ToGetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput)
+}
+
+// GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput is an input type that accepts GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray and GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput values.
+// You can construct a concrete instance of `GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput` via:
+//
+//	GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray{ GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs{...} }
+type GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput
+	ToGetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Context) GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput
+}
+
+type GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray []GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput
+
+func (GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray) ToGetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return i.ToGetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray) ToGetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
+type GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) ToGetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput() GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+func (o GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) ToGetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix
+func (o GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6address
+	}).(pulumi.StringOutput)
+}
+
+// The IPv6 prefix allocated to the subnet
+func (o GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6subnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6subnetCidr
+	}).(pulumi.StringOutput)
+}
+
+type GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) Index(i pulumi.IntInput) GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail {
+		return vs[0].([]GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)[vs[1].(int)]
+	}).(GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput)
+}
+
 type GetNodePoolsFilter struct {
 	// The name to filter on.
 	Name   string   `pulumi:"name"`
@@ -15541,6 +16326,8 @@ type GetNodePoolsNodePool struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The name to filter on.
 	Name string `pulumi:"name"`
+	// Emulation type for the physical network interface card (NIC) for nodes
+	NetworkLaunchType string `pulumi:"networkLaunchType"`
 	// The configuration of nodes in the node pool.
 	NodeConfigDetails []GetNodePoolsNodePoolNodeConfigDetail `pulumi:"nodeConfigDetails"`
 	// Node Eviction Details configuration
@@ -15568,6 +16355,8 @@ type GetNodePoolsNodePool struct {
 	Nodes       []GetNodePoolsNodePoolNode       `pulumi:"nodes"`
 	// The number of nodes in each subnet.
 	QuantityPerSubnet int `pulumi:"quantityPerSubnet"`
+	// A list of secondary vnics to attach to nodes
+	SecondaryVnics []GetNodePoolsNodePoolSecondaryVnic `pulumi:"secondaryVnics"`
 	// The SSH public key on each node in the node pool on launch.
 	SshPublicKey string `pulumi:"sshPublicKey"`
 	// A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
@@ -15606,6 +16395,8 @@ type GetNodePoolsNodePoolArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The name to filter on.
 	Name pulumi.StringInput `pulumi:"name"`
+	// Emulation type for the physical network interface card (NIC) for nodes
+	NetworkLaunchType pulumi.StringInput `pulumi:"networkLaunchType"`
 	// The configuration of nodes in the node pool.
 	NodeConfigDetails GetNodePoolsNodePoolNodeConfigDetailArrayInput `pulumi:"nodeConfigDetails"`
 	// Node Eviction Details configuration
@@ -15633,6 +16424,8 @@ type GetNodePoolsNodePoolArgs struct {
 	Nodes       GetNodePoolsNodePoolNodeArrayInput       `pulumi:"nodes"`
 	// The number of nodes in each subnet.
 	QuantityPerSubnet pulumi.IntInput `pulumi:"quantityPerSubnet"`
+	// A list of secondary vnics to attach to nodes
+	SecondaryVnics GetNodePoolsNodePoolSecondaryVnicArrayInput `pulumi:"secondaryVnics"`
 	// The SSH public key on each node in the node pool on launch.
 	SshPublicKey pulumi.StringInput `pulumi:"sshPublicKey"`
 	// A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
@@ -15737,6 +16530,11 @@ func (o GetNodePoolsNodePoolOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePool) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// Emulation type for the physical network interface card (NIC) for nodes
+func (o GetNodePoolsNodePoolOutput) NetworkLaunchType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePool) string { return v.NetworkLaunchType }).(pulumi.StringOutput)
+}
+
 // The configuration of nodes in the node pool.
 func (o GetNodePoolsNodePoolOutput) NodeConfigDetails() GetNodePoolsNodePoolNodeConfigDetailArrayOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePool) []GetNodePoolsNodePoolNodeConfigDetail { return v.NodeConfigDetails }).(GetNodePoolsNodePoolNodeConfigDetailArrayOutput)
@@ -15805,6 +16603,11 @@ func (o GetNodePoolsNodePoolOutput) Nodes() GetNodePoolsNodePoolNodeArrayOutput 
 // The number of nodes in each subnet.
 func (o GetNodePoolsNodePoolOutput) QuantityPerSubnet() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePool) int { return v.QuantityPerSubnet }).(pulumi.IntOutput)
+}
+
+// A list of secondary vnics to attach to nodes
+func (o GetNodePoolsNodePoolOutput) SecondaryVnics() GetNodePoolsNodePoolSecondaryVnicArrayOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePool) []GetNodePoolsNodePoolSecondaryVnic { return v.SecondaryVnics }).(GetNodePoolsNodePoolSecondaryVnicArrayOutput)
 }
 
 // The SSH public key on each node in the node pool on launch.
@@ -15970,7 +16773,7 @@ type GetNodePoolsNodePoolNode struct {
 	PublicIp   string `pulumi:"publicIp"`
 	// A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
 	State string `pulumi:"state"`
-	// The OCID of the subnet in which to place nodes.
+	// the ocid of the subnet to create the vnic in
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -16007,7 +16810,7 @@ type GetNodePoolsNodePoolNodeArgs struct {
 	PublicIp   pulumi.StringInput `pulumi:"publicIp"`
 	// A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
 	State pulumi.StringInput `pulumi:"state"`
-	// The OCID of the subnet in which to place nodes.
+	// the ocid of the subnet to create the vnic in
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -16122,7 +16925,7 @@ func (o GetNodePoolsNodePoolNodeOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The OCID of the subnet in which to place nodes.
+// the ocid of the subnet to create the vnic in
 func (o GetNodePoolsNodePoolNodeOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -16158,7 +16961,7 @@ type GetNodePoolsNodePoolNodeConfigDetail struct {
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// The CNI related configuration of pods in the node pool.
 	NodePoolPodNetworkOptionDetails []GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail `pulumi:"nodePoolPodNetworkOptionDetails"`
-	// The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+	// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
 	NsgIds []string `pulumi:"nsgIds"`
 	// The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
 	PlacementConfigs []GetNodePoolsNodePoolNodeConfigDetailPlacementConfig `pulumi:"placementConfigs"`
@@ -16188,7 +16991,7 @@ type GetNodePoolsNodePoolNodeConfigDetailArgs struct {
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// The CNI related configuration of pods in the node pool.
 	NodePoolPodNetworkOptionDetails GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayInput `pulumi:"nodePoolPodNetworkOptionDetails"`
-	// The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+	// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
 	PlacementConfigs GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayInput `pulumi:"placementConfigs"`
@@ -16274,7 +17077,7 @@ func (o GetNodePoolsNodePoolNodeConfigDetailOutput) NodePoolPodNetworkOptionDeta
 	}).(GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput)
 }
 
-// The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
 func (o GetNodePoolsNodePoolNodeConfigDetailOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetail) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
@@ -16450,7 +17253,7 @@ type GetNodePoolsNodePoolNodeConfigDetailPlacementConfig struct {
 	FaultDomains []string `pulumi:"faultDomains"`
 	// Configuration options for preemptible nodes.
 	PreemptibleNodeConfigs []GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig `pulumi:"preemptibleNodeConfigs"`
-	// The OCID of the subnet in which to place nodes.
+	// the ocid of the subnet to create the vnic in
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -16474,7 +17277,7 @@ type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArgs struct {
 	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
 	// Configuration options for preemptible nodes.
 	PreemptibleNodeConfigs GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput `pulumi:"preemptibleNodeConfigs"`
-	// The OCID of the subnet in which to place nodes.
+	// the ocid of the subnet to create the vnic in
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -16551,7 +17354,7 @@ func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) PreemptibleNo
 	}).(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput)
 }
 
-// The OCID of the subnet in which to place nodes.
+// the ocid of the subnet to create the vnic in
 func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailPlacementConfig) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -17464,6 +18267,422 @@ func (o GetNodePoolsNodePoolNodeSourceDetailArrayOutput) Index(i pulumi.IntInput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolNodeSourceDetail {
 		return vs[0].([]GetNodePoolsNodePoolNodeSourceDetail)[vs[1].(int)]
 	}).(GetNodePoolsNodePoolNodeSourceDetailOutput)
+}
+
+type GetNodePoolsNodePoolSecondaryVnic struct {
+	// The properties of the secondary vnics
+	CreateVnicDetails []GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail `pulumi:"createVnicDetails"`
+	// Display name for vnic attachment
+	DisplayName string `pulumi:"displayName"`
+	// Which physical network interface card (NIC) the VNIC will use
+	NicIndex int `pulumi:"nicIndex"`
+}
+
+// GetNodePoolsNodePoolSecondaryVnicInput is an input type that accepts GetNodePoolsNodePoolSecondaryVnicArgs and GetNodePoolsNodePoolSecondaryVnicOutput values.
+// You can construct a concrete instance of `GetNodePoolsNodePoolSecondaryVnicInput` via:
+//
+//	GetNodePoolsNodePoolSecondaryVnicArgs{...}
+type GetNodePoolsNodePoolSecondaryVnicInput interface {
+	pulumi.Input
+
+	ToGetNodePoolsNodePoolSecondaryVnicOutput() GetNodePoolsNodePoolSecondaryVnicOutput
+	ToGetNodePoolsNodePoolSecondaryVnicOutputWithContext(context.Context) GetNodePoolsNodePoolSecondaryVnicOutput
+}
+
+type GetNodePoolsNodePoolSecondaryVnicArgs struct {
+	// The properties of the secondary vnics
+	CreateVnicDetails GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayInput `pulumi:"createVnicDetails"`
+	// Display name for vnic attachment
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Which physical network interface card (NIC) the VNIC will use
+	NicIndex pulumi.IntInput `pulumi:"nicIndex"`
+}
+
+func (GetNodePoolsNodePoolSecondaryVnicArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolsNodePoolSecondaryVnic)(nil)).Elem()
+}
+
+func (i GetNodePoolsNodePoolSecondaryVnicArgs) ToGetNodePoolsNodePoolSecondaryVnicOutput() GetNodePoolsNodePoolSecondaryVnicOutput {
+	return i.ToGetNodePoolsNodePoolSecondaryVnicOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolsNodePoolSecondaryVnicArgs) ToGetNodePoolsNodePoolSecondaryVnicOutputWithContext(ctx context.Context) GetNodePoolsNodePoolSecondaryVnicOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolSecondaryVnicOutput)
+}
+
+// GetNodePoolsNodePoolSecondaryVnicArrayInput is an input type that accepts GetNodePoolsNodePoolSecondaryVnicArray and GetNodePoolsNodePoolSecondaryVnicArrayOutput values.
+// You can construct a concrete instance of `GetNodePoolsNodePoolSecondaryVnicArrayInput` via:
+//
+//	GetNodePoolsNodePoolSecondaryVnicArray{ GetNodePoolsNodePoolSecondaryVnicArgs{...} }
+type GetNodePoolsNodePoolSecondaryVnicArrayInput interface {
+	pulumi.Input
+
+	ToGetNodePoolsNodePoolSecondaryVnicArrayOutput() GetNodePoolsNodePoolSecondaryVnicArrayOutput
+	ToGetNodePoolsNodePoolSecondaryVnicArrayOutputWithContext(context.Context) GetNodePoolsNodePoolSecondaryVnicArrayOutput
+}
+
+type GetNodePoolsNodePoolSecondaryVnicArray []GetNodePoolsNodePoolSecondaryVnicInput
+
+func (GetNodePoolsNodePoolSecondaryVnicArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolsNodePoolSecondaryVnic)(nil)).Elem()
+}
+
+func (i GetNodePoolsNodePoolSecondaryVnicArray) ToGetNodePoolsNodePoolSecondaryVnicArrayOutput() GetNodePoolsNodePoolSecondaryVnicArrayOutput {
+	return i.ToGetNodePoolsNodePoolSecondaryVnicArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolsNodePoolSecondaryVnicArray) ToGetNodePoolsNodePoolSecondaryVnicArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolSecondaryVnicArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolSecondaryVnicArrayOutput)
+}
+
+type GetNodePoolsNodePoolSecondaryVnicOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolsNodePoolSecondaryVnicOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolsNodePoolSecondaryVnic)(nil)).Elem()
+}
+
+func (o GetNodePoolsNodePoolSecondaryVnicOutput) ToGetNodePoolsNodePoolSecondaryVnicOutput() GetNodePoolsNodePoolSecondaryVnicOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolSecondaryVnicOutput) ToGetNodePoolsNodePoolSecondaryVnicOutputWithContext(ctx context.Context) GetNodePoolsNodePoolSecondaryVnicOutput {
+	return o
+}
+
+// The properties of the secondary vnics
+func (o GetNodePoolsNodePoolSecondaryVnicOutput) CreateVnicDetails() GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolSecondaryVnic) []GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail {
+		return v.CreateVnicDetails
+	}).(GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayOutput)
+}
+
+// Display name for vnic attachment
+func (o GetNodePoolsNodePoolSecondaryVnicOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolSecondaryVnic) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Which physical network interface card (NIC) the VNIC will use
+func (o GetNodePoolsNodePoolSecondaryVnicOutput) NicIndex() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolSecondaryVnic) int { return v.NicIndex }).(pulumi.IntOutput)
+}
+
+type GetNodePoolsNodePoolSecondaryVnicArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolsNodePoolSecondaryVnicArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolsNodePoolSecondaryVnic)(nil)).Elem()
+}
+
+func (o GetNodePoolsNodePoolSecondaryVnicArrayOutput) ToGetNodePoolsNodePoolSecondaryVnicArrayOutput() GetNodePoolsNodePoolSecondaryVnicArrayOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolSecondaryVnicArrayOutput) ToGetNodePoolsNodePoolSecondaryVnicArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolSecondaryVnicArrayOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolSecondaryVnicArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolSecondaryVnicOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolSecondaryVnic {
+		return vs[0].([]GetNodePoolsNodePoolSecondaryVnic)[vs[1].(int)]
+	}).(GetNodePoolsNodePoolSecondaryVnicOutput)
+}
+
+type GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail struct {
+	// The application resource that corresponds to this secondary vnic. Used to map pods to this specific vnic for scheduling
+	ApplicationResources []string `pulumi:"applicationResources"`
+	// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet
+	AssignIpv6ip bool `pulumi:"assignIpv6ip"`
+	// Whether the VNIC should be assigned a public IP address
+	AssignPublicIp bool `pulumi:"assignPublicIp"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Display name for vnic attachment
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The number of ip addresses to attach to secondary vnic
+	IpCount int `pulumi:"ipCount"`
+	// A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix  and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty  and instead provide the specific IPv6 address that should be used from within that range.
+	Ipv6addressIpv6subnetCidrPairDetails []GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
+	// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
+	NsgIds []string `pulumi:"nsgIds"`
+	// Whether the source/destination check is disabled on the VNIC
+	SkipSourceDestCheck bool `pulumi:"skipSourceDestCheck"`
+	// the ocid of the subnet to create the vnic in
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailInput is an input type that accepts GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArgs and GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput values.
+// You can construct a concrete instance of `GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailInput` via:
+//
+//	GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArgs{...}
+type GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailInput interface {
+	pulumi.Input
+
+	ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput() GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput
+	ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutputWithContext(context.Context) GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput
+}
+
+type GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArgs struct {
+	// The application resource that corresponds to this secondary vnic. Used to map pods to this specific vnic for scheduling
+	ApplicationResources pulumi.StringArrayInput `pulumi:"applicationResources"`
+	// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet
+	AssignIpv6ip pulumi.BoolInput `pulumi:"assignIpv6ip"`
+	// Whether the VNIC should be assigned a public IP address
+	AssignPublicIp pulumi.BoolInput `pulumi:"assignPublicIp"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Display name for vnic attachment
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The number of ip addresses to attach to secondary vnic
+	IpCount pulumi.IntInput `pulumi:"ipCount"`
+	// A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix  and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty  and instead provide the specific IPv6 address that should be used from within that range.
+	Ipv6addressIpv6subnetCidrPairDetails GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
+	// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// Whether the source/destination check is disabled on the VNIC
+	SkipSourceDestCheck pulumi.BoolInput `pulumi:"skipSourceDestCheck"`
+	// the ocid of the subnet to create the vnic in
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail)(nil)).Elem()
+}
+
+func (i GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArgs) ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput() GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput {
+	return i.ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArgs) ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutputWithContext(ctx context.Context) GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput)
+}
+
+// GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayInput is an input type that accepts GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArray and GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayOutput values.
+// You can construct a concrete instance of `GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayInput` via:
+//
+//	GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArray{ GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArgs{...} }
+type GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayOutput() GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayOutput
+	ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayOutputWithContext(context.Context) GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayOutput
+}
+
+type GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArray []GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailInput
+
+func (GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail)(nil)).Elem()
+}
+
+func (i GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArray) ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayOutput() GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayOutput {
+	return i.ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArray) ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayOutput)
+}
+
+type GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail)(nil)).Elem()
+}
+
+func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput) ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput() GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput) ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutputWithContext(ctx context.Context) GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput {
+	return o
+}
+
+// The application resource that corresponds to this secondary vnic. Used to map pods to this specific vnic for scheduling
+func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput) ApplicationResources() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail) []string { return v.ApplicationResources }).(pulumi.StringArrayOutput)
+}
+
+// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet
+func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput) AssignIpv6ip() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail) bool { return v.AssignIpv6ip }).(pulumi.BoolOutput)
+}
+
+// Whether the VNIC should be assigned a public IP address
+func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput) AssignPublicIp() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail) bool { return v.AssignPublicIp }).(pulumi.BoolOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Display name for vnic attachment
+func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The number of ip addresses to attach to secondary vnic
+func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput) IpCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail) int { return v.IpCount }).(pulumi.IntOutput)
+}
+
+// A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix  and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty  and instead provide the specific IPv6 address that should be used from within that range.
+func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput) Ipv6addressIpv6subnetCidrPairDetails() GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail) []GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail {
+		return v.Ipv6addressIpv6subnetCidrPairDetails
+	}).(GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
+// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
+func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// Whether the source/destination check is disabled on the VNIC
+func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput) SkipSourceDestCheck() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail) bool { return v.SkipSourceDestCheck }).(pulumi.BoolOutput)
+}
+
+// the ocid of the subnet to create the vnic in
+func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail)(nil)).Elem()
+}
+
+func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayOutput) ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayOutput() GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayOutput) ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail {
+		return vs[0].([]GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail)[vs[1].(int)]
+	}).(GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput)
+}
+
+type GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail struct {
+	// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix
+	Ipv6address string `pulumi:"ipv6address"`
+	// The IPv6 prefix allocated to the subnet
+	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
+}
+
+// GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput is an input type that accepts GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs and GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput values.
+// You can construct a concrete instance of `GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput` via:
+//
+//	GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs{...}
+type GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput interface {
+	pulumi.Input
+
+	ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput() GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput
+	ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Context) GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput
+}
+
+type GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs struct {
+	// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix
+	Ipv6address pulumi.StringInput `pulumi:"ipv6address"`
+	// The IPv6 prefix allocated to the subnet
+	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
+}
+
+func (GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs) ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput() GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return i.ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs) ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput)
+}
+
+// GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput is an input type that accepts GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray and GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput values.
+// You can construct a concrete instance of `GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput` via:
+//
+//	GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray{ GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs{...} }
+type GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput
+	ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Context) GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput
+}
+
+type GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray []GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput
+
+func (GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray) ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return i.ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray) ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
+type GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput() GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix
+func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6address
+	}).(pulumi.StringOutput)
+}
+
+// The IPv6 prefix allocated to the subnet
+func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6subnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6subnetCidr
+	}).(pulumi.StringOutput)
+}
+
+type GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail {
+		return vs[0].([]GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)[vs[1].(int)]
+	}).(GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput)
 }
 
 type GetPodShapesFilter struct {
@@ -20470,6 +21689,11 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeSourceArrayInput)(nil)).Elem(), NodePoolNodeSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeSourceDetailsInput)(nil)).Elem(), NodePoolNodeSourceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeSourceDetailsPtrInput)(nil)).Elem(), NodePoolNodeSourceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolSecondaryVnicInput)(nil)).Elem(), NodePoolSecondaryVnicArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolSecondaryVnicArrayInput)(nil)).Elem(), NodePoolSecondaryVnicArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolSecondaryVnicCreateVnicDetailsInput)(nil)).Elem(), NodePoolSecondaryVnicCreateVnicDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailInput)(nil)).Elem(), NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayInput)(nil)).Elem(), NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VirtualNodePoolInitialVirtualNodeLabelInput)(nil)).Elem(), VirtualNodePoolInitialVirtualNodeLabelArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VirtualNodePoolInitialVirtualNodeLabelArrayInput)(nil)).Elem(), VirtualNodePoolInitialVirtualNodeLabelArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VirtualNodePoolPlacementConfigurationInput)(nil)).Elem(), VirtualNodePoolPlacementConfigurationArgs{})
@@ -20600,6 +21824,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeSourceDetailArrayInput)(nil)).Elem(), GetNodePoolNodeSourceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolOptionSourceInput)(nil)).Elem(), GetNodePoolOptionSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolOptionSourceArrayInput)(nil)).Elem(), GetNodePoolOptionSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolSecondaryVnicInput)(nil)).Elem(), GetNodePoolSecondaryVnicArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolSecondaryVnicArrayInput)(nil)).Elem(), GetNodePoolSecondaryVnicArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolSecondaryVnicCreateVnicDetailInput)(nil)).Elem(), GetNodePoolSecondaryVnicCreateVnicDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolSecondaryVnicCreateVnicDetailArrayInput)(nil)).Elem(), GetNodePoolSecondaryVnicCreateVnicDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput)(nil)).Elem(), GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput)(nil)).Elem(), GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsFilterInput)(nil)).Elem(), GetNodePoolsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsFilterArrayInput)(nil)).Elem(), GetNodePoolsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolInput)(nil)).Elem(), GetNodePoolsNodePoolArgs{})
@@ -20630,6 +21860,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeSourceArrayInput)(nil)).Elem(), GetNodePoolsNodePoolNodeSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeSourceDetailInput)(nil)).Elem(), GetNodePoolsNodePoolNodeSourceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeSourceDetailArrayInput)(nil)).Elem(), GetNodePoolsNodePoolNodeSourceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolSecondaryVnicInput)(nil)).Elem(), GetNodePoolsNodePoolSecondaryVnicArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolSecondaryVnicArrayInput)(nil)).Elem(), GetNodePoolsNodePoolSecondaryVnicArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailInput)(nil)).Elem(), GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayInput)(nil)).Elem(), GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput)(nil)).Elem(), GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput)(nil)).Elem(), GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPodShapesFilterInput)(nil)).Elem(), GetPodShapesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPodShapesFilterArrayInput)(nil)).Elem(), GetPodShapesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPodShapesPodShapeInput)(nil)).Elem(), GetPodShapesPodShapeArgs{})
@@ -20764,6 +22000,11 @@ func init() {
 	pulumi.RegisterOutputType(NodePoolNodeSourceArrayOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeSourceDetailsOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeSourceDetailsPtrOutput{})
+	pulumi.RegisterOutputType(NodePoolSecondaryVnicOutput{})
+	pulumi.RegisterOutputType(NodePoolSecondaryVnicArrayOutput{})
+	pulumi.RegisterOutputType(NodePoolSecondaryVnicCreateVnicDetailsOutput{})
+	pulumi.RegisterOutputType(NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailOutput{})
+	pulumi.RegisterOutputType(NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayOutput{})
 	pulumi.RegisterOutputType(VirtualNodePoolInitialVirtualNodeLabelOutput{})
 	pulumi.RegisterOutputType(VirtualNodePoolInitialVirtualNodeLabelArrayOutput{})
 	pulumi.RegisterOutputType(VirtualNodePoolPlacementConfigurationOutput{})
@@ -20894,6 +22135,12 @@ func init() {
 	pulumi.RegisterOutputType(GetNodePoolNodeSourceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolOptionSourceOutput{})
 	pulumi.RegisterOutputType(GetNodePoolOptionSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetNodePoolSecondaryVnicOutput{})
+	pulumi.RegisterOutputType(GetNodePoolSecondaryVnicArrayOutput{})
+	pulumi.RegisterOutputType(GetNodePoolSecondaryVnicCreateVnicDetailOutput{})
+	pulumi.RegisterOutputType(GetNodePoolSecondaryVnicCreateVnicDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput{})
+	pulumi.RegisterOutputType(GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsFilterOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolOutput{})
@@ -20924,6 +22171,12 @@ func init() {
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeSourceDetailOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeSourceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetNodePoolsNodePoolSecondaryVnicOutput{})
+	pulumi.RegisterOutputType(GetNodePoolsNodePoolSecondaryVnicArrayOutput{})
+	pulumi.RegisterOutputType(GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput{})
+	pulumi.RegisterOutputType(GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput{})
+	pulumi.RegisterOutputType(GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPodShapesFilterOutput{})
 	pulumi.RegisterOutputType(GetPodShapesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetPodShapesPodShapeOutput{})

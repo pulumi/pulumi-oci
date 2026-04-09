@@ -52,6 +52,10 @@ export interface GetManagedInstanceResult {
      */
     readonly architecture: string;
     /**
+     * Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+     */
+    readonly areSourcesManaged: boolean;
+    /**
      * Settings for the Autonomous Linux service.
      */
     readonly autonomousSettings: outputs.OsManagementHub.GetManagedInstanceAutonomousSetting[];
@@ -192,6 +196,10 @@ export interface GetManagedInstanceResult {
      * Time that the instance last checked in with the service (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     readonly timeLastCheckin: string;
+    /**
+     * The date and time the instance's software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     */
+    readonly timeLastSoftwareRefresh: string;
     /**
      * The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */

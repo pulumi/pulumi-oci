@@ -108,7 +108,8 @@ type LookupSoftwareSourceResult struct {
 	// Indicates if this software source can be mirrored to a management station.
 	IsMirrorSyncAllowed bool `pulumi:"isMirrorSyncAllowed"`
 	// Indicates if SSL validation is enabled for the software source.
-	IsSslVerifyEnabled bool `pulumi:"isSslVerifyEnabled"`
+	IsSslVerifyEnabled bool   `pulumi:"isSslVerifyEnabled"`
+	OriginDisplayName  string `pulumi:"originDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment. This property applies only to replicated vendor software sources.
 	OriginSoftwareSourceId string `pulumi:"originSoftwareSourceId"`
 	// The OS family of the software source.
@@ -298,6 +299,10 @@ func (o LookupSoftwareSourceResultOutput) IsMirrorSyncAllowed() pulumi.BoolOutpu
 // Indicates if SSL validation is enabled for the software source.
 func (o LookupSoftwareSourceResultOutput) IsSslVerifyEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) bool { return v.IsSslVerifyEnabled }).(pulumi.BoolOutput)
+}
+
+func (o LookupSoftwareSourceResultOutput) OriginDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.OriginDisplayName }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment. This property applies only to replicated vendor software sources.

@@ -42,7 +42,7 @@ public final class GetNodePoolsNodePoolNodeConfigDetail {
      */
     private List<GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail> nodePoolPodNetworkOptionDetails;
     /**
-     * @return The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+     * @return A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
      * 
      */
     private List<String> nsgIds;
@@ -94,7 +94,7 @@ public final class GetNodePoolsNodePoolNodeConfigDetail {
         return this.nodePoolPodNetworkOptionDetails;
     }
     /**
-     * @return The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+     * @return A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
      * 
      */
     public List<String> nsgIds() {

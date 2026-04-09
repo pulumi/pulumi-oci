@@ -15,6 +15,20 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'DynamicSetInstallPackagesManagementWorkRequestDetailsArgs',
+    'DynamicSetInstallPackagesManagementWorkRequestDetailsArgsDict',
+    'DynamicSetMatchingRuleArgs',
+    'DynamicSetMatchingRuleArgsDict',
+    'DynamicSetMatchingRuleTagArgs',
+    'DynamicSetMatchingRuleTagArgsDict',
+    'DynamicSetRebootManagementWorkRequestDetailsArgs',
+    'DynamicSetRebootManagementWorkRequestDetailsArgsDict',
+    'DynamicSetRemovePackagesManagementWorkRequestDetailsArgs',
+    'DynamicSetRemovePackagesManagementWorkRequestDetailsArgsDict',
+    'DynamicSetTargetCompartmentArgs',
+    'DynamicSetTargetCompartmentArgsDict',
+    'DynamicSetUpdatePackagesManagementWorkRequestDetailsArgs',
+    'DynamicSetUpdatePackagesManagementWorkRequestDetailsArgsDict',
     'EventDataArgs',
     'EventDataArgsDict',
     'EventDataAdditionalDetailArgs',
@@ -45,8 +59,12 @@ __all__ = [
     'LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgsDict',
     'LifecycleStageRebootManagementWorkRequestDetailsArgs',
     'LifecycleStageRebootManagementWorkRequestDetailsArgsDict',
+    'ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsArgs',
+    'ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsArgsDict',
     'ManagedInstanceAutonomousSettingsArgs',
     'ManagedInstanceAutonomousSettingsArgsDict',
+    'ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsArgs',
+    'ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsArgsDict',
     'ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs',
     'ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgsDict',
     'ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetailsArgs',
@@ -77,6 +95,12 @@ __all__ = [
     'ManagedInstanceGroupSoftwareSourceArgsDict',
     'ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs',
     'ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgsDict',
+    'ManagedInstanceInstallPackagesManagementWorkRequestDetailsArgs',
+    'ManagedInstanceInstallPackagesManagementWorkRequestDetailsArgsDict',
+    'ManagedInstanceInstallSnapsManagementSnapDetailArgs',
+    'ManagedInstanceInstallSnapsManagementSnapDetailArgsDict',
+    'ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs',
+    'ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgsDict',
     'ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs',
     'ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict',
     'ManagedInstanceLifecycleEnvironmentArgs',
@@ -87,10 +111,24 @@ __all__ = [
     'ManagedInstanceManagedInstanceGroupArgsDict',
     'ManagedInstanceRebootManagementWorkRequestDetailsArgs',
     'ManagedInstanceRebootManagementWorkRequestDetailsArgsDict',
+    'ManagedInstanceRemovePackagesManagementWorkRequestDetailsArgs',
+    'ManagedInstanceRemovePackagesManagementWorkRequestDetailsArgsDict',
+    'ManagedInstanceRemoveSnapsManagementSnapDetailArgs',
+    'ManagedInstanceRemoveSnapsManagementSnapDetailArgsDict',
+    'ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs',
+    'ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgsDict',
     'ManagedInstanceSoftwareSourceArgs',
     'ManagedInstanceSoftwareSourceArgsDict',
+    'ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs',
+    'ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgsDict',
+    'ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs',
+    'ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgsDict',
     'ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgs',
     'ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgsDict',
+    'ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsArgs',
+    'ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict',
+    'ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs',
+    'ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgsDict',
     'ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs',
     'ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgsDict',
     'ManagementStationHealthArgs',
@@ -113,6 +151,8 @@ __all__ = [
     'ProfileSoftwareSourceArgsDict',
     'ScheduledJobOperationArgs',
     'ScheduledJobOperationArgsDict',
+    'ScheduledJobOperationInstallSnapDetailsArgs',
+    'ScheduledJobOperationInstallSnapDetailsArgsDict',
     'ScheduledJobOperationManageModuleStreamsDetailsArgs',
     'ScheduledJobOperationManageModuleStreamsDetailsArgsDict',
     'ScheduledJobOperationManageModuleStreamsDetailsDisableArgs',
@@ -123,8 +163,12 @@ __all__ = [
     'ScheduledJobOperationManageModuleStreamsDetailsInstallArgsDict',
     'ScheduledJobOperationManageModuleStreamsDetailsRemoveArgs',
     'ScheduledJobOperationManageModuleStreamsDetailsRemoveArgsDict',
+    'ScheduledJobOperationRemoveSnapDetailsArgs',
+    'ScheduledJobOperationRemoveSnapDetailsArgsDict',
     'ScheduledJobOperationSwitchModuleStreamsDetailsArgs',
     'ScheduledJobOperationSwitchModuleStreamsDetailsArgsDict',
+    'ScheduledJobOperationSwitchSnapChannelDetailsArgs',
+    'ScheduledJobOperationSwitchSnapChannelDetailsArgsDict',
     'SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs',
     'SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgsDict',
     'SoftwareSourceCustomSoftwareSourceFilterArgs',
@@ -139,6 +183,10 @@ __all__ = [
     'SoftwareSourceVendorSoftwareSourceArgsDict',
     'WorkRequestRerunManagementWorkRequestDetailsArgs',
     'WorkRequestRerunManagementWorkRequestDetailsArgsDict',
+    'GetDynamicSetManagedInstancesFilterArgs',
+    'GetDynamicSetManagedInstancesFilterArgsDict',
+    'GetDynamicSetsFilterArgs',
+    'GetDynamicSetsFilterArgsDict',
     'GetEntitlementsFilterArgs',
     'GetEntitlementsFilterArgsDict',
     'GetErrataFilterArgs',
@@ -165,6 +213,8 @@ __all__ = [
     'GetManagedInstanceGroupAvailableSoftwareSourcesFilterArgsDict',
     'GetManagedInstanceGroupInstalledPackagesFilterArgs',
     'GetManagedInstanceGroupInstalledPackagesFilterArgsDict',
+    'GetManagedInstanceGroupManagedInstancesFilterArgs',
+    'GetManagedInstanceGroupManagedInstancesFilterArgsDict',
     'GetManagedInstanceGroupModulesFilterArgs',
     'GetManagedInstanceGroupModulesFilterArgsDict',
     'GetManagedInstanceGroupsFilterArgs',
@@ -175,6 +225,8 @@ __all__ = [
     'GetManagedInstanceInstalledWindowsUpdatesFilterArgsDict',
     'GetManagedInstanceModulesFilterArgs',
     'GetManagedInstanceModulesFilterArgsDict',
+    'GetManagedInstanceSnapsFilterArgs',
+    'GetManagedInstanceSnapsFilterArgsDict',
     'GetManagedInstanceUpdatablePackagesFilterArgs',
     'GetManagedInstanceUpdatablePackagesFilterArgsDict',
     'GetManagedInstancesFilterArgs',
@@ -211,6 +263,606 @@ __all__ = [
     'GetWindowsUpdatesFilterArgsDict',
 ]
 
+class DynamicSetInstallPackagesManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+
+@pulumi.input_type
+class DynamicSetInstallPackagesManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+
+class DynamicSetMatchingRuleArgsDict(TypedDict):
+    architectures: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of managed instance architectures.
+    """
+    display_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of managed instance display names.
+    """
+    is_reboot_required: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates if the managed instance needs to be rebooted.
+    """
+    locations: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of managed instance locations.
+    """
+    managed_instance_group_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of managed instance group IDs.
+    """
+    managed_instance_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of managed instance ids.
+    """
+    os_families: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of managed instance OS families.
+    """
+    os_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of managed instance OS names.
+    """
+    statuses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of managed instance statuses.
+    """
+    tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['DynamicSetMatchingRuleTagArgsDict']]]]
+    """
+    (Updatable) The list of the managed instance tags.
+    """
+
+@pulumi.input_type
+class DynamicSetMatchingRuleArgs:
+    def __init__(__self__, *,
+                 architectures: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 display_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_reboot_required: Optional[pulumi.Input[_builtins.bool]] = None,
+                 locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 managed_instance_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 os_families: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 os_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 statuses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['DynamicSetMatchingRuleTagArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] architectures: (Updatable) The list of managed instance architectures.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] display_names: (Updatable) The list of managed instance display names.
+        :param pulumi.Input[_builtins.bool] is_reboot_required: (Updatable) Indicates if the managed instance needs to be rebooted.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] locations: (Updatable) The list of managed instance locations.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instance_group_ids: (Updatable) The list of managed instance group IDs.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instance_ids: (Updatable) The list of managed instance ids.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] os_families: (Updatable) The list of managed instance OS families.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] os_names: (Updatable) The list of managed instance OS names.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] statuses: (Updatable) The list of managed instance statuses.
+        :param pulumi.Input[Sequence[pulumi.Input['DynamicSetMatchingRuleTagArgs']]] tags: (Updatable) The list of the managed instance tags.
+        """
+        if architectures is not None:
+            pulumi.set(__self__, "architectures", architectures)
+        if display_names is not None:
+            pulumi.set(__self__, "display_names", display_names)
+        if is_reboot_required is not None:
+            pulumi.set(__self__, "is_reboot_required", is_reboot_required)
+        if locations is not None:
+            pulumi.set(__self__, "locations", locations)
+        if managed_instance_group_ids is not None:
+            pulumi.set(__self__, "managed_instance_group_ids", managed_instance_group_ids)
+        if managed_instance_ids is not None:
+            pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
+        if os_families is not None:
+            pulumi.set(__self__, "os_families", os_families)
+        if os_names is not None:
+            pulumi.set(__self__, "os_names", os_names)
+        if statuses is not None:
+            pulumi.set(__self__, "statuses", statuses)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+
+    @_builtins.property
+    @pulumi.getter
+    def architectures(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) The list of managed instance architectures.
+        """
+        return pulumi.get(self, "architectures")
+
+    @architectures.setter
+    def architectures(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "architectures", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayNames")
+    def display_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) The list of managed instance display names.
+        """
+        return pulumi.get(self, "display_names")
+
+    @display_names.setter
+    def display_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "display_names", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isRebootRequired")
+    def is_reboot_required(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Indicates if the managed instance needs to be rebooted.
+        """
+        return pulumi.get(self, "is_reboot_required")
+
+    @is_reboot_required.setter
+    def is_reboot_required(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_reboot_required", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) The list of managed instance locations.
+        """
+        return pulumi.get(self, "locations")
+
+    @locations.setter
+    def locations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "locations", value)
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceGroupIds")
+    def managed_instance_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) The list of managed instance group IDs.
+        """
+        return pulumi.get(self, "managed_instance_group_ids")
+
+    @managed_instance_group_ids.setter
+    def managed_instance_group_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "managed_instance_group_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceIds")
+    def managed_instance_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) The list of managed instance ids.
+        """
+        return pulumi.get(self, "managed_instance_ids")
+
+    @managed_instance_ids.setter
+    def managed_instance_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "managed_instance_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="osFamilies")
+    def os_families(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) The list of managed instance OS families.
+        """
+        return pulumi.get(self, "os_families")
+
+    @os_families.setter
+    def os_families(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "os_families", value)
+
+    @_builtins.property
+    @pulumi.getter(name="osNames")
+    def os_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) The list of managed instance OS names.
+        """
+        return pulumi.get(self, "os_names")
+
+    @os_names.setter
+    def os_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "os_names", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def statuses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) The list of managed instance statuses.
+        """
+        return pulumi.get(self, "statuses")
+
+    @statuses.setter
+    def statuses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "statuses", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DynamicSetMatchingRuleTagArgs']]]]:
+        """
+        (Updatable) The list of the managed instance tags.
+        """
+        return pulumi.get(self, "tags")
+
+    @tags.setter
+    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DynamicSetMatchingRuleTagArgs']]]]):
+        pulumi.set(self, "tags", value)
+
+
+class DynamicSetMatchingRuleTagArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of the tag. Common values include `defined` or `freeform`.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The key of the tag.
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The namespace of the tag.
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The value associated with the tag key.
+    """
+
+@pulumi.input_type
+class DynamicSetMatchingRuleTagArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 key: Optional[pulumi.Input[_builtins.str]] = None,
+                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
+                 value: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: (Updatable) The type of the tag. Common values include `defined` or `freeform`.
+        :param pulumi.Input[_builtins.str] key: (Updatable) The key of the tag.
+        :param pulumi.Input[_builtins.str] namespace: (Updatable) The namespace of the tag.
+        :param pulumi.Input[_builtins.str] value: (Updatable) The value associated with the tag key.
+        """
+        pulumi.set(__self__, "type", type)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The type of the tag. Common values include `defined` or `freeform`.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The key of the tag.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The namespace of the tag.
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "namespace", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The value associated with the tag key.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class DynamicSetRebootManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+
+@pulumi.input_type
+class DynamicSetRebootManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+
+class DynamicSetRemovePackagesManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+
+@pulumi.input_type
+class DynamicSetRemovePackagesManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+
+class DynamicSetTargetCompartmentArgsDict(TypedDict):
+    compartment_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    """
+    does_include_children: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Indicates if the child compartments are included in the matching rule. 
+
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+
+@pulumi.input_type
+class DynamicSetTargetCompartmentArgs:
+    def __init__(__self__, *,
+                 compartment_id: pulumi.Input[_builtins.str],
+                 does_include_children: pulumi.Input[_builtins.bool]):
+        """
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param pulumi.Input[_builtins.bool] does_include_children: (Updatable) Indicates if the child compartments are included in the matching rule. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "does_include_children", does_include_children)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="doesIncludeChildren")
+    def does_include_children(self) -> pulumi.Input[_builtins.bool]:
+        """
+        (Updatable) Indicates if the child compartments are included in the matching rule. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "does_include_children")
+
+    @does_include_children.setter
+    def does_include_children(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "does_include_children", value)
+
+
+class DynamicSetUpdatePackagesManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+
+@pulumi.input_type
+class DynamicSetUpdatePackagesManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+
 class EventDataArgsDict(TypedDict):
     additional_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['EventDataAdditionalDetailArgsDict']]]]
     """
@@ -231,6 +883,10 @@ class EventDataArgsDict(TypedDict):
     error_log: NotRequired[pulumi.Input[_builtins.str]]
     """
     The output log of the error.
+    """
+    error_summary: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Brief description on how this error is categorized.
     """
     event_count: NotRequired[pulumi.Input[_builtins.int]]
     """
@@ -281,6 +937,7 @@ class EventDataArgs:
                  contents: Optional[pulumi.Input[Sequence[pulumi.Input['EventDataContentArgs']]]] = None,
                  error_cause: Optional[pulumi.Input[_builtins.str]] = None,
                  error_log: Optional[pulumi.Input[_builtins.str]] = None,
+                 error_summary: Optional[pulumi.Input[_builtins.str]] = None,
                  event_count: Optional[pulumi.Input[_builtins.int]] = None,
                  event_fingerprint: Optional[pulumi.Input[_builtins.str]] = None,
                  health_state: Optional[pulumi.Input[_builtins.str]] = None,
@@ -297,6 +954,7 @@ class EventDataArgs:
         :param pulumi.Input[Sequence[pulumi.Input['EventDataContentArgs']]] contents: Provides information collected for the exploit attempt event.
         :param pulumi.Input[_builtins.str] error_cause: The commands executed by the agent that caused the error.
         :param pulumi.Input[_builtins.str] error_log: The output log of the error.
+        :param pulumi.Input[_builtins.str] error_summary: Brief description on how this error is categorized.
         :param pulumi.Input[_builtins.int] event_count: Number of times the event has occurred.
         :param pulumi.Input[_builtins.str] event_fingerprint: Fingerprint of the event.
         :param pulumi.Input[_builtins.str] health_state: Health state of the management station
@@ -318,6 +976,8 @@ class EventDataArgs:
             pulumi.set(__self__, "error_cause", error_cause)
         if error_log is not None:
             pulumi.set(__self__, "error_log", error_log)
+        if error_summary is not None:
+            pulumi.set(__self__, "error_summary", error_summary)
         if event_count is not None:
             pulumi.set(__self__, "event_count", event_count)
         if event_fingerprint is not None:
@@ -398,6 +1058,18 @@ class EventDataArgs:
     @error_log.setter
     def error_log(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "error_log", value)
+
+    @_builtins.property
+    @pulumi.getter(name="errorSummary")
+    def error_summary(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Brief description on how this error is categorized.
+        """
+        return pulumi.get(self, "error_summary")
+
+    @error_summary.setter
+    def error_summary(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "error_summary", value)
 
     @_builtins.property
     @pulumi.getter(name="eventCount")
@@ -1887,6 +2559,67 @@ class LifecycleStageRebootManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
+class ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+
+@pulumi.input_type
+class ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+
 class ManagedInstanceAutonomousSettingsArgsDict(TypedDict):
     is_data_collection_authorized: NotRequired[pulumi.Input[_builtins.bool]]
     """
@@ -1934,6 +2667,67 @@ class ManagedInstanceAutonomousSettingsArgs:
     @scheduled_job_id.setter
     def scheduled_job_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "scheduled_job_id", value)
+
+
+class ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+
+@pulumi.input_type
+class ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
 
 
 class ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgsDict(TypedDict):
@@ -2949,6 +3743,236 @@ class ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
+class ManagedInstanceInstallPackagesManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+
+@pulumi.input_type
+class ManagedInstanceInstallPackagesManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+
+class ManagedInstanceInstallSnapsManagementSnapDetailArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    The name of the snap to install.
+    """
+    channel: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The snap channel to install from (e.g. stable, 1.2/edge, beta, candidate, or a custom channel).
+    """
+    is_signed: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+    """
+    mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The confinement mode for the snap.
+    """
+    revision: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The snap revision to install.
+    """
+
+@pulumi.input_type
+class ManagedInstanceInstallSnapsManagementSnapDetailArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[_builtins.str],
+                 channel: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_signed: Optional[pulumi.Input[_builtins.bool]] = None,
+                 mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 revision: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: The name of the snap to install.
+        :param pulumi.Input[_builtins.str] channel: The snap channel to install from (e.g. stable, 1.2/edge, beta, candidate, or a custom channel).
+        :param pulumi.Input[_builtins.bool] is_signed: If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+        :param pulumi.Input[_builtins.str] mode: The confinement mode for the snap.
+        :param pulumi.Input[_builtins.str] revision: The snap revision to install.
+        """
+        pulumi.set(__self__, "name", name)
+        if channel is not None:
+            pulumi.set(__self__, "channel", channel)
+        if is_signed is not None:
+            pulumi.set(__self__, "is_signed", is_signed)
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+        if revision is not None:
+            pulumi.set(__self__, "revision", revision)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        The name of the snap to install.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def channel(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The snap channel to install from (e.g. stable, 1.2/edge, beta, candidate, or a custom channel).
+        """
+        return pulumi.get(self, "channel")
+
+    @channel.setter
+    def channel(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "channel", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isSigned")
+    def is_signed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+        """
+        return pulumi.get(self, "is_signed")
+
+    @is_signed.setter
+    def is_signed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_signed", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The confinement mode for the snap.
+        """
+        return pulumi.get(self, "mode")
+
+    @mode.setter
+    def mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "mode", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def revision(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The snap revision to install.
+        """
+        return pulumi.get(self, "revision")
+
+    @revision.setter
+    def revision(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "revision", value)
+
+
+class ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+
+@pulumi.input_type
+class ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+
 class ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict(TypedDict):
     description: NotRequired[pulumi.Input[_builtins.str]]
     """
@@ -3218,6 +4242,176 @@ class ManagedInstanceRebootManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
+class ManagedInstanceRemovePackagesManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+
+@pulumi.input_type
+class ManagedInstanceRemovePackagesManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+
+class ManagedInstanceRemoveSnapsManagementSnapDetailArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    The name of the snap to remove.
+    """
+    revision: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The revision to remove. Note: This option cannot be used when removing multiple snaps.
+    """
+
+@pulumi.input_type
+class ManagedInstanceRemoveSnapsManagementSnapDetailArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[_builtins.str],
+                 revision: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: The name of the snap to remove.
+        :param pulumi.Input[_builtins.str] revision: The revision to remove. Note: This option cannot be used when removing multiple snaps.
+        """
+        pulumi.set(__self__, "name", name)
+        if revision is not None:
+            pulumi.set(__self__, "revision", revision)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        The name of the snap to remove.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def revision(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The revision to remove. Note: This option cannot be used when removing multiple snaps.
+        """
+        return pulumi.get(self, "revision")
+
+    @revision.setter
+    def revision(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "revision", value)
+
+
+class ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+
+@pulumi.input_type
+class ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+
 class ManagedInstanceSoftwareSourceArgsDict(TypedDict):
     description: NotRequired[pulumi.Input[_builtins.str]]
     """
@@ -3327,6 +4521,115 @@ class ManagedInstanceSoftwareSourceArgs:
         pulumi.set(self, "software_source_type", value)
 
 
+class ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    The name of the snap.
+    """
+    channel: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+    """
+
+@pulumi.input_type
+class ManagedInstanceSwitchSnapChannelManagementSnapDetailsArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[_builtins.str],
+                 channel: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: The name of the snap.
+        :param pulumi.Input[_builtins.str] channel: The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+        """
+        pulumi.set(__self__, "name", name)
+        if channel is not None:
+            pulumi.set(__self__, "channel", channel)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        The name of the snap.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def channel(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+        """
+        return pulumi.get(self, "channel")
+
+    @channel.setter
+    def channel(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "channel", value)
+
+
+class ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+
+@pulumi.input_type
+class ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+
 class ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgsDict(TypedDict):
     description: NotRequired[pulumi.Input[_builtins.str]]
     """
@@ -3343,6 +4646,128 @@ class ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgsDict(TypedDic
 
 @pulumi.input_type
 class ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+
+class ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+
+@pulumi.input_type
+class ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+
+class ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User-specified information about the job. Avoid entering confidential information.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+
+@pulumi.input_type
+class ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs:
     def __init__(__self__, *,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None):
@@ -3503,10 +4928,6 @@ class ManagementStationMirrorArgsDict(TypedDict):
     """
     (Updatable) Path to the data volume on the management station where software source mirrors are stored.
     """
-    port: pulumi.Input[_builtins.str]
-    """
-    (Updatable) Default mirror listening port for http.
-    """
     sslport: pulumi.Input[_builtins.str]
     """
     (Updatable) Default mirror listening port for https.
@@ -3514,6 +4935,10 @@ class ManagementStationMirrorArgsDict(TypedDict):
     is_sslverify_enabled: NotRequired[pulumi.Input[_builtins.bool]]
     """
     (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+    """
+    port: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Default mirror listening port for http.
     """
     sslcert: NotRequired[pulumi.Input[_builtins.str]]
     """
@@ -3524,22 +4949,23 @@ class ManagementStationMirrorArgsDict(TypedDict):
 class ManagementStationMirrorArgs:
     def __init__(__self__, *,
                  directory: pulumi.Input[_builtins.str],
-                 port: pulumi.Input[_builtins.str],
                  sslport: pulumi.Input[_builtins.str],
                  is_sslverify_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 port: Optional[pulumi.Input[_builtins.str]] = None,
                  sslcert: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] directory: (Updatable) Path to the data volume on the management station where software source mirrors are stored.
-        :param pulumi.Input[_builtins.str] port: (Updatable) Default mirror listening port for http.
         :param pulumi.Input[_builtins.str] sslport: (Updatable) Default mirror listening port for https.
         :param pulumi.Input[_builtins.bool] is_sslverify_enabled: (Updatable) When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+        :param pulumi.Input[_builtins.str] port: (Updatable) Default mirror listening port for http.
         :param pulumi.Input[_builtins.str] sslcert: (Updatable) Path to the SSL cerfificate.
         """
         pulumi.set(__self__, "directory", directory)
-        pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "sslport", sslport)
         if is_sslverify_enabled is not None:
             pulumi.set(__self__, "is_sslverify_enabled", is_sslverify_enabled)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
         if sslcert is not None:
             pulumi.set(__self__, "sslcert", sslcert)
 
@@ -3554,18 +4980,6 @@ class ManagementStationMirrorArgs:
     @directory.setter
     def directory(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "directory", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def port(self) -> pulumi.Input[_builtins.str]:
-        """
-        (Updatable) Default mirror listening port for http.
-        """
-        return pulumi.get(self, "port")
-
-    @port.setter
-    def port(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
@@ -3590,6 +5004,18 @@ class ManagementStationMirrorArgs:
     @is_sslverify_enabled.setter
     def is_sslverify_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "is_sslverify_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Default mirror listening port for http.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
@@ -3853,7 +5279,7 @@ class ManagementStationProxyArgs:
 class ProfileLifecycleEnvironmentArgsDict(TypedDict):
     display_name: NotRequired[pulumi.Input[_builtins.str]]
     """
-    (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+    (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
     """
     id: NotRequired[pulumi.Input[_builtins.str]]
     """
@@ -3866,7 +5292,7 @@ class ProfileLifecycleEnvironmentArgs:
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  id: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         if display_name is not None:
@@ -3878,7 +5304,7 @@ class ProfileLifecycleEnvironmentArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+        (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -3902,7 +5328,7 @@ class ProfileLifecycleEnvironmentArgs:
 class ProfileLifecycleStageArgsDict(TypedDict):
     display_name: NotRequired[pulumi.Input[_builtins.str]]
     """
-    (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+    (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
     """
     id: NotRequired[pulumi.Input[_builtins.str]]
     """
@@ -3915,7 +5341,7 @@ class ProfileLifecycleStageArgs:
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  id: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         if display_name is not None:
@@ -3927,7 +5353,7 @@ class ProfileLifecycleStageArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+        (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -3951,7 +5377,7 @@ class ProfileLifecycleStageArgs:
 class ProfileManagedInstanceGroupArgsDict(TypedDict):
     display_name: NotRequired[pulumi.Input[_builtins.str]]
     """
-    (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+    (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
     """
     id: NotRequired[pulumi.Input[_builtins.str]]
     """
@@ -3964,7 +5390,7 @@ class ProfileManagedInstanceGroupArgs:
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  id: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         if display_name is not None:
@@ -3976,7 +5402,7 @@ class ProfileManagedInstanceGroupArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+        (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -4004,7 +5430,7 @@ class ProfileSoftwareSourceArgsDict(TypedDict):
     """
     display_name: NotRequired[pulumi.Input[_builtins.str]]
     """
-    (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+    (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
     """
     id: NotRequired[pulumi.Input[_builtins.str]]
     """
@@ -4029,7 +5455,7 @@ class ProfileSoftwareSourceArgs:
                  software_source_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] description: (Updatable) User-specified description of the registration profile.
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         :param pulumi.Input[_builtins.bool] is_mandatory_for_autonomous_linux: Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
         :param pulumi.Input[_builtins.str] software_source_type: Type of the software source.
@@ -4061,7 +5487,7 @@ class ProfileSoftwareSourceArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+        (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -4111,6 +5537,10 @@ class ScheduledJobOperationArgsDict(TypedDict):
     """
     (Updatable) The type of operation this scheduled job performs.
     """
+    install_snap_details: NotRequired[pulumi.Input['ScheduledJobOperationInstallSnapDetailsArgsDict']]
+    """
+    (Updatable) Provides the information used to install a snap.
+    """
     manage_module_streams_details: NotRequired[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsArgsDict']]
     """
     (Updatable) The set of changes to make to the state of the modules, streams, and profiles on the managed target.
@@ -4123,6 +5553,10 @@ class ScheduledJobOperationArgsDict(TypedDict):
     """
     (Updatable) The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
     """
+    remove_snap_details: NotRequired[pulumi.Input['ScheduledJobOperationRemoveSnapDetailsArgsDict']]
+    """
+    (Updatable) Provides the information used to remove a snap.
+    """
     software_source_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
     """
     (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
@@ -4130,6 +5564,10 @@ class ScheduledJobOperationArgsDict(TypedDict):
     switch_module_streams_details: NotRequired[pulumi.Input['ScheduledJobOperationSwitchModuleStreamsDetailsArgsDict']]
     """
     (Updatable) Provides the information used to update a module stream.
+    """
+    switch_snap_channel_details: NotRequired[pulumi.Input['ScheduledJobOperationSwitchSnapChannelDetailsArgsDict']]
+    """
+    (Updatable) Provides the information used to switch a snap channel.
     """
     windows_update_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
     """
@@ -4140,32 +5578,44 @@ class ScheduledJobOperationArgsDict(TypedDict):
 class ScheduledJobOperationArgs:
     def __init__(__self__, *,
                  operation_type: pulumi.Input[_builtins.str],
+                 install_snap_details: Optional[pulumi.Input['ScheduledJobOperationInstallSnapDetailsArgs']] = None,
                  manage_module_streams_details: Optional[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsArgs']] = None,
                  package_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  reboot_timeout_in_mins: Optional[pulumi.Input[_builtins.int]] = None,
+                 remove_snap_details: Optional[pulumi.Input['ScheduledJobOperationRemoveSnapDetailsArgs']] = None,
                  software_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  switch_module_streams_details: Optional[pulumi.Input['ScheduledJobOperationSwitchModuleStreamsDetailsArgs']] = None,
+                 switch_snap_channel_details: Optional[pulumi.Input['ScheduledJobOperationSwitchSnapChannelDetailsArgs']] = None,
                  windows_update_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] operation_type: (Updatable) The type of operation this scheduled job performs.
+        :param pulumi.Input['ScheduledJobOperationInstallSnapDetailsArgs'] install_snap_details: (Updatable) Provides the information used to install a snap.
         :param pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsArgs'] manage_module_streams_details: (Updatable) The set of changes to make to the state of the modules, streams, and profiles on the managed target.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] package_names: (Updatable) The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
         :param pulumi.Input[_builtins.int] reboot_timeout_in_mins: (Updatable) The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
+        :param pulumi.Input['ScheduledJobOperationRemoveSnapDetailsArgs'] remove_snap_details: (Updatable) Provides the information used to remove a snap.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] software_source_ids: (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
         :param pulumi.Input['ScheduledJobOperationSwitchModuleStreamsDetailsArgs'] switch_module_streams_details: (Updatable) Provides the information used to update a module stream.
+        :param pulumi.Input['ScheduledJobOperationSwitchSnapChannelDetailsArgs'] switch_snap_channel_details: (Updatable) Provides the information used to switch a snap channel.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] windows_update_names: (Updatable) Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
         """
         pulumi.set(__self__, "operation_type", operation_type)
+        if install_snap_details is not None:
+            pulumi.set(__self__, "install_snap_details", install_snap_details)
         if manage_module_streams_details is not None:
             pulumi.set(__self__, "manage_module_streams_details", manage_module_streams_details)
         if package_names is not None:
             pulumi.set(__self__, "package_names", package_names)
         if reboot_timeout_in_mins is not None:
             pulumi.set(__self__, "reboot_timeout_in_mins", reboot_timeout_in_mins)
+        if remove_snap_details is not None:
+            pulumi.set(__self__, "remove_snap_details", remove_snap_details)
         if software_source_ids is not None:
             pulumi.set(__self__, "software_source_ids", software_source_ids)
         if switch_module_streams_details is not None:
             pulumi.set(__self__, "switch_module_streams_details", switch_module_streams_details)
+        if switch_snap_channel_details is not None:
+            pulumi.set(__self__, "switch_snap_channel_details", switch_snap_channel_details)
         if windows_update_names is not None:
             pulumi.set(__self__, "windows_update_names", windows_update_names)
 
@@ -4180,6 +5630,18 @@ class ScheduledJobOperationArgs:
     @operation_type.setter
     def operation_type(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "operation_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="installSnapDetails")
+    def install_snap_details(self) -> Optional[pulumi.Input['ScheduledJobOperationInstallSnapDetailsArgs']]:
+        """
+        (Updatable) Provides the information used to install a snap.
+        """
+        return pulumi.get(self, "install_snap_details")
+
+    @install_snap_details.setter
+    def install_snap_details(self, value: Optional[pulumi.Input['ScheduledJobOperationInstallSnapDetailsArgs']]):
+        pulumi.set(self, "install_snap_details", value)
 
     @_builtins.property
     @pulumi.getter(name="manageModuleStreamsDetails")
@@ -4218,6 +5680,18 @@ class ScheduledJobOperationArgs:
         pulumi.set(self, "reboot_timeout_in_mins", value)
 
     @_builtins.property
+    @pulumi.getter(name="removeSnapDetails")
+    def remove_snap_details(self) -> Optional[pulumi.Input['ScheduledJobOperationRemoveSnapDetailsArgs']]:
+        """
+        (Updatable) Provides the information used to remove a snap.
+        """
+        return pulumi.get(self, "remove_snap_details")
+
+    @remove_snap_details.setter
+    def remove_snap_details(self, value: Optional[pulumi.Input['ScheduledJobOperationRemoveSnapDetailsArgs']]):
+        pulumi.set(self, "remove_snap_details", value)
+
+    @_builtins.property
     @pulumi.getter(name="softwareSourceIds")
     def software_source_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
@@ -4242,6 +5716,18 @@ class ScheduledJobOperationArgs:
         pulumi.set(self, "switch_module_streams_details", value)
 
     @_builtins.property
+    @pulumi.getter(name="switchSnapChannelDetails")
+    def switch_snap_channel_details(self) -> Optional[pulumi.Input['ScheduledJobOperationSwitchSnapChannelDetailsArgs']]:
+        """
+        (Updatable) Provides the information used to switch a snap channel.
+        """
+        return pulumi.get(self, "switch_snap_channel_details")
+
+    @switch_snap_channel_details.setter
+    def switch_snap_channel_details(self, value: Optional[pulumi.Input['ScheduledJobOperationSwitchSnapChannelDetailsArgs']]):
+        pulumi.set(self, "switch_snap_channel_details", value)
+
+    @_builtins.property
     @pulumi.getter(name="windowsUpdateNames")
     def windows_update_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
@@ -4252,6 +5738,114 @@ class ScheduledJobOperationArgs:
     @windows_update_names.setter
     def windows_update_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "windows_update_names", value)
+
+
+class ScheduledJobOperationInstallSnapDetailsArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the snap to install.
+    """
+    channel: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The snap channel to install from (e.g. stable, 1.2/edge, beta, candidate, or a custom channel).
+    """
+    is_signed: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+    """
+    mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The confinement mode for the snap.
+    """
+    revision: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The snap revision to install.
+    """
+
+@pulumi.input_type
+class ScheduledJobOperationInstallSnapDetailsArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[_builtins.str],
+                 channel: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_signed: Optional[pulumi.Input[_builtins.bool]] = None,
+                 mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 revision: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: (Updatable) The name of the snap to install.
+        :param pulumi.Input[_builtins.str] channel: (Updatable) The snap channel to install from (e.g. stable, 1.2/edge, beta, candidate, or a custom channel).
+        :param pulumi.Input[_builtins.bool] is_signed: (Updatable) If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+        :param pulumi.Input[_builtins.str] mode: (Updatable) The confinement mode for the snap.
+        :param pulumi.Input[_builtins.str] revision: (Updatable) The snap revision to install.
+        """
+        pulumi.set(__self__, "name", name)
+        if channel is not None:
+            pulumi.set(__self__, "channel", channel)
+        if is_signed is not None:
+            pulumi.set(__self__, "is_signed", is_signed)
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+        if revision is not None:
+            pulumi.set(__self__, "revision", revision)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The name of the snap to install.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def channel(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The snap channel to install from (e.g. stable, 1.2/edge, beta, candidate, or a custom channel).
+        """
+        return pulumi.get(self, "channel")
+
+    @channel.setter
+    def channel(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "channel", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isSigned")
+    def is_signed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) If false, allows installing snaps not signed by the Snap Store. E.g., snaps from local file. Use with caution.
+        """
+        return pulumi.get(self, "is_signed")
+
+    @is_signed.setter
+    def is_signed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_signed", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The confinement mode for the snap.
+        """
+        return pulumi.get(self, "mode")
+
+    @mode.setter
+    def mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "mode", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def revision(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The snap revision to install.
+        """
+        return pulumi.get(self, "revision")
+
+    @revision.setter
+    def revision(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "revision", value)
 
 
 class ScheduledJobOperationManageModuleStreamsDetailsArgsDict(TypedDict):
@@ -4649,6 +6243,54 @@ class ScheduledJobOperationManageModuleStreamsDetailsRemoveArgs:
         pulumi.set(self, "software_source_id", value)
 
 
+class ScheduledJobOperationRemoveSnapDetailsArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the snap to remove.
+    """
+    revision: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The revision to remove. Note: This option cannot be used when removing multiple snaps.
+    """
+
+@pulumi.input_type
+class ScheduledJobOperationRemoveSnapDetailsArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[_builtins.str],
+                 revision: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: (Updatable) The name of the snap to remove.
+        :param pulumi.Input[_builtins.str] revision: (Updatable) The revision to remove. Note: This option cannot be used when removing multiple snaps.
+        """
+        pulumi.set(__self__, "name", name)
+        if revision is not None:
+            pulumi.set(__self__, "revision", revision)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The name of the snap to remove.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def revision(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The revision to remove. Note: This option cannot be used when removing multiple snaps.
+        """
+        return pulumi.get(self, "revision")
+
+    @revision.setter
+    def revision(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "revision", value)
+
+
 class ScheduledJobOperationSwitchModuleStreamsDetailsArgsDict(TypedDict):
     module_name: pulumi.Input[_builtins.str]
     """
@@ -4714,6 +6356,54 @@ class ScheduledJobOperationSwitchModuleStreamsDetailsArgs:
     @software_source_id.setter
     def software_source_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "software_source_id", value)
+
+
+class ScheduledJobOperationSwitchSnapChannelDetailsArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the snap.
+    """
+    channel: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+    """
+
+@pulumi.input_type
+class ScheduledJobOperationSwitchSnapChannelDetailsArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[_builtins.str],
+                 channel: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: (Updatable) The name of the snap.
+        :param pulumi.Input[_builtins.str] channel: (Updatable) The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+        """
+        pulumi.set(__self__, "name", name)
+        if channel is not None:
+            pulumi.set(__self__, "channel", channel)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The name of the snap.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def channel(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The channel to switch to (e.g. stable, edge, beta, candidate, or a custom channel).
+        """
+        return pulumi.get(self, "channel")
+
+    @channel.setter
+    def channel(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "channel", value)
 
 
 class SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgsDict(TypedDict):
@@ -5202,6 +6892,94 @@ class WorkRequestRerunManagementWorkRequestDetailsArgs:
         pulumi.set(self, "display_name", value)
 
 
+class GetDynamicSetManagedInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetDynamicSetManagedInstancesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetDynamicSetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetDynamicSetsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
 class GetEntitlementsFilterArgsDict(TypedDict):
     name: _builtins.str
     values: Sequence[_builtins.str]
@@ -5249,7 +7027,7 @@ class GetEntitlementsFilterArgs:
 class GetErrataFilterArgsDict(TypedDict):
     name: _builtins.str
     """
-    The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+    The erratum name (such as ELSA-2023-34678).
     """
     values: Sequence[_builtins.str]
     regex: NotRequired[_builtins.bool]
@@ -5261,7 +7039,7 @@ class GetErrataFilterArgs:
                  values: Sequence[_builtins.str],
                  regex: Optional[_builtins.bool] = None):
         """
-        :param _builtins.str name: The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+        :param _builtins.str name: The erratum name (such as ELSA-2023-34678).
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -5272,7 +7050,7 @@ class GetErrataFilterArgs:
     @pulumi.getter
     def name(self) -> _builtins.str:
         """
-        The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+        The erratum name (such as ELSA-2023-34678).
         """
         return pulumi.get(self, "name")
 
@@ -5837,6 +7615,50 @@ class GetManagedInstanceGroupInstalledPackagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+class GetManagedInstanceGroupManagedInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetManagedInstanceGroupManagedInstancesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
 class GetManagedInstanceGroupModulesFilterArgsDict(TypedDict):
     name: _builtins.str
     """
@@ -6050,6 +7872,59 @@ class GetManagedInstanceModulesFilterArgsDict(TypedDict):
 
 @pulumi.input_type
 class GetManagedInstanceModulesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The resource name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetManagedInstanceSnapsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The resource name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetManagedInstanceSnapsFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
@@ -6368,6 +8243,9 @@ class GetProfilesFilterArgs:
 
 class GetScheduledJobsFilterArgsDict(TypedDict):
     name: _builtins.str
+    """
+    The name of the snap.
+    """
     values: Sequence[_builtins.str]
     regex: NotRequired[_builtins.bool]
 
@@ -6377,6 +8255,9 @@ class GetScheduledJobsFilterArgs:
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
                  regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The name of the snap.
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -6385,6 +8266,9 @@ class GetScheduledJobsFilterArgs:
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        """
+        The name of the snap.
+        """
         return pulumi.get(self, "name")
 
     @name.setter

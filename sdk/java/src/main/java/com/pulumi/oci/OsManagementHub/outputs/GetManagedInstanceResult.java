@@ -29,6 +29,11 @@ public final class GetManagedInstanceResult {
      */
     private String architecture;
     /**
+     * @return Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+     * 
+     */
+    private Boolean areSourcesManaged;
+    /**
      * @return Settings for the Autonomous Linux service.
      * 
      */
@@ -205,6 +210,11 @@ public final class GetManagedInstanceResult {
      */
     private String timeLastCheckin;
     /**
+     * @return The date and time the instance&#39;s software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * 
+     */
+    private String timeLastSoftwareRefresh;
+    /**
      * @return The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
@@ -234,6 +244,13 @@ public final class GetManagedInstanceResult {
      */
     public String architecture() {
         return this.architecture;
+    }
+    /**
+     * @return Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+     * 
+     */
+    public Boolean areSourcesManaged() {
+        return this.areSourcesManaged;
     }
     /**
      * @return Settings for the Autonomous Linux service.
@@ -484,6 +501,13 @@ public final class GetManagedInstanceResult {
         return this.timeLastCheckin;
     }
     /**
+     * @return The date and time the instance&#39;s software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * 
+     */
+    public String timeLastSoftwareRefresh() {
+        return this.timeLastSoftwareRefresh;
+    }
+    /**
      * @return The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
@@ -516,6 +540,7 @@ public final class GetManagedInstanceResult {
     public static final class Builder {
         private String agentVersion;
         private String architecture;
+        private Boolean areSourcesManaged;
         private List<GetManagedInstanceAutonomousSetting> autonomousSettings;
         private Integer bugUpdatesAvailable;
         private String compartmentId;
@@ -552,6 +577,7 @@ public final class GetManagedInstanceResult {
         private String timeCreated;
         private String timeLastBoot;
         private String timeLastCheckin;
+        private String timeLastSoftwareRefresh;
         private String timeUpdated;
         private Integer updatesAvailable;
         private Integer workRequestCount;
@@ -560,6 +586,7 @@ public final class GetManagedInstanceResult {
     	      Objects.requireNonNull(defaults);
     	      this.agentVersion = defaults.agentVersion;
     	      this.architecture = defaults.architecture;
+    	      this.areSourcesManaged = defaults.areSourcesManaged;
     	      this.autonomousSettings = defaults.autonomousSettings;
     	      this.bugUpdatesAvailable = defaults.bugUpdatesAvailable;
     	      this.compartmentId = defaults.compartmentId;
@@ -596,6 +623,7 @@ public final class GetManagedInstanceResult {
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeLastBoot = defaults.timeLastBoot;
     	      this.timeLastCheckin = defaults.timeLastCheckin;
+    	      this.timeLastSoftwareRefresh = defaults.timeLastSoftwareRefresh;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.updatesAvailable = defaults.updatesAvailable;
     	      this.workRequestCount = defaults.workRequestCount;
@@ -615,6 +643,14 @@ public final class GetManagedInstanceResult {
               throw new MissingRequiredPropertyException("GetManagedInstanceResult", "architecture");
             }
             this.architecture = architecture;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder areSourcesManaged(Boolean areSourcesManaged) {
+            if (areSourcesManaged == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "areSourcesManaged");
+            }
+            this.areSourcesManaged = areSourcesManaged;
             return this;
         }
         @CustomType.Setter
@@ -921,6 +957,14 @@ public final class GetManagedInstanceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder timeLastSoftwareRefresh(String timeLastSoftwareRefresh) {
+            if (timeLastSoftwareRefresh == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceResult", "timeLastSoftwareRefresh");
+            }
+            this.timeLastSoftwareRefresh = timeLastSoftwareRefresh;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             if (timeUpdated == null) {
               throw new MissingRequiredPropertyException("GetManagedInstanceResult", "timeUpdated");
@@ -948,6 +992,7 @@ public final class GetManagedInstanceResult {
             final var _resultValue = new GetManagedInstanceResult();
             _resultValue.agentVersion = agentVersion;
             _resultValue.architecture = architecture;
+            _resultValue.areSourcesManaged = areSourcesManaged;
             _resultValue.autonomousSettings = autonomousSettings;
             _resultValue.bugUpdatesAvailable = bugUpdatesAvailable;
             _resultValue.compartmentId = compartmentId;
@@ -984,6 +1029,7 @@ public final class GetManagedInstanceResult {
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeLastBoot = timeLastBoot;
             _resultValue.timeLastCheckin = timeLastCheckin;
+            _resultValue.timeLastSoftwareRefresh = timeLastSoftwareRefresh;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.updatesAvailable = updatesAvailable;
             _resultValue.workRequestCount = workRequestCount;

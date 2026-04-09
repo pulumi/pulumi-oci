@@ -13,7 +13,7 @@ namespace Pulumi.Oci.CloudBridge.Inputs
     public sealed class AssetSourceReplicationCredentialsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "&lt;VMwareUser&gt;", "password": "&lt;VMwarePassword&gt;" }`.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "&lt;User&gt;", "password": "example-password" }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ "accessKeyId": "&lt;AccessKey&gt;", "secretAccessKey": "&lt;AccessKeyValue&gt;" }`.
         /// </summary>
         [Input("secretId", required: true)]
         public Input<string> SecretId { get; set; } = null!;

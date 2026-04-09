@@ -27,7 +27,7 @@ class GetSoftwareSourceResult:
     """
     A collection of values returned by getSoftwareSource.
     """
-    def __init__(__self__, advanced_repo_options=None, arch_type=None, availability=None, availability_at_oci=None, checksum_type=None, compartment_id=None, custom_software_source_filters=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, gpg_key_fingerprint=None, gpg_key_id=None, gpg_key_url=None, id=None, is_auto_resolve_dependencies=None, is_automatically_updated=None, is_created_from_package_list=None, is_gpg_check_enabled=None, is_latest_content_only=None, is_mandatory_for_autonomous_linux=None, is_mirror_sync_allowed=None, is_ssl_verify_enabled=None, origin_software_source_id=None, os_family=None, package_count=None, packages=None, repo_id=None, size=None, software_source_id=None, software_source_sub_type=None, software_source_type=None, software_source_version=None, state=None, system_tags=None, time_created=None, time_metadata_updated=None, url=None, vendor_name=None, vendor_software_sources=None):
+    def __init__(__self__, advanced_repo_options=None, arch_type=None, availability=None, availability_at_oci=None, checksum_type=None, compartment_id=None, custom_software_source_filters=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, gpg_key_fingerprint=None, gpg_key_id=None, gpg_key_url=None, id=None, is_auto_resolve_dependencies=None, is_automatically_updated=None, is_created_from_package_list=None, is_gpg_check_enabled=None, is_latest_content_only=None, is_mandatory_for_autonomous_linux=None, is_mirror_sync_allowed=None, is_ssl_verify_enabled=None, origin_display_name=None, origin_software_source_id=None, os_family=None, package_count=None, packages=None, repo_id=None, size=None, software_source_id=None, software_source_sub_type=None, software_source_type=None, software_source_version=None, state=None, system_tags=None, time_created=None, time_metadata_updated=None, url=None, vendor_name=None, vendor_software_sources=None):
         if advanced_repo_options and not isinstance(advanced_repo_options, str):
             raise TypeError("Expected argument 'advanced_repo_options' to be a str")
         pulumi.set(__self__, "advanced_repo_options", advanced_repo_options)
@@ -97,6 +97,9 @@ class GetSoftwareSourceResult:
         if is_ssl_verify_enabled and not isinstance(is_ssl_verify_enabled, bool):
             raise TypeError("Expected argument 'is_ssl_verify_enabled' to be a bool")
         pulumi.set(__self__, "is_ssl_verify_enabled", is_ssl_verify_enabled)
+        if origin_display_name and not isinstance(origin_display_name, str):
+            raise TypeError("Expected argument 'origin_display_name' to be a str")
+        pulumi.set(__self__, "origin_display_name", origin_display_name)
         if origin_software_source_id and not isinstance(origin_software_source_id, str):
             raise TypeError("Expected argument 'origin_software_source_id' to be a str")
         pulumi.set(__self__, "origin_software_source_id", origin_software_source_id)
@@ -339,6 +342,11 @@ class GetSoftwareSourceResult:
         return pulumi.get(self, "is_ssl_verify_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="originDisplayName")
+    def origin_display_name(self) -> _builtins.str:
+        return pulumi.get(self, "origin_display_name")
+
+    @_builtins.property
     @pulumi.getter(name="originSoftwareSourceId")
     def origin_software_source_id(self) -> _builtins.str:
         """
@@ -501,6 +509,7 @@ class AwaitableGetSoftwareSourceResult(GetSoftwareSourceResult):
             is_mandatory_for_autonomous_linux=self.is_mandatory_for_autonomous_linux,
             is_mirror_sync_allowed=self.is_mirror_sync_allowed,
             is_ssl_verify_enabled=self.is_ssl_verify_enabled,
+            origin_display_name=self.origin_display_name,
             origin_software_source_id=self.origin_software_source_id,
             os_family=self.os_family,
             package_count=self.package_count,
@@ -568,6 +577,7 @@ def get_software_source(software_source_id: Optional[_builtins.str] = None,
         is_mandatory_for_autonomous_linux=pulumi.get(__ret__, 'is_mandatory_for_autonomous_linux'),
         is_mirror_sync_allowed=pulumi.get(__ret__, 'is_mirror_sync_allowed'),
         is_ssl_verify_enabled=pulumi.get(__ret__, 'is_ssl_verify_enabled'),
+        origin_display_name=pulumi.get(__ret__, 'origin_display_name'),
         origin_software_source_id=pulumi.get(__ret__, 'origin_software_source_id'),
         os_family=pulumi.get(__ret__, 'os_family'),
         package_count=pulumi.get(__ret__, 'package_count'),
@@ -632,6 +642,7 @@ def get_software_source_output(software_source_id: Optional[pulumi.Input[_builti
         is_mandatory_for_autonomous_linux=pulumi.get(__response__, 'is_mandatory_for_autonomous_linux'),
         is_mirror_sync_allowed=pulumi.get(__response__, 'is_mirror_sync_allowed'),
         is_ssl_verify_enabled=pulumi.get(__response__, 'is_ssl_verify_enabled'),
+        origin_display_name=pulumi.get(__response__, 'origin_display_name'),
         origin_software_source_id=pulumi.get(__response__, 'origin_software_source_id'),
         os_family=pulumi.get(__response__, 'os_family'),
         package_count=pulumi.get(__response__, 'package_count'),

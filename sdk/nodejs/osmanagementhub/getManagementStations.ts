@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     displayName: managementStationDisplayName,
  *     displayNameContains: managementStationDisplayNameContains,
+ *     healthState: managementStationHealthState,
  *     id: managementStationId,
  *     locations: managementStationLocation,
  *     locationNotEqualTos: managementStationLocationNotEqualTo,
@@ -38,6 +39,7 @@ export function getManagementStations(args?: GetManagementStationsArgs, opts?: p
         "displayName": args.displayName,
         "displayNameContains": args.displayNameContains,
         "filters": args.filters,
+        "healthState": args.healthState,
         "id": args.id,
         "locationNotEqualTos": args.locationNotEqualTos,
         "locations": args.locations,
@@ -63,6 +65,10 @@ export interface GetManagementStationsArgs {
      */
     displayNameContains?: string;
     filters?: inputs.OsManagementHub.GetManagementStationsFilter[];
+    /**
+     * A filter that returns information for management stations in the specified health state.
+     */
+    healthState?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
      */
@@ -99,6 +105,7 @@ export interface GetManagementStationsResult {
     readonly displayName?: string;
     readonly displayNameContains?: string;
     readonly filters?: outputs.OsManagementHub.GetManagementStationsFilter[];
+    readonly healthState?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
      */
@@ -137,6 +144,7 @@ export interface GetManagementStationsResult {
  *     compartmentId: compartmentId,
  *     displayName: managementStationDisplayName,
  *     displayNameContains: managementStationDisplayNameContains,
+ *     healthState: managementStationHealthState,
  *     id: managementStationId,
  *     locations: managementStationLocation,
  *     locationNotEqualTos: managementStationLocationNotEqualTo,
@@ -153,6 +161,7 @@ export function getManagementStationsOutput(args?: GetManagementStationsOutputAr
         "displayName": args.displayName,
         "displayNameContains": args.displayNameContains,
         "filters": args.filters,
+        "healthState": args.healthState,
         "id": args.id,
         "locationNotEqualTos": args.locationNotEqualTos,
         "locations": args.locations,
@@ -178,6 +187,10 @@ export interface GetManagementStationsOutputArgs {
      */
     displayNameContains?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagementStationsFilterArgs>[]>;
+    /**
+     * A filter that returns information for management stations in the specified health state.
+     */
+    healthState?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
      */

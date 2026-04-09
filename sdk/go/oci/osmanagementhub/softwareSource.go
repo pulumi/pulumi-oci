@@ -78,6 +78,8 @@ type SoftwareSource struct {
 	IsMirrorSyncAllowed pulumi.BoolOutput `pulumi:"isMirrorSyncAllowed"`
 	// (Updatable) Whether SSL validation needs to be turned on
 	IsSslVerifyEnabled pulumi.BoolOutput `pulumi:"isSslVerifyEnabled"`
+	// The display name of the software source to be replicated
+	OriginDisplayName pulumi.StringOutput `pulumi:"originDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
 	OriginSoftwareSourceId pulumi.StringOutput `pulumi:"originSoftwareSourceId"`
 	// The OS family for the third-party software source.
@@ -197,6 +199,8 @@ type softwareSourceState struct {
 	IsMirrorSyncAllowed *bool `pulumi:"isMirrorSyncAllowed"`
 	// (Updatable) Whether SSL validation needs to be turned on
 	IsSslVerifyEnabled *bool `pulumi:"isSslVerifyEnabled"`
+	// The display name of the software source to be replicated
+	OriginDisplayName *string `pulumi:"originDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
 	OriginSoftwareSourceId *string `pulumi:"originSoftwareSourceId"`
 	// The OS family for the third-party software source.
@@ -281,6 +285,8 @@ type SoftwareSourceState struct {
 	IsMirrorSyncAllowed pulumi.BoolPtrInput
 	// (Updatable) Whether SSL validation needs to be turned on
 	IsSslVerifyEnabled pulumi.BoolPtrInput
+	// The display name of the software source to be replicated
+	OriginDisplayName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
 	OriginSoftwareSourceId pulumi.StringPtrInput
 	// The OS family for the third-party software source.
@@ -357,6 +363,8 @@ type softwareSourceArgs struct {
 	IsMirrorSyncAllowed *bool `pulumi:"isMirrorSyncAllowed"`
 	// (Updatable) Whether SSL validation needs to be turned on
 	IsSslVerifyEnabled *bool `pulumi:"isSslVerifyEnabled"`
+	// The display name of the software source to be replicated
+	OriginDisplayName *string `pulumi:"originDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
 	OriginSoftwareSourceId *string `pulumi:"originSoftwareSourceId"`
 	// The OS family for the third-party software source.
@@ -414,6 +422,8 @@ type SoftwareSourceArgs struct {
 	IsMirrorSyncAllowed pulumi.BoolPtrInput
 	// (Updatable) Whether SSL validation needs to be turned on
 	IsSslVerifyEnabled pulumi.BoolPtrInput
+	// The display name of the software source to be replicated
+	OriginDisplayName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
 	OriginSoftwareSourceId pulumi.StringPtrInput
 	// The OS family for the third-party software source.
@@ -634,6 +644,11 @@ func (o SoftwareSourceOutput) IsMirrorSyncAllowed() pulumi.BoolOutput {
 // (Updatable) Whether SSL validation needs to be turned on
 func (o SoftwareSourceOutput) IsSslVerifyEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *SoftwareSource) pulumi.BoolOutput { return v.IsSslVerifyEnabled }).(pulumi.BoolOutput)
+}
+
+// The display name of the software source to be replicated
+func (o SoftwareSourceOutput) OriginDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.OriginDisplayName }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.

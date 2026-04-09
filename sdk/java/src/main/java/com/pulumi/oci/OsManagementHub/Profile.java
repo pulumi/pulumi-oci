@@ -143,14 +143,14 @@ public class Profile extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+     * (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+     * @return (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -269,14 +269,14 @@ public class Profile extends com.pulumi.resources.CustomResource {
         return this.managedInstanceGroups;
     }
     /**
-     * description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
+     * description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is used when creating a profile for non-OCI instances.
      * 
      */
     @Export(name="managementStationId", refs={String.class}, tree="[0]")
     private Output<String> managementStationId;
 
     /**
-     * @return description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
+     * @return description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is used when creating a profile for non-OCI instances.
      * 
      */
     public Output<String> managementStationId() {

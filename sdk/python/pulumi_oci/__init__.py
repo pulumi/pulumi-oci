@@ -4679,6 +4679,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "GenerativeAi/semanticStore",
+  "fqn": "pulumi_oci.generativeai",
+  "classes": {
+   "oci:GenerativeAi/semanticStore:SemanticStore": "SemanticStore"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "GenericArtifactsContent/artifactByPath",
   "fqn": "pulumi_oci.genericartifactscontent",
   "classes": {
@@ -6631,6 +6639,46 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "OsManagementHub/dynamicSet",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/dynamicSet:DynamicSet": "DynamicSet"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/dynamicSetInstallPackagesManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/dynamicSetInstallPackagesManagement:DynamicSetInstallPackagesManagement": "DynamicSetInstallPackagesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/dynamicSetRebootManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/dynamicSetRebootManagement:DynamicSetRebootManagement": "DynamicSetRebootManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/dynamicSetRemovePackagesManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/dynamicSetRemovePackagesManagement:DynamicSetRemovePackagesManagement": "DynamicSetRemovePackagesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/dynamicSetUpdatePackagesManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/dynamicSetUpdatePackagesManagement:DynamicSetUpdatePackagesManagement": "DynamicSetUpdatePackagesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "OsManagementHub/event",
   "fqn": "pulumi_oci.osmanagementhub",
   "classes": {
@@ -6695,10 +6743,26 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "OsManagementHub/managedInstanceAttachSoftwareSourcesManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/managedInstanceAttachSoftwareSourcesManagement:ManagedInstanceAttachSoftwareSourcesManagement": "ManagedInstanceAttachSoftwareSourcesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "OsManagementHub/managedInstanceDetachProfileManagement",
   "fqn": "pulumi_oci.osmanagementhub",
   "classes": {
    "oci:OsManagementHub/managedInstanceDetachProfileManagement:ManagedInstanceDetachProfileManagement": "ManagedInstanceDetachProfileManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/managedInstanceDetachSoftwareSourcesManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/managedInstanceDetachSoftwareSourcesManagement:ManagedInstanceDetachSoftwareSourcesManagement": "ManagedInstanceDetachSoftwareSourcesManagement"
   }
  },
  {
@@ -6791,6 +6855,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "OsManagementHub/managedInstanceInstallPackagesManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/managedInstanceInstallPackagesManagement:ManagedInstanceInstallPackagesManagement": "ManagedInstanceInstallPackagesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/managedInstanceInstallSnapsManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/managedInstanceInstallSnapsManagement:ManagedInstanceInstallSnapsManagement": "ManagedInstanceInstallSnapsManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "OsManagementHub/managedInstanceInstallWindowsUpdatesManagement",
   "fqn": "pulumi_oci.osmanagementhub",
   "classes": {
@@ -6807,10 +6887,58 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "OsManagementHub/managedInstanceRefreshSoftwareManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/managedInstanceRefreshSoftwareManagement:ManagedInstanceRefreshSoftwareManagement": "ManagedInstanceRefreshSoftwareManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/managedInstanceRemovePackagesManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/managedInstanceRemovePackagesManagement:ManagedInstanceRemovePackagesManagement": "ManagedInstanceRemovePackagesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/managedInstanceRemoveSnapsManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/managedInstanceRemoveSnapsManagement:ManagedInstanceRemoveSnapsManagement": "ManagedInstanceRemoveSnapsManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/managedInstanceSwitchSnapChannelManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/managedInstanceSwitchSnapChannelManagement:ManagedInstanceSwitchSnapChannelManagement": "ManagedInstanceSwitchSnapChannelManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "OsManagementHub/managedInstanceUpdatePackagesManagement",
   "fqn": "pulumi_oci.osmanagementhub",
   "classes": {
    "oci:OsManagementHub/managedInstanceUpdatePackagesManagement:ManagedInstanceUpdatePackagesManagement": "ManagedInstanceUpdatePackagesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/managedInstancesInstallWindowsUpdatesManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/managedInstancesInstallWindowsUpdatesManagement:ManagedInstancesInstallWindowsUpdatesManagement": "ManagedInstancesInstallWindowsUpdatesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/managedInstancesUpdatePackagesManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/managedInstancesUpdatePackagesManagement:ManagedInstancesUpdatePackagesManagement": "ManagedInstancesUpdatePackagesManagement"
   }
  },
  {
@@ -6891,6 +7019,14 @@ _utilities.register(
   "fqn": "pulumi_oci.osmanagementhub",
   "classes": {
    "oci:OsManagementHub/profileAttachSoftwareSourcesManagement:ProfileAttachSoftwareSourcesManagement": "ProfileAttachSoftwareSourcesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/profileDetachManagementStationManagement",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/profileDetachManagementStationManagement:ProfileDetachManagementStationManagement": "ProfileDetachManagementStationManagement"
   }
  },
  {

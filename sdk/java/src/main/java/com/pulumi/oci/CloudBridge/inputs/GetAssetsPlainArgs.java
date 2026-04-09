@@ -18,6 +18,36 @@ public final class GetAssetsPlainArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetAssetsPlainArgs Empty = new GetAssetsPlainArgs();
 
     /**
+     * The name of the asset class.
+     * 
+     */
+    @Import(name="assetClassName")
+    private @Nullable String assetClassName;
+
+    /**
+     * @return The name of the asset class.
+     * 
+     */
+    public Optional<String> assetClassName() {
+        return Optional.ofNullable(this.assetClassName);
+    }
+
+    /**
+     * The version of the asset class.
+     * 
+     */
+    @Import(name="assetClassVersion")
+    private @Nullable String assetClassVersion;
+
+    /**
+     * @return The version of the asset class.
+     * 
+     */
+    public Optional<String> assetClassVersion() {
+        return Optional.ofNullable(this.assetClassVersion);
+    }
+
+    /**
      * Unique asset identifier.
      * 
      */
@@ -147,6 +177,8 @@ public final class GetAssetsPlainArgs extends com.pulumi.resources.InvokeArgs {
     private GetAssetsPlainArgs() {}
 
     private GetAssetsPlainArgs(GetAssetsPlainArgs $) {
+        this.assetClassName = $.assetClassName;
+        this.assetClassVersion = $.assetClassVersion;
         this.assetId = $.assetId;
         this.assetType = $.assetType;
         this.compartmentId = $.compartmentId;
@@ -174,6 +206,28 @@ public final class GetAssetsPlainArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder(GetAssetsPlainArgs defaults) {
             $ = new GetAssetsPlainArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param assetClassName The name of the asset class.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assetClassName(@Nullable String assetClassName) {
+            $.assetClassName = assetClassName;
+            return this;
+        }
+
+        /**
+         * @param assetClassVersion The version of the asset class.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assetClassVersion(@Nullable String assetClassVersion) {
+            $.assetClassVersion = assetClassVersion;
+            return this;
         }
 
         /**

@@ -79,7 +79,7 @@ public final class GetNodePoolNode {
      */
     private String state;
     /**
-     * @return The OCID of the subnet in which this node is placed.
+     * @return the ocid of the subnet to create the vnic in
      * 
      */
     private String subnetId;
@@ -177,7 +177,7 @@ public final class GetNodePoolNode {
         return this.state;
     }
     /**
-     * @return The OCID of the subnet in which this node is placed.
+     * @return the ocid of the subnet to create the vnic in
      * 
      */
     public String subnetId() {

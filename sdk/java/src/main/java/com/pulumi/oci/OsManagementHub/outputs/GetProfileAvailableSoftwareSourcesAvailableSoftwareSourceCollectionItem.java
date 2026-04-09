@@ -16,6 +16,11 @@ public final class GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceColl
      */
     private String compartmentId;
     /**
+     * @return Software source description.
+     * 
+     */
+    private String description;
+    /**
      * @return A filter to return resources that match the given display names.
      * 
      */
@@ -25,6 +30,11 @@ public final class GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceColl
      * 
      */
     private String id;
+    /**
+     * @return Type of the software source.
+     * 
+     */
+    private String softwareSourceType;
 
     private GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem() {}
     /**
@@ -33,6 +43,13 @@ public final class GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceColl
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return Software source description.
+     * 
+     */
+    public String description() {
+        return this.description;
     }
     /**
      * @return A filter to return resources that match the given display names.
@@ -48,6 +65,13 @@ public final class GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceColl
     public String id() {
         return this.id;
     }
+    /**
+     * @return Type of the software source.
+     * 
+     */
+    public String softwareSourceType() {
+        return this.softwareSourceType;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -59,14 +83,18 @@ public final class GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceColl
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private String description;
         private String displayName;
         private String id;
+        private String softwareSourceType;
         public Builder() {}
         public Builder(GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
+    	      this.softwareSourceType = defaults.softwareSourceType;
         }
 
         @CustomType.Setter
@@ -75,6 +103,14 @@ public final class GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceColl
               throw new MissingRequiredPropertyException("GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder description(String description) {
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
@@ -93,11 +129,21 @@ public final class GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceColl
             this.id = id;
             return this;
         }
+        @CustomType.Setter
+        public Builder softwareSourceType(String softwareSourceType) {
+            if (softwareSourceType == null) {
+              throw new MissingRequiredPropertyException("GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem", "softwareSourceType");
+            }
+            this.softwareSourceType = softwareSourceType;
+            return this;
+        }
         public GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem build() {
             final var _resultValue = new GetProfileAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.description = description;
             _resultValue.displayName = displayName;
             _resultValue.id = id;
+            _resultValue.softwareSourceType = softwareSourceType;
             return _resultValue;
         }
     }

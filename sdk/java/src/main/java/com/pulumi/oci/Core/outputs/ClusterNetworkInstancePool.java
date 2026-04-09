@@ -23,6 +23,11 @@ public final class ClusterNetworkInstancePool {
      */
     private @Nullable String compartmentId;
     /**
+     * @return Count of instance in running state associated to the Instance Pool.
+     * 
+     */
+    private @Nullable Integer currentSize;
+    /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
@@ -82,6 +87,13 @@ public final class ClusterNetworkInstancePool {
      */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+    /**
+     * @return Count of instance in running state associated to the Instance Pool.
+     * 
+     */
+    public Optional<Integer> currentSize() {
+        return Optional.ofNullable(this.currentSize);
     }
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -170,6 +182,7 @@ public final class ClusterNetworkInstancePool {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
+        private @Nullable Integer currentSize;
         private @Nullable Map<String,String> definedTags;
         private @Nullable String displayName;
         private @Nullable Map<String,String> freeformTags;
@@ -186,6 +199,7 @@ public final class ClusterNetworkInstancePool {
         public Builder(ClusterNetworkInstancePool defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.currentSize = defaults.currentSize;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
@@ -204,6 +218,12 @@ public final class ClusterNetworkInstancePool {
         public Builder compartmentId(@Nullable String compartmentId) {
 
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder currentSize(@Nullable Integer currentSize) {
+
+            this.currentSize = currentSize;
             return this;
         }
         @CustomType.Setter
@@ -291,6 +311,7 @@ public final class ClusterNetworkInstancePool {
         public ClusterNetworkInstancePool build() {
             final var _resultValue = new ClusterNetworkInstancePool();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.currentSize = currentSize;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;

@@ -37,6 +37,7 @@ import * as utilities from "../utilities";
  *         hosts: managementStationProxyHosts,
  *         port: managementStationProxyPort,
  *     },
+ *     archType: managementStationArchType,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -45,6 +46,7 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     isAutoConfigEnabled: managementStationIsAutoConfigEnabled,
+ *     osFamily: managementStationOsFamily,
  * });
  * ```
  *
@@ -84,6 +86,10 @@ export class ManagementStation extends pulumi.CustomResource {
         return obj['__pulumiType'] === ManagementStation.__pulumiType;
     }
 
+    /**
+     * (Updatable) The architecture type.
+     */
+    declare public readonly archType: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
      */
@@ -157,6 +163,10 @@ export class ManagementStation extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly mirrorUniquePackageCount: pulumi.Output<number>;
     /**
+     * (Updatable) The operating system family.
+     */
+    declare public readonly osFamily: pulumi.Output<string>;
+    /**
      * A decimal number representing the progress of the current mirror sync.
      */
     declare public /*out*/ readonly overallPercentage: pulumi.Output<number>;
@@ -214,6 +224,7 @@ export class ManagementStation extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagementStationState | undefined;
+            resourceInputs["archType"] = state?.archType;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["description"] = state?.description;
@@ -232,6 +243,7 @@ export class ManagementStation extends pulumi.CustomResource {
             resourceInputs["mirrorStorageSize"] = state?.mirrorStorageSize;
             resourceInputs["mirrorSyncStatuses"] = state?.mirrorSyncStatuses;
             resourceInputs["mirrorUniquePackageCount"] = state?.mirrorUniquePackageCount;
+            resourceInputs["osFamily"] = state?.osFamily;
             resourceInputs["overallPercentage"] = state?.overallPercentage;
             resourceInputs["overallState"] = state?.overallState;
             resourceInputs["peerManagementStations"] = state?.peerManagementStations;
@@ -259,6 +271,7 @@ export class ManagementStation extends pulumi.CustomResource {
             if (args?.proxy === undefined && !opts.urn) {
                 throw new Error("Missing required property 'proxy'");
             }
+            resourceInputs["archType"] = args?.archType;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["description"] = args?.description;
@@ -267,6 +280,7 @@ export class ManagementStation extends pulumi.CustomResource {
             resourceInputs["hostname"] = args?.hostname;
             resourceInputs["isAutoConfigEnabled"] = args?.isAutoConfigEnabled;
             resourceInputs["mirror"] = args?.mirror;
+            resourceInputs["osFamily"] = args?.osFamily;
             resourceInputs["proxy"] = args?.proxy;
             resourceInputs["refreshTrigger"] = args?.refreshTrigger;
             resourceInputs["healths"] = undefined /*out*/;
@@ -297,6 +311,10 @@ export class ManagementStation extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ManagementStation resources.
  */
 export interface ManagementStationState {
+    /**
+     * (Updatable) The architecture type.
+     */
+    archType?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
      */
@@ -370,6 +388,10 @@ export interface ManagementStationState {
      */
     mirrorUniquePackageCount?: pulumi.Input<number>;
     /**
+     * (Updatable) The operating system family.
+     */
+    osFamily?: pulumi.Input<string>;
+    /**
      * A decimal number representing the progress of the current mirror sync.
      */
     overallPercentage?: pulumi.Input<number>;
@@ -420,6 +442,10 @@ export interface ManagementStationState {
  */
 export interface ManagementStationArgs {
     /**
+     * (Updatable) The architecture type.
+     */
+    archType?: pulumi.Input<string>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
      */
     compartmentId: pulumi.Input<string>;
@@ -451,6 +477,10 @@ export interface ManagementStationArgs {
      * (Updatable) Information used to create the mirror configuration for a management station.
      */
     mirror: pulumi.Input<inputs.OsManagementHub.ManagementStationMirror>;
+    /**
+     * (Updatable) The operating system family.
+     */
+    osFamily?: pulumi.Input<string>;
     /**
      * (Updatable) Information used to create the proxy configuration for a management station.
      */

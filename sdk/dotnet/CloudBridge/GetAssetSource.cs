@@ -136,6 +136,8 @@ namespace Pulumi.Oci.CloudBridge
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that is going to be used to create assets.
         /// </summary>
         public readonly string AssetsCompartmentId;
+        public readonly string AwsAccountKey;
+        public readonly string AwsRegion;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
         /// </summary>
@@ -161,6 +163,10 @@ namespace Pulumi.Oci.CloudBridge
         /// </summary>
         public readonly string EnvironmentId;
         /// <summary>
+        /// Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+        /// </summary>
+        public readonly string EnvironmentType;
+        /// <summary>
         /// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
@@ -172,10 +178,15 @@ namespace Pulumi.Oci.CloudBridge
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
         /// </summary>
         public readonly string InventoryId;
+        public readonly bool IsCostInformationCollected;
         /// <summary>
         /// The detailed state of the asset source.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// Endpoint for OLVM asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;```
+        /// </summary>
+        public readonly string OlvmEndpoint;
         /// <summary>
         /// Credentials for an asset source.
         /// </summary>
@@ -215,6 +226,10 @@ namespace Pulumi.Oci.CloudBridge
 
             string assetsCompartmentId,
 
+            string awsAccountKey,
+
+            string awsRegion,
+
             string compartmentId,
 
             ImmutableDictionary<string, string> definedTags,
@@ -227,13 +242,19 @@ namespace Pulumi.Oci.CloudBridge
 
             string environmentId,
 
+            string environmentType,
+
             ImmutableDictionary<string, string> freeformTags,
 
             string id,
 
             string inventoryId,
 
+            bool isCostInformationCollected,
+
             string lifecycleDetails,
+
+            string olvmEndpoint,
 
             ImmutableArray<Outputs.GetAssetSourceReplicationCredentialResult> replicationCredentials,
 
@@ -253,16 +274,21 @@ namespace Pulumi.Oci.CloudBridge
             AreRealtimeMetricsCollected = areRealtimeMetricsCollected;
             AssetSourceId = assetSourceId;
             AssetsCompartmentId = assetsCompartmentId;
+            AwsAccountKey = awsAccountKey;
+            AwsRegion = awsRegion;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DiscoveryCredentials = discoveryCredentials;
             DiscoveryScheduleId = discoveryScheduleId;
             DisplayName = displayName;
             EnvironmentId = environmentId;
+            EnvironmentType = environmentType;
             FreeformTags = freeformTags;
             Id = id;
             InventoryId = inventoryId;
+            IsCostInformationCollected = isCostInformationCollected;
             LifecycleDetails = lifecycleDetails;
+            OlvmEndpoint = olvmEndpoint;
             ReplicationCredentials = replicationCredentials;
             State = state;
             SystemTags = systemTags;

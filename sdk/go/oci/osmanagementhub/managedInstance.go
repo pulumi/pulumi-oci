@@ -33,7 +33,9 @@ type ManagedInstance struct {
 	AgentVersion pulumi.StringOutput `pulumi:"agentVersion"`
 	// The CPU architecture type of the managed instance.
 	Architecture pulumi.StringOutput `pulumi:"architecture"`
-	// (Updatable) Updatable settings for the Autonomous Linux service.
+	// Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+	AreSourcesManaged pulumi.BoolOutput `pulumi:"areSourcesManaged"`
+	// (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
 	AutonomousSettings ManagedInstanceAutonomousSettingsOutput `pulumi:"autonomousSettings"`
 	// Number of bug fix type updates available for installation.
 	BugUpdatesAvailable pulumi.IntOutput `pulumi:"bugUpdatesAvailable"`
@@ -106,6 +108,8 @@ type ManagedInstance struct {
 	TimeLastBoot pulumi.StringOutput `pulumi:"timeLastBoot"`
 	// Time that the instance last checked in with the service (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeLastCheckin pulumi.StringOutput `pulumi:"timeLastCheckin"`
+	// The date and time the instance's software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeLastSoftwareRefresh pulumi.StringOutput `pulumi:"timeLastSoftwareRefresh"`
 	// The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// Number of updates available for installation.
@@ -151,7 +155,9 @@ type managedInstanceState struct {
 	AgentVersion *string `pulumi:"agentVersion"`
 	// The CPU architecture type of the managed instance.
 	Architecture *string `pulumi:"architecture"`
-	// (Updatable) Updatable settings for the Autonomous Linux service.
+	// Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+	AreSourcesManaged *bool `pulumi:"areSourcesManaged"`
+	// (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
 	AutonomousSettings *ManagedInstanceAutonomousSettings `pulumi:"autonomousSettings"`
 	// Number of bug fix type updates available for installation.
 	BugUpdatesAvailable *int `pulumi:"bugUpdatesAvailable"`
@@ -224,6 +230,8 @@ type managedInstanceState struct {
 	TimeLastBoot *string `pulumi:"timeLastBoot"`
 	// Time that the instance last checked in with the service (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeLastCheckin *string `pulumi:"timeLastCheckin"`
+	// The date and time the instance's software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeLastSoftwareRefresh *string `pulumi:"timeLastSoftwareRefresh"`
 	// The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Number of updates available for installation.
@@ -237,7 +245,9 @@ type ManagedInstanceState struct {
 	AgentVersion pulumi.StringPtrInput
 	// The CPU architecture type of the managed instance.
 	Architecture pulumi.StringPtrInput
-	// (Updatable) Updatable settings for the Autonomous Linux service.
+	// Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+	AreSourcesManaged pulumi.BoolPtrInput
+	// (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
 	AutonomousSettings ManagedInstanceAutonomousSettingsPtrInput
 	// Number of bug fix type updates available for installation.
 	BugUpdatesAvailable pulumi.IntPtrInput
@@ -310,6 +320,8 @@ type ManagedInstanceState struct {
 	TimeLastBoot pulumi.StringPtrInput
 	// Time that the instance last checked in with the service (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeLastCheckin pulumi.StringPtrInput
+	// The date and time the instance's software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+	TimeLastSoftwareRefresh pulumi.StringPtrInput
 	// The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeUpdated pulumi.StringPtrInput
 	// Number of updates available for installation.
@@ -323,7 +335,7 @@ func (ManagedInstanceState) ElementType() reflect.Type {
 }
 
 type managedInstanceArgs struct {
-	// (Updatable) Updatable settings for the Autonomous Linux service.
+	// (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
 	AutonomousSettings *ManagedInstanceAutonomousSettings `pulumi:"autonomousSettings"`
 	// (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
@@ -342,7 +354,7 @@ type managedInstanceArgs struct {
 
 // The set of arguments for constructing a ManagedInstance resource.
 type ManagedInstanceArgs struct {
-	// (Updatable) Updatable settings for the Autonomous Linux service.
+	// (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
 	AutonomousSettings ManagedInstanceAutonomousSettingsPtrInput
 	// (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
@@ -456,7 +468,12 @@ func (o ManagedInstanceOutput) Architecture() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedInstance) pulumi.StringOutput { return v.Architecture }).(pulumi.StringOutput)
 }
 
-// (Updatable) Updatable settings for the Autonomous Linux service.
+// Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+func (o ManagedInstanceOutput) AreSourcesManaged() pulumi.BoolOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.BoolOutput { return v.AreSourcesManaged }).(pulumi.BoolOutput)
+}
+
+// (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
 func (o ManagedInstanceOutput) AutonomousSettings() ManagedInstanceAutonomousSettingsOutput {
 	return o.ApplyT(func(v *ManagedInstance) ManagedInstanceAutonomousSettingsOutput { return v.AutonomousSettings }).(ManagedInstanceAutonomousSettingsOutput)
 }
@@ -636,6 +653,11 @@ func (o ManagedInstanceOutput) TimeLastBoot() pulumi.StringOutput {
 // Time that the instance last checked in with the service (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 func (o ManagedInstanceOutput) TimeLastCheckin() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedInstance) pulumi.StringOutput { return v.TimeLastCheckin }).(pulumi.StringOutput)
+}
+
+// The date and time the instance's software information was last refreshed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+func (o ManagedInstanceOutput) TimeLastSoftwareRefresh() pulumi.StringOutput {
+	return o.ApplyT(func(v *ManagedInstance) pulumi.StringOutput { return v.TimeLastSoftwareRefresh }).(pulumi.StringOutput)
 }
 
 // The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).

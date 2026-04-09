@@ -56,6 +56,8 @@ export interface GetAssetSourceResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that is going to be used to create assets.
      */
     readonly assetsCompartmentId: string;
+    readonly awsAccountKey: string;
+    readonly awsRegion: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
      */
@@ -81,6 +83,10 @@ export interface GetAssetSourceResult {
      */
     readonly environmentId: string;
     /**
+     * Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     */
+    readonly environmentType: string;
+    /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     readonly freeformTags: {[key: string]: string};
@@ -92,10 +98,15 @@ export interface GetAssetSourceResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
      */
     readonly inventoryId: string;
+    readonly isCostInformationCollected: boolean;
     /**
      * The detailed state of the asset source.
      */
     readonly lifecycleDetails: string;
+    /**
+     * Endpoint for OLVM asset discovery and replication in the form of ```https://<host>:<port>```
+     */
+    readonly olvmEndpoint: string;
     /**
      * Credentials for an asset source.
      */

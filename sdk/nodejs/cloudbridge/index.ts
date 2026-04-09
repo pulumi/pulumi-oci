@@ -125,6 +125,11 @@ export const getInventory: typeof import("./getInventory").getInventory = null a
 export const getInventoryOutput: typeof import("./getInventory").getInventoryOutput = null as any;
 utilities.lazyLoad(exports, ["getInventory","getInventoryOutput"], () => require("./getInventory"));
 
+export { GetSupportedCloudRegionsArgs, GetSupportedCloudRegionsResult, GetSupportedCloudRegionsOutputArgs } from "./getSupportedCloudRegions";
+export const getSupportedCloudRegions: typeof import("./getSupportedCloudRegions").getSupportedCloudRegions = null as any;
+export const getSupportedCloudRegionsOutput: typeof import("./getSupportedCloudRegions").getSupportedCloudRegionsOutput = null as any;
+utilities.lazyLoad(exports, ["getSupportedCloudRegions","getSupportedCloudRegionsOutput"], () => require("./getSupportedCloudRegions"));
+
 export { InventoryArgs, InventoryState } from "./inventory";
 export type Inventory = import("./inventory").Inventory;
 export const Inventory: typeof import("./inventory").Inventory = null as any;

@@ -25,6 +25,21 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
     public static final ManagementStationState Empty = new ManagementStationState();
 
     /**
+     * (Updatable) The architecture type.
+     * 
+     */
+    @Import(name="archType")
+    private @Nullable Output<String> archType;
+
+    /**
+     * @return (Updatable) The architecture type.
+     * 
+     */
+    public Optional<Output<String>> archType() {
+        return Optional.ofNullable(this.archType);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
      * 
      */
@@ -295,6 +310,21 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * (Updatable) The operating system family.
+     * 
+     */
+    @Import(name="osFamily")
+    private @Nullable Output<String> osFamily;
+
+    /**
+     * @return (Updatable) The operating system family.
+     * 
+     */
+    public Optional<Output<String>> osFamily() {
+        return Optional.ofNullable(this.osFamily);
+    }
+
+    /**
      * A decimal number representing the progress of the current mirror sync.
      * 
      */
@@ -453,6 +483,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
     private ManagementStationState() {}
 
     private ManagementStationState(ManagementStationState $) {
+        this.archType = $.archType;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.description = $.description;
@@ -471,6 +502,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         this.mirrorStorageSize = $.mirrorStorageSize;
         this.mirrorSyncStatuses = $.mirrorSyncStatuses;
         this.mirrorUniquePackageCount = $.mirrorUniquePackageCount;
+        this.osFamily = $.osFamily;
         this.overallPercentage = $.overallPercentage;
         this.overallState = $.overallState;
         this.peerManagementStations = $.peerManagementStations;
@@ -499,6 +531,27 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
 
         public Builder(ManagementStationState defaults) {
             $ = new ManagementStationState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param archType (Updatable) The architecture type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder archType(@Nullable Output<String> archType) {
+            $.archType = archType;
+            return this;
+        }
+
+        /**
+         * @param archType (Updatable) The architecture type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder archType(String archType) {
+            return archType(Output.of(archType));
         }
 
         /**
@@ -897,6 +950,27 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
          */
         public Builder mirrorUniquePackageCount(Integer mirrorUniquePackageCount) {
             return mirrorUniquePackageCount(Output.of(mirrorUniquePackageCount));
+        }
+
+        /**
+         * @param osFamily (Updatable) The operating system family.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder osFamily(@Nullable Output<String> osFamily) {
+            $.osFamily = osFamily;
+            return this;
+        }
+
+        /**
+         * @param osFamily (Updatable) The operating system family.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder osFamily(String osFamily) {
+            return osFamily(Output.of(osFamily));
         }
 
         /**

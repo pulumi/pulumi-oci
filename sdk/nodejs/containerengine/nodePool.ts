@@ -36,6 +36,7 @@ import * as utilities from "../utilities";
  *         value: nodePoolInitialNodeLabelsValue,
  *     }],
  *     kubernetesVersion: nodePoolKubernetesVersion,
+ *     networkLaunchType: nodePoolNetworkLaunchType,
  *     nodeConfigDetails: {
  *         placementConfigs: [{
  *             availabilityDomain: nodePoolNodeConfigDetailsPlacementConfigsAvailabilityDomain,
@@ -50,6 +51,12 @@ import * as utilities from "../utilities";
  *             },
  *         }],
  *         size: nodePoolNodeConfigDetailsSize,
+ *         definedTags: {
+ *             "Operations.CostCenter": "42",
+ *         },
+ *         freeformTags: {
+ *             Department: "Finance",
+ *         },
  *         isPvEncryptionInTransitEnabled: nodePoolNodeConfigDetailsIsPvEncryptionInTransitEnabled,
  *         kmsKeyId: testKey.id,
  *         nodePoolPodNetworkOptionDetails: {
@@ -57,12 +64,6 @@ import * as utilities from "../utilities";
  *             maxPodsPerNode: nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsMaxPodsPerNode,
  *             podNsgIds: nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPodNsgIds,
  *             podSubnetIds: nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPodSubnetIds,
- *         },
- *         definedTags: {
- *             "Operations.CostCenter": "42",
- *         },
- *         freeformTags: {
- *             Department: "Finance",
  *         },
  *         nsgIds: nodePoolNodeConfigDetailsNsgIds,
  *     },
@@ -89,6 +90,30 @@ import * as utilities from "../utilities";
  *         bootVolumeSizeInGbs: nodePoolNodeSourceDetailsBootVolumeSizeInGbs,
  *     },
  *     quantityPerSubnet: nodePoolQuantityPerSubnet,
+ *     secondaryVnics: [{
+ *         createVnicDetails: {
+ *             subnetId: testSubnet.id,
+ *             applicationResources: nodePoolSecondaryVnicsCreateVnicDetailsApplicationResources,
+ *             assignIpv6ip: nodePoolSecondaryVnicsCreateVnicDetailsAssignIpv6ip,
+ *             assignPublicIp: nodePoolSecondaryVnicsCreateVnicDetailsAssignPublicIp,
+ *             definedTags: {
+ *                 "Operations.CostCenter": "42",
+ *             },
+ *             displayName: nodePoolSecondaryVnicsCreateVnicDetailsDisplayName,
+ *             freeformTags: {
+ *                 Department: "Finance",
+ *             },
+ *             ipCount: nodePoolSecondaryVnicsCreateVnicDetailsIpCount,
+ *             ipv6addressIpv6subnetCidrPairDetails: [{
+ *                 ipv6address: nodePoolSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address,
+ *                 ipv6subnetCidr: nodePoolSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
+ *             }],
+ *             nsgIds: nodePoolSecondaryVnicsCreateVnicDetailsNsgIds,
+ *             skipSourceDestCheck: nodePoolSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck,
+ *         },
+ *         displayName: nodePoolSecondaryVnicsDisplayName,
+ *         nicIndex: nodePoolSecondaryVnicsNicIndex,
+ *     }],
  *     sshPublicKey: nodePoolSshPublicKey,
  *     subnetIds: nodePoolSubnetIds,
  * });
@@ -163,6 +188,10 @@ export class NodePool extends pulumi.CustomResource {
      */
     declare public readonly name: pulumi.Output<string>;
     /**
+     * (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+     */
+    declare public readonly networkLaunchType: pulumi.Output<string>;
+    /**
      * (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
      */
     declare public readonly nodeConfigDetails: pulumi.Output<outputs.ContainerEngine.NodePoolNodeConfigDetails>;
@@ -215,11 +244,15 @@ export class NodePool extends pulumi.CustomResource {
      */
     declare public readonly quantityPerSubnet: pulumi.Output<number>;
     /**
+     * (Updatable) A list of secondary vnics to attach to nodes
+     */
+    declare public readonly secondaryVnics: pulumi.Output<outputs.ContainerEngine.NodePoolSecondaryVnic[] | undefined>;
+    /**
      * (Updatable) The SSH public key on each node in the node pool on launch.
      */
     declare public readonly sshPublicKey: pulumi.Output<string>;
     /**
-     * The state of the nodepool.
+     * The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
@@ -252,6 +285,7 @@ export class NodePool extends pulumi.CustomResource {
             resourceInputs["kubernetesVersion"] = state?.kubernetesVersion;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["name"] = state?.name;
+            resourceInputs["networkLaunchType"] = state?.networkLaunchType;
             resourceInputs["nodeConfigDetails"] = state?.nodeConfigDetails;
             resourceInputs["nodeEvictionNodePoolSettings"] = state?.nodeEvictionNodePoolSettings;
             resourceInputs["nodeImageId"] = state?.nodeImageId;
@@ -264,6 +298,7 @@ export class NodePool extends pulumi.CustomResource {
             resourceInputs["nodeSources"] = state?.nodeSources;
             resourceInputs["nodes"] = state?.nodes;
             resourceInputs["quantityPerSubnet"] = state?.quantityPerSubnet;
+            resourceInputs["secondaryVnics"] = state?.secondaryVnics;
             resourceInputs["sshPublicKey"] = state?.sshPublicKey;
             resourceInputs["state"] = state?.state;
             resourceInputs["subnetIds"] = state?.subnetIds;
@@ -285,6 +320,7 @@ export class NodePool extends pulumi.CustomResource {
             resourceInputs["initialNodeLabels"] = args?.initialNodeLabels;
             resourceInputs["kubernetesVersion"] = args?.kubernetesVersion;
             resourceInputs["name"] = args?.name;
+            resourceInputs["networkLaunchType"] = args?.networkLaunchType;
             resourceInputs["nodeConfigDetails"] = args?.nodeConfigDetails;
             resourceInputs["nodeEvictionNodePoolSettings"] = args?.nodeEvictionNodePoolSettings;
             resourceInputs["nodeImageId"] = args?.nodeImageId;
@@ -295,6 +331,7 @@ export class NodePool extends pulumi.CustomResource {
             resourceInputs["nodeShapeConfig"] = args?.nodeShapeConfig;
             resourceInputs["nodeSourceDetails"] = args?.nodeSourceDetails;
             resourceInputs["quantityPerSubnet"] = args?.quantityPerSubnet;
+            resourceInputs["secondaryVnics"] = args?.secondaryVnics;
             resourceInputs["sshPublicKey"] = args?.sshPublicKey;
             resourceInputs["subnetIds"] = args?.subnetIds;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -343,6 +380,10 @@ export interface NodePoolState {
      * (Updatable) The name of the node pool. Avoid entering confidential information.
      */
     name?: pulumi.Input<string>;
+    /**
+     * (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+     */
+    networkLaunchType?: pulumi.Input<string>;
     /**
      * (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
      */
@@ -396,11 +437,15 @@ export interface NodePoolState {
      */
     quantityPerSubnet?: pulumi.Input<number>;
     /**
+     * (Updatable) A list of secondary vnics to attach to nodes
+     */
+    secondaryVnics?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.NodePoolSecondaryVnic>[]>;
+    /**
      * (Updatable) The SSH public key on each node in the node pool on launch.
      */
     sshPublicKey?: pulumi.Input<string>;
     /**
-     * The state of the nodepool.
+     * The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
      */
     state?: pulumi.Input<string>;
     /**
@@ -446,6 +491,10 @@ export interface NodePoolArgs {
      */
     name?: pulumi.Input<string>;
     /**
+     * (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+     */
+    networkLaunchType?: pulumi.Input<string>;
+    /**
      * (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
      */
     nodeConfigDetails?: pulumi.Input<inputs.ContainerEngine.NodePoolNodeConfigDetails>;
@@ -489,6 +538,10 @@ export interface NodePoolArgs {
      * (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
      */
     quantityPerSubnet?: pulumi.Input<number>;
+    /**
+     * (Updatable) A list of secondary vnics to attach to nodes
+     */
+    secondaryVnics?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.NodePoolSecondaryVnic>[]>;
     /**
      * (Updatable) The SSH public key on each node in the node pool on launch.
      */

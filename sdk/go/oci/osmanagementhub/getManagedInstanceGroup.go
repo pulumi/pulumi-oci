@@ -89,7 +89,7 @@ type LookupManagedInstanceGroupResult struct {
 	OsFamily string `pulumi:"osFamily"`
 	// The number of scheduled jobs pending against the managed instance group.
 	PendingJobCount int `pulumi:"pendingJobCount"`
-	// The list of software source OCIDs that the managed instance group will use.
+	// The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the managed instance group will use.
 	SoftwareSourceIds []string `pulumi:"softwareSourceIds"`
 	// The list of software sources that the managed instance group will use.
 	SoftwareSources []GetManagedInstanceGroupSoftwareSource `pulumi:"softwareSources"`
@@ -220,7 +220,7 @@ func (o LookupManagedInstanceGroupResultOutput) PendingJobCount() pulumi.IntOutp
 	return o.ApplyT(func(v LookupManagedInstanceGroupResult) int { return v.PendingJobCount }).(pulumi.IntOutput)
 }
 
-// The list of software source OCIDs that the managed instance group will use.
+// The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the managed instance group will use.
 func (o LookupManagedInstanceGroupResultOutput) SoftwareSourceIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupManagedInstanceGroupResult) []string { return v.SoftwareSourceIds }).(pulumi.StringArrayOutput)
 }

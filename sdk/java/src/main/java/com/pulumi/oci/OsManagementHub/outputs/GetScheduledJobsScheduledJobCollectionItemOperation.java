@@ -5,8 +5,11 @@ package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.OsManagementHub.outputs.GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetail;
 import com.pulumi.oci.OsManagementHub.outputs.GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetail;
+import com.pulumi.oci.OsManagementHub.outputs.GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetail;
 import com.pulumi.oci.OsManagementHub.outputs.GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetail;
+import com.pulumi.oci.OsManagementHub.outputs.GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetail;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -14,6 +17,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetScheduledJobsScheduledJobCollectionItemOperation {
+    /**
+     * @return Provides the information used to install a snap.
+     * 
+     */
+    private List<GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetail> installSnapDetails;
     /**
      * @return The set of changes to make to the state of the modules, streams, and profiles on the managed target.
      * 
@@ -35,6 +43,11 @@ public final class GetScheduledJobsScheduledJobCollectionItemOperation {
      */
     private Integer rebootTimeoutInMins;
     /**
+     * @return Provides the information used to remove a snap.
+     * 
+     */
+    private List<GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetail> removeSnapDetails;
+    /**
      * @return The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
      * 
      */
@@ -45,12 +58,24 @@ public final class GetScheduledJobsScheduledJobCollectionItemOperation {
      */
     private List<GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetail> switchModuleStreamsDetails;
     /**
+     * @return Provides the information used to switch a snap channel.
+     * 
+     */
+    private List<GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetail> switchSnapChannelDetails;
+    /**
      * @return Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: &#39;6981d463-cd91-4a26-b7c4-ea4ded9183ed&#39;.
      * 
      */
     private List<String> windowsUpdateNames;
 
     private GetScheduledJobsScheduledJobCollectionItemOperation() {}
+    /**
+     * @return Provides the information used to install a snap.
+     * 
+     */
+    public List<GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetail> installSnapDetails() {
+        return this.installSnapDetails;
+    }
     /**
      * @return The set of changes to make to the state of the modules, streams, and profiles on the managed target.
      * 
@@ -80,6 +105,13 @@ public final class GetScheduledJobsScheduledJobCollectionItemOperation {
         return this.rebootTimeoutInMins;
     }
     /**
+     * @return Provides the information used to remove a snap.
+     * 
+     */
+    public List<GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetail> removeSnapDetails() {
+        return this.removeSnapDetails;
+    }
+    /**
      * @return The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
      * 
      */
@@ -92,6 +124,13 @@ public final class GetScheduledJobsScheduledJobCollectionItemOperation {
      */
     public List<GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetail> switchModuleStreamsDetails() {
         return this.switchModuleStreamsDetails;
+    }
+    /**
+     * @return Provides the information used to switch a snap channel.
+     * 
+     */
+    public List<GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetail> switchSnapChannelDetails() {
+        return this.switchSnapChannelDetails;
     }
     /**
      * @return Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: &#39;6981d463-cd91-4a26-b7c4-ea4ded9183ed&#39;.
@@ -110,25 +149,42 @@ public final class GetScheduledJobsScheduledJobCollectionItemOperation {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetail> installSnapDetails;
         private List<GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetail> manageModuleStreamsDetails;
         private String operationType;
         private List<String> packageNames;
         private Integer rebootTimeoutInMins;
+        private List<GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetail> removeSnapDetails;
         private List<String> softwareSourceIds;
         private List<GetScheduledJobsScheduledJobCollectionItemOperationSwitchModuleStreamsDetail> switchModuleStreamsDetails;
+        private List<GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetail> switchSnapChannelDetails;
         private List<String> windowsUpdateNames;
         public Builder() {}
         public Builder(GetScheduledJobsScheduledJobCollectionItemOperation defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.installSnapDetails = defaults.installSnapDetails;
     	      this.manageModuleStreamsDetails = defaults.manageModuleStreamsDetails;
     	      this.operationType = defaults.operationType;
     	      this.packageNames = defaults.packageNames;
     	      this.rebootTimeoutInMins = defaults.rebootTimeoutInMins;
+    	      this.removeSnapDetails = defaults.removeSnapDetails;
     	      this.softwareSourceIds = defaults.softwareSourceIds;
     	      this.switchModuleStreamsDetails = defaults.switchModuleStreamsDetails;
+    	      this.switchSnapChannelDetails = defaults.switchSnapChannelDetails;
     	      this.windowsUpdateNames = defaults.windowsUpdateNames;
         }
 
+        @CustomType.Setter
+        public Builder installSnapDetails(List<GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetail> installSnapDetails) {
+            if (installSnapDetails == null) {
+              throw new MissingRequiredPropertyException("GetScheduledJobsScheduledJobCollectionItemOperation", "installSnapDetails");
+            }
+            this.installSnapDetails = installSnapDetails;
+            return this;
+        }
+        public Builder installSnapDetails(GetScheduledJobsScheduledJobCollectionItemOperationInstallSnapDetail... installSnapDetails) {
+            return installSnapDetails(List.of(installSnapDetails));
+        }
         @CustomType.Setter
         public Builder manageModuleStreamsDetails(List<GetScheduledJobsScheduledJobCollectionItemOperationManageModuleStreamsDetail> manageModuleStreamsDetails) {
             if (manageModuleStreamsDetails == null) {
@@ -168,6 +224,17 @@ public final class GetScheduledJobsScheduledJobCollectionItemOperation {
             return this;
         }
         @CustomType.Setter
+        public Builder removeSnapDetails(List<GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetail> removeSnapDetails) {
+            if (removeSnapDetails == null) {
+              throw new MissingRequiredPropertyException("GetScheduledJobsScheduledJobCollectionItemOperation", "removeSnapDetails");
+            }
+            this.removeSnapDetails = removeSnapDetails;
+            return this;
+        }
+        public Builder removeSnapDetails(GetScheduledJobsScheduledJobCollectionItemOperationRemoveSnapDetail... removeSnapDetails) {
+            return removeSnapDetails(List.of(removeSnapDetails));
+        }
+        @CustomType.Setter
         public Builder softwareSourceIds(List<String> softwareSourceIds) {
             if (softwareSourceIds == null) {
               throw new MissingRequiredPropertyException("GetScheduledJobsScheduledJobCollectionItemOperation", "softwareSourceIds");
@@ -190,6 +257,17 @@ public final class GetScheduledJobsScheduledJobCollectionItemOperation {
             return switchModuleStreamsDetails(List.of(switchModuleStreamsDetails));
         }
         @CustomType.Setter
+        public Builder switchSnapChannelDetails(List<GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetail> switchSnapChannelDetails) {
+            if (switchSnapChannelDetails == null) {
+              throw new MissingRequiredPropertyException("GetScheduledJobsScheduledJobCollectionItemOperation", "switchSnapChannelDetails");
+            }
+            this.switchSnapChannelDetails = switchSnapChannelDetails;
+            return this;
+        }
+        public Builder switchSnapChannelDetails(GetScheduledJobsScheduledJobCollectionItemOperationSwitchSnapChannelDetail... switchSnapChannelDetails) {
+            return switchSnapChannelDetails(List.of(switchSnapChannelDetails));
+        }
+        @CustomType.Setter
         public Builder windowsUpdateNames(List<String> windowsUpdateNames) {
             if (windowsUpdateNames == null) {
               throw new MissingRequiredPropertyException("GetScheduledJobsScheduledJobCollectionItemOperation", "windowsUpdateNames");
@@ -202,12 +280,15 @@ public final class GetScheduledJobsScheduledJobCollectionItemOperation {
         }
         public GetScheduledJobsScheduledJobCollectionItemOperation build() {
             final var _resultValue = new GetScheduledJobsScheduledJobCollectionItemOperation();
+            _resultValue.installSnapDetails = installSnapDetails;
             _resultValue.manageModuleStreamsDetails = manageModuleStreamsDetails;
             _resultValue.operationType = operationType;
             _resultValue.packageNames = packageNames;
             _resultValue.rebootTimeoutInMins = rebootTimeoutInMins;
+            _resultValue.removeSnapDetails = removeSnapDetails;
             _resultValue.softwareSourceIds = softwareSourceIds;
             _resultValue.switchModuleStreamsDetails = switchModuleStreamsDetails;
+            _resultValue.switchSnapChannelDetails = switchSnapChannelDetails;
             _resultValue.windowsUpdateNames = windowsUpdateNames;
             return _resultValue;
         }

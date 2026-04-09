@@ -8,6 +8,12 @@ import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
+import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetArgs;
+import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetManagedInstancesArgs;
+import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetManagedInstancesPlainArgs;
+import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetPlainArgs;
+import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetsArgs;
+import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetsPlainArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetEntitlementsArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetEntitlementsPlainArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetErrataArgs;
@@ -44,6 +50,8 @@ import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupAvailableSof
 import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupAvailableSoftwareSourcesPlainArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupInstalledPackagesArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupInstalledPackagesPlainArgs;
+import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupManagedInstancesArgs;
+import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupManagedInstancesPlainArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupModulesArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupModulesPlainArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupPlainArgs;
@@ -56,6 +64,8 @@ import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceInstalledWindowsU
 import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceModulesArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceModulesPlainArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstancePlainArgs;
+import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceSnapsArgs;
+import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceSnapsPlainArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceUpdatablePackagesArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceUpdatablePackagesPlainArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstancesArgs;
@@ -114,6 +124,9 @@ import com.pulumi.oci.OsManagementHub.inputs.GetWindowsUpdateArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetWindowsUpdatePlainArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetWindowsUpdatesArgs;
 import com.pulumi.oci.OsManagementHub.inputs.GetWindowsUpdatesPlainArgs;
+import com.pulumi.oci.OsManagementHub.outputs.GetDynamicSetManagedInstancesResult;
+import com.pulumi.oci.OsManagementHub.outputs.GetDynamicSetResult;
+import com.pulumi.oci.OsManagementHub.outputs.GetDynamicSetsResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetEntitlementsResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetErrataResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetErratumResult;
@@ -131,6 +144,7 @@ import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceGroupAvailableMo
 import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceGroupAvailablePackagesResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceGroupAvailableSoftwareSourcesResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceGroupInstalledPackagesResult;
+import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceGroupManagedInstancesResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceGroupModulesResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceGroupResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceGroupsResult;
@@ -138,6 +152,7 @@ import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceInstalledPackage
 import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceInstalledWindowsUpdatesResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceModulesResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceResult;
+import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceSnapsResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceUpdatablePackagesResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstancesResult;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationMirrorsResult;
@@ -171,6 +186,761 @@ import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class OsManagementHubFunctions {
+    /**
+     * This data source provides details about a specific Dynamic Set resource in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Gets information about the specified dynamic set.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDynamicSet = OsManagementHubFunctions.getDynamicSet(GetDynamicSetArgs.builder()
+     *             .dynamicSetId(testDynamicSetOciOsManagementHubDynamicSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDynamicSetResult> getDynamicSet(GetDynamicSetArgs args) {
+        return getDynamicSet(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Dynamic Set resource in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Gets information about the specified dynamic set.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDynamicSet = OsManagementHubFunctions.getDynamicSet(GetDynamicSetArgs.builder()
+     *             .dynamicSetId(testDynamicSetOciOsManagementHubDynamicSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDynamicSetResult> getDynamicSetPlain(GetDynamicSetPlainArgs args) {
+        return getDynamicSetPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Dynamic Set resource in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Gets information about the specified dynamic set.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDynamicSet = OsManagementHubFunctions.getDynamicSet(GetDynamicSetArgs.builder()
+     *             .dynamicSetId(testDynamicSetOciOsManagementHubDynamicSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDynamicSetResult> getDynamicSet(GetDynamicSetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagementHub/getDynamicSet:getDynamicSet", TypeShape.of(GetDynamicSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Dynamic Set resource in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Gets information about the specified dynamic set.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDynamicSet = OsManagementHubFunctions.getDynamicSet(GetDynamicSetArgs.builder()
+     *             .dynamicSetId(testDynamicSetOciOsManagementHubDynamicSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDynamicSetResult> getDynamicSet(GetDynamicSetArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagementHub/getDynamicSet:getDynamicSet", TypeShape.of(GetDynamicSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Dynamic Set resource in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Gets information about the specified dynamic set.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDynamicSet = OsManagementHubFunctions.getDynamicSet(GetDynamicSetArgs.builder()
+     *             .dynamicSetId(testDynamicSetOciOsManagementHubDynamicSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDynamicSetResult> getDynamicSetPlain(GetDynamicSetPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:OsManagementHub/getDynamicSet:getDynamicSet", TypeShape.of(GetDynamicSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Dynamic Set Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Retrieves a list of managed instances associated with a specified dynamic set.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDynamicSetManagedInstances = OsManagementHubFunctions.getDynamicSetManagedInstances(GetDynamicSetManagedInstancesArgs.builder()
+     *             .dynamicSetId(testDynamicSet.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(dynamicSetManagedInstanceCompartmentIdInSubtree)
+     *             .displayName(dynamicSetManagedInstanceDisplayName)
+     *             .displayNameContains(dynamicSetManagedInstanceDisplayNameContains)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDynamicSetManagedInstancesResult> getDynamicSetManagedInstances(GetDynamicSetManagedInstancesArgs args) {
+        return getDynamicSetManagedInstances(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Dynamic Set Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Retrieves a list of managed instances associated with a specified dynamic set.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDynamicSetManagedInstances = OsManagementHubFunctions.getDynamicSetManagedInstances(GetDynamicSetManagedInstancesArgs.builder()
+     *             .dynamicSetId(testDynamicSet.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(dynamicSetManagedInstanceCompartmentIdInSubtree)
+     *             .displayName(dynamicSetManagedInstanceDisplayName)
+     *             .displayNameContains(dynamicSetManagedInstanceDisplayNameContains)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDynamicSetManagedInstancesResult> getDynamicSetManagedInstancesPlain(GetDynamicSetManagedInstancesPlainArgs args) {
+        return getDynamicSetManagedInstancesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Dynamic Set Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Retrieves a list of managed instances associated with a specified dynamic set.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDynamicSetManagedInstances = OsManagementHubFunctions.getDynamicSetManagedInstances(GetDynamicSetManagedInstancesArgs.builder()
+     *             .dynamicSetId(testDynamicSet.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(dynamicSetManagedInstanceCompartmentIdInSubtree)
+     *             .displayName(dynamicSetManagedInstanceDisplayName)
+     *             .displayNameContains(dynamicSetManagedInstanceDisplayNameContains)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDynamicSetManagedInstancesResult> getDynamicSetManagedInstances(GetDynamicSetManagedInstancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagementHub/getDynamicSetManagedInstances:getDynamicSetManagedInstances", TypeShape.of(GetDynamicSetManagedInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Dynamic Set Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Retrieves a list of managed instances associated with a specified dynamic set.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDynamicSetManagedInstances = OsManagementHubFunctions.getDynamicSetManagedInstances(GetDynamicSetManagedInstancesArgs.builder()
+     *             .dynamicSetId(testDynamicSet.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(dynamicSetManagedInstanceCompartmentIdInSubtree)
+     *             .displayName(dynamicSetManagedInstanceDisplayName)
+     *             .displayNameContains(dynamicSetManagedInstanceDisplayNameContains)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDynamicSetManagedInstancesResult> getDynamicSetManagedInstances(GetDynamicSetManagedInstancesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagementHub/getDynamicSetManagedInstances:getDynamicSetManagedInstances", TypeShape.of(GetDynamicSetManagedInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Dynamic Set Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Retrieves a list of managed instances associated with a specified dynamic set.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDynamicSetManagedInstances = OsManagementHubFunctions.getDynamicSetManagedInstances(GetDynamicSetManagedInstancesArgs.builder()
+     *             .dynamicSetId(testDynamicSet.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(dynamicSetManagedInstanceCompartmentIdInSubtree)
+     *             .displayName(dynamicSetManagedInstanceDisplayName)
+     *             .displayNameContains(dynamicSetManagedInstanceDisplayNameContains)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDynamicSetManagedInstancesResult> getDynamicSetManagedInstancesPlain(GetDynamicSetManagedInstancesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:OsManagementHub/getDynamicSetManagedInstances:getDynamicSetManagedInstances", TypeShape.of(GetDynamicSetManagedInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Dynamic Sets in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Lists dynamic sets that match the specified compartment or dynamic set OCID. Filter the list against a variety of criteria including but not limited to its name, status, architecture, and OS version.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDynamicSets = OsManagementHubFunctions.getDynamicSets(GetDynamicSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(dynamicSetDisplayName)
+     *             .displayNameContains(dynamicSetDisplayNameContains)
+     *             .dynamicSetId(testDynamicSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDynamicSetsResult> getDynamicSets() {
+        return getDynamicSets(GetDynamicSetsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Dynamic Sets in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Lists dynamic sets that match the specified compartment or dynamic set OCID. Filter the list against a variety of criteria including but not limited to its name, status, architecture, and OS version.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDynamicSets = OsManagementHubFunctions.getDynamicSets(GetDynamicSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(dynamicSetDisplayName)
+     *             .displayNameContains(dynamicSetDisplayNameContains)
+     *             .dynamicSetId(testDynamicSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDynamicSetsResult> getDynamicSetsPlain() {
+        return getDynamicSetsPlain(GetDynamicSetsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Dynamic Sets in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Lists dynamic sets that match the specified compartment or dynamic set OCID. Filter the list against a variety of criteria including but not limited to its name, status, architecture, and OS version.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDynamicSets = OsManagementHubFunctions.getDynamicSets(GetDynamicSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(dynamicSetDisplayName)
+     *             .displayNameContains(dynamicSetDisplayNameContains)
+     *             .dynamicSetId(testDynamicSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDynamicSetsResult> getDynamicSets(GetDynamicSetsArgs args) {
+        return getDynamicSets(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Dynamic Sets in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Lists dynamic sets that match the specified compartment or dynamic set OCID. Filter the list against a variety of criteria including but not limited to its name, status, architecture, and OS version.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDynamicSets = OsManagementHubFunctions.getDynamicSets(GetDynamicSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(dynamicSetDisplayName)
+     *             .displayNameContains(dynamicSetDisplayNameContains)
+     *             .dynamicSetId(testDynamicSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDynamicSetsResult> getDynamicSetsPlain(GetDynamicSetsPlainArgs args) {
+        return getDynamicSetsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Dynamic Sets in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Lists dynamic sets that match the specified compartment or dynamic set OCID. Filter the list against a variety of criteria including but not limited to its name, status, architecture, and OS version.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDynamicSets = OsManagementHubFunctions.getDynamicSets(GetDynamicSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(dynamicSetDisplayName)
+     *             .displayNameContains(dynamicSetDisplayNameContains)
+     *             .dynamicSetId(testDynamicSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDynamicSetsResult> getDynamicSets(GetDynamicSetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagementHub/getDynamicSets:getDynamicSets", TypeShape.of(GetDynamicSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Dynamic Sets in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Lists dynamic sets that match the specified compartment or dynamic set OCID. Filter the list against a variety of criteria including but not limited to its name, status, architecture, and OS version.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDynamicSets = OsManagementHubFunctions.getDynamicSets(GetDynamicSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(dynamicSetDisplayName)
+     *             .displayNameContains(dynamicSetDisplayNameContains)
+     *             .dynamicSetId(testDynamicSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDynamicSetsResult> getDynamicSets(GetDynamicSetsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagementHub/getDynamicSets:getDynamicSets", TypeShape.of(GetDynamicSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Dynamic Sets in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Lists dynamic sets that match the specified compartment or dynamic set OCID. Filter the list against a variety of criteria including but not limited to its name, status, architecture, and OS version.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetDynamicSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDynamicSets = OsManagementHubFunctions.getDynamicSets(GetDynamicSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(dynamicSetDisplayName)
+     *             .displayNameContains(dynamicSetDisplayNameContains)
+     *             .dynamicSetId(testDynamicSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDynamicSetsResult> getDynamicSetsPlain(GetDynamicSetsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:OsManagementHub/getDynamicSets:getDynamicSets", TypeShape.of(GetDynamicSetsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides the list of Entitlements in Oracle Cloud Infrastructure Os Management Hub service.
      * 
@@ -397,10 +1167,9 @@ public final class OsManagementHubFunctions {
         return Deployment.getInstance().invokeAsync("oci:OsManagementHub/getEntitlements:getEntitlements", TypeShape.of(GetEntitlementsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
+     * This data source provides details about a specific Errata resource in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Lists all of the currently available errata. Filter the list against a variety of criteria including but not
-     * limited to its name, classification type, advisory severity, and OS family.
+     * Returns information about the specified erratum based on its advisory name.
      * 
      * ## Example Usage
      * 
@@ -428,14 +1197,7 @@ public final class OsManagementHubFunctions {
      *     public static void stack(Context ctx) {
      *         final var testErrata = OsManagementHubFunctions.getErrata(GetErrataArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .advisorySeverities(erratumAdvisorySeverity)
-     *             .advisoryTypes(erratumAdvisoryType)
-     *             .classificationTypes(erratumClassificationType)
-     *             .names(erratumName)
-     *             .nameContains(erratumNameContains)
-     *             .osFamily(erratumOsFamily)
-     *             .timeIssueDateEnd(erratumTimeIssueDateEnd)
-     *             .timeIssueDateStart(erratumTimeIssueDateStart)
+     *             .names(errataName)
      *             .build());
      * 
      *     }
@@ -448,10 +1210,9 @@ public final class OsManagementHubFunctions {
         return getErrata(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
+     * This data source provides details about a specific Errata resource in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Lists all of the currently available errata. Filter the list against a variety of criteria including but not
-     * limited to its name, classification type, advisory severity, and OS family.
+     * Returns information about the specified erratum based on its advisory name.
      * 
      * ## Example Usage
      * 
@@ -479,14 +1240,7 @@ public final class OsManagementHubFunctions {
      *     public static void stack(Context ctx) {
      *         final var testErrata = OsManagementHubFunctions.getErrata(GetErrataArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .advisorySeverities(erratumAdvisorySeverity)
-     *             .advisoryTypes(erratumAdvisoryType)
-     *             .classificationTypes(erratumClassificationType)
-     *             .names(erratumName)
-     *             .nameContains(erratumNameContains)
-     *             .osFamily(erratumOsFamily)
-     *             .timeIssueDateEnd(erratumTimeIssueDateEnd)
-     *             .timeIssueDateStart(erratumTimeIssueDateStart)
+     *             .names(errataName)
      *             .build());
      * 
      *     }
@@ -499,10 +1253,9 @@ public final class OsManagementHubFunctions {
         return getErrataPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
+     * This data source provides details about a specific Errata resource in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Lists all of the currently available errata. Filter the list against a variety of criteria including but not
-     * limited to its name, classification type, advisory severity, and OS family.
+     * Returns information about the specified erratum based on its advisory name.
      * 
      * ## Example Usage
      * 
@@ -530,14 +1283,7 @@ public final class OsManagementHubFunctions {
      *     public static void stack(Context ctx) {
      *         final var testErrata = OsManagementHubFunctions.getErrata(GetErrataArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .advisorySeverities(erratumAdvisorySeverity)
-     *             .advisoryTypes(erratumAdvisoryType)
-     *             .classificationTypes(erratumClassificationType)
-     *             .names(erratumName)
-     *             .nameContains(erratumNameContains)
-     *             .osFamily(erratumOsFamily)
-     *             .timeIssueDateEnd(erratumTimeIssueDateEnd)
-     *             .timeIssueDateStart(erratumTimeIssueDateStart)
+     *             .names(errataName)
      *             .build());
      * 
      *     }
@@ -550,10 +1296,9 @@ public final class OsManagementHubFunctions {
         return Deployment.getInstance().invoke("oci:OsManagementHub/getErrata:getErrata", TypeShape.of(GetErrataResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
+     * This data source provides details about a specific Errata resource in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Lists all of the currently available errata. Filter the list against a variety of criteria including but not
-     * limited to its name, classification type, advisory severity, and OS family.
+     * Returns information about the specified erratum based on its advisory name.
      * 
      * ## Example Usage
      * 
@@ -581,14 +1326,7 @@ public final class OsManagementHubFunctions {
      *     public static void stack(Context ctx) {
      *         final var testErrata = OsManagementHubFunctions.getErrata(GetErrataArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .advisorySeverities(erratumAdvisorySeverity)
-     *             .advisoryTypes(erratumAdvisoryType)
-     *             .classificationTypes(erratumClassificationType)
-     *             .names(erratumName)
-     *             .nameContains(erratumNameContains)
-     *             .osFamily(erratumOsFamily)
-     *             .timeIssueDateEnd(erratumTimeIssueDateEnd)
-     *             .timeIssueDateStart(erratumTimeIssueDateStart)
+     *             .names(errataName)
      *             .build());
      * 
      *     }
@@ -601,10 +1339,9 @@ public final class OsManagementHubFunctions {
         return Deployment.getInstance().invoke("oci:OsManagementHub/getErrata:getErrata", TypeShape.of(GetErrataResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Errata in Oracle Cloud Infrastructure Os Management Hub service.
+     * This data source provides details about a specific Errata resource in Oracle Cloud Infrastructure Os Management Hub service.
      * 
-     * Lists all of the currently available errata. Filter the list against a variety of criteria including but not
-     * limited to its name, classification type, advisory severity, and OS family.
+     * Returns information about the specified erratum based on its advisory name.
      * 
      * ## Example Usage
      * 
@@ -632,14 +1369,7 @@ public final class OsManagementHubFunctions {
      *     public static void stack(Context ctx) {
      *         final var testErrata = OsManagementHubFunctions.getErrata(GetErrataArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .advisorySeverities(erratumAdvisorySeverity)
-     *             .advisoryTypes(erratumAdvisoryType)
-     *             .classificationTypes(erratumClassificationType)
-     *             .names(erratumName)
-     *             .nameContains(erratumNameContains)
-     *             .osFamily(erratumOsFamily)
-     *             .timeIssueDateEnd(erratumTimeIssueDateEnd)
-     *             .timeIssueDateStart(erratumTimeIssueDateStart)
+     *             .names(errataName)
      *             .build());
      * 
      *     }
@@ -2222,48 +2952,6 @@ public final class OsManagementHubFunctions {
      * 
      * Lists lifecycle stages that match the specified compartment or lifecycle stage [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against
      * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
-     * import com.pulumi.oci.OsManagementHub.inputs.GetLifecycleStagesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testLifecycleStages = OsManagementHubFunctions.getLifecycleStages(GetLifecycleStagesArgs.builder()
-     *             .archType(lifecycleStageArchType)
-     *             .compartmentId(compartmentId)
-     *             .displayNames(lifecycleStageDisplayName)
-     *             .displayNameContains(lifecycleStageDisplayNameContains)
-     *             .lifecycleStageId(testLifecycleStage.id())
-     *             .locations(lifecycleStageLocation)
-     *             .locationNotEqualTos(lifecycleStageLocationNotEqualTo)
-     *             .osFamily(lifecycleStageOsFamily)
-     *             .softwareSourceId(lifecycleStageSoftwareSourceId)
-     *             .state(lifecycleStageState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
      */
     public static Output<GetLifecycleStagesResult> getLifecycleStages() {
         return getLifecycleStages(GetLifecycleStagesArgs.Empty, InvokeOptions.Empty);
@@ -2272,48 +2960,6 @@ public final class OsManagementHubFunctions {
      * This data source provides the list of Lifecycle Stages in Oracle Cloud Infrastructure Os Management Hub service.
      * 
      * Lists lifecycle stages that match the specified compartment or lifecycle stage [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
-     * import com.pulumi.oci.OsManagementHub.inputs.GetLifecycleStagesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testLifecycleStages = OsManagementHubFunctions.getLifecycleStages(GetLifecycleStagesArgs.builder()
-     *             .archType(lifecycleStageArchType)
-     *             .compartmentId(compartmentId)
-     *             .displayNames(lifecycleStageDisplayName)
-     *             .displayNameContains(lifecycleStageDisplayNameContains)
-     *             .lifecycleStageId(testLifecycleStage.id())
-     *             .locations(lifecycleStageLocation)
-     *             .locationNotEqualTos(lifecycleStageLocationNotEqualTo)
-     *             .osFamily(lifecycleStageOsFamily)
-     *             .softwareSourceId(lifecycleStageSoftwareSourceId)
-     *             .state(lifecycleStageState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * 
      */
     public static CompletableFuture<GetLifecycleStagesResult> getLifecycleStagesPlain() {
@@ -2324,48 +2970,6 @@ public final class OsManagementHubFunctions {
      * 
      * Lists lifecycle stages that match the specified compartment or lifecycle stage [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against
      * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
-     * import com.pulumi.oci.OsManagementHub.inputs.GetLifecycleStagesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testLifecycleStages = OsManagementHubFunctions.getLifecycleStages(GetLifecycleStagesArgs.builder()
-     *             .archType(lifecycleStageArchType)
-     *             .compartmentId(compartmentId)
-     *             .displayNames(lifecycleStageDisplayName)
-     *             .displayNameContains(lifecycleStageDisplayNameContains)
-     *             .lifecycleStageId(testLifecycleStage.id())
-     *             .locations(lifecycleStageLocation)
-     *             .locationNotEqualTos(lifecycleStageLocationNotEqualTo)
-     *             .osFamily(lifecycleStageOsFamily)
-     *             .softwareSourceId(lifecycleStageSoftwareSourceId)
-     *             .state(lifecycleStageState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
      */
     public static Output<GetLifecycleStagesResult> getLifecycleStages(GetLifecycleStagesArgs args) {
         return getLifecycleStages(args, InvokeOptions.Empty);
@@ -2374,48 +2978,6 @@ public final class OsManagementHubFunctions {
      * This data source provides the list of Lifecycle Stages in Oracle Cloud Infrastructure Os Management Hub service.
      * 
      * Lists lifecycle stages that match the specified compartment or lifecycle stage [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
-     * import com.pulumi.oci.OsManagementHub.inputs.GetLifecycleStagesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testLifecycleStages = OsManagementHubFunctions.getLifecycleStages(GetLifecycleStagesArgs.builder()
-     *             .archType(lifecycleStageArchType)
-     *             .compartmentId(compartmentId)
-     *             .displayNames(lifecycleStageDisplayName)
-     *             .displayNameContains(lifecycleStageDisplayNameContains)
-     *             .lifecycleStageId(testLifecycleStage.id())
-     *             .locations(lifecycleStageLocation)
-     *             .locationNotEqualTos(lifecycleStageLocationNotEqualTo)
-     *             .osFamily(lifecycleStageOsFamily)
-     *             .softwareSourceId(lifecycleStageSoftwareSourceId)
-     *             .state(lifecycleStageState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * 
      */
     public static CompletableFuture<GetLifecycleStagesResult> getLifecycleStagesPlain(GetLifecycleStagesPlainArgs args) {
@@ -2426,48 +2988,6 @@ public final class OsManagementHubFunctions {
      * 
      * Lists lifecycle stages that match the specified compartment or lifecycle stage [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against
      * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
-     * import com.pulumi.oci.OsManagementHub.inputs.GetLifecycleStagesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testLifecycleStages = OsManagementHubFunctions.getLifecycleStages(GetLifecycleStagesArgs.builder()
-     *             .archType(lifecycleStageArchType)
-     *             .compartmentId(compartmentId)
-     *             .displayNames(lifecycleStageDisplayName)
-     *             .displayNameContains(lifecycleStageDisplayNameContains)
-     *             .lifecycleStageId(testLifecycleStage.id())
-     *             .locations(lifecycleStageLocation)
-     *             .locationNotEqualTos(lifecycleStageLocationNotEqualTo)
-     *             .osFamily(lifecycleStageOsFamily)
-     *             .softwareSourceId(lifecycleStageSoftwareSourceId)
-     *             .state(lifecycleStageState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
      */
     public static Output<GetLifecycleStagesResult> getLifecycleStages(GetLifecycleStagesArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:OsManagementHub/getLifecycleStages:getLifecycleStages", TypeShape.of(GetLifecycleStagesResult.class), args, Utilities.withVersion(options));
@@ -2477,48 +2997,6 @@ public final class OsManagementHubFunctions {
      * 
      * Lists lifecycle stages that match the specified compartment or lifecycle stage [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against
      * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
-     * import com.pulumi.oci.OsManagementHub.inputs.GetLifecycleStagesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testLifecycleStages = OsManagementHubFunctions.getLifecycleStages(GetLifecycleStagesArgs.builder()
-     *             .archType(lifecycleStageArchType)
-     *             .compartmentId(compartmentId)
-     *             .displayNames(lifecycleStageDisplayName)
-     *             .displayNameContains(lifecycleStageDisplayNameContains)
-     *             .lifecycleStageId(testLifecycleStage.id())
-     *             .locations(lifecycleStageLocation)
-     *             .locationNotEqualTos(lifecycleStageLocationNotEqualTo)
-     *             .osFamily(lifecycleStageOsFamily)
-     *             .softwareSourceId(lifecycleStageSoftwareSourceId)
-     *             .state(lifecycleStageState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
-     * 
      */
     public static Output<GetLifecycleStagesResult> getLifecycleStages(GetLifecycleStagesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:OsManagementHub/getLifecycleStages:getLifecycleStages", TypeShape.of(GetLifecycleStagesResult.class), args, Utilities.withVersion(options));
@@ -2527,48 +3005,6 @@ public final class OsManagementHubFunctions {
      * This data source provides the list of Lifecycle Stages in Oracle Cloud Infrastructure Os Management Hub service.
      * 
      * Lists lifecycle stages that match the specified compartment or lifecycle stage [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against
-     * 
-     * ## Example Usage
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
-     * import com.pulumi.oci.OsManagementHub.inputs.GetLifecycleStagesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testLifecycleStages = OsManagementHubFunctions.getLifecycleStages(GetLifecycleStagesArgs.builder()
-     *             .archType(lifecycleStageArchType)
-     *             .compartmentId(compartmentId)
-     *             .displayNames(lifecycleStageDisplayName)
-     *             .displayNameContains(lifecycleStageDisplayNameContains)
-     *             .lifecycleStageId(testLifecycleStage.id())
-     *             .locations(lifecycleStageLocation)
-     *             .locationNotEqualTos(lifecycleStageLocationNotEqualTo)
-     *             .osFamily(lifecycleStageOsFamily)
-     *             .softwareSourceId(lifecycleStageSoftwareSourceId)
-     *             .state(lifecycleStageState)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * 
      */
     public static CompletableFuture<GetLifecycleStagesResult> getLifecycleStagesPlain(GetLifecycleStagesPlainArgs args, InvokeOptions options) {
@@ -4840,6 +5276,241 @@ public final class OsManagementHubFunctions {
         return Deployment.getInstance().invokeAsync("oci:OsManagementHub/getManagedInstanceGroupInstalledPackages:getManagedInstanceGroupInstalledPackages", TypeShape.of(GetManagedInstanceGroupInstalledPackagesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Managed Instance Group Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Lists all managed instances for a specified managed instance group. Filter the list against a variety of criteria including but not limited to the managed instance name. The results list all managed instances that have already been added to the group.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceGroupManagedInstances = OsManagementHubFunctions.getManagedInstanceGroupManagedInstances(GetManagedInstanceGroupManagedInstancesArgs.builder()
+     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(managedInstanceGroupManagedInstanceCompartmentIdInSubtree)
+     *             .displayNames(managedInstanceGroupManagedInstanceDisplayName)
+     *             .displayNameContains(managedInstanceGroupManagedInstanceDisplayNameContains)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetManagedInstanceGroupManagedInstancesResult> getManagedInstanceGroupManagedInstances(GetManagedInstanceGroupManagedInstancesArgs args) {
+        return getManagedInstanceGroupManagedInstances(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Instance Group Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Lists all managed instances for a specified managed instance group. Filter the list against a variety of criteria including but not limited to the managed instance name. The results list all managed instances that have already been added to the group.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceGroupManagedInstances = OsManagementHubFunctions.getManagedInstanceGroupManagedInstances(GetManagedInstanceGroupManagedInstancesArgs.builder()
+     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(managedInstanceGroupManagedInstanceCompartmentIdInSubtree)
+     *             .displayNames(managedInstanceGroupManagedInstanceDisplayName)
+     *             .displayNameContains(managedInstanceGroupManagedInstanceDisplayNameContains)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetManagedInstanceGroupManagedInstancesResult> getManagedInstanceGroupManagedInstancesPlain(GetManagedInstanceGroupManagedInstancesPlainArgs args) {
+        return getManagedInstanceGroupManagedInstancesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Instance Group Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Lists all managed instances for a specified managed instance group. Filter the list against a variety of criteria including but not limited to the managed instance name. The results list all managed instances that have already been added to the group.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceGroupManagedInstances = OsManagementHubFunctions.getManagedInstanceGroupManagedInstances(GetManagedInstanceGroupManagedInstancesArgs.builder()
+     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(managedInstanceGroupManagedInstanceCompartmentIdInSubtree)
+     *             .displayNames(managedInstanceGroupManagedInstanceDisplayName)
+     *             .displayNameContains(managedInstanceGroupManagedInstanceDisplayNameContains)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetManagedInstanceGroupManagedInstancesResult> getManagedInstanceGroupManagedInstances(GetManagedInstanceGroupManagedInstancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagementHub/getManagedInstanceGroupManagedInstances:getManagedInstanceGroupManagedInstances", TypeShape.of(GetManagedInstanceGroupManagedInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Instance Group Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Lists all managed instances for a specified managed instance group. Filter the list against a variety of criteria including but not limited to the managed instance name. The results list all managed instances that have already been added to the group.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceGroupManagedInstances = OsManagementHubFunctions.getManagedInstanceGroupManagedInstances(GetManagedInstanceGroupManagedInstancesArgs.builder()
+     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(managedInstanceGroupManagedInstanceCompartmentIdInSubtree)
+     *             .displayNames(managedInstanceGroupManagedInstanceDisplayName)
+     *             .displayNameContains(managedInstanceGroupManagedInstanceDisplayNameContains)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetManagedInstanceGroupManagedInstancesResult> getManagedInstanceGroupManagedInstances(GetManagedInstanceGroupManagedInstancesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagementHub/getManagedInstanceGroupManagedInstances:getManagedInstanceGroupManagedInstances", TypeShape.of(GetManagedInstanceGroupManagedInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Instance Group Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Lists all managed instances for a specified managed instance group. Filter the list against a variety of criteria including but not limited to the managed instance name. The results list all managed instances that have already been added to the group.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceGroupManagedInstances = OsManagementHubFunctions.getManagedInstanceGroupManagedInstances(GetManagedInstanceGroupManagedInstancesArgs.builder()
+     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(managedInstanceGroupManagedInstanceCompartmentIdInSubtree)
+     *             .displayNames(managedInstanceGroupManagedInstanceDisplayName)
+     *             .displayNameContains(managedInstanceGroupManagedInstanceDisplayNameContains)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetManagedInstanceGroupManagedInstancesResult> getManagedInstanceGroupManagedInstancesPlain(GetManagedInstanceGroupManagedInstancesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:OsManagementHub/getManagedInstanceGroupManagedInstances:getManagedInstanceGroupManagedInstances", TypeShape.of(GetManagedInstanceGroupManagedInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Managed Instance Group Modules in Oracle Cloud Infrastructure Os Management Hub service.
      * 
      * Retrieve a list of module streams, along with a summary of their
@@ -6224,6 +6895,231 @@ public final class OsManagementHubFunctions {
         return Deployment.getInstance().invokeAsync("oci:OsManagementHub/getManagedInstanceModules:getManagedInstanceModules", TypeShape.of(GetManagedInstanceModulesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Managed Instance Snaps in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Retrieves a list of snaps for a managed instance. Filters may be applied to select a subset of snaps based on the filter criteria.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceSnapsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceSnaps = OsManagementHubFunctions.getManagedInstanceSnaps(GetManagedInstanceSnapsArgs.builder()
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .compartmentId(compartmentId)
+     *             .name(managedInstanceSnapName)
+     *             .nameContains(managedInstanceSnapNameContains)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetManagedInstanceSnapsResult> getManagedInstanceSnaps(GetManagedInstanceSnapsArgs args) {
+        return getManagedInstanceSnaps(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Instance Snaps in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Retrieves a list of snaps for a managed instance. Filters may be applied to select a subset of snaps based on the filter criteria.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceSnapsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceSnaps = OsManagementHubFunctions.getManagedInstanceSnaps(GetManagedInstanceSnapsArgs.builder()
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .compartmentId(compartmentId)
+     *             .name(managedInstanceSnapName)
+     *             .nameContains(managedInstanceSnapNameContains)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetManagedInstanceSnapsResult> getManagedInstanceSnapsPlain(GetManagedInstanceSnapsPlainArgs args) {
+        return getManagedInstanceSnapsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Instance Snaps in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Retrieves a list of snaps for a managed instance. Filters may be applied to select a subset of snaps based on the filter criteria.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceSnapsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceSnaps = OsManagementHubFunctions.getManagedInstanceSnaps(GetManagedInstanceSnapsArgs.builder()
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .compartmentId(compartmentId)
+     *             .name(managedInstanceSnapName)
+     *             .nameContains(managedInstanceSnapNameContains)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetManagedInstanceSnapsResult> getManagedInstanceSnaps(GetManagedInstanceSnapsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagementHub/getManagedInstanceSnaps:getManagedInstanceSnaps", TypeShape.of(GetManagedInstanceSnapsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Instance Snaps in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Retrieves a list of snaps for a managed instance. Filters may be applied to select a subset of snaps based on the filter criteria.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceSnapsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceSnaps = OsManagementHubFunctions.getManagedInstanceSnaps(GetManagedInstanceSnapsArgs.builder()
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .compartmentId(compartmentId)
+     *             .name(managedInstanceSnapName)
+     *             .nameContains(managedInstanceSnapNameContains)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetManagedInstanceSnapsResult> getManagedInstanceSnaps(GetManagedInstanceSnapsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagementHub/getManagedInstanceSnaps:getManagedInstanceSnaps", TypeShape.of(GetManagedInstanceSnapsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Instance Snaps in Oracle Cloud Infrastructure Os Management Hub service.
+     * 
+     * Retrieves a list of snaps for a managed instance. Filters may be applied to select a subset of snaps based on the filter criteria.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagementHub.OsManagementHubFunctions;
+     * import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceSnapsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceSnaps = OsManagementHubFunctions.getManagedInstanceSnaps(GetManagedInstanceSnapsArgs.builder()
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .compartmentId(compartmentId)
+     *             .name(managedInstanceSnapName)
+     *             .nameContains(managedInstanceSnapNameContains)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetManagedInstanceSnapsResult> getManagedInstanceSnapsPlain(GetManagedInstanceSnapsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:OsManagementHub/getManagedInstanceSnaps:getManagedInstanceSnaps", TypeShape.of(GetManagedInstanceSnapsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Managed Instance Updatable Packages in Oracle Cloud Infrastructure Os Management Hub service.
      * 
      * Returns a list of updatable packages for a managed instance.
@@ -6255,6 +7151,7 @@ public final class OsManagementHubFunctions {
      *         final var testManagedInstanceUpdatablePackages = OsManagementHubFunctions.getManagedInstanceUpdatablePackages(GetManagedInstanceUpdatablePackagesArgs.builder()
      *             .managedInstanceId(testManagedInstance.id())
      *             .advisoryNames(managedInstanceUpdatablePackageAdvisoryName)
+     *             .advisorySeverities(managedInstanceUpdatablePackageAdvisorySeverity)
      *             .classificationTypes(managedInstanceUpdatablePackageClassificationType)
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceUpdatablePackageDisplayName)
@@ -6302,6 +7199,7 @@ public final class OsManagementHubFunctions {
      *         final var testManagedInstanceUpdatablePackages = OsManagementHubFunctions.getManagedInstanceUpdatablePackages(GetManagedInstanceUpdatablePackagesArgs.builder()
      *             .managedInstanceId(testManagedInstance.id())
      *             .advisoryNames(managedInstanceUpdatablePackageAdvisoryName)
+     *             .advisorySeverities(managedInstanceUpdatablePackageAdvisorySeverity)
      *             .classificationTypes(managedInstanceUpdatablePackageClassificationType)
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceUpdatablePackageDisplayName)
@@ -6349,6 +7247,7 @@ public final class OsManagementHubFunctions {
      *         final var testManagedInstanceUpdatablePackages = OsManagementHubFunctions.getManagedInstanceUpdatablePackages(GetManagedInstanceUpdatablePackagesArgs.builder()
      *             .managedInstanceId(testManagedInstance.id())
      *             .advisoryNames(managedInstanceUpdatablePackageAdvisoryName)
+     *             .advisorySeverities(managedInstanceUpdatablePackageAdvisorySeverity)
      *             .classificationTypes(managedInstanceUpdatablePackageClassificationType)
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceUpdatablePackageDisplayName)
@@ -6396,6 +7295,7 @@ public final class OsManagementHubFunctions {
      *         final var testManagedInstanceUpdatablePackages = OsManagementHubFunctions.getManagedInstanceUpdatablePackages(GetManagedInstanceUpdatablePackagesArgs.builder()
      *             .managedInstanceId(testManagedInstance.id())
      *             .advisoryNames(managedInstanceUpdatablePackageAdvisoryName)
+     *             .advisorySeverities(managedInstanceUpdatablePackageAdvisorySeverity)
      *             .classificationTypes(managedInstanceUpdatablePackageClassificationType)
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceUpdatablePackageDisplayName)
@@ -6443,6 +7343,7 @@ public final class OsManagementHubFunctions {
      *         final var testManagedInstanceUpdatablePackages = OsManagementHubFunctions.getManagedInstanceUpdatablePackages(GetManagedInstanceUpdatablePackagesArgs.builder()
      *             .managedInstanceId(testManagedInstance.id())
      *             .advisoryNames(managedInstanceUpdatablePackageAdvisoryName)
+     *             .advisorySeverities(managedInstanceUpdatablePackageAdvisorySeverity)
      *             .classificationTypes(managedInstanceUpdatablePackageClassificationType)
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceUpdatablePackageDisplayName)
@@ -6990,6 +7891,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(managementStationDisplayName)
      *             .displayNameContains(managementStationDisplayNameContains)
+     *             .healthState(managementStationHealthState)
      *             .id(managementStationId)
      *             .locations(managementStationLocation)
      *             .locationNotEqualTos(managementStationLocationNotEqualTo)
@@ -7040,6 +7942,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(managementStationDisplayName)
      *             .displayNameContains(managementStationDisplayNameContains)
+     *             .healthState(managementStationHealthState)
      *             .id(managementStationId)
      *             .locations(managementStationLocation)
      *             .locationNotEqualTos(managementStationLocationNotEqualTo)
@@ -7090,6 +7993,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(managementStationDisplayName)
      *             .displayNameContains(managementStationDisplayNameContains)
+     *             .healthState(managementStationHealthState)
      *             .id(managementStationId)
      *             .locations(managementStationLocation)
      *             .locationNotEqualTos(managementStationLocationNotEqualTo)
@@ -7140,6 +8044,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(managementStationDisplayName)
      *             .displayNameContains(managementStationDisplayNameContains)
+     *             .healthState(managementStationHealthState)
      *             .id(managementStationId)
      *             .locations(managementStationLocation)
      *             .locationNotEqualTos(managementStationLocationNotEqualTo)
@@ -7190,6 +8095,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(managementStationDisplayName)
      *             .displayNameContains(managementStationDisplayNameContains)
+     *             .healthState(managementStationHealthState)
      *             .id(managementStationId)
      *             .locations(managementStationLocation)
      *             .locationNotEqualTos(managementStationLocationNotEqualTo)
@@ -7240,6 +8146,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(managementStationDisplayName)
      *             .displayNameContains(managementStationDisplayNameContains)
+     *             .healthState(managementStationHealthState)
      *             .id(managementStationId)
      *             .locations(managementStationLocation)
      *             .locationNotEqualTos(managementStationLocationNotEqualTo)
@@ -7290,6 +8197,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(managementStationDisplayName)
      *             .displayNameContains(managementStationDisplayNameContains)
+     *             .healthState(managementStationHealthState)
      *             .id(managementStationId)
      *             .locations(managementStationLocation)
      *             .locationNotEqualTos(managementStationLocationNotEqualTo)
@@ -8599,6 +9507,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentIdInSubtree(scheduledJobCompartmentIdInSubtree)
      *             .displayName(scheduledJobDisplayName)
      *             .displayNameContains(scheduledJobDisplayNameContains)
+     *             .dynamicSetId(testDynamicSet.id())
      *             .id(scheduledJobId)
      *             .isManagedByAutonomousLinux(scheduledJobIsManagedByAutonomousLinux)
      *             .isRestricted(scheduledJobIsRestricted)
@@ -8658,6 +9567,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentIdInSubtree(scheduledJobCompartmentIdInSubtree)
      *             .displayName(scheduledJobDisplayName)
      *             .displayNameContains(scheduledJobDisplayNameContains)
+     *             .dynamicSetId(testDynamicSet.id())
      *             .id(scheduledJobId)
      *             .isManagedByAutonomousLinux(scheduledJobIsManagedByAutonomousLinux)
      *             .isRestricted(scheduledJobIsRestricted)
@@ -8717,6 +9627,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentIdInSubtree(scheduledJobCompartmentIdInSubtree)
      *             .displayName(scheduledJobDisplayName)
      *             .displayNameContains(scheduledJobDisplayNameContains)
+     *             .dynamicSetId(testDynamicSet.id())
      *             .id(scheduledJobId)
      *             .isManagedByAutonomousLinux(scheduledJobIsManagedByAutonomousLinux)
      *             .isRestricted(scheduledJobIsRestricted)
@@ -8776,6 +9687,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentIdInSubtree(scheduledJobCompartmentIdInSubtree)
      *             .displayName(scheduledJobDisplayName)
      *             .displayNameContains(scheduledJobDisplayNameContains)
+     *             .dynamicSetId(testDynamicSet.id())
      *             .id(scheduledJobId)
      *             .isManagedByAutonomousLinux(scheduledJobIsManagedByAutonomousLinux)
      *             .isRestricted(scheduledJobIsRestricted)
@@ -8835,6 +9747,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentIdInSubtree(scheduledJobCompartmentIdInSubtree)
      *             .displayName(scheduledJobDisplayName)
      *             .displayNameContains(scheduledJobDisplayNameContains)
+     *             .dynamicSetId(testDynamicSet.id())
      *             .id(scheduledJobId)
      *             .isManagedByAutonomousLinux(scheduledJobIsManagedByAutonomousLinux)
      *             .isRestricted(scheduledJobIsRestricted)
@@ -8894,6 +9807,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentIdInSubtree(scheduledJobCompartmentIdInSubtree)
      *             .displayName(scheduledJobDisplayName)
      *             .displayNameContains(scheduledJobDisplayNameContains)
+     *             .dynamicSetId(testDynamicSet.id())
      *             .id(scheduledJobId)
      *             .isManagedByAutonomousLinux(scheduledJobIsManagedByAutonomousLinux)
      *             .isRestricted(scheduledJobIsRestricted)
@@ -8953,6 +9867,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentIdInSubtree(scheduledJobCompartmentIdInSubtree)
      *             .displayName(scheduledJobDisplayName)
      *             .displayNameContains(scheduledJobDisplayNameContains)
+     *             .dynamicSetId(testDynamicSet.id())
      *             .id(scheduledJobId)
      *             .isManagedByAutonomousLinux(scheduledJobIsManagedByAutonomousLinux)
      *             .isRestricted(scheduledJobIsRestricted)

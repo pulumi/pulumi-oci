@@ -36,6 +36,11 @@ public final class GetScheduledJobResult {
      */
     private String displayName;
     /**
+     * @return The dynamic set [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on. A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+     * 
+     */
+    private List<String> dynamicSetIds;
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -61,7 +66,7 @@ public final class GetScheduledJobResult {
      */
     private Boolean isSubcompartmentIncluded;
     /**
-     * @return The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+     * @return The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds, and dynamicSetIds.
      * 
      */
     private List<String> lifecycleStageIds;
@@ -99,7 +104,7 @@ public final class GetScheduledJobResult {
      */
     private List<GetScheduledJobOperation> operations;
     /**
-     * @return The frequency schedule for a recurring scheduled job.
+     * @return The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported. In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY&#34;, HOURLY are supported.
      * 
      */
     private String recurringRule;
@@ -185,6 +190,13 @@ public final class GetScheduledJobResult {
         return this.displayName;
     }
     /**
+     * @return The dynamic set [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on. A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+     * 
+     */
+    public List<String> dynamicSetIds() {
+        return this.dynamicSetIds;
+    }
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -220,7 +232,7 @@ public final class GetScheduledJobResult {
         return this.isSubcompartmentIncluded;
     }
     /**
-     * @return The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+     * @return The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds, and dynamicSetIds.
      * 
      */
     public List<String> lifecycleStageIds() {
@@ -270,7 +282,7 @@ public final class GetScheduledJobResult {
         return this.operations;
     }
     /**
-     * @return The frequency schedule for a recurring scheduled job.
+     * @return The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported. In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY&#34;, HOURLY are supported.
      * 
      */
     public String recurringRule() {
@@ -363,6 +375,7 @@ public final class GetScheduledJobResult {
         private Map<String,String> definedTags;
         private String description;
         private String displayName;
+        private List<String> dynamicSetIds;
         private Map<String,String> freeformTags;
         private String id;
         private Boolean isManagedByAutonomousLinux;
@@ -393,6 +406,7 @@ public final class GetScheduledJobResult {
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
+    	      this.dynamicSetIds = defaults.dynamicSetIds;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isManagedByAutonomousLinux = defaults.isManagedByAutonomousLinux;
@@ -449,6 +463,17 @@ public final class GetScheduledJobResult {
             }
             this.displayName = displayName;
             return this;
+        }
+        @CustomType.Setter
+        public Builder dynamicSetIds(List<String> dynamicSetIds) {
+            if (dynamicSetIds == null) {
+              throw new MissingRequiredPropertyException("GetScheduledJobResult", "dynamicSetIds");
+            }
+            this.dynamicSetIds = dynamicSetIds;
+            return this;
+        }
+        public Builder dynamicSetIds(String... dynamicSetIds) {
+            return dynamicSetIds(List.of(dynamicSetIds));
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,String> freeformTags) {
@@ -664,6 +689,7 @@ public final class GetScheduledJobResult {
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.displayName = displayName;
+            _resultValue.dynamicSetIds = dynamicSetIds;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isManagedByAutonomousLinux = isManagedByAutonomousLinux;

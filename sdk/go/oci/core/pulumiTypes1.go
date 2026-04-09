@@ -12856,6 +12856,8 @@ type GetInstancePoolsInstancePool struct {
 	ActualSize int `pulumi:"actualSize"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
+	// Count of instance in running state associated to the Instance Pool.
+	CurrentSize int `pulumi:"currentSize"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
@@ -12899,6 +12901,8 @@ type GetInstancePoolsInstancePoolArgs struct {
 	ActualSize pulumi.IntInput `pulumi:"actualSize"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Count of instance in running state associated to the Instance Pool.
+	CurrentSize pulumi.IntInput `pulumi:"currentSize"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
@@ -12985,6 +12989,11 @@ func (o GetInstancePoolsInstancePoolOutput) ActualSize() pulumi.IntOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetInstancePoolsInstancePoolOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancePoolsInstancePool) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Count of instance in running state associated to the Instance Pool.
+func (o GetInstancePoolsInstancePoolOutput) CurrentSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePool) int { return v.CurrentSize }).(pulumi.IntOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`

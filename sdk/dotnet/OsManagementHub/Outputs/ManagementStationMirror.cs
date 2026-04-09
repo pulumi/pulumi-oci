@@ -24,7 +24,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// (Updatable) Default mirror listening port for http.
         /// </summary>
-        public readonly string Port;
+        public readonly string? Port;
         /// <summary>
         /// (Updatable) Path to the SSL cerfificate.
         /// </summary>
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             bool? isSslverifyEnabled,
 
-            string port,
+            string? port,
 
             string? sslcert,
 

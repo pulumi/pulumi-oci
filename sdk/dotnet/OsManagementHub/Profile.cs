@@ -91,7 +91,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+        /// (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -145,7 +145,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<ImmutableArray<Outputs.ProfileManagedInstanceGroup>> ManagedInstanceGroups { get; private set; } = null!;
 
         /// <summary>
-        /// description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
+        /// description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is used when creating a profile for non-OCI instances.
         /// </summary>
         [Output("managementStationId")]
         public Output<string> ManagementStationId { get; private set; } = null!;
@@ -297,7 +297,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+        /// (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -333,7 +333,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? ManagedInstanceGroupId { get; set; }
 
         /// <summary>
-        /// description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
+        /// description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is used when creating a profile for non-OCI instances.
         /// </summary>
         [Input("managementStationId")]
         public Input<string>? ManagementStationId { get; set; }
@@ -417,7 +417,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
+        /// (Updatable) A user-friendly name. Must be unique and you can change the name later. Avoid entering  confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -495,7 +495,7 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
+        /// description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is used when creating a profile for non-OCI instances.
         /// </summary>
         [Input("managementStationId")]
         public Input<string>? ManagementStationId { get; set; }

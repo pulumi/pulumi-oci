@@ -74,10 +74,12 @@ import javax.annotation.Nullable;
  *                 .hosts(managementStationProxyHosts)
  *                 .port(managementStationProxyPort)
  *                 .build())
+ *             .archType(managementStationArchType)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(managementStationDescription)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .isAutoConfigEnabled(managementStationIsAutoConfigEnabled)
+ *             .osFamily(managementStationOsFamily)
  *             .build());
  * 
  *     }
@@ -96,6 +98,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:OsManagementHub/managementStation:ManagementStation")
 public class ManagementStation extends com.pulumi.resources.CustomResource {
+    /**
+     * (Updatable) The architecture type.
+     * 
+     */
+    @Export(name="archType", refs={String.class}, tree="[0]")
+    private Output<String> archType;
+
+    /**
+     * @return (Updatable) The architecture type.
+     * 
+     */
+    public Output<String> archType() {
+        return this.archType;
+    }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
      * 
@@ -347,6 +363,20 @@ public class ManagementStation extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> mirrorUniquePackageCount() {
         return this.mirrorUniquePackageCount;
+    }
+    /**
+     * (Updatable) The operating system family.
+     * 
+     */
+    @Export(name="osFamily", refs={String.class}, tree="[0]")
+    private Output<String> osFamily;
+
+    /**
+     * @return (Updatable) The operating system family.
+     * 
+     */
+    public Output<String> osFamily() {
+        return this.osFamily;
     }
     /**
      * A decimal number representing the progress of the current mirror sync.

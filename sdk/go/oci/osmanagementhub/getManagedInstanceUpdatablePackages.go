@@ -32,6 +32,7 @@ import (
 //			_, err := osmanagementhub.GetManagedInstanceUpdatablePackages(ctx, &osmanagementhub.GetManagedInstanceUpdatablePackagesArgs{
 //				ManagedInstanceId:   testManagedInstance.Id,
 //				AdvisoryNames:       managedInstanceUpdatablePackageAdvisoryName,
+//				AdvisorySeverities:  managedInstanceUpdatablePackageAdvisorySeverity,
 //				ClassificationTypes: managedInstanceUpdatablePackageClassificationType,
 //				CompartmentId:       pulumi.StringRef(compartmentId),
 //				DisplayNames:        managedInstanceUpdatablePackageDisplayName,
@@ -59,6 +60,8 @@ func GetManagedInstanceUpdatablePackages(ctx *pulumi.Context, args *GetManagedIn
 type GetManagedInstanceUpdatablePackagesArgs struct {
 	// The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
 	AdvisoryNames []string `pulumi:"advisoryNames"`
+	// The advisory severity.
+	AdvisorySeverities []string `pulumi:"advisorySeverities"`
 	// A filter to return only packages that match the given update classification type.
 	ClassificationTypes []string `pulumi:"classificationTypes"`
 	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
@@ -74,7 +77,9 @@ type GetManagedInstanceUpdatablePackagesArgs struct {
 
 // A collection of values returned by getManagedInstanceUpdatablePackages.
 type GetManagedInstanceUpdatablePackagesResult struct {
-	AdvisoryNames       []string `pulumi:"advisoryNames"`
+	AdvisoryNames []string `pulumi:"advisoryNames"`
+	// The severity level of the security update. Only applicable when updateType is SECURITY.
+	AdvisorySeverities  []string `pulumi:"advisorySeverities"`
 	ClassificationTypes []string `pulumi:"classificationTypes"`
 	CompartmentId       *string  `pulumi:"compartmentId"`
 	DisplayNameContains *string  `pulumi:"displayNameContains"`
@@ -101,6 +106,8 @@ func GetManagedInstanceUpdatablePackagesOutput(ctx *pulumi.Context, args GetMana
 type GetManagedInstanceUpdatablePackagesOutputArgs struct {
 	// The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
 	AdvisoryNames pulumi.StringArrayInput `pulumi:"advisoryNames"`
+	// The advisory severity.
+	AdvisorySeverities pulumi.StringArrayInput `pulumi:"advisorySeverities"`
 	// A filter to return only packages that match the given update classification type.
 	ClassificationTypes pulumi.StringArrayInput `pulumi:"classificationTypes"`
 	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
@@ -135,6 +142,11 @@ func (o GetManagedInstanceUpdatablePackagesResultOutput) ToGetManagedInstanceUpd
 
 func (o GetManagedInstanceUpdatablePackagesResultOutput) AdvisoryNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetManagedInstanceUpdatablePackagesResult) []string { return v.AdvisoryNames }).(pulumi.StringArrayOutput)
+}
+
+// The severity level of the security update. Only applicable when updateType is SECURITY.
+func (o GetManagedInstanceUpdatablePackagesResultOutput) AdvisorySeverities() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedInstanceUpdatablePackagesResult) []string { return v.AdvisorySeverities }).(pulumi.StringArrayOutput)
 }
 
 func (o GetManagedInstanceUpdatablePackagesResultOutput) ClassificationTypes() pulumi.StringArrayOutput {

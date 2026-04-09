@@ -58,6 +58,10 @@ import com.pulumi.oci.GenerativeAi.inputs.GetModelArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetModelPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetModelsArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetModelsPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoreArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStorePlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoresArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoresPlainArgs;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentAgentEndpointResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentAgentEndpointsResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentAgentResult;
@@ -83,6 +87,8 @@ import com.pulumi.oci.GenerativeAi.outputs.GetImportedModelResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetImportedModelsResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetModelResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetModelsResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetSemanticStoreResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetSemanticStoresResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
@@ -6215,5 +6221,537 @@ public final class GenerativeAiFunctions {
      */
     public static CompletableFuture<GetModelsResult> getModelsPlain(GetModelsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getModels:getModels", TypeShape.of(GetModelsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Semantic Store resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a semanticStore.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoreArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSemanticStore = GenerativeAiFunctions.getSemanticStore(GetSemanticStoreArgs.builder()
+     *             .semanticStoreId(testSemanticStoreOciGenerativeAiSemanticStore.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSemanticStoreResult> getSemanticStore(GetSemanticStoreArgs args) {
+        return getSemanticStore(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Semantic Store resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a semanticStore.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoreArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSemanticStore = GenerativeAiFunctions.getSemanticStore(GetSemanticStoreArgs.builder()
+     *             .semanticStoreId(testSemanticStoreOciGenerativeAiSemanticStore.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSemanticStoreResult> getSemanticStorePlain(GetSemanticStorePlainArgs args) {
+        return getSemanticStorePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Semantic Store resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a semanticStore.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoreArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSemanticStore = GenerativeAiFunctions.getSemanticStore(GetSemanticStoreArgs.builder()
+     *             .semanticStoreId(testSemanticStoreOciGenerativeAiSemanticStore.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSemanticStoreResult> getSemanticStore(GetSemanticStoreArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getSemanticStore:getSemanticStore", TypeShape.of(GetSemanticStoreResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Semantic Store resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a semanticStore.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoreArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSemanticStore = GenerativeAiFunctions.getSemanticStore(GetSemanticStoreArgs.builder()
+     *             .semanticStoreId(testSemanticStoreOciGenerativeAiSemanticStore.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSemanticStoreResult> getSemanticStore(GetSemanticStoreArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getSemanticStore:getSemanticStore", TypeShape.of(GetSemanticStoreResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Semantic Store resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a semanticStore.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoreArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSemanticStore = GenerativeAiFunctions.getSemanticStore(GetSemanticStoreArgs.builder()
+     *             .semanticStoreId(testSemanticStoreOciGenerativeAiSemanticStore.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSemanticStoreResult> getSemanticStorePlain(GetSemanticStorePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getSemanticStore:getSemanticStore", TypeShape.of(GetSemanticStoreResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Semantic Stores in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the SemanticStores given specific filter.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSemanticStores = GenerativeAiFunctions.getSemanticStores(GetSemanticStoresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dataSourceQueryingConnectionId(testConnection.id())
+     *             .displayName(semanticStoreDisplayName)
+     *             .id(semanticStoreId)
+     *             .states(semanticStoreState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSemanticStoresResult> getSemanticStores() {
+        return getSemanticStores(GetSemanticStoresArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Semantic Stores in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the SemanticStores given specific filter.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSemanticStores = GenerativeAiFunctions.getSemanticStores(GetSemanticStoresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dataSourceQueryingConnectionId(testConnection.id())
+     *             .displayName(semanticStoreDisplayName)
+     *             .id(semanticStoreId)
+     *             .states(semanticStoreState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSemanticStoresResult> getSemanticStoresPlain() {
+        return getSemanticStoresPlain(GetSemanticStoresPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Semantic Stores in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the SemanticStores given specific filter.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSemanticStores = GenerativeAiFunctions.getSemanticStores(GetSemanticStoresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dataSourceQueryingConnectionId(testConnection.id())
+     *             .displayName(semanticStoreDisplayName)
+     *             .id(semanticStoreId)
+     *             .states(semanticStoreState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSemanticStoresResult> getSemanticStores(GetSemanticStoresArgs args) {
+        return getSemanticStores(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Semantic Stores in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the SemanticStores given specific filter.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSemanticStores = GenerativeAiFunctions.getSemanticStores(GetSemanticStoresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dataSourceQueryingConnectionId(testConnection.id())
+     *             .displayName(semanticStoreDisplayName)
+     *             .id(semanticStoreId)
+     *             .states(semanticStoreState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSemanticStoresResult> getSemanticStoresPlain(GetSemanticStoresPlainArgs args) {
+        return getSemanticStoresPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Semantic Stores in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the SemanticStores given specific filter.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSemanticStores = GenerativeAiFunctions.getSemanticStores(GetSemanticStoresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dataSourceQueryingConnectionId(testConnection.id())
+     *             .displayName(semanticStoreDisplayName)
+     *             .id(semanticStoreId)
+     *             .states(semanticStoreState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSemanticStoresResult> getSemanticStores(GetSemanticStoresArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getSemanticStores:getSemanticStores", TypeShape.of(GetSemanticStoresResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Semantic Stores in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the SemanticStores given specific filter.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSemanticStores = GenerativeAiFunctions.getSemanticStores(GetSemanticStoresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dataSourceQueryingConnectionId(testConnection.id())
+     *             .displayName(semanticStoreDisplayName)
+     *             .id(semanticStoreId)
+     *             .states(semanticStoreState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetSemanticStoresResult> getSemanticStores(GetSemanticStoresArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getSemanticStores:getSemanticStores", TypeShape.of(GetSemanticStoresResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Semantic Stores in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the SemanticStores given specific filter.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSemanticStores = GenerativeAiFunctions.getSemanticStores(GetSemanticStoresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dataSourceQueryingConnectionId(testConnection.id())
+     *             .displayName(semanticStoreDisplayName)
+     *             .id(semanticStoreId)
+     *             .states(semanticStoreState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetSemanticStoresResult> getSemanticStoresPlain(GetSemanticStoresPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getSemanticStores:getSemanticStores", TypeShape.of(GetSemanticStoresResult.class), args, Utilities.withVersion(options));
     }
 }

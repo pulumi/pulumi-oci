@@ -61,18 +61,23 @@ import javax.annotation.Nullable;
  *             .environmentId(testEnvironment.id())
  *             .inventoryId(testInventory.id())
  *             .type(assetSourceType)
- *             .vcenterEndpoint(assetSourceVcenterEndpoint)
  *             .areHistoricalMetricsCollected(assetSourceAreHistoricalMetricsCollected)
  *             .areRealtimeMetricsCollected(assetSourceAreRealtimeMetricsCollected)
+ *             .awsAccountKey(assetSourceAwsAccountKey)
+ *             .awsRegion(assetSourceAwsRegion)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .discoveryScheduleId(testDiscoverySchedule.id())
  *             .displayName(assetSourceDisplayName)
+ *             .environmentType(assetSourceEnvironmentType)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .isCostInformationCollected(assetSourceIsCostInformationCollected)
+ *             .olvmEndpoint(assetSourceOlvmEndpoint)
  *             .replicationCredentials(AssetSourceReplicationCredentialsArgs.builder()
  *                 .secretId(testSecret.id())
  *                 .type(assetSourceReplicationCredentialsType)
  *                 .build())
  *             .systemTags(assetSourceSystemTags)
+ *             .vcenterEndpoint(assetSourceVcenterEndpoint)
  *             .build());
  * 
  *     }
@@ -132,6 +137,34 @@ public class AssetSource extends com.pulumi.resources.CustomResource {
      */
     public Output<String> assetsCompartmentId() {
         return this.assetsCompartmentId;
+    }
+    /**
+     * The key of customer&#39;s aws account to be discovered/migrated.
+     * 
+     */
+    @Export(name="awsAccountKey", refs={String.class}, tree="[0]")
+    private Output<String> awsAccountKey;
+
+    /**
+     * @return The key of customer&#39;s aws account to be discovered/migrated.
+     * 
+     */
+    public Output<String> awsAccountKey() {
+        return this.awsAccountKey;
+    }
+    /**
+     * AWS region information, from where the resources are discovered.
+     * 
+     */
+    @Export(name="awsRegion", refs={String.class}, tree="[0]")
+    private Output<String> awsRegion;
+
+    /**
+     * @return AWS region information, from where the resources are discovered.
+     * 
+     */
+    public Output<String> awsRegion() {
+        return this.awsRegion;
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
@@ -218,6 +251,20 @@ public class AssetSource extends com.pulumi.resources.CustomResource {
         return this.environmentId;
     }
     /**
+     * (Updatable) Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     * 
+     */
+    @Export(name="environmentType", refs={String.class}, tree="[0]")
+    private Output<String> environmentType;
+
+    /**
+     * @return (Updatable) Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+     * 
+     */
+    public Output<String> environmentType() {
+        return this.environmentType;
+    }
+    /**
      * (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -246,6 +293,20 @@ public class AssetSource extends com.pulumi.resources.CustomResource {
         return this.inventoryId;
     }
     /**
+     * (Updatable) Flag indicating whether cost data collection is enabled for assets, originating from this asset source.
+     * 
+     */
+    @Export(name="isCostInformationCollected", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isCostInformationCollected;
+
+    /**
+     * @return (Updatable) Flag indicating whether cost data collection is enabled for assets, originating from this asset source.
+     * 
+     */
+    public Output<Boolean> isCostInformationCollected() {
+        return this.isCostInformationCollected;
+    }
+    /**
      * The detailed state of the asset source.
      * 
      */
@@ -258,6 +319,20 @@ public class AssetSource extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * (Updatable) Endpoint for OLVM asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;```
+     * 
+     */
+    @Export(name="olvmEndpoint", refs={String.class}, tree="[0]")
+    private Output<String> olvmEndpoint;
+
+    /**
+     * @return (Updatable) Endpoint for OLVM asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;```
+     * 
+     */
+    public Output<String> olvmEndpoint() {
+        return this.olvmEndpoint;
     }
     /**
      * (Updatable) Credentials for an asset source.

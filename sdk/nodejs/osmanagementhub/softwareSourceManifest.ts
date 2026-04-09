@@ -6,7 +6,7 @@ import * as utilities from "../utilities";
 
 /**
  * This resource provides the Software Source Manifest resource in Oracle Cloud Infrastructure Os Management Hub service.
- * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/SoftwareSourceManifest
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/osmh/latest/Manifest
  *
  * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
  *
@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSoftwareSourceManifest = new oci.osmanagementhub.SoftwareSourceManifest("test_software_source_manifest", {
+ *     updateSoftwareSourceManifestDetails: softwareSourceManifestUpdateSoftwareSourceManifestDetails,
  *     softwareSourceId: testSoftwareSource.id,
- *     content: content,
  * });
  * ```
  *
@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  * SoftwareSourceManifests can be imported using the `id`, e.g.
  *
  * ```sh
- * $ pulumi import oci:OsManagementHub/softwareSourceManifest:SoftwareSourceManifest test_software_source_manifest "id"
+ * $ pulumi import oci:OsManagementHub/softwareSourceManifest:SoftwareSourceManifest test_software_source_manifest "softwareSources/{softwareSourceId}/manifest"
  * ```
  */
 export class SoftwareSourceManifest extends pulumi.CustomResource {
@@ -60,9 +60,6 @@ export class SoftwareSourceManifest extends pulumi.CustomResource {
         return obj['__pulumiType'] === SoftwareSourceManifest.__pulumiType;
     }
 
-    /**
-     * (Updatable) Provides the manifest content used to update the package list of the software source.
-     */
     declare public readonly content: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
@@ -105,9 +102,6 @@ export class SoftwareSourceManifest extends pulumi.CustomResource {
  * Input properties used for looking up and filtering SoftwareSourceManifest resources.
  */
 export interface SoftwareSourceManifestState {
-    /**
-     * (Updatable) Provides the manifest content used to update the package list of the software source.
-     */
     content?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
@@ -123,9 +117,6 @@ export interface SoftwareSourceManifestState {
  * The set of arguments for constructing a SoftwareSourceManifest resource.
  */
 export interface SoftwareSourceManifestArgs {
-    /**
-     * (Updatable) Provides the manifest content used to update the package list of the software source.
-     */
     content?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.

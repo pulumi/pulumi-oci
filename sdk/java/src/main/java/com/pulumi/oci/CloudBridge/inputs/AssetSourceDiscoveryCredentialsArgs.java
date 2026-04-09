@@ -15,14 +15,14 @@ public final class AssetSourceDiscoveryCredentialsArgs extends com.pulumi.resour
     public static final AssetSourceDiscoveryCredentialsArgs Empty = new AssetSourceDiscoveryCredentialsArgs();
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ &#34;username&#34;: &#34;&lt;VMwareUser&gt;&#34;, &#34;password&#34;: &#34;&lt;VMwarePassword&gt;&#34; }`.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ &#34;username&#34;: &#34;&lt;User&gt;&#34;, &#34;password&#34;: &#34;example-password&#34; }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ &#34;accessKeyId&#34;: &#34;&lt;AccessKey&gt;&#34;, &#34;secretAccessKey&#34;: &#34;&lt;AccessKeyValue&gt;&#34; }`.
      * 
      */
     @Import(name="secretId", required=true)
     private Output<String> secretId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ &#34;username&#34;: &#34;&lt;VMwareUser&gt;&#34;, &#34;password&#34;: &#34;&lt;VMwarePassword&gt;&#34; }`.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ &#34;username&#34;: &#34;&lt;User&gt;&#34;, &#34;password&#34;: &#34;example-password&#34; }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ &#34;accessKeyId&#34;: &#34;&lt;AccessKey&gt;&#34;, &#34;secretAccessKey&#34;: &#34;&lt;AccessKeyValue&gt;&#34; }`.
      * 
      */
     public Output<String> secretId() {
@@ -70,7 +70,7 @@ public final class AssetSourceDiscoveryCredentialsArgs extends com.pulumi.resour
         }
 
         /**
-         * @param secretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ &#34;username&#34;: &#34;&lt;VMwareUser&gt;&#34;, &#34;password&#34;: &#34;&lt;VMwarePassword&gt;&#34; }`.
+         * @param secretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ &#34;username&#34;: &#34;&lt;User&gt;&#34;, &#34;password&#34;: &#34;example-password&#34; }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ &#34;accessKeyId&#34;: &#34;&lt;AccessKey&gt;&#34;, &#34;secretAccessKey&#34;: &#34;&lt;AccessKeyValue&gt;&#34; }`.
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class AssetSourceDiscoveryCredentialsArgs extends com.pulumi.resour
         }
 
         /**
-         * @param secretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ &#34;username&#34;: &#34;&lt;VMwareUser&gt;&#34;, &#34;password&#34;: &#34;&lt;VMwarePassword&gt;&#34; }`.
+         * @param secretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the type of the credentials is `BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ &#34;username&#34;: &#34;&lt;User&gt;&#34;, &#34;password&#34;: &#34;example-password&#34; }`. If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and secretAccessKey in JSON format, which is in the form of `{ &#34;accessKeyId&#34;: &#34;&lt;AccessKey&gt;&#34;, &#34;secretAccessKey&#34;: &#34;&lt;AccessKeyValue&gt;&#34; }`.
          * 
          * @return builder
          * 

@@ -77,7 +77,7 @@ type ManagedInstanceGroup struct {
 
 	// The CPU architecture type of the managed instances that will be attached to this group.
 	ArchType pulumi.StringOutput `pulumi:"archType"`
-	// (Updatable) Updatable settings for the Autonomous Linux service.
+	// (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
 	AutonomousSettings ManagedInstanceGroupAutonomousSettingsOutput `pulumi:"autonomousSettings"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
@@ -169,7 +169,7 @@ func GetManagedInstanceGroup(ctx *pulumi.Context,
 type managedInstanceGroupState struct {
 	// The CPU architecture type of the managed instances that will be attached to this group.
 	ArchType *string `pulumi:"archType"`
-	// (Updatable) Updatable settings for the Autonomous Linux service.
+	// (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
 	AutonomousSettings *ManagedInstanceGroupAutonomousSettings `pulumi:"autonomousSettings"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -217,7 +217,7 @@ type managedInstanceGroupState struct {
 type ManagedInstanceGroupState struct {
 	// The CPU architecture type of the managed instances that will be attached to this group.
 	ArchType pulumi.StringPtrInput
-	// (Updatable) Updatable settings for the Autonomous Linux service.
+	// (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
 	AutonomousSettings ManagedInstanceGroupAutonomousSettingsPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
 	CompartmentId pulumi.StringPtrInput
@@ -269,7 +269,7 @@ func (ManagedInstanceGroupState) ElementType() reflect.Type {
 type managedInstanceGroupArgs struct {
 	// The CPU architecture type of the managed instances that will be attached to this group.
 	ArchType string `pulumi:"archType"`
-	// (Updatable) Updatable settings for the Autonomous Linux service.
+	// (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
 	AutonomousSettings *ManagedInstanceGroupAutonomousSettings `pulumi:"autonomousSettings"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -302,7 +302,7 @@ type managedInstanceGroupArgs struct {
 type ManagedInstanceGroupArgs struct {
 	// The CPU architecture type of the managed instances that will be attached to this group.
 	ArchType pulumi.StringInput
-	// (Updatable) Updatable settings for the Autonomous Linux service.
+	// (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
 	AutonomousSettings ManagedInstanceGroupAutonomousSettingsPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
 	CompartmentId pulumi.StringInput
@@ -423,7 +423,7 @@ func (o ManagedInstanceGroupOutput) ArchType() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringOutput { return v.ArchType }).(pulumi.StringOutput)
 }
 
-// (Updatable) Updatable settings for the Autonomous Linux service.
+// (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
 func (o ManagedInstanceGroupOutput) AutonomousSettings() ManagedInstanceGroupAutonomousSettingsOutput {
 	return o.ApplyT(func(v *ManagedInstanceGroup) ManagedInstanceGroupAutonomousSettingsOutput {
 		return v.AutonomousSettings

@@ -37,9 +37,6 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// The user-friendly name for the lifecycle environment. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        /// </summary>
         public readonly string LifecycleEnvironmentDisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
@@ -49,9 +46,6 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// A filter to return only resources whose location matches the given value.
         /// </summary>
         public readonly string Location;
-        /// <summary>
-        /// The number of managed instances associated with the lifecycle stage.
-        /// </summary>
         public readonly int ManagedInstances;
         /// <summary>
         /// A filter to return only resources that match the given operating system family.

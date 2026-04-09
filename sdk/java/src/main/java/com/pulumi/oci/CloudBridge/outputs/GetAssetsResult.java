@@ -16,6 +16,16 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetAssetsResult {
     /**
+     * @return The class name of the asset.
+     * 
+     */
+    private @Nullable String assetClassName;
+    /**
+     * @return The version of the asset class.
+     * 
+     */
+    private @Nullable String assetClassVersion;
+    /**
      * @return The list of asset_collection.
      * 
      */
@@ -64,6 +74,20 @@ public final class GetAssetsResult {
     private @Nullable String state;
 
     private GetAssetsResult() {}
+    /**
+     * @return The class name of the asset.
+     * 
+     */
+    public Optional<String> assetClassName() {
+        return Optional.ofNullable(this.assetClassName);
+    }
+    /**
+     * @return The version of the asset class.
+     * 
+     */
+    public Optional<String> assetClassVersion() {
+        return Optional.ofNullable(this.assetClassVersion);
+    }
     /**
      * @return The list of asset_collection.
      * 
@@ -143,6 +167,8 @@ public final class GetAssetsResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String assetClassName;
+        private @Nullable String assetClassVersion;
         private List<GetAssetsAssetCollection> assetCollections;
         private @Nullable String assetId;
         private @Nullable String assetType;
@@ -157,6 +183,8 @@ public final class GetAssetsResult {
         public Builder() {}
         public Builder(GetAssetsResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.assetClassName = defaults.assetClassName;
+    	      this.assetClassVersion = defaults.assetClassVersion;
     	      this.assetCollections = defaults.assetCollections;
     	      this.assetId = defaults.assetId;
     	      this.assetType = defaults.assetType;
@@ -170,6 +198,18 @@ public final class GetAssetsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
+        public Builder assetClassName(@Nullable String assetClassName) {
+
+            this.assetClassName = assetClassName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder assetClassVersion(@Nullable String assetClassVersion) {
+
+            this.assetClassVersion = assetClassVersion;
+            return this;
+        }
         @CustomType.Setter
         public Builder assetCollections(List<GetAssetsAssetCollection> assetCollections) {
             if (assetCollections == null) {
@@ -250,6 +290,8 @@ public final class GetAssetsResult {
         }
         public GetAssetsResult build() {
             final var _resultValue = new GetAssetsResult();
+            _resultValue.assetClassName = assetClassName;
+            _resultValue.assetClassVersion = assetClassVersion;
             _resultValue.assetCollections = assetCollections;
             _resultValue.assetId = assetId;
             _resultValue.assetType = assetType;

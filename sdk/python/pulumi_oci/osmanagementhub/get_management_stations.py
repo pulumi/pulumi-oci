@@ -28,7 +28,7 @@ class GetManagementStationsResult:
     """
     A collection of values returned by getManagementStations.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, display_name_contains=None, filters=None, id=None, location_not_equal_tos=None, locations=None, managed_instance_id=None, management_station_collections=None, state=None):
+    def __init__(__self__, compartment_id=None, display_name=None, display_name_contains=None, filters=None, health_state=None, id=None, location_not_equal_tos=None, locations=None, managed_instance_id=None, management_station_collections=None, state=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -41,6 +41,9 @@ class GetManagementStationsResult:
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
+        if health_state and not isinstance(health_state, str):
+            raise TypeError("Expected argument 'health_state' to be a str")
+        pulumi.set(__self__, "health_state", health_state)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -85,6 +88,11 @@ class GetManagementStationsResult:
     @pulumi.getter
     def filters(self) -> Optional[Sequence['outputs.GetManagementStationsFilterResult']]:
         return pulumi.get(self, "filters")
+
+    @_builtins.property
+    @pulumi.getter(name="healthState")
+    def health_state(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "health_state")
 
     @_builtins.property
     @pulumi.getter
@@ -142,6 +150,7 @@ class AwaitableGetManagementStationsResult(GetManagementStationsResult):
             display_name=self.display_name,
             display_name_contains=self.display_name_contains,
             filters=self.filters,
+            health_state=self.health_state,
             id=self.id,
             location_not_equal_tos=self.location_not_equal_tos,
             locations=self.locations,
@@ -154,6 +163,7 @@ def get_management_stations(compartment_id: Optional[_builtins.str] = None,
                             display_name: Optional[_builtins.str] = None,
                             display_name_contains: Optional[_builtins.str] = None,
                             filters: Optional[Sequence[Union['GetManagementStationsFilterArgs', 'GetManagementStationsFilterArgsDict']]] = None,
+                            health_state: Optional[_builtins.str] = None,
                             id: Optional[_builtins.str] = None,
                             location_not_equal_tos: Optional[Sequence[_builtins.str]] = None,
                             locations: Optional[Sequence[_builtins.str]] = None,
@@ -175,6 +185,7 @@ def get_management_stations(compartment_id: Optional[_builtins.str] = None,
     test_management_stations = oci.OsManagementHub.get_management_stations(compartment_id=compartment_id,
         display_name=management_station_display_name,
         display_name_contains=management_station_display_name_contains,
+        health_state=management_station_health_state,
         id=management_station_id,
         locations=management_station_location,
         location_not_equal_tos=management_station_location_not_equal_to,
@@ -186,6 +197,7 @@ def get_management_stations(compartment_id: Optional[_builtins.str] = None,
     :param _builtins.str compartment_id: (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
     :param _builtins.str display_name: A filter to return resources that match the given user-friendly name.
     :param _builtins.str display_name_contains: A filter to return resources that may partially match the given display name.
+    :param _builtins.str health_state: A filter that returns information for management stations in the specified health state.
     :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
     :param Sequence[_builtins.str] location_not_equal_tos: A filter to return only resources whose location does not match the given value.
     :param Sequence[_builtins.str] locations: A filter to return only resources whose location matches the given value.
@@ -197,6 +209,7 @@ def get_management_stations(compartment_id: Optional[_builtins.str] = None,
     __args__['displayName'] = display_name
     __args__['displayNameContains'] = display_name_contains
     __args__['filters'] = filters
+    __args__['healthState'] = health_state
     __args__['id'] = id
     __args__['locationNotEqualTos'] = location_not_equal_tos
     __args__['locations'] = locations
@@ -210,6 +223,7 @@ def get_management_stations(compartment_id: Optional[_builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         display_name_contains=pulumi.get(__ret__, 'display_name_contains'),
         filters=pulumi.get(__ret__, 'filters'),
+        health_state=pulumi.get(__ret__, 'health_state'),
         id=pulumi.get(__ret__, 'id'),
         location_not_equal_tos=pulumi.get(__ret__, 'location_not_equal_tos'),
         locations=pulumi.get(__ret__, 'locations'),
@@ -220,6 +234,7 @@ def get_management_stations_output(compartment_id: Optional[pulumi.Input[Optiona
                                    display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                    display_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagementStationsFilterArgs', 'GetManagementStationsFilterArgsDict']]]]] = None,
+                                   health_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                    id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                    location_not_equal_tos: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
                                    locations: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
@@ -241,6 +256,7 @@ def get_management_stations_output(compartment_id: Optional[pulumi.Input[Optiona
     test_management_stations = oci.OsManagementHub.get_management_stations(compartment_id=compartment_id,
         display_name=management_station_display_name,
         display_name_contains=management_station_display_name_contains,
+        health_state=management_station_health_state,
         id=management_station_id,
         locations=management_station_location,
         location_not_equal_tos=management_station_location_not_equal_to,
@@ -252,6 +268,7 @@ def get_management_stations_output(compartment_id: Optional[pulumi.Input[Optiona
     :param _builtins.str compartment_id: (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
     :param _builtins.str display_name: A filter to return resources that match the given user-friendly name.
     :param _builtins.str display_name_contains: A filter to return resources that may partially match the given display name.
+    :param _builtins.str health_state: A filter that returns information for management stations in the specified health state.
     :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
     :param Sequence[_builtins.str] location_not_equal_tos: A filter to return only resources whose location does not match the given value.
     :param Sequence[_builtins.str] locations: A filter to return only resources whose location matches the given value.
@@ -263,6 +280,7 @@ def get_management_stations_output(compartment_id: Optional[pulumi.Input[Optiona
     __args__['displayName'] = display_name
     __args__['displayNameContains'] = display_name_contains
     __args__['filters'] = filters
+    __args__['healthState'] = health_state
     __args__['id'] = id
     __args__['locationNotEqualTos'] = location_not_equal_tos
     __args__['locations'] = locations
@@ -275,6 +293,7 @@ def get_management_stations_output(compartment_id: Optional[pulumi.Input[Optiona
         display_name=pulumi.get(__response__, 'display_name'),
         display_name_contains=pulumi.get(__response__, 'display_name_contains'),
         filters=pulumi.get(__response__, 'filters'),
+        health_state=pulumi.get(__response__, 'health_state'),
         id=pulumi.get(__response__, 'id'),
         location_not_equal_tos=pulumi.get(__response__, 'location_not_equal_tos'),
         locations=pulumi.get(__response__, 'locations'),

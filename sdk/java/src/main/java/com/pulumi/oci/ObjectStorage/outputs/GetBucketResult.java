@@ -40,6 +40,11 @@ public final class GetBucketResult {
      */
     private String bucketId;
     /**
+     * @return Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+     * 
+     */
+    private String bucketScope;
+    /**
      * @return The compartment ID in which the bucket is authorized.
      * 
      */
@@ -161,6 +166,13 @@ public final class GetBucketResult {
      */
     public String bucketId() {
         return this.bucketId;
+    }
+    /**
+     * @return Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
+     * 
+     */
+    public String bucketScope() {
+        return this.bucketScope;
     }
     /**
      * @return The compartment ID in which the bucket is authorized.
@@ -299,6 +311,7 @@ public final class GetBucketResult {
         private String approximateSize;
         private String autoTiering;
         private String bucketId;
+        private String bucketScope;
         private String compartmentId;
         private String createdBy;
         private Map<String,String> definedTags;
@@ -325,6 +338,7 @@ public final class GetBucketResult {
     	      this.approximateSize = defaults.approximateSize;
     	      this.autoTiering = defaults.autoTiering;
     	      this.bucketId = defaults.bucketId;
+    	      this.bucketScope = defaults.bucketScope;
     	      this.compartmentId = defaults.compartmentId;
     	      this.createdBy = defaults.createdBy;
     	      this.definedTags = defaults.definedTags;
@@ -383,6 +397,14 @@ public final class GetBucketResult {
               throw new MissingRequiredPropertyException("GetBucketResult", "bucketId");
             }
             this.bucketId = bucketId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder bucketScope(String bucketScope) {
+            if (bucketScope == null) {
+              throw new MissingRequiredPropertyException("GetBucketResult", "bucketScope");
+            }
+            this.bucketScope = bucketScope;
             return this;
         }
         @CustomType.Setter
@@ -539,6 +561,7 @@ public final class GetBucketResult {
             _resultValue.approximateSize = approximateSize;
             _resultValue.autoTiering = autoTiering;
             _resultValue.bucketId = bucketId;
+            _resultValue.bucketScope = bucketScope;
             _resultValue.compartmentId = compartmentId;
             _resultValue.createdBy = createdBy;
             _resultValue.definedTags = definedTags;

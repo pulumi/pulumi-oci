@@ -144,6 +144,10 @@ export class SoftwareSource extends pulumi.CustomResource {
      */
     declare public readonly isSslVerifyEnabled: pulumi.Output<boolean>;
     /**
+     * The display name of the software source to be replicated
+     */
+    declare public readonly originDisplayName: pulumi.Output<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
      */
     declare public readonly originSoftwareSourceId: pulumi.Output<string>;
@@ -243,6 +247,7 @@ export class SoftwareSource extends pulumi.CustomResource {
             resourceInputs["isMandatoryForAutonomousLinux"] = state?.isMandatoryForAutonomousLinux;
             resourceInputs["isMirrorSyncAllowed"] = state?.isMirrorSyncAllowed;
             resourceInputs["isSslVerifyEnabled"] = state?.isSslVerifyEnabled;
+            resourceInputs["originDisplayName"] = state?.originDisplayName;
             resourceInputs["originSoftwareSourceId"] = state?.originSoftwareSourceId;
             resourceInputs["osFamily"] = state?.osFamily;
             resourceInputs["packageCount"] = state?.packageCount;
@@ -283,6 +288,7 @@ export class SoftwareSource extends pulumi.CustomResource {
             resourceInputs["isLatestContentOnly"] = args?.isLatestContentOnly;
             resourceInputs["isMirrorSyncAllowed"] = args?.isMirrorSyncAllowed;
             resourceInputs["isSslVerifyEnabled"] = args?.isSslVerifyEnabled;
+            resourceInputs["originDisplayName"] = args?.originDisplayName;
             resourceInputs["originSoftwareSourceId"] = args?.originSoftwareSourceId;
             resourceInputs["osFamily"] = args?.osFamily;
             resourceInputs["packages"] = args?.packages;
@@ -408,6 +414,10 @@ export interface SoftwareSourceState {
      * (Updatable) Whether SSL validation needs to be turned on
      */
     isSslVerifyEnabled?: pulumi.Input<boolean>;
+    /**
+     * The display name of the software source to be replicated
+     */
+    originDisplayName?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
      */
@@ -547,6 +557,10 @@ export interface SoftwareSourceArgs {
      * (Updatable) Whether SSL validation needs to be turned on
      */
     isSslVerifyEnabled?: pulumi.Input<boolean>;
+    /**
+     * The display name of the software source to be replicated
+     */
+    originDisplayName?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
      */

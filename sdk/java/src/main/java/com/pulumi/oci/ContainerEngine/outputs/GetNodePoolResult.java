@@ -13,6 +13,7 @@ import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolNodePoolCyclingDetail;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolNodeShapeConfig;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolNodeSource;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolNodeSourceDetail;
+import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolSecondaryVnic;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -66,6 +67,11 @@ public final class GetNodePoolResult {
      * 
      */
     private String name;
+    /**
+     * @return Emulation type for the physical network interface card (NIC) for nodes
+     * 
+     */
+    private String networkLaunchType;
     /**
      * @return The configuration of nodes in the node pool.
      * 
@@ -139,6 +145,11 @@ public final class GetNodePoolResult {
      * 
      */
     private Integer quantityPerSubnet;
+    /**
+     * @return A list of secondary vnics to attach to nodes
+     * 
+     */
+    private List<GetNodePoolSecondaryVnic> secondaryVnics;
     /**
      * @return The SSH public key on each node in the node pool on launch.
      * 
@@ -218,6 +229,13 @@ public final class GetNodePoolResult {
      */
     public String name() {
         return this.name;
+    }
+    /**
+     * @return Emulation type for the physical network interface card (NIC) for nodes
+     * 
+     */
+    public String networkLaunchType() {
+        return this.networkLaunchType;
     }
     /**
      * @return The configuration of nodes in the node pool.
@@ -319,6 +337,13 @@ public final class GetNodePoolResult {
         return this.quantityPerSubnet;
     }
     /**
+     * @return A list of secondary vnics to attach to nodes
+     * 
+     */
+    public List<GetNodePoolSecondaryVnic> secondaryVnics() {
+        return this.secondaryVnics;
+    }
+    /**
      * @return The SSH public key on each node in the node pool on launch.
      * 
      */
@@ -358,6 +383,7 @@ public final class GetNodePoolResult {
         private String kubernetesVersion;
         private String lifecycleDetails;
         private String name;
+        private String networkLaunchType;
         private List<GetNodePoolNodeConfigDetail> nodeConfigDetails;
         private List<GetNodePoolNodeEvictionNodePoolSetting> nodeEvictionNodePoolSettings;
         private String nodeImageId;
@@ -371,6 +397,7 @@ public final class GetNodePoolResult {
         private List<GetNodePoolNodeSource> nodeSources;
         private List<GetNodePoolNode> nodes;
         private Integer quantityPerSubnet;
+        private List<GetNodePoolSecondaryVnic> secondaryVnics;
         private String sshPublicKey;
         private String state;
         private List<String> subnetIds;
@@ -386,6 +413,7 @@ public final class GetNodePoolResult {
     	      this.kubernetesVersion = defaults.kubernetesVersion;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.name = defaults.name;
+    	      this.networkLaunchType = defaults.networkLaunchType;
     	      this.nodeConfigDetails = defaults.nodeConfigDetails;
     	      this.nodeEvictionNodePoolSettings = defaults.nodeEvictionNodePoolSettings;
     	      this.nodeImageId = defaults.nodeImageId;
@@ -399,6 +427,7 @@ public final class GetNodePoolResult {
     	      this.nodeSources = defaults.nodeSources;
     	      this.nodes = defaults.nodes;
     	      this.quantityPerSubnet = defaults.quantityPerSubnet;
+    	      this.secondaryVnics = defaults.secondaryVnics;
     	      this.sshPublicKey = defaults.sshPublicKey;
     	      this.state = defaults.state;
     	      this.subnetIds = defaults.subnetIds;
@@ -477,6 +506,14 @@ public final class GetNodePoolResult {
               throw new MissingRequiredPropertyException("GetNodePoolResult", "name");
             }
             this.name = name;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder networkLaunchType(String networkLaunchType) {
+            if (networkLaunchType == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "networkLaunchType");
+            }
+            this.networkLaunchType = networkLaunchType;
             return this;
         }
         @CustomType.Setter
@@ -605,6 +642,17 @@ public final class GetNodePoolResult {
             return this;
         }
         @CustomType.Setter
+        public Builder secondaryVnics(List<GetNodePoolSecondaryVnic> secondaryVnics) {
+            if (secondaryVnics == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolResult", "secondaryVnics");
+            }
+            this.secondaryVnics = secondaryVnics;
+            return this;
+        }
+        public Builder secondaryVnics(GetNodePoolSecondaryVnic... secondaryVnics) {
+            return secondaryVnics(List.of(secondaryVnics));
+        }
+        @CustomType.Setter
         public Builder sshPublicKey(String sshPublicKey) {
             if (sshPublicKey == null) {
               throw new MissingRequiredPropertyException("GetNodePoolResult", "sshPublicKey");
@@ -642,6 +690,7 @@ public final class GetNodePoolResult {
             _resultValue.kubernetesVersion = kubernetesVersion;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.name = name;
+            _resultValue.networkLaunchType = networkLaunchType;
             _resultValue.nodeConfigDetails = nodeConfigDetails;
             _resultValue.nodeEvictionNodePoolSettings = nodeEvictionNodePoolSettings;
             _resultValue.nodeImageId = nodeImageId;
@@ -655,6 +704,7 @@ public final class GetNodePoolResult {
             _resultValue.nodeSources = nodeSources;
             _resultValue.nodes = nodes;
             _resultValue.quantityPerSubnet = quantityPerSubnet;
+            _resultValue.secondaryVnics = secondaryVnics;
             _resultValue.sshPublicKey = sshPublicKey;
             _resultValue.state = state;
             _resultValue.subnetIds = subnetIds;

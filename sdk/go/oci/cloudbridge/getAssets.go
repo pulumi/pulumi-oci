@@ -30,14 +30,16 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := cloudbridge.GetAssets(ctx, &cloudbridge.GetAssetsArgs{
-//				CompartmentId:    compartmentId,
-//				AssetId:          pulumi.StringRef(testAsset.Id),
-//				AssetType:        pulumi.StringRef(assetAssetType),
-//				DisplayName:      pulumi.StringRef(assetDisplayName),
-//				ExternalAssetKey: pulumi.StringRef(assetExternalAssetKey),
-//				InventoryId:      pulumi.StringRef(testInventory.Id),
-//				SourceKey:        pulumi.StringRef(assetSourceKey),
-//				State:            pulumi.StringRef(assetState),
+//				CompartmentId:     compartmentId,
+//				AssetClassName:    pulumi.StringRef(assetAssetClassName),
+//				AssetClassVersion: pulumi.StringRef(assetAssetClassVersion),
+//				AssetId:           pulumi.StringRef(testAsset.Id),
+//				AssetType:         pulumi.StringRef(assetAssetType),
+//				DisplayName:       pulumi.StringRef(assetDisplayName),
+//				ExternalAssetKey:  pulumi.StringRef(assetExternalAssetKey),
+//				InventoryId:       pulumi.StringRef(testInventory.Id),
+//				SourceKey:         pulumi.StringRef(assetSourceKey),
+//				State:             pulumi.StringRef(assetState),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -59,6 +61,10 @@ func GetAssets(ctx *pulumi.Context, args *GetAssetsArgs, opts ...pulumi.InvokeOp
 
 // A collection of arguments for invoking getAssets.
 type GetAssetsArgs struct {
+	// The name of the asset class.
+	AssetClassName *string `pulumi:"assetClassName"`
+	// The version of the asset class.
+	AssetClassVersion *string `pulumi:"assetClassVersion"`
 	// Unique asset identifier.
 	AssetId *string `pulumi:"assetId"`
 	// The type of asset.
@@ -80,6 +86,10 @@ type GetAssetsArgs struct {
 
 // A collection of values returned by getAssets.
 type GetAssetsResult struct {
+	// The class name of the asset.
+	AssetClassName *string `pulumi:"assetClassName"`
+	// The version of the asset class.
+	AssetClassVersion *string `pulumi:"assetClassVersion"`
 	// The list of asset_collection.
 	AssetCollections []GetAssetsAssetCollection `pulumi:"assetCollections"`
 	AssetId          *string                    `pulumi:"assetId"`
@@ -113,6 +123,10 @@ func GetAssetsOutput(ctx *pulumi.Context, args GetAssetsOutputArgs, opts ...pulu
 
 // A collection of arguments for invoking getAssets.
 type GetAssetsOutputArgs struct {
+	// The name of the asset class.
+	AssetClassName pulumi.StringPtrInput `pulumi:"assetClassName"`
+	// The version of the asset class.
+	AssetClassVersion pulumi.StringPtrInput `pulumi:"assetClassVersion"`
 	// Unique asset identifier.
 	AssetId pulumi.StringPtrInput `pulumi:"assetId"`
 	// The type of asset.
@@ -149,6 +163,16 @@ func (o GetAssetsResultOutput) ToGetAssetsResultOutput() GetAssetsResultOutput {
 
 func (o GetAssetsResultOutput) ToGetAssetsResultOutputWithContext(ctx context.Context) GetAssetsResultOutput {
 	return o
+}
+
+// The class name of the asset.
+func (o GetAssetsResultOutput) AssetClassName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsResult) *string { return v.AssetClassName }).(pulumi.StringPtrOutput)
+}
+
+// The version of the asset class.
+func (o GetAssetsResultOutput) AssetClassVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsResult) *string { return v.AssetClassVersion }).(pulumi.StringPtrOutput)
 }
 
 // The list of asset_collection.

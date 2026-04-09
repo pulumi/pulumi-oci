@@ -14,6 +14,10 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class GetManagedInstanceUpdatablePackagesUpdatablePackageCollectionItemResult
     {
         /// <summary>
+        /// The advisory severity.
+        /// </summary>
+        public readonly string AdvisorySeverity;
+        /// <summary>
         /// The architecture for which this package was built.
         /// </summary>
         public readonly string Architecture;
@@ -60,6 +64,8 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
         [OutputConstructor]
         private GetManagedInstanceUpdatablePackagesUpdatablePackageCollectionItemResult(
+            string advisorySeverity,
+
             string architecture,
 
             string displayName,
@@ -82,6 +88,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             string version)
         {
+            AdvisorySeverity = advisorySeverity;
             Architecture = architecture;
             DisplayName = displayName;
             Erratas = erratas;

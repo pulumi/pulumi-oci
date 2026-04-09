@@ -12,6 +12,7 @@ import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeEvictionNodePoolSetting
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodePoolCyclingDetailsArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeShapeConfigArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeSourceDetailsArgs;
+import com.pulumi.oci.ContainerEngine.inputs.NodePoolSecondaryVnicArgs;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -128,6 +129,21 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
+    }
+
+    /**
+     * (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+     * 
+     */
+    @Import(name="networkLaunchType")
+    private @Nullable Output<String> networkLaunchType;
+
+    /**
+     * @return (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+     * 
+     */
+    public Optional<Output<String>> networkLaunchType() {
+        return Optional.ofNullable(this.networkLaunchType);
     }
 
     /**
@@ -297,6 +313,21 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) A list of secondary vnics to attach to nodes
+     * 
+     */
+    @Import(name="secondaryVnics")
+    private @Nullable Output<List<NodePoolSecondaryVnicArgs>> secondaryVnics;
+
+    /**
+     * @return (Updatable) A list of secondary vnics to attach to nodes
+     * 
+     */
+    public Optional<Output<List<NodePoolSecondaryVnicArgs>>> secondaryVnics() {
+        return Optional.ofNullable(this.secondaryVnics);
+    }
+
+    /**
      * (Updatable) The SSH public key on each node in the node pool on launch.
      * 
      */
@@ -342,6 +373,7 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
         this.initialNodeLabels = $.initialNodeLabels;
         this.kubernetesVersion = $.kubernetesVersion;
         this.name = $.name;
+        this.networkLaunchType = $.networkLaunchType;
         this.nodeConfigDetails = $.nodeConfigDetails;
         this.nodeEvictionNodePoolSettings = $.nodeEvictionNodePoolSettings;
         this.nodeImageId = $.nodeImageId;
@@ -352,6 +384,7 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
         this.nodeShapeConfig = $.nodeShapeConfig;
         this.nodeSourceDetails = $.nodeSourceDetails;
         this.quantityPerSubnet = $.quantityPerSubnet;
+        this.secondaryVnics = $.secondaryVnics;
         this.sshPublicKey = $.sshPublicKey;
         this.subnetIds = $.subnetIds;
     }
@@ -529,6 +562,27 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        /**
+         * @param networkLaunchType (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkLaunchType(@Nullable Output<String> networkLaunchType) {
+            $.networkLaunchType = networkLaunchType;
+            return this;
+        }
+
+        /**
+         * @param networkLaunchType (Updatable) Emulation type for the physical network interface card (NIC) for nodes
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkLaunchType(String networkLaunchType) {
+            return networkLaunchType(Output.of(networkLaunchType));
         }
 
         /**
@@ -755,6 +809,37 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder quantityPerSubnet(Integer quantityPerSubnet) {
             return quantityPerSubnet(Output.of(quantityPerSubnet));
+        }
+
+        /**
+         * @param secondaryVnics (Updatable) A list of secondary vnics to attach to nodes
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secondaryVnics(@Nullable Output<List<NodePoolSecondaryVnicArgs>> secondaryVnics) {
+            $.secondaryVnics = secondaryVnics;
+            return this;
+        }
+
+        /**
+         * @param secondaryVnics (Updatable) A list of secondary vnics to attach to nodes
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secondaryVnics(List<NodePoolSecondaryVnicArgs> secondaryVnics) {
+            return secondaryVnics(Output.of(secondaryVnics));
+        }
+
+        /**
+         * @param secondaryVnics (Updatable) A list of secondary vnics to attach to nodes
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secondaryVnics(NodePoolSecondaryVnicArgs... secondaryVnics) {
+            return secondaryVnics(List.of(secondaryVnics));
         }
 
         /**

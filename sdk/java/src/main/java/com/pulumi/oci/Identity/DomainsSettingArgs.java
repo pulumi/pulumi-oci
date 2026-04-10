@@ -852,6 +852,41 @@ public final class DomainsSettingArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * (Updatable) Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: global
+     * 
+     */
+    @Import(name="identityDomainsSettingId")
+    private @Nullable Output<String> identityDomainsSettingId;
+
+    /**
+     * @return (Updatable) Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: global
+     * 
+     */
+    public Optional<Output<String>> identityDomainsSettingId() {
+        return Optional.ofNullable(this.identityDomainsSettingId);
+    }
+
+    /**
      * (Updatable) References to various images
      * 
      * **SCIM++ Properties:**
@@ -1696,6 +1731,7 @@ public final class DomainsSettingArgs extends com.pulumi.resources.ResourceArgs 
         this.externalId = $.externalId;
         this.iamUpstSessionExpiry = $.iamUpstSessionExpiry;
         this.idcsEndpoint = $.idcsEndpoint;
+        this.identityDomainsSettingId = $.identityDomainsSettingId;
         this.images = $.images;
         this.isHostedPage = $.isHostedPage;
         this.issuer = $.issuer;
@@ -2826,6 +2862,47 @@ public final class DomainsSettingArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder idcsEndpoint(String idcsEndpoint) {
             return idcsEndpoint(Output.of(idcsEndpoint));
+        }
+
+        /**
+         * @param identityDomainsSettingId (Updatable) Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: global
+         * 
+         * @return builder
+         * 
+         */
+        public Builder identityDomainsSettingId(@Nullable Output<String> identityDomainsSettingId) {
+            $.identityDomainsSettingId = identityDomainsSettingId;
+            return this;
+        }
+
+        /**
+         * @param identityDomainsSettingId (Updatable) Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: global
+         * 
+         * @return builder
+         * 
+         */
+        public Builder identityDomainsSettingId(String identityDomainsSettingId) {
+            return identityDomainsSettingId(Output.of(identityDomainsSettingId));
         }
 
         /**

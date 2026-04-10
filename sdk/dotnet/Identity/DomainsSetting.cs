@@ -98,7 +98,7 @@ namespace Pulumi.Oci.Identity
     ///         EnableTermsOfUse = settingEnableTermsOfUse,
     ///         ExternalId = "externalId",
     ///         IamUpstSessionExpiry = settingIamUpstSessionExpiry,
-    ///         Id = settingId,
+    ///         IdentityDomainsSettingId = settingId,
     ///         Images = new[]
     ///         {
     ///             new Oci.Identity.Inputs.DomainsSettingImageArgs
@@ -744,6 +744,22 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         [Output("idcsPreventedOperations")]
         public Output<ImmutableArray<string>> IdcsPreventedOperations { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: global
+        /// </summary>
+        [Output("identityDomainsSettingId")]
+        public Output<string> IdentityDomainsSettingId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) References to various images
@@ -1646,6 +1662,22 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         [Input("idcsEndpoint", required: true)]
         public Input<string> IdcsEndpoint { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: global
+        /// </summary>
+        [Input("identityDomainsSettingId")]
+        public Input<string>? IdentityDomainsSettingId { get; set; }
 
         [Input("images")]
         private InputList<Inputs.DomainsSettingImageArgs>? _images;
@@ -2706,6 +2738,22 @@ namespace Pulumi.Oci.Identity
             get => _idcsPreventedOperations ?? (_idcsPreventedOperations = new InputList<string>());
             set => _idcsPreventedOperations = value;
         }
+
+        /// <summary>
+        /// (Updatable) Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: global
+        /// </summary>
+        [Input("identityDomainsSettingId")]
+        public Input<string>? IdentityDomainsSettingId { get; set; }
 
         [Input("images")]
         private InputList<Inputs.DomainsSettingImageGetArgs>? _images;

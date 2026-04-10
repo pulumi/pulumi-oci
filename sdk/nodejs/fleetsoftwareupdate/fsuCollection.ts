@@ -141,6 +141,10 @@ export class FsuCollection extends pulumi.CustomResource {
      */
     declare public readonly fleetDiscovery: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCollectionFleetDiscovery>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
+     */
+    declare public readonly fleetSoftwareUpdateFsuCollectionId: pulumi.Output<string>;
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
@@ -208,6 +212,7 @@ export class FsuCollection extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["fleetDiscovery"] = state?.fleetDiscovery;
+            resourceInputs["fleetSoftwareUpdateFsuCollectionId"] = state?.fleetSoftwareUpdateFsuCollectionId;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["lastCompletedFsuCycleId"] = state?.lastCompletedFsuCycleId;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
@@ -235,6 +240,7 @@ export class FsuCollection extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["fleetDiscovery"] = args?.fleetDiscovery;
+            resourceInputs["fleetSoftwareUpdateFsuCollectionId"] = args?.fleetSoftwareUpdateFsuCollectionId;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["serviceType"] = args?.serviceType;
             resourceInputs["sourceMajorVersion"] = args?.sourceMajorVersion;
@@ -281,6 +287,10 @@ export interface FsuCollectionState {
      * Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
      */
     fleetDiscovery?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCollectionFleetDiscovery>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
+     */
+    fleetSoftwareUpdateFsuCollectionId?: pulumi.Input<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
@@ -355,6 +365,10 @@ export interface FsuCollectionArgs {
      * Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
      */
     fleetDiscovery?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCollectionFleetDiscovery>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
+     */
+    fleetSoftwareUpdateFsuCollectionId?: pulumi.Input<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */

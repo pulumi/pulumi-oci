@@ -31,7 +31,7 @@ import (
 // pulumi.Run(func(ctx *pulumi.Context) error {
 // var splat0 []interface{}
 // for _, val0 := range testExadbVmCluster.NodeResource {
-// splat0 = append(splat0, val0.NodeId)
+// splat0 = append(splat0, val0.(map[string]interface{})["nodeId"])
 // }
 // _, err := database.NewDbNodeSnapshotManagement(ctx, "test_db_node_snapshot_management", &database.DbNodeSnapshotManagementArgs{
 // ExadbVmClusterId: pulumi.Any(testExadbVmCluster.Id),

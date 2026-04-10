@@ -28,6 +28,7 @@ class FsuCollectionArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  fleet_discovery: Optional[pulumi.Input['FsuCollectionFleetDiscoveryArgs']] = None,
+                 fleet_software_update_fsu_collection_id: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  source_major_version: Optional[pulumi.Input[_builtins.str]] = None):
         """
@@ -44,6 +45,7 @@ class FsuCollectionArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
         :param pulumi.Input['FsuCollectionFleetDiscoveryArgs'] fleet_discovery: Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
+        :param pulumi.Input[_builtins.str] fleet_software_update_fsu_collection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] source_major_version: Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose 'systemVersion' is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
         """
@@ -58,6 +60,8 @@ class FsuCollectionArgs:
             pulumi.set(__self__, "display_name", display_name)
         if fleet_discovery is not None:
             pulumi.set(__self__, "fleet_discovery", fleet_discovery)
+        if fleet_software_update_fsu_collection_id is not None:
+            pulumi.set(__self__, "fleet_software_update_fsu_collection_id", fleet_software_update_fsu_collection_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if source_major_version is not None:
@@ -152,6 +156,18 @@ class FsuCollectionArgs:
         pulumi.set(self, "fleet_discovery", value)
 
     @_builtins.property
+    @pulumi.getter(name="fleetSoftwareUpdateFsuCollectionId")
+    def fleet_software_update_fsu_collection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
+        """
+        return pulumi.get(self, "fleet_software_update_fsu_collection_id")
+
+    @fleet_software_update_fsu_collection_id.setter
+    def fleet_software_update_fsu_collection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "fleet_software_update_fsu_collection_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -185,6 +201,7 @@ class _FsuCollectionState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  fleet_discovery: Optional[pulumi.Input['FsuCollectionFleetDiscoveryArgs']] = None,
+                 fleet_software_update_fsu_collection_id: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  last_completed_fsu_cycle_id: Optional[pulumi.Input[_builtins.str]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
@@ -205,6 +222,7 @@ class _FsuCollectionState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
         :param pulumi.Input['FsuCollectionFleetDiscoveryArgs'] fleet_discovery: Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
+        :param pulumi.Input[_builtins.str] fleet_software_update_fsu_collection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] last_completed_fsu_cycle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -233,6 +251,8 @@ class _FsuCollectionState:
             pulumi.set(__self__, "display_name", display_name)
         if fleet_discovery is not None:
             pulumi.set(__self__, "fleet_discovery", fleet_discovery)
+        if fleet_software_update_fsu_collection_id is not None:
+            pulumi.set(__self__, "fleet_software_update_fsu_collection_id", fleet_software_update_fsu_collection_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if last_completed_fsu_cycle_id is not None:
@@ -327,6 +347,18 @@ class _FsuCollectionState:
     @fleet_discovery.setter
     def fleet_discovery(self, value: Optional[pulumi.Input['FsuCollectionFleetDiscoveryArgs']]):
         pulumi.set(self, "fleet_discovery", value)
+
+    @_builtins.property
+    @pulumi.getter(name="fleetSoftwareUpdateFsuCollectionId")
+    def fleet_software_update_fsu_collection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
+        """
+        return pulumi.get(self, "fleet_software_update_fsu_collection_id")
+
+    @fleet_software_update_fsu_collection_id.setter
+    def fleet_software_update_fsu_collection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "fleet_software_update_fsu_collection_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
@@ -476,6 +508,7 @@ class FsuCollection(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  fleet_discovery: Optional[pulumi.Input[Union['FsuCollectionFleetDiscoveryArgs', 'FsuCollectionFleetDiscoveryArgsDict']]] = None,
+                 fleet_software_update_fsu_collection_id: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  service_type: Optional[pulumi.Input[_builtins.str]] = None,
                  source_major_version: Optional[pulumi.Input[_builtins.str]] = None,
@@ -570,6 +603,7 @@ class FsuCollection(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
         :param pulumi.Input[Union['FsuCollectionFleetDiscoveryArgs', 'FsuCollectionFleetDiscoveryArgsDict']] fleet_discovery: Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
+        :param pulumi.Input[_builtins.str] fleet_software_update_fsu_collection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] service_type: Exadata service type for the target resource members.
         :param pulumi.Input[_builtins.str] source_major_version: Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose 'systemVersion' is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
@@ -687,6 +721,7 @@ class FsuCollection(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  fleet_discovery: Optional[pulumi.Input[Union['FsuCollectionFleetDiscoveryArgs', 'FsuCollectionFleetDiscoveryArgsDict']]] = None,
+                 fleet_software_update_fsu_collection_id: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  service_type: Optional[pulumi.Input[_builtins.str]] = None,
                  source_major_version: Optional[pulumi.Input[_builtins.str]] = None,
@@ -707,6 +742,7 @@ class FsuCollection(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["fleet_discovery"] = fleet_discovery
+            __props__.__dict__["fleet_software_update_fsu_collection_id"] = fleet_software_update_fsu_collection_id
             __props__.__dict__["freeform_tags"] = freeform_tags
             if service_type is None and not opts.urn:
                 raise TypeError("Missing required property 'service_type'")
@@ -739,6 +775,7 @@ class FsuCollection(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             fleet_discovery: Optional[pulumi.Input[Union['FsuCollectionFleetDiscoveryArgs', 'FsuCollectionFleetDiscoveryArgsDict']]] = None,
+            fleet_software_update_fsu_collection_id: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             last_completed_fsu_cycle_id: Optional[pulumi.Input[_builtins.str]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
@@ -763,6 +800,7 @@ class FsuCollection(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
         :param pulumi.Input[Union['FsuCollectionFleetDiscoveryArgs', 'FsuCollectionFleetDiscoveryArgsDict']] fleet_discovery: Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
+        :param pulumi.Input[_builtins.str] fleet_software_update_fsu_collection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] last_completed_fsu_cycle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -789,6 +827,7 @@ class FsuCollection(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["fleet_discovery"] = fleet_discovery
+        __props__.__dict__["fleet_software_update_fsu_collection_id"] = fleet_software_update_fsu_collection_id
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["last_completed_fsu_cycle_id"] = last_completed_fsu_cycle_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
@@ -849,6 +888,14 @@ class FsuCollection(pulumi.CustomResource):
         Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
         """
         return pulumi.get(self, "fleet_discovery")
+
+    @_builtins.property
+    @pulumi.getter(name="fleetSoftwareUpdateFsuCollectionId")
+    def fleet_software_update_fsu_collection_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
+        """
+        return pulumi.get(self, "fleet_software_update_fsu_collection_id")
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")

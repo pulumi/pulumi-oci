@@ -132,6 +132,8 @@ type FsuCollection struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
 	FleetDiscovery FsuCollectionFleetDiscoveryOutput `pulumi:"fleetDiscovery"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
+	FleetSoftwareUpdateFsuCollectionId pulumi.StringOutput `pulumi:"fleetSoftwareUpdateFsuCollectionId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
@@ -210,6 +212,8 @@ type fsuCollectionState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
 	FleetDiscovery *FsuCollectionFleetDiscovery `pulumi:"fleetDiscovery"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
+	FleetSoftwareUpdateFsuCollectionId *string `pulumi:"fleetSoftwareUpdateFsuCollectionId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
@@ -250,6 +254,8 @@ type FsuCollectionState struct {
 	DisplayName pulumi.StringPtrInput
 	// Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
 	FleetDiscovery FsuCollectionFleetDiscoveryPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
+	FleetSoftwareUpdateFsuCollectionId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
@@ -292,6 +298,8 @@ type fsuCollectionArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
 	FleetDiscovery *FsuCollectionFleetDiscovery `pulumi:"fleetDiscovery"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
+	FleetSoftwareUpdateFsuCollectionId *string `pulumi:"fleetSoftwareUpdateFsuCollectionId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Exadata service type for the target resource members.
@@ -317,6 +325,8 @@ type FsuCollectionArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
 	FleetDiscovery FsuCollectionFleetDiscoveryPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
+	FleetSoftwareUpdateFsuCollectionId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// Exadata service type for the target resource members.
@@ -445,6 +455,11 @@ func (o FsuCollectionOutput) DisplayName() pulumi.StringOutput {
 // Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
 func (o FsuCollectionOutput) FleetDiscovery() FsuCollectionFleetDiscoveryOutput {
 	return o.ApplyT(func(v *FsuCollection) FsuCollectionFleetDiscoveryOutput { return v.FleetDiscovery }).(FsuCollectionFleetDiscoveryOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
+func (o FsuCollectionOutput) FleetSoftwareUpdateFsuCollectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v *FsuCollection) pulumi.StringOutput { return v.FleetSoftwareUpdateFsuCollectionId }).(pulumi.StringOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`

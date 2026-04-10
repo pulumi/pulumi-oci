@@ -162,6 +162,12 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Output<Outputs.FsuCollectionFleetDiscovery> FleetDiscovery { get; private set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
+        /// </summary>
+        [Output("fleetSoftwareUpdateFsuCollectionId")]
+        public Output<string> FleetSoftwareUpdateFsuCollectionId { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
@@ -319,6 +325,12 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         [Input("fleetDiscovery")]
         public Input<Inputs.FsuCollectionFleetDiscoveryArgs>? FleetDiscovery { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
+        /// </summary>
+        [Input("fleetSoftwareUpdateFsuCollectionId")]
+        public Input<string>? FleetSoftwareUpdateFsuCollectionId { get; set; }
+
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
 
@@ -414,6 +426,12 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         /// </summary>
         [Input("fleetDiscovery")]
         public Input<Inputs.FsuCollectionFleetDiscoveryGetArgs>? FleetDiscovery { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
+        /// </summary>
+        [Input("fleetSoftwareUpdateFsuCollectionId")]
+        public Input<string>? FleetSoftwareUpdateFsuCollectionId { get; set; }
 
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;

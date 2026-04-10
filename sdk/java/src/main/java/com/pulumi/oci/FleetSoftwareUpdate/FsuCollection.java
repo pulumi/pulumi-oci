@@ -210,6 +210,20 @@ public class FsuCollection extends com.pulumi.resources.CustomResource {
         return this.fleetDiscovery;
     }
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
+     * 
+     */
+    @Export(name="fleetSoftwareUpdateFsuCollectionId", refs={String.class}, tree="[0]")
+    private Output<String> fleetSoftwareUpdateFsuCollectionId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
+     * 
+     */
+    public Output<String> fleetSoftwareUpdateFsuCollectionId() {
+        return this.fleetSoftwareUpdateFsuCollectionId;
+    }
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */

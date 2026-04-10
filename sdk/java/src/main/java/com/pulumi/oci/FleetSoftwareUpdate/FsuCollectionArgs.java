@@ -96,6 +96,21 @@ public final class FsuCollectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
+     * 
+     */
+    @Import(name="fleetSoftwareUpdateFsuCollectionId")
+    private @Nullable Output<String> fleetSoftwareUpdateFsuCollectionId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
+     * 
+     */
+    public Optional<Output<String>> fleetSoftwareUpdateFsuCollectionId() {
+        return Optional.ofNullable(this.fleetSoftwareUpdateFsuCollectionId);
+    }
+
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -169,6 +184,7 @@ public final class FsuCollectionArgs extends com.pulumi.resources.ResourceArgs {
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.fleetDiscovery = $.fleetDiscovery;
+        this.fleetSoftwareUpdateFsuCollectionId = $.fleetSoftwareUpdateFsuCollectionId;
         this.freeformTags = $.freeformTags;
         this.serviceType = $.serviceType;
         this.sourceMajorVersion = $.sourceMajorVersion;
@@ -306,6 +322,27 @@ public final class FsuCollectionArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder fleetDiscovery(FsuCollectionFleetDiscoveryArgs fleetDiscovery) {
             return fleetDiscovery(Output.of(fleetDiscovery));
+        }
+
+        /**
+         * @param fleetSoftwareUpdateFsuCollectionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fleetSoftwareUpdateFsuCollectionId(@Nullable Output<String> fleetSoftwareUpdateFsuCollectionId) {
+            $.fleetSoftwareUpdateFsuCollectionId = fleetSoftwareUpdateFsuCollectionId;
+            return this;
+        }
+
+        /**
+         * @param fleetSoftwareUpdateFsuCollectionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fleetSoftwareUpdateFsuCollectionId(String fleetSoftwareUpdateFsuCollectionId) {
+            return fleetSoftwareUpdateFsuCollectionId(Output.of(fleetSoftwareUpdateFsuCollectionId));
         }
 
         /**

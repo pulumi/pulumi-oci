@@ -49,6 +49,7 @@ class DomainsSettingArgs:
                  enable_terms_of_use: Optional[pulumi.Input[_builtins.bool]] = None,
                  external_id: Optional[pulumi.Input[_builtins.str]] = None,
                  iam_upst_session_expiry: Optional[pulumi.Input[_builtins.int]] = None,
+                 identity_domains_setting_id: Optional[pulumi.Input[_builtins.str]] = None,
                  images: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingImageArgs']]]] = None,
                  is_hosted_page: Optional[pulumi.Input[_builtins.bool]] = None,
                  issuer: Optional[pulumi.Input[_builtins.str]] = None,
@@ -329,6 +330,17 @@ class DomainsSettingArgs:
                * returned: default
                * type: integer
                * uniqueness: none
+        :param pulumi.Input[_builtins.str] identity_domains_setting_id: (Updatable) Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: always
+               * type: string
+               * uniqueness: global
         :param pulumi.Input[Sequence[pulumi.Input['DomainsSettingImageArgs']]] images: (Updatable) References to various images
                
                **SCIM++ Properties:**
@@ -623,6 +635,8 @@ class DomainsSettingArgs:
             pulumi.set(__self__, "external_id", external_id)
         if iam_upst_session_expiry is not None:
             pulumi.set(__self__, "iam_upst_session_expiry", iam_upst_session_expiry)
+        if identity_domains_setting_id is not None:
+            pulumi.set(__self__, "identity_domains_setting_id", identity_domains_setting_id)
         if images is not None:
             pulumi.set(__self__, "images", images)
         if is_hosted_page is not None:
@@ -1232,6 +1246,28 @@ class DomainsSettingArgs:
         pulumi.set(self, "iam_upst_session_expiry", value)
 
     @_builtins.property
+    @pulumi.getter(name="identityDomainsSettingId")
+    def identity_domains_setting_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: always
+        * type: string
+        * uniqueness: global
+        """
+        return pulumi.get(self, "identity_domains_setting_id")
+
+    @identity_domains_setting_id.setter
+    def identity_domains_setting_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "identity_domains_setting_id", value)
+
+    @_builtins.property
     @pulumi.getter
     def images(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingImageArgs']]]]:
         """
@@ -1756,6 +1792,7 @@ class _DomainsSettingState:
                  idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingIdcsLastModifiedByArgs']]]] = None,
                  idcs_last_upgraded_in_release: Optional[pulumi.Input[_builtins.str]] = None,
                  idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 identity_domains_setting_id: Optional[pulumi.Input[_builtins.str]] = None,
                  images: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingImageArgs']]]] = None,
                  is_hosted_page: Optional[pulumi.Input[_builtins.bool]] = None,
                  issuer: Optional[pulumi.Input[_builtins.str]] = None,
@@ -2158,6 +2195,17 @@ class _DomainsSettingState:
                * returned: request
                * type: string
                * uniqueness: none
+        :param pulumi.Input[_builtins.str] identity_domains_setting_id: (Updatable) Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: always
+               * type: string
+               * uniqueness: global
         :param pulumi.Input[Sequence[pulumi.Input['DomainsSettingImageArgs']]] images: (Updatable) References to various images
                
                **SCIM++ Properties:**
@@ -2534,6 +2582,8 @@ class _DomainsSettingState:
             pulumi.set(__self__, "idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
         if idcs_prevented_operations is not None:
             pulumi.set(__self__, "idcs_prevented_operations", idcs_prevented_operations)
+        if identity_domains_setting_id is not None:
+            pulumi.set(__self__, "identity_domains_setting_id", identity_domains_setting_id)
         if images is not None:
             pulumi.set(__self__, "images", images)
         if is_hosted_page is not None:
@@ -3381,6 +3431,28 @@ class _DomainsSettingState:
         pulumi.set(self, "idcs_prevented_operations", value)
 
     @_builtins.property
+    @pulumi.getter(name="identityDomainsSettingId")
+    def identity_domains_setting_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: always
+        * type: string
+        * uniqueness: global
+        """
+        return pulumi.get(self, "identity_domains_setting_id")
+
+    @identity_domains_setting_id.setter
+    def identity_domains_setting_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "identity_domains_setting_id", value)
+
+    @_builtins.property
     @pulumi.getter
     def images(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSettingImageArgs']]]]:
         """
@@ -4020,6 +4092,7 @@ class DomainsSetting(pulumi.CustomResource):
                  external_id: Optional[pulumi.Input[_builtins.str]] = None,
                  iam_upst_session_expiry: Optional[pulumi.Input[_builtins.int]] = None,
                  idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
+                 identity_domains_setting_id: Optional[pulumi.Input[_builtins.str]] = None,
                  images: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingImageArgs', 'DomainsSettingImageArgsDict']]]]] = None,
                  is_hosted_page: Optional[pulumi.Input[_builtins.bool]] = None,
                  issuer: Optional[pulumi.Input[_builtins.str]] = None,
@@ -4108,7 +4181,7 @@ class DomainsSetting(pulumi.CustomResource):
             enable_terms_of_use=setting_enable_terms_of_use,
             external_id="externalId",
             iam_upst_session_expiry=setting_iam_upst_session_expiry,
-            id=setting_id,
+            identity_domains_setting_id=setting_id,
             images=[{
                 "type": setting_images_type,
                 "value": setting_images_value,
@@ -4408,6 +4481,17 @@ class DomainsSetting(pulumi.CustomResource):
                * type: integer
                * uniqueness: none
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
+        :param pulumi.Input[_builtins.str] identity_domains_setting_id: (Updatable) Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: always
+               * type: string
+               * uniqueness: global
         :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingImageArgs', 'DomainsSettingImageArgsDict']]]] images: (Updatable) References to various images
                
                **SCIM++ Properties:**
@@ -4731,7 +4815,7 @@ class DomainsSetting(pulumi.CustomResource):
             enable_terms_of_use=setting_enable_terms_of_use,
             external_id="externalId",
             iam_upst_session_expiry=setting_iam_upst_session_expiry,
-            id=setting_id,
+            identity_domains_setting_id=setting_id,
             images=[{
                 "type": setting_images_type,
                 "value": setting_images_value,
@@ -4827,6 +4911,7 @@ class DomainsSetting(pulumi.CustomResource):
                  external_id: Optional[pulumi.Input[_builtins.str]] = None,
                  iam_upst_session_expiry: Optional[pulumi.Input[_builtins.int]] = None,
                  idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
+                 identity_domains_setting_id: Optional[pulumi.Input[_builtins.str]] = None,
                  images: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingImageArgs', 'DomainsSettingImageArgsDict']]]]] = None,
                  is_hosted_page: Optional[pulumi.Input[_builtins.bool]] = None,
                  issuer: Optional[pulumi.Input[_builtins.str]] = None,
@@ -4890,6 +4975,7 @@ class DomainsSetting(pulumi.CustomResource):
             if idcs_endpoint is None and not opts.urn:
                 raise TypeError("Missing required property 'idcs_endpoint'")
             __props__.__dict__["idcs_endpoint"] = idcs_endpoint
+            __props__.__dict__["identity_domains_setting_id"] = identity_domains_setting_id
             __props__.__dict__["images"] = images
             __props__.__dict__["is_hosted_page"] = is_hosted_page
             __props__.__dict__["issuer"] = issuer
@@ -4984,6 +5070,7 @@ class DomainsSetting(pulumi.CustomResource):
             idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingIdcsLastModifiedByArgs', 'DomainsSettingIdcsLastModifiedByArgsDict']]]]] = None,
             idcs_last_upgraded_in_release: Optional[pulumi.Input[_builtins.str]] = None,
             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            identity_domains_setting_id: Optional[pulumi.Input[_builtins.str]] = None,
             images: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingImageArgs', 'DomainsSettingImageArgsDict']]]]] = None,
             is_hosted_page: Optional[pulumi.Input[_builtins.bool]] = None,
             issuer: Optional[pulumi.Input[_builtins.str]] = None,
@@ -5390,6 +5477,17 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
+        :param pulumi.Input[_builtins.str] identity_domains_setting_id: (Updatable) Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: always
+               * type: string
+               * uniqueness: global
         :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsSettingImageArgs', 'DomainsSettingImageArgsDict']]]] images: (Updatable) References to various images
                
                **SCIM++ Properties:**
@@ -5732,6 +5830,7 @@ class DomainsSetting(pulumi.CustomResource):
         __props__.__dict__["idcs_last_modified_bies"] = idcs_last_modified_bies
         __props__.__dict__["idcs_last_upgraded_in_release"] = idcs_last_upgraded_in_release
         __props__.__dict__["idcs_prevented_operations"] = idcs_prevented_operations
+        __props__.__dict__["identity_domains_setting_id"] = identity_domains_setting_id
         __props__.__dict__["images"] = images
         __props__.__dict__["is_hosted_page"] = is_hosted_page
         __props__.__dict__["issuer"] = issuer
@@ -6398,6 +6497,24 @@ class DomainsSetting(pulumi.CustomResource):
         * uniqueness: none
         """
         return pulumi.get(self, "idcs_prevented_operations")
+
+    @_builtins.property
+    @pulumi.getter(name="identityDomainsSettingId")
+    def identity_domains_setting_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: always
+        * type: string
+        * uniqueness: global
+        """
+        return pulumi.get(self, "identity_domains_setting_id")
 
     @_builtins.property
     @pulumi.getter

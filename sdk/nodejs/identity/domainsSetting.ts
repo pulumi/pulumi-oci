@@ -69,7 +69,7 @@ import * as utilities from "../utilities";
  *     enableTermsOfUse: settingEnableTermsOfUse,
  *     externalId: "externalId",
  *     iamUpstSessionExpiry: settingIamUpstSessionExpiry,
- *     id: settingId,
+ *     identityDomainsSettingId: settingId,
  *     images: [{
  *         type: settingImagesType,
  *         value: settingImagesValue,
@@ -638,6 +638,20 @@ export class DomainsSetting extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly idcsPreventedOperations: pulumi.Output<string[]>;
     /**
+     * (Updatable) Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: global
+     */
+    declare public readonly identityDomainsSettingId: pulumi.Output<string>;
+    /**
      * (Updatable) References to various images
      *
      * **SCIM++ Properties:**
@@ -1072,6 +1086,7 @@ export class DomainsSetting extends pulumi.CustomResource {
             resourceInputs["idcsLastModifiedBies"] = state?.idcsLastModifiedBies;
             resourceInputs["idcsLastUpgradedInRelease"] = state?.idcsLastUpgradedInRelease;
             resourceInputs["idcsPreventedOperations"] = state?.idcsPreventedOperations;
+            resourceInputs["identityDomainsSettingId"] = state?.identityDomainsSettingId;
             resourceInputs["images"] = state?.images;
             resourceInputs["isHostedPage"] = state?.isHostedPage;
             resourceInputs["issuer"] = state?.issuer;
@@ -1140,6 +1155,7 @@ export class DomainsSetting extends pulumi.CustomResource {
             resourceInputs["externalId"] = args?.externalId;
             resourceInputs["iamUpstSessionExpiry"] = args?.iamUpstSessionExpiry;
             resourceInputs["idcsEndpoint"] = args?.idcsEndpoint;
+            resourceInputs["identityDomainsSettingId"] = args?.identityDomainsSettingId;
             resourceInputs["images"] = args?.images;
             resourceInputs["isHostedPage"] = args?.isHostedPage;
             resourceInputs["issuer"] = args?.issuer;
@@ -1677,6 +1693,20 @@ export interface DomainsSettingState {
      * * uniqueness: none
      */
     idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: global
+     */
+    identityDomainsSettingId?: pulumi.Input<string>;
     /**
      * (Updatable) References to various images
      *
@@ -2387,6 +2417,20 @@ export interface DomainsSettingArgs {
      * The basic endpoint for the identity domain
      */
     idcsEndpoint: pulumi.Input<string>;
+    /**
+     * (Updatable) Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: global
+     */
+    identityDomainsSettingId?: pulumi.Input<string>;
     /**
      * (Updatable) References to various images
      *

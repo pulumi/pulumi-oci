@@ -44,6 +44,10 @@ export interface GetFusionEnvironmentArgs {
  */
 export interface GetFusionEnvironmentResult {
     /**
+     * Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+     */
+    readonly additionalEgressRules: outputs.Functions.GetFusionEnvironmentAdditionalEgressRule[];
+    /**
      * Language packs
      */
     readonly additionalLanguagePacks: string[];
@@ -98,7 +102,7 @@ export interface GetFusionEnvironmentResult {
      */
     readonly isBreakGlassEnabled: boolean;
     /**
-     * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     * Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
      */
     readonly isIpv6dualStackEnabled: boolean;
     /**

@@ -138,7 +138,7 @@ class GetDistributedDatabaseDistributedDatabasePrivateEndpointResult:
     @pulumi.getter(name="globallyDistributedAutonomousDatabases")
     def globally_distributed_autonomous_databases(self) -> Sequence['outputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabaseResult']:
         """
-        The details of the non-deleted Globally distributed autonomous databases that consumes the given private endpoint.
+        This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
         """
         return pulumi.get(self, "globally_distributed_autonomous_databases")
 
@@ -146,7 +146,7 @@ class GetDistributedDatabaseDistributedDatabasePrivateEndpointResult:
     @pulumi.getter(name="globallyDistributedDatabases")
     def globally_distributed_databases(self) -> Sequence['outputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabaseResult']:
         """
-        The details of the non-deleted Globally distributed databases that consumes the given private endpoint.
+        This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
         """
         return pulumi.get(self, "globally_distributed_databases")
 

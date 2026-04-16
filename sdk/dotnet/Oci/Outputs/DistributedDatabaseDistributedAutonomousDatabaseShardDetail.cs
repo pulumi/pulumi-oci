@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// <summary>
         /// Admin password for shard database.
         /// </summary>
-        public readonly string AdminPassword;
+        public readonly string? AdminPassword;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         /// </summary>
@@ -53,6 +53,14 @@ namespace Pulumi.Oci.Oci.Outputs
         /// Name of the shard.
         /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// The OKV endpoint name.
+        /// </summary>
+        public readonly string? OkvEndPointGroup;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+        /// </summary>
+        public readonly string? OkvKeyStoreId;
         /// <summary>
         /// This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers on new shards of distributed autonomous database please use peerDetails.
         /// </summary>
@@ -96,7 +104,7 @@ namespace Pulumi.Oci.Oci.Outputs
 
         [OutputConstructor]
         private DistributedDatabaseDistributedAutonomousDatabaseShardDetail(
-            string adminPassword,
+            string? adminPassword,
 
             string cloudAutonomousVmClusterId,
 
@@ -115,6 +123,10 @@ namespace Pulumi.Oci.Oci.Outputs
             ImmutableArray<Outputs.DistributedDatabaseDistributedAutonomousDatabaseShardDetailMetadata> metadatas,
 
             string? name,
+
+            string? okvEndPointGroup,
+
+            string? okvKeyStoreId,
 
             ImmutableArray<string> peerCloudAutonomousVmClusterIds,
 
@@ -146,6 +158,8 @@ namespace Pulumi.Oci.Oci.Outputs
             KmsKeyVersionId = kmsKeyVersionId;
             Metadatas = metadatas;
             Name = name;
+            OkvEndPointGroup = okvEndPointGroup;
+            OkvKeyStoreId = okvKeyStoreId;
             PeerCloudAutonomousVmClusterIds = peerCloudAutonomousVmClusterIds;
             PeerDetails = peerDetails;
             ShardGroup = shardGroup;

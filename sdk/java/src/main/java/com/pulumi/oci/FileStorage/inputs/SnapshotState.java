@@ -6,6 +6,7 @@ package com.pulumi.oci.FileStorage.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.FileStorage.inputs.SnapshotLockArgs;
+import com.pulumi.oci.FileStorage.inputs.SnapshotLockDurationDetailsArgs;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -129,6 +130,21 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> lifecycleDetails() {
         return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
+     * (Updatable) Details for setting a retention date or legal hold.
+     * 
+     */
+    @Import(name="lockDurationDetails")
+    private @Nullable Output<SnapshotLockDurationDetailsArgs> lockDurationDetails;
+
+    /**
+     * @return (Updatable) Details for setting a retention date or legal hold.
+     * 
+     */
+    public Optional<Output<SnapshotLockDurationDetailsArgs>> lockDurationDetails() {
+        return Optional.ofNullable(this.lockDurationDetails);
     }
 
     /**
@@ -271,6 +287,21 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.timeCreated);
     }
 
+    /**
+     * The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+     * 
+     */
+    @Import(name="timeLocked")
+    private @Nullable Output<String> timeLocked;
+
+    /**
+     * @return The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+     * 
+     */
+    public Optional<Output<String>> timeLocked() {
+        return Optional.ofNullable(this.timeLocked);
+    }
+
     private SnapshotState() {}
 
     private SnapshotState(SnapshotState $) {
@@ -282,6 +313,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         this.isCloneSource = $.isCloneSource;
         this.isLockOverride = $.isLockOverride;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.lockDurationDetails = $.lockDurationDetails;
         this.locks = $.locks;
         this.name = $.name;
         this.provenanceId = $.provenanceId;
@@ -290,6 +322,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
+        this.timeLocked = $.timeLocked;
     }
 
     public static Builder builder() {
@@ -464,6 +497,27 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
+         * @param lockDurationDetails (Updatable) Details for setting a retention date or legal hold.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lockDurationDetails(@Nullable Output<SnapshotLockDurationDetailsArgs> lockDurationDetails) {
+            $.lockDurationDetails = lockDurationDetails;
+            return this;
+        }
+
+        /**
+         * @param lockDurationDetails (Updatable) Details for setting a retention date or legal hold.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lockDurationDetails(SnapshotLockDurationDetailsArgs lockDurationDetails) {
+            return lockDurationDetails(Output.of(lockDurationDetails));
         }
 
         /**
@@ -662,6 +716,27 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder timeCreated(String timeCreated) {
             return timeCreated(Output.of(timeCreated));
+        }
+
+        /**
+         * @param timeLocked The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeLocked(@Nullable Output<String> timeLocked) {
+            $.timeLocked = timeLocked;
+            return this;
+        }
+
+        /**
+         * @param timeLocked The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeLocked(String timeLocked) {
+            return timeLocked(Output.of(timeLocked));
         }
 
         public SnapshotState build() {

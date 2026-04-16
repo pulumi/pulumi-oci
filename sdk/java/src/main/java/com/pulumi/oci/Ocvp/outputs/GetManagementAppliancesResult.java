@@ -38,6 +38,11 @@ public final class GetManagementAppliancesResult {
     private List<GetManagementAppliancesManagementApplianceCollection> managementApplianceCollections;
     private @Nullable String managementApplianceId;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
+     * 
+     */
+    private @Nullable String sddcId;
+    /**
      * @return Current state of the management appliance.
      * 
      */
@@ -79,6 +84,13 @@ public final class GetManagementAppliancesResult {
         return Optional.ofNullable(this.managementApplianceId);
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
+     * 
+     */
+    public Optional<String> sddcId() {
+        return Optional.ofNullable(this.sddcId);
+    }
+    /**
      * @return Current state of the management appliance.
      * 
      */
@@ -101,6 +113,7 @@ public final class GetManagementAppliancesResult {
         private String id;
         private List<GetManagementAppliancesManagementApplianceCollection> managementApplianceCollections;
         private @Nullable String managementApplianceId;
+        private @Nullable String sddcId;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetManagementAppliancesResult defaults) {
@@ -111,6 +124,7 @@ public final class GetManagementAppliancesResult {
     	      this.id = defaults.id;
     	      this.managementApplianceCollections = defaults.managementApplianceCollections;
     	      this.managementApplianceId = defaults.managementApplianceId;
+    	      this.sddcId = defaults.sddcId;
     	      this.state = defaults.state;
         }
 
@@ -163,6 +177,12 @@ public final class GetManagementAppliancesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder sddcId(@Nullable String sddcId) {
+
+            this.sddcId = sddcId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
 
             this.state = state;
@@ -176,6 +196,7 @@ public final class GetManagementAppliancesResult {
             _resultValue.id = id;
             _resultValue.managementApplianceCollections = managementApplianceCollections;
             _resultValue.managementApplianceId = managementApplianceId;
+            _resultValue.sddcId = sddcId;
             _resultValue.state = state;
             return _resultValue;
         }

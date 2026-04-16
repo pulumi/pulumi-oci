@@ -26,6 +26,7 @@ class SnapshotArgs:
                  expiration_time: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
+                 lock_duration_details: Optional[pulumi.Input['SnapshotLockDurationDetailsArgs']] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['SnapshotLockArgs']]]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
@@ -35,6 +36,7 @@ class SnapshotArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] expiration_time: (Updatable) The time when this snapshot will be deleted.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input['SnapshotLockDurationDetailsArgs'] lock_duration_details: (Updatable) Details for setting a retention date or legal hold.
         :param pulumi.Input[Sequence[pulumi.Input['SnapshotLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] name: Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
                
@@ -55,6 +57,8 @@ class SnapshotArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_lock_override is not None:
             pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if lock_duration_details is not None:
+            pulumi.set(__self__, "lock_duration_details", lock_duration_details)
         if locks is not None:
             pulumi.set(__self__, "locks", locks)
         if name is not None:
@@ -118,6 +122,18 @@ class SnapshotArgs:
         pulumi.set(self, "is_lock_override", value)
 
     @_builtins.property
+    @pulumi.getter(name="lockDurationDetails")
+    def lock_duration_details(self) -> Optional[pulumi.Input['SnapshotLockDurationDetailsArgs']]:
+        """
+        (Updatable) Details for setting a retention date or legal hold.
+        """
+        return pulumi.get(self, "lock_duration_details")
+
+    @lock_duration_details.setter
+    def lock_duration_details(self, value: Optional[pulumi.Input['SnapshotLockDurationDetailsArgs']]):
+        pulumi.set(self, "lock_duration_details", value)
+
+    @_builtins.property
     @pulumi.getter
     def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SnapshotLockArgs']]]]:
         """
@@ -161,6 +177,7 @@ class _SnapshotState:
                  is_clone_source: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
+                 lock_duration_details: Optional[pulumi.Input['SnapshotLockDurationDetailsArgs']] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['SnapshotLockArgs']]]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  provenance_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -168,7 +185,8 @@ class _SnapshotState:
                  snapshot_type: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_locked: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Snapshot resources.
 
@@ -179,6 +197,7 @@ class _SnapshotState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_clone_source: Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current `lifecycleState`.
+        :param pulumi.Input['SnapshotLockDurationDetailsArgs'] lock_duration_details: (Updatable) Details for setting a retention date or legal hold.
         :param pulumi.Input[Sequence[pulumi.Input['SnapshotLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] name: Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
                
@@ -198,6 +217,7 @@ class _SnapshotState:
         :param pulumi.Input[_builtins.str] state: The current state of the snapshot.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
         :param pulumi.Input[_builtins.str] time_created: The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.str] time_locked: The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
         """
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
@@ -215,6 +235,8 @@ class _SnapshotState:
             pulumi.set(__self__, "is_lock_override", is_lock_override)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if lock_duration_details is not None:
+            pulumi.set(__self__, "lock_duration_details", lock_duration_details)
         if locks is not None:
             pulumi.set(__self__, "locks", locks)
         if name is not None:
@@ -231,6 +253,8 @@ class _SnapshotState:
             pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if time_locked is not None:
+            pulumi.set(__self__, "time_locked", time_locked)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -324,6 +348,18 @@ class _SnapshotState:
     @lifecycle_details.setter
     def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="lockDurationDetails")
+    def lock_duration_details(self) -> Optional[pulumi.Input['SnapshotLockDurationDetailsArgs']]:
+        """
+        (Updatable) Details for setting a retention date or legal hold.
+        """
+        return pulumi.get(self, "lock_duration_details")
+
+    @lock_duration_details.setter
+    def lock_duration_details(self, value: Optional[pulumi.Input['SnapshotLockDurationDetailsArgs']]):
+        pulumi.set(self, "lock_duration_details", value)
 
     @_builtins.property
     @pulumi.getter
@@ -432,6 +468,18 @@ class _SnapshotState:
     def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
+    @_builtins.property
+    @pulumi.getter(name="timeLocked")
+    def time_locked(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+        """
+        return pulumi.get(self, "time_locked")
+
+    @time_locked.setter
+    def time_locked(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_locked", value)
+
 
 @pulumi.type_token("oci:FileStorage/snapshot:Snapshot")
 class Snapshot(pulumi.CustomResource):
@@ -444,6 +492,7 @@ class Snapshot(pulumi.CustomResource):
                  file_system_id: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
+                 lock_duration_details: Optional[pulumi.Input[Union['SnapshotLockDurationDetailsArgs', 'SnapshotLockDurationDetailsArgsDict']]] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SnapshotLockArgs', 'SnapshotLockArgsDict']]]]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
@@ -472,6 +521,11 @@ class Snapshot(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            lock_duration_details={
+                "lock_duration": snapshot_lock_duration_details_lock_duration,
+                "lock_mode": snapshot_lock_duration_details_lock_mode,
+                "cool_off_duration": snapshot_lock_duration_details_cool_off_duration,
+            },
             locks=[{
                 "type": snapshot_locks_type,
                 "message": snapshot_locks_message,
@@ -495,6 +549,7 @@ class Snapshot(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] expiration_time: (Updatable) The time when this snapshot will be deleted.
         :param pulumi.Input[_builtins.str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Union['SnapshotLockDurationDetailsArgs', 'SnapshotLockDurationDetailsArgsDict']] lock_duration_details: (Updatable) Details for setting a retention date or legal hold.
         :param pulumi.Input[Sequence[pulumi.Input[Union['SnapshotLockArgs', 'SnapshotLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] name: Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
                
@@ -537,6 +592,11 @@ class Snapshot(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            lock_duration_details={
+                "lock_duration": snapshot_lock_duration_details_lock_duration,
+                "lock_mode": snapshot_lock_duration_details_lock_mode,
+                "cool_off_duration": snapshot_lock_duration_details_cool_off_duration,
+            },
             locks=[{
                 "type": snapshot_locks_type,
                 "message": snapshot_locks_message,
@@ -574,6 +634,7 @@ class Snapshot(pulumi.CustomResource):
                  file_system_id: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
+                 lock_duration_details: Optional[pulumi.Input[Union['SnapshotLockDurationDetailsArgs', 'SnapshotLockDurationDetailsArgsDict']]] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SnapshotLockArgs', 'SnapshotLockArgsDict']]]]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
@@ -592,6 +653,7 @@ class Snapshot(pulumi.CustomResource):
             __props__.__dict__["file_system_id"] = file_system_id
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_lock_override"] = is_lock_override
+            __props__.__dict__["lock_duration_details"] = lock_duration_details
             __props__.__dict__["locks"] = locks
             __props__.__dict__["name"] = name
             __props__.__dict__["filesystem_snapshot_policy_id"] = None
@@ -603,6 +665,7 @@ class Snapshot(pulumi.CustomResource):
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
+            __props__.__dict__["time_locked"] = None
         super(Snapshot, __self__).__init__(
             'oci:FileStorage/snapshot:Snapshot',
             resource_name,
@@ -621,6 +684,7 @@ class Snapshot(pulumi.CustomResource):
             is_clone_source: Optional[pulumi.Input[_builtins.bool]] = None,
             is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
+            lock_duration_details: Optional[pulumi.Input[Union['SnapshotLockDurationDetailsArgs', 'SnapshotLockDurationDetailsArgsDict']]] = None,
             locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SnapshotLockArgs', 'SnapshotLockArgsDict']]]]] = None,
             name: Optional[pulumi.Input[_builtins.str]] = None,
             provenance_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -628,7 +692,8 @@ class Snapshot(pulumi.CustomResource):
             snapshot_type: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'Snapshot':
+            time_created: Optional[pulumi.Input[_builtins.str]] = None,
+            time_locked: Optional[pulumi.Input[_builtins.str]] = None) -> 'Snapshot':
         """
         Get an existing Snapshot resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -643,6 +708,7 @@ class Snapshot(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_clone_source: Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current `lifecycleState`.
+        :param pulumi.Input[Union['SnapshotLockDurationDetailsArgs', 'SnapshotLockDurationDetailsArgsDict']] lock_duration_details: (Updatable) Details for setting a retention date or legal hold.
         :param pulumi.Input[Sequence[pulumi.Input[Union['SnapshotLockArgs', 'SnapshotLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] name: Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
                
@@ -662,6 +728,7 @@ class Snapshot(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The current state of the snapshot.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
         :param pulumi.Input[_builtins.str] time_created: The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.str] time_locked: The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -675,6 +742,7 @@ class Snapshot(pulumi.CustomResource):
         __props__.__dict__["is_clone_source"] = is_clone_source
         __props__.__dict__["is_lock_override"] = is_lock_override
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["lock_duration_details"] = lock_duration_details
         __props__.__dict__["locks"] = locks
         __props__.__dict__["name"] = name
         __props__.__dict__["provenance_id"] = provenance_id
@@ -683,6 +751,7 @@ class Snapshot(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["time_locked"] = time_locked
         return Snapshot(resource_name, opts=opts, __props__=__props__)
 
     @_builtins.property
@@ -745,6 +814,14 @@ class Snapshot(pulumi.CustomResource):
         Additional information about the current `lifecycleState`.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="lockDurationDetails")
+    def lock_duration_details(self) -> pulumi.Output[Optional['outputs.SnapshotLockDurationDetails']]:
+        """
+        (Updatable) Details for setting a retention date or legal hold.
+        """
+        return pulumi.get(self, "lock_duration_details")
 
     @_builtins.property
     @pulumi.getter
@@ -820,4 +897,12 @@ class Snapshot(pulumi.CustomResource):
         The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLocked")
+    def time_locked(self) -> pulumi.Output[_builtins.str]:
+        """
+        The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+        """
+        return pulumi.get(self, "time_locked")
 

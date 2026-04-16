@@ -5,6 +5,7 @@ package com.pulumi.oci.FusionApps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentAdditionalEgressRuleArgs;
 import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs;
 import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentKmsKeyInfoArgs;
 import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentMaintenancePolicyArgs;
@@ -22,6 +23,21 @@ import javax.annotation.Nullable;
 public final class FusionEnvironmentState extends com.pulumi.resources.ResourceArgs {
 
     public static final FusionEnvironmentState Empty = new FusionEnvironmentState();
+
+    /**
+     * (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+     * 
+     */
+    @Import(name="additionalEgressRules")
+    private @Nullable Output<List<FusionEnvironmentAdditionalEgressRuleArgs>> additionalEgressRules;
+
+    /**
+     * @return (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+     * 
+     */
+    public Optional<Output<List<FusionEnvironmentAdditionalEgressRuleArgs>>> additionalEgressRules() {
+        return Optional.ofNullable(this.additionalEgressRules);
+    }
 
     /**
      * (Updatable) Language packs.
@@ -219,14 +235,14 @@ public final class FusionEnvironmentState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     * (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
      * 
      */
     @Import(name="isIpv6dualStackEnabled")
     private @Nullable Output<Boolean> isIpv6dualStackEnabled;
 
     /**
-     * @return Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     * @return (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
      * 
      */
     public Optional<Output<Boolean>> isIpv6dualStackEnabled() {
@@ -461,6 +477,7 @@ public final class FusionEnvironmentState extends com.pulumi.resources.ResourceA
     private FusionEnvironmentState() {}
 
     private FusionEnvironmentState(FusionEnvironmentState $) {
+        this.additionalEgressRules = $.additionalEgressRules;
         this.additionalLanguagePacks = $.additionalLanguagePacks;
         this.appliedPatchBundles = $.appliedPatchBundles;
         this.compartmentId = $.compartmentId;
@@ -508,6 +525,37 @@ public final class FusionEnvironmentState extends com.pulumi.resources.ResourceA
 
         public Builder(FusionEnvironmentState defaults) {
             $ = new FusionEnvironmentState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param additionalEgressRules (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalEgressRules(@Nullable Output<List<FusionEnvironmentAdditionalEgressRuleArgs>> additionalEgressRules) {
+            $.additionalEgressRules = additionalEgressRules;
+            return this;
+        }
+
+        /**
+         * @param additionalEgressRules (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalEgressRules(List<FusionEnvironmentAdditionalEgressRuleArgs> additionalEgressRules) {
+            return additionalEgressRules(Output.of(additionalEgressRules));
+        }
+
+        /**
+         * @param additionalEgressRules (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalEgressRules(FusionEnvironmentAdditionalEgressRuleArgs... additionalEgressRules) {
+            return additionalEgressRules(List.of(additionalEgressRules));
         }
 
         /**
@@ -804,7 +852,7 @@ public final class FusionEnvironmentState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param isIpv6dualStackEnabled Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+         * @param isIpv6dualStackEnabled (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
          * 
          * @return builder
          * 
@@ -815,7 +863,7 @@ public final class FusionEnvironmentState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param isIpv6dualStackEnabled Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+         * @param isIpv6dualStackEnabled (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
          * 
          * @return builder
          * 

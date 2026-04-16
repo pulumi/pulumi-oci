@@ -81,7 +81,9 @@ type LookupManagementApplianceResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management agent, that this appliance is running in.
 	ManagementAgentId     string `pulumi:"managementAgentId"`
 	ManagementApplianceId string `pulumi:"managementApplianceId"`
-	PublicSshKeys         string `pulumi:"publicSshKeys"`
+	// Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-<version>.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+	PluginVersion string `pulumi:"pluginVersion"`
+	PublicSshKeys string `pulumi:"publicSshKeys"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
 	SddcId string `pulumi:"sddcId"`
 	// Current state of the management appliance.
@@ -191,6 +193,11 @@ func (o LookupManagementApplianceResultOutput) ManagementAgentId() pulumi.String
 
 func (o LookupManagementApplianceResultOutput) ManagementApplianceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagementApplianceResult) string { return v.ManagementApplianceId }).(pulumi.StringOutput)
+}
+
+// Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-<version>.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+func (o LookupManagementApplianceResultOutput) PluginVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagementApplianceResult) string { return v.PluginVersion }).(pulumi.StringOutput)
 }
 
 func (o LookupManagementApplianceResultOutput) PublicSshKeys() pulumi.StringOutput {

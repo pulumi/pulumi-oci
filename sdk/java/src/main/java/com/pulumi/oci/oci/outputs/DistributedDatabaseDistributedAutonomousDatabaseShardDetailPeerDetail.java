@@ -32,7 +32,7 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseShardDetailPe
      */
     private @Nullable Integer fastStartFailOverLagLimitInSeconds;
     /**
-     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * @return This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
      * 
      */
     private @Nullable Boolean isAutomaticFailoverEnabled;
@@ -100,7 +100,7 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseShardDetailPe
         return Optional.ofNullable(this.fastStartFailOverLagLimitInSeconds);
     }
     /**
-     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * @return This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
      * 
      */
     public Optional<Boolean> isAutomaticFailoverEnabled() {

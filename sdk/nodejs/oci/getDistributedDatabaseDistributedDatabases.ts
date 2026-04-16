@@ -19,6 +19,7 @@ export function getDistributedDatabaseDistributedDatabases(args: GetDistributedD
         "displayName": args.displayName,
         "filters": args.filters,
         "metadata": args.metadata,
+        "privateEndpointId": args.privateEndpointId,
         "state": args.state,
     }, opts);
 }
@@ -45,6 +46,10 @@ export interface GetDistributedDatabaseDistributedDatabasesArgs {
      */
     metadata?: string;
     /**
+     * A filter to return only resources that are associated with the given privateEndpointId.
+     */
+    privateEndpointId?: string;
+    /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      */
     state?: string;
@@ -63,7 +68,7 @@ export interface GetDistributedDatabaseDistributedDatabasesResult {
      */
     readonly dbDeploymentType?: string;
     /**
-     * The display name of the Globally distributed database.
+     * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
      */
     readonly displayName?: string;
     /**
@@ -79,6 +84,7 @@ export interface GetDistributedDatabaseDistributedDatabasesResult {
      * Additional metadata related to Globally distributed database resources.
      */
     readonly metadata?: string;
+    readonly privateEndpointId?: string;
     /**
      * Lifecycle states for the Globally distributed database.
      */
@@ -97,6 +103,7 @@ export function getDistributedDatabaseDistributedDatabasesOutput(args: GetDistri
         "displayName": args.displayName,
         "filters": args.filters,
         "metadata": args.metadata,
+        "privateEndpointId": args.privateEndpointId,
         "state": args.state,
     }, opts);
 }
@@ -122,6 +129,10 @@ export interface GetDistributedDatabaseDistributedDatabasesOutputArgs {
      * Comma separated names of argument corresponding to which metadata need to be retrived.
      */
     metadata?: pulumi.Input<string>;
+    /**
+     * A filter to return only resources that are associated with the given privateEndpointId.
+     */
+    privateEndpointId?: pulumi.Input<string>;
     /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      */

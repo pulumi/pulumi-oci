@@ -27,7 +27,7 @@ class GetClusterResult:
     """
     A collection of values returned by getCluster.
     """
-    def __init__(__self__, actual_esxi_hosts_count=None, attach_datastore_cluster_ids=None, capacity_reservation_id=None, cluster_id=None, compartment_id=None, compute_availability_domain=None, datastore_cluster_ids=None, datastores=None, defined_tags=None, detach_datastore_cluster_ids=None, display_name=None, esxi_hosts_count=None, esxi_software_version=None, freeform_tags=None, id=None, initial_commitment=None, initial_host_ocpu_count=None, initial_host_shape_name=None, instance_display_name_prefix=None, is_shielded_instance_enabled=None, network_configurations=None, sddc_id=None, state=None, system_tags=None, time_created=None, time_updated=None, upgrade_licenses=None, vmware_software_version=None, vsphere_type=None, vsphere_upgrade_objects=None, workload_network_cidr=None):
+    def __init__(__self__, actual_esxi_hosts_count=None, attach_datastore_cluster_ids=None, capacity_reservation_id=None, cluster_byol_allocation_details=None, cluster_id=None, compartment_id=None, compute_availability_domain=None, datastore_cluster_ids=None, datastores=None, defined_tags=None, detach_datastore_cluster_ids=None, display_name=None, esxi_hosts_count=None, esxi_software_version=None, freeform_tags=None, id=None, initial_commitment=None, initial_host_ocpu_count=None, initial_host_shape_name=None, initial_vcf_byol_allocation_id=None, instance_display_name_prefix=None, is_shielded_instance_enabled=None, network_configurations=None, sddc_id=None, state=None, system_tags=None, time_created=None, time_updated=None, upgrade_licenses=None, vmware_software_version=None, vsphere_type=None, vsphere_upgrade_objects=None, workload_network_cidr=None):
         if actual_esxi_hosts_count and not isinstance(actual_esxi_hosts_count, int):
             raise TypeError("Expected argument 'actual_esxi_hosts_count' to be a int")
         pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
@@ -37,6 +37,9 @@ class GetClusterResult:
         if capacity_reservation_id and not isinstance(capacity_reservation_id, str):
             raise TypeError("Expected argument 'capacity_reservation_id' to be a str")
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        if cluster_byol_allocation_details and not isinstance(cluster_byol_allocation_details, list):
+            raise TypeError("Expected argument 'cluster_byol_allocation_details' to be a list")
+        pulumi.set(__self__, "cluster_byol_allocation_details", cluster_byol_allocation_details)
         if cluster_id and not isinstance(cluster_id, str):
             raise TypeError("Expected argument 'cluster_id' to be a str")
         pulumi.set(__self__, "cluster_id", cluster_id)
@@ -82,6 +85,9 @@ class GetClusterResult:
         if initial_host_shape_name and not isinstance(initial_host_shape_name, str):
             raise TypeError("Expected argument 'initial_host_shape_name' to be a str")
         pulumi.set(__self__, "initial_host_shape_name", initial_host_shape_name)
+        if initial_vcf_byol_allocation_id and not isinstance(initial_vcf_byol_allocation_id, str):
+            raise TypeError("Expected argument 'initial_vcf_byol_allocation_id' to be a str")
+        pulumi.set(__self__, "initial_vcf_byol_allocation_id", initial_vcf_byol_allocation_id)
         if instance_display_name_prefix and not isinstance(instance_display_name_prefix, str):
             raise TypeError("Expected argument 'instance_display_name_prefix' to be a str")
         pulumi.set(__self__, "instance_display_name_prefix", instance_display_name_prefix)
@@ -139,6 +145,14 @@ class GetClusterResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         """
         return pulumi.get(self, "capacity_reservation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterByolAllocationDetails")
+    def cluster_byol_allocation_details(self) -> Sequence['outputs.GetClusterClusterByolAllocationDetailResult']:
+        """
+        The BYOL allocations used for VMware Cluster provisioning.
+        """
+        return pulumi.get(self, "cluster_byol_allocation_details")
 
     @_builtins.property
     @pulumi.getter(name="clusterId")
@@ -255,6 +269,14 @@ class GetClusterResult:
         return pulumi.get(self, "initial_host_shape_name")
 
     @_builtins.property
+    @pulumi.getter(name="initialVcfByolAllocationId")
+    def initial_vcf_byol_allocation_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+        """
+        return pulumi.get(self, "initial_vcf_byol_allocation_id")
+
+    @_builtins.property
     @pulumi.getter(name="instanceDisplayNamePrefix")
     def instance_display_name_prefix(self) -> _builtins.str:
         """
@@ -368,6 +390,7 @@ class AwaitableGetClusterResult(GetClusterResult):
             actual_esxi_hosts_count=self.actual_esxi_hosts_count,
             attach_datastore_cluster_ids=self.attach_datastore_cluster_ids,
             capacity_reservation_id=self.capacity_reservation_id,
+            cluster_byol_allocation_details=self.cluster_byol_allocation_details,
             cluster_id=self.cluster_id,
             compartment_id=self.compartment_id,
             compute_availability_domain=self.compute_availability_domain,
@@ -383,6 +406,7 @@ class AwaitableGetClusterResult(GetClusterResult):
             initial_commitment=self.initial_commitment,
             initial_host_ocpu_count=self.initial_host_ocpu_count,
             initial_host_shape_name=self.initial_host_shape_name,
+            initial_vcf_byol_allocation_id=self.initial_vcf_byol_allocation_id,
             instance_display_name_prefix=self.instance_display_name_prefix,
             is_shielded_instance_enabled=self.is_shielded_instance_enabled,
             network_configurations=self.network_configurations,
@@ -426,6 +450,7 @@ def get_cluster(cluster_id: Optional[_builtins.str] = None,
         actual_esxi_hosts_count=pulumi.get(__ret__, 'actual_esxi_hosts_count'),
         attach_datastore_cluster_ids=pulumi.get(__ret__, 'attach_datastore_cluster_ids'),
         capacity_reservation_id=pulumi.get(__ret__, 'capacity_reservation_id'),
+        cluster_byol_allocation_details=pulumi.get(__ret__, 'cluster_byol_allocation_details'),
         cluster_id=pulumi.get(__ret__, 'cluster_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         compute_availability_domain=pulumi.get(__ret__, 'compute_availability_domain'),
@@ -441,6 +466,7 @@ def get_cluster(cluster_id: Optional[_builtins.str] = None,
         initial_commitment=pulumi.get(__ret__, 'initial_commitment'),
         initial_host_ocpu_count=pulumi.get(__ret__, 'initial_host_ocpu_count'),
         initial_host_shape_name=pulumi.get(__ret__, 'initial_host_shape_name'),
+        initial_vcf_byol_allocation_id=pulumi.get(__ret__, 'initial_vcf_byol_allocation_id'),
         instance_display_name_prefix=pulumi.get(__ret__, 'instance_display_name_prefix'),
         is_shielded_instance_enabled=pulumi.get(__ret__, 'is_shielded_instance_enabled'),
         network_configurations=pulumi.get(__ret__, 'network_configurations'),
@@ -481,6 +507,7 @@ def get_cluster_output(cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
         actual_esxi_hosts_count=pulumi.get(__response__, 'actual_esxi_hosts_count'),
         attach_datastore_cluster_ids=pulumi.get(__response__, 'attach_datastore_cluster_ids'),
         capacity_reservation_id=pulumi.get(__response__, 'capacity_reservation_id'),
+        cluster_byol_allocation_details=pulumi.get(__response__, 'cluster_byol_allocation_details'),
         cluster_id=pulumi.get(__response__, 'cluster_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         compute_availability_domain=pulumi.get(__response__, 'compute_availability_domain'),
@@ -496,6 +523,7 @@ def get_cluster_output(cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
         initial_commitment=pulumi.get(__response__, 'initial_commitment'),
         initial_host_ocpu_count=pulumi.get(__response__, 'initial_host_ocpu_count'),
         initial_host_shape_name=pulumi.get(__response__, 'initial_host_shape_name'),
+        initial_vcf_byol_allocation_id=pulumi.get(__response__, 'initial_vcf_byol_allocation_id'),
         instance_display_name_prefix=pulumi.get(__response__, 'instance_display_name_prefix'),
         is_shielded_instance_enabled=pulumi.get(__response__, 'is_shielded_instance_enabled'),
         network_configurations=pulumi.get(__response__, 'network_configurations'),

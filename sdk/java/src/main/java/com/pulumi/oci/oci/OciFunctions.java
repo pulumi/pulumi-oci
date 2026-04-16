@@ -103,6 +103,8 @@ import com.pulumi.oci.oci.inputs.GetDifStacksArgs;
 import com.pulumi.oci.oci.inputs.GetDifStacksPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabaseArgs;
 import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabasePlainArgs;
+import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs;
+import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabasesArgs;
 import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabasesPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabaseArgs;
@@ -111,6 +113,8 @@ import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivat
 import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsArgs;
 import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabaseRaftMetricArgs;
+import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabaseRaftMetricPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasesArgs;
 import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabasesPlainArgs;
 import com.pulumi.oci.oci.inputs.GetGdpGdpPipelineArgs;
@@ -295,10 +299,12 @@ import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbGcpKeyRingsResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbGcpKeysResult;
 import com.pulumi.oci.oci.outputs.GetDifStackResult;
 import com.pulumi.oci.oci.outputs.GetDifStacksResult;
+import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResult;
 import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedAutonomousDatabaseResult;
 import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedAutonomousDatabasesResult;
 import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointResult;
 import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult;
+import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedDatabaseRaftMetricResult;
 import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedDatabaseResult;
 import com.pulumi.oci.oci.outputs.GetDistributedDatabaseDistributedDatabasesResult;
 import com.pulumi.oci.oci.outputs.GetGdpGdpPipelineResult;
@@ -11550,6 +11556,221 @@ public final class OciFunctions {
         return Deployment.getInstance().invokeAsync("oci:oci/getDistributedDatabaseDistributedAutonomousDatabase:getDistributedDatabaseDistributedAutonomousDatabase", TypeShape.of(GetDistributedDatabaseDistributedAutonomousDatabaseResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Distributed Autonomous Database Raft Metric resource in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * Operation to retrieve RAFT metrics for the Globally distributed autonomous database. If the Globally distributed
+     * autonomous database is not RAFT based then empty response is returned from the API.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDistributedAutonomousDatabaseRaftMetric = OciFunctions.getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs.builder()
+     *             .distributedAutonomousDatabaseId(testDistributedAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResult> getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs args) {
+        return getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Distributed Autonomous Database Raft Metric resource in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * Operation to retrieve RAFT metrics for the Globally distributed autonomous database. If the Globally distributed
+     * autonomous database is not RAFT based then empty response is returned from the API.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDistributedAutonomousDatabaseRaftMetric = OciFunctions.getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs.builder()
+     *             .distributedAutonomousDatabaseId(testDistributedAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResult> getDistributedDatabaseDistributedAutonomousDatabaseRaftMetricPlain(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricPlainArgs args) {
+        return getDistributedDatabaseDistributedAutonomousDatabaseRaftMetricPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Distributed Autonomous Database Raft Metric resource in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * Operation to retrieve RAFT metrics for the Globally distributed autonomous database. If the Globally distributed
+     * autonomous database is not RAFT based then empty response is returned from the API.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDistributedAutonomousDatabaseRaftMetric = OciFunctions.getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs.builder()
+     *             .distributedAutonomousDatabaseId(testDistributedAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResult> getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric:getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric", TypeShape.of(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Distributed Autonomous Database Raft Metric resource in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * Operation to retrieve RAFT metrics for the Globally distributed autonomous database. If the Globally distributed
+     * autonomous database is not RAFT based then empty response is returned from the API.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDistributedAutonomousDatabaseRaftMetric = OciFunctions.getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs.builder()
+     *             .distributedAutonomousDatabaseId(testDistributedAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResult> getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric:getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric", TypeShape.of(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Distributed Autonomous Database Raft Metric resource in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * Operation to retrieve RAFT metrics for the Globally distributed autonomous database. If the Globally distributed
+     * autonomous database is not RAFT based then empty response is returned from the API.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDistributedAutonomousDatabaseRaftMetric = OciFunctions.getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricArgs.builder()
+     *             .distributedAutonomousDatabaseId(testDistributedAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResult> getDistributedDatabaseDistributedAutonomousDatabaseRaftMetricPlain(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric:getDistributedDatabaseDistributedAutonomousDatabaseRaftMetric", TypeShape.of(GetDistributedDatabaseDistributedAutonomousDatabaseRaftMetricResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Distributed Autonomous Databases in Oracle Cloud Infrastructure Distributed Database service.
      * 
      * List of Globally distributed autonomous databases.
@@ -12078,6 +12299,221 @@ public final class OciFunctions {
      */
     public static CompletableFuture<GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult> getDistributedDatabaseDistributedDatabasePrivateEndpointsPlain(GetDistributedDatabaseDistributedDatabasePrivateEndpointsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:oci/getDistributedDatabaseDistributedDatabasePrivateEndpoints:getDistributedDatabaseDistributedDatabasePrivateEndpoints", TypeShape.of(GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Distributed Database Raft Metric resource in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * Operation to retrieve RAFT metrics for the Globally distributed database. If the Globally distributed database is not
+     * RAFT based then empty response is returned from the API.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabaseRaftMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDistributedDatabaseRaftMetric = OciFunctions.getDistributedDatabaseDistributedDatabaseRaftMetric(GetDistributedDatabaseDistributedDatabaseRaftMetricArgs.builder()
+     *             .distributedDatabaseId(testDistributedDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDistributedDatabaseDistributedDatabaseRaftMetricResult> getDistributedDatabaseDistributedDatabaseRaftMetric(GetDistributedDatabaseDistributedDatabaseRaftMetricArgs args) {
+        return getDistributedDatabaseDistributedDatabaseRaftMetric(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Distributed Database Raft Metric resource in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * Operation to retrieve RAFT metrics for the Globally distributed database. If the Globally distributed database is not
+     * RAFT based then empty response is returned from the API.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabaseRaftMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDistributedDatabaseRaftMetric = OciFunctions.getDistributedDatabaseDistributedDatabaseRaftMetric(GetDistributedDatabaseDistributedDatabaseRaftMetricArgs.builder()
+     *             .distributedDatabaseId(testDistributedDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDistributedDatabaseDistributedDatabaseRaftMetricResult> getDistributedDatabaseDistributedDatabaseRaftMetricPlain(GetDistributedDatabaseDistributedDatabaseRaftMetricPlainArgs args) {
+        return getDistributedDatabaseDistributedDatabaseRaftMetricPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Distributed Database Raft Metric resource in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * Operation to retrieve RAFT metrics for the Globally distributed database. If the Globally distributed database is not
+     * RAFT based then empty response is returned from the API.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabaseRaftMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDistributedDatabaseRaftMetric = OciFunctions.getDistributedDatabaseDistributedDatabaseRaftMetric(GetDistributedDatabaseDistributedDatabaseRaftMetricArgs.builder()
+     *             .distributedDatabaseId(testDistributedDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDistributedDatabaseDistributedDatabaseRaftMetricResult> getDistributedDatabaseDistributedDatabaseRaftMetric(GetDistributedDatabaseDistributedDatabaseRaftMetricArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedDatabaseRaftMetric:getDistributedDatabaseDistributedDatabaseRaftMetric", TypeShape.of(GetDistributedDatabaseDistributedDatabaseRaftMetricResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Distributed Database Raft Metric resource in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * Operation to retrieve RAFT metrics for the Globally distributed database. If the Globally distributed database is not
+     * RAFT based then empty response is returned from the API.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabaseRaftMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDistributedDatabaseRaftMetric = OciFunctions.getDistributedDatabaseDistributedDatabaseRaftMetric(GetDistributedDatabaseDistributedDatabaseRaftMetricArgs.builder()
+     *             .distributedDatabaseId(testDistributedDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDistributedDatabaseDistributedDatabaseRaftMetricResult> getDistributedDatabaseDistributedDatabaseRaftMetric(GetDistributedDatabaseDistributedDatabaseRaftMetricArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDistributedDatabaseDistributedDatabaseRaftMetric:getDistributedDatabaseDistributedDatabaseRaftMetric", TypeShape.of(GetDistributedDatabaseDistributedDatabaseRaftMetricResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Distributed Database Raft Metric resource in Oracle Cloud Infrastructure Distributed Database service.
+     * 
+     * Operation to retrieve RAFT metrics for the Globally distributed database. If the Globally distributed database is not
+     * RAFT based then empty response is returned from the API.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDistributedDatabaseDistributedDatabaseRaftMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDistributedDatabaseRaftMetric = OciFunctions.getDistributedDatabaseDistributedDatabaseRaftMetric(GetDistributedDatabaseDistributedDatabaseRaftMetricArgs.builder()
+     *             .distributedDatabaseId(testDistributedDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDistributedDatabaseDistributedDatabaseRaftMetricResult> getDistributedDatabaseDistributedDatabaseRaftMetricPlain(GetDistributedDatabaseDistributedDatabaseRaftMetricPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDistributedDatabaseDistributedDatabaseRaftMetric:getDistributedDatabaseDistributedDatabaseRaftMetric", TypeShape.of(GetDistributedDatabaseDistributedDatabaseRaftMetricResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Distributed Databases in Oracle Cloud Infrastructure Distributed Database service.

@@ -49,6 +49,10 @@ export interface GetClusterResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      */
     readonly capacityReservationId: string;
+    /**
+     * The BYOL allocations used for VMware Cluster provisioning.
+     */
+    readonly clusterByolAllocationDetails: outputs.Ocvp.GetClusterClusterByolAllocationDetail[];
     readonly clusterId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
@@ -103,6 +107,10 @@ export interface GetClusterResult {
      * The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
      */
     readonly initialHostShapeName: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+     */
+    readonly initialVcfByolAllocationId: string;
     /**
      * A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
      */

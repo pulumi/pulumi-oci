@@ -171,6 +171,21 @@ public final class ManagementApplianceState extends com.pulumi.resources.Resourc
     }
 
     /**
+     * Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-&lt;version&gt;.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+     * 
+     */
+    @Import(name="pluginVersion")
+    private @Nullable Output<String> pluginVersion;
+
+    /**
+     * @return Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-&lt;version&gt;.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+     * 
+     */
+    public Optional<Output<String>> pluginVersion() {
+        return Optional.ofNullable(this.pluginVersion);
+    }
+
+    /**
      * One or more public SSH keys to be included in `~/.ssh/authorized_keys` file for Management Appliance compute instance. Several public SSH keys must be separate by newline character.
      * 
      */
@@ -309,6 +324,7 @@ public final class ManagementApplianceState extends com.pulumi.resources.Resourc
         this.heartbeatConnectionStates = $.heartbeatConnectionStates;
         this.lifecycleDetails = $.lifecycleDetails;
         this.managementAgentId = $.managementAgentId;
+        this.pluginVersion = $.pluginVersion;
         this.publicSshKeys = $.publicSshKeys;
         this.sddcId = $.sddcId;
         this.state = $.state;
@@ -565,6 +581,27 @@ public final class ManagementApplianceState extends com.pulumi.resources.Resourc
          */
         public Builder managementAgentId(String managementAgentId) {
             return managementAgentId(Output.of(managementAgentId));
+        }
+
+        /**
+         * @param pluginVersion Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-&lt;version&gt;.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pluginVersion(@Nullable Output<String> pluginVersion) {
+            $.pluginVersion = pluginVersion;
+            return this;
+        }
+
+        /**
+         * @param pluginVersion Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-&lt;version&gt;.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pluginVersion(String pluginVersion) {
+            return pluginVersion(Output.of(pluginVersion));
         }
 
         /**

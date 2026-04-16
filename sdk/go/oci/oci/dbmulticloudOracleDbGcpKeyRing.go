@@ -67,6 +67,7 @@ import (
 type DbmulticloudOracleDbGcpKeyRing struct {
 	pulumi.CustomResourceState
 
+	Action pulumi.StringPtrOutput `pulumi:"action"`
 	// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the Oracle DB GCP Key Ring resource resides.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -85,10 +86,14 @@ type DbmulticloudOracleDbGcpKeyRing struct {
 	OracleDbConnectorId pulumi.StringOutput `pulumi:"oracleDbConnectorId"`
 	// Oracle DB GCP Key Ring resource's properties.
 	Properties pulumi.StringMapOutput `pulumi:"properties"`
+	// Replication metadata, it has information about replication and target region.
+	ReplicationMetadatas DbmulticloudOracleDbGcpKeyRingReplicationMetadataArrayOutput `pulumi:"replicationMetadatas"`
 	// The lifecycle state of the Oracle DB GCP Key Ring resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
+	// The target region, where resource is replicated.
+	TargetRegion pulumi.StringPtrOutput `pulumi:"targetRegion"`
 	// Time when the DB GCP Key Ring resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// Time when the DB GCP Key Ring resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
@@ -139,6 +144,7 @@ func GetDbmulticloudOracleDbGcpKeyRing(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DbmulticloudOracleDbGcpKeyRing resources.
 type dbmulticloudOracleDbGcpKeyRingState struct {
+	Action *string `pulumi:"action"`
 	// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the Oracle DB GCP Key Ring resource resides.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -157,10 +163,14 @@ type dbmulticloudOracleDbGcpKeyRingState struct {
 	OracleDbConnectorId *string `pulumi:"oracleDbConnectorId"`
 	// Oracle DB GCP Key Ring resource's properties.
 	Properties map[string]string `pulumi:"properties"`
+	// Replication metadata, it has information about replication and target region.
+	ReplicationMetadatas []DbmulticloudOracleDbGcpKeyRingReplicationMetadata `pulumi:"replicationMetadatas"`
 	// The lifecycle state of the Oracle DB GCP Key Ring resource.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
+	// The target region, where resource is replicated.
+	TargetRegion *string `pulumi:"targetRegion"`
 	// Time when the DB GCP Key Ring resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 	TimeCreated *string `pulumi:"timeCreated"`
 	// Time when the DB GCP Key Ring resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
@@ -173,6 +183,7 @@ type dbmulticloudOracleDbGcpKeyRingState struct {
 }
 
 type DbmulticloudOracleDbGcpKeyRingState struct {
+	Action pulumi.StringPtrInput
 	// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the Oracle DB GCP Key Ring resource resides.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -191,10 +202,14 @@ type DbmulticloudOracleDbGcpKeyRingState struct {
 	OracleDbConnectorId pulumi.StringPtrInput
 	// Oracle DB GCP Key Ring resource's properties.
 	Properties pulumi.StringMapInput
+	// Replication metadata, it has information about replication and target region.
+	ReplicationMetadatas DbmulticloudOracleDbGcpKeyRingReplicationMetadataArrayInput
 	// The lifecycle state of the Oracle DB GCP Key Ring resource.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
+	// The target region, where resource is replicated.
+	TargetRegion pulumi.StringPtrInput
 	// Time when the DB GCP Key Ring resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 	TimeCreated pulumi.StringPtrInput
 	// Time when the DB GCP Key Ring resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
@@ -211,6 +226,7 @@ func (DbmulticloudOracleDbGcpKeyRingState) ElementType() reflect.Type {
 }
 
 type dbmulticloudOracleDbGcpKeyRingArgs struct {
+	Action *string `pulumi:"action"`
 	// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the Oracle DB GCP Key Ring resource resides.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -227,6 +243,8 @@ type dbmulticloudOracleDbGcpKeyRingArgs struct {
 	OracleDbConnectorId string `pulumi:"oracleDbConnectorId"`
 	// Oracle DB GCP Key Ring resource's properties.
 	Properties map[string]string `pulumi:"properties"`
+	// The target region, where resource is replicated.
+	TargetRegion *string `pulumi:"targetRegion"`
 	// Oracle DB GCP Key Ring resource Type.
 	//
 	// ** IMPORTANT **
@@ -236,6 +254,7 @@ type dbmulticloudOracleDbGcpKeyRingArgs struct {
 
 // The set of arguments for constructing a DbmulticloudOracleDbGcpKeyRing resource.
 type DbmulticloudOracleDbGcpKeyRingArgs struct {
+	Action pulumi.StringPtrInput
 	// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the Oracle DB GCP Key Ring resource resides.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -252,6 +271,8 @@ type DbmulticloudOracleDbGcpKeyRingArgs struct {
 	OracleDbConnectorId pulumi.StringInput
 	// Oracle DB GCP Key Ring resource's properties.
 	Properties pulumi.StringMapInput
+	// The target region, where resource is replicated.
+	TargetRegion pulumi.StringPtrInput
 	// Oracle DB GCP Key Ring resource Type.
 	//
 	// ** IMPORTANT **
@@ -346,6 +367,10 @@ func (o DbmulticloudOracleDbGcpKeyRingOutput) ToDbmulticloudOracleDbGcpKeyRingOu
 	return o
 }
 
+func (o DbmulticloudOracleDbGcpKeyRingOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbmulticloudOracleDbGcpKeyRing) pulumi.StringPtrOutput { return v.Action }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the Oracle DB GCP Key Ring resource resides.
 func (o DbmulticloudOracleDbGcpKeyRingOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbGcpKeyRing) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -391,6 +416,13 @@ func (o DbmulticloudOracleDbGcpKeyRingOutput) Properties() pulumi.StringMapOutpu
 	return o.ApplyT(func(v *DbmulticloudOracleDbGcpKeyRing) pulumi.StringMapOutput { return v.Properties }).(pulumi.StringMapOutput)
 }
 
+// Replication metadata, it has information about replication and target region.
+func (o DbmulticloudOracleDbGcpKeyRingOutput) ReplicationMetadatas() DbmulticloudOracleDbGcpKeyRingReplicationMetadataArrayOutput {
+	return o.ApplyT(func(v *DbmulticloudOracleDbGcpKeyRing) DbmulticloudOracleDbGcpKeyRingReplicationMetadataArrayOutput {
+		return v.ReplicationMetadatas
+	}).(DbmulticloudOracleDbGcpKeyRingReplicationMetadataArrayOutput)
+}
+
 // The lifecycle state of the Oracle DB GCP Key Ring resource.
 func (o DbmulticloudOracleDbGcpKeyRingOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbGcpKeyRing) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
@@ -399,6 +431,11 @@ func (o DbmulticloudOracleDbGcpKeyRingOutput) State() pulumi.StringOutput {
 // System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o DbmulticloudOracleDbGcpKeyRingOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbGcpKeyRing) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The target region, where resource is replicated.
+func (o DbmulticloudOracleDbGcpKeyRingOutput) TargetRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbmulticloudOracleDbGcpKeyRing) pulumi.StringPtrOutput { return v.TargetRegion }).(pulumi.StringPtrOutput)
 }
 
 // Time when the DB GCP Key Ring resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'

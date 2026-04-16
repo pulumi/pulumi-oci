@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -72,6 +74,7 @@ export class DbmulticloudOracleDbAzureVault extends pulumi.CustomResource {
         return obj['__pulumiType'] === DbmulticloudOracleDbAzureVault.__pulumiType;
     }
 
+    declare public readonly action: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Azure Vault ID.
      */
@@ -117,6 +120,10 @@ export class DbmulticloudOracleDbAzureVault extends pulumi.CustomResource {
      */
     declare public readonly properties: pulumi.Output<{[key: string]: string}>;
     /**
+     * Replication metadata, it has information about replication and target region.
+     */
+    declare public /*out*/ readonly replicationMetadatas: pulumi.Output<outputs.oci.DbmulticloudOracleDbAzureVaultReplicationMetadata[]>;
+    /**
      * The lifecycle state of the Oracle DB Azure Vault resource.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
@@ -124,6 +131,10 @@ export class DbmulticloudOracleDbAzureVault extends pulumi.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
+    /**
+     * The target region, where resource is replicated.
+     */
+    declare public readonly targetRegion: pulumi.Output<string | undefined>;
     /**
      * Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
      */
@@ -154,6 +165,7 @@ export class DbmulticloudOracleDbAzureVault extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DbmulticloudOracleDbAzureVaultState | undefined;
+            resourceInputs["action"] = state?.action;
             resourceInputs["azureVaultId"] = state?.azureVaultId;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["definedTags"] = state?.definedTags;
@@ -165,8 +177,10 @@ export class DbmulticloudOracleDbAzureVault extends pulumi.CustomResource {
             resourceInputs["oracleDbAzureResourceGroup"] = state?.oracleDbAzureResourceGroup;
             resourceInputs["oracleDbConnectorId"] = state?.oracleDbConnectorId;
             resourceInputs["properties"] = state?.properties;
+            resourceInputs["replicationMetadatas"] = state?.replicationMetadatas;
             resourceInputs["state"] = state?.state;
             resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["targetRegion"] = state?.targetRegion;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
             resourceInputs["type"] = state?.type;
@@ -181,6 +195,7 @@ export class DbmulticloudOracleDbAzureVault extends pulumi.CustomResource {
             if (args?.oracleDbConnectorId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'oracleDbConnectorId'");
             }
+            resourceInputs["action"] = args?.action;
             resourceInputs["azureVaultId"] = args?.azureVaultId;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["definedTags"] = args?.definedTags;
@@ -190,9 +205,11 @@ export class DbmulticloudOracleDbAzureVault extends pulumi.CustomResource {
             resourceInputs["oracleDbAzureResourceGroup"] = args?.oracleDbAzureResourceGroup;
             resourceInputs["oracleDbConnectorId"] = args?.oracleDbConnectorId;
             resourceInputs["properties"] = args?.properties;
+            resourceInputs["targetRegion"] = args?.targetRegion;
             resourceInputs["type"] = args?.type;
             resourceInputs["lastModification"] = undefined /*out*/;
             resourceInputs["lifecycleStateDetails"] = undefined /*out*/;
+            resourceInputs["replicationMetadatas"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -207,6 +224,7 @@ export class DbmulticloudOracleDbAzureVault extends pulumi.CustomResource {
  * Input properties used for looking up and filtering DbmulticloudOracleDbAzureVault resources.
  */
 export interface DbmulticloudOracleDbAzureVaultState {
+    action?: pulumi.Input<string>;
     /**
      * (Updatable) Azure Vault ID.
      */
@@ -252,6 +270,10 @@ export interface DbmulticloudOracleDbAzureVaultState {
      */
     properties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * Replication metadata, it has information about replication and target region.
+     */
+    replicationMetadatas?: pulumi.Input<pulumi.Input<inputs.oci.DbmulticloudOracleDbAzureVaultReplicationMetadata>[]>;
+    /**
      * The lifecycle state of the Oracle DB Azure Vault resource.
      */
     state?: pulumi.Input<string>;
@@ -259,6 +281,10 @@ export interface DbmulticloudOracleDbAzureVaultState {
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * The target region, where resource is replicated.
+     */
+    targetRegion?: pulumi.Input<string>;
     /**
      * Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
      */
@@ -281,6 +307,7 @@ export interface DbmulticloudOracleDbAzureVaultState {
  * The set of arguments for constructing a DbmulticloudOracleDbAzureVault resource.
  */
 export interface DbmulticloudOracleDbAzureVaultArgs {
+    action?: pulumi.Input<string>;
     /**
      * (Updatable) Azure Vault ID.
      */
@@ -317,6 +344,10 @@ export interface DbmulticloudOracleDbAzureVaultArgs {
      * (Updatable) resource's properties.
      */
     properties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * The target region, where resource is replicated.
+     */
+    targetRegion?: pulumi.Input<string>;
     /**
      * (Updatable) Oracle DB Azure Vault resource type.
      *

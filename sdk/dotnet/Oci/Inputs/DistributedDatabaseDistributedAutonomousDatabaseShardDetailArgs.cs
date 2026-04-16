@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Oci.Inputs
 
     public sealed class DistributedDatabaseDistributedAutonomousDatabaseShardDetailArgs : global::Pulumi.ResourceArgs
     {
-        [Input("adminPassword", required: true)]
+        [Input("adminPassword")]
         private Input<string>? _adminPassword;
 
         /// <summary>
@@ -87,6 +87,18 @@ namespace Pulumi.Oci.Oci.Inputs
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        /// <summary>
+        /// The OKV endpoint name.
+        /// </summary>
+        [Input("okvEndPointGroup")]
+        public Input<string>? OkvEndPointGroup { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+        /// </summary>
+        [Input("okvKeyStoreId")]
+        public Input<string>? OkvKeyStoreId { get; set; }
 
         [Input("peerCloudAutonomousVmClusterIds")]
         private InputList<string>? _peerCloudAutonomousVmClusterIds;

@@ -55,6 +55,12 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? OrdsUrl { get; set; }
 
         /// <summary>
+        /// The URL of the Spatial Studio for the Autonomous AI Database.
+        /// </summary>
+        [Input("spatialStudioUrl")]
+        public Input<string>? SpatialStudioUrl { get; set; }
+
+        /// <summary>
         /// Oracle SQL Developer Web URL.
         /// </summary>
         [Input("sqlDevWebUrl")]

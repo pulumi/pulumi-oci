@@ -28,7 +28,7 @@ class GetDistributedDatabaseDistributedAutonomousDatabasesResult:
     """
     A collection of values returned by getDistributedDatabaseDistributedAutonomousDatabases.
     """
-    def __init__(__self__, compartment_id=None, db_deployment_type=None, display_name=None, distributed_autonomous_database_collections=None, filters=None, id=None, metadatas=None, state=None):
+    def __init__(__self__, compartment_id=None, db_deployment_type=None, display_name=None, distributed_autonomous_database_collections=None, filters=None, id=None, metadatas=None, private_endpoint_id=None, state=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -50,6 +50,9 @@ class GetDistributedDatabaseDistributedAutonomousDatabasesResult:
         if metadatas and not isinstance(metadatas, list):
             raise TypeError("Expected argument 'metadatas' to be a list")
         pulumi.set(__self__, "metadatas", metadatas)
+        if private_endpoint_id and not isinstance(private_endpoint_id, str):
+            raise TypeError("Expected argument 'private_endpoint_id' to be a str")
+        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -108,6 +111,11 @@ class GetDistributedDatabaseDistributedAutonomousDatabasesResult:
         return pulumi.get(self, "metadatas")
 
     @_builtins.property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "private_endpoint_id")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
@@ -129,6 +137,7 @@ class AwaitableGetDistributedDatabaseDistributedAutonomousDatabasesResult(GetDis
             filters=self.filters,
             id=self.id,
             metadatas=self.metadatas,
+            private_endpoint_id=self.private_endpoint_id,
             state=self.state)
 
 
@@ -136,6 +145,7 @@ def get_distributed_database_distributed_autonomous_databases(compartment_id: Op
                                                               db_deployment_type: Optional[_builtins.str] = None,
                                                               display_name: Optional[_builtins.str] = None,
                                                               filters: Optional[Sequence[Union['GetDistributedDatabaseDistributedAutonomousDatabasesFilterArgs', 'GetDistributedDatabaseDistributedAutonomousDatabasesFilterArgsDict']]] = None,
+                                                              private_endpoint_id: Optional[_builtins.str] = None,
                                                               state: Optional[_builtins.str] = None,
                                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDistributedDatabaseDistributedAutonomousDatabasesResult:
     """
@@ -149,6 +159,7 @@ def get_distributed_database_distributed_autonomous_databases(compartment_id: Op
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
     :param _builtins.str db_deployment_type: A filter to return only resources their dbDeploymentType matches the given dbDeploymentType.
     :param _builtins.str display_name: A filter to return only Globally distributed autonomous databases that match the entire name given. The match is not case sensitive.
+    :param _builtins.str private_endpoint_id: A filter to return only resources that are associated with the given privateEndpointId.
     :param _builtins.str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
     """
     __args__ = dict()
@@ -156,6 +167,7 @@ def get_distributed_database_distributed_autonomous_databases(compartment_id: Op
     __args__['dbDeploymentType'] = db_deployment_type
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['privateEndpointId'] = private_endpoint_id
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:oci/getDistributedDatabaseDistributedAutonomousDatabases:getDistributedDatabaseDistributedAutonomousDatabases', __args__, opts=opts, typ=GetDistributedDatabaseDistributedAutonomousDatabasesResult).value
@@ -168,11 +180,13 @@ def get_distributed_database_distributed_autonomous_databases(compartment_id: Op
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'),
+        private_endpoint_id=pulumi.get(__ret__, 'private_endpoint_id'),
         state=pulumi.get(__ret__, 'state'))
 def get_distributed_database_distributed_autonomous_databases_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                                                                      db_deployment_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                                                      display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDistributedDatabaseDistributedAutonomousDatabasesFilterArgs', 'GetDistributedDatabaseDistributedAutonomousDatabasesFilterArgsDict']]]]] = None,
+                                                                     private_endpoint_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                                                      state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDistributedDatabaseDistributedAutonomousDatabasesResult]:
     """
@@ -186,6 +200,7 @@ def get_distributed_database_distributed_autonomous_databases_output(compartment
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
     :param _builtins.str db_deployment_type: A filter to return only resources their dbDeploymentType matches the given dbDeploymentType.
     :param _builtins.str display_name: A filter to return only Globally distributed autonomous databases that match the entire name given. The match is not case sensitive.
+    :param _builtins.str private_endpoint_id: A filter to return only resources that are associated with the given privateEndpointId.
     :param _builtins.str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
     """
     __args__ = dict()
@@ -193,6 +208,7 @@ def get_distributed_database_distributed_autonomous_databases_output(compartment
     __args__['dbDeploymentType'] = db_deployment_type
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['privateEndpointId'] = private_endpoint_id
     __args__['state'] = state
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:oci/getDistributedDatabaseDistributedAutonomousDatabases:getDistributedDatabaseDistributedAutonomousDatabases', __args__, opts=opts, typ=GetDistributedDatabaseDistributedAutonomousDatabasesResult)
@@ -204,4 +220,5 @@ def get_distributed_database_distributed_autonomous_databases_output(compartment
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
         metadatas=pulumi.get(__response__, 'metadatas'),
+        private_endpoint_id=pulumi.get(__response__, 'private_endpoint_id'),
         state=pulumi.get(__response__, 'state')))

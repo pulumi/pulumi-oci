@@ -294,6 +294,10 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly string ReplicationVlanId;
         public readonly ImmutableArray<string> ReservingHcxOnPremiseLicenseKeys;
+        /// <summary>
+        /// The BYOL allocations used for VMware SDDC provisioning.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetSddcSddcByolAllocationDetailResult> SddcByolAllocationDetails;
         public readonly string SddcId;
         /// <summary>
         /// One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `AuthorizedKeys` file.
@@ -464,6 +468,8 @@ namespace Pulumi.Oci.Ocvp
 
             ImmutableArray<string> reservingHcxOnPremiseLicenseKeys,
 
+            ImmutableArray<Outputs.GetSddcSddcByolAllocationDetailResult> sddcByolAllocationDetails,
+
             string sddcId,
 
             string sshAuthorizedKeys,
@@ -549,6 +555,7 @@ namespace Pulumi.Oci.Ocvp
             RefreshHcxLicenseStatus = refreshHcxLicenseStatus;
             ReplicationVlanId = replicationVlanId;
             ReservingHcxOnPremiseLicenseKeys = reservingHcxOnPremiseLicenseKeys;
+            SddcByolAllocationDetails = sddcByolAllocationDetails;
             SddcId = sddcId;
             SshAuthorizedKeys = sshAuthorizedKeys;
             State = state;

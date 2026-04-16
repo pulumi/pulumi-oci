@@ -14,9 +14,17 @@ namespace Pulumi.Oci.Oci.Outputs
     public sealed class GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailResult
     {
         /// <summary>
+        /// The name of the availability domain that the distributed database shard will be located in.
+        /// </summary>
+        public readonly string AvailabilityDomain;
+        /// <summary>
         /// the identifier of the container database for underlying supporting resource.
         /// </summary>
         public readonly string ContainerDatabaseId;
+        /// <summary>
+        /// The Storage Vault for Distributed Database Resource
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetailResult> DbStorageVaultDetails;
         /// <summary>
         /// Comma separated names of argument corresponding to which metadata need to be retrived.
         /// </summary>
@@ -50,13 +58,21 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string TransportType;
         /// <summary>
+        /// The Exadata VM cluster for Distributed Database Resource
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetailResult> VmClusterDetails;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
         /// </summary>
         public readonly string VmClusterId;
 
         [OutputConstructor]
         private GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailResult(
+            string availabilityDomain,
+
             string containerDatabaseId,
+
+            ImmutableArray<Outputs.GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailDbStorageVaultDetailResult> dbStorageVaultDetails,
 
             ImmutableArray<Outputs.GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailMetadataResult> metadatas,
 
@@ -74,9 +90,13 @@ namespace Pulumi.Oci.Oci.Outputs
 
             string transportType,
 
+            ImmutableArray<Outputs.GetDistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailVmClusterDetailResult> vmClusterDetails,
+
             string vmClusterId)
         {
+            AvailabilityDomain = availabilityDomain;
             ContainerDatabaseId = containerDatabaseId;
+            DbStorageVaultDetails = dbStorageVaultDetails;
             Metadatas = metadatas;
             ProtectionMode = protectionMode;
             ShardGroup = shardGroup;
@@ -85,6 +105,7 @@ namespace Pulumi.Oci.Oci.Outputs
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
             TransportType = transportType;
+            VmClusterDetails = vmClusterDetails;
             VmClusterId = vmClusterId;
         }
     }

@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// <summary>
         /// (Updatable)
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private DistributedDatabaseDistributedDatabasePatchOperation(
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Oci.Outputs
 
             string selection,
 
-            string value)
+            string? value)
         {
             Operation = operation;
             Selection = selection;

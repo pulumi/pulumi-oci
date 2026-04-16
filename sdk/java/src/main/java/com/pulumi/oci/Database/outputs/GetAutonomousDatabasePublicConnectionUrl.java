@@ -46,6 +46,11 @@ public final class GetAutonomousDatabasePublicConnectionUrl {
      */
     private String ordsUrl;
     /**
+     * @return The URL of the Spatial Studio for the Autonomous AI Database.
+     * 
+     */
+    private String spatialStudioUrl;
+    /**
      * @return Oracle SQL Developer Web URL.
      * 
      */
@@ -102,6 +107,13 @@ public final class GetAutonomousDatabasePublicConnectionUrl {
         return this.ordsUrl;
     }
     /**
+     * @return The URL of the Spatial Studio for the Autonomous AI Database.
+     * 
+     */
+    public String spatialStudioUrl() {
+        return this.spatialStudioUrl;
+    }
+    /**
      * @return Oracle SQL Developer Web URL.
      * 
      */
@@ -125,6 +137,7 @@ public final class GetAutonomousDatabasePublicConnectionUrl {
         private String machineLearningUserManagementUrl;
         private String mongoDbUrl;
         private String ordsUrl;
+        private String spatialStudioUrl;
         private String sqlDevWebUrl;
         public Builder() {}
         public Builder(GetAutonomousDatabasePublicConnectionUrl defaults) {
@@ -136,6 +149,7 @@ public final class GetAutonomousDatabasePublicConnectionUrl {
     	      this.machineLearningUserManagementUrl = defaults.machineLearningUserManagementUrl;
     	      this.mongoDbUrl = defaults.mongoDbUrl;
     	      this.ordsUrl = defaults.ordsUrl;
+    	      this.spatialStudioUrl = defaults.spatialStudioUrl;
     	      this.sqlDevWebUrl = defaults.sqlDevWebUrl;
         }
 
@@ -196,6 +210,14 @@ public final class GetAutonomousDatabasePublicConnectionUrl {
             return this;
         }
         @CustomType.Setter
+        public Builder spatialStudioUrl(String spatialStudioUrl) {
+            if (spatialStudioUrl == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasePublicConnectionUrl", "spatialStudioUrl");
+            }
+            this.spatialStudioUrl = spatialStudioUrl;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sqlDevWebUrl(String sqlDevWebUrl) {
             if (sqlDevWebUrl == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasePublicConnectionUrl", "sqlDevWebUrl");
@@ -212,6 +234,7 @@ public final class GetAutonomousDatabasePublicConnectionUrl {
             _resultValue.machineLearningUserManagementUrl = machineLearningUserManagementUrl;
             _resultValue.mongoDbUrl = mongoDbUrl;
             _resultValue.ordsUrl = ordsUrl;
+            _resultValue.spatialStudioUrl = spatialStudioUrl;
             _resultValue.sqlDevWebUrl = sqlDevWebUrl;
             return _resultValue;
         }

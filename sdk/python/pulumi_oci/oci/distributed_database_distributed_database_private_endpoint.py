@@ -189,8 +189,8 @@ class _DistributedDatabaseDistributedDatabasePrivateEndpointState:
         :param pulumi.Input[_builtins.str] description: (Updatable) DistributedDatabasePrivateEndpoint description.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Private endpoint display name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabaseArgs']]] globally_distributed_autonomous_databases: The details of the non-deleted Globally distributed autonomous databases that consumes the given private endpoint.
-        :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabaseArgs']]] globally_distributed_databases: The details of the non-deleted Globally distributed databases that consumes the given private endpoint.
+        :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabaseArgs']]] globally_distributed_autonomous_databases: This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
+        :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabaseArgs']]] globally_distributed_databases: This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
         :param pulumi.Input[_builtins.str] lifecycle_details: Detailed message for the lifecycle state.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
         :param pulumi.Input[_builtins.str] private_ip: IP address of the Private Endpoint.
@@ -308,7 +308,7 @@ class _DistributedDatabaseDistributedDatabasePrivateEndpointState:
     @pulumi.getter(name="globallyDistributedAutonomousDatabases")
     def globally_distributed_autonomous_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabaseArgs']]]]:
         """
-        The details of the non-deleted Globally distributed autonomous databases that consumes the given private endpoint.
+        This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
         """
         return pulumi.get(self, "globally_distributed_autonomous_databases")
 
@@ -320,7 +320,7 @@ class _DistributedDatabaseDistributedDatabasePrivateEndpointState:
     @pulumi.getter(name="globallyDistributedDatabases")
     def globally_distributed_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabaseArgs']]]]:
         """
-        The details of the non-deleted Globally distributed databases that consumes the given private endpoint.
+        This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
         """
         return pulumi.get(self, "globally_distributed_databases")
 
@@ -671,8 +671,8 @@ class DistributedDatabaseDistributedDatabasePrivateEndpoint(pulumi.CustomResourc
         :param pulumi.Input[_builtins.str] description: (Updatable) DistributedDatabasePrivateEndpoint description.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Private endpoint display name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabaseArgs', 'DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabaseArgsDict']]]] globally_distributed_autonomous_databases: The details of the non-deleted Globally distributed autonomous databases that consumes the given private endpoint.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabaseArgs', 'DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabaseArgsDict']]]] globally_distributed_databases: The details of the non-deleted Globally distributed databases that consumes the given private endpoint.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabaseArgs', 'DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabaseArgsDict']]]] globally_distributed_autonomous_databases: This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabaseArgs', 'DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabaseArgsDict']]]] globally_distributed_databases: This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
         :param pulumi.Input[_builtins.str] lifecycle_details: Detailed message for the lifecycle state.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
         :param pulumi.Input[_builtins.str] private_ip: IP address of the Private Endpoint.
@@ -757,7 +757,7 @@ class DistributedDatabaseDistributedDatabasePrivateEndpoint(pulumi.CustomResourc
     @pulumi.getter(name="globallyDistributedAutonomousDatabases")
     def globally_distributed_autonomous_databases(self) -> pulumi.Output[Sequence['outputs.DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabase']]:
         """
-        The details of the non-deleted Globally distributed autonomous databases that consumes the given private endpoint.
+        This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
         """
         return pulumi.get(self, "globally_distributed_autonomous_databases")
 
@@ -765,7 +765,7 @@ class DistributedDatabaseDistributedDatabasePrivateEndpoint(pulumi.CustomResourc
     @pulumi.getter(name="globallyDistributedDatabases")
     def globally_distributed_databases(self) -> pulumi.Output[Sequence['outputs.DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabase']]:
         """
-        The details of the non-deleted Globally distributed databases that consumes the given private endpoint.
+        This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
         """
         return pulumi.get(self, "globally_distributed_databases")
 

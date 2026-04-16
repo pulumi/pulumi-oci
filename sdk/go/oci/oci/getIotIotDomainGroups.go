@@ -82,7 +82,7 @@ type GetIotIotDomainGroupsResult struct {
 	IotDomainGroupCollections []GetIotIotDomainGroupsIotDomainGroupCollection `pulumi:"iotDomainGroupCollections"`
 	// The current state of an IoT Domain Group.
 	State *string `pulumi:"state"`
-	// Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
+	// Type of domain group. DEVELOPMENT uses fewer resources and has a higher Recovery Time Objective (RTO), making it suitable for development and testing. PRODUCTION is recommended for production workloads.  LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION respectively and will be removed  in a future release.
 	Type *string `pulumi:"type"`
 }
 
@@ -160,7 +160,7 @@ func (o GetIotIotDomainGroupsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetIotIotDomainGroupsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
-// Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
+// Type of domain group. DEVELOPMENT uses fewer resources and has a higher Recovery Time Objective (RTO), making it suitable for development and testing. PRODUCTION is recommended for production workloads.  LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION respectively and will be removed  in a future release.
 func (o GetIotIotDomainGroupsResultOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetIotIotDomainGroupsResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }

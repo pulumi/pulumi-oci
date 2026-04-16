@@ -35,8 +35,10 @@ type LookupDistributedDatabaseDistributedAutonomousDatabaseArgs struct {
 
 // A collection of values returned by getDistributedDatabaseDistributedAutonomousDatabase.
 type LookupDistributedDatabaseDistributedAutonomousDatabaseResult struct {
+	CaBundleId string `pulumi:"caBundleId"`
 	// Collection of catalogs associated with the Globally distributed autonomous database.
 	CatalogDetails              []GetDistributedDatabaseDistributedAutonomousDatabaseCatalogDetail `pulumi:"catalogDetails"`
+	CertificateId               string                                                             `pulumi:"certificateId"`
 	ChangeDbBackupConfigTrigger int                                                                `pulumi:"changeDbBackupConfigTrigger"`
 	// The character set for the database.
 	CharacterSet string `pulumi:"characterSet"`
@@ -44,6 +46,7 @@ type LookupDistributedDatabaseDistributedAutonomousDatabaseResult struct {
 	Chunks int `pulumi:"chunks"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed autonomous database compartment.
 	CompartmentId                        string `pulumi:"compartmentId"`
+	ConfigureGsmWalletTrigger            int    `pulumi:"configureGsmWalletTrigger"`
 	ConfigureShardingIsRebalanceRequired bool   `pulumi:"configureShardingIsRebalanceRequired"`
 	ConfigureShardingTrigger             int    `pulumi:"configureShardingTrigger"`
 	// Details of Globally distributed autonomous database connection String.
@@ -87,7 +90,8 @@ type LookupDistributedDatabaseDistributedAutonomousDatabaseResult struct {
 	ListenerPortTls int     `pulumi:"listenerPortTls"`
 	MetadataQuery   *string `pulumi:"metadataQuery"`
 	// Additional metadata related to Globally distributed autonomous database resources.
-	Metadatas []GetDistributedDatabaseDistributedAutonomousDatabaseMetadata `pulumi:"metadatas"`
+	Metadatas                  []GetDistributedDatabaseDistributedAutonomousDatabaseMetadata `pulumi:"metadatas"`
+	MoveReplicationUnitTrigger int                                                           `pulumi:"moveReplicationUnitTrigger"`
 	// The national character set for the database.
 	NcharacterSet string `pulumi:"ncharacterSet"`
 	// Ons local port number for Globally distributed autonomous database.
@@ -98,7 +102,8 @@ type LookupDistributedDatabaseDistributedAutonomousDatabaseResult struct {
 	// Unique name prefix for the Globally distributed autonomous databases. Only alpha-numeric values are allowed. First character has to be a letter followed by any combination of letter and number.
 	Prefix string `pulumi:"prefix"`
 	// The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
-	PrivateEndpointIds []string `pulumi:"privateEndpointIds"`
+	PrivateEndpointIds            []string `pulumi:"privateEndpointIds"`
+	RecreateFailedResourceTrigger int      `pulumi:"recreateFailedResourceTrigger"`
 	// The Replication factor for RAFT replication based Globally distributed autonomous database. Currently supported values are 3, 5 and 7.
 	ReplicationFactor int `pulumi:"replicationFactor"`
 	// The Replication method for Globally distributed autonomous database. Use RAFT for Raft replication, and DG for DataGuard. If replicationMethod is not provided, it defaults to DG.
@@ -121,6 +126,7 @@ type LookupDistributedDatabaseDistributedAutonomousDatabaseResult struct {
 	TimeUpdated                                     string                                                                     `pulumi:"timeUpdated"`
 	UploadCaSignedCertificate                       string                                                                     `pulumi:"uploadCaSignedCertificate"`
 	UploadSignedCertificateAndGenerateWalletTrigger int                                                                        `pulumi:"uploadSignedCertificateAndGenerateWalletTrigger"`
+	ValidateCaBundleTrigger                         int                                                                        `pulumi:"validateCaBundleTrigger"`
 	ValidateNetworkDetails                          []GetDistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetail `pulumi:"validateNetworkDetails"`
 	ValidateNetworkTrigger                          int                                                                        `pulumi:"validateNetworkTrigger"`
 }
@@ -160,11 +166,19 @@ func (o LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput) ToLo
 	return o
 }
 
+func (o LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput) CaBundleId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDistributedDatabaseDistributedAutonomousDatabaseResult) string { return v.CaBundleId }).(pulumi.StringOutput)
+}
+
 // Collection of catalogs associated with the Globally distributed autonomous database.
 func (o LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput) CatalogDetails() GetDistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArrayOutput {
 	return o.ApplyT(func(v LookupDistributedDatabaseDistributedAutonomousDatabaseResult) []GetDistributedDatabaseDistributedAutonomousDatabaseCatalogDetail {
 		return v.CatalogDetails
 	}).(GetDistributedDatabaseDistributedAutonomousDatabaseCatalogDetailArrayOutput)
+}
+
+func (o LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput) CertificateId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDistributedDatabaseDistributedAutonomousDatabaseResult) string { return v.CertificateId }).(pulumi.StringOutput)
 }
 
 func (o LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput) ChangeDbBackupConfigTrigger() pulumi.IntOutput {
@@ -186,6 +200,12 @@ func (o LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput) Chun
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed autonomous database compartment.
 func (o LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDistributedDatabaseDistributedAutonomousDatabaseResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput) ConfigureGsmWalletTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDistributedDatabaseDistributedAutonomousDatabaseResult) int {
+		return v.ConfigureGsmWalletTrigger
+	}).(pulumi.IntOutput)
 }
 
 func (o LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput) ConfigureShardingIsRebalanceRequired() pulumi.BoolOutput {
@@ -359,6 +379,12 @@ func (o LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput) Meta
 	}).(GetDistributedDatabaseDistributedAutonomousDatabaseMetadataArrayOutput)
 }
 
+func (o LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput) MoveReplicationUnitTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDistributedDatabaseDistributedAutonomousDatabaseResult) int {
+		return v.MoveReplicationUnitTrigger
+	}).(pulumi.IntOutput)
+}
+
 // The national character set for the database.
 func (o LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput) NcharacterSet() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDistributedDatabaseDistributedAutonomousDatabaseResult) string { return v.NcharacterSet }).(pulumi.StringOutput)
@@ -390,6 +416,12 @@ func (o LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput) Priv
 	return o.ApplyT(func(v LookupDistributedDatabaseDistributedAutonomousDatabaseResult) []string {
 		return v.PrivateEndpointIds
 	}).(pulumi.StringArrayOutput)
+}
+
+func (o LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput) RecreateFailedResourceTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDistributedDatabaseDistributedAutonomousDatabaseResult) int {
+		return v.RecreateFailedResourceTrigger
+	}).(pulumi.IntOutput)
 }
 
 // The Replication factor for RAFT replication based Globally distributed autonomous database. Currently supported values are 3, 5 and 7.
@@ -462,6 +494,12 @@ func (o LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput) Uplo
 func (o LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput) UploadSignedCertificateAndGenerateWalletTrigger() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupDistributedDatabaseDistributedAutonomousDatabaseResult) int {
 		return v.UploadSignedCertificateAndGenerateWalletTrigger
+	}).(pulumi.IntOutput)
+}
+
+func (o LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput) ValidateCaBundleTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDistributedDatabaseDistributedAutonomousDatabaseResult) int {
+		return v.ValidateCaBundleTrigger
 	}).(pulumi.IntOutput)
 }
 

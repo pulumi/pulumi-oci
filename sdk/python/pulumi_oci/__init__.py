@@ -791,6 +791,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "BigDataService/bdsInstanceExecuteBootstrapScriptAction",
+  "fqn": "pulumi_oci.bigdataservice",
+  "classes": {
+   "oci:BigDataService/bdsInstanceExecuteBootstrapScriptAction:BdsInstanceExecuteBootstrapScriptAction": "BdsInstanceExecuteBootstrapScriptAction"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "BigDataService/bdsInstanceIdentityConfiguration",
   "fqn": "pulumi_oci.bigdataservice",
   "classes": {
@@ -3959,6 +3967,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DemandSignal/occMetricAlarm",
+  "fqn": "pulumi_oci.demandsignal",
+  "classes": {
+   "oci:DemandSignal/occMetricAlarm:OccMetricAlarm": "OccMetricAlarm"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Desktops/desktopPool",
   "fqn": "pulumi_oci.desktops",
   "classes": {
@@ -6347,6 +6363,22 @@ _utilities.register(
   "fqn": "pulumi_oci.oce",
   "classes": {
    "oci:Oce/instance:Instance": "Instance"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Ocvp/byol",
+  "fqn": "pulumi_oci.ocvp",
+  "classes": {
+   "oci:Ocvp/byol:Byol": "Byol"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Ocvp/byolAllocation",
+  "fqn": "pulumi_oci.ocvp",
+  "classes": {
+   "oci:Ocvp/byolAllocation:ByolAllocation": "ByolAllocation"
   }
  },
  {

@@ -66,14 +66,14 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetail
     }
 
     /**
-     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
      * 
      */
     @Import(name="isAutomaticFailoverEnabled")
     private @Nullable Output<Boolean> isAutomaticFailoverEnabled;
 
     /**
-     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     * @return This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
      * 
      */
     public Optional<Output<Boolean>> isAutomaticFailoverEnabled() {
@@ -299,7 +299,7 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetail
         }
 
         /**
-         * @param isAutomaticFailoverEnabled Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+         * @param isAutomaticFailoverEnabled This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
          * 
          * @return builder
          * 
@@ -310,7 +310,7 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetail
         }
 
         /**
-         * @param isAutomaticFailoverEnabled Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+         * @param isAutomaticFailoverEnabled This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
          * 
          * @return builder
          * 

@@ -6,10 +6,16 @@ import builtins as _builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .byol import *
+from .byol_allocation import *
 from .cluster import *
 from .datastore import *
 from .datastore_cluster import *
 from .esxi_host import *
+from .get_byol import *
+from .get_byol_allocation import *
+from .get_byol_allocations import *
+from .get_byols import *
 from .get_cluster import *
 from .get_clusters import *
 from .get_datastore import *

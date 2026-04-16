@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly string CapacityReservationId;
         /// <summary>
+        /// The BYOL allocations used for VMware Cluster provisioning.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailResult> ClusterByolAllocationDetails;
+        /// <summary>
         /// The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         public readonly string ComputeAvailabilityDomain;
@@ -54,6 +58,10 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly string InitialHostShapeName;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+        /// </summary>
+        public readonly string InitialVcfByolAllocationId;
+        /// <summary>
         /// A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
         /// </summary>
         public readonly string InstanceDisplayNamePrefix;
@@ -80,6 +88,8 @@ namespace Pulumi.Oci.Ocvp.Outputs
 
             string capacityReservationId,
 
+            ImmutableArray<Outputs.GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailResult> clusterByolAllocationDetails,
+
             string computeAvailabilityDomain,
 
             ImmutableArray<string> datastoreClusterIds,
@@ -96,6 +106,8 @@ namespace Pulumi.Oci.Ocvp.Outputs
 
             string initialHostShapeName,
 
+            string initialVcfByolAllocationId,
+
             string instanceDisplayNamePrefix,
 
             bool isShieldedInstanceEnabled,
@@ -108,6 +120,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
         {
             ActualEsxiHostsCount = actualEsxiHostsCount;
             CapacityReservationId = capacityReservationId;
+            ClusterByolAllocationDetails = clusterByolAllocationDetails;
             ComputeAvailabilityDomain = computeAvailabilityDomain;
             DatastoreClusterIds = datastoreClusterIds;
             Datastores = datastores;
@@ -116,6 +129,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
             InitialCommitment = initialCommitment;
             InitialHostOcpuCount = initialHostOcpuCount;
             InitialHostShapeName = initialHostShapeName;
+            InitialVcfByolAllocationId = initialVcfByolAllocationId;
             InstanceDisplayNamePrefix = instanceDisplayNamePrefix;
             IsShieldedInstanceEnabled = isShieldedInstanceEnabled;
             NetworkConfigurations = networkConfigurations;

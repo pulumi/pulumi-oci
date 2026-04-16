@@ -17,6 +17,13 @@ public final class DbmulticloudOracleDbGcpKeyRingArgs extends com.pulumi.resourc
 
     public static final DbmulticloudOracleDbGcpKeyRingArgs Empty = new DbmulticloudOracleDbGcpKeyRingArgs();
 
+    @Import(name="action")
+    private @Nullable Output<String> action;
+
+    public Optional<Output<String>> action() {
+        return Optional.ofNullable(this.action);
+    }
+
     /**
      * (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the Oracle DB GCP Key Ring resource resides.
      * 
@@ -138,6 +145,21 @@ public final class DbmulticloudOracleDbGcpKeyRingArgs extends com.pulumi.resourc
     }
 
     /**
+     * The target region, where resource is replicated.
+     * 
+     */
+    @Import(name="targetRegion")
+    private @Nullable Output<String> targetRegion;
+
+    /**
+     * @return The target region, where resource is replicated.
+     * 
+     */
+    public Optional<Output<String>> targetRegion() {
+        return Optional.ofNullable(this.targetRegion);
+    }
+
+    /**
      * Oracle DB GCP Key Ring resource Type.
      * 
      * ** IMPORTANT **
@@ -161,6 +183,7 @@ public final class DbmulticloudOracleDbGcpKeyRingArgs extends com.pulumi.resourc
     private DbmulticloudOracleDbGcpKeyRingArgs() {}
 
     private DbmulticloudOracleDbGcpKeyRingArgs(DbmulticloudOracleDbGcpKeyRingArgs $) {
+        this.action = $.action;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
@@ -169,6 +192,7 @@ public final class DbmulticloudOracleDbGcpKeyRingArgs extends com.pulumi.resourc
         this.location = $.location;
         this.oracleDbConnectorId = $.oracleDbConnectorId;
         this.properties = $.properties;
+        this.targetRegion = $.targetRegion;
         this.type = $.type;
     }
 
@@ -188,6 +212,15 @@ public final class DbmulticloudOracleDbGcpKeyRingArgs extends com.pulumi.resourc
 
         public Builder(DbmulticloudOracleDbGcpKeyRingArgs defaults) {
             $ = new DbmulticloudOracleDbGcpKeyRingArgs(Objects.requireNonNull(defaults));
+        }
+
+        public Builder action(@Nullable Output<String> action) {
+            $.action = action;
+            return this;
+        }
+
+        public Builder action(String action) {
+            return action(Output.of(action));
         }
 
         /**
@@ -356,6 +389,27 @@ public final class DbmulticloudOracleDbGcpKeyRingArgs extends com.pulumi.resourc
          */
         public Builder properties(Map<String,String> properties) {
             return properties(Output.of(properties));
+        }
+
+        /**
+         * @param targetRegion The target region, where resource is replicated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetRegion(@Nullable Output<String> targetRegion) {
+            $.targetRegion = targetRegion;
+            return this;
+        }
+
+        /**
+         * @param targetRegion The target region, where resource is replicated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetRegion(String targetRegion) {
+            return targetRegion(Output.of(targetRegion));
         }
 
         /**

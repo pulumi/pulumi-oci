@@ -5,6 +5,7 @@ package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Ocvp.outputs.SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails;
 import com.pulumi.oci.Ocvp.outputs.SddcInitialConfigurationInitialClusterConfigurationDatastore;
 import com.pulumi.oci.Ocvp.outputs.SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration;
 import java.lang.Boolean;
@@ -28,6 +29,11 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
      * 
      */
     private @Nullable String capacityReservationId;
+    /**
+     * @return The BYOL allocations used for VMware Cluster provisioning.
+     * 
+     */
+    private @Nullable SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails clusterByolAllocationDetails;
     /**
      * @return The availability domain to create the Cluster&#39;s ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
      * 
@@ -71,6 +77,11 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
      */
     private @Nullable String initialHostShapeName;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+     * 
+     */
+    private @Nullable String initialVcfByolAllocationId;
+    /**
      * @return A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn&#39;t set, the Cluster&#39;s `displayName` is used as the prefix.
      * 
      * For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
@@ -112,6 +123,13 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
      */
     public Optional<String> capacityReservationId() {
         return Optional.ofNullable(this.capacityReservationId);
+    }
+    /**
+     * @return The BYOL allocations used for VMware Cluster provisioning.
+     * 
+     */
+    public Optional<SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails> clusterByolAllocationDetails() {
+        return Optional.ofNullable(this.clusterByolAllocationDetails);
     }
     /**
      * @return The availability domain to create the Cluster&#39;s ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
@@ -172,6 +190,13 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
         return Optional.ofNullable(this.initialHostShapeName);
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+     * 
+     */
+    public Optional<String> initialVcfByolAllocationId() {
+        return Optional.ofNullable(this.initialVcfByolAllocationId);
+    }
+    /**
      * @return A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn&#39;t set, the Cluster&#39;s `displayName` is used as the prefix.
      * 
      * For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
@@ -220,6 +245,7 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
     public static final class Builder {
         private @Nullable Integer actualEsxiHostsCount;
         private @Nullable String capacityReservationId;
+        private @Nullable SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails clusterByolAllocationDetails;
         private String computeAvailabilityDomain;
         private @Nullable List<String> datastoreClusterIds;
         private @Nullable List<SddcInitialConfigurationInitialClusterConfigurationDatastore> datastores;
@@ -228,6 +254,7 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
         private @Nullable String initialCommitment;
         private @Nullable Double initialHostOcpuCount;
         private @Nullable String initialHostShapeName;
+        private @Nullable String initialVcfByolAllocationId;
         private @Nullable String instanceDisplayNamePrefix;
         private @Nullable Boolean isShieldedInstanceEnabled;
         private @Nullable SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration networkConfiguration;
@@ -238,6 +265,7 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
     	      Objects.requireNonNull(defaults);
     	      this.actualEsxiHostsCount = defaults.actualEsxiHostsCount;
     	      this.capacityReservationId = defaults.capacityReservationId;
+    	      this.clusterByolAllocationDetails = defaults.clusterByolAllocationDetails;
     	      this.computeAvailabilityDomain = defaults.computeAvailabilityDomain;
     	      this.datastoreClusterIds = defaults.datastoreClusterIds;
     	      this.datastores = defaults.datastores;
@@ -246,6 +274,7 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
     	      this.initialCommitment = defaults.initialCommitment;
     	      this.initialHostOcpuCount = defaults.initialHostOcpuCount;
     	      this.initialHostShapeName = defaults.initialHostShapeName;
+    	      this.initialVcfByolAllocationId = defaults.initialVcfByolAllocationId;
     	      this.instanceDisplayNamePrefix = defaults.instanceDisplayNamePrefix;
     	      this.isShieldedInstanceEnabled = defaults.isShieldedInstanceEnabled;
     	      this.networkConfiguration = defaults.networkConfiguration;
@@ -263,6 +292,12 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
         public Builder capacityReservationId(@Nullable String capacityReservationId) {
 
             this.capacityReservationId = capacityReservationId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterByolAllocationDetails(@Nullable SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails clusterByolAllocationDetails) {
+
+            this.clusterByolAllocationDetails = clusterByolAllocationDetails;
             return this;
         }
         @CustomType.Setter
@@ -324,6 +359,12 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
             return this;
         }
         @CustomType.Setter
+        public Builder initialVcfByolAllocationId(@Nullable String initialVcfByolAllocationId) {
+
+            this.initialVcfByolAllocationId = initialVcfByolAllocationId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder instanceDisplayNamePrefix(@Nullable String instanceDisplayNamePrefix) {
 
             this.instanceDisplayNamePrefix = instanceDisplayNamePrefix;
@@ -359,6 +400,7 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
             final var _resultValue = new SddcInitialConfigurationInitialClusterConfiguration();
             _resultValue.actualEsxiHostsCount = actualEsxiHostsCount;
             _resultValue.capacityReservationId = capacityReservationId;
+            _resultValue.clusterByolAllocationDetails = clusterByolAllocationDetails;
             _resultValue.computeAvailabilityDomain = computeAvailabilityDomain;
             _resultValue.datastoreClusterIds = datastoreClusterIds;
             _resultValue.datastores = datastores;
@@ -367,6 +409,7 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
             _resultValue.initialCommitment = initialCommitment;
             _resultValue.initialHostOcpuCount = initialHostOcpuCount;
             _resultValue.initialHostShapeName = initialHostShapeName;
+            _resultValue.initialVcfByolAllocationId = initialVcfByolAllocationId;
             _resultValue.instanceDisplayNamePrefix = instanceDisplayNamePrefix;
             _resultValue.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
             _resultValue.networkConfiguration = networkConfiguration;

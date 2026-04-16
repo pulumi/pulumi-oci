@@ -70,6 +70,21 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesPlainArgs
     }
 
     /**
+     * A filter to return only resources that are associated with the given privateEndpointId.
+     * 
+     */
+    @Import(name="privateEndpointId")
+    private @Nullable String privateEndpointId;
+
+    /**
+     * @return A filter to return only resources that are associated with the given privateEndpointId.
+     * 
+     */
+    public Optional<String> privateEndpointId() {
+        return Optional.ofNullable(this.privateEndpointId);
+    }
+
+    /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      * 
      */
@@ -91,6 +106,7 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesPlainArgs
         this.dbDeploymentType = $.dbDeploymentType;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.privateEndpointId = $.privateEndpointId;
         this.state = $.state;
     }
 
@@ -152,6 +168,17 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesPlainArgs
 
         public Builder filters(GetDistributedDatabaseDistributedAutonomousDatabasesFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param privateEndpointId A filter to return only resources that are associated with the given privateEndpointId.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateEndpointId(@Nullable String privateEndpointId) {
+            $.privateEndpointId = privateEndpointId;
+            return this;
         }
 
         /**

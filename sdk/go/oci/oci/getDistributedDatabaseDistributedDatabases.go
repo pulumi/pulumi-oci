@@ -35,6 +35,8 @@ type GetDistributedDatabaseDistributedDatabasesArgs struct {
 	Filters     []GetDistributedDatabaseDistributedDatabasesFilter `pulumi:"filters"`
 	// Comma separated names of argument corresponding to which metadata need to be retrived.
 	Metadata *string `pulumi:"metadata"`
+	// A filter to return only resources that are associated with the given privateEndpointId.
+	PrivateEndpointId *string `pulumi:"privateEndpointId"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State *string `pulumi:"state"`
 }
@@ -45,7 +47,7 @@ type GetDistributedDatabaseDistributedDatabasesResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The distributed database deployment type.
 	DbDeploymentType *string `pulumi:"dbDeploymentType"`
-	// The display name of the Globally distributed database.
+	// The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// The list of distributed_database_collection.
 	DistributedDatabaseCollections []GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollection `pulumi:"distributedDatabaseCollections"`
@@ -53,7 +55,8 @@ type GetDistributedDatabaseDistributedDatabasesResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// Additional metadata related to Globally distributed database resources.
-	Metadata *string `pulumi:"metadata"`
+	Metadata          *string `pulumi:"metadata"`
+	PrivateEndpointId *string `pulumi:"privateEndpointId"`
 	// Lifecycle states for the Globally distributed database.
 	State *string `pulumi:"state"`
 }
@@ -78,6 +81,8 @@ type GetDistributedDatabaseDistributedDatabasesOutputArgs struct {
 	Filters     GetDistributedDatabaseDistributedDatabasesFilterArrayInput `pulumi:"filters"`
 	// Comma separated names of argument corresponding to which metadata need to be retrived.
 	Metadata pulumi.StringPtrInput `pulumi:"metadata"`
+	// A filter to return only resources that are associated with the given privateEndpointId.
+	PrivateEndpointId pulumi.StringPtrInput `pulumi:"privateEndpointId"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
@@ -111,7 +116,7 @@ func (o GetDistributedDatabaseDistributedDatabasesResultOutput) DbDeploymentType
 	return o.ApplyT(func(v GetDistributedDatabaseDistributedDatabasesResult) *string { return v.DbDeploymentType }).(pulumi.StringPtrOutput)
 }
 
-// The display name of the Globally distributed database.
+// The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
 func (o GetDistributedDatabaseDistributedDatabasesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDistributedDatabaseDistributedDatabasesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -137,6 +142,10 @@ func (o GetDistributedDatabaseDistributedDatabasesResultOutput) Id() pulumi.Stri
 // Additional metadata related to Globally distributed database resources.
 func (o GetDistributedDatabaseDistributedDatabasesResultOutput) Metadata() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDistributedDatabaseDistributedDatabasesResult) *string { return v.Metadata }).(pulumi.StringPtrOutput)
+}
+
+func (o GetDistributedDatabaseDistributedDatabasesResultOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDistributedDatabaseDistributedDatabasesResult) *string { return v.PrivateEndpointId }).(pulumi.StringPtrOutput)
 }
 
 // Lifecycle states for the Globally distributed database.

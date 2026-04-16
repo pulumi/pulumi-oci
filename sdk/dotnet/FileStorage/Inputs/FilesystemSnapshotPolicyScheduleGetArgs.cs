@@ -31,6 +31,12 @@ namespace Pulumi.Oci.FileStorage.Inputs
         public Input<int>? HourOfDay { get; set; }
 
         /// <summary>
+        /// (Updatable) Details for setting a retention date or legal hold.
+        /// </summary>
+        [Input("lockDurationDetails")]
+        public Input<Inputs.FilesystemSnapshotPolicyScheduleLockDurationDetailsGetArgs>? LockDurationDetails { get; set; }
+
+        /// <summary>
         /// (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
         /// </summary>
         [Input("month")]

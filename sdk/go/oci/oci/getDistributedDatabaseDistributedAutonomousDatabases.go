@@ -35,6 +35,8 @@ type GetDistributedDatabaseDistributedAutonomousDatabasesArgs struct {
 	// A filter to return only Globally distributed autonomous databases that match the entire name given. The match is not case sensitive.
 	DisplayName *string                                                      `pulumi:"displayName"`
 	Filters     []GetDistributedDatabaseDistributedAutonomousDatabasesFilter `pulumi:"filters"`
+	// A filter to return only resources that are associated with the given privateEndpointId.
+	PrivateEndpointId *string `pulumi:"privateEndpointId"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State *string `pulumi:"state"`
 }
@@ -53,7 +55,8 @@ type GetDistributedDatabaseDistributedAutonomousDatabasesResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// Additional metadata related to Globally distributed autonomous database resources.
-	Metadatas []GetDistributedDatabaseDistributedAutonomousDatabasesMetadata `pulumi:"metadatas"`
+	Metadatas         []GetDistributedDatabaseDistributedAutonomousDatabasesMetadata `pulumi:"metadatas"`
+	PrivateEndpointId *string                                                        `pulumi:"privateEndpointId"`
 	// Lifecycle states for the Globally distributed autonomous database.
 	State *string `pulumi:"state"`
 }
@@ -76,6 +79,8 @@ type GetDistributedDatabaseDistributedAutonomousDatabasesOutputArgs struct {
 	// A filter to return only Globally distributed autonomous databases that match the entire name given. The match is not case sensitive.
 	DisplayName pulumi.StringPtrInput                                                `pulumi:"displayName"`
 	Filters     GetDistributedDatabaseDistributedAutonomousDatabasesFilterArrayInput `pulumi:"filters"`
+	// A filter to return only resources that are associated with the given privateEndpointId.
+	PrivateEndpointId pulumi.StringPtrInput `pulumi:"privateEndpointId"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
@@ -137,6 +142,10 @@ func (o GetDistributedDatabaseDistributedAutonomousDatabasesResultOutput) Metada
 	return o.ApplyT(func(v GetDistributedDatabaseDistributedAutonomousDatabasesResult) []GetDistributedDatabaseDistributedAutonomousDatabasesMetadata {
 		return v.Metadatas
 	}).(GetDistributedDatabaseDistributedAutonomousDatabasesMetadataArrayOutput)
+}
+
+func (o GetDistributedDatabaseDistributedAutonomousDatabasesResultOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDistributedDatabaseDistributedAutonomousDatabasesResult) *string { return v.PrivateEndpointId }).(pulumi.StringPtrOutput)
 }
 
 // Lifecycle states for the Globally distributed autonomous database.

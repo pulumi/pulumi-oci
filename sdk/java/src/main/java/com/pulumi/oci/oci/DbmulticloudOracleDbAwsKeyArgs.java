@@ -18,6 +18,13 @@ public final class DbmulticloudOracleDbAwsKeyArgs extends com.pulumi.resources.R
 
     public static final DbmulticloudOracleDbAwsKeyArgs Empty = new DbmulticloudOracleDbAwsKeyArgs();
 
+    @Import(name="action")
+    private @Nullable Output<String> action;
+
+    public Optional<Output<String>> action() {
+        return Optional.ofNullable(this.action);
+    }
+
     /**
      * AWS Account ID.
      * 
@@ -169,6 +176,21 @@ public final class DbmulticloudOracleDbAwsKeyArgs extends com.pulumi.resources.R
     }
 
     /**
+     * The target region, where resource is replicated.
+     * 
+     */
+    @Import(name="targetRegion")
+    private @Nullable Output<String> targetRegion;
+
+    /**
+     * @return The target region, where resource is replicated.
+     * 
+     */
+    public Optional<Output<String>> targetRegion() {
+        return Optional.ofNullable(this.targetRegion);
+    }
+
+    /**
      * AWS Key resource type.
      * 
      * ** IMPORTANT **
@@ -192,6 +214,7 @@ public final class DbmulticloudOracleDbAwsKeyArgs extends com.pulumi.resources.R
     private DbmulticloudOracleDbAwsKeyArgs() {}
 
     private DbmulticloudOracleDbAwsKeyArgs(DbmulticloudOracleDbAwsKeyArgs $) {
+        this.action = $.action;
         this.awsAccountId = $.awsAccountId;
         this.awsKeyArn = $.awsKeyArn;
         this.compartmentId = $.compartmentId;
@@ -202,6 +225,7 @@ public final class DbmulticloudOracleDbAwsKeyArgs extends com.pulumi.resources.R
         this.location = $.location;
         this.oracleDbConnectorId = $.oracleDbConnectorId;
         this.properties = $.properties;
+        this.targetRegion = $.targetRegion;
         this.type = $.type;
     }
 
@@ -221,6 +245,15 @@ public final class DbmulticloudOracleDbAwsKeyArgs extends com.pulumi.resources.R
 
         public Builder(DbmulticloudOracleDbAwsKeyArgs defaults) {
             $ = new DbmulticloudOracleDbAwsKeyArgs(Objects.requireNonNull(defaults));
+        }
+
+        public Builder action(@Nullable Output<String> action) {
+            $.action = action;
+            return this;
+        }
+
+        public Builder action(String action) {
+            return action(Output.of(action));
         }
 
         /**
@@ -431,6 +464,27 @@ public final class DbmulticloudOracleDbAwsKeyArgs extends com.pulumi.resources.R
          */
         public Builder properties(Map<String,String> properties) {
             return properties(Output.of(properties));
+        }
+
+        /**
+         * @param targetRegion The target region, where resource is replicated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetRegion(@Nullable Output<String> targetRegion) {
+            $.targetRegion = targetRegion;
+            return this;
+        }
+
+        /**
+         * @param targetRegion The target region, where resource is replicated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetRegion(String targetRegion) {
+            return targetRegion(Output.of(targetRegion));
         }
 
         /**

@@ -88,6 +88,10 @@ export interface GetManagementApplianceResult {
      */
     readonly managementAgentId: string;
     readonly managementApplianceId: string;
+    /**
+     * Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-<version>.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+     */
+    readonly pluginVersion: string;
     readonly publicSshKeys: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.

@@ -5,12 +5,15 @@ package com.pulumi.oci.oci.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureVaultReplicationMetadata;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 @CustomType
 public final class GetDbmulticloudOracleDbAzureVaultResult {
+    private String action;
     /**
      * @return Azure Vault ID.
      * 
@@ -73,6 +76,11 @@ public final class GetDbmulticloudOracleDbAzureVaultResult {
      */
     private Map<String,String> properties;
     /**
+     * @return Replication metadata, it has information about replication and target region.
+     * 
+     */
+    private List<GetDbmulticloudOracleDbAzureVaultReplicationMetadata> replicationMetadatas;
+    /**
      * @return The lifecycle state of the Oracle DB Azure Vault resource.
      * 
      */
@@ -82,6 +90,11 @@ public final class GetDbmulticloudOracleDbAzureVaultResult {
      * 
      */
     private Map<String,String> systemTags;
+    /**
+     * @return The target region, where resource is replicated.
+     * 
+     */
+    private String targetRegion;
     /**
      * @return Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;
      * 
@@ -99,6 +112,9 @@ public final class GetDbmulticloudOracleDbAzureVaultResult {
     private String type;
 
     private GetDbmulticloudOracleDbAzureVaultResult() {}
+    public String action() {
+        return this.action;
+    }
     /**
      * @return Azure Vault ID.
      * 
@@ -187,6 +203,13 @@ public final class GetDbmulticloudOracleDbAzureVaultResult {
         return this.properties;
     }
     /**
+     * @return Replication metadata, it has information about replication and target region.
+     * 
+     */
+    public List<GetDbmulticloudOracleDbAzureVaultReplicationMetadata> replicationMetadatas() {
+        return this.replicationMetadatas;
+    }
+    /**
      * @return The lifecycle state of the Oracle DB Azure Vault resource.
      * 
      */
@@ -199,6 +222,13 @@ public final class GetDbmulticloudOracleDbAzureVaultResult {
      */
     public Map<String,String> systemTags() {
         return this.systemTags;
+    }
+    /**
+     * @return The target region, where resource is replicated.
+     * 
+     */
+    public String targetRegion() {
+        return this.targetRegion;
     }
     /**
      * @return Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;
@@ -231,6 +261,7 @@ public final class GetDbmulticloudOracleDbAzureVaultResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String action;
         private String azureVaultId;
         private String compartmentId;
         private Map<String,String> definedTags;
@@ -244,14 +275,17 @@ public final class GetDbmulticloudOracleDbAzureVaultResult {
         private String oracleDbAzureVaultId;
         private String oracleDbConnectorId;
         private Map<String,String> properties;
+        private List<GetDbmulticloudOracleDbAzureVaultReplicationMetadata> replicationMetadatas;
         private String state;
         private Map<String,String> systemTags;
+        private String targetRegion;
         private String timeCreated;
         private String timeUpdated;
         private String type;
         public Builder() {}
         public Builder(GetDbmulticloudOracleDbAzureVaultResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.action = defaults.action;
     	      this.azureVaultId = defaults.azureVaultId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
@@ -265,13 +299,23 @@ public final class GetDbmulticloudOracleDbAzureVaultResult {
     	      this.oracleDbAzureVaultId = defaults.oracleDbAzureVaultId;
     	      this.oracleDbConnectorId = defaults.oracleDbConnectorId;
     	      this.properties = defaults.properties;
+    	      this.replicationMetadatas = defaults.replicationMetadatas;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
+    	      this.targetRegion = defaults.targetRegion;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
+        public Builder action(String action) {
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAzureVaultResult", "action");
+            }
+            this.action = action;
+            return this;
+        }
         @CustomType.Setter
         public Builder azureVaultId(String azureVaultId) {
             if (azureVaultId == null) {
@@ -377,6 +421,17 @@ public final class GetDbmulticloudOracleDbAzureVaultResult {
             return this;
         }
         @CustomType.Setter
+        public Builder replicationMetadatas(List<GetDbmulticloudOracleDbAzureVaultReplicationMetadata> replicationMetadatas) {
+            if (replicationMetadatas == null) {
+              throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAzureVaultResult", "replicationMetadatas");
+            }
+            this.replicationMetadatas = replicationMetadatas;
+            return this;
+        }
+        public Builder replicationMetadatas(GetDbmulticloudOracleDbAzureVaultReplicationMetadata... replicationMetadatas) {
+            return replicationMetadatas(List.of(replicationMetadatas));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAzureVaultResult", "state");
@@ -390,6 +445,14 @@ public final class GetDbmulticloudOracleDbAzureVaultResult {
               throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAzureVaultResult", "systemTags");
             }
             this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder targetRegion(String targetRegion) {
+            if (targetRegion == null) {
+              throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAzureVaultResult", "targetRegion");
+            }
+            this.targetRegion = targetRegion;
             return this;
         }
         @CustomType.Setter
@@ -418,6 +481,7 @@ public final class GetDbmulticloudOracleDbAzureVaultResult {
         }
         public GetDbmulticloudOracleDbAzureVaultResult build() {
             final var _resultValue = new GetDbmulticloudOracleDbAzureVaultResult();
+            _resultValue.action = action;
             _resultValue.azureVaultId = azureVaultId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
@@ -431,8 +495,10 @@ public final class GetDbmulticloudOracleDbAzureVaultResult {
             _resultValue.oracleDbAzureVaultId = oracleDbAzureVaultId;
             _resultValue.oracleDbConnectorId = oracleDbConnectorId;
             _resultValue.properties = properties;
+            _resultValue.replicationMetadatas = replicationMetadatas;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
+            _resultValue.targetRegion = targetRegion;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.type = type;

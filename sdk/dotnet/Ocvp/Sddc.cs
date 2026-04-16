@@ -61,6 +61,11 @@ namespace Pulumi.Oci.Ocvp
     ///                         },
     ///                         VsphereType = sddcInitialConfigurationInitialClusterConfigurationsVsphereType,
     ///                         CapacityReservationId = testCapacityReservation.Id,
+    ///                         ClusterByolAllocationDetails = new Oci.Ocvp.Inputs.SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs
+    ///                         {
+    ///                             FirewallByolAllocationId = testByolAllocation.Id,
+    ///                             VsanByolAllocationId = testByolAllocation.Id,
+    ///                         },
     ///                         DatastoreClusterIds = sddcInitialConfigurationInitialClusterConfigurationsDatastoreClusterIds,
     ///                         Datastores = new[]
     ///                         {
@@ -74,6 +79,7 @@ namespace Pulumi.Oci.Ocvp
     ///                         InitialCommitment = sddcInitialConfigurationInitialClusterConfigurationsInitialCommitment,
     ///                         InitialHostOcpuCount = sddcInitialConfigurationInitialClusterConfigurationsInitialHostOcpuCount,
     ///                         InitialHostShapeName = testShape.Name,
+    ///                         InitialVcfByolAllocationId = testByolAllocation.Id,
     ///                         InstanceDisplayNamePrefix = sddcInitialConfigurationInitialClusterConfigurationsInstanceDisplayNamePrefix,
     ///                         IsShieldedInstanceEnabled = sddcInitialConfigurationInitialClusterConfigurationsIsShieldedInstanceEnabled,
     ///                         WorkloadNetworkCidr = sddcInitialConfigurationInitialClusterConfigurationsWorkloadNetworkCidr,
@@ -93,6 +99,11 @@ namespace Pulumi.Oci.Ocvp
     ///             { "Department", "Finance" },
     ///         },
     ///         IsSingleHostSddc = sddcIsSingleHostSddc,
+    ///         SddcByolAllocationDetails = new Oci.Ocvp.Inputs.SddcSddcByolAllocationDetailsArgs
+    ///         {
+    ///             LoadBalancerByolAllocationId = testByolAllocation.Id,
+    ///             LoadBalancerInstanceCount = sddcSddcByolAllocationDetailsLoadBalancerInstanceCount,
+    ///         },
     ///         HcxAction = hcxAction,
     ///         IsHcxEnabled = sddcIsHcxEnabled,
     ///     });
@@ -389,6 +400,12 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Output("reservingHcxOnPremiseLicenseKeys")]
         public Output<ImmutableArray<string>> ReservingHcxOnPremiseLicenseKeys { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The BYOL allocations used for VMware SDDC provisioning.
+        /// </summary>
+        [Output("sddcByolAllocationDetails")]
+        public Output<Outputs.SddcSddcByolAllocationDetails> SddcByolAllocationDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `AuthorizedKeys` file
@@ -760,6 +777,12 @@ namespace Pulumi.Oci.Ocvp
         }
 
         /// <summary>
+        /// (Updatable) The BYOL allocations used for VMware SDDC provisioning.
+        /// </summary>
+        [Input("sddcByolAllocationDetails")]
+        public Input<Inputs.SddcSddcByolAllocationDetailsArgs>? SddcByolAllocationDetails { get; set; }
+
+        /// <summary>
         /// (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `AuthorizedKeys` file
         /// </summary>
         [Input("sshAuthorizedKeys", required: true)]
@@ -1113,6 +1136,12 @@ namespace Pulumi.Oci.Ocvp
             get => _reservingHcxOnPremiseLicenseKeys ?? (_reservingHcxOnPremiseLicenseKeys = new InputList<string>());
             set => _reservingHcxOnPremiseLicenseKeys = value;
         }
+
+        /// <summary>
+        /// (Updatable) The BYOL allocations used for VMware SDDC provisioning.
+        /// </summary>
+        [Input("sddcByolAllocationDetails")]
+        public Input<Inputs.SddcSddcByolAllocationDetailsGetArgs>? SddcByolAllocationDetails { get; set; }
 
         /// <summary>
         /// (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `AuthorizedKeys` file

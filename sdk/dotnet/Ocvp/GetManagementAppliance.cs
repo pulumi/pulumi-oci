@@ -168,6 +168,10 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly string ManagementAgentId;
         public readonly string ManagementApplianceId;
+        /// <summary>
+        /// Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-&lt;version&gt;.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+        /// </summary>
+        public readonly string PluginVersion;
         public readonly string PublicSshKeys;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
@@ -224,6 +228,8 @@ namespace Pulumi.Oci.Ocvp
 
             string managementApplianceId,
 
+            string pluginVersion,
+
             string publicSshKeys,
 
             string sddcId,
@@ -252,6 +258,7 @@ namespace Pulumi.Oci.Ocvp
             LifecycleDetails = lifecycleDetails;
             ManagementAgentId = managementAgentId;
             ManagementApplianceId = managementApplianceId;
+            PluginVersion = pluginVersion;
             PublicSshKeys = publicSshKeys;
             SddcId = sddcId;
             State = state;

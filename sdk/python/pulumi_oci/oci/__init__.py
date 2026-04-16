@@ -76,10 +76,12 @@ from .get_dbmulticloud_oracle_db_gcp_keys import *
 from .get_dif_stack import *
 from .get_dif_stacks import *
 from .get_distributed_database_distributed_autonomous_database import *
+from .get_distributed_database_distributed_autonomous_database_raft_metric import *
 from .get_distributed_database_distributed_autonomous_databases import *
 from .get_distributed_database_distributed_database import *
 from .get_distributed_database_distributed_database_private_endpoint import *
 from .get_distributed_database_distributed_database_private_endpoints import *
+from .get_distributed_database_distributed_database_raft_metric import *
 from .get_distributed_database_distributed_databases import *
 from .get_gdp_gdp_pipeline import *
 from .get_gdp_gdp_pipelines import *

@@ -148,28 +148,28 @@ public class DistributedDatabaseDistributedDatabasePrivateEndpoint extends com.p
         return this.freeformTags;
     }
     /**
-     * The details of the non-deleted Globally distributed autonomous databases that consumes the given private endpoint.
+     * This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
      * 
      */
     @Export(name="globallyDistributedAutonomousDatabases", refs={List.class,DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabase.class}, tree="[0,1]")
     private Output<List<DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabase>> globallyDistributedAutonomousDatabases;
 
     /**
-     * @return The details of the non-deleted Globally distributed autonomous databases that consumes the given private endpoint.
+     * @return This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
      * 
      */
     public Output<List<DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabase>> globallyDistributedAutonomousDatabases() {
         return this.globallyDistributedAutonomousDatabases;
     }
     /**
-     * The details of the non-deleted Globally distributed databases that consumes the given private endpoint.
+     * This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
      * 
      */
     @Export(name="globallyDistributedDatabases", refs={List.class,DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabase.class}, tree="[0,1]")
     private Output<List<DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabase>> globallyDistributedDatabases;
 
     /**
-     * @return The details of the non-deleted Globally distributed databases that consumes the given private endpoint.
+     * @return This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
      * 
      */
     public Output<List<DistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabase>> globallyDistributedDatabases() {

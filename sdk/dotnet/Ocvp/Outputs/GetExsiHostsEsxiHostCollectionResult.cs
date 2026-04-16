@@ -104,6 +104,10 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly bool IsBillingSwappingInProgress;
         /// <summary>
+        /// Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+        /// </summary>
+        public readonly bool IsVsanByolEnabled;
+        /// <summary>
         /// The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
         /// </summary>
         public readonly string NextCommitment;
@@ -115,6 +119,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
         /// </summary>
         public readonly string NonUpgradedEsxiHostId;
+        public readonly string PrimaryVnicMacAddress;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
         /// </summary>
@@ -147,6 +152,10 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
         /// </summary>
         public readonly string UpgradedReplacementEsxiHostId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+        /// </summary>
+        public readonly string VcfByolAllocationId;
         /// <summary>
         /// The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
         /// </summary>
@@ -202,11 +211,15 @@ namespace Pulumi.Oci.Ocvp.Outputs
 
             bool isBillingSwappingInProgress,
 
+            bool isVsanByolEnabled,
+
             string nextCommitment,
 
             string nextSku,
 
             string nonUpgradedEsxiHostId,
+
+            string primaryVnicMacAddress,
 
             string replacementEsxiHostId,
 
@@ -223,6 +236,8 @@ namespace Pulumi.Oci.Ocvp.Outputs
             string timeUpdated,
 
             string upgradedReplacementEsxiHostId,
+
+            string vcfByolAllocationId,
 
             string vmwareSoftwareVersion)
         {
@@ -250,9 +265,11 @@ namespace Pulumi.Oci.Ocvp.Outputs
             Id = id;
             IsBillingContinuationInProgress = isBillingContinuationInProgress;
             IsBillingSwappingInProgress = isBillingSwappingInProgress;
+            IsVsanByolEnabled = isVsanByolEnabled;
             NextCommitment = nextCommitment;
             NextSku = nextSku;
             NonUpgradedEsxiHostId = nonUpgradedEsxiHostId;
+            PrimaryVnicMacAddress = primaryVnicMacAddress;
             ReplacementEsxiHostId = replacementEsxiHostId;
             SddcId = sddcId;
             State = state;
@@ -261,6 +278,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
             UpgradedReplacementEsxiHostId = upgradedReplacementEsxiHostId;
+            VcfByolAllocationId = vcfByolAllocationId;
             VmwareSoftwareVersion = vmwareSoftwareVersion;
         }
     }

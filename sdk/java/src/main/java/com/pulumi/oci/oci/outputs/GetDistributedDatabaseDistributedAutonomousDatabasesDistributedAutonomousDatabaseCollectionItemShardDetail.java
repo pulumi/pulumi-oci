@@ -62,6 +62,16 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
      */
     private String name;
     /**
+     * @return The OKV endpoint name.
+     * 
+     */
+    private String okvEndPointGroup;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+     * 
+     */
+    private String okvKeyStoreId;
+    /**
      * @return This field is deprecated. For shard peer details please refer peerDetails attribute.
      * 
      */
@@ -180,6 +190,20 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
         return this.name;
     }
     /**
+     * @return The OKV endpoint name.
+     * 
+     */
+    public String okvEndPointGroup() {
+        return this.okvEndPointGroup;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the shard.
+     * 
+     */
+    public String okvKeyStoreId() {
+        return this.okvKeyStoreId;
+    }
+    /**
      * @return This field is deprecated. For shard peer details please refer peerDetails attribute.
      * 
      */
@@ -269,6 +293,8 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
         private String kmsKeyVersionId;
         private List<GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemShardDetailMetadata> metadatas;
         private String name;
+        private String okvEndPointGroup;
+        private String okvKeyStoreId;
         private List<String> peerCloudAutonomousVmClusterIds;
         private List<GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemShardDetailPeerDetail> peerDetails;
         private String shardGroup;
@@ -292,6 +318,8 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.metadatas = defaults.metadatas;
     	      this.name = defaults.name;
+    	      this.okvEndPointGroup = defaults.okvEndPointGroup;
+    	      this.okvKeyStoreId = defaults.okvKeyStoreId;
     	      this.peerCloudAutonomousVmClusterIds = defaults.peerCloudAutonomousVmClusterIds;
     	      this.peerDetails = defaults.peerDetails;
     	      this.shardGroup = defaults.shardGroup;
@@ -385,6 +413,22 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
               throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemShardDetail", "name");
             }
             this.name = name;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder okvEndPointGroup(String okvEndPointGroup) {
+            if (okvEndPointGroup == null) {
+              throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemShardDetail", "okvEndPointGroup");
+            }
+            this.okvEndPointGroup = okvEndPointGroup;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder okvKeyStoreId(String okvKeyStoreId) {
+            if (okvKeyStoreId == null) {
+              throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItemShardDetail", "okvKeyStoreId");
+            }
+            this.okvKeyStoreId = okvKeyStoreId;
             return this;
         }
         @CustomType.Setter
@@ -485,6 +529,8 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
             _resultValue.metadatas = metadatas;
             _resultValue.name = name;
+            _resultValue.okvEndPointGroup = okvEndPointGroup;
+            _resultValue.okvKeyStoreId = okvKeyStoreId;
             _resultValue.peerCloudAutonomousVmClusterIds = peerCloudAutonomousVmClusterIds;
             _resultValue.peerDetails = peerDetails;
             _resultValue.shardGroup = shardGroup;

@@ -19,6 +19,7 @@ __all__ = [
     'OccDemandSignalOccDemandSignal',
     'OccDemandSignalOccDemandSignalValue',
     'OccDemandSignalPatchOperation',
+    'OccMetricAlarmResourceConfiguration',
     'GetOccDemandSignalOccDemandSignalResult',
     'GetOccDemandSignalOccDemandSignalValueResult',
     'GetOccDemandSignalPatchOperationResult',
@@ -28,6 +29,11 @@ __all__ = [
     'GetOccDemandSignalsOccDemandSignalCollectionItemOccDemandSignalResult',
     'GetOccDemandSignalsOccDemandSignalCollectionItemOccDemandSignalValueResult',
     'GetOccDemandSignalsOccDemandSignalCollectionItemPatchOperationResult',
+    'GetOccMetricAlarmResourceConfigurationResult',
+    'GetOccMetricAlarmsFilterResult',
+    'GetOccMetricAlarmsOccMetricAlarmCollectionResult',
+    'GetOccMetricAlarmsOccMetricAlarmCollectionItemResult',
+    'GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationResult',
 ]
 
 @pulumi.output_type
@@ -237,6 +243,148 @@ class OccDemandSignalPatchOperation(dict):
         (Updatable)
         """
         return pulumi.get(self, "selected_item")
+
+
+@pulumi.output_type
+class OccMetricAlarmResourceConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "usageType":
+            suggest = "usage_type"
+        elif key == "computeHwGeneration":
+            suggest = "compute_hw_generation"
+        elif key == "hwGeneration":
+            suggest = "hw_generation"
+        elif key == "linkRole":
+            suggest = "link_role"
+        elif key == "nodeType":
+            suggest = "node_type"
+        elif key == "occMetricAlarmProvider":
+            suggest = "occ_metric_alarm_provider"
+        elif key == "storageType":
+            suggest = "storage_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OccMetricAlarmResourceConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OccMetricAlarmResourceConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OccMetricAlarmResourceConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 resource: _builtins.str,
+                 usage_type: _builtins.str,
+                 compute_hw_generation: Optional[_builtins.str] = None,
+                 hw_generation: Optional[_builtins.str] = None,
+                 link_role: Optional[_builtins.str] = None,
+                 node_type: Optional[_builtins.str] = None,
+                 occ_metric_alarm_provider: Optional[_builtins.str] = None,
+                 shape: Optional[_builtins.str] = None,
+                 storage_type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str resource: Resources like COMPUTE, STORAGE, EXADATA etc.
+        :param _builtins.str usage_type: The type of usage for the resource.
+        :param _builtins.str compute_hw_generation: The hardware generation of the compute resource.
+        :param _builtins.str hw_generation: The hardware generation of the Exadata system.
+        :param _builtins.str link_role: The role of the link in the network.
+        :param _builtins.str node_type: The type of node in the Exadata system.
+        :param _builtins.str occ_metric_alarm_provider: The provider of the network service.
+        :param _builtins.str shape: The shape of the compute instance.
+        :param _builtins.str storage_type: The type of storage resource.
+        """
+        pulumi.set(__self__, "resource", resource)
+        pulumi.set(__self__, "usage_type", usage_type)
+        if compute_hw_generation is not None:
+            pulumi.set(__self__, "compute_hw_generation", compute_hw_generation)
+        if hw_generation is not None:
+            pulumi.set(__self__, "hw_generation", hw_generation)
+        if link_role is not None:
+            pulumi.set(__self__, "link_role", link_role)
+        if node_type is not None:
+            pulumi.set(__self__, "node_type", node_type)
+        if occ_metric_alarm_provider is not None:
+            pulumi.set(__self__, "occ_metric_alarm_provider", occ_metric_alarm_provider)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
+        if storage_type is not None:
+            pulumi.set(__self__, "storage_type", storage_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def resource(self) -> _builtins.str:
+        """
+        Resources like COMPUTE, STORAGE, EXADATA etc.
+        """
+        return pulumi.get(self, "resource")
+
+    @_builtins.property
+    @pulumi.getter(name="usageType")
+    def usage_type(self) -> _builtins.str:
+        """
+        The type of usage for the resource.
+        """
+        return pulumi.get(self, "usage_type")
+
+    @_builtins.property
+    @pulumi.getter(name="computeHwGeneration")
+    def compute_hw_generation(self) -> Optional[_builtins.str]:
+        """
+        The hardware generation of the compute resource.
+        """
+        return pulumi.get(self, "compute_hw_generation")
+
+    @_builtins.property
+    @pulumi.getter(name="hwGeneration")
+    def hw_generation(self) -> Optional[_builtins.str]:
+        """
+        The hardware generation of the Exadata system.
+        """
+        return pulumi.get(self, "hw_generation")
+
+    @_builtins.property
+    @pulumi.getter(name="linkRole")
+    def link_role(self) -> Optional[_builtins.str]:
+        """
+        The role of the link in the network.
+        """
+        return pulumi.get(self, "link_role")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> Optional[_builtins.str]:
+        """
+        The type of node in the Exadata system.
+        """
+        return pulumi.get(self, "node_type")
+
+    @_builtins.property
+    @pulumi.getter(name="occMetricAlarmProvider")
+    def occ_metric_alarm_provider(self) -> Optional[_builtins.str]:
+        """
+        The provider of the network service.
+        """
+        return pulumi.get(self, "occ_metric_alarm_provider")
+
+    @_builtins.property
+    @pulumi.getter
+    def shape(self) -> Optional[_builtins.str]:
+        """
+        The shape of the compute instance.
+        """
+        return pulumi.get(self, "shape")
+
+    @_builtins.property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> Optional[_builtins.str]:
+        """
+        The type of storage resource.
+        """
+        return pulumi.get(self, "storage_type")
 
 
 @pulumi.output_type
@@ -701,5 +849,439 @@ class GetOccDemandSignalsOccDemandSignalCollectionItemPatchOperationResult(dict)
         The Demand Signal Value.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetOccMetricAlarmResourceConfigurationResult(dict):
+    def __init__(__self__, *,
+                 compute_hw_generation: _builtins.str,
+                 hw_generation: _builtins.str,
+                 link_role: _builtins.str,
+                 node_type: _builtins.str,
+                 occ_metric_alarm_provider: _builtins.str,
+                 resource: _builtins.str,
+                 shape: _builtins.str,
+                 storage_type: _builtins.str,
+                 usage_type: _builtins.str):
+        """
+        :param _builtins.str compute_hw_generation: The hardware generation of the compute resource.
+        :param _builtins.str hw_generation: The hardware generation of the Exadata system.
+        :param _builtins.str link_role: The role of the link in the network.
+        :param _builtins.str node_type: The type of node in the Exadata system.
+        :param _builtins.str occ_metric_alarm_provider: The provider of the network service.
+        :param _builtins.str resource: Resources like COMPUTE, STORAGE, EXADATA etc.
+        :param _builtins.str shape: The shape of the compute instance.
+        :param _builtins.str storage_type: The type of storage resource.
+        :param _builtins.str usage_type: The type of usage for the resource.
+        """
+        pulumi.set(__self__, "compute_hw_generation", compute_hw_generation)
+        pulumi.set(__self__, "hw_generation", hw_generation)
+        pulumi.set(__self__, "link_role", link_role)
+        pulumi.set(__self__, "node_type", node_type)
+        pulumi.set(__self__, "occ_metric_alarm_provider", occ_metric_alarm_provider)
+        pulumi.set(__self__, "resource", resource)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "storage_type", storage_type)
+        pulumi.set(__self__, "usage_type", usage_type)
+
+    @_builtins.property
+    @pulumi.getter(name="computeHwGeneration")
+    def compute_hw_generation(self) -> _builtins.str:
+        """
+        The hardware generation of the compute resource.
+        """
+        return pulumi.get(self, "compute_hw_generation")
+
+    @_builtins.property
+    @pulumi.getter(name="hwGeneration")
+    def hw_generation(self) -> _builtins.str:
+        """
+        The hardware generation of the Exadata system.
+        """
+        return pulumi.get(self, "hw_generation")
+
+    @_builtins.property
+    @pulumi.getter(name="linkRole")
+    def link_role(self) -> _builtins.str:
+        """
+        The role of the link in the network.
+        """
+        return pulumi.get(self, "link_role")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> _builtins.str:
+        """
+        The type of node in the Exadata system.
+        """
+        return pulumi.get(self, "node_type")
+
+    @_builtins.property
+    @pulumi.getter(name="occMetricAlarmProvider")
+    def occ_metric_alarm_provider(self) -> _builtins.str:
+        """
+        The provider of the network service.
+        """
+        return pulumi.get(self, "occ_metric_alarm_provider")
+
+    @_builtins.property
+    @pulumi.getter
+    def resource(self) -> _builtins.str:
+        """
+        Resources like COMPUTE, STORAGE, EXADATA etc.
+        """
+        return pulumi.get(self, "resource")
+
+    @_builtins.property
+    @pulumi.getter
+    def shape(self) -> _builtins.str:
+        """
+        The shape of the compute instance.
+        """
+        return pulumi.get(self, "shape")
+
+    @_builtins.property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> _builtins.str:
+        """
+        The type of storage resource.
+        """
+        return pulumi.get(self, "storage_type")
+
+    @_builtins.property
+    @pulumi.getter(name="usageType")
+    def usage_type(self) -> _builtins.str:
+        """
+        The type of usage for the resource.
+        """
+        return pulumi.get(self, "usage_type")
+
+
+@pulumi.output_type
+class GetOccMetricAlarmsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetOccMetricAlarmsOccMetricAlarmCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetOccMetricAlarmsOccMetricAlarmCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetOccMetricAlarmsOccMetricAlarmCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetOccMetricAlarmsOccMetricAlarmCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 frequency: _builtins.str,
+                 id: _builtins.str,
+                 is_active: _builtins.bool,
+                 resource_configurations: Sequence['outputs.GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationResult'],
+                 state: _builtins.str,
+                 subscribers: Sequence[_builtins.str],
+                 system_tags: Mapping[str, _builtins.str],
+                 threshold: _builtins.int,
+                 threshold_type: _builtins.str,
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: Optional description for the alarm.
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str frequency: Frequency at which notifications should be sent.
+        :param _builtins.str id: Unique OCID for this alarm configuration.
+        :param _builtins.bool is_active: Filter to list only active or inactive alarms.
+        :param Sequence['GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArgs'] resource_configurations: Configuration for a given 'resource'
+        :param _builtins.str state: The current lifecycle state of the resource.
+        :param Sequence[_builtins.str] subscribers: List of topic OCIDs for notifications.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.int threshold: Threshold at which alarm must be triggered.
+        :param _builtins.str threshold_type: Units in which threshold is being stored.
+        :param _builtins.str time_created: Creation timestamp (RFC 3339).
+        :param _builtins.str time_updated: Last update timestamp (RFC 3339).
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "frequency", frequency)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_active", is_active)
+        pulumi.set(__self__, "resource_configurations", resource_configurations)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subscribers", subscribers)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "threshold", threshold)
+        pulumi.set(__self__, "threshold_type", threshold_type)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Optional description for the alarm.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def frequency(self) -> _builtins.str:
+        """
+        Frequency at which notifications should be sent.
+        """
+        return pulumi.get(self, "frequency")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        Unique OCID for this alarm configuration.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isActive")
+    def is_active(self) -> _builtins.bool:
+        """
+        Filter to list only active or inactive alarms.
+        """
+        return pulumi.get(self, "is_active")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceConfigurations")
+    def resource_configurations(self) -> Sequence['outputs.GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationResult']:
+        """
+        Configuration for a given 'resource'
+        """
+        return pulumi.get(self, "resource_configurations")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current lifecycle state of the resource.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter
+    def subscribers(self) -> Sequence[_builtins.str]:
+        """
+        List of topic OCIDs for notifications.
+        """
+        return pulumi.get(self, "subscribers")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def threshold(self) -> _builtins.int:
+        """
+        Threshold at which alarm must be triggered.
+        """
+        return pulumi.get(self, "threshold")
+
+    @_builtins.property
+    @pulumi.getter(name="thresholdType")
+    def threshold_type(self) -> _builtins.str:
+        """
+        Units in which threshold is being stored.
+        """
+        return pulumi.get(self, "threshold_type")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        Creation timestamp (RFC 3339).
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        Last update timestamp (RFC 3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationResult(dict):
+    def __init__(__self__, *,
+                 compute_hw_generation: _builtins.str,
+                 hw_generation: _builtins.str,
+                 link_role: _builtins.str,
+                 node_type: _builtins.str,
+                 occ_metric_alarm_provider: _builtins.str,
+                 resource: _builtins.str,
+                 shape: _builtins.str,
+                 storage_type: _builtins.str,
+                 usage_type: _builtins.str):
+        """
+        :param _builtins.str compute_hw_generation: The hardware generation of the compute resource.
+        :param _builtins.str hw_generation: The hardware generation of the Exadata system.
+        :param _builtins.str link_role: The role of the link in the network.
+        :param _builtins.str node_type: The type of node in the Exadata system.
+        :param _builtins.str occ_metric_alarm_provider: The provider of the network service.
+        :param _builtins.str resource: Resources like COMPUTE, STORAGE, EXADATA etc.
+        :param _builtins.str shape: The shape of the compute instance.
+        :param _builtins.str storage_type: The type of storage resource.
+        :param _builtins.str usage_type: The type of usage for the resource.
+        """
+        pulumi.set(__self__, "compute_hw_generation", compute_hw_generation)
+        pulumi.set(__self__, "hw_generation", hw_generation)
+        pulumi.set(__self__, "link_role", link_role)
+        pulumi.set(__self__, "node_type", node_type)
+        pulumi.set(__self__, "occ_metric_alarm_provider", occ_metric_alarm_provider)
+        pulumi.set(__self__, "resource", resource)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "storage_type", storage_type)
+        pulumi.set(__self__, "usage_type", usage_type)
+
+    @_builtins.property
+    @pulumi.getter(name="computeHwGeneration")
+    def compute_hw_generation(self) -> _builtins.str:
+        """
+        The hardware generation of the compute resource.
+        """
+        return pulumi.get(self, "compute_hw_generation")
+
+    @_builtins.property
+    @pulumi.getter(name="hwGeneration")
+    def hw_generation(self) -> _builtins.str:
+        """
+        The hardware generation of the Exadata system.
+        """
+        return pulumi.get(self, "hw_generation")
+
+    @_builtins.property
+    @pulumi.getter(name="linkRole")
+    def link_role(self) -> _builtins.str:
+        """
+        The role of the link in the network.
+        """
+        return pulumi.get(self, "link_role")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> _builtins.str:
+        """
+        The type of node in the Exadata system.
+        """
+        return pulumi.get(self, "node_type")
+
+    @_builtins.property
+    @pulumi.getter(name="occMetricAlarmProvider")
+    def occ_metric_alarm_provider(self) -> _builtins.str:
+        """
+        The provider of the network service.
+        """
+        return pulumi.get(self, "occ_metric_alarm_provider")
+
+    @_builtins.property
+    @pulumi.getter
+    def resource(self) -> _builtins.str:
+        """
+        Resources like COMPUTE, STORAGE, EXADATA etc.
+        """
+        return pulumi.get(self, "resource")
+
+    @_builtins.property
+    @pulumi.getter
+    def shape(self) -> _builtins.str:
+        """
+        The shape of the compute instance.
+        """
+        return pulumi.get(self, "shape")
+
+    @_builtins.property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> _builtins.str:
+        """
+        The type of storage resource.
+        """
+        return pulumi.get(self, "storage_type")
+
+    @_builtins.property
+    @pulumi.getter(name="usageType")
+    def usage_type(self) -> _builtins.str:
+        """
+        The type of usage for the resource.
+        """
+        return pulumi.get(self, "usage_type")
 
 

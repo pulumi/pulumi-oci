@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Ocvp.inputs.SddcDatastoreArgs;
 import com.pulumi.oci.Ocvp.inputs.SddcInitialConfigurationArgs;
+import com.pulumi.oci.Ocvp.inputs.SddcSddcByolAllocationDetailsArgs;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -592,6 +593,21 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The BYOL allocations used for VMware SDDC provisioning.
+     * 
+     */
+    @Import(name="sddcByolAllocationDetails")
+    private @Nullable Output<SddcSddcByolAllocationDetailsArgs> sddcByolAllocationDetails;
+
+    /**
+     * @return (Updatable) The BYOL allocations used for VMware SDDC provisioning.
+     * 
+     */
+    public Optional<Output<SddcSddcByolAllocationDetailsArgs>> sddcByolAllocationDetails() {
+        return Optional.ofNullable(this.sddcByolAllocationDetails);
+    }
+
+    /**
      * (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file
      * 
      */
@@ -750,6 +766,7 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
         this.refreshHcxLicenseStatus = $.refreshHcxLicenseStatus;
         this.replicationVlanId = $.replicationVlanId;
         this.reservingHcxOnPremiseLicenseKeys = $.reservingHcxOnPremiseLicenseKeys;
+        this.sddcByolAllocationDetails = $.sddcByolAllocationDetails;
         this.sshAuthorizedKeys = $.sshAuthorizedKeys;
         this.vmotionVlanId = $.vmotionVlanId;
         this.vmwareSoftwareVersion = $.vmwareSoftwareVersion;
@@ -1544,6 +1561,27 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder reservingHcxOnPremiseLicenseKeys(String... reservingHcxOnPremiseLicenseKeys) {
             return reservingHcxOnPremiseLicenseKeys(List.of(reservingHcxOnPremiseLicenseKeys));
+        }
+
+        /**
+         * @param sddcByolAllocationDetails (Updatable) The BYOL allocations used for VMware SDDC provisioning.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sddcByolAllocationDetails(@Nullable Output<SddcSddcByolAllocationDetailsArgs> sddcByolAllocationDetails) {
+            $.sddcByolAllocationDetails = sddcByolAllocationDetails;
+            return this;
+        }
+
+        /**
+         * @param sddcByolAllocationDetails (Updatable) The BYOL allocations used for VMware SDDC provisioning.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sddcByolAllocationDetails(SddcSddcByolAllocationDetailsArgs sddcByolAllocationDetails) {
+            return sddcByolAllocationDetails(Output.of(sddcByolAllocationDetails));
         }
 
         /**

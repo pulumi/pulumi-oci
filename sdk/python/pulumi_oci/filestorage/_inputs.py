@@ -27,6 +27,8 @@ __all__ = [
     'FilesystemSnapshotPolicyLockArgsDict',
     'FilesystemSnapshotPolicyScheduleArgs',
     'FilesystemSnapshotPolicyScheduleArgsDict',
+    'FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs',
+    'FilesystemSnapshotPolicyScheduleLockDurationDetailsArgsDict',
     'MountTargetKerberosArgs',
     'MountTargetKerberosArgsDict',
     'MountTargetLdapIdmapArgs',
@@ -41,6 +43,8 @@ __all__ = [
     'ReplicationLockArgsDict',
     'SnapshotLockArgs',
     'SnapshotLockArgsDict',
+    'SnapshotLockDurationDetailsArgs',
+    'SnapshotLockDurationDetailsArgsDict',
     'GetExportSetsFilterArgs',
     'GetExportSetsFilterArgsDict',
     'GetExportsFilterArgs',
@@ -571,6 +575,10 @@ class FilesystemSnapshotPolicyScheduleArgsDict(TypedDict):
     """
     (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
     """
+    lock_duration_details: NotRequired[pulumi.Input['FilesystemSnapshotPolicyScheduleLockDurationDetailsArgsDict']]
+    """
+    (Updatable) Details for setting a retention date or legal hold.
+    """
     month: NotRequired[pulumi.Input[_builtins.str]]
     """
     (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
@@ -596,6 +604,7 @@ class FilesystemSnapshotPolicyScheduleArgs:
                  day_of_month: Optional[pulumi.Input[_builtins.int]] = None,
                  day_of_week: Optional[pulumi.Input[_builtins.str]] = None,
                  hour_of_day: Optional[pulumi.Input[_builtins.int]] = None,
+                 lock_duration_details: Optional[pulumi.Input['FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs']] = None,
                  month: Optional[pulumi.Input[_builtins.str]] = None,
                  retention_duration_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
                  schedule_prefix: Optional[pulumi.Input[_builtins.str]] = None,
@@ -606,6 +615,7 @@ class FilesystemSnapshotPolicyScheduleArgs:
         :param pulumi.Input[_builtins.int] day_of_month: (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
         :param pulumi.Input[_builtins.str] day_of_week: (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
         :param pulumi.Input[_builtins.int] hour_of_day: (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
+        :param pulumi.Input['FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs'] lock_duration_details: (Updatable) Details for setting a retention date or legal hold.
         :param pulumi.Input[_builtins.str] month: (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
         :param pulumi.Input[_builtins.str] retention_duration_in_seconds: (Updatable) The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
         :param pulumi.Input[_builtins.str] schedule_prefix: (Updatable) A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
@@ -619,6 +629,8 @@ class FilesystemSnapshotPolicyScheduleArgs:
             pulumi.set(__self__, "day_of_week", day_of_week)
         if hour_of_day is not None:
             pulumi.set(__self__, "hour_of_day", hour_of_day)
+        if lock_duration_details is not None:
+            pulumi.set(__self__, "lock_duration_details", lock_duration_details)
         if month is not None:
             pulumi.set(__self__, "month", month)
         if retention_duration_in_seconds is not None:
@@ -689,6 +701,18 @@ class FilesystemSnapshotPolicyScheduleArgs:
         pulumi.set(self, "hour_of_day", value)
 
     @_builtins.property
+    @pulumi.getter(name="lockDurationDetails")
+    def lock_duration_details(self) -> Optional[pulumi.Input['FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs']]:
+        """
+        (Updatable) Details for setting a retention date or legal hold.
+        """
+        return pulumi.get(self, "lock_duration_details")
+
+    @lock_duration_details.setter
+    def lock_duration_details(self, value: Optional[pulumi.Input['FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs']]):
+        pulumi.set(self, "lock_duration_details", value)
+
+    @_builtins.property
     @pulumi.getter
     def month(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -735,6 +759,73 @@ class FilesystemSnapshotPolicyScheduleArgs:
     @time_schedule_start.setter
     def time_schedule_start(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "time_schedule_start", value)
+
+
+class FilesystemSnapshotPolicyScheduleLockDurationDetailsArgsDict(TypedDict):
+    lock_duration: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+    """
+    lock_mode: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+    """
+    cool_off_duration: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+    """
+
+@pulumi.input_type
+class FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs:
+    def __init__(__self__, *,
+                 lock_duration: pulumi.Input[_builtins.int],
+                 lock_mode: pulumi.Input[_builtins.str],
+                 cool_off_duration: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] lock_duration: (Updatable) The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+        :param pulumi.Input[_builtins.str] lock_mode: (Updatable) Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+        :param pulumi.Input[_builtins.int] cool_off_duration: (Updatable) For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+        """
+        pulumi.set(__self__, "lock_duration", lock_duration)
+        pulumi.set(__self__, "lock_mode", lock_mode)
+        if cool_off_duration is not None:
+            pulumi.set(__self__, "cool_off_duration", cool_off_duration)
+
+    @_builtins.property
+    @pulumi.getter(name="lockDuration")
+    def lock_duration(self) -> pulumi.Input[_builtins.int]:
+        """
+        (Updatable) The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+        """
+        return pulumi.get(self, "lock_duration")
+
+    @lock_duration.setter
+    def lock_duration(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "lock_duration", value)
+
+    @_builtins.property
+    @pulumi.getter(name="lockMode")
+    def lock_mode(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+        """
+        return pulumi.get(self, "lock_mode")
+
+    @lock_mode.setter
+    def lock_mode(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "lock_mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="coolOffDuration")
+    def cool_off_duration(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+        """
+        return pulumi.get(self, "cool_off_duration")
+
+    @cool_off_duration.setter
+    def cool_off_duration(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "cool_off_duration", value)
 
 
 class MountTargetKerberosArgsDict(TypedDict):
@@ -1411,6 +1502,73 @@ class SnapshotLockArgs:
     @time_created.setter
     def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "time_created", value)
+
+
+class SnapshotLockDurationDetailsArgsDict(TypedDict):
+    lock_duration: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+    """
+    lock_mode: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+    """
+    cool_off_duration: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+    """
+
+@pulumi.input_type
+class SnapshotLockDurationDetailsArgs:
+    def __init__(__self__, *,
+                 lock_duration: pulumi.Input[_builtins.int],
+                 lock_mode: pulumi.Input[_builtins.str],
+                 cool_off_duration: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] lock_duration: (Updatable) The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+        :param pulumi.Input[_builtins.str] lock_mode: (Updatable) Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+        :param pulumi.Input[_builtins.int] cool_off_duration: (Updatable) For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+        """
+        pulumi.set(__self__, "lock_duration", lock_duration)
+        pulumi.set(__self__, "lock_mode", lock_mode)
+        if cool_off_duration is not None:
+            pulumi.set(__self__, "cool_off_duration", cool_off_duration)
+
+    @_builtins.property
+    @pulumi.getter(name="lockDuration")
+    def lock_duration(self) -> pulumi.Input[_builtins.int]:
+        """
+        (Updatable) The retention period (measured in days) defines how long a snapshot remains locked, preventing user modifications or deletions. In governance mode this period can be adjusted, but in compliance mode it becomes permanent after a cool-off period. Snapshots can be locked for a minimum of 0 days and a maximum of 36,500 days. A value of 0 days stands for an indefinite retention period and it is used for a legal hold.
+        """
+        return pulumi.get(self, "lock_duration")
+
+    @lock_duration.setter
+    def lock_duration(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "lock_duration", value)
+
+    @_builtins.property
+    @pulumi.getter(name="lockMode")
+    def lock_mode(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Can be GOVERNANCE or COMPLIANCE. GOVERNANCE MODE: locks snapshots based on either a retention period or a legal hold. COMPLIANCE MODE: the customer can only remove the snapshot during its cooling-off period. Once that time ends, the snapshot becomes immutable; customers cannot delete or modify it until its set retention date passes. After the snapshot is locked, customers can only increase its retention period.
+        """
+        return pulumi.get(self, "lock_mode")
+
+    @lock_mode.setter
+    def lock_mode(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "lock_mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="coolOffDuration")
+    def cool_off_duration(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) For snapshots in compliance mode, a cooling-off period (measured in days) begins. During this time, you can still edit or remove the lock. Once this period ends, the snapshot becomes immutable until the specified retention date expires, permanently preventing any deletion or modification. The cool off duration can be set for a minimum of 0 days and a maximum of 365. It defaults to 14 days if not set.
+        """
+        return pulumi.get(self, "cool_off_duration")
+
+    @cool_off_duration.setter
+    def cool_off_duration(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "cool_off_duration", value)
 
 
 class GetExportSetsFilterArgsDict(TypedDict):

@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetDbmulticloudOracleDbAwsKeyResult',
@@ -26,7 +27,10 @@ class GetDbmulticloudOracleDbAwsKeyResult:
     """
     A collection of values returned by getDbmulticloudOracleDbAwsKey.
     """
-    def __init__(__self__, aws_account_id=None, aws_key_arn=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_aws_key_enabled=None, lifecycle_state_details=None, location=None, oracle_db_aws_key_id=None, oracle_db_connector_id=None, properties=None, state=None, system_tags=None, time_created=None, time_updated=None, type=None):
+    def __init__(__self__, action=None, aws_account_id=None, aws_key_arn=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_aws_key_enabled=None, lifecycle_state_details=None, location=None, oracle_db_aws_key_id=None, oracle_db_connector_id=None, properties=None, replication_metadatas=None, state=None, system_tags=None, target_region=None, time_created=None, time_updated=None, type=None):
+        if action and not isinstance(action, str):
+            raise TypeError("Expected argument 'action' to be a str")
+        pulumi.set(__self__, "action", action)
         if aws_account_id and not isinstance(aws_account_id, str):
             raise TypeError("Expected argument 'aws_account_id' to be a str")
         pulumi.set(__self__, "aws_account_id", aws_account_id)
@@ -66,12 +70,18 @@ class GetDbmulticloudOracleDbAwsKeyResult:
         if properties and not isinstance(properties, dict):
             raise TypeError("Expected argument 'properties' to be a dict")
         pulumi.set(__self__, "properties", properties)
+        if replication_metadatas and not isinstance(replication_metadatas, list):
+            raise TypeError("Expected argument 'replication_metadatas' to be a list")
+        pulumi.set(__self__, "replication_metadatas", replication_metadatas)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
+        if target_region and not isinstance(target_region, str):
+            raise TypeError("Expected argument 'target_region' to be a str")
+        pulumi.set(__self__, "target_region", target_region)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -81,6 +91,11 @@ class GetDbmulticloudOracleDbAwsKeyResult:
         if type and not isinstance(type, str):
             raise TypeError("Expected argument 'type' to be a str")
         pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> _builtins.str:
+        return pulumi.get(self, "action")
 
     @_builtins.property
     @pulumi.getter(name="awsAccountId")
@@ -184,6 +199,14 @@ class GetDbmulticloudOracleDbAwsKeyResult:
         return pulumi.get(self, "properties")
 
     @_builtins.property
+    @pulumi.getter(name="replicationMetadatas")
+    def replication_metadatas(self) -> Sequence['outputs.GetDbmulticloudOracleDbAwsKeyReplicationMetadataResult']:
+        """
+        Replication metadata, it has information about replication and target region.
+        """
+        return pulumi.get(self, "replication_metadatas")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -198,6 +221,14 @@ class GetDbmulticloudOracleDbAwsKeyResult:
         System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="targetRegion")
+    def target_region(self) -> _builtins.str:
+        """
+        The target region, where resource is replicated.
+        """
+        return pulumi.get(self, "target_region")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -230,6 +261,7 @@ class AwaitableGetDbmulticloudOracleDbAwsKeyResult(GetDbmulticloudOracleDbAwsKey
         if False:
             yield self
         return GetDbmulticloudOracleDbAwsKeyResult(
+            action=self.action,
             aws_account_id=self.aws_account_id,
             aws_key_arn=self.aws_key_arn,
             compartment_id=self.compartment_id,
@@ -243,8 +275,10 @@ class AwaitableGetDbmulticloudOracleDbAwsKeyResult(GetDbmulticloudOracleDbAwsKey
             oracle_db_aws_key_id=self.oracle_db_aws_key_id,
             oracle_db_connector_id=self.oracle_db_connector_id,
             properties=self.properties,
+            replication_metadatas=self.replication_metadatas,
             state=self.state,
             system_tags=self.system_tags,
+            target_region=self.target_region,
             time_created=self.time_created,
             time_updated=self.time_updated,
             type=self.type)
@@ -275,6 +309,7 @@ def get_dbmulticloud_oracle_db_aws_key(oracle_db_aws_key_id: Optional[_builtins.
     __ret__ = pulumi.runtime.invoke('oci:oci/getDbmulticloudOracleDbAwsKey:getDbmulticloudOracleDbAwsKey', __args__, opts=opts, typ=GetDbmulticloudOracleDbAwsKeyResult).value
 
     return AwaitableGetDbmulticloudOracleDbAwsKeyResult(
+        action=pulumi.get(__ret__, 'action'),
         aws_account_id=pulumi.get(__ret__, 'aws_account_id'),
         aws_key_arn=pulumi.get(__ret__, 'aws_key_arn'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
@@ -288,8 +323,10 @@ def get_dbmulticloud_oracle_db_aws_key(oracle_db_aws_key_id: Optional[_builtins.
         oracle_db_aws_key_id=pulumi.get(__ret__, 'oracle_db_aws_key_id'),
         oracle_db_connector_id=pulumi.get(__ret__, 'oracle_db_connector_id'),
         properties=pulumi.get(__ret__, 'properties'),
+        replication_metadatas=pulumi.get(__ret__, 'replication_metadatas'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
+        target_region=pulumi.get(__ret__, 'target_region'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
@@ -317,6 +354,7 @@ def get_dbmulticloud_oracle_db_aws_key_output(oracle_db_aws_key_id: Optional[pul
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:oci/getDbmulticloudOracleDbAwsKey:getDbmulticloudOracleDbAwsKey', __args__, opts=opts, typ=GetDbmulticloudOracleDbAwsKeyResult)
     return __ret__.apply(lambda __response__: GetDbmulticloudOracleDbAwsKeyResult(
+        action=pulumi.get(__response__, 'action'),
         aws_account_id=pulumi.get(__response__, 'aws_account_id'),
         aws_key_arn=pulumi.get(__response__, 'aws_key_arn'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
@@ -330,8 +368,10 @@ def get_dbmulticloud_oracle_db_aws_key_output(oracle_db_aws_key_id: Optional[pul
         oracle_db_aws_key_id=pulumi.get(__response__, 'oracle_db_aws_key_id'),
         oracle_db_connector_id=pulumi.get(__response__, 'oracle_db_connector_id'),
         properties=pulumi.get(__response__, 'properties'),
+        replication_metadatas=pulumi.get(__response__, 'replication_metadatas'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
+        target_region=pulumi.get(__response__, 'target_region'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated'),
         type=pulumi.get(__response__, 'type')))

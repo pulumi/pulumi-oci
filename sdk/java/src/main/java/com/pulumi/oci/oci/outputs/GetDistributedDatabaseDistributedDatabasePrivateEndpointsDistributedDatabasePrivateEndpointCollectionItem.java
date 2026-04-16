@@ -41,12 +41,12 @@ public final class GetDistributedDatabaseDistributedDatabasePrivateEndpointsDist
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The details of the non-deleted Globally distributed autonomous databases that consumes the given private endpoint.
+     * @return This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
      * 
      */
     private List<GetDistributedDatabaseDistributedDatabasePrivateEndpointsDistributedDatabasePrivateEndpointCollectionItemGloballyDistributedAutonomousDatabase> globallyDistributedAutonomousDatabases;
     /**
-     * @return The details of the non-deleted Globally distributed databases that consumes the given private endpoint.
+     * @return This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
      * 
      */
     private List<GetDistributedDatabaseDistributedDatabasePrivateEndpointsDistributedDatabasePrivateEndpointCollectionItemGloballyDistributedDatabase> globallyDistributedDatabases;
@@ -144,14 +144,14 @@ public final class GetDistributedDatabaseDistributedDatabasePrivateEndpointsDist
         return this.freeformTags;
     }
     /**
-     * @return The details of the non-deleted Globally distributed autonomous databases that consumes the given private endpoint.
+     * @return This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
      * 
      */
     public List<GetDistributedDatabaseDistributedDatabasePrivateEndpointsDistributedDatabasePrivateEndpointCollectionItemGloballyDistributedAutonomousDatabase> globallyDistributedAutonomousDatabases() {
         return this.globallyDistributedAutonomousDatabases;
     }
     /**
-     * @return The details of the non-deleted Globally distributed databases that consumes the given private endpoint.
+     * @return This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
      * 
      */
     public List<GetDistributedDatabaseDistributedDatabasePrivateEndpointsDistributedDatabasePrivateEndpointCollectionItemGloballyDistributedDatabase> globallyDistributedDatabases() {

@@ -71,6 +71,21 @@ public final class GetManagementAppliancesArgs extends com.pulumi.resources.Invo
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
+     * 
+     */
+    @Import(name="sddcId")
+    private @Nullable Output<String> sddcId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
+     * 
+     */
+    public Optional<Output<String>> sddcId() {
+        return Optional.ofNullable(this.sddcId);
+    }
+
+    /**
      * The lifecycle state of the management appliance.
      * 
      */
@@ -92,6 +107,7 @@ public final class GetManagementAppliancesArgs extends com.pulumi.resources.Invo
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.managementApplianceId = $.managementApplianceId;
+        this.sddcId = $.sddcId;
         this.state = $.state;
     }
 
@@ -187,6 +203,27 @@ public final class GetManagementAppliancesArgs extends com.pulumi.resources.Invo
          */
         public Builder managementApplianceId(String managementApplianceId) {
             return managementApplianceId(Output.of(managementApplianceId));
+        }
+
+        /**
+         * @param sddcId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sddcId(@Nullable Output<String> sddcId) {
+            $.sddcId = sddcId;
+            return this;
+        }
+
+        /**
+         * @param sddcId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sddcId(String sddcId) {
+            return sddcId(Output.of(sddcId));
         }
 
         /**

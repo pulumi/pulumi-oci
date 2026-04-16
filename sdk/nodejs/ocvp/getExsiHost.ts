@@ -141,6 +141,10 @@ export interface GetExsiHostResult {
      */
     readonly isBillingSwappingInProgress: boolean;
     /**
+     * Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+     */
+    readonly isVsanByolEnabled: boolean;
+    /**
      * The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
      */
     readonly nextCommitment: string;
@@ -156,6 +160,7 @@ export interface GetExsiHostResult {
      * @deprecated This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.
      */
     readonly nonUpgradedEsxiHostId: string;
+    readonly primaryVnicMacAddress: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
      */
@@ -190,6 +195,10 @@ export interface GetExsiHostResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
      */
     readonly upgradedReplacementEsxiHostId: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+     */
+    readonly vcfByolAllocationId: string;
     /**
      * The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
      */

@@ -27,7 +27,7 @@ class GetManagementApplianceResult:
     """
     A collection of values returned by getManagementAppliance.
     """
-    def __init__(__self__, compartment_id=None, compute_instance_id=None, configurations=None, connections=None, defined_tags=None, display_name=None, freeform_tags=None, heartbeat_connection_states=None, id=None, lifecycle_details=None, management_agent_id=None, management_appliance_id=None, public_ssh_keys=None, sddc_id=None, state=None, system_tags=None, time_configuration_updated=None, time_created=None, time_last_heartbeat=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, compute_instance_id=None, configurations=None, connections=None, defined_tags=None, display_name=None, freeform_tags=None, heartbeat_connection_states=None, id=None, lifecycle_details=None, management_agent_id=None, management_appliance_id=None, plugin_version=None, public_ssh_keys=None, sddc_id=None, state=None, system_tags=None, time_configuration_updated=None, time_created=None, time_last_heartbeat=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -64,6 +64,9 @@ class GetManagementApplianceResult:
         if management_appliance_id and not isinstance(management_appliance_id, str):
             raise TypeError("Expected argument 'management_appliance_id' to be a str")
         pulumi.set(__self__, "management_appliance_id", management_appliance_id)
+        if plugin_version and not isinstance(plugin_version, str):
+            raise TypeError("Expected argument 'plugin_version' to be a str")
+        pulumi.set(__self__, "plugin_version", plugin_version)
         if public_ssh_keys and not isinstance(public_ssh_keys, str):
             raise TypeError("Expected argument 'public_ssh_keys' to be a str")
         pulumi.set(__self__, "public_ssh_keys", public_ssh_keys)
@@ -183,6 +186,14 @@ class GetManagementApplianceResult:
         return pulumi.get(self, "management_appliance_id")
 
     @_builtins.property
+    @pulumi.getter(name="pluginVersion")
+    def plugin_version(self) -> _builtins.str:
+        """
+        Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-<version>.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+        """
+        return pulumi.get(self, "plugin_version")
+
+    @_builtins.property
     @pulumi.getter(name="publicSshKeys")
     def public_ssh_keys(self) -> _builtins.str:
         return pulumi.get(self, "public_ssh_keys")
@@ -262,6 +273,7 @@ class AwaitableGetManagementApplianceResult(GetManagementApplianceResult):
             lifecycle_details=self.lifecycle_details,
             management_agent_id=self.management_agent_id,
             management_appliance_id=self.management_appliance_id,
+            plugin_version=self.plugin_version,
             public_ssh_keys=self.public_ssh_keys,
             sddc_id=self.sddc_id,
             state=self.state,
@@ -309,6 +321,7 @@ def get_management_appliance(management_appliance_id: Optional[_builtins.str] = 
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         management_agent_id=pulumi.get(__ret__, 'management_agent_id'),
         management_appliance_id=pulumi.get(__ret__, 'management_appliance_id'),
+        plugin_version=pulumi.get(__ret__, 'plugin_version'),
         public_ssh_keys=pulumi.get(__ret__, 'public_ssh_keys'),
         sddc_id=pulumi.get(__ret__, 'sddc_id'),
         state=pulumi.get(__ret__, 'state'),
@@ -353,6 +366,7 @@ def get_management_appliance_output(management_appliance_id: Optional[pulumi.Inp
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         management_agent_id=pulumi.get(__response__, 'management_agent_id'),
         management_appliance_id=pulumi.get(__response__, 'management_appliance_id'),
+        plugin_version=pulumi.get(__response__, 'plugin_version'),
         public_ssh_keys=pulumi.get(__response__, 'public_ssh_keys'),
         sddc_id=pulumi.get(__response__, 'sddc_id'),
         state=pulumi.get(__response__, 'state'),

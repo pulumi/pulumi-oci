@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Ocvp.ClusterArgs;
 import com.pulumi.oci.Ocvp.inputs.ClusterState;
+import com.pulumi.oci.Ocvp.outputs.ClusterClusterByolAllocationDetails;
 import com.pulumi.oci.Ocvp.outputs.ClusterDatastore;
 import com.pulumi.oci.Ocvp.outputs.ClusterNetworkConfiguration;
 import com.pulumi.oci.Ocvp.outputs.ClusterUpgradeLicense;
@@ -48,6 +49,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Ocvp.Cluster;
  * import com.pulumi.oci.Ocvp.ClusterArgs;
  * import com.pulumi.oci.Ocvp.inputs.ClusterNetworkConfigurationArgs;
+ * import com.pulumi.oci.Ocvp.inputs.ClusterClusterByolAllocationDetailsArgs;
  * import com.pulumi.oci.Ocvp.inputs.ClusterDatastoreArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -80,6 +82,10 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .sddcId(testSddc.id())
  *             .capacityReservationId(testCapacityReservation.id())
+ *             .clusterByolAllocationDetails(ClusterClusterByolAllocationDetailsArgs.builder()
+ *                 .firewallByolAllocationId(testByolAllocation.id())
+ *                 .vsanByolAllocationId(testByolAllocation.id())
+ *                 .build())
  *             .datastoreClusterIds(clusterDatastoreClusterIds)
  *             .datastores(ClusterDatastoreArgs.builder()
  *                 .blockVolumeIds(clusterDatastoresBlockVolumeIds)
@@ -92,6 +98,7 @@ import javax.annotation.Nullable;
  *             .initialCommitment(clusterInitialCommitment)
  *             .initialHostOcpuCount(clusterInitialHostOcpuCount)
  *             .initialHostShapeName(testShape.name())
+ *             .initialVcfByolAllocationId(testByolAllocation.id())
  *             .instanceDisplayNamePrefix(clusterInstanceDisplayNamePrefix)
  *             .isShieldedInstanceEnabled(clusterIsShieldedInstanceEnabled)
  *             .vmwareSoftwareVersion(clusterVmwareSoftwareVersion)
@@ -139,6 +146,20 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> capacityReservationId() {
         return this.capacityReservationId;
+    }
+    /**
+     * (Updatable) The BYOL allocations used for VMware Cluster provisioning.
+     * 
+     */
+    @Export(name="clusterByolAllocationDetails", refs={ClusterClusterByolAllocationDetails.class}, tree="[0]")
+    private Output<ClusterClusterByolAllocationDetails> clusterByolAllocationDetails;
+
+    /**
+     * @return (Updatable) The BYOL allocations used for VMware Cluster provisioning.
+     * 
+     */
+    public Output<ClusterClusterByolAllocationDetails> clusterByolAllocationDetails() {
+        return this.clusterByolAllocationDetails;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
@@ -317,6 +338,20 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> initialHostShapeName() {
         return this.initialHostShapeName;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+     * 
+     */
+    @Export(name="initialVcfByolAllocationId", refs={String.class}, tree="[0]")
+    private Output<String> initialVcfByolAllocationId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+     * 
+     */
+    public Output<String> initialVcfByolAllocationId() {
+        return this.initialVcfByolAllocationId;
     }
     /**
      * A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn&#39;t set, the Cluster&#39;s `displayName` is used as the prefix.

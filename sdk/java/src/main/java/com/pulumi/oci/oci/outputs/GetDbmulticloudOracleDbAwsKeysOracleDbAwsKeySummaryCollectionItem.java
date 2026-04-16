@@ -5,13 +5,16 @@ package com.pulumi.oci.oci.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemReplicationMetadata;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 @CustomType
 public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem {
+    private String action;
     /**
      * @return AWS Account ID.
      * 
@@ -73,6 +76,11 @@ public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection
      */
     private Map<String,String> properties;
     /**
+     * @return Replication metadata, it has information about replication and target region.
+     * 
+     */
+    private List<GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemReplicationMetadata> replicationMetadatas;
+    /**
      * @return A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      * 
      */
@@ -82,6 +90,11 @@ public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection
      * 
      */
     private Map<String,String> systemTags;
+    /**
+     * @return The target region, where resource is replicated.
+     * 
+     */
+    private String targetRegion;
     /**
      * @return Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;.
      * 
@@ -99,6 +112,9 @@ public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection
     private String type;
 
     private GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem() {}
+    public String action() {
+        return this.action;
+    }
     /**
      * @return AWS Account ID.
      * 
@@ -184,6 +200,13 @@ public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection
         return this.properties;
     }
     /**
+     * @return Replication metadata, it has information about replication and target region.
+     * 
+     */
+    public List<GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemReplicationMetadata> replicationMetadatas() {
+        return this.replicationMetadatas;
+    }
+    /**
      * @return A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      * 
      */
@@ -196,6 +219,13 @@ public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection
      */
     public Map<String,String> systemTags() {
         return this.systemTags;
+    }
+    /**
+     * @return The target region, where resource is replicated.
+     * 
+     */
+    public String targetRegion() {
+        return this.targetRegion;
     }
     /**
      * @return Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;.
@@ -228,6 +258,7 @@ public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection
     }
     @CustomType.Builder
     public static final class Builder {
+        private String action;
         private String awsAccountId;
         private String awsKeyArn;
         private String compartmentId;
@@ -240,14 +271,17 @@ public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection
         private String location;
         private String oracleDbConnectorId;
         private Map<String,String> properties;
+        private List<GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemReplicationMetadata> replicationMetadatas;
         private String state;
         private Map<String,String> systemTags;
+        private String targetRegion;
         private String timeCreated;
         private String timeUpdated;
         private String type;
         public Builder() {}
         public Builder(GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.action = defaults.action;
     	      this.awsAccountId = defaults.awsAccountId;
     	      this.awsKeyArn = defaults.awsKeyArn;
     	      this.compartmentId = defaults.compartmentId;
@@ -260,13 +294,23 @@ public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection
     	      this.location = defaults.location;
     	      this.oracleDbConnectorId = defaults.oracleDbConnectorId;
     	      this.properties = defaults.properties;
+    	      this.replicationMetadatas = defaults.replicationMetadatas;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
+    	      this.targetRegion = defaults.targetRegion;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
+        public Builder action(String action) {
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem", "action");
+            }
+            this.action = action;
+            return this;
+        }
         @CustomType.Setter
         public Builder awsAccountId(String awsAccountId) {
             if (awsAccountId == null) {
@@ -364,6 +408,17 @@ public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection
             return this;
         }
         @CustomType.Setter
+        public Builder replicationMetadatas(List<GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemReplicationMetadata> replicationMetadatas) {
+            if (replicationMetadatas == null) {
+              throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem", "replicationMetadatas");
+            }
+            this.replicationMetadatas = replicationMetadatas;
+            return this;
+        }
+        public Builder replicationMetadatas(GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemReplicationMetadata... replicationMetadatas) {
+            return replicationMetadatas(List.of(replicationMetadatas));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem", "state");
@@ -377,6 +432,14 @@ public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection
               throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem", "systemTags");
             }
             this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder targetRegion(String targetRegion) {
+            if (targetRegion == null) {
+              throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem", "targetRegion");
+            }
+            this.targetRegion = targetRegion;
             return this;
         }
         @CustomType.Setter
@@ -405,6 +468,7 @@ public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection
         }
         public GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem build() {
             final var _resultValue = new GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem();
+            _resultValue.action = action;
             _resultValue.awsAccountId = awsAccountId;
             _resultValue.awsKeyArn = awsKeyArn;
             _resultValue.compartmentId = compartmentId;
@@ -417,8 +481,10 @@ public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection
             _resultValue.location = location;
             _resultValue.oracleDbConnectorId = oracleDbConnectorId;
             _resultValue.properties = properties;
+            _resultValue.replicationMetadatas = replicationMetadatas;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
+            _resultValue.targetRegion = targetRegion;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.type = type;

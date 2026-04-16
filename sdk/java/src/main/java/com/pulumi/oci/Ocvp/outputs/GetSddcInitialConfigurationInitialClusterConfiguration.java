@@ -5,6 +5,7 @@ package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Ocvp.outputs.GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail;
 import com.pulumi.oci.Ocvp.outputs.GetSddcInitialConfigurationInitialClusterConfigurationDatastore;
 import com.pulumi.oci.Ocvp.outputs.GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration;
 import java.lang.Boolean;
@@ -26,6 +27,11 @@ public final class GetSddcInitialConfigurationInitialClusterConfiguration {
      * 
      */
     private String capacityReservationId;
+    /**
+     * @return The BYOL allocations used for VMware Cluster provisioning.
+     * 
+     */
+    private List<GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail> clusterByolAllocationDetails;
     /**
      * @return The availability domain to create the Cluster&#39;s ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
      * 
@@ -67,6 +73,11 @@ public final class GetSddcInitialConfigurationInitialClusterConfiguration {
      */
     private String initialHostShapeName;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+     * 
+     */
+    private String initialVcfByolAllocationId;
+    /**
      * @return (**Deprecated**) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn&#39;t set, the SDDC&#39;s `displayName` is used as the prefix.
      * 
      */
@@ -106,6 +117,13 @@ public final class GetSddcInitialConfigurationInitialClusterConfiguration {
      */
     public String capacityReservationId() {
         return this.capacityReservationId;
+    }
+    /**
+     * @return The BYOL allocations used for VMware Cluster provisioning.
+     * 
+     */
+    public List<GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail> clusterByolAllocationDetails() {
+        return this.clusterByolAllocationDetails;
     }
     /**
      * @return The availability domain to create the Cluster&#39;s ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
@@ -164,6 +182,13 @@ public final class GetSddcInitialConfigurationInitialClusterConfiguration {
         return this.initialHostShapeName;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+     * 
+     */
+    public String initialVcfByolAllocationId() {
+        return this.initialVcfByolAllocationId;
+    }
+    /**
      * @return (**Deprecated**) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn&#39;t set, the SDDC&#39;s `displayName` is used as the prefix.
      * 
      */
@@ -210,6 +235,7 @@ public final class GetSddcInitialConfigurationInitialClusterConfiguration {
     public static final class Builder {
         private Integer actualEsxiHostsCount;
         private String capacityReservationId;
+        private List<GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail> clusterByolAllocationDetails;
         private String computeAvailabilityDomain;
         private List<String> datastoreClusterIds;
         private List<GetSddcInitialConfigurationInitialClusterConfigurationDatastore> datastores;
@@ -218,6 +244,7 @@ public final class GetSddcInitialConfigurationInitialClusterConfiguration {
         private String initialCommitment;
         private Double initialHostOcpuCount;
         private String initialHostShapeName;
+        private String initialVcfByolAllocationId;
         private String instanceDisplayNamePrefix;
         private Boolean isShieldedInstanceEnabled;
         private List<GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration> networkConfigurations;
@@ -228,6 +255,7 @@ public final class GetSddcInitialConfigurationInitialClusterConfiguration {
     	      Objects.requireNonNull(defaults);
     	      this.actualEsxiHostsCount = defaults.actualEsxiHostsCount;
     	      this.capacityReservationId = defaults.capacityReservationId;
+    	      this.clusterByolAllocationDetails = defaults.clusterByolAllocationDetails;
     	      this.computeAvailabilityDomain = defaults.computeAvailabilityDomain;
     	      this.datastoreClusterIds = defaults.datastoreClusterIds;
     	      this.datastores = defaults.datastores;
@@ -236,6 +264,7 @@ public final class GetSddcInitialConfigurationInitialClusterConfiguration {
     	      this.initialCommitment = defaults.initialCommitment;
     	      this.initialHostOcpuCount = defaults.initialHostOcpuCount;
     	      this.initialHostShapeName = defaults.initialHostShapeName;
+    	      this.initialVcfByolAllocationId = defaults.initialVcfByolAllocationId;
     	      this.instanceDisplayNamePrefix = defaults.instanceDisplayNamePrefix;
     	      this.isShieldedInstanceEnabled = defaults.isShieldedInstanceEnabled;
     	      this.networkConfigurations = defaults.networkConfigurations;
@@ -258,6 +287,17 @@ public final class GetSddcInitialConfigurationInitialClusterConfiguration {
             }
             this.capacityReservationId = capacityReservationId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder clusterByolAllocationDetails(List<GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail> clusterByolAllocationDetails) {
+            if (clusterByolAllocationDetails == null) {
+              throw new MissingRequiredPropertyException("GetSddcInitialConfigurationInitialClusterConfiguration", "clusterByolAllocationDetails");
+            }
+            this.clusterByolAllocationDetails = clusterByolAllocationDetails;
+            return this;
+        }
+        public Builder clusterByolAllocationDetails(GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail... clusterByolAllocationDetails) {
+            return clusterByolAllocationDetails(List.of(clusterByolAllocationDetails));
         }
         @CustomType.Setter
         public Builder computeAvailabilityDomain(String computeAvailabilityDomain) {
@@ -330,6 +370,14 @@ public final class GetSddcInitialConfigurationInitialClusterConfiguration {
             return this;
         }
         @CustomType.Setter
+        public Builder initialVcfByolAllocationId(String initialVcfByolAllocationId) {
+            if (initialVcfByolAllocationId == null) {
+              throw new MissingRequiredPropertyException("GetSddcInitialConfigurationInitialClusterConfiguration", "initialVcfByolAllocationId");
+            }
+            this.initialVcfByolAllocationId = initialVcfByolAllocationId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder instanceDisplayNamePrefix(String instanceDisplayNamePrefix) {
             if (instanceDisplayNamePrefix == null) {
               throw new MissingRequiredPropertyException("GetSddcInitialConfigurationInitialClusterConfiguration", "instanceDisplayNamePrefix");
@@ -376,6 +424,7 @@ public final class GetSddcInitialConfigurationInitialClusterConfiguration {
             final var _resultValue = new GetSddcInitialConfigurationInitialClusterConfiguration();
             _resultValue.actualEsxiHostsCount = actualEsxiHostsCount;
             _resultValue.capacityReservationId = capacityReservationId;
+            _resultValue.clusterByolAllocationDetails = clusterByolAllocationDetails;
             _resultValue.computeAvailabilityDomain = computeAvailabilityDomain;
             _resultValue.datastoreClusterIds = datastoreClusterIds;
             _resultValue.datastores = datastores;
@@ -384,6 +433,7 @@ public final class GetSddcInitialConfigurationInitialClusterConfiguration {
             _resultValue.initialCommitment = initialCommitment;
             _resultValue.initialHostOcpuCount = initialHostOcpuCount;
             _resultValue.initialHostShapeName = initialHostShapeName;
+            _resultValue.initialVcfByolAllocationId = initialVcfByolAllocationId;
             _resultValue.instanceDisplayNamePrefix = instanceDisplayNamePrefix;
             _resultValue.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
             _resultValue.networkConfigurations = networkConfigurations;

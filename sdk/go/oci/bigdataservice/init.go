@@ -29,6 +29,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &BdsInstance{}
 	case "oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey":
 		r = &BdsInstanceApiKey{}
+	case "oci:BigDataService/bdsInstanceExecuteBootstrapScriptAction:BdsInstanceExecuteBootstrapScriptAction":
+		r = &BdsInstanceExecuteBootstrapScriptAction{}
 	case "oci:BigDataService/bdsInstanceIdentityConfiguration:BdsInstanceIdentityConfiguration":
 		r = &BdsInstanceIdentityConfiguration{}
 	case "oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig":
@@ -82,6 +84,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"BigDataService/bdsInstanceApiKey",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"BigDataService/bdsInstanceExecuteBootstrapScriptAction",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

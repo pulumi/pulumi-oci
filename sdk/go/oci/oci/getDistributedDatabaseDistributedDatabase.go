@@ -55,7 +55,7 @@ type LookupDistributedDatabaseDistributedDatabaseResult struct {
 	DbDeploymentType string `pulumi:"dbDeploymentType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// The display name of the Globally distributed database.
+	// The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
 	DisplayName           string `pulumi:"displayName"`
 	DistributedDatabaseId string `pulumi:"distributedDatabaseId"`
 	// Deprecated: This trigger/action API is deprecated.
@@ -85,7 +85,8 @@ type LookupDistributedDatabaseDistributedDatabaseResult struct {
 	// The TLS listener port number for Globally distributed database.
 	ListenerPortTls int `pulumi:"listenerPortTls"`
 	// Additional metadata related to Globally distributed database resources.
-	Metadata *string `pulumi:"metadata"`
+	Metadata                   *string `pulumi:"metadata"`
+	MoveReplicationUnitTrigger int     `pulumi:"moveReplicationUnitTrigger"`
 	// The national character set for the database.
 	NcharacterSet string `pulumi:"ncharacterSet"`
 	// Ons local port number.
@@ -96,13 +97,16 @@ type LookupDistributedDatabaseDistributedDatabaseResult struct {
 	// Unique name prefix for the Globally distributed databases. Only alpha-numeric values are allowed. First character has to be a letter followed by any combination of letter and number.
 	Prefix string `pulumi:"prefix"`
 	// The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
-	PrivateEndpointIds []string `pulumi:"privateEndpointIds"`
+	PrivateEndpointIds            []string `pulumi:"privateEndpointIds"`
+	RecreateFailedResourceTrigger int      `pulumi:"recreateFailedResourceTrigger"`
 	// The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
 	ReplicationFactor int `pulumi:"replicationFactor"`
 	// The Replication method for Globally distributed database. Use RAFT for Raft replication, and DG for DataGuard. If replicationMethod is not provided, it defaults to DG.
 	ReplicationMethod string `pulumi:"replicationMethod"`
 	// The replication unit count for RAFT based distributed database. For RAFT replication based Globally distributed database, the value should be at least twice the number of shards.
 	ReplicationUnit int `pulumi:"replicationUnit"`
+	// The TCP Single Client Access Name (SCAN) port for Globally distributed database clusters.
+	ScanListenerPort int `pulumi:"scanListenerPort"`
 	// Collection of shards associated with the Globally distributed database.
 	ShardDetails []GetDistributedDatabaseDistributedDatabaseShardDetail `pulumi:"shardDetails"`
 	// Sharding Methods for the Globally distributed database.
@@ -224,7 +228,7 @@ func (o LookupDistributedDatabaseDistributedDatabaseResultOutput) DefinedTags() 
 	return o.ApplyT(func(v LookupDistributedDatabaseDistributedDatabaseResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// The display name of the Globally distributed database.
+// The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
 func (o LookupDistributedDatabaseDistributedDatabaseResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDistributedDatabaseDistributedDatabaseResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -328,6 +332,10 @@ func (o LookupDistributedDatabaseDistributedDatabaseResultOutput) Metadata() pul
 	return o.ApplyT(func(v LookupDistributedDatabaseDistributedDatabaseResult) *string { return v.Metadata }).(pulumi.StringPtrOutput)
 }
 
+func (o LookupDistributedDatabaseDistributedDatabaseResultOutput) MoveReplicationUnitTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDistributedDatabaseDistributedDatabaseResult) int { return v.MoveReplicationUnitTrigger }).(pulumi.IntOutput)
+}
+
 // The national character set for the database.
 func (o LookupDistributedDatabaseDistributedDatabaseResultOutput) NcharacterSet() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDistributedDatabaseDistributedDatabaseResult) string { return v.NcharacterSet }).(pulumi.StringOutput)
@@ -359,6 +367,10 @@ func (o LookupDistributedDatabaseDistributedDatabaseResultOutput) PrivateEndpoin
 	return o.ApplyT(func(v LookupDistributedDatabaseDistributedDatabaseResult) []string { return v.PrivateEndpointIds }).(pulumi.StringArrayOutput)
 }
 
+func (o LookupDistributedDatabaseDistributedDatabaseResultOutput) RecreateFailedResourceTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDistributedDatabaseDistributedDatabaseResult) int { return v.RecreateFailedResourceTrigger }).(pulumi.IntOutput)
+}
+
 // The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
 func (o LookupDistributedDatabaseDistributedDatabaseResultOutput) ReplicationFactor() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupDistributedDatabaseDistributedDatabaseResult) int { return v.ReplicationFactor }).(pulumi.IntOutput)
@@ -372,6 +384,11 @@ func (o LookupDistributedDatabaseDistributedDatabaseResultOutput) ReplicationMet
 // The replication unit count for RAFT based distributed database. For RAFT replication based Globally distributed database, the value should be at least twice the number of shards.
 func (o LookupDistributedDatabaseDistributedDatabaseResultOutput) ReplicationUnit() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupDistributedDatabaseDistributedDatabaseResult) int { return v.ReplicationUnit }).(pulumi.IntOutput)
+}
+
+// The TCP Single Client Access Name (SCAN) port for Globally distributed database clusters.
+func (o LookupDistributedDatabaseDistributedDatabaseResultOutput) ScanListenerPort() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDistributedDatabaseDistributedDatabaseResult) int { return v.ScanListenerPort }).(pulumi.IntOutput)
 }
 
 // Collection of shards associated with the Globally distributed database.

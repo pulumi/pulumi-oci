@@ -71,6 +71,11 @@ public final class GetManagementApplianceResult {
      */
     private String managementAgentId;
     private String managementApplianceId;
+    /**
+     * @return Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-&lt;version&gt;.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+     * 
+     */
+    private String pluginVersion;
     private String publicSshKeys;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
@@ -189,6 +194,13 @@ public final class GetManagementApplianceResult {
     public String managementApplianceId() {
         return this.managementApplianceId;
     }
+    /**
+     * @return Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-&lt;version&gt;.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+     * 
+     */
+    public String pluginVersion() {
+        return this.pluginVersion;
+    }
     public String publicSshKeys() {
         return this.publicSshKeys;
     }
@@ -263,6 +275,7 @@ public final class GetManagementApplianceResult {
         private String lifecycleDetails;
         private String managementAgentId;
         private String managementApplianceId;
+        private String pluginVersion;
         private String publicSshKeys;
         private String sddcId;
         private String state;
@@ -286,6 +299,7 @@ public final class GetManagementApplianceResult {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.managementAgentId = defaults.managementAgentId;
     	      this.managementApplianceId = defaults.managementApplianceId;
+    	      this.pluginVersion = defaults.pluginVersion;
     	      this.publicSshKeys = defaults.publicSshKeys;
     	      this.sddcId = defaults.sddcId;
     	      this.state = defaults.state;
@@ -402,6 +416,14 @@ public final class GetManagementApplianceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder pluginVersion(String pluginVersion) {
+            if (pluginVersion == null) {
+              throw new MissingRequiredPropertyException("GetManagementApplianceResult", "pluginVersion");
+            }
+            this.pluginVersion = pluginVersion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder publicSshKeys(String publicSshKeys) {
             if (publicSshKeys == null) {
               throw new MissingRequiredPropertyException("GetManagementApplianceResult", "publicSshKeys");
@@ -479,6 +501,7 @@ public final class GetManagementApplianceResult {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.managementAgentId = managementAgentId;
             _resultValue.managementApplianceId = managementApplianceId;
+            _resultValue.pluginVersion = pluginVersion;
             _resultValue.publicSshKeys = publicSshKeys;
             _resultValue.sddcId = sddcId;
             _resultValue.state = state;

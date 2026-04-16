@@ -148,11 +148,11 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// The details of the non-deleted Globally distributed autonomous databases that consumes the given private endpoint.
+        /// This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedAutonomousDatabaseResult> GloballyDistributedAutonomousDatabases;
         /// <summary>
-        /// The details of the non-deleted Globally distributed databases that consumes the given private endpoint.
+        /// This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDistributedDatabaseDistributedDatabasePrivateEndpointGloballyDistributedDatabaseResult> GloballyDistributedDatabases;
         /// <summary>

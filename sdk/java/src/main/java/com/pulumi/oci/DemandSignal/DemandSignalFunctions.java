@@ -12,8 +12,14 @@ import com.pulumi.oci.DemandSignal.inputs.GetOccDemandSignalArgs;
 import com.pulumi.oci.DemandSignal.inputs.GetOccDemandSignalPlainArgs;
 import com.pulumi.oci.DemandSignal.inputs.GetOccDemandSignalsArgs;
 import com.pulumi.oci.DemandSignal.inputs.GetOccDemandSignalsPlainArgs;
+import com.pulumi.oci.DemandSignal.inputs.GetOccMetricAlarmArgs;
+import com.pulumi.oci.DemandSignal.inputs.GetOccMetricAlarmPlainArgs;
+import com.pulumi.oci.DemandSignal.inputs.GetOccMetricAlarmsArgs;
+import com.pulumi.oci.DemandSignal.inputs.GetOccMetricAlarmsPlainArgs;
 import com.pulumi.oci.DemandSignal.outputs.GetOccDemandSignalResult;
 import com.pulumi.oci.DemandSignal.outputs.GetOccDemandSignalsResult;
+import com.pulumi.oci.DemandSignal.outputs.GetOccMetricAlarmResult;
+import com.pulumi.oci.DemandSignal.outputs.GetOccMetricAlarmsResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
@@ -542,5 +548,435 @@ public final class DemandSignalFunctions {
      */
     public static CompletableFuture<GetOccDemandSignalsResult> getOccDemandSignalsPlain(GetOccDemandSignalsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DemandSignal/getOccDemandSignals:getOccDemandSignals", TypeShape.of(GetOccDemandSignalsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Occ Metric Alarm resource in Oracle Cloud Infrastructure Demand Signal service.
+     * 
+     * Retrieves the specified OccMetricAlarm resource based on its identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
+     * import com.pulumi.oci.DemandSignal.inputs.GetOccMetricAlarmArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccMetricAlarm = DemandSignalFunctions.getOccMetricAlarm(GetOccMetricAlarmArgs.builder()
+     *             .occMetricAlarmId(testOccMetricAlarmOciDemandSignalOccMetricAlarm.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetOccMetricAlarmResult> getOccMetricAlarm(GetOccMetricAlarmArgs args) {
+        return getOccMetricAlarm(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Occ Metric Alarm resource in Oracle Cloud Infrastructure Demand Signal service.
+     * 
+     * Retrieves the specified OccMetricAlarm resource based on its identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
+     * import com.pulumi.oci.DemandSignal.inputs.GetOccMetricAlarmArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccMetricAlarm = DemandSignalFunctions.getOccMetricAlarm(GetOccMetricAlarmArgs.builder()
+     *             .occMetricAlarmId(testOccMetricAlarmOciDemandSignalOccMetricAlarm.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetOccMetricAlarmResult> getOccMetricAlarmPlain(GetOccMetricAlarmPlainArgs args) {
+        return getOccMetricAlarmPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Occ Metric Alarm resource in Oracle Cloud Infrastructure Demand Signal service.
+     * 
+     * Retrieves the specified OccMetricAlarm resource based on its identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
+     * import com.pulumi.oci.DemandSignal.inputs.GetOccMetricAlarmArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccMetricAlarm = DemandSignalFunctions.getOccMetricAlarm(GetOccMetricAlarmArgs.builder()
+     *             .occMetricAlarmId(testOccMetricAlarmOciDemandSignalOccMetricAlarm.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetOccMetricAlarmResult> getOccMetricAlarm(GetOccMetricAlarmArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DemandSignal/getOccMetricAlarm:getOccMetricAlarm", TypeShape.of(GetOccMetricAlarmResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Occ Metric Alarm resource in Oracle Cloud Infrastructure Demand Signal service.
+     * 
+     * Retrieves the specified OccMetricAlarm resource based on its identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
+     * import com.pulumi.oci.DemandSignal.inputs.GetOccMetricAlarmArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccMetricAlarm = DemandSignalFunctions.getOccMetricAlarm(GetOccMetricAlarmArgs.builder()
+     *             .occMetricAlarmId(testOccMetricAlarmOciDemandSignalOccMetricAlarm.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetOccMetricAlarmResult> getOccMetricAlarm(GetOccMetricAlarmArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DemandSignal/getOccMetricAlarm:getOccMetricAlarm", TypeShape.of(GetOccMetricAlarmResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Occ Metric Alarm resource in Oracle Cloud Infrastructure Demand Signal service.
+     * 
+     * Retrieves the specified OccMetricAlarm resource based on its identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
+     * import com.pulumi.oci.DemandSignal.inputs.GetOccMetricAlarmArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccMetricAlarm = DemandSignalFunctions.getOccMetricAlarm(GetOccMetricAlarmArgs.builder()
+     *             .occMetricAlarmId(testOccMetricAlarmOciDemandSignalOccMetricAlarm.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetOccMetricAlarmResult> getOccMetricAlarmPlain(GetOccMetricAlarmPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DemandSignal/getOccMetricAlarm:getOccMetricAlarm", TypeShape.of(GetOccMetricAlarmResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Occ Metric Alarms in Oracle Cloud Infrastructure Demand Signal service.
+     * 
+     * Gets a list of OccMetricAlarms.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
+     * import com.pulumi.oci.DemandSignal.inputs.GetOccMetricAlarmsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccMetricAlarms = DemandSignalFunctions.getOccMetricAlarms(GetOccMetricAlarmsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(occMetricAlarmDisplayName)
+     *             .isActive(occMetricAlarmIsActive)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetOccMetricAlarmsResult> getOccMetricAlarms(GetOccMetricAlarmsArgs args) {
+        return getOccMetricAlarms(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Occ Metric Alarms in Oracle Cloud Infrastructure Demand Signal service.
+     * 
+     * Gets a list of OccMetricAlarms.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
+     * import com.pulumi.oci.DemandSignal.inputs.GetOccMetricAlarmsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccMetricAlarms = DemandSignalFunctions.getOccMetricAlarms(GetOccMetricAlarmsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(occMetricAlarmDisplayName)
+     *             .isActive(occMetricAlarmIsActive)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetOccMetricAlarmsResult> getOccMetricAlarmsPlain(GetOccMetricAlarmsPlainArgs args) {
+        return getOccMetricAlarmsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Occ Metric Alarms in Oracle Cloud Infrastructure Demand Signal service.
+     * 
+     * Gets a list of OccMetricAlarms.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
+     * import com.pulumi.oci.DemandSignal.inputs.GetOccMetricAlarmsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccMetricAlarms = DemandSignalFunctions.getOccMetricAlarms(GetOccMetricAlarmsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(occMetricAlarmDisplayName)
+     *             .isActive(occMetricAlarmIsActive)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetOccMetricAlarmsResult> getOccMetricAlarms(GetOccMetricAlarmsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DemandSignal/getOccMetricAlarms:getOccMetricAlarms", TypeShape.of(GetOccMetricAlarmsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Occ Metric Alarms in Oracle Cloud Infrastructure Demand Signal service.
+     * 
+     * Gets a list of OccMetricAlarms.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
+     * import com.pulumi.oci.DemandSignal.inputs.GetOccMetricAlarmsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccMetricAlarms = DemandSignalFunctions.getOccMetricAlarms(GetOccMetricAlarmsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(occMetricAlarmDisplayName)
+     *             .isActive(occMetricAlarmIsActive)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetOccMetricAlarmsResult> getOccMetricAlarms(GetOccMetricAlarmsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DemandSignal/getOccMetricAlarms:getOccMetricAlarms", TypeShape.of(GetOccMetricAlarmsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Occ Metric Alarms in Oracle Cloud Infrastructure Demand Signal service.
+     * 
+     * Gets a list of OccMetricAlarms.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DemandSignal.DemandSignalFunctions;
+     * import com.pulumi.oci.DemandSignal.inputs.GetOccMetricAlarmsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOccMetricAlarms = DemandSignalFunctions.getOccMetricAlarms(GetOccMetricAlarmsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(occMetricAlarmDisplayName)
+     *             .isActive(occMetricAlarmIsActive)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetOccMetricAlarmsResult> getOccMetricAlarmsPlain(GetOccMetricAlarmsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DemandSignal/getOccMetricAlarms:getOccMetricAlarms", TypeShape.of(GetOccMetricAlarmsResult.class), args, Utilities.withVersion(options));
     }
 }

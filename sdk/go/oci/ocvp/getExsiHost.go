@@ -111,6 +111,8 @@ type GetExsiHostResult struct {
 	IsBillingContinuationInProgress bool `pulumi:"isBillingContinuationInProgress"`
 	// Indicates whether this host is in the progress of swapping billing.
 	IsBillingSwappingInProgress bool `pulumi:"isBillingSwappingInProgress"`
+	// Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+	IsVsanByolEnabled bool `pulumi:"isVsanByolEnabled"`
 	// The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
 	NextCommitment string `pulumi:"nextCommitment"`
 	// (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
@@ -121,6 +123,7 @@ type GetExsiHostResult struct {
 	//
 	// Deprecated: This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.
 	NonUpgradedEsxiHostId string `pulumi:"nonUpgradedEsxiHostId"`
+	PrimaryVnicMacAddress string `pulumi:"primaryVnicMacAddress"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
 	ReplacementEsxiHostId string `pulumi:"replacementEsxiHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
@@ -139,6 +142,8 @@ type GetExsiHostResult struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
 	UpgradedReplacementEsxiHostId string `pulumi:"upgradedReplacementEsxiHostId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+	VcfByolAllocationId string `pulumi:"vcfByolAllocationId"`
 	// The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
 	VmwareSoftwareVersion string `pulumi:"vmwareSoftwareVersion"`
 }
@@ -305,6 +310,11 @@ func (o GetExsiHostResultOutput) IsBillingSwappingInProgress() pulumi.BoolOutput
 	return o.ApplyT(func(v GetExsiHostResult) bool { return v.IsBillingSwappingInProgress }).(pulumi.BoolOutput)
 }
 
+// Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+func (o GetExsiHostResultOutput) IsVsanByolEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExsiHostResult) bool { return v.IsVsanByolEnabled }).(pulumi.BoolOutput)
+}
+
 // The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
 func (o GetExsiHostResultOutput) NextCommitment() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostResult) string { return v.NextCommitment }).(pulumi.StringOutput)
@@ -322,6 +332,10 @@ func (o GetExsiHostResultOutput) NextSku() pulumi.StringOutput {
 // Deprecated: This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.
 func (o GetExsiHostResultOutput) NonUpgradedEsxiHostId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostResult) string { return v.NonUpgradedEsxiHostId }).(pulumi.StringOutput)
+}
+
+func (o GetExsiHostResultOutput) PrimaryVnicMacAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostResult) string { return v.PrimaryVnicMacAddress }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
@@ -364,6 +378,11 @@ func (o GetExsiHostResultOutput) TimeUpdated() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
 func (o GetExsiHostResultOutput) UpgradedReplacementEsxiHostId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostResult) string { return v.UpgradedReplacementEsxiHostId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+func (o GetExsiHostResultOutput) VcfByolAllocationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostResult) string { return v.VcfByolAllocationId }).(pulumi.StringOutput)
 }
 
 // The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.

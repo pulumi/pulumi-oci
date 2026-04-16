@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
+import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -21,6 +22,7 @@ public final class ComputeCapacityReservationInstanceReservationConfigInstanceSh
      * 
      */
     private @Nullable Double ocpus;
+    private @Nullable String resourceManagement;
 
     private ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig() {}
     /**
@@ -37,6 +39,9 @@ public final class ComputeCapacityReservationInstanceReservationConfigInstanceSh
     public Optional<Double> ocpus() {
         return Optional.ofNullable(this.ocpus);
     }
+    public Optional<String> resourceManagement() {
+        return Optional.ofNullable(this.resourceManagement);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -49,11 +54,13 @@ public final class ComputeCapacityReservationInstanceReservationConfigInstanceSh
     public static final class Builder {
         private @Nullable Double memoryInGbs;
         private @Nullable Double ocpus;
+        private @Nullable String resourceManagement;
         public Builder() {}
         public Builder(ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.ocpus = defaults.ocpus;
+    	      this.resourceManagement = defaults.resourceManagement;
         }
 
         @CustomType.Setter
@@ -68,10 +75,17 @@ public final class ComputeCapacityReservationInstanceReservationConfigInstanceSh
             this.ocpus = ocpus;
             return this;
         }
+        @CustomType.Setter
+        public Builder resourceManagement(@Nullable String resourceManagement) {
+
+            this.resourceManagement = resourceManagement;
+            return this;
+        }
         public ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig build() {
             final var _resultValue = new ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig();
             _resultValue.memoryInGbs = memoryInGbs;
             _resultValue.ocpus = ocpus;
+            _resultValue.resourceManagement = resourceManagement;
             return _resultValue;
         }
     }

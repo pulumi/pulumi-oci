@@ -13,6 +13,9 @@ import (
 )
 
 // This resource provides the Management Appliance resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vmware/latest/ManagementAppliance
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/ocvp
 //
 // Creates a management appliance.
 //
@@ -92,6 +95,8 @@ type ManagementAppliance struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management agent, that this appliance is running in.
 	ManagementAgentId pulumi.StringOutput `pulumi:"managementAgentId"`
+	// Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-<version>.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+	PluginVersion pulumi.StringOutput `pulumi:"pluginVersion"`
 	// One or more public SSH keys to be included in `~/.ssh/authorized_keys` file for Management Appliance compute instance. Several public SSH keys must be separate by newline character.
 	PublicSshKeys pulumi.StringOutput `pulumi:"publicSshKeys"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
@@ -175,6 +180,8 @@ type managementApplianceState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management agent, that this appliance is running in.
 	ManagementAgentId *string `pulumi:"managementAgentId"`
+	// Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-<version>.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+	PluginVersion *string `pulumi:"pluginVersion"`
 	// One or more public SSH keys to be included in `~/.ssh/authorized_keys` file for Management Appliance compute instance. Several public SSH keys must be separate by newline character.
 	PublicSshKeys *string `pulumi:"publicSshKeys"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
@@ -217,6 +224,8 @@ type ManagementApplianceState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management agent, that this appliance is running in.
 	ManagementAgentId pulumi.StringPtrInput
+	// Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-<version>.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+	PluginVersion pulumi.StringPtrInput
 	// One or more public SSH keys to be included in `~/.ssh/authorized_keys` file for Management Appliance compute instance. Several public SSH keys must be separate by newline character.
 	PublicSshKeys pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
@@ -420,6 +429,11 @@ func (o ManagementApplianceOutput) LifecycleDetails() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management agent, that this appliance is running in.
 func (o ManagementApplianceOutput) ManagementAgentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagementAppliance) pulumi.StringOutput { return v.ManagementAgentId }).(pulumi.StringOutput)
+}
+
+// Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-<version>.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+func (o ManagementApplianceOutput) PluginVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v *ManagementAppliance) pulumi.StringOutput { return v.PluginVersion }).(pulumi.StringOutput)
 }
 
 // One or more public SSH keys to be included in `~/.ssh/authorized_keys` file for Management Appliance compute instance. Several public SSH keys must be separate by newline character.

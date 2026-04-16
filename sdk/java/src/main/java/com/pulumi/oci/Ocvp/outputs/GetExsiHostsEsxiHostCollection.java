@@ -140,6 +140,11 @@ public final class GetExsiHostsEsxiHostCollection {
      */
     private Boolean isBillingSwappingInProgress;
     /**
+     * @return Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+     * 
+     */
+    private Boolean isVsanByolEnabled;
+    /**
      * @return The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
      * 
      */
@@ -162,6 +167,7 @@ public final class GetExsiHostsEsxiHostCollection {
      */
     @Deprecated /* This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only. */
     private String nonUpgradedEsxiHostId;
+    private String primaryVnicMacAddress;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
      * 
@@ -206,6 +212,11 @@ public final class GetExsiHostsEsxiHostCollection {
      * 
      */
     private String upgradedReplacementEsxiHostId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+     * 
+     */
+    private String vcfByolAllocationId;
     /**
      * @return The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
      * 
@@ -386,6 +397,13 @@ public final class GetExsiHostsEsxiHostCollection {
         return this.isBillingSwappingInProgress;
     }
     /**
+     * @return Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+     * 
+     */
+    public Boolean isVsanByolEnabled() {
+        return this.isVsanByolEnabled;
+    }
+    /**
      * @return The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
      * 
      */
@@ -413,6 +431,9 @@ public final class GetExsiHostsEsxiHostCollection {
     @Deprecated /* This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only. */
     public String nonUpgradedEsxiHostId() {
         return this.nonUpgradedEsxiHostId;
+    }
+    public String primaryVnicMacAddress() {
+        return this.primaryVnicMacAddress;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
@@ -475,6 +496,13 @@ public final class GetExsiHostsEsxiHostCollection {
         return this.upgradedReplacementEsxiHostId;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+     * 
+     */
+    public String vcfByolAllocationId() {
+        return this.vcfByolAllocationId;
+    }
+    /**
      * @return The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
      * 
      */
@@ -515,9 +543,11 @@ public final class GetExsiHostsEsxiHostCollection {
         private String id;
         private Boolean isBillingContinuationInProgress;
         private Boolean isBillingSwappingInProgress;
+        private Boolean isVsanByolEnabled;
         private String nextCommitment;
         private String nextSku;
         private String nonUpgradedEsxiHostId;
+        private String primaryVnicMacAddress;
         private String replacementEsxiHostId;
         private String sddcId;
         private String state;
@@ -526,6 +556,7 @@ public final class GetExsiHostsEsxiHostCollection {
         private String timeCreated;
         private String timeUpdated;
         private String upgradedReplacementEsxiHostId;
+        private String vcfByolAllocationId;
         private String vmwareSoftwareVersion;
         public Builder() {}
         public Builder(GetExsiHostsEsxiHostCollection defaults) {
@@ -554,9 +585,11 @@ public final class GetExsiHostsEsxiHostCollection {
     	      this.id = defaults.id;
     	      this.isBillingContinuationInProgress = defaults.isBillingContinuationInProgress;
     	      this.isBillingSwappingInProgress = defaults.isBillingSwappingInProgress;
+    	      this.isVsanByolEnabled = defaults.isVsanByolEnabled;
     	      this.nextCommitment = defaults.nextCommitment;
     	      this.nextSku = defaults.nextSku;
     	      this.nonUpgradedEsxiHostId = defaults.nonUpgradedEsxiHostId;
+    	      this.primaryVnicMacAddress = defaults.primaryVnicMacAddress;
     	      this.replacementEsxiHostId = defaults.replacementEsxiHostId;
     	      this.sddcId = defaults.sddcId;
     	      this.state = defaults.state;
@@ -565,6 +598,7 @@ public final class GetExsiHostsEsxiHostCollection {
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.upgradedReplacementEsxiHostId = defaults.upgradedReplacementEsxiHostId;
+    	      this.vcfByolAllocationId = defaults.vcfByolAllocationId;
     	      this.vmwareSoftwareVersion = defaults.vmwareSoftwareVersion;
         }
 
@@ -773,6 +807,14 @@ public final class GetExsiHostsEsxiHostCollection {
             return this;
         }
         @CustomType.Setter
+        public Builder isVsanByolEnabled(Boolean isVsanByolEnabled) {
+            if (isVsanByolEnabled == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostsEsxiHostCollection", "isVsanByolEnabled");
+            }
+            this.isVsanByolEnabled = isVsanByolEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder nextCommitment(String nextCommitment) {
             if (nextCommitment == null) {
               throw new MissingRequiredPropertyException("GetExsiHostsEsxiHostCollection", "nextCommitment");
@@ -794,6 +836,14 @@ public final class GetExsiHostsEsxiHostCollection {
               throw new MissingRequiredPropertyException("GetExsiHostsEsxiHostCollection", "nonUpgradedEsxiHostId");
             }
             this.nonUpgradedEsxiHostId = nonUpgradedEsxiHostId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder primaryVnicMacAddress(String primaryVnicMacAddress) {
+            if (primaryVnicMacAddress == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostsEsxiHostCollection", "primaryVnicMacAddress");
+            }
+            this.primaryVnicMacAddress = primaryVnicMacAddress;
             return this;
         }
         @CustomType.Setter
@@ -861,6 +911,14 @@ public final class GetExsiHostsEsxiHostCollection {
             return this;
         }
         @CustomType.Setter
+        public Builder vcfByolAllocationId(String vcfByolAllocationId) {
+            if (vcfByolAllocationId == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostsEsxiHostCollection", "vcfByolAllocationId");
+            }
+            this.vcfByolAllocationId = vcfByolAllocationId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder vmwareSoftwareVersion(String vmwareSoftwareVersion) {
             if (vmwareSoftwareVersion == null) {
               throw new MissingRequiredPropertyException("GetExsiHostsEsxiHostCollection", "vmwareSoftwareVersion");
@@ -894,9 +952,11 @@ public final class GetExsiHostsEsxiHostCollection {
             _resultValue.id = id;
             _resultValue.isBillingContinuationInProgress = isBillingContinuationInProgress;
             _resultValue.isBillingSwappingInProgress = isBillingSwappingInProgress;
+            _resultValue.isVsanByolEnabled = isVsanByolEnabled;
             _resultValue.nextCommitment = nextCommitment;
             _resultValue.nextSku = nextSku;
             _resultValue.nonUpgradedEsxiHostId = nonUpgradedEsxiHostId;
+            _resultValue.primaryVnicMacAddress = primaryVnicMacAddress;
             _resultValue.replacementEsxiHostId = replacementEsxiHostId;
             _resultValue.sddcId = sddcId;
             _resultValue.state = state;
@@ -905,6 +965,7 @@ public final class GetExsiHostsEsxiHostCollection {
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.upgradedReplacementEsxiHostId = upgradedReplacementEsxiHostId;
+            _resultValue.vcfByolAllocationId = vcfByolAllocationId;
             _resultValue.vmwareSoftwareVersion = vmwareSoftwareVersion;
             return _resultValue;
         }

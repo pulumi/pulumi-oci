@@ -5,8 +5,10 @@ package com.pulumi.oci.oci.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.oci.inputs.DbmulticloudOracleDbAwsKeyReplicationMetadataArgs;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -16,6 +18,13 @@ import javax.annotation.Nullable;
 public final class DbmulticloudOracleDbAwsKeyState extends com.pulumi.resources.ResourceArgs {
 
     public static final DbmulticloudOracleDbAwsKeyState Empty = new DbmulticloudOracleDbAwsKeyState();
+
+    @Import(name="action")
+    private @Nullable Output<String> action;
+
+    public Optional<Output<String>> action() {
+        return Optional.ofNullable(this.action);
+    }
 
     /**
      * AWS Account ID.
@@ -183,6 +192,21 @@ public final class DbmulticloudOracleDbAwsKeyState extends com.pulumi.resources.
     }
 
     /**
+     * Replication metadata, it has information about replication and target region.
+     * 
+     */
+    @Import(name="replicationMetadatas")
+    private @Nullable Output<List<DbmulticloudOracleDbAwsKeyReplicationMetadataArgs>> replicationMetadatas;
+
+    /**
+     * @return Replication metadata, it has information about replication and target region.
+     * 
+     */
+    public Optional<Output<List<DbmulticloudOracleDbAwsKeyReplicationMetadataArgs>>> replicationMetadatas() {
+        return Optional.ofNullable(this.replicationMetadatas);
+    }
+
+    /**
      * The lifecycle state of the Oracle DB AWS Key resource.
      * 
      */
@@ -210,6 +234,21 @@ public final class DbmulticloudOracleDbAwsKeyState extends com.pulumi.resources.
      */
     public Optional<Output<Map<String,String>>> systemTags() {
         return Optional.ofNullable(this.systemTags);
+    }
+
+    /**
+     * The target region, where resource is replicated.
+     * 
+     */
+    @Import(name="targetRegion")
+    private @Nullable Output<String> targetRegion;
+
+    /**
+     * @return The target region, where resource is replicated.
+     * 
+     */
+    public Optional<Output<String>> targetRegion() {
+        return Optional.ofNullable(this.targetRegion);
     }
 
     /**
@@ -266,6 +305,7 @@ public final class DbmulticloudOracleDbAwsKeyState extends com.pulumi.resources.
     private DbmulticloudOracleDbAwsKeyState() {}
 
     private DbmulticloudOracleDbAwsKeyState(DbmulticloudOracleDbAwsKeyState $) {
+        this.action = $.action;
         this.awsAccountId = $.awsAccountId;
         this.awsKeyArn = $.awsKeyArn;
         this.compartmentId = $.compartmentId;
@@ -277,8 +317,10 @@ public final class DbmulticloudOracleDbAwsKeyState extends com.pulumi.resources.
         this.location = $.location;
         this.oracleDbConnectorId = $.oracleDbConnectorId;
         this.properties = $.properties;
+        this.replicationMetadatas = $.replicationMetadatas;
         this.state = $.state;
         this.systemTags = $.systemTags;
+        this.targetRegion = $.targetRegion;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
         this.type = $.type;
@@ -300,6 +342,15 @@ public final class DbmulticloudOracleDbAwsKeyState extends com.pulumi.resources.
 
         public Builder(DbmulticloudOracleDbAwsKeyState defaults) {
             $ = new DbmulticloudOracleDbAwsKeyState(Objects.requireNonNull(defaults));
+        }
+
+        public Builder action(@Nullable Output<String> action) {
+            $.action = action;
+            return this;
+        }
+
+        public Builder action(String action) {
+            return action(Output.of(action));
         }
 
         /**
@@ -534,6 +585,37 @@ public final class DbmulticloudOracleDbAwsKeyState extends com.pulumi.resources.
         }
 
         /**
+         * @param replicationMetadatas Replication metadata, it has information about replication and target region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicationMetadatas(@Nullable Output<List<DbmulticloudOracleDbAwsKeyReplicationMetadataArgs>> replicationMetadatas) {
+            $.replicationMetadatas = replicationMetadatas;
+            return this;
+        }
+
+        /**
+         * @param replicationMetadatas Replication metadata, it has information about replication and target region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicationMetadatas(List<DbmulticloudOracleDbAwsKeyReplicationMetadataArgs> replicationMetadatas) {
+            return replicationMetadatas(Output.of(replicationMetadatas));
+        }
+
+        /**
+         * @param replicationMetadatas Replication metadata, it has information about replication and target region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicationMetadatas(DbmulticloudOracleDbAwsKeyReplicationMetadataArgs... replicationMetadatas) {
+            return replicationMetadatas(List.of(replicationMetadatas));
+        }
+
+        /**
          * @param state The lifecycle state of the Oracle DB AWS Key resource.
          * 
          * @return builder
@@ -573,6 +655,27 @@ public final class DbmulticloudOracleDbAwsKeyState extends com.pulumi.resources.
          */
         public Builder systemTags(Map<String,String> systemTags) {
             return systemTags(Output.of(systemTags));
+        }
+
+        /**
+         * @param targetRegion The target region, where resource is replicated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetRegion(@Nullable Output<String> targetRegion) {
+            $.targetRegion = targetRegion;
+            return this;
+        }
+
+        /**
+         * @param targetRegion The target region, where resource is replicated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetRegion(String targetRegion) {
+            return targetRegion(Output.of(targetRegion));
         }
 
         /**

@@ -43,6 +43,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.FileStorage.FilesystemSnapshotPolicyArgs;
  * import com.pulumi.oci.FileStorage.inputs.FilesystemSnapshotPolicyLockArgs;
  * import com.pulumi.oci.FileStorage.inputs.FilesystemSnapshotPolicyScheduleArgs;
+ * import com.pulumi.oci.FileStorage.inputs.FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -75,6 +76,11 @@ import javax.annotation.Nullable;
  *                 .dayOfMonth(filesystemSnapshotPolicySchedulesDayOfMonth)
  *                 .dayOfWeek(filesystemSnapshotPolicySchedulesDayOfWeek)
  *                 .hourOfDay(filesystemSnapshotPolicySchedulesHourOfDay)
+ *                 .lockDurationDetails(FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs.builder()
+ *                     .lockDuration(filesystemSnapshotPolicySchedulesLockDurationDetailsLockDuration)
+ *                     .lockMode(filesystemSnapshotPolicySchedulesLockDurationDetailsLockMode)
+ *                     .coolOffDuration(filesystemSnapshotPolicySchedulesLockDurationDetailsCoolOffDuration)
+ *                     .build())
  *                 .month(filesystemSnapshotPolicySchedulesMonth)
  *                 .retentionDurationInSeconds(filesystemSnapshotPolicySchedulesRetentionDurationInSeconds)
  *                 .schedulePrefix(filesystemSnapshotPolicySchedulesSchedulePrefix)

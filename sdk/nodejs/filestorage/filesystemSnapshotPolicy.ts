@@ -47,6 +47,11 @@ import * as utilities from "../utilities";
  *         dayOfMonth: filesystemSnapshotPolicySchedulesDayOfMonth,
  *         dayOfWeek: filesystemSnapshotPolicySchedulesDayOfWeek,
  *         hourOfDay: filesystemSnapshotPolicySchedulesHourOfDay,
+ *         lockDurationDetails: {
+ *             lockDuration: filesystemSnapshotPolicySchedulesLockDurationDetailsLockDuration,
+ *             lockMode: filesystemSnapshotPolicySchedulesLockDurationDetailsLockMode,
+ *             coolOffDuration: filesystemSnapshotPolicySchedulesLockDurationDetailsCoolOffDuration,
+ *         },
  *         month: filesystemSnapshotPolicySchedulesMonth,
  *         retentionDurationInSeconds: filesystemSnapshotPolicySchedulesRetentionDurationInSeconds,
  *         schedulePrefix: filesystemSnapshotPolicySchedulesSchedulePrefix,

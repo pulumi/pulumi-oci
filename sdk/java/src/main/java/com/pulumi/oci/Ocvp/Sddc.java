@@ -12,6 +12,7 @@ import com.pulumi.oci.Ocvp.inputs.SddcState;
 import com.pulumi.oci.Ocvp.outputs.SddcDatastore;
 import com.pulumi.oci.Ocvp.outputs.SddcHcxOnPremLicense;
 import com.pulumi.oci.Ocvp.outputs.SddcInitialConfiguration;
+import com.pulumi.oci.Ocvp.outputs.SddcSddcByolAllocationDetails;
 import com.pulumi.oci.Ocvp.outputs.SddcUpgradeLicense;
 import com.pulumi.oci.Ocvp.outputs.SddcVsphereUpgradeObject;
 import com.pulumi.oci.Utilities;
@@ -49,6 +50,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Ocvp.Sddc;
  * import com.pulumi.oci.Ocvp.SddcArgs;
  * import com.pulumi.oci.Ocvp.inputs.SddcInitialConfigurationArgs;
+ * import com.pulumi.oci.Ocvp.inputs.SddcSddcByolAllocationDetailsArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -83,6 +85,10 @@ import javax.annotation.Nullable;
  *                         .build())
  *                     .vsphereType(sddcInitialConfigurationInitialClusterConfigurationsVsphereType)
  *                     .capacityReservationId(testCapacityReservation.id())
+ *                     .clusterByolAllocationDetails(SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs.builder()
+ *                         .firewallByolAllocationId(testByolAllocation.id())
+ *                         .vsanByolAllocationId(testByolAllocation.id())
+ *                         .build())
  *                     .datastoreClusterIds(sddcInitialConfigurationInitialClusterConfigurationsDatastoreClusterIds)
  *                     .datastores(SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs.builder()
  *                         .blockVolumeIds(sddcInitialConfigurationInitialClusterConfigurationsDatastoresBlockVolumeIds)
@@ -92,6 +98,7 @@ import javax.annotation.Nullable;
  *                     .initialCommitment(sddcInitialConfigurationInitialClusterConfigurationsInitialCommitment)
  *                     .initialHostOcpuCount(sddcInitialConfigurationInitialClusterConfigurationsInitialHostOcpuCount)
  *                     .initialHostShapeName(testShape.name())
+ *                     .initialVcfByolAllocationId(testByolAllocation.id())
  *                     .instanceDisplayNamePrefix(sddcInitialConfigurationInitialClusterConfigurationsInstanceDisplayNamePrefix)
  *                     .isShieldedInstanceEnabled(sddcInitialConfigurationInitialClusterConfigurationsIsShieldedInstanceEnabled)
  *                     .workloadNetworkCidr(sddcInitialConfigurationInitialClusterConfigurationsWorkloadNetworkCidr)
@@ -103,6 +110,10 @@ import javax.annotation.Nullable;
  *             .displayName(sddcDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .isSingleHostSddc(sddcIsSingleHostSddc)
+ *             .sddcByolAllocationDetails(SddcSddcByolAllocationDetailsArgs.builder()
+ *                 .loadBalancerByolAllocationId(testByolAllocation.id())
+ *                 .loadBalancerInstanceCount(sddcSddcByolAllocationDetailsLoadBalancerInstanceCount)
+ *                 .build())
  *             .hcxAction(hcxAction)
  *             .isHcxEnabled(sddcIsHcxEnabled)
  *             .build());
@@ -851,6 +862,20 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<List<String>>> reservingHcxOnPremiseLicenseKeys() {
         return Codegen.optional(this.reservingHcxOnPremiseLicenseKeys);
+    }
+    /**
+     * (Updatable) The BYOL allocations used for VMware SDDC provisioning.
+     * 
+     */
+    @Export(name="sddcByolAllocationDetails", refs={SddcSddcByolAllocationDetails.class}, tree="[0]")
+    private Output<SddcSddcByolAllocationDetails> sddcByolAllocationDetails;
+
+    /**
+     * @return (Updatable) The BYOL allocations used for VMware SDDC provisioning.
+     * 
+     */
+    public Output<SddcSddcByolAllocationDetails> sddcByolAllocationDetails() {
+        return this.sddcByolAllocationDetails;
     }
     /**
      * (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file

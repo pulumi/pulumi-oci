@@ -5,7 +5,9 @@ package com.pulumi.oci.oci.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.oci.inputs.DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgs;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -15,6 +17,13 @@ import javax.annotation.Nullable;
 public final class DbmulticloudOracleDbGcpKeyRingState extends com.pulumi.resources.ResourceArgs {
 
     public static final DbmulticloudOracleDbGcpKeyRingState Empty = new DbmulticloudOracleDbGcpKeyRingState();
+
+    @Import(name="action")
+    private @Nullable Output<String> action;
+
+    public Optional<Output<String>> action() {
+        return Optional.ofNullable(this.action);
+    }
 
     /**
      * (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the Oracle DB GCP Key Ring resource resides.
@@ -152,6 +161,21 @@ public final class DbmulticloudOracleDbGcpKeyRingState extends com.pulumi.resour
     }
 
     /**
+     * Replication metadata, it has information about replication and target region.
+     * 
+     */
+    @Import(name="replicationMetadatas")
+    private @Nullable Output<List<DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgs>> replicationMetadatas;
+
+    /**
+     * @return Replication metadata, it has information about replication and target region.
+     * 
+     */
+    public Optional<Output<List<DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgs>>> replicationMetadatas() {
+        return Optional.ofNullable(this.replicationMetadatas);
+    }
+
+    /**
      * The lifecycle state of the Oracle DB GCP Key Ring resource.
      * 
      */
@@ -179,6 +203,21 @@ public final class DbmulticloudOracleDbGcpKeyRingState extends com.pulumi.resour
      */
     public Optional<Output<Map<String,String>>> systemTags() {
         return Optional.ofNullable(this.systemTags);
+    }
+
+    /**
+     * The target region, where resource is replicated.
+     * 
+     */
+    @Import(name="targetRegion")
+    private @Nullable Output<String> targetRegion;
+
+    /**
+     * @return The target region, where resource is replicated.
+     * 
+     */
+    public Optional<Output<String>> targetRegion() {
+        return Optional.ofNullable(this.targetRegion);
     }
 
     /**
@@ -235,6 +274,7 @@ public final class DbmulticloudOracleDbGcpKeyRingState extends com.pulumi.resour
     private DbmulticloudOracleDbGcpKeyRingState() {}
 
     private DbmulticloudOracleDbGcpKeyRingState(DbmulticloudOracleDbGcpKeyRingState $) {
+        this.action = $.action;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
@@ -244,8 +284,10 @@ public final class DbmulticloudOracleDbGcpKeyRingState extends com.pulumi.resour
         this.location = $.location;
         this.oracleDbConnectorId = $.oracleDbConnectorId;
         this.properties = $.properties;
+        this.replicationMetadatas = $.replicationMetadatas;
         this.state = $.state;
         this.systemTags = $.systemTags;
+        this.targetRegion = $.targetRegion;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
         this.type = $.type;
@@ -267,6 +309,15 @@ public final class DbmulticloudOracleDbGcpKeyRingState extends com.pulumi.resour
 
         public Builder(DbmulticloudOracleDbGcpKeyRingState defaults) {
             $ = new DbmulticloudOracleDbGcpKeyRingState(Objects.requireNonNull(defaults));
+        }
+
+        public Builder action(@Nullable Output<String> action) {
+            $.action = action;
+            return this;
+        }
+
+        public Builder action(String action) {
+            return action(Output.of(action));
         }
 
         /**
@@ -459,6 +510,37 @@ public final class DbmulticloudOracleDbGcpKeyRingState extends com.pulumi.resour
         }
 
         /**
+         * @param replicationMetadatas Replication metadata, it has information about replication and target region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicationMetadatas(@Nullable Output<List<DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgs>> replicationMetadatas) {
+            $.replicationMetadatas = replicationMetadatas;
+            return this;
+        }
+
+        /**
+         * @param replicationMetadatas Replication metadata, it has information about replication and target region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicationMetadatas(List<DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgs> replicationMetadatas) {
+            return replicationMetadatas(Output.of(replicationMetadatas));
+        }
+
+        /**
+         * @param replicationMetadatas Replication metadata, it has information about replication and target region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicationMetadatas(DbmulticloudOracleDbGcpKeyRingReplicationMetadataArgs... replicationMetadatas) {
+            return replicationMetadatas(List.of(replicationMetadatas));
+        }
+
+        /**
          * @param state The lifecycle state of the Oracle DB GCP Key Ring resource.
          * 
          * @return builder
@@ -498,6 +580,27 @@ public final class DbmulticloudOracleDbGcpKeyRingState extends com.pulumi.resour
          */
         public Builder systemTags(Map<String,String> systemTags) {
             return systemTags(Output.of(systemTags));
+        }
+
+        /**
+         * @param targetRegion The target region, where resource is replicated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetRegion(@Nullable Output<String> targetRegion) {
+            $.targetRegion = targetRegion;
+            return this;
+        }
+
+        /**
+         * @param targetRegion The target region, where resource is replicated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetRegion(String targetRegion) {
+            return targetRegion(Output.of(targetRegion));
         }
 
         /**

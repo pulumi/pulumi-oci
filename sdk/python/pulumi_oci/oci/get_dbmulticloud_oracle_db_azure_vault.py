@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetDbmulticloudOracleDbAzureVaultResult',
@@ -26,7 +27,10 @@ class GetDbmulticloudOracleDbAzureVaultResult:
     """
     A collection of values returned by getDbmulticloudOracleDbAzureVault.
     """
-    def __init__(__self__, azure_vault_id=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, last_modification=None, lifecycle_state_details=None, location=None, oracle_db_azure_resource_group=None, oracle_db_azure_vault_id=None, oracle_db_connector_id=None, properties=None, state=None, system_tags=None, time_created=None, time_updated=None, type=None):
+    def __init__(__self__, action=None, azure_vault_id=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, last_modification=None, lifecycle_state_details=None, location=None, oracle_db_azure_resource_group=None, oracle_db_azure_vault_id=None, oracle_db_connector_id=None, properties=None, replication_metadatas=None, state=None, system_tags=None, target_region=None, time_created=None, time_updated=None, type=None):
+        if action and not isinstance(action, str):
+            raise TypeError("Expected argument 'action' to be a str")
+        pulumi.set(__self__, "action", action)
         if azure_vault_id and not isinstance(azure_vault_id, str):
             raise TypeError("Expected argument 'azure_vault_id' to be a str")
         pulumi.set(__self__, "azure_vault_id", azure_vault_id)
@@ -66,12 +70,18 @@ class GetDbmulticloudOracleDbAzureVaultResult:
         if properties and not isinstance(properties, dict):
             raise TypeError("Expected argument 'properties' to be a dict")
         pulumi.set(__self__, "properties", properties)
+        if replication_metadatas and not isinstance(replication_metadatas, list):
+            raise TypeError("Expected argument 'replication_metadatas' to be a list")
+        pulumi.set(__self__, "replication_metadatas", replication_metadatas)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
+        if target_region and not isinstance(target_region, str):
+            raise TypeError("Expected argument 'target_region' to be a str")
+        pulumi.set(__self__, "target_region", target_region)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -81,6 +91,11 @@ class GetDbmulticloudOracleDbAzureVaultResult:
         if type and not isinstance(type, str):
             raise TypeError("Expected argument 'type' to be a str")
         pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> _builtins.str:
+        return pulumi.get(self, "action")
 
     @_builtins.property
     @pulumi.getter(name="azureVaultId")
@@ -184,6 +199,14 @@ class GetDbmulticloudOracleDbAzureVaultResult:
         return pulumi.get(self, "properties")
 
     @_builtins.property
+    @pulumi.getter(name="replicationMetadatas")
+    def replication_metadatas(self) -> Sequence['outputs.GetDbmulticloudOracleDbAzureVaultReplicationMetadataResult']:
+        """
+        Replication metadata, it has information about replication and target region.
+        """
+        return pulumi.get(self, "replication_metadatas")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -198,6 +221,14 @@ class GetDbmulticloudOracleDbAzureVaultResult:
         System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="targetRegion")
+    def target_region(self) -> _builtins.str:
+        """
+        The target region, where resource is replicated.
+        """
+        return pulumi.get(self, "target_region")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -230,6 +261,7 @@ class AwaitableGetDbmulticloudOracleDbAzureVaultResult(GetDbmulticloudOracleDbAz
         if False:
             yield self
         return GetDbmulticloudOracleDbAzureVaultResult(
+            action=self.action,
             azure_vault_id=self.azure_vault_id,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
@@ -243,8 +275,10 @@ class AwaitableGetDbmulticloudOracleDbAzureVaultResult(GetDbmulticloudOracleDbAz
             oracle_db_azure_vault_id=self.oracle_db_azure_vault_id,
             oracle_db_connector_id=self.oracle_db_connector_id,
             properties=self.properties,
+            replication_metadatas=self.replication_metadatas,
             state=self.state,
             system_tags=self.system_tags,
+            target_region=self.target_region,
             time_created=self.time_created,
             time_updated=self.time_updated,
             type=self.type)
@@ -275,6 +309,7 @@ def get_dbmulticloud_oracle_db_azure_vault(oracle_db_azure_vault_id: Optional[_b
     __ret__ = pulumi.runtime.invoke('oci:oci/getDbmulticloudOracleDbAzureVault:getDbmulticloudOracleDbAzureVault', __args__, opts=opts, typ=GetDbmulticloudOracleDbAzureVaultResult).value
 
     return AwaitableGetDbmulticloudOracleDbAzureVaultResult(
+        action=pulumi.get(__ret__, 'action'),
         azure_vault_id=pulumi.get(__ret__, 'azure_vault_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
@@ -288,8 +323,10 @@ def get_dbmulticloud_oracle_db_azure_vault(oracle_db_azure_vault_id: Optional[_b
         oracle_db_azure_vault_id=pulumi.get(__ret__, 'oracle_db_azure_vault_id'),
         oracle_db_connector_id=pulumi.get(__ret__, 'oracle_db_connector_id'),
         properties=pulumi.get(__ret__, 'properties'),
+        replication_metadatas=pulumi.get(__ret__, 'replication_metadatas'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
+        target_region=pulumi.get(__ret__, 'target_region'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
@@ -317,6 +354,7 @@ def get_dbmulticloud_oracle_db_azure_vault_output(oracle_db_azure_vault_id: Opti
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:oci/getDbmulticloudOracleDbAzureVault:getDbmulticloudOracleDbAzureVault', __args__, opts=opts, typ=GetDbmulticloudOracleDbAzureVaultResult)
     return __ret__.apply(lambda __response__: GetDbmulticloudOracleDbAzureVaultResult(
+        action=pulumi.get(__response__, 'action'),
         azure_vault_id=pulumi.get(__response__, 'azure_vault_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
@@ -330,8 +368,10 @@ def get_dbmulticloud_oracle_db_azure_vault_output(oracle_db_azure_vault_id: Opti
         oracle_db_azure_vault_id=pulumi.get(__response__, 'oracle_db_azure_vault_id'),
         oracle_db_connector_id=pulumi.get(__response__, 'oracle_db_connector_id'),
         properties=pulumi.get(__response__, 'properties'),
+        replication_metadatas=pulumi.get(__response__, 'replication_metadatas'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
+        target_region=pulumi.get(__response__, 'target_region'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated'),
         type=pulumi.get(__response__, 'type')))

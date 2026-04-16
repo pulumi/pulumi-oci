@@ -10,6 +10,7 @@ from .auto_scaling_configuration import *
 from .bds_capacity_report import *
 from .bds_instance import *
 from .bds_instance_api_key import *
+from .bds_instance_execute_bootstrap_script_action import *
 from .bds_instance_identity_configuration import *
 from .bds_instance_metastore_config import *
 from .bds_instance_node_backup import *

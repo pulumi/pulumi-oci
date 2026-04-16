@@ -8,6 +8,9 @@ import * as utilities from "../utilities";
 
 /**
  * This resource provides the Management Appliance resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vmware/latest/ManagementAppliance
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/ocvp
  *
  * Creates a management appliance.
  *
@@ -117,6 +120,10 @@ export class ManagementAppliance extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly managementAgentId: pulumi.Output<string>;
     /**
+     * Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-<version>.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+     */
+    declare public /*out*/ readonly pluginVersion: pulumi.Output<string>;
+    /**
      * One or more public SSH keys to be included in `~/.ssh/authorized_keys` file for Management Appliance compute instance. Several public SSH keys must be separate by newline character.
      */
     declare public readonly publicSshKeys: pulumi.Output<string>;
@@ -176,6 +183,7 @@ export class ManagementAppliance extends pulumi.CustomResource {
             resourceInputs["heartbeatConnectionStates"] = state?.heartbeatConnectionStates;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["managementAgentId"] = state?.managementAgentId;
+            resourceInputs["pluginVersion"] = state?.pluginVersion;
             resourceInputs["publicSshKeys"] = state?.publicSshKeys;
             resourceInputs["sddcId"] = state?.sddcId;
             resourceInputs["state"] = state?.state;
@@ -210,6 +218,7 @@ export class ManagementAppliance extends pulumi.CustomResource {
             resourceInputs["heartbeatConnectionStates"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["managementAgentId"] = undefined /*out*/;
+            resourceInputs["pluginVersion"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeConfigurationUpdated"] = undefined /*out*/;
@@ -266,6 +275,10 @@ export interface ManagementApplianceState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management agent, that this appliance is running in.
      */
     managementAgentId?: pulumi.Input<string>;
+    /**
+     * Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-<version>.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+     */
+    pluginVersion?: pulumi.Input<string>;
     /**
      * One or more public SSH keys to be included in `~/.ssh/authorized_keys` file for Management Appliance compute instance. Several public SSH keys must be separate by newline character.
      */

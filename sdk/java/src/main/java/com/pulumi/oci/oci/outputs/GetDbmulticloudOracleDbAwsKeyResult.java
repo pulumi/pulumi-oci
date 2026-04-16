@@ -5,13 +5,16 @@ package com.pulumi.oci.oci.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAwsKeyReplicationMetadata;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 @CustomType
 public final class GetDbmulticloudOracleDbAwsKeyResult {
+    private String action;
     /**
      * @return AWS Account ID.
      * 
@@ -74,6 +77,11 @@ public final class GetDbmulticloudOracleDbAwsKeyResult {
      */
     private Map<String,String> properties;
     /**
+     * @return Replication metadata, it has information about replication and target region.
+     * 
+     */
+    private List<GetDbmulticloudOracleDbAwsKeyReplicationMetadata> replicationMetadatas;
+    /**
      * @return The lifecycle state of the Oracle DB AWS Key resource.
      * 
      */
@@ -83,6 +91,11 @@ public final class GetDbmulticloudOracleDbAwsKeyResult {
      * 
      */
     private Map<String,String> systemTags;
+    /**
+     * @return The target region, where resource is replicated.
+     * 
+     */
+    private String targetRegion;
     /**
      * @return Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;.
      * 
@@ -100,6 +113,9 @@ public final class GetDbmulticloudOracleDbAwsKeyResult {
     private String type;
 
     private GetDbmulticloudOracleDbAwsKeyResult() {}
+    public String action() {
+        return this.action;
+    }
     /**
      * @return AWS Account ID.
      * 
@@ -188,6 +204,13 @@ public final class GetDbmulticloudOracleDbAwsKeyResult {
         return this.properties;
     }
     /**
+     * @return Replication metadata, it has information about replication and target region.
+     * 
+     */
+    public List<GetDbmulticloudOracleDbAwsKeyReplicationMetadata> replicationMetadatas() {
+        return this.replicationMetadatas;
+    }
+    /**
      * @return The lifecycle state of the Oracle DB AWS Key resource.
      * 
      */
@@ -200,6 +223,13 @@ public final class GetDbmulticloudOracleDbAwsKeyResult {
      */
     public Map<String,String> systemTags() {
         return this.systemTags;
+    }
+    /**
+     * @return The target region, where resource is replicated.
+     * 
+     */
+    public String targetRegion() {
+        return this.targetRegion;
     }
     /**
      * @return Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;.
@@ -232,6 +262,7 @@ public final class GetDbmulticloudOracleDbAwsKeyResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String action;
         private String awsAccountId;
         private String awsKeyArn;
         private String compartmentId;
@@ -245,14 +276,17 @@ public final class GetDbmulticloudOracleDbAwsKeyResult {
         private String oracleDbAwsKeyId;
         private String oracleDbConnectorId;
         private Map<String,String> properties;
+        private List<GetDbmulticloudOracleDbAwsKeyReplicationMetadata> replicationMetadatas;
         private String state;
         private Map<String,String> systemTags;
+        private String targetRegion;
         private String timeCreated;
         private String timeUpdated;
         private String type;
         public Builder() {}
         public Builder(GetDbmulticloudOracleDbAwsKeyResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.action = defaults.action;
     	      this.awsAccountId = defaults.awsAccountId;
     	      this.awsKeyArn = defaults.awsKeyArn;
     	      this.compartmentId = defaults.compartmentId;
@@ -266,13 +300,23 @@ public final class GetDbmulticloudOracleDbAwsKeyResult {
     	      this.oracleDbAwsKeyId = defaults.oracleDbAwsKeyId;
     	      this.oracleDbConnectorId = defaults.oracleDbConnectorId;
     	      this.properties = defaults.properties;
+    	      this.replicationMetadatas = defaults.replicationMetadatas;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
+    	      this.targetRegion = defaults.targetRegion;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
+        public Builder action(String action) {
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAwsKeyResult", "action");
+            }
+            this.action = action;
+            return this;
+        }
         @CustomType.Setter
         public Builder awsAccountId(String awsAccountId) {
             if (awsAccountId == null) {
@@ -378,6 +422,17 @@ public final class GetDbmulticloudOracleDbAwsKeyResult {
             return this;
         }
         @CustomType.Setter
+        public Builder replicationMetadatas(List<GetDbmulticloudOracleDbAwsKeyReplicationMetadata> replicationMetadatas) {
+            if (replicationMetadatas == null) {
+              throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAwsKeyResult", "replicationMetadatas");
+            }
+            this.replicationMetadatas = replicationMetadatas;
+            return this;
+        }
+        public Builder replicationMetadatas(GetDbmulticloudOracleDbAwsKeyReplicationMetadata... replicationMetadatas) {
+            return replicationMetadatas(List.of(replicationMetadatas));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAwsKeyResult", "state");
@@ -391,6 +446,14 @@ public final class GetDbmulticloudOracleDbAwsKeyResult {
               throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAwsKeyResult", "systemTags");
             }
             this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder targetRegion(String targetRegion) {
+            if (targetRegion == null) {
+              throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAwsKeyResult", "targetRegion");
+            }
+            this.targetRegion = targetRegion;
             return this;
         }
         @CustomType.Setter
@@ -419,6 +482,7 @@ public final class GetDbmulticloudOracleDbAwsKeyResult {
         }
         public GetDbmulticloudOracleDbAwsKeyResult build() {
             final var _resultValue = new GetDbmulticloudOracleDbAwsKeyResult();
+            _resultValue.action = action;
             _resultValue.awsAccountId = awsAccountId;
             _resultValue.awsKeyArn = awsKeyArn;
             _resultValue.compartmentId = compartmentId;
@@ -432,8 +496,10 @@ public final class GetDbmulticloudOracleDbAwsKeyResult {
             _resultValue.oracleDbAwsKeyId = oracleDbAwsKeyId;
             _resultValue.oracleDbConnectorId = oracleDbConnectorId;
             _resultValue.properties = properties;
+            _resultValue.replicationMetadatas = replicationMetadatas;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
+            _resultValue.targetRegion = targetRegion;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.type = type;

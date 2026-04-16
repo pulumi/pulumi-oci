@@ -72,6 +72,12 @@ namespace Pulumi.Oci.Oci
         public string? Metadata { get; set; }
 
         /// <summary>
+        /// A filter to return only resources that are associated with the given privateEndpointId.
+        /// </summary>
+        [Input("privateEndpointId")]
+        public string? PrivateEndpointId { get; set; }
+
+        /// <summary>
         /// A filter to return only resources their lifecycleState matches the given lifecycleState.
         /// </summary>
         [Input("state")]
@@ -118,6 +124,12 @@ namespace Pulumi.Oci.Oci
         public Input<string>? Metadata { get; set; }
 
         /// <summary>
+        /// A filter to return only resources that are associated with the given privateEndpointId.
+        /// </summary>
+        [Input("privateEndpointId")]
+        public Input<string>? PrivateEndpointId { get; set; }
+
+        /// <summary>
         /// A filter to return only resources their lifecycleState matches the given lifecycleState.
         /// </summary>
         [Input("state")]
@@ -142,7 +154,7 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         public readonly string? DbDeploymentType;
         /// <summary>
-        /// The display name of the Globally distributed database.
+        /// The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
@@ -158,6 +170,7 @@ namespace Pulumi.Oci.Oci
         /// Additional metadata related to Globally distributed database resources.
         /// </summary>
         public readonly string? Metadata;
+        public readonly string? PrivateEndpointId;
         /// <summary>
         /// Lifecycle states for the Globally distributed database.
         /// </summary>
@@ -179,6 +192,8 @@ namespace Pulumi.Oci.Oci
 
             string? metadata,
 
+            string? privateEndpointId,
+
             string? state)
         {
             CompartmentId = compartmentId;
@@ -188,6 +203,7 @@ namespace Pulumi.Oci.Oci
             Filters = filters;
             Id = id;
             Metadata = metadata;
+            PrivateEndpointId = privateEndpointId;
             State = state;
         }
     }

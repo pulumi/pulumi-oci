@@ -58,6 +58,7 @@ type LookupDbmulticloudOracleDbAzureVaultArgs struct {
 
 // A collection of values returned by getDbmulticloudOracleDbAzureVault.
 type LookupDbmulticloudOracleDbAzureVaultResult struct {
+	Action string `pulumi:"action"`
 	// Azure Vault ID.
 	AzureVaultId string `pulumi:"azureVaultId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this Oracle DB Azure Vault resource.
@@ -83,10 +84,14 @@ type LookupDbmulticloudOracleDbAzureVaultResult struct {
 	OracleDbConnectorId string `pulumi:"oracleDbConnectorId"`
 	// Oracle DB Azure Vault resource's properties.
 	Properties map[string]string `pulumi:"properties"`
+	// Replication metadata, it has information about replication and target region.
+	ReplicationMetadatas []GetDbmulticloudOracleDbAzureVaultReplicationMetadata `pulumi:"replicationMetadatas"`
 	// The lifecycle state of the Oracle DB Azure Vault resource.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
+	// The target region, where resource is replicated.
+	TargetRegion string `pulumi:"targetRegion"`
 	// Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 	TimeCreated string `pulumi:"timeCreated"`
 	// Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
@@ -127,6 +132,10 @@ func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) ToLookupDbmulticloudOr
 
 func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) ToLookupDbmulticloudOracleDbAzureVaultResultOutputWithContext(ctx context.Context) LookupDbmulticloudOracleDbAzureVaultResultOutput {
 	return o
+}
+
+func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultResult) string { return v.Action }).(pulumi.StringOutput)
 }
 
 // Azure Vault ID.
@@ -193,6 +202,13 @@ func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) Properties() pulumi.St
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultResult) map[string]string { return v.Properties }).(pulumi.StringMapOutput)
 }
 
+// Replication metadata, it has information about replication and target region.
+func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) ReplicationMetadatas() GetDbmulticloudOracleDbAzureVaultReplicationMetadataArrayOutput {
+	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultResult) []GetDbmulticloudOracleDbAzureVaultReplicationMetadata {
+		return v.ReplicationMetadatas
+	}).(GetDbmulticloudOracleDbAzureVaultReplicationMetadataArrayOutput)
+}
+
 // The lifecycle state of the Oracle DB Azure Vault resource.
 func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultResult) string { return v.State }).(pulumi.StringOutput)
@@ -201,6 +217,11 @@ func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) State() pulumi.StringO
 // System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The target region, where resource is replicated.
+func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) TargetRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultResult) string { return v.TargetRegion }).(pulumi.StringOutput)
 }
 
 // Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'

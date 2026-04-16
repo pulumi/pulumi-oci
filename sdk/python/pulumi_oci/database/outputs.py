@@ -4869,6 +4869,8 @@ class AutonomousDatabaseConnectionUrl(dict):
             suggest = "mongo_db_url"
         elif key == "ordsUrl":
             suggest = "ords_url"
+        elif key == "spatialStudioUrl":
+            suggest = "spatial_studio_url"
         elif key == "sqlDevWebUrl":
             suggest = "sql_dev_web_url"
 
@@ -4891,6 +4893,7 @@ class AutonomousDatabaseConnectionUrl(dict):
                  machine_learning_user_management_url: Optional[_builtins.str] = None,
                  mongo_db_url: Optional[_builtins.str] = None,
                  ords_url: Optional[_builtins.str] = None,
+                 spatial_studio_url: Optional[_builtins.str] = None,
                  sql_dev_web_url: Optional[_builtins.str] = None):
         """
         :param _builtins.str apex_url: Oracle Application Express (APEX) URL.
@@ -4900,6 +4903,7 @@ class AutonomousDatabaseConnectionUrl(dict):
         :param _builtins.str machine_learning_user_management_url: Oracle Machine Learning user management URL.
         :param _builtins.str mongo_db_url: The URL of the MongoDB API for the Autonomous Database.
         :param _builtins.str ords_url: The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        :param _builtins.str spatial_studio_url: The URL of the Spatial Studio for the Autonomous AI Database.
         :param _builtins.str sql_dev_web_url: Oracle SQL Developer Web URL.
         """
         if apex_url is not None:
@@ -4916,6 +4920,8 @@ class AutonomousDatabaseConnectionUrl(dict):
             pulumi.set(__self__, "mongo_db_url", mongo_db_url)
         if ords_url is not None:
             pulumi.set(__self__, "ords_url", ords_url)
+        if spatial_studio_url is not None:
+            pulumi.set(__self__, "spatial_studio_url", spatial_studio_url)
         if sql_dev_web_url is not None:
             pulumi.set(__self__, "sql_dev_web_url", sql_dev_web_url)
 
@@ -4974,6 +4980,14 @@ class AutonomousDatabaseConnectionUrl(dict):
         The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
         """
         return pulumi.get(self, "ords_url")
+
+    @_builtins.property
+    @pulumi.getter(name="spatialStudioUrl")
+    def spatial_studio_url(self) -> Optional[_builtins.str]:
+        """
+        The URL of the Spatial Studio for the Autonomous AI Database.
+        """
+        return pulumi.get(self, "spatial_studio_url")
 
     @_builtins.property
     @pulumi.getter(name="sqlDevWebUrl")
@@ -6057,6 +6071,8 @@ class AutonomousDatabasePublicConnectionUrl(dict):
             suggest = "mongo_db_url"
         elif key == "ordsUrl":
             suggest = "ords_url"
+        elif key == "spatialStudioUrl":
+            suggest = "spatial_studio_url"
         elif key == "sqlDevWebUrl":
             suggest = "sql_dev_web_url"
 
@@ -6079,6 +6095,7 @@ class AutonomousDatabasePublicConnectionUrl(dict):
                  machine_learning_user_management_url: Optional[_builtins.str] = None,
                  mongo_db_url: Optional[_builtins.str] = None,
                  ords_url: Optional[_builtins.str] = None,
+                 spatial_studio_url: Optional[_builtins.str] = None,
                  sql_dev_web_url: Optional[_builtins.str] = None):
         """
         :param _builtins.str apex_url: Oracle Application Express (APEX) URL.
@@ -6088,6 +6105,7 @@ class AutonomousDatabasePublicConnectionUrl(dict):
         :param _builtins.str machine_learning_user_management_url: Oracle Machine Learning user management URL.
         :param _builtins.str mongo_db_url: The URL of the MongoDB API for the Autonomous Database.
         :param _builtins.str ords_url: The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        :param _builtins.str spatial_studio_url: The URL of the Spatial Studio for the Autonomous AI Database.
         :param _builtins.str sql_dev_web_url: Oracle SQL Developer Web URL.
         """
         if apex_url is not None:
@@ -6104,6 +6122,8 @@ class AutonomousDatabasePublicConnectionUrl(dict):
             pulumi.set(__self__, "mongo_db_url", mongo_db_url)
         if ords_url is not None:
             pulumi.set(__self__, "ords_url", ords_url)
+        if spatial_studio_url is not None:
+            pulumi.set(__self__, "spatial_studio_url", spatial_studio_url)
         if sql_dev_web_url is not None:
             pulumi.set(__self__, "sql_dev_web_url", sql_dev_web_url)
 
@@ -6162,6 +6182,14 @@ class AutonomousDatabasePublicConnectionUrl(dict):
         The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
         """
         return pulumi.get(self, "ords_url")
+
+    @_builtins.property
+    @pulumi.getter(name="spatialStudioUrl")
+    def spatial_studio_url(self) -> Optional[_builtins.str]:
+        """
+        The URL of the Spatial Studio for the Autonomous AI Database.
+        """
+        return pulumi.get(self, "spatial_studio_url")
 
     @_builtins.property
     @pulumi.getter(name="sqlDevWebUrl")
@@ -27693,6 +27721,7 @@ class GetAutonomousDatabaseConnectionUrlResult(dict):
                  machine_learning_user_management_url: _builtins.str,
                  mongo_db_url: _builtins.str,
                  ords_url: _builtins.str,
+                 spatial_studio_url: _builtins.str,
                  sql_dev_web_url: _builtins.str):
         """
         :param _builtins.str apex_url: Oracle Application Express (APEX) URL.
@@ -27702,6 +27731,7 @@ class GetAutonomousDatabaseConnectionUrlResult(dict):
         :param _builtins.str machine_learning_user_management_url: Oracle Machine Learning user management URL.
         :param _builtins.str mongo_db_url: The URL of the MongoDB API for the Autonomous Database.
         :param _builtins.str ords_url: The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        :param _builtins.str spatial_studio_url: The URL of the Spatial Studio for the Autonomous AI Database.
         :param _builtins.str sql_dev_web_url: Oracle SQL Developer Web URL.
         """
         pulumi.set(__self__, "apex_url", apex_url)
@@ -27711,6 +27741,7 @@ class GetAutonomousDatabaseConnectionUrlResult(dict):
         pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
         pulumi.set(__self__, "mongo_db_url", mongo_db_url)
         pulumi.set(__self__, "ords_url", ords_url)
+        pulumi.set(__self__, "spatial_studio_url", spatial_studio_url)
         pulumi.set(__self__, "sql_dev_web_url", sql_dev_web_url)
 
     @_builtins.property
@@ -27768,6 +27799,14 @@ class GetAutonomousDatabaseConnectionUrlResult(dict):
         The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
         """
         return pulumi.get(self, "ords_url")
+
+    @_builtins.property
+    @pulumi.getter(name="spatialStudioUrl")
+    def spatial_studio_url(self) -> _builtins.str:
+        """
+        The URL of the Spatial Studio for the Autonomous AI Database.
+        """
+        return pulumi.get(self, "spatial_studio_url")
 
     @_builtins.property
     @pulumi.getter(name="sqlDevWebUrl")
@@ -28831,6 +28870,7 @@ class GetAutonomousDatabasePublicConnectionUrlResult(dict):
                  machine_learning_user_management_url: _builtins.str,
                  mongo_db_url: _builtins.str,
                  ords_url: _builtins.str,
+                 spatial_studio_url: _builtins.str,
                  sql_dev_web_url: _builtins.str):
         """
         :param _builtins.str apex_url: Oracle Application Express (APEX) URL.
@@ -28840,6 +28880,7 @@ class GetAutonomousDatabasePublicConnectionUrlResult(dict):
         :param _builtins.str machine_learning_user_management_url: Oracle Machine Learning user management URL.
         :param _builtins.str mongo_db_url: The URL of the MongoDB API for the Autonomous Database.
         :param _builtins.str ords_url: The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        :param _builtins.str spatial_studio_url: The URL of the Spatial Studio for the Autonomous AI Database.
         :param _builtins.str sql_dev_web_url: Oracle SQL Developer Web URL.
         """
         pulumi.set(__self__, "apex_url", apex_url)
@@ -28849,6 +28890,7 @@ class GetAutonomousDatabasePublicConnectionUrlResult(dict):
         pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
         pulumi.set(__self__, "mongo_db_url", mongo_db_url)
         pulumi.set(__self__, "ords_url", ords_url)
+        pulumi.set(__self__, "spatial_studio_url", spatial_studio_url)
         pulumi.set(__self__, "sql_dev_web_url", sql_dev_web_url)
 
     @_builtins.property
@@ -28906,6 +28948,14 @@ class GetAutonomousDatabasePublicConnectionUrlResult(dict):
         The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
         """
         return pulumi.get(self, "ords_url")
+
+    @_builtins.property
+    @pulumi.getter(name="spatialStudioUrl")
+    def spatial_studio_url(self) -> _builtins.str:
+        """
+        The URL of the Spatial Studio for the Autonomous AI Database.
+        """
+        return pulumi.get(self, "spatial_studio_url")
 
     @_builtins.property
     @pulumi.getter(name="sqlDevWebUrl")
@@ -31702,6 +31752,7 @@ class GetAutonomousDatabasesAutonomousDatabaseConnectionUrlResult(dict):
                  machine_learning_user_management_url: _builtins.str,
                  mongo_db_url: _builtins.str,
                  ords_url: _builtins.str,
+                 spatial_studio_url: _builtins.str,
                  sql_dev_web_url: _builtins.str):
         """
         :param _builtins.str apex_url: Oracle Application Express (APEX) URL.
@@ -31711,6 +31762,7 @@ class GetAutonomousDatabasesAutonomousDatabaseConnectionUrlResult(dict):
         :param _builtins.str machine_learning_user_management_url: Oracle Machine Learning user management URL.
         :param _builtins.str mongo_db_url: The URL of the MongoDB API for the Autonomous Database.
         :param _builtins.str ords_url: The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        :param _builtins.str spatial_studio_url: The URL of the Spatial Studio for the Autonomous AI Database.
         :param _builtins.str sql_dev_web_url: Oracle SQL Developer Web URL.
         """
         pulumi.set(__self__, "apex_url", apex_url)
@@ -31720,6 +31772,7 @@ class GetAutonomousDatabasesAutonomousDatabaseConnectionUrlResult(dict):
         pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
         pulumi.set(__self__, "mongo_db_url", mongo_db_url)
         pulumi.set(__self__, "ords_url", ords_url)
+        pulumi.set(__self__, "spatial_studio_url", spatial_studio_url)
         pulumi.set(__self__, "sql_dev_web_url", sql_dev_web_url)
 
     @_builtins.property
@@ -31777,6 +31830,14 @@ class GetAutonomousDatabasesAutonomousDatabaseConnectionUrlResult(dict):
         The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
         """
         return pulumi.get(self, "ords_url")
+
+    @_builtins.property
+    @pulumi.getter(name="spatialStudioUrl")
+    def spatial_studio_url(self) -> _builtins.str:
+        """
+        The URL of the Spatial Studio for the Autonomous AI Database.
+        """
+        return pulumi.get(self, "spatial_studio_url")
 
     @_builtins.property
     @pulumi.getter(name="sqlDevWebUrl")
@@ -32556,6 +32617,7 @@ class GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlResult(dict):
                  machine_learning_user_management_url: _builtins.str,
                  mongo_db_url: _builtins.str,
                  ords_url: _builtins.str,
+                 spatial_studio_url: _builtins.str,
                  sql_dev_web_url: _builtins.str):
         """
         :param _builtins.str apex_url: Oracle Application Express (APEX) URL.
@@ -32565,6 +32627,7 @@ class GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlResult(dict):
         :param _builtins.str machine_learning_user_management_url: Oracle Machine Learning user management URL.
         :param _builtins.str mongo_db_url: The URL of the MongoDB API for the Autonomous Database.
         :param _builtins.str ords_url: The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        :param _builtins.str spatial_studio_url: The URL of the Spatial Studio for the Autonomous AI Database.
         :param _builtins.str sql_dev_web_url: Oracle SQL Developer Web URL.
         """
         pulumi.set(__self__, "apex_url", apex_url)
@@ -32574,6 +32637,7 @@ class GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlResult(dict):
         pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
         pulumi.set(__self__, "mongo_db_url", mongo_db_url)
         pulumi.set(__self__, "ords_url", ords_url)
+        pulumi.set(__self__, "spatial_studio_url", spatial_studio_url)
         pulumi.set(__self__, "sql_dev_web_url", sql_dev_web_url)
 
     @_builtins.property
@@ -32631,6 +32695,14 @@ class GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlResult(dict):
         The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
         """
         return pulumi.get(self, "ords_url")
+
+    @_builtins.property
+    @pulumi.getter(name="spatialStudioUrl")
+    def spatial_studio_url(self) -> _builtins.str:
+        """
+        The URL of the Spatial Studio for the Autonomous AI Database.
+        """
+        return pulumi.get(self, "spatial_studio_url")
 
     @_builtins.property
     @pulumi.getter(name="sqlDevWebUrl")
@@ -34905,6 +34977,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlResult(dict):
                  machine_learning_user_management_url: _builtins.str,
                  mongo_db_url: _builtins.str,
                  ords_url: _builtins.str,
+                 spatial_studio_url: _builtins.str,
                  sql_dev_web_url: _builtins.str):
         """
         :param _builtins.str apex_url: Oracle Application Express (APEX) URL.
@@ -34914,6 +34987,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlResult(dict):
         :param _builtins.str machine_learning_user_management_url: Oracle Machine Learning user management URL.
         :param _builtins.str mongo_db_url: The URL of the MongoDB API for the Autonomous Database.
         :param _builtins.str ords_url: The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        :param _builtins.str spatial_studio_url: The URL of the Spatial Studio for the Autonomous AI Database.
         :param _builtins.str sql_dev_web_url: Oracle SQL Developer Web URL.
         """
         pulumi.set(__self__, "apex_url", apex_url)
@@ -34923,6 +34997,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlResult(dict):
         pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
         pulumi.set(__self__, "mongo_db_url", mongo_db_url)
         pulumi.set(__self__, "ords_url", ords_url)
+        pulumi.set(__self__, "spatial_studio_url", spatial_studio_url)
         pulumi.set(__self__, "sql_dev_web_url", sql_dev_web_url)
 
     @_builtins.property
@@ -34980,6 +35055,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlResult(dict):
         The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
         """
         return pulumi.get(self, "ords_url")
+
+    @_builtins.property
+    @pulumi.getter(name="spatialStudioUrl")
+    def spatial_studio_url(self) -> _builtins.str:
+        """
+        The URL of the Spatial Studio for the Autonomous AI Database.
+        """
+        return pulumi.get(self, "spatial_studio_url")
 
     @_builtins.property
     @pulumi.getter(name="sqlDevWebUrl")
@@ -35759,6 +35842,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlResult(di
                  machine_learning_user_management_url: _builtins.str,
                  mongo_db_url: _builtins.str,
                  ords_url: _builtins.str,
+                 spatial_studio_url: _builtins.str,
                  sql_dev_web_url: _builtins.str):
         """
         :param _builtins.str apex_url: Oracle Application Express (APEX) URL.
@@ -35768,6 +35852,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlResult(di
         :param _builtins.str machine_learning_user_management_url: Oracle Machine Learning user management URL.
         :param _builtins.str mongo_db_url: The URL of the MongoDB API for the Autonomous Database.
         :param _builtins.str ords_url: The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        :param _builtins.str spatial_studio_url: The URL of the Spatial Studio for the Autonomous AI Database.
         :param _builtins.str sql_dev_web_url: Oracle SQL Developer Web URL.
         """
         pulumi.set(__self__, "apex_url", apex_url)
@@ -35777,6 +35862,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlResult(di
         pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
         pulumi.set(__self__, "mongo_db_url", mongo_db_url)
         pulumi.set(__self__, "ords_url", ords_url)
+        pulumi.set(__self__, "spatial_studio_url", spatial_studio_url)
         pulumi.set(__self__, "sql_dev_web_url", sql_dev_web_url)
 
     @_builtins.property
@@ -35834,6 +35920,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlResult(di
         The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
         """
         return pulumi.get(self, "ords_url")
+
+    @_builtins.property
+    @pulumi.getter(name="spatialStudioUrl")
+    def spatial_studio_url(self) -> _builtins.str:
+        """
+        The URL of the Spatial Studio for the Autonomous AI Database.
+        """
+        return pulumi.get(self, "spatial_studio_url")
 
     @_builtins.property
     @pulumi.getter(name="sqlDevWebUrl")

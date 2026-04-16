@@ -157,6 +157,10 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// Details for setting a retention date or legal hold.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetSnapshotLockDurationDetailResult> LockDurationDetails;
+        /// <summary>
         /// Locks associated with this resource.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSnapshotLockResult> Locks;
@@ -192,6 +196,10 @@ namespace Pulumi.Oci.FileStorage
         /// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
+        /// <summary>
+        /// The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+        /// </summary>
+        public readonly string TimeLocked;
 
         [OutputConstructor]
         private GetSnapshotResult(
@@ -213,6 +221,8 @@ namespace Pulumi.Oci.FileStorage
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetSnapshotLockDurationDetailResult> lockDurationDetails,
+
             ImmutableArray<Outputs.GetSnapshotLockResult> locks,
 
             string name,
@@ -229,7 +239,9 @@ namespace Pulumi.Oci.FileStorage
 
             ImmutableDictionary<string, string> systemTags,
 
-            string timeCreated)
+            string timeCreated,
+
+            string timeLocked)
         {
             DefinedTags = definedTags;
             ExpirationTime = expirationTime;
@@ -240,6 +252,7 @@ namespace Pulumi.Oci.FileStorage
             IsCloneSource = isCloneSource;
             IsLockOverride = isLockOverride;
             LifecycleDetails = lifecycleDetails;
+            LockDurationDetails = lockDurationDetails;
             Locks = locks;
             Name = name;
             ProvenanceId = provenanceId;
@@ -249,6 +262,7 @@ namespace Pulumi.Oci.FileStorage
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
+            TimeLocked = timeLocked;
         }
     }
 }

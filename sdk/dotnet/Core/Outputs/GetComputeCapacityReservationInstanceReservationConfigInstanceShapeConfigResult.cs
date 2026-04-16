@@ -21,15 +21,19 @@ namespace Pulumi.Oci.Core.Outputs
         /// The total number of OCPUs available to the instance.
         /// </summary>
         public readonly double Ocpus;
+        public readonly string ResourceManagement;
 
         [OutputConstructor]
         private GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigResult(
             double memoryInGbs,
 
-            double ocpus)
+            double ocpus,
+
+            string resourceManagement)
         {
             MemoryInGbs = memoryInGbs;
             Ocpus = ocpus;
+            ResourceManagement = resourceManagement;
         }
     }
 }

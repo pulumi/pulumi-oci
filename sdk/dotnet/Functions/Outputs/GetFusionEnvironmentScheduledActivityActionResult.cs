@@ -14,15 +14,15 @@ namespace Pulumi.Oci.Functions.Outputs
     public sealed class GetFusionEnvironmentScheduledActivityActionResult
     {
         /// <summary>
-        /// Type of action
+        /// Type of action.
         /// </summary>
         public readonly string ActionType;
         /// <summary>
-        /// patch that delivered the vertex update prerequisite
+        /// Patch that delivered the Vertex update prerequisite.
         /// </summary>
         public readonly string Artifact;
         /// <summary>
-        /// patch artifact category
+        /// Patch artifact category.
         /// </summary>
         public readonly string Category;
         /// <summary>
@@ -30,15 +30,15 @@ namespace Pulumi.Oci.Functions.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// A string that describes whether the change is applied hot or cold
+        /// A string that describes whether the change is applied hot or cold.
         /// </summary>
         public readonly string Mode;
         /// <summary>
-        /// month qualifier
+        /// Month qualifier.
         /// </summary>
         public readonly string Qualifier;
         /// <summary>
-        /// Unique identifier of the object that represents the action
+        /// Unique identifier of the object that represents the action.
         /// </summary>
         public readonly string ReferenceKey;
         /// <summary>
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Functions.Outputs
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// name of the repo
+        /// Name of the repo.
         /// </summary>
         public readonly string Version;
 

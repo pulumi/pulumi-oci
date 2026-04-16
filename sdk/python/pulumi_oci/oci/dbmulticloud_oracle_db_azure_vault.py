@@ -13,6 +13,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['DbmulticloudOracleDbAzureVaultArgs', 'DbmulticloudOracleDbAzureVault']
 
@@ -22,12 +24,14 @@ class DbmulticloudOracleDbAzureVaultArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
                  oracle_db_connector_id: pulumi.Input[_builtins.str],
+                 action: Optional[pulumi.Input[_builtins.str]] = None,
                  azure_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  location: Optional[pulumi.Input[_builtins.str]] = None,
                  oracle_db_azure_resource_group: Optional[pulumi.Input[_builtins.str]] = None,
                  properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_region: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DbmulticloudOracleDbAzureVault resource.
@@ -41,6 +45,7 @@ class DbmulticloudOracleDbAzureVaultArgs:
         :param pulumi.Input[_builtins.str] location: (Updatable) Oracle DB Azure Vault resource location.
         :param pulumi.Input[_builtins.str] oracle_db_azure_resource_group: (Updatable) Oracle DB Azure resource group name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) resource's properties.
+        :param pulumi.Input[_builtins.str] target_region: The target region, where resource is replicated.
         :param pulumi.Input[_builtins.str] type: (Updatable) Oracle DB Azure Vault resource type.
                
                
@@ -50,6 +55,8 @@ class DbmulticloudOracleDbAzureVaultArgs:
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "oracle_db_connector_id", oracle_db_connector_id)
+        if action is not None:
+            pulumi.set(__self__, "action", action)
         if azure_vault_id is not None:
             pulumi.set(__self__, "azure_vault_id", azure_vault_id)
         if defined_tags is not None:
@@ -62,6 +69,8 @@ class DbmulticloudOracleDbAzureVaultArgs:
             pulumi.set(__self__, "oracle_db_azure_resource_group", oracle_db_azure_resource_group)
         if properties is not None:
             pulumi.set(__self__, "properties", properties)
+        if target_region is not None:
+            pulumi.set(__self__, "target_region", target_region)
         if type is not None:
             pulumi.set(__self__, "type", type)
 
@@ -100,6 +109,15 @@ class DbmulticloudOracleDbAzureVaultArgs:
     @oracle_db_connector_id.setter
     def oracle_db_connector_id(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "oracle_db_connector_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter(name="azureVaultId")
@@ -174,6 +192,18 @@ class DbmulticloudOracleDbAzureVaultArgs:
         pulumi.set(self, "properties", value)
 
     @_builtins.property
+    @pulumi.getter(name="targetRegion")
+    def target_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The target region, where resource is replicated.
+        """
+        return pulumi.get(self, "target_region")
+
+    @target_region.setter
+    def target_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target_region", value)
+
+    @_builtins.property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -193,6 +223,7 @@ class DbmulticloudOracleDbAzureVaultArgs:
 @pulumi.input_type
 class _DbmulticloudOracleDbAzureVaultState:
     def __init__(__self__, *,
+                 action: Optional[pulumi.Input[_builtins.str]] = None,
                  azure_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -204,8 +235,10 @@ class _DbmulticloudOracleDbAzureVaultState:
                  oracle_db_azure_resource_group: Optional[pulumi.Input[_builtins.str]] = None,
                  oracle_db_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
                  properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 replication_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAzureVaultReplicationMetadataArgs']]]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_region: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None):
@@ -223,8 +256,10 @@ class _DbmulticloudOracleDbAzureVaultState:
         :param pulumi.Input[_builtins.str] oracle_db_azure_resource_group: (Updatable) Oracle DB Azure resource group name.
         :param pulumi.Input[_builtins.str] oracle_db_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) resource's properties.
+        :param pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAzureVaultReplicationMetadataArgs']]] replication_metadatas: Replication metadata, it has information about replication and target region.
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the Oracle DB Azure Vault resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[_builtins.str] target_region: The target region, where resource is replicated.
         :param pulumi.Input[_builtins.str] time_created: Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
         :param pulumi.Input[_builtins.str] time_updated: Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
         :param pulumi.Input[_builtins.str] type: (Updatable) Oracle DB Azure Vault resource type.
@@ -233,6 +268,8 @@ class _DbmulticloudOracleDbAzureVaultState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
         if azure_vault_id is not None:
             pulumi.set(__self__, "azure_vault_id", azure_vault_id)
         if compartment_id is not None:
@@ -255,16 +292,29 @@ class _DbmulticloudOracleDbAzureVaultState:
             pulumi.set(__self__, "oracle_db_connector_id", oracle_db_connector_id)
         if properties is not None:
             pulumi.set(__self__, "properties", properties)
+        if replication_metadatas is not None:
+            pulumi.set(__self__, "replication_metadatas", replication_metadatas)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
+        if target_region is not None:
+            pulumi.set(__self__, "target_region", target_region)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
         if type is not None:
             pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter(name="azureVaultId")
@@ -399,6 +449,18 @@ class _DbmulticloudOracleDbAzureVaultState:
         pulumi.set(self, "properties", value)
 
     @_builtins.property
+    @pulumi.getter(name="replicationMetadatas")
+    def replication_metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAzureVaultReplicationMetadataArgs']]]]:
+        """
+        Replication metadata, it has information about replication and target region.
+        """
+        return pulumi.get(self, "replication_metadatas")
+
+    @replication_metadatas.setter
+    def replication_metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAzureVaultReplicationMetadataArgs']]]]):
+        pulumi.set(self, "replication_metadatas", value)
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -421,6 +483,18 @@ class _DbmulticloudOracleDbAzureVaultState:
     @system_tags.setter
     def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetRegion")
+    def target_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The target region, where resource is replicated.
+        """
+        return pulumi.get(self, "target_region")
+
+    @target_region.setter
+    def target_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target_region", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -469,6 +543,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 action: Optional[pulumi.Input[_builtins.str]] = None,
                  azure_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -478,6 +553,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
                  oracle_db_azure_resource_group: Optional[pulumi.Input[_builtins.str]] = None,
                  oracle_db_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
                  properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_region: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
@@ -531,6 +607,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] oracle_db_azure_resource_group: (Updatable) Oracle DB Azure resource group name.
         :param pulumi.Input[_builtins.str] oracle_db_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) resource's properties.
+        :param pulumi.Input[_builtins.str] target_region: The target region, where resource is replicated.
         :param pulumi.Input[_builtins.str] type: (Updatable) Oracle DB Azure Vault resource type.
                
                
@@ -598,6 +675,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 action: Optional[pulumi.Input[_builtins.str]] = None,
                  azure_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -607,6 +685,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
                  oracle_db_azure_resource_group: Optional[pulumi.Input[_builtins.str]] = None,
                  oracle_db_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
                  properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_region: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -617,6 +696,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DbmulticloudOracleDbAzureVaultArgs.__new__(DbmulticloudOracleDbAzureVaultArgs)
 
+            __props__.__dict__["action"] = action
             __props__.__dict__["azure_vault_id"] = azure_vault_id
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
@@ -632,9 +712,11 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
                 raise TypeError("Missing required property 'oracle_db_connector_id'")
             __props__.__dict__["oracle_db_connector_id"] = oracle_db_connector_id
             __props__.__dict__["properties"] = properties
+            __props__.__dict__["target_region"] = target_region
             __props__.__dict__["type"] = type
             __props__.__dict__["last_modification"] = None
             __props__.__dict__["lifecycle_state_details"] = None
+            __props__.__dict__["replication_metadatas"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
@@ -649,6 +731,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            action: Optional[pulumi.Input[_builtins.str]] = None,
             azure_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -660,8 +743,10 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
             oracle_db_azure_resource_group: Optional[pulumi.Input[_builtins.str]] = None,
             oracle_db_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
             properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            replication_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureVaultReplicationMetadataArgs', 'DbmulticloudOracleDbAzureVaultReplicationMetadataArgsDict']]]]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_region: Optional[pulumi.Input[_builtins.str]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_updated: Optional[pulumi.Input[_builtins.str]] = None,
             type: Optional[pulumi.Input[_builtins.str]] = None) -> 'DbmulticloudOracleDbAzureVault':
@@ -683,8 +768,10 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] oracle_db_azure_resource_group: (Updatable) Oracle DB Azure resource group name.
         :param pulumi.Input[_builtins.str] oracle_db_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) resource's properties.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureVaultReplicationMetadataArgs', 'DbmulticloudOracleDbAzureVaultReplicationMetadataArgsDict']]]] replication_metadatas: Replication metadata, it has information about replication and target region.
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the Oracle DB Azure Vault resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[_builtins.str] target_region: The target region, where resource is replicated.
         :param pulumi.Input[_builtins.str] time_created: Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
         :param pulumi.Input[_builtins.str] time_updated: Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
         :param pulumi.Input[_builtins.str] type: (Updatable) Oracle DB Azure Vault resource type.
@@ -697,6 +784,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
 
         __props__ = _DbmulticloudOracleDbAzureVaultState.__new__(_DbmulticloudOracleDbAzureVaultState)
 
+        __props__.__dict__["action"] = action
         __props__.__dict__["azure_vault_id"] = azure_vault_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
@@ -708,12 +796,19 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
         __props__.__dict__["oracle_db_azure_resource_group"] = oracle_db_azure_resource_group
         __props__.__dict__["oracle_db_connector_id"] = oracle_db_connector_id
         __props__.__dict__["properties"] = properties
+        __props__.__dict__["replication_metadatas"] = replication_metadatas
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
+        __props__.__dict__["target_region"] = target_region
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["type"] = type
         return DbmulticloudOracleDbAzureVault(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> pulumi.Output[Optional[_builtins.str]]:
+        return pulumi.get(self, "action")
 
     @_builtins.property
     @pulumi.getter(name="azureVaultId")
@@ -804,6 +899,14 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
         return pulumi.get(self, "properties")
 
     @_builtins.property
+    @pulumi.getter(name="replicationMetadatas")
+    def replication_metadatas(self) -> pulumi.Output[Sequence['outputs.DbmulticloudOracleDbAzureVaultReplicationMetadata']]:
+        """
+        Replication metadata, it has information about replication and target region.
+        """
+        return pulumi.get(self, "replication_metadatas")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
@@ -818,6 +921,14 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
         System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="targetRegion")
+    def target_region(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        The target region, where resource is replicated.
+        """
+        return pulumi.get(self, "target_region")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")

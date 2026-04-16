@@ -382,14 +382,29 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+     * (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+     * 
+     */
+    @Import(name="isVsanByolEnabled")
+    private @Nullable Output<Boolean> isVsanByolEnabled;
+
+    /**
+     * @return (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+     * 
+     */
+    public Optional<Output<Boolean>> isVsanByolEnabled() {
+        return Optional.ofNullable(this.isVsanByolEnabled);
+    }
+
+    /**
+     * (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
      * 
      */
     @Import(name="nextCommitment")
     private @Nullable Output<String> nextCommitment;
 
     /**
-     * @return The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+     * @return (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
      * 
      */
     public Optional<Output<String>> nextCommitment() {
@@ -440,6 +455,13 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
     @Deprecated /* This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only. */
     public Optional<Output<String>> nonUpgradedEsxiHostId() {
         return Optional.ofNullable(this.nonUpgradedEsxiHostId);
+    }
+
+    @Import(name="primaryVnicMacAddress")
+    private @Nullable Output<String> primaryVnicMacAddress;
+
+    public Optional<Output<String>> primaryVnicMacAddress() {
+        return Optional.ofNullable(this.primaryVnicMacAddress);
     }
 
     /**
@@ -577,6 +599,21 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+     * 
+     */
+    @Import(name="vcfByolAllocationId")
+    private @Nullable Output<String> vcfByolAllocationId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+     * 
+     */
+    public Optional<Output<String>> vcfByolAllocationId() {
+        return Optional.ofNullable(this.vcfByolAllocationId);
+    }
+
+    /**
      * The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
      * 
      */
@@ -617,9 +654,11 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         this.hostShapeName = $.hostShapeName;
         this.isBillingContinuationInProgress = $.isBillingContinuationInProgress;
         this.isBillingSwappingInProgress = $.isBillingSwappingInProgress;
+        this.isVsanByolEnabled = $.isVsanByolEnabled;
         this.nextCommitment = $.nextCommitment;
         this.nextSku = $.nextSku;
         this.nonUpgradedEsxiHostId = $.nonUpgradedEsxiHostId;
+        this.primaryVnicMacAddress = $.primaryVnicMacAddress;
         this.replacementEsxiHostId = $.replacementEsxiHostId;
         this.sddcId = $.sddcId;
         this.state = $.state;
@@ -628,6 +667,7 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
         this.upgradedReplacementEsxiHostId = $.upgradedReplacementEsxiHostId;
+        this.vcfByolAllocationId = $.vcfByolAllocationId;
         this.vmwareSoftwareVersion = $.vmwareSoftwareVersion;
     }
 
@@ -1169,7 +1209,28 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nextCommitment The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+         * @param isVsanByolEnabled (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isVsanByolEnabled(@Nullable Output<Boolean> isVsanByolEnabled) {
+            $.isVsanByolEnabled = isVsanByolEnabled;
+            return this;
+        }
+
+        /**
+         * @param isVsanByolEnabled (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isVsanByolEnabled(Boolean isVsanByolEnabled) {
+            return isVsanByolEnabled(Output.of(isVsanByolEnabled));
+        }
+
+        /**
+         * @param nextCommitment (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
          * 
          * @return builder
          * 
@@ -1180,7 +1241,7 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nextCommitment The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+         * @param nextCommitment (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
          * 
          * @return builder
          * 
@@ -1245,6 +1306,15 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         @Deprecated /* This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only. */
         public Builder nonUpgradedEsxiHostId(String nonUpgradedEsxiHostId) {
             return nonUpgradedEsxiHostId(Output.of(nonUpgradedEsxiHostId));
+        }
+
+        public Builder primaryVnicMacAddress(@Nullable Output<String> primaryVnicMacAddress) {
+            $.primaryVnicMacAddress = primaryVnicMacAddress;
+            return this;
+        }
+
+        public Builder primaryVnicMacAddress(String primaryVnicMacAddress) {
+            return primaryVnicMacAddress(Output.of(primaryVnicMacAddress));
         }
 
         /**
@@ -1427,6 +1497,27 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder upgradedReplacementEsxiHostId(String upgradedReplacementEsxiHostId) {
             return upgradedReplacementEsxiHostId(Output.of(upgradedReplacementEsxiHostId));
+        }
+
+        /**
+         * @param vcfByolAllocationId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vcfByolAllocationId(@Nullable Output<String> vcfByolAllocationId) {
+            $.vcfByolAllocationId = vcfByolAllocationId;
+            return this;
+        }
+
+        /**
+         * @param vcfByolAllocationId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vcfByolAllocationId(String vcfByolAllocationId) {
+            return vcfByolAllocationId(Output.of(vcfByolAllocationId));
         }
 
         /**

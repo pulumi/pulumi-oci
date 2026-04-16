@@ -20,6 +20,7 @@ export function getDistributedDatabaseDistributedAutonomousDatabases(args: GetDi
         "dbDeploymentType": args.dbDeploymentType,
         "displayName": args.displayName,
         "filters": args.filters,
+        "privateEndpointId": args.privateEndpointId,
         "state": args.state,
     }, opts);
 }
@@ -41,6 +42,10 @@ export interface GetDistributedDatabaseDistributedAutonomousDatabasesArgs {
      */
     displayName?: string;
     filters?: inputs.oci.GetDistributedDatabaseDistributedAutonomousDatabasesFilter[];
+    /**
+     * A filter to return only resources that are associated with the given privateEndpointId.
+     */
+    privateEndpointId?: string;
     /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      */
@@ -76,6 +81,7 @@ export interface GetDistributedDatabaseDistributedAutonomousDatabasesResult {
      * Additional metadata related to Globally distributed autonomous database resources.
      */
     readonly metadatas: outputs.oci.GetDistributedDatabaseDistributedAutonomousDatabasesMetadata[];
+    readonly privateEndpointId?: string;
     /**
      * Lifecycle states for the Globally distributed autonomous database.
      */
@@ -95,6 +101,7 @@ export function getDistributedDatabaseDistributedAutonomousDatabasesOutput(args:
         "dbDeploymentType": args.dbDeploymentType,
         "displayName": args.displayName,
         "filters": args.filters,
+        "privateEndpointId": args.privateEndpointId,
         "state": args.state,
     }, opts);
 }
@@ -116,6 +123,10 @@ export interface GetDistributedDatabaseDistributedAutonomousDatabasesOutputArgs 
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDistributedDatabaseDistributedAutonomousDatabasesFilterArgs>[]>;
+    /**
+     * A filter to return only resources that are associated with the given privateEndpointId.
+     */
+    privateEndpointId?: pulumi.Input<string>;
     /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      */

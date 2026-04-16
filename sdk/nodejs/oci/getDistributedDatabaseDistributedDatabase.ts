@@ -77,7 +77,7 @@ export interface GetDistributedDatabaseDistributedDatabaseResult {
      */
     readonly definedTags: {[key: string]: string};
     /**
-     * The display name of the Globally distributed database.
+     * The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
      */
     readonly displayName: string;
     readonly distributedDatabaseId: string;
@@ -131,6 +131,7 @@ export interface GetDistributedDatabaseDistributedDatabaseResult {
      * Additional metadata related to Globally distributed database resources.
      */
     readonly metadata?: string;
+    readonly moveReplicationUnitTrigger: number;
     /**
      * The national character set for the database.
      */
@@ -152,6 +153,7 @@ export interface GetDistributedDatabaseDistributedDatabaseResult {
      * The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
      */
     readonly privateEndpointIds: string[];
+    readonly recreateFailedResourceTrigger: number;
     /**
      * The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
      */
@@ -164,6 +166,10 @@ export interface GetDistributedDatabaseDistributedDatabaseResult {
      * The replication unit count for RAFT based distributed database. For RAFT replication based Globally distributed database, the value should be at least twice the number of shards.
      */
     readonly replicationUnit: number;
+    /**
+     * The TCP Single Client Access Name (SCAN) port for Globally distributed database clusters.
+     */
+    readonly scanListenerPort: number;
     /**
      * Collection of shards associated with the Globally distributed database.
      */

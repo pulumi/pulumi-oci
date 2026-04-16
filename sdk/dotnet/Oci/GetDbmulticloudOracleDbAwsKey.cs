@@ -126,6 +126,7 @@ namespace Pulumi.Oci.Oci
     [OutputType]
     public sealed class GetDbmulticloudOracleDbAwsKeyResult
     {
+        public readonly string Action;
         /// <summary>
         /// AWS Account ID.
         /// </summary>
@@ -176,6 +177,10 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         public readonly ImmutableDictionary<string, string> Properties;
         /// <summary>
+        /// Replication metadata, it has information about replication and target region.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDbmulticloudOracleDbAwsKeyReplicationMetadataResult> ReplicationMetadatas;
+        /// <summary>
         /// The lifecycle state of the Oracle DB AWS Key resource.
         /// </summary>
         public readonly string State;
@@ -183,6 +188,10 @@ namespace Pulumi.Oci.Oci
         /// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
+        /// The target region, where resource is replicated.
+        /// </summary>
+        public readonly string TargetRegion;
         /// <summary>
         /// Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
         /// </summary>
@@ -198,6 +207,8 @@ namespace Pulumi.Oci.Oci
 
         [OutputConstructor]
         private GetDbmulticloudOracleDbAwsKeyResult(
+            string action,
+
             string awsAccountId,
 
             string awsKeyArn,
@@ -224,9 +235,13 @@ namespace Pulumi.Oci.Oci
 
             ImmutableDictionary<string, string> properties,
 
+            ImmutableArray<Outputs.GetDbmulticloudOracleDbAwsKeyReplicationMetadataResult> replicationMetadatas,
+
             string state,
 
             ImmutableDictionary<string, string> systemTags,
+
+            string targetRegion,
 
             string timeCreated,
 
@@ -234,6 +249,7 @@ namespace Pulumi.Oci.Oci
 
             string type)
         {
+            Action = action;
             AwsAccountId = awsAccountId;
             AwsKeyArn = awsKeyArn;
             CompartmentId = compartmentId;
@@ -247,8 +263,10 @@ namespace Pulumi.Oci.Oci
             OracleDbAwsKeyId = oracleDbAwsKeyId;
             OracleDbConnectorId = oracleDbConnectorId;
             Properties = properties;
+            ReplicationMetadatas = replicationMetadatas;
             State = state;
             SystemTags = systemTags;
+            TargetRegion = targetRegion;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
             Type = type;

@@ -3827,6 +3827,130 @@ func (o GetFunctionsFunctionTraceConfigArrayOutput) Index(i pulumi.IntInput) Get
 	}).(GetFunctionsFunctionTraceConfigOutput)
 }
 
+type GetFusionEnvironmentAdditionalEgressRule struct {
+	// A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+	Description string `pulumi:"description"`
+	// Specifies the destination CIDR block the port should be opened for. Must be IPv4 only, and cannot be part of any private range from [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918).
+	DestinationCidr string `pulumi:"destinationCidr"`
+	// The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	MaxDestinationPort int `pulumi:"maxDestinationPort"`
+	// The minimum port number, which must not be greater than the maximum port number.
+	MinDestinationPort int `pulumi:"minDestinationPort"`
+}
+
+// GetFusionEnvironmentAdditionalEgressRuleInput is an input type that accepts GetFusionEnvironmentAdditionalEgressRuleArgs and GetFusionEnvironmentAdditionalEgressRuleOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentAdditionalEgressRuleInput` via:
+//
+//	GetFusionEnvironmentAdditionalEgressRuleArgs{...}
+type GetFusionEnvironmentAdditionalEgressRuleInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentAdditionalEgressRuleOutput() GetFusionEnvironmentAdditionalEgressRuleOutput
+	ToGetFusionEnvironmentAdditionalEgressRuleOutputWithContext(context.Context) GetFusionEnvironmentAdditionalEgressRuleOutput
+}
+
+type GetFusionEnvironmentAdditionalEgressRuleArgs struct {
+	// A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+	Description pulumi.StringInput `pulumi:"description"`
+	// Specifies the destination CIDR block the port should be opened for. Must be IPv4 only, and cannot be part of any private range from [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918).
+	DestinationCidr pulumi.StringInput `pulumi:"destinationCidr"`
+	// The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	MaxDestinationPort pulumi.IntInput `pulumi:"maxDestinationPort"`
+	// The minimum port number, which must not be greater than the maximum port number.
+	MinDestinationPort pulumi.IntInput `pulumi:"minDestinationPort"`
+}
+
+func (GetFusionEnvironmentAdditionalEgressRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentAdditionalEgressRule)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentAdditionalEgressRuleArgs) ToGetFusionEnvironmentAdditionalEgressRuleOutput() GetFusionEnvironmentAdditionalEgressRuleOutput {
+	return i.ToGetFusionEnvironmentAdditionalEgressRuleOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentAdditionalEgressRuleArgs) ToGetFusionEnvironmentAdditionalEgressRuleOutputWithContext(ctx context.Context) GetFusionEnvironmentAdditionalEgressRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentAdditionalEgressRuleOutput)
+}
+
+// GetFusionEnvironmentAdditionalEgressRuleArrayInput is an input type that accepts GetFusionEnvironmentAdditionalEgressRuleArray and GetFusionEnvironmentAdditionalEgressRuleArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentAdditionalEgressRuleArrayInput` via:
+//
+//	GetFusionEnvironmentAdditionalEgressRuleArray{ GetFusionEnvironmentAdditionalEgressRuleArgs{...} }
+type GetFusionEnvironmentAdditionalEgressRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentAdditionalEgressRuleArrayOutput() GetFusionEnvironmentAdditionalEgressRuleArrayOutput
+	ToGetFusionEnvironmentAdditionalEgressRuleArrayOutputWithContext(context.Context) GetFusionEnvironmentAdditionalEgressRuleArrayOutput
+}
+
+type GetFusionEnvironmentAdditionalEgressRuleArray []GetFusionEnvironmentAdditionalEgressRuleInput
+
+func (GetFusionEnvironmentAdditionalEgressRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentAdditionalEgressRule)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentAdditionalEgressRuleArray) ToGetFusionEnvironmentAdditionalEgressRuleArrayOutput() GetFusionEnvironmentAdditionalEgressRuleArrayOutput {
+	return i.ToGetFusionEnvironmentAdditionalEgressRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentAdditionalEgressRuleArray) ToGetFusionEnvironmentAdditionalEgressRuleArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentAdditionalEgressRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentAdditionalEgressRuleArrayOutput)
+}
+
+type GetFusionEnvironmentAdditionalEgressRuleOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentAdditionalEgressRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentAdditionalEgressRule)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentAdditionalEgressRuleOutput) ToGetFusionEnvironmentAdditionalEgressRuleOutput() GetFusionEnvironmentAdditionalEgressRuleOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentAdditionalEgressRuleOutput) ToGetFusionEnvironmentAdditionalEgressRuleOutputWithContext(ctx context.Context) GetFusionEnvironmentAdditionalEgressRuleOutput {
+	return o
+}
+
+// A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+func (o GetFusionEnvironmentAdditionalEgressRuleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdditionalEgressRule) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Specifies the destination CIDR block the port should be opened for. Must be IPv4 only, and cannot be part of any private range from [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918).
+func (o GetFusionEnvironmentAdditionalEgressRuleOutput) DestinationCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdditionalEgressRule) string { return v.DestinationCidr }).(pulumi.StringOutput)
+}
+
+// The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+func (o GetFusionEnvironmentAdditionalEgressRuleOutput) MaxDestinationPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdditionalEgressRule) int { return v.MaxDestinationPort }).(pulumi.IntOutput)
+}
+
+// The minimum port number, which must not be greater than the maximum port number.
+func (o GetFusionEnvironmentAdditionalEgressRuleOutput) MinDestinationPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdditionalEgressRule) int { return v.MinDestinationPort }).(pulumi.IntOutput)
+}
+
+type GetFusionEnvironmentAdditionalEgressRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentAdditionalEgressRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentAdditionalEgressRule)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentAdditionalEgressRuleArrayOutput) ToGetFusionEnvironmentAdditionalEgressRuleArrayOutput() GetFusionEnvironmentAdditionalEgressRuleArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentAdditionalEgressRuleArrayOutput) ToGetFusionEnvironmentAdditionalEgressRuleArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentAdditionalEgressRuleArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentAdditionalEgressRuleArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentAdditionalEgressRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentAdditionalEgressRule {
+		return vs[0].([]GetFusionEnvironmentAdditionalEgressRule)[vs[1].(int)]
+	}).(GetFusionEnvironmentAdditionalEgressRuleOutput)
+}
+
 type GetFusionEnvironmentAdminUserItem struct {
 	// Admin users email address
 	EmailAddress string `pulumi:"emailAddress"`
@@ -7897,23 +8021,23 @@ func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAr
 }
 
 type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction struct {
-	// Type of action
+	// Type of action.
 	ActionType string `pulumi:"actionType"`
-	// patch that delivered the vertex update prerequisite
+	// Patch that delivered the Vertex update prerequisite.
 	Artifact string `pulumi:"artifact"`
-	// patch artifact category
+	// Patch artifact category.
 	Category string `pulumi:"category"`
 	// A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description string `pulumi:"description"`
-	// A string that describes whether the change is applied hot or cold
+	// A string that describes whether the change is applied hot or cold.
 	Mode string `pulumi:"mode"`
-	// month qualifier
+	// Month qualifier.
 	Qualifier string `pulumi:"qualifier"`
-	// Unique identifier of the object that represents the action
+	// Unique identifier of the object that represents the action.
 	ReferenceKey string `pulumi:"referenceKey"`
 	// A filter that returns all resources that match the specified status
 	State string `pulumi:"state"`
-	// name of the repo
+	// Name of the repo.
 	Version string `pulumi:"version"`
 }
 
@@ -7929,23 +8053,23 @@ type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActio
 }
 
 type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArgs struct {
-	// Type of action
+	// Type of action.
 	ActionType pulumi.StringInput `pulumi:"actionType"`
-	// patch that delivered the vertex update prerequisite
+	// Patch that delivered the Vertex update prerequisite.
 	Artifact pulumi.StringInput `pulumi:"artifact"`
-	// patch artifact category
+	// Patch artifact category.
 	Category pulumi.StringInput `pulumi:"category"`
 	// A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description pulumi.StringInput `pulumi:"description"`
-	// A string that describes whether the change is applied hot or cold
+	// A string that describes whether the change is applied hot or cold.
 	Mode pulumi.StringInput `pulumi:"mode"`
-	// month qualifier
+	// Month qualifier.
 	Qualifier pulumi.StringInput `pulumi:"qualifier"`
-	// Unique identifier of the object that represents the action
+	// Unique identifier of the object that represents the action.
 	ReferenceKey pulumi.StringInput `pulumi:"referenceKey"`
 	// A filter that returns all resources that match the specified status
 	State pulumi.StringInput `pulumi:"state"`
-	// name of the repo
+	// Name of the repo.
 	Version pulumi.StringInput `pulumi:"version"`
 }
 
@@ -8000,21 +8124,21 @@ func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAc
 	return o
 }
 
-// Type of action
+// Type of action.
 func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) ActionType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
 		return v.ActionType
 	}).(pulumi.StringOutput)
 }
 
-// patch that delivered the vertex update prerequisite
+// Patch that delivered the Vertex update prerequisite.
 func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Artifact() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
 		return v.Artifact
 	}).(pulumi.StringOutput)
 }
 
-// patch artifact category
+// Patch artifact category.
 func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
 		return v.Category
@@ -8028,21 +8152,21 @@ func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAc
 	}).(pulumi.StringOutput)
 }
 
-// A string that describes whether the change is applied hot or cold
+// A string that describes whether the change is applied hot or cold.
 func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Mode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
 		return v.Mode
 	}).(pulumi.StringOutput)
 }
 
-// month qualifier
+// Month qualifier.
 func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Qualifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
 		return v.Qualifier
 	}).(pulumi.StringOutput)
 }
 
-// Unique identifier of the object that represents the action
+// Unique identifier of the object that represents the action.
 func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) ReferenceKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
 		return v.ReferenceKey
@@ -8056,7 +8180,7 @@ func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAc
 	}).(pulumi.StringOutput)
 }
 
-// name of the repo
+// Name of the repo.
 func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
 		return v.Version
@@ -8084,23 +8208,23 @@ func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAc
 }
 
 type GetFusionEnvironmentScheduledActivityAction struct {
-	// Type of action
+	// Type of action.
 	ActionType string `pulumi:"actionType"`
-	// patch that delivered the vertex update prerequisite
+	// Patch that delivered the Vertex update prerequisite.
 	Artifact string `pulumi:"artifact"`
-	// patch artifact category
+	// Patch artifact category.
 	Category string `pulumi:"category"`
 	// A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description string `pulumi:"description"`
-	// A string that describes whether the change is applied hot or cold
+	// A string that describes whether the change is applied hot or cold.
 	Mode string `pulumi:"mode"`
-	// month qualifier
+	// Month qualifier.
 	Qualifier string `pulumi:"qualifier"`
-	// Unique identifier of the object that represents the action
+	// Unique identifier of the object that represents the action.
 	ReferenceKey string `pulumi:"referenceKey"`
 	// The current state of the scheduledActivity.
 	State string `pulumi:"state"`
-	// name of the repo
+	// Name of the repo.
 	Version string `pulumi:"version"`
 }
 
@@ -8116,23 +8240,23 @@ type GetFusionEnvironmentScheduledActivityActionInput interface {
 }
 
 type GetFusionEnvironmentScheduledActivityActionArgs struct {
-	// Type of action
+	// Type of action.
 	ActionType pulumi.StringInput `pulumi:"actionType"`
-	// patch that delivered the vertex update prerequisite
+	// Patch that delivered the Vertex update prerequisite.
 	Artifact pulumi.StringInput `pulumi:"artifact"`
-	// patch artifact category
+	// Patch artifact category.
 	Category pulumi.StringInput `pulumi:"category"`
 	// A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description pulumi.StringInput `pulumi:"description"`
-	// A string that describes whether the change is applied hot or cold
+	// A string that describes whether the change is applied hot or cold.
 	Mode pulumi.StringInput `pulumi:"mode"`
-	// month qualifier
+	// Month qualifier.
 	Qualifier pulumi.StringInput `pulumi:"qualifier"`
-	// Unique identifier of the object that represents the action
+	// Unique identifier of the object that represents the action.
 	ReferenceKey pulumi.StringInput `pulumi:"referenceKey"`
 	// The current state of the scheduledActivity.
 	State pulumi.StringInput `pulumi:"state"`
-	// name of the repo
+	// Name of the repo.
 	Version pulumi.StringInput `pulumi:"version"`
 }
 
@@ -8187,17 +8311,17 @@ func (o GetFusionEnvironmentScheduledActivityActionOutput) ToGetFusionEnvironmen
 	return o
 }
 
-// Type of action
+// Type of action.
 func (o GetFusionEnvironmentScheduledActivityActionOutput) ActionType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.ActionType }).(pulumi.StringOutput)
 }
 
-// patch that delivered the vertex update prerequisite
+// Patch that delivered the Vertex update prerequisite.
 func (o GetFusionEnvironmentScheduledActivityActionOutput) Artifact() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.Artifact }).(pulumi.StringOutput)
 }
 
-// patch artifact category
+// Patch artifact category.
 func (o GetFusionEnvironmentScheduledActivityActionOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.Category }).(pulumi.StringOutput)
 }
@@ -8207,17 +8331,17 @@ func (o GetFusionEnvironmentScheduledActivityActionOutput) Description() pulumi.
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// A string that describes whether the change is applied hot or cold
+// A string that describes whether the change is applied hot or cold.
 func (o GetFusionEnvironmentScheduledActivityActionOutput) Mode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.Mode }).(pulumi.StringOutput)
 }
 
-// month qualifier
+// Month qualifier.
 func (o GetFusionEnvironmentScheduledActivityActionOutput) Qualifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.Qualifier }).(pulumi.StringOutput)
 }
 
-// Unique identifier of the object that represents the action
+// Unique identifier of the object that represents the action.
 func (o GetFusionEnvironmentScheduledActivityActionOutput) ReferenceKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.ReferenceKey }).(pulumi.StringOutput)
 }
@@ -8227,7 +8351,7 @@ func (o GetFusionEnvironmentScheduledActivityActionOutput) State() pulumi.String
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.State }).(pulumi.StringOutput)
 }
 
-// name of the repo
+// Name of the repo.
 func (o GetFusionEnvironmentScheduledActivityActionOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.Version }).(pulumi.StringOutput)
 }
@@ -9285,6 +9409,8 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput) Index(i pul
 }
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItem struct {
+	// Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+	AdditionalEgressRules []GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRule `pulumi:"additionalEgressRules"`
 	// Language packs
 	AdditionalLanguagePacks []string `pulumi:"additionalLanguagePacks"`
 	// Patch bundle names
@@ -9312,7 +9438,7 @@ type GetFusionEnvironmentsFusionEnvironmentCollectionItem struct {
 	IdcsDomainUrl string `pulumi:"idcsDomainUrl"`
 	// If it's true, then the Break Glass feature is enabled
 	IsBreakGlassEnabled bool `pulumi:"isBreakGlassEnabled"`
-	// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+	// Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
 	IsIpv6dualStackEnabled bool `pulumi:"isIpv6dualStackEnabled"`
 	// BYOK key id
 	KmsKeyId string `pulumi:"kmsKeyId"`
@@ -9358,6 +9484,8 @@ type GetFusionEnvironmentsFusionEnvironmentCollectionItemInput interface {
 }
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemArgs struct {
+	// Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+	AdditionalEgressRules GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayInput `pulumi:"additionalEgressRules"`
 	// Language packs
 	AdditionalLanguagePacks pulumi.StringArrayInput `pulumi:"additionalLanguagePacks"`
 	// Patch bundle names
@@ -9385,7 +9513,7 @@ type GetFusionEnvironmentsFusionEnvironmentCollectionItemArgs struct {
 	IdcsDomainUrl pulumi.StringInput `pulumi:"idcsDomainUrl"`
 	// If it's true, then the Break Glass feature is enabled
 	IsBreakGlassEnabled pulumi.BoolInput `pulumi:"isBreakGlassEnabled"`
-	// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+	// Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
 	IsIpv6dualStackEnabled pulumi.BoolInput `pulumi:"isIpv6dualStackEnabled"`
 	// BYOK key id
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
@@ -9470,6 +9598,13 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) ToGetFusionE
 	return o
 }
 
+// Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) AdditionalEgressRules() GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) []GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRule {
+		return v.AdditionalEgressRules
+	}).(GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayOutput)
+}
+
 // Language packs
 func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) AdditionalLanguagePacks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) []string {
@@ -9545,7 +9680,7 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) IsBreakGlass
 	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) bool { return v.IsBreakGlassEnabled }).(pulumi.BoolOutput)
 }
 
-// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+// Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
 func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) IsIpv6dualStackEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) bool { return v.IsIpv6dualStackEnabled }).(pulumi.BoolOutput)
 }
@@ -9651,6 +9786,138 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput) Index(i
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentsFusionEnvironmentCollectionItem {
 		return vs[0].([]GetFusionEnvironmentsFusionEnvironmentCollectionItem)[vs[1].(int)]
 	}).(GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRule struct {
+	// A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+	Description string `pulumi:"description"`
+	// Specifies the destination CIDR block the port should be opened for. Must be IPv4 only, and cannot be part of any private range from [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918).
+	DestinationCidr string `pulumi:"destinationCidr"`
+	// The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	MaxDestinationPort int `pulumi:"maxDestinationPort"`
+	// The minimum port number, which must not be greater than the maximum port number.
+	MinDestinationPort int `pulumi:"minDestinationPort"`
+}
+
+// GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArgs and GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleInput` via:
+//
+//	GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArgs{...}
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutput
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutputWithContext(context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutput
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArgs struct {
+	// A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+	Description pulumi.StringInput `pulumi:"description"`
+	// Specifies the destination CIDR block the port should be opened for. Must be IPv4 only, and cannot be part of any private range from [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918).
+	DestinationCidr pulumi.StringInput `pulumi:"destinationCidr"`
+	// The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+	MaxDestinationPort pulumi.IntInput `pulumi:"maxDestinationPort"`
+	// The minimum port number, which must not be greater than the maximum port number.
+	MinDestinationPort pulumi.IntInput `pulumi:"minDestinationPort"`
+}
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRule)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutput {
+	return i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutput)
+}
+
+// GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArray and GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayInput` via:
+//
+//	GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArray{ GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArgs{...} }
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayOutput
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayOutputWithContext(context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayOutput
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArray []GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleInput
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRule)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArray) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayOutput {
+	return i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArray) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRule)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutput {
+	return o
+}
+
+// A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRule) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// Specifies the destination CIDR block the port should be opened for. Must be IPv4 only, and cannot be part of any private range from [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918).
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutput) DestinationCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRule) string {
+		return v.DestinationCidr
+	}).(pulumi.StringOutput)
+}
+
+// The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutput) MaxDestinationPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRule) int {
+		return v.MaxDestinationPort
+	}).(pulumi.IntOutput)
+}
+
+// The minimum port number, which must not be greater than the maximum port number.
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutput) MinDestinationPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRule) int {
+		return v.MinDestinationPort
+	}).(pulumi.IntOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRule)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRule {
+		return vs[0].([]GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRule)[vs[1].(int)]
+	}).(GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutput)
 }
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail struct {
@@ -12907,6 +13174,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionSuccessDestinationArrayInput)(nil)).Elem(), GetFunctionsFunctionSuccessDestinationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionTraceConfigInput)(nil)).Elem(), GetFunctionsFunctionTraceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionTraceConfigArrayInput)(nil)).Elem(), GetFunctionsFunctionTraceConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentAdditionalEgressRuleInput)(nil)).Elem(), GetFusionEnvironmentAdditionalEgressRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentAdditionalEgressRuleArrayInput)(nil)).Elem(), GetFusionEnvironmentAdditionalEgressRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentAdminUserItemInput)(nil)).Elem(), GetFusionEnvironmentAdminUserItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentAdminUserItemArrayInput)(nil)).Elem(), GetFusionEnvironmentAdminUserItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentAdminUsersAdminUserCollectionInput)(nil)).Elem(), GetFusionEnvironmentAdminUsersAdminUserCollectionArgs{})
@@ -12997,6 +13266,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionArrayInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArgs{})
@@ -13109,6 +13380,8 @@ func init() {
 	pulumi.RegisterOutputType(GetFunctionsFunctionSuccessDestinationArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionTraceConfigOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionTraceConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentAdditionalEgressRuleOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentAdditionalEgressRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentAdminUserItemOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentAdminUserItemArrayOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentAdminUsersAdminUserCollectionOutput{})
@@ -13199,6 +13472,8 @@ func init() {
 	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput{})

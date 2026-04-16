@@ -3754,12 +3754,14 @@ class ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs
     """
     (Updatable) The total number of OCPUs available to the instance.
     """
+    resource_management: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs:
     def __init__(__self__, *,
                  memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 ocpus: Optional[pulumi.Input[_builtins.float]] = None):
+                 ocpus: Optional[pulumi.Input[_builtins.float]] = None,
+                 resource_management: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.float] memory_in_gbs: (Updatable) The total amount of memory available to the instance, in gigabytes.
         :param pulumi.Input[_builtins.float] ocpus: (Updatable) The total number of OCPUs available to the instance.
@@ -3768,6 +3770,8 @@ class ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
+        if resource_management is not None:
+            pulumi.set(__self__, "resource_management", resource_management)
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -3792,6 +3796,15 @@ class ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs
     @ocpus.setter
     def ocpus(self, value: Optional[pulumi.Input[_builtins.float]]):
         pulumi.set(self, "ocpus", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceManagement")
+    def resource_management(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "resource_management")
+
+    @resource_management.setter
+    def resource_management(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "resource_management", value)
 
 
 class ComputeCapacityTopologyCapacitySourceArgsDict(TypedDict):

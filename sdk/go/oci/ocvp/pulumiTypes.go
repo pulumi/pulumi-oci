@@ -13,6 +13,162 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ClusterClusterByolAllocationDetails struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+	FirewallByolAllocationId *string `pulumi:"firewallByolAllocationId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+	VsanByolAllocationId *string `pulumi:"vsanByolAllocationId"`
+}
+
+// ClusterClusterByolAllocationDetailsInput is an input type that accepts ClusterClusterByolAllocationDetailsArgs and ClusterClusterByolAllocationDetailsOutput values.
+// You can construct a concrete instance of `ClusterClusterByolAllocationDetailsInput` via:
+//
+//	ClusterClusterByolAllocationDetailsArgs{...}
+type ClusterClusterByolAllocationDetailsInput interface {
+	pulumi.Input
+
+	ToClusterClusterByolAllocationDetailsOutput() ClusterClusterByolAllocationDetailsOutput
+	ToClusterClusterByolAllocationDetailsOutputWithContext(context.Context) ClusterClusterByolAllocationDetailsOutput
+}
+
+type ClusterClusterByolAllocationDetailsArgs struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+	FirewallByolAllocationId pulumi.StringPtrInput `pulumi:"firewallByolAllocationId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+	VsanByolAllocationId pulumi.StringPtrInput `pulumi:"vsanByolAllocationId"`
+}
+
+func (ClusterClusterByolAllocationDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterClusterByolAllocationDetails)(nil)).Elem()
+}
+
+func (i ClusterClusterByolAllocationDetailsArgs) ToClusterClusterByolAllocationDetailsOutput() ClusterClusterByolAllocationDetailsOutput {
+	return i.ToClusterClusterByolAllocationDetailsOutputWithContext(context.Background())
+}
+
+func (i ClusterClusterByolAllocationDetailsArgs) ToClusterClusterByolAllocationDetailsOutputWithContext(ctx context.Context) ClusterClusterByolAllocationDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterClusterByolAllocationDetailsOutput)
+}
+
+func (i ClusterClusterByolAllocationDetailsArgs) ToClusterClusterByolAllocationDetailsPtrOutput() ClusterClusterByolAllocationDetailsPtrOutput {
+	return i.ToClusterClusterByolAllocationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ClusterClusterByolAllocationDetailsArgs) ToClusterClusterByolAllocationDetailsPtrOutputWithContext(ctx context.Context) ClusterClusterByolAllocationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterClusterByolAllocationDetailsOutput).ToClusterClusterByolAllocationDetailsPtrOutputWithContext(ctx)
+}
+
+// ClusterClusterByolAllocationDetailsPtrInput is an input type that accepts ClusterClusterByolAllocationDetailsArgs, ClusterClusterByolAllocationDetailsPtr and ClusterClusterByolAllocationDetailsPtrOutput values.
+// You can construct a concrete instance of `ClusterClusterByolAllocationDetailsPtrInput` via:
+//
+//	        ClusterClusterByolAllocationDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ClusterClusterByolAllocationDetailsPtrInput interface {
+	pulumi.Input
+
+	ToClusterClusterByolAllocationDetailsPtrOutput() ClusterClusterByolAllocationDetailsPtrOutput
+	ToClusterClusterByolAllocationDetailsPtrOutputWithContext(context.Context) ClusterClusterByolAllocationDetailsPtrOutput
+}
+
+type clusterClusterByolAllocationDetailsPtrType ClusterClusterByolAllocationDetailsArgs
+
+func ClusterClusterByolAllocationDetailsPtr(v *ClusterClusterByolAllocationDetailsArgs) ClusterClusterByolAllocationDetailsPtrInput {
+	return (*clusterClusterByolAllocationDetailsPtrType)(v)
+}
+
+func (*clusterClusterByolAllocationDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterClusterByolAllocationDetails)(nil)).Elem()
+}
+
+func (i *clusterClusterByolAllocationDetailsPtrType) ToClusterClusterByolAllocationDetailsPtrOutput() ClusterClusterByolAllocationDetailsPtrOutput {
+	return i.ToClusterClusterByolAllocationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *clusterClusterByolAllocationDetailsPtrType) ToClusterClusterByolAllocationDetailsPtrOutputWithContext(ctx context.Context) ClusterClusterByolAllocationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterClusterByolAllocationDetailsPtrOutput)
+}
+
+type ClusterClusterByolAllocationDetailsOutput struct{ *pulumi.OutputState }
+
+func (ClusterClusterByolAllocationDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterClusterByolAllocationDetails)(nil)).Elem()
+}
+
+func (o ClusterClusterByolAllocationDetailsOutput) ToClusterClusterByolAllocationDetailsOutput() ClusterClusterByolAllocationDetailsOutput {
+	return o
+}
+
+func (o ClusterClusterByolAllocationDetailsOutput) ToClusterClusterByolAllocationDetailsOutputWithContext(ctx context.Context) ClusterClusterByolAllocationDetailsOutput {
+	return o
+}
+
+func (o ClusterClusterByolAllocationDetailsOutput) ToClusterClusterByolAllocationDetailsPtrOutput() ClusterClusterByolAllocationDetailsPtrOutput {
+	return o.ToClusterClusterByolAllocationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ClusterClusterByolAllocationDetailsOutput) ToClusterClusterByolAllocationDetailsPtrOutputWithContext(ctx context.Context) ClusterClusterByolAllocationDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ClusterClusterByolAllocationDetails) *ClusterClusterByolAllocationDetails {
+		return &v
+	}).(ClusterClusterByolAllocationDetailsPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+func (o ClusterClusterByolAllocationDetailsOutput) FirewallByolAllocationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterClusterByolAllocationDetails) *string { return v.FirewallByolAllocationId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+func (o ClusterClusterByolAllocationDetailsOutput) VsanByolAllocationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterClusterByolAllocationDetails) *string { return v.VsanByolAllocationId }).(pulumi.StringPtrOutput)
+}
+
+type ClusterClusterByolAllocationDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ClusterClusterByolAllocationDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterClusterByolAllocationDetails)(nil)).Elem()
+}
+
+func (o ClusterClusterByolAllocationDetailsPtrOutput) ToClusterClusterByolAllocationDetailsPtrOutput() ClusterClusterByolAllocationDetailsPtrOutput {
+	return o
+}
+
+func (o ClusterClusterByolAllocationDetailsPtrOutput) ToClusterClusterByolAllocationDetailsPtrOutputWithContext(ctx context.Context) ClusterClusterByolAllocationDetailsPtrOutput {
+	return o
+}
+
+func (o ClusterClusterByolAllocationDetailsPtrOutput) Elem() ClusterClusterByolAllocationDetailsOutput {
+	return o.ApplyT(func(v *ClusterClusterByolAllocationDetails) ClusterClusterByolAllocationDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ClusterClusterByolAllocationDetails
+		return ret
+	}).(ClusterClusterByolAllocationDetailsOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+func (o ClusterClusterByolAllocationDetailsPtrOutput) FirewallByolAllocationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterClusterByolAllocationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FirewallByolAllocationId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+func (o ClusterClusterByolAllocationDetailsPtrOutput) VsanByolAllocationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterClusterByolAllocationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VsanByolAllocationId
+	}).(pulumi.StringPtrOutput)
+}
+
 type ClusterDatastore struct {
 	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
 	BlockVolumeIds []string `pulumi:"blockVolumeIds"`
@@ -1907,6 +2063,8 @@ type SddcInitialConfigurationInitialClusterConfiguration struct {
 	ActualEsxiHostsCount *int `pulumi:"actualEsxiHostsCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId *string `pulumi:"capacityReservationId"`
+	// The BYOL allocations used for VMware Cluster provisioning.
+	ClusterByolAllocationDetails *SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails `pulumi:"clusterByolAllocationDetails"`
 	// The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
 	ComputeAvailabilityDomain string `pulumi:"computeAvailabilityDomain"`
 	// A list of datastore clusters.
@@ -1925,6 +2083,8 @@ type SddcInitialConfigurationInitialClusterConfiguration struct {
 	InitialHostOcpuCount *float64 `pulumi:"initialHostOcpuCount"`
 	// The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
 	InitialHostShapeName *string `pulumi:"initialHostShapeName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+	InitialVcfByolAllocationId *string `pulumi:"initialVcfByolAllocationId"`
 	// A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
 	//
 	// For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
@@ -1955,6 +2115,8 @@ type SddcInitialConfigurationInitialClusterConfigurationArgs struct {
 	ActualEsxiHostsCount pulumi.IntPtrInput `pulumi:"actualEsxiHostsCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId pulumi.StringPtrInput `pulumi:"capacityReservationId"`
+	// The BYOL allocations used for VMware Cluster provisioning.
+	ClusterByolAllocationDetails SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrInput `pulumi:"clusterByolAllocationDetails"`
 	// The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
 	ComputeAvailabilityDomain pulumi.StringInput `pulumi:"computeAvailabilityDomain"`
 	// A list of datastore clusters.
@@ -1973,6 +2135,8 @@ type SddcInitialConfigurationInitialClusterConfigurationArgs struct {
 	InitialHostOcpuCount pulumi.Float64PtrInput `pulumi:"initialHostOcpuCount"`
 	// The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
 	InitialHostShapeName pulumi.StringPtrInput `pulumi:"initialHostShapeName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+	InitialVcfByolAllocationId pulumi.StringPtrInput `pulumi:"initialVcfByolAllocationId"`
 	// A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
 	//
 	// For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
@@ -2048,6 +2212,13 @@ func (o SddcInitialConfigurationInitialClusterConfigurationOutput) CapacityReser
 	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) *string { return v.CapacityReservationId }).(pulumi.StringPtrOutput)
 }
 
+// The BYOL allocations used for VMware Cluster provisioning.
+func (o SddcInitialConfigurationInitialClusterConfigurationOutput) ClusterByolAllocationDetails() SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) *SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails {
+		return v.ClusterByolAllocationDetails
+	}).(SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput)
+}
+
 // The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
 func (o SddcInitialConfigurationInitialClusterConfigurationOutput) ComputeAvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) string { return v.ComputeAvailabilityDomain }).(pulumi.StringOutput)
@@ -2090,6 +2261,13 @@ func (o SddcInitialConfigurationInitialClusterConfigurationOutput) InitialHostOc
 // The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
 func (o SddcInitialConfigurationInitialClusterConfigurationOutput) InitialHostShapeName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) *string { return v.InitialHostShapeName }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+func (o SddcInitialConfigurationInitialClusterConfigurationOutput) InitialVcfByolAllocationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) *string {
+		return v.InitialVcfByolAllocationId
+	}).(pulumi.StringPtrOutput)
 }
 
 // A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
@@ -2141,6 +2319,166 @@ func (o SddcInitialConfigurationInitialClusterConfigurationArrayOutput) Index(i 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SddcInitialConfigurationInitialClusterConfiguration {
 		return vs[0].([]SddcInitialConfigurationInitialClusterConfiguration)[vs[1].(int)]
 	}).(SddcInitialConfigurationInitialClusterConfigurationOutput)
+}
+
+type SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+	FirewallByolAllocationId *string `pulumi:"firewallByolAllocationId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+	VsanByolAllocationId *string `pulumi:"vsanByolAllocationId"`
+}
+
+// SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsInput is an input type that accepts SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs and SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutput values.
+// You can construct a concrete instance of `SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsInput` via:
+//
+//	SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs{...}
+type SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsInput interface {
+	pulumi.Input
+
+	ToSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutput() SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutput
+	ToSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutputWithContext(context.Context) SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutput
+}
+
+type SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+	FirewallByolAllocationId pulumi.StringPtrInput `pulumi:"firewallByolAllocationId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+	VsanByolAllocationId pulumi.StringPtrInput `pulumi:"vsanByolAllocationId"`
+}
+
+func (SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails)(nil)).Elem()
+}
+
+func (i SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs) ToSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutput() SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutput {
+	return i.ToSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutputWithContext(context.Background())
+}
+
+func (i SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs) ToSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutputWithContext(ctx context.Context) SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutput)
+}
+
+func (i SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs) ToSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput() SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput {
+	return i.ToSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs) ToSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutputWithContext(ctx context.Context) SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutput).ToSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutputWithContext(ctx)
+}
+
+// SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrInput is an input type that accepts SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs, SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtr and SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput values.
+// You can construct a concrete instance of `SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrInput` via:
+//
+//	        SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrInput interface {
+	pulumi.Input
+
+	ToSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput() SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput
+	ToSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutputWithContext(context.Context) SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput
+}
+
+type sddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrType SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs
+
+func SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtr(v *SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs) SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrInput {
+	return (*sddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrType)(v)
+}
+
+func (*sddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails)(nil)).Elem()
+}
+
+func (i *sddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrType) ToSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput() SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput {
+	return i.ToSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *sddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrType) ToSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutputWithContext(ctx context.Context) SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput)
+}
+
+type SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutput struct{ *pulumi.OutputState }
+
+func (SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails)(nil)).Elem()
+}
+
+func (o SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutput) ToSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutput() SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutput {
+	return o
+}
+
+func (o SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutput) ToSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutputWithContext(ctx context.Context) SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutput {
+	return o
+}
+
+func (o SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutput) ToSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput() SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput {
+	return o.ToSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutput) ToSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutputWithContext(ctx context.Context) SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails) *SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails {
+		return &v
+	}).(SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+func (o SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutput) FirewallByolAllocationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails) *string {
+		return v.FirewallByolAllocationId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+func (o SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutput) VsanByolAllocationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails) *string {
+		return v.VsanByolAllocationId
+	}).(pulumi.StringPtrOutput)
+}
+
+type SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails)(nil)).Elem()
+}
+
+func (o SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput) ToSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput() SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput {
+	return o
+}
+
+func (o SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput) ToSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutputWithContext(ctx context.Context) SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput {
+	return o
+}
+
+func (o SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput) Elem() SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutput {
+	return o.ApplyT(func(v *SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails) SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails {
+		if v != nil {
+			return *v
+		}
+		var ret SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails
+		return ret
+	}).(SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+func (o SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput) FirewallByolAllocationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FirewallByolAllocationId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+func (o SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput) VsanByolAllocationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VsanByolAllocationId
+	}).(pulumi.StringPtrOutput)
 }
 
 type SddcInitialConfigurationInitialClusterConfigurationDatastore struct {
@@ -2726,6 +3064,162 @@ func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationP
 	}).(pulumi.StringPtrOutput)
 }
 
+type SddcSddcByolAllocationDetails struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware Avi Load Balancer.
+	LoadBalancerByolAllocationId *string `pulumi:"loadBalancerByolAllocationId"`
+	// (Updatable) The number of VMware Avi Load Balancer instances to be deployed on VMware SDDC.
+	LoadBalancerInstanceCount *int `pulumi:"loadBalancerInstanceCount"`
+}
+
+// SddcSddcByolAllocationDetailsInput is an input type that accepts SddcSddcByolAllocationDetailsArgs and SddcSddcByolAllocationDetailsOutput values.
+// You can construct a concrete instance of `SddcSddcByolAllocationDetailsInput` via:
+//
+//	SddcSddcByolAllocationDetailsArgs{...}
+type SddcSddcByolAllocationDetailsInput interface {
+	pulumi.Input
+
+	ToSddcSddcByolAllocationDetailsOutput() SddcSddcByolAllocationDetailsOutput
+	ToSddcSddcByolAllocationDetailsOutputWithContext(context.Context) SddcSddcByolAllocationDetailsOutput
+}
+
+type SddcSddcByolAllocationDetailsArgs struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware Avi Load Balancer.
+	LoadBalancerByolAllocationId pulumi.StringPtrInput `pulumi:"loadBalancerByolAllocationId"`
+	// (Updatable) The number of VMware Avi Load Balancer instances to be deployed on VMware SDDC.
+	LoadBalancerInstanceCount pulumi.IntPtrInput `pulumi:"loadBalancerInstanceCount"`
+}
+
+func (SddcSddcByolAllocationDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SddcSddcByolAllocationDetails)(nil)).Elem()
+}
+
+func (i SddcSddcByolAllocationDetailsArgs) ToSddcSddcByolAllocationDetailsOutput() SddcSddcByolAllocationDetailsOutput {
+	return i.ToSddcSddcByolAllocationDetailsOutputWithContext(context.Background())
+}
+
+func (i SddcSddcByolAllocationDetailsArgs) ToSddcSddcByolAllocationDetailsOutputWithContext(ctx context.Context) SddcSddcByolAllocationDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SddcSddcByolAllocationDetailsOutput)
+}
+
+func (i SddcSddcByolAllocationDetailsArgs) ToSddcSddcByolAllocationDetailsPtrOutput() SddcSddcByolAllocationDetailsPtrOutput {
+	return i.ToSddcSddcByolAllocationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i SddcSddcByolAllocationDetailsArgs) ToSddcSddcByolAllocationDetailsPtrOutputWithContext(ctx context.Context) SddcSddcByolAllocationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SddcSddcByolAllocationDetailsOutput).ToSddcSddcByolAllocationDetailsPtrOutputWithContext(ctx)
+}
+
+// SddcSddcByolAllocationDetailsPtrInput is an input type that accepts SddcSddcByolAllocationDetailsArgs, SddcSddcByolAllocationDetailsPtr and SddcSddcByolAllocationDetailsPtrOutput values.
+// You can construct a concrete instance of `SddcSddcByolAllocationDetailsPtrInput` via:
+//
+//	        SddcSddcByolAllocationDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type SddcSddcByolAllocationDetailsPtrInput interface {
+	pulumi.Input
+
+	ToSddcSddcByolAllocationDetailsPtrOutput() SddcSddcByolAllocationDetailsPtrOutput
+	ToSddcSddcByolAllocationDetailsPtrOutputWithContext(context.Context) SddcSddcByolAllocationDetailsPtrOutput
+}
+
+type sddcSddcByolAllocationDetailsPtrType SddcSddcByolAllocationDetailsArgs
+
+func SddcSddcByolAllocationDetailsPtr(v *SddcSddcByolAllocationDetailsArgs) SddcSddcByolAllocationDetailsPtrInput {
+	return (*sddcSddcByolAllocationDetailsPtrType)(v)
+}
+
+func (*sddcSddcByolAllocationDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SddcSddcByolAllocationDetails)(nil)).Elem()
+}
+
+func (i *sddcSddcByolAllocationDetailsPtrType) ToSddcSddcByolAllocationDetailsPtrOutput() SddcSddcByolAllocationDetailsPtrOutput {
+	return i.ToSddcSddcByolAllocationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *sddcSddcByolAllocationDetailsPtrType) ToSddcSddcByolAllocationDetailsPtrOutputWithContext(ctx context.Context) SddcSddcByolAllocationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SddcSddcByolAllocationDetailsPtrOutput)
+}
+
+type SddcSddcByolAllocationDetailsOutput struct{ *pulumi.OutputState }
+
+func (SddcSddcByolAllocationDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SddcSddcByolAllocationDetails)(nil)).Elem()
+}
+
+func (o SddcSddcByolAllocationDetailsOutput) ToSddcSddcByolAllocationDetailsOutput() SddcSddcByolAllocationDetailsOutput {
+	return o
+}
+
+func (o SddcSddcByolAllocationDetailsOutput) ToSddcSddcByolAllocationDetailsOutputWithContext(ctx context.Context) SddcSddcByolAllocationDetailsOutput {
+	return o
+}
+
+func (o SddcSddcByolAllocationDetailsOutput) ToSddcSddcByolAllocationDetailsPtrOutput() SddcSddcByolAllocationDetailsPtrOutput {
+	return o.ToSddcSddcByolAllocationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o SddcSddcByolAllocationDetailsOutput) ToSddcSddcByolAllocationDetailsPtrOutputWithContext(ctx context.Context) SddcSddcByolAllocationDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SddcSddcByolAllocationDetails) *SddcSddcByolAllocationDetails {
+		return &v
+	}).(SddcSddcByolAllocationDetailsPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware Avi Load Balancer.
+func (o SddcSddcByolAllocationDetailsOutput) LoadBalancerByolAllocationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SddcSddcByolAllocationDetails) *string { return v.LoadBalancerByolAllocationId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The number of VMware Avi Load Balancer instances to be deployed on VMware SDDC.
+func (o SddcSddcByolAllocationDetailsOutput) LoadBalancerInstanceCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v SddcSddcByolAllocationDetails) *int { return v.LoadBalancerInstanceCount }).(pulumi.IntPtrOutput)
+}
+
+type SddcSddcByolAllocationDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (SddcSddcByolAllocationDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SddcSddcByolAllocationDetails)(nil)).Elem()
+}
+
+func (o SddcSddcByolAllocationDetailsPtrOutput) ToSddcSddcByolAllocationDetailsPtrOutput() SddcSddcByolAllocationDetailsPtrOutput {
+	return o
+}
+
+func (o SddcSddcByolAllocationDetailsPtrOutput) ToSddcSddcByolAllocationDetailsPtrOutputWithContext(ctx context.Context) SddcSddcByolAllocationDetailsPtrOutput {
+	return o
+}
+
+func (o SddcSddcByolAllocationDetailsPtrOutput) Elem() SddcSddcByolAllocationDetailsOutput {
+	return o.ApplyT(func(v *SddcSddcByolAllocationDetails) SddcSddcByolAllocationDetails {
+		if v != nil {
+			return *v
+		}
+		var ret SddcSddcByolAllocationDetails
+		return ret
+	}).(SddcSddcByolAllocationDetailsOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware Avi Load Balancer.
+func (o SddcSddcByolAllocationDetailsPtrOutput) LoadBalancerByolAllocationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SddcSddcByolAllocationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LoadBalancerByolAllocationId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The number of VMware Avi Load Balancer instances to be deployed on VMware SDDC.
+func (o SddcSddcByolAllocationDetailsPtrOutput) LoadBalancerInstanceCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *SddcSddcByolAllocationDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.LoadBalancerInstanceCount
+	}).(pulumi.IntPtrOutput)
+}
+
 type SddcUpgradeLicense struct {
 	// vSphere license key value.
 	LicenseKey *string `pulumi:"licenseKey"`
@@ -2936,6 +3430,987 @@ func (o SddcVsphereUpgradeObjectArrayOutput) Index(i pulumi.IntInput) SddcVspher
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SddcVsphereUpgradeObject {
 		return vs[0].([]SddcVsphereUpgradeObject)[vs[1].(int)]
 	}).(SddcVsphereUpgradeObjectOutput)
+}
+
+type GetByolAllocationsByolAllocationCollection struct {
+	Items []GetByolAllocationsByolAllocationCollectionItem `pulumi:"items"`
+}
+
+// GetByolAllocationsByolAllocationCollectionInput is an input type that accepts GetByolAllocationsByolAllocationCollectionArgs and GetByolAllocationsByolAllocationCollectionOutput values.
+// You can construct a concrete instance of `GetByolAllocationsByolAllocationCollectionInput` via:
+//
+//	GetByolAllocationsByolAllocationCollectionArgs{...}
+type GetByolAllocationsByolAllocationCollectionInput interface {
+	pulumi.Input
+
+	ToGetByolAllocationsByolAllocationCollectionOutput() GetByolAllocationsByolAllocationCollectionOutput
+	ToGetByolAllocationsByolAllocationCollectionOutputWithContext(context.Context) GetByolAllocationsByolAllocationCollectionOutput
+}
+
+type GetByolAllocationsByolAllocationCollectionArgs struct {
+	Items GetByolAllocationsByolAllocationCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetByolAllocationsByolAllocationCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetByolAllocationsByolAllocationCollection)(nil)).Elem()
+}
+
+func (i GetByolAllocationsByolAllocationCollectionArgs) ToGetByolAllocationsByolAllocationCollectionOutput() GetByolAllocationsByolAllocationCollectionOutput {
+	return i.ToGetByolAllocationsByolAllocationCollectionOutputWithContext(context.Background())
+}
+
+func (i GetByolAllocationsByolAllocationCollectionArgs) ToGetByolAllocationsByolAllocationCollectionOutputWithContext(ctx context.Context) GetByolAllocationsByolAllocationCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetByolAllocationsByolAllocationCollectionOutput)
+}
+
+// GetByolAllocationsByolAllocationCollectionArrayInput is an input type that accepts GetByolAllocationsByolAllocationCollectionArray and GetByolAllocationsByolAllocationCollectionArrayOutput values.
+// You can construct a concrete instance of `GetByolAllocationsByolAllocationCollectionArrayInput` via:
+//
+//	GetByolAllocationsByolAllocationCollectionArray{ GetByolAllocationsByolAllocationCollectionArgs{...} }
+type GetByolAllocationsByolAllocationCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetByolAllocationsByolAllocationCollectionArrayOutput() GetByolAllocationsByolAllocationCollectionArrayOutput
+	ToGetByolAllocationsByolAllocationCollectionArrayOutputWithContext(context.Context) GetByolAllocationsByolAllocationCollectionArrayOutput
+}
+
+type GetByolAllocationsByolAllocationCollectionArray []GetByolAllocationsByolAllocationCollectionInput
+
+func (GetByolAllocationsByolAllocationCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetByolAllocationsByolAllocationCollection)(nil)).Elem()
+}
+
+func (i GetByolAllocationsByolAllocationCollectionArray) ToGetByolAllocationsByolAllocationCollectionArrayOutput() GetByolAllocationsByolAllocationCollectionArrayOutput {
+	return i.ToGetByolAllocationsByolAllocationCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetByolAllocationsByolAllocationCollectionArray) ToGetByolAllocationsByolAllocationCollectionArrayOutputWithContext(ctx context.Context) GetByolAllocationsByolAllocationCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetByolAllocationsByolAllocationCollectionArrayOutput)
+}
+
+type GetByolAllocationsByolAllocationCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetByolAllocationsByolAllocationCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetByolAllocationsByolAllocationCollection)(nil)).Elem()
+}
+
+func (o GetByolAllocationsByolAllocationCollectionOutput) ToGetByolAllocationsByolAllocationCollectionOutput() GetByolAllocationsByolAllocationCollectionOutput {
+	return o
+}
+
+func (o GetByolAllocationsByolAllocationCollectionOutput) ToGetByolAllocationsByolAllocationCollectionOutputWithContext(ctx context.Context) GetByolAllocationsByolAllocationCollectionOutput {
+	return o
+}
+
+func (o GetByolAllocationsByolAllocationCollectionOutput) Items() GetByolAllocationsByolAllocationCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetByolAllocationsByolAllocationCollection) []GetByolAllocationsByolAllocationCollectionItem {
+		return v.Items
+	}).(GetByolAllocationsByolAllocationCollectionItemArrayOutput)
+}
+
+type GetByolAllocationsByolAllocationCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetByolAllocationsByolAllocationCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetByolAllocationsByolAllocationCollection)(nil)).Elem()
+}
+
+func (o GetByolAllocationsByolAllocationCollectionArrayOutput) ToGetByolAllocationsByolAllocationCollectionArrayOutput() GetByolAllocationsByolAllocationCollectionArrayOutput {
+	return o
+}
+
+func (o GetByolAllocationsByolAllocationCollectionArrayOutput) ToGetByolAllocationsByolAllocationCollectionArrayOutputWithContext(ctx context.Context) GetByolAllocationsByolAllocationCollectionArrayOutput {
+	return o
+}
+
+func (o GetByolAllocationsByolAllocationCollectionArrayOutput) Index(i pulumi.IntInput) GetByolAllocationsByolAllocationCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetByolAllocationsByolAllocationCollection {
+		return vs[0].([]GetByolAllocationsByolAllocationCollection)[vs[1].(int)]
+	}).(GetByolAllocationsByolAllocationCollectionOutput)
+}
+
+type GetByolAllocationsByolAllocationCollectionItem struct {
+	// The quantity of licensed units that allocated to this region.
+	AllocatedUnits int `pulumi:"allocatedUnits"`
+	// The quantity of licensed units that not yet consumed by resources.
+	AvailableUnits int `pulumi:"availableUnits"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL.
+	ByolId string `pulumi:"byolId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// The Broadcom-supplied identifier of a BYOL license.
+	EntitlementKey string `pulumi:"entitlementKey"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL Allocation.
+	Id string `pulumi:"id"`
+	// A filter to return only resources whose softwareType matches the given value.
+	SoftwareType string `pulumi:"softwareType"`
+	// A filter to return only resources whose lifecycle state matches the given value.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the BYOL Allocation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time when the BYOL Allocation expires and becomes inactive. In the format defined by[RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeTermEnd string `pulumi:"timeTermEnd"`
+	// The date and time when the BYOL Allocation becomes active. VMware software functionality cannot begin before this time. In the format defined by[RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeTermStart string `pulumi:"timeTermStart"`
+	// The date and time the BYOL Allocation was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetByolAllocationsByolAllocationCollectionItemInput is an input type that accepts GetByolAllocationsByolAllocationCollectionItemArgs and GetByolAllocationsByolAllocationCollectionItemOutput values.
+// You can construct a concrete instance of `GetByolAllocationsByolAllocationCollectionItemInput` via:
+//
+//	GetByolAllocationsByolAllocationCollectionItemArgs{...}
+type GetByolAllocationsByolAllocationCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetByolAllocationsByolAllocationCollectionItemOutput() GetByolAllocationsByolAllocationCollectionItemOutput
+	ToGetByolAllocationsByolAllocationCollectionItemOutputWithContext(context.Context) GetByolAllocationsByolAllocationCollectionItemOutput
+}
+
+type GetByolAllocationsByolAllocationCollectionItemArgs struct {
+	// The quantity of licensed units that allocated to this region.
+	AllocatedUnits pulumi.IntInput `pulumi:"allocatedUnits"`
+	// The quantity of licensed units that not yet consumed by resources.
+	AvailableUnits pulumi.IntInput `pulumi:"availableUnits"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL.
+	ByolId pulumi.StringInput `pulumi:"byolId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The Broadcom-supplied identifier of a BYOL license.
+	EntitlementKey pulumi.StringInput `pulumi:"entitlementKey"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL Allocation.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return only resources whose softwareType matches the given value.
+	SoftwareType pulumi.StringInput `pulumi:"softwareType"`
+	// A filter to return only resources whose lifecycle state matches the given value.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the BYOL Allocation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time when the BYOL Allocation expires and becomes inactive. In the format defined by[RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeTermEnd pulumi.StringInput `pulumi:"timeTermEnd"`
+	// The date and time when the BYOL Allocation becomes active. VMware software functionality cannot begin before this time. In the format defined by[RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeTermStart pulumi.StringInput `pulumi:"timeTermStart"`
+	// The date and time the BYOL Allocation was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetByolAllocationsByolAllocationCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetByolAllocationsByolAllocationCollectionItem)(nil)).Elem()
+}
+
+func (i GetByolAllocationsByolAllocationCollectionItemArgs) ToGetByolAllocationsByolAllocationCollectionItemOutput() GetByolAllocationsByolAllocationCollectionItemOutput {
+	return i.ToGetByolAllocationsByolAllocationCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetByolAllocationsByolAllocationCollectionItemArgs) ToGetByolAllocationsByolAllocationCollectionItemOutputWithContext(ctx context.Context) GetByolAllocationsByolAllocationCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetByolAllocationsByolAllocationCollectionItemOutput)
+}
+
+// GetByolAllocationsByolAllocationCollectionItemArrayInput is an input type that accepts GetByolAllocationsByolAllocationCollectionItemArray and GetByolAllocationsByolAllocationCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetByolAllocationsByolAllocationCollectionItemArrayInput` via:
+//
+//	GetByolAllocationsByolAllocationCollectionItemArray{ GetByolAllocationsByolAllocationCollectionItemArgs{...} }
+type GetByolAllocationsByolAllocationCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetByolAllocationsByolAllocationCollectionItemArrayOutput() GetByolAllocationsByolAllocationCollectionItemArrayOutput
+	ToGetByolAllocationsByolAllocationCollectionItemArrayOutputWithContext(context.Context) GetByolAllocationsByolAllocationCollectionItemArrayOutput
+}
+
+type GetByolAllocationsByolAllocationCollectionItemArray []GetByolAllocationsByolAllocationCollectionItemInput
+
+func (GetByolAllocationsByolAllocationCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetByolAllocationsByolAllocationCollectionItem)(nil)).Elem()
+}
+
+func (i GetByolAllocationsByolAllocationCollectionItemArray) ToGetByolAllocationsByolAllocationCollectionItemArrayOutput() GetByolAllocationsByolAllocationCollectionItemArrayOutput {
+	return i.ToGetByolAllocationsByolAllocationCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetByolAllocationsByolAllocationCollectionItemArray) ToGetByolAllocationsByolAllocationCollectionItemArrayOutputWithContext(ctx context.Context) GetByolAllocationsByolAllocationCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetByolAllocationsByolAllocationCollectionItemArrayOutput)
+}
+
+type GetByolAllocationsByolAllocationCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetByolAllocationsByolAllocationCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetByolAllocationsByolAllocationCollectionItem)(nil)).Elem()
+}
+
+func (o GetByolAllocationsByolAllocationCollectionItemOutput) ToGetByolAllocationsByolAllocationCollectionItemOutput() GetByolAllocationsByolAllocationCollectionItemOutput {
+	return o
+}
+
+func (o GetByolAllocationsByolAllocationCollectionItemOutput) ToGetByolAllocationsByolAllocationCollectionItemOutputWithContext(ctx context.Context) GetByolAllocationsByolAllocationCollectionItemOutput {
+	return o
+}
+
+// The quantity of licensed units that allocated to this region.
+func (o GetByolAllocationsByolAllocationCollectionItemOutput) AllocatedUnits() pulumi.IntOutput {
+	return o.ApplyT(func(v GetByolAllocationsByolAllocationCollectionItem) int { return v.AllocatedUnits }).(pulumi.IntOutput)
+}
+
+// The quantity of licensed units that not yet consumed by resources.
+func (o GetByolAllocationsByolAllocationCollectionItemOutput) AvailableUnits() pulumi.IntOutput {
+	return o.ApplyT(func(v GetByolAllocationsByolAllocationCollectionItem) int { return v.AvailableUnits }).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL.
+func (o GetByolAllocationsByolAllocationCollectionItemOutput) ByolId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolAllocationsByolAllocationCollectionItem) string { return v.ByolId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetByolAllocationsByolAllocationCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolAllocationsByolAllocationCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetByolAllocationsByolAllocationCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetByolAllocationsByolAllocationCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetByolAllocationsByolAllocationCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolAllocationsByolAllocationCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The Broadcom-supplied identifier of a BYOL license.
+func (o GetByolAllocationsByolAllocationCollectionItemOutput) EntitlementKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolAllocationsByolAllocationCollectionItem) string { return v.EntitlementKey }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetByolAllocationsByolAllocationCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetByolAllocationsByolAllocationCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL Allocation.
+func (o GetByolAllocationsByolAllocationCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolAllocationsByolAllocationCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources whose softwareType matches the given value.
+func (o GetByolAllocationsByolAllocationCollectionItemOutput) SoftwareType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolAllocationsByolAllocationCollectionItem) string { return v.SoftwareType }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources whose lifecycle state matches the given value.
+func (o GetByolAllocationsByolAllocationCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolAllocationsByolAllocationCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+func (o GetByolAllocationsByolAllocationCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetByolAllocationsByolAllocationCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the BYOL Allocation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetByolAllocationsByolAllocationCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolAllocationsByolAllocationCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time when the BYOL Allocation expires and becomes inactive. In the format defined by[RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetByolAllocationsByolAllocationCollectionItemOutput) TimeTermEnd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolAllocationsByolAllocationCollectionItem) string { return v.TimeTermEnd }).(pulumi.StringOutput)
+}
+
+// The date and time when the BYOL Allocation becomes active. VMware software functionality cannot begin before this time. In the format defined by[RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetByolAllocationsByolAllocationCollectionItemOutput) TimeTermStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolAllocationsByolAllocationCollectionItem) string { return v.TimeTermStart }).(pulumi.StringOutput)
+}
+
+// The date and time the BYOL Allocation was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetByolAllocationsByolAllocationCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolAllocationsByolAllocationCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetByolAllocationsByolAllocationCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetByolAllocationsByolAllocationCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetByolAllocationsByolAllocationCollectionItem)(nil)).Elem()
+}
+
+func (o GetByolAllocationsByolAllocationCollectionItemArrayOutput) ToGetByolAllocationsByolAllocationCollectionItemArrayOutput() GetByolAllocationsByolAllocationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetByolAllocationsByolAllocationCollectionItemArrayOutput) ToGetByolAllocationsByolAllocationCollectionItemArrayOutputWithContext(ctx context.Context) GetByolAllocationsByolAllocationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetByolAllocationsByolAllocationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetByolAllocationsByolAllocationCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetByolAllocationsByolAllocationCollectionItem {
+		return vs[0].([]GetByolAllocationsByolAllocationCollectionItem)[vs[1].(int)]
+	}).(GetByolAllocationsByolAllocationCollectionItemOutput)
+}
+
+type GetByolAllocationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetByolAllocationsFilterInput is an input type that accepts GetByolAllocationsFilterArgs and GetByolAllocationsFilterOutput values.
+// You can construct a concrete instance of `GetByolAllocationsFilterInput` via:
+//
+//	GetByolAllocationsFilterArgs{...}
+type GetByolAllocationsFilterInput interface {
+	pulumi.Input
+
+	ToGetByolAllocationsFilterOutput() GetByolAllocationsFilterOutput
+	ToGetByolAllocationsFilterOutputWithContext(context.Context) GetByolAllocationsFilterOutput
+}
+
+type GetByolAllocationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetByolAllocationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetByolAllocationsFilter)(nil)).Elem()
+}
+
+func (i GetByolAllocationsFilterArgs) ToGetByolAllocationsFilterOutput() GetByolAllocationsFilterOutput {
+	return i.ToGetByolAllocationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetByolAllocationsFilterArgs) ToGetByolAllocationsFilterOutputWithContext(ctx context.Context) GetByolAllocationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetByolAllocationsFilterOutput)
+}
+
+// GetByolAllocationsFilterArrayInput is an input type that accepts GetByolAllocationsFilterArray and GetByolAllocationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetByolAllocationsFilterArrayInput` via:
+//
+//	GetByolAllocationsFilterArray{ GetByolAllocationsFilterArgs{...} }
+type GetByolAllocationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetByolAllocationsFilterArrayOutput() GetByolAllocationsFilterArrayOutput
+	ToGetByolAllocationsFilterArrayOutputWithContext(context.Context) GetByolAllocationsFilterArrayOutput
+}
+
+type GetByolAllocationsFilterArray []GetByolAllocationsFilterInput
+
+func (GetByolAllocationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetByolAllocationsFilter)(nil)).Elem()
+}
+
+func (i GetByolAllocationsFilterArray) ToGetByolAllocationsFilterArrayOutput() GetByolAllocationsFilterArrayOutput {
+	return i.ToGetByolAllocationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetByolAllocationsFilterArray) ToGetByolAllocationsFilterArrayOutputWithContext(ctx context.Context) GetByolAllocationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetByolAllocationsFilterArrayOutput)
+}
+
+type GetByolAllocationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetByolAllocationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetByolAllocationsFilter)(nil)).Elem()
+}
+
+func (o GetByolAllocationsFilterOutput) ToGetByolAllocationsFilterOutput() GetByolAllocationsFilterOutput {
+	return o
+}
+
+func (o GetByolAllocationsFilterOutput) ToGetByolAllocationsFilterOutputWithContext(ctx context.Context) GetByolAllocationsFilterOutput {
+	return o
+}
+
+func (o GetByolAllocationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolAllocationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetByolAllocationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetByolAllocationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetByolAllocationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetByolAllocationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetByolAllocationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetByolAllocationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetByolAllocationsFilter)(nil)).Elem()
+}
+
+func (o GetByolAllocationsFilterArrayOutput) ToGetByolAllocationsFilterArrayOutput() GetByolAllocationsFilterArrayOutput {
+	return o
+}
+
+func (o GetByolAllocationsFilterArrayOutput) ToGetByolAllocationsFilterArrayOutputWithContext(ctx context.Context) GetByolAllocationsFilterArrayOutput {
+	return o
+}
+
+func (o GetByolAllocationsFilterArrayOutput) Index(i pulumi.IntInput) GetByolAllocationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetByolAllocationsFilter {
+		return vs[0].([]GetByolAllocationsFilter)[vs[1].(int)]
+	}).(GetByolAllocationsFilterOutput)
+}
+
+type GetByolsByolCollection struct {
+	Items []GetByolsByolCollectionItem `pulumi:"items"`
+}
+
+// GetByolsByolCollectionInput is an input type that accepts GetByolsByolCollectionArgs and GetByolsByolCollectionOutput values.
+// You can construct a concrete instance of `GetByolsByolCollectionInput` via:
+//
+//	GetByolsByolCollectionArgs{...}
+type GetByolsByolCollectionInput interface {
+	pulumi.Input
+
+	ToGetByolsByolCollectionOutput() GetByolsByolCollectionOutput
+	ToGetByolsByolCollectionOutputWithContext(context.Context) GetByolsByolCollectionOutput
+}
+
+type GetByolsByolCollectionArgs struct {
+	Items GetByolsByolCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetByolsByolCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetByolsByolCollection)(nil)).Elem()
+}
+
+func (i GetByolsByolCollectionArgs) ToGetByolsByolCollectionOutput() GetByolsByolCollectionOutput {
+	return i.ToGetByolsByolCollectionOutputWithContext(context.Background())
+}
+
+func (i GetByolsByolCollectionArgs) ToGetByolsByolCollectionOutputWithContext(ctx context.Context) GetByolsByolCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetByolsByolCollectionOutput)
+}
+
+// GetByolsByolCollectionArrayInput is an input type that accepts GetByolsByolCollectionArray and GetByolsByolCollectionArrayOutput values.
+// You can construct a concrete instance of `GetByolsByolCollectionArrayInput` via:
+//
+//	GetByolsByolCollectionArray{ GetByolsByolCollectionArgs{...} }
+type GetByolsByolCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetByolsByolCollectionArrayOutput() GetByolsByolCollectionArrayOutput
+	ToGetByolsByolCollectionArrayOutputWithContext(context.Context) GetByolsByolCollectionArrayOutput
+}
+
+type GetByolsByolCollectionArray []GetByolsByolCollectionInput
+
+func (GetByolsByolCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetByolsByolCollection)(nil)).Elem()
+}
+
+func (i GetByolsByolCollectionArray) ToGetByolsByolCollectionArrayOutput() GetByolsByolCollectionArrayOutput {
+	return i.ToGetByolsByolCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetByolsByolCollectionArray) ToGetByolsByolCollectionArrayOutputWithContext(ctx context.Context) GetByolsByolCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetByolsByolCollectionArrayOutput)
+}
+
+type GetByolsByolCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetByolsByolCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetByolsByolCollection)(nil)).Elem()
+}
+
+func (o GetByolsByolCollectionOutput) ToGetByolsByolCollectionOutput() GetByolsByolCollectionOutput {
+	return o
+}
+
+func (o GetByolsByolCollectionOutput) ToGetByolsByolCollectionOutputWithContext(ctx context.Context) GetByolsByolCollectionOutput {
+	return o
+}
+
+func (o GetByolsByolCollectionOutput) Items() GetByolsByolCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetByolsByolCollection) []GetByolsByolCollectionItem { return v.Items }).(GetByolsByolCollectionItemArrayOutput)
+}
+
+type GetByolsByolCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetByolsByolCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetByolsByolCollection)(nil)).Elem()
+}
+
+func (o GetByolsByolCollectionArrayOutput) ToGetByolsByolCollectionArrayOutput() GetByolsByolCollectionArrayOutput {
+	return o
+}
+
+func (o GetByolsByolCollectionArrayOutput) ToGetByolsByolCollectionArrayOutputWithContext(ctx context.Context) GetByolsByolCollectionArrayOutput {
+	return o
+}
+
+func (o GetByolsByolCollectionArrayOutput) Index(i pulumi.IntInput) GetByolsByolCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetByolsByolCollection {
+		return vs[0].([]GetByolsByolCollection)[vs[1].(int)]
+	}).(GetByolsByolCollectionOutput)
+}
+
+type GetByolsByolCollectionItem struct {
+	// The quantity of licensed units that not yet allocated to specific region.
+	AvailableUnits int `pulumi:"availableUnits"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A description of the BYOL.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// The Broadcom-supplied identifier of a BYOL license.
+	EntitlementKey string `pulumi:"entitlementKey"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL.
+	Id string `pulumi:"id"`
+	// A filter to return only resources whose softwareType matches the given value.
+	SoftwareType string `pulumi:"softwareType"`
+	// A filter to return only resources whose lifecycle state matches the given value.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the BYOL was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time when the BYOL expires and becomes inactive. In the format defined by[RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeTermEnd string `pulumi:"timeTermEnd"`
+	// The date and time when the BYOL becomes active. VMware software functionality cannot begin before this time. In the format defined by[RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeTermStart string `pulumi:"timeTermStart"`
+	// The date and time the BYOL was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Total quantity of licensed units for the specified `softwareType`:
+	// * VCF, VDEFEND: number of OCPUs
+	// * VSAN: storage capacity in TiB (tebibytes)
+	// * AVI_LOAD_BALANCER: number of instances
+	TotalUnits int `pulumi:"totalUnits"`
+}
+
+// GetByolsByolCollectionItemInput is an input type that accepts GetByolsByolCollectionItemArgs and GetByolsByolCollectionItemOutput values.
+// You can construct a concrete instance of `GetByolsByolCollectionItemInput` via:
+//
+//	GetByolsByolCollectionItemArgs{...}
+type GetByolsByolCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetByolsByolCollectionItemOutput() GetByolsByolCollectionItemOutput
+	ToGetByolsByolCollectionItemOutputWithContext(context.Context) GetByolsByolCollectionItemOutput
+}
+
+type GetByolsByolCollectionItemArgs struct {
+	// The quantity of licensed units that not yet allocated to specific region.
+	AvailableUnits pulumi.IntInput `pulumi:"availableUnits"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A description of the BYOL.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The Broadcom-supplied identifier of a BYOL license.
+	EntitlementKey pulumi.StringInput `pulumi:"entitlementKey"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return only resources whose softwareType matches the given value.
+	SoftwareType pulumi.StringInput `pulumi:"softwareType"`
+	// A filter to return only resources whose lifecycle state matches the given value.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the BYOL was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time when the BYOL expires and becomes inactive. In the format defined by[RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeTermEnd pulumi.StringInput `pulumi:"timeTermEnd"`
+	// The date and time when the BYOL becomes active. VMware software functionality cannot begin before this time. In the format defined by[RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeTermStart pulumi.StringInput `pulumi:"timeTermStart"`
+	// The date and time the BYOL was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Total quantity of licensed units for the specified `softwareType`:
+	// * VCF, VDEFEND: number of OCPUs
+	// * VSAN: storage capacity in TiB (tebibytes)
+	// * AVI_LOAD_BALANCER: number of instances
+	TotalUnits pulumi.IntInput `pulumi:"totalUnits"`
+}
+
+func (GetByolsByolCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetByolsByolCollectionItem)(nil)).Elem()
+}
+
+func (i GetByolsByolCollectionItemArgs) ToGetByolsByolCollectionItemOutput() GetByolsByolCollectionItemOutput {
+	return i.ToGetByolsByolCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetByolsByolCollectionItemArgs) ToGetByolsByolCollectionItemOutputWithContext(ctx context.Context) GetByolsByolCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetByolsByolCollectionItemOutput)
+}
+
+// GetByolsByolCollectionItemArrayInput is an input type that accepts GetByolsByolCollectionItemArray and GetByolsByolCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetByolsByolCollectionItemArrayInput` via:
+//
+//	GetByolsByolCollectionItemArray{ GetByolsByolCollectionItemArgs{...} }
+type GetByolsByolCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetByolsByolCollectionItemArrayOutput() GetByolsByolCollectionItemArrayOutput
+	ToGetByolsByolCollectionItemArrayOutputWithContext(context.Context) GetByolsByolCollectionItemArrayOutput
+}
+
+type GetByolsByolCollectionItemArray []GetByolsByolCollectionItemInput
+
+func (GetByolsByolCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetByolsByolCollectionItem)(nil)).Elem()
+}
+
+func (i GetByolsByolCollectionItemArray) ToGetByolsByolCollectionItemArrayOutput() GetByolsByolCollectionItemArrayOutput {
+	return i.ToGetByolsByolCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetByolsByolCollectionItemArray) ToGetByolsByolCollectionItemArrayOutputWithContext(ctx context.Context) GetByolsByolCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetByolsByolCollectionItemArrayOutput)
+}
+
+type GetByolsByolCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetByolsByolCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetByolsByolCollectionItem)(nil)).Elem()
+}
+
+func (o GetByolsByolCollectionItemOutput) ToGetByolsByolCollectionItemOutput() GetByolsByolCollectionItemOutput {
+	return o
+}
+
+func (o GetByolsByolCollectionItemOutput) ToGetByolsByolCollectionItemOutputWithContext(ctx context.Context) GetByolsByolCollectionItemOutput {
+	return o
+}
+
+// The quantity of licensed units that not yet allocated to specific region.
+func (o GetByolsByolCollectionItemOutput) AvailableUnits() pulumi.IntOutput {
+	return o.ApplyT(func(v GetByolsByolCollectionItem) int { return v.AvailableUnits }).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetByolsByolCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolsByolCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetByolsByolCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetByolsByolCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A description of the BYOL.
+func (o GetByolsByolCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolsByolCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetByolsByolCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolsByolCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The Broadcom-supplied identifier of a BYOL license.
+func (o GetByolsByolCollectionItemOutput) EntitlementKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolsByolCollectionItem) string { return v.EntitlementKey }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetByolsByolCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetByolsByolCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL.
+func (o GetByolsByolCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolsByolCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources whose softwareType matches the given value.
+func (o GetByolsByolCollectionItemOutput) SoftwareType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolsByolCollectionItem) string { return v.SoftwareType }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources whose lifecycle state matches the given value.
+func (o GetByolsByolCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolsByolCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+func (o GetByolsByolCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetByolsByolCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the BYOL was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetByolsByolCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolsByolCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time when the BYOL expires and becomes inactive. In the format defined by[RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetByolsByolCollectionItemOutput) TimeTermEnd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolsByolCollectionItem) string { return v.TimeTermEnd }).(pulumi.StringOutput)
+}
+
+// The date and time when the BYOL becomes active. VMware software functionality cannot begin before this time. In the format defined by[RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetByolsByolCollectionItemOutput) TimeTermStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolsByolCollectionItem) string { return v.TimeTermStart }).(pulumi.StringOutput)
+}
+
+// The date and time the BYOL was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetByolsByolCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolsByolCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Total quantity of licensed units for the specified `softwareType`:
+// * VCF, VDEFEND: number of OCPUs
+// * VSAN: storage capacity in TiB (tebibytes)
+// * AVI_LOAD_BALANCER: number of instances
+func (o GetByolsByolCollectionItemOutput) TotalUnits() pulumi.IntOutput {
+	return o.ApplyT(func(v GetByolsByolCollectionItem) int { return v.TotalUnits }).(pulumi.IntOutput)
+}
+
+type GetByolsByolCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetByolsByolCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetByolsByolCollectionItem)(nil)).Elem()
+}
+
+func (o GetByolsByolCollectionItemArrayOutput) ToGetByolsByolCollectionItemArrayOutput() GetByolsByolCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetByolsByolCollectionItemArrayOutput) ToGetByolsByolCollectionItemArrayOutputWithContext(ctx context.Context) GetByolsByolCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetByolsByolCollectionItemArrayOutput) Index(i pulumi.IntInput) GetByolsByolCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetByolsByolCollectionItem {
+		return vs[0].([]GetByolsByolCollectionItem)[vs[1].(int)]
+	}).(GetByolsByolCollectionItemOutput)
+}
+
+type GetByolsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetByolsFilterInput is an input type that accepts GetByolsFilterArgs and GetByolsFilterOutput values.
+// You can construct a concrete instance of `GetByolsFilterInput` via:
+//
+//	GetByolsFilterArgs{...}
+type GetByolsFilterInput interface {
+	pulumi.Input
+
+	ToGetByolsFilterOutput() GetByolsFilterOutput
+	ToGetByolsFilterOutputWithContext(context.Context) GetByolsFilterOutput
+}
+
+type GetByolsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetByolsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetByolsFilter)(nil)).Elem()
+}
+
+func (i GetByolsFilterArgs) ToGetByolsFilterOutput() GetByolsFilterOutput {
+	return i.ToGetByolsFilterOutputWithContext(context.Background())
+}
+
+func (i GetByolsFilterArgs) ToGetByolsFilterOutputWithContext(ctx context.Context) GetByolsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetByolsFilterOutput)
+}
+
+// GetByolsFilterArrayInput is an input type that accepts GetByolsFilterArray and GetByolsFilterArrayOutput values.
+// You can construct a concrete instance of `GetByolsFilterArrayInput` via:
+//
+//	GetByolsFilterArray{ GetByolsFilterArgs{...} }
+type GetByolsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetByolsFilterArrayOutput() GetByolsFilterArrayOutput
+	ToGetByolsFilterArrayOutputWithContext(context.Context) GetByolsFilterArrayOutput
+}
+
+type GetByolsFilterArray []GetByolsFilterInput
+
+func (GetByolsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetByolsFilter)(nil)).Elem()
+}
+
+func (i GetByolsFilterArray) ToGetByolsFilterArrayOutput() GetByolsFilterArrayOutput {
+	return i.ToGetByolsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetByolsFilterArray) ToGetByolsFilterArrayOutputWithContext(ctx context.Context) GetByolsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetByolsFilterArrayOutput)
+}
+
+type GetByolsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetByolsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetByolsFilter)(nil)).Elem()
+}
+
+func (o GetByolsFilterOutput) ToGetByolsFilterOutput() GetByolsFilterOutput {
+	return o
+}
+
+func (o GetByolsFilterOutput) ToGetByolsFilterOutputWithContext(ctx context.Context) GetByolsFilterOutput {
+	return o
+}
+
+func (o GetByolsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetByolsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetByolsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetByolsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetByolsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetByolsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetByolsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetByolsFilter)(nil)).Elem()
+}
+
+func (o GetByolsFilterArrayOutput) ToGetByolsFilterArrayOutput() GetByolsFilterArrayOutput {
+	return o
+}
+
+func (o GetByolsFilterArrayOutput) ToGetByolsFilterArrayOutputWithContext(ctx context.Context) GetByolsFilterArrayOutput {
+	return o
+}
+
+func (o GetByolsFilterArrayOutput) Index(i pulumi.IntInput) GetByolsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetByolsFilter {
+		return vs[0].([]GetByolsFilter)[vs[1].(int)]
+	}).(GetByolsFilterOutput)
+}
+
+type GetClusterClusterByolAllocationDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+	FirewallByolAllocationId string `pulumi:"firewallByolAllocationId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+	VsanByolAllocationId string `pulumi:"vsanByolAllocationId"`
+}
+
+// GetClusterClusterByolAllocationDetailInput is an input type that accepts GetClusterClusterByolAllocationDetailArgs and GetClusterClusterByolAllocationDetailOutput values.
+// You can construct a concrete instance of `GetClusterClusterByolAllocationDetailInput` via:
+//
+//	GetClusterClusterByolAllocationDetailArgs{...}
+type GetClusterClusterByolAllocationDetailInput interface {
+	pulumi.Input
+
+	ToGetClusterClusterByolAllocationDetailOutput() GetClusterClusterByolAllocationDetailOutput
+	ToGetClusterClusterByolAllocationDetailOutputWithContext(context.Context) GetClusterClusterByolAllocationDetailOutput
+}
+
+type GetClusterClusterByolAllocationDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+	FirewallByolAllocationId pulumi.StringInput `pulumi:"firewallByolAllocationId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+	VsanByolAllocationId pulumi.StringInput `pulumi:"vsanByolAllocationId"`
+}
+
+func (GetClusterClusterByolAllocationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterClusterByolAllocationDetail)(nil)).Elem()
+}
+
+func (i GetClusterClusterByolAllocationDetailArgs) ToGetClusterClusterByolAllocationDetailOutput() GetClusterClusterByolAllocationDetailOutput {
+	return i.ToGetClusterClusterByolAllocationDetailOutputWithContext(context.Background())
+}
+
+func (i GetClusterClusterByolAllocationDetailArgs) ToGetClusterClusterByolAllocationDetailOutputWithContext(ctx context.Context) GetClusterClusterByolAllocationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterClusterByolAllocationDetailOutput)
+}
+
+// GetClusterClusterByolAllocationDetailArrayInput is an input type that accepts GetClusterClusterByolAllocationDetailArray and GetClusterClusterByolAllocationDetailArrayOutput values.
+// You can construct a concrete instance of `GetClusterClusterByolAllocationDetailArrayInput` via:
+//
+//	GetClusterClusterByolAllocationDetailArray{ GetClusterClusterByolAllocationDetailArgs{...} }
+type GetClusterClusterByolAllocationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterClusterByolAllocationDetailArrayOutput() GetClusterClusterByolAllocationDetailArrayOutput
+	ToGetClusterClusterByolAllocationDetailArrayOutputWithContext(context.Context) GetClusterClusterByolAllocationDetailArrayOutput
+}
+
+type GetClusterClusterByolAllocationDetailArray []GetClusterClusterByolAllocationDetailInput
+
+func (GetClusterClusterByolAllocationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterClusterByolAllocationDetail)(nil)).Elem()
+}
+
+func (i GetClusterClusterByolAllocationDetailArray) ToGetClusterClusterByolAllocationDetailArrayOutput() GetClusterClusterByolAllocationDetailArrayOutput {
+	return i.ToGetClusterClusterByolAllocationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterClusterByolAllocationDetailArray) ToGetClusterClusterByolAllocationDetailArrayOutputWithContext(ctx context.Context) GetClusterClusterByolAllocationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterClusterByolAllocationDetailArrayOutput)
+}
+
+type GetClusterClusterByolAllocationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetClusterClusterByolAllocationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterClusterByolAllocationDetail)(nil)).Elem()
+}
+
+func (o GetClusterClusterByolAllocationDetailOutput) ToGetClusterClusterByolAllocationDetailOutput() GetClusterClusterByolAllocationDetailOutput {
+	return o
+}
+
+func (o GetClusterClusterByolAllocationDetailOutput) ToGetClusterClusterByolAllocationDetailOutputWithContext(ctx context.Context) GetClusterClusterByolAllocationDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+func (o GetClusterClusterByolAllocationDetailOutput) FirewallByolAllocationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterClusterByolAllocationDetail) string { return v.FirewallByolAllocationId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+func (o GetClusterClusterByolAllocationDetailOutput) VsanByolAllocationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterClusterByolAllocationDetail) string { return v.VsanByolAllocationId }).(pulumi.StringOutput)
+}
+
+type GetClusterClusterByolAllocationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterClusterByolAllocationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterClusterByolAllocationDetail)(nil)).Elem()
+}
+
+func (o GetClusterClusterByolAllocationDetailArrayOutput) ToGetClusterClusterByolAllocationDetailArrayOutput() GetClusterClusterByolAllocationDetailArrayOutput {
+	return o
+}
+
+func (o GetClusterClusterByolAllocationDetailArrayOutput) ToGetClusterClusterByolAllocationDetailArrayOutputWithContext(ctx context.Context) GetClusterClusterByolAllocationDetailArrayOutput {
+	return o
+}
+
+func (o GetClusterClusterByolAllocationDetailArrayOutput) Index(i pulumi.IntInput) GetClusterClusterByolAllocationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterClusterByolAllocationDetail {
+		return vs[0].([]GetClusterClusterByolAllocationDetail)[vs[1].(int)]
+	}).(GetClusterClusterByolAllocationDetailOutput)
 }
 
 type GetClusterDatastore struct {
@@ -3551,6 +5026,8 @@ type GetClustersClusterCollectionItem struct {
 	AttachDatastoreClusterIds []string `pulumi:"attachDatastoreClusterIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId string `pulumi:"capacityReservationId"`
+	// The BYOL allocations used for VMware Cluster provisioning.
+	ClusterByolAllocationDetails []GetClustersClusterCollectionItemClusterByolAllocationDetail `pulumi:"clusterByolAllocationDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The availability domain the ESXi hosts are running in. For Multi-AD Cluster, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
@@ -3578,6 +5055,8 @@ type GetClustersClusterCollectionItem struct {
 	InitialHostOcpuCount float64 `pulumi:"initialHostOcpuCount"`
 	// The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
 	InitialHostShapeName string `pulumi:"initialHostShapeName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+	InitialVcfByolAllocationId string `pulumi:"initialVcfByolAllocationId"`
 	// A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
 	InstanceDisplayNamePrefix string `pulumi:"instanceDisplayNamePrefix"`
 	// Indicates whether shielded instance is enabled at the Cluster level.
@@ -3622,6 +5101,8 @@ type GetClustersClusterCollectionItemArgs struct {
 	AttachDatastoreClusterIds pulumi.StringArrayInput `pulumi:"attachDatastoreClusterIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
+	// The BYOL allocations used for VMware Cluster provisioning.
+	ClusterByolAllocationDetails GetClustersClusterCollectionItemClusterByolAllocationDetailArrayInput `pulumi:"clusterByolAllocationDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The availability domain the ESXi hosts are running in. For Multi-AD Cluster, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
@@ -3649,6 +5130,8 @@ type GetClustersClusterCollectionItemArgs struct {
 	InitialHostOcpuCount pulumi.Float64Input `pulumi:"initialHostOcpuCount"`
 	// The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
 	InitialHostShapeName pulumi.StringInput `pulumi:"initialHostShapeName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+	InitialVcfByolAllocationId pulumi.StringInput `pulumi:"initialVcfByolAllocationId"`
 	// A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
 	InstanceDisplayNamePrefix pulumi.StringInput `pulumi:"instanceDisplayNamePrefix"`
 	// Indicates whether shielded instance is enabled at the Cluster level.
@@ -3741,6 +5224,13 @@ func (o GetClustersClusterCollectionItemOutput) CapacityReservationId() pulumi.S
 	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.CapacityReservationId }).(pulumi.StringOutput)
 }
 
+// The BYOL allocations used for VMware Cluster provisioning.
+func (o GetClustersClusterCollectionItemOutput) ClusterByolAllocationDetails() GetClustersClusterCollectionItemClusterByolAllocationDetailArrayOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) []GetClustersClusterCollectionItemClusterByolAllocationDetail {
+		return v.ClusterByolAllocationDetails
+	}).(GetClustersClusterCollectionItemClusterByolAllocationDetailArrayOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
 func (o GetClustersClusterCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -3810,6 +5300,11 @@ func (o GetClustersClusterCollectionItemOutput) InitialHostOcpuCount() pulumi.Fl
 // The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
 func (o GetClustersClusterCollectionItemOutput) InitialHostShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.InitialHostShapeName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+func (o GetClustersClusterCollectionItemOutput) InitialVcfByolAllocationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.InitialVcfByolAllocationId }).(pulumi.StringOutput)
 }
 
 // A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
@@ -3901,6 +5396,116 @@ func (o GetClustersClusterCollectionItemArrayOutput) Index(i pulumi.IntInput) Ge
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersClusterCollectionItem {
 		return vs[0].([]GetClustersClusterCollectionItem)[vs[1].(int)]
 	}).(GetClustersClusterCollectionItemOutput)
+}
+
+type GetClustersClusterCollectionItemClusterByolAllocationDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+	FirewallByolAllocationId string `pulumi:"firewallByolAllocationId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+	VsanByolAllocationId string `pulumi:"vsanByolAllocationId"`
+}
+
+// GetClustersClusterCollectionItemClusterByolAllocationDetailInput is an input type that accepts GetClustersClusterCollectionItemClusterByolAllocationDetailArgs and GetClustersClusterCollectionItemClusterByolAllocationDetailOutput values.
+// You can construct a concrete instance of `GetClustersClusterCollectionItemClusterByolAllocationDetailInput` via:
+//
+//	GetClustersClusterCollectionItemClusterByolAllocationDetailArgs{...}
+type GetClustersClusterCollectionItemClusterByolAllocationDetailInput interface {
+	pulumi.Input
+
+	ToGetClustersClusterCollectionItemClusterByolAllocationDetailOutput() GetClustersClusterCollectionItemClusterByolAllocationDetailOutput
+	ToGetClustersClusterCollectionItemClusterByolAllocationDetailOutputWithContext(context.Context) GetClustersClusterCollectionItemClusterByolAllocationDetailOutput
+}
+
+type GetClustersClusterCollectionItemClusterByolAllocationDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+	FirewallByolAllocationId pulumi.StringInput `pulumi:"firewallByolAllocationId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+	VsanByolAllocationId pulumi.StringInput `pulumi:"vsanByolAllocationId"`
+}
+
+func (GetClustersClusterCollectionItemClusterByolAllocationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersClusterCollectionItemClusterByolAllocationDetail)(nil)).Elem()
+}
+
+func (i GetClustersClusterCollectionItemClusterByolAllocationDetailArgs) ToGetClustersClusterCollectionItemClusterByolAllocationDetailOutput() GetClustersClusterCollectionItemClusterByolAllocationDetailOutput {
+	return i.ToGetClustersClusterCollectionItemClusterByolAllocationDetailOutputWithContext(context.Background())
+}
+
+func (i GetClustersClusterCollectionItemClusterByolAllocationDetailArgs) ToGetClustersClusterCollectionItemClusterByolAllocationDetailOutputWithContext(ctx context.Context) GetClustersClusterCollectionItemClusterByolAllocationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterCollectionItemClusterByolAllocationDetailOutput)
+}
+
+// GetClustersClusterCollectionItemClusterByolAllocationDetailArrayInput is an input type that accepts GetClustersClusterCollectionItemClusterByolAllocationDetailArray and GetClustersClusterCollectionItemClusterByolAllocationDetailArrayOutput values.
+// You can construct a concrete instance of `GetClustersClusterCollectionItemClusterByolAllocationDetailArrayInput` via:
+//
+//	GetClustersClusterCollectionItemClusterByolAllocationDetailArray{ GetClustersClusterCollectionItemClusterByolAllocationDetailArgs{...} }
+type GetClustersClusterCollectionItemClusterByolAllocationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersClusterCollectionItemClusterByolAllocationDetailArrayOutput() GetClustersClusterCollectionItemClusterByolAllocationDetailArrayOutput
+	ToGetClustersClusterCollectionItemClusterByolAllocationDetailArrayOutputWithContext(context.Context) GetClustersClusterCollectionItemClusterByolAllocationDetailArrayOutput
+}
+
+type GetClustersClusterCollectionItemClusterByolAllocationDetailArray []GetClustersClusterCollectionItemClusterByolAllocationDetailInput
+
+func (GetClustersClusterCollectionItemClusterByolAllocationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersClusterCollectionItemClusterByolAllocationDetail)(nil)).Elem()
+}
+
+func (i GetClustersClusterCollectionItemClusterByolAllocationDetailArray) ToGetClustersClusterCollectionItemClusterByolAllocationDetailArrayOutput() GetClustersClusterCollectionItemClusterByolAllocationDetailArrayOutput {
+	return i.ToGetClustersClusterCollectionItemClusterByolAllocationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersClusterCollectionItemClusterByolAllocationDetailArray) ToGetClustersClusterCollectionItemClusterByolAllocationDetailArrayOutputWithContext(ctx context.Context) GetClustersClusterCollectionItemClusterByolAllocationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterCollectionItemClusterByolAllocationDetailArrayOutput)
+}
+
+type GetClustersClusterCollectionItemClusterByolAllocationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetClustersClusterCollectionItemClusterByolAllocationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersClusterCollectionItemClusterByolAllocationDetail)(nil)).Elem()
+}
+
+func (o GetClustersClusterCollectionItemClusterByolAllocationDetailOutput) ToGetClustersClusterCollectionItemClusterByolAllocationDetailOutput() GetClustersClusterCollectionItemClusterByolAllocationDetailOutput {
+	return o
+}
+
+func (o GetClustersClusterCollectionItemClusterByolAllocationDetailOutput) ToGetClustersClusterCollectionItemClusterByolAllocationDetailOutputWithContext(ctx context.Context) GetClustersClusterCollectionItemClusterByolAllocationDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+func (o GetClustersClusterCollectionItemClusterByolAllocationDetailOutput) FirewallByolAllocationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItemClusterByolAllocationDetail) string {
+		return v.FirewallByolAllocationId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+func (o GetClustersClusterCollectionItemClusterByolAllocationDetailOutput) VsanByolAllocationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItemClusterByolAllocationDetail) string {
+		return v.VsanByolAllocationId
+	}).(pulumi.StringOutput)
+}
+
+type GetClustersClusterCollectionItemClusterByolAllocationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersClusterCollectionItemClusterByolAllocationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersClusterCollectionItemClusterByolAllocationDetail)(nil)).Elem()
+}
+
+func (o GetClustersClusterCollectionItemClusterByolAllocationDetailArrayOutput) ToGetClustersClusterCollectionItemClusterByolAllocationDetailArrayOutput() GetClustersClusterCollectionItemClusterByolAllocationDetailArrayOutput {
+	return o
+}
+
+func (o GetClustersClusterCollectionItemClusterByolAllocationDetailArrayOutput) ToGetClustersClusterCollectionItemClusterByolAllocationDetailArrayOutputWithContext(ctx context.Context) GetClustersClusterCollectionItemClusterByolAllocationDetailArrayOutput {
+	return o
+}
+
+func (o GetClustersClusterCollectionItemClusterByolAllocationDetailArrayOutput) Index(i pulumi.IntInput) GetClustersClusterCollectionItemClusterByolAllocationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersClusterCollectionItemClusterByolAllocationDetail {
+		return vs[0].([]GetClustersClusterCollectionItemClusterByolAllocationDetail)[vs[1].(int)]
+	}).(GetClustersClusterCollectionItemClusterByolAllocationDetailOutput)
 }
 
 type GetClustersClusterCollectionItemDatastore struct {
@@ -6030,6 +7635,8 @@ type GetExsiHostsEsxiHostCollection struct {
 	IsBillingContinuationInProgress bool `pulumi:"isBillingContinuationInProgress"`
 	// Indicates whether this host is in the progress of swapping billing.
 	IsBillingSwappingInProgress bool `pulumi:"isBillingSwappingInProgress"`
+	// Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+	IsVsanByolEnabled bool `pulumi:"isVsanByolEnabled"`
 	// The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
 	NextCommitment string `pulumi:"nextCommitment"`
 	// (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
@@ -6040,6 +7647,7 @@ type GetExsiHostsEsxiHostCollection struct {
 	//
 	// Deprecated: This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.
 	NonUpgradedEsxiHostId string `pulumi:"nonUpgradedEsxiHostId"`
+	PrimaryVnicMacAddress string `pulumi:"primaryVnicMacAddress"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
 	ReplacementEsxiHostId string `pulumi:"replacementEsxiHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
@@ -6058,6 +7666,8 @@ type GetExsiHostsEsxiHostCollection struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
 	UpgradedReplacementEsxiHostId string `pulumi:"upgradedReplacementEsxiHostId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+	VcfByolAllocationId string `pulumi:"vcfByolAllocationId"`
 	// The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
 	VmwareSoftwareVersion string `pulumi:"vmwareSoftwareVersion"`
 }
@@ -6126,6 +7736,8 @@ type GetExsiHostsEsxiHostCollectionArgs struct {
 	IsBillingContinuationInProgress pulumi.BoolInput `pulumi:"isBillingContinuationInProgress"`
 	// Indicates whether this host is in the progress of swapping billing.
 	IsBillingSwappingInProgress pulumi.BoolInput `pulumi:"isBillingSwappingInProgress"`
+	// Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+	IsVsanByolEnabled pulumi.BoolInput `pulumi:"isVsanByolEnabled"`
 	// The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
 	NextCommitment pulumi.StringInput `pulumi:"nextCommitment"`
 	// (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
@@ -6136,6 +7748,7 @@ type GetExsiHostsEsxiHostCollectionArgs struct {
 	//
 	// Deprecated: This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.
 	NonUpgradedEsxiHostId pulumi.StringInput `pulumi:"nonUpgradedEsxiHostId"`
+	PrimaryVnicMacAddress pulumi.StringInput `pulumi:"primaryVnicMacAddress"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
 	ReplacementEsxiHostId pulumi.StringInput `pulumi:"replacementEsxiHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
@@ -6154,6 +7767,8 @@ type GetExsiHostsEsxiHostCollectionArgs struct {
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
 	UpgradedReplacementEsxiHostId pulumi.StringInput `pulumi:"upgradedReplacementEsxiHostId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+	VcfByolAllocationId pulumi.StringInput `pulumi:"vcfByolAllocationId"`
 	// The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
 	VmwareSoftwareVersion pulumi.StringInput `pulumi:"vmwareSoftwareVersion"`
 }
@@ -6335,6 +7950,11 @@ func (o GetExsiHostsEsxiHostCollectionOutput) IsBillingSwappingInProgress() pulu
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) bool { return v.IsBillingSwappingInProgress }).(pulumi.BoolOutput)
 }
 
+// Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+func (o GetExsiHostsEsxiHostCollectionOutput) IsVsanByolEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) bool { return v.IsVsanByolEnabled }).(pulumi.BoolOutput)
+}
+
 // The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
 func (o GetExsiHostsEsxiHostCollectionOutput) NextCommitment() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.NextCommitment }).(pulumi.StringOutput)
@@ -6352,6 +7972,10 @@ func (o GetExsiHostsEsxiHostCollectionOutput) NextSku() pulumi.StringOutput {
 // Deprecated: This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.
 func (o GetExsiHostsEsxiHostCollectionOutput) NonUpgradedEsxiHostId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.NonUpgradedEsxiHostId }).(pulumi.StringOutput)
+}
+
+func (o GetExsiHostsEsxiHostCollectionOutput) PrimaryVnicMacAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.PrimaryVnicMacAddress }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
@@ -6394,6 +8018,11 @@ func (o GetExsiHostsEsxiHostCollectionOutput) TimeUpdated() pulumi.StringOutput 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
 func (o GetExsiHostsEsxiHostCollectionOutput) UpgradedReplacementEsxiHostId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.UpgradedReplacementEsxiHostId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+func (o GetExsiHostsEsxiHostCollectionOutput) VcfByolAllocationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.VcfByolAllocationId }).(pulumi.StringOutput)
 }
 
 // The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
@@ -7230,8 +8859,10 @@ type GetManagementAppliancesManagementApplianceCollectionItem struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management agent, that this appliance is running in.
 	ManagementAgentId string `pulumi:"managementAgentId"`
-	PublicSshKeys     string `pulumi:"publicSshKeys"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
+	// Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-<version>.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+	PluginVersion string `pulumi:"pluginVersion"`
+	PublicSshKeys string `pulumi:"publicSshKeys"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
 	SddcId string `pulumi:"sddcId"`
 	// The lifecycle state of the management appliance.
 	State string `pulumi:"state"`
@@ -7281,8 +8912,10 @@ type GetManagementAppliancesManagementApplianceCollectionItemArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management agent, that this appliance is running in.
 	ManagementAgentId pulumi.StringInput `pulumi:"managementAgentId"`
-	PublicSshKeys     pulumi.StringInput `pulumi:"publicSshKeys"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
+	// Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-<version>.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+	PluginVersion pulumi.StringInput `pulumi:"pluginVersion"`
+	PublicSshKeys pulumi.StringInput `pulumi:"publicSshKeys"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
 	SddcId pulumi.StringInput `pulumi:"sddcId"`
 	// The lifecycle state of the management appliance.
 	State pulumi.StringInput `pulumi:"state"`
@@ -7414,11 +9047,16 @@ func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) Manageme
 	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItem) string { return v.ManagementAgentId }).(pulumi.StringOutput)
 }
 
+// Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-<version>.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) PluginVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItem) string { return v.PluginVersion }).(pulumi.StringOutput)
+}
+
 func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) PublicSshKeys() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItem) string { return v.PublicSshKeys }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
 func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) SddcId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItem) string { return v.SddcId }).(pulumi.StringOutput)
 }
@@ -8172,6 +9810,8 @@ type GetSddcInitialConfigurationInitialClusterConfiguration struct {
 	ActualEsxiHostsCount int `pulumi:"actualEsxiHostsCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId string `pulumi:"capacityReservationId"`
+	// The BYOL allocations used for VMware Cluster provisioning.
+	ClusterByolAllocationDetails []GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail `pulumi:"clusterByolAllocationDetails"`
 	// The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
 	ComputeAvailabilityDomain string `pulumi:"computeAvailabilityDomain"`
 	// A list of datastore clusters.
@@ -8188,6 +9828,8 @@ type GetSddcInitialConfigurationInitialClusterConfiguration struct {
 	InitialHostOcpuCount float64 `pulumi:"initialHostOcpuCount"`
 	// (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initialHostShapeName` of `initialClusterConfigurations` instead.
 	InitialHostShapeName string `pulumi:"initialHostShapeName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+	InitialVcfByolAllocationId string `pulumi:"initialVcfByolAllocationId"`
 	// (**Deprecated**) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
 	InstanceDisplayNamePrefix string `pulumi:"instanceDisplayNamePrefix"`
 	// (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level. **Deprecated**. Please use `isShieldedInstanceEnabled` of `initialClusterConfigurations` instead.
@@ -8216,6 +9858,8 @@ type GetSddcInitialConfigurationInitialClusterConfigurationArgs struct {
 	ActualEsxiHostsCount pulumi.IntInput `pulumi:"actualEsxiHostsCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
+	// The BYOL allocations used for VMware Cluster provisioning.
+	ClusterByolAllocationDetails GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayInput `pulumi:"clusterByolAllocationDetails"`
 	// The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
 	ComputeAvailabilityDomain pulumi.StringInput `pulumi:"computeAvailabilityDomain"`
 	// A list of datastore clusters.
@@ -8232,6 +9876,8 @@ type GetSddcInitialConfigurationInitialClusterConfigurationArgs struct {
 	InitialHostOcpuCount pulumi.Float64Input `pulumi:"initialHostOcpuCount"`
 	// (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initialHostShapeName` of `initialClusterConfigurations` instead.
 	InitialHostShapeName pulumi.StringInput `pulumi:"initialHostShapeName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+	InitialVcfByolAllocationId pulumi.StringInput `pulumi:"initialVcfByolAllocationId"`
 	// (**Deprecated**) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
 	InstanceDisplayNamePrefix pulumi.StringInput `pulumi:"instanceDisplayNamePrefix"`
 	// (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level. **Deprecated**. Please use `isShieldedInstanceEnabled` of `initialClusterConfigurations` instead.
@@ -8305,6 +9951,13 @@ func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) CapacityRe
 	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfiguration) string { return v.CapacityReservationId }).(pulumi.StringOutput)
 }
 
+// The BYOL allocations used for VMware Cluster provisioning.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) ClusterByolAllocationDetails() GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfiguration) []GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail {
+		return v.ClusterByolAllocationDetails
+	}).(GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput)
+}
+
 // The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
 func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) ComputeAvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfiguration) string {
@@ -8347,6 +10000,13 @@ func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) InitialHos
 // (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initialHostShapeName` of `initialClusterConfigurations` instead.
 func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) InitialHostShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfiguration) string { return v.InitialHostShapeName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) InitialVcfByolAllocationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfiguration) string {
+		return v.InitialVcfByolAllocationId
+	}).(pulumi.StringOutput)
 }
 
 // (**Deprecated**) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
@@ -8398,6 +10058,116 @@ func (o GetSddcInitialConfigurationInitialClusterConfigurationArrayOutput) Index
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcInitialConfigurationInitialClusterConfiguration {
 		return vs[0].([]GetSddcInitialConfigurationInitialClusterConfiguration)[vs[1].(int)]
 	}).(GetSddcInitialConfigurationInitialClusterConfigurationOutput)
+}
+
+type GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+	FirewallByolAllocationId string `pulumi:"firewallByolAllocationId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+	VsanByolAllocationId string `pulumi:"vsanByolAllocationId"`
+}
+
+// GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailInput is an input type that accepts GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArgs and GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput values.
+// You can construct a concrete instance of `GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailInput` via:
+//
+//	GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArgs{...}
+type GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailInput interface {
+	pulumi.Input
+
+	ToGetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput() GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput
+	ToGetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutputWithContext(context.Context) GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput
+}
+
+type GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+	FirewallByolAllocationId pulumi.StringInput `pulumi:"firewallByolAllocationId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+	VsanByolAllocationId pulumi.StringInput `pulumi:"vsanByolAllocationId"`
+}
+
+func (GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail)(nil)).Elem()
+}
+
+func (i GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArgs) ToGetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput() GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput {
+	return i.ToGetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutputWithContext(context.Background())
+}
+
+func (i GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArgs) ToGetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutputWithContext(ctx context.Context) GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput)
+}
+
+// GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayInput is an input type that accepts GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArray and GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput values.
+// You can construct a concrete instance of `GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayInput` via:
+//
+//	GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArray{ GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArgs{...} }
+type GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput() GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput
+	ToGetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutputWithContext(context.Context) GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput
+}
+
+type GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArray []GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailInput
+
+func (GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail)(nil)).Elem()
+}
+
+func (i GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArray) ToGetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput() GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput {
+	return i.ToGetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArray) ToGetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutputWithContext(ctx context.Context) GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput)
+}
+
+type GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail)(nil)).Elem()
+}
+
+func (o GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput) ToGetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput() GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput {
+	return o
+}
+
+func (o GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput) ToGetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutputWithContext(ctx context.Context) GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput) FirewallByolAllocationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail) string {
+		return v.FirewallByolAllocationId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput) VsanByolAllocationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail) string {
+		return v.VsanByolAllocationId
+	}).(pulumi.StringOutput)
+}
+
+type GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail)(nil)).Elem()
+}
+
+func (o GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput) ToGetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput() GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput {
+	return o
+}
+
+func (o GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput) ToGetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutputWithContext(ctx context.Context) GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput {
+	return o
+}
+
+func (o GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput) Index(i pulumi.IntInput) GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail {
+		return vs[0].([]GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail)[vs[1].(int)]
+	}).(GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput)
 }
 
 type GetSddcInitialConfigurationInitialClusterConfigurationDatastore struct {
@@ -8715,6 +10485,112 @@ func (o GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurati
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration {
 		return vs[0].([]GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration)[vs[1].(int)]
 	}).(GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput)
+}
+
+type GetSddcSddcByolAllocationDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware Avi Load Balancer.
+	LoadBalancerByolAllocationId string `pulumi:"loadBalancerByolAllocationId"`
+	// The number of VMware Avi Load Balancer instances to be deployed on VMware SDDC.
+	LoadBalancerInstanceCount int `pulumi:"loadBalancerInstanceCount"`
+}
+
+// GetSddcSddcByolAllocationDetailInput is an input type that accepts GetSddcSddcByolAllocationDetailArgs and GetSddcSddcByolAllocationDetailOutput values.
+// You can construct a concrete instance of `GetSddcSddcByolAllocationDetailInput` via:
+//
+//	GetSddcSddcByolAllocationDetailArgs{...}
+type GetSddcSddcByolAllocationDetailInput interface {
+	pulumi.Input
+
+	ToGetSddcSddcByolAllocationDetailOutput() GetSddcSddcByolAllocationDetailOutput
+	ToGetSddcSddcByolAllocationDetailOutputWithContext(context.Context) GetSddcSddcByolAllocationDetailOutput
+}
+
+type GetSddcSddcByolAllocationDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware Avi Load Balancer.
+	LoadBalancerByolAllocationId pulumi.StringInput `pulumi:"loadBalancerByolAllocationId"`
+	// The number of VMware Avi Load Balancer instances to be deployed on VMware SDDC.
+	LoadBalancerInstanceCount pulumi.IntInput `pulumi:"loadBalancerInstanceCount"`
+}
+
+func (GetSddcSddcByolAllocationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcSddcByolAllocationDetail)(nil)).Elem()
+}
+
+func (i GetSddcSddcByolAllocationDetailArgs) ToGetSddcSddcByolAllocationDetailOutput() GetSddcSddcByolAllocationDetailOutput {
+	return i.ToGetSddcSddcByolAllocationDetailOutputWithContext(context.Background())
+}
+
+func (i GetSddcSddcByolAllocationDetailArgs) ToGetSddcSddcByolAllocationDetailOutputWithContext(ctx context.Context) GetSddcSddcByolAllocationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcSddcByolAllocationDetailOutput)
+}
+
+// GetSddcSddcByolAllocationDetailArrayInput is an input type that accepts GetSddcSddcByolAllocationDetailArray and GetSddcSddcByolAllocationDetailArrayOutput values.
+// You can construct a concrete instance of `GetSddcSddcByolAllocationDetailArrayInput` via:
+//
+//	GetSddcSddcByolAllocationDetailArray{ GetSddcSddcByolAllocationDetailArgs{...} }
+type GetSddcSddcByolAllocationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSddcSddcByolAllocationDetailArrayOutput() GetSddcSddcByolAllocationDetailArrayOutput
+	ToGetSddcSddcByolAllocationDetailArrayOutputWithContext(context.Context) GetSddcSddcByolAllocationDetailArrayOutput
+}
+
+type GetSddcSddcByolAllocationDetailArray []GetSddcSddcByolAllocationDetailInput
+
+func (GetSddcSddcByolAllocationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcSddcByolAllocationDetail)(nil)).Elem()
+}
+
+func (i GetSddcSddcByolAllocationDetailArray) ToGetSddcSddcByolAllocationDetailArrayOutput() GetSddcSddcByolAllocationDetailArrayOutput {
+	return i.ToGetSddcSddcByolAllocationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSddcSddcByolAllocationDetailArray) ToGetSddcSddcByolAllocationDetailArrayOutputWithContext(ctx context.Context) GetSddcSddcByolAllocationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcSddcByolAllocationDetailArrayOutput)
+}
+
+type GetSddcSddcByolAllocationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSddcSddcByolAllocationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcSddcByolAllocationDetail)(nil)).Elem()
+}
+
+func (o GetSddcSddcByolAllocationDetailOutput) ToGetSddcSddcByolAllocationDetailOutput() GetSddcSddcByolAllocationDetailOutput {
+	return o
+}
+
+func (o GetSddcSddcByolAllocationDetailOutput) ToGetSddcSddcByolAllocationDetailOutputWithContext(ctx context.Context) GetSddcSddcByolAllocationDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware Avi Load Balancer.
+func (o GetSddcSddcByolAllocationDetailOutput) LoadBalancerByolAllocationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcSddcByolAllocationDetail) string { return v.LoadBalancerByolAllocationId }).(pulumi.StringOutput)
+}
+
+// The number of VMware Avi Load Balancer instances to be deployed on VMware SDDC.
+func (o GetSddcSddcByolAllocationDetailOutput) LoadBalancerInstanceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSddcSddcByolAllocationDetail) int { return v.LoadBalancerInstanceCount }).(pulumi.IntOutput)
+}
+
+type GetSddcSddcByolAllocationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSddcSddcByolAllocationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcSddcByolAllocationDetail)(nil)).Elem()
+}
+
+func (o GetSddcSddcByolAllocationDetailArrayOutput) ToGetSddcSddcByolAllocationDetailArrayOutput() GetSddcSddcByolAllocationDetailArrayOutput {
+	return o
+}
+
+func (o GetSddcSddcByolAllocationDetailArrayOutput) ToGetSddcSddcByolAllocationDetailArrayOutputWithContext(ctx context.Context) GetSddcSddcByolAllocationDetailArrayOutput {
+	return o
+}
+
+func (o GetSddcSddcByolAllocationDetailArrayOutput) Index(i pulumi.IntInput) GetSddcSddcByolAllocationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcSddcByolAllocationDetail {
+		return vs[0].([]GetSddcSddcByolAllocationDetail)[vs[1].(int)]
+	}).(GetSddcSddcByolAllocationDetailOutput)
 }
 
 type GetSddcUpgradeLicense struct {
@@ -9156,7 +11032,9 @@ type GetSddcsSddcCollection struct {
 	// Deprecated: The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	ReplicationVlanId                string   `pulumi:"replicationVlanId"`
 	ReservingHcxOnPremiseLicenseKeys []string `pulumi:"reservingHcxOnPremiseLicenseKeys"`
-	SshAuthorizedKeys                string   `pulumi:"sshAuthorizedKeys"`
+	// The BYOL allocations used for VMware SDDC provisioning.
+	SddcByolAllocationDetails []GetSddcsSddcCollectionSddcByolAllocationDetail `pulumi:"sddcByolAllocationDetails"`
+	SshAuthorizedKeys         string                                           `pulumi:"sshAuthorizedKeys"`
 	// The lifecycle state of the resource.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -9331,7 +11209,9 @@ type GetSddcsSddcCollectionArgs struct {
 	// Deprecated: The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	ReplicationVlanId                pulumi.StringInput      `pulumi:"replicationVlanId"`
 	ReservingHcxOnPremiseLicenseKeys pulumi.StringArrayInput `pulumi:"reservingHcxOnPremiseLicenseKeys"`
-	SshAuthorizedKeys                pulumi.StringInput      `pulumi:"sshAuthorizedKeys"`
+	// The BYOL allocations used for VMware SDDC provisioning.
+	SddcByolAllocationDetails GetSddcsSddcCollectionSddcByolAllocationDetailArrayInput `pulumi:"sddcByolAllocationDetails"`
+	SshAuthorizedKeys         pulumi.StringInput                                       `pulumi:"sshAuthorizedKeys"`
 	// The lifecycle state of the resource.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -9680,6 +11560,13 @@ func (o GetSddcsSddcCollectionOutput) ReplicationVlanId() pulumi.StringOutput {
 
 func (o GetSddcsSddcCollectionOutput) ReservingHcxOnPremiseLicenseKeys() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) []string { return v.ReservingHcxOnPremiseLicenseKeys }).(pulumi.StringArrayOutput)
+}
+
+// The BYOL allocations used for VMware SDDC provisioning.
+func (o GetSddcsSddcCollectionOutput) SddcByolAllocationDetails() GetSddcsSddcCollectionSddcByolAllocationDetailArrayOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) []GetSddcsSddcCollectionSddcByolAllocationDetail {
+		return v.SddcByolAllocationDetails
+	}).(GetSddcsSddcCollectionSddcByolAllocationDetailArrayOutput)
 }
 
 func (o GetSddcsSddcCollectionOutput) SshAuthorizedKeys() pulumi.StringOutput {
@@ -10133,6 +12020,8 @@ type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration struc
 	ActualEsxiHostsCount int `pulumi:"actualEsxiHostsCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId string `pulumi:"capacityReservationId"`
+	// The BYOL allocations used for VMware Cluster provisioning.
+	ClusterByolAllocationDetails []GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail `pulumi:"clusterByolAllocationDetails"`
 	// The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
 	ComputeAvailabilityDomain string `pulumi:"computeAvailabilityDomain"`
 	// A list of datastore clusters.
@@ -10149,6 +12038,8 @@ type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration struc
 	InitialHostOcpuCount float64 `pulumi:"initialHostOcpuCount"`
 	// (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
 	InitialHostShapeName string `pulumi:"initialHostShapeName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+	InitialVcfByolAllocationId string `pulumi:"initialVcfByolAllocationId"`
 	// A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
 	InstanceDisplayNamePrefix string `pulumi:"instanceDisplayNamePrefix"`
 	// (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level.
@@ -10177,6 +12068,8 @@ type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArgs s
 	ActualEsxiHostsCount pulumi.IntInput `pulumi:"actualEsxiHostsCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
+	// The BYOL allocations used for VMware Cluster provisioning.
+	ClusterByolAllocationDetails GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayInput `pulumi:"clusterByolAllocationDetails"`
 	// The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
 	ComputeAvailabilityDomain pulumi.StringInput `pulumi:"computeAvailabilityDomain"`
 	// A list of datastore clusters.
@@ -10193,6 +12086,8 @@ type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArgs s
 	InitialHostOcpuCount pulumi.Float64Input `pulumi:"initialHostOcpuCount"`
 	// (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
 	InitialHostShapeName pulumi.StringInput `pulumi:"initialHostShapeName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+	InitialVcfByolAllocationId pulumi.StringInput `pulumi:"initialVcfByolAllocationId"`
 	// A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
 	InstanceDisplayNamePrefix pulumi.StringInput `pulumi:"instanceDisplayNamePrefix"`
 	// (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level.
@@ -10270,6 +12165,13 @@ func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOut
 	}).(pulumi.StringOutput)
 }
 
+// The BYOL allocations used for VMware Cluster provisioning.
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) ClusterByolAllocationDetails() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) []GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail {
+		return v.ClusterByolAllocationDetails
+	}).(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput)
+}
+
 // The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
 func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) ComputeAvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) string {
@@ -10326,6 +12228,13 @@ func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOut
 	}).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) InitialVcfByolAllocationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) string {
+		return v.InitialVcfByolAllocationId
+	}).(pulumi.StringOutput)
+}
+
 // A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
 func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) InstanceDisplayNamePrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) string {
@@ -10379,6 +12288,116 @@ func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArr
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration {
 		return vs[0].([]GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration)[vs[1].(int)]
 	}).(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput)
+}
+
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+	FirewallByolAllocationId string `pulumi:"firewallByolAllocationId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+	VsanByolAllocationId string `pulumi:"vsanByolAllocationId"`
+}
+
+// GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailInput is an input type that accepts GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArgs and GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput values.
+// You can construct a concrete instance of `GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailInput` via:
+//
+//	GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArgs{...}
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailInput interface {
+	pulumi.Input
+
+	ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput
+	ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutputWithContext(context.Context) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput
+}
+
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+	FirewallByolAllocationId pulumi.StringInput `pulumi:"firewallByolAllocationId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+	VsanByolAllocationId pulumi.StringInput `pulumi:"vsanByolAllocationId"`
+}
+
+func (GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail)(nil)).Elem()
+}
+
+func (i GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArgs) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput {
+	return i.ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutputWithContext(context.Background())
+}
+
+func (i GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArgs) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutputWithContext(ctx context.Context) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput)
+}
+
+// GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayInput is an input type that accepts GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArray and GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput values.
+// You can construct a concrete instance of `GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayInput` via:
+//
+//	GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArray{ GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArgs{...} }
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput
+	ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutputWithContext(context.Context) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput
+}
+
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArray []GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailInput
+
+func (GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail)(nil)).Elem()
+}
+
+func (i GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArray) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput {
+	return i.ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArray) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutputWithContext(ctx context.Context) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput)
+}
+
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail)(nil)).Elem()
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutputWithContext(ctx context.Context) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput) FirewallByolAllocationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail) string {
+		return v.FirewallByolAllocationId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware vSAN.
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput) VsanByolAllocationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail) string {
+		return v.VsanByolAllocationId
+	}).(pulumi.StringOutput)
+}
+
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail)(nil)).Elem()
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutputWithContext(ctx context.Context) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput) Index(i pulumi.IntInput) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail {
+		return vs[0].([]GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetail)[vs[1].(int)]
+	}).(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput)
 }
 
 type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore struct {
@@ -10698,6 +12717,112 @@ func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNet
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration {
 		return vs[0].([]GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration)[vs[1].(int)]
 	}).(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput)
+}
+
+type GetSddcsSddcCollectionSddcByolAllocationDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware Avi Load Balancer.
+	LoadBalancerByolAllocationId string `pulumi:"loadBalancerByolAllocationId"`
+	// The number of VMware Avi Load Balancer instances to be deployed on VMware SDDC.
+	LoadBalancerInstanceCount int `pulumi:"loadBalancerInstanceCount"`
+}
+
+// GetSddcsSddcCollectionSddcByolAllocationDetailInput is an input type that accepts GetSddcsSddcCollectionSddcByolAllocationDetailArgs and GetSddcsSddcCollectionSddcByolAllocationDetailOutput values.
+// You can construct a concrete instance of `GetSddcsSddcCollectionSddcByolAllocationDetailInput` via:
+//
+//	GetSddcsSddcCollectionSddcByolAllocationDetailArgs{...}
+type GetSddcsSddcCollectionSddcByolAllocationDetailInput interface {
+	pulumi.Input
+
+	ToGetSddcsSddcCollectionSddcByolAllocationDetailOutput() GetSddcsSddcCollectionSddcByolAllocationDetailOutput
+	ToGetSddcsSddcCollectionSddcByolAllocationDetailOutputWithContext(context.Context) GetSddcsSddcCollectionSddcByolAllocationDetailOutput
+}
+
+type GetSddcsSddcCollectionSddcByolAllocationDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware Avi Load Balancer.
+	LoadBalancerByolAllocationId pulumi.StringInput `pulumi:"loadBalancerByolAllocationId"`
+	// The number of VMware Avi Load Balancer instances to be deployed on VMware SDDC.
+	LoadBalancerInstanceCount pulumi.IntInput `pulumi:"loadBalancerInstanceCount"`
+}
+
+func (GetSddcsSddcCollectionSddcByolAllocationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcsSddcCollectionSddcByolAllocationDetail)(nil)).Elem()
+}
+
+func (i GetSddcsSddcCollectionSddcByolAllocationDetailArgs) ToGetSddcsSddcCollectionSddcByolAllocationDetailOutput() GetSddcsSddcCollectionSddcByolAllocationDetailOutput {
+	return i.ToGetSddcsSddcCollectionSddcByolAllocationDetailOutputWithContext(context.Background())
+}
+
+func (i GetSddcsSddcCollectionSddcByolAllocationDetailArgs) ToGetSddcsSddcCollectionSddcByolAllocationDetailOutputWithContext(ctx context.Context) GetSddcsSddcCollectionSddcByolAllocationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionSddcByolAllocationDetailOutput)
+}
+
+// GetSddcsSddcCollectionSddcByolAllocationDetailArrayInput is an input type that accepts GetSddcsSddcCollectionSddcByolAllocationDetailArray and GetSddcsSddcCollectionSddcByolAllocationDetailArrayOutput values.
+// You can construct a concrete instance of `GetSddcsSddcCollectionSddcByolAllocationDetailArrayInput` via:
+//
+//	GetSddcsSddcCollectionSddcByolAllocationDetailArray{ GetSddcsSddcCollectionSddcByolAllocationDetailArgs{...} }
+type GetSddcsSddcCollectionSddcByolAllocationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSddcsSddcCollectionSddcByolAllocationDetailArrayOutput() GetSddcsSddcCollectionSddcByolAllocationDetailArrayOutput
+	ToGetSddcsSddcCollectionSddcByolAllocationDetailArrayOutputWithContext(context.Context) GetSddcsSddcCollectionSddcByolAllocationDetailArrayOutput
+}
+
+type GetSddcsSddcCollectionSddcByolAllocationDetailArray []GetSddcsSddcCollectionSddcByolAllocationDetailInput
+
+func (GetSddcsSddcCollectionSddcByolAllocationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcsSddcCollectionSddcByolAllocationDetail)(nil)).Elem()
+}
+
+func (i GetSddcsSddcCollectionSddcByolAllocationDetailArray) ToGetSddcsSddcCollectionSddcByolAllocationDetailArrayOutput() GetSddcsSddcCollectionSddcByolAllocationDetailArrayOutput {
+	return i.ToGetSddcsSddcCollectionSddcByolAllocationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSddcsSddcCollectionSddcByolAllocationDetailArray) ToGetSddcsSddcCollectionSddcByolAllocationDetailArrayOutputWithContext(ctx context.Context) GetSddcsSddcCollectionSddcByolAllocationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionSddcByolAllocationDetailArrayOutput)
+}
+
+type GetSddcsSddcCollectionSddcByolAllocationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSddcsSddcCollectionSddcByolAllocationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcsSddcCollectionSddcByolAllocationDetail)(nil)).Elem()
+}
+
+func (o GetSddcsSddcCollectionSddcByolAllocationDetailOutput) ToGetSddcsSddcCollectionSddcByolAllocationDetailOutput() GetSddcsSddcCollectionSddcByolAllocationDetailOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionSddcByolAllocationDetailOutput) ToGetSddcsSddcCollectionSddcByolAllocationDetailOutputWithContext(ctx context.Context) GetSddcsSddcCollectionSddcByolAllocationDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VMware BYOL Allocation used to deploy VMware Avi Load Balancer.
+func (o GetSddcsSddcCollectionSddcByolAllocationDetailOutput) LoadBalancerByolAllocationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionSddcByolAllocationDetail) string { return v.LoadBalancerByolAllocationId }).(pulumi.StringOutput)
+}
+
+// The number of VMware Avi Load Balancer instances to be deployed on VMware SDDC.
+func (o GetSddcsSddcCollectionSddcByolAllocationDetailOutput) LoadBalancerInstanceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionSddcByolAllocationDetail) int { return v.LoadBalancerInstanceCount }).(pulumi.IntOutput)
+}
+
+type GetSddcsSddcCollectionSddcByolAllocationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSddcsSddcCollectionSddcByolAllocationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcsSddcCollectionSddcByolAllocationDetail)(nil)).Elem()
+}
+
+func (o GetSddcsSddcCollectionSddcByolAllocationDetailArrayOutput) ToGetSddcsSddcCollectionSddcByolAllocationDetailArrayOutput() GetSddcsSddcCollectionSddcByolAllocationDetailArrayOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionSddcByolAllocationDetailArrayOutput) ToGetSddcsSddcCollectionSddcByolAllocationDetailArrayOutputWithContext(ctx context.Context) GetSddcsSddcCollectionSddcByolAllocationDetailArrayOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionSddcByolAllocationDetailArrayOutput) Index(i pulumi.IntInput) GetSddcsSddcCollectionSddcByolAllocationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcsSddcCollectionSddcByolAllocationDetail {
+		return vs[0].([]GetSddcsSddcCollectionSddcByolAllocationDetail)[vs[1].(int)]
+	}).(GetSddcsSddcCollectionSddcByolAllocationDetailOutput)
 }
 
 type GetSddcsSddcCollectionUpgradeLicense struct {
@@ -11970,6 +14095,8 @@ func (o GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayOutput) In
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterClusterByolAllocationDetailsInput)(nil)).Elem(), ClusterClusterByolAllocationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterClusterByolAllocationDetailsPtrInput)(nil)).Elem(), ClusterClusterByolAllocationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterDatastoreInput)(nil)).Elem(), ClusterDatastoreArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterDatastoreArrayInput)(nil)).Elem(), ClusterDatastoreArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterNetworkConfigurationInput)(nil)).Elem(), ClusterNetworkConfigurationArgs{})
@@ -11998,14 +14125,32 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcInitialConfigurationArrayInput)(nil)).Elem(), SddcInitialConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcInitialConfigurationInitialClusterConfigurationInput)(nil)).Elem(), SddcInitialConfigurationInitialClusterConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcInitialConfigurationInitialClusterConfigurationArrayInput)(nil)).Elem(), SddcInitialConfigurationInitialClusterConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsInput)(nil)).Elem(), SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrInput)(nil)).Elem(), SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcInitialConfigurationInitialClusterConfigurationDatastoreInput)(nil)).Elem(), SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayInput)(nil)).Elem(), SddcInitialConfigurationInitialClusterConfigurationDatastoreArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationInput)(nil)).Elem(), SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrInput)(nil)).Elem(), SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SddcSddcByolAllocationDetailsInput)(nil)).Elem(), SddcSddcByolAllocationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SddcSddcByolAllocationDetailsPtrInput)(nil)).Elem(), SddcSddcByolAllocationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcUpgradeLicenseInput)(nil)).Elem(), SddcUpgradeLicenseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcUpgradeLicenseArrayInput)(nil)).Elem(), SddcUpgradeLicenseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcVsphereUpgradeObjectInput)(nil)).Elem(), SddcVsphereUpgradeObjectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcVsphereUpgradeObjectArrayInput)(nil)).Elem(), SddcVsphereUpgradeObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetByolAllocationsByolAllocationCollectionInput)(nil)).Elem(), GetByolAllocationsByolAllocationCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetByolAllocationsByolAllocationCollectionArrayInput)(nil)).Elem(), GetByolAllocationsByolAllocationCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetByolAllocationsByolAllocationCollectionItemInput)(nil)).Elem(), GetByolAllocationsByolAllocationCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetByolAllocationsByolAllocationCollectionItemArrayInput)(nil)).Elem(), GetByolAllocationsByolAllocationCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetByolAllocationsFilterInput)(nil)).Elem(), GetByolAllocationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetByolAllocationsFilterArrayInput)(nil)).Elem(), GetByolAllocationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetByolsByolCollectionInput)(nil)).Elem(), GetByolsByolCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetByolsByolCollectionArrayInput)(nil)).Elem(), GetByolsByolCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetByolsByolCollectionItemInput)(nil)).Elem(), GetByolsByolCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetByolsByolCollectionItemArrayInput)(nil)).Elem(), GetByolsByolCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetByolsFilterInput)(nil)).Elem(), GetByolsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetByolsFilterArrayInput)(nil)).Elem(), GetByolsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterClusterByolAllocationDetailInput)(nil)).Elem(), GetClusterClusterByolAllocationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterClusterByolAllocationDetailArrayInput)(nil)).Elem(), GetClusterClusterByolAllocationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterDatastoreInput)(nil)).Elem(), GetClusterDatastoreArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterDatastoreArrayInput)(nil)).Elem(), GetClusterDatastoreArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworkConfigurationInput)(nil)).Elem(), GetClusterNetworkConfigurationArgs{})
@@ -12018,6 +14163,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterCollectionArrayInput)(nil)).Elem(), GetClustersClusterCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterCollectionItemInput)(nil)).Elem(), GetClustersClusterCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterCollectionItemArrayInput)(nil)).Elem(), GetClustersClusterCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterCollectionItemClusterByolAllocationDetailInput)(nil)).Elem(), GetClustersClusterCollectionItemClusterByolAllocationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterCollectionItemClusterByolAllocationDetailArrayInput)(nil)).Elem(), GetClustersClusterCollectionItemClusterByolAllocationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterCollectionItemDatastoreInput)(nil)).Elem(), GetClustersClusterCollectionItemDatastoreArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterCollectionItemDatastoreArrayInput)(nil)).Elem(), GetClustersClusterCollectionItemDatastoreArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterCollectionItemNetworkConfigurationInput)(nil)).Elem(), GetClustersClusterCollectionItemNetworkConfigurationArgs{})
@@ -12082,10 +14229,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcInitialConfigurationArrayInput)(nil)).Elem(), GetSddcInitialConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcInitialConfigurationInitialClusterConfigurationInput)(nil)).Elem(), GetSddcInitialConfigurationInitialClusterConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcInitialConfigurationInitialClusterConfigurationArrayInput)(nil)).Elem(), GetSddcInitialConfigurationInitialClusterConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailInput)(nil)).Elem(), GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayInput)(nil)).Elem(), GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcInitialConfigurationInitialClusterConfigurationDatastoreInput)(nil)).Elem(), GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayInput)(nil)).Elem(), GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationInput)(nil)).Elem(), GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayInput)(nil)).Elem(), GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcSddcByolAllocationDetailInput)(nil)).Elem(), GetSddcSddcByolAllocationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcSddcByolAllocationDetailArrayInput)(nil)).Elem(), GetSddcSddcByolAllocationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcUpgradeLicenseInput)(nil)).Elem(), GetSddcUpgradeLicenseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcUpgradeLicenseArrayInput)(nil)).Elem(), GetSddcUpgradeLicenseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcVsphereUpgradeObjectInput)(nil)).Elem(), GetSddcVsphereUpgradeObjectArgs{})
@@ -12102,10 +14253,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationArrayInput)(nil)).Elem(), GetSddcsSddcCollectionInitialConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationInput)(nil)).Elem(), GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayInput)(nil)).Elem(), GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailInput)(nil)).Elem(), GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayInput)(nil)).Elem(), GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreInput)(nil)).Elem(), GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayInput)(nil)).Elem(), GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationInput)(nil)).Elem(), GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayInput)(nil)).Elem(), GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionSddcByolAllocationDetailInput)(nil)).Elem(), GetSddcsSddcCollectionSddcByolAllocationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionSddcByolAllocationDetailArrayInput)(nil)).Elem(), GetSddcsSddcCollectionSddcByolAllocationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionUpgradeLicenseInput)(nil)).Elem(), GetSddcsSddcCollectionUpgradeLicenseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionUpgradeLicenseArrayInput)(nil)).Elem(), GetSddcsSddcCollectionUpgradeLicenseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionVsphereUpgradeObjectInput)(nil)).Elem(), GetSddcsSddcCollectionVsphereUpgradeObjectArgs{})
@@ -12128,6 +14283,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedVmwareSoftwareVersionsItemArrayInput)(nil)).Elem(), GetSupportedVmwareSoftwareVersionsItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionInput)(nil)).Elem(), GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayInput)(nil)).Elem(), GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArray{})
+	pulumi.RegisterOutputType(ClusterClusterByolAllocationDetailsOutput{})
+	pulumi.RegisterOutputType(ClusterClusterByolAllocationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ClusterDatastoreOutput{})
 	pulumi.RegisterOutputType(ClusterDatastoreArrayOutput{})
 	pulumi.RegisterOutputType(ClusterNetworkConfigurationOutput{})
@@ -12156,14 +14313,32 @@ func init() {
 	pulumi.RegisterOutputType(SddcInitialConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(SddcInitialConfigurationInitialClusterConfigurationOutput{})
 	pulumi.RegisterOutputType(SddcInitialConfigurationInitialClusterConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsOutput{})
+	pulumi.RegisterOutputType(SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(SddcInitialConfigurationInitialClusterConfigurationDatastoreOutput{})
 	pulumi.RegisterOutputType(SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput{})
 	pulumi.RegisterOutputType(SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput{})
 	pulumi.RegisterOutputType(SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(SddcSddcByolAllocationDetailsOutput{})
+	pulumi.RegisterOutputType(SddcSddcByolAllocationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(SddcUpgradeLicenseOutput{})
 	pulumi.RegisterOutputType(SddcUpgradeLicenseArrayOutput{})
 	pulumi.RegisterOutputType(SddcVsphereUpgradeObjectOutput{})
 	pulumi.RegisterOutputType(SddcVsphereUpgradeObjectArrayOutput{})
+	pulumi.RegisterOutputType(GetByolAllocationsByolAllocationCollectionOutput{})
+	pulumi.RegisterOutputType(GetByolAllocationsByolAllocationCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetByolAllocationsByolAllocationCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetByolAllocationsByolAllocationCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetByolAllocationsFilterOutput{})
+	pulumi.RegisterOutputType(GetByolAllocationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetByolsByolCollectionOutput{})
+	pulumi.RegisterOutputType(GetByolsByolCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetByolsByolCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetByolsByolCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetByolsFilterOutput{})
+	pulumi.RegisterOutputType(GetByolsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterClusterByolAllocationDetailOutput{})
+	pulumi.RegisterOutputType(GetClusterClusterByolAllocationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterDatastoreOutput{})
 	pulumi.RegisterOutputType(GetClusterDatastoreArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterNetworkConfigurationOutput{})
@@ -12176,6 +14351,8 @@ func init() {
 	pulumi.RegisterOutputType(GetClustersClusterCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetClustersClusterCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetClustersClusterCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersClusterCollectionItemClusterByolAllocationDetailOutput{})
+	pulumi.RegisterOutputType(GetClustersClusterCollectionItemClusterByolAllocationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetClustersClusterCollectionItemDatastoreOutput{})
 	pulumi.RegisterOutputType(GetClustersClusterCollectionItemDatastoreArrayOutput{})
 	pulumi.RegisterOutputType(GetClustersClusterCollectionItemNetworkConfigurationOutput{})
@@ -12240,10 +14417,14 @@ func init() {
 	pulumi.RegisterOutputType(GetSddcInitialConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcInitialConfigurationInitialClusterConfigurationOutput{})
 	pulumi.RegisterOutputType(GetSddcInitialConfigurationInitialClusterConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput{})
+	pulumi.RegisterOutputType(GetSddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutput{})
 	pulumi.RegisterOutputType(GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput{})
 	pulumi.RegisterOutputType(GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetSddcSddcByolAllocationDetailOutput{})
+	pulumi.RegisterOutputType(GetSddcSddcByolAllocationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcUpgradeLicenseOutput{})
 	pulumi.RegisterOutputType(GetSddcUpgradeLicenseArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcVsphereUpgradeObjectOutput{})
@@ -12260,10 +14441,14 @@ func init() {
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionInitialConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput{})
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailOutput{})
+	pulumi.RegisterOutputType(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutput{})
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput{})
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetSddcsSddcCollectionSddcByolAllocationDetailOutput{})
+	pulumi.RegisterOutputType(GetSddcsSddcCollectionSddcByolAllocationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionUpgradeLicenseOutput{})
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionUpgradeLicenseArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionVsphereUpgradeObjectOutput{})

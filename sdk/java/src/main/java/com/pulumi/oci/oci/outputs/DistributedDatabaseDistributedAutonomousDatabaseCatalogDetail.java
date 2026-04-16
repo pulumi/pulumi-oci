@@ -68,6 +68,16 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetail
      */
     private @Nullable String name;
     /**
+     * @return The OKV endpoint name.
+     * 
+     */
+    private @Nullable String okvEndPointGroup;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the catalog.
+     * 
+     */
+    private @Nullable String okvKeyStoreId;
+    /**
      * @return This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers on catalog of distributed autonomous database please use peerDetails.
      * 
      */
@@ -185,6 +195,20 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetail
         return Optional.ofNullable(this.name);
     }
     /**
+     * @return The OKV endpoint name.
+     * 
+     */
+    public Optional<String> okvEndPointGroup() {
+        return Optional.ofNullable(this.okvEndPointGroup);
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the catalog.
+     * 
+     */
+    public Optional<String> okvKeyStoreId() {
+        return Optional.ofNullable(this.okvKeyStoreId);
+    }
+    /**
      * @return This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers on catalog of distributed autonomous database please use peerDetails.
      * 
      */
@@ -267,6 +291,8 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetail
         private @Nullable String kmsKeyVersionId;
         private @Nullable List<DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailMetadata> metadatas;
         private @Nullable String name;
+        private @Nullable String okvEndPointGroup;
+        private @Nullable String okvKeyStoreId;
         private @Nullable List<String> peerCloudAutonomousVmClusterIds;
         private @Nullable List<DistributedDatabaseDistributedAutonomousDatabaseCatalogDetailPeerDetail> peerDetails;
         private @Nullable String shardGroup;
@@ -289,6 +315,8 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetail
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.metadatas = defaults.metadatas;
     	      this.name = defaults.name;
+    	      this.okvEndPointGroup = defaults.okvEndPointGroup;
+    	      this.okvKeyStoreId = defaults.okvKeyStoreId;
     	      this.peerCloudAutonomousVmClusterIds = defaults.peerCloudAutonomousVmClusterIds;
     	      this.peerDetails = defaults.peerDetails;
     	      this.shardGroup = defaults.shardGroup;
@@ -374,6 +402,18 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetail
             return this;
         }
         @CustomType.Setter
+        public Builder okvEndPointGroup(@Nullable String okvEndPointGroup) {
+
+            this.okvEndPointGroup = okvEndPointGroup;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder okvKeyStoreId(@Nullable String okvKeyStoreId) {
+
+            this.okvKeyStoreId = okvKeyStoreId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder peerCloudAutonomousVmClusterIds(@Nullable List<String> peerCloudAutonomousVmClusterIds) {
 
             this.peerCloudAutonomousVmClusterIds = peerCloudAutonomousVmClusterIds;
@@ -447,6 +487,8 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetail
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
             _resultValue.metadatas = metadatas;
             _resultValue.name = name;
+            _resultValue.okvEndPointGroup = okvEndPointGroup;
+            _resultValue.okvKeyStoreId = okvKeyStoreId;
             _resultValue.peerCloudAutonomousVmClusterIds = peerCloudAutonomousVmClusterIds;
             _resultValue.peerDetails = peerDetails;
             _resultValue.shardGroup = shardGroup;

@@ -5,6 +5,7 @@ package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.FileStorage.outputs.FilesystemSnapshotPolicyScheduleLockDurationDetails;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -28,6 +29,11 @@ public final class FilesystemSnapshotPolicySchedule {
      * 
      */
     private @Nullable Integer hourOfDay;
+    /**
+     * @return (Updatable) Details for setting a retention date or legal hold.
+     * 
+     */
+    private @Nullable FilesystemSnapshotPolicyScheduleLockDurationDetails lockDurationDetails;
     /**
      * @return (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
      * 
@@ -80,6 +86,13 @@ public final class FilesystemSnapshotPolicySchedule {
      */
     public Optional<Integer> hourOfDay() {
         return Optional.ofNullable(this.hourOfDay);
+    }
+    /**
+     * @return (Updatable) Details for setting a retention date or legal hold.
+     * 
+     */
+    public Optional<FilesystemSnapshotPolicyScheduleLockDurationDetails> lockDurationDetails() {
+        return Optional.ofNullable(this.lockDurationDetails);
     }
     /**
      * @return (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
@@ -136,6 +149,7 @@ public final class FilesystemSnapshotPolicySchedule {
         private @Nullable Integer dayOfMonth;
         private @Nullable String dayOfWeek;
         private @Nullable Integer hourOfDay;
+        private @Nullable FilesystemSnapshotPolicyScheduleLockDurationDetails lockDurationDetails;
         private @Nullable String month;
         private String period;
         private @Nullable String retentionDurationInSeconds;
@@ -148,6 +162,7 @@ public final class FilesystemSnapshotPolicySchedule {
     	      this.dayOfMonth = defaults.dayOfMonth;
     	      this.dayOfWeek = defaults.dayOfWeek;
     	      this.hourOfDay = defaults.hourOfDay;
+    	      this.lockDurationDetails = defaults.lockDurationDetails;
     	      this.month = defaults.month;
     	      this.period = defaults.period;
     	      this.retentionDurationInSeconds = defaults.retentionDurationInSeconds;
@@ -172,6 +187,12 @@ public final class FilesystemSnapshotPolicySchedule {
         public Builder hourOfDay(@Nullable Integer hourOfDay) {
 
             this.hourOfDay = hourOfDay;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lockDurationDetails(@Nullable FilesystemSnapshotPolicyScheduleLockDurationDetails lockDurationDetails) {
+
+            this.lockDurationDetails = lockDurationDetails;
             return this;
         }
         @CustomType.Setter
@@ -219,6 +240,7 @@ public final class FilesystemSnapshotPolicySchedule {
             _resultValue.dayOfMonth = dayOfMonth;
             _resultValue.dayOfWeek = dayOfWeek;
             _resultValue.hourOfDay = hourOfDay;
+            _resultValue.lockDurationDetails = lockDurationDetails;
             _resultValue.month = month;
             _resultValue.period = period;
             _resultValue.retentionDurationInSeconds = retentionDurationInSeconds;

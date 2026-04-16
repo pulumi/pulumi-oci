@@ -31,6 +31,7 @@ namespace Pulumi.Oci.Ocvp
         ///         CompartmentId = compartmentId,
         ///         DisplayName = managementApplianceDisplayName,
         ///         ManagementApplianceId = testManagementAppliance.Id,
+        ///         SddcId = testSddc.Id,
         ///         State = managementApplianceState,
         ///     });
         /// 
@@ -60,6 +61,7 @@ namespace Pulumi.Oci.Ocvp
         ///         CompartmentId = compartmentId,
         ///         DisplayName = managementApplianceDisplayName,
         ///         ManagementApplianceId = testManagementAppliance.Id,
+        ///         SddcId = testSddc.Id,
         ///         State = managementApplianceState,
         ///     });
         /// 
@@ -89,6 +91,7 @@ namespace Pulumi.Oci.Ocvp
         ///         CompartmentId = compartmentId,
         ///         DisplayName = managementApplianceDisplayName,
         ///         ManagementApplianceId = testManagementAppliance.Id,
+        ///         SddcId = testSddc.Id,
         ///         State = managementApplianceState,
         ///     });
         /// 
@@ -127,6 +130,12 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Input("managementApplianceId")]
         public string? ManagementApplianceId { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
+        /// </summary>
+        [Input("sddcId")]
+        public string? SddcId { get; set; }
 
         /// <summary>
         /// The lifecycle state of the management appliance.
@@ -169,6 +178,12 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? ManagementApplianceId { get; set; }
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
+        /// </summary>
+        [Input("sddcId")]
+        public Input<string>? SddcId { get; set; }
+
+        /// <summary>
         /// The lifecycle state of the management appliance.
         /// </summary>
         [Input("state")]
@@ -203,6 +218,10 @@ namespace Pulumi.Oci.Ocvp
         public readonly ImmutableArray<Outputs.GetManagementAppliancesManagementApplianceCollectionResult> ManagementApplianceCollections;
         public readonly string? ManagementApplianceId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
+        /// </summary>
+        public readonly string? SddcId;
+        /// <summary>
         /// Current state of the management appliance.
         /// </summary>
         public readonly string? State;
@@ -221,6 +240,8 @@ namespace Pulumi.Oci.Ocvp
 
             string? managementApplianceId,
 
+            string? sddcId,
+
             string? state)
         {
             CompartmentId = compartmentId;
@@ -229,6 +250,7 @@ namespace Pulumi.Oci.Ocvp
             Id = id;
             ManagementApplianceCollections = managementApplianceCollections;
             ManagementApplianceId = managementApplianceId;
+            SddcId = sddcId;
             State = state;
         }
     }

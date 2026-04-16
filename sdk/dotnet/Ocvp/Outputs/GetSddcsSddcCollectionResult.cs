@@ -160,6 +160,10 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly string ReplicationVlanId;
         public readonly ImmutableArray<string> ReservingHcxOnPremiseLicenseKeys;
+        /// <summary>
+        /// The BYOL allocations used for VMware SDDC provisioning.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetSddcsSddcCollectionSddcByolAllocationDetailResult> SddcByolAllocationDetails;
         public readonly string SshAuthorizedKeys;
         /// <summary>
         /// The lifecycle state of the resource.
@@ -302,6 +306,8 @@ namespace Pulumi.Oci.Ocvp.Outputs
 
             ImmutableArray<string> reservingHcxOnPremiseLicenseKeys,
 
+            ImmutableArray<Outputs.GetSddcsSddcCollectionSddcByolAllocationDetailResult> sddcByolAllocationDetails,
+
             string sshAuthorizedKeys,
 
             string state,
@@ -385,6 +391,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
             RefreshHcxLicenseStatus = refreshHcxLicenseStatus;
             ReplicationVlanId = replicationVlanId;
             ReservingHcxOnPremiseLicenseKeys = reservingHcxOnPremiseLicenseKeys;
+            SddcByolAllocationDetails = sddcByolAllocationDetails;
             SshAuthorizedKeys = sshAuthorizedKeys;
             State = state;
             SystemTags = systemTags;

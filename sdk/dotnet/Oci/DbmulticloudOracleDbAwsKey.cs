@@ -62,6 +62,9 @@ namespace Pulumi.Oci.Oci
     [OciResourceType("oci:oci/dbmulticloudOracleDbAwsKey:DbmulticloudOracleDbAwsKey")]
     public partial class DbmulticloudOracleDbAwsKey : global::Pulumi.CustomResource
     {
+        [Output("action")]
+        public Output<string?> Action { get; private set; } = null!;
+
         /// <summary>
         /// AWS Account ID.
         /// </summary>
@@ -129,6 +132,12 @@ namespace Pulumi.Oci.Oci
         public Output<ImmutableDictionary<string, string>> Properties { get; private set; } = null!;
 
         /// <summary>
+        /// Replication metadata, it has information about replication and target region.
+        /// </summary>
+        [Output("replicationMetadatas")]
+        public Output<ImmutableArray<Outputs.DbmulticloudOracleDbAwsKeyReplicationMetadata>> ReplicationMetadatas { get; private set; } = null!;
+
+        /// <summary>
         /// The lifecycle state of the Oracle DB AWS Key resource.
         /// </summary>
         [Output("state")]
@@ -139,6 +148,12 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Output("systemTags")]
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
+
+        /// <summary>
+        /// The target region, where resource is replicated.
+        /// </summary>
+        [Output("targetRegion")]
+        public Output<string?> TargetRegion { get; private set; } = null!;
 
         /// <summary>
         /// Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
@@ -208,6 +223,9 @@ namespace Pulumi.Oci.Oci
 
     public sealed class DbmulticloudOracleDbAwsKeyArgs : global::Pulumi.ResourceArgs
     {
+        [Input("action")]
+        public Input<string>? Action { get; set; }
+
         /// <summary>
         /// AWS Account ID.
         /// </summary>
@@ -287,6 +305,12 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
+        /// The target region, where resource is replicated.
+        /// </summary>
+        [Input("targetRegion")]
+        public Input<string>? TargetRegion { get; set; }
+
+        /// <summary>
         /// AWS Key resource type.
         /// 
         /// 
@@ -304,6 +328,9 @@ namespace Pulumi.Oci.Oci
 
     public sealed class DbmulticloudOracleDbAwsKeyState : global::Pulumi.ResourceArgs
     {
+        [Input("action")]
+        public Input<string>? Action { get; set; }
+
         /// <summary>
         /// AWS Account ID.
         /// </summary>
@@ -388,6 +415,18 @@ namespace Pulumi.Oci.Oci
             set => _properties = value;
         }
 
+        [Input("replicationMetadatas")]
+        private InputList<Inputs.DbmulticloudOracleDbAwsKeyReplicationMetadataGetArgs>? _replicationMetadatas;
+
+        /// <summary>
+        /// Replication metadata, it has information about replication and target region.
+        /// </summary>
+        public InputList<Inputs.DbmulticloudOracleDbAwsKeyReplicationMetadataGetArgs> ReplicationMetadatas
+        {
+            get => _replicationMetadatas ?? (_replicationMetadatas = new InputList<Inputs.DbmulticloudOracleDbAwsKeyReplicationMetadataGetArgs>());
+            set => _replicationMetadatas = value;
+        }
+
         /// <summary>
         /// The lifecycle state of the Oracle DB AWS Key resource.
         /// </summary>
@@ -405,6 +444,12 @@ namespace Pulumi.Oci.Oci
             get => _systemTags ?? (_systemTags = new InputMap<string>());
             set => _systemTags = value;
         }
+
+        /// <summary>
+        /// The target region, where resource is replicated.
+        /// </summary>
+        [Input("targetRegion")]
+        public Input<string>? TargetRegion { get; set; }
 
         /// <summary>
         /// Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.

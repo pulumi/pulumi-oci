@@ -27,7 +27,10 @@ class GetFusionEnvironmentResult:
     """
     A collection of values returned by getFusionEnvironment.
     """
-    def __init__(__self__, additional_language_packs=None, applied_patch_bundles=None, compartment_id=None, create_fusion_environment_admin_user_details=None, defined_tags=None, display_name=None, dns_prefix=None, domain_id=None, freeform_tags=None, fusion_environment_family_id=None, fusion_environment_id=None, fusion_environment_type=None, id=None, idcs_domain_url=None, is_break_glass_enabled=None, is_ipv6dual_stack_enabled=None, kms_key_id=None, kms_key_infos=None, lifecycle_details=None, lockbox_id=None, maintenance_policies=None, public_url=None, refreshes=None, rules=None, state=None, subscription_ids=None, system_name=None, time_created=None, time_upcoming_maintenance=None, time_updated=None, version=None):
+    def __init__(__self__, additional_egress_rules=None, additional_language_packs=None, applied_patch_bundles=None, compartment_id=None, create_fusion_environment_admin_user_details=None, defined_tags=None, display_name=None, dns_prefix=None, domain_id=None, freeform_tags=None, fusion_environment_family_id=None, fusion_environment_id=None, fusion_environment_type=None, id=None, idcs_domain_url=None, is_break_glass_enabled=None, is_ipv6dual_stack_enabled=None, kms_key_id=None, kms_key_infos=None, lifecycle_details=None, lockbox_id=None, maintenance_policies=None, public_url=None, refreshes=None, rules=None, state=None, subscription_ids=None, system_name=None, time_created=None, time_upcoming_maintenance=None, time_updated=None, version=None):
+        if additional_egress_rules and not isinstance(additional_egress_rules, list):
+            raise TypeError("Expected argument 'additional_egress_rules' to be a list")
+        pulumi.set(__self__, "additional_egress_rules", additional_egress_rules)
         if additional_language_packs and not isinstance(additional_language_packs, list):
             raise TypeError("Expected argument 'additional_language_packs' to be a list")
         pulumi.set(__self__, "additional_language_packs", additional_language_packs)
@@ -121,6 +124,14 @@ class GetFusionEnvironmentResult:
         if version and not isinstance(version, str):
             raise TypeError("Expected argument 'version' to be a str")
         pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalEgressRules")
+    def additional_egress_rules(self) -> Sequence['outputs.GetFusionEnvironmentAdditionalEgressRuleResult']:
+        """
+        Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+        """
+        return pulumi.get(self, "additional_egress_rules")
 
     @_builtins.property
     @pulumi.getter(name="additionalLanguagePacks")
@@ -240,7 +251,7 @@ class GetFusionEnvironmentResult:
     @pulumi.getter(name="isIpv6dualStackEnabled")
     def is_ipv6dual_stack_enabled(self) -> _builtins.bool:
         """
-        Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+        Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
         """
         return pulumi.get(self, "is_ipv6dual_stack_enabled")
 
@@ -371,6 +382,7 @@ class AwaitableGetFusionEnvironmentResult(GetFusionEnvironmentResult):
         if False:
             yield self
         return GetFusionEnvironmentResult(
+            additional_egress_rules=self.additional_egress_rules,
             additional_language_packs=self.additional_language_packs,
             applied_patch_bundles=self.applied_patch_bundles,
             compartment_id=self.compartment_id,
@@ -429,6 +441,7 @@ def get_fusion_environment(fusion_environment_id: Optional[_builtins.str] = None
     __ret__ = pulumi.runtime.invoke('oci:Functions/getFusionEnvironment:getFusionEnvironment', __args__, opts=opts, typ=GetFusionEnvironmentResult).value
 
     return AwaitableGetFusionEnvironmentResult(
+        additional_egress_rules=pulumi.get(__ret__, 'additional_egress_rules'),
         additional_language_packs=pulumi.get(__ret__, 'additional_language_packs'),
         applied_patch_bundles=pulumi.get(__ret__, 'applied_patch_bundles'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
@@ -484,6 +497,7 @@ def get_fusion_environment_output(fusion_environment_id: Optional[pulumi.Input[_
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Functions/getFusionEnvironment:getFusionEnvironment', __args__, opts=opts, typ=GetFusionEnvironmentResult)
     return __ret__.apply(lambda __response__: GetFusionEnvironmentResult(
+        additional_egress_rules=pulumi.get(__response__, 'additional_egress_rules'),
         additional_language_packs=pulumi.get(__response__, 'additional_language_packs'),
         applied_patch_bundles=pulumi.get(__response__, 'applied_patch_bundles'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),

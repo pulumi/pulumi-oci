@@ -385,6 +385,295 @@ func (o OccDemandSignalPatchOperationArrayOutput) Index(i pulumi.IntInput) OccDe
 	}).(OccDemandSignalPatchOperationOutput)
 }
 
+type OccMetricAlarmResourceConfiguration struct {
+	// The hardware generation of the compute resource.
+	ComputeHwGeneration *string `pulumi:"computeHwGeneration"`
+	// The hardware generation of the Exadata system.
+	HwGeneration *string `pulumi:"hwGeneration"`
+	// The role of the link in the network.
+	LinkRole *string `pulumi:"linkRole"`
+	// The type of node in the Exadata system.
+	NodeType *string `pulumi:"nodeType"`
+	// The provider of the network service.
+	OccMetricAlarmProvider *string `pulumi:"occMetricAlarmProvider"`
+	// Resources like COMPUTE, STORAGE, EXADATA etc.
+	Resource string `pulumi:"resource"`
+	// The shape of the compute instance.
+	Shape *string `pulumi:"shape"`
+	// The type of storage resource.
+	StorageType *string `pulumi:"storageType"`
+	// The type of usage for the resource.
+	UsageType string `pulumi:"usageType"`
+}
+
+// OccMetricAlarmResourceConfigurationInput is an input type that accepts OccMetricAlarmResourceConfigurationArgs and OccMetricAlarmResourceConfigurationOutput values.
+// You can construct a concrete instance of `OccMetricAlarmResourceConfigurationInput` via:
+//
+//	OccMetricAlarmResourceConfigurationArgs{...}
+type OccMetricAlarmResourceConfigurationInput interface {
+	pulumi.Input
+
+	ToOccMetricAlarmResourceConfigurationOutput() OccMetricAlarmResourceConfigurationOutput
+	ToOccMetricAlarmResourceConfigurationOutputWithContext(context.Context) OccMetricAlarmResourceConfigurationOutput
+}
+
+type OccMetricAlarmResourceConfigurationArgs struct {
+	// The hardware generation of the compute resource.
+	ComputeHwGeneration pulumi.StringPtrInput `pulumi:"computeHwGeneration"`
+	// The hardware generation of the Exadata system.
+	HwGeneration pulumi.StringPtrInput `pulumi:"hwGeneration"`
+	// The role of the link in the network.
+	LinkRole pulumi.StringPtrInput `pulumi:"linkRole"`
+	// The type of node in the Exadata system.
+	NodeType pulumi.StringPtrInput `pulumi:"nodeType"`
+	// The provider of the network service.
+	OccMetricAlarmProvider pulumi.StringPtrInput `pulumi:"occMetricAlarmProvider"`
+	// Resources like COMPUTE, STORAGE, EXADATA etc.
+	Resource pulumi.StringInput `pulumi:"resource"`
+	// The shape of the compute instance.
+	Shape pulumi.StringPtrInput `pulumi:"shape"`
+	// The type of storage resource.
+	StorageType pulumi.StringPtrInput `pulumi:"storageType"`
+	// The type of usage for the resource.
+	UsageType pulumi.StringInput `pulumi:"usageType"`
+}
+
+func (OccMetricAlarmResourceConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OccMetricAlarmResourceConfiguration)(nil)).Elem()
+}
+
+func (i OccMetricAlarmResourceConfigurationArgs) ToOccMetricAlarmResourceConfigurationOutput() OccMetricAlarmResourceConfigurationOutput {
+	return i.ToOccMetricAlarmResourceConfigurationOutputWithContext(context.Background())
+}
+
+func (i OccMetricAlarmResourceConfigurationArgs) ToOccMetricAlarmResourceConfigurationOutputWithContext(ctx context.Context) OccMetricAlarmResourceConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OccMetricAlarmResourceConfigurationOutput)
+}
+
+func (i OccMetricAlarmResourceConfigurationArgs) ToOccMetricAlarmResourceConfigurationPtrOutput() OccMetricAlarmResourceConfigurationPtrOutput {
+	return i.ToOccMetricAlarmResourceConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i OccMetricAlarmResourceConfigurationArgs) ToOccMetricAlarmResourceConfigurationPtrOutputWithContext(ctx context.Context) OccMetricAlarmResourceConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OccMetricAlarmResourceConfigurationOutput).ToOccMetricAlarmResourceConfigurationPtrOutputWithContext(ctx)
+}
+
+// OccMetricAlarmResourceConfigurationPtrInput is an input type that accepts OccMetricAlarmResourceConfigurationArgs, OccMetricAlarmResourceConfigurationPtr and OccMetricAlarmResourceConfigurationPtrOutput values.
+// You can construct a concrete instance of `OccMetricAlarmResourceConfigurationPtrInput` via:
+//
+//	        OccMetricAlarmResourceConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type OccMetricAlarmResourceConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToOccMetricAlarmResourceConfigurationPtrOutput() OccMetricAlarmResourceConfigurationPtrOutput
+	ToOccMetricAlarmResourceConfigurationPtrOutputWithContext(context.Context) OccMetricAlarmResourceConfigurationPtrOutput
+}
+
+type occMetricAlarmResourceConfigurationPtrType OccMetricAlarmResourceConfigurationArgs
+
+func OccMetricAlarmResourceConfigurationPtr(v *OccMetricAlarmResourceConfigurationArgs) OccMetricAlarmResourceConfigurationPtrInput {
+	return (*occMetricAlarmResourceConfigurationPtrType)(v)
+}
+
+func (*occMetricAlarmResourceConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OccMetricAlarmResourceConfiguration)(nil)).Elem()
+}
+
+func (i *occMetricAlarmResourceConfigurationPtrType) ToOccMetricAlarmResourceConfigurationPtrOutput() OccMetricAlarmResourceConfigurationPtrOutput {
+	return i.ToOccMetricAlarmResourceConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *occMetricAlarmResourceConfigurationPtrType) ToOccMetricAlarmResourceConfigurationPtrOutputWithContext(ctx context.Context) OccMetricAlarmResourceConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OccMetricAlarmResourceConfigurationPtrOutput)
+}
+
+type OccMetricAlarmResourceConfigurationOutput struct{ *pulumi.OutputState }
+
+func (OccMetricAlarmResourceConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OccMetricAlarmResourceConfiguration)(nil)).Elem()
+}
+
+func (o OccMetricAlarmResourceConfigurationOutput) ToOccMetricAlarmResourceConfigurationOutput() OccMetricAlarmResourceConfigurationOutput {
+	return o
+}
+
+func (o OccMetricAlarmResourceConfigurationOutput) ToOccMetricAlarmResourceConfigurationOutputWithContext(ctx context.Context) OccMetricAlarmResourceConfigurationOutput {
+	return o
+}
+
+func (o OccMetricAlarmResourceConfigurationOutput) ToOccMetricAlarmResourceConfigurationPtrOutput() OccMetricAlarmResourceConfigurationPtrOutput {
+	return o.ToOccMetricAlarmResourceConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o OccMetricAlarmResourceConfigurationOutput) ToOccMetricAlarmResourceConfigurationPtrOutputWithContext(ctx context.Context) OccMetricAlarmResourceConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OccMetricAlarmResourceConfiguration) *OccMetricAlarmResourceConfiguration {
+		return &v
+	}).(OccMetricAlarmResourceConfigurationPtrOutput)
+}
+
+// The hardware generation of the compute resource.
+func (o OccMetricAlarmResourceConfigurationOutput) ComputeHwGeneration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OccMetricAlarmResourceConfiguration) *string { return v.ComputeHwGeneration }).(pulumi.StringPtrOutput)
+}
+
+// The hardware generation of the Exadata system.
+func (o OccMetricAlarmResourceConfigurationOutput) HwGeneration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OccMetricAlarmResourceConfiguration) *string { return v.HwGeneration }).(pulumi.StringPtrOutput)
+}
+
+// The role of the link in the network.
+func (o OccMetricAlarmResourceConfigurationOutput) LinkRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OccMetricAlarmResourceConfiguration) *string { return v.LinkRole }).(pulumi.StringPtrOutput)
+}
+
+// The type of node in the Exadata system.
+func (o OccMetricAlarmResourceConfigurationOutput) NodeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OccMetricAlarmResourceConfiguration) *string { return v.NodeType }).(pulumi.StringPtrOutput)
+}
+
+// The provider of the network service.
+func (o OccMetricAlarmResourceConfigurationOutput) OccMetricAlarmProvider() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OccMetricAlarmResourceConfiguration) *string { return v.OccMetricAlarmProvider }).(pulumi.StringPtrOutput)
+}
+
+// Resources like COMPUTE, STORAGE, EXADATA etc.
+func (o OccMetricAlarmResourceConfigurationOutput) Resource() pulumi.StringOutput {
+	return o.ApplyT(func(v OccMetricAlarmResourceConfiguration) string { return v.Resource }).(pulumi.StringOutput)
+}
+
+// The shape of the compute instance.
+func (o OccMetricAlarmResourceConfigurationOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OccMetricAlarmResourceConfiguration) *string { return v.Shape }).(pulumi.StringPtrOutput)
+}
+
+// The type of storage resource.
+func (o OccMetricAlarmResourceConfigurationOutput) StorageType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OccMetricAlarmResourceConfiguration) *string { return v.StorageType }).(pulumi.StringPtrOutput)
+}
+
+// The type of usage for the resource.
+func (o OccMetricAlarmResourceConfigurationOutput) UsageType() pulumi.StringOutput {
+	return o.ApplyT(func(v OccMetricAlarmResourceConfiguration) string { return v.UsageType }).(pulumi.StringOutput)
+}
+
+type OccMetricAlarmResourceConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (OccMetricAlarmResourceConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OccMetricAlarmResourceConfiguration)(nil)).Elem()
+}
+
+func (o OccMetricAlarmResourceConfigurationPtrOutput) ToOccMetricAlarmResourceConfigurationPtrOutput() OccMetricAlarmResourceConfigurationPtrOutput {
+	return o
+}
+
+func (o OccMetricAlarmResourceConfigurationPtrOutput) ToOccMetricAlarmResourceConfigurationPtrOutputWithContext(ctx context.Context) OccMetricAlarmResourceConfigurationPtrOutput {
+	return o
+}
+
+func (o OccMetricAlarmResourceConfigurationPtrOutput) Elem() OccMetricAlarmResourceConfigurationOutput {
+	return o.ApplyT(func(v *OccMetricAlarmResourceConfiguration) OccMetricAlarmResourceConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret OccMetricAlarmResourceConfiguration
+		return ret
+	}).(OccMetricAlarmResourceConfigurationOutput)
+}
+
+// The hardware generation of the compute resource.
+func (o OccMetricAlarmResourceConfigurationPtrOutput) ComputeHwGeneration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OccMetricAlarmResourceConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ComputeHwGeneration
+	}).(pulumi.StringPtrOutput)
+}
+
+// The hardware generation of the Exadata system.
+func (o OccMetricAlarmResourceConfigurationPtrOutput) HwGeneration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OccMetricAlarmResourceConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HwGeneration
+	}).(pulumi.StringPtrOutput)
+}
+
+// The role of the link in the network.
+func (o OccMetricAlarmResourceConfigurationPtrOutput) LinkRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OccMetricAlarmResourceConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LinkRole
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of node in the Exadata system.
+func (o OccMetricAlarmResourceConfigurationPtrOutput) NodeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OccMetricAlarmResourceConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NodeType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The provider of the network service.
+func (o OccMetricAlarmResourceConfigurationPtrOutput) OccMetricAlarmProvider() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OccMetricAlarmResourceConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OccMetricAlarmProvider
+	}).(pulumi.StringPtrOutput)
+}
+
+// Resources like COMPUTE, STORAGE, EXADATA etc.
+func (o OccMetricAlarmResourceConfigurationPtrOutput) Resource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OccMetricAlarmResourceConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Resource
+	}).(pulumi.StringPtrOutput)
+}
+
+// The shape of the compute instance.
+func (o OccMetricAlarmResourceConfigurationPtrOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OccMetricAlarmResourceConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Shape
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of storage resource.
+func (o OccMetricAlarmResourceConfigurationPtrOutput) StorageType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OccMetricAlarmResourceConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.StorageType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of usage for the resource.
+func (o OccMetricAlarmResourceConfigurationPtrOutput) UsageType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OccMetricAlarmResourceConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.UsageType
+	}).(pulumi.StringPtrOutput)
+}
+
 type GetOccDemandSignalOccDemandSignal struct {
 	// The name of the resource for the data.
 	ResourceType string `pulumi:"resourceType"`
@@ -1522,6 +1811,788 @@ func (o GetOccDemandSignalsOccDemandSignalCollectionItemPatchOperationArrayOutpu
 	}).(GetOccDemandSignalsOccDemandSignalCollectionItemPatchOperationOutput)
 }
 
+type GetOccMetricAlarmResourceConfiguration struct {
+	// The hardware generation of the compute resource.
+	ComputeHwGeneration string `pulumi:"computeHwGeneration"`
+	// The hardware generation of the Exadata system.
+	HwGeneration string `pulumi:"hwGeneration"`
+	// The role of the link in the network.
+	LinkRole string `pulumi:"linkRole"`
+	// The type of node in the Exadata system.
+	NodeType string `pulumi:"nodeType"`
+	// The provider of the network service.
+	OccMetricAlarmProvider string `pulumi:"occMetricAlarmProvider"`
+	// Resources like COMPUTE, STORAGE, EXADATA etc.
+	Resource string `pulumi:"resource"`
+	// The shape of the compute instance.
+	Shape string `pulumi:"shape"`
+	// The type of storage resource.
+	StorageType string `pulumi:"storageType"`
+	// The type of usage for the resource.
+	UsageType string `pulumi:"usageType"`
+}
+
+// GetOccMetricAlarmResourceConfigurationInput is an input type that accepts GetOccMetricAlarmResourceConfigurationArgs and GetOccMetricAlarmResourceConfigurationOutput values.
+// You can construct a concrete instance of `GetOccMetricAlarmResourceConfigurationInput` via:
+//
+//	GetOccMetricAlarmResourceConfigurationArgs{...}
+type GetOccMetricAlarmResourceConfigurationInput interface {
+	pulumi.Input
+
+	ToGetOccMetricAlarmResourceConfigurationOutput() GetOccMetricAlarmResourceConfigurationOutput
+	ToGetOccMetricAlarmResourceConfigurationOutputWithContext(context.Context) GetOccMetricAlarmResourceConfigurationOutput
+}
+
+type GetOccMetricAlarmResourceConfigurationArgs struct {
+	// The hardware generation of the compute resource.
+	ComputeHwGeneration pulumi.StringInput `pulumi:"computeHwGeneration"`
+	// The hardware generation of the Exadata system.
+	HwGeneration pulumi.StringInput `pulumi:"hwGeneration"`
+	// The role of the link in the network.
+	LinkRole pulumi.StringInput `pulumi:"linkRole"`
+	// The type of node in the Exadata system.
+	NodeType pulumi.StringInput `pulumi:"nodeType"`
+	// The provider of the network service.
+	OccMetricAlarmProvider pulumi.StringInput `pulumi:"occMetricAlarmProvider"`
+	// Resources like COMPUTE, STORAGE, EXADATA etc.
+	Resource pulumi.StringInput `pulumi:"resource"`
+	// The shape of the compute instance.
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// The type of storage resource.
+	StorageType pulumi.StringInput `pulumi:"storageType"`
+	// The type of usage for the resource.
+	UsageType pulumi.StringInput `pulumi:"usageType"`
+}
+
+func (GetOccMetricAlarmResourceConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccMetricAlarmResourceConfiguration)(nil)).Elem()
+}
+
+func (i GetOccMetricAlarmResourceConfigurationArgs) ToGetOccMetricAlarmResourceConfigurationOutput() GetOccMetricAlarmResourceConfigurationOutput {
+	return i.ToGetOccMetricAlarmResourceConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetOccMetricAlarmResourceConfigurationArgs) ToGetOccMetricAlarmResourceConfigurationOutputWithContext(ctx context.Context) GetOccMetricAlarmResourceConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccMetricAlarmResourceConfigurationOutput)
+}
+
+// GetOccMetricAlarmResourceConfigurationArrayInput is an input type that accepts GetOccMetricAlarmResourceConfigurationArray and GetOccMetricAlarmResourceConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetOccMetricAlarmResourceConfigurationArrayInput` via:
+//
+//	GetOccMetricAlarmResourceConfigurationArray{ GetOccMetricAlarmResourceConfigurationArgs{...} }
+type GetOccMetricAlarmResourceConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetOccMetricAlarmResourceConfigurationArrayOutput() GetOccMetricAlarmResourceConfigurationArrayOutput
+	ToGetOccMetricAlarmResourceConfigurationArrayOutputWithContext(context.Context) GetOccMetricAlarmResourceConfigurationArrayOutput
+}
+
+type GetOccMetricAlarmResourceConfigurationArray []GetOccMetricAlarmResourceConfigurationInput
+
+func (GetOccMetricAlarmResourceConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccMetricAlarmResourceConfiguration)(nil)).Elem()
+}
+
+func (i GetOccMetricAlarmResourceConfigurationArray) ToGetOccMetricAlarmResourceConfigurationArrayOutput() GetOccMetricAlarmResourceConfigurationArrayOutput {
+	return i.ToGetOccMetricAlarmResourceConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccMetricAlarmResourceConfigurationArray) ToGetOccMetricAlarmResourceConfigurationArrayOutputWithContext(ctx context.Context) GetOccMetricAlarmResourceConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccMetricAlarmResourceConfigurationArrayOutput)
+}
+
+type GetOccMetricAlarmResourceConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetOccMetricAlarmResourceConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccMetricAlarmResourceConfiguration)(nil)).Elem()
+}
+
+func (o GetOccMetricAlarmResourceConfigurationOutput) ToGetOccMetricAlarmResourceConfigurationOutput() GetOccMetricAlarmResourceConfigurationOutput {
+	return o
+}
+
+func (o GetOccMetricAlarmResourceConfigurationOutput) ToGetOccMetricAlarmResourceConfigurationOutputWithContext(ctx context.Context) GetOccMetricAlarmResourceConfigurationOutput {
+	return o
+}
+
+// The hardware generation of the compute resource.
+func (o GetOccMetricAlarmResourceConfigurationOutput) ComputeHwGeneration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmResourceConfiguration) string { return v.ComputeHwGeneration }).(pulumi.StringOutput)
+}
+
+// The hardware generation of the Exadata system.
+func (o GetOccMetricAlarmResourceConfigurationOutput) HwGeneration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmResourceConfiguration) string { return v.HwGeneration }).(pulumi.StringOutput)
+}
+
+// The role of the link in the network.
+func (o GetOccMetricAlarmResourceConfigurationOutput) LinkRole() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmResourceConfiguration) string { return v.LinkRole }).(pulumi.StringOutput)
+}
+
+// The type of node in the Exadata system.
+func (o GetOccMetricAlarmResourceConfigurationOutput) NodeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmResourceConfiguration) string { return v.NodeType }).(pulumi.StringOutput)
+}
+
+// The provider of the network service.
+func (o GetOccMetricAlarmResourceConfigurationOutput) OccMetricAlarmProvider() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmResourceConfiguration) string { return v.OccMetricAlarmProvider }).(pulumi.StringOutput)
+}
+
+// Resources like COMPUTE, STORAGE, EXADATA etc.
+func (o GetOccMetricAlarmResourceConfigurationOutput) Resource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmResourceConfiguration) string { return v.Resource }).(pulumi.StringOutput)
+}
+
+// The shape of the compute instance.
+func (o GetOccMetricAlarmResourceConfigurationOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmResourceConfiguration) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// The type of storage resource.
+func (o GetOccMetricAlarmResourceConfigurationOutput) StorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmResourceConfiguration) string { return v.StorageType }).(pulumi.StringOutput)
+}
+
+// The type of usage for the resource.
+func (o GetOccMetricAlarmResourceConfigurationOutput) UsageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmResourceConfiguration) string { return v.UsageType }).(pulumi.StringOutput)
+}
+
+type GetOccMetricAlarmResourceConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccMetricAlarmResourceConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccMetricAlarmResourceConfiguration)(nil)).Elem()
+}
+
+func (o GetOccMetricAlarmResourceConfigurationArrayOutput) ToGetOccMetricAlarmResourceConfigurationArrayOutput() GetOccMetricAlarmResourceConfigurationArrayOutput {
+	return o
+}
+
+func (o GetOccMetricAlarmResourceConfigurationArrayOutput) ToGetOccMetricAlarmResourceConfigurationArrayOutputWithContext(ctx context.Context) GetOccMetricAlarmResourceConfigurationArrayOutput {
+	return o
+}
+
+func (o GetOccMetricAlarmResourceConfigurationArrayOutput) Index(i pulumi.IntInput) GetOccMetricAlarmResourceConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccMetricAlarmResourceConfiguration {
+		return vs[0].([]GetOccMetricAlarmResourceConfiguration)[vs[1].(int)]
+	}).(GetOccMetricAlarmResourceConfigurationOutput)
+}
+
+type GetOccMetricAlarmsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetOccMetricAlarmsFilterInput is an input type that accepts GetOccMetricAlarmsFilterArgs and GetOccMetricAlarmsFilterOutput values.
+// You can construct a concrete instance of `GetOccMetricAlarmsFilterInput` via:
+//
+//	GetOccMetricAlarmsFilterArgs{...}
+type GetOccMetricAlarmsFilterInput interface {
+	pulumi.Input
+
+	ToGetOccMetricAlarmsFilterOutput() GetOccMetricAlarmsFilterOutput
+	ToGetOccMetricAlarmsFilterOutputWithContext(context.Context) GetOccMetricAlarmsFilterOutput
+}
+
+type GetOccMetricAlarmsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetOccMetricAlarmsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccMetricAlarmsFilter)(nil)).Elem()
+}
+
+func (i GetOccMetricAlarmsFilterArgs) ToGetOccMetricAlarmsFilterOutput() GetOccMetricAlarmsFilterOutput {
+	return i.ToGetOccMetricAlarmsFilterOutputWithContext(context.Background())
+}
+
+func (i GetOccMetricAlarmsFilterArgs) ToGetOccMetricAlarmsFilterOutputWithContext(ctx context.Context) GetOccMetricAlarmsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccMetricAlarmsFilterOutput)
+}
+
+// GetOccMetricAlarmsFilterArrayInput is an input type that accepts GetOccMetricAlarmsFilterArray and GetOccMetricAlarmsFilterArrayOutput values.
+// You can construct a concrete instance of `GetOccMetricAlarmsFilterArrayInput` via:
+//
+//	GetOccMetricAlarmsFilterArray{ GetOccMetricAlarmsFilterArgs{...} }
+type GetOccMetricAlarmsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetOccMetricAlarmsFilterArrayOutput() GetOccMetricAlarmsFilterArrayOutput
+	ToGetOccMetricAlarmsFilterArrayOutputWithContext(context.Context) GetOccMetricAlarmsFilterArrayOutput
+}
+
+type GetOccMetricAlarmsFilterArray []GetOccMetricAlarmsFilterInput
+
+func (GetOccMetricAlarmsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccMetricAlarmsFilter)(nil)).Elem()
+}
+
+func (i GetOccMetricAlarmsFilterArray) ToGetOccMetricAlarmsFilterArrayOutput() GetOccMetricAlarmsFilterArrayOutput {
+	return i.ToGetOccMetricAlarmsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccMetricAlarmsFilterArray) ToGetOccMetricAlarmsFilterArrayOutputWithContext(ctx context.Context) GetOccMetricAlarmsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccMetricAlarmsFilterArrayOutput)
+}
+
+type GetOccMetricAlarmsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetOccMetricAlarmsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccMetricAlarmsFilter)(nil)).Elem()
+}
+
+func (o GetOccMetricAlarmsFilterOutput) ToGetOccMetricAlarmsFilterOutput() GetOccMetricAlarmsFilterOutput {
+	return o
+}
+
+func (o GetOccMetricAlarmsFilterOutput) ToGetOccMetricAlarmsFilterOutputWithContext(ctx context.Context) GetOccMetricAlarmsFilterOutput {
+	return o
+}
+
+func (o GetOccMetricAlarmsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetOccMetricAlarmsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetOccMetricAlarmsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetOccMetricAlarmsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccMetricAlarmsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccMetricAlarmsFilter)(nil)).Elem()
+}
+
+func (o GetOccMetricAlarmsFilterArrayOutput) ToGetOccMetricAlarmsFilterArrayOutput() GetOccMetricAlarmsFilterArrayOutput {
+	return o
+}
+
+func (o GetOccMetricAlarmsFilterArrayOutput) ToGetOccMetricAlarmsFilterArrayOutputWithContext(ctx context.Context) GetOccMetricAlarmsFilterArrayOutput {
+	return o
+}
+
+func (o GetOccMetricAlarmsFilterArrayOutput) Index(i pulumi.IntInput) GetOccMetricAlarmsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccMetricAlarmsFilter {
+		return vs[0].([]GetOccMetricAlarmsFilter)[vs[1].(int)]
+	}).(GetOccMetricAlarmsFilterOutput)
+}
+
+type GetOccMetricAlarmsOccMetricAlarmCollection struct {
+	Items []GetOccMetricAlarmsOccMetricAlarmCollectionItem `pulumi:"items"`
+}
+
+// GetOccMetricAlarmsOccMetricAlarmCollectionInput is an input type that accepts GetOccMetricAlarmsOccMetricAlarmCollectionArgs and GetOccMetricAlarmsOccMetricAlarmCollectionOutput values.
+// You can construct a concrete instance of `GetOccMetricAlarmsOccMetricAlarmCollectionInput` via:
+//
+//	GetOccMetricAlarmsOccMetricAlarmCollectionArgs{...}
+type GetOccMetricAlarmsOccMetricAlarmCollectionInput interface {
+	pulumi.Input
+
+	ToGetOccMetricAlarmsOccMetricAlarmCollectionOutput() GetOccMetricAlarmsOccMetricAlarmCollectionOutput
+	ToGetOccMetricAlarmsOccMetricAlarmCollectionOutputWithContext(context.Context) GetOccMetricAlarmsOccMetricAlarmCollectionOutput
+}
+
+type GetOccMetricAlarmsOccMetricAlarmCollectionArgs struct {
+	Items GetOccMetricAlarmsOccMetricAlarmCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetOccMetricAlarmsOccMetricAlarmCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccMetricAlarmsOccMetricAlarmCollection)(nil)).Elem()
+}
+
+func (i GetOccMetricAlarmsOccMetricAlarmCollectionArgs) ToGetOccMetricAlarmsOccMetricAlarmCollectionOutput() GetOccMetricAlarmsOccMetricAlarmCollectionOutput {
+	return i.ToGetOccMetricAlarmsOccMetricAlarmCollectionOutputWithContext(context.Background())
+}
+
+func (i GetOccMetricAlarmsOccMetricAlarmCollectionArgs) ToGetOccMetricAlarmsOccMetricAlarmCollectionOutputWithContext(ctx context.Context) GetOccMetricAlarmsOccMetricAlarmCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccMetricAlarmsOccMetricAlarmCollectionOutput)
+}
+
+// GetOccMetricAlarmsOccMetricAlarmCollectionArrayInput is an input type that accepts GetOccMetricAlarmsOccMetricAlarmCollectionArray and GetOccMetricAlarmsOccMetricAlarmCollectionArrayOutput values.
+// You can construct a concrete instance of `GetOccMetricAlarmsOccMetricAlarmCollectionArrayInput` via:
+//
+//	GetOccMetricAlarmsOccMetricAlarmCollectionArray{ GetOccMetricAlarmsOccMetricAlarmCollectionArgs{...} }
+type GetOccMetricAlarmsOccMetricAlarmCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetOccMetricAlarmsOccMetricAlarmCollectionArrayOutput() GetOccMetricAlarmsOccMetricAlarmCollectionArrayOutput
+	ToGetOccMetricAlarmsOccMetricAlarmCollectionArrayOutputWithContext(context.Context) GetOccMetricAlarmsOccMetricAlarmCollectionArrayOutput
+}
+
+type GetOccMetricAlarmsOccMetricAlarmCollectionArray []GetOccMetricAlarmsOccMetricAlarmCollectionInput
+
+func (GetOccMetricAlarmsOccMetricAlarmCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccMetricAlarmsOccMetricAlarmCollection)(nil)).Elem()
+}
+
+func (i GetOccMetricAlarmsOccMetricAlarmCollectionArray) ToGetOccMetricAlarmsOccMetricAlarmCollectionArrayOutput() GetOccMetricAlarmsOccMetricAlarmCollectionArrayOutput {
+	return i.ToGetOccMetricAlarmsOccMetricAlarmCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccMetricAlarmsOccMetricAlarmCollectionArray) ToGetOccMetricAlarmsOccMetricAlarmCollectionArrayOutputWithContext(ctx context.Context) GetOccMetricAlarmsOccMetricAlarmCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccMetricAlarmsOccMetricAlarmCollectionArrayOutput)
+}
+
+type GetOccMetricAlarmsOccMetricAlarmCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetOccMetricAlarmsOccMetricAlarmCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccMetricAlarmsOccMetricAlarmCollection)(nil)).Elem()
+}
+
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionOutput) ToGetOccMetricAlarmsOccMetricAlarmCollectionOutput() GetOccMetricAlarmsOccMetricAlarmCollectionOutput {
+	return o
+}
+
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionOutput) ToGetOccMetricAlarmsOccMetricAlarmCollectionOutputWithContext(ctx context.Context) GetOccMetricAlarmsOccMetricAlarmCollectionOutput {
+	return o
+}
+
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionOutput) Items() GetOccMetricAlarmsOccMetricAlarmCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollection) []GetOccMetricAlarmsOccMetricAlarmCollectionItem {
+		return v.Items
+	}).(GetOccMetricAlarmsOccMetricAlarmCollectionItemArrayOutput)
+}
+
+type GetOccMetricAlarmsOccMetricAlarmCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccMetricAlarmsOccMetricAlarmCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccMetricAlarmsOccMetricAlarmCollection)(nil)).Elem()
+}
+
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionArrayOutput) ToGetOccMetricAlarmsOccMetricAlarmCollectionArrayOutput() GetOccMetricAlarmsOccMetricAlarmCollectionArrayOutput {
+	return o
+}
+
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionArrayOutput) ToGetOccMetricAlarmsOccMetricAlarmCollectionArrayOutputWithContext(ctx context.Context) GetOccMetricAlarmsOccMetricAlarmCollectionArrayOutput {
+	return o
+}
+
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionArrayOutput) Index(i pulumi.IntInput) GetOccMetricAlarmsOccMetricAlarmCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccMetricAlarmsOccMetricAlarmCollection {
+		return vs[0].([]GetOccMetricAlarmsOccMetricAlarmCollection)[vs[1].(int)]
+	}).(GetOccMetricAlarmsOccMetricAlarmCollectionOutput)
+}
+
+type GetOccMetricAlarmsOccMetricAlarmCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Optional description for the alarm.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Frequency at which notifications should be sent.
+	Frequency string `pulumi:"frequency"`
+	// Unique OCID for this alarm configuration.
+	Id string `pulumi:"id"`
+	// Filter to list only active or inactive alarms.
+	IsActive bool `pulumi:"isActive"`
+	// Configuration for a given 'resource'
+	ResourceConfigurations []GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfiguration `pulumi:"resourceConfigurations"`
+	// The current lifecycle state of the resource.
+	State string `pulumi:"state"`
+	// List of topic OCIDs for notifications.
+	Subscribers []string `pulumi:"subscribers"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// Threshold at which alarm must be triggered.
+	Threshold int `pulumi:"threshold"`
+	// Units in which threshold is being stored.
+	ThresholdType string `pulumi:"thresholdType"`
+	// Creation timestamp (RFC 3339).
+	TimeCreated string `pulumi:"timeCreated"`
+	// Last update timestamp (RFC 3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetOccMetricAlarmsOccMetricAlarmCollectionItemInput is an input type that accepts GetOccMetricAlarmsOccMetricAlarmCollectionItemArgs and GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput values.
+// You can construct a concrete instance of `GetOccMetricAlarmsOccMetricAlarmCollectionItemInput` via:
+//
+//	GetOccMetricAlarmsOccMetricAlarmCollectionItemArgs{...}
+type GetOccMetricAlarmsOccMetricAlarmCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetOccMetricAlarmsOccMetricAlarmCollectionItemOutput() GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput
+	ToGetOccMetricAlarmsOccMetricAlarmCollectionItemOutputWithContext(context.Context) GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput
+}
+
+type GetOccMetricAlarmsOccMetricAlarmCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Optional description for the alarm.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Frequency at which notifications should be sent.
+	Frequency pulumi.StringInput `pulumi:"frequency"`
+	// Unique OCID for this alarm configuration.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Filter to list only active or inactive alarms.
+	IsActive pulumi.BoolInput `pulumi:"isActive"`
+	// Configuration for a given 'resource'
+	ResourceConfigurations GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayInput `pulumi:"resourceConfigurations"`
+	// The current lifecycle state of the resource.
+	State pulumi.StringInput `pulumi:"state"`
+	// List of topic OCIDs for notifications.
+	Subscribers pulumi.StringArrayInput `pulumi:"subscribers"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// Threshold at which alarm must be triggered.
+	Threshold pulumi.IntInput `pulumi:"threshold"`
+	// Units in which threshold is being stored.
+	ThresholdType pulumi.StringInput `pulumi:"thresholdType"`
+	// Creation timestamp (RFC 3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Last update timestamp (RFC 3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetOccMetricAlarmsOccMetricAlarmCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccMetricAlarmsOccMetricAlarmCollectionItem)(nil)).Elem()
+}
+
+func (i GetOccMetricAlarmsOccMetricAlarmCollectionItemArgs) ToGetOccMetricAlarmsOccMetricAlarmCollectionItemOutput() GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput {
+	return i.ToGetOccMetricAlarmsOccMetricAlarmCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetOccMetricAlarmsOccMetricAlarmCollectionItemArgs) ToGetOccMetricAlarmsOccMetricAlarmCollectionItemOutputWithContext(ctx context.Context) GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput)
+}
+
+// GetOccMetricAlarmsOccMetricAlarmCollectionItemArrayInput is an input type that accepts GetOccMetricAlarmsOccMetricAlarmCollectionItemArray and GetOccMetricAlarmsOccMetricAlarmCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetOccMetricAlarmsOccMetricAlarmCollectionItemArrayInput` via:
+//
+//	GetOccMetricAlarmsOccMetricAlarmCollectionItemArray{ GetOccMetricAlarmsOccMetricAlarmCollectionItemArgs{...} }
+type GetOccMetricAlarmsOccMetricAlarmCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOccMetricAlarmsOccMetricAlarmCollectionItemArrayOutput() GetOccMetricAlarmsOccMetricAlarmCollectionItemArrayOutput
+	ToGetOccMetricAlarmsOccMetricAlarmCollectionItemArrayOutputWithContext(context.Context) GetOccMetricAlarmsOccMetricAlarmCollectionItemArrayOutput
+}
+
+type GetOccMetricAlarmsOccMetricAlarmCollectionItemArray []GetOccMetricAlarmsOccMetricAlarmCollectionItemInput
+
+func (GetOccMetricAlarmsOccMetricAlarmCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccMetricAlarmsOccMetricAlarmCollectionItem)(nil)).Elem()
+}
+
+func (i GetOccMetricAlarmsOccMetricAlarmCollectionItemArray) ToGetOccMetricAlarmsOccMetricAlarmCollectionItemArrayOutput() GetOccMetricAlarmsOccMetricAlarmCollectionItemArrayOutput {
+	return i.ToGetOccMetricAlarmsOccMetricAlarmCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccMetricAlarmsOccMetricAlarmCollectionItemArray) ToGetOccMetricAlarmsOccMetricAlarmCollectionItemArrayOutputWithContext(ctx context.Context) GetOccMetricAlarmsOccMetricAlarmCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccMetricAlarmsOccMetricAlarmCollectionItemArrayOutput)
+}
+
+type GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccMetricAlarmsOccMetricAlarmCollectionItem)(nil)).Elem()
+}
+
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput) ToGetOccMetricAlarmsOccMetricAlarmCollectionItemOutput() GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput {
+	return o
+}
+
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput) ToGetOccMetricAlarmsOccMetricAlarmCollectionItemOutputWithContext(ctx context.Context) GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Optional description for the alarm.
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// Frequency at which notifications should be sent.
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput) Frequency() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItem) string { return v.Frequency }).(pulumi.StringOutput)
+}
+
+// Unique OCID for this alarm configuration.
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Filter to list only active or inactive alarms.
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput) IsActive() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItem) bool { return v.IsActive }).(pulumi.BoolOutput)
+}
+
+// Configuration for a given 'resource'
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput) ResourceConfigurations() GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItem) []GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfiguration {
+		return v.ResourceConfigurations
+	}).(GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayOutput)
+}
+
+// The current lifecycle state of the resource.
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// List of topic OCIDs for notifications.
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput) Subscribers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItem) []string { return v.Subscribers }).(pulumi.StringArrayOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// Threshold at which alarm must be triggered.
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput) Threshold() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItem) int { return v.Threshold }).(pulumi.IntOutput)
+}
+
+// Units in which threshold is being stored.
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput) ThresholdType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItem) string { return v.ThresholdType }).(pulumi.StringOutput)
+}
+
+// Creation timestamp (RFC 3339).
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Last update timestamp (RFC 3339).
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetOccMetricAlarmsOccMetricAlarmCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccMetricAlarmsOccMetricAlarmCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccMetricAlarmsOccMetricAlarmCollectionItem)(nil)).Elem()
+}
+
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemArrayOutput) ToGetOccMetricAlarmsOccMetricAlarmCollectionItemArrayOutput() GetOccMetricAlarmsOccMetricAlarmCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemArrayOutput) ToGetOccMetricAlarmsOccMetricAlarmCollectionItemArrayOutputWithContext(ctx context.Context) GetOccMetricAlarmsOccMetricAlarmCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccMetricAlarmsOccMetricAlarmCollectionItem {
+		return vs[0].([]GetOccMetricAlarmsOccMetricAlarmCollectionItem)[vs[1].(int)]
+	}).(GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput)
+}
+
+type GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfiguration struct {
+	// The hardware generation of the compute resource.
+	ComputeHwGeneration string `pulumi:"computeHwGeneration"`
+	// The hardware generation of the Exadata system.
+	HwGeneration string `pulumi:"hwGeneration"`
+	// The role of the link in the network.
+	LinkRole string `pulumi:"linkRole"`
+	// The type of node in the Exadata system.
+	NodeType string `pulumi:"nodeType"`
+	// The provider of the network service.
+	OccMetricAlarmProvider string `pulumi:"occMetricAlarmProvider"`
+	// Resources like COMPUTE, STORAGE, EXADATA etc.
+	Resource string `pulumi:"resource"`
+	// The shape of the compute instance.
+	Shape string `pulumi:"shape"`
+	// The type of storage resource.
+	StorageType string `pulumi:"storageType"`
+	// The type of usage for the resource.
+	UsageType string `pulumi:"usageType"`
+}
+
+// GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationInput is an input type that accepts GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArgs and GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput values.
+// You can construct a concrete instance of `GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationInput` via:
+//
+//	GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArgs{...}
+type GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationInput interface {
+	pulumi.Input
+
+	ToGetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput() GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput
+	ToGetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutputWithContext(context.Context) GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput
+}
+
+type GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArgs struct {
+	// The hardware generation of the compute resource.
+	ComputeHwGeneration pulumi.StringInput `pulumi:"computeHwGeneration"`
+	// The hardware generation of the Exadata system.
+	HwGeneration pulumi.StringInput `pulumi:"hwGeneration"`
+	// The role of the link in the network.
+	LinkRole pulumi.StringInput `pulumi:"linkRole"`
+	// The type of node in the Exadata system.
+	NodeType pulumi.StringInput `pulumi:"nodeType"`
+	// The provider of the network service.
+	OccMetricAlarmProvider pulumi.StringInput `pulumi:"occMetricAlarmProvider"`
+	// Resources like COMPUTE, STORAGE, EXADATA etc.
+	Resource pulumi.StringInput `pulumi:"resource"`
+	// The shape of the compute instance.
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// The type of storage resource.
+	StorageType pulumi.StringInput `pulumi:"storageType"`
+	// The type of usage for the resource.
+	UsageType pulumi.StringInput `pulumi:"usageType"`
+}
+
+func (GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfiguration)(nil)).Elem()
+}
+
+func (i GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArgs) ToGetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput() GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput {
+	return i.ToGetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArgs) ToGetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutputWithContext(ctx context.Context) GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput)
+}
+
+// GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayInput is an input type that accepts GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArray and GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayInput` via:
+//
+//	GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArray{ GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArgs{...} }
+type GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayOutput() GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayOutput
+	ToGetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayOutputWithContext(context.Context) GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayOutput
+}
+
+type GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArray []GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationInput
+
+func (GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfiguration)(nil)).Elem()
+}
+
+func (i GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArray) ToGetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayOutput() GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayOutput {
+	return i.ToGetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArray) ToGetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayOutputWithContext(ctx context.Context) GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayOutput)
+}
+
+type GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfiguration)(nil)).Elem()
+}
+
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput) ToGetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput() GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput {
+	return o
+}
+
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput) ToGetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutputWithContext(ctx context.Context) GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput {
+	return o
+}
+
+// The hardware generation of the compute resource.
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput) ComputeHwGeneration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfiguration) string {
+		return v.ComputeHwGeneration
+	}).(pulumi.StringOutput)
+}
+
+// The hardware generation of the Exadata system.
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput) HwGeneration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfiguration) string {
+		return v.HwGeneration
+	}).(pulumi.StringOutput)
+}
+
+// The role of the link in the network.
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput) LinkRole() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfiguration) string { return v.LinkRole }).(pulumi.StringOutput)
+}
+
+// The type of node in the Exadata system.
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput) NodeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfiguration) string { return v.NodeType }).(pulumi.StringOutput)
+}
+
+// The provider of the network service.
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput) OccMetricAlarmProvider() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfiguration) string {
+		return v.OccMetricAlarmProvider
+	}).(pulumi.StringOutput)
+}
+
+// Resources like COMPUTE, STORAGE, EXADATA etc.
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput) Resource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfiguration) string { return v.Resource }).(pulumi.StringOutput)
+}
+
+// The shape of the compute instance.
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfiguration) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// The type of storage resource.
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput) StorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfiguration) string {
+		return v.StorageType
+	}).(pulumi.StringOutput)
+}
+
+// The type of usage for the resource.
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput) UsageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfiguration) string { return v.UsageType }).(pulumi.StringOutput)
+}
+
+type GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfiguration)(nil)).Elem()
+}
+
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayOutput) ToGetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayOutput() GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayOutput {
+	return o
+}
+
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayOutput) ToGetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayOutputWithContext(ctx context.Context) GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayOutput {
+	return o
+}
+
+func (o GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayOutput) Index(i pulumi.IntInput) GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfiguration {
+		return vs[0].([]GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfiguration)[vs[1].(int)]
+	}).(GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*OccDemandSignalOccDemandSignalInput)(nil)).Elem(), OccDemandSignalOccDemandSignalArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OccDemandSignalOccDemandSignalArrayInput)(nil)).Elem(), OccDemandSignalOccDemandSignalArray{})
@@ -1529,6 +2600,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*OccDemandSignalOccDemandSignalValueArrayInput)(nil)).Elem(), OccDemandSignalOccDemandSignalValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OccDemandSignalPatchOperationInput)(nil)).Elem(), OccDemandSignalPatchOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OccDemandSignalPatchOperationArrayInput)(nil)).Elem(), OccDemandSignalPatchOperationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OccMetricAlarmResourceConfigurationInput)(nil)).Elem(), OccMetricAlarmResourceConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OccMetricAlarmResourceConfigurationPtrInput)(nil)).Elem(), OccMetricAlarmResourceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccDemandSignalOccDemandSignalInput)(nil)).Elem(), GetOccDemandSignalOccDemandSignalArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccDemandSignalOccDemandSignalArrayInput)(nil)).Elem(), GetOccDemandSignalOccDemandSignalArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccDemandSignalOccDemandSignalValueInput)(nil)).Elem(), GetOccDemandSignalOccDemandSignalValueArgs{})
@@ -1547,12 +2620,24 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccDemandSignalsOccDemandSignalCollectionItemOccDemandSignalValueArrayInput)(nil)).Elem(), GetOccDemandSignalsOccDemandSignalCollectionItemOccDemandSignalValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccDemandSignalsOccDemandSignalCollectionItemPatchOperationInput)(nil)).Elem(), GetOccDemandSignalsOccDemandSignalCollectionItemPatchOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccDemandSignalsOccDemandSignalCollectionItemPatchOperationArrayInput)(nil)).Elem(), GetOccDemandSignalsOccDemandSignalCollectionItemPatchOperationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccMetricAlarmResourceConfigurationInput)(nil)).Elem(), GetOccMetricAlarmResourceConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccMetricAlarmResourceConfigurationArrayInput)(nil)).Elem(), GetOccMetricAlarmResourceConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccMetricAlarmsFilterInput)(nil)).Elem(), GetOccMetricAlarmsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccMetricAlarmsFilterArrayInput)(nil)).Elem(), GetOccMetricAlarmsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccMetricAlarmsOccMetricAlarmCollectionInput)(nil)).Elem(), GetOccMetricAlarmsOccMetricAlarmCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccMetricAlarmsOccMetricAlarmCollectionArrayInput)(nil)).Elem(), GetOccMetricAlarmsOccMetricAlarmCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccMetricAlarmsOccMetricAlarmCollectionItemInput)(nil)).Elem(), GetOccMetricAlarmsOccMetricAlarmCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccMetricAlarmsOccMetricAlarmCollectionItemArrayInput)(nil)).Elem(), GetOccMetricAlarmsOccMetricAlarmCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationInput)(nil)).Elem(), GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayInput)(nil)).Elem(), GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArray{})
 	pulumi.RegisterOutputType(OccDemandSignalOccDemandSignalOutput{})
 	pulumi.RegisterOutputType(OccDemandSignalOccDemandSignalArrayOutput{})
 	pulumi.RegisterOutputType(OccDemandSignalOccDemandSignalValueOutput{})
 	pulumi.RegisterOutputType(OccDemandSignalOccDemandSignalValueArrayOutput{})
 	pulumi.RegisterOutputType(OccDemandSignalPatchOperationOutput{})
 	pulumi.RegisterOutputType(OccDemandSignalPatchOperationArrayOutput{})
+	pulumi.RegisterOutputType(OccMetricAlarmResourceConfigurationOutput{})
+	pulumi.RegisterOutputType(OccMetricAlarmResourceConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(GetOccDemandSignalOccDemandSignalOutput{})
 	pulumi.RegisterOutputType(GetOccDemandSignalOccDemandSignalArrayOutput{})
 	pulumi.RegisterOutputType(GetOccDemandSignalOccDemandSignalValueOutput{})
@@ -1571,4 +2656,14 @@ func init() {
 	pulumi.RegisterOutputType(GetOccDemandSignalsOccDemandSignalCollectionItemOccDemandSignalValueArrayOutput{})
 	pulumi.RegisterOutputType(GetOccDemandSignalsOccDemandSignalCollectionItemPatchOperationOutput{})
 	pulumi.RegisterOutputType(GetOccDemandSignalsOccDemandSignalCollectionItemPatchOperationArrayOutput{})
+	pulumi.RegisterOutputType(GetOccMetricAlarmResourceConfigurationOutput{})
+	pulumi.RegisterOutputType(GetOccMetricAlarmResourceConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetOccMetricAlarmsFilterOutput{})
+	pulumi.RegisterOutputType(GetOccMetricAlarmsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetOccMetricAlarmsOccMetricAlarmCollectionOutput{})
+	pulumi.RegisterOutputType(GetOccMetricAlarmsOccMetricAlarmCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetOccMetricAlarmsOccMetricAlarmCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetOccMetricAlarmsOccMetricAlarmCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationOutput{})
+	pulumi.RegisterOutputType(GetOccMetricAlarmsOccMetricAlarmCollectionItemResourceConfigurationArrayOutput{})
 }

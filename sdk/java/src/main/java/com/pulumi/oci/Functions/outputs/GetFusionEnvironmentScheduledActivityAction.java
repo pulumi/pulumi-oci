@@ -11,17 +11,17 @@ import java.util.Objects;
 @CustomType
 public final class GetFusionEnvironmentScheduledActivityAction {
     /**
-     * @return Type of action
+     * @return Type of action.
      * 
      */
     private String actionType;
     /**
-     * @return patch that delivered the vertex update prerequisite
+     * @return Patch that delivered the Vertex update prerequisite.
      * 
      */
     private String artifact;
     /**
-     * @return patch artifact category
+     * @return Patch artifact category.
      * 
      */
     private String category;
@@ -31,17 +31,17 @@ public final class GetFusionEnvironmentScheduledActivityAction {
      */
     private String description;
     /**
-     * @return A string that describes whether the change is applied hot or cold
+     * @return A string that describes whether the change is applied hot or cold.
      * 
      */
     private String mode;
     /**
-     * @return month qualifier
+     * @return Month qualifier.
      * 
      */
     private String qualifier;
     /**
-     * @return Unique identifier of the object that represents the action
+     * @return Unique identifier of the object that represents the action.
      * 
      */
     private String referenceKey;
@@ -51,28 +51,28 @@ public final class GetFusionEnvironmentScheduledActivityAction {
      */
     private String state;
     /**
-     * @return name of the repo
+     * @return Name of the repo.
      * 
      */
     private String version;
 
     private GetFusionEnvironmentScheduledActivityAction() {}
     /**
-     * @return Type of action
+     * @return Type of action.
      * 
      */
     public String actionType() {
         return this.actionType;
     }
     /**
-     * @return patch that delivered the vertex update prerequisite
+     * @return Patch that delivered the Vertex update prerequisite.
      * 
      */
     public String artifact() {
         return this.artifact;
     }
     /**
-     * @return patch artifact category
+     * @return Patch artifact category.
      * 
      */
     public String category() {
@@ -86,21 +86,21 @@ public final class GetFusionEnvironmentScheduledActivityAction {
         return this.description;
     }
     /**
-     * @return A string that describes whether the change is applied hot or cold
+     * @return A string that describes whether the change is applied hot or cold.
      * 
      */
     public String mode() {
         return this.mode;
     }
     /**
-     * @return month qualifier
+     * @return Month qualifier.
      * 
      */
     public String qualifier() {
         return this.qualifier;
     }
     /**
-     * @return Unique identifier of the object that represents the action
+     * @return Unique identifier of the object that represents the action.
      * 
      */
     public String referenceKey() {
@@ -114,7 +114,7 @@ public final class GetFusionEnvironmentScheduledActivityAction {
         return this.state;
     }
     /**
-     * @return name of the repo
+     * @return Name of the repo.
      * 
      */
     public String version() {

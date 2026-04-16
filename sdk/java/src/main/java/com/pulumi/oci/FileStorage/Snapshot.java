@@ -10,11 +10,13 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.FileStorage.SnapshotArgs;
 import com.pulumi.oci.FileStorage.inputs.SnapshotState;
 import com.pulumi.oci.FileStorage.outputs.SnapshotLock;
+import com.pulumi.oci.FileStorage.outputs.SnapshotLockDurationDetails;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -37,6 +39,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.FileStorage.Snapshot;
  * import com.pulumi.oci.FileStorage.SnapshotArgs;
+ * import com.pulumi.oci.FileStorage.inputs.SnapshotLockDurationDetailsArgs;
  * import com.pulumi.oci.FileStorage.inputs.SnapshotLockArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -57,6 +60,11 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .expirationTime(snapshotExpirationTime)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .lockDurationDetails(SnapshotLockDurationDetailsArgs.builder()
+ *                 .lockDuration(snapshotLockDurationDetailsLockDuration)
+ *                 .lockMode(snapshotLockDurationDetailsLockMode)
+ *                 .coolOffDuration(snapshotLockDurationDetailsCoolOffDuration)
+ *                 .build())
  *             .locks(SnapshotLockArgs.builder()
  *                 .type(snapshotLocksType)
  *                 .message(snapshotLocksMessage)
@@ -184,6 +192,20 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * (Updatable) Details for setting a retention date or legal hold.
+     * 
+     */
+    @Export(name="lockDurationDetails", refs={SnapshotLockDurationDetails.class}, tree="[0]")
+    private Output</* @Nullable */ SnapshotLockDurationDetails> lockDurationDetails;
+
+    /**
+     * @return (Updatable) Details for setting a retention date or legal hold.
+     * 
+     */
+    public Output<Optional<SnapshotLockDurationDetails>> lockDurationDetails() {
+        return Codegen.optional(this.lockDurationDetails);
     }
     /**
      * Locks associated with this resource.
@@ -316,6 +338,20 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
+    }
+    /**
+     * The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+     * 
+     */
+    @Export(name="timeLocked", refs={String.class}, tree="[0]")
+    private Output<String> timeLocked;
+
+    /**
+     * @return The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+     * 
+     */
+    public Output<String> timeLocked() {
+        return this.timeLocked;
     }
 
     /**

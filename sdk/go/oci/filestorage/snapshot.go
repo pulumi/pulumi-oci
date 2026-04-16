@@ -44,6 +44,11 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				LockDurationDetails: &filestorage.SnapshotLockDurationDetailsArgs{
+//					LockDuration:    pulumi.Any(snapshotLockDurationDetailsLockDuration),
+//					LockMode:        pulumi.Any(snapshotLockDurationDetailsLockMode),
+//					CoolOffDuration: pulumi.Any(snapshotLockDurationDetailsCoolOffDuration),
+//				},
 //				Locks: filestorage.SnapshotLockArray{
 //					&filestorage.SnapshotLockArgs{
 //						Type:              pulumi.Any(snapshotLocksType),
@@ -87,6 +92,8 @@ type Snapshot struct {
 	IsLockOverride pulumi.BoolOutput `pulumi:"isLockOverride"`
 	// Additional information about the current `lifecycleState`.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// (Updatable) Details for setting a retention date or legal hold.
+	LockDurationDetails SnapshotLockDurationDetailsPtrOutput `pulumi:"lockDurationDetails"`
 	// Locks associated with this resource.
 	Locks SnapshotLockArrayOutput `pulumi:"locks"`
 	// Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
@@ -113,6 +120,8 @@ type Snapshot struct {
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+	TimeLocked pulumi.StringOutput `pulumi:"timeLocked"`
 }
 
 // NewSnapshot registers a new resource with the given unique name, arguments, and options.
@@ -163,6 +172,8 @@ type snapshotState struct {
 	IsLockOverride *bool `pulumi:"isLockOverride"`
 	// Additional information about the current `lifecycleState`.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// (Updatable) Details for setting a retention date or legal hold.
+	LockDurationDetails *SnapshotLockDurationDetails `pulumi:"lockDurationDetails"`
 	// Locks associated with this resource.
 	Locks []SnapshotLock `pulumi:"locks"`
 	// Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
@@ -189,6 +200,8 @@ type snapshotState struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
+	// The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+	TimeLocked *string `pulumi:"timeLocked"`
 }
 
 type SnapshotState struct {
@@ -207,6 +220,8 @@ type SnapshotState struct {
 	IsLockOverride pulumi.BoolPtrInput
 	// Additional information about the current `lifecycleState`.
 	LifecycleDetails pulumi.StringPtrInput
+	// (Updatable) Details for setting a retention date or legal hold.
+	LockDurationDetails SnapshotLockDurationDetailsPtrInput
 	// Locks associated with this resource.
 	Locks SnapshotLockArrayInput
 	// Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
@@ -233,6 +248,8 @@ type SnapshotState struct {
 	SystemTags pulumi.StringMapInput
 	// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
+	// The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+	TimeLocked pulumi.StringPtrInput
 }
 
 func (SnapshotState) ElementType() reflect.Type {
@@ -249,6 +266,8 @@ type snapshotArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags   map[string]string `pulumi:"freeformTags"`
 	IsLockOverride *bool             `pulumi:"isLockOverride"`
+	// (Updatable) Details for setting a retention date or legal hold.
+	LockDurationDetails *SnapshotLockDurationDetails `pulumi:"lockDurationDetails"`
 	// Locks associated with this resource.
 	Locks []SnapshotLock `pulumi:"locks"`
 	// Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
@@ -273,6 +292,8 @@ type SnapshotArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags   pulumi.StringMapInput
 	IsLockOverride pulumi.BoolPtrInput
+	// (Updatable) Details for setting a retention date or legal hold.
+	LockDurationDetails SnapshotLockDurationDetailsPtrInput
 	// Locks associated with this resource.
 	Locks SnapshotLockArrayInput
 	// Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
@@ -412,6 +433,11 @@ func (o SnapshotOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// (Updatable) Details for setting a retention date or legal hold.
+func (o SnapshotOutput) LockDurationDetails() SnapshotLockDurationDetailsPtrOutput {
+	return o.ApplyT(func(v *Snapshot) SnapshotLockDurationDetailsPtrOutput { return v.LockDurationDetails }).(SnapshotLockDurationDetailsPtrOutput)
+}
+
 // Locks associated with this resource.
 func (o SnapshotOutput) Locks() SnapshotLockArrayOutput {
 	return o.ApplyT(func(v *Snapshot) SnapshotLockArrayOutput { return v.Locks }).(SnapshotLockArrayOutput)
@@ -460,6 +486,11 @@ func (o SnapshotOutput) SystemTags() pulumi.StringMapOutput {
 // The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o SnapshotOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
+func (o SnapshotOutput) TimeLocked() pulumi.StringOutput {
+	return o.ApplyT(func(v *Snapshot) pulumi.StringOutput { return v.TimeLocked }).(pulumi.StringOutput)
 }
 
 type SnapshotArrayOutput struct{ *pulumi.OutputState }

@@ -172,6 +172,36 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetail
     }
 
     /**
+     * The OKV endpoint name.
+     * 
+     */
+    @Import(name="okvEndPointGroup")
+    private @Nullable Output<String> okvEndPointGroup;
+
+    /**
+     * @return The OKV endpoint name.
+     * 
+     */
+    public Optional<Output<String>> okvEndPointGroup() {
+        return Optional.ofNullable(this.okvEndPointGroup);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the catalog.
+     * 
+     */
+    @Import(name="okvKeyStoreId")
+    private @Nullable Output<String> okvKeyStoreId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the catalog.
+     * 
+     */
+    public Optional<Output<String>> okvKeyStoreId() {
+        return Optional.ofNullable(this.okvKeyStoreId);
+    }
+
+    /**
      * This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers on catalog of distributed autonomous database please use peerDetails.
      * 
      */
@@ -319,6 +349,8 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetail
         this.kmsKeyVersionId = $.kmsKeyVersionId;
         this.metadatas = $.metadatas;
         this.name = $.name;
+        this.okvEndPointGroup = $.okvEndPointGroup;
+        this.okvKeyStoreId = $.okvKeyStoreId;
         this.peerCloudAutonomousVmClusterIds = $.peerCloudAutonomousVmClusterIds;
         this.peerDetails = $.peerDetails;
         this.shardGroup = $.shardGroup;
@@ -566,6 +598,48 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseCatalogDetail
          */
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        /**
+         * @param okvEndPointGroup The OKV endpoint name.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder okvEndPointGroup(@Nullable Output<String> okvEndPointGroup) {
+            $.okvEndPointGroup = okvEndPointGroup;
+            return this;
+        }
+
+        /**
+         * @param okvEndPointGroup The OKV endpoint name.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder okvEndPointGroup(String okvEndPointGroup) {
+            return okvEndPointGroup(Output.of(okvEndPointGroup));
+        }
+
+        /**
+         * @param okvKeyStoreId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the catalog.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder okvKeyStoreId(@Nullable Output<String> okvKeyStoreId) {
+            $.okvKeyStoreId = okvKeyStoreId;
+            return this;
+        }
+
+        /**
+         * @param okvKeyStoreId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store used to create the catalog.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder okvKeyStoreId(String okvKeyStoreId) {
+            return okvKeyStoreId(Output.of(okvKeyStoreId));
         }
 
         /**

@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     displayName: managementApplianceDisplayName,
  *     managementApplianceId: testManagementAppliance.id,
+ *     sddcId: testSddc.id,
  *     state: managementApplianceState,
  * });
  * ```
@@ -32,6 +33,7 @@ export function getManagementAppliances(args: GetManagementAppliancesArgs, opts?
         "displayName": args.displayName,
         "filters": args.filters,
         "managementApplianceId": args.managementApplianceId,
+        "sddcId": args.sddcId,
         "state": args.state,
     }, opts);
 }
@@ -53,6 +55,10 @@ export interface GetManagementAppliancesArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management appliance.
      */
     managementApplianceId?: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
+     */
+    sddcId?: string;
     /**
      * The lifecycle state of the management appliance.
      */
@@ -82,6 +88,10 @@ export interface GetManagementAppliancesResult {
     readonly managementApplianceCollections: outputs.Ocvp.GetManagementAppliancesManagementApplianceCollection[];
     readonly managementApplianceId?: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
+     */
+    readonly sddcId?: string;
+    /**
      * Current state of the management appliance.
      */
     readonly state?: string;
@@ -101,6 +111,7 @@ export interface GetManagementAppliancesResult {
  *     compartmentId: compartmentId,
  *     displayName: managementApplianceDisplayName,
  *     managementApplianceId: testManagementAppliance.id,
+ *     sddcId: testSddc.id,
  *     state: managementApplianceState,
  * });
  * ```
@@ -112,6 +123,7 @@ export function getManagementAppliancesOutput(args: GetManagementAppliancesOutpu
         "displayName": args.displayName,
         "filters": args.filters,
         "managementApplianceId": args.managementApplianceId,
+        "sddcId": args.sddcId,
         "state": args.state,
     }, opts);
 }
@@ -133,6 +145,10 @@ export interface GetManagementAppliancesOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management appliance.
      */
     managementApplianceId?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
+     */
+    sddcId?: pulumi.Input<string>;
     /**
      * The lifecycle state of the management appliance.
      */

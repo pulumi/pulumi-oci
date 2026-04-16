@@ -124,6 +124,10 @@ namespace Pulumi.Oci.Functions
     public sealed class GetFusionEnvironmentResult
     {
         /// <summary>
+        /// Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFusionEnvironmentAdditionalEgressRuleResult> AdditionalEgressRules;
+        /// <summary>
         /// Language packs
         /// </summary>
         public readonly ImmutableArray<string> AdditionalLanguagePacks;
@@ -178,7 +182,7 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         public readonly bool IsBreakGlassEnabled;
         /// <summary>
-        /// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+        /// Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
         /// </summary>
         public readonly bool IsIpv6dualStackEnabled;
         /// <summary>
@@ -244,6 +248,8 @@ namespace Pulumi.Oci.Functions
 
         [OutputConstructor]
         private GetFusionEnvironmentResult(
+            ImmutableArray<Outputs.GetFusionEnvironmentAdditionalEgressRuleResult> additionalEgressRules,
+
             ImmutableArray<string> additionalLanguagePacks,
 
             ImmutableArray<string> appliedPatchBundles,
@@ -306,6 +312,7 @@ namespace Pulumi.Oci.Functions
 
             string version)
         {
+            AdditionalEgressRules = additionalEgressRules;
             AdditionalLanguagePacks = additionalLanguagePacks;
             AppliedPatchBundles = appliedPatchBundles;
             CompartmentId = compartmentId;

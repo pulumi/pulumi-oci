@@ -100,6 +100,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// Comma separated names of argument corresponding to which metadata need to be retrived.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemMetadataResult> Metadatas;
+        public readonly int MoveReplicationUnitTrigger;
         /// <summary>
         /// The national character set for the database.
         /// </summary>
@@ -121,6 +122,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
         /// </summary>
         public readonly ImmutableArray<string> PrivateEndpointIds;
+        public readonly int RecreateFailedResourceTrigger;
         /// <summary>
         /// The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
         /// </summary>
@@ -133,6 +135,10 @@ namespace Pulumi.Oci.Oci.Outputs
         /// The replication unit count for RAFT based distributed database. For RAFT replication based Globally distributed database, the value should be at least twice the number of shards.
         /// </summary>
         public readonly int ReplicationUnit;
+        /// <summary>
+        /// The TCP Single Client Access Name (SCAN) port for Globally distributed database clusters.
+        /// </summary>
+        public readonly int ScanListenerPort;
         /// <summary>
         /// Collection of shards associated with the Globally distributed database.
         /// </summary>
@@ -231,6 +237,8 @@ namespace Pulumi.Oci.Oci.Outputs
 
             ImmutableArray<Outputs.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemMetadataResult> metadatas,
 
+            int moveReplicationUnitTrigger,
+
             string ncharacterSet,
 
             int onsPortLocal,
@@ -243,11 +251,15 @@ namespace Pulumi.Oci.Oci.Outputs
 
             ImmutableArray<string> privateEndpointIds,
 
+            int recreateFailedResourceTrigger,
+
             int replicationFactor,
 
             string replicationMethod,
 
             int replicationUnit,
+
+            int scanListenerPort,
 
             ImmutableArray<Outputs.GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItemShardDetailResult> shardDetails,
 
@@ -301,15 +313,18 @@ namespace Pulumi.Oci.Oci.Outputs
             ListenerPort = listenerPort;
             ListenerPortTls = listenerPortTls;
             Metadatas = metadatas;
+            MoveReplicationUnitTrigger = moveReplicationUnitTrigger;
             NcharacterSet = ncharacterSet;
             OnsPortLocal = onsPortLocal;
             OnsPortRemote = onsPortRemote;
             PatchOperations = patchOperations;
             Prefix = prefix;
             PrivateEndpointIds = privateEndpointIds;
+            RecreateFailedResourceTrigger = recreateFailedResourceTrigger;
             ReplicationFactor = replicationFactor;
             ReplicationMethod = replicationMethod;
             ReplicationUnit = replicationUnit;
+            ScanListenerPort = scanListenerPort;
             ShardDetails = shardDetails;
             ShardingMethod = shardingMethod;
             StartDatabaseTrigger = startDatabaseTrigger;

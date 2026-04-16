@@ -6,8 +6,10 @@ package com.pulumi.oci.oci.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.oci.inputs.DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetailsArgs;
 import com.pulumi.oci.oci.inputs.DistributedDatabaseDistributedDatabaseCatalogDetailMetadataArgs;
 import com.pulumi.oci.oci.inputs.DistributedDatabaseDistributedDatabaseCatalogDetailPeerDetailArgs;
+import com.pulumi.oci.oci.inputs.DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetailsArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -20,18 +22,33 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetailArgs exten
     public static final DistributedDatabaseDistributedDatabaseCatalogDetailArgs Empty = new DistributedDatabaseDistributedDatabaseCatalogDetailArgs();
 
     /**
-     * The admin password for the cataog associated with Globally distributed database.
+     * The admin password for the catalog associated with Globally distributed database.
      * 
      */
     @Import(name="adminPassword", required=true)
     private Output<String> adminPassword;
 
     /**
-     * @return The admin password for the cataog associated with Globally distributed database.
+     * @return The admin password for the catalog associated with Globally distributed database.
      * 
      */
     public Output<String> adminPassword() {
         return this.adminPassword;
+    }
+
+    /**
+     * The name of the availability domain that the distributed database shard will be located in.
+     * 
+     */
+    @Import(name="availabilityDomain")
+    private @Nullable Output<String> availabilityDomain;
+
+    /**
+     * @return The name of the availability domain that the distributed database shard will be located in.
+     * 
+     */
+    public Optional<Output<String>> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
 
     /**
@@ -62,6 +79,21 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetailArgs exten
      */
     public Optional<Output<String>> dbHomeId() {
         return Optional.ofNullable(this.dbHomeId);
+    }
+
+    /**
+     * Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+     * 
+     */
+    @Import(name="dbStorageVaultDetails")
+    private @Nullable Output<DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetailsArgs> dbStorageVaultDetails;
+
+    /**
+     * @return Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+     * 
+     */
+    public Optional<Output<DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetailsArgs>> dbStorageVaultDetails() {
+        return Optional.ofNullable(this.dbStorageVaultDetails);
     }
 
     /**
@@ -185,14 +217,14 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetailArgs exten
     }
 
     /**
-     * The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+     * Type of Globally distributed database Shard or Catalog. Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch. Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters. EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
      * 
      */
     @Import(name="source", required=true)
     private Output<String> source;
 
     /**
-     * @return The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+     * @return Type of Globally distributed database Shard or Catalog. Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch. Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters. EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
      * 
      */
     public Output<String> source() {
@@ -275,26 +307,43 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetailArgs exten
     }
 
     /**
+     * Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+     * 
+     */
+    @Import(name="vmClusterDetails")
+    private @Nullable Output<DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetailsArgs> vmClusterDetails;
+
+    /**
+     * @return Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+     * 
+     */
+    public Optional<Output<DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetailsArgs>> vmClusterDetails() {
+        return Optional.ofNullable(this.vmClusterDetails);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
      * 
      */
-    @Import(name="vmClusterId", required=true)
-    private Output<String> vmClusterId;
+    @Import(name="vmClusterId")
+    private @Nullable Output<String> vmClusterId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
      * 
      */
-    public Output<String> vmClusterId() {
-        return this.vmClusterId;
+    public Optional<Output<String>> vmClusterId() {
+        return Optional.ofNullable(this.vmClusterId);
     }
 
     private DistributedDatabaseDistributedDatabaseCatalogDetailArgs() {}
 
     private DistributedDatabaseDistributedDatabaseCatalogDetailArgs(DistributedDatabaseDistributedDatabaseCatalogDetailArgs $) {
         this.adminPassword = $.adminPassword;
+        this.availabilityDomain = $.availabilityDomain;
         this.containerDatabaseId = $.containerDatabaseId;
         this.dbHomeId = $.dbHomeId;
+        this.dbStorageVaultDetails = $.dbStorageVaultDetails;
         this.kmsKeyId = $.kmsKeyId;
         this.kmsKeyVersionId = $.kmsKeyVersionId;
         this.metadatas = $.metadatas;
@@ -309,6 +358,7 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetailArgs exten
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
         this.vaultId = $.vaultId;
+        this.vmClusterDetails = $.vmClusterDetails;
         this.vmClusterId = $.vmClusterId;
     }
 
@@ -331,7 +381,7 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetailArgs exten
         }
 
         /**
-         * @param adminPassword The admin password for the cataog associated with Globally distributed database.
+         * @param adminPassword The admin password for the catalog associated with Globally distributed database.
          * 
          * @return builder
          * 
@@ -342,13 +392,34 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetailArgs exten
         }
 
         /**
-         * @param adminPassword The admin password for the cataog associated with Globally distributed database.
+         * @param adminPassword The admin password for the catalog associated with Globally distributed database.
          * 
          * @return builder
          * 
          */
         public Builder adminPassword(String adminPassword) {
             return adminPassword(Output.of(adminPassword));
+        }
+
+        /**
+         * @param availabilityDomain The name of the availability domain that the distributed database shard will be located in.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(@Nullable Output<String> availabilityDomain) {
+            $.availabilityDomain = availabilityDomain;
+            return this;
+        }
+
+        /**
+         * @param availabilityDomain The name of the availability domain that the distributed database shard will be located in.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(String availabilityDomain) {
+            return availabilityDomain(Output.of(availabilityDomain));
         }
 
         /**
@@ -391,6 +462,27 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetailArgs exten
          */
         public Builder dbHomeId(String dbHomeId) {
             return dbHomeId(Output.of(dbHomeId));
+        }
+
+        /**
+         * @param dbStorageVaultDetails Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbStorageVaultDetails(@Nullable Output<DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetailsArgs> dbStorageVaultDetails) {
+            $.dbStorageVaultDetails = dbStorageVaultDetails;
+            return this;
+        }
+
+        /**
+         * @param dbStorageVaultDetails Details of the request to create exascale db vault storage for shard or catalog of the distributed database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbStorageVaultDetails(DistributedDatabaseDistributedDatabaseCatalogDetailDbStorageVaultDetailsArgs dbStorageVaultDetails) {
+            return dbStorageVaultDetails(Output.of(dbStorageVaultDetails));
         }
 
         /**
@@ -592,7 +684,7 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetailArgs exten
         }
 
         /**
-         * @param source The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+         * @param source Type of Globally distributed database Shard or Catalog. Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch. Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters. EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
          * 
          * @return builder
          * 
@@ -603,7 +695,7 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetailArgs exten
         }
 
         /**
-         * @param source The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+         * @param source Type of Globally distributed database Shard or Catalog. Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch. Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters. EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
          * 
          * @return builder
          * 
@@ -718,12 +810,33 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetailArgs exten
         }
 
         /**
+         * @param vmClusterDetails Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterDetails(@Nullable Output<DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetailsArgs> vmClusterDetails) {
+            $.vmClusterDetails = vmClusterDetails;
+            return this;
+        }
+
+        /**
+         * @param vmClusterDetails Details of the request to create exadb vm cluster for shard or catalog of the distributed database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterDetails(DistributedDatabaseDistributedDatabaseCatalogDetailVmClusterDetailsArgs vmClusterDetails) {
+            return vmClusterDetails(Output.of(vmClusterDetails));
+        }
+
+        /**
          * @param vmClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VmCluster.
          * 
          * @return builder
          * 
          */
-        public Builder vmClusterId(Output<String> vmClusterId) {
+        public Builder vmClusterId(@Nullable Output<String> vmClusterId) {
             $.vmClusterId = vmClusterId;
             return this;
         }
@@ -744,9 +857,6 @@ public final class DistributedDatabaseDistributedDatabaseCatalogDetailArgs exten
             }
             if ($.source == null) {
                 throw new MissingRequiredPropertyException("DistributedDatabaseDistributedDatabaseCatalogDetailArgs", "source");
-            }
-            if ($.vmClusterId == null) {
-                throw new MissingRequiredPropertyException("DistributedDatabaseDistributedDatabaseCatalogDetailArgs", "vmClusterId");
             }
             return $;
         }

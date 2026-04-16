@@ -27,7 +27,7 @@ class GetSddcResult:
     """
     A collection of values returned by getSddc.
     """
-    def __init__(__self__, actual_esxi_hosts_count=None, capacity_reservation_id=None, clusters_count=None, compartment_id=None, compute_availability_domain=None, datastores=None, defined_tags=None, display_name=None, esxi_hosts_count=None, esxi_software_version=None, freeform_tags=None, hcx_action=None, hcx_fqdn=None, hcx_initial_password=None, hcx_mode=None, hcx_on_prem_key=None, hcx_on_prem_licenses=None, hcx_private_ip_id=None, hcx_vlan_id=None, id=None, initial_configurations=None, initial_host_ocpu_count=None, initial_host_shape_name=None, initial_sku=None, instance_display_name_prefix=None, is_hcx_enabled=None, is_hcx_enterprise_enabled=None, is_hcx_pending_downgrade=None, is_shielded_instance_enabled=None, is_single_host_sddc=None, nsx_edge_uplink1vlan_id=None, nsx_edge_uplink2vlan_id=None, nsx_edge_uplink_ip_id=None, nsx_edge_vtep_vlan_id=None, nsx_manager_fqdn=None, nsx_manager_initial_password=None, nsx_manager_private_ip_id=None, nsx_manager_username=None, nsx_overlay_segment_name=None, nsx_vtep_vlan_id=None, provisioning_subnet_id=None, provisioning_vlan_id=None, refresh_hcx_license_status=None, replication_vlan_id=None, reserving_hcx_on_premise_license_keys=None, sddc_id=None, ssh_authorized_keys=None, state=None, system_tags=None, time_created=None, time_hcx_billing_cycle_end=None, time_hcx_license_status_updated=None, time_updated=None, upgrade_licenses=None, vcenter_fqdn=None, vcenter_initial_password=None, vcenter_private_ip_id=None, vcenter_username=None, vmotion_vlan_id=None, vmware_software_version=None, vsan_vlan_id=None, vsphere_upgrade_guide=None, vsphere_upgrade_objects=None, vsphere_vlan_id=None, workload_network_cidr=None):
+    def __init__(__self__, actual_esxi_hosts_count=None, capacity_reservation_id=None, clusters_count=None, compartment_id=None, compute_availability_domain=None, datastores=None, defined_tags=None, display_name=None, esxi_hosts_count=None, esxi_software_version=None, freeform_tags=None, hcx_action=None, hcx_fqdn=None, hcx_initial_password=None, hcx_mode=None, hcx_on_prem_key=None, hcx_on_prem_licenses=None, hcx_private_ip_id=None, hcx_vlan_id=None, id=None, initial_configurations=None, initial_host_ocpu_count=None, initial_host_shape_name=None, initial_sku=None, instance_display_name_prefix=None, is_hcx_enabled=None, is_hcx_enterprise_enabled=None, is_hcx_pending_downgrade=None, is_shielded_instance_enabled=None, is_single_host_sddc=None, nsx_edge_uplink1vlan_id=None, nsx_edge_uplink2vlan_id=None, nsx_edge_uplink_ip_id=None, nsx_edge_vtep_vlan_id=None, nsx_manager_fqdn=None, nsx_manager_initial_password=None, nsx_manager_private_ip_id=None, nsx_manager_username=None, nsx_overlay_segment_name=None, nsx_vtep_vlan_id=None, provisioning_subnet_id=None, provisioning_vlan_id=None, refresh_hcx_license_status=None, replication_vlan_id=None, reserving_hcx_on_premise_license_keys=None, sddc_byol_allocation_details=None, sddc_id=None, ssh_authorized_keys=None, state=None, system_tags=None, time_created=None, time_hcx_billing_cycle_end=None, time_hcx_license_status_updated=None, time_updated=None, upgrade_licenses=None, vcenter_fqdn=None, vcenter_initial_password=None, vcenter_private_ip_id=None, vcenter_username=None, vmotion_vlan_id=None, vmware_software_version=None, vsan_vlan_id=None, vsphere_upgrade_guide=None, vsphere_upgrade_objects=None, vsphere_vlan_id=None, workload_network_cidr=None):
         if actual_esxi_hosts_count and not isinstance(actual_esxi_hosts_count, int):
             raise TypeError("Expected argument 'actual_esxi_hosts_count' to be a int")
         pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
@@ -163,6 +163,9 @@ class GetSddcResult:
         if reserving_hcx_on_premise_license_keys and not isinstance(reserving_hcx_on_premise_license_keys, list):
             raise TypeError("Expected argument 'reserving_hcx_on_premise_license_keys' to be a list")
         pulumi.set(__self__, "reserving_hcx_on_premise_license_keys", reserving_hcx_on_premise_license_keys)
+        if sddc_byol_allocation_details and not isinstance(sddc_byol_allocation_details, list):
+            raise TypeError("Expected argument 'sddc_byol_allocation_details' to be a list")
+        pulumi.set(__self__, "sddc_byol_allocation_details", sddc_byol_allocation_details)
         if sddc_id and not isinstance(sddc_id, str):
             raise TypeError("Expected argument 'sddc_id' to be a str")
         pulumi.set(__self__, "sddc_id", sddc_id)
@@ -599,6 +602,14 @@ class GetSddcResult:
         return pulumi.get(self, "reserving_hcx_on_premise_license_keys")
 
     @_builtins.property
+    @pulumi.getter(name="sddcByolAllocationDetails")
+    def sddc_byol_allocation_details(self) -> Sequence['outputs.GetSddcSddcByolAllocationDetailResult']:
+        """
+        The BYOL allocations used for VMware SDDC provisioning.
+        """
+        return pulumi.get(self, "sddc_byol_allocation_details")
+
+    @_builtins.property
     @pulumi.getter(name="sddcId")
     def sddc_id(self) -> _builtins.str:
         return pulumi.get(self, "sddc_id")
@@ -815,6 +826,7 @@ class AwaitableGetSddcResult(GetSddcResult):
             refresh_hcx_license_status=self.refresh_hcx_license_status,
             replication_vlan_id=self.replication_vlan_id,
             reserving_hcx_on_premise_license_keys=self.reserving_hcx_on_premise_license_keys,
+            sddc_byol_allocation_details=self.sddc_byol_allocation_details,
             sddc_id=self.sddc_id,
             ssh_authorized_keys=self.ssh_authorized_keys,
             state=self.state,
@@ -907,6 +919,7 @@ def get_sddc(sddc_id: Optional[_builtins.str] = None,
         refresh_hcx_license_status=pulumi.get(__ret__, 'refresh_hcx_license_status'),
         replication_vlan_id=pulumi.get(__ret__, 'replication_vlan_id'),
         reserving_hcx_on_premise_license_keys=pulumi.get(__ret__, 'reserving_hcx_on_premise_license_keys'),
+        sddc_byol_allocation_details=pulumi.get(__ret__, 'sddc_byol_allocation_details'),
         sddc_id=pulumi.get(__ret__, 'sddc_id'),
         ssh_authorized_keys=pulumi.get(__ret__, 'ssh_authorized_keys'),
         state=pulumi.get(__ret__, 'state'),
@@ -996,6 +1009,7 @@ def get_sddc_output(sddc_id: Optional[pulumi.Input[_builtins.str]] = None,
         refresh_hcx_license_status=pulumi.get(__response__, 'refresh_hcx_license_status'),
         replication_vlan_id=pulumi.get(__response__, 'replication_vlan_id'),
         reserving_hcx_on_premise_license_keys=pulumi.get(__response__, 'reserving_hcx_on_premise_license_keys'),
+        sddc_byol_allocation_details=pulumi.get(__response__, 'sddc_byol_allocation_details'),
         sddc_id=pulumi.get(__response__, 'sddc_id'),
         ssh_authorized_keys=pulumi.get(__response__, 'ssh_authorized_keys'),
         state=pulumi.get(__response__, 'state'),

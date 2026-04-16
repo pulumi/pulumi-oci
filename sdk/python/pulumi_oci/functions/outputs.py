@@ -44,6 +44,7 @@ __all__ = [
     'GetFunctionsFunctionSourceDetailResult',
     'GetFunctionsFunctionSuccessDestinationResult',
     'GetFunctionsFunctionTraceConfigResult',
+    'GetFusionEnvironmentAdditionalEgressRuleResult',
     'GetFusionEnvironmentAdminUserItemResult',
     'GetFusionEnvironmentAdminUsersAdminUserCollectionResult',
     'GetFusionEnvironmentAdminUsersAdminUserCollectionItemResult',
@@ -89,6 +90,7 @@ __all__ = [
     'GetFusionEnvironmentsFilterResult',
     'GetFusionEnvironmentsFusionEnvironmentCollectionResult',
     'GetFusionEnvironmentsFusionEnvironmentCollectionItemResult',
+    'GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleResult',
     'GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailResult',
     'GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoResult',
     'GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyResult',
@@ -1600,6 +1602,57 @@ class GetFunctionsFunctionTraceConfigResult(dict):
 
 
 @pulumi.output_type
+class GetFusionEnvironmentAdditionalEgressRuleResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 destination_cidr: _builtins.str,
+                 max_destination_port: _builtins.int,
+                 min_destination_port: _builtins.int):
+        """
+        :param _builtins.str description: A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+        :param _builtins.str destination_cidr: Specifies the destination CIDR block the port should be opened for. Must be IPv4 only, and cannot be part of any private range from [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918).
+        :param _builtins.int max_destination_port: The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param _builtins.int min_destination_port: The minimum port number, which must not be greater than the maximum port number.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "destination_cidr", destination_cidr)
+        pulumi.set(__self__, "max_destination_port", max_destination_port)
+        pulumi.set(__self__, "min_destination_port", min_destination_port)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="destinationCidr")
+    def destination_cidr(self) -> _builtins.str:
+        """
+        Specifies the destination CIDR block the port should be opened for. Must be IPv4 only, and cannot be part of any private range from [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918).
+        """
+        return pulumi.get(self, "destination_cidr")
+
+    @_builtins.property
+    @pulumi.getter(name="maxDestinationPort")
+    def max_destination_port(self) -> _builtins.int:
+        """
+        The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        """
+        return pulumi.get(self, "max_destination_port")
+
+    @_builtins.property
+    @pulumi.getter(name="minDestinationPort")
+    def min_destination_port(self) -> _builtins.int:
+        """
+        The minimum port number, which must not be greater than the maximum port number.
+        """
+        return pulumi.get(self, "min_destination_port")
+
+
+@pulumi.output_type
 class GetFusionEnvironmentAdminUserItemResult(dict):
     def __init__(__self__, *,
                  email_address: _builtins.str,
@@ -3107,15 +3160,15 @@ class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActi
                  state: _builtins.str,
                  version: _builtins.str):
         """
-        :param _builtins.str action_type: Type of action
-        :param _builtins.str artifact: patch that delivered the vertex update prerequisite
-        :param _builtins.str category: patch artifact category
+        :param _builtins.str action_type: Type of action.
+        :param _builtins.str artifact: Patch that delivered the Vertex update prerequisite.
+        :param _builtins.str category: Patch artifact category.
         :param _builtins.str description: A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
-        :param _builtins.str mode: A string that describes whether the change is applied hot or cold
-        :param _builtins.str qualifier: month qualifier
-        :param _builtins.str reference_key: Unique identifier of the object that represents the action
+        :param _builtins.str mode: A string that describes whether the change is applied hot or cold.
+        :param _builtins.str qualifier: Month qualifier.
+        :param _builtins.str reference_key: Unique identifier of the object that represents the action.
         :param _builtins.str state: A filter that returns all resources that match the specified status
-        :param _builtins.str version: name of the repo
+        :param _builtins.str version: Name of the repo.
         """
         pulumi.set(__self__, "action_type", action_type)
         pulumi.set(__self__, "artifact", artifact)
@@ -3131,7 +3184,7 @@ class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActi
     @pulumi.getter(name="actionType")
     def action_type(self) -> _builtins.str:
         """
-        Type of action
+        Type of action.
         """
         return pulumi.get(self, "action_type")
 
@@ -3139,7 +3192,7 @@ class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActi
     @pulumi.getter
     def artifact(self) -> _builtins.str:
         """
-        patch that delivered the vertex update prerequisite
+        Patch that delivered the Vertex update prerequisite.
         """
         return pulumi.get(self, "artifact")
 
@@ -3147,7 +3200,7 @@ class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActi
     @pulumi.getter
     def category(self) -> _builtins.str:
         """
-        patch artifact category
+        Patch artifact category.
         """
         return pulumi.get(self, "category")
 
@@ -3163,7 +3216,7 @@ class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActi
     @pulumi.getter
     def mode(self) -> _builtins.str:
         """
-        A string that describes whether the change is applied hot or cold
+        A string that describes whether the change is applied hot or cold.
         """
         return pulumi.get(self, "mode")
 
@@ -3171,7 +3224,7 @@ class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActi
     @pulumi.getter
     def qualifier(self) -> _builtins.str:
         """
-        month qualifier
+        Month qualifier.
         """
         return pulumi.get(self, "qualifier")
 
@@ -3179,7 +3232,7 @@ class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActi
     @pulumi.getter(name="referenceKey")
     def reference_key(self) -> _builtins.str:
         """
-        Unique identifier of the object that represents the action
+        Unique identifier of the object that represents the action.
         """
         return pulumi.get(self, "reference_key")
 
@@ -3195,7 +3248,7 @@ class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActi
     @pulumi.getter
     def version(self) -> _builtins.str:
         """
-        name of the repo
+        Name of the repo.
         """
         return pulumi.get(self, "version")
 
@@ -3213,15 +3266,15 @@ class GetFusionEnvironmentScheduledActivityActionResult(dict):
                  state: _builtins.str,
                  version: _builtins.str):
         """
-        :param _builtins.str action_type: Type of action
-        :param _builtins.str artifact: patch that delivered the vertex update prerequisite
-        :param _builtins.str category: patch artifact category
+        :param _builtins.str action_type: Type of action.
+        :param _builtins.str artifact: Patch that delivered the Vertex update prerequisite.
+        :param _builtins.str category: Patch artifact category.
         :param _builtins.str description: A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
-        :param _builtins.str mode: A string that describes whether the change is applied hot or cold
-        :param _builtins.str qualifier: month qualifier
-        :param _builtins.str reference_key: Unique identifier of the object that represents the action
+        :param _builtins.str mode: A string that describes whether the change is applied hot or cold.
+        :param _builtins.str qualifier: Month qualifier.
+        :param _builtins.str reference_key: Unique identifier of the object that represents the action.
         :param _builtins.str state: The current state of the scheduledActivity.
-        :param _builtins.str version: name of the repo
+        :param _builtins.str version: Name of the repo.
         """
         pulumi.set(__self__, "action_type", action_type)
         pulumi.set(__self__, "artifact", artifact)
@@ -3237,7 +3290,7 @@ class GetFusionEnvironmentScheduledActivityActionResult(dict):
     @pulumi.getter(name="actionType")
     def action_type(self) -> _builtins.str:
         """
-        Type of action
+        Type of action.
         """
         return pulumi.get(self, "action_type")
 
@@ -3245,7 +3298,7 @@ class GetFusionEnvironmentScheduledActivityActionResult(dict):
     @pulumi.getter
     def artifact(self) -> _builtins.str:
         """
-        patch that delivered the vertex update prerequisite
+        Patch that delivered the Vertex update prerequisite.
         """
         return pulumi.get(self, "artifact")
 
@@ -3253,7 +3306,7 @@ class GetFusionEnvironmentScheduledActivityActionResult(dict):
     @pulumi.getter
     def category(self) -> _builtins.str:
         """
-        patch artifact category
+        Patch artifact category.
         """
         return pulumi.get(self, "category")
 
@@ -3269,7 +3322,7 @@ class GetFusionEnvironmentScheduledActivityActionResult(dict):
     @pulumi.getter
     def mode(self) -> _builtins.str:
         """
-        A string that describes whether the change is applied hot or cold
+        A string that describes whether the change is applied hot or cold.
         """
         return pulumi.get(self, "mode")
 
@@ -3277,7 +3330,7 @@ class GetFusionEnvironmentScheduledActivityActionResult(dict):
     @pulumi.getter
     def qualifier(self) -> _builtins.str:
         """
-        month qualifier
+        Month qualifier.
         """
         return pulumi.get(self, "qualifier")
 
@@ -3285,7 +3338,7 @@ class GetFusionEnvironmentScheduledActivityActionResult(dict):
     @pulumi.getter(name="referenceKey")
     def reference_key(self) -> _builtins.str:
         """
-        Unique identifier of the object that represents the action
+        Unique identifier of the object that represents the action.
         """
         return pulumi.get(self, "reference_key")
 
@@ -3301,7 +3354,7 @@ class GetFusionEnvironmentScheduledActivityActionResult(dict):
     @pulumi.getter
     def version(self) -> _builtins.str:
         """
-        name of the repo
+        Name of the repo.
         """
         return pulumi.get(self, "version")
 
@@ -3618,6 +3671,7 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionResult(dict):
 @pulumi.output_type
 class GetFusionEnvironmentsFusionEnvironmentCollectionItemResult(dict):
     def __init__(__self__, *,
+                 additional_egress_rules: Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleResult'],
                  additional_language_packs: Sequence[_builtins.str],
                  applied_patch_bundles: Sequence[_builtins.str],
                  compartment_id: _builtins.str,
@@ -3649,6 +3703,7 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemResult(dict):
                  time_updated: _builtins.str,
                  version: _builtins.str):
         """
+        :param Sequence['GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleArgs'] additional_egress_rules: Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
         :param Sequence[_builtins.str] additional_language_packs: Language packs
         :param Sequence[_builtins.str] applied_patch_bundles: Patch bundle names
         :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
@@ -3662,7 +3717,7 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemResult(dict):
         :param _builtins.str id: Unique identifier that is immutable on creation
         :param _builtins.str idcs_domain_url: The IDCS Domain URL
         :param _builtins.bool is_break_glass_enabled: If it's true, then the Break Glass feature is enabled
-        :param _builtins.bool is_ipv6dual_stack_enabled: Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+        :param _builtins.bool is_ipv6dual_stack_enabled: Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
         :param _builtins.str kms_key_id: BYOK key id
         :param Sequence['GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArgs'] kms_key_infos: BYOK key info
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -3679,6 +3734,7 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemResult(dict):
         :param _builtins.str time_updated: The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
         :param _builtins.str version: Version of Fusion Apps used by this environment
         """
+        pulumi.set(__self__, "additional_egress_rules", additional_egress_rules)
         pulumi.set(__self__, "additional_language_packs", additional_language_packs)
         pulumi.set(__self__, "applied_patch_bundles", applied_patch_bundles)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -3709,6 +3765,14 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemResult(dict):
         pulumi.set(__self__, "time_upcoming_maintenance", time_upcoming_maintenance)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalEgressRules")
+    def additional_egress_rules(self) -> Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleResult']:
+        """
+        Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+        """
+        return pulumi.get(self, "additional_egress_rules")
 
     @_builtins.property
     @pulumi.getter(name="additionalLanguagePacks")
@@ -3823,7 +3887,7 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemResult(dict):
     @pulumi.getter(name="isIpv6dualStackEnabled")
     def is_ipv6dual_stack_enabled(self) -> _builtins.bool:
         """
-        Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+        Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
         """
         return pulumi.get(self, "is_ipv6dual_stack_enabled")
 
@@ -3946,6 +4010,57 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemResult(dict):
         Version of Fusion Apps used by this environment
         """
         return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentsFusionEnvironmentCollectionItemAdditionalEgressRuleResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 destination_cidr: _builtins.str,
+                 max_destination_port: _builtins.int,
+                 min_destination_port: _builtins.int):
+        """
+        :param _builtins.str description: A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+        :param _builtins.str destination_cidr: Specifies the destination CIDR block the port should be opened for. Must be IPv4 only, and cannot be part of any private range from [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918).
+        :param _builtins.int max_destination_port: The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param _builtins.int min_destination_port: The minimum port number, which must not be greater than the maximum port number.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "destination_cidr", destination_cidr)
+        pulumi.set(__self__, "max_destination_port", max_destination_port)
+        pulumi.set(__self__, "min_destination_port", min_destination_port)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="destinationCidr")
+    def destination_cidr(self) -> _builtins.str:
+        """
+        Specifies the destination CIDR block the port should be opened for. Must be IPv4 only, and cannot be part of any private range from [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918).
+        """
+        return pulumi.get(self, "destination_cidr")
+
+    @_builtins.property
+    @pulumi.getter(name="maxDestinationPort")
+    def max_destination_port(self) -> _builtins.int:
+        """
+        The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        """
+        return pulumi.get(self, "max_destination_port")
+
+    @_builtins.property
+    @pulumi.getter(name="minDestinationPort")
+    def min_destination_port(self) -> _builtins.int:
+        """
+        The minimum port number, which must not be greater than the maximum port number.
+        """
+        return pulumi.get(self, "min_destination_port")
 
 
 @pulumi.output_type
